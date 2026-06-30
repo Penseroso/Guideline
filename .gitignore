@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
