@@ -1,37 +1,41 @@
 # Project Scope
 
-## Primary Goal
+## Mission and Product Value
 
-Create a minimal, objective, and reusable foundation for archiving regulatory guideline content as structured data with source traceability.
+Build a traceable regulatory knowledge archive that preserves official guideline source text and supports reusable structured records. The archive should help users find relevant regulatory statements, understand requirements, quantitative criteria, conditions, and exceptions, verify results against exact source text and PDF locations, compare related content across sections and later documents, and reuse reviewed structured information.
 
-## Current Pilot Scope
+## Users and Initial Product Target
 
-- Pilot document: ICH M10.
-- Source file currently present: `Guideline Files/ICH M10.pdf`.
-- Existing assessment document: `working_docs/pdf_assessment_M10.md`.
-- Current work is limited to repository-level project documentation and future workflow scaffolding.
+The primary users are internal reviewers and analysts who need to inspect and verify regulatory guideline content. The initial product target is a future read-only internal review tool; Phase 0 does not implement that application.
 
-## Completion Criteria
+## Canonical Data and Design Principles
 
-The pilot foundation is complete when:
+Canonical sources are immutable official PDFs and reviewed, Git-managed structured JSON. Databases, search indexes, embeddings, retrieval context, comparison views, and application data are derived and reproducible.
 
-- Original source files remain unchanged.
-- Project scope, decisions, and review-log documents exist under `working_docs/`.
-- The repository README describes the project purpose, folder roles, current status, and basic workflow.
-- Future structured records, when created, can be traced to document, section, and PDF page fields.
-- Validation rules and scripts are added before structured data is treated as complete.
+The foundation must preserve source traceability, separate source-derived records from analyst-derived mappings or interpretations, support multiple documents and coexisting document versions, and remain compatible with future cross-document comparison.
 
-## Excluded Scope
+## Current Scope
+
+Phase 0 is limited to aligning repository documentation before the M10 JSON pilot. The current pilot document is ICH M10, with the source PDF at `Guideline Files/ICH M10.pdf`, the PDF assessment at `working_docs/pdf_assessment_M10.md`, and the conceptual data model at `working_docs/schema.md` version `0.1.0`.
+
+## Project Phases
+
+- Phase 0 — Foundation Alignment: align documentation, roles, terminology, and current status.
+- Phase 1 — M10 Pilot: create a limited reviewed JSON pilot from ICH M10 using the conceptual model.
+- Phase 2 — Data Contract and Validation: add JSON Schema and reproducible validation tooling for structured data.
+- Phase 3 — Expansion and Application: expand across sections/documents and support derived review-tool capabilities.
+
+## Non-Goals
 
 The following are outside the current scope unless explicitly requested:
 
 - Full-guideline extraction.
-- Schema design or schema implementation.
+- JSON Schema implementation.
 - Structured data creation.
 - Extraction or validation script implementation.
+- Database, search, embedding, or web application implementation.
 - Regulatory suitability conclusions.
 - Study-design recommendations.
 - Automated decision making.
 - Go/No-Go judgments.
 - Scoring systems.
-- Web application development.

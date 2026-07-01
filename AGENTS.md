@@ -77,7 +77,9 @@ Preserve the original modal verb or wording in the source record.
 
 ## Validation
 
-A task is not complete until:
+A task is not complete until the validation checks that exist and apply to the changed files have been run and reported. Do not claim unavailable validation passed; report unavailable checks as `not yet available` and irrelevant checks as `not applicable`.
+
+For structured data changes, applicable checks include:
 
 * structured files are syntactically valid
 * schema validation passes
@@ -86,6 +88,8 @@ A task is not complete until:
 * required source-traceability fields are present
 * unresolved items are marked `needs_review`
 * validation commands and results are reported
+
+JSON Schema and validation-script checks are mandatory once those artifacts exist and structured data is changed.
 
 ## Completion report
 

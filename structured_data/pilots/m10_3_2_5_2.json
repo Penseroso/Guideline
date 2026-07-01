@@ -1,0 +1,555 @@
+{
+  "documents": [
+    {
+      "document_id": "ich_m10",
+      "title": "Bioanalytical Method Validation and Study Sample Analysis",
+      "guideline_code": "M10",
+      "issuing_body": "ICH",
+      "document_version_label": "Final version, adopted on 24 May 2022",
+      "source_file_path": "Guideline Files/ICH M10.pdf",
+      "source_file_checksum": "E306F3B6DC367EB2913CE242093A8F6C9DCD095A139A9FDB6D6F5E25201FA6AF",
+      "schema_model_version": "0.1.0"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "ich_m10.sec.3",
+      "document_id": "ich_m10",
+      "section_number": "3",
+      "title": "CHROMATOGRAPHY",
+      "parent_section_id": null,
+      "section_order": null,
+      "section_order_status": "unknown",
+      "heading_source_unit_id": null
+    },
+    {
+      "section_id": "ich_m10.sec.3_2",
+      "document_id": "ich_m10",
+      "section_number": "3.2",
+      "title": "Validation",
+      "parent_section_id": "ich_m10.sec.3",
+      "section_order": null,
+      "section_order_status": "unknown",
+      "heading_source_unit_id": null
+    },
+    {
+      "section_id": "ich_m10.sec.3_2_5",
+      "document_id": "ich_m10",
+      "section_number": "3.2.5",
+      "title": "Accuracy and Precision",
+      "parent_section_id": "ich_m10.sec.3_2",
+      "section_order": null,
+      "section_order_status": "unknown",
+      "heading_source_unit_id": null
+    },
+    {
+      "section_id": "ich_m10.sec.3_2_5_2",
+      "document_id": "ich_m10",
+      "section_number": "3.2.5.2",
+      "title": "Evaluation of Accuracy and Precision",
+      "parent_section_id": "ich_m10.sec.3_2_5",
+      "section_order": null,
+      "section_order_status": "unknown",
+      "heading_source_unit_id": "ich_m10.su.3_2_5_2.001"
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "ich_m10.su.3_2_5_2.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.3_2_5_2",
+      "unit_type": "heading",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "3.2.5.2 Evaluation of Accuracy and Precision",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.3_2_5_2",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.3_2_5_2.002",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.3_2_5_2",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "Accuracy and precision should be determined by analysing the QCs within each run (within-run) and in different runs (between-run). Accuracy and precision should be evaluated using the same runs and data.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.3_2_5_2",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.3_2_5_2",
+      "unit_type": "paragraph",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "source_text": "Within-run accuracy and precision should be evaluated by analysing at least 5 replicates at each QC concentration level in each analytical run. Between-run accuracy and precision should be evaluated by analysing each QC concentration level in at least 3 analytical runs over at least two days. To enable the evaluation of any trends over time within one run, it is recommended to demonstrate accuracy and precision of the QCs over at least one of the runs in a size equivalent to a prospective analytical run of study samples. Reported method validation data and the determination of accuracy and precision should include all results obtained, including individual QCs outside of the acceptance criteria, except those cases where errors are obvious and documented. Within-run accuracy and precision data should be reported for each run. If the within-run accuracy or precision criteria are not met in all runs, an overall estimate of within-run accuracy and precision for each QC level should be calculated. Between-run (intermediate) precision and accuracy should be calculated by combining the data from all runs.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.3_2_5_2",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.3_2_5_2.004",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.3_2_5_2",
+      "unit_type": "paragraph",
+      "unit_order": 4,
+      "unit_order_status": "known",
+      "source_text": "The calibration curves for these assessments should be prepared using freshly spiked calibration standards in at least one run. If freshly spiked calibration standards are not used in the other runs, stability of the frozen calibration standards should be demonstrated.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.3_2_5_2",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.3_2_5_2",
+      "unit_type": "paragraph",
+      "unit_order": 5,
+      "unit_order_status": "known",
+      "source_text": "The accuracy at each concentration level should be within ±15% of the nominal concentration, except at the LLOQ, where it should be within ±20%. The precision (%CV) of the concentrations determined at each level should not exceed 15%, except at the LLOQ, where it should not exceed 20%. For non-accuracy and precision validation runs, at least 2/3 of the total QCs and at least 50% at each concentration level should be within ±15% of the nominal values.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.3_2_5_2",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    }
+  ],
+  "knowledge_records": [
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.001",
+      "source_unit_ids": ["ich_m10.su.3_2_5_2.002"],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be determined",
+      "subject": "Accuracy and precision",
+      "action": "be determined",
+      "object": "by analysing the QCs within each run (within-run) and in different runs (between-run)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.002",
+      "source_unit_ids": ["ich_m10.su.3_2_5_2.002"],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be evaluated",
+      "subject": "Accuracy and precision",
+      "action": "be evaluated",
+      "object": "using the same runs and data",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.003",
+      "source_unit_ids": ["ich_m10.su.3_2_5_2.003"],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be evaluated",
+      "subject": "Within-run accuracy and precision",
+      "action": "be evaluated",
+      "object": "by analysing at least 5 replicates at each QC concentration level in each analytical run",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.004",
+      "source_unit_ids": ["ich_m10.su.3_2_5_2.003"],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be evaluated",
+      "subject": "Between-run accuracy and precision",
+      "action": "be evaluated",
+      "object": "by analysing each QC concentration level in at least 3 analytical runs over at least two days",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.005",
+      "source_unit_ids": ["ich_m10.su.3_2_5_2.003"],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "it is recommended",
+      "subject": "Accuracy and precision of the QCs",
+      "action": "be demonstrated",
+      "object": "over at least one of the runs in a size equivalent to a prospective analytical run of study samples",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.006",
+      "source_unit_ids": ["ich_m10.su.3_2_5_2.003"],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should include",
+      "subject": "Reported method validation data and the determination of accuracy and precision",
+      "action": "include",
+      "object": "all results obtained, including individual QCs outside of the acceptance criteria",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.007",
+      "source_unit_ids": ["ich_m10.su.3_2_5_2.003"],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be reported",
+      "subject": "Within-run accuracy and precision data",
+      "action": "be reported",
+      "object": "for each run",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.008",
+      "source_unit_ids": ["ich_m10.su.3_2_5_2.003"],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be calculated",
+      "subject": "An overall estimate of within-run accuracy and precision for each QC level",
+      "action": "be calculated",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.009",
+      "source_unit_ids": ["ich_m10.su.3_2_5_2.003"],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be calculated",
+      "subject": "Between-run (intermediate) precision and accuracy",
+      "action": "be calculated",
+      "object": "by combining the data from all runs",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.010",
+      "source_unit_ids": ["ich_m10.su.3_2_5_2.004"],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be prepared",
+      "subject": "The calibration curves for these assessments",
+      "action": "be prepared",
+      "object": "using freshly spiked calibration standards in at least one run",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.011",
+      "source_unit_ids": ["ich_m10.su.3_2_5_2.004"],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be demonstrated",
+      "subject": "Stability of the frozen calibration standards",
+      "action": "be demonstrated",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.012",
+      "source_unit_ids": ["ich_m10.su.3_2_5_2.005"],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be within",
+      "subject": "The accuracy at each concentration level",
+      "action": "be within",
+      "object": "±15% of the nominal concentration, except at the LLOQ, where it should be within ±20%",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.013",
+      "source_unit_ids": ["ich_m10.su.3_2_5_2.005"],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should not exceed",
+      "subject": "The precision (%CV) of the concentrations determined at each level",
+      "action": "not exceed",
+      "object": "15%, except at the LLOQ, where it should not exceed 20%",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.014",
+      "source_unit_ids": ["ich_m10.su.3_2_5_2.005"],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be within",
+      "subject": "At least 2/3 of the total QCs and at least 50% at each concentration level",
+      "action": "be within",
+      "object": "±15% of the nominal values",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    }
+  ],
+  "quantitative_criteria": [
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.001",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.003",
+      "parameter": "replicates",
+      "comparator": "at_least",
+      "value": 5,
+      "unit": "replicates",
+      "value_status": "known",
+      "denominator_or_reference": "each QC concentration level in each analytical run",
+      "condition_ids": ["ich_m10.cond.3_2_5_2.001"],
+      "source_text": "at least 5 replicates at each QC concentration level in each analytical run"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.002",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.004",
+      "parameter": "analytical runs",
+      "comparator": "at_least",
+      "value": 3,
+      "unit": "analytical runs",
+      "value_status": "known",
+      "denominator_or_reference": "each QC concentration level",
+      "condition_ids": ["ich_m10.cond.3_2_5_2.002"],
+      "source_text": "at least 3 analytical runs"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.003",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.004",
+      "parameter": "days",
+      "comparator": "at_least",
+      "value": 2,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": "between-run accuracy and precision evaluation",
+      "condition_ids": ["ich_m10.cond.3_2_5_2.002"],
+      "source_text": "over at least two days"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.004",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.005",
+      "parameter": "runs sized equivalent to a prospective analytical run of study samples",
+      "comparator": "at_least",
+      "value": 1,
+      "unit": "run",
+      "value_status": "known",
+      "denominator_or_reference": "evaluation of trends over time within one run",
+      "condition_ids": [],
+      "source_text": "over at least one of the runs in a size equivalent to a prospective analytical run of study samples"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.005",
+      "source_unit_id": "ich_m10.su.3_2_5_2.004",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.010",
+      "parameter": "freshly spiked calibration standard runs",
+      "comparator": "at_least",
+      "value": 1,
+      "unit": "run",
+      "value_status": "known",
+      "denominator_or_reference": "calibration curves for these assessments",
+      "condition_ids": [],
+      "source_text": "in at least one run"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.006",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.012",
+      "parameter": "accuracy",
+      "comparator": "within",
+      "value": 15,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal concentration at each concentration level except LLOQ",
+      "condition_ids": [],
+      "source_text": "within ±15% of the nominal concentration"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.007",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.012",
+      "parameter": "accuracy",
+      "comparator": "within",
+      "value": 20,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal concentration at the LLOQ",
+      "condition_ids": ["ich_m10.cond.3_2_5_2.007"],
+      "source_text": "except at the LLOQ, where it should be within ±20%"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.008",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.013",
+      "parameter": "precision",
+      "comparator": "not_exceed",
+      "value": 15,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "%CV of concentrations determined at each level except LLOQ",
+      "condition_ids": [],
+      "source_text": "should not exceed 15%"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.009",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.013",
+      "parameter": "precision",
+      "comparator": "not_exceed",
+      "value": 20,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "%CV at the LLOQ",
+      "condition_ids": ["ich_m10.cond.3_2_5_2.007"],
+      "source_text": "except at the LLOQ, where it should not exceed 20%"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.010",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.014",
+      "parameter": "total QCs within nominal values",
+      "comparator": "at_least",
+      "value": null,
+      "unit": "fraction",
+      "value_status": "needs_review",
+      "denominator_or_reference": "total QCs in non-accuracy and precision validation runs",
+      "condition_ids": ["ich_m10.cond.3_2_5_2.008"],
+      "source_text": "at least 2/3 of the total QCs"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.011",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.014",
+      "parameter": "QCs within nominal values at each concentration level",
+      "comparator": "at_least",
+      "value": 50,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "each concentration level in non-accuracy and precision validation runs",
+      "condition_ids": ["ich_m10.cond.3_2_5_2.008"],
+      "source_text": "at least 50% at each concentration level"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.012",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.014",
+      "parameter": "accuracy for QCs in non-accuracy and precision validation runs",
+      "comparator": "within",
+      "value": 15,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal values",
+      "condition_ids": ["ich_m10.cond.3_2_5_2.008"],
+      "source_text": "should be within ±15% of the nominal values"
+    }
+  ],
+  "conditions": [
+    {
+      "condition_id": "ich_m10.cond.3_2_5_2.001",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "condition_text": "Within-run accuracy and precision",
+      "condition_type": "applicability",
+      "applies_to_ids": ["ich_m10.kr.3_2_5_2.003", "ich_m10.qc.3_2_5_2.001"],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.3_2_5_2.002",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "condition_text": "Between-run accuracy and precision",
+      "condition_type": "applicability",
+      "applies_to_ids": ["ich_m10.kr.3_2_5_2.004", "ich_m10.qc.3_2_5_2.002", "ich_m10.qc.3_2_5_2.003"],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.3_2_5_2.004",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "condition_text": "except those cases where errors are obvious and documented",
+      "condition_type": "exception",
+      "applies_to_ids": ["ich_m10.kr.3_2_5_2.006"],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.3_2_5_2.005",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "condition_text": "If the within-run accuracy or precision criteria are not met in all runs",
+      "condition_type": "precondition",
+      "applies_to_ids": ["ich_m10.kr.3_2_5_2.008"],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.3_2_5_2.006",
+      "source_unit_id": "ich_m10.su.3_2_5_2.004",
+      "condition_text": "If freshly spiked calibration standards are not used in the other runs",
+      "condition_type": "precondition",
+      "applies_to_ids": ["ich_m10.kr.3_2_5_2.011"],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.3_2_5_2.007",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "condition_text": "at the LLOQ",
+      "condition_type": "exception",
+      "applies_to_ids": ["ich_m10.kr.3_2_5_2.012", "ich_m10.kr.3_2_5_2.013", "ich_m10.qc.3_2_5_2.007", "ich_m10.qc.3_2_5_2.009"],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.3_2_5_2.008",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "condition_text": "For non-accuracy and precision validation runs",
+      "condition_type": "applicability",
+      "applies_to_ids": ["ich_m10.kr.3_2_5_2.014", "ich_m10.qc.3_2_5_2.010", "ich_m10.qc.3_2_5_2.011", "ich_m10.qc.3_2_5_2.012"],
+      "review_status": "reviewed"
+    }
+  ],
+  "cross_references": []
+}
