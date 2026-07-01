@@ -1,0 +1,304 @@
+{
+  "documents": [
+    {
+      "document_id": "ich_m10",
+      "title": "Bioanalytical Method Validation and Study Sample Analysis",
+      "guideline_code": "M10",
+      "issuing_body": "ICH",
+      "document_version_label": "Final version, adopted on 24 May 2022",
+      "source_file_path": "Guideline Files/ICH M10.pdf",
+      "source_file_checksum": "E306F3B6DC367EB2913CE242093A8F6C9DCD095A139A9FDB6D6F5E25201FA6AF",
+      "schema_model_version": "0.2.0"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "ich_m10.sec.8",
+      "document_id": "ich_m10",
+      "section_number": "8",
+      "title": "DOCUMENTATION",
+      "parent_section_id": null,
+      "section_order": null,
+      "section_order_status": "unknown",
+      "heading_source_unit_id": null
+    },
+    {
+      "section_id": "ich_m10.sec.8_2",
+      "document_id": "ich_m10",
+      "section_number": "8.2",
+      "title": "Documentation for Validation and Bioanalytical Reports",
+      "parent_section_id": "ich_m10.sec.8",
+      "section_order": null,
+      "section_order_status": "unknown",
+      "heading_source_unit_id": null
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "ich_m10.su.phase2.table1.critical_reagents.item",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.8_2",
+      "unit_type": "table_cell",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Critical Reagents",
+      "related_source_unit_ids": [],
+      "table_context": {
+        "table_id": "ich_m10.table.1",
+        "row_index": 5,
+        "column_index": 1,
+        "row_header_text": "Critical Reagents",
+        "column_header_text": "Items"
+      },
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.8_2",
+        "pdf_page_index_zero_based": 46,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "47",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with Ghostscript txtwrite assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.phase2.table1.critical_reagents.site",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.8_2",
+      "unit_type": "table_cell",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "• Name of reagent\n• Batch/Lot number\n• Source/Origin\n• Concentration, if applicable\n• Retest date (expiry date)\n• Storage conditions",
+      "related_source_unit_ids": [],
+      "table_context": {
+        "table_id": "ich_m10.table.1",
+        "row_index": 5,
+        "column_index": 2,
+        "row_header_text": "Critical Reagents",
+        "column_header_text": "Documentation at the Analytical Site"
+      },
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.8_2",
+        "pdf_page_index_zero_based": 46,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "47",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with Ghostscript txtwrite assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.phase2.table1.critical_reagents.validation_report",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.8_2",
+      "unit_type": "table_cell",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "source_text": "• Name of reagent\n• Batch/Lot number\n• Source/Origin\n• Concentration, if applicable\n• Retest date (expiry date)\n• Storage conditions",
+      "related_source_unit_ids": [],
+      "table_context": {
+        "table_id": "ich_m10.table.1",
+        "row_index": 5,
+        "column_index": 3,
+        "row_header_text": "Critical Reagents",
+        "column_header_text": "Validation Report*"
+      },
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.8_2",
+        "pdf_page_index_zero_based": 46,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "47",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with Ghostscript txtwrite assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.phase2.table1.critical_reagents.bioanalytical_report",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.8_2",
+      "unit_type": "table_cell",
+      "unit_order": 4,
+      "unit_order_status": "known",
+      "source_text": "• Name of reagent\n• Batch/Lot number\n• Source/Origin\n• Concentration, if applicable\n• Retest date (expiry date)\n• Storage conditions",
+      "related_source_unit_ids": [],
+      "table_context": {
+        "table_id": "ich_m10.table.1",
+        "row_index": 5,
+        "column_index": 4,
+        "row_header_text": "Critical Reagents",
+        "column_header_text": "Bioanalytical Report*"
+      },
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.8_2",
+        "pdf_page_index_zero_based": 46,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "47",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with Ghostscript txtwrite assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.phase2.table1.isr.item",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.8_2",
+      "unit_type": "table_cell",
+      "unit_order": 5,
+      "unit_order_status": "known",
+      "source_text": "ISR",
+      "related_source_unit_ids": [],
+      "table_context": {
+        "table_id": "ich_m10.table.1",
+        "row_index": 15,
+        "column_index": 1,
+        "row_header_text": "ISR",
+        "column_header_text": "Items"
+      },
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.8_2",
+        "pdf_page_index_zero_based": 50,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "51",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with Ghostscript txtwrite assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.phase2.table1.isr.site",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.8_2",
+      "unit_type": "table_cell",
+      "unit_order": 6,
+      "unit_order_status": "known",
+      "source_text": "• Procedure for ISR\n• ISR data: Run IDs, run summary sheets, chromatograms or other electronic instrument data files\n• Document ISR failure investigations, if any",
+      "related_source_unit_ids": [],
+      "table_context": {
+        "table_id": "ich_m10.table.1",
+        "row_index": 15,
+        "column_index": 2,
+        "row_header_text": "ISR",
+        "column_header_text": "Documentation at the Analytical Site"
+      },
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.8_2",
+        "pdf_page_index_zero_based": 50,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "51",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with Ghostscript txtwrite assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.phase2.table1.isr.validation_report",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.8_2",
+      "unit_type": "table_cell",
+      "unit_order": 7,
+      "unit_order_status": "known",
+      "source_text": "• Not applicable",
+      "related_source_unit_ids": [],
+      "table_context": {
+        "table_id": "ich_m10.table.1",
+        "row_index": 15,
+        "column_index": 3,
+        "row_header_text": "ISR",
+        "column_header_text": "Validation Report*"
+      },
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.8_2",
+        "pdf_page_index_zero_based": 50,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "51",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with Ghostscript txtwrite assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.phase2.table1.isr.bioanalytical_report",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.8_2",
+      "unit_type": "table_cell",
+      "unit_order": 8,
+      "unit_order_status": "known",
+      "source_text": "• ISR data table (original and reanalysis values and run IDs, percent difference, percent passed)\n• ISR failure investigations, if any††",
+      "related_source_unit_ids": ["ich_m10.su.phase2.table1.note.dagger_dagger"],
+      "table_context": {
+        "table_id": "ich_m10.table.1",
+        "row_index": 15,
+        "column_index": 4,
+        "row_header_text": "ISR",
+        "column_header_text": "Bioanalytical Report*"
+      },
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.8_2",
+        "pdf_page_index_zero_based": 50,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "51",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with Ghostscript txtwrite assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.phase2.table1.note.dagger_dagger",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.8_2",
+      "unit_type": "footnote",
+      "unit_order": 9,
+      "unit_order_status": "known",
+      "source_text": "††Submit either in Validation Report or in Bioanalytical Report",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.8_2",
+        "pdf_page_index_zero_based": 51,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "52",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with Ghostscript txtwrite assistance"
+      },
+      "review_status": "reviewed"
+    }
+  ],
+  "knowledge_records": [
+    {
+      "knowledge_record_id": "ich_m10.kr.phase2.table1.isr.bioanalytical_report",
+      "source_unit_ids": [
+        "ich_m10.su.phase2.table1.isr.bioanalytical_report",
+        "ich_m10.su.phase2.table1.note.dagger_dagger"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "Submit either",
+      "subject": "ISR failure investigations, if any",
+      "action": "submit either",
+      "object": "in Validation Report or in Bioanalytical Report",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    }
+  ],
+  "quantitative_criteria": [],
+  "conditions": [],
+  "cross_references": []
+}

@@ -169,6 +169,15 @@ This document records material project decisions after they are made. It should 
 - Consequences: `ajv` is the only direct dependency, and validation is run with `npm run validate -- <json files>`.
 - Related files: `package.json`, `package-lock.json`, `scripts/validate_structured_data.js`
 
+### DEC-020: Retain model 0.2.0 after structural pressure tests
+
+- Date: 2026-07-01
+- Status: Accepted
+- Decision: Model `0.2.0` is retained after Phase 2 structural pressure testing.
+- Rationale: Minimal probes covering continued Table 1 cells, the related `††` table note, explicit internal and external cross-references, and a compound section `6.2` applicability or exception paragraph produced no demonstrated information loss under the current model.
+- Consequences: No JSON Schema, validator, model-version, dependency, or source-PDF change is required from this review. Follow-up is limited to documentation guidance and any later human semantic-classification review.
+- Related files: `working_docs/schema.md`, `working_docs/review_log.md`, `structured_data/pilots/m10_phase2_table_pressure.json`, `structured_data/pilots/m10_phase2_reference_condition_pressure.json`
+
 ## Decision Template
 
 ### DEC-000: Title

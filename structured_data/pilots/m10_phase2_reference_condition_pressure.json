@@ -1,0 +1,219 @@
+{
+  "documents": [
+    {
+      "document_id": "ich_m10",
+      "title": "Bioanalytical Method Validation and Study Sample Analysis",
+      "guideline_code": "M10",
+      "issuing_body": "ICH",
+      "document_version_label": "Final version, adopted on 24 May 2022",
+      "source_file_path": "Guideline Files/ICH M10.pdf",
+      "source_file_checksum": "E306F3B6DC367EB2913CE242093A8F6C9DCD095A139A9FDB6D6F5E25201FA6AF",
+      "schema_model_version": "0.2.0"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "ich_m10.sec.6",
+      "document_id": "ich_m10",
+      "section_number": "6",
+      "title": "PARTIAL AND CROSS VALIDATION",
+      "parent_section_id": null,
+      "section_order": null,
+      "section_order_status": "unknown",
+      "heading_source_unit_id": null
+    },
+    {
+      "section_id": "ich_m10.sec.6_2",
+      "document_id": "ich_m10",
+      "section_number": "6.2",
+      "title": "Cross Validation",
+      "parent_section_id": "ich_m10.sec.6",
+      "section_order": null,
+      "section_order_status": "unknown",
+      "heading_source_unit_id": null
+    },
+    {
+      "section_id": "ich_m10.sec.7",
+      "document_id": "ich_m10",
+      "section_number": "7",
+      "title": "ADDITIONAL CONSIDERATIONS",
+      "parent_section_id": null,
+      "section_order": null,
+      "section_order_status": "unknown",
+      "heading_source_unit_id": null
+    },
+    {
+      "section_id": "ich_m10.sec.7_6",
+      "document_id": "ich_m10",
+      "section_number": "7.6",
+      "title": "New or Alternative Technologies",
+      "parent_section_id": "ich_m10.sec.7",
+      "section_order": null,
+      "section_order_status": "unknown",
+      "heading_source_unit_id": null
+    },
+    {
+      "section_id": "ich_m10.sec.7_6_1",
+      "document_id": "ich_m10",
+      "section_number": "7.6.1",
+      "title": "Dried Matrix Methods",
+      "parent_section_id": "ich_m10.sec.7_6",
+      "section_order": null,
+      "section_order_status": "unknown",
+      "heading_source_unit_id": null
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "ich_m10.su.phase2.6_2.final_exception",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "If data are obtained from different fully validated methods, and these data are not to be combined across studies, cross validation is not generally required.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_2",
+        "pdf_page_index_zero_based": 35,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "36",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with Ghostscript txtwrite assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.phase2.7_6_1.cross_reference",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.7_6_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "When DMM is used for clinical or nonclinical studies in addition to typical liquid approaches (e.g., liquid plasma samples) in the same studies, these two methods should be cross validated as described (Refer to Section 6.2). For nonclinical TK studies, refer to Section 4.1 of ICH S3A Q&A. Feedback from the appropriate regulatory authorities is encouraged in early drug development.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "Guideline Files/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.7_6_1",
+        "pdf_page_index_zero_based": 43,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "44",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with Ghostscript txtwrite assistance"
+      },
+      "review_status": "reviewed"
+    }
+  ],
+  "knowledge_records": [
+    {
+      "knowledge_record_id": "ich_m10.kr.phase2.6_2.final_exception",
+      "source_unit_ids": ["ich_m10.su.phase2.6_2.final_exception"],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "is not generally required",
+      "subject": "cross validation",
+      "action": "is not generally required",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "needs_review"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.phase2.7_6_1.cross_validate_dmm",
+      "source_unit_ids": ["ich_m10.su.phase2.7_6_1.cross_reference"],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be cross validated",
+      "subject": "these two methods",
+      "action": "be cross validated",
+      "object": "as described (Refer to Section 6.2)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.phase2.7_6_1.external_reference",
+      "source_unit_ids": ["ich_m10.su.phase2.7_6_1.cross_reference"],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "refer to",
+      "subject": "nonclinical TK studies",
+      "action": "refer to",
+      "object": "Section 4.1 of ICH S3A Q&A",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.phase2.7_6_1.feedback",
+      "source_unit_ids": ["ich_m10.su.phase2.7_6_1.cross_reference"],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is encouraged",
+      "subject": "Feedback from the appropriate regulatory authorities",
+      "action": "is encouraged",
+      "object": "in early drug development",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    }
+  ],
+  "quantitative_criteria": [],
+  "conditions": [
+    {
+      "condition_id": "ich_m10.cond.phase2.6_2.different_methods",
+      "source_unit_id": "ich_m10.su.phase2.6_2.final_exception",
+      "condition_text": "If data are obtained from different fully validated methods",
+      "condition_type": "applicability",
+      "applies_to_ids": ["ich_m10.kr.phase2.6_2.final_exception"],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.phase2.6_2.not_combined",
+      "source_unit_id": "ich_m10.su.phase2.6_2.final_exception",
+      "condition_text": "these data are not to be combined across studies",
+      "condition_type": "exception",
+      "applies_to_ids": ["ich_m10.kr.phase2.6_2.final_exception"],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.phase2.7_6_1.dmm_with_liquid",
+      "source_unit_id": "ich_m10.su.phase2.7_6_1.cross_reference",
+      "condition_text": "When DMM is used for clinical or nonclinical studies in addition to typical liquid approaches (e.g., liquid plasma samples) in the same studies",
+      "condition_type": "precondition",
+      "applies_to_ids": ["ich_m10.kr.phase2.7_6_1.cross_validate_dmm"],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.phase2.7_6_1.nonclinical_tk",
+      "source_unit_id": "ich_m10.su.phase2.7_6_1.cross_reference",
+      "condition_text": "For nonclinical TK studies",
+      "condition_type": "applicability",
+      "applies_to_ids": ["ich_m10.kr.phase2.7_6_1.external_reference"],
+      "review_status": "reviewed"
+    }
+  ],
+  "cross_references": [
+    {
+      "xref_id": "ich_m10.xref.phase2.7_6_1.section_6_2",
+      "source_unit_id": "ich_m10.su.phase2.7_6_1.cross_reference",
+      "raw_reference_text": "Refer to Section 6.2",
+      "target_type": "section",
+      "target_document_label": null,
+      "target_id": "ich_m10.sec.6_2",
+      "resolution_status": "resolved",
+      "review_status": "reviewed"
+    },
+    {
+      "xref_id": "ich_m10.xref.phase2.7_6_1.ich_s3a_qa_section_4_1",
+      "source_unit_id": "ich_m10.su.phase2.7_6_1.cross_reference",
+      "raw_reference_text": "Section 4.1 of ICH S3A Q&A",
+      "target_type": "section",
+      "target_document_label": "ICH S3A Q&A",
+      "target_id": null,
+      "resolution_status": "unresolved",
+      "review_status": "reviewed"
+    }
+  ]
+}
