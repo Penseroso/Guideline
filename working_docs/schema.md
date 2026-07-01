@@ -144,6 +144,8 @@ Core fields:
 - `row_header_text`
 - `column_header_text`
 
+For continued tables, `row_index` and `column_index` are manually reviewed source coordinates within the logical table. They preserve the reviewed table position and are not required to be automatically derivable from extraction order.
+
 For every `SourceUnit` where `unit_type` is not `table_cell`, `table_context` must be `null`.
 
 `trace` fields:
@@ -162,6 +164,8 @@ PDF page positions are provisional until reviewed. `pdf_page_index_zero_based` m
 `printed_page_label` preserves the page label displayed in the document. Do not convert Roman numerals, appendix labels, or other page labels into numbers. Do not perform meaning-level normalization beyond trimming leading and trailing whitespace.
 
 Footnotes are represented as `SourceUnit.unit_type=footnote`. There is no separate `Footnote` object in the minimum model.
+
+`related_source_unit_ids` may be directional and need not be reciprocal. For example, a table cell may link to a footnote needed to complete its meaning without requiring the footnote source unit to link back to every referring cell.
 
 ### KnowledgeRecord
 
@@ -250,6 +254,8 @@ If `condition_type=exception`, `applies_to_ids` must contain at least one ID.
 
 There is no separate `Exception` object in the minimum model. Exceptions are represented with `Condition.condition_type=exception`.
 
+When source wording contains both an applicability condition and an explicit cross-reference, the condition should normally apply to the related `KnowledgeRecord`, not directly to the `CrossReference`. `CrossReference` preserves the reference target and resolution state; `Condition` preserves applicability of the source statement.
+
 ### CrossReference
 
 Represents a source cross-reference to another section, table, figure, document, or guideline.
@@ -268,6 +274,8 @@ Core fields:
 `target_id` must contain only IDs that actually exist in the current archive.
 
 Use `resolution_status=resolved` only when `target_id` exists in the current archive. Use `resolution_status=unresolved` when the reference target is clear but has not yet been structured in the archive; in that case set `target_id=null`. Use `resolution_status=needs_review` when the target interpretation, `target_type`, or target scope is uncertain.
+
+For an unresolved external section reference, preserve the exact `raw_reference_text`, use `target_type=section`, set `target_document_label` to the external document label when available, set `target_id=null`, and use `resolution_status=unresolved` when the target is clear.
 
 ## Validation contract
 

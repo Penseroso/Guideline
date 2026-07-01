@@ -48,3 +48,18 @@ Use this document to record human review results after review is performed. Do n
 - Validation command: `npm run validate -- structured_data/pilots/m10_3_2_5_2.json structured_data/pilots/m10_6_1.json`
 - Follow-up owner: Future phase owner
 - Status: Resolved
+
+### REV-003: Phase 2 Structural Pressure-Test Review
+
+- Date: 2026-07-01
+- Reviewer: Repository review
+- Scope reviewed: Minimal structural probes for continued table cells, footnote linkage, explicit cross-references, and compound applicability or exception handling.
+- Source document: `Guideline Files/ICH M10.pdf`
+- Sections or pages reviewed: Table 1 `Critical Reagents` row on physical PDF page index `46`; Table 1 `ISR` row on index `50`; Table 1 `††` note on index `51`; section `7.6.1` cross-reference paragraph on index `43`; section `6.2` final exception paragraph on index `35`.
+- Files reviewed: `structured_data/pilots/m10_phase2_table_pressure.json`; `structured_data/pilots/m10_phase2_reference_condition_pressure.json`; rendered PDF page images for printed page labels `36`, `44`, `47`, `51`, and `52`.
+- Findings: Model `0.2.0` represented the table, footnote, cross-reference, and compound-condition probes without demonstrated information loss. Continued-table coordinates and directional footnote linkage are documentation-guidance issues, not model changes.
+- Required corrections: Reviewed and resolved clear semantic classifications for the `††` note instruction, external-reference instruction, feedback encouragement statement, and section `6.2` applicability and exception conditions.
+- Unresolved items: `ich_m10.kr.phase2.6_2.final_exception` remains `needs_review` because classification of "is not generally required" as description versus requirement-like exception needs human policy confirmation.
+- Validation command: `npm.cmd test`; `npm.cmd run validate -- structured_data/pilots/m10_3_2_5_2.json structured_data/pilots/m10_6_1.json structured_data/pilots/m10_phase2_table_pressure.json structured_data/pilots/m10_phase2_reference_condition_pressure.json`; `git diff --check`
+- Follow-up owner: Future phase owner
+- Status: Resolved
