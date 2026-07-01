@@ -35,7 +35,7 @@
   ],
   "source_units": [
     {
-      "source_unit_id": "ich_m10.su.phase2.table1.critical_reagents.item",
+      "source_unit_id": "ich_m10.su.8_2.table1.critical_reagents.item",
       "document_id": "ich_m10",
       "section_id": "ich_m10.sec.8_2",
       "unit_type": "table_cell",
@@ -63,7 +63,7 @@
       "review_status": "reviewed"
     },
     {
-      "source_unit_id": "ich_m10.su.phase2.table1.critical_reagents.site",
+      "source_unit_id": "ich_m10.su.8_2.table1.critical_reagents.site",
       "document_id": "ich_m10",
       "section_id": "ich_m10.sec.8_2",
       "unit_type": "table_cell",
@@ -91,7 +91,7 @@
       "review_status": "reviewed"
     },
     {
-      "source_unit_id": "ich_m10.su.phase2.table1.critical_reagents.validation_report",
+      "source_unit_id": "ich_m10.su.8_2.table1.critical_reagents.validation_report",
       "document_id": "ich_m10",
       "section_id": "ich_m10.sec.8_2",
       "unit_type": "table_cell",
@@ -119,7 +119,7 @@
       "review_status": "reviewed"
     },
     {
-      "source_unit_id": "ich_m10.su.phase2.table1.critical_reagents.bioanalytical_report",
+      "source_unit_id": "ich_m10.su.8_2.table1.critical_reagents.bioanalytical_report",
       "document_id": "ich_m10",
       "section_id": "ich_m10.sec.8_2",
       "unit_type": "table_cell",
@@ -147,7 +147,7 @@
       "review_status": "reviewed"
     },
     {
-      "source_unit_id": "ich_m10.su.phase2.table1.isr.item",
+      "source_unit_id": "ich_m10.su.8_2.table1.isr.item",
       "document_id": "ich_m10",
       "section_id": "ich_m10.sec.8_2",
       "unit_type": "table_cell",
@@ -175,7 +175,7 @@
       "review_status": "reviewed"
     },
     {
-      "source_unit_id": "ich_m10.su.phase2.table1.isr.site",
+      "source_unit_id": "ich_m10.su.8_2.table1.isr.site",
       "document_id": "ich_m10",
       "section_id": "ich_m10.sec.8_2",
       "unit_type": "table_cell",
@@ -203,7 +203,7 @@
       "review_status": "reviewed"
     },
     {
-      "source_unit_id": "ich_m10.su.phase2.table1.isr.validation_report",
+      "source_unit_id": "ich_m10.su.8_2.table1.isr.validation_report",
       "document_id": "ich_m10",
       "section_id": "ich_m10.sec.8_2",
       "unit_type": "table_cell",
@@ -231,14 +231,14 @@
       "review_status": "reviewed"
     },
     {
-      "source_unit_id": "ich_m10.su.phase2.table1.isr.bioanalytical_report",
+      "source_unit_id": "ich_m10.su.8_2.table1.isr.bioanalytical_report",
       "document_id": "ich_m10",
       "section_id": "ich_m10.sec.8_2",
       "unit_type": "table_cell",
       "unit_order": 8,
       "unit_order_status": "known",
       "source_text": "• ISR data table (original and reanalysis values and run IDs, percent difference, percent passed)\n• ISR failure investigations, if any††",
-      "related_source_unit_ids": ["ich_m10.su.phase2.table1.note.dagger_dagger"],
+      "related_source_unit_ids": ["ich_m10.su.8_2.table1.note.dagger_dagger"],
       "table_context": {
         "table_id": "ich_m10.table.1",
         "row_index": 15,
@@ -259,7 +259,7 @@
       "review_status": "reviewed"
     },
     {
-      "source_unit_id": "ich_m10.su.phase2.table1.note.dagger_dagger",
+      "source_unit_id": "ich_m10.su.8_2.table1.note.dagger_dagger",
       "document_id": "ich_m10",
       "section_id": "ich_m10.sec.8_2",
       "unit_type": "footnote",
@@ -283,10 +283,10 @@
   ],
   "knowledge_records": [
     {
-      "knowledge_record_id": "ich_m10.kr.phase2.table1.isr.bioanalytical_report",
+      "knowledge_record_id": "ich_m10.kr.8_2.table1.isr.bioanalytical_report",
       "source_unit_ids": [
-        "ich_m10.su.phase2.table1.isr.bioanalytical_report",
-        "ich_m10.su.phase2.table1.note.dagger_dagger"
+        "ich_m10.su.8_2.table1.isr.bioanalytical_report",
+        "ich_m10.su.8_2.table1.note.dagger_dagger"
       ],
       "record_type": "recommendation",
       "modality": "other",
