@@ -8,7 +8,7 @@
       "document_version_label": "Final version, adopted on 24 May 2022",
       "source_file_path": "Guideline Files/ICH M10.pdf",
       "source_file_checksum": "E306F3B6DC367EB2913CE242093A8F6C9DCD095A139A9FDB6D6F5E25201FA6AF",
-      "schema_model_version": "0.1.0"
+      "schema_model_version": "0.2.0"
     }
   ],
   "sections": [
@@ -343,11 +343,13 @@
       "parameter": "replicates",
       "comparator": "at_least",
       "value": 5,
+      "value_fraction": null,
       "unit": "replicates",
       "value_status": "known",
       "denominator_or_reference": "each QC concentration level in each analytical run",
       "condition_ids": ["ich_m10.cond.3_2_5_2.001"],
-      "source_text": "at least 5 replicates at each QC concentration level in each analytical run"
+      "source_text": "at least 5 replicates at each QC concentration level in each analytical run",
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ich_m10.qc.3_2_5_2.002",
@@ -356,11 +358,13 @@
       "parameter": "analytical runs",
       "comparator": "at_least",
       "value": 3,
+      "value_fraction": null,
       "unit": "analytical runs",
       "value_status": "known",
       "denominator_or_reference": "each QC concentration level",
       "condition_ids": ["ich_m10.cond.3_2_5_2.002"],
-      "source_text": "at least 3 analytical runs"
+      "source_text": "at least 3 analytical runs",
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ich_m10.qc.3_2_5_2.003",
@@ -369,11 +373,13 @@
       "parameter": "days",
       "comparator": "at_least",
       "value": 2,
+      "value_fraction": null,
       "unit": "days",
       "value_status": "known",
       "denominator_or_reference": "between-run accuracy and precision evaluation",
       "condition_ids": ["ich_m10.cond.3_2_5_2.002"],
-      "source_text": "over at least two days"
+      "source_text": "over at least two days",
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ich_m10.qc.3_2_5_2.004",
@@ -382,11 +388,13 @@
       "parameter": "runs sized equivalent to a prospective analytical run of study samples",
       "comparator": "at_least",
       "value": 1,
+      "value_fraction": null,
       "unit": "run",
       "value_status": "known",
       "denominator_or_reference": "evaluation of trends over time within one run",
       "condition_ids": [],
-      "source_text": "over at least one of the runs in a size equivalent to a prospective analytical run of study samples"
+      "source_text": "over at least one of the runs in a size equivalent to a prospective analytical run of study samples",
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ich_m10.qc.3_2_5_2.005",
@@ -395,11 +403,13 @@
       "parameter": "freshly spiked calibration standard runs",
       "comparator": "at_least",
       "value": 1,
+      "value_fraction": null,
       "unit": "run",
       "value_status": "known",
       "denominator_or_reference": "calibration curves for these assessments",
       "condition_ids": [],
-      "source_text": "in at least one run"
+      "source_text": "in at least one run",
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ich_m10.qc.3_2_5_2.006",
@@ -408,11 +418,13 @@
       "parameter": "accuracy",
       "comparator": "within",
       "value": 15,
+      "value_fraction": null,
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "nominal concentration at each concentration level except LLOQ",
       "condition_ids": [],
-      "source_text": "within ±15% of the nominal concentration"
+      "source_text": "within ±15% of the nominal concentration",
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ich_m10.qc.3_2_5_2.007",
@@ -421,11 +433,13 @@
       "parameter": "accuracy",
       "comparator": "within",
       "value": 20,
+      "value_fraction": null,
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "nominal concentration at the LLOQ",
       "condition_ids": ["ich_m10.cond.3_2_5_2.007"],
-      "source_text": "except at the LLOQ, where it should be within ±20%"
+      "source_text": "except at the LLOQ, where it should be within ±20%",
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ich_m10.qc.3_2_5_2.008",
@@ -434,11 +448,13 @@
       "parameter": "precision",
       "comparator": "not_exceed",
       "value": 15,
+      "value_fraction": null,
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "%CV of concentrations determined at each level except LLOQ",
       "condition_ids": [],
-      "source_text": "should not exceed 15%"
+      "source_text": "should not exceed 15%",
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ich_m10.qc.3_2_5_2.009",
@@ -447,11 +463,13 @@
       "parameter": "precision",
       "comparator": "not_exceed",
       "value": 20,
+      "value_fraction": null,
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "%CV at the LLOQ",
       "condition_ids": ["ich_m10.cond.3_2_5_2.007"],
-      "source_text": "except at the LLOQ, where it should not exceed 20%"
+      "source_text": "except at the LLOQ, where it should not exceed 20%",
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ich_m10.qc.3_2_5_2.010",
@@ -460,11 +478,16 @@
       "parameter": "total QCs within nominal values",
       "comparator": "at_least",
       "value": null,
+      "value_fraction": {
+        "numerator": 2,
+        "denominator": 3
+      },
       "unit": "fraction",
-      "value_status": "needs_review",
+      "value_status": "known",
       "denominator_or_reference": "total QCs in non-accuracy and precision validation runs",
       "condition_ids": ["ich_m10.cond.3_2_5_2.008"],
-      "source_text": "at least 2/3 of the total QCs"
+      "source_text": "at least 2/3 of the total QCs",
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ich_m10.qc.3_2_5_2.011",
@@ -473,11 +496,13 @@
       "parameter": "QCs within nominal values at each concentration level",
       "comparator": "at_least",
       "value": 50,
+      "value_fraction": null,
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "each concentration level in non-accuracy and precision validation runs",
       "condition_ids": ["ich_m10.cond.3_2_5_2.008"],
-      "source_text": "at least 50% at each concentration level"
+      "source_text": "at least 50% at each concentration level",
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ich_m10.qc.3_2_5_2.012",
@@ -486,11 +511,13 @@
       "parameter": "accuracy for QCs in non-accuracy and precision validation runs",
       "comparator": "within",
       "value": 15,
+      "value_fraction": null,
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "nominal values",
       "condition_ids": ["ich_m10.cond.3_2_5_2.008"],
-      "source_text": "should be within ±15% of the nominal values"
+      "source_text": "should be within ±15% of the nominal values",
+      "review_status": "reviewed"
     }
   ],
   "conditions": [

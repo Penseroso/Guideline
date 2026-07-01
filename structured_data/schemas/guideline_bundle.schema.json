@@ -1,0 +1,443 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.local/regulatory-guideline-archive/guideline_bundle.schema.json",
+  "title": "Regulatory Guideline Archive Bundle",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "documents",
+    "sections",
+    "source_units",
+    "knowledge_records",
+    "quantitative_criteria",
+    "conditions",
+    "cross_references"
+  ],
+  "properties": {
+    "documents": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/document" }
+    },
+    "sections": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/section" }
+    },
+    "source_units": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/sourceUnit" }
+    },
+    "knowledge_records": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/knowledgeRecord" }
+    },
+    "quantitative_criteria": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/quantitativeCriterion" }
+    },
+    "conditions": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/condition" }
+    },
+    "cross_references": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/crossReference" }
+    }
+  },
+  "definitions": {
+    "reviewStatus": {
+      "type": "string",
+      "enum": ["unreviewed", "needs_review", "reviewed"]
+    },
+    "valueStatus": {
+      "type": "string",
+      "enum": ["known", "unknown", "not_applicable", "needs_review"]
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nullableId": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "nullableString": {
+      "type": ["string", "null"]
+    },
+    "stringArray": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/id" }
+    },
+    "document": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "document_id",
+        "title",
+        "guideline_code",
+        "issuing_body",
+        "document_version_label",
+        "source_file_path",
+        "source_file_checksum",
+        "schema_model_version"
+      ],
+      "properties": {
+        "document_id": { "$ref": "#/definitions/id" },
+        "title": { "type": "string", "minLength": 1 },
+        "guideline_code": { "type": "string", "minLength": 1 },
+        "issuing_body": { "type": "string", "minLength": 1 },
+        "document_version_label": { "type": "string", "minLength": 1 },
+        "source_file_path": { "type": "string", "minLength": 1 },
+        "source_file_checksum": { "type": "string", "minLength": 1 },
+        "schema_model_version": { "const": "0.2.0" }
+      }
+    },
+    "section": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "section_id",
+        "document_id",
+        "section_number",
+        "title",
+        "parent_section_id",
+        "section_order",
+        "section_order_status",
+        "heading_source_unit_id"
+      ],
+      "properties": {
+        "section_id": { "$ref": "#/definitions/id" },
+        "document_id": { "$ref": "#/definitions/id" },
+        "section_number": { "type": "string", "minLength": 1 },
+        "title": { "type": "string", "minLength": 1 },
+        "parent_section_id": { "$ref": "#/definitions/nullableId" },
+        "section_order": { "type": ["integer", "null"] },
+        "section_order_status": { "$ref": "#/definitions/valueStatus" },
+        "heading_source_unit_id": { "$ref": "#/definitions/nullableId" }
+      },
+      "allOf": [
+        { "$ref": "#/definitions/integerValueStatusPair" }
+      ]
+    },
+    "sourceUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_unit_id",
+        "document_id",
+        "section_id",
+        "unit_type",
+        "unit_order",
+        "unit_order_status",
+        "source_text",
+        "related_source_unit_ids",
+        "table_context",
+        "trace",
+        "review_status"
+      ],
+      "properties": {
+        "source_unit_id": { "$ref": "#/definitions/id" },
+        "document_id": { "$ref": "#/definitions/id" },
+        "section_id": { "$ref": "#/definitions/id" },
+        "unit_type": {
+          "type": "string",
+          "enum": ["heading", "paragraph", "list_item", "table_cell", "footnote"]
+        },
+        "unit_order": { "type": ["integer", "null"] },
+        "unit_order_status": { "$ref": "#/definitions/valueStatus" },
+        "source_text": { "type": "string", "minLength": 1 },
+        "related_source_unit_ids": { "$ref": "#/definitions/stringArray" },
+        "table_context": {
+          "oneOf": [
+            { "type": "null" },
+            { "$ref": "#/definitions/tableContext" }
+          ]
+        },
+        "trace": { "$ref": "#/definitions/trace" },
+        "review_status": { "$ref": "#/definitions/reviewStatus" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "unit_order_status": { "const": "known" } },
+            "required": ["unit_order_status"]
+          },
+          "then": { "properties": { "unit_order": { "type": "integer" } } },
+          "else": { "properties": { "unit_order": { "type": "null" } } }
+        },
+        {
+          "if": {
+            "properties": { "unit_type": { "const": "table_cell" } },
+            "required": ["unit_type"]
+          },
+          "then": { "properties": { "table_context": { "$ref": "#/definitions/tableContext" } } },
+          "else": { "properties": { "table_context": { "type": "null" } } }
+        }
+      ]
+    },
+    "tableContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "table_id",
+        "row_index",
+        "column_index",
+        "row_header_text",
+        "column_header_text"
+      ],
+      "properties": {
+        "table_id": { "type": "string", "minLength": 1 },
+        "row_index": { "type": "integer" },
+        "column_index": { "type": "integer" },
+        "row_header_text": { "$ref": "#/definitions/nullableString" },
+        "column_header_text": { "$ref": "#/definitions/nullableString" }
+      }
+    },
+    "trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_file_path",
+        "document_id",
+        "section_id",
+        "pdf_page_index_zero_based",
+        "pdf_page_index_status",
+        "printed_page_label",
+        "printed_page_label_status",
+        "extraction_method"
+      ],
+      "properties": {
+        "source_file_path": { "type": "string", "minLength": 1 },
+        "document_id": { "$ref": "#/definitions/id" },
+        "section_id": { "$ref": "#/definitions/id" },
+        "pdf_page_index_zero_based": { "type": ["integer", "null"] },
+        "pdf_page_index_status": { "$ref": "#/definitions/valueStatus" },
+        "printed_page_label": { "$ref": "#/definitions/nullableString" },
+        "printed_page_label_status": { "$ref": "#/definitions/valueStatus" },
+        "extraction_method": { "type": "string", "minLength": 1 }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "pdf_page_index_status": { "const": "known" } },
+            "required": ["pdf_page_index_status"]
+          },
+          "then": { "properties": { "pdf_page_index_zero_based": { "type": "integer" } } },
+          "else": { "properties": { "pdf_page_index_zero_based": { "type": "null" } } }
+        },
+        {
+          "if": {
+            "properties": { "printed_page_label_status": { "const": "known" } },
+            "required": ["printed_page_label_status"]
+          },
+          "then": { "properties": { "printed_page_label": { "type": "string" } } },
+          "else": { "properties": { "printed_page_label": { "type": "null" } } }
+        }
+      ]
+    },
+    "knowledgeRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "knowledge_record_id",
+        "source_unit_ids",
+        "record_type",
+        "modality",
+        "original_modal_text",
+        "subject",
+        "action",
+        "object",
+        "normalized_ko",
+        "review_status"
+      ],
+      "properties": {
+        "knowledge_record_id": { "$ref": "#/definitions/id" },
+        "source_unit_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/id" }
+        },
+        "record_type": {
+          "type": "string",
+          "enum": ["requirement", "recommendation", "description", "definition", "example", "scope_statement"]
+        },
+        "modality": {
+          "type": "string",
+          "enum": ["must", "should", "may", "none", "other"]
+        },
+        "original_modal_text": { "$ref": "#/definitions/nullableString" },
+        "subject": { "$ref": "#/definitions/nullableString" },
+        "action": { "$ref": "#/definitions/nullableString" },
+        "object": { "$ref": "#/definitions/nullableString" },
+        "normalized_ko": { "$ref": "#/definitions/nullableString" },
+        "review_status": { "$ref": "#/definitions/reviewStatus" }
+      }
+    },
+    "quantitativeCriterion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "criterion_id",
+        "source_unit_id",
+        "knowledge_record_id",
+        "parameter",
+        "comparator",
+        "value",
+        "value_fraction",
+        "unit",
+        "value_status",
+        "denominator_or_reference",
+        "condition_ids",
+        "source_text",
+        "review_status"
+      ],
+      "properties": {
+        "criterion_id": { "$ref": "#/definitions/id" },
+        "source_unit_id": { "$ref": "#/definitions/id" },
+        "knowledge_record_id": { "$ref": "#/definitions/nullableId" },
+        "parameter": { "type": "string", "minLength": 1 },
+        "comparator": {
+          "type": "string",
+          "enum": ["within", "not_exceed", "at_least"]
+        },
+        "value": { "type": ["number", "null"] },
+        "value_fraction": {
+          "oneOf": [
+            { "type": "null" },
+            { "$ref": "#/definitions/fractionValue" }
+          ]
+        },
+        "unit": { "$ref": "#/definitions/nullableString" },
+        "value_status": { "$ref": "#/definitions/valueStatus" },
+        "denominator_or_reference": { "$ref": "#/definitions/nullableString" },
+        "condition_ids": { "$ref": "#/definitions/stringArray" },
+        "source_text": { "type": "string", "minLength": 1 },
+        "review_status": { "$ref": "#/definitions/reviewStatus" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "value_status": { "const": "known" } },
+            "required": ["value_status"]
+          },
+          "then": {
+            "oneOf": [
+              {
+                "properties": {
+                  "value": { "type": "number" },
+                  "value_fraction": { "type": "null" }
+                },
+                "required": ["value", "value_fraction"]
+              },
+              {
+                "properties": {
+                  "value": { "type": "null" },
+                  "value_fraction": { "$ref": "#/definitions/fractionValue" }
+                },
+                "required": ["value", "value_fraction"]
+              }
+            ]
+          },
+          "else": {
+            "properties": {
+              "value": { "type": "null" },
+              "value_fraction": { "type": "null" }
+            }
+          }
+        }
+      ]
+    },
+    "fractionValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["numerator", "denominator"],
+      "properties": {
+        "numerator": { "type": "integer" },
+        "denominator": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "condition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "condition_id",
+        "source_unit_id",
+        "condition_text",
+        "condition_type",
+        "applies_to_ids",
+        "review_status"
+      ],
+      "properties": {
+        "condition_id": { "$ref": "#/definitions/id" },
+        "source_unit_id": { "$ref": "#/definitions/id" },
+        "condition_text": { "type": "string", "minLength": 1 },
+        "condition_type": {
+          "type": "string",
+          "enum": ["applicability", "scope", "precondition", "exception"]
+        },
+        "applies_to_ids": { "$ref": "#/definitions/stringArray" },
+        "review_status": { "$ref": "#/definitions/reviewStatus" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "condition_type": { "const": "exception" } },
+            "required": ["condition_type"]
+          },
+          "then": {
+            "properties": {
+              "applies_to_ids": { "minItems": 1 }
+            }
+          }
+        }
+      ]
+    },
+    "crossReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "xref_id",
+        "source_unit_id",
+        "raw_reference_text",
+        "target_type",
+        "target_document_label",
+        "target_id",
+        "resolution_status",
+        "review_status"
+      ],
+      "properties": {
+        "xref_id": { "$ref": "#/definitions/id" },
+        "source_unit_id": { "$ref": "#/definitions/id" },
+        "raw_reference_text": { "type": "string", "minLength": 1 },
+        "target_type": {
+          "type": "string",
+          "enum": ["section", "table", "figure", "document", "guideline", "unknown"]
+        },
+        "target_document_label": { "$ref": "#/definitions/nullableString" },
+        "target_id": { "$ref": "#/definitions/nullableId" },
+        "resolution_status": {
+          "type": "string",
+          "enum": ["resolved", "unresolved", "needs_review"]
+        },
+        "review_status": { "$ref": "#/definitions/reviewStatus" }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "resolution_status": { "const": "resolved" } },
+            "required": ["resolution_status"]
+          },
+          "then": { "properties": { "target_id": { "$ref": "#/definitions/id" } } },
+          "else": { "properties": { "target_id": { "type": "null" } } }
+        }
+      ]
+    },
+    "integerValueStatusPair": {
+      "if": {
+        "properties": { "section_order_status": { "const": "known" } },
+        "required": ["section_order_status"]
+      },
+      "then": { "properties": { "section_order": { "type": "integer" } } },
+      "else": { "properties": { "section_order": { "type": "null" } } }
+    }
+  }
+}

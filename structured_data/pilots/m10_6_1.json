@@ -8,7 +8,7 @@
       "document_version_label": "Final version, adopted on 24 May 2022",
       "source_file_path": "Guideline Files/ICH M10.pdf",
       "source_file_checksum": "E306F3B6DC367EB2913CE242093A8F6C9DCD095A139A9FDB6D6F5E25201FA6AF",
-      "schema_model_version": "0.1.0"
+      "schema_model_version": "0.2.0"
     }
   ],
   "sections": [
@@ -514,25 +514,25 @@
       "knowledge_record_id": "ich_m10.kr.6_1.002",
       "source_unit_ids": ["ich_m10.su.6_1.002"],
       "record_type": "description",
-      "modality": "may",
+      "modality": "other",
       "original_modal_text": "can range",
       "subject": "Partial validation",
       "action": "range",
       "object": "from as little as one within-run accuracy and precision determination, to a nearly full validation",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_m10.kr.6_1.003",
       "source_unit_ids": ["ich_m10.su.6_1.002"],
       "record_type": "description",
-      "modality": "none",
-      "original_modal_text": null,
+      "modality": "other",
+      "original_modal_text": "does not necessarily need to be repeated",
       "subject": "Stability established at one facility",
       "action": "does not necessarily need to be repeated",
       "object": "at another facility",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_m10.kr.6_1.004",
@@ -772,7 +772,7 @@
       "action": "is warranted",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     }
   ],
   "quantitative_criteria": [],
