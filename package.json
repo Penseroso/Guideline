@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "test": "node --test",
     "validate": "node scripts/validate_structured_data.js"
   },
   "dependencies": {

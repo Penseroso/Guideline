@@ -292,24 +292,13 @@ function loadJson(file, errors) {
   }
 }
 
-function main() {
-  const files = process.argv.slice(2);
-  if (files.length === 0) {
-    console.error("Usage: npm run validate -- <json-file> [json-file ...]");
-    process.exit(2);
-  }
-
+function validateBundles(fileBundles) {
   const errors = [];
   const schema = JSON.parse(fs.readFileSync(SCHEMA_PATH, "utf8"));
   const ajv = new Ajv({ allErrors: true, strict: false });
   const validate = ajv.compile(schema);
 
-  const fileBundles = [];
-  for (const inputFile of files) {
-    const file = path.normalize(inputFile);
-    const bundle = loadJson(file, errors);
-    if (!bundle) continue;
-
+  for (const { file, bundle } of fileBundles) {
     const valid = validate(bundle);
     if (!valid) {
       for (const error of validate.errors || []) {
@@ -317,7 +306,6 @@ function main() {
         addError(errors, file, objectId, error.instancePath || "/", `${error.message}`);
       }
     }
-    fileBundles.push({ file, bundle });
   }
 
   const archiveIds = new Set();
@@ -331,13 +319,47 @@ function main() {
   }
   checkCrossFileRules(fileBundles, errors);
 
+  return {
+    ok: errors.length === 0,
+    errors,
+    bundleCount: fileBundles.length
+  };
+}
+
+function validateFiles(files) {
+  const errors = [];
+  const fileBundles = [];
+  for (const inputFile of files) {
+    const file = path.normalize(inputFile);
+    const bundle = loadJson(file, errors);
+    if (bundle) fileBundles.push({ file, bundle });
+  }
+
+  const result = validateBundles(fileBundles);
+  return {
+    ok: errors.length === 0 && result.ok,
+    errors: errors.concat(result.errors),
+    bundleCount: result.bundleCount
+  };
+}
+
+function main() {
+  const files = process.argv.slice(2);
+  if (files.length === 0) {
+    console.error("Usage: npm run validate -- <json-file> [json-file ...]");
+    process.exit(2);
+  }
+
+  const result = validateFiles(files);
+  const errors = result.errors;
+
   if (errors.length > 0) {
     console.error(`Validation failed with ${errors.length} error(s):`);
     for (const error of errors) console.error(`- ${error}`);
     process.exit(1);
   }
 
-  console.log(`Validated ${fileBundles.length} bundle(s).`);
+  console.log(`Validated ${result.bundleCount} bundle(s).`);
 }
 
 function inferObjectId(bundle, instancePath) {
@@ -351,4 +373,11 @@ function inferObjectId(bundle, instancePath) {
   return item ? item[entry[1]] : null;
 }
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = {
+  validateBundles,
+  validateFiles
+};
