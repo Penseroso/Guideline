@@ -191,7 +191,7 @@
 
 - `document_id`는 모든 문서 공통 데이터셋에서 ICH M10을 구분할 수 있도록 별도 부여한다.
 - `section_id`는 본문 heading 기준으로 생성하되, 목차에서 추출된 heading은 본문 section으로 중복 등록하지 않는다.
-- page 정보는 최소한 `pdf_page_index`와 `printed_page_number`를 분리해 관리한다.
+- page 정보는 현재 승인된 모델에 따라 `pdf_page_index_zero_based`와 `printed_page_label`을 분리해 관리한다(`working_docs/schema.md`, DEC-013).
 - header/footer 제거 규칙을 먼저 적용한 뒤 문단 병합을 수행한다.
 - 표 1은 자동 추출 결과만 신뢰하지 말고 별도 검수 대상으로 표시한다.
 - 각주는 본문 paragraph와 분리해 note로 저장하고, 가능한 경우 source table 또는 section에 연결한다.
