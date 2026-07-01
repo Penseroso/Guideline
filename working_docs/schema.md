@@ -2,7 +2,7 @@
 
 Document status: Draft
 
-Schema model version: `0.1.0`
+Schema model version: `0.2.0`
 
 ## Purpose and scope
 
@@ -13,7 +13,7 @@ This document defines the minimum data model for preserving regulatory guideline
 
 The model is intended for source preservation and knowledge structuring. It is not a regulatory decision engine and must not create requirements, recommendations, study-design advice, or suitability conclusions that are not present in the source.
 
-This document does not define JSON Schema, structured extraction output, extraction code, validation code, or full-guideline extraction.
+Model `0.2.0` is implemented as a machine-validatable JSON bundle contract with JSON Schema plus reusable validation rules. It does not define full-guideline extraction, database storage, search, embeddings, regulatory decision logic, or an application interface.
 
 ## Core principles
 
@@ -24,6 +24,8 @@ This document does not define JSON Schema, structured extraction output, extract
 - Store Korean normalization only on `KnowledgeRecord`.
 - Use `review_status` for record review state and `value_status` for uncertain typed values.
 - Store typed values as actual typed values or `null`; do not place status strings such as `unknown` or `needs_review` in typed fields.
+- Preserve exact source fractions as structured fractions rather than approximate decimals when the source provides an exact fraction.
+- Treat each structured JSON file as a self-contained bundle for non-cross-reference relationships.
 
 ## Shared status values
 
@@ -56,6 +58,31 @@ The following fields use the `value_status` vocabulary:
 - `unit_order_status`
 - `pdf_page_index_status`
 - `printed_page_label_status`
+- `QuantitativeCriterion.value_status`
+
+For typed values governed by `value_status`:
+
+- `known` requires a non-null typed value.
+- `unknown`, `not_applicable`, and `needs_review` require the typed value to be `null`.
+- `QuantitativeCriterion` has special exact-fraction rules described below.
+
+## Bundle contract
+
+Each structured JSON file is a self-contained bundle with these required top-level arrays:
+
+- `documents`
+- `sections`
+- `source_units`
+- `knowledge_records`
+- `quantitative_criteria`
+- `conditions`
+- `cross_references`
+
+All non-`CrossReference` relationships must resolve inside the same file. Repeated `Document` records across a validation set are allowed only when every field is identical. Repeated `Section` IDs across a validation set are allowed only when the `Section` objects are identical and the section is context-only in every bundle where it appears. A context-only section is referenced by another `Section.parent_section_id` in that bundle and is not directly used by any `SourceUnit.section_id` in that bundle. Repeated leaf or directly structured sections are rejected even when identical. All other primary object IDs must be unique across the validation set.
+
+Resolved `CrossReference.target_id` values must exist in the validated archive. External, not-yet-structured, or uncertain targets must use `target_id=null` with `resolution_status=unresolved` or `resolution_status=needs_review`.
+
+Within each section, `SourceUnit` records with `unit_order_status=known` must appear in deterministic increasing `unit_order` order and must not reuse the same order value.
 
 ## Objects
 
@@ -72,7 +99,7 @@ Core fields:
 - `document_version_label`: Version or publication label as supported by the source.
 - `source_file_path`: Path to the immutable source file.
 - `source_file_checksum`: Checksum of the source file used for extraction or review.
-- `schema_model_version`: Model version used for records derived from the document. Initial value: `0.1.0`.
+- `schema_model_version`: Model version used for records derived from the document. Current value: `0.2.0`.
 
 ### Section
 
@@ -155,6 +182,13 @@ Core fields:
 
 `record_type` and `modality` are independent. For example, descriptive or rationale text without a modal verb should use `record_type=description` and `modality=none`.
 
+Modality assignment guidance:
+
+- `may` is for permission or allowance, not every occurrence of "can".
+- Indirect or non-enum modal wording uses `modality=other` with `original_modal_text` preserving the source wording.
+- Non-modal descriptive wording uses `modality=none` and `original_modal_text=null`.
+- Preserve the source wording in `original_modal_text` when `modality=other`.
+
 ### QuantitativeCriterion
 
 Represents a structured quantitative criterion derived from source text.
@@ -167,11 +201,27 @@ Core fields:
 - `parameter`: Parameter being constrained, for example accuracy or precision.
 - `comparator`: Comparator, for example `within`, `not_exceed`, `at_least`.
 - `value`: Numeric value, or `null` if unavailable or uncertain.
+- `value_fraction`: Exact fraction object, or `null`.
 - `unit`: Unit, for example `%`, or `null`.
 - `value_status`: Status of the typed value.
 - `denominator_or_reference`: Reference basis, for example nominal concentration, total QCs, or concentration level.
 - `condition_ids`: Conditions or exceptions that affect the criterion.
 - `source_text`: Source text supporting the criterion.
+- `review_status`: Review state.
+
+`value_fraction` fields:
+
+- `numerator`
+- `denominator`
+
+`denominator` must be an integer greater than zero.
+
+For `QuantitativeCriterion`:
+
+- `value_status=known` requires exactly one of non-null `value` or non-null `value_fraction`.
+- `value_status=unknown`, `not_applicable`, or `needs_review` requires both `value` and `value_fraction` to be `null`.
+- Exact source expressions such as `2/3` use `value=null`, `value_fraction={"numerator":2,"denominator":3}`, `unit="fraction"`, and preserve the exact source expression in `source_text`.
+- `denominator_or_reference` retains the reference basis, such as total QCs, when applicable.
 
 Use multiple `QuantitativeCriterion` records when one sentence contains both a general criterion and an exception criterion, such as a general threshold and an LLOQ threshold.
 
@@ -219,6 +269,14 @@ Core fields:
 
 Use `resolution_status=resolved` only when `target_id` exists in the current archive. Use `resolution_status=unresolved` when the reference target is clear but has not yet been structured in the archive; in that case set `target_id=null`. Use `resolution_status=needs_review` when the target interpretation, `target_type`, or target scope is uncertain.
 
+## Validation contract
+
+The machine-validatable contract for model `0.2.0` is split between JSON Schema and a reusable validator.
+
+JSON Schema validates object structure, required fields, primitive and nullable types, controlled vocabularies, additional-property rejection, model version `0.2.0`, local value/status combinations, and positive fraction denominators.
+
+The reusable validator validates JSON parsing, JSON Schema conformance, object ID uniqueness, reference resolution, self-contained bundle rules, repeated `Document` and `Section` consistency across files, `SourceUnit` ordering, provenance consistency, value/status consistency, and actionable non-zero failures.
+
 ## Relationships
 
 - `Document` contains many `Section` records.
@@ -229,6 +287,7 @@ Use `resolution_status=resolved` only when `target_id` exists in the current arc
 - `QuantitativeCriterion.source_unit_id` preserves the direct source anchor.
 - `QuantitativeCriterion.knowledge_record_id` links a criterion to a semantic statement when available.
 - `QuantitativeCriterion.condition_ids` links criteria to applicability conditions or exceptions.
+- `QuantitativeCriterion.value_fraction` preserves exact source fractions without replacing them with approximate decimals.
 - `Condition.applies_to_ids` links conditions to affected source units, semantic records, or quantitative criteria.
 - `CrossReference.source_unit_id` preserves the source anchor for reference text.
 - `CrossReference.target_type` classifies the referenced target, and `CrossReference.resolution_status` records whether the target has been resolved to an existing archive ID.

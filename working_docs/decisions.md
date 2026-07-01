@@ -124,6 +124,51 @@ This document records material project decisions after they are made. It should 
 - Consequences: `heading_source_unit_id` must be `null` or reference an existing `SourceUnit` in the current archive with `unit_type=heading`. If no heading source unit exists or the link is not confirmed, use `null`.
 - Related files: `working_docs/schema.md`
 
+### DEC-015: Increment machine-validatable model to 0.2.0
+
+- Date: 2026-07-01
+- Status: Accepted
+- Decision: The Phase 2 data contract uses `schema_model_version=0.2.0`.
+- Rationale: Phase 2 adds machine-validatable bundle rules and a new required `QuantitativeCriterion.review_status` field plus exact fraction support, so unmodified `0.1.0` pilot files are not valid under the new contract.
+- Consequences: Existing pilot bundles must update their document model version and migrate quantitative criteria before validation.
+- Related files: `working_docs/schema.md`, `structured_data/schemas/guideline_bundle.schema.json`, `scripts/validate_structured_data.js`
+
+### DEC-016: Represent exact source fractions without decimal approximation
+
+- Date: 2026-07-01
+- Status: Accepted
+- Decision: Exact source fractions are represented with nullable `QuantitativeCriterion.value_fraction` containing integer `numerator` and positive integer `denominator`; `value` remains numeric-or-null.
+- Rationale: Source values such as `2/3` are exact and reusable as structured data, while decimal approximation would lose source fidelity and source-text-only storage would leave a confident value unresolved.
+- Consequences: `value_status=known` requires exactly one of `value` or `value_fraction`; non-known statuses require both to be `null`.
+- Related files: `working_docs/schema.md`, `structured_data/pilots/m10_3_2_5_2.json`
+
+### DEC-017: Clarify modality assignment without changing vocabulary
+
+- Date: 2026-07-01
+- Status: Accepted
+- Decision: The modality vocabulary remains `must`, `should`, `may`, `none`, and `other`. `may` is reserved for permission or allowance; indirect or non-enum modal wording uses `other` with `original_modal_text`; non-modal descriptive wording uses `none`.
+- Rationale: The pilot issues were assignment-guidance issues, not evidence that the controlled vocabulary needs expansion.
+- Consequences: The M10 Phase 1 modality review items for "can range", "does not necessarily need to be repeated", and "is warranted" are resolved under this guidance.
+- Related files: `working_docs/schema.md`, `structured_data/pilots/m10_6_1.json`
+
+### DEC-018: Validate structured JSON as self-contained bundles
+
+- Date: 2026-07-01
+- Status: Accepted
+- Decision: Each structured JSON file is a self-contained bundle for all non-`CrossReference` relationships. Repeated `Document` records across a validation set are allowed only when identical. Repeated `Section` IDs are allowed only when the `Section` objects are identical and context-only in every bundle where they appear; context-only means another section references it through `parent_section_id` and no `SourceUnit` directly uses it as `section_id`. All other primary object IDs must be unique across the validation set.
+- Rationale: Pilot files need repeated document and ancestor-section context for local traceability, but duplicate semantic or source records across files would make archive identity ambiguous.
+- Consequences: Cross-reference targets may resolve across the validated archive only when `resolution_status=resolved`; unresolved or uncertain targets use `target_id=null`.
+- Related files: `working_docs/schema.md`, `scripts/validate_structured_data.js`
+
+### DEC-019: Use JSON Schema plus one reusable validator
+
+- Date: 2026-07-01
+- Status: Accepted
+- Decision: Phase 2 validation uses draft-07 JSON Schema for structural rules and a single Node/Ajv validator script for cross-object and cross-file rules.
+- Rationale: This is the smallest maintainable validation architecture in the current repository environment; Node and `npm.cmd` are available, while Python is not reliably available.
+- Consequences: `ajv` is the only direct dependency, and validation is run with `npm run validate -- <json files>`.
+- Related files: `package.json`, `package-lock.json`, `scripts/validate_structured_data.js`
+
 ## Decision Template
 
 ### DEC-000: Title

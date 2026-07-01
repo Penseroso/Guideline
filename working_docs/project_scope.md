@@ -16,7 +16,9 @@ The foundation must preserve source traceability, separate source-derived record
 
 ## Current Scope
 
-Phase 0 is limited to aligning repository documentation before the M10 JSON pilot. The current pilot document is ICH M10, with the source PDF at `Guideline Files/ICH M10.pdf`, the PDF assessment at `working_docs/pdf_assessment_M10.md`, and the conceptual data model at `working_docs/schema.md` version `0.1.0`.
+The current scope is Phase 2 Data Contract and Validation. Phase 1 produced reviewed pilot JSON for ICH M10 sections `3.2.5.2` and `6.1`; Phase 2 formalizes that pilot into model `0.2.0`, JSON Schema, and one reusable validation script.
+
+The current pilot document remains ICH M10, with the source PDF at `Guideline Files/ICH M10.pdf`, the PDF assessment at `working_docs/pdf_assessment_M10.md`, the data model at `working_docs/schema.md`, and pilot outputs under `structured_data/pilots/`.
 
 ## Project Phases
 
@@ -30,9 +32,8 @@ Phase 0 is limited to aligning repository documentation before the M10 JSON pilo
 The following are outside the current scope unless explicitly requested:
 
 - Full-guideline extraction.
-- JSON Schema implementation.
-- Structured data creation.
-- Extraction or validation script implementation.
+- Full-guideline structured data creation.
+- Automated extraction script implementation.
 - Database, search, embedding, or web application implementation.
 - Regulatory suitability conclusions.
 - Study-design recommendations.

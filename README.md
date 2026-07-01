@@ -6,16 +6,18 @@ This repository builds a traceable structured-data archive for regulatory guidel
 
 - Original pilot PDF exists at `Guideline Files/ICH M10.pdf`.
 - Initial PDF assessment exists at `working_docs/pdf_assessment_M10.md`.
-- Conceptual data model exists at `working_docs/schema.md` as version `0.1.0`.
-- JSON Schema, pilot JSON, validation scripts, automated extraction, database, and web application have not been created yet.
-- The next phase is the M10 pilot using the current conceptual model.
+- Phase 1 is complete for the limited ICH M10 pilot sections `3.2.5.2` and `6.1`.
+- Reviewed pilot JSON files exist at `structured_data/pilots/m10_3_2_5_2.json` and `structured_data/pilots/m10_6_1.json`.
+- The data model exists at `working_docs/schema.md` as model version `0.2.0`.
+- Phase 2 is implementing the JSON Schema and reusable validator for the structured-data contract.
+- Automated extraction, database, search, embeddings, RAG, and web application work remain out of scope.
 
 ## Repository Map
 
 - `Guideline Files/`: immutable original guideline PDFs.
 - `working_docs/`: project scope, conceptual model, PDF assessments, decisions, and review logs.
-- `structured_data/`: future machine-readable structured outputs and schemas.
-- `scripts/`: future reproducible extraction and validation scripts.
+- `structured_data/`: machine-readable structured outputs and schemas.
+- `scripts/`: reproducible extraction and validation scripts.
 - `.agents/skills/`: future reusable workflows after validation.
 
 ## Key Documents
@@ -24,5 +26,6 @@ This repository builds a traceable structured-data archive for regulatory guidel
 - `working_docs/schema.md`: current conceptual data model.
 - `working_docs/decisions.md`: accepted material decisions and rationale.
 - `working_docs/pdf_assessment_M10.md`: technical assessment of the ICH M10 PDF and extraction risks.
+- `working_docs/pilot_review_M10.md`: completed pilot review and Phase 2 migration notes for M10 sections `3.2.5.2` and `6.1`.
 - `working_docs/review_log.md`: completed human review records.
 - `AGENTS.md`: repository-wide operating rules for agents.
