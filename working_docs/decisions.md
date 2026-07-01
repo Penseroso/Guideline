@@ -25,6 +25,105 @@ This document records material project decisions after they are made. It should 
 - Decision: Source text, normalized Korean text, quantitative criteria, applicability conditions, exceptions, footnotes, cross-references, and interpretation or review notes must remain conceptually and structurally separate.
 - Rationale: The archive must preserve source meaning without adding unsupported requirements or recommendations.
 
+### DEC-004: Use SourceUnit as the base archival unit
+
+- Date: 2026-06-30
+- Status: Accepted
+- Decision: The base archival unit is `SourceUnit`; `Requirement` is not a base object and is represented only as `KnowledgeRecord.record_type=requirement` when supported by source text.
+- Rationale: Regulatory guideline text includes descriptions, examples, definitions, scope statements, recommendations, and requirements. Treating every sentence as a requirement would create unsupported regulatory classifications.
+- Consequences: All semantic records must retain source-unit traceability.
+- Related files: `working_docs/schema.md`
+
+### DEC-005: Separate source preservation from semantic structuring
+
+- Date: 2026-06-30
+- Status: Accepted
+- Decision: Source-preservation records and semantic knowledge records are separate layers.
+- Rationale: Preserved source text must remain independently verifiable and must not be overwritten by normalized text or interpretation.
+- Consequences: `SourceUnit` preserves source text; `KnowledgeRecord` stores semantic structure and optional Korean normalization.
+- Related files: `working_docs/schema.md`
+
+### DEC-006: Keep Korean normalization only on KnowledgeRecord
+
+- Date: 2026-06-30
+- Status: Accepted
+- Decision: In the minimum model, `normalized_ko` is stored only on `KnowledgeRecord` and is optional and nullable.
+- Rationale: Duplicating Korean normalization on both source and semantic records increases maintenance risk without adding necessary source traceability.
+- Consequences: `SourceUnit` remains source-text focused.
+- Related files: `working_docs/schema.md`
+
+### DEC-007: Separate record type from modality
+
+- Date: 2026-06-30
+- Status: Accepted
+- Decision: `record_type` and `modality` are separate fields. `record_type` is limited to `requirement`, `recommendation`, `description`, `definition`, `example`, and `scope_statement`; `modality` is limited to `must`, `should`, `may`, `none`, and `other`.
+- Rationale: A semantic statement's function and its modal wording are related but not identical.
+- Consequences: Descriptive or rationale text without modal verbs can be represented without misclassifying it as a requirement.
+- Related files: `working_docs/schema.md`
+
+### DEC-008: Use review_status and value_status for state
+
+- Date: 2026-06-30
+- Status: Accepted
+- Decision: The minimum model uses `review_status` for record review state and `value_status` for uncertain typed values. Typed fields must contain actual typed values or `null`, not status strings. Cross-reference target resolution uses a separate `resolution_status` field because it is not a typed-value status.
+- Rationale: Keeping state separate from typed values prevents invalid numeric, date, and page fields.
+- Consequences: `review_status` is limited to `unreviewed`, `needs_review`, and `reviewed`; `value_status` is limited to `known`, `unknown`, `not_applicable`, and `needs_review`. `section_order_status`, `unit_order_status`, `pdf_page_index_status`, and `printed_page_label_status` use the `value_status` vocabulary.
+- Related files: `working_docs/schema.md`
+
+### DEC-009: Represent footnotes and exceptions without separate objects
+
+- Date: 2026-06-30
+- Status: Accepted
+- Decision: Footnotes are represented as `SourceUnit.unit_type=footnote`; exceptions are represented as `Condition.condition_type=exception`.
+- Rationale: The minimum model should avoid extra objects unless needed to prevent information loss.
+- Consequences: Footnotes can be linked through `related_source_unit_ids`; exception conditions must use `applies_to_ids`, and exception conditions require at least one target.
+- Related files: `working_docs/schema.md`
+
+### DEC-010: Add table context only for table-cell source units
+
+- Date: 2026-06-30
+- Status: Accepted
+- Decision: `SourceUnit.table_context` is available only when `SourceUnit.unit_type=table_cell` and is `null` for all other source-unit types.
+- Rationale: Table cells can lose meaning without row and column context, while non-table source units do not need this field.
+- Consequences: `table_context` includes `table_id`, `row_index`, `column_index`, `row_header_text`, and `column_header_text`.
+- Related files: `working_docs/schema.md`
+
+### DEC-011: Limit current-stage versioning
+
+- Date: 2026-06-30
+- Status: Accepted
+- Decision: Current-stage versioning is limited to `document_version_label`, `source_file_checksum`, and `schema_model_version`; the initial `schema_model_version` is `0.1.0`.
+- Rationale: Record-level revisioning is premature before sample structured data and validation workflows exist.
+- Consequences: Draft state is represented as document status in `schema.md`, not in the version string.
+- Related files: `working_docs/schema.md`
+
+### DEC-012: Restrict condition links and unresolved cross-references
+
+- Date: 2026-06-30
+- Status: Accepted
+- Decision: In the minimum model, `Condition.applies_to_ids` may reference only `SourceUnit`, `KnowledgeRecord`, and `QuantitativeCriterion`. `CrossReference.target_id` may contain only IDs that exist in the current archive. `CrossReference.target_type` classifies the referenced target, and `CrossReference.resolution_status` records whether the target is resolved.
+- Rationale: Restricting links prevents unverified references from appearing resolved.
+- Consequences: External or not-yet-structured targets preserve `raw_reference_text`, may use `target_document_label`, set `target_id=null`, and use `resolution_status=unresolved` when the target is clear. Use `resolution_status=needs_review` when the target interpretation, target type, or target scope is uncertain.
+- Related files: `working_docs/schema.md`
+
+### DEC-013: Simplify page trace fields
+
+- Date: 2026-06-30
+- Status: Accepted
+- Decision: `SourceUnit.trace` stores the physical PDF page as `pdf_page_index_zero_based` and the displayed document page label as `printed_page_label`, each with its own status field. `pdf_page_number_one_based`, `printed_page_number`, and `page_value_status` are not part of the minimum model.
+- Rationale: A one-based PDF page number can be derived from the zero-based index, while printed page labels may include Roman numerals, appendix labels, or other non-numeric strings. Separate status fields prevent one page status from applying incorrectly to multiple page values.
+- Consequences: `pdf_page_index_status` and `printed_page_label_status` use the `value_status` vocabulary. `printed_page_label` preserves the displayed label as a string or `null`, with no meaning-level normalization beyond trimming leading and trailing whitespace. `schema_model_version` remains `0.1.0` because this is a review correction before the first baseline model is finalized.
+- Related files: `working_docs/schema.md`
+
+### DEC-014: Link sections to heading source units
+
+- Date: 2026-06-30
+- Status: Accepted
+- Decision: `Section.trace_status` is removed. `Section.heading_source_unit_id` optionally links a section to the source unit preserving its heading text.
+- Rationale: A direct link to the heading source unit is more verifiable than a general trace status field.
+- Consequences: `heading_source_unit_id` must be `null` or reference an existing `SourceUnit` in the current archive with `unit_type=heading`. If no heading source unit exists or the link is not confirmed, use `null`.
+- Related files: `working_docs/schema.md`
+
 ## Decision Template
 
 ### DEC-000: Title
