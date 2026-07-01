@@ -15,6 +15,10 @@ The model is intended for source preservation and knowledge structuring. It is n
 
 Model `0.2.0` is implemented as a machine-validatable JSON bundle contract with JSON Schema plus reusable validation rules. It does not define full-guideline extraction, database storage, search, embeddings, regulatory decision logic, or an application interface.
 
+Phase 2 implementation and selected M10 structural pressure testing are complete, and model `0.2.0` is retained. Broader cross-guideline validation remains pending. Phase 3 has not started.
+
+The files `structured_data/pilots/m10_phase2_table_pressure.json` and `structured_data/pilots/m10_phase2_reference_condition_pressure.json` are reviewed structural probes for model pressure testing. They should later be retired or absorbed if the same leaf sections are replaced by fuller canonical bundles.
+
 ## Core principles
 
 - Preserve source text before semantic interpretation.
@@ -284,6 +288,8 @@ The machine-validatable contract for model `0.2.0` is split between JSON Schema 
 JSON Schema validates object structure, required fields, primitive and nullable types, controlled vocabularies, additional-property rejection, model version `0.2.0`, local value/status combinations, and positive fraction denominators.
 
 The reusable validator validates JSON parsing, JSON Schema conformance, object ID uniqueness, reference resolution, self-contained bundle rules, repeated `Document` and `Section` consistency across files, `SourceUnit` ordering, provenance consistency, value/status consistency, and actionable non-zero failures.
+
+Use `npm run validate -- <json-file> [json-file ...]` to validate explicit files. Use `npm run validate:pilots` to discover and validate all JSON files under `structured_data/pilots/` without relying on shell wildcard expansion.
 
 ## Relationships
 

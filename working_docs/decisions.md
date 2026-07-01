@@ -166,7 +166,7 @@ This document records material project decisions after they are made. It should 
 - Status: Accepted
 - Decision: Phase 2 validation uses draft-07 JSON Schema for structural rules and a single Node/Ajv validator script for cross-object and cross-file rules.
 - Rationale: This is the smallest maintainable validation architecture in the current repository environment; Node and `npm.cmd` are available, while Python is not reliably available.
-- Consequences: `ajv` is the only direct dependency, and validation is run with `npm run validate -- <json files>`.
+- Consequences: `ajv` is the only direct dependency. Explicit files are validated with `npm run validate -- <json files>`, and current pilot bundles are discovered and validated with `npm run validate:pilots`.
 - Related files: `package.json`, `package-lock.json`, `scripts/validate_structured_data.js`
 
 ### DEC-020: Retain model 0.2.0 after structural pressure tests

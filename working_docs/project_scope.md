@@ -14,18 +14,22 @@ Canonical sources are immutable official PDFs and reviewed, Git-managed structur
 
 The foundation must preserve source traceability, separate source-derived records from analyst-derived mappings or interpretations, support multiple documents and coexisting document versions, and remain compatible with future cross-document comparison.
 
-## Current Scope
+## Current Status
 
-The current scope is Phase 2 Data Contract and Validation. Phase 1 produced reviewed pilot JSON for ICH M10 sections `3.2.5.2` and `6.1`; Phase 2 formalizes that pilot into model `0.2.0`, JSON Schema, and one reusable validation script.
+Phase 2 Data Contract and Validation is complete for the current ICH M10 pilot. Phase 1 produced reviewed pilot JSON for ICH M10 sections `3.2.5.2` and `6.1`; Phase 2 formalized that pilot into model `0.2.0`, JSON Schema, and reusable validation scripts. Selected M10 structural pressure testing is also complete, and model `0.2.0` is retained.
 
 The current pilot document remains ICH M10, with the source PDF at `Guideline Files/ICH M10.pdf`, the PDF assessment at `working_docs/pdf_assessment_M10.md`, the data model at `working_docs/schema.md`, and pilot outputs under `structured_data/pilots/`.
+
+The files `structured_data/pilots/m10_phase2_table_pressure.json` and `structured_data/pilots/m10_phase2_reference_condition_pressure.json` are reviewed structural probes, not fuller canonical bundles for their leaf sections. They should later be retired or absorbed if those same leaf sections are replaced by fuller canonical bundles.
+
+Broader cross-guideline validation remains pending. Phase 3 has not started.
 
 ## Project Phases
 
 - Phase 0 — Foundation Alignment: align documentation, roles, terminology, and current status.
 - Phase 1 — M10 Pilot: create a limited reviewed JSON pilot from ICH M10 using the conceptual model.
-- Phase 2 — Data Contract and Validation: add JSON Schema and reproducible validation tooling for structured data.
-- Phase 3 — Expansion and Application: expand across sections/documents and support derived review-tool capabilities.
+- Phase 2 — Data Contract and Validation: complete for the current M10 pilots and selected M10 structural pressure tests.
+- Phase 3 — Expansion and Application: not started; future expansion across sections/documents and derived review-tool capabilities.
 
 ## Non-Goals
 

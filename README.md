@@ -9,8 +9,11 @@ This repository builds a traceable structured-data archive for regulatory guidel
 - Phase 1 is complete for the limited ICH M10 pilot sections `3.2.5.2` and `6.1`.
 - Reviewed pilot JSON files exist at `structured_data/pilots/m10_3_2_5_2.json` and `structured_data/pilots/m10_6_1.json`.
 - The data model exists at `working_docs/schema.md` as model version `0.2.0`.
-- Phase 2 core implementation is complete for the current M10 pilots: model `0.2.0`, JSON Schema, reusable validator, and migrated pilot files validate with `npm run validate -- structured_data/pilots/m10_3_2_5_2.json structured_data/pilots/m10_6_1.json`.
-- Structural pressure testing and broader validation beyond the two pilot sections remain pending.
+- Phase 2 implementation is complete for the current M10 pilots: model `0.2.0`, JSON Schema, reusable validator, and migrated pilot files validate with `npm run validate:pilots`.
+- Selected M10 structural pressure testing is complete, and model `0.2.0` is retained.
+- The files `structured_data/pilots/m10_phase2_table_pressure.json` and `structured_data/pilots/m10_phase2_reference_condition_pressure.json` are reviewed structural probes. They should later be retired or absorbed if the same leaf sections are replaced by fuller canonical bundles.
+- Broader cross-guideline validation remains pending.
+- Phase 3 has not started.
 - Automated extraction, database, search, embeddings, RAG, and web application work remain out of scope.
 
 ## Repository Map

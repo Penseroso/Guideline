@@ -71,5 +71,5 @@ Model `0.1.0` is provisionally sufficient to proceed toward Phase 2 JSON Schema 
 - Exact fraction resolution: `ich_m10.qc.3_2_5_2.010` now preserves source text `2/3` and represents the typed value as `value_fraction={"numerator":2,"denominator":3}`, with `value=null`, `unit="fraction"`, and `value_status=known`.
 - Criterion review status: all `QuantitativeCriterion` records now include required `review_status`; all current pilot criteria are `reviewed`.
 - Modality resolution: `ich_m10.kr.6_1.002` uses `modality=other` with `original_modal_text="can range"`; `ich_m10.kr.6_1.003` uses `modality=other` with `original_modal_text="does not necessarily need to be repeated"`; `ich_m10.kr.6_1.023` retains `modality=other` with `original_modal_text="is warranted"`. All three are now `reviewed` under the accepted Phase 2 modality guidance.
-- Current validation status: `npm run validate -- structured_data/pilots/m10_3_2_5_2.json structured_data/pilots/m10_6_1.json` passes for both model `0.2.0` pilot bundles.
+- Current validation status: `npm run validate:pilots` passes for the model `0.2.0` pilot bundles.
 - No source wording, PDF trace fields, checksum, or pilot section scope was intentionally changed during migration.

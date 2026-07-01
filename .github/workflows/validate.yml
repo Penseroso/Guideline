@@ -27,4 +27,4 @@ jobs:
         run: npm test
 
       - name: Validate pilot structured data
-        run: npm run validate -- structured_data/pilots/*.json
+        run: npm run validate:pilots
