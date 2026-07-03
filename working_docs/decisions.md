@@ -178,6 +178,33 @@ This document records material project decisions after they are made. It should 
 - Consequences: No JSON Schema, validator, model-version, dependency, or source-PDF change is required from this review. Follow-up is limited to documentation guidance and any later human semantic-classification review.
 - Related files: `working_docs/schema.md`, `working_docs/review_log.md`, `structured_data/pilots/m10_phase2_table_pressure.json`, `structured_data/pilots/m10_phase2_reference_condition_pressure.json`
 
+### DEC-021: Separate source, amendment mapping, and effective-state layers
+
+- Date: 2026-07-03
+- Status: Accepted
+- Decision: Phase 3 preserves three distinct layers: immutable source records, reviewed Parent-Addendum amendment mappings, and reviewed current effective-state records derived from all applicable sources.
+- Rationale: Addenda can clarify, modify, narrow, broaden, replace, supersede, or conflict with parent guidance. Collapsing those relationships into source records would overwrite source provenance and obscure analyst synthesis.
+- Consequences: Parent and Addendum source records remain independently traceable. Amendment mappings and effective-state records are derived review artifacts and are not source text.
+- Related files: `working_docs/amendment_effective_strategy.md`, `working_docs/phase3_plan.md`, `working_docs/pdf_assessment_S6_R1.md`
+
+### DEC-022: Treat integrated S6(R1) as one physical Document with separate Part provenance
+
+- Date: 2026-07-03
+- Status: Accepted
+- Decision: The local integrated S6(R1) PDF is one physical `Document`, while Parent and Addendum material must preserve separate Part provenance with Part-aware section and source-unit IDs.
+- Rationale: The source is a single immutable PDF containing both the Parent Guideline and Addendum, and section numbering restarts across Parts.
+- Consequences: S6 source-layer IDs must be Part-aware, for example `ich_s6_r1.sec.part1...` and `ich_s6_r1.sec.part2...`. The PDF must not be split, renamed, moved, recompressed, or edited.
+- Related files: `Guideline Files/ICH S6.pdf`, `working_docs/pdf_assessment_S6_R1.md`, `working_docs/amendment_effective_strategy.md`
+
+### DEC-023: Retain source model 0.2.0 until an S6 pilot demonstrates a limitation
+
+- Date: 2026-07-03
+- Status: Accepted
+- Decision: Source model `0.2.0` remains the active model for the next S6 source-layer pilot until actual S6 records demonstrate a limitation.
+- Rationale: The S6(R1) assessment identified workflow and derived-layer pressure points, but no structured S6 pilot has yet shown that the source model cannot preserve source records.
+- Consequences: No JSON Schema, validator, dependency, or model-version change is made in Module 3.0. Amendment mapping and `EffectiveRecord` remain provisional derived-layer designs outside the current JSON Schema.
+- Related files: `working_docs/schema.md`, `working_docs/pdf_assessment_S6_R1.md`, `working_docs/amendment_effective_strategy.md`, `working_docs/phase3_plan.md`
+
 ## Decision Template
 
 ### DEC-000: Title
