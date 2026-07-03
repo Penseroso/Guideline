@@ -1349,21 +1349,6 @@
   ],
   "quantitative_criteria": [
     {
-      "criterion_id": "ich_s6_r1.qc.part1.3_3.005",
-      "source_unit_id": "ich_s6_r1.su.part1.3_3.005",
-      "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.011",
-      "parameter": "repeated dose toxicity study duration",
-      "comparator": "not_exceed",
-      "value": 14,
-      "value_fraction": null,
-      "unit": "days",
-      "value_status": "known",
-      "denominator_or_reference": "limited toxicity evaluation in a single species",
-      "condition_ids": ["ich_s6_r1.cond.part1.3_3.008"],
-      "source_text": "≤ 14 days duration",
-      "review_status": "reviewed"
-    },
-    {
       "criterion_id": "ich_s6_r1.qc.part2.2_2.004",
       "source_unit_id": "ich_s6_r1.su.part2.2_2.002",
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_2.001",

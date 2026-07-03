@@ -24,7 +24,7 @@ No Part II `2.3` content or other adjacent section content was structured.
 - `Section`: 8
 - `SourceUnit`: 29
 - `KnowledgeRecord`: 51
-- `QuantitativeCriterion`: 3
+- `QuantitativeCriterion`: 2
 - `Condition`: 29
 - `CrossReference`: 7
 
@@ -84,11 +84,12 @@ The following `CrossReference` objects are marked `needs_review`:
 
 ## Quantitative-criterion summary
 
-The pilot represents 3 explicit numeric constraints whose comparator is accurately supported by model `0.2.0`:
+The pilot represents 2 explicit numeric constraints whose comparator is accurately supported by model `0.2.0`:
 
-- `ich_s6_r1.qc.part1.3_3.005`: `≤ 14 days duration`
 - `ich_s6_r1.qc.part2.2_2.004`: `up to 1 month duration`
 - `ich_s6_r1.qc.part2.notes.001`: `at least one species with the unconjugated toxin`
+
+The `≤ 14 days` expression remains preserved in source text and the related `KnowledgeRecord`, but it is intentionally not modeled as a `QuantitativeCriterion` because it appears only as an `e.g.` example within a conditional recommendation. Model `0.2.0` does not preserve example status on `QuantitativeCriterion`, so modeling it as a reviewed `not_exceed` criterion could overstate the source meaning.
 
 Exact-count source wording, including one species, only one species, single species, two species, one rodent, one non-rodent, and two non-rodent species, remains preserved in `KnowledgeRecord`, `Condition`, and source text fields. Exact-count `QuantitativeCriterion` objects were intentionally not created under model `0.2.0` because representing those statements with `comparator=at_least` would change the source meaning. No illustrative example was converted into an unconditional criterion.
 
