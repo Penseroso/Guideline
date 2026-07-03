@@ -24,7 +24,7 @@ No Part II `2.3` content or other adjacent section content was structured.
 - `Section`: 8
 - `SourceUnit`: 29
 - `KnowledgeRecord`: 51
-- `QuantitativeCriterion`: 16
+- `QuantitativeCriterion`: 3
 - `Condition`: 29
 - `CrossReference`: 7
 
@@ -69,32 +69,33 @@ The following `KnowledgeRecord` objects are marked `needs_review` because recomm
 - `ich_s6_r1.kr.part2.notes.006`
 - `ich_s6_r1.kr.part2.notes.011`
 
-The following `QuantitativeCriterion` objects are marked `needs_review` because model `0.2.0` does not distinguish exact-count constraints from minimum-count constraints:
+No `QuantitativeCriterion` objects are marked `needs_review`.
 
-- `ich_s6_r1.qc.part1.3_3.001`
-- `ich_s6_r1.qc.part1.3_3.002`
-- `ich_s6_r1.qc.part1.3_3.003`
-- `ich_s6_r1.qc.part1.3_3.004`
-- `ich_s6_r1.qc.part2.2_1.001`
-- `ich_s6_r1.qc.part2.2_2.001`
-- `ich_s6_r1.qc.part2.2_2.002`
-- `ich_s6_r1.qc.part2.2_2.003`
-- `ich_s6_r1.qc.part2.2_2.005`
-- `ich_s6_r1.qc.part2.2_2.006`
-- `ich_s6_r1.qc.part2.2_2.007`
-- `ich_s6_r1.qc.part2.notes.002`
-- `ich_s6_r1.qc.part2.notes.003`
+The following `Condition` object is marked `needs_review`:
+
+- `ich_s6_r1.cond.part2.notes.001`
+
+The following `CrossReference` objects are marked `needs_review`:
+
+- `ich_s6_r1.xref.part1.3_3.001`
+- `ich_s6_r1.xref.part2.2_1.001`
+- `ich_s6_r1.xref.part2.2_1.004`
+- `ich_s6_r1.xref.part2.2_1.005`
 
 ## Quantitative-criterion summary
 
-The pilot represents 16 explicit numeric constraints from the selected scope. These cover species counts, rodent and non-rodent species counts, one-species and two-species criteria, `<= 14 days`, `up to 1 month`, and `at least one species`.
+The pilot represents 3 explicit numeric constraints whose comparator is accurately supported by model `0.2.0`:
 
-Duration constraints with direct upper bounds are represented as reviewed criteria. Exact one-species and two-species source wording is represented with the available `at_least` comparator and marked `needs_review` where the model cannot preserve exact-count semantics. No illustrative example was converted into an unconditional criterion.
+- `ich_s6_r1.qc.part1.3_3.005`: `≤ 14 days duration`
+- `ich_s6_r1.qc.part2.2_2.004`: `up to 1 month duration`
+- `ich_s6_r1.qc.part2.notes.001`: `at least one species with the unconjugated toxin`
+
+Exact-count source wording, including one species, only one species, single species, two species, one rodent, one non-rodent, and two non-rodent species, remains preserved in `KnowledgeRecord`, `Condition`, and source text fields. Exact-count `QuantitativeCriterion` objects were intentionally not created under model `0.2.0` because representing those statements with `comparator=at_least` would change the source meaning. No illustrative example was converted into an unconditional criterion.
 
 ## Condition-linkage decisions
 
 - Part II Note 1 unexpected human-tissue binding applies to `ich_s6_r1.kr.part2.notes.014`, which records that evaluation of selected animal tissues can provide supplemental information regarding potential correlations or lack thereof with preclinical toxicity.
-- The same unexpected-binding condition is not applied to `ich_s6_r1.kr.part2.notes.013`, which records that tissue cross-reactivity studies using a full panel of animal tissues are not recommended.
+- The same unexpected-binding condition is not applied to `ich_s6_r1.kr.part2.notes.005`, which records that tissue cross-reactivity studies using a full panel of animal tissues are not recommended.
 - Part II Note 2 `unless the toxin is not active in the rodent` applies to `ich_s6_r1.kr.part2.notes.015`, which records that a rodent is preferred.
 - The rodent exception is not applied to `ich_s6_r1.kr.part2.notes.009`, which records the additional unconjugated-toxin study.
 
@@ -116,7 +117,7 @@ Confirmed fit:
 - Separate Parent and Addendum source provenance.
 - Paragraph-level source-unit segmentation.
 - Source trace fields for zero-based PDF page index and printed page label.
-- Explicit quantitative constraints as `QuantitativeCriterion` records when supported by source wording.
+- Explicit quantitative constraints as `QuantitativeCriterion` records when the model has an accurate comparator.
 - Conditions, exceptions, and unresolved cross-references without creating amendment or effective-state records.
 
 ## Information loss or workaround
@@ -127,7 +128,7 @@ Note-specific cross-reference targets cannot be represented precisely as resolve
 
 Potential Module 3.5 candidate: model `0.2.0` lacks a note-specific cross-reference target type or a controlled way to resolve a `CrossReference` directly to a `SourceUnit`. This did not block schema-valid source preservation, but it prevents reviewed resolution of Note 1 and Note 2 references at the intended granularity.
 
-Potential Module 3.5 candidate: model `0.2.0` lacks an exact-count comparator for quantitative criteria. The pilot uses `at_least` with `needs_review` for exact one-species and two-species source wording so the numeric constraint remains traceable without overstating reviewed semantics.
+Potential Module 3.5 candidate: model `0.2.0` lacks an exact-count comparator for quantitative criteria. Exact-count source wording remains traceable through source text, `KnowledgeRecord`, and `Condition` objects, but exact-count `QuantitativeCriterion` objects were intentionally not created because the available `at_least` comparator would distort the source meaning.
 
 ## Amendment and effective-state confirmation
 
