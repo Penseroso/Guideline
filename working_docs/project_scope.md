@@ -18,18 +18,20 @@ The foundation must preserve source traceability, separate source-derived record
 
 Phase 2 Data Contract and Validation is complete for the current ICH M10 pilot. Phase 1 produced reviewed pilot JSON for ICH M10 sections `3.2.5.2` and `6.1`; Phase 2 formalized that pilot into model `0.2.0`, JSON Schema, and reusable validation scripts. Selected M10 structural pressure testing is also complete, and model `0.2.0` is retained.
 
-The current pilot document remains ICH M10, with the source PDF at `Guideline Files/ICH M10.pdf`, the PDF assessment at `working_docs/pdf_assessment_M10.md`, the data model at `working_docs/schema.md`, and pilot outputs under `structured_data/pilots/`.
+The current structured pilot document remains ICH M10, with the source PDF at `Guideline Files/ICH M10.pdf`, the PDF assessment at `working_docs/pdf_assessment_M10.md`, the data model at `working_docs/schema.md`, and pilot outputs under `structured_data/pilots/`.
 
 The files `structured_data/pilots/m10_phase2_table_pressure.json` and `structured_data/pilots/m10_phase2_reference_condition_pressure.json` are reviewed structural probes, not fuller canonical bundles for their leaf sections. They should later be retired or absorbed if those same leaf sections are replaced by fuller canonical bundles.
 
-Broader cross-guideline validation remains pending. Phase 3 has not started.
+Phase 3 has started. Module 3.0 is the current scope: onboarding the local S6(R1) PDF, assessing its source structure, and defining the baseline strategy for separate source, amendment-mapping, and current effective-state layers. S6 cross-guideline validation is not complete, and no S6 structured JSON pilot has been created.
+
+Source model `0.2.0` remains unchanged. Amendment mapping and `EffectiveRecord` are provisional derived-layer designs documented in `working_docs/amendment_effective_strategy.md`; they are not JSON Schema objects in the current model.
 
 ## Project Phases
 
-- Phase 0 — Foundation Alignment: align documentation, roles, terminology, and current status.
-- Phase 1 — M10 Pilot: create a limited reviewed JSON pilot from ICH M10 using the conceptual model.
-- Phase 2 — Data Contract and Validation: complete for the current M10 pilots and selected M10 structural pressure tests.
-- Phase 3 — Expansion and Application: not started; future expansion across sections/documents and derived review-tool capabilities.
+- Phase 0 - Foundation Alignment: align documentation, roles, terminology, and current status.
+- Phase 1 - M10 Pilot: create a limited reviewed JSON pilot from ICH M10 using the conceptual model.
+- Phase 2 - Data Contract and Validation: complete for the current M10 pilots and selected M10 structural pressure tests.
+- Phase 3 - S6 Foundation and Derived-Layer Strategy: started; Module 3.0 is current, with S6 foundation and architecture work only.
 
 ## Non-Goals
 
@@ -37,8 +39,10 @@ The following are outside the current scope unless explicitly requested:
 
 - Full-guideline extraction.
 - Full-guideline structured data creation.
+- S6 JSON pilot creation before the Phase 3 pilot scope is selected and approved.
+- Schema changes before an actual S6 pilot demonstrates a limitation.
 - Automated extraction script implementation.
-- Database, search, embedding, or web application implementation.
+- Database, search, embedding, RAG, or web application implementation.
 - Regulatory suitability conclusions.
 - Study-design recommendations.
 - Automated decision making.

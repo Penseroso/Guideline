@@ -13,9 +13,11 @@ This document defines the minimum data model for preserving regulatory guideline
 
 The model is intended for source preservation and knowledge structuring. It is not a regulatory decision engine and must not create requirements, recommendations, study-design advice, or suitability conclusions that are not present in the source.
 
-Model `0.2.0` is implemented as a machine-validatable JSON bundle contract with JSON Schema plus reusable validation rules. It does not define full-guideline extraction, database storage, search, embeddings, regulatory decision logic, or an application interface.
+Model `0.2.0` is implemented as a machine-validatable JSON bundle contract with JSON Schema plus reusable validation rules. It does not define full-guideline extraction, database storage, search, embeddings, RAG, regulatory decision logic, or an application interface.
 
-Phase 2 implementation and selected M10 structural pressure testing are complete, and model `0.2.0` is retained. Broader cross-guideline validation remains pending. Phase 3 has not started.
+Phase 2 implementation and selected M10 structural pressure testing are complete, and model `0.2.0` is retained. Phase 3 has started with Module 3.0 S6(R1) foundation and architecture work. S6 cross-guideline validation is not complete.
+
+The provisional amendment-mapping layer and `EffectiveRecord` concept are derived-layer designs documented in `working_docs/amendment_effective_strategy.md`. They are not part of source model `0.2.0`, are not represented in the current JSON Schema, and do not change the current validator.
 
 The files `structured_data/pilots/m10_phase2_table_pressure.json` and `structured_data/pilots/m10_phase2_reference_condition_pressure.json` are reviewed structural probes for model pressure testing. They should later be retired or absorbed if the same leaf sections are replaced by fuller canonical bundles.
 
