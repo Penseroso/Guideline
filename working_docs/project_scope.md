@@ -22,7 +22,7 @@ The current structured pilot document remains ICH M10, with the source PDF at `G
 
 The files `structured_data/pilots/m10_phase2_table_pressure.json` and `structured_data/pilots/m10_phase2_reference_condition_pressure.json` are reviewed structural probes, not fuller canonical bundles for their leaf sections. They should later be retired or absorbed if those same leaf sections are replaced by fuller canonical bundles.
 
-Phase 3 has started. Module 3.0 foundation is complete. Module 3.1 S6 Parent-Addendum pilot scope selection is approved after repository review. The selected scope is documented in `working_docs/pilot_scope_S6_R1.md`. S6 cross-guideline validation is not complete, and no S6 structured JSON pilot has been created.
+Phase 3 has started. Module 3.0 foundation is complete. Module 3.1 S6 Parent-Addendum pilot scope selection is approved after repository review. Module 3.2 source-layer pilot is implemented pending repository review, with the selected scope documented in `working_docs/pilot_scope_S6_R1.md` and review notes in `working_docs/pilot_review_S6_R1.md`. S6 cross-guideline model validation is not yet complete.
 
 Source model `0.2.0` remains unchanged. Amendment mapping and `EffectiveRecord` are provisional derived-layer designs documented in `working_docs/amendment_effective_strategy.md`; they are not JSON Schema objects in the current model and remain unimplemented.
 
@@ -31,7 +31,7 @@ Source model `0.2.0` remains unchanged. Amendment mapping and `EffectiveRecord` 
 - Phase 0 - Foundation Alignment: align documentation, roles, terminology, and current status.
 - Phase 1 - M10 Pilot: create a limited reviewed JSON pilot from ICH M10 using the conceptual model.
 - Phase 2 - Data Contract and Validation: complete for the current M10 pilots and selected M10 structural pressure tests.
-- Phase 3 - S6 Foundation and Derived-Layer Strategy: started; Module 3.1 scope selection is approved after repository review, and Module 3.2 source-layer S6 pilot is not started.
+- Phase 3 - S6 Foundation and Derived-Layer Strategy: started; Module 3.2 source-layer S6 pilot is implemented pending repository review, and Modules 3.3 and later remain unstarted.
 
 ## Non-Goals
 
@@ -39,7 +39,7 @@ The following are outside the current scope unless explicitly requested:
 
 - Full-guideline extraction.
 - Full-guideline structured data creation.
-- S6 JSON pilot creation before the Phase 3 pilot scope is selected and approved.
+- Additional S6 JSON pilot creation outside the approved Module 3.2 scope.
 - Schema changes before an actual S6 pilot demonstrates a limitation.
 - Automated extraction script implementation.
 - Database, search, embedding, RAG, or web application implementation.
