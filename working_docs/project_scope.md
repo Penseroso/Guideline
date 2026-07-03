@@ -22,16 +22,16 @@ The current structured pilot document remains ICH M10, with the source PDF at `G
 
 The files `structured_data/pilots/m10_phase2_table_pressure.json` and `structured_data/pilots/m10_phase2_reference_condition_pressure.json` are reviewed structural probes, not fuller canonical bundles for their leaf sections. They should later be retired or absorbed if those same leaf sections are replaced by fuller canonical bundles.
 
-Phase 3 has started. Module 3.0 is the current scope: onboarding the local S6(R1) PDF, assessing its source structure, and defining the baseline strategy for separate source, amendment-mapping, and current effective-state layers. S6 cross-guideline validation is not complete, and no S6 structured JSON pilot has been created.
+Phase 3 has started. Module 3.0 foundation is complete. Module 3.1 S6 Parent-Addendum pilot scope selection is complete pending repository review. The selected scope is documented in `working_docs/pilot_scope_S6_R1.md`. S6 cross-guideline validation is not complete, and no S6 structured JSON pilot has been created.
 
-Source model `0.2.0` remains unchanged. Amendment mapping and `EffectiveRecord` are provisional derived-layer designs documented in `working_docs/amendment_effective_strategy.md`; they are not JSON Schema objects in the current model.
+Source model `0.2.0` remains unchanged. Amendment mapping and `EffectiveRecord` are provisional derived-layer designs documented in `working_docs/amendment_effective_strategy.md`; they are not JSON Schema objects in the current model and remain unimplemented.
 
 ## Project Phases
 
 - Phase 0 - Foundation Alignment: align documentation, roles, terminology, and current status.
 - Phase 1 - M10 Pilot: create a limited reviewed JSON pilot from ICH M10 using the conceptual model.
 - Phase 2 - Data Contract and Validation: complete for the current M10 pilots and selected M10 structural pressure tests.
-- Phase 3 - S6 Foundation and Derived-Layer Strategy: started; Module 3.0 is current, with S6 foundation and architecture work only.
+- Phase 3 - S6 Foundation and Derived-Layer Strategy: started; Module 3.1 scope selection is complete pending repository review, and Module 3.2 source-layer S6 pilot is not started.
 
 ## Non-Goals
 
