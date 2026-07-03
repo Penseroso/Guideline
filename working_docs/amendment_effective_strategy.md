@@ -17,13 +17,17 @@ The source layer preserves official source text and provenance.
 - Preserve Parent and Addendum source text independently.
 - Never overwrite or rewrite Parent records with Addendum wording.
 - Maintain exact Part, section, source text, and PDF provenance.
-- For an integrated S6(R1) PDF, use one physical `Document`.
+- For an integrated package, use one physical current `Document`.
 - Use Part-aware IDs because numbering may restart:
   - `ich_s6_r1.sec.part1...`
   - `ich_s6_r1.sec.part2...`
   - equivalent Part-aware `SourceUnit` IDs.
 - Treat source cross-references as source records, not amendment mappings.
 - Treat Korean normalized text as source-preserving normalization only when it is added to reviewed source-derived semantic records.
+
+## Source precedence rule
+
+Use official consolidated text when an official textually consolidated edition is available. Otherwise, derive the effective state from reviewed Parent-Addendum mappings. Never silently treat an integrated package as textually consolidated.
 
 ## Amendment layer
 
@@ -68,14 +72,39 @@ Rules:
 
 ## Source-availability scenarios
 
-### Integrated Parent and Addendum PDF
+### Integrated package
 
-Use one physical `Document` for the immutable PDF. Preserve Parent and Addendum source units separately through Part-aware sections, Part-aware source-unit IDs, printed page labels, and zero-based PDF page indexes. Amendment mappings and effective-state records are derived later and must reference the preserved source records.
+An integrated package is a single official PDF that contains Parent and Addendum as separate Parts, but the Addendum changes are not incorporated directly into the Parent body text.
+
+Rules:
+
+- Use one physical current `Document`.
+- Preserve separate Part, Section, and `SourceUnit` provenance.
+- Require amendment mappings to relate applicable Addendum records to Parent records.
+- Derive reviewed effective state from applicable Parent and Addendum records.
+
+The local `Guideline Files/ICH S6.pdf` is classified as an integrated package.
+
+### Textually consolidated edition
+
+A textually consolidated edition is an official edition that incorporates amendment wording directly into the operative body text.
+
+Rules:
+
+- Designate the consolidated edition as the canonical current source.
+- Retain Parent and standalone Addendum documents as historical or supporting sources.
+- Create current source records directly from the consolidated text.
+- Do not generate duplicate canonical semantic records by re-synthesizing Parent and Addendum.
+- Amendment mappings may remain for history and change explanation.
 
 ### Separate Parent and Addendum PDFs
 
 Use separate physical `Document` records for each immutable PDF. Preserve each source independently with its own checksum, source file path, page indexes, printed page labels, and section IDs. Amendment mappings connect records across the two documents and must not collapse their source provenance.
 
+When no official textually consolidated edition is available, reviewed effective state is derived from reviewed Parent-Addendum mappings.
+
 ### Parent, Addendum, and official consolidated edition all available
 
-Preserve each physical source as its own `Document`. Treat the official consolidated edition as a source document with its own provenance, not as a replacement for Parent or Addendum records. Effective-state synthesis may use the consolidated edition as contributing evidence only when its source role and edition context are explicit. Conflicts between consolidated wording, Parent records, and Addendum mappings require review before a reviewed effective state is created.
+Preserve each physical source as its own `Document`. Designate the official textually consolidated edition as the canonical current source and create current source records directly from its text. Retain Parent and standalone Addendum documents as historical or supporting sources, and use amendment mappings for history and change explanation rather than generating duplicate canonical semantic records by re-synthesizing Parent and Addendum.
+
+Conflicts between consolidated wording, Parent records, and Addendum mappings require review before historical mappings or explanatory notes are marked reviewed.

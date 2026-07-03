@@ -20,9 +20,13 @@
 - Addendum incorporation statement: incorporated at the end of June 2011
 - Document history states that the Addendum was incorporated into the parent Guideline, which is now renamed `S6(R1)`.
 
-## Integrated Parent and Addendum status
+## Source form classification
 
-The local PDF is an integrated S6(R1) PDF containing both the Parent Guideline and the Addendum. It should be represented as one physical `Document` because there is one immutable source file, while preserving separate Part provenance for Parent and Addendum source records.
+The local PDF is an integrated package: one official PDF contains the Parent Guideline and Addendum as separate Parts, but the Addendum changes are not incorporated directly into the Parent body text.
+
+It should be represented as one physical current `Document` because there is one immutable source file, while preserving separate Part, Section, and `SourceUnit` provenance for Parent and Addendum source records. Amendment mappings remain required, and reviewed effective state should be derived from applicable Parent and Addendum records.
+
+Do not treat this local PDF as a textually consolidated edition. If an official textually consolidated edition becomes available later, that consolidated edition should be designated as the canonical current source; Parent and standalone Addendum records should be retained as historical or supporting sources.
 
 ## Part boundaries and numbering risks
 
@@ -88,7 +92,8 @@ Observed issues:
 Model `0.2.0` should be retained for the first S6 source-layer pilot, but S6(R1) is likely to pressure the workflow in these areas:
 
 - Part-aware source identity because Parent and Addendum numbering restarts.
-- Distinguishing one physical `Document` from two logical source parts.
+- Distinguishing an integrated package from a textually consolidated edition.
+- Distinguishing one physical current `Document` from two logical source parts.
 - Preserving source records independently from later amendment and effective-state derived layers.
 - Separating source cross-references from reviewed amendment mappings.
 - Handling dense applicability conditions involving species, pharmacological relevance, product class, clinical use, and development stage.
