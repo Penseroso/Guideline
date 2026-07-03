@@ -12,12 +12,12 @@ This repository builds a traceable structured-data archive for regulatory guidel
 - Phase 2 implementation is complete for the current M10 pilots: model `0.2.0`, JSON Schema, reusable validator, and migrated pilot files validate with `npm run validate:pilots`.
 - Selected M10 structural pressure testing is complete, and model `0.2.0` is retained.
 - The files `structured_data/pilots/m10_phase2_table_pressure.json` and `structured_data/pilots/m10_phase2_reference_condition_pressure.json` are reviewed structural probes. They should later be retired or absorbed if the same leaf sections are replaced by fuller canonical bundles.
-- Phase 3 has started. Module 3.0 is the current scope: S6(R1) PDF assessment and addendum/effective-state architecture only.
+- Phase 3 has started. Module 3.0 foundation is complete, and Module 3.1 S6 Parent-Addendum pilot scope selection is approved after repository review.
 - The S6(R1) source PDF exists at `Guideline Files/ICH S6.pdf`, with assessment at `working_docs/pdf_assessment_S6_R1.md`.
 - S6 cross-guideline validation is not complete.
 - Source model `0.2.0` remains unchanged.
-- Amendment mapping and `EffectiveRecord` are provisional derived-layer designs, not JSON Schema objects.
-- S6 JSON pilot, schema changes, full extraction, database, search, embeddings, RAG, web application, and regulatory decision automation are not started.
+- Amendment mapping and `EffectiveRecord` are provisional derived-layer designs, not JSON Schema objects, and remain unimplemented.
+- S6 structured JSON, schema changes, full extraction, database, search, embeddings, RAG, web application, and regulatory decision automation are not started.
 
 ## Repository Map
 
@@ -35,6 +35,7 @@ This repository builds a traceable structured-data archive for regulatory guidel
 - `working_docs/pdf_assessment_M10.md`: technical assessment of the ICH M10 PDF and extraction risks.
 - `working_docs/pdf_assessment_S6_R1.md`: technical assessment of the local ICH S6(R1) PDF and extraction risks.
 - `working_docs/phase3_plan.md`: Phase 3 module plan.
+- `working_docs/pilot_scope_S6_R1.md`: selected S6(R1) Parent-Addendum pilot scope for Module 3.2, approved after repository review.
 - `working_docs/amendment_effective_strategy.md`: provisional derived-layer strategy for Parent-Addendum mappings and effective-state records.
 - `working_docs/pilot_review_M10.md`: completed pilot review and Phase 2 migration notes for M10 sections `3.2.5.2` and `6.1`.
 - `working_docs/review_log.md`: human review log template and completed review records.
