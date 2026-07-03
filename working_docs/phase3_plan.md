@@ -10,8 +10,8 @@
 ## 3.1 pilot scope selection
 
 - Objective: Select a small reviewed S6 Parent-Addendum pilot scope before creating structured JSON.
-- Outputs: Scope selected, pending repository review. Pilot-scope note identifies exact Part, section, page, and rationale for the selected S6 sample.
-- Completion gate: Pending repository review. Human-reviewable scope is selected and does not exceed Part I `3.3 Animal Species/Model Selection`, Part II `2 Species Selection`, `2.1 General Principles`, `2.2 One or Two Species`, and directly referenced notes needed to preserve meaning.
+- Outputs: Complete. Pilot-scope note identifies exact Part, section, page, and rationale for the selected S6 sample.
+- Completion gate: Complete after repository review. Human-reviewable scope is selected and does not exceed Part I `3.3 Animal Species/Model Selection`, Part II `2 Species Selection`, `2.1 General Principles`, `2.2 One or Two Species`, and directly referenced notes needed to preserve meaning.
 - Non-goals: Full-guideline extraction, effective-state synthesis, schema changes, and regulatory or study-design conclusions.
 
 ## 3.2 source-layer S6 pilot using model `0.2.0`

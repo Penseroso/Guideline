@@ -2,7 +2,7 @@
 
 ## Status
 
-Selected, pending repository review.
+Selected and approved after repository review.
 
 This scope is for Phase 3 Module 3.1 only. It does not create S6 structured JSON, amendment mappings, or effective-state records.
 
@@ -46,7 +46,7 @@ This scope is for Phase 3 Module 3.1 only. It does not create S6 structured JSON
   - 3 heading source units for sections `2`, `2.1`, and `2.2`
   - 7 paragraph source units in `2.1`
   - 2 paragraph source units in `2.2`
-  - Cross-references to Part II `Note 1`, Part II `Note 2`, ICH S6 Guideline, and ICH S6 Guideline Section `3.3`
+  - Cross-references to Part II `Note 1`, Part II `Note 2`, and ICH S6 Guideline
 - Included notes needed for meaning:
   - Part II `NOTES`, `Note 1`
     - Physical PDF pages: zero-based indexes `19` and `20`
@@ -81,7 +81,7 @@ This scope is the smallest coherent S6(R1) sample that exercises the Phase 3 pre
 - Relevant-species conditions, including pharmacological activity, target binding, tissue specificity, functional activity, homologous molecules, transgenic models, animal models of disease, and ADC-specific species considerations.
 - One/two-species conditions, including short-term and longer-term study contexts and one-species justification scenarios.
 - Mixed semantic types, including requirements, recommendations, rationale or explanation, applicability conditions, exceptions, and cross-references.
-- Later amendment-mapping suitability, because Addendum section `2` directly addresses and references the Parent species-selection concepts in Part I section `3.3`.
+- Later amendment-mapping suitability, because Addendum section `2` addresses the same Parent species-selection concepts covered in Part I section `3.3`.
 
 ## Expected source-layer objects
 
@@ -106,8 +106,8 @@ Expected source-layer object types for Module 3.2:
 Provisional Part-aware ID pattern:
 
 - `document_id`: `ich_s6_r1`
-- Parent section IDs: `ich_s6_r1.sec.part1.3_3`, `ich_s6_r1.sec.part1.notes.note1`
-- Addendum section IDs: `ich_s6_r1.sec.part2.2`, `ich_s6_r1.sec.part2.2_1`, `ich_s6_r1.sec.part2.2_2`, `ich_s6_r1.sec.part2.notes.note1`, `ich_s6_r1.sec.part2.notes.note2`
+- Parent section IDs: `ich_s6_r1.sec.part1.3_3`, `ich_s6_r1.sec.part1.notes`
+- Addendum section IDs: `ich_s6_r1.sec.part2.2`, `ich_s6_r1.sec.part2.2_1`, `ich_s6_r1.sec.part2.2_2`, `ich_s6_r1.sec.part2.notes`
 - Parent source-unit IDs: `ich_s6_r1.su.part1.3_3.001`
 - Addendum source-unit IDs: `ich_s6_r1.su.part2.2_1.001`
 - Note source-unit IDs: `ich_s6_r1.su.part1.notes.note1.001`, `ich_s6_r1.su.part2.notes.note1.001`
