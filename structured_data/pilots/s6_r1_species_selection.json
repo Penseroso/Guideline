@@ -277,7 +277,7 @@
       "unit_type": "heading",
       "unit_order": 1,
       "unit_order_status": "known",
-      "source_text": "2. Species Selection",
+      "source_text": "2. SPECIES SELECTION",
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
@@ -792,7 +792,7 @@
       "action": "may still be of some relevance",
       "object": "for assessing toxicity if comparable unintentional tissue cross-reactivity to humans is demonstrated",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.006",
@@ -810,25 +810,25 @@
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.007",
       "source_unit_ids": ["ich_s6_r1.su.part1.3_3.004"],
       "record_type": "recommendation",
-      "modality": "may",
+      "modality": "other",
       "original_modal_text": "may suffice",
       "subject": "One relevant species",
       "action": "may suffice",
       "object": "in certain justified cases",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.008",
       "source_unit_ids": ["ich_s6_r1.su.part1.3_3.004"],
       "record_type": "recommendation",
-      "modality": "may",
+      "modality": "other",
       "original_modal_text": "may be possible",
       "subject": "Use of only one species for subsequent long term toxicity studies",
       "action": "may be possible to justify",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.009",
@@ -888,7 +888,7 @@
       "action": "may be used",
       "object": "as an acceptable alternative to toxicity studies in normal animals",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.014",
