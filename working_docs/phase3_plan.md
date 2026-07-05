@@ -16,9 +16,9 @@
 
 ## 3.2 source-layer S6 pilot using model `0.2.0`
 
-- Objective: Implemented pending repository review. Create a small source-preserving S6 pilot bundle using existing model `0.2.0`.
-- Outputs: Part-aware S6 source-layer JSON pilot and review notes for model fit.
-- Completion gate: Pending repository review. Existing JSON Schema and validator pass for the pilot, with model-fit notes documented in `working_docs/pilot_review_S6_R1.md`.
+- Objective: Complete. Create a small source-preserving S6 pilot bundle using existing model `0.2.0`.
+- Outputs: Complete. Part-aware S6 source-layer JSON pilot and review notes for model fit.
+- Completion gate: Complete after repository review REV-004. Existing JSON Schema and validator pass for the pilot, source text verified against the original PDF, and model-fit notes documented in `working_docs/pilot_review_S6_R1.md`. Remaining `needs_review` items are confirmed as legitimate classification or model-limitation questions, not defects, and do not block this gate.
 - Non-goals: Amendment-relation objects, EffectiveRecord objects, model-version changes before evidence, and full S6 extraction.
 
 ## 3.3 amendment-relation prototype

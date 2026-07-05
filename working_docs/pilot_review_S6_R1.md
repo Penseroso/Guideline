@@ -1,6 +1,12 @@
 # Pilot Review: ICH S6(R1) Source-Layer Pilot
 
-Status: implemented, pending repository review.
+Status: implemented and reviewed. Repository review recorded as REV-004 in `working_docs/review_log.md`; Module 3.2 review gate satisfied.
+
+## Review corrections (REV-004)
+
+- Source-casing fidelity: heading source unit `ich_s6_r1.su.part2.2.001` was corrected from `2. Species Selection` to the source rendering `2. SPECIES SELECTION`. The normalized `Section.title` remains `Species Selection`.
+- Modality under DEC-017: `ich_s6_r1.kr.part1.3_3.007` (`may suffice`) and `ich_s6_r1.kr.part1.3_3.008` (`may be possible`) were corrected from `modality=may` to `modality=other`, because DEC-017 reserves `may` for permission or allowance and routes epistemic "may = might" wording to `other`.
+- Four Part I `3.3` items resolved to `review_status=reviewed`: `ich_s6_r1.kr.part1.3_3.005`, `.007`, `.008`, and `.013`. The permission `may be used` on `.013` correctly keeps `modality=may`.
 
 ## Structured scope
 
@@ -50,13 +56,9 @@ Source text was segmented by source paragraph. No selected table cells were pres
 
 ## Semantic classifications requiring review
 
-The following `KnowledgeRecord` objects are marked `needs_review` because recommendation, description, or modality classification is materially ambiguous:
+After REV-004, the following `KnowledgeRecord` objects remain `needs_review`. Their open question is the record-type treatment of non-modal evaluative wording (`appropriate`, `sufficient`, `justified`, `critical`, `prudent`, `recommended`, `not warranted`, `calls for`), which needs a classification decision before batch resolution:
 
-- `ich_s6_r1.kr.part1.3_3.005`
-- `ich_s6_r1.kr.part1.3_3.007`
-- `ich_s6_r1.kr.part1.3_3.008`
 - `ich_s6_r1.kr.part1.3_3.011`
-- `ich_s6_r1.kr.part1.3_3.013`
 - `ich_s6_r1.kr.part1.notes.002`
 - `ich_s6_r1.kr.part2.2_1.005`
 - `ich_s6_r1.kr.part2.2_1.008`
@@ -68,6 +70,8 @@ The following `KnowledgeRecord` objects are marked `needs_review` because recomm
 - `ich_s6_r1.kr.part2.2_2.005`
 - `ich_s6_r1.kr.part2.notes.006`
 - `ich_s6_r1.kr.part2.notes.011`
+
+REV-004 resolved four previously listed items to `reviewed`: `ich_s6_r1.kr.part1.3_3.005`, `.007`, `.008`, and `.013`.
 
 No `QuantitativeCriterion` objects are marked `needs_review`.
 
