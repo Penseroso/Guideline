@@ -1,0 +1,64 @@
+{
+  "artifact": {
+    "document_id": "test_doc",
+    "layer": "effective_state",
+    "derivation": "analyst-derived synthesis, not source text",
+    "provisional": true,
+    "not_a_source_bundle": true,
+    "schema_coverage": "none; fixture derived layer outside source schema",
+    "source_pilot_file": "test/fixtures/derived/minimal_source_bundle.json",
+    "amendment_mapping_file": "test/fixtures/derived/minimal_amendment_mappings.json",
+    "strategy_reference": "working_docs/amendment_effective_strategy.md",
+    "design_note": "working_docs/derived_layer_validator_module_3_5.md"
+  },
+  "effective_records": [
+    {
+      "effective_record_id": "test.eff.001",
+      "effective_status": "current",
+      "review_status": "reviewed",
+      "edition_context": {
+        "document_id": "test_doc",
+        "document_version_label": "Test version",
+        "source_model_version": "0.2.0",
+        "source_availability": "fixture",
+        "source_pilot_file": "test/fixtures/derived/minimal_source_bundle.json",
+        "amendment_mapping_file": "test/fixtures/derived/minimal_amendment_mappings.json",
+        "derived_layer_status": "provisional outside JSON Schema and validator"
+      },
+      "amendment_relation_ids": ["test.amend.001"],
+      "knowledge_record_ids": ["test.kr.parent.001", "test.kr.addendum.001"],
+      "condition_ids": ["test.cond.001"],
+      "quantitative_criterion_ids": ["test.qc.001"],
+      "cross_reference_ids": ["test.xref.001"],
+      "source_unit_ids": ["test.su.parent.001", "test.su.addendum.001"],
+      "effective_text_en": "Fixture effective text.",
+      "normalized_ko": null,
+      "synthesis_rationale": "Fixture synthesis rationale.",
+      "representation_limitations": []
+    },
+    {
+      "effective_record_id": "test.eff.mapping_independent",
+      "effective_status": "current",
+      "review_status": "reviewed",
+      "edition_context": {
+        "document_id": "test_doc",
+        "document_version_label": "Test version",
+        "source_model_version": "0.2.0",
+        "source_availability": "fixture",
+        "source_pilot_file": "test/fixtures/derived/minimal_source_bundle.json",
+        "amendment_mapping_file": "test/fixtures/derived/minimal_amendment_mappings.json",
+        "derived_layer_status": "provisional outside JSON Schema and validator"
+      },
+      "amendment_relation_ids": [],
+      "knowledge_record_ids": ["test.kr.addendum.001"],
+      "condition_ids": ["test.cond.001"],
+      "quantitative_criterion_ids": ["test.qc.001"],
+      "cross_reference_ids": [],
+      "source_unit_ids": ["test.su.addendum.001"],
+      "effective_text_en": "Fixture mapping-independent effective text.",
+      "normalized_ko": null,
+      "synthesis_rationale": "Fixture mapping-independent rationale.",
+      "representation_limitations": []
+    }
+  ]
+}
