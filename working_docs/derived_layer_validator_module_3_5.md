@@ -1,6 +1,6 @@
 # Derived-Layer Validator: Phase 3 Module 3.5
 
-Status: implemented pending repository review.
+Status: implemented and reviewed. Independent repository review completed in REV-010.
 
 This module adds automated validation for provisional S6 derived-layer artifacts without changing source model `0.2.0`, the source JSON Schema, source-bundle validation, or reviewed structured data.
 
@@ -63,4 +63,4 @@ Configured file paths are converted to repository-relative paths with `/` separa
 
 ## Review status
 
-Module 3.5 is implemented pending independent repository review. Do not mark it complete and do not add REV-010 until a later review task validates the implementation.
+Module 3.5 is complete after independent repository review REV-010. The review confirmed that the derived-layer validator covers the demonstrated Module 3.3-3.5 structural failure modes, implements and tests artifact/document identity consistency, preserves existing source-pilot and M10 validation behavior, and leaves model/schema decisions deferred to Module 3.6.

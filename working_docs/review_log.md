@@ -190,3 +190,32 @@ Use this document to record human review results after review is performed. Do n
 - Validation command: Focused EffectiveRecord review check; `npm.cmd test`; `npm.cmd run validate:pilots`; `git diff --check`; protected-file diff checks for `structured_data/pilots/s6_r1_species_selection.json` and `structured_data/derived/s6_r1_amendment_mappings.json`.
 - Follow-up owner: Future phase owner
 - Status: Resolved
+
+### REV-010: Phase 3 Module 3.5 Derived-Layer Validator Review
+
+- Date: 2026-07-06
+- Reviewer: Repository review
+- Scope reviewed: Independent review of the merged Module 3.5 derived-layer validator on `main`, including merge commit `a71bc9132aecceaa6e6f893deec0848f6d5770d5`; validator architecture, CLI behavior, exported functions, regression coverage, current S6 artifact compatibility, source-pilot validation compatibility, and Module 3.5 completion documentation.
+- Source document: Not applicable; this review covered validation code and reviewed structured artifacts rather than source-text extraction.
+- Sections or pages reviewed: Not applicable.
+- Files reviewed: `scripts/validate_derived.js`; `test/validate_derived.test.js`; `test/fixtures/derived/`; `package.json`; `working_docs/derived_layer_validator_module_3_5.md`; `working_docs/phase3_plan.md`; `working_docs/review_log.md`; `scripts/validate_structured_data.js`; `scripts/validate_pilots.js`; `structured_data/pilots/s6_r1_species_selection.json`; `structured_data/derived/s6_r1_amendment_mappings.json`; `structured_data/derived/s6_r1_effective_records.json`.
+- Validation architecture findings:
+  - The derived-layer validator remains separate from source-bundle and M10 validation. `scripts/validate_structured_data.js` and `scripts/validate_pilots.js` are unchanged, and `validate:pilots` still scans only `structured_data/pilots/`.
+  - No new dependency, source model change, or JSON Schema change is introduced.
+  - The validator exports reusable functions and provides a working CLI with exit code `0` for success, `1` for validation failure, and `2` for usage/configuration failure.
+  - Production validation does not hard-code S6 record counts or specific EffectiveRecord IDs, does not infer Addendum-only status, and does not impose an unapproved `effective_status` vocabulary.
+  - The derived-layer validator covers the demonstrated Module 3.3-3.5 structural failure modes, including duplicate IDs, missing or wrong-layer references, invalid relation/review statuses, reviewed mapping and contributor status consistency, mapping endpoint coverage, required provenance fields, provenance-graph closure, and the documented CrossReference representation-limitation exception.
+  - The five artifact/document identity checks are implemented: amendment `artifact.layer` must equal `amendment_mapping`; effective `artifact.layer` must equal `effective_state`; amendment and effective artifact `document_id` values must match; every `edition_context.document_id` must equal the effective artifact `document_id`; and every SourceUnit referenced by an EffectiveRecord must have the same `document_id` as that EffectiveRecord's `edition_context.document_id`.
+- Regression-test findings:
+  - `test/validate_derived.test.js` includes focused negative regression tests for demonstrated structural failure modes and for each of the five artifact/document identity rules.
+  - The current reviewed S6 source, amendment, and effective-state artifacts are included in a positive regression and pass without modification.
+  - CLI regression tests cover success, validation failure, usage failure, and unreadable configured file failure.
+- Compatibility findings:
+  - Current reviewed S6 derived artifacts pass `validate:derived` without modification: 4 amendment mappings and 4 EffectiveRecords.
+  - Existing source-pilot and M10 validation behavior remains unchanged: `validate:pilots` validates 5 pilot bundles, and the existing source-bundle validator tests continue to pass.
+  - No unintended changes were made to `structured_data/pilots/`, `structured_data/derived/`, `structured_data/schemas/guideline_bundle.schema.json`, `scripts/validate_structured_data.js`, `scripts/validate_pilots.js`, or `package-lock.json`.
+- Required corrections: None.
+- Unresolved items: None for Module 3.5. Remaining derived-layer model and schema decisions, including whether amendment mappings and EffectiveRecords become schema-backed or first-class model objects, remain deferred to Module 3.6.
+- Validation command: `npm test` attempted first but was blocked by the local PowerShell execution policy for `npm.ps1`; equivalent Windows shim commands were then run successfully: `npm.cmd test` (67/67 pass); `npm.cmd run validate:pilots` (Validated 5 pilot bundle(s)); `npm.cmd run validate:derived` (Validated 4 amendment mapping(s) and 4 EffectiveRecord(s)); `git diff --check` (clean). Additional protected-file diff checks confirmed no unintended changes to `structured_data/pilots/`, `structured_data/derived/`, `structured_data/schemas/guideline_bundle.schema.json`, `scripts/validate_structured_data.js`, `scripts/validate_pilots.js`, or `package-lock.json`.
+- Follow-up owner: Future Module 3.6 owner
+- Status: Resolved

@@ -38,9 +38,9 @@
 
 ## 3.5 validator and regression-test expansion
 
-- Objective: Implemented pending repository review. Expand validation only after source-layer, amendment, or effective-state prototype evidence shows what checks are needed.
-- Outputs: Derived-layer validator and regression tests for the reviewed S6 amendment-mapping and EffectiveRecord artifacts, documented in `working_docs/derived_layer_validator_module_3_5.md`.
-- Completion gate: Pending independent repository review. New checks must validate the demonstrated failure modes without weakening existing M10 validation; REV-010 and final completion are deferred to a later review task.
+- Objective: Complete. Expand validation only after source-layer, amendment, or effective-state prototype evidence shows what checks are needed.
+- Outputs: Complete. Derived-layer validator and regression tests for the reviewed S6 amendment-mapping and EffectiveRecord artifacts, documented in `working_docs/derived_layer_validator_module_3_5.md`.
+- Completion gate: Complete after REV-010. The derived validator and regression suite passed independent review; demonstrated failure modes and artifact/document identity consistency are covered; existing M10/source validation remains unchanged; model/schema decisions remain deferred to Module 3.6.
 - Non-goals: Speculative schema expansion, dependency additions without need, or unrelated refactoring.
 
 ## 3.6 model/workflow decision
