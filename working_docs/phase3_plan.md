@@ -31,9 +31,9 @@
 ## 3.4 current effective-state prototype
 
 - Prerequisite: Complete. S6(R1) evaluative-language record-type classifications are resolved (DEC-026, REV-006); all S6 pilot `KnowledgeRecord` objects are `reviewed`. The `amend.004` tissue-cross-reactivity determination is resolved to `narrows` and `reviewed` (DEC-027, REV-007). The `amend.003` no-relevant-species determination is resolved to `clarifies` and `reviewed` (DEC-028, REV-008). Addendum-only `EffectiveRecord` handling is defined (DEC-029): operative Addendum guidance with no meaningful Parent counterpart may be synthesized with full Addendum provenance and an empty amendment-relation ID array.
-- Objective: Unstarted. Prototype reviewed current effective-state records derived from applicable Parent and Addendum records.
-- Outputs: Provisional `EffectiveRecord` design notes and a small reviewed synthesis sample.
-- Completion gate: Each effective statement traces to all contributing source records and, where applicable, amendment-relation IDs; Addendum-only statements use an empty amendment-relation ID array, and unresolved conflicts block reviewed status.
+- Objective: Implemented pending repository review. Prototype current effective-state records derived from applicable Parent and Addendum records while keeping each EffectiveRecord at `review_status=needs_review` until independent review.
+- Outputs: Provisional `EffectiveRecord` design note (`working_docs/effective_state_prototype_S6_R1.md`) and a small initial synthesis sample (`structured_data/derived/s6_r1_effective_records.json`) outside source model `0.2.0`, JSON Schema, and the current validator.
+- Completion gate: Pending repository review. Initial implementation must keep every EffectiveRecord at `needs_review`, preserve traceability to all contributing source records and, where applicable, reviewed amendment-relation IDs, use an empty amendment-relation ID array for Addendum-only statements, and document representation limitations. A later repository-review task must verify the four EffectiveRecords against the source, apply any corrections, change accepted records to `reviewed`, add the review-log entry, and then mark Module 3.4 complete.
 - Non-goals: Verbatim source replacement, regulatory suitability conclusions, decision automation, or UI implementation.
 
 ## 3.5 validator and regression-test expansion
