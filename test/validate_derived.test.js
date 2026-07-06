@@ -20,6 +20,15 @@ function clone(value) {
   return JSON.parse(JSON.stringify(value));
 }
 
+
+function addOtherDocument(sourceBundle) {
+  sourceBundle.documents.push({
+    ...clone(sourceBundle.documents[0]),
+    document_id: "other_doc",
+    title: "Other Test Guideline"
+  });
+}
+
 function validateCopies(mutator) {
   const sourceBundle = clone(sourceFixture);
   const amendmentArtifact = clone(amendmentFixture);
@@ -69,6 +78,38 @@ test("current S6 derived artifacts pass", () => {
       effectiveFile: "structured_data/derived/s6_r1_effective_records.json"
     }
   }));
+});
+
+test("amendment artifact layer must be amendment_mapping", () => {
+  assertInvalid(validateCopies((source, amendments) => {
+    amendments.artifact.layer = "effective_state";
+  }), "minimal_amendment_mappings.json artifact.layer: must equal amendment_mapping; found effective_state");
+});
+
+test("effective artifact layer must be effective_state", () => {
+  assertInvalid(validateCopies((source, amendments, effective) => {
+    effective.artifact.layer = "amendment_mapping";
+  }), "minimal_effective_records.json artifact.layer: must equal effective_state; found amendment_mapping");
+});
+
+test("amendment and effective artifact document IDs must match", () => {
+  assertInvalid(validateCopies((source, amendments) => {
+    addOtherDocument(source);
+    amendments.artifact.document_id = "other_doc";
+  }), "minimal_effective_records.json artifact.document_id: must equal amendment artifact document_id other_doc; found test_doc");
+});
+
+test("EffectiveRecord edition_context document_id must match effective artifact document_id", () => {
+  assertInvalid(validateCopies((source, amendments, effective) => {
+    addOtherDocument(source);
+    effective.effective_records[0].edition_context.document_id = "other_doc";
+  }), "test.eff.001 edition_context.document_id: must equal effective artifact document_id test_doc; found other_doc");
+});
+
+test("EffectiveRecord SourceUnit document_id must match edition_context document_id", () => {
+  assertInvalid(validateCopies((source) => {
+    source.source_units[1].document_id = "other_doc";
+  }), "test.eff.001 source_unit_ids: SourceUnit test.su.addendum.001 document_id must equal edition_context.document_id test_doc; found other_doc");
 });
 
 test("duplicate mapping IDs fail", () => {

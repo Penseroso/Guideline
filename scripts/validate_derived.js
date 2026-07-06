@@ -165,6 +165,12 @@ function checkReviewStatus(errors, file, ownerId, status, field) {
   }
 }
 
+function expectedLayerForType(type) {
+  if (type === "amendment") return "amendment_mapping";
+  if (type === "effective") return "effective_state";
+  return null;
+}
+
 function validateArtifactMetadata({ errors, file, artifact, sourceIndexes, sourceFile, amendmentFile, type }) {
   if (!checkRequiredObject(errors, file, null, artifact, "artifact")) return;
 
@@ -188,6 +194,11 @@ function validateArtifactMetadata({ errors, file, artifact, sourceIndexes, sourc
     } else {
       checkRequiredNonEmptyString(errors, file, null, artifact, field, `artifact.${field}`);
     }
+  }
+
+  const expectedLayer = expectedLayerForType(type);
+  if (artifact.layer !== expectedLayer) {
+    addError(errors, file, null, "artifact.layer", `must equal ${expectedLayer}; found ${artifact.layer}`);
   }
 
   requireSourceRef(errors, file, sourceIndexes, artifact.document_id, "artifact.document_id", null, "documents");
@@ -295,11 +306,11 @@ function validateEffectiveRecords({ sourceBundle, effectiveArtifact, files, sour
 
   const seen = new Set();
   for (const record of effectiveArtifact.effective_records) {
-    validateEffectiveRecord({ sourceBundle, record, file, files, sourceIndexes, mappings, seen, errors });
+    validateEffectiveRecord({ sourceBundle, effectiveArtifact, record, file, files, sourceIndexes, mappings, seen, errors });
   }
 }
 
-function validateEffectiveRecord({ sourceBundle, record, file, files, sourceIndexes, mappings, seen, errors }) {
+function validateEffectiveRecord({ sourceBundle, effectiveArtifact, record, file, files, sourceIndexes, mappings, seen, errors }) {
   const id = record && record.effective_record_id;
   if (!isNonEmptyString(id)) {
     addError(errors, file, null, "effective_record_id", "is required and must be a non-empty string");
@@ -334,15 +345,16 @@ function validateEffectiveRecord({ sourceBundle, record, file, files, sourceInde
     }
   }
 
-  validateEditionContext({ sourceBundle, record, file, files, errors });
+  validateEditionContext({ sourceBundle, effectiveArtifact, record, file, files, errors });
 
   const resolved = validateEffectiveReferences({ record, file, sourceIndexes, mappings, errors });
   validateMappingCoverage({ record, file, mappings, errors });
   validateContributorReviewStatus({ record, file, resolved, errors });
+  validateSourceUnitDocumentConsistency({ record, file, resolved, errors });
   validateProvenanceGraph({ record, file, resolved, errors });
 }
 
-function validateEditionContext({ sourceBundle, record, file, files, errors }) {
+function validateEditionContext({ sourceBundle, effectiveArtifact, record, file, files, errors }) {
   const id = record.effective_record_id;
   if (!checkRequiredObject(errors, file, id, record.edition_context, "edition_context")) return;
   const edition = record.edition_context;
@@ -356,6 +368,11 @@ function validateEditionContext({ sourceBundle, record, file, files, errors }) {
     "derived_layer_status"
   ];
   for (const field of required) checkRequiredNonEmptyString(errors, file, id, edition, field, `edition_context.${field}`);
+
+  const artifactDocumentId = effectiveArtifact && effectiveArtifact.artifact && effectiveArtifact.artifact.document_id;
+  if (edition.document_id !== artifactDocumentId) {
+    addError(errors, file, id, "edition_context.document_id", `must equal effective artifact document_id ${artifactDocumentId}; found ${edition.document_id}`);
+  }
 
   const document = findDocument(sourceBundle, edition.document_id);
   if (!document) {
@@ -409,6 +426,16 @@ function validateEffectiveReferences({ record, file, sourceIndexes, mappings, er
   }
 
   return resolved;
+}
+
+function validateSourceUnitDocumentConsistency({ record, file, resolved, errors }) {
+  const id = record.effective_record_id;
+  const recordDocumentId = record.edition_context && record.edition_context.document_id;
+  for (const sourceUnit of resolved.source_units) {
+    if (sourceUnit.document_id !== recordDocumentId) {
+      addError(errors, file, id, "source_unit_ids", `SourceUnit ${sourceUnit.source_unit_id} document_id must equal edition_context.document_id ${recordDocumentId}; found ${sourceUnit.document_id}`);
+    }
+  }
 }
 
 function validateMappingCoverage({ record, file, mappings, errors }) {
@@ -505,6 +532,12 @@ function validateDerivedArtifacts({ sourceBundle, amendmentArtifact, effectiveAr
     sourceIndexes,
     errors
   });
+  const amendmentDocumentId = amendmentArtifact && amendmentArtifact.artifact && amendmentArtifact.artifact.document_id;
+  const effectiveDocumentId = effectiveArtifact && effectiveArtifact.artifact && effectiveArtifact.artifact.document_id;
+  if (amendmentDocumentId !== effectiveDocumentId) {
+    addError(errors, normalizedFiles.effectiveFile, null, "artifact.document_id", `must equal amendment artifact document_id ${amendmentDocumentId}; found ${effectiveDocumentId}`);
+  }
+
   validateEffectiveRecords({
     sourceBundle: sourceBundle || {},
     effectiveArtifact: effectiveArtifact || {},
