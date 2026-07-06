@@ -89,3 +89,24 @@ Use this document to record human review results after review is performed. Do n
 - Validation command: `npm run validate:pilots` (Validated 5 pilot bundle(s)); `npm test` (17/17 pass); `git diff --check` (clean). `ajv` was installed from `package.json` before running; `package-lock.json` left unchanged.
 - Follow-up owner: Future phase owner
 - Status: Resolved
+
+### REV-005: Phase 3 Module 3.3 ICH S6(R1) Amendment-Relation Prototype Review
+
+- Date: 2026-07-06
+- Reviewer: Repository review
+- Scope reviewed: Module 3.3 amendment-relation prototype; endpoint traceability, source-faithfulness of each relation-type assignment against the source text, analyst-derived marking, source-layer immutability, and placement outside the source JSON Schema/validator.
+- Source document: `Guideline Files/ICH S6.pdf` (SHA-256 `05C41D25575259D9C931FCAD33A8227089A8B2F704C0922C0B5F7F411D812E22`), via the REV-004 source records in `structured_data/pilots/s6_r1_species_selection.json`.
+- Sections or pages reviewed: Part I `3.3` (`kr.part1.3_3.002`, `.003`, `.004`, `.006`, `.007`, `.010`) and Part II `2.1`/`2.2` (`kr.part2.2_1.001`, `.002`, `.003`, `.007`, `.008`, `.009`; `kr.part2.2_2.001`, `.002`, `.004`, `.005`).
+- Files reviewed: `structured_data/derived/s6_r1_amendment_mappings.json`; `working_docs/amendment_prototype_S6_R1.md`; `working_docs/amendment_effective_strategy.md`; `working_docs/phase3_plan.md`.
+- Findings:
+  - All four mappings trace to existing source `KnowledgeRecord` IDs (16 endpoints, 0 unresolved) and use only the strategy relation-type vocabulary. Each is explicitly marked analyst-derived. The source layer (`s6_r1_species_selection.json`) is unchanged.
+  - Relation assignments are source-faithful: `amend.001` `clarifies` (Part II 2.1 explains how relevancy is determined without changing the Part I 3.3 definition) and `amend.002` `narrows` (Part II 2.2 adds the "two non-rodent species are not appropriate" restriction, limiting the general two-species expectation) are clearly supported and are set to `review_status=reviewed`.
+  - Placement under `structured_data/derived/`, outside `structured_data/pilots/`, correctly keeps the artifact out of the source-bundle validation set (DEC-025); `validate:pilots` still reports exactly 5 bundles.
+- Required corrections: None. No source record or model change was needed.
+- Unresolved items (confirmed as legitimate; do not block Module 3.3):
+  - `amend.003` (`supplements` vs `clarifies`) remains `needs_review` as a genuine relation-vocabulary boundary case, deferred to the Module 3.6 vocabulary decision.
+  - `amend.004` (`modifies` vs `conflicts_with`) remains `needs_review` because the choice is consequential: a `conflicts_with` reading would block a reviewed effective state for the tissue-cross-reactivity pair (Part I `3_3.004` vs Part II `2_1.007`/`.008`). This must be settled, ideally with domain input, before Module 3.4 effective-state synthesis treats the pair as reviewed.
+  - Vocabulary gap confirmed: new Addendum scope with no Parent record (ADC content, `kr.part2.2_1.014` and Part II Note 2) has no fitting relation type; recorded for the Module 3.6 model decision.
+- Validation command: `npm run validate:pilots` (Validated 5 pilot bundle(s)); `npm test` (17/17 pass); endpoint ID-resolution check (16 endpoints, 0 unresolved, 0 relation types outside vocabulary); `git diff --check` (clean).
+- Follow-up owner: Future phase owner
+- Status: Resolved
