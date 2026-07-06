@@ -110,3 +110,25 @@ Use this document to record human review results after review is performed. Do n
 - Validation command: `npm run validate:pilots` (Validated 5 pilot bundle(s)); `npm test` (17/17 pass); endpoint ID-resolution check (16 endpoints, 0 unresolved, 0 relation types outside vocabulary); `git diff --check` (clean).
 - Follow-up owner: Future phase owner
 - Status: Resolved
+
+### REV-006: Phase 3 ICH S6(R1) Evaluative-Language Classification Audit
+
+- Date: 2026-07-06
+- Reviewer: Repository review
+- Scope reviewed: Record-type and modality classification of fourteen S6(R1) `KnowledgeRecord` objects — the twelve evaluative-language records left `needs_review` after REV-004 plus two already-reviewed records re-audited for consistency (`ich_s6_r1.kr.part2.2_1.002`, `ich_s6_r1.kr.part2.2_1.006`). This is a prerequisite review for Module 3.4.
+- Source document: `Guideline Files/ICH S6.pdf` (SHA-256 `05C41D25575259D9C931FCAD33A8227089A8B2F704C0922C0B5F7F411D812E22`).
+- Sections or pages reviewed: Part I `3.3` and `Note 1`; Part II `2.1`, `2.2`, and `Note 1` — the source units already reproduced in the REV-004 pilot.
+- Files reviewed: `structured_data/pilots/s6_r1_species_selection.json`; `working_docs/schema.md`; `working_docs/decisions.md`; `working_docs/pilot_review_S6_R1.md`.
+- Findings:
+  - Applied the DEC-026 rule: `record_type=recommendation` when a statement determines selection, allowance, exclusion, necessity, sufficiency, justification, or appropriateness of a regulatory action, study, method, or evidence; `record_type=description` only for information value, function, capability, or factual characteristics. Non-enum evaluative wording kept as `modality=other` with exact `original_modal_text`, not converted to `must`/`should`/`may`.
+  - All fourteen audited records resolve to `record_type=recommendation` and `review_status=reviewed`. No `KnowledgeRecord` in the pilot remains `needs_review`.
+- Required corrections (applied):
+  - `description` → `recommendation`: `ich_s6_r1.kr.part1.notes.002`, `ich_s6_r1.kr.part2.2_1.002`, `ich_s6_r1.kr.part2.2_1.006`, `ich_s6_r1.kr.part2.2_1.008`, `ich_s6_r1.kr.part2.2_2.005`.
+  - `ich_s6_r1.kr.part2.2_2.005` also: `modality=none` → `modality=other`, `original_modal_text=null` → `"is justified"`.
+  - The remaining nine audited records were already `recommendation`; their `record_type`, `modality`, and source wording were preserved and `review_status` set to `reviewed`.
+- Unresolved items:
+  - `ich_s6_r1.cond.part2.notes.001` (Condition) and four `CrossReference` objects (`xref.part1.3_3.001`, `xref.part2.2_1.001`, `.004`, `.005`) remain `needs_review` from REV-004; they are out of scope for this evaluative-language audit.
+  - Amendment mappings `amend.003` and `amend.004` remain `needs_review` from REV-005 and were not touched.
+- Validation command: `npm run validate:pilots` (Validated 5 pilot bundle(s)); `npm test` (17/17 pass); scripted check confirming exactly the fourteen target records changed, only within `record_type`/`modality`/`original_modal_text`/`review_status`, with no other `KnowledgeRecord` altered; `git diff --check` (clean).
+- Follow-up owner: Future phase owner
+- Status: Resolved

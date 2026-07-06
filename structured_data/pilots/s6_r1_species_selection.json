@@ -864,7 +864,7 @@
       "action": "may still be prudent",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.012",
@@ -917,14 +917,14 @@
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.notes.002",
       "source_unit_ids": ["ich_s6_r1.su.part1.notes.note1.001"],
-      "record_type": "description",
+      "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "is critical",
       "subject": "The collection of concurrent control and baseline data",
       "action": "is critical",
       "object": "to optimise study design",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.001",
@@ -941,7 +941,7 @@
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.002",
       "source_unit_ids": ["ich_s6_r1.su.part2.2_1.002"],
-      "record_type": "description",
+      "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "can be",
       "subject": "Comparisons of target sequence homology between species",
@@ -984,12 +984,12 @@
       "action": "provide confidence",
       "object": "that a model is capable of demonstrating potentially adverse consequences of target modulation",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.006",
       "source_unit_ids": ["ich_s6_r1.su.part2.2_1.004"],
-      "record_type": "description",
+      "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "can be sufficient",
       "subject": "Binding affinity and activity in cell-based systems",
@@ -1013,14 +1013,14 @@
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.008",
       "source_unit_ids": ["ich_s6_r1.su.part2.2_1.005"],
-      "record_type": "description",
+      "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "can be used",
       "subject": "Tissue cross-reactivity (TCR) studies",
       "action": "can be used",
       "object": "to guide selection of toxicology species by comparison of tissue binding profiles in human and those animal tissues where target binding is expected",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.009",
@@ -1044,7 +1044,7 @@
       "action": "can be considered",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.011",
@@ -1056,7 +1056,7 @@
       "action": "are not appropriate",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.012",
@@ -1068,7 +1068,7 @@
       "action": "can be included",
       "object": "to provide information on potential target-associated safety aspects",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.013",
@@ -1116,7 +1116,7 @@
       "action": "are usually considered sufficient",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_2.003",
@@ -1140,19 +1140,19 @@
       "action": "are not appropriate",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_2.005",
       "source_unit_ids": ["ich_s6_r1.su.part2.2_2.003"],
-      "record_type": "description",
-      "modality": "none",
-      "original_modal_text": null,
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is justified",
       "subject": "The use of one species for all general toxicity studies",
       "action": "is justified",
       "object": "when the clinical candidate is pharmacologically active in only one species",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_2.006",
@@ -1248,7 +1248,7 @@
       "action": "is not needed",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.007",
@@ -1320,7 +1320,7 @@
       "action": "calls for",
       "object": "an approach to species selection similar to that used for a new chemical entity on a case-by case approach",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.012",

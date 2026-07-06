@@ -30,6 +30,7 @@
 
 ## 3.4 current effective-state prototype
 
+- Prerequisite: Complete. S6(R1) evaluative-language record-type classifications are resolved (DEC-026, REV-006); all S6 pilot `KnowledgeRecord` objects are `reviewed`. The `amend.004` `modifies` vs `conflicts_with` determination (REV-005) remains open and must be settled before this module treats the tissue-cross-reactivity pair as reviewed.
 - Objective: Unstarted. Prototype reviewed current effective-state records derived from applicable Parent and Addendum records.
 - Outputs: Provisional `EffectiveRecord` design notes and a small reviewed synthesis sample.
 - Completion gate: Each effective statement traces to all contributing source records and amendment-relation IDs, with unresolved conflicts blocking reviewed status.

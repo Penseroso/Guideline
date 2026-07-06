@@ -13,6 +13,7 @@ This repository builds a traceable structured-data archive for regulatory guidel
 - Selected M10 structural pressure testing is complete, and model `0.2.0` is retained.
 - The files `structured_data/pilots/m10_phase2_table_pressure.json` and `structured_data/pilots/m10_phase2_reference_condition_pressure.json` are reviewed structural probes. They should later be retired or absorbed if the same leaf sections are replaced by fuller canonical bundles.
 - Phase 3 has started. Module 3.0 foundation is complete, Module 3.1 S6 Parent-Addendum pilot scope selection is approved after repository review, Module 3.2 source-layer pilot is implemented and reviewed after repository review REV-004, and Module 3.3 amendment-relation prototype is implemented and reviewed after repository review REV-005.
+- S6(R1) evaluative-language record-type classifications are resolved under decision DEC-026 and repository review REV-006; all `KnowledgeRecord` objects in the S6 source pilot are `reviewed`.
 - The S6(R1) source PDF exists at `Guideline Files/ICH S6.pdf`, with assessment at `working_docs/pdf_assessment_S6_R1.md`.
 - S6 cross-guideline model validation is not yet complete.
 - Source model `0.2.0` remains unchanged.
