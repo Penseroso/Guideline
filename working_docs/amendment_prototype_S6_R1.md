@@ -1,6 +1,6 @@
 # Amendment-Relation Prototype: ICH S6(R1) Species Selection
 
-Status: implemented, pending repository review (REV-005).
+Status: implemented and reviewed. Repository review recorded as REV-005 in `working_docs/review_log.md`; Module 3.3 review gate satisfied.
 
 This is a Phase 3 Module 3.3 prototype. It creates a small reviewed sample of analyst-derived mappings between Addendum (Part II §2.x) and Parent (Part I §3.3) `KnowledgeRecord` objects, to test the relation-type vocabulary in `working_docs/amendment_effective_strategy.md` against the real REV-004 source records.
 
@@ -36,7 +36,15 @@ Each mapping is many-to-many at record level: it relates one or more Addendum re
 - **Relation vocabulary coverage.** The species-selection scope exercised four types: `clarifies`, `narrows`, `supplements`, `modifies`. Untested by this scope: `broadens`, `replaces`, `supersedes`, `conflicts_with`. No new relation type was needed for the mapped records.
 - **Cardinality is many-to-many.** Every sampled mapping relates multiple Addendum records to one or more Parent records. A future amendment-mapping schema (Module 3.5) must support record-level many-to-many relations, not 1:1 only.
 - **Boundary gap: new Addendum scope with no Parent record.** Addendum ADC content — `kr.part2.2_1.014` (ADC species selection follows the same general principles) and Part II Note 2 records (`kr.part2.notes.009`–`.013`, `.015`) — introduces genuinely new scope that has no Part I §3.3 counterpart. None of the eight relation types describes "new scope, no Parent record." This is intentionally left unmapped here and recorded as a vocabulary gap for the Module 3.6 model decision, not forced into an ill-fitting relation.
-- **Relation ambiguity is expected.** `amend.003` (supplements vs clarifies) and `amend.004` (modifies vs conflicts_with) are genuine reviewer judgment calls. Every mapping is marked `review_status=needs_review` pending REV-005.
+- **Relation ambiguity is expected.** `amend.003` (supplements vs clarifies) and `amend.004` (modifies vs conflicts_with) are genuine reviewer judgment calls that REV-005 left `needs_review` (see below).
+
+## Repository review (REV-005)
+
+REV-005 verified all four mappings against the Part I §3.3 and Part II §2.1–2.2 source text, confirmed every endpoint resolves to an existing source `KnowledgeRecord`, and confirmed the source layer was not modified.
+
+- `amend.001` (`clarifies`) and `amend.002` (`narrows`) are clearly source-supported and are set to `review_status=reviewed`.
+- `amend.003` (`supplements` vs `clarifies`) remains `needs_review` as a genuine relation-vocabulary boundary case, deferred to the Module 3.6 vocabulary decision.
+- `amend.004` (`modifies` vs `conflicts_with`) remains `needs_review` because the determination has downstream effect: a `conflicts_with` reading would block a reviewed effective state for the tissue-cross-reactivity pair. This must be settled, ideally with domain input, before Module 3.4 effective-state synthesis treats this pair as reviewed.
 
 ## Verification
 

@@ -26,7 +26,7 @@
       "mapped_scope": "How a pharmacologically relevant species is determined.",
       "analyst_rationale": "Part I 3.3 defines a relevant species (pharmacological activity via receptor/epitope) and states that a variety of techniques can identify one. Part II 2.1 explains how that determination is made: target sequence homology as a starting point, in vitro binding/occupancy comparisons, and functional-activity assessment. The Addendum records do not change the Parent definition; they explain and disambiguate the evidence used to satisfy it.",
       "derivation": "analyst-derived, not source text",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "mapping_id": "ich_s6_r1.amend.002",
@@ -44,7 +44,7 @@
       "mapped_scope": "Number of species for the general toxicology program.",
       "analyst_rationale": "Part I 3.3 states that safety evaluation programs should normally include two relevant species, with one sufficing in certain justified cases. Part II 2.2 constrains that general statement into specific conditions: both species for short-term studies when two relevant species exist, one species usually sufficient for longer-term studies, one species when the candidate is active in only one species, and an explicit restriction that studies in two non-rodent species are not appropriate. The two-non-rodent restriction and the duration-based split limit the applicability of the Parent's general two-species expectation, so the relation is narrows rather than a plain clarification.",
       "derivation": "analyst-derived, not source text",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "mapping_id": "ich_s6_r1.amend.003",

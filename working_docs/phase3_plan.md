@@ -23,9 +23,9 @@
 
 ## 3.3 amendment-relation prototype
 
-- Objective: Implemented pending repository review. Prototype reviewed mappings between Addendum and Parent `KnowledgeRecord` objects.
-- Outputs: Implemented. Provisional amendment-relation design note (`working_docs/amendment_prototype_S6_R1.md`) and a small mapping sample (`structured_data/derived/s6_r1_amendment_mappings.json`) referencing existing S6 source `KnowledgeRecord` IDs.
-- Completion gate: Pending repository review REV-005. Each mapping traces to existing source records, uses only the strategy relation-type vocabulary, and is clearly marked analyst-derived, not source text. Mappings are marked `needs_review` until REV-005.
+- Objective: Complete. Prototype reviewed mappings between Addendum and Parent `KnowledgeRecord` objects.
+- Outputs: Complete. Provisional amendment-relation design note (`working_docs/amendment_prototype_S6_R1.md`) and a small reviewed mapping sample (`structured_data/derived/s6_r1_amendment_mappings.json`) referencing existing S6 source `KnowledgeRecord` IDs.
+- Completion gate: Complete after repository review REV-005. Each mapping traces to existing source records, uses only the strategy relation-type vocabulary, and is clearly marked analyst-derived, not source text. `amend.001`/`amend.002` are `reviewed`; the two relation-boundary mappings (`amend.003`, `amend.004`) remain `needs_review` and are deferred to the Module 3.6 vocabulary decision, not blocking this gate.
 - Non-goals: Rewriting Parent records, creating effective-state records, automated amendment detection, or adding objects to the JSON Schema.
 
 ## 3.4 current effective-state prototype
