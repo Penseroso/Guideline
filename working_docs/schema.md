@@ -199,6 +199,13 @@ Modality assignment guidance:
 - Non-modal descriptive wording uses `modality=none` and `original_modal_text=null`.
 - Preserve the source wording in `original_modal_text` when `modality=other`.
 
+Record-type classification for evaluative language:
+
+- Use `record_type=recommendation` when the statement determines the selection, allowance, exclusion, necessity, sufficiency, justification, or appropriateness of a regulatory action, study, method, or evidence.
+- Use `record_type=description` only when the statement describes information value, function, capability, or factual characteristics without directing a regulatory choice.
+- `record_type` and `modality` remain independent: a statement can be a `recommendation` while its modality is `other`.
+- Preserve non-enum evaluative wording — for example `appropriate`, `sufficient`, `justified`, `critical`, `prudent`, `recommended`, `not warranted`, `there is no need`, and `calls for` — with `modality=other` and the exact wording in `original_modal_text`. Do not convert these expressions to `must`, `should`, or `may`.
+
 ### QuantitativeCriterion
 
 Represents a structured quantitative criterion derived from source text.

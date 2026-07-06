@@ -56,22 +56,19 @@ Source text was segmented by source paragraph. No selected table cells were pres
 
 ## Semantic classifications requiring review
 
-After REV-004, the following `KnowledgeRecord` objects remain `needs_review`. Their open question is the record-type treatment of non-modal evaluative wording (`appropriate`, `sufficient`, `justified`, `critical`, `prudent`, `recommended`, `not warranted`, `calls for`), which needs a classification decision before batch resolution:
+REV-004 resolved four items to `reviewed`: `ich_s6_r1.kr.part1.3_3.005`, `.007`, `.008`, and `.013`.
 
-- `ich_s6_r1.kr.part1.3_3.011`
-- `ich_s6_r1.kr.part1.notes.002`
-- `ich_s6_r1.kr.part2.2_1.005`
-- `ich_s6_r1.kr.part2.2_1.008`
-- `ich_s6_r1.kr.part2.2_1.010`
-- `ich_s6_r1.kr.part2.2_1.011`
-- `ich_s6_r1.kr.part2.2_1.012`
-- `ich_s6_r1.kr.part2.2_2.002`
-- `ich_s6_r1.kr.part2.2_2.004`
-- `ich_s6_r1.kr.part2.2_2.005`
-- `ich_s6_r1.kr.part2.notes.006`
-- `ich_s6_r1.kr.part2.notes.011`
+REV-006 audited the remaining twelve evaluative-language records plus two already-reviewed records (`ich_s6_r1.kr.part2.2_1.002`, `ich_s6_r1.kr.part2.2_1.006`) under the DEC-026 classification rule and set all fourteen to `review_status=reviewed`. All `KnowledgeRecord` objects in the pilot are now `reviewed`; none remain `needs_review`.
 
-REV-004 resolved four previously listed items to `reviewed`: `ich_s6_r1.kr.part1.3_3.005`, `.007`, `.008`, and `.013`.
+Record-type or modality changes made by REV-006:
+
+- `ich_s6_r1.kr.part1.notes.002`: `description` → `recommendation` (collection of concurrent control and baseline data is `critical`).
+- `ich_s6_r1.kr.part2.2_1.002`: `description` → `recommendation` (sequence-homology comparison can be an `appropriate` starting point).
+- `ich_s6_r1.kr.part2.2_1.006`: `description` → `recommendation` (cell-based binding/activity can be `sufficient` to guide species selection).
+- `ich_s6_r1.kr.part2.2_1.008`: `description` → `recommendation` (TCR studies `can be used` to guide toxicology-species selection).
+- `ich_s6_r1.kr.part2.2_2.005`: `description` → `recommendation`, and `modality=none`/`original_modal_text=null` → `modality=other`/`original_modal_text="is justified"`.
+
+The remaining nine audited records were already `record_type=recommendation` with source-consistent modality and wording; REV-006 preserved those fields and set `review_status=reviewed`.
 
 No `QuantitativeCriterion` objects are marked `needs_review`.
 
