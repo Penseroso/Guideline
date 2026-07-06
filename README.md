@@ -12,18 +12,18 @@ This repository builds a traceable structured-data archive for regulatory guidel
 - Phase 2 implementation is complete for the current M10 pilots: model `0.2.0`, JSON Schema, reusable validator, and migrated pilot files validate with `npm run validate:pilots`.
 - Selected M10 structural pressure testing is complete, and model `0.2.0` is retained.
 - The files `structured_data/pilots/m10_phase2_table_pressure.json` and `structured_data/pilots/m10_phase2_reference_condition_pressure.json` are reviewed structural probes. They should later be retired or absorbed if the same leaf sections are replaced by fuller canonical bundles.
-- Phase 3 has started. Module 3.0 foundation is complete, Module 3.1 S6 Parent-Addendum pilot scope selection is approved after repository review, and Module 3.2 source-layer pilot is implemented and reviewed after repository review REV-004.
+- Phase 3 has started. Module 3.0 foundation is complete, Module 3.1 S6 Parent-Addendum pilot scope selection is approved after repository review, Module 3.2 source-layer pilot is implemented and reviewed after repository review REV-004, and Module 3.3 amendment-relation prototype is implemented pending repository review REV-005.
 - The S6(R1) source PDF exists at `Guideline Files/ICH S6.pdf`, with assessment at `working_docs/pdf_assessment_S6_R1.md`.
 - S6 cross-guideline model validation is not yet complete.
 - Source model `0.2.0` remains unchanged.
-- Amendment mapping and `EffectiveRecord` are provisional derived-layer designs, not JSON Schema objects, and remain unimplemented.
-- S6 amendment mappings, effective-state records, schema changes, full extraction, database, search, embeddings, RAG, web application, and regulatory decision automation are not started.
+- The Module 3.3 amendment-mapping prototype is a provisional derived-layer artifact under `structured_data/derived/`, outside the JSON Schema and validator; the `EffectiveRecord` effective-state layer remains an unimplemented derived-layer design.
+- S6 effective-state records, schema changes, full extraction, database, search, embeddings, RAG, web application, and regulatory decision automation are not started.
 
 ## Repository Map
 
 - `Guideline Files/`: immutable original guideline PDFs.
 - `working_docs/`: project scope, conceptual model, PDF assessments, decisions, and review logs.
-- `structured_data/`: machine-readable structured outputs and schemas.
+- `structured_data/`: machine-readable structured outputs and schemas; `structured_data/derived/` holds provisional derived-layer artifacts (amendment mappings) that are outside the source JSON Schema and validator.
 - `scripts/`: reproducible extraction and validation scripts.
 - `.agents/skills/`: future reusable workflows after validation.
 
@@ -38,6 +38,7 @@ This repository builds a traceable structured-data archive for regulatory guidel
 - `working_docs/pilot_scope_S6_R1.md`: selected S6(R1) Parent-Addendum pilot scope for Module 3.2, approved after repository review.
 - `working_docs/pilot_review_S6_R1.md`: implemented and reviewed S6(R1) source-layer pilot review notes; repository review recorded as REV-004.
 - `working_docs/amendment_effective_strategy.md`: provisional derived-layer strategy for Parent-Addendum mappings and effective-state records.
+- `working_docs/amendment_prototype_S6_R1.md`: implemented Module 3.3 amendment-relation prototype note, pending repository review REV-005; sample at `structured_data/derived/s6_r1_amendment_mappings.json`.
 - `working_docs/pilot_review_M10.md`: completed pilot review and Phase 2 migration notes for M10 sections `3.2.5.2` and `6.1`.
 - `working_docs/review_log.md`: human review log template and completed review records.
 - `AGENTS.md`: repository-wide operating rules for agents.

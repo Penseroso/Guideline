@@ -1,0 +1,79 @@
+{
+  "artifact": {
+    "document_id": "ich_s6_r1",
+    "layer": "amendment_mapping",
+    "derivation": "analyst-derived, not source text",
+    "provisional": true,
+    "not_a_source_bundle": true,
+    "schema_coverage": "none; amendment mappings are outside source model 0.2.0 and the current JSON Schema/validator (DEC-021, DEC-023, DEC-025)",
+    "source_pilot_file": "structured_data/pilots/s6_r1_species_selection.json",
+    "strategy_reference": "working_docs/amendment_effective_strategy.md",
+    "review_note": "Reviewed effective-state synthesis is NOT part of this artifact; see Module 3.4."
+  },
+  "amendment_mappings": [
+    {
+      "mapping_id": "ich_s6_r1.amend.001",
+      "addendum_knowledge_record_ids": [
+        "ich_s6_r1.kr.part2.2_1.001",
+        "ich_s6_r1.kr.part2.2_1.002",
+        "ich_s6_r1.kr.part2.2_1.003"
+      ],
+      "parent_knowledge_record_ids": [
+        "ich_s6_r1.kr.part1.3_3.002",
+        "ich_s6_r1.kr.part1.3_3.003"
+      ],
+      "relation_type": "clarifies",
+      "mapped_scope": "How a pharmacologically relevant species is determined.",
+      "analyst_rationale": "Part I 3.3 defines a relevant species (pharmacological activity via receptor/epitope) and states that a variety of techniques can identify one. Part II 2.1 explains how that determination is made: target sequence homology as a starting point, in vitro binding/occupancy comparisons, and functional-activity assessment. The Addendum records do not change the Parent definition; they explain and disambiguate the evidence used to satisfy it.",
+      "derivation": "analyst-derived, not source text",
+      "review_status": "needs_review"
+    },
+    {
+      "mapping_id": "ich_s6_r1.amend.002",
+      "addendum_knowledge_record_ids": [
+        "ich_s6_r1.kr.part2.2_2.001",
+        "ich_s6_r1.kr.part2.2_2.002",
+        "ich_s6_r1.kr.part2.2_2.004",
+        "ich_s6_r1.kr.part2.2_2.005"
+      ],
+      "parent_knowledge_record_ids": [
+        "ich_s6_r1.kr.part1.3_3.006",
+        "ich_s6_r1.kr.part1.3_3.007"
+      ],
+      "relation_type": "narrows",
+      "mapped_scope": "Number of species for the general toxicology program.",
+      "analyst_rationale": "Part I 3.3 states that safety evaluation programs should normally include two relevant species, with one sufficing in certain justified cases. Part II 2.2 constrains that general statement into specific conditions: both species for short-term studies when two relevant species exist, one species usually sufficient for longer-term studies, one species when the candidate is active in only one species, and an explicit restriction that studies in two non-rodent species are not appropriate. The two-non-rodent restriction and the duration-based split limit the applicability of the Parent's general two-species expectation, so the relation is narrows rather than a plain clarification.",
+      "derivation": "analyst-derived, not source text",
+      "review_status": "needs_review"
+    },
+    {
+      "mapping_id": "ich_s6_r1.amend.003",
+      "addendum_knowledge_record_ids": [
+        "ich_s6_r1.kr.part2.2_1.009"
+      ],
+      "parent_knowledge_record_ids": [
+        "ich_s6_r1.kr.part1.3_3.010"
+      ],
+      "relation_type": "supplements",
+      "mapped_scope": "Approach when no relevant species can be identified.",
+      "analyst_rationale": "Part I 3.3 states that when no relevant species exists, use of relevant transgenic animals or homologous proteins should be considered. Part II 2.1 restates this path and adds the orthologous-target framing (no interaction with the orthologous target in any species) as the trigger condition, explicitly citing the ICH S6 Guideline. The Addendum adds a related qualifying condition without changing the Parent recommendation, so the relation is supplements. A clarifies reading is also tenable and is noted for reviewer confirmation.",
+      "derivation": "analyst-derived, not source text",
+      "review_status": "needs_review"
+    },
+    {
+      "mapping_id": "ich_s6_r1.amend.004",
+      "addendum_knowledge_record_ids": [
+        "ich_s6_r1.kr.part2.2_1.007",
+        "ich_s6_r1.kr.part2.2_1.008"
+      ],
+      "parent_knowledge_record_ids": [
+        "ich_s6_r1.kr.part1.3_3.004"
+      ],
+      "relation_type": "modifies",
+      "mapped_scope": "Role of tissue cross-reactivity in species selection.",
+      "analyst_rationale": "Part I 3.3 treats a similar tissue cross-reactivity profile as part of what makes an animal species relevant for monoclonal antibodies. Part II 2.1 repositions tissue cross-reactivity in animal tissues as of limited value for species selection, usable only in specific cases where other approaches cannot demonstrate a pharmacologically relevant species. This changes how the Parent's tissue-cross-reactivity criterion should be understood for species selection, so the relation is modifies. It is not marked conflicts_with because the Addendum narrows the method's role rather than contradicting the Parent outright; a reviewer should confirm this boundary.",
+      "derivation": "analyst-derived, not source text",
+      "review_status": "needs_review"
+    }
+  ]
+}
