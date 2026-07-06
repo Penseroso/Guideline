@@ -1,0 +1,26 @@
+{
+  "artifact": {
+    "document_id": "test_doc",
+    "layer": "amendment_mapping",
+    "derivation": "analyst-derived, not source text",
+    "provisional": true,
+    "not_a_source_bundle": true,
+    "schema_coverage": "none; fixture derived layer outside source schema",
+    "source_pilot_file": "test/fixtures/derived/minimal_source_bundle.json",
+    "strategy_reference": "working_docs/amendment_effective_strategy.md"
+  },
+  "amendment_mappings": [
+    {
+      "mapping_id": "test.amend.001",
+      "addendum_knowledge_record_ids": ["test.kr.addendum.001"],
+      "parent_knowledge_record_ids": ["test.kr.parent.001"],
+      "relation_type": "clarifies",
+      "mapped_scope": "Test scope",
+      "analyst_rationale": "The addendum clarifies the parent record in this fixture.",
+      "derivation": "analyst-derived, not source text",
+      "contextual_cross_reference_ids": ["test.xref.001"],
+      "contextual_cross_reference_note": "Fixture contextual cross-reference.",
+      "review_status": "reviewed"
+    }
+  ]
+}
