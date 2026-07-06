@@ -1,6 +1,6 @@
 # Regulatory Guideline Archive
 
-This repository builds a traceable structured-data archive for regulatory guidelines. The current structured pilot source is ICH M10. Phase 3 is complete for the S6(R1) foundation, source-layer pilot, derived-layer prototypes, derived validator, and provisional derived contract boundary; Phase 4 Module 4.1 is implemented, pending independent repository review.
+This repository builds a traceable structured-data archive for regulatory guidelines. The current structured pilot source is ICH M10. Phase 3 is complete for the S6(R1) foundation, source-layer pilot, derived-layer prototypes, derived validator, and provisional derived contract boundary; Phase 4 Module 4.1 is complete after REV-012. Module 4.2 is not started and now eligible to begin.
 
 ## Current Status
 
@@ -17,7 +17,7 @@ This repository builds a traceable structured-data archive for regulatory guidel
 - The S6(R1) source PDF exists at `Guideline Files/ICH S6.pdf`, with assessment at `working_docs/pdf_assessment_S6_R1.md`.
 - Source model `0.2.0` remains unchanged.
 - The Module 3.3 amendment-mapping prototype and Module 3.4 effective-state prototype are frozen historical derived-layer artifacts under `structured_data/derived/`, outside the source JSON Schema and validated by the separate legacy derived-layer validator.
-- Derived schema scaffolding for contract `0.1.0` is implemented in Phase 4 Module 4.1 and pending independent repository review. The production derived validator is contract-manifest based; Phase 3 prototypes are regression references, not production migration inputs. The Phase 4 single-PDF engine, FDA/EMA production profiles, full extraction, database, search, embeddings, RAG, web application, and regulatory decision automation are not started.
+- Derived schema scaffolding for contract `0.1.0` is complete in Phase 4 Module 4.1 after REV-012; Module 4.2 is not started and now eligible to begin. The production derived validator is contract-manifest based, revalidates the supplied source bundle under source model `0.2.0` before derived validation, and keeps Phase 3 prototypes as regression references, not production migration inputs. The Phase 4 single-PDF engine, FDA/EMA production profiles, full extraction, database, search, embeddings, RAG, web application, and regulatory decision automation are not started.
 
 ## Repository Map
 
@@ -44,7 +44,7 @@ This repository builds a traceable structured-data archive for regulatory guidel
 - `working_docs/derived_contract_module_3_6.md`: implemented and reviewed Module 3.6 provisional derived contract decision note; repository review recorded as REV-011.
 - `working_docs/phase4_handoff_plan.md`: historical Phase 4 single-PDF engine handoff document; superseded as an executable specification by `working_docs/phase4_plan.md` and retained as reference.
 - `working_docs/phase4_plan.md`: concretized Phase 4 module specification (modules 4.1-4.12) for the regulator-neutral engine, with the M10 baseline and S6 stress-test corpus.
-- `working_docs/phase4_module_4_1.md`: implemented, pending independent repository review, for the derived contract schema scaffold.
+- `working_docs/phase4_module_4_1.md`: complete after REV-012, for the derived contract schema scaffold.
 - `working_docs/pilot_review_M10.md`: completed pilot review and Phase 2 migration notes for M10 sections `3.2.5.2` and `6.1`.
 - `working_docs/review_log.md`: repository review log template and completed review records.
 - `AGENTS.md`: repository-wide operating rules for agents.

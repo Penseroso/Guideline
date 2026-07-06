@@ -1,6 +1,6 @@
 # Phase 4 Module 4.1: Derived Contract Schema Scaffold
 
-Status: implemented, pending independent repository review.
+Status: Module 4.1 complete after REV-012. Module 4.2 not started and now eligible to begin.
 
 ## Scope implemented
 
@@ -101,6 +101,6 @@ Full risk-tier satisfaction, review-attestation aggregation, and disagreement-re
 
 ## Items requiring additional review
 
-- Independent repository review must confirm the schemas express the Module 3.6 contract without expanding it.
+- REV-012 confirmed that the schemas express the Module 3.6 contract without expanding it; Module 4.1 is complete.
 - Later modules must extend cross-object validation for production registry, risk, review-attestation, and snapshot rules when those production artifacts exist.
 - Module 4.6 remains responsible for generated derived artifacts and regression reconciliation against frozen Phase 3 references where scopes overlap.

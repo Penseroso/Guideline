@@ -1,6 +1,6 @@
 # Phase 4 Plan
 
-Status: Module 4.1 implemented, pending independent repository review; Modules 4.2 through 4.12 not started. This document concretizes `working_docs/phase4_handoff_plan.md` into an executable module specification under the accepted derived-layer contract (DEC-030, REV-011).
+Status: Module 4.1 complete after REV-012; Module 4.2 not started and now eligible to begin; Modules 4.3 through 4.12 not started. This document concretizes `working_docs/phase4_handoff_plan.md` into an executable module specification under the accepted derived-layer contract (DEC-030, REV-011).
 
 Revision note: this plan was revised before implementation start to (1) state the objective as a regulator-neutral common engine, (2) designate an official two-document test corpus (M10 baseline, S6 stress test), (3) add a generic run/orchestration module and an official corpus full-run module, (4) add a coverage ledger, (5) make legacy artifacts non-destructive regression references, and (6) move the incremental family update after the M10 and S6 full runs. Modules are renumbered 4.1 through 4.12.
 
