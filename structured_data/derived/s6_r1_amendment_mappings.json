@@ -54,11 +54,11 @@
       "parent_knowledge_record_ids": [
         "ich_s6_r1.kr.part1.3_3.010"
       ],
-      "relation_type": "supplements",
+      "relation_type": "clarifies",
       "mapped_scope": "Approach when no relevant species can be identified.",
-      "analyst_rationale": "Part I 3.3 states that when no relevant species exists, use of relevant transgenic animals or homologous proteins should be considered. Part II 2.1 restates this path and adds the orthologous-target framing (no interaction with the orthologous target in any species) as the trigger condition, explicitly citing the ICH S6 Guideline. The Addendum adds a related qualifying condition without changing the Parent recommendation, so the relation is supplements. A clarifies reading is also tenable and is noted for reviewer confirmation.",
+      "analyst_rationale": "Part I 3.3 states that when no relevant species exists, relevant transgenic animals expressing the human receptor or homologous proteins should be considered. Part II 2.1 begins with \"As described in ICH S6 Guideline\" and restates the same alternative pathway. The associated condition ich_s6_r1.cond.part2.2_1.004 preserves the orthologous-target clause as material evidence: it explains a specific mechanism by which no relevant species can be identified, but does not add a new alternative, independent obligation, or broader scope. Therefore, the Addendum disambiguates the Parent condition rather than supplementing it with new guidance. Amendment mappings currently use KnowledgeRecord endpoints; linked Conditions must also be followed during effective-state synthesis.",
       "derivation": "analyst-derived, not source text",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "mapping_id": "ich_s6_r1.amend.004",

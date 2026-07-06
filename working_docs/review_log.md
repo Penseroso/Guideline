@@ -153,3 +153,21 @@ Use this document to record human review results after review is performed. Do n
 - Validation command: `npm run validate:pilots` (Validated 5 pilot bundle(s)); `npm test` (17/17 pass); scripted check confirming only `amend.004` changed among mappings, all six endpoints exist, `relation_type="narrows"`, `review_status="reviewed"`; `git diff --check` (clean).
 - Follow-up owner: Future phase owner
 - Status: Resolved
+
+### REV-008: Phase 3 ICH S6(R1) pre-Module-3.4 decision closure
+
+- Date: 2026-07-06
+- Reviewer: Repository review
+- Scope reviewed: Resolution of amendment mapping `ich_s6_r1.amend.003` and Addendum-only effective-guidance handling before Module 3.4. No Module 3.4 `EffectiveRecord` objects were created.
+- Source document: `Guideline Files/ICH S6.pdf` (SHA-256 `05C41D25575259D9C931FCAD33A8227089A8B2F704C0922C0B5F7F411D812E22`), via existing S6 pilot source records.
+- Sections or pages reviewed: Part I §3.3 (`ich_s6_r1.kr.part1.3_3.010`); Part II §2.1 (`ich_s6_r1.kr.part2.2_1.009` and condition `ich_s6_r1.cond.part2.2_1.004`); candidate Addendum-only examples `ich_s6_r1.kr.part2.2_1.014` and Part II Note 2 records `ich_s6_r1.kr.part2.notes.009`, `.010`, `.011`, `.012`, `.013`, and `.015`.
+- Files reviewed: `structured_data/derived/s6_r1_amendment_mappings.json`; `working_docs/amendment_prototype_S6_R1.md`; `working_docs/amendment_effective_strategy.md`; `working_docs/decisions.md`; `working_docs/phase3_plan.md`.
+- Findings:
+  - `amend.003` is source-faithful as `clarifies`: Part II §2.1 begins with `As described in ICH S6 Guideline` and restates the same alternative pathway described in Part I §3.3 for cases where no relevant species exists. The condition `ich_s6_r1.cond.part2.2_1.004` preserves the orthologous-target mechanism as material evidence, but does not create a new alternative, independent obligation, or broader scope.
+  - The current `KnowledgeRecord` endpoints for `amend.003` remain unchanged. Amendment mappings currently use `KnowledgeRecord` endpoints, while linked `Condition` records must also be followed during effective-state synthesis.
+  - Addendum-only operative guidance may produce an Addendum-derived `EffectiveRecord` with full Addendum provenance and an empty amendment-relation ID array. This does not imply amendment, replacement, or supersession of a nonexistent Parent record, and absence of a Parent counterpart is not a conflict or unresolved mapping.
+- Required corrections (applied): `ich_s6_r1.amend.003` `relation_type` `supplements` → `clarifies`; `review_status` `needs_review` → `reviewed`; `analyst_rationale` updated to cite `ich_s6_r1.cond.part2.2_1.004` and remove the prior `supplements` interpretation. Strategy and prototype documentation updated to permit Addendum-only `EffectiveRecord` handling without creating effective records.
+- Unresolved items: No remaining pre-Module-3.4 amendment-decision blocker is identified in this scope. Actual Module 3.4 synthesis remains unstarted and must still review all contributing source records, conditions, quantitative criteria, cross-references, and materially referenced source units for each proposed `EffectiveRecord`.
+- Validation command: `npm test`; `npm run validate:pilots`; scripted amendment check for `amend.003` relation/status/endpoints/rationale, Addendum-only strategy text, and unchanged non-`amend.003` mappings; `git diff --check`.
+- Follow-up owner: Future phase owner
+- Status: Resolved

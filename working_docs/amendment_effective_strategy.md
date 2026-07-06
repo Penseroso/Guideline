@@ -67,6 +67,10 @@ Rules:
 - Effective text is reviewed synthesis, never verbatim source.
 - Every effective statement must trace to all contributing records.
 - Source records remain immutable.
+- Addendum-derived `EffectiveRecord` objects are allowed when the Addendum introduces operative guidance with no meaningful Parent counterpart.
+- For Addendum-only effective guidance, `contributing source-record IDs` include all applicable Addendum `KnowledgeRecord` objects plus applicable `Condition`, `QuantitativeCriteria`, and materially referenced records; `amendment-relation IDs` is an empty array; `effective status` is `current` when the Addendum is part of the applicable current edition; and `review status` is `reviewed` only when all contributing records and the synthesis are reviewed.
+- Addendum-only synthesis rationale must state explicitly that the effective guidance originates from Addendum-only scope, preserve full Addendum provenance, and must not imply that the Addendum modified, replaced, or superseded a nonexistent Parent record.
+- Explicit cross-references and related source units must still be followed when they materially determine the effective meaning.
 - `conflicts_with` or unresolved mappings prevent a reviewed effective state.
 - A future review UI may show the effective state first, with direct access to Parent and Addendum sources.
 
@@ -80,8 +84,9 @@ Rules:
 
 - Use one physical current `Document`.
 - Preserve separate Part, Section, and `SourceUnit` provenance.
-- Require amendment mappings to relate applicable Addendum records to Parent records.
-- Derive reviewed effective state from applicable Parent and Addendum records.
+- Require amendment mappings to relate applicable Addendum records to Parent records when a meaningful Parent counterpart exists.
+- Do not create fictitious Parent endpoints or force Addendum-only content into an amendment relation type; absence of a Parent counterpart is not itself a conflict or unresolved mapping.
+- Derive reviewed effective state from applicable Parent and Addendum records, including Addendum-only `EffectiveRecord` objects where the Addendum contains operative current guidance without a meaningful Parent counterpart.
 
 The local `Guideline Files/ICH S6.pdf` is classified as an integrated package.
 
