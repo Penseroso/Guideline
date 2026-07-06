@@ -22,16 +22,17 @@ The current structured pilot document remains ICH M10, with the source PDF at `G
 
 The files `structured_data/pilots/m10_phase2_table_pressure.json` and `structured_data/pilots/m10_phase2_reference_condition_pressure.json` are reviewed structural probes, not fuller canonical bundles for their leaf sections. They should later be retired or absorbed if those same leaf sections are replaced by fuller canonical bundles.
 
-Phase 3 has started. Module 3.0 foundation is complete. Module 3.1 S6 Parent-Addendum pilot scope selection is approved after repository review. Module 3.2 source-layer pilot is implemented pending repository review, with the selected scope documented in `working_docs/pilot_scope_S6_R1.md` and review notes in `working_docs/pilot_review_S6_R1.md`. S6 cross-guideline model validation is not yet complete.
+Phase 3 is complete after REV-011. Modules 3.0 through 3.6 completed the S6(R1) foundation, approved Parent-Addendum pilot scope, reviewed source-layer pilot, reviewed amendment-relation prototype, reviewed current effective-state prototype, derived-layer validator, and provisional derived-layer contract plus Phase 4 handoff plan.
 
-Source model `0.2.0` remains unchanged. Amendment mapping and `EffectiveRecord` are provisional derived-layer designs documented in `working_docs/amendment_effective_strategy.md`; they are not JSON Schema objects in the current model and remain unimplemented.
+Source model `0.2.0` remains unchanged. AmendmentMapping and `EffectiveRecord` are provisional derived-layer artifacts under `structured_data/derived/`, documented in `working_docs/amendment_effective_strategy.md`, `working_docs/amendment_prototype_S6_R1.md`, and `working_docs/effective_state_prototype_S6_R1.md`. They remain outside the source JSON Schema and are validated separately by `scripts/validate_derived.js`. Module 3.6 documents the provisional derived-layer contract boundary in `working_docs/derived_contract_module_3_6.md`, with Phase 4 planned but not started.
 
 ## Project Phases
 
 - Phase 0 - Foundation Alignment: align documentation, roles, terminology, and current status.
 - Phase 1 - M10 Pilot: create a limited reviewed JSON pilot from ICH M10 using the conceptual model.
 - Phase 2 - Data Contract and Validation: complete for the current M10 pilots and selected M10 structural pressure tests.
-- Phase 3 - S6 Foundation and Derived-Layer Strategy: started; Module 3.2 source-layer S6 pilot is implemented pending repository review, and Modules 3.3 and later remain unstarted.
+- Phase 3 - S6 Foundation and Derived-Layer Strategy: complete after REV-011; source model `0.2.0` is retained, derived-layer prototypes and validation are reviewed, and the provisional derived contract plus Phase 4 handoff plan are documented.
+- Phase 4 - Single-guideline full-processing engine: planned, not started.
 
 ## Non-Goals
 
