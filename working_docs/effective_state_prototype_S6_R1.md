@@ -1,6 +1,6 @@
 # Effective-State Prototype: ICH S6(R1) Species Selection
 
-Status: implemented pending repository review. This Module 3.4 prototype creates provisional derived-layer `EffectiveRecord` objects, but it does not mark them reviewed and does not complete Module 3.4.
+Status: implemented and reviewed. Module 3.4 is complete after independent repository review REV-009 accepted the four provisional derived-layer `EffectiveRecord` objects.
 
 This artifact is analyst-derived synthesis, not source text. It does not change source model `0.2.0`, the JSON Schema, the validator, the source-layer S6 pilot, or the amendment-mapping artifact.
 
@@ -35,16 +35,16 @@ Provenance is separated by object type to keep the synthesis auditable without c
 
 ## Prototype records
 
-The prototype contains exactly four independently reviewable operative propositions.
+The prototype contains exactly four independently reviewed operative propositions.
 
 | EffectiveRecord | Purpose | Review status |
 | --- | --- | --- |
-| `ich_s6_r1.eff.part2.2_2.short_term_two_species` | `amend.002` short-term two-species rule with a material condition and quantitative criterion | `needs_review` |
-| `ich_s6_r1.eff.part2.2_1.no_relevant_species_pathway` | `amend.003` no-relevant-species pathway; Parent recommendation clarified by Addendum precondition | `needs_review` |
-| `ich_s6_r1.eff.part2.2_1.animal_tcr_species_selection` | `amend.004` animal-tissue TCR role; explicit Note 1 context and cross-reference provenance | `needs_review` |
-| `ich_s6_r1.eff.part2.notes.adc_unconjugated_toxin_short_term` | Addendum-only ADC unconjugated-toxin short-term study rule | `needs_review` |
+| `ich_s6_r1.eff.part2.2_2.short_term_two_species` | `amend.002` short-term two-species rule with a material condition and quantitative criterion | `reviewed` |
+| `ich_s6_r1.eff.part2.2_1.no_relevant_species_pathway` | `amend.003` no-relevant-species pathway; Parent recommendation clarified by Addendum precondition | `reviewed` |
+| `ich_s6_r1.eff.part2.2_1.animal_tcr_species_selection` | `amend.004` animal-tissue TCR role; explicit Note 1 context and cross-reference provenance | `reviewed` |
+| `ich_s6_r1.eff.part2.notes.adc_unconjugated_toxin_short_term` | Addendum-only Note 2 ADC unconjugated-toxin short-term study rule | `reviewed` |
 
-All four records use `effective_status=current` because the Addendum is part of the applicable current S6(R1) integrated package. All four records remain `review_status=needs_review` because the implementation task creates and structurally validates the synthesis but does not perform the independent repository review required to accept it.
+All four records use `effective_status=current` because the Addendum is part of the applicable current S6(R1) integrated package. REV-009 verified the contributing `KnowledgeRecord`, `Condition`, `QuantitativeCriterion`, `CrossReference`, `SourceUnit`, and amendment-mapping records and accepted all four EffectiveRecords as `review_status=reviewed`.
 
 ## Synthesis notes
 
@@ -73,38 +73,41 @@ The Parent `should be considered` recommendation remains operative. The Addendum
 - Material conditions: `ich_s6_r1.cond.part1.3_3.002`, `.003`, `ich_s6_r1.cond.part2.2_1.003`, and `ich_s6_r1.cond.part2.notes.002`
 - Cross-reference provenance: `ich_s6_r1.xref.part2.2_1.001`
 
-The effective text preserves `can be used`, rather than normalizing it to `may`. The Note 1 source anchor included in this EffectiveRecord is `ich_s6_r1.su.part2.notes.note1.004`, which directly supports the mapped Note 1 operative records. The broader Note 1 definition source unit is not included.
+The corrected effective text preserves the Parent epitope-expression criterion and the conditional relevance of an epitope-negative species, then applies the Addendum narrowing. It preserves `can be used`, rather than normalizing it to `may`. The Note 1 source anchor included in this EffectiveRecord is `ich_s6_r1.su.part2.notes.note1.004`, which directly supports the mapped Note 1 operative records. The broader Note 1 definition source unit is not included.
 
 ### Addendum-only ADC unconjugated-toxin study
 
 - Amendment relations: empty array
-- Source contribution: Addendum `ich_s6_r1.kr.part2.2_1.014`, `ich_s6_r1.kr.part2.notes.009`, and `ich_s6_r1.kr.part2.notes.015`
-- Material conditions: `ich_s6_r1.cond.part2.2_1.008`, `ich_s6_r1.cond.part2.notes.005`, and `ich_s6_r1.cond.part2.notes.006`
+- Source contribution: Addendum `ich_s6_r1.kr.part2.notes.009` and `ich_s6_r1.kr.part2.notes.015`
+- Material conditions: `ich_s6_r1.cond.part2.notes.005` and `ich_s6_r1.cond.part2.notes.006`
 - Material quantitative criterion: `ich_s6_r1.qc.part2.notes.001`
-- Cross-reference provenance: `ich_s6_r1.xref.part2.2_1.005`
+- Cross-reference provenance: empty array
 
-This record is Addendum-only operative guidance. It uses full Addendum provenance, an empty `amendment_relation_ids` array, and no fictitious Parent endpoint. The ADC general-principles record `ich_s6_r1.kr.part2.2_1.014` and its condition provide contextual scope for the selected Note 2 short-term-study proposition. The vague `(see above)` reference `ich_s6_r1.xref.part2.2_1.004` is not included because no concrete material contribution was identified for this operative proposition.
+This record is Addendum-only operative guidance. It uses Note 2 provenance, an empty `amendment_relation_ids` array, and no fictitious Parent endpoint. It is limited to the Note 2 short-term unconjugated-toxin proposition: if two species have been used to assess ADC safety, an additional short-term study or arm should be conducted in at least one species with the unconjugated toxin, with rodent preference unless the toxin is not active in the rodent. The novel-toxin general-principles statement in `ich_s6_r1.kr.part2.2_1.014` is a separate proposition and remains excluded. The vague `(see above)` reference `ich_s6_r1.xref.part2.2_1.004` and the Note 2 cross-reference `ich_s6_r1.xref.part2.2_1.005` are not included because no concrete material contribution was identified for this narrowed operative proposition.
 
 ## Excluded candidates
 
-- `ich_s6_r1.amend.001` is excluded because the initial prototype already exercises a reviewed `clarifies` synthesis through `amend.003`.
+- `ich_s6_r1.amend.001` is excluded because the prototype already exercises a reviewed `clarifies` synthesis through `amend.003`.
 - Other `amend.002` propositions are excluded because they have different conditions, modalities, or operative effects and would require separate EffectiveRecords.
-- A standalone ADC general-principles EffectiveRecord is excluded. `ich_s6_r1.kr.part2.2_1.014` alone states that ADC species selection follows the same general principles as an unconjugated antibody, while the referenced Note 2 source unit contains several independent operative propositions. The prototype instead uses `.014` as contextual scope for the selected Addendum-only Note 2 proposition.
+- A standalone ADC general-principles EffectiveRecord is excluded. `ich_s6_r1.kr.part2.2_1.014` states that ADC species selection follows the same general principles as an unconjugated antibody, while the referenced Note 2 source unit contains several independent operative propositions. REV-009 confirmed that `.014` is a separate proposition and is not used as provenance for the selected Addendum-only Note 2 short-term unconjugated-toxin record.
 - Other Note 2 records (`ich_s6_r1.kr.part2.notes.010`, `.011`, `.012`, `.013`) are excluded because they represent independent operative propositions outside the minimum sample.
 
-## Initial implementation gate
+## Final review gate
 
-The implementation is structurally acceptable when:
+The reviewed implementation is acceptable when:
 
 - JSON parses.
 - Exactly four EffectiveRecords exist.
-- Every EffectiveRecord has `review_status=needs_review`.
+- Every EffectiveRecord has `effective_status=current`.
+- Every EffectiveRecord has `review_status=reviewed`.
 - EffectiveRecord IDs are unique.
 - Every provenance ID exists.
 - Amendment-backed records reference existing reviewed amendment mappings.
 - The Addendum-only record has `amendment_relation_ids=[]`.
+- The ADC record uses only the final Note 2 short-term unconjugated-toxin provenance.
+- The TCR record retains all required Parent and Addendum provenance.
 - Selected Conditions and QuantitativeCriteria are present.
-- `needs_review` CrossReferences are documented only as model limitations.
+- Representation limitations are documented only as model limitations, not substantive blockers.
 - Source-layer and amendment-mapping files are unchanged.
 
 Focused validation command:
@@ -137,16 +140,25 @@ const required = new Map([
   }],
   ["ich_s6_r1.eff.part2.2_1.animal_tcr_species_selection", {
     amendment_relation_ids: ["ich_s6_r1.amend.004"],
+    knowledge_record_ids: ["ich_s6_r1.kr.part1.3_3.004", "ich_s6_r1.kr.part1.3_3.005", "ich_s6_r1.kr.part2.2_1.007", "ich_s6_r1.kr.part2.2_1.008", "ich_s6_r1.kr.part2.notes.005", "ich_s6_r1.kr.part2.notes.014"],
     condition_ids: ["ich_s6_r1.cond.part1.3_3.002", "ich_s6_r1.cond.part1.3_3.003", "ich_s6_r1.cond.part2.2_1.003", "ich_s6_r1.cond.part2.notes.002"],
     cross_reference_ids: ["ich_s6_r1.xref.part2.2_1.001"]
   }],
   ["ich_s6_r1.eff.part2.notes.adc_unconjugated_toxin_short_term", {
     amendment_relation_ids: [],
-    condition_ids: ["ich_s6_r1.cond.part2.2_1.008", "ich_s6_r1.cond.part2.notes.005", "ich_s6_r1.cond.part2.notes.006"],
+    knowledge_record_ids: ["ich_s6_r1.kr.part2.notes.009", "ich_s6_r1.kr.part2.notes.015"],
+    condition_ids: ["ich_s6_r1.cond.part2.notes.005", "ich_s6_r1.cond.part2.notes.006"],
     quantitative_criterion_ids: ["ich_s6_r1.qc.part2.notes.001"],
-    cross_reference_ids: ["ich_s6_r1.xref.part2.2_1.005"]
+    cross_reference_ids: [],
+    source_unit_ids: ["ich_s6_r1.su.part2.notes.note2.001"]
   }]
 ]);
+const removedAdcIds = [
+  "ich_s6_r1.kr.part2.2_1.014",
+  "ich_s6_r1.cond.part2.2_1.008",
+  "ich_s6_r1.xref.part2.2_1.005",
+  "ich_s6_r1.su.part2.2_1.008"
+];
 let errors = [];
 if (records.length !== 4) errors.push(`expected 4 EffectiveRecords, found ${records.length}`);
 const recordIds = new Set();
@@ -154,7 +166,7 @@ for (const record of records) {
   if (recordIds.has(record.effective_record_id)) errors.push(`duplicate EffectiveRecord ID ${record.effective_record_id}`);
   recordIds.add(record.effective_record_id);
   if (record.effective_status !== "current") errors.push(`${record.effective_record_id} effective_status is not current`);
-  if (record.review_status !== "needs_review") errors.push(`${record.effective_record_id} review_status is not needs_review`);
+  if (record.review_status !== "reviewed") errors.push(`${record.effective_record_id} review_status is not reviewed`);
   for (const [field, sourceIds] of Object.entries(ids)) {
     for (const id of record[field] || []) if (!sourceIds.has(id)) errors.push(`${record.effective_record_id} unresolved ${field}: ${id}`);
   }
@@ -167,23 +179,24 @@ for (const record of records) {
   if (!req) errors.push(`unexpected EffectiveRecord ${record.effective_record_id}`);
   else {
     for (const [field, values] of Object.entries(req)) {
-      for (const value of values) if (!(record[field] || []).includes(value)) errors.push(`${record.effective_record_id} missing ${field}: ${value}`);
-    }
-  }
-  for (const xrefId of record.cross_reference_ids || []) {
-    const xref = ids.cross_reference_ids.get(xrefId);
-    if (xref && xref.review_status === "needs_review" && !(record.representation_limitations || []).join(" ").includes(xrefId)) {
-      errors.push(`${record.effective_record_id} needs_review CrossReference lacks representation limitation note: ${xrefId}`);
+      const actual = record[field] || [];
+      for (const value of values) if (!actual.includes(value)) errors.push(`${record.effective_record_id} missing ${field}: ${value}`);
+      if (field === "cross_reference_ids" && actual.length !== values.length) errors.push(`${record.effective_record_id} unexpected ${field}`);
     }
   }
 }
 const adc = records.find((record) => record.effective_record_id === "ich_s6_r1.eff.part2.notes.adc_unconjugated_toxin_short_term");
 if (!adc || adc.amendment_relation_ids.length !== 0) errors.push("Addendum-only ADC record must have empty amendment_relation_ids");
+if (adc) {
+  const adcProvenance = ["knowledge_record_ids", "condition_ids", "cross_reference_ids", "source_unit_ids"].flatMap((field) => adc[field] || []);
+  for (const id of removedAdcIds) if (adcProvenance.includes(id)) errors.push(`ADC record still includes removed provenance ID ${id}`);
+}
+if (records.some((record) => record.review_status === "needs_review")) errors.push("EffectiveRecord remains needs_review");
 if (errors.length) {
   console.error(errors.join("\n"));
   process.exit(1);
 }
-console.log("EffectiveRecord prototype validation passed: 4 records, all needs_review, provenance resolved.");
+console.log("EffectiveRecord prototype validation passed: 4 records, all current/reviewed, provenance resolved.");
 '@ | node
 ```
 
@@ -199,19 +212,9 @@ git diff -- structured_data/derived/s6_r1_amendment_mappings.json
 
 The final two diff commands should produce no diff.
 
-## Later repository-review gate
+## Repository Review
 
-A separate review task should:
-
-- Check each effective statement against the source records.
-- Confirm source modality is preserved or any synthesis decision is explicitly justified.
-- Confirm no material condition, quantity, exception, or Note limitation is omitted.
-- Confirm no unsupported regulatory requirement is introduced.
-- Distinguish representation limitations from substantive uncertainty.
-- Apply required corrections.
-- Change accepted EffectiveRecords to `review_status=reviewed`.
-- Add the completed review entry to `working_docs/review_log.md`.
-- Mark Module 3.4 complete in `working_docs/phase3_plan.md`.
+REV-009 completed the independent repository review. The review checked each effective statement against contributing `KnowledgeRecord`, `Condition`, `QuantitativeCriterion`, `CrossReference`, `SourceUnit`, and amendment-mapping records; corrected the TCR and ADC records; accepted representation limitations as model issues rather than substantive blockers; and changed all four EffectiveRecords to `review_status=reviewed`.
 
 ## Non-goals
 

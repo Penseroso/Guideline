@@ -10,13 +10,13 @@
     "amendment_mapping_file": "structured_data/derived/s6_r1_amendment_mappings.json",
     "strategy_reference": "working_docs/amendment_effective_strategy.md",
     "design_note": "working_docs/effective_state_prototype_S6_R1.md",
-    "review_note": "Initial Module 3.4 implementation only. EffectiveRecord review_status values remain needs_review until a later repository-review task verifies and accepts the synthesis."
+    "review_note": "Module 3.4 independent review completed in REV-009. All four EffectiveRecords are accepted with review_status=reviewed."
   },
   "effective_records": [
     {
       "effective_record_id": "ich_s6_r1.eff.part2.2_2.short_term_two_species",
       "effective_status": "current",
-      "review_status": "needs_review",
+      "review_status": "reviewed",
       "edition_context": {
         "document_id": "ich_s6_r1",
         "document_version_label": "Current Step 4 version; Parent Guideline dated 16 July 1997; Addendum dated 12 June 2011 incorporated at the end of June 2011",
@@ -52,7 +52,7 @@
     {
       "effective_record_id": "ich_s6_r1.eff.part2.2_1.no_relevant_species_pathway",
       "effective_status": "current",
-      "review_status": "needs_review",
+      "review_status": "reviewed",
       "edition_context": {
         "document_id": "ich_s6_r1",
         "document_version_label": "Current Step 4 version; Parent Guideline dated 16 July 1997; Addendum dated 12 June 2011 incorporated at the end of June 2011",
@@ -91,7 +91,7 @@
     {
       "effective_record_id": "ich_s6_r1.eff.part2.2_1.animal_tcr_species_selection",
       "effective_status": "current",
-      "review_status": "needs_review",
+      "review_status": "reviewed",
       "edition_context": {
         "document_id": "ich_s6_r1",
         "document_version_label": "Current Step 4 version; Parent Guideline dated 16 July 1997; Addendum dated 12 June 2011 incorporated at the end of June 2011",
@@ -127,9 +127,9 @@
         "ich_s6_r1.su.part2.2_1.005",
         "ich_s6_r1.su.part2.notes.note1.004"
       ],
-      "effective_text_en": "Assessment of tissue cross-reactivity in animal tissues has limited value for species selection. TCR studies can be used to guide toxicology-species selection only in specific cases where other approaches cannot demonstrate a pharmacologically relevant species. When unexpected binding occurs in human tissues, selected animal tissues can provide supplemental information, but TCR using a full panel of animal tissues is not recommended.",
+      "effective_text_en": "For monoclonal-antibody testing, expression of the desired epitope remains central to species relevance. An epitope-negative species may still have some relevance for toxicity assessment if comparable unintended tissue cross-reactivity to humans is demonstrated. However, assessment of tissue cross-reactivity in animal tissues has limited value for species selection and TCR studies can be used only in specific cases where other approaches cannot demonstrate a pharmacologically relevant species. When unexpected binding occurs in human tissues, selected animal tissues can provide supplemental information, but TCR using a full panel of animal tissues is not recommended.",
       "normalized_ko": null,
-      "synthesis_rationale": "This EffectiveRecord represents one operative proposition from the reviewed narrows mapping ich_s6_r1.amend.004. Parent records define the monoclonal-antibody species-selection relevance of epitope expression and comparable tissue cross-reactivity. Addendum body records narrow animal-tissue TCR to limited species-selection value and specific cases where other approaches cannot demonstrate a pharmacologically relevant species. The referenced Note 1 records materially define the restriction by preserving that selected animal-tissue evaluation can provide supplemental information when unexpected binding occurs in human tissues, while TCR using a full panel of animal tissues is not recommended. The effective text preserves 'can be used' and does not normalize it to 'may'.",
+      "synthesis_rationale": "This EffectiveRecord represents one operative proposition from the reviewed narrows mapping ich_s6_r1.amend.004. Parent records ich_s6_r1.kr.part1.3_3.004 and ich_s6_r1.kr.part1.3_3.005 supply the monoclonal-antibody epitope-expression criterion and the conditional relevance of an epitope-negative species when comparable unintended tissue cross-reactivity to humans is demonstrated. Parent Conditions ich_s6_r1.cond.part1.3_3.002 and ich_s6_r1.cond.part1.3_3.003 remain material to that scope. Addendum records ich_s6_r1.kr.part2.2_1.007 and ich_s6_r1.kr.part2.2_1.008 narrow the role of animal-tissue TCR to limited species-selection value and specific cases where other approaches cannot demonstrate a pharmacologically relevant species. Note 1 records ich_s6_r1.kr.part2.notes.005 and ich_s6_r1.kr.part2.notes.014 limit full-panel animal TCR and permit selected-animal-tissue evaluation only as conditional supplemental information when unexpected binding occurs in human tissues. The effective text preserves 'can be used' and does not normalize it to 'may'.",
       "representation_limitations": [
         "Cross-reference ich_s6_r1.xref.part2.2_1.001 has raw text '(see Note 1)' and target_id=null because model 0.2.0 cannot resolve note-level targets. The linked Note 1 source unit ich_s6_r1.su.part2.notes.note1.004 and operative Note 1 records are included, so this is a representation limitation rather than absence of reviewed context."
       ]
@@ -137,7 +137,7 @@
     {
       "effective_record_id": "ich_s6_r1.eff.part2.notes.adc_unconjugated_toxin_short_term",
       "effective_status": "current",
-      "review_status": "needs_review",
+      "review_status": "reviewed",
       "edition_context": {
         "document_id": "ich_s6_r1",
         "document_version_label": "Current Step 4 version; Parent Guideline dated 16 July 1997; Addendum dated 12 June 2011 incorporated at the end of June 2011",
@@ -149,31 +149,24 @@
       },
       "amendment_relation_ids": [],
       "knowledge_record_ids": [
-        "ich_s6_r1.kr.part2.2_1.014",
         "ich_s6_r1.kr.part2.notes.009",
         "ich_s6_r1.kr.part2.notes.015"
       ],
       "condition_ids": [
-        "ich_s6_r1.cond.part2.2_1.008",
         "ich_s6_r1.cond.part2.notes.005",
         "ich_s6_r1.cond.part2.notes.006"
       ],
       "quantitative_criterion_ids": [
         "ich_s6_r1.qc.part2.notes.001"
       ],
-      "cross_reference_ids": [
-        "ich_s6_r1.xref.part2.2_1.005"
-      ],
+      "cross_reference_ids": [],
       "source_unit_ids": [
-        "ich_s6_r1.su.part2.2_1.008",
         "ich_s6_r1.su.part2.notes.note2.001"
       ],
-      "effective_text_en": "For an ADC incorporating a novel toxin or toxicant, species selection should follow the same general principles as for an unconjugated antibody. If two species have been used to assess ADC safety, an additional short-term study or arm should be conducted in at least one species with the unconjugated toxin. A rodent is preferred unless the toxin is not active in the rodent.",
+      "effective_text_en": "If two species have been used to assess the safety of an ADC, an additional short-term study or arm should be conducted in at least one species with the unconjugated toxin. A rodent is preferred unless the toxin is not active in the rodent.",
       "normalized_ko": null,
-      "synthesis_rationale": "This EffectiveRecord is Addendum-only operative guidance. It uses full Addendum provenance, leaves amendment_relation_ids empty, and creates no fictitious Parent endpoint. Record ich_s6_r1.kr.part2.2_1.014 and condition ich_s6_r1.cond.part2.2_1.008 provide the ADC applicability scope. Note 2 records ich_s6_r1.kr.part2.notes.009 and ich_s6_r1.kr.part2.notes.015 provide the selected operative proposition, including the precondition that two species have been used to assess ADC safety, the at-least-one-species quantitative criterion for the unconjugated toxin, and the rodent-preference exception when the toxin is not active in the rodent.",
-      "representation_limitations": [
-        "Cross-reference ich_s6_r1.xref.part2.2_1.005 has raw text 'see Note 2' and target_id=null because model 0.2.0 cannot resolve note-level targets. The Note 2 source unit and selected operative Note 2 records are included, so this is a representation limitation rather than absence of reviewed context."
-      ]
+      "synthesis_rationale": "This EffectiveRecord is Addendum-only guidance; no meaningful Parent counterpart exists, so amendment_relation_ids is empty. Record ich_s6_r1.kr.part2.notes.009 supplies the short-term study or arm recommendation, Condition ich_s6_r1.cond.part2.notes.005 supplies the two-species precondition, and QuantitativeCriterion ich_s6_r1.qc.part2.notes.001 supplies the at-least-one-species criterion for the unconjugated toxin. Record ich_s6_r1.kr.part2.notes.015 supplies the rodent preference, and Condition ich_s6_r1.cond.part2.notes.006 supplies the exception when the toxin is not active in the rodent. The novel-toxin general-principles statement is a separate proposition and is excluded from this EffectiveRecord.",
+      "representation_limitations": []
     }
   ]
 }

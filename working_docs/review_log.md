@@ -171,3 +171,22 @@ Use this document to record human review results after review is performed. Do n
 - Validation command: `npm test`; `npm run validate:pilots`; scripted amendment check for `amend.003` relation/status/endpoints/rationale, Addendum-only strategy text, and unchanged non-`amend.003` mappings; `git diff --check`.
 - Follow-up owner: Future phase owner
 - Status: Resolved
+
+### REV-009: Phase 3 Module 3.4 ICH S6(R1) Effective-State Prototype Review
+
+- Date: 2026-07-06
+- Reviewer: Repository review
+- Scope reviewed: Independent review of all four Module 3.4 `EffectiveRecord` objects against contributing `KnowledgeRecord`, `Condition`, `QuantitativeCriterion`, `CrossReference`, `SourceUnit`, and amendment-mapping records.
+- Source document: `Guideline Files/ICH S6.pdf` (SHA-256 `05C41D25575259D9C931FCAD33A8227089A8B2F704C0922C0B5F7F411D812E22`), via existing S6 pilot source records.
+- Sections or pages reviewed: Part I `3.3`; Part II `2.1`, `2.2`, Note 1, and Note 2 within the Module 3.4 effective-state scope.
+- Files reviewed: `structured_data/derived/s6_r1_effective_records.json`; `structured_data/derived/s6_r1_amendment_mappings.json`; `structured_data/pilots/s6_r1_species_selection.json`; `working_docs/effective_state_prototype_S6_R1.md`; `working_docs/amendment_effective_strategy.md`; `working_docs/phase3_plan.md`.
+- Findings:
+  - All four EffectiveRecords are supported as current S6(R1) effective-state synthesis after correction.
+  - The TCR record needed fuller Parent text in `effective_text_en` and a rationale explicitly preserving Parent `.004`/`.005`, Parent Conditions `.002`/`.003`, Addendum `.007`/`.008`, Note 1 `.005`/`.014`, and the source wording `can be used`.
+  - The ADC record needed narrowing to the Note 2 short-term unconjugated-toxin proposition only. The novel-toxin general-principles statement is a separate proposition and is excluded.
+  - Representation limitations for note-target cross-references remain model issues, not substantive blockers.
+- Required corrections: Corrected the TCR effective text and rationale; removed `ich_s6_r1.kr.part2.2_1.014`, `ich_s6_r1.cond.part2.2_1.008`, `ich_s6_r1.xref.part2.2_1.005`, and `ich_s6_r1.su.part2.2_1.008` from the ADC record; replaced the ADC effective text and rationale; removed the obsolete ADC CrossReference representation limitation; changed all four EffectiveRecords to `review_status=reviewed`.
+- Unresolved items: None for Module 3.4. EffectiveRecords remain provisional derived-layer artifacts outside source model `0.2.0`, JSON Schema, and the current validator.
+- Validation command: Focused EffectiveRecord review check; `npm.cmd test`; `npm.cmd run validate:pilots`; `git diff --check`; protected-file diff checks for `structured_data/pilots/s6_r1_species_selection.json` and `structured_data/derived/s6_r1_amendment_mappings.json`.
+- Follow-up owner: Future phase owner
+- Status: Resolved
