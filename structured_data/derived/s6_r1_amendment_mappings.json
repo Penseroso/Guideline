@@ -64,16 +64,23 @@
       "mapping_id": "ich_s6_r1.amend.004",
       "addendum_knowledge_record_ids": [
         "ich_s6_r1.kr.part2.2_1.007",
-        "ich_s6_r1.kr.part2.2_1.008"
+        "ich_s6_r1.kr.part2.2_1.008",
+        "ich_s6_r1.kr.part2.notes.005",
+        "ich_s6_r1.kr.part2.notes.014"
       ],
       "parent_knowledge_record_ids": [
-        "ich_s6_r1.kr.part1.3_3.004"
+        "ich_s6_r1.kr.part1.3_3.004",
+        "ich_s6_r1.kr.part1.3_3.005"
       ],
-      "relation_type": "modifies",
-      "mapped_scope": "Role of tissue cross-reactivity in species selection.",
-      "analyst_rationale": "Part I 3.3 treats a similar tissue cross-reactivity profile as part of what makes an animal species relevant for monoclonal antibodies. Part II 2.1 repositions tissue cross-reactivity in animal tissues as of limited value for species selection, usable only in specific cases where other approaches cannot demonstrate a pharmacologically relevant species. This changes how the Parent's tissue-cross-reactivity criterion should be understood for species selection, so the relation is modifies. It is not marked conflicts_with because the Addendum narrows the method's role rather than contradicting the Parent outright; a reviewer should confirm this boundary.",
+      "relation_type": "narrows",
+      "mapped_scope": "Role and permissible use of tissue cross-reactivity evidence in species selection",
+      "analyst_rationale": "Part I 3.3 treats tissue cross-reactivity evidence as part of species relevance for monoclonal antibodies (kr.part1.3_3.004), and allows an epitope-negative species to remain of some relevance where comparable unintentional tissue cross-reactivity to humans is demonstrated (kr.part1.3_3.005). Addendum body records kr.part2.2_1.007 and kr.part2.2_1.008 carry the primary species-selection guidance: animal-tissue tissue cross-reactivity is of limited value for species selection, and may be used only in specific cases where other approaches cannot identify a pharmacologically relevant species. That body source unit explicitly references Note 1 (see the contextual cross-reference below), and Note 1 records kr.part2.notes.005 and kr.part2.notes.014 materially define the restriction: full-panel animal-tissue tissue cross-reactivity is not recommended, and selected animal-tissue evaluation provides only conditional supplemental information (when there is unexpected binding in human tissues). Including the Note 1 records as Addendum endpoints does not mean Note 1 independently amends the Parent; the body records and the referenced Note 1 records together form the complete Addendum meaning for this mapping. Taken together, the Addendum neither contradicts nor replaces the Parent guidance: it narrows the scope and evidentiary role of animal-tissue tissue cross-reactivity in species selection, so the relation type is narrows.",
+      "contextual_cross_reference_ids": [
+        "ich_s6_r1.xref.part2.2_1.001"
+      ],
+      "contextual_cross_reference_note": "kr.part2.2_1.008 derives from source unit su.part2.2_1.005, which carries the explicit reference xref.part2.2_1.001 with raw text '(see Note 1)'. The Note 1 target is not model-resolvable (target_id=null, resolution_status=needs_review), but the raw reference and the related Note 1 source units are preserved, so the contextual linkage is present and was reviewed before assigning the relation type.",
       "derivation": "analyst-derived, not source text",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     }
   ]
 }

@@ -1,6 +1,6 @@
 # Amendment-Relation Prototype: ICH S6(R1) Species Selection
 
-Status: implemented and reviewed. Repository review recorded as REV-005 in `working_docs/review_log.md`; Module 3.3 review gate satisfied.
+Status: implemented and reviewed. Repository reviews recorded as REV-005 and REV-007 in `working_docs/review_log.md`; Module 3.3 review gate satisfied. `amend.004` is resolved to `narrows` (REV-007); `amend.003` remains `needs_review`.
 
 This is a Phase 3 Module 3.3 prototype. It creates a small reviewed sample of analyst-derived mappings between Addendum (Part II §2.x) and Parent (Part I §3.3) `KnowledgeRecord` objects, to test the relation-type vocabulary in `working_docs/amendment_effective_strategy.md` against the real REV-004 source records.
 
@@ -22,21 +22,22 @@ Each mapping is many-to-many at record level: it relates one or more Addendum re
 | `amend.001` | `kr.part2.2_1.001`, `.002`, `.003` | `kr.part1.3_3.002`, `.003` | `clarifies` | How a pharmacologically relevant species is determined |
 | `amend.002` | `kr.part2.2_2.001`, `.002`, `.004`, `.005` | `kr.part1.3_3.006`, `.007` | `narrows` | Number of species for the general toxicology program |
 | `amend.003` | `kr.part2.2_1.009` | `kr.part1.3_3.010` | `supplements` | Approach when no relevant species can be identified |
-| `amend.004` | `kr.part2.2_1.007`, `.008` | `kr.part1.3_3.004` | `modifies` | Role of tissue cross-reactivity in species selection |
+| `amend.004` | `kr.part2.2_1.007`, `.008`, `kr.part2.notes.005`, `.014` | `kr.part1.3_3.004`, `.005` | `narrows` | Role and permissible use of tissue cross-reactivity evidence in species selection |
 
 ### Analyst rationale
 
 - `amend.001` — `clarifies`. Part I 3.3 defines a relevant species and says a variety of techniques can identify one; Part II 2.1 explains the determination (sequence homology, in vitro binding/occupancy, functional-activity assessment) without changing the Parent definition.
 - `amend.002` — `narrows`. Part I 3.3 states programs should normally include two relevant species, with one sufficing in justified cases. Part II 2.2 constrains this into specific conditions and adds the explicit restriction that studies in two non-rodent species are not appropriate, limiting the applicability of the general two-species expectation.
 - `amend.003` — `supplements`. Part I 3.3 recommends considering transgenic animals or homologous proteins when no relevant species exists. Part II 2.1 restates this and adds the orthologous-target trigger condition, citing the ICH S6 Guideline. A `clarifies` reading is tenable and is flagged for reviewer confirmation.
-- `amend.004` — `modifies`. Part I 3.3 treats a similar tissue cross-reactivity profile as part of species relevance for monoclonal antibodies. Part II 2.1 repositions tissue cross-reactivity in animal tissues as of limited value for species selection, changing how the Parent criterion should be understood. It is deliberately not `conflicts_with`, because the Addendum narrows the method's role rather than contradicting the Parent; the boundary needs reviewer confirmation.
+- `amend.004` — `narrows` (resolved in REV-007). Part I 3.3 treats tissue cross-reactivity evidence as part of species relevance for monoclonal antibodies (`kr.part1.3_3.004`) and allows an epitope-negative species to retain some relevance where comparable tissue cross-reactivity is demonstrated (`kr.part1.3_3.005`). Addendum body records `kr.part2.2_1.007`/`.008` carry the primary guidance: animal-tissue tissue cross-reactivity is of limited value and usable only in specific cases. That body source unit explicitly references Note 1, whose records `kr.part2.notes.005` (full-panel animal-tissue TCR not recommended) and `kr.part2.notes.014` (selected animal-tissue evaluation gives only conditional supplemental information) materially define the restriction. Including the Note 1 records does not mean Note 1 independently amends the Parent; the body and referenced Note 1 records together form the complete Addendum meaning. The Addendum neither contradicts nor replaces the Parent — it narrows the scope and evidentiary role of animal-tissue TCR — so the relation is `narrows`, not `modifies` or `conflicts_with`. The `(see Note 1)` contextual link is recorded on the mapping as `contextual_cross_reference_ids` (`ich_s6_r1.xref.part2.2_1.001`).
 
 ## Findings for Module 3.5 / 3.6
 
-- **Relation vocabulary coverage.** The species-selection scope exercised four types: `clarifies`, `narrows`, `supplements`, `modifies`. Untested by this scope: `broadens`, `replaces`, `supersedes`, `conflicts_with`. No new relation type was needed for the mapped records.
+- **Relation vocabulary coverage.** After the REV-007 resolution of `amend.004` to `narrows`, the species-selection scope exercises three types: `clarifies`, `narrows` (`amend.002`, `amend.004`), and `supplements`. Untested by this scope: `modifies`, `broadens`, `replaces`, `supersedes`, `conflicts_with`. No new relation type was needed for the mapped records.
 - **Cardinality is many-to-many.** Every sampled mapping relates multiple Addendum records to one or more Parent records. A future amendment-mapping schema (Module 3.5) must support record-level many-to-many relations, not 1:1 only.
 - **Boundary gap: new Addendum scope with no Parent record.** Addendum ADC content — `kr.part2.2_1.014` (ADC species selection follows the same general principles) and Part II Note 2 records (`kr.part2.notes.009`–`.013`, `.015`) — introduces genuinely new scope that has no Part I §3.3 counterpart. None of the eight relation types describes "new scope, no Parent record." This is intentionally left unmapped here and recorded as a vocabulary gap for the Module 3.6 model decision, not forced into an ill-fitting relation.
-- **Relation ambiguity is expected.** `amend.003` (supplements vs clarifies) and `amend.004` (modifies vs conflicts_with) are genuine reviewer judgment calls that REV-005 left `needs_review` (see below).
+- **Relation ambiguity is expected.** `amend.003` (supplements vs clarifies) remains a genuine reviewer judgment call left `needs_review` by REV-005. `amend.004` (previously modifies vs conflicts_with) was resolved to `narrows` in REV-007 after following its explicit Note 1 reference (see below).
+- **Follow explicit references before assigning a relation.** `amend.004` shows that an amendment's meaning can depend on a referenced note: the Part II 2.1 body limits animal-tissue TCR, and the referenced Note 1 completes that limit. Reviewing the referenced content before assigning the relation type changed the reading from a contested modifies/conflicts_with to a clear narrows. This general rule is recorded as DEC-027.
 
 ## Repository review (REV-005)
 
@@ -44,7 +45,15 @@ REV-005 verified all four mappings against the Part I §3.3 and Part II §2.1–
 
 - `amend.001` (`clarifies`) and `amend.002` (`narrows`) are clearly source-supported and are set to `review_status=reviewed`.
 - `amend.003` (`supplements` vs `clarifies`) remains `needs_review` as a genuine relation-vocabulary boundary case, deferred to the Module 3.6 vocabulary decision.
-- `amend.004` (`modifies` vs `conflicts_with`) remains `needs_review` because the determination has downstream effect: a `conflicts_with` reading would block a reviewed effective state for the tissue-cross-reactivity pair. This must be settled, ideally with domain input, before Module 3.4 effective-state synthesis treats this pair as reviewed.
+- `amend.004` was left `needs_review` by REV-005 (`modifies` vs `conflicts_with`) and is resolved by REV-007 (below).
+
+## Repository review (REV-007)
+
+REV-007 resolved `amend.004`. Following the general rule now recorded as DEC-027, the reviewer followed the explicit `(see Note 1)` reference on the Addendum body source unit and reviewed the referenced Note 1 records before assigning the relation type.
+
+- Final relation type: `narrows`. Final review status: `reviewed`. `modifies` and `conflicts_with` are removed as interpretations.
+- Endpoints expanded to the full evidentiary set: parents `kr.part1.3_3.004` and `kr.part1.3_3.005`; Addendum body `kr.part2.2_1.007`/`.008` plus referenced Note 1 records `kr.part2.notes.005`/`.014`.
+- The `(see Note 1)` contextual link (`ich_s6_r1.xref.part2.2_1.001`) is recorded on the mapping via `contextual_cross_reference_ids`. The Note 1 cross-reference remains model-unresolvable (`target_id=null`), but that is not treated as absence of contextual linkage because the raw reference and related Note 1 source units are preserved.
 
 ## Verification
 
@@ -69,7 +78,7 @@ REV-005 verified all four mappings against the Part I §3.3 and Part II §2.1–
   '
   ```
 
-  Result: 4 mappings, 16 endpoints, 0 unresolved KR IDs, 0 relation types outside the vocabulary.
+  Result after REV-007: 4 mappings, 19 endpoints, 0 unresolved KR IDs, 0 relation types outside the vocabulary.
 
 ## Not in scope
 
