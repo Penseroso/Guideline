@@ -232,6 +232,15 @@ This document records material project decisions after they are made. It should 
 - Consequences: Fourteen audited S6 `KnowledgeRecord` objects were reviewed under this rule and set to `review_status=reviewed`; five moved from `description` to `recommendation` (`kr.part1.notes.002`, `kr.part2.2_1.002`, `kr.part2.2_1.006`, `kr.part2.2_1.008`, `kr.part2.2_2.005`), and `kr.part2.2_2.005` additionally moved from `modality=none`/`original_modal_text=null` to `modality=other`/`original_modal_text="is justified"`. No source text, condition, cross-reference, JSON Schema, validator, or model-version change was made. This rule applies to future guideline extraction, including M10, but no retroactive re-audit of already-reviewed M10 records is performed in this task.
 - Related files: `working_docs/schema.md`, `structured_data/pilots/s6_r1_species_selection.json`, `working_docs/pilot_review_S6_R1.md`, `working_docs/review_log.md`
 
+### DEC-027: Follow explicit references before assigning an amendment relation type
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: When an amendment source unit contains an explicit note, section, table, or guideline reference, the referenced content must be followed and reviewed before assigning the amendment relation type. A `CrossReference` with `target_id=null` or `resolution_status=needs_review` must not be treated as absence of contextual linkage when the raw reference text and the related source units are preserved. Referenced-note `KnowledgeRecord` objects should be included as amendment endpoints when they materially determine the amendment relationship, and the contextual link should be recorded on the mapping.
+- Rationale: `amend.004` was contested (`modifies` vs `conflicts_with`) only while the Part II 2.1 body was read in isolation. The body explicitly references Note 1, and Note 1 records `kr.part2.notes.005` and `kr.part2.notes.014` complete the restriction on animal-tissue tissue cross-reactivity. Reviewing the referenced content showed the Addendum narrows rather than contradicts the Parent, resolving the relation to `narrows`. A model-unresolvable note reference is a representation limitation, not evidence that the contextual link is absent.
+- Consequences: `amend.004` now includes its referenced Note 1 records as Addendum endpoints and records the `(see Note 1)` link via `contextual_cross_reference_ids` (`ich_s6_r1.xref.part2.2_1.001`), resolved to `relation_type=narrows` and `review_status=reviewed` (REV-007). This rule does not change any `CrossReference` object, the Note-target model limitation, or the JSON Schema. It guides future amendment-relation review, including the still-open `amend.003` and any Module 3.5 amendment-mapping schema work.
+- Related files: `structured_data/derived/s6_r1_amendment_mappings.json`, `working_docs/amendment_prototype_S6_R1.md`, `working_docs/amendment_effective_strategy.md`, `working_docs/review_log.md`
+
 ## Decision Template
 
 ### DEC-000: Title

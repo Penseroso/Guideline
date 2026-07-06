@@ -132,3 +132,24 @@ Use this document to record human review results after review is performed. Do n
 - Validation command: `npm run validate:pilots` (Validated 5 pilot bundle(s)); `npm test` (17/17 pass); scripted check confirming exactly the fourteen target records changed, only within `record_type`/`modality`/`original_modal_text`/`review_status`, with no other `KnowledgeRecord` altered; `git diff --check` (clean).
 - Follow-up owner: Future phase owner
 - Status: Resolved
+
+### REV-007: Phase 3 ICH S6(R1) Amendment Mapping `amend.004` Resolution
+
+- Date: 2026-07-06
+- Reviewer: Repository review
+- Scope reviewed: Resolution of amendment mapping `ich_s6_r1.amend.004` (tissue cross-reactivity in species selection), left `needs_review` by REV-005. Prerequisite for Module 3.4.
+- Source document: `Guideline Files/ICH S6.pdf` (SHA-256 `05C41D25575259D9C931FCAD33A8227089A8B2F704C0922C0B5F7F411D812E22`).
+- Sections or pages reviewed: Part I `3.3` (`kr.part1.3_3.004`, `.005`); Part II `2.1` body (`kr.part2.2_1.007`, `.008`); Part II `Note 1` (`kr.part2.notes.005`, `.014`), reached by following the explicit `(see Note 1)` reference `xref.part2.2_1.001` on source unit `su.part2.2_1.005`.
+- Files reviewed: `structured_data/derived/s6_r1_amendment_mappings.json`; `working_docs/amendment_prototype_S6_R1.md`; `working_docs/amendment_effective_strategy.md`; `structured_data/pilots/s6_r1_species_selection.json`.
+- Findings:
+  - Following the explicit Note 1 reference (per DEC-027) resolved the contested reading. The Addendum body records `kr.part2.2_1.007`/`.008` carry the primary species-selection guidance (animal-tissue tissue cross-reactivity is of limited value and usable only in specific cases). Note 1 records `kr.part2.notes.005` (full-panel animal-tissue TCR not recommended) and `kr.part2.notes.014` (selected animal-tissue evaluation gives only conditional supplemental information) materially define the restriction.
+  - The Addendum neither contradicts nor replaces the Parent; it narrows the scope and evidentiary role of animal-tissue tissue cross-reactivity in species selection. `modifies` and `conflicts_with` are removed as interpretations.
+  - Including Note 1 records as endpoints does not make Note 1 an independent amendment of the Parent; the body records and referenced Note 1 records together form the complete Addendum meaning. The `(see Note 1)` link is recorded on the mapping via `contextual_cross_reference_ids`; the Note-target model limitation is unchanged and not treated as absence of contextual linkage.
+- Required corrections (applied):
+  - `ich_s6_r1.amend.004`: `relation_type` `modifies` → `narrows`; `review_status` `needs_review` → `reviewed`; parent endpoints → `kr.part1.3_3.004`, `.005`; Addendum endpoints → `kr.part2.2_1.007`, `.008`, `kr.part2.notes.005`, `.014`; added `contextual_cross_reference_ids=["ich_s6_r1.xref.part2.2_1.001"]`; `mapped_scope` updated. Recorded the general reference-review rule as DEC-027.
+- Unresolved items:
+  - `ich_s6_r1.amend.003` (`supplements` vs `clarifies`) remains `needs_review`, deferred to the Module 3.6 vocabulary decision; not touched.
+  - The Note 1 `CrossReference` model limitation (`target_id=null`) is unchanged and out of scope.
+- Validation command: `npm run validate:pilots` (Validated 5 pilot bundle(s)); `npm test` (17/17 pass); scripted check confirming only `amend.004` changed among mappings, all six endpoints exist, `relation_type="narrows"`, `review_status="reviewed"`; `git diff --check` (clean).
+- Follow-up owner: Future phase owner
+- Status: Resolved
