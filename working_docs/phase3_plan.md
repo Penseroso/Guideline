@@ -45,7 +45,7 @@
 
 ## 3.6 model/workflow decision
 
-- Objective: Implemented pending repository review. Decide whether model `0.2.0` remains sufficient or requires a versioned extension for S6-derived layers.
-- Outputs: Provisional derived-layer contract decision and Phase 4 handoff plan, documented in `working_docs/derived_contract_module_3_6.md`, `working_docs/phase4_handoff_plan.md`, and DEC-030.
-- Completion gate: Pending independent repository review. REV-011 must verify the Module 3.6 decision, validation results, and Phase 4 boundary before Module 3.6 and Phase 3 are marked complete.
+- Objective: Complete. Decide whether model `0.2.0` remains sufficient or requires a versioned extension for S6-derived layers.
+- Outputs: Complete. Provisional derived-layer contract decision and Phase 4 handoff plan, documented in `working_docs/derived_contract_module_3_6.md`, `working_docs/phase4_handoff_plan.md`, and DEC-030.
+- Completion gate: Complete after REV-011. The Module 3.6 decision and Phase 4 boundary passed independent repository review; Phase 3 is complete; Phase 4 remains planned and not started.
 - Non-goals: Premature model changes, unreviewed derived records, or full production workflow implementation.

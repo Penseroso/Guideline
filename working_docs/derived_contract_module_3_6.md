@@ -1,6 +1,6 @@
 # Derived-Layer Contract Decision: Phase 3 Module 3.6
 
-Status: implemented pending repository review.
+Status: implemented and reviewed. Independent repository review completed in REV-011.
 
 This document records the Module 3.6 derived-layer contract and workflow boundary decision. It is a documentation and planning artifact only. It does not implement derived schemas, migrations, validators, source model changes, or the Phase 4 engine.
 
@@ -356,14 +356,9 @@ When a new PDF is assigned to an existing GuidanceFamily:
 
 ## Completion boundary
 
-This Module 3.6 implementation ends as `Implemented pending repository review`.
+Module 3.6 is complete after independent repository review REV-011.
 
-A later independent review task must:
-
-- add REV-011;
-- verify this decision and handoff plan;
-- mark Module 3.6 complete if accepted;
-- mark Phase 3 complete if all Phase 3 criteria pass.
+REV-011 verified this decision and handoff plan, validation results, and consistency with existing repository decisions. Phase 3 is complete. Phase 4 remains planned and not started.
 
 ## Non-goals
 

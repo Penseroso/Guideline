@@ -219,3 +219,31 @@ Use this document to record human review results after review is performed. Do n
 - Validation command: `npm test` attempted first but was blocked by the local PowerShell execution policy for `npm.ps1`; equivalent Windows shim commands were then run successfully: `npm.cmd test` (67/67 pass); `npm.cmd run validate:pilots` (Validated 5 pilot bundle(s)); `npm.cmd run validate:derived` (Validated 4 amendment mapping(s) and 4 EffectiveRecord(s)); `git diff --check` (clean). Additional protected-file diff checks confirmed no unintended changes to `structured_data/pilots/`, `structured_data/derived/`, `structured_data/schemas/guideline_bundle.schema.json`, `scripts/validate_structured_data.js`, `scripts/validate_pilots.js`, or `package-lock.json`.
 - Follow-up owner: Future Module 3.6 owner
 - Status: Resolved
+
+### REV-011: Phase 3 Module 3.6 Derived Contract and Phase 4 Handoff Review
+
+- Date: 2026-07-06
+- Reviewer: Repository review
+- Scope reviewed: Independent review of Phase 3 Module 3.6 implementation at commit `e97f80fd4e1f77ce2b4bb908abf7a60b7beb0537`; DEC-030; `working_docs/derived_contract_module_3_6.md`; `working_docs/phase4_handoff_plan.md`; Module 3.6 and Phase 3 status documentation; consistency with existing repository decisions and validation behavior.
+- Source document: Not applicable; this review covered architecture and workflow documentation rather than source-text extraction.
+- Sections or pages reviewed: Not applicable.
+- Files reviewed: `working_docs/decisions.md`; `working_docs/derived_contract_module_3_6.md`; `working_docs/phase4_handoff_plan.md`; `working_docs/phase3_plan.md`; `README.md`; `working_docs/review_log.md`; `working_docs/derived_layer_validator_module_3_5.md`; `working_docs/schema.md`; `structured_data/schemas/guideline_bundle.schema.json`; `scripts/validate_derived.js`; `scripts/validate_structured_data.js`; `scripts/validate_pilots.js`; `structured_data/pilots/s6_r1_species_selection.json`; `structured_data/derived/s6_r1_amendment_mappings.json`; `structured_data/derived/s6_r1_effective_records.json`.
+- Decision findings:
+  - DEC-030 is consistent with the approved Module 3.6 plan and existing repository decisions. It retains source model `0.2.0`, starts the independent derived contract at `derived_model_version=0.1.0`, and reserves `1.0.0` for a later stability gate after schemas, validators, migrations, and Phase 4 evidence are reviewed.
+  - The source `Document` remains the canonical physical-PDF record. The derived family/edition registry references existing source `document_id` values and does not duplicate source path, checksum, version-label, or source-identity fields.
+  - The documented derived core/profile boundary preserves a regulator-neutral core with ICH, FDA, and EMA profile extension points without implementing production FDA or EMA profiles.
+  - Same-family synthesis is constrained: reviewed lifecycle relationships may support reviewed EffectiveRecords; unresolved lifecycle relationships may produce only candidate `needs_review` EffectiveRecords and must not automatically supersede or replace existing effective state.
+  - Review attestations, non-inventive legacy review migration, versioned RiskAssessment history, aggregate `review_status`, `include_needs_review` disclosures, and `reviewed_only` strict mode are documented consistently with the approved plan.
+  - EffectiveStateSnapshot identity is separated from execution metadata: identity derives from family, jurisdiction, `as_of_date`, review policy, derived contract version, source corpus identity, and calculation-policy version; `calculated_at` is metadata only.
+- Phase 4 boundary findings:
+  - `working_docs/phase4_handoff_plan.md` keeps Phase 4 planned and not started.
+  - The handoff processes exactly one PDF per extraction run, supports cumulative family history, preserves historical effective states, and prohibits simultaneous multi-PDF extraction and automatic unreviewed cross-document synthesis.
+  - The Phase 4 modules preserve layered validation: source schema and cross-object validation, derived schema validation, derived cross-object validation, risk/review-policy validation, and snapshot identity and history validation.
+- Compatibility findings:
+  - Source model `0.2.0`, source JSON Schema, source validation, M10 validation, pilot validation, derived validator code, tests, dependencies, structured data, and PDFs remain unchanged by this review.
+  - Current reviewed S6 source and derived artifacts continue to pass existing validation without modification.
+- Required corrections: None. Status documentation was updated after successful review to record REV-011, mark Module 3.6 complete, and mark Phase 3 complete while keeping Phase 4 planned and not started.
+- Unresolved items: None for Module 3.6 or Phase 3. Derived schemas, migrations, validator extensions, artifact migrations, Phase 4 engine implementation, FDA/EMA production profiles, UI, answer generation, and full applicability ontology remain deferred to Phase 4 or later approved work.
+- Validation command: `npm.cmd test` (67/67 pass); `npm.cmd run validate:pilots` (Validated 5 pilot bundle(s)); `npm.cmd run validate:derived` (Validated 4 amendment mapping(s) and 4 EffectiveRecord(s)); `git diff --check` (clean); protected-file diff checks for `structured_data/`, `structured_data/schemas/guideline_bundle.schema.json`, `scripts/`, `test/`, `package.json`, `package-lock.json`, and `Guideline Files/` (no unintended changes).
+- Follow-up owner: Phase 4 owner
+- Status: Resolved
