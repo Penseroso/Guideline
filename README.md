@@ -43,7 +43,7 @@ This repository builds a traceable structured-data archive for regulatory guidel
 - `working_docs/derived_layer_validator_module_3_5.md`: implemented and reviewed Module 3.5 derived-layer validator note; repository review recorded as REV-010.
 - `working_docs/derived_contract_module_3_6.md`: implemented and reviewed Module 3.6 provisional derived contract decision note; repository review recorded as REV-011.
 - `working_docs/phase4_handoff_plan.md`: planned Phase 4 single-PDF engine handoff; Phase 4 is not started.
-- `working_docs/phase4_plan.md`: concretized Phase 4 module specification (modules 4.1-4.10) derived from the handoff plan; Phase 4 remains not started.
+- `working_docs/phase4_plan.md`: concretized Phase 4 module specification (modules 4.1-4.12) for the regulator-neutral engine, with the M10 baseline and S6 stress-test corpus; Phase 4 remains not started.
 - `working_docs/pilot_review_M10.md`: completed pilot review and Phase 2 migration notes for M10 sections `3.2.5.2` and `6.1`.
 - `working_docs/review_log.md`: human review log template and completed review records.
 - `AGENTS.md`: repository-wide operating rules for agents.
