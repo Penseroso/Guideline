@@ -4,7 +4,12 @@ const path = require("node:path");
 const { spawnSync } = require("node:child_process");
 const test = require("node:test");
 
-const { validateDerivedArtifacts, validateDerivedContractArtifact } = require("../scripts/validate_derived");
+const {
+  validateContractArtifacts,
+  validateDerivedArtifacts,
+  validateDerivedContractArtifact,
+  validateLegacyDerivedArtifacts
+} = require("../scripts/validate_derived");
 
 const ROOT = path.resolve(__dirname, "..");
 const FIXTURE_DIR = path.join(ROOT, "test", "fixtures", "derived");
@@ -35,7 +40,7 @@ function validateCopies(mutator) {
   const amendmentArtifact = clone(amendmentFixture);
   const effectiveArtifact = clone(effectiveFixture);
   if (mutator) mutator(sourceBundle, amendmentArtifact, effectiveArtifact);
-  return validateDerivedArtifacts({
+  return validateLegacyDerivedArtifacts({
     sourceBundle,
     amendmentArtifact,
     effectiveArtifact,
@@ -44,6 +49,106 @@ function validateCopies(mutator) {
       amendmentFile: AMENDMENT_FILE,
       effectiveFile: EFFECTIVE_FILE
     }
+  });
+}
+
+function contractGraphArtifacts(mutator) {
+  const sourceBundle = clone(sourceFixture);
+  const amendmentArtifact = {
+    derived_model_version: "0.1.0",
+    artifact_type: "AmendmentMapping",
+    regulator_profile: "core",
+    records: [
+      {
+        mapping_id: "test.contract.amend.001",
+        guidance_family_id: "test.family",
+        source_document_edition_id: "test.edition.parent",
+        amending_document_edition_id: "test.edition.addendum",
+        source_record_ids: ["test.kr.parent.001"],
+        amending_record_ids: ["test.kr.addendum.001"],
+        relation_type: "clarifies",
+        original_relationship_wording: "clarifies",
+        source_references: [
+          {
+            document_id: "test_doc",
+            section_id: "test.sec.parent",
+            source_unit_id: "test.su.parent.001",
+            pdf_page_index_zero_based: 0,
+            printed_page_label: "1",
+            source_text: "Parent source text."
+          },
+          {
+            document_id: "test_doc",
+            section_id: "test.sec.addendum",
+            source_unit_id: "test.su.addendum.001",
+            pdf_page_index_zero_based: 1,
+            printed_page_label: "2",
+            source_text: "Addendum source text."
+          }
+        ],
+        review_status: "needs_review",
+        profile_details: null
+      }
+    ]
+  };
+  const effectiveArtifact = {
+    derived_model_version: "0.1.0",
+    artifact_type: "EffectiveRecord",
+    regulator_profile: "core",
+    records: [
+      {
+        effective_record_id: "test.contract.eff.001",
+        guidance_family_id: "test.family",
+        document_edition_id: "test.edition.addendum",
+        jurisdiction: "TEST",
+        as_of_date: "2026-07-06",
+        effective_status: "current",
+        derivation_basis: "amendment_synthesis",
+        amendment_mapping_ids: ["test.contract.amend.001"],
+        contributing_record_ids: [
+          "test.kr.parent.001",
+          "test.kr.addendum.001",
+          "test.cond.001",
+          "test.qc.001",
+          "test.xref.001"
+        ],
+        source_references: [
+          {
+            document_id: "test_doc",
+            section_id: "test.sec.parent",
+            source_unit_id: "test.su.parent.001",
+            pdf_page_index_zero_based: 0,
+            printed_page_label: "1",
+            source_text: "Parent source text."
+          },
+          {
+            document_id: "test_doc",
+            section_id: "test.sec.addendum",
+            source_unit_id: "test.su.addendum.001",
+            pdf_page_index_zero_based: 1,
+            printed_page_label: "2",
+            source_text: "Addendum source text."
+          }
+        ],
+        effective_text_en: "Fixture contract effective text.",
+        normalized_ko: null,
+        review_status: "needs_review",
+        profile_details: null
+      }
+    ]
+  };
+  if (mutator) mutator(sourceBundle, amendmentArtifact, effectiveArtifact);
+  return { sourceBundle, amendmentArtifact, effectiveArtifact };
+}
+
+function validateContractGraphCopies(mutator) {
+  const { sourceBundle, amendmentArtifact, effectiveArtifact } = contractGraphArtifacts(mutator);
+  return validateContractArtifacts({
+    sourceBundle,
+    artifacts: [
+      { artifact: amendmentArtifact, file: "contract_amendment.json" },
+      { artifact: effectiveArtifact, file: "contract_effective.json" }
+    ]
   });
 }
 
@@ -68,12 +173,17 @@ test("valid derived fixtures pass", () => {
 test("valid derived contract 0.1.0 fixtures pass schema validation", () => {
   const validDir = path.join(CONTRACT_FIXTURE_DIR, "valid");
   const files = fs.readdirSync(validDir).filter((file) => file.endsWith(".json"));
-  assert.equal(files.length, 9);
+  assert.equal(files.length, 11);
   for (const file of files) {
     const fixturePath = path.join(validDir, file);
     const artifact = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
     assertValid(validateDerivedContractArtifact({ artifact, file: fixturePath }));
   }
+});
+
+test("core schema does not reference the ICH profile", () => {
+  const coreSchema = fs.readFileSync(path.join(ROOT, "structured_data", "schemas", "derived", "core.schema.json"), "utf8");
+  assert.equal(coreSchema.includes("profiles/ich"), false);
 });
 
 test("derived contract fixtures fail on wrong version", () => {
@@ -100,17 +210,70 @@ test("derived contract core artifacts reject ICH profile details", () => {
   assertInvalid(validateDerivedContractArtifact({ artifact, file: fixturePath }), "must be null for regulator-neutral core artifacts");
 });
 
-test("contract-marked amendment and effective artifacts use schema validation before legacy cross-object checks", () => {
-  const amendmentArtifact = JSON.parse(fs.readFileSync(path.join(CONTRACT_FIXTURE_DIR, "valid", "amendment_mapping.json"), "utf8"));
-  const effectiveArtifact = JSON.parse(fs.readFileSync(path.join(CONTRACT_FIXTURE_DIR, "valid", "effective_record.json"), "utf8"));
+test("relevant ICH EffectiveRecords require profile details", () => {
+  const fixturePath = path.join(CONTRACT_FIXTURE_DIR, "invalid", "ich_effective_missing_profile_details.json");
+  const artifact = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
+  assertInvalid(validateDerivedContractArtifact({ artifact, file: fixturePath }), "must be object");
+});
+
+test("non-relevant ICH EffectiveRecords do not require derivation-specific profile details", () => {
+  const fixturePath = path.join(CONTRACT_FIXTURE_DIR, "valid", "effective_record_ich_direct_source.json");
+  const artifact = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
+  assertValid(validateDerivedContractArtifact({ artifact, file: fixturePath }));
+});
+
+test("metadata artifacts do not require derivation-specific ICH fields", () => {
+  for (const file of ["guidance_family.json", "review_attestation.json", "risk_assessment.json"]) {
+    const fixturePath = path.join(CONTRACT_FIXTURE_DIR, "valid", file);
+    const artifact = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
+    assertValid(validateDerivedContractArtifact({ artifact, file: fixturePath }));
+  }
+});
+
+test("successor artifacts can represent technical migration provenance", () => {
+  const fixturePath = path.join(CONTRACT_FIXTURE_DIR, "valid", "effective_record_migrated_successor.json");
+  const artifact = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
+  assertValid(validateDerivedContractArtifact({ artifact, file: fixturePath }));
+});
+
+test("contract graph validation passes after schema validation for valid contract artifacts", () => {
+  assertValid(validateContractGraphCopies());
+});
+
+test("contract graph validation rejects unresolved source IDs", () => {
+  assertInvalid(validateContractGraphCopies((source, amendments) => {
+    amendments.records[0].source_record_ids[0] = "test.kr.missing";
+  }), "reference does not resolve to knowledge_records: test.kr.missing");
+});
+
+test("contract graph validation rejects incomplete mapping endpoint coverage", () => {
+  assertInvalid(validateContractGraphCopies((source, amendments, effective) => {
+    effective.records[0].contributing_record_ids = effective.records[0].contributing_record_ids.filter((id) => id !== "test.kr.parent.001");
+  }), "missing source endpoint coverage");
+});
+
+test("contract graph validation rejects incomplete provenance closure", () => {
+  assertInvalid(validateContractGraphCopies((source, amendments, effective) => {
+    effective.records[0].source_references = effective.records[0].source_references.filter((ref) => ref.source_unit_id !== "test.su.addendum.001");
+  }), "direct SourceUnit test.su.addendum.001 is not included");
+});
+
+test("contract graph validation rejects unauthorized cross-family synthesis", () => {
+  assertInvalid(validateContractGraphCopies((source, amendments, effective) => {
+    amendments.records[0].guidance_family_id = "other.family";
+  }), "unauthorized cross-family synthesis");
+});
+
+test("public dispatch validates contract artifacts with contract-aware graph checks", () => {
+  const { sourceBundle, amendmentArtifact, effectiveArtifact } = contractGraphArtifacts();
   assertValid(validateDerivedArtifacts({
-    sourceBundle: sourceFixture,
+    sourceBundle,
     amendmentArtifact,
     effectiveArtifact,
     files: {
       sourceFile: SOURCE_FILE,
-      amendmentFile: path.join(CONTRACT_FIXTURE_DIR, "valid", "amendment_mapping.json"),
-      effectiveFile: path.join(CONTRACT_FIXTURE_DIR, "valid", "effective_record.json")
+      amendmentFile: "contract_amendment.json",
+      effectiveFile: "contract_effective.json"
     }
   }));
 });
@@ -129,6 +292,19 @@ test("legacy Phase 3 prototype paths are exempt from 0.1.0 schema enforcement", 
       effectiveFile: "structured_data/derived/s6_r1_effective_records.json"
     }
   }));
+});
+
+test("legacy-shaped artifacts outside exact Phase 3 paths fail public dispatch", () => {
+  assertInvalid(validateDerivedArtifacts({
+    sourceBundle: sourceFixture,
+    amendmentArtifact: clone(amendmentFixture),
+    effectiveArtifact: clone(effectiveFixture),
+    files: {
+      sourceFile: SOURCE_FILE,
+      amendmentFile: path.join(CONTRACT_FIXTURE_DIR, "copied_legacy_amendment.json"),
+      effectiveFile: path.join(CONTRACT_FIXTURE_DIR, "copied_legacy_effective.json")
+    }
+  }), "derived contract artifacts must declare derived_model_version and artifact_type");
 });
 
 test("current S6 derived artifacts pass", () => {
@@ -429,14 +605,14 @@ test("CLI exits zero on valid files", () => {
   const result = spawnSync(process.execPath, [
     "scripts/validate_derived.js",
     "--source",
-    SOURCE_FILE,
+    path.join(ROOT, "structured_data", "pilots", "s6_r1_species_selection.json"),
     "--amendments",
-    AMENDMENT_FILE,
+    path.join(ROOT, "structured_data", "derived", "s6_r1_amendment_mappings.json"),
     "--effective",
-    EFFECTIVE_FILE
+    path.join(ROOT, "structured_data", "derived", "s6_r1_effective_records.json")
   ], { cwd: ROOT, encoding: "utf8" });
   assert.equal(result.status, 0, result.stderr);
-  assert.match(result.stdout, /Validated 1 amendment mapping\(s\) and 2 EffectiveRecord\(s\)\./);
+  assert.match(result.stdout, /Validated 4 amendment mapping\(s\) and 4 EffectiveRecord\(s\)\./);
 });
 
 test("CLI exits one on validation failure", () => {

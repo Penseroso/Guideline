@@ -12,7 +12,7 @@
         "integrated_package"
       ]
     },
-    "profileDetails": {
+    "effectiveRecordProfileDetails": {
       "type": "object",
       "additionalProperties": false,
       "required": ["ich_derivation_detail"],

@@ -304,6 +304,42 @@ This document records material project decisions after they are made. It should 
 - Consequences: Schema validation rejects direct ICH field leakage through closed object definitions, and the derived validator rejects non-null `profile_details` on core artifacts.
 - Related files: `structured_data/schemas/derived/profiles/ich.schema.json`, `scripts/validate_derived.js`, `test/fixtures/derived_contract/invalid/`
 
+### DEC-035: Separate legacy and contract-aware derived validation entry points
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: `scripts/validate_derived.js` preserves a dedicated legacy validator for the two frozen Phase 3 prototype shapes and adds a separate contract-aware validator for derived contract `0.1.0` artifacts. The public three-file CLI dispatches to legacy validation only for the exact Phase 3 prototype paths; all other derived artifacts must be contract-marked and schema-valid before contract graph validation.
+- Rationale: Module 4.1 requires schema validation before, not instead of, applicable cross-object validation. New contract artifacts use different field names from the Phase 3 prototypes and must not be forced through legacy-shape checks.
+- Consequences: Existing Module 3.5 behavior remains available for the frozen prototypes. Contract validation runs schema checks first, then contract-shape-aware source-reference, endpoint, provenance, family identity, reviewed-contributor, and cross-family-synthesis checks.
+- Related files: `scripts/validate_derived.js`, `test/validate_derived.test.js`, `working_docs/phase4_module_4_1.md`
+
+### DEC-036: Keep the neutral derived core free of regulator-profile dependencies
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: The regulator-neutral derived core schema must not directly reference ICH profile schemas. Profile-specific constraints are applied from artifact schemas and profile schemas.
+- Rationale: DEC-030 requires profiles to extend or constrain the core without duplicating or contaminating the core with regulator-specific semantics.
+- Consequences: `core.schema.json` contains only neutral definitions. ICH profile details are required only by relevant artifact/profile combinations, and metadata artifacts are not forced to carry derivation-specific ICH fields.
+- Related files: `structured_data/schemas/derived/core.schema.json`, `structured_data/schemas/derived/artifacts/`, `structured_data/schemas/derived/profiles/ich.schema.json`
+
+### DEC-037: Keep derivation basis on EffectiveRecord, not AmendmentMapping
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: Module 4.1 does not place `derivation_basis` or ICH derivation-detail fields on AmendmentMapping. `derivation_basis` belongs to EffectiveRecord creation unless a later reviewed contract decision expands its use.
+- Rationale: Module 3.6 defines derivation basis primarily for EffectiveRecord creation. AmendmentMapping records the amendment relationship, endpoints, source evidence, original wording, and review status.
+- Consequences: AmendmentMapping schemas enforce the closed amendment relation vocabulary but do not invent ICH mapping-detail vocabulary. EffectiveRecord schemas retain `derivation_basis` and relevant ICH derivation profile details.
+- Related files: `structured_data/schemas/derived/artifacts/amendment_mapping.schema.json`, `structured_data/schemas/derived/artifacts/effective_record.schema.json`, `structured_data/schemas/derived/profiles/ich.schema.json`
+
+### DEC-038: Distinguish technical migration history from regulatory lifecycle semantics
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: Contract artifacts may carry minimal technical migration evidence through successor-to-predecessor references and source artifact paths, but those fields do not represent regulatory lifecycle replacement, amendment, or supersession.
+- Rationale: Module 4.6 must migrate Phase 3 prototypes non-destructively while preserving historical records. Technical migration evidence is needed, but it must not be confused with regulatory semantic relationships.
+- Consequences: Legacy file paths are migration evidence only, not stable artifact identity. Bidirectional successor links are not required in Module 4.1. Lifecycle and amendment semantics remain represented by their own artifact types and relation fields.
+- Related files: `structured_data/schemas/derived/core.schema.json`, `structured_data/schemas/derived/artifacts/effective_record.schema.json`, `test/fixtures/derived_contract/valid/effective_record_migrated_successor.json`
+
 ## Decision Template
 
 ### DEC-000: Title

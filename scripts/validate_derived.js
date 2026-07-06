@@ -109,13 +109,6 @@ function getDerivedSchemaAjv() {
   return derivedSchemaAjv;
 }
 
-function isContractMarkedArtifact(artifact) {
-  return isObject(artifact) && (
-    Object.prototype.hasOwnProperty.call(artifact, "derived_model_version") ||
-    Object.prototype.hasOwnProperty.call(artifact, "artifact_type")
-  );
-}
-
 function formatSchemaPath(error) {
   return error.instancePath || "/";
 }
@@ -155,14 +148,6 @@ function validateDerivedContractArtifact({ artifact, file }) {
   }
 
   return { ok: errors.length === 0, errors };
-}
-
-function validateDerivedContractArtifactIfRequired({ artifact, file }) {
-  if (isLegacySchemaExemptFile(file) || !isContractMarkedArtifact(artifact)) {
-    return { ok: true, errors: [], schemaValidated: false };
-  }
-  const result = validateDerivedContractArtifact({ artifact, file });
-  return { ...result, schemaValidated: true };
 }
 
 function compareRepoPath(errors, file, id, field, actual, expected) {
@@ -623,40 +608,13 @@ function requireIncludedSourceUnit(errors, file, ownerId, field, sourceUnitId, s
   }
 }
 
-function validateDerivedArtifacts({ sourceBundle, amendmentArtifact, effectiveArtifact, files }) {
+function validateLegacyDerivedArtifacts({ sourceBundle, amendmentArtifact, effectiveArtifact, files }) {
   const errors = [];
   const normalizedFiles = {
     sourceFile: files && files.sourceFile ? files.sourceFile : "source",
     amendmentFile: files && files.amendmentFile ? files.amendmentFile : "amendments",
     effectiveFile: files && files.effectiveFile ? files.effectiveFile : "effective"
   };
-
-  const amendmentSchemaResult = validateDerivedContractArtifactIfRequired({
-    artifact: amendmentArtifact,
-    file: normalizedFiles.amendmentFile
-  });
-  const effectiveSchemaResult = validateDerivedContractArtifactIfRequired({
-    artifact: effectiveArtifact,
-    file: normalizedFiles.effectiveFile
-  });
-  errors.push(...amendmentSchemaResult.errors, ...effectiveSchemaResult.errors);
-  if (errors.length > 0) {
-    return {
-      ok: false,
-      errors,
-      amendmentMappingCount: 0,
-      effectiveRecordCount: 0
-    };
-  }
-
-  if (amendmentSchemaResult.schemaValidated || effectiveSchemaResult.schemaValidated) {
-    return {
-      ok: true,
-      errors,
-      amendmentMappingCount: Array.isArray(amendmentArtifact && amendmentArtifact.records) ? amendmentArtifact.records.length : 0,
-      effectiveRecordCount: Array.isArray(effectiveArtifact && effectiveArtifact.records) ? effectiveArtifact.records.length : 0
-    };
-  }
 
   const sourceIndexes = buildSourceIndexes(sourceBundle || {});
   const mappings = validateAmendments({
@@ -688,6 +646,312 @@ function validateDerivedArtifacts({ sourceBundle, amendmentArtifact, effectiveAr
       ? effectiveArtifact.effective_records.length
       : 0
   };
+}
+
+const CONTRACT_ID_FIELDS = {
+  GuidanceFamily: "guidance_family_id",
+  DocumentEdition: "document_edition_id",
+  EditionSource: "edition_source_id",
+  LifecycleRelationship: "lifecycle_relationship_id",
+  AmendmentMapping: "mapping_id",
+  EffectiveRecord: "effective_record_id",
+  EffectiveStateSnapshot: "snapshot_id",
+  ReviewAttestation: "review_attestation_id",
+  RiskAssessment: "risk_assessment_id"
+};
+
+function validateContractArtifacts({ sourceBundle, artifacts }) {
+  const errors = [];
+  const normalizedArtifacts = (artifacts || []).map((entry, index) => ({
+    artifact: entry && entry.artifact,
+    file: entry && entry.file ? entry.file : `artifact_${index}.json`
+  }));
+
+  for (const { artifact, file } of normalizedArtifacts) {
+    if (!isObject(artifact) || !Object.prototype.hasOwnProperty.call(artifact, "derived_model_version") || !Object.prototype.hasOwnProperty.call(artifact, "artifact_type")) {
+      addError(errors, file, null, "artifact_type", "derived contract artifacts must declare derived_model_version and artifact_type");
+      continue;
+    }
+    const result = validateDerivedContractArtifact({ artifact, file });
+    errors.push(...result.errors);
+  }
+
+  if (errors.length > 0) {
+    return {
+      ok: false,
+      errors,
+      amendmentMappingCount: 0,
+      effectiveRecordCount: 0
+    };
+  }
+
+  const sourceIndexes = buildSourceIndexes(sourceBundle || {});
+  const contractIndexes = buildContractIndexes({ artifacts: normalizedArtifacts, errors });
+  validateContractRegistry({ contractIndexes, sourceIndexes, errors });
+  validateContractAmendmentMappings({ contractIndexes, sourceIndexes, errors });
+  validateContractEffectiveRecords({ contractIndexes, sourceIndexes, errors });
+
+  return {
+    ok: errors.length === 0,
+    errors,
+    amendmentMappingCount: contractIndexes.amendmentMappings.size,
+    effectiveRecordCount: contractIndexes.effectiveRecords.size
+  };
+}
+
+function buildContractIndexes({ artifacts, errors }) {
+  const indexes = {
+    guidanceFamilies: new Map(),
+    documentEditions: new Map(),
+    editionSources: new Map(),
+    lifecycleRelationships: new Map(),
+    amendmentMappings: new Map(),
+    effectiveRecords: new Map(),
+    artifactsByType: new Map(),
+    recordOwners: new Map()
+  };
+
+  const mapByType = {
+    GuidanceFamily: indexes.guidanceFamilies,
+    DocumentEdition: indexes.documentEditions,
+    EditionSource: indexes.editionSources,
+    LifecycleRelationship: indexes.lifecycleRelationships,
+    AmendmentMapping: indexes.amendmentMappings,
+    EffectiveRecord: indexes.effectiveRecords
+  };
+
+  for (const { artifact, file } of artifacts) {
+    if (!indexes.artifactsByType.has(artifact.artifact_type)) indexes.artifactsByType.set(artifact.artifact_type, []);
+    indexes.artifactsByType.get(artifact.artifact_type).push({ artifact, file });
+    const idField = CONTRACT_ID_FIELDS[artifact.artifact_type];
+    const targetMap = mapByType[artifact.artifact_type];
+    if (!idField || !targetMap) continue;
+    for (const record of artifact.records || []) {
+      const id = record && record[idField];
+      if (!isNonEmptyString(id)) continue;
+      if (targetMap.has(id)) {
+        addError(errors, file, id, idField, "duplicate contract record ID");
+      } else {
+        targetMap.set(id, record);
+        indexes.recordOwners.set(id, { artifact, file, artifactType: artifact.artifact_type });
+      }
+    }
+  }
+  return indexes;
+}
+
+function validateContractRegistry({ contractIndexes, sourceIndexes, errors }) {
+  for (const [editionId, edition] of contractIndexes.documentEditions) {
+    if (contractIndexes.guidanceFamilies.size > 0 && !contractIndexes.guidanceFamilies.has(edition.guidance_family_id)) {
+      const owner = contractIndexes.recordOwners.get(editionId);
+      addError(errors, owner.file, editionId, "guidance_family_id", `reference does not resolve to GuidanceFamily: ${edition.guidance_family_id}`);
+    }
+  }
+  for (const [editionSourceId, editionSource] of contractIndexes.editionSources) {
+    const owner = contractIndexes.recordOwners.get(editionSourceId);
+    if (contractIndexes.documentEditions.size > 0 && !contractIndexes.documentEditions.has(editionSource.document_edition_id)) {
+      addError(errors, owner.file, editionSourceId, "document_edition_id", `reference does not resolve to DocumentEdition: ${editionSource.document_edition_id}`);
+    }
+    requireSourceRef(errors, owner.file, sourceIndexes, editionSource.document_id, "document_id", editionSourceId, "documents");
+  }
+}
+
+function validateContractAmendmentMappings({ contractIndexes, sourceIndexes, errors }) {
+  for (const [mappingId, mapping] of contractIndexes.amendmentMappings) {
+    const owner = contractIndexes.recordOwners.get(mappingId);
+    if (contractIndexes.documentEditions.size > 0) {
+      const sourceEdition = contractIndexes.documentEditions.get(mapping.source_document_edition_id);
+      const amendingEdition = contractIndexes.documentEditions.get(mapping.amending_document_edition_id);
+      if (!sourceEdition) {
+        addError(errors, owner.file, mappingId, "source_document_edition_id", `reference does not resolve to DocumentEdition: ${mapping.source_document_edition_id}`);
+      } else if (sourceEdition.guidance_family_id !== mapping.guidance_family_id) {
+        addError(errors, owner.file, mappingId, "source_document_edition_id", "DocumentEdition guidance_family_id must match mapping guidance_family_id");
+      }
+      if (!amendingEdition) {
+        addError(errors, owner.file, mappingId, "amending_document_edition_id", `reference does not resolve to DocumentEdition: ${mapping.amending_document_edition_id}`);
+      } else if (amendingEdition.guidance_family_id !== mapping.guidance_family_id) {
+        addError(errors, owner.file, mappingId, "amending_document_edition_id", "DocumentEdition guidance_family_id must match mapping guidance_family_id");
+      }
+    }
+    for (const sourceRecordId of mapping.source_record_ids || []) {
+      const endpoint = requireSourceRef(errors, owner.file, sourceIndexes, sourceRecordId, "source_record_ids", mappingId, "knowledge_records");
+      if (mapping.review_status === "reviewed" && endpoint && endpoint.review_status !== "reviewed") {
+        addError(errors, owner.file, mappingId, "review_status", `reviewed mapping references unreviewed KnowledgeRecord ${sourceRecordId}`);
+      }
+    }
+    for (const amendingRecordId of mapping.amending_record_ids || []) {
+      const endpoint = requireSourceRef(errors, owner.file, sourceIndexes, amendingRecordId, "amending_record_ids", mappingId, "knowledge_records");
+      if (mapping.review_status === "reviewed" && endpoint && endpoint.review_status !== "reviewed") {
+        addError(errors, owner.file, mappingId, "review_status", `reviewed mapping references unreviewed KnowledgeRecord ${amendingRecordId}`);
+      }
+    }
+    validateContractSourceReferences({ refs: mapping.source_references || [], ownerId: mappingId, file: owner.file, sourceIndexes, errors });
+  }
+}
+
+function validateContractEffectiveRecords({ contractIndexes, sourceIndexes, errors }) {
+  for (const [effectiveRecordId, record] of contractIndexes.effectiveRecords) {
+    const owner = contractIndexes.recordOwners.get(effectiveRecordId);
+    if (record.derivation_basis === "reviewed_cross_document_synthesis") {
+      addError(errors, owner.file, effectiveRecordId, "derivation_basis", "reviewed_cross_document_synthesis is not executable in Module 4.1 without an approved authorization artifact");
+    }
+
+    if (contractIndexes.documentEditions.size > 0) {
+      const edition = contractIndexes.documentEditions.get(record.document_edition_id);
+      if (!edition) {
+        addError(errors, owner.file, effectiveRecordId, "document_edition_id", `reference does not resolve to DocumentEdition: ${record.document_edition_id}`);
+      } else if (edition.guidance_family_id !== record.guidance_family_id) {
+        addError(errors, owner.file, effectiveRecordId, "document_edition_id", "DocumentEdition guidance_family_id must match EffectiveRecord guidance_family_id");
+      }
+    }
+
+    validateContractSourceReferences({ refs: record.source_references || [], ownerId: effectiveRecordId, file: owner.file, sourceIndexes, errors });
+    const resolved = resolveContractEffectiveContributors({ record, file: owner.file, sourceIndexes, errors });
+    validateContractEffectiveMappingCoverage({ record, file: owner.file, contractIndexes, resolved, errors });
+    validateContractEffectiveProvenanceClosure({ record, file: owner.file, resolved, errors });
+  }
+}
+
+function validateContractSourceReferences({ refs, ownerId, file, sourceIndexes, errors }) {
+  for (const ref of refs) {
+    requireSourceRef(errors, file, sourceIndexes, ref.document_id, "source_references.document_id", ownerId, "documents");
+    if (ref.section_id !== null && ref.section_id !== undefined) {
+      requireSourceRef(errors, file, sourceIndexes, ref.section_id, "source_references.section_id", ownerId, "sections");
+    }
+    if (ref.source_unit_id !== null && ref.source_unit_id !== undefined) {
+      const sourceUnit = requireSourceRef(errors, file, sourceIndexes, ref.source_unit_id, "source_references.source_unit_id", ownerId, "source_units");
+      if (sourceUnit && sourceUnit.document_id !== ref.document_id) {
+        addError(errors, file, ownerId, "source_references.source_unit_id", `SourceUnit ${ref.source_unit_id} document_id must match source reference document_id ${ref.document_id}`);
+      }
+      if (sourceUnit && ref.section_id && sourceUnit.section_id !== ref.section_id) {
+        addError(errors, file, ownerId, "source_references.source_unit_id", `SourceUnit ${ref.source_unit_id} section_id must match source reference section_id ${ref.section_id}`);
+      }
+    }
+  }
+}
+
+function resolveContractEffectiveContributors({ record, file, sourceIndexes, errors }) {
+  const resolved = {
+    knowledge_records: [],
+    conditions: [],
+    quantitative_criteria: [],
+    cross_references: [],
+    source_units: []
+  };
+  for (const contributorId of record.contributing_record_ids || []) {
+    const layer = sourceIndexes.idLayers.get(contributorId);
+    if (!layer) {
+      addError(errors, file, record.effective_record_id, "contributing_record_ids", `reference does not resolve to a source contributor: ${contributorId}`);
+      continue;
+    }
+    const collection = layer.find((candidate) => Object.prototype.hasOwnProperty.call(resolved, candidate));
+    if (!collection) {
+      addError(errors, file, record.effective_record_id, "contributing_record_ids", `reference resolves to unsupported source layer ${layer.join(", ")}: ${contributorId}`);
+      continue;
+    }
+    resolved[collection].push(sourceIndexes[collection].get(contributorId));
+  }
+  return resolved;
+}
+
+function validateContractEffectiveMappingCoverage({ record, file, contractIndexes, resolved, errors }) {
+  const contributorIds = new Set(record.contributing_record_ids || []);
+  for (const mappingId of record.amendment_mapping_ids || []) {
+    const mapping = contractIndexes.amendmentMappings.get(mappingId);
+    if (!mapping) {
+      addError(errors, file, record.effective_record_id, "amendment_mapping_ids", `reference does not resolve to AmendmentMapping: ${mappingId}`);
+      continue;
+    }
+    if (mapping.guidance_family_id !== record.guidance_family_id) {
+      addError(errors, file, record.effective_record_id, "amendment_mapping_ids", `unauthorized cross-family synthesis through AmendmentMapping ${mappingId}`);
+    }
+    if (record.review_status === "reviewed" && mapping.review_status !== "reviewed") {
+      addError(errors, file, record.effective_record_id, "amendment_mapping_ids", `reviewed EffectiveRecord references unreviewed AmendmentMapping ${mappingId}`);
+    }
+    const hasSource = (mapping.source_record_ids || []).some((id) => contributorIds.has(id));
+    const hasAmending = (mapping.amending_record_ids || []).some((id) => contributorIds.has(id));
+    if (!hasSource) {
+      addError(errors, file, record.effective_record_id, "contributing_record_ids", `mapping-backed record is missing source endpoint coverage for ${mappingId}`);
+    }
+    if (!hasAmending) {
+      addError(errors, file, record.effective_record_id, "contributing_record_ids", `mapping-backed record is missing amending endpoint coverage for ${mappingId}`);
+    }
+  }
+  if (record.review_status === "reviewed") {
+    for (const collection of ["knowledge_records", "conditions", "quantitative_criteria", "source_units"]) {
+      for (const contributor of resolved[collection]) {
+        const contributorId = contributor.knowledge_record_id || contributor.condition_id || contributor.criterion_id || contributor.source_unit_id;
+        if (contributor.review_status !== "reviewed") {
+          addError(errors, file, record.effective_record_id, collection, `reviewed EffectiveRecord references unreviewed contributor ${contributorId}`);
+        }
+      }
+    }
+  }
+}
+
+function validateContractEffectiveProvenanceClosure({ record, file, resolved, errors }) {
+  const sourceUnitIds = new Set((record.source_references || []).map((ref) => ref.source_unit_id).filter(isNonEmptyString));
+  const knowledgeIds = new Set(resolved.knowledge_records.map((item) => item.knowledge_record_id));
+  const conditionIds = new Set(resolved.conditions.map((item) => item.condition_id));
+
+  for (const kr of resolved.knowledge_records) {
+    for (const sourceUnitId of kr.source_unit_ids || []) {
+      requireContractSourceUnitReference(errors, file, record.effective_record_id, sourceUnitId, sourceUnitIds, `KnowledgeRecord ${kr.knowledge_record_id}`);
+    }
+  }
+  for (const condition of resolved.conditions) {
+    if (!(condition.applies_to_ids || []).some((id) => knowledgeIds.has(id))) {
+      addError(errors, file, record.effective_record_id, "contributing_record_ids", `Condition ${condition.condition_id} does not apply to any included KnowledgeRecord`);
+    }
+    requireContractSourceUnitReference(errors, file, record.effective_record_id, condition.source_unit_id, sourceUnitIds, `Condition ${condition.condition_id}`);
+  }
+  for (const criterion of resolved.quantitative_criteria) {
+    if (!knowledgeIds.has(criterion.knowledge_record_id)) {
+      addError(errors, file, record.effective_record_id, "contributing_record_ids", `QuantitativeCriterion ${criterion.criterion_id} references KnowledgeRecord ${criterion.knowledge_record_id} not included`);
+    }
+    for (const conditionId of criterion.condition_ids || []) {
+      if (!conditionIds.has(conditionId)) {
+        addError(errors, file, record.effective_record_id, "contributing_record_ids", `QuantitativeCriterion ${criterion.criterion_id} condition ${conditionId} is not included`);
+      }
+    }
+    requireContractSourceUnitReference(errors, file, record.effective_record_id, criterion.source_unit_id, sourceUnitIds, `QuantitativeCriterion ${criterion.criterion_id}`);
+  }
+  for (const xref of resolved.cross_references) {
+    requireContractSourceUnitReference(errors, file, record.effective_record_id, xref.source_unit_id, sourceUnitIds, `CrossReference ${xref.xref_id}`);
+  }
+}
+
+function requireContractSourceUnitReference(errors, file, ownerId, sourceUnitId, sourceUnitIds, label) {
+  if (!sourceUnitIds.has(sourceUnitId)) {
+    addError(errors, file, ownerId, "source_references", `${label} direct SourceUnit ${sourceUnitId} is not included`);
+  }
+}
+
+function shouldUseLegacyFileDispatch(files) {
+  return isLegacySchemaExemptFile(files.amendmentFile) && isLegacySchemaExemptFile(files.effectiveFile);
+}
+
+function validateDerivedArtifacts({ sourceBundle, amendmentArtifact, effectiveArtifact, files }) {
+  const normalizedFiles = {
+    sourceFile: files && files.sourceFile ? files.sourceFile : "source",
+    amendmentFile: files && files.amendmentFile ? files.amendmentFile : "amendments",
+    effectiveFile: files && files.effectiveFile ? files.effectiveFile : "effective"
+  };
+  if (shouldUseLegacyFileDispatch(normalizedFiles)) {
+    return validateLegacyDerivedArtifacts({
+      sourceBundle,
+      amendmentArtifact,
+      effectiveArtifact,
+      files: normalizedFiles
+    });
+  }
+  return validateContractArtifacts({
+    sourceBundle,
+    artifacts: [
+      { artifact: amendmentArtifact, file: normalizedFiles.amendmentFile },
+      { artifact: effectiveArtifact, file: normalizedFiles.effectiveFile }
+    ]
+  });
 }
 
 function loadJson(file, errors) {
@@ -759,7 +1023,9 @@ if (require.main === module) {
 
 module.exports = {
   normalizeRepoPath,
+  validateContractArtifacts,
   validateDerivedContractArtifact,
   validateDerivedArtifacts,
-  validateDerivedFiles
+  validateDerivedFiles,
+  validateLegacyDerivedArtifacts
 };

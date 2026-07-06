@@ -12,7 +12,6 @@
       "amending_record_ids": ["fixture.kr.addendum"],
       "relation_type": "explains",
       "original_relationship_wording": "explains",
-      "derivation_basis": "amendment_synthesis",
       "source_references": [
         {
           "document_id": "ich_s6_r1",

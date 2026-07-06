@@ -9,6 +9,12 @@
     "derived_model_version": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/derivedModelVersion" },
     "artifact_type": { "const": "EditionSource" },
     "regulator_profile": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/regulatorProfile" },
+    "technical_migration": {
+      "oneOf": [
+        { "type": "null" },
+        { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/technicalMigration" }
+      ]
+    },
     "records": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/editionSource" } }
   },
   "definitions": {
@@ -22,7 +28,8 @@
         "document_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id" },
         "source_role": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString" },
         "review_status": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/aggregateReviewStatus" },
-        "profile_details": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/profileDetails" }
+        "profile_details": { "type": "null" },
+        "history": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/recordHistory" }
       }
     }
   }
