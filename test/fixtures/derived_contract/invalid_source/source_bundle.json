@@ -1,0 +1,141 @@
+{
+  "documents": [
+    {
+      "document_id": "test_doc",
+      "title": "Test Guideline",
+      "guideline_code": "TEST",
+      "issuing_body": "TEST",
+      "document_version_label": "Test version",
+      "source_file_path": "Guideline Files/Test.pdf",
+      "source_file_checksum": "TEST",
+      "schema_model_version": "0.2.0"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "test.sec.parent",
+      "document_id": "test_doc",
+      "section_number": "1",
+      "title": "Parent",
+      "parent_section_id": null,
+      "section_order": 1,
+      "section_order_status": "known",
+      "heading_source_unit_id": null
+    },
+    {
+      "section_id": "test.sec.addendum",
+      "document_id": "test_doc",
+      "section_number": "2",
+      "title": "Addendum",
+      "parent_section_id": null,
+      "section_order": 2,
+      "section_order_status": "known",
+      "heading_source_unit_id": null
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "test.su.parent.001",
+      "document_id": "test_doc",
+      "section_id": "test.sec.nonexistent",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Parent source text.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "Guideline Files/Test.pdf",
+        "document_id": "test_doc",
+        "section_id": "test.sec.nonexistent",
+        "pdf_page_index_zero_based": 0,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "1",
+        "printed_page_label_status": "known",
+        "extraction_method": "fixture"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "test.su.addendum.001",
+      "document_id": "test_doc",
+      "section_id": "test.sec.addendum",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Addendum source text.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "Guideline Files/Test.pdf",
+        "document_id": "test_doc",
+        "section_id": "test.sec.addendum",
+        "pdf_page_index_zero_based": 1,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "2",
+        "printed_page_label_status": "known",
+        "extraction_method": "fixture"
+      },
+      "review_status": "reviewed"
+    }
+  ],
+  "knowledge_records": [
+    {
+      "knowledge_record_id": "test.kr.addendum.001",
+      "source_unit_ids": [
+        "test.su.addendum.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Addendum subject",
+      "action": "should do",
+      "object": "addendum object",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    }
+  ],
+  "quantitative_criteria": [
+    {
+      "criterion_id": "test.qc.001",
+      "source_unit_id": "test.su.addendum.001",
+      "knowledge_record_id": "test.kr.addendum.001",
+      "parameter": "duration",
+      "comparator": "at_least",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "month",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [
+        "test.cond.001"
+      ],
+      "source_text": "at least 1 month",
+      "review_status": "reviewed"
+    }
+  ],
+  "conditions": [
+    {
+      "condition_id": "test.cond.001",
+      "source_unit_id": "test.su.addendum.001",
+      "condition_text": "when applicable",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "test.kr.addendum.001"
+      ],
+      "review_status": "reviewed"
+    }
+  ],
+  "cross_references": [
+    {
+      "xref_id": "test.xref.001",
+      "source_unit_id": "test.su.addendum.001",
+      "raw_reference_text": "see note",
+      "target_type": "unknown",
+      "target_document_label": null,
+      "target_id": null,
+      "resolution_status": "needs_review",
+      "review_status": "reviewed"
+    }
+  ]
+}

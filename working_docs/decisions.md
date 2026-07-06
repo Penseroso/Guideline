@@ -415,6 +415,7 @@ This document records material project decisions after they are made. It should 
 - Rationale: Contract validation must be reusable by the future engine and must not depend on historical repository filenames. Legacy validation remains valuable as regression protection, but it is not part of the production runtime contract.
 - Consequences: `npm run validate:derived` validates a complete contract `0.1.0` graph fixture. `npm run validate:legacy` validates the frozen Phase 3 prototypes. DEC-035 is superseded to the extent it placed legacy dispatch inside the production validator.
 - Related files: `scripts/validate_derived.js`, `scripts/validate_legacy_derived.js`, `package.json`, `test/fixtures/derived_contract/complete_graph/manifest.json`, `test/validate_derived.test.js`
+- Clarification note (Module 4.1 follow-up): the production contract validator now revalidates the manifest's source bundle before derived validation, reusing `validateBundles` from `scripts/validate_structured_data.js` (source model `0.2.0`) rather than reimplementing source rules. Order is source schema and source cross-object validation, then derived artifact schema validation, then derived contract graph validation; a source-validation failure stops the run before graph validation. This does not change the split between production and legacy validation.
 
 ### DEC-047: Use source-layer IDs as derived provenance authority
 
@@ -424,6 +425,7 @@ This document records material project decisions after they are made. It should 
 - Rationale: Source bundles are authoritative for text and page trace. Duplicating source text or page fields in derived artifacts creates divergence risk and weakens traceability.
 - Consequences: Derived schemas remove duplicated source-reference page/text fields. AmendmentMapping, LifecycleRelationship, and EffectiveRecord evidence uses source-unit-level references. EditionSource is enforced as the relevant source-document authorization boundary when supplied.
 - Related files: `structured_data/schemas/derived/core.schema.json`, `scripts/validate_derived.js`, `test/fixtures/derived_contract/`, `test/validate_derived.test.js`
+- Clarification note (Module 4.1 follow-up): the single `sourceDocumentRef` shape is separated into two closed shapes. `documentLevelSourceRef` requires only `document_id`; `sourceUnitLevelSourceRef` requires `document_id`, `section_id`, and `source_unit_id` together. LifecycleRelationship, AmendmentMapping, and EffectiveRecord `source_references` accept only `sourceUnitLevelSourceRef`, so a document-only reference on those artifacts now fails at schema validation. No source text or page fields are re-added.
 
 ### DEC-048: Enforce global contract ID uniqueness and genuine predecessor history
 
@@ -433,6 +435,7 @@ This document records material project decisions after they are made. It should 
 - Rationale: A future engine needs stable global derived-record identity independent of file layout. Technical migration from Phase 3 prototypes is no longer a production flow, and predecessor links must not be used merely because a fixture or artifact was copied from a historical prototype.
 - Consequences: `technical_migration`, `technical_migration_from_record_ids`, and migration-only fixtures are removed from the production contract. Later modules may add semantic successor records, but must do so without cycles or self-reference.
 - Related files: `structured_data/schemas/derived/core.schema.json`, `scripts/validate_derived.js`, `test/validate_derived.test.js`
+- Clarification note (Module 4.1 follow-up): genuine predecessor history is further constrained. When a `history.predecessor_record_ids` entry is present in the supplied contract graph, it must share the referencing record's `artifact_type`; referencing a different artifact type as a predecessor fails. Predecessor IDs absent from the supplied graph remain allowed as historical lineage. This reinforces that Phase 1-3 prototypes are regression references and never production predecessor or successor targets.
 
 ## Decision Template
 

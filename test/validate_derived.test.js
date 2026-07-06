@@ -651,6 +651,104 @@ test("supplied-record predecessor cycles fail", () => {
   }), "predecessor cycle detected");
 });
 
+test("predecessor referencing a different supplied artifact type fails", () => {
+  assertInvalid(validateContractGraphCopies((source, artifacts) => {
+    artifacts.effectiveArtifact.records[0].history = { predecessor_record_ids: ["test.family"] };
+  }), "predecessor test.family must have the same artifact_type EffectiveRecord; found GuidanceFamily");
+});
+
+test("predecessor referencing the same supplied artifact type passes", () => {
+  assertValid(validateContractGraphCopies((source, artifacts) => {
+    const second = clone(artifacts.effectiveArtifact.records[0]);
+    second.effective_record_id = "test.contract.eff.002";
+    second.history = { predecessor_record_ids: ["test.contract.eff.001"] };
+    artifacts.effectiveArtifact.records.push(second);
+  }));
+});
+
+test("predecessor IDs absent from the supplied graph are allowed", () => {
+  assertValid(validateContractGraphCopies((source, artifacts) => {
+    artifacts.effectiveArtifact.records[0].history = { predecessor_record_ids: ["legacy.effective.not_in_graph"] };
+  }));
+});
+
+test("derived validation revalidates the supplied source bundle and fails on an invalid source bundle", () => {
+  const result = validateDerivedManifestFile({
+    manifestFile: path.join(CONTRACT_FIXTURE_DIR, "invalid_source", "manifest.json")
+  });
+  assertInvalid(result, "reference does not resolve inside this bundle: test.sec.nonexistent");
+});
+
+test("derived graph validation does not run when source validation fails", () => {
+  const result = validateDerivedManifestFile({
+    manifestFile: path.join(CONTRACT_FIXTURE_DIR, "invalid_source", "manifest.json")
+  });
+  assert.equal(result.ok, false);
+  assert.equal(
+    result.errors.some((error) => error.includes("does not resolve to knowledge_records: test.kr.parent.001")),
+    false,
+    `derived graph validation should not have run, got:\n${result.errors.join("\n")}`
+  );
+});
+
+test("source-unit-level evidence rejects a missing section_id", () => {
+  const artifact = readJson(path.join(CONTRACT_FIXTURE_DIR, "valid", "lifecycle_relationship.json"));
+  delete artifact.records[0].source_references[0].section_id;
+  assertInvalid(validateDerivedContractArtifact({ artifact, file: "lifecycle_relationship.json" }), "must have required property 'section_id'");
+});
+
+test("source-unit-level evidence rejects a missing source_unit_id", () => {
+  const artifact = readJson(path.join(CONTRACT_FIXTURE_DIR, "valid", "lifecycle_relationship.json"));
+  delete artifact.records[0].source_references[0].source_unit_id;
+  assertInvalid(validateDerivedContractArtifact({ artifact, file: "lifecycle_relationship.json" }), "must have required property 'source_unit_id'");
+});
+
+function contractArtifactsWithoutEditionSource(mutator) {
+  const graph = contractGraphArtifacts(mutator);
+  return validateContractArtifacts({
+    sourceBundle: graph.sourceBundle,
+    artifacts: [
+      { artifact: graph.guidanceFamilyArtifact, file: "contract_guidance_family.json" },
+      { artifact: graph.documentEditionArtifact, file: "contract_document_edition.json" },
+      { artifact: graph.lifecycleArtifact, file: "contract_lifecycle.json" },
+      { artifact: graph.amendmentArtifact, file: "contract_amendment.json" },
+      { artifact: graph.effectiveArtifact, file: "contract_effective.json" }
+    ]
+  });
+}
+
+test("authorization is skipped when no referenced edition has an EditionSource", () => {
+  assertValid(contractArtifactsWithoutEditionSource());
+});
+
+test("authorization runs when every referenced edition has an EditionSource", () => {
+  assertValid(validateContractGraphCopies());
+});
+
+test("partial EditionSource coverage fails with an incomplete registry error", () => {
+  assertInvalid(validateContractGraphCopies((source, artifacts) => {
+    artifacts.editionSourceArtifact.records = artifacts.editionSourceArtifact.records.filter((record) => record.document_edition_id !== "test.edition.addendum");
+  }), "incomplete EditionSource registry");
+});
+
+test("LifecycleRelationship partial EditionSource coverage fails", () => {
+  assertInvalid(validateContractGraphCopies((source, artifacts) => {
+    artifacts.editionSourceArtifact.records = artifacts.editionSourceArtifact.records.filter((record) => record.document_edition_id !== "test.edition.addendum");
+  }), "test.lifecycle.001 edition_source: incomplete EditionSource registry");
+});
+
+test("AmendmentMapping partial EditionSource coverage fails", () => {
+  assertInvalid(validateContractGraphCopies((source, artifacts) => {
+    artifacts.editionSourceArtifact.records = artifacts.editionSourceArtifact.records.filter((record) => record.document_edition_id !== "test.edition.addendum");
+  }), "test.contract.amend.001 edition_source: incomplete EditionSource registry");
+});
+
+test("EffectiveRecord partial EditionSource coverage fails", () => {
+  assertInvalid(validateContractGraphCopies((source, artifacts) => {
+    artifacts.editionSourceArtifact.records = artifacts.editionSourceArtifact.records.filter((record) => record.document_edition_id !== "test.edition.addendum");
+  }), "test.contract.eff.001 edition_source: incomplete EditionSource registry");
+});
+
 test("AmendmentMapping rejects empty source endpoints", () => {
   const artifact = readJson(path.join(CONTRACT_FIXTURE_DIR, "valid", "amendment_mapping.json"));
   artifact.records[0].source_record_ids = [];
