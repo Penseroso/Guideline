@@ -708,6 +708,7 @@ function buildContractIndexes({ artifacts, errors }) {
     amendmentMappings: new Map(),
     effectiveRecords: new Map(),
     artifactsByType: new Map(),
+    editionSourceDocuments: new Map(),
     recordOwners: new Map()
   };
 
@@ -734,6 +735,12 @@ function buildContractIndexes({ artifacts, errors }) {
       } else {
         targetMap.set(id, record);
         indexes.recordOwners.set(id, { artifact, file, artifactType: artifact.artifact_type });
+        if (artifact.artifact_type === "EditionSource") {
+          if (!indexes.editionSourceDocuments.has(record.document_edition_id)) {
+            indexes.editionSourceDocuments.set(record.document_edition_id, new Set());
+          }
+          indexes.editionSourceDocuments.get(record.document_edition_id).add(record.document_id);
+        }
       }
     }
   }
@@ -753,6 +760,43 @@ function validateContractRegistry({ contractIndexes, sourceIndexes, errors }) {
       addError(errors, owner.file, editionSourceId, "document_edition_id", `reference does not resolve to DocumentEdition: ${editionSource.document_edition_id}`);
     }
     requireSourceRef(errors, owner.file, sourceIndexes, editionSource.document_id, "document_id", editionSourceId, "documents");
+  }
+  for (const [relationshipId, relationship] of contractIndexes.lifecycleRelationships) {
+    const owner = contractIndexes.recordOwners.get(relationshipId);
+    if (contractIndexes.guidanceFamilies.size > 0 && !contractIndexes.guidanceFamilies.has(relationship.guidance_family_id)) {
+      addError(errors, owner.file, relationshipId, "guidance_family_id", `reference does not resolve to GuidanceFamily: ${relationship.guidance_family_id}`);
+    }
+    const fromEdition = contractIndexes.documentEditions.get(relationship.from_document_edition_id);
+    const toEdition = contractIndexes.documentEditions.get(relationship.to_document_edition_id);
+    if (relationship.from_document_edition_id === relationship.to_document_edition_id) {
+      addError(errors, owner.file, relationshipId, "to_document_edition_id", "LifecycleRelationship self-relations are not supported in Module 4.1");
+    }
+    if (contractIndexes.documentEditions.size > 0 && !fromEdition) {
+      addError(errors, owner.file, relationshipId, "from_document_edition_id", `reference does not resolve to DocumentEdition: ${relationship.from_document_edition_id}`);
+    } else if (fromEdition && fromEdition.guidance_family_id !== relationship.guidance_family_id) {
+      addError(errors, owner.file, relationshipId, "from_document_edition_id", "DocumentEdition guidance_family_id must match LifecycleRelationship guidance_family_id");
+    }
+    if (contractIndexes.documentEditions.size > 0 && !toEdition) {
+      addError(errors, owner.file, relationshipId, "to_document_edition_id", `reference does not resolve to DocumentEdition: ${relationship.to_document_edition_id}`);
+    } else if (toEdition && toEdition.guidance_family_id !== relationship.guidance_family_id) {
+      addError(errors, owner.file, relationshipId, "to_document_edition_id", "DocumentEdition guidance_family_id must match LifecycleRelationship guidance_family_id");
+    }
+    if (fromEdition && toEdition && fromEdition.jurisdiction !== toEdition.jurisdiction) {
+      addError(errors, owner.file, relationshipId, "jurisdiction", "LifecycleRelationship editions must have matching jurisdiction");
+    }
+    if (fromEdition && relationship.jurisdiction !== fromEdition.jurisdiction) {
+      addError(errors, owner.file, relationshipId, "jurisdiction", "LifecycleRelationship jurisdiction must match source DocumentEdition jurisdiction");
+    }
+    validateContractSourceReferences({ refs: relationship.source_references || [], ownerId: relationshipId, file: owner.file, sourceIndexes, errors });
+    if (relationship.review_status === "reviewed") {
+      for (const ref of relationship.source_references || []) {
+        if (!isNonEmptyString(ref.source_unit_id)) continue;
+        const sourceUnit = sourceIndexes.source_units.get(ref.source_unit_id);
+        if (sourceUnit && sourceUnit.review_status !== "reviewed") {
+          addError(errors, owner.file, relationshipId, "review_status", `reviewed LifecycleRelationship references unreviewed SourceUnit ${ref.source_unit_id}`);
+        }
+      }
+    }
   }
 }
 
@@ -785,7 +829,19 @@ function validateContractAmendmentMappings({ contractIndexes, sourceIndexes, err
         addError(errors, owner.file, mappingId, "review_status", `reviewed mapping references unreviewed KnowledgeRecord ${amendingRecordId}`);
       }
     }
+    for (const xrefId of mapping.contextual_cross_reference_ids || []) {
+      requireSourceRef(errors, owner.file, sourceIndexes, xrefId, "contextual_cross_reference_ids", mappingId, "cross_references");
+    }
     validateContractSourceReferences({ refs: mapping.source_references || [], ownerId: mappingId, file: owner.file, sourceIndexes, errors });
+    validateAuthorizedSourceDocuments({
+      refs: mapping.source_references || [],
+      ownerId: mappingId,
+      file: owner.file,
+      field: "source_references.document_id",
+      editionIds: [mapping.source_document_edition_id, mapping.amending_document_edition_id],
+      contractIndexes,
+      errors
+    });
   }
 }
 
@@ -796,6 +852,7 @@ function validateContractEffectiveRecords({ contractIndexes, sourceIndexes, erro
       addError(errors, owner.file, effectiveRecordId, "derivation_basis", "reviewed_cross_document_synthesis is not executable in Module 4.1 without an approved authorization artifact");
     }
 
+    const authorizedEditionIds = [record.document_edition_id];
     if (contractIndexes.documentEditions.size > 0) {
       const edition = contractIndexes.documentEditions.get(record.document_edition_id);
       if (!edition) {
@@ -807,8 +864,40 @@ function validateContractEffectiveRecords({ contractIndexes, sourceIndexes, erro
 
     validateContractSourceReferences({ refs: record.source_references || [], ownerId: effectiveRecordId, file: owner.file, sourceIndexes, errors });
     const resolved = resolveContractEffectiveContributors({ record, file: owner.file, sourceIndexes, errors });
+    for (const mappingId of record.amendment_mapping_ids || []) {
+      const mapping = contractIndexes.amendmentMappings.get(mappingId);
+      if (!mapping) continue;
+      authorizedEditionIds.push(mapping.source_document_edition_id, mapping.amending_document_edition_id);
+    }
+    validateAuthorizedSourceDocuments({
+      refs: record.source_references || [],
+      ownerId: effectiveRecordId,
+      file: owner.file,
+      field: "source_references.document_id",
+      editionIds: authorizedEditionIds,
+      contractIndexes,
+      errors
+    });
+    validateContractRepresentationLimitations({ record, file: owner.file, contractIndexes, sourceIndexes, resolved, errors });
     validateContractEffectiveMappingCoverage({ record, file: owner.file, contractIndexes, resolved, errors });
     validateContractEffectiveProvenanceClosure({ record, file: owner.file, resolved, errors });
+  }
+}
+
+function validateAuthorizedSourceDocuments({ refs, ownerId, file, field, editionIds, contractIndexes, errors }) {
+  const allowedDocuments = new Set();
+  let hasRelevantEditionSource = false;
+  for (const editionId of editionIds || []) {
+    const documents = contractIndexes.editionSourceDocuments.get(editionId);
+    if (!documents) continue;
+    hasRelevantEditionSource = true;
+    for (const documentId of documents) allowedDocuments.add(documentId);
+  }
+  if (!hasRelevantEditionSource) return;
+  for (const ref of refs) {
+    if (!allowedDocuments.has(ref.document_id)) {
+      addError(errors, file, ownerId, field, `source document ${ref.document_id} is not authorized by EditionSource for the referenced DocumentEdition`);
+    }
   }
 }
 
@@ -884,6 +973,69 @@ function validateContractEffectiveMappingCoverage({ record, file, contractIndexe
         if (contributor.review_status !== "reviewed") {
           addError(errors, file, record.effective_record_id, collection, `reviewed EffectiveRecord references unreviewed contributor ${contributorId}`);
         }
+      }
+    }
+    const limitedCrossReferenceIds = collectLimitedCrossReferenceIds(record);
+    for (const xref of resolved.cross_references) {
+      const unresolved = xref.resolution_status && xref.resolution_status !== "resolved";
+      if ((xref.review_status !== "reviewed" || unresolved) && !limitedCrossReferenceIds.has(xref.xref_id)) {
+        addError(errors, file, record.effective_record_id, "representation_limitations", `CrossReference ${xref.xref_id} must be documented in structured representation_limitations`);
+      }
+    }
+  }
+}
+
+function collectLimitedCrossReferenceIds(record) {
+  const ids = new Set();
+  for (const limitation of record.representation_limitations || []) {
+    for (const id of limitation.affected_cross_reference_ids || []) ids.add(id);
+  }
+  return ids;
+}
+
+function validateContractRepresentationLimitations({ record, file, contractIndexes, sourceIndexes, resolved, errors }) {
+  const evidenceIds = new Set(record.contributing_record_ids || []);
+  for (const mappingId of record.amendment_mapping_ids || []) evidenceIds.add(mappingId);
+  for (const ref of record.source_references || []) {
+    if (isNonEmptyString(ref.document_id)) evidenceIds.add(ref.document_id);
+    if (isNonEmptyString(ref.section_id)) evidenceIds.add(ref.section_id);
+    if (isNonEmptyString(ref.source_unit_id)) evidenceIds.add(ref.source_unit_id);
+  }
+  const sourceCollectionsById = new Map([
+    ["documents", "document_id"],
+    ["sections", "section_id"],
+    ["source_units", "source_unit_id"],
+    ["knowledge_records", "knowledge_record_id"],
+    ["quantitative_criteria", "criterion_id"],
+    ["conditions", "condition_id"],
+    ["cross_references", "xref_id"]
+  ]);
+  const limitationList = record.representation_limitations || [];
+  for (const limitation of limitationList) {
+    for (const xrefId of limitation.affected_cross_reference_ids || []) {
+      requireSourceRef(errors, file, sourceIndexes, xrefId, "representation_limitations.affected_cross_reference_ids", record.effective_record_id, "cross_references");
+      if (!evidenceIds.has(xrefId)) {
+        addError(errors, file, record.effective_record_id, "representation_limitations.affected_cross_reference_ids", `affected CrossReference ${xrefId} must be a contributor or referenced evidence`);
+      }
+    }
+    for (const affectedId of limitation.affected_record_ids || []) {
+      if (contractIndexes.amendmentMappings.has(affectedId)) {
+        if (!evidenceIds.has(affectedId)) {
+          addError(errors, file, record.effective_record_id, "representation_limitations.affected_record_ids", `affected record ${affectedId} must be a contributor or referenced evidence`);
+        }
+        continue;
+      }
+      const layers = sourceIndexes.idLayers.get(affectedId);
+      if (!layers) {
+        addError(errors, file, record.effective_record_id, "representation_limitations.affected_record_ids", `reference does not resolve to source or contract evidence: ${affectedId}`);
+        continue;
+      }
+      const supportedLayer = layers.find((layer) => sourceCollectionsById.has(layer));
+      if (!supportedLayer) {
+        addError(errors, file, record.effective_record_id, "representation_limitations.affected_record_ids", `reference resolves to unsupported evidence layer ${layers.join(", ")}: ${affectedId}`);
+      }
+      if (!evidenceIds.has(affectedId)) {
+        addError(errors, file, record.effective_record_id, "representation_limitations.affected_record_ids", `affected record ${affectedId} must be a contributor or referenced evidence`);
       }
     }
   }

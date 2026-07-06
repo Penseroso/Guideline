@@ -25,6 +25,8 @@
       ],
       "effective_text_en": "Fixture effective text.",
       "normalized_ko": null,
+      "synthesis_rationale": "Fixture synthesis rationale.",
+      "representation_limitations": [],
       "review_status": "needs_review",
       "profile_details": null
     }

@@ -11,7 +11,11 @@
       "source_record_ids": ["fixture.kr.parent"],
       "amending_record_ids": ["fixture.kr.addendum"],
       "relation_type": "clarifies",
+      "mapped_scope": "Fixture amendment scope.",
+      "analyst_rationale": "Fixture rationale preserving why the amendment relationship was assigned.",
       "original_relationship_wording": "clarifies",
+      "contextual_cross_reference_ids": [],
+      "contextual_cross_reference_note": null,
       "source_references": [
         {
           "document_id": "ich_s6_r1",

@@ -68,7 +68,7 @@
     "effectiveRecord": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["effective_record_id", "guidance_family_id", "document_edition_id", "jurisdiction", "as_of_date", "effective_status", "derivation_basis", "amendment_mapping_ids", "contributing_record_ids", "source_references", "effective_text_en", "normalized_ko", "review_status", "profile_details"],
+      "required": ["effective_record_id", "guidance_family_id", "document_edition_id", "jurisdiction", "as_of_date", "effective_status", "derivation_basis", "amendment_mapping_ids", "contributing_record_ids", "source_references", "effective_text_en", "normalized_ko", "synthesis_rationale", "representation_limitations", "review_status", "profile_details"],
       "properties": {
         "effective_record_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id" },
         "guidance_family_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id" },
@@ -78,10 +78,15 @@
         "effective_status": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString" },
         "derivation_basis": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/derivationBasis" },
         "amendment_mapping_ids": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/idArray" },
-        "contributing_record_ids": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/idArray" },
+        "contributing_record_ids": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyIdArray" },
         "source_references": { "type": "array", "minItems": 1, "items": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/sourceDocumentRef" } },
         "effective_text_en": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString" },
         "normalized_ko": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nullableString" },
+        "synthesis_rationale": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString" },
+        "representation_limitations": {
+          "type": "array",
+          "items": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/representationLimitation" }
+        },
         "review_status": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/aggregateReviewStatus" },
         "profile_details": {
           "oneOf": [
@@ -90,7 +95,22 @@
           ]
         },
         "history": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/recordHistory" }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "derivation_basis": { "const": "amendment_synthesis" }
+            },
+            "required": ["derivation_basis"]
+          },
+          "then": {
+            "properties": {
+              "amendment_mapping_ids": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyIdArray" }
+            }
+          }
+        }
+      ]
     }
   }
 }

@@ -340,6 +340,60 @@ This document records material project decisions after they are made. It should 
 - Consequences: Legacy file paths are migration evidence only, not stable artifact identity. Bidirectional successor links are not required in Module 4.1. Lifecycle and amendment semantics remain represented by their own artifact types and relation fields.
 - Related files: `structured_data/schemas/derived/core.schema.json`, `structured_data/schemas/derived/artifacts/effective_record.schema.json`, `test/fixtures/derived_contract/valid/effective_record_migrated_successor.json`
 
+### DEC-039: Preserve reviewed Phase 3 derived rationale and limitation fields in the contract
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: AmendmentMapping contract records preserve `mapped_scope`, `analyst_rationale`, `contextual_cross_reference_ids`, and `contextual_cross_reference_note`. EffectiveRecord contract records preserve `synthesis_rationale` and structured `representation_limitations`.
+- Rationale: The reviewed Phase 3 prototypes contain material derived meaning in these fields. Because contract schemas are closed, omitting them would prevent Module 4.6 successor artifacts from preserving reviewed Phase 3 information without loss.
+- Consequences: These fields are regulator-neutral contract fields. They remain derived-layer analysis and must not be moved into source-layer records or reinterpreted during migration.
+- Related files: `structured_data/schemas/derived/artifacts/amendment_mapping.schema.json`, `structured_data/schemas/derived/artifacts/effective_record.schema.json`, `test/fixtures/derived_contract/valid/s6_r1_amendment_mapping_successor.json`, `test/fixtures/derived_contract/valid/s6_r1_effective_record_successor.json`
+
+### DEC-040: Ground EffectiveRecord representation limitations with structured affected IDs
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: EffectiveRecord `representation_limitations` are structured objects with human-readable `limitation_text` plus affected CrossReference and/or affected record IDs. At least one affected-ID array must be non-empty, every affected ID must resolve, and every affected ID must be a contributor or otherwise referenced evidence of the EffectiveRecord.
+- Rationale: Module 3.5 allowed a reviewed EffectiveRecord to depend on an unresolved CrossReference only when the limitation was explicitly disclosed. Structured affected IDs preserve that behavior without free-form substring matching or ungrounded notes.
+- Consequences: Free-form-only limitation notes are rejected. Reviewed EffectiveRecords that rely on unresolved or unreviewed CrossReferences must name the affected CrossReference in structured limitations.
+- Related files: `structured_data/schemas/derived/core.schema.json`, `structured_data/schemas/derived/artifacts/effective_record.schema.json`, `scripts/validate_derived.js`, `test/validate_derived.test.js`
+
+### DEC-041: Add artifact-specific minimum cardinality for derived endpoints and contributors
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: AmendmentMapping `source_record_ids` and `amending_record_ids` must each contain at least one ID. EffectiveRecord `contributing_record_ids` must contain at least one ID. EffectiveRecord `amendment_mapping_ids` must contain at least one ID when `derivation_basis=amendment_synthesis`, but may be empty for supported direct-source and supplementary-source records.
+- Rationale: Empty arrays are valid for some shared ID-array fields, so the shared `idArray` definition must remain permissive. Endpoint and contributor cardinality is artifact-specific contract meaning.
+- Consequences: Schema validation catches empty mapping endpoints, empty EffectiveRecord contributors, and empty amendment-synthesis mapping references without changing unrelated array fields.
+- Related files: `structured_data/schemas/derived/core.schema.json`, `structured_data/schemas/derived/artifacts/amendment_mapping.schema.json`, `structured_data/schemas/derived/artifacts/effective_record.schema.json`, `test/validate_derived.test.js`
+
+### DEC-042: Treat EditionSource as the source-document authorization boundary when supplied
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: When relevant EditionSource artifacts are supplied, contract graph validation uses them to authorize which source `Document` IDs may support an AmendmentMapping or EffectiveRecord. EditionSource completeness is not required when registry artifacts are absent.
+- Rationale: DEC-030 keeps source `Document` canonical and makes EditionSource the bridge from DocumentEdition to source documents. Module 4.1 can enforce graph integrity for supplied fixtures without requiring Module 4.2 production registry completeness.
+- Consequences: Unrelated source documents cannot be used silently when relevant EditionSource records exist. Module 4.2 remains responsible for production registry completeness.
+- Related files: `structured_data/schemas/derived/artifacts/edition_source.schema.json`, `scripts/validate_derived.js`, `test/validate_derived.test.js`
+
+### DEC-043: Prohibit LifecycleRelationship self-relations in Module 4.1
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: Module 4.1 contract graph validation rejects LifecycleRelationship records whose source and target DocumentEdition IDs are the same.
+- Rationale: The approved contract does not define a self-relation semantic. Allowing one would introduce ambiguous lifecycle behavior before later lifecycle modules have reviewed such a case.
+- Consequences: Self-relations require a later explicit contract decision. Module 4.1 validates lifecycle references, family consistency, jurisdiction consistency, source-reference resolution, and reviewed source-unit evidence without inventing additional lifecycle relation vocabulary.
+- Related files: `structured_data/schemas/derived/artifacts/lifecycle_relationship.schema.json`, `scripts/validate_derived.js`, `test/validate_derived.test.js`
+
+### DEC-044: Interpret current risk reference optionality as required nullable before Module 4.5
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: Before Module 4.5, `current_risk_assessment_id` remains a required property on GuidanceFamily and DocumentEdition records, but its value may be `null`.
+- Rationale: The Phase 4 plan makes the current risk reference optional before RiskAssessment production rules exist. A required nullable property preserves stable registry shape while explicitly representing that no current RiskAssessment has been assigned yet.
+- Consequences: Module 4.1 does not require a RiskAssessment artifact or latest-risk-history validation. Module 4.5 may later require non-null, resolving current risk references.
+- Related files: `structured_data/schemas/derived/artifacts/guidance_family.schema.json`, `structured_data/schemas/derived/artifacts/document_edition.schema.json`, `working_docs/phase4_plan.md`
+
 ## Decision Template
 
 ### DEC-000: Title

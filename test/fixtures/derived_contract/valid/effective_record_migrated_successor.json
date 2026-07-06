@@ -29,6 +29,8 @@
       ],
       "effective_text_en": "Fixture migrated successor effective text.",
       "normalized_ko": null,
+      "synthesis_rationale": "Fixture migrated successor synthesis rationale.",
+      "representation_limitations": [],
       "review_status": "needs_review",
       "profile_details": {
         "ich_derivation_detail": "addendum_without_parent_counterpart",

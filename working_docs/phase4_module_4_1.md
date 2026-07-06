@@ -34,13 +34,29 @@ All other derived artifacts must be contract-marked with `derived_model_version`
 
 The regulator-neutral core schema has no direct dependency on the ICH profile schema. Artifact schemas apply profile-specific constraints where needed.
 
-- `AmendmentMapping` carries amendment endpoint, relation, source evidence, review, and technical history fields. It does not carry `derivation_basis` or ICH derivation details in Module 4.1.
-- `EffectiveRecord` carries `derivation_basis`; ICH derivation details are required only where the EffectiveRecord derivation basis needs ICH profile detail.
+- `AmendmentMapping` carries amendment endpoint, relation, mapped scope, analyst rationale, contextual cross-reference evidence, source evidence, review, and technical history fields. It does not carry `derivation_basis` or ICH derivation details in Module 4.1.
+- `EffectiveRecord` carries `derivation_basis`, synthesis rationale, and structured representation limitations. ICH derivation details are required only where the EffectiveRecord derivation basis needs ICH profile detail.
 - Review, risk, family, snapshot, and other metadata artifacts are not required to carry derivation-specific ICH details.
+- `current_risk_assessment_id` is required but nullable before Module 4.5, so absence of a current RiskAssessment is explicit without prematurely requiring RiskAssessment production artifacts.
+
+## Migration-fidelity scaffold
+
+Module 4.1 includes fixture-only successor artifacts demonstrating that reviewed Phase 3 derived meaning can be represented without migrating the frozen production prototypes.
+
+- Existing reviewed strings, IDs, and review states are preserved exactly in the fixture successors.
+- Legacy-to-contract field renaming is structural normalization, for example Parent/Addendum endpoint names to source/amending endpoint names.
+- `source_references` reconstructed from source-bundle trace are trace-derived enrichment.
+- `technical_migration.source_artifact_paths` and `technical_migration.migration_note` preserve technical migration evidence without representing regulatory lifecycle replacement or supersession.
 
 ## Contract graph checks
 
-The Module 4.1 contract graph validator checks source-reference resolution, object-layer correctness, AmendmentMapping endpoint resolution, EffectiveRecord mapping coverage, provenance closure, family or document identity when registry artifacts are supplied, reviewed-contributor invariants demonstrated by Module 3.5, and rejection of `reviewed_cross_document_synthesis` or cross-family synthesis by default.
+The Module 4.1 contract graph validator checks source-reference resolution, object-layer correctness, AmendmentMapping endpoint resolution, contextual CrossReference resolution, EffectiveRecord mapping coverage, provenance closure, family or document identity when registry artifacts are supplied, reviewed-contributor invariants demonstrated by Module 3.5, and rejection of `reviewed_cross_document_synthesis` or cross-family synthesis by default.
+
+LifecycleRelationship graph validation resolves declared GuidanceFamily, source and target DocumentEdition records, family consistency, jurisdiction consistency, source references, reviewed source-unit evidence where applicable, and rejects self-relations in Module 4.1.
+
+When relevant EditionSource artifacts are supplied, contract graph validation uses EditionSource as the source-document authorization boundary for AmendmentMapping and EffectiveRecord source references. Module 4.1 does not require EditionSource completeness when registry artifacts are absent; production registry completeness remains Module 4.2 scope.
+
+Reviewed EffectiveRecords may depend on unresolved or unreviewed CrossReferences only when a structured representation limitation names the affected CrossReference and the affected IDs resolve to contributors or referenced evidence. Free-form limitation notes without affected IDs are rejected.
 
 Full risk-tier satisfaction, review-attestation aggregation, and disagreement-resolution policy remain assigned to later Phase 4 modules.
 

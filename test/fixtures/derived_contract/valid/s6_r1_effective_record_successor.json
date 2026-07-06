@@ -1,0 +1,80 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "EffectiveRecord",
+  "regulator_profile": "ich",
+  "technical_migration": {
+    "source_artifact_paths": ["structured_data/derived/s6_r1_effective_records.json"],
+    "migration_note": "Fixture successor preserving reviewed Phase 3 effective-state information for Module 4.1 contract validation."
+  },
+  "records": [
+    {
+      "effective_record_id": "ich_s6_r1.eff.part2.2_1.animal_tcr_species_selection",
+      "guidance_family_id": "fixture.family.ich_s6",
+      "document_edition_id": "fixture.edition.s6.addendum",
+      "jurisdiction": "ICH",
+      "as_of_date": "2026-07-06",
+      "effective_status": "current",
+      "derivation_basis": "amendment_synthesis",
+      "amendment_mapping_ids": ["ich_s6_r1.amend.004"],
+      "contributing_record_ids": [
+        "ich_s6_r1.kr.part1.3_3.004",
+        "ich_s6_r1.kr.part1.3_3.005",
+        "ich_s6_r1.kr.part2.2_1.007",
+        "ich_s6_r1.kr.part2.2_1.008",
+        "ich_s6_r1.kr.part2.notes.005",
+        "ich_s6_r1.kr.part2.notes.014",
+        "ich_s6_r1.cond.part1.3_3.002",
+        "ich_s6_r1.cond.part1.3_3.003",
+        "ich_s6_r1.cond.part2.2_1.003",
+        "ich_s6_r1.cond.part2.notes.002",
+        "ich_s6_r1.xref.part2.2_1.001"
+      ],
+      "source_references": [
+        {
+          "document_id": "ich_s6_r1",
+          "section_id": "ich_s6_r1.sec.part1.3_3",
+          "source_unit_id": "ich_s6_r1.su.part1.3_3.003",
+          "pdf_page_index_zero_based": 7,
+          "printed_page_label": "4",
+          "source_text": null
+        },
+        {
+          "document_id": "ich_s6_r1",
+          "section_id": "ich_s6_r1.sec.part2.2_1",
+          "source_unit_id": "ich_s6_r1.su.part2.2_1.005",
+          "pdf_page_index_zero_based": 14,
+          "printed_page_label": "11",
+          "source_text": null
+        },
+        {
+          "document_id": "ich_s6_r1",
+          "section_id": "ich_s6_r1.sec.part2.notes",
+          "source_unit_id": "ich_s6_r1.su.part2.notes.note1.004",
+          "pdf_page_index_zero_based": 20,
+          "printed_page_label": "17",
+          "source_text": null
+        }
+      ],
+      "effective_text_en": "For monoclonal-antibody testing, expression of the desired epitope remains central to species relevance. An epitope-negative species may still have some relevance for toxicity assessment if comparable unintended tissue cross-reactivity to humans is demonstrated. However, assessment of tissue cross-reactivity in animal tissues has limited value for species selection and TCR studies can be used only in specific cases where other approaches cannot demonstrate a pharmacologically relevant species. When unexpected binding occurs in human tissues, selected animal tissues can provide supplemental information, but TCR using a full panel of animal tissues is not recommended.",
+      "normalized_ko": null,
+      "synthesis_rationale": "This EffectiveRecord represents one operative proposition from the reviewed narrows mapping ich_s6_r1.amend.004. Parent records ich_s6_r1.kr.part1.3_3.004 and ich_s6_r1.kr.part1.3_3.005 supply the monoclonal-antibody epitope-expression criterion and the conditional relevance of an epitope-negative species when comparable unintended tissue cross-reactivity to humans is demonstrated. Parent Conditions ich_s6_r1.cond.part1.3_3.002 and ich_s6_r1.cond.part1.3_3.003 remain material to that scope. Addendum records ich_s6_r1.kr.part2.2_1.007 and ich_s6_r1.kr.part2.2_1.008 narrow the role of animal-tissue TCR to limited species-selection value and specific cases where other approaches cannot demonstrate a pharmacologically relevant species. Note 1 records ich_s6_r1.kr.part2.notes.005 and ich_s6_r1.kr.part2.notes.014 limit full-panel animal TCR and permit selected-animal-tissue evaluation only as conditional supplemental information when unexpected binding occurs in human tissues. The effective text preserves 'can be used' and does not normalize it to 'may'.",
+      "representation_limitations": [
+        {
+          "limitation_text": "Cross-reference ich_s6_r1.xref.part2.2_1.001 has raw text '(see Note 1)' and target_id=null because model 0.2.0 cannot resolve note-level targets. The linked Note 1 source unit ich_s6_r1.su.part2.notes.note1.004 and operative Note 1 records are included, so this is a representation limitation rather than absence of reviewed context.",
+          "affected_cross_reference_ids": ["ich_s6_r1.xref.part2.2_1.001"],
+          "affected_record_ids": ["ich_s6_r1.su.part2.notes.note1.004"]
+        }
+      ],
+      "review_status": "reviewed",
+      "profile_details": {
+        "ich_derivation_detail": "parent_addendum_synthesis",
+        "ich_step": "Step 4",
+        "ich_code": "S6"
+      },
+      "history": {
+        "predecessor_record_ids": ["ich_s6_r1.eff.part2.2_1.animal_tcr_species_selection"],
+        "technical_migration_from_record_ids": ["ich_s6_r1.eff.part2.2_1.animal_tcr_species_selection"]
+      }
+    }
+  ]
+}
