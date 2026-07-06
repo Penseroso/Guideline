@@ -25,15 +25,15 @@
 
 - Objective: Complete. Prototype reviewed mappings between Addendum and Parent `KnowledgeRecord` objects.
 - Outputs: Complete. Provisional amendment-relation design note (`working_docs/amendment_prototype_S6_R1.md`) and a small reviewed mapping sample (`structured_data/derived/s6_r1_amendment_mappings.json`) referencing existing S6 source `KnowledgeRecord` IDs.
-- Completion gate: Complete after repository review REV-005. Each mapping traces to existing source records, uses only the strategy relation-type vocabulary, and is clearly marked analyst-derived, not source text. `amend.001`/`amend.002` are `reviewed`; the two relation-boundary mappings (`amend.003`, `amend.004`) remain `needs_review` and are deferred to the Module 3.6 vocabulary decision, not blocking this gate.
+- Completion gate: Complete after repository review REV-005. Each mapping traces to existing source records, uses only the strategy relation-type vocabulary, and is clearly marked analyst-derived, not source text. All four mappings are now `reviewed` after REV-008 resolved `amend.003` to `clarifies` and REV-007 resolved `amend.004` to `narrows`.
 - Non-goals: Rewriting Parent records, creating effective-state records, automated amendment detection, or adding objects to the JSON Schema.
 
 ## 3.4 current effective-state prototype
 
-- Prerequisite: Complete. S6(R1) evaluative-language record-type classifications are resolved (DEC-026, REV-006); all S6 pilot `KnowledgeRecord` objects are `reviewed`. The `amend.004` tissue-cross-reactivity determination is resolved to `narrows` and `reviewed` (DEC-027, REV-007). The `amend.003` `supplements` vs `clarifies` boundary remains `needs_review` (Module 3.6) but does not affect the tissue-cross-reactivity pair.
+- Prerequisite: Complete. S6(R1) evaluative-language record-type classifications are resolved (DEC-026, REV-006); all S6 pilot `KnowledgeRecord` objects are `reviewed`. The `amend.004` tissue-cross-reactivity determination is resolved to `narrows` and `reviewed` (DEC-027, REV-007). The `amend.003` no-relevant-species determination is resolved to `clarifies` and `reviewed` (DEC-028, REV-008). Addendum-only `EffectiveRecord` handling is defined (DEC-029): operative Addendum guidance with no meaningful Parent counterpart may be synthesized with full Addendum provenance and an empty amendment-relation ID array.
 - Objective: Unstarted. Prototype reviewed current effective-state records derived from applicable Parent and Addendum records.
 - Outputs: Provisional `EffectiveRecord` design notes and a small reviewed synthesis sample.
-- Completion gate: Each effective statement traces to all contributing source records and amendment-relation IDs, with unresolved conflicts blocking reviewed status.
+- Completion gate: Each effective statement traces to all contributing source records and, where applicable, amendment-relation IDs; Addendum-only statements use an empty amendment-relation ID array, and unresolved conflicts block reviewed status.
 - Non-goals: Verbatim source replacement, regulatory suitability conclusions, decision automation, or UI implementation.
 
 ## 3.5 validator and regression-test expansion
