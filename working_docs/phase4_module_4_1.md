@@ -41,7 +41,7 @@ The regulator-neutral core schema has no direct dependency on the ICH profile sc
 - Review, risk, family, snapshot, and other metadata artifacts are not required to carry derivation-specific ICH details.
 - `current_risk_assessment_id` is required but nullable before Module 4.5, so absence of a current RiskAssessment is explicit without prematurely requiring RiskAssessment production artifacts.
 - `GuidanceFamily` uses the artifact envelope `regulator_profile`; the record does not repeat that field.
-- Source references are ID-based only. Derived artifacts store `document_id`, and for source-unit evidence store `document_id`, `section_id`, and `source_unit_id`. Source text, page index, and printed page labels remain authoritative in the source bundle.
+- Source references are ID-based only, and the core schema separates two closed reference shapes. A document-level reference (`documentLevelSourceRef`) carries only `document_id`. A source-unit-level reference (`sourceUnitLevelSourceRef`) requires all three of `document_id`, `section_id`, and `source_unit_id`. LifecycleRelationship, AmendmentMapping, and EffectiveRecord `source_references` accept only source-unit-level references, so partial evidence that names a document without its section and source unit is rejected at schema validation. Source text, page index, and printed page labels remain authoritative in the source bundle and are not re-added to derived artifacts.
 
 ## Repository artifact authority
 
@@ -67,13 +67,21 @@ Historical/non-normative:
 
 The production engine must use only normative runtime artifacts. Phase 3 prototypes are comparison references, not production migration inputs.
 
+## Source bundle revalidation
+
+`npm run validate:derived` revalidates the supplied source bundle before any derived validation. The manifest validator runs, in order: (1) source JSON Schema and source cross-object validation, reusing `validateBundles` from `scripts/validate_structured_data.js`; (2) derived artifact JSON Schema validation; (3) derived contract graph validation. It reuses the existing source validator rather than copying source rules. If source validation fails, the derived contract graph validation does not run, so a derived artifact is never graph-checked against a source bundle that is itself invalid.
+
 ## Contract graph checks
 
 The Module 4.1 contract graph validator checks source-reference resolution, object-layer correctness, AmendmentMapping endpoint resolution and provenance closure, contextual CrossReference resolution, EffectiveRecord mapping coverage, EffectiveRecord provenance closure including direct SourceUnit contributors, family or document identity when registry artifacts are supplied, reviewed-contributor invariants demonstrated by Module 3.5, global contract ID uniqueness, predecessor-history self-reference and cycle checks, and rejection of `reviewed_cross_document_synthesis` or cross-family synthesis by default.
 
+Predecessor-history integrity additionally requires that a `history.predecessor_record_ids` entry present in the supplied contract graph shares the referencing record's `artifact_type`; referencing a different artifact type as a predecessor fails. Predecessor IDs that are not present in the supplied graph are treated as historical lineage and allowed.
+
 LifecycleRelationship graph validation resolves declared GuidanceFamily, source and target DocumentEdition records, family consistency, jurisdiction consistency, source references, reviewed source-unit evidence where applicable, and rejects self-relations in Module 4.1.
 
 When relevant EditionSource artifacts are supplied, contract graph validation uses EditionSource as the source-document authorization boundary for LifecycleRelationship, AmendmentMapping, and EffectiveRecord source references. AmendmentMapping validates source and amending endpoint evidence against the corresponding edition separately. Module 4.1 does not require EditionSource completeness when registry artifacts are absent; production registry completeness remains Module 4.2 scope.
+
+Partial EditionSource coverage is rejected per validated record. For the editions a record references — LifecycleRelationship from/to editions, AmendmentMapping source/amending editions, and EffectiveRecord own edition plus the editions its referenced AmendmentMappings require — either none of those editions has an EditionSource, in which case the authorization check is skipped, or all of them do, in which case authorization runs. If some but not all of the referenced editions carry an EditionSource, validation fails with an incomplete-registry error. Whole-of-production registry completeness remains Module 4.2 scope.
 
 Reviewed EffectiveRecords may depend on unresolved or unreviewed CrossReferences only when a structured representation limitation names the affected CrossReference and the affected IDs resolve to contributors or referenced evidence. Free-form limitation notes without affected IDs are rejected.
 

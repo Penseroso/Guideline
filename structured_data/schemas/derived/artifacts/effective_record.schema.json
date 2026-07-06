@@ -160,7 +160,7 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/sourceDocumentRef"
+            "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/sourceUnitLevelSourceRef"
           }
         },
         "effective_text_en": {

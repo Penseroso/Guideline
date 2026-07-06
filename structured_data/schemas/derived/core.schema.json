@@ -107,14 +107,22 @@
       "type": "string",
       "minLength": 1
     },
-    "sourceDocumentRef": {
+    "documentLevelSourceRef": {
       "type": "object",
       "additionalProperties": false,
       "required": ["document_id"],
       "properties": {
+        "document_id": { "$ref": "#/definitions/id" }
+      }
+    },
+    "sourceUnitLevelSourceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document_id", "section_id", "source_unit_id"],
+      "properties": {
         "document_id": { "$ref": "#/definitions/id" },
-        "section_id": { "$ref": "#/definitions/nullableId" },
-        "source_unit_id": { "$ref": "#/definitions/nullableId" }
+        "section_id": { "$ref": "#/definitions/id" },
+        "source_unit_id": { "$ref": "#/definitions/id" }
       }
     },
     "representationLimitation": {

@@ -1,0 +1,11 @@
+{
+  "source_bundle": "source_bundle.json",
+  "artifacts": [
+    "../complete_graph/guidance_family.json",
+    "../complete_graph/document_edition.json",
+    "../complete_graph/edition_source.json",
+    "../complete_graph/lifecycle_relationship.json",
+    "../complete_graph/amendment_mapping.json",
+    "../complete_graph/effective_record.json"
+  ]
+}

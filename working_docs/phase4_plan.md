@@ -29,7 +29,9 @@ All entry conditions are satisfied as of REV-011:
 
 - DEC-030 accepted: provisional derived contract `derived_model_version=0.1.0`, regulator-neutral core plus ICH profile, source model `0.2.0` preserved.
 - Module 3.6 reviewed (REV-011); Phase 3 complete.
-- Source validation (`npm run validate:pilots`), derived validation (`npm run validate:derived`), and the regression suite (`npm test`) pass on the current repository state.
+- Source validation (`npm run validate:pilots`) and the regression suite (`npm test`) pass on the current repository state.
+
+Validation-command timeline: at REV-011 (Phase 3 completion) `npm run validate:derived` invoked the Module 3.5 legacy derived-layer validator over the frozen Phase 3 prototypes. Module 4.1 repurposed `npm run validate:derived` to the contract-manifest validator for derived contract `0.1.0`, and the Module 3.5 legacy behavior moved to `npm run validate:legacy`. References to `validate:derived` at or before REV-011 mean the legacy validator; from Module 4.1 onward they mean the contract-manifest validator.
 
 ## Engine boundary
 
@@ -45,6 +47,7 @@ Additional boundary from this revision:
 
 - The engine core is regulator-neutral; regulator specifics live only in profile contracts and profile configuration.
 - Reviewed historical artifacts are never modified in place. Phase 1-3 pilots, probes, prototypes, and review records are regression references and audit history, not production inputs for the runtime contract. Later semantic supersession is additive, with explicit predecessor links; removal or retirement of a historical artifact requires a recorded decision.
+- Predecessor and successor lineage scope: the Phase 1-3 prototypes are regression references only; they are never the target of a production predecessor or successor link. `history.predecessor_record_ids` is reserved for the semantic or version lineage of genuine future Phase 4 production records, and contract validation (DEC-048) requires a supplied predecessor to share the referencing record's `artifact_type` while still allowing historical predecessor IDs that are not present in the supplied contract graph.
 
 ## Common rules binding every module
 
