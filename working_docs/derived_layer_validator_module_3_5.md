@@ -32,12 +32,17 @@ Exit codes:
 
 ## Validation scope
 
-The validator checks artifact metadata, ID uniqueness, source-reference resolution, object-layer correctness, review-state consistency, required provenance fields, amendment endpoint coverage, and EffectiveRecord provenance graph integrity.
+The validator checks artifact metadata, artifact-layer identity, cross-artifact document identity, EffectiveRecord edition identity, SourceUnit document consistency, ID uniqueness, source-reference resolution, object-layer correctness, review-state consistency, required provenance fields, amendment endpoint coverage, and EffectiveRecord provenance graph integrity.
 
 Configured file paths are converted to repository-relative paths with `/` separators before comparison. This avoids false failures from Windows absolute paths.
 
 ## Key rules
 
+- Amendment artifacts must declare `artifact.layer` as `amendment_mapping`.
+- Effective-state artifacts must declare `artifact.layer` as `effective_state`.
+- Amendment and effective-state artifacts must declare the same `artifact.document_id`.
+- Every EffectiveRecord `edition_context.document_id` must equal the effective artifact `artifact.document_id`.
+- Every SourceUnit directly referenced by an EffectiveRecord must have `document_id` equal to that record's `edition_context.document_id`.
 - Amendment mappings must use reviewed source `KnowledgeRecord` endpoints when marked reviewed.
 - Amendment relation types are limited to the provisional vocabulary in `working_docs/amendment_effective_strategy.md`.
 - EffectiveRecords require a non-empty `effective_status` string, but no effective-status vocabulary is enforced in Module 3.5.
