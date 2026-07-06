@@ -15,10 +15,7 @@
         {
           "document_id": "ich_m10",
           "section_id": null,
-          "source_unit_id": null,
-          "pdf_page_index_zero_based": null,
-          "printed_page_label": null,
-          "source_text": "fixture source text"
+          "source_unit_id": null
         }
       ],
       "review_status": "needs_review",

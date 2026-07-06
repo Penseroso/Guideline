@@ -11,7 +11,9 @@
       "review_policy": "include_needs_review",
       "source_corpus_identity": "fixture corpus",
       "calculation_policy_version": "fixture-policy-0",
-      "effective_record_ids": ["fixture.effective.001"],
+      "effective_record_ids": [
+        "fixture.effective.001"
+      ],
       "calculated_at": "2026-07-06T00:00:00Z",
       "review_status": "needs_review",
       "profile_details": null

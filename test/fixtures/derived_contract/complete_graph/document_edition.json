@@ -1,0 +1,33 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "DocumentEdition",
+  "regulator_profile": "core",
+  "records": [
+    {
+      "document_edition_id": "test.edition.parent",
+      "guidance_family_id": "test.family",
+      "edition_label": "Parent",
+      "edition_role": "parent",
+      "jurisdiction": "TEST",
+      "publication_date": null,
+      "effective_date": null,
+      "document_status": "historical",
+      "current_risk_assessment_id": null,
+      "review_status": "needs_review",
+      "profile_details": null
+    },
+    {
+      "document_edition_id": "test.edition.addendum",
+      "guidance_family_id": "test.family",
+      "edition_label": "Addendum",
+      "edition_role": "addendum",
+      "jurisdiction": "TEST",
+      "publication_date": null,
+      "effective_date": null,
+      "document_status": "current",
+      "current_risk_assessment_id": null,
+      "review_status": "needs_review",
+      "profile_details": null
+    }
+  ]
+}

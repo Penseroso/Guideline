@@ -114,10 +114,7 @@
       "properties": {
         "document_id": { "$ref": "#/definitions/id" },
         "section_id": { "$ref": "#/definitions/nullableId" },
-        "source_unit_id": { "$ref": "#/definitions/nullableId" },
-        "pdf_page_index_zero_based": { "type": ["integer", "null"] },
-        "printed_page_label": { "$ref": "#/definitions/nullableString" },
-        "source_text": { "$ref": "#/definitions/nullableString" }
+        "source_unit_id": { "$ref": "#/definitions/nullableId" }
       }
     },
     "representationLimitation": {
@@ -142,27 +139,12 @@
         }
       ]
     },
-    "technicalMigration": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["source_artifact_paths", "migration_note"],
-      "properties": {
-        "source_artifact_paths": {
-          "type": "array",
-          "minItems": 1,
-          "items": { "$ref": "#/definitions/nonEmptyString" },
-          "uniqueItems": true
-        },
-        "migration_note": { "$ref": "#/definitions/nonEmptyString" }
-      }
-    },
     "recordHistory": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["predecessor_record_ids", "technical_migration_from_record_ids"],
+      "required": ["predecessor_record_ids"],
       "properties": {
-        "predecessor_record_ids": { "$ref": "#/definitions/idArray" },
-        "technical_migration_from_record_ids": { "$ref": "#/definitions/idArray" }
+        "predecessor_record_ids": { "$ref": "#/definitions/idArray" }
       }
     },
     "artifactEnvelope": {
@@ -172,12 +154,6 @@
         "derived_model_version": { "$ref": "#/definitions/derivedModelVersion" },
         "artifact_type": { "$ref": "#/definitions/nonEmptyString" },
         "regulator_profile": { "$ref": "#/definitions/regulatorProfile" },
-        "technical_migration": {
-          "oneOf": [
-            { "type": "null" },
-            { "$ref": "#/definitions/technicalMigration" }
-          ]
-        },
         "records": {
           "type": "array",
           "minItems": 1

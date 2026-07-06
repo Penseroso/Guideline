@@ -15,18 +15,20 @@ All contract-conformant artifacts declare `derived_model_version="0.1.0"` and us
 
 ## Validation boundary
 
-`scripts/validate_derived.js` now has separate validation entry points:
+Production contract validation and Phase 3 legacy validation are separate code paths:
 
-- `validateLegacyDerivedArtifacts(...)` preserves the Module 3.5 validator for the frozen Phase 3 prototype shapes.
-- `validateContractArtifacts(...)` validates contract artifacts by running JSON Schema first, then contract-shape-aware graph checks.
-- The existing three-file CLI remains available and dispatches the exact Phase 3 prototype paths to legacy validation.
+- `scripts/validate_derived.js` is the production contract validator for derived contract `0.1.0`.
+- `validateDerivedContractArtifact(...)` validates a single contract artifact against JSON Schema.
+- `validateContractArtifacts(...)` validates supplied contract artifacts by running JSON Schema first, then contract-shape-aware graph checks.
+- The production CLI accepts `--manifest <manifest.json>`, where the manifest names one source bundle and a list of contract artifact files.
+- `scripts/validate_legacy_derived.js` preserves the Module 3.5 validator for the frozen Phase 3 prototype shapes and is exposed by `npm run validate:legacy`.
 
-The Phase 3 prototype artifacts remain explicitly exempt from derived `0.1.0` schema enforcement:
+The production contract validator contains no Phase 3 prototype paths and performs no filename-based legacy dispatch. The Phase 3 prototype artifacts remain historical regression assets:
 
 - `structured_data/derived/s6_r1_amendment_mappings.json`
 - `structured_data/derived/s6_r1_effective_records.json`
 
-They remain covered by the existing Module 3.5 cross-object validator and are not migrated in this module.
+They remain covered by the isolated legacy validator and are not migrated in this module.
 
 All other derived artifacts must be contract-marked with `derived_model_version` and `artifact_type`, and must pass JSON Schema before graph validation.
 
@@ -38,25 +40,44 @@ The regulator-neutral core schema has no direct dependency on the ICH profile sc
 - `EffectiveRecord` carries `derivation_basis`, synthesis rationale, and structured representation limitations. ICH derivation details are required only where the EffectiveRecord derivation basis needs ICH profile detail.
 - Review, risk, family, snapshot, and other metadata artifacts are not required to carry derivation-specific ICH details.
 - `current_risk_assessment_id` is required but nullable before Module 4.5, so absence of a current RiskAssessment is explicit without prematurely requiring RiskAssessment production artifacts.
+- `GuidanceFamily` uses the artifact envelope `regulator_profile`; the record does not repeat that field.
+- Source references are ID-based only. Derived artifacts store `document_id`, and for source-unit evidence store `document_id`, `section_id`, and `source_unit_id`. Source text, page index, and printed page labels remain authoritative in the source bundle.
 
-## Migration-fidelity scaffold
+## Repository artifact authority
 
-Module 4.1 includes fixture-only successor artifacts demonstrating that reviewed Phase 3 derived meaning can be represented without migrating the frozen production prototypes.
+Normative runtime contract:
 
-- Existing reviewed strings, IDs, and review states are preserved exactly in the fixture successors.
-- Legacy-to-contract field renaming is structural normalization, for example Parent/Addendum endpoint names to source/amending endpoint names.
-- `source_references` reconstructed from source-bundle trace are trace-derived enrichment.
-- `technical_migration.source_artifact_paths` and `technical_migration.migration_note` preserve technical migration evidence without representing regulatory lifecycle replacement or supersession.
+- Derived JSON Schemas under `structured_data/schemas/derived/`.
+- Regulator profile schemas under `structured_data/schemas/derived/profiles/`.
+- Production contract validator `scripts/validate_derived.js`.
+- Future generation policy and configuration created by later modules.
+
+Test-only:
+
+- Contract fixtures and manifests under `test/fixtures/derived_contract/`.
+- M10/S6 regression samples.
+- Invalid failure fixtures.
+
+Historical/non-normative:
+
+- Phase 1-3 plans.
+- Phase 3 prototypes.
+- Old review records.
+- Implementation and decision history.
+
+The production engine must use only normative runtime artifacts. Phase 3 prototypes are comparison references, not production migration inputs.
 
 ## Contract graph checks
 
-The Module 4.1 contract graph validator checks source-reference resolution, object-layer correctness, AmendmentMapping endpoint resolution, contextual CrossReference resolution, EffectiveRecord mapping coverage, provenance closure, family or document identity when registry artifacts are supplied, reviewed-contributor invariants demonstrated by Module 3.5, and rejection of `reviewed_cross_document_synthesis` or cross-family synthesis by default.
+The Module 4.1 contract graph validator checks source-reference resolution, object-layer correctness, AmendmentMapping endpoint resolution and provenance closure, contextual CrossReference resolution, EffectiveRecord mapping coverage, EffectiveRecord provenance closure including direct SourceUnit contributors, family or document identity when registry artifacts are supplied, reviewed-contributor invariants demonstrated by Module 3.5, global contract ID uniqueness, predecessor-history self-reference and cycle checks, and rejection of `reviewed_cross_document_synthesis` or cross-family synthesis by default.
 
 LifecycleRelationship graph validation resolves declared GuidanceFamily, source and target DocumentEdition records, family consistency, jurisdiction consistency, source references, reviewed source-unit evidence where applicable, and rejects self-relations in Module 4.1.
 
-When relevant EditionSource artifacts are supplied, contract graph validation uses EditionSource as the source-document authorization boundary for AmendmentMapping and EffectiveRecord source references. Module 4.1 does not require EditionSource completeness when registry artifacts are absent; production registry completeness remains Module 4.2 scope.
+When relevant EditionSource artifacts are supplied, contract graph validation uses EditionSource as the source-document authorization boundary for LifecycleRelationship, AmendmentMapping, and EffectiveRecord source references. AmendmentMapping validates source and amending endpoint evidence against the corresponding edition separately. Module 4.1 does not require EditionSource completeness when registry artifacts are absent; production registry completeness remains Module 4.2 scope.
 
 Reviewed EffectiveRecords may depend on unresolved or unreviewed CrossReferences only when a structured representation limitation names the affected CrossReference and the affected IDs resolve to contributors or referenced evidence. Free-form limitation notes without affected IDs are rejected.
+
+Module 4.1 fixes the structural contract and generic graph rules. Module 4.2 owns production registry data and reviewed controlled vocabularies for DocumentEdition roles, document statuses, and LifecycleRelationship types. Current free-string registry lifecycle fields are provisional until 4.2. The ICH profile currently constrains EffectiveRecord derivation detail only.
 
 Full risk-tier satisfaction, review-attestation aggregation, and disagreement-resolution policy remain assigned to later Phase 4 modules.
 
@@ -68,9 +89,10 @@ Full risk-tier satisfaction, review-attestation aggregation, and disagreement-re
 - No production registry artifact creation.
 - No FDA or EMA production profile.
 - No ingest, extraction, orchestration, UI, decision engine, or derived contract `1.0.0`.
+- No production migration of Phase 3 prototypes.
 
 ## Items requiring additional review
 
 - Independent repository review must confirm the schemas express the Module 3.6 contract without expanding it.
 - Later modules must extend cross-object validation for production registry, risk, review-attestation, and snapshot rules when those production artifacts exist.
-- Module 4.6 remains responsible for non-destructive migration of Phase 3 prototype artifacts into contract-conformant successor artifacts.
+- Module 4.6 remains responsible for generated derived artifacts and regression reconciliation against frozen Phase 3 references where scopes overlap.

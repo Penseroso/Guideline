@@ -1,0 +1,35 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "AmendmentMapping",
+  "regulator_profile": "core",
+  "records": [
+    {
+      "mapping_id": "test.contract.amend.001",
+      "guidance_family_id": "test.family",
+      "source_document_edition_id": "test.edition.parent",
+      "amending_document_edition_id": "test.edition.addendum",
+      "source_record_ids": ["test.kr.parent.001"],
+      "amending_record_ids": ["test.kr.addendum.001"],
+      "relation_type": "clarifies",
+      "mapped_scope": "Fixture amendment scope.",
+      "analyst_rationale": "Fixture rationale for the amendment relationship.",
+      "original_relationship_wording": "clarifies",
+      "contextual_cross_reference_ids": [],
+      "contextual_cross_reference_note": null,
+      "source_references": [
+        {
+          "document_id": "test_doc",
+          "section_id": "test.sec.parent",
+          "source_unit_id": "test.su.parent.001"
+        },
+        {
+          "document_id": "test_doc",
+          "section_id": "test.sec.addendum",
+          "source_unit_id": "test.su.addendum.001"
+        }
+      ],
+      "review_status": "needs_review",
+      "profile_details": null
+    }
+  ]
+}

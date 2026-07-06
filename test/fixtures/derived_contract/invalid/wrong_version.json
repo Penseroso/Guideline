@@ -8,7 +8,9 @@
       "target_type": "EffectiveRecord",
       "target_id": "fixture.effective.001",
       "risk_level": "high",
-      "risk_factors": ["addendum_or_partial_amendment_structure"],
+      "risk_factors": [
+        "addendum_or_partial_amendment_structure"
+      ],
       "rationale": "Fixture high-risk derived artifact.",
       "assessor_attestation_id": null,
       "assessed_at": "2026-07-06T00:00:00Z",

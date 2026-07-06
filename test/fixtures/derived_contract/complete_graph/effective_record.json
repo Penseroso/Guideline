@@ -1,0 +1,42 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "EffectiveRecord",
+  "regulator_profile": "core",
+  "records": [
+    {
+      "effective_record_id": "test.contract.eff.001",
+      "guidance_family_id": "test.family",
+      "document_edition_id": "test.edition.addendum",
+      "jurisdiction": "TEST",
+      "as_of_date": "2026-07-06",
+      "effective_status": "current",
+      "derivation_basis": "amendment_synthesis",
+      "amendment_mapping_ids": ["test.contract.amend.001"],
+      "contributing_record_ids": [
+        "test.kr.parent.001",
+        "test.kr.addendum.001",
+        "test.cond.001",
+        "test.qc.001",
+        "test.xref.001"
+      ],
+      "source_references": [
+        {
+          "document_id": "test_doc",
+          "section_id": "test.sec.parent",
+          "source_unit_id": "test.su.parent.001"
+        },
+        {
+          "document_id": "test_doc",
+          "section_id": "test.sec.addendum",
+          "source_unit_id": "test.su.addendum.001"
+        }
+      ],
+      "effective_text_en": "Fixture contract effective text.",
+      "normalized_ko": null,
+      "synthesis_rationale": "Fixture synthesis rationale.",
+      "representation_limitations": [],
+      "review_status": "needs_review",
+      "profile_details": null
+    }
+  ]
+}

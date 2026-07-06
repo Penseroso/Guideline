@@ -2,9 +2,11 @@
 
 Status: Module 4.1 implemented, pending independent repository review; Modules 4.2 through 4.12 not started. This document concretizes `working_docs/phase4_handoff_plan.md` into an executable module specification under the accepted derived-layer contract (DEC-030, REV-011).
 
-Revision note: this plan was revised before implementation start to (1) state the objective as a regulator-neutral common engine, (2) designate an official two-document test corpus (M10 baseline, S6 stress test), (3) add a generic run/orchestration module and an official corpus full-run module, (4) add a coverage ledger, (5) make legacy artifact migration non-destructive, and (6) move the incremental family update after the M10 and S6 full runs. Modules are renumbered 4.1 through 4.12.
+Revision note: this plan was revised before implementation start to (1) state the objective as a regulator-neutral common engine, (2) designate an official two-document test corpus (M10 baseline, S6 stress test), (3) add a generic run/orchestration module and an official corpus full-run module, (4) add a coverage ledger, (5) make legacy artifacts non-destructive regression references, and (6) move the incremental family update after the M10 and S6 full runs. Modules are renumbered 4.1 through 4.12.
 
-Second revision note, also before implementation start: (1) the legacy schema-validation transition is now explicit — Module 4.1 does not enforce the `0.1.0` schemas on Phase 3 prototype artifacts, which formally enter the contract only through their Module 4.6 successors; (2) the RiskAssessment dependency order between Modules 4.2 and 4.5 is corrected (`current_risk_assessment_id` optional in 4.2, mandatory validation from 4.5); (3) a source model limitation stop rule is added; (4) review terminology is normalized to "items requiring additional review" and "independently reviewed samples"; (5) the FDA/EMA compatibility wording is softened — Phase 4 verifies only ICH-profile containment and claims no FDA/EMA compatibility.
+Second revision note, also before implementation start: (1) the legacy schema-validation transition is now explicit — Module 4.1 does not enforce the `0.1.0` schemas on Phase 3 prototype artifacts, which remain frozen regression references validated only by the legacy regression validator; (2) the RiskAssessment dependency order between Modules 4.2 and 4.5 is corrected (`current_risk_assessment_id` optional in 4.2, mandatory validation from 4.5); (3) a source model limitation stop rule is added; (4) review terminology is normalized to "items requiring additional review" and "independently reviewed samples"; (5) the FDA/EMA compatibility wording is softened — Phase 4 verifies only ICH-profile containment and claims no FDA/EMA compatibility.
+
+Third revision note, after Module 4.1 architecture correction: DEC-045 through DEC-048 supersede the earlier production-migration assumption. Phase 4 production flow is PDF -> new source extraction -> new contract-conformant derived artifacts -> comparison against Phase 1-3 regression references. It is not Phase 3 prototype -> production successor migration.
 
 ## Objective
 
@@ -42,7 +44,7 @@ Unchanged from `working_docs/phase4_handoff_plan.md` and the Module 3.6 contract
 Additional boundary from this revision:
 
 - The engine core is regulator-neutral; regulator specifics live only in profile contracts and profile configuration.
-- Reviewed historical artifacts are never modified in place. All migration and supersession is additive, with explicit predecessor links; removal or retirement of a legacy artifact requires a recorded decision.
+- Reviewed historical artifacts are never modified in place. Phase 1-3 pilots, probes, prototypes, and review records are regression references and audit history, not production inputs for the runtime contract. Later semantic supersession is additive, with explicit predecessor links; removal or retirement of a historical artifact requires a recorded decision.
 
 ## Common rules binding every module
 
@@ -88,7 +90,7 @@ Paths below are the working proposal for Phase 4 outputs. Each path becomes fixe
 - `structured_data/schemas/derived/`: derived core, artifact, and ICH profile JSON Schemas (4.1).
 - `structured_data/derived/registry/`: GuidanceFamily, DocumentEdition, EditionSource, LifecycleRelationship artifacts (4.2).
 - `structured_data/derived/risk/`: versioned RiskAssessment history (4.5).
-- `structured_data/derived/reviews/`: ReviewAttestation artifacts, including legacy REV migrations (4.7).
+- `structured_data/derived/reviews/`: ReviewAttestation artifacts for actual Phase 4 outputs (4.7).
 - `structured_data/derived/snapshots/`: EffectiveStateSnapshot artifacts (4.8).
 - `structured_data/bundles/<document_id>/`: per-document full-run outputs — structure manifest, coverage ledger, and complete source-layer bundles — kept separate from the frozen pilot bundles under `structured_data/pilots/` (4.3, 4.10).
 - `structured_data/runs/`: run manifests produced by the orchestrator (4.9).
@@ -100,9 +102,9 @@ Paths below are the working proposal for Phase 4 outputs. Each path becomes fixe
 
 - Objective: Implement JSON Schemas for the derived contract: a regulator-neutral core (shared definitions for IDs, artifact metadata, derivation basis, review attestation, aggregate review status, risk assessment references, lifecycle relationship, effective-state context, and provenance references), per-artifact schemas, and the initial ICH profile. All derived artifacts declare `derived_model_version=0.1.0`.
 - Inputs and dependencies: DEC-030; the Module 3.6 contract; the reviewed prototype artifacts under `structured_data/derived/` as fit-evidence (they are not migrated in this module).
-- Outputs: Schemas under `structured_data/schemas/derived/`; `scripts/validate_derived.js` extended to run `0.1.0` schema validation ahead of its existing cross-object checks for new contract-conformant artifacts and fixtures only, with the Phase 3 prototype artifacts explicitly exempt from schema enforcement; new regression tests, including fixtures demonstrating both schema acceptance and schema rejection; a module note `working_docs/phase4_module_4_1.md`; decision entries for schema structure choices.
-- Validation: `npm run validate:derived` passes with schema validation active for new artifacts and fixtures; the legacy prototypes under `structured_data/derived/` remain covered by the existing cross-object checks only and are not required to conform to `derived_model_version=0.1.0`; existing cross-object checks and all 3.5-era tests still pass unchanged; `npm run validate:pilots` unchanged.
-- Completion gate: Independent repository review confirms the schemas express the Module 3.6 contract without expanding it, the core/profile split holds (profiles extend or constrain, never duplicate the core; no ICH concept leaks into core definitions), the closed relation vocabulary is enforced, source schema `0.2.0` is untouched, and the legacy transition boundary is explicit: Phase 3 prototype artifacts formally enter schema validation only through their Module 4.6 successor artifacts.
+- Outputs: Schemas under `structured_data/schemas/derived/`; `scripts/validate_derived.js` validates contract `0.1.0` artifacts from a manifest and runs schema validation before contract graph validation; `scripts/validate_legacy_derived.js` preserves isolated Phase 3 regression validation; new regression tests, including fixtures demonstrating both schema acceptance and schema rejection; a module note `working_docs/phase4_module_4_1.md`; decision entries for schema structure choices.
+- Validation: `npm run validate:derived` passes against a complete contract graph fixture and manifest; `npm run validate:legacy` passes against the frozen Phase 3 prototypes; existing cross-object checks and all 3.5-era tests still pass through the legacy validator; `npm run validate:pilots` unchanged.
+- Completion gate: Independent repository review confirms the schemas express the Module 3.6 contract without expanding it, the core/profile split holds (profiles extend or constrain, never duplicate the core; no ICH concept leaks into core definitions), the closed relation vocabulary is enforced, source schema `0.2.0` is untouched, and the legacy transition boundary is explicit: Phase 3 prototype artifacts are historical regression references, not production migration inputs.
 - Non-goals: FDA/EMA profile schemas beyond named placeholders; retroactive schema enforcement on Phase 3 prototype artifacts; prototype migration; source schema changes; derived contract `1.0.0`.
 
 ### 4.2 Family registry and lifecycle artifacts
@@ -141,22 +143,22 @@ Paths below are the working proposal for Phase 4 outputs. Each path becomes fixe
 - Completion gate: Independent repository review confirms risk levels are justified by recorded factors, no assessment overwrites a prior one, and required review tiers match the Module 3.6 policy table.
 - Non-goals: Review execution itself (4.7); risk-policy redesign.
 
-### 4.6 Derived artifact generation and non-destructive migration
+### 4.6 Derived artifact generation and regression reconciliation
 
-- Objective: Implement the derived-artifact stage generating AmendmentMappings and candidate or reviewed EffectiveRecords under the 4.1 schemas, honoring lifecycle-relationship review status, and represent the Phase 3 prototype artifacts in the derived contract non-destructively.
-- Inputs and dependencies: 4.2 registry and lifecycle artifacts; 4.5 risk assessments; the Module 3.6 migration strategy (including `derivation_basis=supplementary_source` plus ICH profile detail for the Addendum-only case).
-- Outputs: Contract-conformant mapping and EffectiveRecord artifacts under `structured_data/derived/` for the 4.4 sample scope, exercising `direct_source` on M10 samples and `amendment_synthesis`/`supplementary_source` on S6 samples; successor artifacts for the Phase 3 prototypes created alongside the originals, each carrying an explicit predecessor reference (for example `migrated_from`) to the legacy artifact and preserving endpoint semantics unchanged; generation script; module note; regression tests.
-- Validation: Extended `npm run validate:derived` passes for all derived artifacts; `structured_data/derived/s6_r1_amendment_mappings.json` and `structured_data/derived/s6_r1_effective_records.json` are byte-identical to their reviewed state and remain readable as frozen historical inputs; every successor artifact resolves its predecessor link; unresolved lifecycle relationships yield only candidate `needs_review` EffectiveRecords; no historical EffectiveRecord version is overwritten; the closed relation vocabulary is respected; no cross-family synthesis exists.
-- Completion gate: Independent repository review at the `high` artifact-type tier confirms mapping endpoint coverage, derivation-basis correctness, migration fidelity for the four reviewed mappings and four reviewed EffectiveRecords, jurisdiction/date scoping on all new records, and that no legacy file was modified, moved, or deleted. Retirement of the legacy prototype files, if ever, is a separate later recorded decision.
-- Non-goals: Automated relation-type inference presented as reviewed; retiring any effective state without reviewed lifecycle evidence; deleting or rewriting legacy artifacts; FDA/EMA derivation details.
+- Objective: Implement the derived-artifact stage generating AmendmentMappings and candidate or reviewed EffectiveRecords under the 4.1 schemas from newly generated source-layer records, honoring lifecycle-relationship review status, and reconcile overlapping output against Phase 1-3 regression references.
+- Inputs and dependencies: 4.2 registry and lifecycle artifacts; 4.5 risk assessments; 4.4 newly generated source-layer records; Phase 1-3 pilots, probes, and prototypes as frozen comparison references only.
+- Outputs: Contract-conformant mapping and EffectiveRecord artifacts under `structured_data/derived/` for the 4.4 sample scope, exercising `direct_source` on M10 samples and `amendment_synthesis`/`supplementary_source` on S6 samples; generation script; regression reconciliation notes comparing overlapping output against frozen references without converting those references into production predecessors; module note; regression tests.
+- Validation: Extended `npm run validate:derived` passes for generated contract artifacts; `npm run validate:legacy` continues to pass for the frozen Phase 3 prototypes; `structured_data/derived/s6_r1_amendment_mappings.json` and `structured_data/derived/s6_r1_effective_records.json` are byte-identical to their reviewed state; unresolved lifecycle relationships yield only candidate `needs_review` EffectiveRecords; no historical EffectiveRecord version is overwritten; the closed relation vocabulary is respected; no cross-family synthesis exists.
+- Completion gate: Independent repository review at the `high` artifact-type tier confirms mapping endpoint coverage, derivation-basis correctness, jurisdiction/date scoping on all new records, regression reconciliation against the frozen Phase 3 references where scopes overlap, and that no legacy file was modified, moved, migrated, or deleted.
+- Non-goals: Automated relation-type inference presented as reviewed; retiring any effective state without reviewed lifecycle evidence; deleting, rewriting, or migrating legacy artifacts; FDA/EMA derivation details.
 
 ### 4.7 Review attestation workflow
 
-- Objective: Implement ReviewAttestation artifacts and aggregate `review_status` calculation, and represent legacy reviews REV-005 through REV-010 as legacy/repository-review attestations at their documented scope only.
-- Inputs and dependencies: 4.5 risk tiers; 4.6 artifacts; Module 3.6 attestation and legacy-migration rules.
+- Objective: Implement ReviewAttestation artifacts and aggregate `review_status` calculation for actual Phase 4 outputs.
+- Inputs and dependencies: 4.5 risk tiers; 4.6 artifacts; Module 3.6 attestation rules.
 - Outputs: Attestation artifacts under `structured_data/derived/reviews/`; validator rules for tier satisfaction, aggregate status derivation (`unreviewed`/`needs_review`/`reviewed`/`rejected`), and disagreement preservation; module note; regression tests.
-- Validation: Extended `npm run validate:derived` verifies every record's aggregate status is derivable from its attestations and required tier; conflicting reviews aggregate to `needs_review` absent a resolution attestation; legacy attestations carry no inferred provider, model, or record-level scope that was not documented; legacy migration is additive only — `working_docs/review_log.md` and all reviewed artifacts are unchanged.
-- Completion gate: Independent repository review confirms attestation-to-record coverage, correct aggregate statuses across the full artifact set, and faithful non-destructive legacy migration.
+- Validation: Extended `npm run validate:derived` verifies every Phase 4 output record's aggregate status is derivable from its attestations and required tier; conflicting reviews aggregate to `needs_review` absent a resolution attestation; historical REV records remain audit history and are not migrated into production ReviewAttestations unless a later decision explicitly assigns a production use.
+- Completion gate: Independent repository review confirms attestation-to-record coverage and correct aggregate statuses across the actual Phase 4 output artifact set.
 - Non-goals: Mandatory human review for every record; retroactive expansion of legacy review scope.
 
 ### 4.8 Effective-state snapshot generation

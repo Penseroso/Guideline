@@ -12,15 +12,14 @@
       "effective_status": "current",
       "derivation_basis": "direct_source",
       "amendment_mapping_ids": [],
-      "contributing_record_ids": ["fixture.kr.direct"],
+      "contributing_record_ids": [
+        "fixture.kr.direct"
+      ],
       "source_references": [
         {
           "document_id": "ich_m10",
           "section_id": null,
-          "source_unit_id": null,
-          "pdf_page_index_zero_based": null,
-          "printed_page_label": null,
-          "source_text": "fixture source text"
+          "source_unit_id": null
         }
       ],
       "effective_text_en": "Fixture direct-source effective text.",

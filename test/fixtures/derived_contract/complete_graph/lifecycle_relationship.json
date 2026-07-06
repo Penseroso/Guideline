@@ -1,0 +1,25 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "LifecycleRelationship",
+  "regulator_profile": "core",
+  "records": [
+    {
+      "lifecycle_relationship_id": "test.lifecycle.001",
+      "guidance_family_id": "test.family",
+      "from_document_edition_id": "test.edition.parent",
+      "to_document_edition_id": "test.edition.addendum",
+      "relationship_type": "amends",
+      "original_relationship_wording": "amends",
+      "jurisdiction": "TEST",
+      "source_references": [
+        {
+          "document_id": "test_doc",
+          "section_id": "test.sec.addendum",
+          "source_unit_id": "test.su.addendum.001"
+        }
+      ],
+      "review_status": "needs_review",
+      "profile_details": null
+    }
+  ]
+}

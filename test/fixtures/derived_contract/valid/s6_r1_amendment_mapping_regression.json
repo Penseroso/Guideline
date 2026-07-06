@@ -2,10 +2,6 @@
   "derived_model_version": "0.1.0",
   "artifact_type": "AmendmentMapping",
   "regulator_profile": "core",
-  "technical_migration": {
-    "source_artifact_paths": ["structured_data/derived/s6_r1_amendment_mappings.json"],
-    "migration_note": "Fixture successor preserving reviewed Phase 3 amendment mapping information for Module 4.1 contract validation."
-  },
   "records": [
     {
       "mapping_id": "ich_s6_r1.amend.004",
@@ -26,39 +22,33 @@
       "mapped_scope": "Role and permissible use of tissue cross-reactivity evidence in species selection",
       "analyst_rationale": "Part I 3.3 treats tissue cross-reactivity evidence as part of species relevance for monoclonal antibodies (kr.part1.3_3.004), and allows an epitope-negative species to remain of some relevance where comparable unintentional tissue cross-reactivity to humans is demonstrated (kr.part1.3_3.005). Addendum body records kr.part2.2_1.007 and kr.part2.2_1.008 carry the primary species-selection guidance: animal-tissue tissue cross-reactivity is of limited value for species selection, and may be used only in specific cases where other approaches cannot identify a pharmacologically relevant species. That body source unit explicitly references Note 1 (see the contextual cross-reference below), and Note 1 records kr.part2.notes.005 and kr.part2.notes.014 materially define the restriction: full-panel animal-tissue tissue cross-reactivity is not recommended, and selected animal-tissue evaluation provides only conditional supplemental information (when there is unexpected binding in human tissues). Including the Note 1 records as Addendum endpoints does not mean Note 1 independently amends the Parent; the body records and the referenced Note 1 records together form the complete Addendum meaning for this mapping. Taken together, the Addendum neither contradicts nor replaces the Parent guidance: it narrows the scope and evidentiary role of animal-tissue tissue cross-reactivity in species selection, so the relation type is narrows.",
       "original_relationship_wording": "narrows",
-      "contextual_cross_reference_ids": ["ich_s6_r1.xref.part2.2_1.001"],
+      "contextual_cross_reference_ids": [
+        "ich_s6_r1.xref.part2.2_1.001"
+      ],
       "contextual_cross_reference_note": "kr.part2.2_1.008 derives from source unit su.part2.2_1.005, which carries the explicit reference xref.part2.2_1.001 with raw text '(see Note 1)'. The Note 1 target is not model-resolvable (target_id=null, resolution_status=needs_review), but the raw reference and the related Note 1 source units are preserved, so the contextual linkage is present and was reviewed before assigning the relation type.",
       "source_references": [
         {
           "document_id": "ich_s6_r1",
           "section_id": "ich_s6_r1.sec.part1.3_3",
-          "source_unit_id": "ich_s6_r1.su.part1.3_3.003",
-          "pdf_page_index_zero_based": 7,
-          "printed_page_label": "4",
-          "source_text": null
+          "source_unit_id": "ich_s6_r1.su.part1.3_3.003"
         },
         {
           "document_id": "ich_s6_r1",
           "section_id": "ich_s6_r1.sec.part2.2_1",
-          "source_unit_id": "ich_s6_r1.su.part2.2_1.005",
-          "pdf_page_index_zero_based": 14,
-          "printed_page_label": "11",
-          "source_text": null
+          "source_unit_id": "ich_s6_r1.su.part2.2_1.005"
         },
         {
           "document_id": "ich_s6_r1",
           "section_id": "ich_s6_r1.sec.part2.notes",
-          "source_unit_id": "ich_s6_r1.su.part2.notes.note1.004",
-          "pdf_page_index_zero_based": 20,
-          "printed_page_label": "17",
-          "source_text": null
+          "source_unit_id": "ich_s6_r1.su.part2.notes.note1.004"
         }
       ],
       "review_status": "reviewed",
       "profile_details": null,
       "history": {
-        "predecessor_record_ids": ["ich_s6_r1.amend.004"],
-        "technical_migration_from_record_ids": ["ich_s6_r1.amend.004"]
+        "predecessor_record_ids": [
+          "ich_s6_r1.amend.004"
+        ]
       }
     }
   ]

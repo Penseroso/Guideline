@@ -4,7 +4,7 @@
   "regulator_profile": "ich",
   "records": [
     {
-      "effective_record_id": "fixture.effective.ich_missing_profile",
+      "effective_record_id": "fixture.effective.history.001",
       "guidance_family_id": "fixture.family.ich_s6",
       "document_edition_id": "fixture.edition.s6.r1",
       "jurisdiction": "ICH",
@@ -22,12 +22,21 @@
           "source_unit_id": null
         }
       ],
-      "effective_text_en": "Fixture effective text.",
+      "effective_text_en": "Fixture effective text with predecessor history.",
       "normalized_ko": null,
-      "synthesis_rationale": "Fixture synthesis rationale.",
+      "synthesis_rationale": "Fixture synthesis rationale for a semantic predecessor history example.",
       "representation_limitations": [],
       "review_status": "needs_review",
-      "profile_details": null
+      "profile_details": {
+        "ich_derivation_detail": "addendum_without_parent_counterpart",
+        "ich_step": "Step 4",
+        "ich_code": "S6"
+      },
+      "history": {
+        "predecessor_record_ids": [
+          "fixture.effective.previous.001"
+        ]
+      }
     }
   ]
 }

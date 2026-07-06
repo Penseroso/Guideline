@@ -4,38 +4,88 @@
   "title": "ReviewAttestation Artifact",
   "type": "object",
   "additionalProperties": false,
-  "required": ["derived_model_version", "artifact_type", "regulator_profile", "records"],
+  "required": [
+    "derived_model_version",
+    "artifact_type",
+    "regulator_profile",
+    "records"
+  ],
   "properties": {
-    "derived_model_version": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/derivedModelVersion" },
-    "artifact_type": { "const": "ReviewAttestation" },
-    "regulator_profile": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/regulatorProfile" },
-    "technical_migration": {
-      "oneOf": [
-        { "type": "null" },
-        { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/technicalMigration" }
-      ]
+    "derived_model_version": {
+      "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/derivedModelVersion"
     },
-    "records": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/reviewAttestation" } }
+    "artifact_type": {
+      "const": "ReviewAttestation"
+    },
+    "regulator_profile": {
+      "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/regulatorProfile"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/reviewAttestation"
+      }
+    }
   },
   "definitions": {
     "reviewAttestation": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["review_attestation_id", "reviewer_type", "provider", "reviewer_name", "model_identifier", "reviewed_at", "review_scope", "review_outcome", "covered_artifact_ids", "covered_record_ids", "notes", "profile_details"],
+      "required": [
+        "review_attestation_id",
+        "reviewer_type",
+        "provider",
+        "reviewer_name",
+        "model_identifier",
+        "reviewed_at",
+        "review_scope",
+        "review_outcome",
+        "covered_artifact_ids",
+        "covered_record_ids",
+        "notes",
+        "profile_details"
+      ],
       "properties": {
-        "review_attestation_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id" },
-        "reviewer_type": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/reviewerType" },
-        "provider": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nullableString" },
-        "reviewer_name": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nullableString" },
-        "model_identifier": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nullableString" },
-        "reviewed_at": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/dateTime" },
-        "review_scope": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString" },
-        "review_outcome": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/reviewOutcome" },
-        "covered_artifact_ids": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/idArray" },
-        "covered_record_ids": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/idArray" },
-        "notes": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nullableString" },
-        "profile_details": { "type": "null" },
-        "history": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/recordHistory" }
+        "review_attestation_id": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id"
+        },
+        "reviewer_type": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/reviewerType"
+        },
+        "provider": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nullableString"
+        },
+        "reviewer_name": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nullableString"
+        },
+        "model_identifier": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nullableString"
+        },
+        "reviewed_at": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/dateTime"
+        },
+        "review_scope": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString"
+        },
+        "review_outcome": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/reviewOutcome"
+        },
+        "covered_artifact_ids": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/idArray"
+        },
+        "covered_record_ids": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/idArray"
+        },
+        "notes": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nullableString"
+        },
+        "profile_details": {
+          "type": "null"
+        },
+        "history": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/recordHistory"
+        }
       }
     }
   }

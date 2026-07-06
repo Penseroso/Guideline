@@ -4,36 +4,84 @@
   "title": "LifecycleRelationship Artifact",
   "type": "object",
   "additionalProperties": false,
-  "required": ["derived_model_version", "artifact_type", "regulator_profile", "records"],
+  "required": [
+    "derived_model_version",
+    "artifact_type",
+    "regulator_profile",
+    "records"
+  ],
   "properties": {
-    "derived_model_version": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/derivedModelVersion" },
-    "artifact_type": { "const": "LifecycleRelationship" },
-    "regulator_profile": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/regulatorProfile" },
-    "technical_migration": {
-      "oneOf": [
-        { "type": "null" },
-        { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/technicalMigration" }
-      ]
+    "derived_model_version": {
+      "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/derivedModelVersion"
     },
-    "records": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/lifecycleRelationship" } }
+    "artifact_type": {
+      "const": "LifecycleRelationship"
+    },
+    "regulator_profile": {
+      "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/regulatorProfile"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/lifecycleRelationship"
+      }
+    }
   },
   "definitions": {
     "lifecycleRelationship": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["lifecycle_relationship_id", "guidance_family_id", "from_document_edition_id", "to_document_edition_id", "relationship_type", "original_relationship_wording", "jurisdiction", "source_references", "review_status", "profile_details"],
+      "required": [
+        "lifecycle_relationship_id",
+        "guidance_family_id",
+        "from_document_edition_id",
+        "to_document_edition_id",
+        "relationship_type",
+        "original_relationship_wording",
+        "jurisdiction",
+        "source_references",
+        "review_status",
+        "profile_details"
+      ],
       "properties": {
-        "lifecycle_relationship_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id" },
-        "guidance_family_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id" },
-        "from_document_edition_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id" },
-        "to_document_edition_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id" },
-        "relationship_type": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString" },
-        "original_relationship_wording": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString" },
-        "jurisdiction": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/jurisdiction" },
-        "source_references": { "type": "array", "minItems": 1, "items": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/sourceDocumentRef" } },
-        "review_status": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/aggregateReviewStatus" },
-        "profile_details": { "type": "null" },
-        "history": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/recordHistory" }
+        "lifecycle_relationship_id": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id"
+        },
+        "guidance_family_id": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id"
+        },
+        "from_document_edition_id": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id"
+        },
+        "to_document_edition_id": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id"
+        },
+        "relationship_type": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString"
+        },
+        "original_relationship_wording": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString"
+        },
+        "jurisdiction": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/jurisdiction"
+        },
+        "source_references": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/sourceDocumentRef"
+          }
+        },
+        "review_status": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/aggregateReviewStatus"
+        },
+        "profile_details": {
+          "type": "null"
+        },
+        "history": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/recordHistory"
+        }
       }
     }
   }

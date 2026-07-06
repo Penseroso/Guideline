@@ -8,8 +8,12 @@
       "guidance_family_id": "fixture.family.ich_s6",
       "source_document_edition_id": "fixture.edition.s6.parent",
       "amending_document_edition_id": "fixture.edition.s6.addendum",
-      "source_record_ids": ["fixture.kr.parent"],
-      "amending_record_ids": ["fixture.kr.addendum"],
+      "source_record_ids": [
+        "fixture.kr.parent"
+      ],
+      "amending_record_ids": [
+        "fixture.kr.addendum"
+      ],
       "relation_type": "clarifies",
       "mapped_scope": "Fixture amendment scope.",
       "analyst_rationale": "Fixture rationale preserving why the amendment relationship was assigned.",
@@ -20,10 +24,7 @@
         {
           "document_id": "ich_s6_r1",
           "section_id": null,
-          "source_unit_id": null,
-          "pdf_page_index_zero_based": null,
-          "printed_page_label": null,
-          "source_text": "fixture source text"
+          "source_unit_id": null
         }
       ],
       "review_status": "needs_review",

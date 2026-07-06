@@ -1,0 +1,23 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "EditionSource",
+  "regulator_profile": "core",
+  "records": [
+    {
+      "edition_source_id": "test.edition_source.parent",
+      "document_edition_id": "test.edition.parent",
+      "document_id": "test_doc",
+      "source_role": "primary",
+      "review_status": "needs_review",
+      "profile_details": null
+    },
+    {
+      "edition_source_id": "test.edition_source.addendum",
+      "document_edition_id": "test.edition.addendum",
+      "document_id": "test_doc",
+      "source_role": "primary",
+      "review_status": "needs_review",
+      "profile_details": null
+    }
+  ]
+}

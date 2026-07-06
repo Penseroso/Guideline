@@ -290,6 +290,7 @@ This document records material project decisions after they are made. It should 
 
 - Date: 2026-07-06
 - Status: Accepted
+- Supersession note: Superseded in part by DEC-045 and DEC-046. The frozen Phase 3 artifacts remain historical regression references, but production contract validation no longer contains exact-path schema exemptions or filename-based legacy dispatch.
 - Decision: The two reviewed Phase 3 prototype files `structured_data/derived/s6_r1_amendment_mappings.json` and `structured_data/derived/s6_r1_effective_records.json` are exempt from derived contract `0.1.0` schema enforcement by exact repository-relative path.
 - Rationale: Phase 4 Module 4.1 introduces schemas but does not migrate prototypes. Module 4.6 owns non-destructive successor artifacts for migration.
 - Consequences: The prototype files remain byte-identical and continue to be covered by the Module 3.5 cross-object validator. Copies or successors outside those exact paths are not exempt.
@@ -308,6 +309,7 @@ This document records material project decisions after they are made. It should 
 
 - Date: 2026-07-06
 - Status: Accepted
+- Supersession note: Superseded in part by DEC-046. Legacy and contract-aware validation remain separate, but production `scripts/validate_derived.js` is contract-only and no longer dispatches by filename.
 - Decision: `scripts/validate_derived.js` preserves a dedicated legacy validator for the two frozen Phase 3 prototype shapes and adds a separate contract-aware validator for derived contract `0.1.0` artifacts. The public three-file CLI dispatches to legacy validation only for the exact Phase 3 prototype paths; all other derived artifacts must be contract-marked and schema-valid before contract graph validation.
 - Rationale: Module 4.1 requires schema validation before, not instead of, applicable cross-object validation. New contract artifacts use different field names from the Phase 3 prototypes and must not be forced through legacy-shape checks.
 - Consequences: Existing Module 3.5 behavior remains available for the frozen prototypes. Contract validation runs schema checks first, then contract-shape-aware source-reference, endpoint, provenance, family identity, reviewed-contributor, and cross-family-synthesis checks.
@@ -335,6 +337,7 @@ This document records material project decisions after they are made. It should 
 
 - Date: 2026-07-06
 - Status: Accepted
+- Supersession note: Superseded in part by DEC-045 and DEC-048. Technical migration fields are removed from the production contract; predecessor history remains only for genuine semantic or version predecessors.
 - Decision: Contract artifacts may carry minimal technical migration evidence through successor-to-predecessor references and source artifact paths, but those fields do not represent regulatory lifecycle replacement, amendment, or supersession.
 - Rationale: Module 4.6 must migrate Phase 3 prototypes non-destructively while preserving historical records. Technical migration evidence is needed, but it must not be confused with regulatory semantic relationships.
 - Consequences: Legacy file paths are migration evidence only, not stable artifact identity. Bidirectional successor links are not required in Module 4.1. Lifecycle and amendment semantics remain represented by their own artifact types and relation fields.
@@ -344,10 +347,11 @@ This document records material project decisions after they are made. It should 
 
 - Date: 2026-07-06
 - Status: Accepted
+- Clarification note: Clarified by DEC-045. These fields remain because final generated derived artifacts require rationale, scope, contextual evidence, and limitation traceability; they are not retained to require Phase 3 prototype migration.
 - Decision: AmendmentMapping contract records preserve `mapped_scope`, `analyst_rationale`, `contextual_cross_reference_ids`, and `contextual_cross_reference_note`. EffectiveRecord contract records preserve `synthesis_rationale` and structured `representation_limitations`.
 - Rationale: The reviewed Phase 3 prototypes contain material derived meaning in these fields. Because contract schemas are closed, omitting them would prevent Module 4.6 successor artifacts from preserving reviewed Phase 3 information without loss.
 - Consequences: These fields are regulator-neutral contract fields. They remain derived-layer analysis and must not be moved into source-layer records or reinterpreted during migration.
-- Related files: `structured_data/schemas/derived/artifacts/amendment_mapping.schema.json`, `structured_data/schemas/derived/artifacts/effective_record.schema.json`, `test/fixtures/derived_contract/valid/s6_r1_amendment_mapping_successor.json`, `test/fixtures/derived_contract/valid/s6_r1_effective_record_successor.json`
+- Related files: `structured_data/schemas/derived/artifacts/amendment_mapping.schema.json`, `structured_data/schemas/derived/artifacts/effective_record.schema.json`, `test/fixtures/derived_contract/valid/s6_r1_amendment_mapping_regression.json`, `test/fixtures/derived_contract/valid/s6_r1_effective_record_regression.json`
 
 ### DEC-040: Ground EffectiveRecord representation limitations with structured affected IDs
 
@@ -393,6 +397,42 @@ This document records material project decisions after they are made. It should 
 - Rationale: The Phase 4 plan makes the current risk reference optional before RiskAssessment production rules exist. A required nullable property preserves stable registry shape while explicitly representing that no current RiskAssessment has been assigned yet.
 - Consequences: Module 4.1 does not require a RiskAssessment artifact or latest-risk-history validation. Module 4.5 may later require non-null, resolving current risk references.
 - Related files: `structured_data/schemas/derived/artifacts/guidance_family.schema.json`, `structured_data/schemas/derived/artifacts/document_edition.schema.json`, `working_docs/phase4_plan.md`
+
+### DEC-045: Treat Phase 3 prototypes as regression references, not production migration inputs
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: Phase 3 derived prototypes are frozen historical and regression references. Phase 4 production output is generated from newly produced source-layer records and contract-conformant derived-generation stages, then compared against Phase 1-3 references where overlap exists. Phase 4 no longer requires production successor migration of the four Phase 3 AmendmentMappings or four Phase 3 EffectiveRecords.
+- Rationale: Module 4.1 must provide a clean derived contract foundation for the future engine. The production contract and validator should depend on schemas, regulator profiles, source model `0.2.0`, supplied source bundles, and supplied contract artifacts, not on historical prototype filenames or migration assumptions.
+- Consequences: Module 4.6 becomes derived-artifact generation plus regression reconciliation. Phase 3 prototypes remain byte-identical regression assets and are not production predecessors. DEC-033, DEC-038, and the migration-fidelity assumption in DEC-039 are superseded to this extent.
+- Related files: `working_docs/phase4_plan.md`, `working_docs/phase4_module_4_1.md`, `working_docs/derived_contract_module_3_6.md`, `scripts/validate_derived.js`, `scripts/validate_legacy_derived.js`
+
+### DEC-046: Split production contract validation from legacy regression validation
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: Production derived contract validation lives in `scripts/validate_derived.js`, accepts a manifest naming one source bundle plus contract artifact files, and contains no Phase 3 prototype paths or filename-based legacy dispatch. Legacy Phase 3 validation lives in `scripts/validate_legacy_derived.js` and is exposed by `npm run validate:legacy`.
+- Rationale: Contract validation must be reusable by the future engine and must not depend on historical repository filenames. Legacy validation remains valuable as regression protection, but it is not part of the production runtime contract.
+- Consequences: `npm run validate:derived` validates a complete contract `0.1.0` graph fixture. `npm run validate:legacy` validates the frozen Phase 3 prototypes. DEC-035 is superseded to the extent it placed legacy dispatch inside the production validator.
+- Related files: `scripts/validate_derived.js`, `scripts/validate_legacy_derived.js`, `package.json`, `test/fixtures/derived_contract/complete_graph/manifest.json`, `test/validate_derived.test.js`
+
+### DEC-047: Use source-layer IDs as derived provenance authority
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: Derived source references store source-layer IDs only: document-level references carry `document_id`, and source-unit-level references carry `document_id`, `section_id`, and `source_unit_id`. Derived artifacts do not duplicate source text, physical page index, or printed page label. Contract graph validation resolves those IDs and enforces document, section, source-unit, and edition-specific authorization.
+- Rationale: Source bundles are authoritative for text and page trace. Duplicating source text or page fields in derived artifacts creates divergence risk and weakens traceability.
+- Consequences: Derived schemas remove duplicated source-reference page/text fields. AmendmentMapping, LifecycleRelationship, and EffectiveRecord evidence uses source-unit-level references. EditionSource is enforced as the relevant source-document authorization boundary when supplied.
+- Related files: `structured_data/schemas/derived/core.schema.json`, `scripts/validate_derived.js`, `test/fixtures/derived_contract/`, `test/validate_derived.test.js`
+
+### DEC-048: Enforce global contract ID uniqueness and genuine predecessor history
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: Contract validation indexes every supported derived artifact type in one global record registry and rejects duplicate record IDs within a file, across files of the same artifact type, and across artifact types. `history.predecessor_record_ids` remains available only for genuine semantic or version predecessor history; technical migration fields are removed. Supplied-record predecessor self-references and cycles are validation errors.
+- Rationale: A future engine needs stable global derived-record identity independent of file layout. Technical migration from Phase 3 prototypes is no longer a production flow, and predecessor links must not be used merely because a fixture or artifact was copied from a historical prototype.
+- Consequences: `technical_migration`, `technical_migration_from_record_ids`, and migration-only fixtures are removed from the production contract. Later modules may add semantic successor records, but must do so without cycles or self-reference.
+- Related files: `structured_data/schemas/derived/core.schema.json`, `scripts/validate_derived.js`, `test/validate_derived.test.js`
 
 ## Decision Template
 

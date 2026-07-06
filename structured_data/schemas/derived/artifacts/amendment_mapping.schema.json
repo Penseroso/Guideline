@@ -4,53 +4,122 @@
   "title": "AmendmentMapping Artifact",
   "type": "object",
   "additionalProperties": false,
-  "required": ["derived_model_version", "artifact_type", "regulator_profile", "records"],
+  "required": [
+    "derived_model_version",
+    "artifact_type",
+    "regulator_profile",
+    "records"
+  ],
   "properties": {
-    "derived_model_version": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/derivedModelVersion" },
-    "artifact_type": { "const": "AmendmentMapping" },
-    "regulator_profile": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/regulatorProfile" },
-    "technical_migration": {
-      "oneOf": [
-        { "type": "null" },
-        { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/technicalMigration" }
-      ]
+    "derived_model_version": {
+      "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/derivedModelVersion"
     },
-    "records": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/amendmentMapping" } }
+    "artifact_type": {
+      "const": "AmendmentMapping"
+    },
+    "regulator_profile": {
+      "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/regulatorProfile"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/amendmentMapping"
+      }
+    }
   },
   "definitions": {
     "amendmentMapping": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["mapping_id", "guidance_family_id", "source_document_edition_id", "amending_document_edition_id", "source_record_ids", "amending_record_ids", "relation_type", "mapped_scope", "analyst_rationale", "original_relationship_wording", "contextual_cross_reference_ids", "contextual_cross_reference_note", "source_references", "review_status", "profile_details"],
+      "required": [
+        "mapping_id",
+        "guidance_family_id",
+        "source_document_edition_id",
+        "amending_document_edition_id",
+        "source_record_ids",
+        "amending_record_ids",
+        "relation_type",
+        "mapped_scope",
+        "analyst_rationale",
+        "original_relationship_wording",
+        "contextual_cross_reference_ids",
+        "contextual_cross_reference_note",
+        "source_references",
+        "review_status",
+        "profile_details"
+      ],
       "properties": {
-        "mapping_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id" },
-        "guidance_family_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id" },
-        "source_document_edition_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id" },
-        "amending_document_edition_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id" },
-        "source_record_ids": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyIdArray" },
-        "amending_record_ids": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyIdArray" },
-        "relation_type": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/amendmentRelationType" },
-        "mapped_scope": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString" },
-        "analyst_rationale": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString" },
-        "original_relationship_wording": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString" },
-        "contextual_cross_reference_ids": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/idArray" },
-        "contextual_cross_reference_note": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nullableString" },
-        "source_references": { "type": "array", "minItems": 1, "items": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/sourceDocumentRef" } },
-        "review_status": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/aggregateReviewStatus" },
-        "profile_details": { "type": "null" },
-        "history": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/recordHistory" }
+        "mapping_id": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id"
+        },
+        "guidance_family_id": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id"
+        },
+        "source_document_edition_id": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id"
+        },
+        "amending_document_edition_id": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id"
+        },
+        "source_record_ids": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyIdArray"
+        },
+        "amending_record_ids": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyIdArray"
+        },
+        "relation_type": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/amendmentRelationType"
+        },
+        "mapped_scope": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString"
+        },
+        "analyst_rationale": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString"
+        },
+        "original_relationship_wording": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString"
+        },
+        "contextual_cross_reference_ids": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/idArray"
+        },
+        "contextual_cross_reference_note": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nullableString"
+        },
+        "source_references": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/sourceDocumentRef"
+          }
+        },
+        "review_status": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/aggregateReviewStatus"
+        },
+        "profile_details": {
+          "type": "null"
+        },
+        "history": {
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/recordHistory"
+        }
       },
       "allOf": [
         {
           "if": {
             "properties": {
-              "contextual_cross_reference_ids": { "minItems": 1 }
+              "contextual_cross_reference_ids": {
+                "minItems": 1
+              }
             },
-            "required": ["contextual_cross_reference_ids"]
+            "required": [
+              "contextual_cross_reference_ids"
+            ]
           },
           "then": {
             "properties": {
-              "contextual_cross_reference_note": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString" }
+              "contextual_cross_reference_note": {
+                "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString"
+              }
             }
           }
         }

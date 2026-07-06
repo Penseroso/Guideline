@@ -2,10 +2,6 @@
   "derived_model_version": "0.1.0",
   "artifact_type": "EffectiveRecord",
   "regulator_profile": "ich",
-  "technical_migration": {
-    "source_artifact_paths": ["structured_data/derived/s6_r1_effective_records.json"],
-    "migration_note": "Fixture successor preserving reviewed Phase 3 effective-state information for Module 4.1 contract validation."
-  },
   "records": [
     {
       "effective_record_id": "ich_s6_r1.eff.part2.2_1.animal_tcr_species_selection",
@@ -15,7 +11,9 @@
       "as_of_date": "2026-07-06",
       "effective_status": "current",
       "derivation_basis": "amendment_synthesis",
-      "amendment_mapping_ids": ["ich_s6_r1.amend.004"],
+      "amendment_mapping_ids": [
+        "ich_s6_r1.amend.004"
+      ],
       "contributing_record_ids": [
         "ich_s6_r1.kr.part1.3_3.004",
         "ich_s6_r1.kr.part1.3_3.005",
@@ -33,26 +31,17 @@
         {
           "document_id": "ich_s6_r1",
           "section_id": "ich_s6_r1.sec.part1.3_3",
-          "source_unit_id": "ich_s6_r1.su.part1.3_3.003",
-          "pdf_page_index_zero_based": 7,
-          "printed_page_label": "4",
-          "source_text": null
+          "source_unit_id": "ich_s6_r1.su.part1.3_3.003"
         },
         {
           "document_id": "ich_s6_r1",
           "section_id": "ich_s6_r1.sec.part2.2_1",
-          "source_unit_id": "ich_s6_r1.su.part2.2_1.005",
-          "pdf_page_index_zero_based": 14,
-          "printed_page_label": "11",
-          "source_text": null
+          "source_unit_id": "ich_s6_r1.su.part2.2_1.005"
         },
         {
           "document_id": "ich_s6_r1",
           "section_id": "ich_s6_r1.sec.part2.notes",
-          "source_unit_id": "ich_s6_r1.su.part2.notes.note1.004",
-          "pdf_page_index_zero_based": 20,
-          "printed_page_label": "17",
-          "source_text": null
+          "source_unit_id": "ich_s6_r1.su.part2.notes.note1.004"
         }
       ],
       "effective_text_en": "For monoclonal-antibody testing, expression of the desired epitope remains central to species relevance. An epitope-negative species may still have some relevance for toxicity assessment if comparable unintended tissue cross-reactivity to humans is demonstrated. However, assessment of tissue cross-reactivity in animal tissues has limited value for species selection and TCR studies can be used only in specific cases where other approaches cannot demonstrate a pharmacologically relevant species. When unexpected binding occurs in human tissues, selected animal tissues can provide supplemental information, but TCR using a full panel of animal tissues is not recommended.",
@@ -61,8 +50,12 @@
       "representation_limitations": [
         {
           "limitation_text": "Cross-reference ich_s6_r1.xref.part2.2_1.001 has raw text '(see Note 1)' and target_id=null because model 0.2.0 cannot resolve note-level targets. The linked Note 1 source unit ich_s6_r1.su.part2.notes.note1.004 and operative Note 1 records are included, so this is a representation limitation rather than absence of reviewed context.",
-          "affected_cross_reference_ids": ["ich_s6_r1.xref.part2.2_1.001"],
-          "affected_record_ids": ["ich_s6_r1.su.part2.notes.note1.004"]
+          "affected_cross_reference_ids": [
+            "ich_s6_r1.xref.part2.2_1.001"
+          ],
+          "affected_record_ids": [
+            "ich_s6_r1.su.part2.notes.note1.004"
+          ]
         }
       ],
       "review_status": "reviewed",
@@ -72,8 +65,9 @@
         "ich_code": "S6"
       },
       "history": {
-        "predecessor_record_ids": ["ich_s6_r1.eff.part2.2_1.animal_tcr_species_selection"],
-        "technical_migration_from_record_ids": ["ich_s6_r1.eff.part2.2_1.animal_tcr_species_selection"]
+        "predecessor_record_ids": [
+          "ich_s6_r1.eff.part2.2_1.animal_tcr_species_selection"
+        ]
       }
     }
   ]

@@ -1,0 +1,11 @@
+{
+  "source_bundle": "../../derived/minimal_source_bundle.json",
+  "artifacts": [
+    "guidance_family.json",
+    "document_edition.json",
+    "edition_source.json",
+    "lifecycle_relationship.json",
+    "amendment_mapping.json",
+    "effective_record.json"
+  ]
+}

@@ -7,7 +7,8 @@
     "test": "node --test",
     "validate": "node scripts/validate_structured_data.js",
     "validate:pilots": "node scripts/validate_pilots.js",
-    "validate:derived": "node scripts/validate_derived.js --source structured_data/pilots/s6_r1_species_selection.json --amendments structured_data/derived/s6_r1_amendment_mappings.json --effective structured_data/derived/s6_r1_effective_records.json"
+    "validate:legacy": "node scripts/validate_legacy_derived.js --source structured_data/pilots/s6_r1_species_selection.json --amendments structured_data/derived/s6_r1_amendment_mappings.json --effective structured_data/derived/s6_r1_effective_records.json",
+    "validate:derived": "node scripts/validate_derived.js --manifest test/fixtures/derived_contract/complete_graph/manifest.json"
   },
   "dependencies": {
     "ajv": "^8.17.1"

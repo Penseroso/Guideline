@@ -4,6 +4,8 @@ Status: implemented and reviewed. Independent repository review completed in REV
 
 This document records the Module 3.6 derived-layer contract and workflow boundary decision. It is a documentation and planning artifact only. It does not implement derived schemas, migrations, validators, source model changes, or the Phase 4 engine.
 
+Superseding note after Phase 4 Module 4.1 architecture correction: DEC-045 through DEC-048 supersede the later Phase 4 production-migration assumptions in this document. Phase 3 prototypes remain frozen historical regression references. Phase 4 production output is generated from newly produced source-layer records and contract-conformant derived-generation stages, then reconciled against those references where scopes overlap.
+
 ## Decision baseline
 
 Module 3.6 preserves these completed Phase 3 findings:
@@ -290,6 +292,8 @@ Mandatory `include_needs_review` behavior:
 - do not present needs-review output as equivalent to fully reviewed output.
 
 ## Current S6 migration strategy
+
+Superseded for Phase 4 production planning by DEC-045. The section below is preserved as historical Module 3.6 handoff context, not as the current Module 4.6 production requirement.
 
 Do not migrate the S6 prototype in Module 3.6.
 

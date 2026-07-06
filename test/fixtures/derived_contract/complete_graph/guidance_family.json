@@ -1,14 +1,12 @@
 {
   "derived_model_version": "0.1.0",
   "artifact_type": "GuidanceFamily",
-  "regulator_profile": "ich",
+  "regulator_profile": "core",
   "records": [
     {
-      "guidance_family_id": "fixture.family.ich_m10",
-      "family_title": "ICH M10",
-      "jurisdictions": [
-        "ICH"
-      ],
+      "guidance_family_id": "test.family",
+      "family_title": "Test family",
+      "jurisdictions": ["TEST"],
       "current_risk_assessment_id": null,
       "review_status": "needs_review",
       "profile_details": null
