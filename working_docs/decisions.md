@@ -268,6 +268,42 @@ This document records material project decisions after they are made. It should 
 - Consequences: Module 3.6 creates documentation and a Phase 4 handoff plan only. It does not implement derived schemas, migrations, validators, or the Phase 4 engine. Module 3.6 remains `Implemented pending repository review` until a later independent review adds REV-011. Module 3.6 and Phase 3 are complete only after REV-011 is resolved. Future derived schema work must implement separate core/profile schemas, use source `document_id` references instead of duplicating source Documents, preserve historical effective-state snapshots, and update derived validation without weakening Module 3.5 checks.
 - Related files: `working_docs/derived_contract_module_3_6.md`, `working_docs/phase4_handoff_plan.md`, `working_docs/phase3_plan.md`, `working_docs/decisions.md`, `working_docs/derived_layer_validator_module_3_5.md`
 
+### DEC-031: Use separate derived core, artifact, and ICH profile schemas
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: Phase 4 Module 4.1 stores derived draft-07 JSON Schemas under `structured_data/schemas/derived/`, with shared regulator-neutral definitions in `core.schema.json`, per-artifact schemas under `artifacts/`, and the initial ICH profile under `profiles/ich.schema.json`.
+- Rationale: DEC-030 requires a regulator-neutral core plus regulator profiles. Separate files keep shared definitions reusable without duplicating the core across artifact schemas.
+- Consequences: Profiles may extend or constrain core records only through explicit profile fields. FDA and EMA production profiles remain deferred.
+- Related files: `structured_data/schemas/derived/core.schema.json`, `structured_data/schemas/derived/artifacts/`, `structured_data/schemas/derived/profiles/ich.schema.json`, `working_docs/phase4_module_4_1.md`
+
+### DEC-032: Dispatch derived schemas by artifact envelope
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: Contract-conformant derived artifacts use an envelope containing `derived_model_version`, `artifact_type`, `regulator_profile`, and `records`. `scripts/validate_derived.js` dispatches schema validation from `artifact_type` to the corresponding artifact schema.
+- Rationale: The derived contract contains multiple artifact types that need distinct structural validation while sharing versioning and profile metadata.
+- Consequences: `derived_model_version` is fixed to `0.1.0` for Module 4.1 artifacts. Unknown artifact types or unsupported versions fail schema validation before any cross-object validation.
+- Related files: `scripts/validate_derived.js`, `structured_data/schemas/derived/artifacts/`, `test/fixtures/derived_contract/`
+
+### DEC-033: Exempt frozen Phase 3 prototypes from derived schema enforcement
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: The two reviewed Phase 3 prototype files `structured_data/derived/s6_r1_amendment_mappings.json` and `structured_data/derived/s6_r1_effective_records.json` are exempt from derived contract `0.1.0` schema enforcement by exact repository-relative path.
+- Rationale: Phase 4 Module 4.1 introduces schemas but does not migrate prototypes. Module 4.6 owns non-destructive successor artifacts for migration.
+- Consequences: The prototype files remain byte-identical and continue to be covered by the Module 3.5 cross-object validator. Copies or successors outside those exact paths are not exempt.
+- Related files: `scripts/validate_derived.js`, `working_docs/phase4_module_4_1.md`, `working_docs/phase4_plan.md`
+
+### DEC-034: Keep ICH profile details out of regulator-neutral core artifacts
+
+- Date: 2026-07-06
+- Status: Accepted
+- Decision: ICH-specific details are allowed only through the ICH profile contract and must not appear as direct fields on regulator-neutral records. Artifacts declared with `regulator_profile=core` must use `profile_details=null`.
+- Rationale: Phase 4 validates only ICH-profile containment and must not let ICH concepts become implicit core semantics.
+- Consequences: Schema validation rejects direct ICH field leakage through closed object definitions, and the derived validator rejects non-null `profile_details` on core artifacts.
+- Related files: `structured_data/schemas/derived/profiles/ich.schema.json`, `scripts/validate_derived.js`, `test/fixtures/derived_contract/invalid/`
+
 ## Decision Template
 
 ### DEC-000: Title

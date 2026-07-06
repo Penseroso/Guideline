@@ -1,7 +1,26 @@
 const fs = require("fs");
 const path = require("path");
+const Ajv = require("ajv");
 
 const ROOT = path.resolve(__dirname, "..");
+const DERIVED_SCHEMA_DIR = path.join(ROOT, "structured_data", "schemas", "derived");
+
+const DERIVED_ARTIFACT_SCHEMAS = {
+  GuidanceFamily: "https://example.local/regulatory-guideline-archive/derived/artifacts/guidance_family.schema.json",
+  DocumentEdition: "https://example.local/regulatory-guideline-archive/derived/artifacts/document_edition.schema.json",
+  EditionSource: "https://example.local/regulatory-guideline-archive/derived/artifacts/edition_source.schema.json",
+  LifecycleRelationship: "https://example.local/regulatory-guideline-archive/derived/artifacts/lifecycle_relationship.schema.json",
+  AmendmentMapping: "https://example.local/regulatory-guideline-archive/derived/artifacts/amendment_mapping.schema.json",
+  EffectiveRecord: "https://example.local/regulatory-guideline-archive/derived/artifacts/effective_record.schema.json",
+  EffectiveStateSnapshot: "https://example.local/regulatory-guideline-archive/derived/artifacts/effective_state_snapshot.schema.json",
+  ReviewAttestation: "https://example.local/regulatory-guideline-archive/derived/artifacts/review_attestation.schema.json",
+  RiskAssessment: "https://example.local/regulatory-guideline-archive/derived/artifacts/risk_assessment.schema.json"
+};
+
+const LEGACY_SCHEMA_EXEMPT_DERIVED_FILES = new Set([
+  "structured_data/derived/s6_r1_amendment_mappings.json",
+  "structured_data/derived/s6_r1_effective_records.json"
+]);
 
 const RELATION_TYPES = new Set([
   "supplements",
@@ -58,6 +77,92 @@ function normalizeRepoPath(inputPath) {
   if (!isNonEmptyString(inputPath)) return inputPath;
   const resolved = path.isAbsolute(inputPath) ? path.normalize(inputPath) : path.resolve(ROOT, inputPath);
   return path.relative(ROOT, resolved).split(path.sep).join("/");
+}
+
+function isLegacySchemaExemptFile(file) {
+  return LEGACY_SCHEMA_EXEMPT_DERIVED_FILES.has(normalizeRepoPath(file));
+}
+
+function collectJsonSchemaFiles(directory) {
+  const files = [];
+  if (!fs.existsSync(directory)) return files;
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const entryPath = path.join(directory, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...collectJsonSchemaFiles(entryPath));
+    } else if (entry.isFile() && entry.name.endsWith(".schema.json")) {
+      files.push(entryPath);
+    }
+  }
+  return files;
+}
+
+let derivedSchemaAjv = null;
+
+function getDerivedSchemaAjv() {
+  if (derivedSchemaAjv) return derivedSchemaAjv;
+  const ajv = new Ajv({ allErrors: true, strict: false });
+  for (const schemaFile of collectJsonSchemaFiles(DERIVED_SCHEMA_DIR)) {
+    ajv.addSchema(JSON.parse(fs.readFileSync(schemaFile, "utf8")));
+  }
+  derivedSchemaAjv = ajv;
+  return derivedSchemaAjv;
+}
+
+function isContractMarkedArtifact(artifact) {
+  return isObject(artifact) && (
+    Object.prototype.hasOwnProperty.call(artifact, "derived_model_version") ||
+    Object.prototype.hasOwnProperty.call(artifact, "artifact_type")
+  );
+}
+
+function formatSchemaPath(error) {
+  return error.instancePath || "/";
+}
+
+function validateDerivedContractArtifact({ artifact, file }) {
+  const errors = [];
+  if (!isObject(artifact)) {
+    addError(errors, file, null, "/", "must be an object");
+    return { ok: false, errors };
+  }
+
+  const artifactType = artifact.artifact_type;
+  const schemaId = DERIVED_ARTIFACT_SCHEMAS[artifactType];
+  if (!schemaId) {
+    addError(errors, file, null, "artifact_type", `unsupported derived artifact type: ${artifactType}`);
+    return { ok: false, errors };
+  }
+
+  const validate = getDerivedSchemaAjv().getSchema(schemaId);
+  if (!validate) {
+    addError(errors, file, null, "schema", `schema not registered for artifact_type ${artifactType}`);
+    return { ok: false, errors };
+  }
+
+  if (!validate(artifact)) {
+    for (const error of validate.errors || []) {
+      addError(errors, file, null, formatSchemaPath(error), error.message);
+    }
+  }
+
+  if (artifact.regulator_profile === "core" && Array.isArray(artifact.records)) {
+    artifact.records.forEach((record, index) => {
+      if (record && record.profile_details !== null) {
+        addError(errors, file, null, `/records/${index}/profile_details`, "must be null for regulator-neutral core artifacts");
+      }
+    });
+  }
+
+  return { ok: errors.length === 0, errors };
+}
+
+function validateDerivedContractArtifactIfRequired({ artifact, file }) {
+  if (isLegacySchemaExemptFile(file) || !isContractMarkedArtifact(artifact)) {
+    return { ok: true, errors: [], schemaValidated: false };
+  }
+  const result = validateDerivedContractArtifact({ artifact, file });
+  return { ...result, schemaValidated: true };
 }
 
 function compareRepoPath(errors, file, id, field, actual, expected) {
@@ -525,6 +630,34 @@ function validateDerivedArtifacts({ sourceBundle, amendmentArtifact, effectiveAr
     amendmentFile: files && files.amendmentFile ? files.amendmentFile : "amendments",
     effectiveFile: files && files.effectiveFile ? files.effectiveFile : "effective"
   };
+
+  const amendmentSchemaResult = validateDerivedContractArtifactIfRequired({
+    artifact: amendmentArtifact,
+    file: normalizedFiles.amendmentFile
+  });
+  const effectiveSchemaResult = validateDerivedContractArtifactIfRequired({
+    artifact: effectiveArtifact,
+    file: normalizedFiles.effectiveFile
+  });
+  errors.push(...amendmentSchemaResult.errors, ...effectiveSchemaResult.errors);
+  if (errors.length > 0) {
+    return {
+      ok: false,
+      errors,
+      amendmentMappingCount: 0,
+      effectiveRecordCount: 0
+    };
+  }
+
+  if (amendmentSchemaResult.schemaValidated || effectiveSchemaResult.schemaValidated) {
+    return {
+      ok: true,
+      errors,
+      amendmentMappingCount: Array.isArray(amendmentArtifact && amendmentArtifact.records) ? amendmentArtifact.records.length : 0,
+      effectiveRecordCount: Array.isArray(effectiveArtifact && effectiveArtifact.records) ? effectiveArtifact.records.length : 0
+    };
+  }
+
   const sourceIndexes = buildSourceIndexes(sourceBundle || {});
   const mappings = validateAmendments({
     amendmentArtifact: amendmentArtifact || {},
@@ -626,6 +759,7 @@ if (require.main === module) {
 
 module.exports = {
   normalizeRepoPath,
+  validateDerivedContractArtifact,
   validateDerivedArtifacts,
   validateDerivedFiles
 };

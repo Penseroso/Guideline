@@ -1,0 +1,30 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "AmendmentMapping",
+  "regulator_profile": "core",
+  "records": [
+    {
+      "mapping_id": "fixture.amend.001",
+      "guidance_family_id": "fixture.family.ich_s6",
+      "source_document_edition_id": "fixture.edition.s6.parent",
+      "amending_document_edition_id": "fixture.edition.s6.addendum",
+      "source_record_ids": ["fixture.kr.parent"],
+      "amending_record_ids": ["fixture.kr.addendum"],
+      "relation_type": "clarifies",
+      "original_relationship_wording": "clarifies",
+      "derivation_basis": "amendment_synthesis",
+      "source_references": [
+        {
+          "document_id": "ich_s6_r1",
+          "section_id": null,
+          "source_unit_id": null,
+          "pdf_page_index_zero_based": null,
+          "printed_page_label": null,
+          "source_text": "fixture source text"
+        }
+      ],
+      "review_status": "needs_review",
+      "profile_details": null
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "derived_model_version": "0.2.0",
+  "artifact_type": "RiskAssessment",
+  "regulator_profile": "core",
+  "records": [
+    {
+      "risk_assessment_id": "fixture.risk.001",
+      "target_type": "EffectiveRecord",
+      "target_id": "fixture.effective.001",
+      "risk_level": "high",
+      "risk_factors": ["addendum_or_partial_amendment_structure"],
+      "rationale": "Fixture high-risk derived artifact.",
+      "assessor_attestation_id": null,
+      "assessed_at": "2026-07-06T00:00:00Z",
+      "required_review_tier": "high",
+      "supersedes_risk_assessment_id": null,
+      "override_reason": null,
+      "override_attestation_id": null,
+      "profile_details": null
+    }
+  ]
+}

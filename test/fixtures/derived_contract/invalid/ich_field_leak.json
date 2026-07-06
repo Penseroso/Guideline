@@ -1,0 +1,21 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "DocumentEdition",
+  "regulator_profile": "core",
+  "records": [
+    {
+      "document_edition_id": "fixture.edition.m10.final",
+      "guidance_family_id": "fixture.family.ich_m10",
+      "edition_label": "Final guideline",
+      "edition_role": "final",
+      "jurisdiction": "ICH",
+      "publication_date": null,
+      "effective_date": null,
+      "document_status": "current",
+      "current_risk_assessment_id": null,
+      "review_status": "needs_review",
+      "profile_details": null,
+      "ich_code": "M10"
+    }
+  ]
+}

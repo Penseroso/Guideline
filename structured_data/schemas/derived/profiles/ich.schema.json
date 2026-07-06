@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.local/regulatory-guideline-archive/derived/profiles/ich.schema.json",
+  "title": "ICH Derived Contract Profile",
+  "definitions": {
+    "ichDerivationDetail": {
+      "type": "string",
+      "enum": [
+        "parent_guideline",
+        "addendum_without_parent_counterpart",
+        "parent_addendum_synthesis",
+        "integrated_package"
+      ]
+    },
+    "profileDetails": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ich_derivation_detail"],
+      "properties": {
+        "ich_derivation_detail": { "$ref": "#/definitions/ichDerivationDetail" },
+        "ich_step": { "type": ["string", "null"] },
+        "ich_code": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

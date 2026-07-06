@@ -24,7 +24,7 @@ The files `structured_data/pilots/m10_phase2_table_pressure.json` and `structure
 
 Phase 3 is complete after REV-011. Modules 3.0 through 3.6 completed the S6(R1) foundation, approved Parent-Addendum pilot scope, reviewed source-layer pilot, reviewed amendment-relation prototype, reviewed current effective-state prototype, derived-layer validator, and provisional derived-layer contract plus Phase 4 handoff plan.
 
-Source model `0.2.0` remains unchanged. AmendmentMapping and `EffectiveRecord` are provisional derived-layer artifacts under `structured_data/derived/`, documented in `working_docs/amendment_effective_strategy.md`, `working_docs/amendment_prototype_S6_R1.md`, and `working_docs/effective_state_prototype_S6_R1.md`. They remain outside the source JSON Schema and are validated separately by `scripts/validate_derived.js`. Module 3.6 documents the provisional derived-layer contract boundary in `working_docs/derived_contract_module_3_6.md`, with Phase 4 planned but not started.
+Source model `0.2.0` remains unchanged. AmendmentMapping and `EffectiveRecord` are provisional derived-layer artifacts under `structured_data/derived/`, documented in `working_docs/amendment_effective_strategy.md`, `working_docs/amendment_prototype_S6_R1.md`, and `working_docs/effective_state_prototype_S6_R1.md`. They remain outside the source JSON Schema and are validated separately by `scripts/validate_derived.js`. Module 3.6 documents the provisional derived-layer contract boundary in `working_docs/derived_contract_module_3_6.md`. Phase 4 Module 4.1 is implemented, pending independent repository review.
 
 ## Project Phases
 
@@ -32,7 +32,7 @@ Source model `0.2.0` remains unchanged. AmendmentMapping and `EffectiveRecord` a
 - Phase 1 - M10 Pilot: create a limited reviewed JSON pilot from ICH M10 using the conceptual model.
 - Phase 2 - Data Contract and Validation: complete for the current M10 pilots and selected M10 structural pressure tests.
 - Phase 3 - S6 Foundation and Derived-Layer Strategy: complete after REV-011; source model `0.2.0` is retained, derived-layer prototypes and validation are reviewed, and the provisional derived contract plus Phase 4 handoff plan are documented.
-- Phase 4 - Single-guideline full-processing engine: planned, not started.
+- Phase 4 - Single-guideline full-processing engine: Module 4.1 implemented, pending independent repository review; later engine modules are not started.
 
 ## Non-Goals
 

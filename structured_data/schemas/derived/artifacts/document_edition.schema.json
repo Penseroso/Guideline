@@ -1,0 +1,34 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.local/regulatory-guideline-archive/derived/artifacts/document_edition.schema.json",
+  "title": "DocumentEdition Artifact",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["derived_model_version", "artifact_type", "regulator_profile", "records"],
+  "properties": {
+    "derived_model_version": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/derivedModelVersion" },
+    "artifact_type": { "const": "DocumentEdition" },
+    "regulator_profile": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/regulatorProfile" },
+    "records": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/documentEdition" } }
+  },
+  "definitions": {
+    "documentEdition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document_edition_id", "guidance_family_id", "edition_label", "edition_role", "jurisdiction", "publication_date", "effective_date", "document_status", "current_risk_assessment_id", "review_status", "profile_details"],
+      "properties": {
+        "document_edition_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id" },
+        "guidance_family_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id" },
+        "edition_label": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString" },
+        "edition_role": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString" },
+        "jurisdiction": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/jurisdiction" },
+        "publication_date": { "oneOf": [{ "type": "null" }, { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/date" }] },
+        "effective_date": { "oneOf": [{ "type": "null" }, { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/date" }] },
+        "document_status": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString" },
+        "current_risk_assessment_id": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nullableId" },
+        "review_status": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/aggregateReviewStatus" },
+        "profile_details": { "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/profileDetails" }
+      }
+    }
+  }
+}

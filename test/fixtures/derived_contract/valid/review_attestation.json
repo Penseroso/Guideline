@@ -1,0 +1,21 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "ReviewAttestation",
+  "regulator_profile": "core",
+  "records": [
+    {
+      "review_attestation_id": "fixture.review.001",
+      "reviewer_type": "validator",
+      "provider": null,
+      "reviewer_name": null,
+      "model_identifier": null,
+      "reviewed_at": "2026-07-06T00:00:00Z",
+      "review_scope": "fixture scope",
+      "review_outcome": "needs_review",
+      "covered_artifact_ids": ["fixture.artifact.001"],
+      "covered_record_ids": [],
+      "notes": null,
+      "profile_details": null
+    }
+  ]
+}

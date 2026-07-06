@@ -4,10 +4,11 @@ const path = require("node:path");
 const { spawnSync } = require("node:child_process");
 const test = require("node:test");
 
-const { validateDerivedArtifacts } = require("../scripts/validate_derived");
+const { validateDerivedArtifacts, validateDerivedContractArtifact } = require("../scripts/validate_derived");
 
 const ROOT = path.resolve(__dirname, "..");
 const FIXTURE_DIR = path.join(ROOT, "test", "fixtures", "derived");
+const CONTRACT_FIXTURE_DIR = path.join(ROOT, "test", "fixtures", "derived_contract");
 const SOURCE_FILE = path.join(FIXTURE_DIR, "minimal_source_bundle.json");
 const AMENDMENT_FILE = path.join(FIXTURE_DIR, "minimal_amendment_mappings.json");
 const EFFECTIVE_FILE = path.join(FIXTURE_DIR, "minimal_effective_records.json");
@@ -62,6 +63,72 @@ function assertInvalid(result, expectedFragment) {
 
 test("valid derived fixtures pass", () => {
   assertValid(validateCopies());
+});
+
+test("valid derived contract 0.1.0 fixtures pass schema validation", () => {
+  const validDir = path.join(CONTRACT_FIXTURE_DIR, "valid");
+  const files = fs.readdirSync(validDir).filter((file) => file.endsWith(".json"));
+  assert.equal(files.length, 9);
+  for (const file of files) {
+    const fixturePath = path.join(validDir, file);
+    const artifact = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
+    assertValid(validateDerivedContractArtifact({ artifact, file: fixturePath }));
+  }
+});
+
+test("derived contract fixtures fail on wrong version", () => {
+  const fixturePath = path.join(CONTRACT_FIXTURE_DIR, "invalid", "wrong_version.json");
+  const artifact = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
+  assertInvalid(validateDerivedContractArtifact({ artifact, file: fixturePath }), "must be equal to constant");
+});
+
+test("derived contract fixtures reject unknown closed-vocabulary relation types", () => {
+  const fixturePath = path.join(CONTRACT_FIXTURE_DIR, "invalid", "unknown_relation.json");
+  const artifact = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
+  assertInvalid(validateDerivedContractArtifact({ artifact, file: fixturePath }), "must be equal to one of the allowed values");
+});
+
+test("derived contract core records reject direct ICH field leakage", () => {
+  const fixturePath = path.join(CONTRACT_FIXTURE_DIR, "invalid", "ich_field_leak.json");
+  const artifact = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
+  assertInvalid(validateDerivedContractArtifact({ artifact, file: fixturePath }), "must NOT have additional properties");
+});
+
+test("derived contract core artifacts reject ICH profile details", () => {
+  const fixturePath = path.join(CONTRACT_FIXTURE_DIR, "invalid", "core_profile_details.json");
+  const artifact = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
+  assertInvalid(validateDerivedContractArtifact({ artifact, file: fixturePath }), "must be null for regulator-neutral core artifacts");
+});
+
+test("contract-marked amendment and effective artifacts use schema validation before legacy cross-object checks", () => {
+  const amendmentArtifact = JSON.parse(fs.readFileSync(path.join(CONTRACT_FIXTURE_DIR, "valid", "amendment_mapping.json"), "utf8"));
+  const effectiveArtifact = JSON.parse(fs.readFileSync(path.join(CONTRACT_FIXTURE_DIR, "valid", "effective_record.json"), "utf8"));
+  assertValid(validateDerivedArtifacts({
+    sourceBundle: sourceFixture,
+    amendmentArtifact,
+    effectiveArtifact,
+    files: {
+      sourceFile: SOURCE_FILE,
+      amendmentFile: path.join(CONTRACT_FIXTURE_DIR, "valid", "amendment_mapping.json"),
+      effectiveFile: path.join(CONTRACT_FIXTURE_DIR, "valid", "effective_record.json")
+    }
+  }));
+});
+
+test("legacy Phase 3 prototype paths are exempt from 0.1.0 schema enforcement", () => {
+  const sourceBundle = JSON.parse(fs.readFileSync(path.join(ROOT, "structured_data", "pilots", "s6_r1_species_selection.json"), "utf8"));
+  const amendmentArtifact = JSON.parse(fs.readFileSync(path.join(ROOT, "structured_data", "derived", "s6_r1_amendment_mappings.json"), "utf8"));
+  const effectiveArtifact = JSON.parse(fs.readFileSync(path.join(ROOT, "structured_data", "derived", "s6_r1_effective_records.json"), "utf8"));
+  assertValid(validateDerivedArtifacts({
+    sourceBundle,
+    amendmentArtifact,
+    effectiveArtifact,
+    files: {
+      sourceFile: "structured_data/pilots/s6_r1_species_selection.json",
+      amendmentFile: "structured_data/derived/s6_r1_amendment_mappings.json",
+      effectiveFile: "structured_data/derived/s6_r1_effective_records.json"
+    }
+  }));
 });
 
 test("current S6 derived artifacts pass", () => {

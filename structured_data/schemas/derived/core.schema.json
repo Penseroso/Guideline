@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.local/regulatory-guideline-archive/derived/core.schema.json",
+  "title": "Derived Contract Core Definitions",
+  "definitions": {
+    "derivedModelVersion": {
+      "const": "0.1.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nullableId": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nullableString": {
+      "type": ["string", "null"]
+    },
+    "idArray": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/id" },
+      "uniqueItems": true
+    },
+    "date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "dateTime": {
+      "type": "string",
+      "minLength": 1
+    },
+    "regulatorProfile": {
+      "type": "string",
+      "enum": ["core", "ich"]
+    },
+    "aggregateReviewStatus": {
+      "type": "string",
+      "enum": ["unreviewed", "needs_review", "reviewed", "rejected"]
+    },
+    "reviewPolicy": {
+      "type": "string",
+      "enum": ["include_needs_review", "reviewed_only"]
+    },
+    "reviewOutcome": {
+      "type": "string",
+      "enum": ["passed", "needs_review", "rejected"]
+    },
+    "reviewerType": {
+      "type": "string",
+      "enum": ["validator", "model", "human", "legacy_repository_review"]
+    },
+    "riskLevel": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "requiredReviewTier": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "riskFactor": {
+      "type": "string",
+      "enum": [
+        "draft_final_withdrawn_status_uncertainty",
+        "unclear_publication_or_effective_date",
+        "unclear_replacement_or_supplementation_scope",
+        "addendum_or_partial_amendment_structure",
+        "integrated_versus_consolidated_structure",
+        "complex_layout_tables_notes_ocr_or_cross_references",
+        "likely_impact_on_current_effective_records"
+      ]
+    },
+    "derivationBasis": {
+      "type": "string",
+      "enum": [
+        "direct_source",
+        "consolidated_source",
+        "amendment_synthesis",
+        "supplementary_source",
+        "reviewed_cross_document_synthesis"
+      ]
+    },
+    "amendmentRelationType": {
+      "type": "string",
+      "enum": [
+        "clarifies",
+        "supplements",
+        "modifies",
+        "narrows",
+        "broadens",
+        "replaces",
+        "supersedes",
+        "conflicts_with"
+      ]
+    },
+    "jurisdiction": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceDocumentRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document_id"],
+      "properties": {
+        "document_id": { "$ref": "#/definitions/id" },
+        "section_id": { "$ref": "#/definitions/nullableId" },
+        "source_unit_id": { "$ref": "#/definitions/nullableId" },
+        "pdf_page_index_zero_based": { "type": ["integer", "null"] },
+        "printed_page_label": { "$ref": "#/definitions/nullableString" },
+        "source_text": { "$ref": "#/definitions/nullableString" }
+      }
+    },
+    "profileDetails": {
+      "oneOf": [
+        { "type": "null" },
+        { "$ref": "https://example.local/regulatory-guideline-archive/derived/profiles/ich.schema.json#/definitions/profileDetails" }
+      ]
+    },
+    "artifactEnvelope": {
+      "type": "object",
+      "required": ["derived_model_version", "artifact_type", "regulator_profile", "records"],
+      "properties": {
+        "derived_model_version": { "$ref": "#/definitions/derivedModelVersion" },
+        "artifact_type": { "$ref": "#/definitions/nonEmptyString" },
+        "regulator_profile": { "$ref": "#/definitions/regulatorProfile" },
+        "records": {
+          "type": "array",
+          "minItems": 1
+        }
+      }
+    }
+  }
+}
