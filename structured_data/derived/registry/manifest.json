@@ -1,12 +1,12 @@
 {
   "source_bundles": [
-    "../../pilots/m10_3_2_5_2.json",
-    "../../pilots/m10_6_1.json",
-    "../../pilots/s6_r1_species_selection.json"
+    "../../source_documents/ich_m10.json",
+    "../../source_documents/ich_s6_r1.json"
   ],
   "artifacts": [
     "guidance_family.json",
     "document_edition.json",
     "edition_source.json"
-  ]
+  ],
+  "strict_registry": true
 }

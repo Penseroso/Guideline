@@ -156,7 +156,7 @@ function requireSourceRef(errors, file, indexes, id, field, ownerId, collection)
   return null;
 }
 
-function validateContractArtifacts({ sourceBundle, artifacts }) {
+function validateContractArtifacts({ sourceBundle, artifacts, strictRegistry }) {
   const errors = [];
   const normalizedArtifacts = (artifacts || []).map((entry, index) => ({
     artifact: entry && entry.artifact,
@@ -179,7 +179,24 @@ function validateContractArtifacts({ sourceBundle, artifacts }) {
   validateContractAmendmentMappings({ contractIndexes, sourceIndexes, errors });
   validateContractEffectiveRecords({ contractIndexes, sourceIndexes, errors });
   validateContractSnapshots({ contractIndexes, errors });
+  if (strictRegistry) validateStrictRegistryCompleteness({ contractIndexes, errors });
   return validationResult(errors, contractIndexes.amendmentMappings.size, contractIndexes.effectiveRecords.size);
+}
+
+function validateStrictRegistryCompleteness({ contractIndexes, errors }) {
+  for (const [familyId] of contractIndexes.guidanceFamilies) {
+    const owner = contractIndexes.recordOwners.get(familyId);
+    const hasEdition = [...contractIndexes.documentEditions.values()].some((edition) => edition.guidance_family_id === familyId);
+    if (!hasEdition) {
+      addError(errors, owner.file, familyId, "guidance_family_id", `strict registry validation: GuidanceFamily ${familyId} has no DocumentEdition referencing it`);
+    }
+  }
+  for (const [editionId] of contractIndexes.documentEditions) {
+    const owner = contractIndexes.recordOwners.get(editionId);
+    if (!contractIndexes.editionSourceDocuments.has(editionId)) {
+      addError(errors, owner.file, editionId, "document_edition_id", `strict registry validation: DocumentEdition ${editionId} has no EditionSource referencing it`);
+    }
+  }
 }
 
 function validationResult(errors, amendmentMappingCount, effectiveRecordCount) {
@@ -421,6 +438,9 @@ function validateContractSnapshots({ contractIndexes, errors }) {
       if (record.guidance_family_id !== snapshot.guidance_family_id) {
         addError(errors, owner.file, snapshotId, "effective_record_ids", `EffectiveRecord ${effectiveRecordId} guidance_family_id ${record.guidance_family_id} must match snapshot guidance_family_id ${snapshot.guidance_family_id}`);
       }
+      if (record.jurisdiction !== snapshot.jurisdiction) {
+        addError(errors, owner.file, snapshotId, "effective_record_ids", `EffectiveRecord ${effectiveRecordId} jurisdiction ${record.jurisdiction} must match snapshot jurisdiction ${snapshot.jurisdiction}`);
+      }
     }
   }
 }
@@ -589,15 +609,35 @@ function mergeSourceBundles(bundles) {
 
 function resolveManifestSourcePaths(manifest, errors, manifestFile) {
   const singular = manifest.source_bundle || manifest.source_bundle_file;
-  const plural = manifest.source_bundles || manifest.source_bundle_files;
+  const pluralField = manifest.source_bundles || manifest.source_bundle_files;
   const hasSingular = isNonEmptyString(singular);
-  const hasPlural = Array.isArray(plural) && plural.length > 0;
+  const hasPluralField = Object.prototype.hasOwnProperty.call(manifest, "source_bundles") || Object.prototype.hasOwnProperty.call(manifest, "source_bundle_files");
+  if (hasPluralField && !Array.isArray(pluralField)) {
+    addError(errors, manifestFile || "manifest", null, "source_bundles", "must be an array of non-empty strings when present");
+    return null;
+  }
+  const hasPlural = Array.isArray(pluralField) && pluralField.length > 0;
   if (hasSingular && hasPlural) {
     addError(errors, manifestFile || "manifest", null, "source_bundle", "must not be combined with source_bundles; supply exactly one");
     return null;
   }
   if (hasSingular) return [singular];
-  if (hasPlural) return plural;
+  if (Array.isArray(pluralField)) {
+    if (pluralField.length === 0) {
+      addError(errors, manifestFile || "manifest", null, "source_bundles", "must not be empty");
+      return null;
+    }
+    const invalidEntries = pluralField
+      .map((entry, index) => ({ entry, index }))
+      .filter(({ entry }) => !isNonEmptyString(entry));
+    if (invalidEntries.length > 0) {
+      for (const { entry, index } of invalidEntries) {
+        addError(errors, manifestFile || "manifest", null, `source_bundles[${index}]`, `must be a non-empty string, got ${JSON.stringify(entry)}`);
+      }
+      return null;
+    }
+    return pluralField;
+  }
   addError(errors, manifestFile || "manifest", null, "source_bundle", "must name a source bundle file, or source_bundles must contain at least one file");
   return null;
 }
@@ -620,6 +660,9 @@ function validateDerivedManifest({ manifest, manifestFile }) {
   const sourcePaths = resolveManifestSourcePaths(manifest, errors, manifestFile);
   const artifactPaths = manifest.artifacts || manifest.artifact_files;
   if (!Array.isArray(artifactPaths) || artifactPaths.length === 0) addError(errors, manifestFile || "manifest", null, "artifacts", "must contain at least one artifact file");
+  if (Object.prototype.hasOwnProperty.call(manifest, "strict_registry") && typeof manifest.strict_registry !== "boolean") {
+    addError(errors, manifestFile || "manifest", null, "strict_registry", "must be a boolean when present");
+  }
   if (errors.length > 0) return { ok: false, configError: true, errors, amendmentMappingCount: 0, effectiveRecordCount: 0 };
   const sourceBundleEntries = sourcePaths.map((sourcePath) => {
     const sourceFile = path.resolve(manifestDir, sourcePath);
@@ -635,7 +678,7 @@ function validateDerivedManifest({ manifest, manifestFile }) {
     return { ok: false, errors: sourceResult.errors, amendmentMappingCount: 0, effectiveRecordCount: 0 };
   }
   const sourceBundle = mergeSourceBundles(sourceBundleEntries.map((entry) => entry.bundle));
-  return validateContractArtifacts({ sourceBundle, artifacts });
+  return validateContractArtifacts({ sourceBundle, artifacts, strictRegistry: manifest.strict_registry === true });
 }
 
 function parseArgs(args) {

@@ -103,6 +103,33 @@
         "conflicts_with"
       ]
     },
+    "documentEditionRole": {
+      "description": "The logical role this edition plays in its guidance family, per Module 3.6.",
+      "type": "string",
+      "enum": [
+        "draft",
+        "final",
+        "revised_final",
+        "addendum",
+        "qa",
+        "annex",
+        "supplement",
+        "withdrawal_notice",
+        "replacement_notice",
+        "integrated_package",
+        "textually_consolidated_edition"
+      ]
+    },
+    "documentStatus": {
+      "description": "The edition's own publication lifecycle state (draft/in force/withdrawn/superseded), an input to effective-state determination. It is not itself a claim that this edition is the currently effective content for any jurisdiction or as_of_date; that is computed by EffectiveRecord and EffectiveStateSnapshot from document_status, publication/effective dates, and lifecycle relationships.",
+      "type": "string",
+      "enum": [
+        "draft",
+        "in_force",
+        "withdrawn",
+        "superseded"
+      ]
+    },
     "jurisdiction": {
       "type": "string",
       "minLength": 1

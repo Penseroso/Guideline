@@ -1,6 +1,6 @@
 # Phase 4 Module 4.1: Derived Contract Schema Scaffold
 
-Status: Module 4.1 complete after REV-012. Module 4.2 not started and now eligible to begin.
+Status: Module 4.1 complete after REV-012. Later Phase 4 module status is tracked in `working_docs/phase4_plan.md` and `README.md`, not restated here.
 
 ## Scope implemented
 

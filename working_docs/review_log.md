@@ -355,6 +355,121 @@ Use this document to record human review results after review is performed. Do n
 - Follow-up owner: Module 4.3 owner
 - Status: Resolved
 
+### REV-013c: Phase 4 Module 4.2 Post-Completion Audit and Correction Review
+
+- Date: 2026-07-13
+- Reviewer: Repository review
+- Scope reviewed: Independent audit of the completed Module 4.2 commit (`6f84b92`) against the Phase 4
+  architecture and the Engine boundary in `working_docs/phase4_plan.md`, without expanding Module 4.2's
+  scope or redesigning the completed architecture. Seven findings were investigated and corrected:
+  (1) strict production-registry validation while preserving generic partial-graph behavior;
+  (2) removal of the production registry's direct dependency on pilot bundles;
+  (3) closing and validating the Module 4.2 registry vocabularies, keeping document status separate
+  from effective currentness; (4) snapshot-member jurisdiction consistency validation and regression
+  coverage; (5) correction of stale and contradictory README status text; (6) hardening of
+  `source_bundles` manifest configuration validation; (7) accurate statement of automated versus
+  manual S6 reconciliation coverage.
+- Source document: Not applicable; this review covered derived-layer schemas, validator code,
+  registry/fixture data, tests, and status documentation rather than source-text extraction.
+- Sections or pages reviewed: Not applicable.
+- Files reviewed: `scripts/validate_derived.js`; `structured_data/schemas/derived/core.schema.json`;
+  `structured_data/schemas/derived/artifacts/document_edition.schema.json`;
+  `structured_data/derived/registry/`; `structured_data/source_documents/ich_m10.json`;
+  `structured_data/source_documents/ich_s6_r1.json`; `test/fixtures/derived_contract/`;
+  `test/validate_derived.test.js`; `working_docs/decisions.md`; `working_docs/phase4_plan.md`;
+  `working_docs/phase4_module_4_2.md`; `README.md`; `working_docs/project_scope.md`.
+- Findings and corrections:
+  - **Finding 1 (registry authority conflict):** The production registry manifest referenced
+    `structured_data/pilots/*.json` directly as its source-Document identity input, contradicting
+    `working_docs/phase4_plan.md`'s Engine boundary rule that Phase 1-3 pilots are regression
+    references and audit history, not production inputs for the runtime contract. **Correction
+    (DEC-053):** two canonical minimal Document-identity bundles were added at
+    `structured_data/source_documents/ich_m10.json` and `.../ich_s6_r1.json` — each a source model
+    `0.2.0` bundle containing only the `documents` collection (one record, byte-identical to the
+    corresponding reviewed pilot's Document record, confirmed by regression test) and empty other
+    collections; a documents-only bundle was confirmed schema- and cross-object-valid before adoption.
+    `structured_data/derived/registry/manifest.json` now references these bundles; DEC-051 part (2),
+    the multi-bundle mechanism, is unchanged and unaffected.
+  - **Finding 2 (document_status conflated with effective currentness):** The registry set
+    `document_status="current"` for both DocumentEditions, an unqualified claim of current effective
+    status rather than the edition's own publication state, and both `edition_role` and
+    `document_status` were unconstrained free strings despite Module 4.1 explicitly deferring their
+    closure to Module 4.2. **Correction (DEC-054):** `core.schema.json` adds closed
+    `documentEditionRole` (the Module 3.6 vocabulary) and `documentStatus`
+    (`draft`/`in_force`/`withdrawn`/`superseded`) enums, referenced from
+    `document_edition.schema.json`; the registry now uses `document_status="in_force"`; all affected
+    fixtures were updated to the closed vocabulary (`edition_role="parent"` to `"final"`,
+    `document_status="current"` to `"in_force"`, `document_status="historical"` to `"superseded"` in
+    the generic `complete_graph` example) with no change to any frozen artifact or source-model
+    semantics. `LifecycleRelationship.relationship_type` remains open, deferred to the module that
+    first produces a production LifecycleRelationship record, since Module 4.2 creates none (DEC-050).
+  - **Finding 3 (no registry completeness check):** Generic contract-graph validation intentionally
+    tolerates partial artifact graphs (for test fixtures), so an orphan GuidanceFamily with no
+    DocumentEdition, or a DocumentEdition with no EditionSource, would pass the production registry
+    manifest silently. **Correction (DEC-055):** an opt-in manifest-level `strict_registry` boolean
+    was added; when `true`, `validateStrictRegistryCompleteness` requires every supplied
+    GuidanceFamily to have at least one DocumentEdition and every DocumentEdition to have at least one
+    EditionSource. Default behavior (flag absent or `false`) is unchanged, confirmed by regression
+    tests showing the same orphan scenarios still pass without the flag.
+    `structured_data/derived/registry/manifest.json` sets `strict_registry: true` and passes.
+  - **Finding 4 (snapshot jurisdiction not checked):** `validateContractSnapshots` checked
+    `guidance_family_id` consistency between a snapshot and its member EffectiveRecords but not
+    `jurisdiction`, despite DEC-030 fixing jurisdiction as part of snapshot identity. **Correction
+    (DEC-056):** a jurisdiction-consistency check was added alongside the family check, with positive
+    and negative regression tests.
+  - **Finding 5 (unhardened source_bundles configuration):** A malformed `source_bundles` manifest
+    entry (non-string, `null`, empty string) reached `path.resolve` and crashed the process with an
+    uncaught `TypeError` instead of producing a validation error; an empty `source_bundles` array or a
+    non-array value were also not explicitly rejected. **Correction (DEC-057):**
+    `resolveManifestSourcePaths` now validates array-ness, non-emptiness, and per-entry
+    non-empty-string type, reporting configuration errors by index; confirmed the prior crash no
+    longer reproduces and regression tests cover all three malformed-input cases.
+  - **Finding 6 (stale/contradictory README status text):** README retained a leftover clause "Module
+    4.2 is not started and now eligible to begin" from before Module 4.2 was implemented, alongside a
+    separate bullet correctly stating Module 4.2 was complete; the Repository Map described
+    `structured_data/derived/` as holding frozen prototypes "until later production derived outputs
+    are generated," which was already false once the Module 4.2 registry existed;
+    `working_docs/phase4_module_4_1.md` carried a similar stale forward-looking status clause.
+    **Correction:** the stale clauses were removed or rephrased to reference current status
+    documents instead of restating a point-in-time forward-looking claim; the Repository Map was
+    updated to describe the current `structured_data/derived/` and new `structured_data/source_documents/`
+    structure; the Artifact Authority Boundary gained a bullet classifying
+    `structured_data/source_documents/` as a normative production source-layer input, distinct from
+    `structured_data/pilots/`.
+  - **Finding 7 (reconciliation claim did not distinguish automated from manual coverage):** Module
+    4.2's documentation described the S6 slice's reconciliation against the frozen
+    `ich_s6_r1.amend.001` prototype as "no unexplained semantic divergence" without stating that only
+    `relation_type` and the KnowledgeRecord endpoint ID arrays are checked by an automated regression
+    test; the prose-level synthesis (`analyst_rationale`, `effective_text_en`, `synthesis_rationale`)
+    is authored and asserted consistent by reviewer judgment, not independently automated.
+    **Correction:** `working_docs/phase4_module_4_2.md` gained an explicit "Automated vs. manual S6
+    reconciliation coverage" section stating this distinction, and `working_docs/phase4_plan.md`'s
+    Module 4.2 completion gate text was updated to the same precision. REV-013b's own findings text
+    is left as the historical record and is not rewritten in place.
+- Compatibility findings: Source model `0.2.0`, `structured_data/schemas/guideline_bundle.schema.json`,
+  `structured_data/pilots/`, `Guideline Files/`, and both frozen Phase 3 prototype files remain
+  byte-identical relative to the REV-013b base (protected-file diff returned no changes).
+  `package-lock.json` is unchanged. No existing ID (`document_id`, `knowledge_record_id`,
+  `guidance_family_id`, etc.) was renamed; only two previously free-string field values
+  (`edition_role`, `document_status`) were normalized to a closed vocabulary already anticipated by
+  Module 4.1.
+- Required corrections: None outstanding; all seven findings above were corrected in this review cycle.
+- Unresolved items: None for this correction round. Module 4.5 and Module 4.7 remain blocked on their
+  DEC-049 governance-policy decisions, unchanged by this review.
+- Validation command: `npm test` (169/169 pass); `npm run validate:pilots` (Validated 5 pilot
+  bundle(s)); `npm run validate:legacy` (Validated 4 legacy amendment mapping(s) and 4 legacy
+  EffectiveRecord(s)); `npm run validate:derived` (Validated contract graph with 1 AmendmentMapping
+  record(s) and 1 EffectiveRecord record(s), unchanged from REV-013b); `npm run validate:registry`
+  (Validated contract graph with 0 AmendmentMapping record(s) and 0 EffectiveRecord record(s), now
+  against `structured_data/source_documents/` with `strict_registry: true`);
+  `node scripts/validate_derived.js --manifest test/fixtures/derived_contract/m10_direct_slice/manifest.json`
+  (1 EffectiveRecord record); `node scripts/validate_derived.js --manifest test/fixtures/derived_contract/s6_amendment_slice/manifest.json`
+  (1 AmendmentMapping record, 1 EffectiveRecord record); `git diff --check` (clean); protected-file
+  diff against the REV-013b base for `Guideline Files`, `structured_data/schemas/guideline_bundle.schema.json`,
+  `structured_data/pilots`, the two Phase 3 derived prototypes, and `package-lock.json` (no changes).
+- Follow-up owner: Module 4.3 owner
+- Status: Resolved
+
 ### REV-012: Phase 4 Module 4.1 Derived Contract Schema Scaffold Review
 
 - Date: 2026-07-06

@@ -1,0 +1,20 @@
+{
+  "documents": [
+    {
+      "document_id": "ich_s6_r1",
+      "title": "Preclinical Safety Evaluation of Biotechnology-Derived Pharmaceuticals",
+      "guideline_code": "S6(R1)",
+      "issuing_body": "ICH",
+      "document_version_label": "Current Step 4 version; Parent Guideline dated 16 July 1997; Addendum dated 12 June 2011 incorporated at the end of June 2011",
+      "source_file_path": "Guideline Files/ICH S6.pdf",
+      "source_file_checksum": "05C41D25575259D9C931FCAD33A8227089A8B2F704C0922C0B5F7F411D812E22",
+      "schema_model_version": "0.2.0"
+    }
+  ],
+  "sections": [],
+  "source_units": [],
+  "knowledge_records": [],
+  "quantitative_criteria": [],
+  "conditions": [],
+  "cross_references": []
+}

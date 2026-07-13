@@ -1,6 +1,8 @@
 # Phase 4 Module 4.2: Family Registry, Lifecycle Artifacts, and Candidate Value-Path Slice
 
-Status: Module 4.2 complete after REV-013b.
+Status: Module 4.2 complete after REV-013b; independently audited and corrected after REV-013c
+(DEC-053 through DEC-057). This note describes the corrected, current state; see "Post-completion
+audit and correction" below for what changed and why.
 
 ## Scope implemented
 
@@ -13,12 +15,16 @@ fixture-first vertical slice, per the Rebaseline R0 decisions (DEC-049 through D
   (`edition_role=integrated_package`, one DocumentEdition, no LifecycleRelationship — DEC-050).
   `current_risk_assessment_id` is `null` on every record (DEC-044, DEC-049); no RiskAssessment or
   ReviewAttestation production artifacts are created in this module.
+- Two canonical minimal Document-identity bundles, `structured_data/source_documents/ich_m10.json`
+  and `structured_data/source_documents/ich_s6_r1.json` (DEC-053): each a source model `0.2.0`
+  bundle containing only the `documents` collection (one record, byte-identical to the corresponding
+  reviewed pilot's Document record) and empty other collections. These, not `structured_data/pilots/`,
+  are the production registry's source-Document identity input.
 - A validation manifest, `structured_data/derived/registry/manifest.json`, naming the three registry
-  artifact files and the three existing reviewed source pilot bundles (`m10_3_2_5_2.json`,
-  `m10_6_1.json`, `s6_r1_species_selection.json`) as `source_bundles`. `npm run validate:registry`
-  runs it.
+  artifact files and the two canonical identity bundles above as `source_bundles`. `npm run
+  validate:registry` runs it.
 - `scripts/validate_derived.js` extended, additively, to accept a manifest naming multiple
-  `source_bundles` (DEC-051): `resolveManifestSourcePaths` accepts either the existing singular
+  `source_bundles` (DEC-051 part 2): `resolveManifestSourcePaths` accepts either the existing singular
   `source_bundle` or the new plural `source_bundles`, rejects supplying both, validates each bundle
   through the existing `validateBundles` reuse (which already performs DEC-018 cross-file rules:
   identical repeated Document records, context-only repeated Sections, global non-repeatable-ID
@@ -50,12 +56,41 @@ fixture-first vertical slice, per the Rebaseline R0 decisions (DEC-049 through D
     reviewed-effective-state claim.
 - Regression tests in `test/validate_derived.test.js` covering: the production two-document registry
   manifest; multi-bundle merge and unresolved-Document failure; rejection of combining
-  `source_bundle` and `source_bundles`; both candidate slices validating end to end; the S6 slice
-  mapping's `relation_type`/endpoint reconciliation against the frozen `ich_s6_r1.amend.001` reference;
-  the S6 registry and slice each using exactly one integrated-package DocumentEdition with no
-  LifecycleRelationship fixture present; and a schema-level demonstration that the closed registry
-  schemas already reject source-Document field duplication (`additionalProperties: false`), so no
-  redundant validator rule for that was added (see "Validator scope" below).
+  `source_bundle` and `source_bundles`; both candidate slices validating end to end; an **automated**
+  assertion that the S6 slice mapping's `relation_type` and `source_record_ids`/`amending_record_ids`
+  endpoint arrays exactly equal the frozen `ich_s6_r1.amend.001` reference's `relation_type` and
+  `parent_knowledge_record_ids`/`addendum_knowledge_record_ids` (see "Automated vs. manual S6
+  reconciliation coverage" below for what is and is not covered by this assertion); the S6 registry
+  and slice each using exactly one integrated-package DocumentEdition with no LifecycleRelationship
+  fixture present; and a schema-level demonstration that the closed registry schemas already reject
+  source-Document field duplication (`additionalProperties: false`), so no redundant validator rule
+  for that was added (see "Validator scope" below).
+
+## Post-completion audit and correction (REV-013c)
+
+An independent audit of the completed Module 4.2 commit found five issues, corrected without
+expanding Module 4.2's scope or redesigning the completed architecture:
+
+1. **Registry depended directly on pilot bundles**, contradicting the Engine boundary rule that
+   Phase 1-3 pilots are not production inputs. Resolved by DEC-053: two canonical minimal
+   Document-identity bundles under `structured_data/source_documents/` replace the direct pilot
+   dependency; the additive multi-bundle manifest mechanism (DEC-051 part 2) is unchanged.
+2. **`document_status="current"`** conflated the DocumentEdition's own publication status with
+   computed effective currentness. Resolved by DEC-054: `edition_role` and `document_status` are now
+   closed vocabularies, and the registry uses `document_status="in_force"`.
+3. **No strict completeness check** for the production registry — an orphan GuidanceFamily or
+   DocumentEdition would pass silently. Resolved by DEC-055: an opt-in `strict_registry` manifest
+   flag, enabled only for the production registry manifest, with the existing generic partial-graph
+   behavior unchanged by default.
+4. **EffectiveStateSnapshot validation checked family but not jurisdiction consistency** for member
+   EffectiveRecords. Resolved by DEC-056.
+5. **Manifest `source_bundles` accepted malformed entries** (non-string, empty-string, empty array,
+   non-array), crashing with an uncaught `TypeError` instead of a clean validation error. Resolved by
+   DEC-057.
+
+See `working_docs/review_log.md` REV-013c for the independent review record, and DEC-053 through
+DEC-057 in `working_docs/decisions.md` for full rationale. REV-013b's original findings are not
+rewritten; they remain the historical record of the state before this correction.
 
 ## Registry identity
 
@@ -64,8 +99,12 @@ fixture-first vertical slice, per the Rebaseline R0 decisions (DEC-049 through D
 EditionSource counterparts) are semantic, guideline-code-based identifiers, not derived from
 `Guideline Files/` filenames (`ICH M10.pdf`, `ICH S6.pdf`). Source `Document` identity (`document_id`,
 checksum, version label, `schema_model_version`) is referenced from, not duplicated into, the
-registry, and is bootstrapped from the existing reviewed pilot bundles (DEC-051) pending full
-production source bundles from Modules 4.4/4.10.
+registry. That identity is provided by the canonical minimal Document-identity bundles under
+`structured_data/source_documents/` (DEC-053), not by direct reference to `structured_data/pilots/`,
+because `working_docs/phase4_plan.md`'s Engine boundary designates Phase 1-3 pilots as regression
+references and audit history, not production inputs for the runtime contract. Full production source
+bundles from Modules 4.4/4.10 will later carry the same `document_id` and checksum and may supersede
+these identity bundles without changing registry identity.
 
 ## S6(R1) registry model (DEC-050)
 
@@ -79,6 +118,32 @@ DEC-043 (LifecycleRelationship self-relations are rejected). The `complete_graph
 generic two-edition LifecycleRelationship example is a structural demonstration only and was not
 treated as the S6 model.
 
+## Automated vs. manual S6 reconciliation coverage
+
+The `s6_amendment_slice` fixture's AmendmentMapping (`slice.s6.amend.001`) is reconciled against the
+frozen Phase 3 prototype `ich_s6_r1.amend.001` (`structured_data/derived/s6_r1_amendment_mappings.json`,
+reviewed `reviewed` in REV-005) at two distinct levels of coverage, which must not be conflated:
+
+- **Automated (regression-tested):** the test `s6_amendment_slice mapping reconciles without
+  divergence against the frozen Phase 3 amend.001 reference` in `test/validate_derived.test.js`
+  asserts by exact equality that `slice.s6.amend.001`'s `relation_type` equals `ich_s6_r1.amend.001`'s
+  `relation_type` (`clarifies`), and that its `source_record_ids`/`amending_record_ids` arrays equal
+  the frozen mapping's `parent_knowledge_record_ids`/`addendum_knowledge_record_ids` arrays. This
+  structural equivalence is checked on every test run and would fail if either endpoint set or the
+  relation type ever diverged.
+- **Manual (asserted by this review, not independently automated):** the prose-level synthesis —
+  `slice.s6.amend.001`'s `analyst_rationale` and `original_relationship_wording`, and
+  `slice.s6.eff.relevant_species_determination`'s `effective_text_en` and `synthesis_rationale` — was
+  authored fresh for the contract-conformant shape and manually checked against the frozen prototype's
+  rationale text and REV-005/REV-008's findings for meaning-level consistency. No automated test
+  compares natural-language field content; there is no reliable exact-match or fuzzy-match assertion
+  for prose meaning, so this level of reconciliation is asserted by reviewer judgment, not enforced by
+  the test suite.
+
+Both the module note and `working_docs/phase4_plan.md`'s Module 4.2 completion gate state this
+distinction explicitly rather than describing the reconciliation as uniformly "automated" or as a
+single unqualified claim.
+
 ## Validator scope (no closed-schema restatement)
 
 Every derived artifact schema is `additionalProperties: false`, and the registry artifact schemas
@@ -87,8 +152,12 @@ no source path, checksum, or version-label fields. Source-Document field duplica
 registry is therefore already rejected at JSON Schema validation, and Module 4.2 does not add a
 duplicate validator rule for it (a positive test demonstrates the schema rejection directly). Module
 4.2 validator additions are limited to graph-level facts the closed schemas cannot express:
-cross-artifact reference resolution for the multi-bundle source index, and EffectiveStateSnapshot
-member/family resolution.
+cross-artifact reference resolution for the multi-bundle source index; EffectiveStateSnapshot member,
+family, and jurisdiction resolution (DEC-056); and, when a manifest opts in with `strict_registry:
+true`, registry completeness — every supplied GuidanceFamily has at least one DocumentEdition, and
+every supplied DocumentEdition has at least one EditionSource (DEC-055). `strict_registry` is off by
+default so the existing generic partial-graph fixtures and tests are unaffected; only
+`structured_data/derived/registry/manifest.json` enables it.
 
 ## Deferred governance (DEC-049)
 
@@ -112,6 +181,10 @@ artifact-identity/linkage gap logged as known gap G1 in `working_docs/phase4_pla
 
 - REV-013b confirms the registry, multi-bundle manifest support, structural snapshot validation, and
   both candidate slices meet the Module 4.2 completion gate in `working_docs/phase4_plan.md`.
+  REV-013c independently audits and corrects that completed state per DEC-053 through DEC-057.
 - Module 4.5 and Module 4.7 remain blocked on their DEC-049 governance-policy decisions.
-- Full production source bundles (Modules 4.4/4.10) will later supersede the pilot-bootstrapped source
-  Document identity additively, without changing registry identity (DEC-051).
+- Full production source bundles (Modules 4.4/4.10) will later supersede the canonical minimal
+  Document-identity bundles under `structured_data/source_documents/` additively, without changing
+  registry identity (DEC-053).
+- The prose-level S6 reconciliation (rationale and effective-text wording) remains manually asserted,
+  not automated; see "Automated vs. manual S6 reconciliation coverage" above.

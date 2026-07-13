@@ -7,11 +7,11 @@
       "document_edition_id": "test.edition.parent",
       "guidance_family_id": "test.family",
       "edition_label": "Parent",
-      "edition_role": "parent",
+      "edition_role": "final",
       "jurisdiction": "TEST",
       "publication_date": null,
       "effective_date": null,
-      "document_status": "historical",
+      "document_status": "superseded",
       "current_risk_assessment_id": null,
       "review_status": "needs_review",
       "profile_details": null
@@ -24,7 +24,7 @@
       "jurisdiction": "TEST",
       "publication_date": null,
       "effective_date": null,
-      "document_status": "current",
+      "document_status": "in_force",
       "current_risk_assessment_id": null,
       "review_status": "needs_review",
       "profile_details": null
