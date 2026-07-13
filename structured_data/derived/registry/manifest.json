@@ -1,0 +1,12 @@
+{
+  "source_bundles": [
+    "../../source_documents/ich_m10.json",
+    "../../source_documents/ich_s6_r1.json"
+  ],
+  "artifacts": [
+    "guidance_family.json",
+    "document_edition.json",
+    "edition_source.json"
+  ],
+  "strict_registry": true
+}

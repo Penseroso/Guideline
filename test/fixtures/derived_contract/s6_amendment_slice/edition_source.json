@@ -1,0 +1,15 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "EditionSource",
+  "regulator_profile": "ich",
+  "records": [
+    {
+      "edition_source_id": "slice.s6.edition_source.integrated_package",
+      "document_edition_id": "slice.s6.edition.integrated_package",
+      "document_id": "ich_s6_r1",
+      "source_role": "primary",
+      "review_status": "needs_review",
+      "profile_details": null
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "EffectiveRecord",
+  "regulator_profile": "ich",
+  "records": [
+    {
+      "effective_record_id": "slice.s6.eff.relevant_species_determination",
+      "guidance_family_id": "slice.s6.family",
+      "document_edition_id": "slice.s6.edition.integrated_package",
+      "jurisdiction": "ICH",
+      "as_of_date": "2011-06-12",
+      "effective_status": "current",
+      "derivation_basis": "amendment_synthesis",
+      "amendment_mapping_ids": ["slice.s6.amend.001"],
+      "contributing_record_ids": [
+        "ich_s6_r1.kr.part1.3_3.002",
+        "ich_s6_r1.kr.part1.3_3.003",
+        "ich_s6_r1.kr.part2.2_1.001",
+        "ich_s6_r1.kr.part2.2_1.002",
+        "ich_s6_r1.kr.part2.2_1.003"
+      ],
+      "source_references": [
+        {
+          "document_id": "ich_s6_r1",
+          "section_id": "ich_s6_r1.sec.part1.3_3",
+          "source_unit_id": "ich_s6_r1.su.part1.3_3.002"
+        },
+        {
+          "document_id": "ich_s6_r1",
+          "section_id": "ich_s6_r1.sec.part2.2_1",
+          "source_unit_id": "ich_s6_r1.su.part2.2_1.002"
+        },
+        {
+          "document_id": "ich_s6_r1",
+          "section_id": "ich_s6_r1.sec.part2.2_1",
+          "source_unit_id": "ich_s6_r1.su.part2.2_1.003"
+        }
+      ],
+      "effective_text_en": "A relevant species is one in which the test material is pharmacologically active due to the expression of the receptor or an epitope. A number of factors should be taken into account when determining species relevancy: comparisons of target sequence homology between species can be an appropriate starting point, followed by in vitro assays for qualitative and quantitative cross-species comparisons of relative target binding affinities and receptor/ligand occupancy and kinetics, and assessments of functional activity are also recommended.",
+      "normalized_ko": null,
+      "synthesis_rationale": "Candidate amendment-synthesis slice built from the clarifies mapping slice.s6.amend.001. Parent record ich_s6_r1.kr.part1.3_3.002 supplies the operative definition of a relevant species; ich_s6_r1.kr.part1.3_3.003 supplies the general statement that a variety of techniques can identify one. Addendum records ich_s6_r1.kr.part2.2_1.001 through .003 supply the specific factors and techniques (sequence homology, in vitro binding/occupancy comparisons, functional-activity assessment) used to satisfy that Parent definition in practice. This reconciles, for the same real endpoint pair, with the reviewed Module 3.3 mapping ich_s6_r1.amend.001 (REV-005): both reach the clarifies conclusion that the Addendum explains and disambiguates evidence for the Parent's relevant-species definition without changing it. No unexplained semantic divergence from that frozen reference is present.",
+      "representation_limitations": [],
+      "review_status": "needs_review",
+      "profile_details": {
+        "ich_derivation_detail": "parent_addendum_synthesis",
+        "ich_step": "Step 4",
+        "ich_code": "S6(R1)"
+      }
+    }
+  ]
+}

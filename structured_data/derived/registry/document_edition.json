@@ -1,0 +1,33 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "DocumentEdition",
+  "regulator_profile": "ich",
+  "records": [
+    {
+      "document_edition_id": "gf.ich_m10.edition.final",
+      "guidance_family_id": "gf.ich_m10",
+      "edition_label": "ICH M10 Final Guideline",
+      "edition_role": "final",
+      "jurisdiction": "ICH",
+      "publication_date": "2022-05-24",
+      "effective_date": null,
+      "document_status": "in_force",
+      "current_risk_assessment_id": null,
+      "review_status": "needs_review",
+      "profile_details": null
+    },
+    {
+      "document_edition_id": "gf.ich_s6r1.edition.integrated_package",
+      "guidance_family_id": "gf.ich_s6r1",
+      "edition_label": "ICH S6(R1) Integrated Parent Guideline and Addendum",
+      "edition_role": "integrated_package",
+      "jurisdiction": "ICH",
+      "publication_date": null,
+      "effective_date": null,
+      "document_status": "in_force",
+      "current_risk_assessment_id": null,
+      "review_status": "needs_review",
+      "profile_details": null
+    }
+  ]
+}

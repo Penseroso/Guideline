@@ -1,0 +1,31 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "EffectiveRecord",
+  "regulator_profile": "ich",
+  "records": [
+    {
+      "effective_record_id": "slice.m10.eff.6_1.022",
+      "guidance_family_id": "slice.m10.family",
+      "document_edition_id": "slice.m10.edition.final",
+      "jurisdiction": "ICH",
+      "as_of_date": "2022-05-24",
+      "effective_status": "current",
+      "derivation_basis": "direct_source",
+      "amendment_mapping_ids": [],
+      "contributing_record_ids": ["ich_m10.kr.6_1.022"],
+      "source_references": [
+        {
+          "document_id": "ich_m10",
+          "section_id": "ich_m10.sec.6_1",
+          "source_unit_id": "ich_m10.su.6_1.021"
+        }
+      ],
+      "effective_text_en": "The parameters of the partial validations should meet the full validation criteria.",
+      "normalized_ko": null,
+      "synthesis_rationale": "Candidate direct-source slice: KnowledgeRecord ich_m10.kr.6_1.022 is reproduced without amendment or cross-document synthesis from the reviewed M10 6.1 pilot bundle, demonstrating the registry-to-EffectiveRecord path for a single final document with no addendum structure (the M10 simple lifecycle path).",
+      "representation_limitations": [],
+      "review_status": "needs_review",
+      "profile_details": null
+    }
+  ]
+}

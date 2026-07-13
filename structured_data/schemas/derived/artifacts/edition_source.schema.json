@@ -51,7 +51,7 @@
           "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/id"
         },
         "source_role": {
-          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString"
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/sourceRole"
         },
         "review_status": {
           "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/aggregateReviewStatus"

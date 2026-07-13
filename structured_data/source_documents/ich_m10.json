@@ -1,0 +1,20 @@
+{
+  "documents": [
+    {
+      "document_id": "ich_m10",
+      "title": "Bioanalytical Method Validation and Study Sample Analysis",
+      "guideline_code": "M10",
+      "issuing_body": "ICH",
+      "document_version_label": "Final version, adopted on 24 May 2022",
+      "source_file_path": "Guideline Files/ICH M10.pdf",
+      "source_file_checksum": "E306F3B6DC367EB2913CE242093A8F6C9DCD095A139A9FDB6D6F5E25201FA6AF",
+      "schema_model_version": "0.2.0"
+    }
+  ],
+  "sections": [],
+  "source_units": [],
+  "knowledge_records": [],
+  "quantitative_criteria": [],
+  "conditions": [],
+  "cross_references": []
+}

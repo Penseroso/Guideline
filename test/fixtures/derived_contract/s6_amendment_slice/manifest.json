@@ -1,0 +1,11 @@
+{
+  "source_bundle": "../../../../structured_data/pilots/s6_r1_species_selection.json",
+  "artifacts": [
+    "guidance_family.json",
+    "document_edition.json",
+    "edition_source.json",
+    "amendment_mapping.json",
+    "effective_record.json",
+    "effective_state_snapshot.json"
+  ]
+}

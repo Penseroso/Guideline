@@ -1,6 +1,6 @@
 # Phase 4 Module 4.1: Derived Contract Schema Scaffold
 
-Status: Module 4.1 complete after REV-012. Module 4.2 not started and now eligible to begin.
+Status: Module 4.1 complete after REV-012. Later Phase 4 module status is tracked in `working_docs/phase4_plan.md` and `README.md`, not restated here.
 
 ## Scope implemented
 
@@ -45,27 +45,12 @@ The regulator-neutral core schema has no direct dependency on the ICH profile sc
 
 ## Repository artifact authority
 
-Normative runtime contract:
-
-- Derived JSON Schemas under `structured_data/schemas/derived/`.
-- Regulator profile schemas under `structured_data/schemas/derived/profiles/`.
-- Production contract validator `scripts/validate_derived.js`.
-- Future generation policy and configuration created by later modules.
-
-Test-only:
-
-- Contract fixtures and manifests under `test/fixtures/derived_contract/`.
-- M10/S6 regression samples.
-- Invalid failure fixtures.
-
-Historical/non-normative:
-
-- Phase 1-3 plans.
-- Phase 3 prototypes.
-- Old review records.
-- Implementation and decision history.
-
-The production engine must use only normative runtime artifacts. Phase 3 prototypes are comparison references, not production migration inputs.
+The normative artifact authority boundary is stated once, in `README.md` under "Artifact Authority
+Boundary". Module 4.1 introduced and follows that boundary: derived JSON Schemas and the production
+contract validator are the normative runtime contract; contract fixtures and manifests under
+`test/fixtures/derived_contract/` are test-only; Phase 1-3 plans, prototypes, and review records are
+historical/non-normative. The production engine must use only normative runtime artifacts, and Phase 3
+prototypes remain comparison references, not production migration inputs.
 
 ## Source bundle revalidation
 

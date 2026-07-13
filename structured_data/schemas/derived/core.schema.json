@@ -103,6 +103,41 @@
         "conflicts_with"
       ]
     },
+    "documentEditionRole": {
+      "description": "The logical role this edition plays in its guidance family, per Module 3.6.",
+      "type": "string",
+      "enum": [
+        "draft",
+        "final",
+        "revised_final",
+        "addendum",
+        "qa",
+        "annex",
+        "supplement",
+        "withdrawal_notice",
+        "replacement_notice",
+        "integrated_package",
+        "textually_consolidated_edition"
+      ]
+    },
+    "documentStatus": {
+      "description": "The edition's own publication lifecycle state (draft/in force/withdrawn/superseded), an input to effective-state determination. It is not itself a claim that this edition is the currently effective content for any jurisdiction or as_of_date; that is computed by EffectiveRecord and EffectiveStateSnapshot from document_status, publication/effective dates, and lifecycle relationships.",
+      "type": "string",
+      "enum": [
+        "draft",
+        "in_force",
+        "withdrawn",
+        "superseded"
+      ]
+    },
+    "sourceRole": {
+      "description": "The role a given source Document plays for a DocumentEdition. EditionSource is a one-or-many link from an edition to its source Document(s) (Module 3.6); primary identifies the edition's principal source Document, and supplementary identifies an additional source Document jointly backing the same edition (for example a textually consolidated edition assembled from more than one source PDF). Exactly one EditionSource per edition should be primary.",
+      "type": "string",
+      "enum": [
+        "primary",
+        "supplementary"
+      ]
+    },
     "jurisdiction": {
       "type": "string",
       "minLength": 1

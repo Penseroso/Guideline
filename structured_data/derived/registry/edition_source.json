@@ -1,0 +1,23 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "EditionSource",
+  "regulator_profile": "ich",
+  "records": [
+    {
+      "edition_source_id": "gf.ich_m10.edition_source.final",
+      "document_edition_id": "gf.ich_m10.edition.final",
+      "document_id": "ich_m10",
+      "source_role": "primary",
+      "review_status": "needs_review",
+      "profile_details": null
+    },
+    {
+      "edition_source_id": "gf.ich_s6r1.edition_source.integrated_package",
+      "document_edition_id": "gf.ich_s6r1.edition.integrated_package",
+      "document_id": "ich_s6_r1",
+      "source_role": "primary",
+      "review_status": "needs_review",
+      "profile_details": null
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "GuidanceFamily",
+  "regulator_profile": "ich",
+  "records": [
+    {
+      "guidance_family_id": "gf.ich_m10",
+      "family_title": "ICH M10 — Bioanalytical Method Validation and Study Sample Analysis",
+      "jurisdictions": ["ICH"],
+      "current_risk_assessment_id": null,
+      "review_status": "needs_review",
+      "profile_details": null
+    },
+    {
+      "guidance_family_id": "gf.ich_s6r1",
+      "family_title": "ICH S6(R1) — Preclinical Safety Evaluation of Biotechnology-Derived Pharmaceuticals",
+      "jurisdictions": ["ICH"],
+      "current_risk_assessment_id": null,
+      "review_status": "needs_review",
+      "profile_details": null
+    }
+  ]
+}

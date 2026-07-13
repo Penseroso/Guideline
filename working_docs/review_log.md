@@ -248,6 +248,288 @@ Use this document to record human review results after review is performed. Do n
 - Follow-up owner: Phase 4 owner
 - Status: Resolved
 
+### REV-013a: Phase 4 Rebaseline R0 Review
+
+- Date: 2026-07-13
+- Reviewer: Repository review
+- Scope reviewed: Independent review of the pre-Module-4.2 architecture audit and Rebaseline R0: reconciliation of the Phase 4 module authority between `working_docs/phase4_handoff_plan.md` and `working_docs/phase4_plan.md`; consolidation of the artifact-authority boundary statement; the CI validation gap closure; and decisions DEC-049 (governance-policy staging with concrete 4.5/4.7 gates), DEC-050 (S6(R1) single integrated-package DocumentEdition), DEC-051 (registry source-Document bootstrap and multi-bundle manifest support), and DEC-052 (production-vs-frozen `structured_data/derived/` path boundary). R0 is documentation, CI configuration, and decision recording only; no schema, structured-data, or validator-behavior change is in scope for this review.
+- Source document: Not applicable; this review covered planning documentation, decision records, and CI configuration rather than source-text extraction.
+- Sections or pages reviewed: Not applicable.
+- Files reviewed: `working_docs/phase4_handoff_plan.md`; `working_docs/phase4_plan.md`; `README.md`; `working_docs/phase4_module_4_1.md`; `working_docs/decisions.md`; `.github/workflows/validate.yml`; `working_docs/project_scope.md`.
+- Findings:
+  - `phase4_handoff_plan.md`'s superseded "Ordered Phase 4 modules" section (a 4.1-4.10 list with different module boundaries than the concretized plan) is replaced with a pointer naming `phase4_plan.md` as sole module authority; the handoff's milestones, processing boundary, impact-analysis strategy, and deferred-work sections are retained unchanged.
+  - The artifact-authority boundary is now stated once, in `README.md`; `phase4_module_4_1.md` references it instead of restating it.
+  - `.github/workflows/validate.yml` now runs `npm run validate:derived` and `npm run validate:legacy` in addition to `npm test` and `npm run validate:pilots`, closing the prior CI gap over the derived contract and the frozen Phase 3 prototypes.
+  - DEC-049 stages Risk/Review governance: Modules 4.2-4.6 use Risk/Review only as schema-conformant structures with basic reference integrity; Module 4.5 is gated on a risk-policy decision and Module 4.7 on a review-aggregation decision, the latter also required to resolve the ReviewAttestation artifact-identity/linkage gap logged as known gap G1.
+  - DEC-050 fixes the S6(R1) registry model as one GuidanceFamily, one DocumentEdition (`edition_role=integrated_package`), one EditionSource, and no LifecycleRelationship, consistent with the existing DEC-022/DEC-024 single-physical-Document finding and the DEC-043 self-relation prohibition.
+  - DEC-051 bootstraps registry source-Document identity from the existing reviewed pilot bundles (no fabricated identity; frozen pilots unchanged) and authorizes an additive multi-`source_bundles` manifest extension to `scripts/validate_derived.js`, preserving the existing single-`source_bundle` behavior.
+  - DEC-052 fixes production derived artifacts (registry, and later risk/review/snapshot) under typed subfolders of `structured_data/derived/`, leaving the two frozen Phase 3 prototype files at their current root-level paths, unmoved.
+  - A known contract gaps register (G1-G4) is added to `phase4_plan.md`, naming each gap, its resolution decision, and the module gate that applies.
+- Compatibility findings: No schema, structured-data, or validator-code change was made in R0. `npm test` (139/139 pass), `npm run validate:pilots` (5 pilot bundles), `npm run validate:legacy` (4 legacy amendment mappings, 4 legacy EffectiveRecords), and `npm run validate:derived` (1 AmendmentMapping, 1 EffectiveRecord against the existing `complete_graph` fixture) all match REV-012 output exactly. `Guideline Files/`, `structured_data/schemas/guideline_bundle.schema.json`, `structured_data/pilots/`, and the two frozen `structured_data/derived/*.json` prototypes are unchanged.
+- Required corrections: None.
+- Unresolved items: None for Rebaseline R0. Module 4.2 implementation (registry artifacts, multi-bundle manifest support, structural snapshot validation, candidate-only vertical-slice fixtures) remains to be completed and separately reviewed under REV-013b.
+- Validation command: `npm test` (139/139 pass); `npm run validate:pilots` (Validated 5 pilot bundle(s)); `npm run validate:legacy` (Validated 4 legacy amendment mapping(s) and 4 legacy EffectiveRecord(s)); `npm run validate:derived` (Validated contract graph with 1 AmendmentMapping record(s) and 1 EffectiveRecord record(s)); `git diff --check` (clean); protected-file diff against the REV-012 base for `Guideline Files`, `structured_data/schemas/guideline_bundle.schema.json`, `structured_data/pilots`, and the two Phase 3 derived prototypes (no changes).
+- Follow-up owner: Module 4.2 owner
+- Status: Resolved
+
+### REV-013b: Phase 4 Module 4.2 Family Registry, Lifecycle Artifacts, and Candidate Value-Path Slice Review
+
+- Date: 2026-07-13
+- Reviewer: Repository review
+- Scope reviewed: Independent completion-gate review of Phase 4 Module 4.2: production family/edition
+  registry for both official corpus documents; the additive multi-bundle manifest extension to
+  `scripts/validate_derived.js` (DEC-051); structural EffectiveStateSnapshot graph validation brought
+  forward from Module 4.8; and two candidate-only, fixture-first vertical-slice scenarios (`m10_direct_slice`,
+  `s6_amendment_slice`) demonstrating the registry-to-derived-to-snapshot path against real, reviewed
+  M10 and S6 pilot content. Confirmed the Module 4.2 completion gate in `working_docs/phase4_plan.md`
+  and the R0 decisions (DEC-049 through DEC-052) it implements.
+- Source document: Not applicable; this review covered derived-layer registry artifacts, validator
+  code, fixtures, tests, and status documentation rather than source-text extraction.
+- Sections or pages reviewed: Not applicable.
+- Files reviewed: `structured_data/derived/registry/guidance_family.json`;
+  `structured_data/derived/registry/document_edition.json`;
+  `structured_data/derived/registry/edition_source.json`;
+  `structured_data/derived/registry/manifest.json`; `scripts/validate_derived.js`;
+  `test/validate_derived.test.js`; `test/fixtures/derived_contract/m10_direct_slice/`;
+  `test/fixtures/derived_contract/s6_amendment_slice/`;
+  `test/fixtures/derived_contract/invalid/source_bundle_and_source_bundles.json`; `package.json`;
+  `.github/workflows/validate.yml`; `working_docs/phase4_module_4_2.md`; `working_docs/phase4_plan.md`;
+  `working_docs/decisions.md`; `README.md`; `working_docs/project_scope.md`.
+- Findings:
+  - Registry identity (`gf.ich_m10`, `gf.ich_s6r1`, and their edition/edition-source IDs) is
+    semantic and guideline-code-based, independent of `Guideline Files/` filenames. No source
+    `Document` path, checksum, or version-label field is duplicated into the registry; this is
+    enforced structurally by the closed (`additionalProperties: false`) registry schemas, confirmed
+    by a positive schema-rejection test rather than a new validator rule.
+  - The S6(R1) registry uses exactly one GuidanceFamily, one DocumentEdition
+    (`edition_role=integrated_package`), and one EditionSource, with no LifecycleRelationship
+    artifact, consistent with DEC-050 and the existing DEC-022/DEC-024 single-physical-Document
+    finding and the DEC-043 self-relation prohibition.
+  - The multi-bundle manifest extension is additive: `resolveManifestSourcePaths` accepts the
+    existing singular `source_bundle` or the new plural `source_bundles`, rejects combining both,
+    reuses the existing `validateBundles` cross-file rules (DEC-018) per bundle, and merges validated
+    bundles via `mergeSourceBundles` before graph validation. The existing single-`source_bundle`
+    `complete_graph` fixture behavior is unchanged and re-verified. The production two-document
+    registry validates against all three bootstrap pilot bundles (`m10_3_2_5_2.json`, `m10_6_1.json`,
+    `s6_r1_species_selection.json`) via `structured_data/derived/registry/manifest.json` and
+    `npm run validate:registry`.
+  - Structural EffectiveStateSnapshot validation (`validateContractSnapshots`) resolves
+    `guidance_family_id` and `effective_record_ids` members against supplied artifacts and rejects a
+    member EffectiveRecord from a different family, without implementing tier, aggregation, or
+    disclosure policy (confirmed deferred to Module 4.8).
+  - Both candidate slices validate end to end against real pilot content: `m10_direct_slice` produces
+    one `derivation_basis=direct_source` EffectiveRecord and one snapshot from
+    `structured_data/pilots/m10_6_1.json`; `s6_amendment_slice` produces one AmendmentMapping and one
+    `derivation_basis=amendment_synthesis` EffectiveRecord (with ICH
+    `ich_derivation_detail=parent_addendum_synthesis`) and one snapshot from
+    `structured_data/pilots/s6_r1_species_selection.json`. All slice records carry
+    `review_status=needs_review` and no slice output claims reviewed or production status.
+  - The S6 slice's AmendmentMapping (`slice.s6.amend.001`) reconciles without unexplained semantic
+    divergence against the frozen Phase 3 prototype `ich_s6_r1.amend.001`
+    (`structured_data/derived/s6_r1_amendment_mappings.json`, reviewed `reviewed` in REV-005): same
+    `relation_type=clarifies`, same Parent and Addendum `KnowledgeRecord` endpoints. The frozen
+    prototype file itself is unread-only referenced and remains byte-identical.
+  - RiskAssessment and ReviewAttestation remain schema-only; no production instances were created;
+    `current_risk_assessment_id` is `null` on every Module 4.2 registry record, consistent with
+    DEC-044 and the DEC-049 governance staging gate.
+- Compatibility findings: Source model `0.2.0`, `structured_data/schemas/guideline_bundle.schema.json`,
+  `structured_data/pilots/`, `Guideline Files/`, and both frozen Phase 3 prototype files
+  (`structured_data/derived/s6_r1_amendment_mappings.json`,
+  `structured_data/derived/s6_r1_effective_records.json`) are unchanged relative to the REV-013a base
+  (protected-file diff returned no changes). `package-lock.json` is unchanged.
+- Required corrections: None.
+- Unresolved items: None for Module 4.2. Module 4.5 (risk) and Module 4.7 (review) remain gated on
+  their DEC-049 governance-policy decisions, the latter also required to resolve the ReviewAttestation
+  artifact-identity/linkage gap (known gap G1). Full production source bundles (Modules 4.4/4.10) will
+  later supersede the pilot-bootstrapped source Document identity additively.
+- Validation command: `npm test` (152/152 pass); `npm run validate:pilots` (Validated 5 pilot
+  bundle(s)); `npm run validate:legacy` (Validated 4 legacy amendment mapping(s) and 4 legacy
+  EffectiveRecord(s)); `npm run validate:derived` (Validated contract graph with 1 AmendmentMapping
+  record(s) and 1 EffectiveRecord record(s), unchanged from REV-012); `npm run validate:registry`
+  (Validated contract graph with 0 AmendmentMapping record(s) and 0 EffectiveRecord record(s));
+  `node scripts/validate_derived.js --manifest test/fixtures/derived_contract/m10_direct_slice/manifest.json`
+  (1 EffectiveRecord record); `node scripts/validate_derived.js --manifest test/fixtures/derived_contract/s6_amendment_slice/manifest.json`
+  (1 AmendmentMapping record, 1 EffectiveRecord record); `git diff --check` (clean); protected-file
+  diff against the REV-013a base for `Guideline Files`, `structured_data/schemas/guideline_bundle.schema.json`,
+  `structured_data/pilots`, the two Phase 3 derived prototypes, and `package-lock.json` (no changes).
+- Follow-up owner: Module 4.3 owner
+- Status: Resolved
+
+### REV-013c: Phase 4 Module 4.2 Post-Completion Audit and Correction Review
+
+- Date: 2026-07-13
+- Reviewer: Repository review
+- Scope reviewed: Independent audit of the completed Module 4.2 commit (`6f84b92`) against the Phase 4
+  architecture and the Engine boundary in `working_docs/phase4_plan.md`, without expanding Module 4.2's
+  scope or redesigning the completed architecture. Seven findings were investigated and corrected:
+  (1) strict production-registry validation while preserving generic partial-graph behavior;
+  (2) removal of the production registry's direct dependency on pilot bundles;
+  (3) closing and validating the Module 4.2 registry vocabularies, keeping document status separate
+  from effective currentness; (4) snapshot-member jurisdiction consistency validation and regression
+  coverage; (5) correction of stale and contradictory README status text; (6) hardening of
+  `source_bundles` manifest configuration validation; (7) accurate statement of automated versus
+  manual S6 reconciliation coverage.
+- Source document: Not applicable; this review covered derived-layer schemas, validator code,
+  registry/fixture data, tests, and status documentation rather than source-text extraction.
+- Sections or pages reviewed: Not applicable.
+- Files reviewed: `scripts/validate_derived.js`; `structured_data/schemas/derived/core.schema.json`;
+  `structured_data/schemas/derived/artifacts/document_edition.schema.json`;
+  `structured_data/derived/registry/`; `structured_data/source_documents/ich_m10.json`;
+  `structured_data/source_documents/ich_s6_r1.json`; `test/fixtures/derived_contract/`;
+  `test/validate_derived.test.js`; `working_docs/decisions.md`; `working_docs/phase4_plan.md`;
+  `working_docs/phase4_module_4_2.md`; `README.md`; `working_docs/project_scope.md`.
+- Findings and corrections:
+  - **Finding 1 (registry authority conflict):** The production registry manifest referenced
+    `structured_data/pilots/*.json` directly as its source-Document identity input, contradicting
+    `working_docs/phase4_plan.md`'s Engine boundary rule that Phase 1-3 pilots are regression
+    references and audit history, not production inputs for the runtime contract. **Correction
+    (DEC-053):** two canonical minimal Document-identity bundles were added at
+    `structured_data/source_documents/ich_m10.json` and `.../ich_s6_r1.json` — each a source model
+    `0.2.0` bundle containing only the `documents` collection (one record, byte-identical to the
+    corresponding reviewed pilot's Document record, confirmed by regression test) and empty other
+    collections; a documents-only bundle was confirmed schema- and cross-object-valid before adoption.
+    `structured_data/derived/registry/manifest.json` now references these bundles; DEC-051 part (2),
+    the multi-bundle mechanism, is unchanged and unaffected.
+  - **Finding 2 (document_status conflated with effective currentness):** The registry set
+    `document_status="current"` for both DocumentEditions, an unqualified claim of current effective
+    status rather than the edition's own publication state, and both `edition_role` and
+    `document_status` were unconstrained free strings despite Module 4.1 explicitly deferring their
+    closure to Module 4.2. **Correction (DEC-054):** `core.schema.json` adds closed
+    `documentEditionRole` (the Module 3.6 vocabulary) and `documentStatus`
+    (`draft`/`in_force`/`withdrawn`/`superseded`) enums, referenced from
+    `document_edition.schema.json`; the registry now uses `document_status="in_force"`; all affected
+    fixtures were updated to the closed vocabulary (`edition_role="parent"` to `"final"`,
+    `document_status="current"` to `"in_force"`, `document_status="historical"` to `"superseded"` in
+    the generic `complete_graph` example) with no change to any frozen artifact or source-model
+    semantics. `LifecycleRelationship.relationship_type` remains open, deferred to the module that
+    first produces a production LifecycleRelationship record, since Module 4.2 creates none (DEC-050).
+  - **Finding 3 (no registry completeness check):** Generic contract-graph validation intentionally
+    tolerates partial artifact graphs (for test fixtures), so an orphan GuidanceFamily with no
+    DocumentEdition, or a DocumentEdition with no EditionSource, would pass the production registry
+    manifest silently. **Correction (DEC-055):** an opt-in manifest-level `strict_registry` boolean
+    was added; when `true`, `validateStrictRegistryCompleteness` requires every supplied
+    GuidanceFamily to have at least one DocumentEdition and every DocumentEdition to have at least one
+    EditionSource. Default behavior (flag absent or `false`) is unchanged, confirmed by regression
+    tests showing the same orphan scenarios still pass without the flag.
+    `structured_data/derived/registry/manifest.json` sets `strict_registry: true` and passes.
+  - **Finding 4 (snapshot jurisdiction not checked):** `validateContractSnapshots` checked
+    `guidance_family_id` consistency between a snapshot and its member EffectiveRecords but not
+    `jurisdiction`, despite DEC-030 fixing jurisdiction as part of snapshot identity. **Correction
+    (DEC-056):** a jurisdiction-consistency check was added alongside the family check, with positive
+    and negative regression tests.
+  - **Finding 5 (unhardened source_bundles configuration):** A malformed `source_bundles` manifest
+    entry (non-string, `null`, empty string) reached `path.resolve` and crashed the process with an
+    uncaught `TypeError` instead of producing a validation error; an empty `source_bundles` array or a
+    non-array value were also not explicitly rejected. **Correction (DEC-057):**
+    `resolveManifestSourcePaths` now validates array-ness, non-emptiness, and per-entry
+    non-empty-string type, reporting configuration errors by index; confirmed the prior crash no
+    longer reproduces and regression tests cover all three malformed-input cases.
+  - **Finding 6 (stale/contradictory README status text):** README retained a leftover clause "Module
+    4.2 is not started and now eligible to begin" from before Module 4.2 was implemented, alongside a
+    separate bullet correctly stating Module 4.2 was complete; the Repository Map described
+    `structured_data/derived/` as holding frozen prototypes "until later production derived outputs
+    are generated," which was already false once the Module 4.2 registry existed;
+    `working_docs/phase4_module_4_1.md` carried a similar stale forward-looking status clause.
+    **Correction:** the stale clauses were removed or rephrased to reference current status
+    documents instead of restating a point-in-time forward-looking claim; the Repository Map was
+    updated to describe the current `structured_data/derived/` and new `structured_data/source_documents/`
+    structure; the Artifact Authority Boundary gained a bullet classifying
+    `structured_data/source_documents/` as a normative production source-layer input, distinct from
+    `structured_data/pilots/`.
+  - **Finding 7 (reconciliation claim did not distinguish automated from manual coverage):** Module
+    4.2's documentation described the S6 slice's reconciliation against the frozen
+    `ich_s6_r1.amend.001` prototype as "no unexplained semantic divergence" without stating that only
+    `relation_type` and the KnowledgeRecord endpoint ID arrays are checked by an automated regression
+    test; the prose-level synthesis (`analyst_rationale`, `effective_text_en`, `synthesis_rationale`)
+    is authored and asserted consistent by reviewer judgment, not independently automated.
+    **Correction:** `working_docs/phase4_module_4_2.md` gained an explicit "Automated vs. manual S6
+    reconciliation coverage" section stating this distinction, and `working_docs/phase4_plan.md`'s
+    Module 4.2 completion gate text was updated to the same precision. REV-013b's own findings text
+    is left as the historical record and is not rewritten in place.
+- Compatibility findings: Source model `0.2.0`, `structured_data/schemas/guideline_bundle.schema.json`,
+  `structured_data/pilots/`, `Guideline Files/`, and both frozen Phase 3 prototype files remain
+  byte-identical relative to the REV-013b base (protected-file diff returned no changes).
+  `package-lock.json` is unchanged. No existing ID (`document_id`, `knowledge_record_id`,
+  `guidance_family_id`, etc.) was renamed; only two previously free-string field values
+  (`edition_role`, `document_status`) were normalized to a closed vocabulary already anticipated by
+  Module 4.1.
+- Required corrections: None outstanding; all seven findings above were corrected in this review cycle.
+- Unresolved items: None for this correction round. Module 4.5 and Module 4.7 remain blocked on their
+  DEC-049 governance-policy decisions, unchanged by this review.
+- Validation command: `npm test` (169/169 pass); `npm run validate:pilots` (Validated 5 pilot
+  bundle(s)); `npm run validate:legacy` (Validated 4 legacy amendment mapping(s) and 4 legacy
+  EffectiveRecord(s)); `npm run validate:derived` (Validated contract graph with 1 AmendmentMapping
+  record(s) and 1 EffectiveRecord record(s), unchanged from REV-013b); `npm run validate:registry`
+  (Validated contract graph with 0 AmendmentMapping record(s) and 0 EffectiveRecord record(s), now
+  against `structured_data/source_documents/` with `strict_registry: true`);
+  `node scripts/validate_derived.js --manifest test/fixtures/derived_contract/m10_direct_slice/manifest.json`
+  (1 EffectiveRecord record); `node scripts/validate_derived.js --manifest test/fixtures/derived_contract/s6_amendment_slice/manifest.json`
+  (1 AmendmentMapping record, 1 EffectiveRecord record); `git diff --check` (clean); protected-file
+  diff against the REV-013b base for `Guideline Files`, `structured_data/schemas/guideline_bundle.schema.json`,
+  `structured_data/pilots`, the two Phase 3 derived prototypes, and `package-lock.json` (no changes).
+- Follow-up owner: Module 4.3 owner
+- Status: Resolved
+
+### REV-013d: Phase 4 Module 4.2 Further Registry Hardening Review
+
+- Date: 2026-07-13
+- Reviewer: Repository review
+- Scope reviewed: Independent review of a further Module 4.2 registry hardening pass on PR #19, requested after REV-013c: closing `EditionSource.source_role` to a minimal justified vocabulary; extending `strict_registry` mode with required-artifact-type presence, disallowed-artifact-type rejection, and duplicate-EditionSource-link rejection, while preserving generic partial-graph and all existing non-strict manifest behavior unchanged; and explicitly recording `LifecycleRelationship.relationship_type` as deferred rather than closed, since no repository evidence yet justifies a specific vocabulary for it.
+- Source document: Not applicable; this review covered derived-layer schemas, validator code, and regression tests rather than source-text extraction.
+- Sections or pages reviewed: Not applicable.
+- Files reviewed: `structured_data/schemas/derived/core.schema.json`;
+  `structured_data/schemas/derived/artifacts/edition_source.schema.json`;
+  `scripts/validate_derived.js`; `structured_data/derived/registry/manifest.json`;
+  `test/validate_derived.test.js`; `working_docs/decisions.md`; `working_docs/phase4_plan.md`;
+  `working_docs/phase4_module_4_2.md`; `README.md`; `working_docs/project_scope.md`.
+- Findings:
+  - `sourceRole` is a new closed two-value enum (`primary`, `supplementary`) in `core.schema.json`,
+    referenced from `edition_source.schema.json`; the vocabulary is the minimum that gives the field
+    meaning given EditionSource's own one-or-many Document-link purpose (Module 3.6), not a
+    speculative expansion. Every existing `source_role` value (`"primary"`) already conforms, so no
+    fixture or production data changed (DEC-058).
+  - `validateStrictRegistryCompleteness` now additionally: requires at least one `GuidanceFamily`, one
+    `DocumentEdition`, and one `EditionSource` artifact in the supplied graph; rejects any supplied
+    artifact of a type other than those three (`LifecycleRelationship`, `AmendmentMapping`,
+    `EffectiveRecord`, `EffectiveStateSnapshot`, `ReviewAttestation`, `RiskAssessment`), one error per
+    offending record; and rejects a duplicate `(document_edition_id, document_id, source_role)`
+    EditionSource link, while correctly allowing distinct `primary`/`supplementary` links for the same
+    edition (DEC-060).
+  - All four new strict checks are gated behind `strict_registry: true` exactly as the original
+    orphan-family/orphan-edition checks were (DEC-055); regression tests confirm every new negative
+    scenario (missing artifact type, disallowed artifact type, duplicate EditionSource link) still
+    passes validation when `strict_registry` is absent, and `structured_data/derived/registry/manifest.json`
+    (which already sets `strict_registry: true`) continues to pass unchanged.
+  - `LifecycleRelationship.relationship_type` was not closed. DEC-059 records the reasoning explicitly:
+    Module 4.2 creates zero production LifecycleRelationship records (DEC-050 fixes S6 as one
+    integrated edition with no inter-edition relationship, and M10 has only one edition), and the only
+    `relationship_type` values anywhere in the repository are generic test-fixture placeholders
+    (`"amends"`, `"same edition"`), which is not repository evidence sufficient to generalize a closed
+    vocabulary from. Closure is deferred to whichever module first produces a real production
+    LifecycleRelationship record.
+  - `working_docs/phase4_module_4_2.md`, `working_docs/phase4_plan.md` (Sixth revision note and the
+    Module 4.2 completion gate and non-goals), `README.md`, and `working_docs/project_scope.md` were
+    updated to describe this hardening accurately and point to DEC-058 through DEC-060.
+- Compatibility findings: Source model `0.2.0`, `structured_data/schemas/guideline_bundle.schema.json`,
+  `structured_data/pilots/`, `Guideline Files/`, and both frozen Phase 3 prototype files remain
+  byte-identical relative to the REV-013c base (protected-file diff returned no changes).
+  `package-lock.json` is unchanged. No existing ID was renamed or relocated.
+- Required corrections: None.
+- Unresolved items: None for this hardening round. Module 4.5 and Module 4.7 remain blocked on their
+  DEC-049 governance-policy decisions, unchanged by this review. `LifecycleRelationship.relationship_type`
+  remains open by design (DEC-059) and is not an outstanding defect.
+- Validation command: `npm test` (182/182 pass); `npm run validate:pilots` (Validated 5 pilot
+  bundle(s)); `npm run validate:legacy` (Validated 4 legacy amendment mapping(s) and 4 legacy
+  EffectiveRecord(s)); `npm run validate:derived` (Validated contract graph with 1 AmendmentMapping
+  record(s) and 1 EffectiveRecord record(s), unchanged from REV-013c); `npm run validate:registry`
+  (Validated contract graph with 0 AmendmentMapping record(s) and 0 EffectiveRecord record(s), now
+  additionally satisfying the extended `strict_registry` checks); `git diff --check` (clean);
+  protected-file diff against the REV-013c base for `Guideline Files`,
+  `structured_data/schemas/guideline_bundle.schema.json`, `structured_data/pilots`, the two Phase 3
+  derived prototypes, and `package-lock.json` (no changes).
+- Follow-up owner: Module 4.3 owner
+- Status: Resolved
+
 ### REV-012: Phase 4 Module 4.1 Derived Contract Schema Scaffold Review
 
 - Date: 2026-07-06

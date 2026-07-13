@@ -83,11 +83,11 @@ function contractGraphArtifacts(mutator) {
         document_edition_id: "test.edition.parent",
         guidance_family_id: "test.family",
         edition_label: "Parent",
-        edition_role: "parent",
+        edition_role: "final",
         jurisdiction: "TEST",
         publication_date: null,
         effective_date: null,
-        document_status: "historical",
+        document_status: "superseded",
         current_risk_assessment_id: null,
         review_status: "needs_review",
         profile_details: null
@@ -100,7 +100,7 @@ function contractGraphArtifacts(mutator) {
         jurisdiction: "TEST",
         publication_date: null,
         effective_date: null,
-        document_status: "current",
+        document_status: "in_force",
         current_risk_assessment_id: null,
         review_status: "needs_review",
         profile_details: null
@@ -780,10 +780,524 @@ test("direct-source records allow empty amendment mapping IDs", () => {
   assertValid(validateDerivedContractArtifact({ artifact, file: "effective_record_ich_direct_source.json" }));
 });
 
+function snapshotArtifact(overrides = {}) {
+  return {
+    derived_model_version: "0.1.0",
+    artifact_type: "EffectiveStateSnapshot",
+    regulator_profile: "core",
+    records: [
+      {
+        snapshot_id: "test.snapshot.001",
+        guidance_family_id: "test.family",
+        jurisdiction: "TEST",
+        as_of_date: "2026-07-06",
+        review_policy: "include_needs_review",
+        source_corpus_identity: "test_doc@fixture",
+        calculation_policy_version: "test-policy-0.1",
+        effective_record_ids: ["test.contract.eff.001"],
+        calculated_at: "2026-07-06T00:00:00Z",
+        review_status: "needs_review",
+        profile_details: null,
+        ...overrides
+      }
+    ]
+  };
+}
+
+function validateContractGraphWithSnapshot({ graphMutator, snapshotOverrides, extraArtifacts } = {}) {
+  const graph = contractGraphArtifacts(graphMutator);
+  const artifacts = [
+    { artifact: graph.guidanceFamilyArtifact, file: "contract_guidance_family.json" },
+    { artifact: graph.documentEditionArtifact, file: "contract_document_edition.json" },
+    { artifact: graph.editionSourceArtifact, file: "contract_edition_source.json" },
+    { artifact: graph.lifecycleArtifact, file: "contract_lifecycle.json" },
+    { artifact: graph.amendmentArtifact, file: "contract_amendment.json" },
+    { artifact: graph.effectiveArtifact, file: "contract_effective.json" },
+    { artifact: snapshotArtifact(snapshotOverrides), file: "contract_snapshot.json" },
+    ...(extraArtifacts || [])
+  ];
+  return validateContractArtifacts({ sourceBundle: graph.sourceBundle, artifacts });
+}
+
+test("EffectiveStateSnapshot with resolving members and matching family passes", () => {
+  assertValid(validateContractGraphWithSnapshot());
+});
+
+test("EffectiveStateSnapshot member must resolve to a supplied EffectiveRecord", () => {
+  assertInvalid(
+    validateContractGraphWithSnapshot({ snapshotOverrides: { effective_record_ids: ["test.contract.eff.999"] } }),
+    "reference does not resolve to a supplied EffectiveRecord: test.contract.eff.999"
+  );
+});
+
+test("EffectiveStateSnapshot guidance_family_id must resolve to a supplied GuidanceFamily", () => {
+  assertInvalid(
+    validateContractGraphWithSnapshot({ snapshotOverrides: { guidance_family_id: "test.family.missing" } }),
+    "reference does not resolve to GuidanceFamily: test.family.missing"
+  );
+});
+
+test("EffectiveStateSnapshot member from a different family is rejected", () => {
+  const otherFamilyArtifact = {
+    derived_model_version: "0.1.0",
+    artifact_type: "GuidanceFamily",
+    regulator_profile: "core",
+    records: [
+      {
+        guidance_family_id: "test.family.other",
+        family_title: "Other test family",
+        jurisdictions: ["TEST"],
+        current_risk_assessment_id: null,
+        review_status: "needs_review",
+        profile_details: null
+      }
+    ]
+  };
+  assertInvalid(
+    validateContractGraphWithSnapshot({
+      snapshotOverrides: { guidance_family_id: "test.family.other" },
+      extraArtifacts: [{ artifact: otherFamilyArtifact, file: "contract_other_family.json" }]
+    }),
+    "EffectiveRecord test.contract.eff.001 guidance_family_id test.family must match snapshot guidance_family_id test.family.other"
+  );
+});
+
+test("EffectiveStateSnapshot member with a different jurisdiction is rejected", () => {
+  assertInvalid(
+    validateContractGraphWithSnapshot({ snapshotOverrides: { jurisdiction: "OTHER" } }),
+    "EffectiveRecord test.contract.eff.001 jurisdiction TEST must match snapshot jurisdiction OTHER"
+  );
+});
+
+test("EffectiveStateSnapshot member with a matching jurisdiction passes", () => {
+  assertValid(validateContractGraphWithSnapshot({ snapshotOverrides: { jurisdiction: "TEST" } }));
+});
+
 test("contract manifest validates the complete contract graph fixture", () => {
   assertValid(validateDerivedManifestFile({
     manifestFile: path.join(CONTRACT_FIXTURE_DIR, "complete_graph", "manifest.json")
   }));
+});
+
+test("production registry manifest validates both corpus documents against the canonical multi-bundle Document-identity bundles", () => {
+  assertValid(validateDerivedManifestFile({
+    manifestFile: path.join(ROOT, "structured_data", "derived", "registry", "manifest.json")
+  }));
+});
+
+function orphanFamilyArtifacts() {
+  return [
+    {
+      file: "family.json",
+      artifact: {
+        derived_model_version: "0.1.0",
+        artifact_type: "GuidanceFamily",
+        regulator_profile: "ich",
+        records: [
+          { guidance_family_id: "strict.orphan_family", family_title: "Orphan family", jurisdictions: ["ICH"], current_risk_assessment_id: null, review_status: "needs_review", profile_details: null }
+        ]
+      }
+    }
+  ];
+}
+
+function orphanEditionArtifacts() {
+  return [
+    {
+      file: "family.json",
+      artifact: {
+        derived_model_version: "0.1.0",
+        artifact_type: "GuidanceFamily",
+        regulator_profile: "ich",
+        records: [
+          { guidance_family_id: "strict.family", family_title: "Strict family", jurisdictions: ["ICH"], current_risk_assessment_id: null, review_status: "needs_review", profile_details: null }
+        ]
+      }
+    },
+    {
+      file: "document_edition.json",
+      artifact: {
+        derived_model_version: "0.1.0",
+        artifact_type: "DocumentEdition",
+        regulator_profile: "ich",
+        records: [
+          { document_edition_id: "strict.orphan_edition", guidance_family_id: "strict.family", edition_label: "Orphan edition", edition_role: "final", jurisdiction: "ICH", publication_date: null, effective_date: null, document_status: "in_force", current_risk_assessment_id: null, review_status: "needs_review", profile_details: null }
+        ]
+      }
+    }
+  ];
+}
+
+function minimalStrictArtifacts() {
+  return [
+    {
+      file: "family.json",
+      artifact: {
+        derived_model_version: "0.1.0",
+        artifact_type: "GuidanceFamily",
+        regulator_profile: "ich",
+        records: [
+          { guidance_family_id: "strict.family", family_title: "Strict family", jurisdictions: ["ICH"], current_risk_assessment_id: null, review_status: "needs_review", profile_details: null }
+        ]
+      }
+    },
+    {
+      file: "document_edition.json",
+      artifact: {
+        derived_model_version: "0.1.0",
+        artifact_type: "DocumentEdition",
+        regulator_profile: "ich",
+        records: [
+          { document_edition_id: "strict.edition", guidance_family_id: "strict.family", edition_label: "Strict edition", edition_role: "final", jurisdiction: "ICH", publication_date: null, effective_date: null, document_status: "in_force", current_risk_assessment_id: null, review_status: "needs_review", profile_details: null }
+        ]
+      }
+    },
+    {
+      file: "edition_source.json",
+      artifact: {
+        derived_model_version: "0.1.0",
+        artifact_type: "EditionSource",
+        regulator_profile: "ich",
+        records: [
+          { edition_source_id: "strict.edition_source", document_edition_id: "strict.edition", document_id: "test_doc", source_role: "primary", review_status: "needs_review", profile_details: null }
+        ]
+      }
+    }
+  ];
+}
+
+test("strict_registry mode accepts a minimal complete GuidanceFamily/DocumentEdition/EditionSource graph", () => {
+  assertValid(validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts: minimalStrictArtifacts(), strictRegistry: true }));
+});
+
+test("strict_registry mode requires at least one GuidanceFamily artifact", () => {
+  const artifacts = minimalStrictArtifacts().filter((entry) => entry.artifact.artifact_type !== "GuidanceFamily");
+  const result = validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts, strictRegistry: true });
+  assertInvalid(result, "strict registry validation requires at least one GuidanceFamily artifact");
+});
+
+test("strict_registry mode requires at least one DocumentEdition artifact", () => {
+  const artifacts = minimalStrictArtifacts().filter((entry) => entry.artifact.artifact_type !== "DocumentEdition");
+  const result = validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts, strictRegistry: true });
+  assertInvalid(result, "strict registry validation requires at least one DocumentEdition artifact");
+});
+
+test("strict_registry mode requires at least one EditionSource artifact", () => {
+  const artifacts = minimalStrictArtifacts().filter((entry) => entry.artifact.artifact_type !== "EditionSource");
+  const result = validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts, strictRegistry: true });
+  assertInvalid(result, "strict registry validation requires at least one EditionSource artifact");
+});
+
+test("generic partial-graph validation still allows a graph missing GuidanceFamily/DocumentEdition/EditionSource artifacts when strict_registry is not set", () => {
+  const artifacts = minimalStrictArtifacts().filter((entry) => entry.artifact.artifact_type === "EditionSource");
+  assertValid(validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts }));
+});
+
+test("strict_registry mode rejects duplicate EditionSource (document_edition_id, document_id, source_role) links", () => {
+  const artifacts = minimalStrictArtifacts();
+  const editionSourceArtifact = artifacts.find((entry) => entry.artifact.artifact_type === "EditionSource").artifact;
+  editionSourceArtifact.records.push({
+    edition_source_id: "strict.edition_source.duplicate",
+    document_edition_id: "strict.edition",
+    document_id: "test_doc",
+    source_role: "primary",
+    review_status: "needs_review",
+    profile_details: null
+  });
+  const result = validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts, strictRegistry: true });
+  assertInvalid(result, "duplicate EditionSource link (document_edition_id=strict.edition, document_id=test_doc, source_role=primary)");
+});
+
+test("strict_registry mode allows the same edition to have distinct primary and supplementary EditionSource links", () => {
+  const artifacts = minimalStrictArtifacts();
+  const editionSourceArtifact = artifacts.find((entry) => entry.artifact.artifact_type === "EditionSource").artifact;
+  editionSourceArtifact.records.push({
+    edition_source_id: "strict.edition_source.supplementary",
+    document_edition_id: "strict.edition",
+    document_id: "test_doc",
+    source_role: "supplementary",
+    review_status: "needs_review",
+    profile_details: null
+  });
+  assertValid(validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts, strictRegistry: true }));
+});
+
+test("generic partial-graph validation still allows duplicate EditionSource links when strict_registry is not set", () => {
+  const artifacts = minimalStrictArtifacts();
+  const editionSourceArtifact = artifacts.find((entry) => entry.artifact.artifact_type === "EditionSource").artifact;
+  editionSourceArtifact.records.push({
+    edition_source_id: "strict.edition_source.duplicate",
+    document_edition_id: "strict.edition",
+    document_id: "test_doc",
+    source_role: "primary",
+    review_status: "needs_review",
+    profile_details: null
+  });
+  assertValid(validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts }));
+});
+
+test("strict_registry mode rejects artifact types outside GuidanceFamily/DocumentEdition/EditionSource", () => {
+  const artifacts = minimalStrictArtifacts();
+  artifacts.push({
+    file: "risk_assessment.json",
+    artifact: {
+      derived_model_version: "0.1.0",
+      artifact_type: "RiskAssessment",
+      regulator_profile: "core",
+      records: [
+        { risk_assessment_id: "strict.risk.001", target_type: "GuidanceFamily", target_id: "strict.family", risk_level: "low", risk_factors: ["unclear_publication_or_effective_date"], rationale: "Fixture rationale.", assessor_attestation_id: null, assessed_at: "2026-07-13T00:00:00Z", required_review_tier: "low", supersedes_risk_assessment_id: null, override_reason: null, override_attestation_id: null, profile_details: null }
+      ]
+    }
+  });
+  const result = validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts, strictRegistry: true });
+  assertInvalid(result, "strict registry validation: artifact type RiskAssessment is not permitted in a strict registry manifest; only GuidanceFamily, DocumentEdition, EditionSource are allowed");
+});
+
+test("generic partial-graph validation still allows a RiskAssessment artifact when strict_registry is not set", () => {
+  const artifacts = minimalStrictArtifacts();
+  artifacts.push({
+    file: "risk_assessment.json",
+    artifact: {
+      derived_model_version: "0.1.0",
+      artifact_type: "RiskAssessment",
+      regulator_profile: "core",
+      records: [
+        { risk_assessment_id: "strict.risk.001", target_type: "GuidanceFamily", target_id: "strict.family", risk_level: "low", risk_factors: ["unclear_publication_or_effective_date"], rationale: "Fixture rationale.", assessor_attestation_id: null, assessed_at: "2026-07-13T00:00:00Z", required_review_tier: "low", supersedes_risk_assessment_id: null, override_reason: null, override_attestation_id: null, profile_details: null }
+      ]
+    }
+  });
+  assertValid(validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts }));
+});
+
+test("strict_registry mode rejects a GuidanceFamily with no DocumentEdition referencing it", () => {
+  const result = validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts: orphanFamilyArtifacts(), strictRegistry: true });
+  assertInvalid(result, "has no DocumentEdition referencing it");
+});
+
+test("strict_registry mode rejects a DocumentEdition with no EditionSource referencing it", () => {
+  const result = validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts: orphanEditionArtifacts(), strictRegistry: true });
+  assertInvalid(result, "has no EditionSource referencing it");
+});
+
+test("generic partial-graph validation still allows an orphan GuidanceFamily when strict_registry is not set", () => {
+  assertValid(validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts: orphanFamilyArtifacts() }));
+});
+
+test("generic partial-graph validation still allows an orphan DocumentEdition when strict_registry is not set", () => {
+  assertValid(validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts: orphanEditionArtifacts() }));
+});
+
+test("production registry manifest enables strict_registry and passes strict completeness", () => {
+  const manifest = readJson(path.join(ROOT, "structured_data", "derived", "registry", "manifest.json"));
+  assert.equal(manifest.strict_registry, true);
+  assertValid(validateDerivedManifestFile({
+    manifestFile: path.join(ROOT, "structured_data", "derived", "registry", "manifest.json")
+  }));
+});
+
+test("manifest strict_registry must be a boolean when present", () => {
+  const manifestDir = path.join(ROOT, "structured_data", "derived", "registry");
+  const manifest = {
+    source_bundles: ["../../source_documents/ich_m10.json", "../../source_documents/ich_s6_r1.json"],
+    artifacts: ["guidance_family.json", "document_edition.json", "edition_source.json"],
+    strict_registry: "yes"
+  };
+  const result = require("../scripts/validate_derived").validateDerivedManifest({
+    manifest,
+    manifestFile: path.join(manifestDir, "manifest.json")
+  });
+  assert.equal(result.configError, true);
+  assertInvalid(result, "strict_registry: must be a boolean when present");
+});
+
+test("production registry manifest has no direct dependency on structured_data/pilots", () => {
+  const manifest = readJson(path.join(ROOT, "structured_data", "derived", "registry", "manifest.json"));
+  for (const sourcePath of manifest.source_bundles || []) {
+    assert.equal(sourcePath.includes("pilots"), false, `registry manifest source_bundles must not reference pilots: ${sourcePath}`);
+  }
+});
+
+test("canonical Document-identity bundles are byte-identical to the reviewed pilot Document records", () => {
+  const m10Identity = readJson(path.join(ROOT, "structured_data", "source_documents", "ich_m10.json"));
+  const m10Pilot = readJson(path.join(ROOT, "structured_data", "pilots", "m10_6_1.json"));
+  assert.deepEqual(m10Identity.documents[0], m10Pilot.documents[0]);
+  const s6Identity = readJson(path.join(ROOT, "structured_data", "source_documents", "ich_s6_r1.json"));
+  const s6Pilot = readJson(path.join(ROOT, "structured_data", "pilots", "s6_r1_species_selection.json"));
+  assert.deepEqual(s6Identity.documents[0], s6Pilot.documents[0]);
+});
+
+test("multi-bundle manifest merges source_bundles and resolves references across them", () => {
+  const manifestDir = path.join(ROOT, "structured_data", "derived", "registry");
+  const manifest = {
+    source_bundles: [
+      "../../pilots/m10_3_2_5_2.json",
+      "../../pilots/s6_r1_species_selection.json"
+    ],
+    artifacts: ["edition_source.json"]
+  };
+  assertValid(require("../scripts/validate_derived").validateDerivedManifest({
+    manifest,
+    manifestFile: path.join(manifestDir, "manifest.json")
+  }));
+});
+
+test("multi-bundle manifest fails when a referenced Document is not among the supplied bundles", () => {
+  const manifestDir = path.join(ROOT, "structured_data", "derived", "registry");
+  const manifest = {
+    source_bundles: ["../../pilots/m10_3_2_5_2.json"],
+    artifacts: ["edition_source.json"]
+  };
+  const result = require("../scripts/validate_derived").validateDerivedManifest({
+    manifest,
+    manifestFile: path.join(manifestDir, "manifest.json")
+  });
+  assertInvalid(result, "reference does not resolve to documents: ich_s6_r1");
+});
+
+test("manifest rejects combining source_bundle and source_bundles", () => {
+  const result = validateDerivedManifestFile({
+    manifestFile: path.join(CONTRACT_FIXTURE_DIR, "invalid", "source_bundle_and_source_bundles.json")
+  });
+  assert.equal(result.configError, true);
+  assertInvalid(result, "must not be combined with source_bundles");
+});
+
+function manifestConfigError(manifest) {
+  return require("../scripts/validate_derived").validateDerivedManifest({
+    manifest,
+    manifestFile: path.join(ROOT, "structured_data", "derived", "registry", "manifest.json")
+  });
+}
+
+test("manifest rejects non-string and empty-string entries in source_bundles instead of crashing", () => {
+  const result = manifestConfigError({ source_bundles: ["", 123, null], artifacts: ["edition_source.json"] });
+  assert.equal(result.configError, true);
+  assertInvalid(result, "source_bundles[0]: must be a non-empty string");
+  assertInvalid(result, 'source_bundles[1]: must be a non-empty string, got 123');
+  assertInvalid(result, "source_bundles[2]: must be a non-empty string, got null");
+});
+
+test("manifest rejects an empty source_bundles array", () => {
+  const result = manifestConfigError({ source_bundles: [], artifacts: ["edition_source.json"] });
+  assert.equal(result.configError, true);
+  assertInvalid(result, "source_bundles: must not be empty");
+});
+
+test("manifest rejects a non-array source_bundles value", () => {
+  const result = manifestConfigError({ source_bundles: "not-an-array", artifacts: ["edition_source.json"] });
+  assert.equal(result.configError, true);
+  assertInvalid(result, "source_bundles: must be an array of non-empty strings when present");
+});
+
+test("m10_direct_slice validates a candidate direct-source EffectiveRecord and snapshot against the real M10 pilot", () => {
+  const result = validateDerivedManifestFile({
+    manifestFile: path.join(CONTRACT_FIXTURE_DIR, "m10_direct_slice", "manifest.json")
+  });
+  assertValid(result);
+  assert.equal(result.effectiveRecordCount, 1);
+  const effectiveArtifact = readJson(path.join(CONTRACT_FIXTURE_DIR, "m10_direct_slice", "effective_record.json"));
+  assert.equal(effectiveArtifact.records[0].derivation_basis, "direct_source");
+  assert.equal(effectiveArtifact.records[0].review_status, "needs_review");
+});
+
+test("s6_amendment_slice validates a candidate amendment-synthesis EffectiveRecord and snapshot against the real S6 pilot", () => {
+  const result = validateDerivedManifestFile({
+    manifestFile: path.join(CONTRACT_FIXTURE_DIR, "s6_amendment_slice", "manifest.json")
+  });
+  assertValid(result);
+  assert.equal(result.amendmentMappingCount, 1);
+  assert.equal(result.effectiveRecordCount, 1);
+  const effectiveArtifact = readJson(path.join(CONTRACT_FIXTURE_DIR, "s6_amendment_slice", "effective_record.json"));
+  assert.equal(effectiveArtifact.records[0].derivation_basis, "amendment_synthesis");
+  assert.equal(effectiveArtifact.records[0].review_status, "needs_review");
+});
+
+test("s6_amendment_slice mapping reconciles without divergence against the frozen Phase 3 amend.001 reference", () => {
+  const sliceMapping = readJson(path.join(CONTRACT_FIXTURE_DIR, "s6_amendment_slice", "amendment_mapping.json")).records[0];
+  const frozenArtifact = readJson(path.join(ROOT, "structured_data", "derived", "s6_r1_amendment_mappings.json"));
+  const frozenMapping = frozenArtifact.amendment_mappings.find((mapping) => mapping.mapping_id === "ich_s6_r1.amend.001");
+  assert.equal(sliceMapping.relation_type, frozenMapping.relation_type);
+  assert.deepEqual(sliceMapping.source_record_ids, frozenMapping.parent_knowledge_record_ids);
+  assert.deepEqual(sliceMapping.amending_record_ids, frozenMapping.addendum_knowledge_record_ids);
+  assert.equal(frozenMapping.review_status, "reviewed");
+});
+
+test("S6(R1) registry and slice use one integrated-package DocumentEdition with no LifecycleRelationship (DEC-050)", () => {
+  const registryEditions = readJson(path.join(ROOT, "structured_data", "derived", "registry", "document_edition.json")).records;
+  const s6RegistryEditions = registryEditions.filter((edition) => edition.guidance_family_id === "gf.ich_s6r1");
+  assert.equal(s6RegistryEditions.length, 1);
+  assert.equal(s6RegistryEditions[0].edition_role, "integrated_package");
+  const sliceFiles = fs.readdirSync(path.join(CONTRACT_FIXTURE_DIR, "s6_amendment_slice"));
+  assert.equal(sliceFiles.includes("lifecycle_relationship.json"), false);
+  const sliceEditions = readJson(path.join(CONTRACT_FIXTURE_DIR, "s6_amendment_slice", "document_edition.json")).records;
+  assert.equal(sliceEditions.length, 1);
+  assert.equal(sliceEditions[0].edition_role, "integrated_package");
+});
+
+test("closed registry schema already rejects source-Document field duplication without a dedicated validator rule", () => {
+  const artifact = readJson(path.join(ROOT, "structured_data", "derived", "registry", "guidance_family.json"));
+  artifact.records[0].source_file_checksum = "duplicated-checksum-should-be-rejected";
+  assertInvalid(
+    validateDerivedContractArtifact({ artifact, file: "guidance_family.json" }),
+    "must NOT have additional properties"
+  );
+});
+
+test("DocumentEdition edition_role is a closed vocabulary", () => {
+  const artifact = readJson(path.join(CONTRACT_FIXTURE_DIR, "valid", "document_edition.json"));
+  artifact.records[0].edition_role = "parent";
+  assertInvalid(
+    validateDerivedContractArtifact({ artifact, file: "document_edition.json" }),
+    "must be equal to one of the allowed values"
+  );
+});
+
+test("DocumentEdition document_status is a closed vocabulary and rejects the prior free-string current value", () => {
+  const artifact = readJson(path.join(CONTRACT_FIXTURE_DIR, "valid", "document_edition.json"));
+  artifact.records[0].document_status = "current";
+  assertInvalid(
+    validateDerivedContractArtifact({ artifact, file: "document_edition.json" }),
+    "must be equal to one of the allowed values"
+  );
+});
+
+test("DocumentEdition document_status accepts the full closed vocabulary without conflating with effective currentness", () => {
+  for (const status of ["draft", "in_force", "withdrawn", "superseded"]) {
+    const artifact = readJson(path.join(CONTRACT_FIXTURE_DIR, "valid", "document_edition.json"));
+    artifact.records[0].document_status = status;
+    assertValid(validateDerivedContractArtifact({ artifact, file: "document_edition.json" }));
+  }
+});
+
+test("registry DocumentEditions use in_force document_status, not a current/effective-currentness value", () => {
+  const registryEditions = readJson(path.join(ROOT, "structured_data", "derived", "registry", "document_edition.json")).records;
+  for (const edition of registryEditions) {
+    assert.equal(edition.document_status, "in_force");
+  }
+});
+
+test("EditionSource source_role is a closed vocabulary and rejects an arbitrary free-string value", () => {
+  const artifact = readJson(path.join(CONTRACT_FIXTURE_DIR, "valid", "edition_source.json"));
+  artifact.records[0].source_role = "backup";
+  assertInvalid(
+    validateDerivedContractArtifact({ artifact, file: "edition_source.json" }),
+    "must be equal to one of the allowed values"
+  );
+});
+
+test("EditionSource source_role accepts the full closed vocabulary", () => {
+  for (const role of ["primary", "supplementary"]) {
+    const artifact = readJson(path.join(CONTRACT_FIXTURE_DIR, "valid", "edition_source.json"));
+    artifact.records[0].source_role = role;
+    assertValid(validateDerivedContractArtifact({ artifact, file: "edition_source.json" }));
+  }
+});
+
+test("registry EditionSources use primary source_role", () => {
+  const registrySources = readJson(path.join(ROOT, "structured_data", "derived", "registry", "edition_source.json")).records;
+  for (const source of registrySources) {
+    assert.equal(source.source_role, "primary");
+  }
 });
 
 test("contract validator source contains no frozen Phase 3 artifact paths", () => {

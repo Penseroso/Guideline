@@ -56,7 +56,7 @@
           "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString"
         },
         "edition_role": {
-          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString"
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/documentEditionRole"
         },
         "jurisdiction": {
           "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/jurisdiction"
@@ -82,7 +82,7 @@
           ]
         },
         "document_status": {
-          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nonEmptyString"
+          "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/documentStatus"
         },
         "current_risk_assessment_id": {
           "$ref": "https://example.local/regulatory-guideline-archive/derived/core.schema.json#/definitions/nullableId"
