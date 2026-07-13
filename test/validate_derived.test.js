@@ -928,6 +928,147 @@ function orphanEditionArtifacts() {
   ];
 }
 
+function minimalStrictArtifacts() {
+  return [
+    {
+      file: "family.json",
+      artifact: {
+        derived_model_version: "0.1.0",
+        artifact_type: "GuidanceFamily",
+        regulator_profile: "ich",
+        records: [
+          { guidance_family_id: "strict.family", family_title: "Strict family", jurisdictions: ["ICH"], current_risk_assessment_id: null, review_status: "needs_review", profile_details: null }
+        ]
+      }
+    },
+    {
+      file: "document_edition.json",
+      artifact: {
+        derived_model_version: "0.1.0",
+        artifact_type: "DocumentEdition",
+        regulator_profile: "ich",
+        records: [
+          { document_edition_id: "strict.edition", guidance_family_id: "strict.family", edition_label: "Strict edition", edition_role: "final", jurisdiction: "ICH", publication_date: null, effective_date: null, document_status: "in_force", current_risk_assessment_id: null, review_status: "needs_review", profile_details: null }
+        ]
+      }
+    },
+    {
+      file: "edition_source.json",
+      artifact: {
+        derived_model_version: "0.1.0",
+        artifact_type: "EditionSource",
+        regulator_profile: "ich",
+        records: [
+          { edition_source_id: "strict.edition_source", document_edition_id: "strict.edition", document_id: "test_doc", source_role: "primary", review_status: "needs_review", profile_details: null }
+        ]
+      }
+    }
+  ];
+}
+
+test("strict_registry mode accepts a minimal complete GuidanceFamily/DocumentEdition/EditionSource graph", () => {
+  assertValid(validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts: minimalStrictArtifacts(), strictRegistry: true }));
+});
+
+test("strict_registry mode requires at least one GuidanceFamily artifact", () => {
+  const artifacts = minimalStrictArtifacts().filter((entry) => entry.artifact.artifact_type !== "GuidanceFamily");
+  const result = validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts, strictRegistry: true });
+  assertInvalid(result, "strict registry validation requires at least one GuidanceFamily artifact");
+});
+
+test("strict_registry mode requires at least one DocumentEdition artifact", () => {
+  const artifacts = minimalStrictArtifacts().filter((entry) => entry.artifact.artifact_type !== "DocumentEdition");
+  const result = validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts, strictRegistry: true });
+  assertInvalid(result, "strict registry validation requires at least one DocumentEdition artifact");
+});
+
+test("strict_registry mode requires at least one EditionSource artifact", () => {
+  const artifacts = minimalStrictArtifacts().filter((entry) => entry.artifact.artifact_type !== "EditionSource");
+  const result = validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts, strictRegistry: true });
+  assertInvalid(result, "strict registry validation requires at least one EditionSource artifact");
+});
+
+test("generic partial-graph validation still allows a graph missing GuidanceFamily/DocumentEdition/EditionSource artifacts when strict_registry is not set", () => {
+  const artifacts = minimalStrictArtifacts().filter((entry) => entry.artifact.artifact_type === "EditionSource");
+  assertValid(validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts }));
+});
+
+test("strict_registry mode rejects duplicate EditionSource (document_edition_id, document_id, source_role) links", () => {
+  const artifacts = minimalStrictArtifacts();
+  const editionSourceArtifact = artifacts.find((entry) => entry.artifact.artifact_type === "EditionSource").artifact;
+  editionSourceArtifact.records.push({
+    edition_source_id: "strict.edition_source.duplicate",
+    document_edition_id: "strict.edition",
+    document_id: "test_doc",
+    source_role: "primary",
+    review_status: "needs_review",
+    profile_details: null
+  });
+  const result = validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts, strictRegistry: true });
+  assertInvalid(result, "duplicate EditionSource link (document_edition_id=strict.edition, document_id=test_doc, source_role=primary)");
+});
+
+test("strict_registry mode allows the same edition to have distinct primary and supplementary EditionSource links", () => {
+  const artifacts = minimalStrictArtifacts();
+  const editionSourceArtifact = artifacts.find((entry) => entry.artifact.artifact_type === "EditionSource").artifact;
+  editionSourceArtifact.records.push({
+    edition_source_id: "strict.edition_source.supplementary",
+    document_edition_id: "strict.edition",
+    document_id: "test_doc",
+    source_role: "supplementary",
+    review_status: "needs_review",
+    profile_details: null
+  });
+  assertValid(validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts, strictRegistry: true }));
+});
+
+test("generic partial-graph validation still allows duplicate EditionSource links when strict_registry is not set", () => {
+  const artifacts = minimalStrictArtifacts();
+  const editionSourceArtifact = artifacts.find((entry) => entry.artifact.artifact_type === "EditionSource").artifact;
+  editionSourceArtifact.records.push({
+    edition_source_id: "strict.edition_source.duplicate",
+    document_edition_id: "strict.edition",
+    document_id: "test_doc",
+    source_role: "primary",
+    review_status: "needs_review",
+    profile_details: null
+  });
+  assertValid(validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts }));
+});
+
+test("strict_registry mode rejects artifact types outside GuidanceFamily/DocumentEdition/EditionSource", () => {
+  const artifacts = minimalStrictArtifacts();
+  artifacts.push({
+    file: "risk_assessment.json",
+    artifact: {
+      derived_model_version: "0.1.0",
+      artifact_type: "RiskAssessment",
+      regulator_profile: "core",
+      records: [
+        { risk_assessment_id: "strict.risk.001", target_type: "GuidanceFamily", target_id: "strict.family", risk_level: "low", risk_factors: ["unclear_publication_or_effective_date"], rationale: "Fixture rationale.", assessor_attestation_id: null, assessed_at: "2026-07-13T00:00:00Z", required_review_tier: "low", supersedes_risk_assessment_id: null, override_reason: null, override_attestation_id: null, profile_details: null }
+      ]
+    }
+  });
+  const result = validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts, strictRegistry: true });
+  assertInvalid(result, "strict registry validation: artifact type RiskAssessment is not permitted in a strict registry manifest; only GuidanceFamily, DocumentEdition, EditionSource are allowed");
+});
+
+test("generic partial-graph validation still allows a RiskAssessment artifact when strict_registry is not set", () => {
+  const artifacts = minimalStrictArtifacts();
+  artifacts.push({
+    file: "risk_assessment.json",
+    artifact: {
+      derived_model_version: "0.1.0",
+      artifact_type: "RiskAssessment",
+      regulator_profile: "core",
+      records: [
+        { risk_assessment_id: "strict.risk.001", target_type: "GuidanceFamily", target_id: "strict.family", risk_level: "low", risk_factors: ["unclear_publication_or_effective_date"], rationale: "Fixture rationale.", assessor_attestation_id: null, assessed_at: "2026-07-13T00:00:00Z", required_review_tier: "low", supersedes_risk_assessment_id: null, override_reason: null, override_attestation_id: null, profile_details: null }
+      ]
+    }
+  });
+  assertValid(validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts }));
+});
+
 test("strict_registry mode rejects a GuidanceFamily with no DocumentEdition referencing it", () => {
   const result = validateContractArtifacts({ sourceBundle: clone(sourceFixture), artifacts: orphanFamilyArtifacts(), strictRegistry: true });
   assertInvalid(result, "has no DocumentEdition referencing it");
@@ -1132,6 +1273,30 @@ test("registry DocumentEditions use in_force document_status, not a current/effe
   const registryEditions = readJson(path.join(ROOT, "structured_data", "derived", "registry", "document_edition.json")).records;
   for (const edition of registryEditions) {
     assert.equal(edition.document_status, "in_force");
+  }
+});
+
+test("EditionSource source_role is a closed vocabulary and rejects an arbitrary free-string value", () => {
+  const artifact = readJson(path.join(CONTRACT_FIXTURE_DIR, "valid", "edition_source.json"));
+  artifact.records[0].source_role = "backup";
+  assertInvalid(
+    validateDerivedContractArtifact({ artifact, file: "edition_source.json" }),
+    "must be equal to one of the allowed values"
+  );
+});
+
+test("EditionSource source_role accepts the full closed vocabulary", () => {
+  for (const role of ["primary", "supplementary"]) {
+    const artifact = readJson(path.join(CONTRACT_FIXTURE_DIR, "valid", "edition_source.json"));
+    artifact.records[0].source_role = role;
+    assertValid(validateDerivedContractArtifact({ artifact, file: "edition_source.json" }));
+  }
+});
+
+test("registry EditionSources use primary source_role", () => {
+  const registrySources = readJson(path.join(ROOT, "structured_data", "derived", "registry", "edition_source.json")).records;
+  for (const source of registrySources) {
+    assert.equal(source.source_role, "primary");
   }
 });
 

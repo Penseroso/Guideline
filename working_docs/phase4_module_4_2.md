@@ -1,8 +1,9 @@
 # Phase 4 Module 4.2: Family Registry, Lifecycle Artifacts, and Candidate Value-Path Slice
 
 Status: Module 4.2 complete after REV-013b; independently audited and corrected after REV-013c
-(DEC-053 through DEC-057). This note describes the corrected, current state; see "Post-completion
-audit and correction" below for what changed and why.
+(DEC-053 through DEC-057); further registry hardening completed after REV-013d (DEC-058 through
+DEC-060). This note describes the corrected, current state; see "Post-completion audit and
+correction" and "Further registry hardening" below for what changed and why.
 
 ## Scope implemented
 
@@ -92,6 +93,33 @@ See `working_docs/review_log.md` REV-013c for the independent review record, and
 DEC-057 in `working_docs/decisions.md` for full rationale. REV-013b's original findings are not
 rewritten; they remain the historical record of the state before this correction.
 
+## Further registry hardening (REV-013d)
+
+A follow-up hardening pass closed one remaining open field and extended `strict_registry` with three
+completeness checks, again without expanding Module 4.2's scope or redesigning the completed
+architecture:
+
+1. **`EditionSource.source_role` was an unconstrained free string.** Resolved by DEC-058: a minimal
+   two-value closed enum, `primary`/`supplementary`, matching EditionSource's own one-or-many
+   Document-link purpose (Module 3.6); every existing record already used `"primary"`, so no fixture
+   or production data changed.
+2. **`strict_registry` did not require the registry to actually be present**, and did not bound what
+   artifact types a strict manifest may contain, and did not catch duplicate EditionSource links.
+   Resolved by DEC-060: `strict_registry: true` now additionally requires at least one
+   `GuidanceFamily`, `DocumentEdition`, and `EditionSource` artifact; rejects any supplied artifact of
+   a type other than those three; and rejects duplicate `(document_edition_id, document_id,
+   source_role)` EditionSource links. All three checks remain opt-in and off by default, confirmed
+   unchanged for every non-strict fixture and manifest by regression tests.
+3. **`LifecycleRelationship.relationship_type` was considered for closure alongside the other two
+   vocabularies and deliberately left open.** DEC-059 records this explicitly: no production
+   LifecycleRelationship record exists (Module 4.2 creates none, per DEC-050), and the only
+   `relationship_type` values in the repository are generic test-fixture placeholders, so there is no
+   repository evidence to generalize a minimum vocabulary from. Closure is deferred to whichever
+   module first produces a real inter-edition LifecycleRelationship record (most likely 4.6 or 4.11).
+
+See `working_docs/review_log.md` REV-013d for the independent review record, and DEC-058 through
+DEC-060 in `working_docs/decisions.md` for full rationale.
+
 ## Registry identity
 
 `guidance_family_id`, `document_edition_id`, and `edition_source_id` values (`gf.ich_m10`,
@@ -154,10 +182,19 @@ duplicate validator rule for it (a positive test demonstrates the schema rejecti
 4.2 validator additions are limited to graph-level facts the closed schemas cannot express:
 cross-artifact reference resolution for the multi-bundle source index; EffectiveStateSnapshot member,
 family, and jurisdiction resolution (DEC-056); and, when a manifest opts in with `strict_registry:
-true`, registry completeness — every supplied GuidanceFamily has at least one DocumentEdition, and
-every supplied DocumentEdition has at least one EditionSource (DEC-055). `strict_registry` is off by
-default so the existing generic partial-graph fixtures and tests are unaffected; only
-`structured_data/derived/registry/manifest.json` enables it.
+true`, registry completeness (DEC-055, extended by DEC-060):
+
+- every supplied GuidanceFamily has at least one DocumentEdition, and every supplied DocumentEdition
+  has at least one EditionSource (DEC-055);
+- the supplied graph includes at least one GuidanceFamily, one DocumentEdition, and one EditionSource
+  artifact (DEC-060);
+- no supplied artifact has a type other than GuidanceFamily, DocumentEdition, or EditionSource
+  (DEC-060);
+- no two EditionSource records share the same `(document_edition_id, document_id, source_role)`
+  triple (DEC-060).
+
+`strict_registry` is off by default so the existing generic partial-graph fixtures and tests are
+unaffected; only `structured_data/derived/registry/manifest.json` enables it.
 
 ## Deferred governance (DEC-049)
 
@@ -182,9 +219,12 @@ artifact-identity/linkage gap logged as known gap G1 in `working_docs/phase4_pla
 - REV-013b confirms the registry, multi-bundle manifest support, structural snapshot validation, and
   both candidate slices meet the Module 4.2 completion gate in `working_docs/phase4_plan.md`.
   REV-013c independently audits and corrects that completed state per DEC-053 through DEC-057.
+  REV-013d independently confirms the further registry hardening per DEC-058 through DEC-060.
 - Module 4.5 and Module 4.7 remain blocked on their DEC-049 governance-policy decisions.
 - Full production source bundles (Modules 4.4/4.10) will later supersede the canonical minimal
   Document-identity bundles under `structured_data/source_documents/` additively, without changing
   registry identity (DEC-053).
 - The prose-level S6 reconciliation (rationale and effective-text wording) remains manually asserted,
   not automated; see "Automated vs. manual S6 reconciliation coverage" above.
+- `LifecycleRelationship.relationship_type` remains deliberately open (DEC-059); it is closed only
+  when a module first produces a real production LifecycleRelationship record.

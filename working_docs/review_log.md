@@ -470,6 +470,66 @@ Use this document to record human review results after review is performed. Do n
 - Follow-up owner: Module 4.3 owner
 - Status: Resolved
 
+### REV-013d: Phase 4 Module 4.2 Further Registry Hardening Review
+
+- Date: 2026-07-13
+- Reviewer: Repository review
+- Scope reviewed: Independent review of a further Module 4.2 registry hardening pass on PR #19, requested after REV-013c: closing `EditionSource.source_role` to a minimal justified vocabulary; extending `strict_registry` mode with required-artifact-type presence, disallowed-artifact-type rejection, and duplicate-EditionSource-link rejection, while preserving generic partial-graph and all existing non-strict manifest behavior unchanged; and explicitly recording `LifecycleRelationship.relationship_type` as deferred rather than closed, since no repository evidence yet justifies a specific vocabulary for it.
+- Source document: Not applicable; this review covered derived-layer schemas, validator code, and regression tests rather than source-text extraction.
+- Sections or pages reviewed: Not applicable.
+- Files reviewed: `structured_data/schemas/derived/core.schema.json`;
+  `structured_data/schemas/derived/artifacts/edition_source.schema.json`;
+  `scripts/validate_derived.js`; `structured_data/derived/registry/manifest.json`;
+  `test/validate_derived.test.js`; `working_docs/decisions.md`; `working_docs/phase4_plan.md`;
+  `working_docs/phase4_module_4_2.md`; `README.md`; `working_docs/project_scope.md`.
+- Findings:
+  - `sourceRole` is a new closed two-value enum (`primary`, `supplementary`) in `core.schema.json`,
+    referenced from `edition_source.schema.json`; the vocabulary is the minimum that gives the field
+    meaning given EditionSource's own one-or-many Document-link purpose (Module 3.6), not a
+    speculative expansion. Every existing `source_role` value (`"primary"`) already conforms, so no
+    fixture or production data changed (DEC-058).
+  - `validateStrictRegistryCompleteness` now additionally: requires at least one `GuidanceFamily`, one
+    `DocumentEdition`, and one `EditionSource` artifact in the supplied graph; rejects any supplied
+    artifact of a type other than those three (`LifecycleRelationship`, `AmendmentMapping`,
+    `EffectiveRecord`, `EffectiveStateSnapshot`, `ReviewAttestation`, `RiskAssessment`), one error per
+    offending record; and rejects a duplicate `(document_edition_id, document_id, source_role)`
+    EditionSource link, while correctly allowing distinct `primary`/`supplementary` links for the same
+    edition (DEC-060).
+  - All four new strict checks are gated behind `strict_registry: true` exactly as the original
+    orphan-family/orphan-edition checks were (DEC-055); regression tests confirm every new negative
+    scenario (missing artifact type, disallowed artifact type, duplicate EditionSource link) still
+    passes validation when `strict_registry` is absent, and `structured_data/derived/registry/manifest.json`
+    (which already sets `strict_registry: true`) continues to pass unchanged.
+  - `LifecycleRelationship.relationship_type` was not closed. DEC-059 records the reasoning explicitly:
+    Module 4.2 creates zero production LifecycleRelationship records (DEC-050 fixes S6 as one
+    integrated edition with no inter-edition relationship, and M10 has only one edition), and the only
+    `relationship_type` values anywhere in the repository are generic test-fixture placeholders
+    (`"amends"`, `"same edition"`), which is not repository evidence sufficient to generalize a closed
+    vocabulary from. Closure is deferred to whichever module first produces a real production
+    LifecycleRelationship record.
+  - `working_docs/phase4_module_4_2.md`, `working_docs/phase4_plan.md` (Sixth revision note and the
+    Module 4.2 completion gate and non-goals), `README.md`, and `working_docs/project_scope.md` were
+    updated to describe this hardening accurately and point to DEC-058 through DEC-060.
+- Compatibility findings: Source model `0.2.0`, `structured_data/schemas/guideline_bundle.schema.json`,
+  `structured_data/pilots/`, `Guideline Files/`, and both frozen Phase 3 prototype files remain
+  byte-identical relative to the REV-013c base (protected-file diff returned no changes).
+  `package-lock.json` is unchanged. No existing ID was renamed or relocated.
+- Required corrections: None.
+- Unresolved items: None for this hardening round. Module 4.5 and Module 4.7 remain blocked on their
+  DEC-049 governance-policy decisions, unchanged by this review. `LifecycleRelationship.relationship_type`
+  remains open by design (DEC-059) and is not an outstanding defect.
+- Validation command: `npm test` (182/182 pass); `npm run validate:pilots` (Validated 5 pilot
+  bundle(s)); `npm run validate:legacy` (Validated 4 legacy amendment mapping(s) and 4 legacy
+  EffectiveRecord(s)); `npm run validate:derived` (Validated contract graph with 1 AmendmentMapping
+  record(s) and 1 EffectiveRecord record(s), unchanged from REV-013c); `npm run validate:registry`
+  (Validated contract graph with 0 AmendmentMapping record(s) and 0 EffectiveRecord record(s), now
+  additionally satisfying the extended `strict_registry` checks); `git diff --check` (clean);
+  protected-file diff against the REV-013c base for `Guideline Files`,
+  `structured_data/schemas/guideline_bundle.schema.json`, `structured_data/pilots`, the two Phase 3
+  derived prototypes, and `package-lock.json` (no changes).
+- Follow-up owner: Module 4.3 owner
+- Status: Resolved
+
 ### REV-012: Phase 4 Module 4.1 Derived Contract Schema Scaffold Review
 
 - Date: 2026-07-06

@@ -183,7 +183,35 @@ function validateContractArtifacts({ sourceBundle, artifacts, strictRegistry }) 
   return validationResult(errors, contractIndexes.amendmentMappings.size, contractIndexes.effectiveRecords.size);
 }
 
+const STRICT_REGISTRY_REQUIRED_ARTIFACT_TYPES = ["GuidanceFamily", "DocumentEdition", "EditionSource"];
+
 function validateStrictRegistryCompleteness({ contractIndexes, errors }) {
+  const registryPresence = {
+    GuidanceFamily: contractIndexes.guidanceFamilies,
+    DocumentEdition: contractIndexes.documentEditions,
+    EditionSource: contractIndexes.editionSources
+  };
+  for (const artifactType of STRICT_REGISTRY_REQUIRED_ARTIFACT_TYPES) {
+    if (registryPresence[artifactType].size === 0) {
+      addError(errors, "strict_registry", null, "artifact_type", `strict registry validation requires at least one ${artifactType} artifact`);
+    }
+  }
+
+  const disallowedPresence = {
+    LifecycleRelationship: contractIndexes.lifecycleRelationships,
+    AmendmentMapping: contractIndexes.amendmentMappings,
+    EffectiveRecord: contractIndexes.effectiveRecords,
+    EffectiveStateSnapshot: contractIndexes.effectiveStateSnapshots,
+    ReviewAttestation: contractIndexes.reviewAttestations,
+    RiskAssessment: contractIndexes.riskAssessments
+  };
+  for (const [artifactType, map] of Object.entries(disallowedPresence)) {
+    for (const [recordId] of map) {
+      const owner = contractIndexes.recordOwners.get(recordId);
+      addError(errors, owner.file, recordId, "artifact_type", `strict registry validation: artifact type ${artifactType} is not permitted in a strict registry manifest; only ${STRICT_REGISTRY_REQUIRED_ARTIFACT_TYPES.join(", ")} are allowed`);
+    }
+  }
+
   for (const [familyId] of contractIndexes.guidanceFamilies) {
     const owner = contractIndexes.recordOwners.get(familyId);
     const hasEdition = [...contractIndexes.documentEditions.values()].some((edition) => edition.guidance_family_id === familyId);
@@ -195,6 +223,18 @@ function validateStrictRegistryCompleteness({ contractIndexes, errors }) {
     const owner = contractIndexes.recordOwners.get(editionId);
     if (!contractIndexes.editionSourceDocuments.has(editionId)) {
       addError(errors, owner.file, editionId, "document_edition_id", `strict registry validation: DocumentEdition ${editionId} has no EditionSource referencing it`);
+    }
+  }
+
+  const seenEditionSourceLinks = new Map();
+  for (const [editionSourceId, editionSource] of contractIndexes.editionSources) {
+    const owner = contractIndexes.recordOwners.get(editionSourceId);
+    const linkKey = `${editionSource.document_edition_id}::${editionSource.document_id}::${editionSource.source_role}`;
+    if (seenEditionSourceLinks.has(linkKey)) {
+      const priorId = seenEditionSourceLinks.get(linkKey);
+      addError(errors, owner.file, editionSourceId, "document_edition_id", `strict registry validation: duplicate EditionSource link (document_edition_id=${editionSource.document_edition_id}, document_id=${editionSource.document_id}, source_role=${editionSource.source_role}) also used by ${priorId}`);
+    } else {
+      seenEditionSourceLinks.set(linkKey, editionSourceId);
     }
   }
 }

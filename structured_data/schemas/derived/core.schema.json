@@ -130,6 +130,14 @@
         "superseded"
       ]
     },
+    "sourceRole": {
+      "description": "The role a given source Document plays for a DocumentEdition. EditionSource is a one-or-many link from an edition to its source Document(s) (Module 3.6); primary identifies the edition's principal source Document, and supplementary identifies an additional source Document jointly backing the same edition (for example a textually consolidated edition assembled from more than one source PDF). Exactly one EditionSource per edition should be primary.",
+      "type": "string",
+      "enum": [
+        "primary",
+        "supplementary"
+      ]
+    },
     "jurisdiction": {
       "type": "string",
       "minLength": 1
