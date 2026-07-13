@@ -1,12 +1,14 @@
 # Phase 4 Plan
 
-Status: Module 4.1 complete after REV-012; Module 4.2 not started and now eligible to begin; Modules 4.3 through 4.12 not started. This document concretizes `working_docs/phase4_handoff_plan.md` into an executable module specification under the accepted derived-layer contract (DEC-030, REV-011).
+Status: Module 4.1 complete after REV-012; Phase 4 Rebaseline R0 complete after REV-013a; Module 4.2 complete after REV-013b; Modules 4.3 through 4.12 not started, and Module 4.3 is now eligible to begin. This document concretizes `working_docs/phase4_handoff_plan.md` into an executable module specification under the accepted derived-layer contract (DEC-030, REV-011).
 
 Revision note: this plan was revised before implementation start to (1) state the objective as a regulator-neutral common engine, (2) designate an official two-document test corpus (M10 baseline, S6 stress test), (3) add a generic run/orchestration module and an official corpus full-run module, (4) add a coverage ledger, (5) make legacy artifacts non-destructive regression references, and (6) move the incremental family update after the M10 and S6 full runs. Modules are renumbered 4.1 through 4.12.
 
 Second revision note, also before implementation start: (1) the legacy schema-validation transition is now explicit — Module 4.1 does not enforce the `0.1.0` schemas on Phase 3 prototype artifacts, which remain frozen regression references validated only by the legacy regression validator; (2) the RiskAssessment dependency order between Modules 4.2 and 4.5 is corrected (`current_risk_assessment_id` optional in 4.2, mandatory validation from 4.5); (3) a source model limitation stop rule is added; (4) review terminology is normalized to "items requiring additional review" and "independently reviewed samples"; (5) the FDA/EMA compatibility wording is softened — Phase 4 verifies only ICH-profile containment and claims no FDA/EMA compatibility.
 
 Third revision note, after Module 4.1 architecture correction: DEC-045 through DEC-048 supersede the earlier production-migration assumption. Phase 4 production flow is PDF -> new source extraction -> new contract-conformant derived artifacts -> comparison against Phase 1-3 regression references. It is not Phase 3 prototype -> production successor migration.
+
+Fourth revision note, from the pre-Module-4.2 architecture audit and Rebaseline R0 (DEC-049 through DEC-052, REV-013a): (1) Module 4.5 (risk) and Module 4.7 (review) may not start until their respective governance-policy decisions are recorded (DEC-049); until then, Risk/Review artifacts are validated only for schema conformance and basic reference integrity, and Modules 4.2 through 4.6 produce only `unreviewed`/`needs_review` records with `current_risk_assessment_id=null`; (2) Module 4.2 brings forward *structural* EffectiveStateSnapshot validation (member resolution, identity fields, no tier/aggregation/disclosure policy) so the registry-to-derived-to-snapshot value path is proven on real M10/S6 pilot content before the ingest/extraction/orchestration engine exists, via candidate-only test fixtures under `test/fixtures/derived_contract/` (not production `structured_data/`); (3) ICH S6(R1) registers as one integrated-package DocumentEdition, not two editions joined by a LifecycleRelationship (DEC-050); (4) `scripts/validate_derived.js` accepts multiple source bundles in a manifest, additive to the existing single-bundle behavior, so the two-corpus-document registry can validate against both existing reviewed pilots pending full production source bundles (DEC-051); (5) production derived artifacts (registry, and later risk/review/snapshot) live in typed subfolders of `structured_data/derived/`, separate from the frozen Phase 3 prototype file paths (DEC-052); (6) a known contract gaps register is added (see "Known contract gaps" below), including a ReviewAttestation artifact-identity/linkage gap that must be resolved before Module 4.7 starts.
 
 ## Objective
 
@@ -98,6 +100,7 @@ Paths below are the working proposal for Phase 4 outputs. Each path becomes fixe
 - `structured_data/bundles/<document_id>/`: per-document full-run outputs — structure manifest, coverage ledger, and complete source-layer bundles — kept separate from the frozen pilot bundles under `structured_data/pilots/` (4.3, 4.10).
 - `structured_data/runs/`: run manifests produced by the orchestrator (4.9).
 - `scripts/`: engine stage scripts and the orchestrator; one script per pipeline stage, reproducible, no hidden state.
+- `test/fixtures/derived_contract/<scenario_name>/`: per-scenario subdirectory-plus-manifest convention for contract-graph fixtures (4.2 introduces `m10_direct_slice/` and `s6_amendment_slice/`); later modules add scenario directories rather than overloading the flat `valid/`/`invalid/` fixture directories. Fixtures never enter `structured_data/` (DEC-052 boundary applies to production artifacts only).
 
 ## Modules
 
@@ -110,14 +113,19 @@ Paths below are the working proposal for Phase 4 outputs. Each path becomes fixe
 - Completion gate: Independent repository review confirms the schemas express the Module 3.6 contract without expanding it, the core/profile split holds (profiles extend or constrain, never duplicate the core; no ICH concept leaks into core definitions), the closed relation vocabulary is enforced, source schema `0.2.0` is untouched, and the legacy transition boundary is explicit: Phase 3 prototype artifacts are historical regression references, not production migration inputs.
 - Non-goals: FDA/EMA profile schemas beyond named placeholders; retroactive schema enforcement on Phase 3 prototype artifacts; prototype migration; source schema changes; derived contract `1.0.0`.
 
-### 4.2 Family registry and lifecycle artifacts
+### 4.2 Family registry, lifecycle artifacts, and candidate value-path slice
 
-- Objective: Implement GuidanceFamily, DocumentEdition, EditionSource, and LifecycleRelationship artifacts, plus the RiskAssessment and ReviewAttestation artifact structures they reference, and create the initial registry entries for both corpus documents.
-- Inputs and dependencies: 4.1 schemas; existing source `document_id=ich_s6_r1` and `document_id=ich_m10` as the canonical physical-PDF records.
-- Outputs: Registry artifacts under `structured_data/derived/registry/` for an ICH S6 GuidanceFamily (edition for the S6(R1) integrated package, EditionSource referencing `ich_s6_r1`) and an ICH M10 GuidanceFamily (edition for the final M10 document, EditionSource referencing `ich_m10`); validator rules for family/edition identity and lifecycle status, with `current_risk_assessment_id` optional in this module and reference-validated only when present, because RiskAssessments are first created in Module 4.5; regression tests; module note.
-- Validation: Extended `npm run validate:derived` covers registry artifacts; duplication of source Document path, checksum, or version fields into the registry is a validation error, not a convention.
-- Completion gate: Independent repository review confirms registry identity is independent of folder names under `Guideline Files/`, no source-Document fields are duplicated, and lifecycle relationships carry source evidence, original wording, normalized type, jurisdiction, and review status.
-- Non-goals: Lifecycle relationships to documents not in the repository; effective-state recalculation.
+- Objective: Implement GuidanceFamily, DocumentEdition, and EditionSource registry artifacts and create the initial registry entries for both corpus documents; implement the LifecycleRelationship artifact structure for future inter-edition use; bring forward *structural* EffectiveStateSnapshot graph validation; and demonstrate, through candidate-only test fixtures, that the registry-to-derived-to-snapshot value path validates end to end against real M10 and S6 pilot content before the ingest/extraction/orchestration engine exists.
+- Inputs and dependencies: 4.1 schemas; Rebaseline R0 decisions (DEC-049 through DEC-052, REV-013a); existing source `document_id=ich_s6_r1` and `document_id=ich_m10` as the canonical physical-PDF records, bootstrapped from the existing reviewed pilot bundles per DEC-051.
+- Outputs:
+  - Registry artifacts under `structured_data/derived/registry/`: an ICH S6 GuidanceFamily with **one** DocumentEdition (`edition_role=integrated_package`) and one EditionSource referencing `ich_s6_r1` — no LifecycleRelationship, per DEC-050 — and an ICH M10 GuidanceFamily with one DocumentEdition (`edition_role=final`) and one EditionSource referencing `ich_m10`. `current_risk_assessment_id` remains optional/null in this module (DEC-044, DEC-049); RiskAssessment and ReviewAttestation production artifacts are not created here.
+  - `scripts/validate_derived.js` extended, additively, to accept a manifest naming multiple `source_bundles` (DEC-051), validate each via the existing `validateBundles` reuse, and merge them into one source index before graph validation; the existing single-`source_bundle` manifest and its behavior are unchanged.
+  - Structural EffectiveStateSnapshot graph validation: snapshot member IDs resolve to supplied EffectiveRecords; identity fields (`guidance_family_id`, jurisdiction, `as_of_date`, review policy, derived contract version, source corpus identity, calculation-policy version) are present; execution metadata (for example `calculated_at`) does not affect identity checks. No tier/aggregation/disclosure policy (Module 4.8 scope).
+  - Two candidate-only scenario fixtures under `test/fixtures/derived_contract/` (`m10_direct_slice/`, `s6_amendment_slice/`), each with its own manifest referencing an existing reviewed source pilot: `m10_direct_slice` produces one EffectiveRecord (`derivation_basis=direct_source`) and one snapshot from an M10 pilot; `s6_amendment_slice` produces one or two AmendmentMappings and one EffectiveRecord (`derivation_basis=amendment_synthesis`, ICH `parent_addendum_synthesis` detail) and one snapshot from `s6_r1_species_selection.json`, reconciled against the frozen Phase 3 prototypes as a semantic reference only. All slice records are `unreviewed`/`needs_review`. These fixtures are test-only and never enter `structured_data/`.
+  - Regression tests; module note `working_docs/phase4_module_4_2.md`.
+- Validation: Extended `npm run validate:derived` covers registry artifacts, multi-bundle manifests, and structural snapshot graph checks. Source-Document path/checksum/version-field duplication into the registry is already rejected at JSON Schema validation (every registry schema is closed with `additionalProperties:false` and defines no such fields); the validator adds only graph-level checks schemas cannot express (cross-artifact reference resolution, multi-bundle source resolution, snapshot member resolution).
+- Completion gate (REV-013b): Independent repository review confirms registry identity is independent of folder names under `Guideline Files/` (review-level check); the S6 registry uses one integrated-package edition with no LifecycleRelationship (DEC-050); the two-document registry validates against both bootstrap pilot bundles via the new multi-bundle manifest while the existing single-bundle `complete_graph` fixture is re-verified unchanged; both candidate slices validate end to end producing `needs_review`/`unreviewed` records and snapshots with no unexplained semantic divergence from the frozen Phase 3 references; frozen artifacts remain byte-identical; `validate:pilots`, `validate:legacy`, `validate:derived`, `validate:registry` (new in this module, validating `structured_data/derived/registry/manifest.json` against both bootstrap pilots), and `npm test` all pass.
+- Non-goals: Lifecycle relationships to documents not in the repository; effective-state recalculation; full risk-tier derivation, review-tier satisfaction, or review-attestation aggregation (deferred to 4.5/4.7 per DEC-049); production (non-fixture) candidate EffectiveRecords or snapshots — the slice is test-only.
 
 ### 4.3 Single-PDF ingest and structure detection
 
@@ -140,7 +148,7 @@ Paths below are the working proposal for Phase 4 outputs. Each path becomes fixe
 ### 4.5 Source validation and risk assessment
 
 - Objective: Run full source validation as a pipeline stage and create the initial versioned RiskAssessment events for both corpus documents and the Phase 4 artifacts produced so far.
-- Inputs and dependencies: 4.4 sample bundles; Module 3.6 risk policy (risk scale, risk factors, artifact-type minimums, review-tier table).
+- Inputs and dependencies: 4.4 sample bundles; Module 3.6 risk policy (risk scale, risk factors, artifact-type minimums, review-tier table); **the DEC-049 risk-policy decision recorded** — Module 4.5 may not start before this gate.
 - Outputs: RiskAssessment artifacts under `structured_data/derived/risk/` with rationale, risk factors, assessor attestation reference, and required review tier computed as the higher of document risk and artifact-type minimum; validator rules for risk-history integrity, including making the registry `current_risk_assessment_id` mandatory from this module on (ending the Module 4.2 optional allowance); module note; regression tests.
 - Validation: Extended `npm run validate:derived` verifies risk artifacts and required-tier derivation, and now requires that every registry entry carries a current-risk reference resolving to the latest assessment in its history.
 - Completion gate: Independent repository review confirms risk levels are justified by recorded factors, no assessment overwrites a prior one, and required review tiers match the Module 3.6 policy table.
@@ -158,7 +166,7 @@ Paths below are the working proposal for Phase 4 outputs. Each path becomes fixe
 ### 4.7 Review attestation workflow
 
 - Objective: Implement ReviewAttestation artifacts and aggregate `review_status` calculation for actual Phase 4 outputs.
-- Inputs and dependencies: 4.5 risk tiers; 4.6 artifacts; Module 3.6 attestation rules.
+- Inputs and dependencies: 4.5 risk tiers; 4.6 artifacts; Module 3.6 attestation rules; **the DEC-049 review-aggregation decision recorded** — Module 4.7 may not start before this gate, and that decision must also resolve the ReviewAttestation artifact-identity/linkage gap (known contract gap G1 below): no schema field currently links a record to the ReviewAttestation(s) that justify its `review_status`, and the validator performs no graph validation of `covered_artifact_ids`/`covered_record_ids` or of RiskAssessment `assessor_attestation_id`/`override_attestation_id`.
 - Outputs: Attestation artifacts under `structured_data/derived/reviews/`; validator rules for tier satisfaction, aggregate status derivation (`unreviewed`/`needs_review`/`reviewed`/`rejected`), and disagreement preservation; module note; regression tests.
 - Validation: Extended `npm run validate:derived` verifies every Phase 4 output record's aggregate status is derivable from its attestations and required tier; conflicting reviews aggregate to `needs_review` absent a resolution attestation; historical REV records remain audit history and are not migrated into production ReviewAttestations unless a later decision explicitly assigns a production use.
 - Completion gate: Independent repository review confirms attestation-to-record coverage and correct aggregate statuses across the actual Phase 4 output artifact set.
@@ -209,9 +217,28 @@ Paths below are the working proposal for Phase 4 outputs. Each path becomes fixe
 - Completion gate: Independent repository review confirms the engine met the Phase 4 boundary, both corpus runs satisfied their gates, all module gates were satisfied in order, and the readiness decisions are recorded with rationale. Phase 4 is complete only after this review.
 - Non-goals: Starting FDA/EMA implementation inside this module; declaring `1.0.0` without the stability evidence DEC-030 reserves it for.
 
+## Known contract gaps
+
+Logged at Rebaseline R0 (REV-013a) for resolution at a named later module; not fixed ahead of that
+module's scope.
+
+- **G1 — ReviewAttestation artifact-identity / linkage gap (resolve before Module 4.7 starts).**
+  Derived records carry only an aggregate `review_status`; no schema field links a record to the
+  ReviewAttestation(s) that justify it, and `scripts/validate_derived.js` performs no graph validation
+  of ReviewAttestation `covered_artifact_ids`/`covered_record_ids`, or of RiskAssessment
+  `assessor_attestation_id`/`override_attestation_id`. The Module 3.6 "hybrid" model (records reference
+  attestation IDs; attestations hold reviewer detail) is not yet expressed in the derived schemas. The
+  Module 4.7 gating decision (DEC-049) must define linkage direction and authority, whether covered IDs
+  must resolve, and how RiskAssessment assessor/override attestation references resolve.
+- **G2 — Multi-bundle registry validation.** Resolved by DEC-051; implemented in Module 4.2.
+- **G3 — Source-Document production bootstrap.** Resolved by DEC-051 (registry reuses existing
+  reviewed-pilot Document identity; full production bundles later supersede additively, same identity).
+- **G4 — Governance policy tables not yet enforced.** Tracked by DEC-049; concrete re-gates at Module
+  4.5 (risk-policy decision) and Module 4.7 (review-aggregation decision, which also closes G1).
+
 ## Sequencing and gating
 
-Modules execute strictly in order 4.1 → 4.12. A module may not start until its dependencies' completion gates (including their repository reviews) are recorded. Within Module 4.10, the M10 baseline run completes and is reviewed before the S6 stress run starts. Within a module, the order is: sample → validate → full scope → validate → module note and status updates → independent repository review. Discovering a contract defect mid-module stops work on that module; the defect is recorded as a decision proposal — against the Module 3.6 contract for derived-layer defects, or as a source-model version decision under the source model limitation stop rule for demonstrated `0.2.0` source-information loss — rather than patched ad hoc.
+Modules execute strictly in order 4.1 → 4.12, with Rebaseline R0 (documentation, CI, and decision recording only — no schema, structured-data, or validator-behavior change) inserted between Module 4.1 and Module 4.2 and gated by REV-013a. A module may not start until its dependencies' completion gates (including their repository reviews) are recorded; Module 4.5 additionally requires the DEC-049 risk-policy decision, and Module 4.7 additionally requires the DEC-049 review-aggregation decision (which also closes known gap G1). Within Module 4.10, the M10 baseline run completes and is reviewed before the S6 stress run starts. Within a module, the order is: sample → validate → full scope → validate → module note and status updates → independent repository review. Discovering a contract defect mid-module stops work on that module; the defect is recorded as a decision proposal — against the Module 3.6 contract for derived-layer defects, or as a source-model version decision under the source model limitation stop rule for demonstrated `0.2.0` source-information loss — rather than patched ad hoc.
 
 ## Validation strategy
 

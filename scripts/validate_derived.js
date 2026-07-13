@@ -178,6 +178,7 @@ function validateContractArtifacts({ sourceBundle, artifacts }) {
   validateContractHistory({ contractIndexes, errors });
   validateContractAmendmentMappings({ contractIndexes, sourceIndexes, errors });
   validateContractEffectiveRecords({ contractIndexes, sourceIndexes, errors });
+  validateContractSnapshots({ contractIndexes, errors });
   return validationResult(errors, contractIndexes.amendmentMappings.size, contractIndexes.effectiveRecords.size);
 }
 
@@ -404,6 +405,26 @@ function validateContractEffectiveRecords({ contractIndexes, sourceIndexes, erro
   }
 }
 
+function validateContractSnapshots({ contractIndexes, errors }) {
+  for (const [snapshotId, snapshot] of contractIndexes.effectiveStateSnapshots) {
+    const owner = contractIndexes.recordOwners.get(snapshotId);
+    const family = contractIndexes.guidanceFamilies.get(snapshot.guidance_family_id);
+    if (contractIndexes.guidanceFamilies.size > 0 && !family) {
+      addError(errors, owner.file, snapshotId, "guidance_family_id", `reference does not resolve to GuidanceFamily: ${snapshot.guidance_family_id}`);
+    }
+    for (const effectiveRecordId of snapshot.effective_record_ids || []) {
+      const record = contractIndexes.effectiveRecords.get(effectiveRecordId);
+      if (!record) {
+        addError(errors, owner.file, snapshotId, "effective_record_ids", `reference does not resolve to a supplied EffectiveRecord: ${effectiveRecordId}`);
+        continue;
+      }
+      if (record.guidance_family_id !== snapshot.guidance_family_id) {
+        addError(errors, owner.file, snapshotId, "effective_record_ids", `EffectiveRecord ${effectiveRecordId} guidance_family_id ${record.guidance_family_id} must match snapshot guidance_family_id ${snapshot.guidance_family_id}`);
+      }
+    }
+  }
+}
+
 function resolveEditionSourceAuthorization({ editionIds, ownerId, file, contractIndexes, errors }) {
   const ids = [...new Set((editionIds || []).filter(isNonEmptyString))];
   const coveredIds = ids.filter((id) => contractIndexes.editionSourceDocuments.has(id));
@@ -546,6 +567,41 @@ function loadJson(file, errors) {
   }
 }
 
+function mergeSourceBundles(bundles) {
+  const merged = {};
+  for (const [collection, idField] of SOURCE_COLLECTIONS) {
+    const seen = new Set();
+    const items = [];
+    for (const bundle of bundles) {
+      for (const item of (bundle && bundle[collection]) || []) {
+        const id = item && item[idField];
+        if (isNonEmptyString(id)) {
+          if (seen.has(id)) continue;
+          seen.add(id);
+        }
+        items.push(item);
+      }
+    }
+    merged[collection] = items;
+  }
+  return merged;
+}
+
+function resolveManifestSourcePaths(manifest, errors, manifestFile) {
+  const singular = manifest.source_bundle || manifest.source_bundle_file;
+  const plural = manifest.source_bundles || manifest.source_bundle_files;
+  const hasSingular = isNonEmptyString(singular);
+  const hasPlural = Array.isArray(plural) && plural.length > 0;
+  if (hasSingular && hasPlural) {
+    addError(errors, manifestFile || "manifest", null, "source_bundle", "must not be combined with source_bundles; supply exactly one");
+    return null;
+  }
+  if (hasSingular) return [singular];
+  if (hasPlural) return plural;
+  addError(errors, manifestFile || "manifest", null, "source_bundle", "must name a source bundle file, or source_bundles must contain at least one file");
+  return null;
+}
+
 function validateDerivedManifestFile({ manifestFile }) {
   const loadErrors = [];
   const manifestPath = path.resolve(manifestFile);
@@ -561,22 +617,24 @@ function validateDerivedManifest({ manifest, manifestFile }) {
     addError(errors, manifestFile || "manifest", null, "/", "must be an object");
     return { ok: false, configError: true, errors, amendmentMappingCount: 0, effectiveRecordCount: 0 };
   }
-  const sourcePath = manifest.source_bundle || manifest.source_bundle_file;
+  const sourcePaths = resolveManifestSourcePaths(manifest, errors, manifestFile);
   const artifactPaths = manifest.artifacts || manifest.artifact_files;
-  if (!isNonEmptyString(sourcePath)) addError(errors, manifestFile || "manifest", null, "source_bundle", "must name a source bundle file");
   if (!Array.isArray(artifactPaths) || artifactPaths.length === 0) addError(errors, manifestFile || "manifest", null, "artifacts", "must contain at least one artifact file");
   if (errors.length > 0) return { ok: false, configError: true, errors, amendmentMappingCount: 0, effectiveRecordCount: 0 };
-  const sourceBundle = loadJson(path.resolve(manifestDir, sourcePath), errors);
+  const sourceBundleEntries = sourcePaths.map((sourcePath) => {
+    const sourceFile = path.resolve(manifestDir, sourcePath);
+    return { file: normalizeRepoPath(sourceFile), bundle: loadJson(sourceFile, errors) };
+  });
   const artifacts = artifactPaths.map((artifactPath) => {
     const artifactFile = path.resolve(manifestDir, artifactPath);
     return { artifact: loadJson(artifactFile, errors), file: artifactFile };
   });
   if (errors.length > 0) return { ok: false, configError: true, errors, amendmentMappingCount: 0, effectiveRecordCount: 0 };
-  const sourceFile = normalizeRepoPath(path.resolve(manifestDir, sourcePath));
-  const sourceResult = validateBundles([{ file: sourceFile, bundle: sourceBundle }]);
+  const sourceResult = validateBundles(sourceBundleEntries);
   if (!sourceResult.ok) {
     return { ok: false, errors: sourceResult.errors, amendmentMappingCount: 0, effectiveRecordCount: 0 };
   }
+  const sourceBundle = mergeSourceBundles(sourceBundleEntries.map((entry) => entry.bundle));
   return validateContractArtifacts({ sourceBundle, artifacts });
 }
 

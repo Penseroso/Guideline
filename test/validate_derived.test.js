@@ -780,10 +780,188 @@ test("direct-source records allow empty amendment mapping IDs", () => {
   assertValid(validateDerivedContractArtifact({ artifact, file: "effective_record_ich_direct_source.json" }));
 });
 
+function snapshotArtifact(overrides = {}) {
+  return {
+    derived_model_version: "0.1.0",
+    artifact_type: "EffectiveStateSnapshot",
+    regulator_profile: "core",
+    records: [
+      {
+        snapshot_id: "test.snapshot.001",
+        guidance_family_id: "test.family",
+        jurisdiction: "TEST",
+        as_of_date: "2026-07-06",
+        review_policy: "include_needs_review",
+        source_corpus_identity: "test_doc@fixture",
+        calculation_policy_version: "test-policy-0.1",
+        effective_record_ids: ["test.contract.eff.001"],
+        calculated_at: "2026-07-06T00:00:00Z",
+        review_status: "needs_review",
+        profile_details: null,
+        ...overrides
+      }
+    ]
+  };
+}
+
+function validateContractGraphWithSnapshot({ graphMutator, snapshotOverrides, extraArtifacts } = {}) {
+  const graph = contractGraphArtifacts(graphMutator);
+  const artifacts = [
+    { artifact: graph.guidanceFamilyArtifact, file: "contract_guidance_family.json" },
+    { artifact: graph.documentEditionArtifact, file: "contract_document_edition.json" },
+    { artifact: graph.editionSourceArtifact, file: "contract_edition_source.json" },
+    { artifact: graph.lifecycleArtifact, file: "contract_lifecycle.json" },
+    { artifact: graph.amendmentArtifact, file: "contract_amendment.json" },
+    { artifact: graph.effectiveArtifact, file: "contract_effective.json" },
+    { artifact: snapshotArtifact(snapshotOverrides), file: "contract_snapshot.json" },
+    ...(extraArtifacts || [])
+  ];
+  return validateContractArtifacts({ sourceBundle: graph.sourceBundle, artifacts });
+}
+
+test("EffectiveStateSnapshot with resolving members and matching family passes", () => {
+  assertValid(validateContractGraphWithSnapshot());
+});
+
+test("EffectiveStateSnapshot member must resolve to a supplied EffectiveRecord", () => {
+  assertInvalid(
+    validateContractGraphWithSnapshot({ snapshotOverrides: { effective_record_ids: ["test.contract.eff.999"] } }),
+    "reference does not resolve to a supplied EffectiveRecord: test.contract.eff.999"
+  );
+});
+
+test("EffectiveStateSnapshot guidance_family_id must resolve to a supplied GuidanceFamily", () => {
+  assertInvalid(
+    validateContractGraphWithSnapshot({ snapshotOverrides: { guidance_family_id: "test.family.missing" } }),
+    "reference does not resolve to GuidanceFamily: test.family.missing"
+  );
+});
+
+test("EffectiveStateSnapshot member from a different family is rejected", () => {
+  const otherFamilyArtifact = {
+    derived_model_version: "0.1.0",
+    artifact_type: "GuidanceFamily",
+    regulator_profile: "core",
+    records: [
+      {
+        guidance_family_id: "test.family.other",
+        family_title: "Other test family",
+        jurisdictions: ["TEST"],
+        current_risk_assessment_id: null,
+        review_status: "needs_review",
+        profile_details: null
+      }
+    ]
+  };
+  assertInvalid(
+    validateContractGraphWithSnapshot({
+      snapshotOverrides: { guidance_family_id: "test.family.other" },
+      extraArtifacts: [{ artifact: otherFamilyArtifact, file: "contract_other_family.json" }]
+    }),
+    "EffectiveRecord test.contract.eff.001 guidance_family_id test.family must match snapshot guidance_family_id test.family.other"
+  );
+});
+
 test("contract manifest validates the complete contract graph fixture", () => {
   assertValid(validateDerivedManifestFile({
     manifestFile: path.join(CONTRACT_FIXTURE_DIR, "complete_graph", "manifest.json")
   }));
+});
+
+test("production registry manifest validates both corpus documents against multiple bootstrap pilot bundles", () => {
+  assertValid(validateDerivedManifestFile({
+    manifestFile: path.join(ROOT, "structured_data", "derived", "registry", "manifest.json")
+  }));
+});
+
+test("multi-bundle manifest merges source_bundles and resolves references across them", () => {
+  const manifestDir = path.join(ROOT, "structured_data", "derived", "registry");
+  const manifest = {
+    source_bundles: [
+      "../../pilots/m10_3_2_5_2.json",
+      "../../pilots/s6_r1_species_selection.json"
+    ],
+    artifacts: ["edition_source.json"]
+  };
+  assertValid(require("../scripts/validate_derived").validateDerivedManifest({
+    manifest,
+    manifestFile: path.join(manifestDir, "manifest.json")
+  }));
+});
+
+test("multi-bundle manifest fails when a referenced Document is not among the supplied bundles", () => {
+  const manifestDir = path.join(ROOT, "structured_data", "derived", "registry");
+  const manifest = {
+    source_bundles: ["../../pilots/m10_3_2_5_2.json"],
+    artifacts: ["edition_source.json"]
+  };
+  const result = require("../scripts/validate_derived").validateDerivedManifest({
+    manifest,
+    manifestFile: path.join(manifestDir, "manifest.json")
+  });
+  assertInvalid(result, "reference does not resolve to documents: ich_s6_r1");
+});
+
+test("manifest rejects combining source_bundle and source_bundles", () => {
+  const result = validateDerivedManifestFile({
+    manifestFile: path.join(CONTRACT_FIXTURE_DIR, "invalid", "source_bundle_and_source_bundles.json")
+  });
+  assert.equal(result.configError, true);
+  assertInvalid(result, "must not be combined with source_bundles");
+});
+
+test("m10_direct_slice validates a candidate direct-source EffectiveRecord and snapshot against the real M10 pilot", () => {
+  const result = validateDerivedManifestFile({
+    manifestFile: path.join(CONTRACT_FIXTURE_DIR, "m10_direct_slice", "manifest.json")
+  });
+  assertValid(result);
+  assert.equal(result.effectiveRecordCount, 1);
+  const effectiveArtifact = readJson(path.join(CONTRACT_FIXTURE_DIR, "m10_direct_slice", "effective_record.json"));
+  assert.equal(effectiveArtifact.records[0].derivation_basis, "direct_source");
+  assert.equal(effectiveArtifact.records[0].review_status, "needs_review");
+});
+
+test("s6_amendment_slice validates a candidate amendment-synthesis EffectiveRecord and snapshot against the real S6 pilot", () => {
+  const result = validateDerivedManifestFile({
+    manifestFile: path.join(CONTRACT_FIXTURE_DIR, "s6_amendment_slice", "manifest.json")
+  });
+  assertValid(result);
+  assert.equal(result.amendmentMappingCount, 1);
+  assert.equal(result.effectiveRecordCount, 1);
+  const effectiveArtifact = readJson(path.join(CONTRACT_FIXTURE_DIR, "s6_amendment_slice", "effective_record.json"));
+  assert.equal(effectiveArtifact.records[0].derivation_basis, "amendment_synthesis");
+  assert.equal(effectiveArtifact.records[0].review_status, "needs_review");
+});
+
+test("s6_amendment_slice mapping reconciles without divergence against the frozen Phase 3 amend.001 reference", () => {
+  const sliceMapping = readJson(path.join(CONTRACT_FIXTURE_DIR, "s6_amendment_slice", "amendment_mapping.json")).records[0];
+  const frozenArtifact = readJson(path.join(ROOT, "structured_data", "derived", "s6_r1_amendment_mappings.json"));
+  const frozenMapping = frozenArtifact.amendment_mappings.find((mapping) => mapping.mapping_id === "ich_s6_r1.amend.001");
+  assert.equal(sliceMapping.relation_type, frozenMapping.relation_type);
+  assert.deepEqual(sliceMapping.source_record_ids, frozenMapping.parent_knowledge_record_ids);
+  assert.deepEqual(sliceMapping.amending_record_ids, frozenMapping.addendum_knowledge_record_ids);
+  assert.equal(frozenMapping.review_status, "reviewed");
+});
+
+test("S6(R1) registry and slice use one integrated-package DocumentEdition with no LifecycleRelationship (DEC-050)", () => {
+  const registryEditions = readJson(path.join(ROOT, "structured_data", "derived", "registry", "document_edition.json")).records;
+  const s6RegistryEditions = registryEditions.filter((edition) => edition.guidance_family_id === "gf.ich_s6r1");
+  assert.equal(s6RegistryEditions.length, 1);
+  assert.equal(s6RegistryEditions[0].edition_role, "integrated_package");
+  const sliceFiles = fs.readdirSync(path.join(CONTRACT_FIXTURE_DIR, "s6_amendment_slice"));
+  assert.equal(sliceFiles.includes("lifecycle_relationship.json"), false);
+  const sliceEditions = readJson(path.join(CONTRACT_FIXTURE_DIR, "s6_amendment_slice", "document_edition.json")).records;
+  assert.equal(sliceEditions.length, 1);
+  assert.equal(sliceEditions[0].edition_role, "integrated_package");
+});
+
+test("closed registry schema already rejects source-Document field duplication without a dedicated validator rule", () => {
+  const artifact = readJson(path.join(ROOT, "structured_data", "derived", "registry", "guidance_family.json"));
+  artifact.records[0].source_file_checksum = "duplicated-checksum-should-be-rejected";
+  assertInvalid(
+    validateDerivedContractArtifact({ artifact, file: "guidance_family.json" }),
+    "must NOT have additional properties"
+  );
 });
 
 test("contract validator source contains no frozen Phase 3 artifact paths", () => {

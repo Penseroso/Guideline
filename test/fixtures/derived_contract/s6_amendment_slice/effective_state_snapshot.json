@@ -1,0 +1,20 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "EffectiveStateSnapshot",
+  "regulator_profile": "ich",
+  "records": [
+    {
+      "snapshot_id": "slice.s6.snapshot.001",
+      "guidance_family_id": "slice.s6.family",
+      "jurisdiction": "ICH",
+      "as_of_date": "2011-06-12",
+      "review_policy": "include_needs_review",
+      "source_corpus_identity": "ich_s6_r1@05C41D25575259D9C931FCAD33A8227089A8B2F704C0922C0B5F7F411D812E22",
+      "calculation_policy_version": "s6-amendment-slice-0.1",
+      "effective_record_ids": ["slice.s6.eff.relevant_species_determination"],
+      "calculated_at": "2026-07-13T00:00:00Z",
+      "review_status": "needs_review",
+      "profile_details": null
+    }
+  ]
+}

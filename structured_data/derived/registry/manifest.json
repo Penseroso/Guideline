@@ -1,0 +1,12 @@
+{
+  "source_bundles": [
+    "../../pilots/m10_3_2_5_2.json",
+    "../../pilots/m10_6_1.json",
+    "../../pilots/s6_r1_species_selection.json"
+  ],
+  "artifacts": [
+    "guidance_family.json",
+    "document_edition.json",
+    "edition_source.json"
+  ]
+}

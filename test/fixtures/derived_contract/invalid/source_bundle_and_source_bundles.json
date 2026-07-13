@@ -1,0 +1,7 @@
+{
+  "source_bundle": "../../derived/minimal_source_bundle.json",
+  "source_bundles": ["../../derived/minimal_source_bundle.json"],
+  "artifacts": [
+    "../valid/guidance_family.json"
+  ]
+}

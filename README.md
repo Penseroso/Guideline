@@ -1,6 +1,6 @@
 # Regulatory Guideline Archive
 
-This repository builds a traceable structured-data archive for regulatory guidelines. The current structured pilot source is ICH M10. Phase 3 is complete for the S6(R1) foundation, source-layer pilot, derived-layer prototypes, derived validator, and provisional derived contract boundary; Phase 4 Module 4.1 is complete after REV-012. Module 4.2 is not started and now eligible to begin.
+This repository builds a traceable structured-data archive for regulatory guidelines. The current structured pilot source is ICH M10. Phase 3 is complete for the S6(R1) foundation, source-layer pilot, derived-layer prototypes, derived validator, and provisional derived contract boundary; Phase 4 Module 4.1 is complete after REV-012. Phase 4 Rebaseline R0 (pre-Module-4.2 architecture audit; DEC-049 through DEC-052) is complete after REV-013a. Module 4.2 (family registry, lifecycle artifacts, and a candidate-only vertical-slice value-path demonstration) is complete after REV-013b. Module 4.3 is not started and now eligible to begin.
 
 ## Current Status
 
@@ -18,6 +18,8 @@ This repository builds a traceable structured-data archive for regulatory guidel
 - Source model `0.2.0` remains unchanged.
 - The Module 3.3 amendment-mapping prototype and Module 3.4 effective-state prototype are frozen historical derived-layer artifacts under `structured_data/derived/`, outside the source JSON Schema and validated by the separate legacy derived-layer validator.
 - Derived schema scaffolding for contract `0.1.0` is complete in Phase 4 Module 4.1 after REV-012; Module 4.2 is not started and now eligible to begin. The production derived validator is contract-manifest based, revalidates the supplied source bundle under source model `0.2.0` before derived validation, and keeps Phase 3 prototypes as regression references, not production migration inputs. The Phase 4 single-PDF engine, FDA/EMA production profiles, full extraction, database, search, embeddings, RAG, web application, and regulatory decision automation are not started.
+- Phase 4 Rebaseline R0 is complete after REV-013a: the Phase 4 module authority is consolidated in `working_docs/phase4_plan.md`, the artifact-authority boundary is stated once in this README, CI now runs `validate:derived` and `validate:legacy`, and decisions DEC-049 (governance-policy staging with concrete Module 4.5/4.7 gates), DEC-050 (S6(R1) single integrated-package DocumentEdition), DEC-051 (registry source-Document bootstrap and multi-bundle manifest support), and DEC-052 (production-vs-frozen `structured_data/derived/` path boundary) are recorded. Module 4.2 now proceeds under this revised scope; no schema, structured-data, or validator behavior changed in R0.
+- Phase 4 Module 4.2 is complete after REV-013b: production registry artifacts (`structured_data/derived/registry/`) exist for both corpus documents; `scripts/validate_derived.js` additively supports multi-bundle manifests (`npm run validate:registry` validates the two-document registry) and structural EffectiveStateSnapshot graph checks; and two candidate-only, test-fixture vertical slices (`test/fixtures/derived_contract/m10_direct_slice/`, `.../s6_amendment_slice/`) demonstrate the registry-to-derived-to-snapshot value path against real, reviewed M10 and S6 pilot content. All Module 4.2 output carries `review_status=needs_review`; RiskAssessment and ReviewAttestation remain schema-only pending their DEC-049 governance-policy gates. See `working_docs/phase4_module_4_2.md`.
 
 ## Repository Map
 
@@ -45,12 +47,18 @@ This repository builds a traceable structured-data archive for regulatory guidel
 - `working_docs/phase4_handoff_plan.md`: historical Phase 4 single-PDF engine handoff document; superseded as an executable specification by `working_docs/phase4_plan.md` and retained as reference.
 - `working_docs/phase4_plan.md`: concretized Phase 4 module specification (modules 4.1-4.12) for the regulator-neutral engine, with the M10 baseline and S6 stress-test corpus.
 - `working_docs/phase4_module_4_1.md`: complete after REV-012, for the derived contract schema scaffold.
+- `working_docs/phase4_module_4_2.md`: complete after REV-013b, for the family registry, lifecycle artifacts, and candidate value-path slice.
 - `working_docs/pilot_review_M10.md`: completed pilot review and Phase 2 migration notes for M10 sections `3.2.5.2` and `6.1`.
 - `working_docs/review_log.md`: repository review log template and completed review records.
 - `AGENTS.md`: repository-wide operating rules for agents.
 
 ## Artifact Authority Boundary
 
-- Normative runtime contract: derived JSON Schemas, regulator profile schemas, production validator, and future generation policy/configuration.
-- Test-only: contract fixtures, M10/S6 regression samples, and invalid failure fixtures.
+This is the single normative statement of derived-layer artifact authority; other documents (for example `working_docs/phase4_module_4_1.md`) reference it rather than restate it.
+
+- Normative runtime contract: derived JSON Schemas under `structured_data/schemas/derived/`, regulator profile schemas under `structured_data/schemas/derived/profiles/`, the production contract validator `scripts/validate_derived.js`, and future generation policy/configuration created by later modules.
+- Test-only: contract fixtures and manifests under `test/fixtures/derived_contract/`, M10/S6 regression samples, and invalid failure fixtures.
 - Historical/non-normative: Phase 1-3 plans, Phase 3 prototypes, old review records, and implementation/decision history.
+- Production registry, risk, review, and snapshot artifacts (Module 4.2 onward) live under typed subfolders of `structured_data/derived/` (for example `structured_data/derived/registry/`); the two root-level files `structured_data/derived/s6_r1_amendment_mappings.json` and `structured_data/derived/s6_r1_effective_records.json` remain the frozen Phase 3 prototypes and are never relocated (DEC-052).
+
+The production engine must use only normative runtime artifacts. Phase 3 prototypes are comparison references, not production migration inputs.

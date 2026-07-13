@@ -1,0 +1,10 @@
+{
+  "source_bundle": "../../../../structured_data/pilots/m10_6_1.json",
+  "artifacts": [
+    "guidance_family.json",
+    "document_edition.json",
+    "edition_source.json",
+    "effective_record.json",
+    "effective_state_snapshot.json"
+  ]
+}

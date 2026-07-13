@@ -1,0 +1,15 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "GuidanceFamily",
+  "regulator_profile": "ich",
+  "records": [
+    {
+      "guidance_family_id": "slice.m10.family",
+      "family_title": "ICH M10 — Bioanalytical Method Validation and Study Sample Analysis",
+      "jurisdictions": ["ICH"],
+      "current_risk_assessment_id": null,
+      "review_status": "needs_review",
+      "profile_details": null
+    }
+  ]
+}

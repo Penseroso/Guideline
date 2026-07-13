@@ -1,0 +1,47 @@
+{
+  "derived_model_version": "0.1.0",
+  "artifact_type": "AmendmentMapping",
+  "regulator_profile": "ich",
+  "records": [
+    {
+      "mapping_id": "slice.s6.amend.001",
+      "guidance_family_id": "slice.s6.family",
+      "source_document_edition_id": "slice.s6.edition.integrated_package",
+      "amending_document_edition_id": "slice.s6.edition.integrated_package",
+      "source_record_ids": [
+        "ich_s6_r1.kr.part1.3_3.002",
+        "ich_s6_r1.kr.part1.3_3.003"
+      ],
+      "amending_record_ids": [
+        "ich_s6_r1.kr.part2.2_1.001",
+        "ich_s6_r1.kr.part2.2_1.002",
+        "ich_s6_r1.kr.part2.2_1.003"
+      ],
+      "relation_type": "clarifies",
+      "mapped_scope": "How a pharmacologically relevant species is determined.",
+      "analyst_rationale": "Candidate amendment-synthesis slice, source-faithful to the reviewed Module 3.3 mapping ich_s6_r1.amend.001 (REV-005) for the same endpoint pair: Part I 3.3 defines a relevant species (pharmacological activity via receptor/epitope expression) and states that a variety of techniques can identify one. Part II 2.1 explains how that determination is made in practice: target sequence homology as a starting point, in vitro binding/occupancy comparisons, and functional-activity assessment. The Addendum records elaborate on and disambiguate the evidence used to satisfy the Parent definition; they do not change it, so the relation is clarifies rather than a broadening or narrowing of scope.",
+      "original_relationship_wording": "No explicit source-text connective phrase (for example an explicit 'as described in' cross-reference) links these Addendum records to Parent 3.3; both the source_record_ids and amending_record_ids endpoints are reproduced verbatim from the reviewed source-layer pilot, and the relationship is an analyst-derived reading of the Addendum's elaboration on species-relevancy determination introduced generally in the Parent.",
+      "contextual_cross_reference_ids": [],
+      "contextual_cross_reference_note": null,
+      "source_references": [
+        {
+          "document_id": "ich_s6_r1",
+          "section_id": "ich_s6_r1.sec.part1.3_3",
+          "source_unit_id": "ich_s6_r1.su.part1.3_3.002"
+        },
+        {
+          "document_id": "ich_s6_r1",
+          "section_id": "ich_s6_r1.sec.part2.2_1",
+          "source_unit_id": "ich_s6_r1.su.part2.2_1.002"
+        },
+        {
+          "document_id": "ich_s6_r1",
+          "section_id": "ich_s6_r1.sec.part2.2_1",
+          "source_unit_id": "ich_s6_r1.su.part2.2_1.003"
+        }
+      ],
+      "review_status": "needs_review",
+      "profile_details": null
+    }
+  ]
+}
