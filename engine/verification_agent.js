@@ -30,7 +30,20 @@ const SYSTEM_PROMPT =
   "Judge strictly from the provided source text only — never use outside knowledge of " +
   "the subject matter. If the claim adds any number, condition, exception, or modality " +
   "(must/should/may) not present in the source text, entailed must be false. " +
-  "If the claim is a fair paraphrase with no added or contradicted content, entailed is true.";
+  "If the claim is a fair paraphrase with no added or contradicted content, entailed is true. " +
+  // Added after a live triage on real M10 3.2.5.2 data (working_docs/milestone_log.md
+  // M1) showed a correct, deliberately narrow criterion (e.g. a general rule split
+  // from its own exception into a separate record, per schema.md's own guidance)
+  // was being rejected for not restating a sibling record's condition/exception.
+  // Verified this addition still rejects the original range-vs-requirement
+  // distortion it was not designed to catch, so it's a scope narrowing, not a
+  // general loosening.
+  "The source text may describe several related but distinct criteria or circumstances " +
+  "(e.g. a general case and a separate exception case). The claim under review is only " +
+  "about ONE specific criterion drawn from that text. Do not reject the claim merely " +
+  "because it does not also restate a DIFFERENT criterion or exception that applies " +
+  "under different circumstances — only reject if the claim itself is unsupported or " +
+  "contradicted for its own stated circumstance.";
 
 async function verifyClaim({ claim, sourceText, client, model }) {
   if (!claim || !sourceText) {
@@ -46,22 +59,33 @@ async function verifyClaim({ claim, sourceText, client, model }) {
   return { entailed: Boolean(result.entailed), reason: result.reason };
 }
 
-// Maps the schema's comparator enum to an explicitly normative phrase.
-// Found necessary the hard way: a bare "parameter at_least N" claim (the
-// previous rendering) was verified as entailed=true against source text
-// that only *describes a range* ("can range from as little as one ... to
-// a nearly full validation") — the model read "at_least" as merely
-// compatible with the low end of a range, not as an asserted requirement.
-// The same claim, reworded to state the requirement explicitly ("must be
-// at least N — a required minimum"), was correctly rejected as not
-// entailed by the same source text on the same model. QuantitativeCriterion
-// represents a regulatory requirement (working_docs/schema.md), not a
-// description, so the claim text must say so unambiguously or entailment
-// checks can silently pass a real distortion. See working_docs/milestone_log.md M1.
+// Maps the schema's comparator enum to an explicit-but-modality-neutral
+// phrase. History (working_docs/milestone_log.md M1), both directions
+// verified against the live API:
+//   v1 (bare "parameter at_least N"): a distortion — a descriptive range
+//   ("can range from as little as one ... to a nearly full validation")
+//   turned into a QuantitativeCriterion — was verified entailed=true. The
+//   model read bare "at_least" as merely compatible with the low end of
+//   a range, not as an asserted criterion.
+//   v2 ("must be at least N — required minimum"): fixed that case, but
+//   caused a *new*, broader false-negative regression on real M10
+//   3.2.5.2 criteria — reproducible on every "should"-governed criterion,
+//   not an isolated miss (found via multi-pass self-consistency triage:
+//   7 of 9 criteria with 3/3-pass agreement, all matching known-correct
+//   values, were rejected). Root cause: QuantitativeCriterion.comparator
+//   (at_least/not_exceed/within) is a mathematical relationship, not a
+//   regulatory modality (must/should/may) — modality lives on the linked
+//   KnowledgeRecord, which this claim construction doesn't have access
+//   to. Hardcoding "must" asserted a stronger modality than the source's
+//   actual "should," and the verifier correctly flagged that mismatch.
+//   v3 (this version) asserts "this is the specified criterion value,
+//   not merely illustrative" without committing to must/should/may —
+//   verified live to pass genuine should-level M10 criteria while still
+//   rejecting the original range-vs-requirement distortion.
 const COMPARATOR_PHRASE = {
-  at_least: (value, unit) => `must be at least ${value}${unit} (this is a required minimum, not merely an observed or possible value)`,
-  not_exceed: (value, unit) => `must not exceed ${value}${unit} (this is a required maximum)`,
-  within: (value, unit) => `must be within ${value}${unit} (this is a required tolerance)`
+  at_least: (value, unit) => `at least ${value}${unit} (this is the specified criterion value for this parameter, not merely an illustrative example or descriptive range)`,
+  not_exceed: (value, unit) => `not exceeding ${value}${unit} (this is the specified criterion value for this parameter, not merely an illustrative example or descriptive range)`,
+  within: (value, unit) => `within ${value}${unit} (this is the specified criterion value for this parameter, not merely an illustrative example or descriptive range)`
 };
 
 /**
@@ -75,8 +99,15 @@ function claimTextFor(record) {
       : record.value;
     const unitSuffix = record.unit ? ` ${record.unit}` : "";
     const phrase = COMPARATOR_PHRASE[record.comparator];
-    if (phrase) return `${record.parameter} ${phrase(value, unitSuffix)}`.trim();
-    return `${record.parameter} ${record.comparator} ${value}${unitSuffix}`.trim();
+    const base = phrase ? `${record.parameter} ${phrase(value, unitSuffix)}` : `${record.parameter} ${record.comparator} ${value}${unitSuffix}`;
+    // Include denominator_or_reference (the criterion's own applicable
+    // circumstance, e.g. "at the LLOQ", "for non-accuracy and precision
+    // validation runs") when present. Without it, an exception/special-case
+    // criterion's claim reads as if it were the general rule and gets
+    // correctly rejected for overstating scope — found via a live triage
+    // on real M10 3.2.5.2 data (working_docs/milestone_log.md M1).
+    const scoped = record.denominator_or_reference ? `${base}, applicable to: ${record.denominator_or_reference}` : base;
+    return scoped.trim();
   }
   if (record.type === "condition") return record.source_text;
   return record.source_text; // knowledge_record

@@ -35,23 +35,29 @@ async function verifyKnowledgeRecord(kr, { sourceUnits, client, model }) {
   return verifyClaim({ claim, sourceText, client, model });
 }
 
-async function verifyQuantitativeCriterion(qc, { client, model }) {
+async function verifyQuantitativeCriterion(qc, { sourceUnits, client, model }) {
   const claim = claimTextFor({
     type: "quantitative_criterion",
     parameter: qc.parameter,
     comparator: qc.comparator,
     value: qc.value,
     value_fraction: qc.value_fraction,
-    unit: qc.unit
+    unit: qc.unit,
+    denominator_or_reference: qc.denominator_or_reference
   });
-  // Verified against the criterion's own extracted source_text (a
-  // deliberately minimal quote), not the full SourceUnit paragraph —
-  // known limitation, see the verification-granularity finding in
-  // working_docs/milestone_log.md M1: this can flag a correctly-scoped
-  // partial criterion (e.g. a general rule split from its own exception
-  // record) as not entailed. Not fixed here; tracked, not silently
-  // patched over.
-  return verifyClaim({ claim, sourceText: qc.source_text, client, model });
+  // Verified against the FULL SourceUnit paragraph, not the criterion's
+  // own minimal source_text quote. Fixed after a live-API triage
+  // (working_docs/milestone_log.md M1) showed the narrow quote alone
+  // routinely omits the parameter noun itself (e.g. "accuracy") when it
+  // sits earlier in the sentence than the number — the verifier then
+  // correctly, but unhelpfully, rejects claims for lacking context the
+  // narrow quote never included. Verified live this doesn't reintroduce
+  // the earlier over-strictness problem (a general-rule criterion no
+  // longer gets flagged just because the full paragraph also states a
+  // sibling record's exception) now that the claim wording (§ above) no
+  // longer asserts "must" either.
+  const sourceText = sourceTextForUnits(sourceUnits, [qc.source_unit_id]) || qc.source_text;
+  return verifyClaim({ claim, sourceText, client, model });
 }
 
 async function verifyCondition(condition, { sourceUnits, client, model }) {
@@ -82,7 +88,7 @@ async function verifyDraft(draft, { sourceUnits, client, model }) {
 
   const quantitative_criteria = [];
   for (const qc of draft.quantitative_criteria) {
-    const v = await verifyQuantitativeCriterion(qc, { client, model });
+    const v = await verifyQuantitativeCriterion(qc, { sourceUnits, client, model });
     report.push({ id: qc.criterion_id, type: "quantitative_criterion", ...v });
     quantitative_criteria.push({ ...qc, review_status: v.entailed ? "reviewed" : "needs_review" });
   }
