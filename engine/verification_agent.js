@@ -32,7 +32,7 @@ const SYSTEM_PROMPT =
   "(must/should/may) not present in the source text, entailed must be false. " +
   "If the claim is a fair paraphrase with no added or contradicted content, entailed is true.";
 
-async function verifyClaim({ claim, sourceText, client }) {
+async function verifyClaim({ claim, sourceText, client, model }) {
   if (!claim || !sourceText) {
     return { entailed: false, reason: "missing claim or source_text to check against" };
   }
@@ -40,10 +40,29 @@ async function verifyClaim({ claim, sourceText, client }) {
   const result = await client.complete({
     system: SYSTEM_PROMPT,
     messages: [{ role: "user", content: userText }],
-    schema: entailmentSchema()
+    schema: entailmentSchema(),
+    ...(model ? { model } : {})
   });
   return { entailed: Boolean(result.entailed), reason: result.reason };
 }
+
+// Maps the schema's comparator enum to an explicitly normative phrase.
+// Found necessary the hard way: a bare "parameter at_least N" claim (the
+// previous rendering) was verified as entailed=true against source text
+// that only *describes a range* ("can range from as little as one ... to
+// a nearly full validation") — the model read "at_least" as merely
+// compatible with the low end of a range, not as an asserted requirement.
+// The same claim, reworded to state the requirement explicitly ("must be
+// at least N — a required minimum"), was correctly rejected as not
+// entailed by the same source text on the same model. QuantitativeCriterion
+// represents a regulatory requirement (working_docs/schema.md), not a
+// description, so the claim text must say so unambiguously or entailment
+// checks can silently pass a real distortion. See working_docs/milestone_log.md M1.
+const COMPARATOR_PHRASE = {
+  at_least: (value, unit) => `must be at least ${value}${unit} (this is a required minimum, not merely an observed or possible value)`,
+  not_exceed: (value, unit) => `must not exceed ${value}${unit} (this is a required maximum)`,
+  within: (value, unit) => `must be within ${value}${unit} (this is a required tolerance)`
+};
 
 /**
  * Builds the natural-language claim to verify for one of
@@ -54,7 +73,10 @@ function claimTextFor(record) {
     const value = record.value_fraction
       ? `${record.value_fraction.numerator}/${record.value_fraction.denominator}`
       : record.value;
-    return `${record.parameter} ${record.comparator} ${value}${record.unit ? " " + record.unit : ""}`.trim();
+    const unitSuffix = record.unit ? ` ${record.unit}` : "";
+    const phrase = COMPARATOR_PHRASE[record.comparator];
+    if (phrase) return `${record.parameter} ${phrase(value, unitSuffix)}`.trim();
+    return `${record.parameter} ${record.comparator} ${value}${unitSuffix}`.trim();
   }
   if (record.type === "condition") return record.source_text;
   return record.source_text; // knowledge_record

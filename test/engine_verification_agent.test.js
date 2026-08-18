@@ -27,10 +27,18 @@ test("verifyClaim sends the source text and claim to the client and returns its 
   assert.match(captured.messages[0].content, /at least 5 replicates at each QC level/);
 });
 
-test("claimTextFor builds a compact claim from a quantitative_criterion record", () => {
+test("claimTextFor makes the comparator's normative force explicit, not just 'parameter comparator value'", () => {
+  // Bare "parameter at_least N" was verified as entailed=true against
+  // source text that only described a range ("can range from as little
+  // as one ... to a nearly full validation") — the model didn't read a
+  // bare "at_least" as an asserted requirement. Explicit "must be..."
+  // phrasing fixed it (working_docs/milestone_log.md M1); this test
+  // guards the fix doesn't silently regress back to the ambiguous form.
   const { records } = loadStore();
   const qc = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
-  assert.equal(claimTextFor(qc), "replicates at_least 5 replicates");
+  const claim = claimTextFor(qc);
+  assert.match(claim, /must be at least 5/);
+  assert.match(claim, /required minimum/);
 });
 
 test("verifyRecord round-trips a real answerable record through the (mocked) verification agent", async () => {
