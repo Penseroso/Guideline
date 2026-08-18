@@ -105,7 +105,18 @@ const SIBLING_SIGNALS = [
   (qc, other) => Boolean(qc.knowledge_record_id) && other.knowledge_record_id === qc.knowledge_record_id && sameIdSet(qc.condition_ids, other.condition_ids)
 ];
 
+// working_docs/schema.md M1 (model 0.3.0): QuantitativeCriterion.joint_with_ids
+// is now a grounded, extraction-time-declared, validator-enforced-reciprocal
+// fact — when a criterion has it populated, that's authoritative and the
+// heuristic SIGNAL inference below is skipped entirely for it, rather than
+// unioned with the heuristics. Only criteria without a populated
+// joint_with_ids (legacy records predating this field, or genuinely
+// independent ones) fall back to heuristic inference.
 function siblingCriteria(qc, allCriteria) {
+  if ((qc.joint_with_ids || []).length > 0) {
+    const declared = new Set(qc.joint_with_ids);
+    return (allCriteria || []).filter((other) => declared.has(other.criterion_id));
+  }
   return (allCriteria || []).filter((other) => {
     if (other.criterion_id === qc.criterion_id) return false;
     return SIBLING_SIGNALS.some((signal) => signal(qc, other));

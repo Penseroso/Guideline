@@ -93,6 +93,63 @@ test("finalizeDraft assigns real IDs, remaps temp_id cross-links, and forces rev
   assert.deepEqual(result.conditions[0].applies_to_ids, ["ich_m10.kr.6_1.001"], "applies_to_temp_ids must resolve too");
 });
 
+test("finalizeDraft resolves joint_with_temp_ids to real criterion_ids and enforces reciprocity even when the model declares it one-sidedly", () => {
+  const section = { document_id: "ich_m10", section_id: "ich_m10.sec.3_2_5_2", section_number: "3.2.5.2", title: "Evaluation of Accuracy and Precision" };
+  const allowedSourceUnitIds = ["ich_m10.su.3_2_5_2.005"];
+
+  const draft = {
+    conditions: [],
+    knowledge_records: [],
+    quantitative_criteria: [
+      {
+        temp_id: 1, source_unit_id: "ich_m10.su.3_2_5_2.005", knowledge_record_temp_id: null, condition_temp_ids: [],
+        joint_with_temp_ids: [2, 3], // declares both partners
+        parameter: "total QCs", comparator: "at_least", value: null,
+        value_fraction: { numerator: 2, denominator: 3 }, unit: "fraction", value_status: "known",
+        denominator_or_reference: "total QCs", source_text: "at least 2/3 of the total QCs"
+      },
+      {
+        temp_id: 2, source_unit_id: "ich_m10.su.3_2_5_2.005", knowledge_record_temp_id: null, condition_temp_ids: [],
+        joint_with_temp_ids: [], // one-sided: does NOT declare temp_id 1 back
+        parameter: "QCs at each level", comparator: "at_least", value: 50, value_fraction: null, unit: "%",
+        value_status: "known", denominator_or_reference: "each level", source_text: "at least 50% at each concentration level"
+      },
+      {
+        temp_id: 3, source_unit_id: "ich_m10.su.3_2_5_2.005", knowledge_record_temp_id: null, condition_temp_ids: [],
+        joint_with_temp_ids: [1], // declares 1, not 2
+        parameter: "QC values", comparator: "within", value: 15, value_fraction: null, unit: "%",
+        value_status: "known", denominator_or_reference: "nominal values", source_text: "within ±15%"
+      }
+    ]
+  };
+
+  const { quantitative_criteria } = finalizeDraft(draft, { section, allowedSourceUnitIds });
+  const [q1, q2, q3] = quantitative_criteria;
+
+  assert.deepEqual(q1.joint_with_ids.sort(), [q2.criterion_id, q3.criterion_id].sort());
+  assert.deepEqual(q2.joint_with_ids.sort(), [q1.criterion_id, q3.criterion_id].sort(), "q2 must be symmetrized in even though it declared nothing itself");
+  assert.deepEqual(q3.joint_with_ids.sort(), [q1.criterion_id, q2.criterion_id].sort(), "q3 must gain q2 via symmetrization even though only q1<->q3 was mutually declared directly");
+});
+
+test("finalizeDraft drops a self-referencing joint_with_temp_ids entry", () => {
+  const section = { document_id: "ich_m10", section_id: "ich_m10.sec.3_2_5_2", section_number: "3.2.5.2", title: "Evaluation of Accuracy and Precision" };
+  const allowedSourceUnitIds = ["ich_m10.su.3_2_5_2.005"];
+  const draft = {
+    conditions: [],
+    knowledge_records: [],
+    quantitative_criteria: [
+      {
+        temp_id: 1, source_unit_id: "ich_m10.su.3_2_5_2.005", knowledge_record_temp_id: null, condition_temp_ids: [],
+        joint_with_temp_ids: [1],
+        parameter: "x", comparator: "at_least", value: 1, value_fraction: null, unit: null,
+        value_status: "known", denominator_or_reference: null, source_text: "x"
+      }
+    ]
+  };
+  const { quantitative_criteria } = finalizeDraft(draft, { section, allowedSourceUnitIds });
+  assert.deepEqual(quantitative_criteria[0].joint_with_ids, []);
+});
+
 test("extractSection calls the client with the section's source units and returns finalized records (mocked client, no network)", async () => {
   const section = { document_id: "ich_m10", section_id: "ich_m10.sec.6_1", section_number: "6.1", title: "Partial Validation" };
   const sourceUnits = [

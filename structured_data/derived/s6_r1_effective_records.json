@@ -20,7 +20,7 @@
       "edition_context": {
         "document_id": "ich_s6_r1",
         "document_version_label": "Current Step 4 version; Parent Guideline dated 16 July 1997; Addendum dated 12 June 2011 incorporated at the end of June 2011",
-        "source_model_version": "0.2.0",
+        "source_model_version": "0.3.0",
         "source_availability": "integrated Parent/Addendum package",
         "source_pilot_file": "structured_data/pilots/s6_r1_species_selection.json",
         "amendment_mapping_file": "structured_data/derived/s6_r1_amendment_mappings.json",
@@ -56,7 +56,7 @@
       "edition_context": {
         "document_id": "ich_s6_r1",
         "document_version_label": "Current Step 4 version; Parent Guideline dated 16 July 1997; Addendum dated 12 June 2011 incorporated at the end of June 2011",
-        "source_model_version": "0.2.0",
+        "source_model_version": "0.3.0",
         "source_availability": "integrated Parent/Addendum package",
         "source_pilot_file": "structured_data/pilots/s6_r1_species_selection.json",
         "amendment_mapping_file": "structured_data/derived/s6_r1_amendment_mappings.json",
@@ -95,7 +95,7 @@
       "edition_context": {
         "document_id": "ich_s6_r1",
         "document_version_label": "Current Step 4 version; Parent Guideline dated 16 July 1997; Addendum dated 12 June 2011 incorporated at the end of June 2011",
-        "source_model_version": "0.2.0",
+        "source_model_version": "0.3.0",
         "source_availability": "integrated Parent/Addendum package",
         "source_pilot_file": "structured_data/pilots/s6_r1_species_selection.json",
         "amendment_mapping_file": "structured_data/derived/s6_r1_amendment_mappings.json",
@@ -141,7 +141,7 @@
       "edition_context": {
         "document_id": "ich_s6_r1",
         "document_version_label": "Current Step 4 version; Parent Guideline dated 16 July 1997; Addendum dated 12 June 2011 incorporated at the end of June 2011",
-        "source_model_version": "0.2.0",
+        "source_model_version": "0.3.0",
         "source_availability": "integrated Parent/Addendum package",
         "source_pilot_file": "structured_data/pilots/s6_r1_species_selection.json",
         "amendment_mapping_file": "structured_data/derived/s6_r1_amendment_mappings.json",

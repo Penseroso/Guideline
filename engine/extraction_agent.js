@@ -45,9 +45,20 @@ function draftQuantitativeCriterionSchema() {
   const schema = withTempId(src, {
     drop: ["criterion_id", "review_status"],
     keep: ["source_unit_id", "parameter", "comparator", "value", "value_fraction", "unit", "value_status", "denominator_or_reference", "source_text"],
-    replaceWithTempIdArray: { knowledge_record_id: "knowledge_record_temp_id", condition_ids: "condition_temp_ids" }
+    replaceWithTempIdArray: { knowledge_record_id: "knowledge_record_temp_id", condition_ids: "condition_temp_ids", joint_with_ids: "joint_with_temp_ids" }
   });
   schema.properties.value_fraction = nullableFractionSchema();
+  // Reciprocity (schema.md: "A.joint_with_ids includes B => B.joint_with_ids
+  // includes A") is enforced in code below (see the symmetrization pass in
+  // finalizeDraft), not left to the model to get right on its own — same
+  // trust posture as temp_id itself: the model proposes, deterministic code
+  // guarantees the invariant.
+  schema.properties.joint_with_temp_ids.description =
+    "temp_ids of OTHER QuantitativeCriterion drafts in this same call that, together with this one, " +
+    "jointly restate a single compound source statement — all values must hold AT THE SAME TIME " +
+    "(e.g. a count-fraction threshold and the tolerance that fraction must meet, both from one sentence). " +
+    "Do NOT use this to link a general criterion to its own exception (e.g. a general threshold and a " +
+    "separate LLOQ threshold) — those are alternatives, not a joint/concurrent statement. Leave empty when independent.";
   return schema;
 }
 
@@ -218,8 +229,16 @@ function finalizeDraft(draft, { section, allowedSourceUnitIds }) {
     };
   });
 
-  const quantitativeCriteria = (draft.quantitative_criteria || []).map((qc, i) => ({
-    criterion_id: nextId(documentId, "qc", section.section_number, i + 1),
+  // criterion_id must be assigned before joint_with_ids can be resolved
+  // (criteria reference each other, unlike KR/Condition which are only
+  // referenced one-directionally) — a separate id-assignment pass first.
+  const qcIdByTempId = new Map();
+  (draft.quantitative_criteria || []).forEach((qc, i) => {
+    qcIdByTempId.set(qc.temp_id, nextId(documentId, "qc", section.section_number, i + 1));
+  });
+
+  const quantitativeCriteria = (draft.quantitative_criteria || []).map((qc) => ({
+    criterion_id: qcIdByTempId.get(qc.temp_id),
     source_unit_id: allowedSourceUnitIds.includes(qc.source_unit_id) ? qc.source_unit_id : null,
     knowledge_record_id: krIdByTempId.get(qc.knowledge_record_temp_id) ?? null,
     parameter: qc.parameter,
@@ -230,9 +249,43 @@ function finalizeDraft(draft, { section, allowedSourceUnitIds }) {
     value_status: qc.value_status,
     denominator_or_reference: qc.denominator_or_reference ?? null,
     condition_ids: (qc.condition_temp_ids || []).map((t) => conditionIdByTempId.get(t)).filter(Boolean),
+    joint_with_ids: (qc.joint_with_temp_ids || [])
+      .map((t) => qcIdByTempId.get(t))
+      .filter((id) => id && id !== qcIdByTempId.get(qc.temp_id)),
     source_text: qc.source_text,
     review_status: "needs_review"
   }));
+
+  // joint_with_ids is symmetric AND transitive by definition (every member
+  // is a facet of ONE compound source statement, not a "friend of a
+  // friend" social link) — so even a partial chain from the model (e.g.
+  // q1 declares {q2,q3}, q3 declares {q1}, q2 declares nothing) is closed
+  // into the full clique everyone in the chain belongs to, not just made
+  // pairwise-reciprocal. Enforces the schema.md reciprocity invariant
+  // (validated by scripts/validate_structured_data.js) without trusting
+  // the model to declare every direction itself.
+  const adjacency = new Map(quantitativeCriteria.map((qc) => [qc.criterion_id, new Set(qc.joint_with_ids)]));
+  for (const qc of quantitativeCriteria) {
+    for (const otherId of qc.joint_with_ids) {
+      adjacency.get(otherId)?.add(qc.criterion_id);
+    }
+  }
+  const componentOf = new Map();
+  for (const qc of quantitativeCriteria) {
+    if (componentOf.has(qc.criterion_id)) continue;
+    const stack = [qc.criterion_id];
+    const component = new Set();
+    while (stack.length) {
+      const id = stack.pop();
+      if (component.has(id)) continue;
+      component.add(id);
+      for (const neighbor of adjacency.get(id) || []) stack.push(neighbor);
+    }
+    for (const id of component) componentOf.set(id, component);
+  }
+  for (const qc of quantitativeCriteria) {
+    qc.joint_with_ids = [...componentOf.get(qc.criterion_id)].filter((id) => id !== qc.criterion_id).sort();
+  }
 
   // Resolve applies_to_ids now that knowledge_record/criterion real IDs exist.
   // The draft schema only asked for temp-id references to *records

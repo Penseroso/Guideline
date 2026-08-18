@@ -2,7 +2,7 @@
 
 Document status: Draft
 
-Schema model version: `0.2.0`
+Schema model version: `0.3.0`
 
 ## Purpose and scope
 
@@ -105,7 +105,7 @@ Core fields:
 - `document_version_label`: Version or publication label as supported by the source.
 - `source_file_path`: Path to the immutable source file.
 - `source_file_checksum`: Checksum of the source file used for extraction or review.
-- `schema_model_version`: Model version used for records derived from the document. Current value: `0.2.0`.
+- `schema_model_version`: Model version used for records derived from the document. Current value: `0.3.0`.
 
 ### Section
 
@@ -223,6 +223,7 @@ Core fields:
 - `value_status`: Status of the typed value.
 - `denominator_or_reference`: Reference basis, for example nominal concentration, total QCs, or concentration level.
 - `condition_ids`: Conditions or exceptions that affect the criterion.
+- `joint_with_ids`: Other `QuantitativeCriterion` records that, together with this one, jointly restate a single compound source statement (all must hold at once — not alternatives, not a general-rule/exception pair). Empty array when this criterion is independent.
 - `source_text`: Source text supporting the criterion.
 - `review_status`: Review state.
 
@@ -240,9 +241,11 @@ For `QuantitativeCriterion`:
 - Exact source expressions such as `2/3` use `value=null`, `value_fraction={"numerator":2,"denominator":3}`, `unit="fraction"`, and preserve the exact source expression in `source_text`.
 - `denominator_or_reference` retains the reference basis, such as total QCs, when applicable.
 
-Use multiple `QuantitativeCriterion` records when one sentence contains both a general criterion and an exception criterion, such as a general threshold and an LLOQ threshold.
+Use multiple `QuantitativeCriterion` records when one sentence contains both a general criterion and an exception criterion, such as a general threshold and an LLOQ threshold. Do not link a general criterion and its own exception via `joint_with_ids` — they are alternatives (the exception's circumstance excludes the general one), not a compound statement that must hold all at once. `joint_with_ids` is reserved for records that split one sentence's *concurrent* numeric facts, such as a count-fraction threshold and the tolerance value that fraction must meet (e.g. "at least 2/3 of QCs... within ±15%").
 
-`QuantitativeCriterion` uses `condition_ids` only. There is no separate `exception_ids` field.
+`joint_with_ids` must be declared reciprocally: if `A.joint_with_ids` includes `B`, `B.joint_with_ids` must include `A`. This is enforced by the validator (`scripts/validate_structured_data.js`) so the relationship is always a grounded, extractor-time fact rather than inferred later from incidental structural similarity (e.g. a shared `knowledge_record_id`), which was found to produce false positives (`working_docs/milestone_log.md` M1: a general accuracy criterion and its own LLOQ exception were once wrongly inferred as "jointly applicable" from a shared `knowledge_record_id` alone).
+
+`QuantitativeCriterion` uses `condition_ids` and `joint_with_ids` only. There is no separate `exception_ids` field.
 
 ### Condition
 
@@ -310,6 +313,7 @@ Use `npm run validate -- <json-file> [json-file ...]` to validate explicit files
 - `QuantitativeCriterion.source_unit_id` preserves the direct source anchor.
 - `QuantitativeCriterion.knowledge_record_id` links a criterion to a semantic statement when available.
 - `QuantitativeCriterion.condition_ids` links criteria to applicability conditions or exceptions.
+- `QuantitativeCriterion.joint_with_ids` links criteria that jointly restate one compound source statement; always reciprocal.
 - `QuantitativeCriterion.value_fraction` preserves exact source fractions without replacing them with approximate decimals.
 - `Condition.applies_to_ids` links conditions to affected source units, semantic records, or quantitative criteria.
 - `CrossReference.source_unit_id` preserves the source anchor for reference text.
@@ -354,3 +358,7 @@ A recall/completeness audit (`working_docs/milestone_log.md` M1, 2026-08-18) fou
 - **Concessive framing clauses** ("even where X may be necessary...") that set up a contrast rather than state a precondition — read as prose framing, not a `Condition.condition_type=precondition`.
 
 A compound sentence combining a descriptive clause and a regulatory determination (e.g. "X may be misleading and are discouraged") is not split into two `KnowledgeRecord`s and does not need a new `record_type` value to hold both senses — merge into one record's `action`/`original_modal_text` (already-established pattern, e.g. `ich_s6_r1.kr.part2.2_2.006`), keeping `record_type` set to whichever sense is the operative regulatory determination.
+
+## Model 0.3.0: `QuantitativeCriterion.joint_with_ids`
+
+Added 2026-08-18 (`working_docs/milestone_log.md` M1) after a verification-agent investigation found that the "is this criterion part of a larger compound statement" relationship had no grounded representation anywhere in the archive — it was being inferred after the fact from incidental structural similarity (a shared `knowledge_record_id`, overlapping `condition_ids`), and that inference was demonstrably wrong at least once (grouping a general rule with its own exception as if they were concurrent facts). A schema change was considered and rejected for the underlying values themselves — `QuantitativeCriterion` still holds exactly one of `value`/`value_fraction` per record, because the sub-facts of a compound statement (e.g. a count-fraction threshold and the tolerance it must meet) are independently true and may vary independently in a future amendment, and merging them into one multi-value record would only relocate the same complexity, not remove it. What the archive was actually missing was a place to *state* the joint relationship as a fact grounded at extraction time, instead of leaving it to be inferred later. `joint_with_ids` fills that gap as an additive, reciprocal-only link field; it does not replace or loosen the existing one-value-per-record rule.

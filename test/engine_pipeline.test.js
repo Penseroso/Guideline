@@ -167,6 +167,17 @@ test("verifyKnowledgeRecord does not duplicate the modal wording when action alr
   assert.equal(occurrences, 1, "must not append a redundant duplicate of wording already present in the recomposed claim");
 });
 
+test("siblingCriteria trusts an explicitly-declared joint_with_ids over heuristic signals, even when they'd disagree", () => {
+  // Explicit field says "not joint" despite a heuristic signal (shared
+  // knowledge_record_id + equal condition_ids) that would otherwise group
+  // them — explicit, extraction-time-grounded data must win.
+  const qcA = { criterion_id: "qc.a", knowledge_record_id: "kr.001", condition_ids: [], joint_with_ids: ["qc.c"] };
+  const qcB = { criterion_id: "qc.b", knowledge_record_id: "kr.001", condition_ids: [] }; // no joint_with_ids: heuristic-eligible
+  const qcC = { criterion_id: "qc.c", knowledge_record_id: "kr.999", condition_ids: [] };
+  const siblings = siblingCriteria(qcA, [qcA, qcB, qcC]);
+  assert.deepEqual(siblings.map((s) => s.criterion_id), ["qc.c"], "explicit joint_with_ids must be used as-is, not unioned with the heuristic-matched qc.b");
+});
+
 test("siblingCriteria groups criteria sharing a knowledge_record_id", () => {
   const qcA = { criterion_id: "qc.a", knowledge_record_id: "kr.001", condition_ids: [] };
   const qcB = { criterion_id: "qc.b", knowledge_record_id: "kr.001", condition_ids: [] };

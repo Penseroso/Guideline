@@ -163,6 +163,16 @@ function checkReferencesAndRules(file, bundle, archiveIds, errors) {
     for (const conditionId of criterion.condition_ids || []) {
       requireLocal(errors, file, indexes, conditionId, "condition_ids", criterion.criterion_id, ["conditions"]);
     }
+    for (const jointId of criterion.joint_with_ids || []) {
+      if (jointId === criterion.criterion_id) {
+        addError(errors, file, criterion.criterion_id, "joint_with_ids", "must not reference itself");
+        continue;
+      }
+      const jointCriterion = requireLocal(errors, file, indexes, jointId, "joint_with_ids", criterion.criterion_id, ["quantitative_criteria"]);
+      if (jointCriterion && !(jointCriterion.joint_with_ids || []).includes(criterion.criterion_id)) {
+        addError(errors, file, criterion.criterion_id, "joint_with_ids", `must be reciprocated by ${jointId} (declares this relationship one-sidedly)`);
+      }
+    }
     const hasValue = criterion.value !== null && criterion.value !== undefined;
     const hasFraction = criterion.value_fraction !== null && criterion.value_fraction !== undefined;
     if (criterion.value_status === "known" && hasValue === hasFraction) {
