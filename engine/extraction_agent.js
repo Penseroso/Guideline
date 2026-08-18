@@ -133,7 +133,29 @@ async function extractSection({ section, sourceUnits, client }) {
     "Only use information present in the given source units. " +
     "Never invent a source_unit_id that wasn't provided. " +
     "Never restate or paraphrase whole paragraphs as source_text/condition_text — " +
-    "quote the exact minimal supporting excerpt from the given source units.";
+    "quote the exact minimal supporting excerpt from the given source units. " +
+    // Added after a real dry-run (M10 3.2.5.2) showed 0 wrong values but
+    // real under-extraction: a quantitative fact embedded in a sentence
+    // already captured as a KnowledgeRecord did not also get its own
+    // QuantitativeCriterion. The schema already supported it (the
+    // human-reviewed archive has the same record) — the prompt just
+    // never told the model to keep decomposing after the first hit.
+    "Be exhaustive, not just non-fabricating: a sentence can produce a KnowledgeRecord " +
+    "AND one or more QuantitativeCriterion/Condition records at the same time. Do not stop " +
+    "at the first record type that fits — if a sentence already captured as a KnowledgeRecord " +
+    "also contains a number+comparator+unit, or a distinct applicability/scope/precondition/exception " +
+    "clause, extract those too as their own records, exactly as you would if the sentence had not " +
+    "already produced a KnowledgeRecord.";
+  // A follow-up instruction telling the model not to duplicate Condition
+  // objects was tried and measured against the same section: it fixed
+  // one duplicate (LLOQ merged correctly via applies_to_temp_ids) but
+  // regressed QuantitativeCriterion recall (12/12 -> 10/12) and caused a
+  // *worse* new failure mode (fragmenting plain descriptive qualifiers
+  // like "at each concentration level" into spurious Condition records).
+  // Reverted. Three prompt versions on one section produced non-monotonic
+  // results (QC 11->12->10, Condition 5->10->12) — tuning further against
+  // a single section is not reliable signal; needs a multi-section eval
+  // before another attempt (see working_docs/milestone_log.md).
 
   const userText = [
     `Section ${section.section_number}: ${section.title}`,
