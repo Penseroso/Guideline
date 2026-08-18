@@ -6,20 +6,17 @@ Schema model version: `0.3.0`
 
 ## Purpose and scope
 
-This document defines the minimum data model for preserving regulatory guideline content as traceable structured data. The model is based on the current ICH M10 pilot design scope:
+This document defines the minimum data model for preserving regulatory guideline content as traceable structured data, and grounds the retrieval/answer layer built on top of it (`engine/`, `working_docs/product_roadmap.md`). Three sections are fully reviewed under this model (content-fidelity and recall audited against the source PDFs, not just schema-valid):
 
-- `3.2.5.2 Evaluation of Accuracy and Precision`
-- `6.1 Partial Validation`
+- ICH M10 `3.2.5.2 Evaluation of Accuracy and Precision`
+- ICH M10 `6.1 Partial Validation`
+- ICH S6(R1) species selection
 
 The model is intended for source preservation and knowledge structuring. It is not a regulatory decision engine and must not create requirements, recommendations, study-design advice, or suitability conclusions that are not present in the source.
 
-Model `0.2.0` is implemented as a machine-validatable JSON bundle contract with JSON Schema plus reusable validation rules. It does not define full-guideline extraction, database storage, search, embeddings, RAG, regulatory decision logic, or an application interface.
+Model `0.3.0` is implemented as a machine-validatable JSON bundle contract with JSON Schema (`structured_data/schemas/guideline_bundle.schema.json`) plus a reusable validator (`scripts/validate_structured_data.js`). It defines source preservation and knowledge structuring only — extraction/verification agents, retrieval, and generation live in `engine/`, not in this model.
 
-Phase 2 implementation and selected M10 structural pressure testing are complete, and model `0.2.0` is retained. Phase 3 is complete after REV-011. The S6(R1) source-layer pilot validated source model `0.2.0` without requiring a source schema change, and later Phase 3 modules documented reviewed derived-layer prototypes, derived-layer validation, and the provisional derived contract boundary.
-
-The provisional AmendmentMapping layer and `EffectiveRecord` concept are derived-layer designs documented in `working_docs/amendment_effective_strategy.md`, `working_docs/amendment_prototype_S6_R1.md`, `working_docs/effective_state_prototype_S6_R1.md`, and `working_docs/derived_contract_module_3_6.md`. They are not part of source model `0.2.0`, are not represented in the current source JSON Schema, and are validated separately by `scripts/validate_derived.js`. Phase 4 is planned but not started.
-
-The files `structured_data/pilots/m10_phase2_table_pressure.json` and `structured_data/pilots/m10_phase2_reference_condition_pressure.json` are reviewed structural probes for model pressure testing. They should later be retired or absorbed if the same leaf sections are replaced by fuller canonical bundles.
+An earlier derived-layer design (AmendmentMapping, EffectiveRecord, a family/edition registry) was explored but never adopted into the product build; it is archived at `history/derived_contract_layer/` (see `history/README.md`) rather than described here as current.
 
 ## Core principles
 

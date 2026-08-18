@@ -1,7 +1,5 @@
 # Project Scope
 
-Status note (2026-08-18): The original Phase 0-4 plan and its non-goal boundary excluding search, embeddings, RAG, and any application layer are superseded. Those superseded planning documents are archived under `history/`. The active product direction, target product profile, and implementation approach now live in `working_docs/product_roadmap.md`; this document is updated to match. The data-layer status below (source model `0.2.0`, pilots, derived contract scaffold) remains accurate and unaffected by the pivot.
-
 ## Mission and Product Value
 
 Build a traceable regulatory knowledge archive that preserves official guideline source text and supports reusable structured records. The archive should help users find relevant regulatory statements, understand requirements, quantitative criteria, conditions, and exceptions, verify results against exact source text and PDF locations, compare related content across sections and later documents, and reuse reviewed structured information.
@@ -18,27 +16,9 @@ The foundation must preserve source traceability, separate source-derived record
 
 ## Current Status
 
-Phase 2 Data Contract and Validation is complete for the current ICH M10 pilot. Phase 1 produced reviewed pilot JSON for ICH M10 sections `3.2.5.2` and `6.1`; Phase 2 formalized that pilot into model `0.2.0`, JSON Schema, and reusable validation scripts. Selected M10 structural pressure testing is also complete, and model `0.2.0` is retained.
-
-The current structured pilot document remains ICH M10, with the source PDF at `Guideline Files/ICH M10.pdf`, the PDF assessment at `working_docs/pdf_assessment_M10.md`, the data model at `working_docs/schema.md`, and pilot outputs under `structured_data/pilots/`.
-
-The files `structured_data/pilots/m10_phase2_table_pressure.json` and `structured_data/pilots/m10_phase2_reference_condition_pressure.json` are reviewed structural probes, not fuller canonical bundles for their leaf sections. They should later be retired or absorbed if those same leaf sections are replaced by fuller canonical bundles.
-
-Phase 3 is complete after REV-011. Modules 3.0 through 3.6 completed the S6(R1) foundation, approved Parent-Addendum pilot scope, reviewed source-layer pilot, reviewed amendment-relation prototype, reviewed current effective-state prototype, derived-layer validator, and provisional derived-layer contract plus Phase 4 handoff plan.
-
-Source model `0.2.0` remains unchanged. AmendmentMapping and `EffectiveRecord` Phase 3 prototypes are frozen historical derived-layer artifacts under `structured_data/derived/`, documented in `working_docs/amendment_effective_strategy.md`, `working_docs/amendment_prototype_S6_R1.md`, and `working_docs/effective_state_prototype_S6_R1.md`. They remain outside the source JSON Schema and are validated separately by `scripts/validate_legacy_derived.js`. Module 3.6 documents the provisional derived-layer contract boundary in `working_docs/derived_contract_module_3_6.md`. Phase 4 Module 4.1 is implemented, pending independent repository review, with production derived contract validation isolated in `scripts/validate_derived.js`.
-
-## Project Phases
-
-- Phase 0 - Foundation Alignment: align documentation, roles, terminology, and current status.
-- Phase 1 - M10 Pilot: create a limited reviewed JSON pilot from ICH M10 using the conceptual model.
-- Phase 2 - Data Contract and Validation: complete for the current M10 pilots and selected M10 structural pressure tests.
-- Phase 3 - S6 Foundation and Derived-Layer Strategy: complete after REV-011; source model `0.2.0` is retained, derived-layer prototypes and validation are reviewed, and the provisional derived contract plus Phase 4 handoff plan are documented.
-- Phase 4 - Single-guideline full-processing engine: Module 4.1 implemented, pending independent repository review; later engine modules are not started.
+See `working_docs/milestone_log.md` for the active, up-to-date status and decision record — it is updated with every roadmap milestone, this file is not. For historical Phase 0-4 process narration (superseded), see `history/README.md`.
 
 ## Non-Goals
-
-Superseded (2026-08-18): "Database, search, embedding, RAG, or web application implementation" and "Additional S6 JSON pilot creation outside the approved Module 3.2 scope" are no longer non-goals — building that application layer and expanding coverage are now the point. See `working_docs/product_roadmap.md` for what replaces them. "Schema changes before an actual pilot demonstrates a limitation" and "Automated extraction script implementation" are also live questions again as coverage expands, not fixed exclusions; treat schema/extraction-automation changes as decisions requiring a `working_docs/milestone_log.md` entry rather than as pre-ruled-out.
 
 The following remain outside scope unless explicitly requested, because they are a product-boundary decision (what the assistant is allowed to conclude), not an implementation-layer decision (what gets built):
 
@@ -47,3 +27,5 @@ The following remain outside scope unless explicitly requested, because they are
 - Automated decision making.
 - Go/No-Go judgments.
 - Scoring systems.
+
+Schema changes and extraction-automation changes are live decisions requiring a `working_docs/milestone_log.md` entry, not pre-ruled-out — see `working_docs/schema.md`'s evidence-first extension policy.

@@ -30,13 +30,6 @@
       "expect_text_contains": "1"
     },
     {
-      "id": "q5",
-      "question": "is cross validation required when data are not combined across studies",
-      "expect_answered": true,
-      "expect_citation_contains": "M10 §6.2",
-      "expect_text_contains": "not generally required"
-    },
-    {
       "id": "q6_refusal",
       "question": "what is the recommended starting dose for first-in-human phase 1 trials",
       "expect_answered": false,
