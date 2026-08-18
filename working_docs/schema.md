@@ -16,7 +16,7 @@ The model is intended for source preservation and knowledge structuring. It is n
 
 Model `0.3.0` is implemented as a machine-validatable JSON bundle contract with JSON Schema (`structured_data/schemas/guideline_bundle.schema.json`) plus a reusable validator (`scripts/validate_structured_data.js`). It defines source preservation and knowledge structuring only — extraction/verification agents, retrieval, and generation live in `engine/`, not in this model.
 
-An earlier derived-layer design (AmendmentMapping, EffectiveRecord, a family/edition registry) was explored but never adopted into the product build; it is archived at `history/derived_contract_layer/` (see `history/README.md`) rather than described here as current.
+An earlier derived-layer design (AmendmentMapping, EffectiveRecord, a family/edition registry) was explored but never adopted into the product build, so it is not described here as current.
 
 ## Core principles
 

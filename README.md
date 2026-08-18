@@ -17,7 +17,6 @@ A hallucination-resistant conversational assistant for regulatory guidelines, bu
 - `engine/`: the chatbot/extraction/verification application layer.
 - `scripts/`: reproducible validation scripts.
 - `test/`: unit tests (mocked LLM clients — no live API calls in CI) and schema validation tests.
-- `history/`: frozen, superseded planning documents and retired data/tooling from the original archive-only phase of this project. See `history/README.md` for what moved and why.
 
 ## Key Documents
 
@@ -28,4 +27,3 @@ A hallucination-resistant conversational assistant for regulatory guidelines, bu
 - `working_docs/audit_2026-08-18.md`: independent repository audit that grounded the pivot to this roadmap.
 - `working_docs/pdf_assessment_M10.md`, `working_docs/pdf_assessment_S6_R1.md`: technical assessments of the source PDFs and extraction risks.
 - `AGENTS.md`: repository-wide operating rules for agents.
-- `history/README.md`: what's archived and why — check here before assuming something described in `history/` is still current.

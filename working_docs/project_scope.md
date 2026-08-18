@@ -16,7 +16,7 @@ The foundation must preserve source traceability, separate source-derived record
 
 ## Current Status
 
-See `working_docs/milestone_log.md` for the active, up-to-date status and decision record — it is updated with every roadmap milestone, this file is not. For historical Phase 0-4 process narration (superseded), see `history/README.md`.
+See `working_docs/milestone_log.md` for the active, up-to-date status and decision record — it is updated with every roadmap milestone, this file is not.
 
 ## Non-Goals
 
