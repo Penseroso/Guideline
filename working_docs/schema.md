@@ -344,3 +344,13 @@ For the minimum model, such content should be represented through:
 - `Condition.applies_to_ids`
 
 Guideline-specific controlled vocabularies for condition types, species, study type, product type, or development stage should be added only after actual sample records show that free-text conditions are insufficient.
+
+## Deliberate non-extraction (not an omission)
+
+A recall/completeness audit (`working_docs/milestone_log.md` M1, 2026-08-18) found real omissions in `s6_r1_species_selection.json` and also surfaced a separate category that looks like an omission but isn't one: source text that is deliberately not given its own `KnowledgeRecord`/`Condition`. Three patterns, confirmed against actual source text, not to be re-flagged as missing in future audits unless the specific instance carries independent, freestanding regulatory content:
+
+- **Narrative/scene-setting sentences** with no discrete regulatory content of their own (e.g. "In recent years, there has been much progress in the development of animal models that are thought to be similar to the human disease.") — context for the sentences that follow, not itself an assertion to preserve separately.
+- **Incidental parentheticals embedded in another sentence's directive** (e.g. "(choice of species to be justified by the sponsor)" inside a sentence about when a short-term safety study can be considered) — part of the host sentence's own record, not a separate `Condition`.
+- **Concessive framing clauses** ("even where X may be necessary...") that set up a contrast rather than state a precondition — read as prose framing, not a `Condition.condition_type=precondition`.
+
+A compound sentence combining a descriptive clause and a regulatory determination (e.g. "X may be misleading and are discouraged") is not split into two `KnowledgeRecord`s and does not need a new `record_type` value to hold both senses — merge into one record's `action`/`original_modal_text` (already-established pattern, e.g. `ich_s6_r1.kr.part2.2_2.006`), keeping `record_type` set to whichever sense is the operative regulatory determination.

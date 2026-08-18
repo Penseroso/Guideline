@@ -871,9 +871,9 @@
       "source_unit_ids": ["ich_s6_r1.su.part1.3_3.005"],
       "record_type": "recommendation",
       "modality": "other",
-      "original_modal_text": "are discouraged",
+      "original_modal_text": "may be misleading and are discouraged",
       "subject": "Toxicity studies in non-relevant species",
-      "action": "are discouraged",
+      "action": "may be misleading and are discouraged",
       "object": null,
       "normalized_ko": null,
       "review_status": "reviewed"
@@ -935,6 +935,18 @@
       "subject": "The production process, range of impurities/contaminants, pharmacokinetics, and exact pharmacological mechanism(s)",
       "action": "may differ",
       "object": "between the homologous form and the product intended for clinical use",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.021",
+      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.006"],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "These animal models",
+      "action": "include",
+      "object": "induced and spontaneous models of disease, gene knockout(s), and transgenic animals",
       "normalized_ko": null,
       "review_status": "reviewed"
     },
