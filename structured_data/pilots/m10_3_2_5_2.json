@@ -508,7 +508,7 @@
       "criterion_id": "ich_m10.qc.3_2_5_2.012",
       "source_unit_id": "ich_m10.su.3_2_5_2.005",
       "knowledge_record_id": "ich_m10.kr.3_2_5_2.014",
-      "parameter": "accuracy for QCs in non-accuracy and precision validation runs",
+      "parameter": "QC values relative to nominal values in non-accuracy and precision validation runs",
       "comparator": "within",
       "value": 15,
       "value_fraction": null,
