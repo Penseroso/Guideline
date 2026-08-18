@@ -34,3 +34,6 @@ jobs:
 
       - name: Validate legacy derived-layer artifacts
         run: npm run validate:legacy
+
+      - name: Run eval harness (Option A only, no API key needed)
+        run: npm run eval

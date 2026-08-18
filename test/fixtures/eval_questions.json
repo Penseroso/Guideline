@@ -1,0 +1,73 @@
+{
+  "_comment": "Gold question/citation pairs for engine/eval_harness.js, hand-written against the 6 already-structured pilot sections (product_roadmap.md §3 M1). Every 'expect_answered: true' case was run against the live query_router and its actual citation/id verified before being added here — this file records real, checked behavior, not aspirational answers. Extend as coverage grows (M3); do not hand-edit expected citations without re-running against the real data.",
+  "questions": [
+    {
+      "id": "q1",
+      "question": "minimum replicates required at each QC concentration level",
+      "expect_answered": true,
+      "expect_citation_contains": "M10 §3.2.5.2",
+      "expect_text_contains": "5"
+    },
+    {
+      "id": "q2",
+      "question": "over how many days should between-run intermediate precision be evaluated",
+      "expect_answered": true,
+      "expect_citation_contains": "M10 §3.2.5.2",
+      "expect_text_contains": "2"
+    },
+    {
+      "id": "q3",
+      "question": "maximum duration for a short-term general toxicology study",
+      "expect_answered": true,
+      "expect_citation_contains": "S6",
+      "expect_text_contains": "1"
+    },
+    {
+      "id": "q4",
+      "question": "minimum number of species for an unconjugated toxin study",
+      "expect_answered": true,
+      "expect_citation_contains": "S6",
+      "expect_text_contains": "1"
+    },
+    {
+      "id": "q5",
+      "question": "is cross validation required when data are not combined across studies",
+      "expect_answered": true,
+      "expect_citation_contains": "M10 §6.2",
+      "expect_text_contains": "not generally required"
+    },
+    {
+      "id": "q6_refusal",
+      "question": "what is the recommended starting dose for first-in-human phase 1 trials",
+      "expect_answered": false,
+      "note": "Not covered by any structured section — must refuse, not guess from model world-knowledge (TPP §1.4)."
+    },
+    {
+      "id": "q7_refusal",
+      "question": "what is the meaning of life",
+      "expect_answered": false,
+      "note": "Sanity check: completely unrelated question must refuse."
+    },
+    {
+      "id": "q8_known_imprecision",
+      "question": "stability of whole blood samples storage conditions",
+      "expect_answered": true,
+      "expect_citation_contains": "M10 §6.1",
+      "note": "KNOWN LIMITATION, not a bug to silently accept: whole-blood-specific stability content (M10 §3.2.8) is not yet structured (see working_docs/milestone_log.md M0 gap-finding scan), so Option A's keyword match lands on a same-guideline 'storage conditions' record via generic term overlap rather than refusing outright. Not a fabrication (the cited record is real and accurately cited), but not the ideal answer either. Tracked here so M2/M3 can decide whether to extract §3.2.8 or improve Option A relevance scoring."
+    },
+    {
+      "id": "q9",
+      "question": "accuracy nominal concentration except LLOQ",
+      "expect_answered": true,
+      "expect_citation_contains": "M10 §3.2.5.2",
+      "expect_text_contains": "15"
+    },
+    {
+      "id": "q10",
+      "question": "fraction of total QCs required to be within nominal values",
+      "expect_answered": true,
+      "expect_citation_contains": "M10 §3.2.5.2",
+      "expect_text_contains": "2/3"
+    }
+  ]
+}

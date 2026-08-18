@@ -1001,9 +1001,9 @@
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.007",
       "source_unit_ids": ["ich_s6_r1.su.part2.2_1.005"],
-      "record_type": "description",
-      "modality": "none",
-      "original_modal_text": null,
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is of limited value",
       "subject": "Assessment of tissue cross reactivity in animal tissues",
       "action": "is",
       "object": "of limited value for species selection",

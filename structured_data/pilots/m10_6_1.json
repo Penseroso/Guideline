@@ -525,7 +525,7 @@
     {
       "knowledge_record_id": "ich_m10.kr.6_1.003",
       "source_unit_ids": ["ich_m10.su.6_1.002"],
-      "record_type": "description",
+      "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "does not necessarily need to be repeated",
       "subject": "Stability established at one facility",
