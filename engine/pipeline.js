@@ -30,7 +30,24 @@ function sourceTextForUnits(sourceUnits, ids) {
 }
 
 async function verifyKnowledgeRecord(kr, { sourceUnits, conditions, client, model }) {
-  const base = [kr.subject, kr.action, kr.object].filter(Boolean).join(" ") || kr.original_modal_text || "";
+  const subjectActionObject = [kr.subject, kr.action, kr.object].filter(Boolean).join(" ");
+  const base = subjectActionObject || kr.original_modal_text || "";
+  // subject/action/object is a re-composed sentence, not a verbatim quote
+  // — it necessarily drops the original modal phrasing (e.g. "it is
+  // recommended to demonstrate..." becomes action="be demonstrated"),
+  // which reads as a bare imperative regardless of the source's real
+  // strength. Harmless for must/should (the recomposed claim's implied
+  // force roughly matches), but for a soft modality like modality="other"
+  // ("it is recommended") it overstates the source and gets correctly
+  // rejected — found live on M10 3.2.5.2 kr.005 (working_docs/milestone_log.md
+  // M1), the same root cause as the QC-side modalHint fix above, just
+  // discovered afterward on the KR side. Only appended when the recomposed
+  // text doesn't already start with it, so must/should records (whose
+  // original_modal_text is often already echoed in action, e.g. "should be
+  // within") don't get a redundant/confusing duplicate.
+  const modalHint = kr.original_modal_text && subjectActionObject && !subjectActionObject.toLowerCase().includes(kr.original_modal_text.toLowerCase())
+    ? ` (per the source's own wording: "${kr.original_modal_text}")`
+    : "";
   // Same fix as verifyQuantitativeCriterion's denominator_or_reference
   // inclusion, applied to KnowledgeRecord: a KR qualified by its own
   // Condition (via Condition.applies_to_ids) reads as an unconditional
@@ -39,14 +56,64 @@ async function verifyKnowledgeRecord(kr, { sourceUnits, conditions, client, mode
   // (working_docs/milestone_log.md M1), just on the KR side instead of QC.
   const applicable = (conditions || []).filter((c) => (c.applies_to_ids || []).includes(kr.knowledge_record_id));
   const claim = applicable.length
-    ? `${base}, applicable when: ${applicable.map((c) => c.condition_text).join("; ")}`
-    : base;
+    ? `${base}${modalHint}, applicable when: ${applicable.map((c) => c.condition_text).join("; ")}`
+    : `${base}${modalHint}`;
   const sourceText = sourceTextForUnits(sourceUnits, kr.source_unit_ids);
   return verifyClaim({ claim, sourceText, client, model });
 }
 
-async function verifyQuantitativeCriterion(qc, { sourceUnits, client, model }) {
-  const claim = claimTextFor({
+function sameIdSet(a, b) {
+  const setA = new Set(a || []);
+  const setB = new Set(b || []);
+  if (setA.size !== setB.size) return false;
+  for (const id of setA) if (!setB.has(id)) return false;
+  return true;
+}
+
+// Two criteria are siblings of one compound statement when ANY of several
+// independent relational signals link them — a list, not a fixed pair, so
+// a future signal can be added without redesigning the caller. Each signal
+// is a formally-declared relational field, not an inferred/fuzzy one:
+//   - shared/overlapping condition_ids: Condition objects formally declare
+//     which records they govern (validator-enforced), so an overlap isn't
+//     coincidental — the strongest signal, usable on its own regardless
+//     of knowledge_record_id.
+//   - same knowledge_record_id, PLUS an equal (not just overlapping)
+//     condition_ids set: a shared parent KR alone is NOT sufficient — a
+//     KR frequently bundles a general rule with its own exception (e.g.
+//     M10 3.2.5.2 kr.012: "accuracy within 15%, except at the LLOQ where
+//     it's within 20%"), and those sub-criteria are mutually EXCLUSIVE
+//     circumstances, not jointly-applicable ones. Found live: grouping
+//     qc.006 (general, condition_ids=[]) with qc.007 (LLOQ-only,
+//     condition_ids=["cond.007"]) via knowledge_record_id alone produced
+//     a claim asserting both hold "jointly," which is false and was
+//     correctly rejected by the verifier — a real self-inflicted
+//     distortion (working_docs/milestone_log.md M1). Requiring the
+//     condition_ids sets to match (both empty counts as a match) restricts
+//     this signal to same-KR criteria that also apply under the identical
+//     circumstance, e.g. a compound value split with no Condition object
+//     involved at all (the held-out synthetic recovery/precision case).
+//   - shared source_unit_id is deliberately EXCLUDED as a signal — a
+//     SourceUnit is often a whole paragraph covering multiple unrelated
+//     criteria, so co-location alone doesn't establish they're jointly
+//     applicable (would over-group).
+// Multi-signal — not just two hardcoded fields — is the actual design
+// intent, so new relational fields (e.g. a future shared cross_reference)
+// can be appended to SIBLING_SIGNALS below without touching the caller.
+const SIBLING_SIGNALS = [
+  (qc, other) => (qc.condition_ids || []).some((id) => (other.condition_ids || []).includes(id)),
+  (qc, other) => Boolean(qc.knowledge_record_id) && other.knowledge_record_id === qc.knowledge_record_id && sameIdSet(qc.condition_ids, other.condition_ids)
+];
+
+function siblingCriteria(qc, allCriteria) {
+  return (allCriteria || []).filter((other) => {
+    if (other.criterion_id === qc.criterion_id) return false;
+    return SIBLING_SIGNALS.some((signal) => signal(qc, other));
+  });
+}
+
+async function verifyQuantitativeCriterion(qc, { sourceUnits, allCriteria, knowledgeRecords, client, model }) {
+  const base = claimTextFor({
     type: "quantitative_criterion",
     parameter: qc.parameter,
     comparator: qc.comparator,
@@ -55,6 +122,28 @@ async function verifyQuantitativeCriterion(qc, { sourceUnits, client, model }) {
     unit: qc.unit,
     denominator_or_reference: qc.denominator_or_reference
   });
+
+  // A criterion whose linked KnowledgeRecord uses a modality softer than
+  // "should" (e.g. modality=other, "it is recommended") was overstated by
+  // the fixed-strength "specified criterion value" phrasing alone — found
+  // live on M10 3.2.5.2 qc.004 (working_docs/milestone_log.md M1). Rather
+  // than hardcode another modal word, surface the source's own wording so
+  // the verifier judges against real evidence, not an assumed strength.
+  const linkedKR = (knowledgeRecords || []).find((k) => k.knowledge_record_id === qc.knowledge_record_id);
+  const modalHint = linkedKR?.original_modal_text ? ` (per the source's own wording: "${linkedKR.original_modal_text}")` : "";
+
+  // A compound statement split across multiple QuantitativeCriterion
+  // records (schema's single parameter/comparator/value can't hold two
+  // entangled numbers in one record) reads as unqualified/overstated
+  // without its sibling values — same pattern as the Condition/
+  // denominator_or_reference fixes, one hop further via siblingCriteria().
+  const siblings = siblingCriteria(qc, allCriteria);
+  const siblingHint = siblings.length
+    ? ` This is one of several jointly-applicable criterion values from the same statement, also including: ${siblings.map((s) => claimTextFor({ type: "quantitative_criterion", parameter: s.parameter, comparator: s.comparator, value: s.value, value_fraction: s.value_fraction, unit: s.unit })).join("; ")}.`
+    : "";
+
+  const claim = `${base}${modalHint}${siblingHint}`;
+
   // Verified against the FULL SourceUnit paragraph, not the criterion's
   // own minimal source_text quote. Fixed after a live-API triage
   // (working_docs/milestone_log.md M1) showed the narrow quote alone
@@ -98,7 +187,13 @@ async function verifyDraft(draft, { sourceUnits, client, model }) {
 
   const quantitative_criteria = [];
   for (const qc of draft.quantitative_criteria) {
-    const v = await verifyQuantitativeCriterion(qc, { sourceUnits, client, model });
+    const v = await verifyQuantitativeCriterion(qc, {
+      sourceUnits,
+      allCriteria: draft.quantitative_criteria,
+      knowledgeRecords: draft.knowledge_records,
+      client,
+      model
+    });
     report.push({ id: qc.criterion_id, type: "quantitative_criterion", ...v });
     quantitative_criteria.push({ ...qc, review_status: v.entailed ? "reviewed" : "needs_review" });
   }
@@ -276,6 +371,7 @@ module.exports = {
   verifyDraft,
   extractAndVerifySection,
   sourceTextForUnits,
+  siblingCriteria,
   mergeExtractionPasses,
   extractSectionSelfConsistent,
   verifyClaimEnsemble,
