@@ -28,3 +28,9 @@ jobs:
 
       - name: Validate pilot structured data
         run: npm run validate:pilots
+
+      - name: Validate derived contract fixture
+        run: npm run validate:derived
+
+      - name: Validate legacy derived-layer artifacts
+        run: npm run validate:legacy

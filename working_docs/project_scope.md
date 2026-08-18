@@ -1,12 +1,14 @@
 # Project Scope
 
+Status note (2026-08-18): The original Phase 0-4 plan and its non-goal boundary excluding search, embeddings, RAG, and any application layer are superseded. Those superseded planning documents are archived under `history/`. The active product direction, target product profile, and implementation approach now live in `working_docs/product_roadmap.md`; this document is updated to match. The data-layer status below (source model `0.2.0`, pilots, derived contract scaffold) remains accurate and unaffected by the pivot.
+
 ## Mission and Product Value
 
 Build a traceable regulatory knowledge archive that preserves official guideline source text and supports reusable structured records. The archive should help users find relevant regulatory statements, understand requirements, quantitative criteria, conditions, and exceptions, verify results against exact source text and PDF locations, compare related content across sections and later documents, and reuse reviewed structured information.
 
 ## Users and Initial Product Target
 
-The primary users are internal reviewers and analysts who need to inspect and verify regulatory guideline content. The initial product target is a future read-only internal review tool; Phase 0 does not implement that application.
+The primary users are internal reviewers and analysts who need to inspect and verify regulatory guideline content. The initial product target is a hallucination-resistant conversational guideline assistant: a chat interface that answers regulatory questions from the structured archive with mandatory source citation, refusing or flagging uncertainty rather than inventing content. Full target-product-profile detail lives in `working_docs/product_roadmap.md`.
 
 ## Canonical Data and Design Principles
 
@@ -36,14 +38,10 @@ Source model `0.2.0` remains unchanged. AmendmentMapping and `EffectiveRecord` P
 
 ## Non-Goals
 
-The following are outside the current scope unless explicitly requested:
+Superseded (2026-08-18): "Database, search, embedding, RAG, or web application implementation" and "Additional S6 JSON pilot creation outside the approved Module 3.2 scope" are no longer non-goals — building that application layer and expanding coverage are now the point. See `working_docs/product_roadmap.md` for what replaces them. "Schema changes before an actual pilot demonstrates a limitation" and "Automated extraction script implementation" are also live questions again as coverage expands, not fixed exclusions; treat schema/extraction-automation changes as decisions requiring a `working_docs/milestone_log.md` entry rather than as pre-ruled-out.
 
-- Full-guideline extraction.
-- Full-guideline structured data creation.
-- Additional S6 JSON pilot creation outside the approved Module 3.2 scope.
-- Schema changes before an actual S6 pilot demonstrates a limitation.
-- Automated extraction script implementation.
-- Database, search, embedding, RAG, or web application implementation.
+The following remain outside scope unless explicitly requested, because they are a product-boundary decision (what the assistant is allowed to conclude), not an implementation-layer decision (what gets built):
+
 - Regulatory suitability conclusions.
 - Study-design recommendations.
 - Automated decision making.
