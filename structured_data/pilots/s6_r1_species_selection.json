@@ -771,6 +771,30 @@
       "review_status": "reviewed"
     },
     {
+      "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.015",
+      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.002"],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The biological activity together with species and/or tissue specificity of many biotechnology-derived pharmaceuticals",
+      "action": "often preclude",
+      "object": "standard toxicity testing designs in commonly used species (e.g., rats and dogs)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.016",
+      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.002"],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can provide",
+      "subject": "Knowledge of receptor/epitope distribution",
+      "action": "can provide",
+      "object": "greater understanding of potential in vivo toxicity",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.004",
       "source_unit_ids": ["ich_s6_r1.su.part1.3_3.003"],
       "record_type": "description",
@@ -779,6 +803,18 @@
       "subject": "Relevant animal species for testing of monoclonal antibodies",
       "action": "are",
       "object": "those that express the desired epitope and demonstrate a similar tissue cross-reactivity profile as for human tissues",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.017",
+      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.003"],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "would optimise",
+      "subject": "This",
+      "action": "optimise",
+      "object": "the ability to evaluate toxicity arising from the binding to the epitope and any unintentional tissue cross-reactivity",
       "normalized_ko": null,
       "review_status": "reviewed"
     },
@@ -867,6 +903,42 @@
       "review_status": "reviewed"
     },
     {
+      "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.018",
+      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.005"],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The information gained from use of a transgenic animal model expressing the human receptor",
+      "action": "is optimised",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.019",
+      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.005"],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "may also be gained",
+      "subject": "Useful information",
+      "action": "may also be gained",
+      "object": "from the use of homologous proteins",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.020",
+      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.005"],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "should be noted",
+      "subject": "The production process, range of impurities/contaminants, pharmacokinetics, and exact pharmacological mechanism(s)",
+      "action": "may differ",
+      "object": "between the homologous form and the product intended for clinical use",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.012",
       "source_unit_ids": ["ich_s6_r1.su.part1.3_3.006"],
       "record_type": "description",
@@ -927,6 +999,18 @@
       "review_status": "reviewed"
     },
     {
+      "knowledge_record_id": "ich_s6_r1.kr.part1.notes.003",
+      "source_unit_ids": ["ich_s6_r1.su.part1.notes.note1.001"],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "should be noted",
+      "subject": "These models of disease",
+      "action": "often have",
+      "object": "a paucity of historical data for use as a reference when evaluating study results",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.001",
       "source_unit_ids": ["ich_s6_r1.su.part2.2_1.002"],
       "record_type": "recommendation",
@@ -951,6 +1035,18 @@
       "review_status": "reviewed"
     },
     {
+      "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.015",
+      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.002"],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "In vitro assays to make qualitative and quantitative cross-species comparisons of relative target binding affinities and receptor/ligand occupancy and kinetics",
+      "action": "follow",
+      "object": "comparisons of target sequence homology between species",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.003",
       "source_unit_ids": ["ich_s6_r1.su.part2.2_1.003"],
       "record_type": "recommendation",
@@ -971,6 +1067,18 @@
       "subject": "Functional activity",
       "action": "can be demonstrated",
       "object": "in species-specific cell-based systems and/or in vivo pharmacology or toxicology studies",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.016",
+      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.003"],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can provide",
+      "subject": "Modulation of a known biologic response or of a pharmacodynamic (PD) marker",
+      "action": "can provide",
+      "object": "evidence for functional activity to support species relevance",
       "normalized_ko": null,
       "review_status": "reviewed"
     },
@@ -1179,6 +1287,18 @@
       "review_status": "reviewed"
     },
     {
+      "knowledge_record_id": "ich_s6_r1.kr.part2.notes.016",
+      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.001"],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can be employed",
+      "subject": "Other technologies",
+      "action": "can be employed",
+      "object": "in place of IHC techniques to demonstrate target/binding site distribution",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.002",
       "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.002"],
       "record_type": "recommendation",
@@ -1211,6 +1331,30 @@
       "subject": "Findings",
       "action": "be evaluated and interpreted",
       "object": "in the context of the overall pharmacology and safety assessment data package",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2.notes.017",
+      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.003"],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Tissue binding per se",
+      "action": "does not indicate",
+      "object": "biological activity in vivo",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2.notes.018",
+      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.003"],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Binding to areas not typically accessible to the antibody in vivo (i.e., cytoplasm)",
+      "action": "is generally not relevant",
+      "object": null,
       "normalized_ko": null,
       "review_status": "reviewed"
     },
@@ -1271,6 +1415,18 @@
       "subject": "TCR studies",
       "action": "are not recommended",
       "object": "for assessing comparability of the test article as a result of process changes over the course of a development program",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2.notes.019",
+      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.007"],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "TCR studies",
+      "action": "cannot detect",
+      "object": "subtle changes in critical quality attributes",
       "normalized_ko": null,
       "review_status": "reviewed"
     },
@@ -1348,6 +1504,21 @@
     }
   ],
   "quantitative_criteria": [
+    {
+      "criterion_id": "ich_s6_r1.qc.part1.3_3.001",
+      "source_unit_id": "ich_s6_r1.su.part1.3_3.005",
+      "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.011",
+      "parameter": "repeated dose toxicity study duration",
+      "comparator": "not_exceed",
+      "value": 14,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": "limited toxicity evaluation in a single species",
+      "condition_ids": ["ich_s6_r1.cond.part1.3_3.008"],
+      "source_text": "a repeated dose toxicity study of ≤ 14 days duration",
+      "review_status": "reviewed"
+    },
     {
       "criterion_id": "ich_s6_r1.qc.part2.2_2.004",
       "source_unit_id": "ich_s6_r1.su.part2.2_2.002",
@@ -1441,7 +1612,15 @@
       "source_unit_id": "ich_s6_r1.su.part1.3_3.005",
       "condition_text": "Where it is not possible to use transgenic animal models or homologous proteins",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part1.3_3.011"],
+      "applies_to_ids": ["ich_s6_r1.kr.part1.3_3.011", "ich_s6_r1.qc.part1.3_3.001"],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part1.3_3.010",
+      "source_unit_id": "ich_s6_r1.su.part1.3_3.005",
+      "condition_text": "when the interaction of the product and the humanised receptor has similar physiological consequences to those expected in humans",
+      "condition_type": "precondition",
+      "applies_to_ids": ["ich_s6_r1.kr.part1.3_3.018"],
       "review_status": "reviewed"
     },
     {

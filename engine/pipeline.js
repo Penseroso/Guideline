@@ -103,7 +103,7 @@ async function verifyDraft(draft, { sourceUnits, client, model }) {
   return { draft: { knowledge_records, quantitative_criteria, conditions }, report, summary };
 }
 
-const { extractSection } = require("./extraction_agent");
+const { extractSection, nextId } = require("./extraction_agent");
 
 /**
  * One automatic call: extract, then verify, then finalize review_status.
@@ -115,4 +115,155 @@ async function extractAndVerifySection({ section, sourceUnits, client, verifyMod
   return verifyDraft(draft, { sourceUnits, client, model: verifyModel });
 }
 
-module.exports = { verifyDraft, extractAndVerifySection, sourceTextForUnits };
+// --- Self-consistency: multiple extraction passes, merged by content ---
+//
+// Real, measured run-to-run variance on identical input (same section,
+// same prompt, different counts — working_docs/milestone_log.md M1) is
+// exploited here rather than just tolerated: run extraction N times and
+// take the union, deduped by content fingerprint, instead of trusting
+// any single pass. This is the field's standard answer to LLM extraction
+// recall (GraphRAG "gleanings", self-consistency sampling) — verified
+// entailment (verifyDraft) still runs afterward on the merged result;
+// self-consistency addresses *recall*, which entailment checking cannot
+// (a record that was never drafted has nothing to verify).
+//
+// Cross-references between drafted objects (QuantitativeCriterion.knowledge_record_id/
+// condition_ids, Condition.applies_to_ids) are dropped during merge, not
+// remapped — after deduping across N independently-numbered passes, a
+// stale intra-pass link would point to an ID that may not exist in the
+// merged set. A dangling reference is worse than an empty one, so these
+// come back null/empty and `needs_review`-worthy for later re-linking.
+// This is a scoped simplification, not an oversight: proving the merge
+// improves raw recall was the immediate goal, not a perfect graph.
+
+function normalizeText(s) {
+  return (s || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+}
+
+function qcFingerprint(qc) {
+  const val = qc.value_fraction ? `${qc.value_fraction.numerator}/${qc.value_fraction.denominator}` : qc.value;
+  return `${qc.source_unit_id}|${qc.comparator}|${val}|${qc.unit || ""}`;
+}
+
+function conditionFingerprint(c) {
+  return `${c.source_unit_id}|${c.condition_type}|${normalizeText(c.condition_text).slice(0, 40)}`;
+}
+
+function krFingerprint(kr) {
+  return `${[...kr.source_unit_ids].sort().join(",")}|${kr.record_type}|${kr.modality}|${normalizeText(kr.action).slice(0, 40)}`;
+}
+
+function groupByFingerprint(items, fingerprintFn) {
+  const groups = new Map();
+  for (const item of items) {
+    const fp = fingerprintFn(item);
+    if (!groups.has(fp)) groups.set(fp, []);
+    groups.get(fp).push(item);
+  }
+  return [...groups.values()].map((group) => ({ item: group[0], agreementCount: group.length }));
+}
+
+function mergeExtractionPasses(drafts, { documentId, sectionNumber }) {
+  const allKR = drafts.flatMap((d) => d.knowledge_records);
+  const allQC = drafts.flatMap((d) => d.quantitative_criteria);
+  const allCond = drafts.flatMap((d) => d.conditions);
+
+  const krGroups = groupByFingerprint(allKR, krFingerprint);
+  const qcGroups = groupByFingerprint(allQC, qcFingerprint);
+  const condGroups = groupByFingerprint(allCond, conditionFingerprint);
+
+  const knowledge_records = krGroups.map(({ item, agreementCount }, i) => ({
+    ...item,
+    knowledge_record_id: nextId(documentId, "kr", sectionNumber, i + 1),
+    review_status: "needs_review",
+    _agreementCount: agreementCount
+  }));
+  const quantitative_criteria = qcGroups.map(({ item, agreementCount }, i) => ({
+    ...item,
+    criterion_id: nextId(documentId, "qc", sectionNumber, i + 1),
+    knowledge_record_id: null,
+    condition_ids: [],
+    review_status: "needs_review",
+    _agreementCount: agreementCount
+  }));
+  const conditions = condGroups.map(({ item, agreementCount }, i) => ({
+    ...item,
+    condition_id: nextId(documentId, "cond", sectionNumber, i + 1),
+    applies_to_ids: [],
+    review_status: "needs_review",
+    _agreementCount: agreementCount
+  }));
+
+  const agreement = {
+    knowledge_records: knowledge_records.map((r) => ({ id: r.knowledge_record_id, agreementCount: r._agreementCount, ofPasses: drafts.length })),
+    quantitative_criteria: quantitative_criteria.map((r) => ({ id: r.criterion_id, agreementCount: r._agreementCount, ofPasses: drafts.length })),
+    conditions: conditions.map((r) => ({ id: r.condition_id, agreementCount: r._agreementCount, ofPasses: drafts.length }))
+  };
+
+  // Strip the temporary bookkeeping field so returned records stay valid
+  // against the closed archive JSON Schema (additionalProperties: false).
+  const strip = (r) => { const { _agreementCount, ...rest } = r; return rest; };
+  return {
+    draft: {
+      knowledge_records: knowledge_records.map(strip),
+      quantitative_criteria: quantitative_criteria.map(strip),
+      conditions: conditions.map(strip)
+    },
+    agreement
+  };
+}
+
+/**
+ * Runs extraction `passes` times and merges by content fingerprint
+ * before handing off to verifyDraft. Cost scales linearly with `passes`
+ * (each is a full extraction call) — call sites should treat `passes`
+ * as a real cost/recall trade-off, not a free win.
+ */
+async function extractSectionSelfConsistent({ section, sourceUnits, client, passes = 3, verifyModel }) {
+  const drafts = [];
+  for (let i = 0; i < passes; i++) {
+    drafts.push(await extractSection({ section, sourceUnits, client }));
+  }
+  const { draft: merged, agreement } = mergeExtractionPasses(drafts, {
+    documentId: section.document_id,
+    sectionNumber: section.section_number
+  });
+  const verified = await verifyDraft(merged, { sourceUnits, client, model: verifyModel });
+  return { ...verified, agreement, passes };
+}
+
+// --- Ensemble verification: require repeated agreement before "reviewed" ---
+//
+// A single entailment call was directly shown to have a false-negative
+// mode (working_docs/milestone_log.md M1: the range-vs-requirement
+// distortion passed as entailed=true on the first pipeline run). This
+// does not replace that fix (the claimTextFor phrasing fix stands); it
+// adds a second, independent layer: call verifyClaim `times` times and
+// require *all* calls to agree entailed=true before trusting it.
+// Disagreement is treated as needs_review, not averaged into a pass —
+// the conservative failure mode (see product_roadmap.md TPP §1.3).
+async function verifyClaimEnsemble({ claim, sourceText, client, model, times = 2 }) {
+  const results = [];
+  for (let i = 0; i < times; i++) {
+    results.push(await verifyClaim({ claim, sourceText, client, model }));
+  }
+  const allEntailed = results.every((r) => r.entailed);
+  return {
+    entailed: allEntailed,
+    reason: allEntailed ? results[0].reason : results.filter((r) => !r.entailed).map((r) => r.reason).join(" | "),
+    agreement: results.filter((r) => r.entailed).length,
+    of: times
+  };
+}
+
+module.exports = {
+  verifyDraft,
+  extractAndVerifySection,
+  sourceTextForUnits,
+  mergeExtractionPasses,
+  extractSectionSelfConsistent,
+  verifyClaimEnsemble,
+  qcFingerprint,
+  conditionFingerprint,
+  krFingerprint
+};
