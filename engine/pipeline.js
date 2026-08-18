@@ -29,8 +29,18 @@ function sourceTextForUnits(sourceUnits, ids) {
     .join("\n");
 }
 
-async function verifyKnowledgeRecord(kr, { sourceUnits, client, model }) {
-  const claim = [kr.subject, kr.action, kr.object].filter(Boolean).join(" ") || kr.original_modal_text || "";
+async function verifyKnowledgeRecord(kr, { sourceUnits, conditions, client, model }) {
+  const base = [kr.subject, kr.action, kr.object].filter(Boolean).join(" ") || kr.original_modal_text || "";
+  // Same fix as verifyQuantitativeCriterion's denominator_or_reference
+  // inclusion, applied to KnowledgeRecord: a KR qualified by its own
+  // Condition (via Condition.applies_to_ids) reads as an unconditional
+  // claim without it, and gets correctly rejected for overstating scope
+  // — same pattern, found in the same M10 3.2.5.2 live triage
+  // (working_docs/milestone_log.md M1), just on the KR side instead of QC.
+  const applicable = (conditions || []).filter((c) => (c.applies_to_ids || []).includes(kr.knowledge_record_id));
+  const claim = applicable.length
+    ? `${base}, applicable when: ${applicable.map((c) => c.condition_text).join("; ")}`
+    : base;
   const sourceText = sourceTextForUnits(sourceUnits, kr.source_unit_ids);
   return verifyClaim({ claim, sourceText, client, model });
 }
@@ -81,7 +91,7 @@ async function verifyDraft(draft, { sourceUnits, client, model }) {
 
   const knowledge_records = [];
   for (const kr of draft.knowledge_records) {
-    const v = await verifyKnowledgeRecord(kr, { sourceUnits, client, model });
+    const v = await verifyKnowledgeRecord(kr, { sourceUnits, conditions: draft.conditions, client, model });
     report.push({ id: kr.knowledge_record_id, type: "knowledge_record", ...v });
     knowledge_records.push({ ...kr, review_status: v.entailed ? "reviewed" : "needs_review" });
   }
