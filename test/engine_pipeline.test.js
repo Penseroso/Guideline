@@ -373,6 +373,20 @@ test("siblingCriteria does NOT group a general rule with its own exception, even
   assert.deepEqual(siblingsOfException, []);
 });
 
+test("siblingCriteria does NOT group a default-with-exception value with its own exception's separate QC record, even when they share the exact same condition_ids set (regression: found live on S6(R1) 3.3, docs/milestone_log.md M1)", () => {
+  // The default record ("at least 2 species") and its own separately-
+  // extracted exception record ("at least 1 species") both correctly link
+  // the same exception Condition, giving them an identical condition_ids
+  // set — which satisfies SIBLING_SIGNALS[0]'s exact-match requirement and
+  // would otherwise assert a false "2 AND 1 jointly applicable" claim,
+  // the same class of anti-pattern the knowledge_record_id-based guard
+  // above exists to prevent, reintroduced through a different signal.
+  const defaultValue = { criterion_id: "qc.default", knowledge_record_id: null, condition_ids: ["cond.001"], is_default_with_exception: true };
+  const exceptionValue = { criterion_id: "qc.exception", knowledge_record_id: null, condition_ids: ["cond.001"], is_default_with_exception: false };
+  assert.deepEqual(siblingCriteria(defaultValue, [defaultValue, exceptionValue]), []);
+  assert.deepEqual(siblingCriteria(exceptionValue, [defaultValue, exceptionValue]), []);
+});
+
 test("siblingCriteria groups two criteria sharing the same single condition_ids entry, even with different knowledge_record_id (e.g. two different parameters both scoped 'at the LLOQ')", () => {
   const accuracyAtLLOQ = { criterion_id: "qc.acc-lloq", knowledge_record_id: "kr.012", condition_ids: ["cond.007"] };
   const precisionAtLLOQ = { criterion_id: "qc.prec-lloq", knowledge_record_id: "kr.013", condition_ids: ["cond.007"] };

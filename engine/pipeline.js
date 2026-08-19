@@ -123,6 +123,10 @@ function sameIdSet(a, b) {
 // Multi-signal — not just two hardcoded fields — is the actual design
 // intent, so new relational fields (e.g. a future shared cross_reference)
 // can be appended to SIBLING_SIGNALS below without touching the caller.
+// is_default_with_exception is handled as a veto in siblingCriteria()
+// itself, not as another signal here — it's a reason to NEVER group, not
+// a reason to group, so it doesn't fit the "any signal true -> sibling"
+// shape of this list.
 const SIBLING_SIGNALS = [
   (qc, other) => (qc.condition_ids || []).length > 0 && sameIdSet(qc.condition_ids, other.condition_ids),
   (qc, other) => Boolean(qc.knowledge_record_id) && other.knowledge_record_id === qc.knowledge_record_id && sameIdSet(qc.condition_ids, other.condition_ids)
@@ -142,6 +146,18 @@ function siblingCriteria(qc, allCriteria) {
   }
   return (allCriteria || []).filter((other) => {
     if (other.criterion_id === qc.criterion_id) return false;
+    // is_default_with_exception (schema.md Model 0.4.0) is itself a
+    // grounded fact that this value is NOT an absolute bound alongside
+    // others — heuristically treating it as jointly-applicable with
+    // anything produces the same false "both hold at once" conjunction
+    // the general-rule/exception guard (signal 2) already exists to
+    // prevent. Found live: a default record and its own separately-
+    // extracted exception record both correctly link the same exception
+    // Condition, giving them an identical condition_ids set that
+    // satisfies signal 1's exact-match — reintroducing the anti-pattern
+    // through a different door. Veto here rather than adding yet another
+    // narrower signal-specific carve-out.
+    if (qc.is_default_with_exception || other.is_default_with_exception) return false;
     return SIBLING_SIGNALS.some((signal) => signal(qc, other));
   });
 }
