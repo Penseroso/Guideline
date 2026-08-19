@@ -214,7 +214,7 @@ Core fields:
 - `source_unit_id`: Source unit containing the criterion.
 - `knowledge_record_id`: Related semantic record ID, or `null` if not yet linked.
 - `parameter`: Parameter being constrained, for example accuracy or precision.
-- `comparator`: Comparator, for example `within`, `not_exceed`, `at_least`.
+- `comparator`: One of `within`, `not_exceed`, `at_least`, `equals`. Use `equals` for an exact count or value stated as such (e.g. "two relevant species," "a single species") — `at_least`/`not_exceed` assert an open-ended bound that a source stating an exact number does not.
 - `value`: Numeric value, or `null` if unavailable or uncertain.
 - `value_fraction`: Exact fraction object, or `null`.
 - `unit`: Unit, for example `%`, or `null`.
@@ -375,3 +375,9 @@ Added 2026-08-19 (`docs/milestone_log.md` M1) after live extraction+verification
 A single combined enum (e.g. `criterion_type: specified|default|illustrative`) was considered and rejected: the two patterns are not the same axis. A default-with-exception value still carries real prescriptive force (it's the recommended answer, just not absolute); an illustrative-example value carries none (it's one instantiation of a broader, unspecified requirement). Collapsing them into one field would either conflate two different strengths of claim or need an unevidenced third "both" state. Two independent boolean fields, both defaulting to `false` (today's existing, unchanged meaning), keep the axes separate and are fully additive — no existing record's meaning changes.
 
 `is_default_with_exception=true` requires a non-empty `condition_ids` (enforced by `validation/validate_structured_data.js`), mirroring `Condition.condition_type=exception` already requiring non-empty `applies_to_ids` — a claimed default with no linkable exception is a contradiction. `is_illustrative_example` has no such requirement; it's independent of whether the value happens to be conditioned.
+
+## Model 0.5.0: `QuantitativeCriterion.comparator=equals`
+
+Added 2026-08-19 (`docs/milestone_log.md` M1), closing the third comparator-semantics gap found in the same S6(R1) §3.3 live-verification round that produced Model 0.4.0. Once the 0.4.0 fields removed the false-conjunction noise obscuring it, every remaining rejection converged on one clean pattern: a source stating an *exact* count ("two relevant species," "a single species," "one relevant species may suffice") was rendered as `at_least N`, which the verifier correctly read as asserting an open-ended floor ("N or more is fine") the source never stated.
+
+Unlike `is_default_with_exception`/`is_illustrative_example` (modifiers layered on top of an existing `comparator`+`value` pair), an exact count is a genuinely different *comparator relationship*, not a modifier — so it's added as a fourth `comparator` enum value, `equals`, rather than another boolean field. No existing record needed migration to it; all 15 existing `QuantitativeCriterion` records already use `within`/`not_exceed`/`at_least` correctly for genuinely open-ended bounds.

@@ -71,6 +71,28 @@ test("claimTextFor keeps the ordinary 'specified, not illustrative' phrasing whe
   assert.match(claim, /specified criterion value/);
 });
 
+// --- claimTextFor: comparator=equals (docs/schema.md Model 0.5.0, found
+// live on S6(R1) 3.3 as the dominant remaining QC failure once the 0.4.0
+// fields stopped the false-conjunction noise) ---
+
+test("claimTextFor asserts an exact value, not an open-ended bound, for comparator=equals", () => {
+  const qc = { type: "quantitative_criterion", parameter: "relevant species count", comparator: "equals", value: 2, value_fraction: null, unit: " species" };
+  const claim = claimTextFor(qc);
+  assert.match(claim, /exactly 2/);
+  assert.match(claim, /not a minimum or maximum/);
+  assert.doesNotMatch(claim, /at least/);
+});
+
+test("claimTextFor combines equals with is_default_with_exception and is_illustrative_example phrasing", () => {
+  const defaultQc = { type: "quantitative_criterion", parameter: "species count", comparator: "equals", value: 2, value_fraction: null, unit: " species", is_default_with_exception: true };
+  assert.match(claimTextFor(defaultQc), /normally exactly 2/);
+
+  const illustrativeQc = { type: "quantitative_criterion", parameter: "species count", comparator: "equals", value: 1, value_fraction: null, unit: " species", is_illustrative_example: true };
+  const claim = claimTextFor(illustrativeQc);
+  assert.match(claim, /exactly 1/);
+  assert.match(claim, /illustrative example/);
+});
+
 test("verifyRecord round-trips a real answerable record through the (mocked) verification agent", async () => {
   const { records } = loadStore();
   const qc = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");

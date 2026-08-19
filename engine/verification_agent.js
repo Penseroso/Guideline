@@ -85,7 +85,12 @@ async function verifyClaim({ claim, sourceText, client, model }) {
 const COMPARATOR_PHRASE = {
   at_least: (value, unit) => `at least ${value}${unit} (this is the specified criterion value for this parameter, not merely an illustrative example or descriptive range)`,
   not_exceed: (value, unit) => `not exceeding ${value}${unit} (this is the specified criterion value for this parameter, not merely an illustrative example or descriptive range)`,
-  within: (value, unit) => `within ${value}${unit} (this is the specified criterion value for this parameter, not merely an illustrative example or descriptive range)`
+  within: (value, unit) => `within ${value}${unit} (this is the specified criterion value for this parameter, not merely an illustrative example or descriptive range)`,
+  // schema.md Model 0.5.0: an exact count/value, not an open-ended bound —
+  // "at least N" was found live to be correctly rejected for asserting "N
+  // or more is fine" when the source states an exact number (e.g. "two
+  // relevant species," "a single species").
+  equals: (value, unit) => `exactly ${value}${unit} (this is the specified exact value for this parameter, not a minimum or maximum — no more, no less)`
 };
 
 // schema.md Model 0.4.0: two patterns COMPARATOR_PHRASE's "specified, not
@@ -96,12 +101,14 @@ const COMPARATOR_PHRASE = {
 const DEFAULT_WITH_EXCEPTION_PHRASE = {
   at_least: (value, unit) => `normally at least ${value}${unit} (this is the default/typical value for this parameter, not an absolute floor — a recognized exception may permit a different value)`,
   not_exceed: (value, unit) => `normally not exceeding ${value}${unit} (this is the default/typical value for this parameter, not an absolute ceiling — a recognized exception may permit a different value)`,
-  within: (value, unit) => `normally within ${value}${unit} (this is the default/typical value for this parameter, not an absolute bound — a recognized exception may permit a different value)`
+  within: (value, unit) => `normally within ${value}${unit} (this is the default/typical value for this parameter, not an absolute bound — a recognized exception may permit a different value)`,
+  equals: (value, unit) => `normally exactly ${value}${unit} (this is the default/typical exact value for this parameter, not an absolute one — a recognized exception may permit a different value)`
 };
 const ILLUSTRATIVE_EXAMPLE_PHRASE = {
   at_least: (value, unit) => `at least ${value}${unit} (this is given as one illustrative example for this parameter, not a specified requirement)`,
   not_exceed: (value, unit) => `not exceeding ${value}${unit} (this is given as one illustrative example for this parameter, not a specified requirement)`,
-  within: (value, unit) => `within ${value}${unit} (this is given as one illustrative example for this parameter, not a specified requirement)`
+  within: (value, unit) => `within ${value}${unit} (this is given as one illustrative example for this parameter, not a specified requirement)`,
+  equals: (value, unit) => `exactly ${value}${unit} (this is given as one illustrative example for this parameter, not a specified requirement)`
 };
 
 /**

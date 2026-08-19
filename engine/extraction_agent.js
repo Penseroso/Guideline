@@ -48,6 +48,17 @@ function draftQuantitativeCriterionSchema() {
     replaceWithTempIdArray: { knowledge_record_id: "knowledge_record_temp_id", condition_ids: "condition_temp_ids", joint_with_ids: "joint_with_temp_ids" }
   });
   schema.properties.value_fraction = nullableFractionSchema();
+  // Use "equals" for an exact count/value stated as such (e.g. "two
+  // relevant species," "a single species") — "at_least"/"not_exceed" assert
+  // an open-ended bound ("N or more"/"N or fewer") that a source stating an
+  // exact number does not, and get correctly rejected for it. Found live
+  // on S6(R1) 3.3 (docs/milestone_log.md M1) as the dominant remaining
+  // failure pattern once the is_default_with_exception/is_illustrative_example
+  // false-conjunction noise was fixed.
+  schema.properties.comparator.description =
+    "\"within\": a range/tolerance around a value. \"not_exceed\": an upper bound (N or fewer is fine). " +
+    "\"at_least\": a lower bound (N or more is fine). \"equals\": an exact count/value — use this, not " +
+    "at_least/not_exceed, when the source states an exact number rather than a floor or ceiling.";
   // A criterion qualified by an exception/precondition (e.g. "should
   // normally be X ... except in certain justified cases") reads as an
   // unconditional rule without this link, and fails verification for

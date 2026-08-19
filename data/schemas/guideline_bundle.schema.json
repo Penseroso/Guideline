@@ -88,7 +88,7 @@
         "document_version_label": { "type": "string", "minLength": 1 },
         "source_file_path": { "type": "string", "minLength": 1 },
         "source_file_checksum": { "type": "string", "minLength": 1 },
-        "schema_model_version": { "const": "0.4.0" }
+        "schema_model_version": { "const": "0.5.0" }
       }
     },
     "section": {
@@ -300,7 +300,7 @@
         "parameter": { "type": "string", "minLength": 1 },
         "comparator": {
           "type": "string",
-          "enum": ["within", "not_exceed", "at_least"]
+          "enum": ["within", "not_exceed", "at_least", "equals"]
         },
         "value": { "type": ["number", "null"] },
         "value_fraction": {
