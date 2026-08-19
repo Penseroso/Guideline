@@ -156,8 +156,12 @@ function siblingCriteria(qc, allCriteria) {
     // Condition, giving them an identical condition_ids set that
     // satisfies signal 1's exact-match — reintroducing the anti-pattern
     // through a different door. Veto here rather than adding yet another
-    // narrower signal-specific carve-out.
+    // narrower signal-specific carve-out. is_illustrative_example gets the
+    // same veto for the same reason (also not an absolute bound to be
+    // jointly asserted with anything else) — found live sharing a
+    // condition_ids entry with an unrelated criterion on S6(R1) 3.3.
     if (qc.is_default_with_exception || other.is_default_with_exception) return false;
+    if (qc.is_illustrative_example || other.is_illustrative_example) return false;
     return SIBLING_SIGNALS.some((signal) => signal(qc, other));
   });
 }

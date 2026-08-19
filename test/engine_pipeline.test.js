@@ -387,6 +387,13 @@ test("siblingCriteria does NOT group a default-with-exception value with its own
   assert.deepEqual(siblingCriteria(exceptionValue, [defaultValue, exceptionValue]), []);
 });
 
+test("siblingCriteria does NOT group an illustrative-example value with an unrelated criterion that happens to share its condition_ids set (regression: same class of anti-pattern as is_default_with_exception, found live on S6(R1) 3.3)", () => {
+  const illustrative = { criterion_id: "qc.example", knowledge_record_id: null, condition_ids: ["cond.001"], is_illustrative_example: true };
+  const unrelated = { criterion_id: "qc.other", knowledge_record_id: null, condition_ids: ["cond.001"], is_illustrative_example: false };
+  assert.deepEqual(siblingCriteria(illustrative, [illustrative, unrelated]), []);
+  assert.deepEqual(siblingCriteria(unrelated, [illustrative, unrelated]), []);
+});
+
 test("siblingCriteria groups two criteria sharing the same single condition_ids entry, even with different knowledge_record_id (e.g. two different parameters both scoped 'at the LLOQ')", () => {
   const accuracyAtLLOQ = { criterion_id: "qc.acc-lloq", knowledge_record_id: "kr.012", condition_ids: ["cond.007"] };
   const precisionAtLLOQ = { criterion_id: "qc.prec-lloq", knowledge_record_id: "kr.013", condition_ids: ["cond.007"] };
