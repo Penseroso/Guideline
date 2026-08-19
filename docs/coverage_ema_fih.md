@@ -33,23 +33,25 @@
 | **7.5** | Maximum exposure and dose | p. 13 | `COMPLETED` | 최대 노출도 한계 (14 KR, 1 QC, 16 Cond) |
 | **7.6** | Moving from single to multiple dosing | p. 14 | `COMPLETED` | SAD ➔ MAD 전환 조건 (8 KR, 7 QC, 10 Cond) |
 | **7.7** | Route of administration | p. 14 | `COMPLETED` | 투여 경로 (IV infusion 속도 등) (3 KR, 2 Cond) |
-| **8.1** | Planning and conduct: General aspects | p. 14 | `BACKLOG` | 임상시험 계획 일반 원칙 |
-| **8.2.1**| Overall design | p. 15 | `BACKLOG` | 임상 디자인 |
-| **8.2.2**| Integrated protocols | p. 15 | `BACKLOG` | 통합 프로토콜 운영 기준 |
-| **8.2.3**| Choice of subjects | p. 16 | `BACKLOG` | 피험자 선정 (건강인 vs 환자) |
-| **8.2.4**| Subject assessments and interventions | p. 16 | `BACKLOG` | 피험자 모니터링 |
-| **8.2.5**| General considerations for all cohorts | p. 17 | `BACKLOG` | 코호트 운영 공통 |
-| **8.2.6**| Precautions within a cohort | p. 17 | **`TARGET_PHASE_2`** | **Sentinel dosing (순차투여 및 관찰간격)** |
-| **8.2.7**| Precautions between cohorts and parts | p. 17 | `BACKLOG` | 코호트 간 투약 간격 |
-| **8.2.8**| Data review for decision | p. 18 | `BACKLOG` | 코호트 증량 결정 데이터 리뷰 |
-| **8.2.9**| Stopping rules | p. 18 | `BACKLOG` | 임상시험 및 코호트 중단 기준 |
-| **8.2.10**| Monitoring and adverse events | p. 19 | `BACKLOG` | 이상반응 모니터링 및 보고 |
-| **8.3** | Sponsor and investigators responsibilities| p. 20 | `BACKLOG` | 의뢰자/시험자 책임 |
-| **8.4** | Investigator site facilities and personnel| p. 20 | `BACKLOG` | 응급처치 시설 및 전문인력 요건 |
+| **8.1** | Planning and conduct: General aspects | p. 14 | `COMPLETED` | 임상시험 계획 일반 원칙 (9 KR, 4 Cond) |
+| **8.2.1**| Overall design | p. 15 | `COMPLETED` | 임상 프로토콜 설계 및 코호트 크기 (6 KR, 1 Cond) |
+| **8.2.2**| Integrated protocols | p. 15 | `COMPLETED` | 통합 프로토콜 운영 기준 (SAD/MAD/DDI 오버랩) (18 KR, 11 Cond) |
+| **8.2.3**| Choice of subjects | p. 16 | `COMPLETED` | 피험자 선정 (건강인 vs 환자) (4 KR, 3 Cond) |
+| **8.2.4**| Subject assessments and interventions | p. 16 | `COMPLETED` | 피험자 안전성 평가 및 추적기간 (14 KR, 13 Cond) |
+| **8.2.5**| General considerations for all cohorts | p. 17 | `COMPLETED` | 코호트 운영 공통 및 재등록 세척기간 (15 KR, 7 Cond) |
+| **8.2.6**| Precautions within a cohort | p. 17 | `COMPLETED` | **Sentinel dosing (순차투여, 위약 동시투약, 관찰간격)** (20 KR, 2 QC, 14 Cond) |
+| **8.2.7**| Precautions between cohorts and parts | p. 17 | `COMPLETED` | 코호트 간 투약 간격 및 누적 데이터 검토 (19 KR, 3 QC, 13 Cond) |
+| **8.2.8**| Data review for decision | p. 18 | `COMPLETED` | 평가 가능 피험자 정의 및 증량 결정 (10 KR, 2 QC, 7 Cond) |
+| **8.2.9**| Stopping rules | p. 18 | `COMPLETED` | **임상시험 중단 기준 (1건 심각반응, 2건 중증반응)** (23 KR, 3 QC, 14 Cond) |
+| **8.2.10**| Monitoring and adverse events | p. 19 | `COMPLETED` | 이상반응 모니터링, 긴급 Unblinding, SUSAR 보고 (18 KR, 11 Cond) |
+| **8.3** | Sponsor and investigators responsibilities| p. 20 | `COMPLETED` | 의뢰자/시험자 책임 및 안전성 검토 위원회 (12 KR, 6 Cond) |
+| **8.4** | Investigator site facilities and personnel| p. 20 | `COMPLETED` | 응급처치 시설, ICU 연계 및 전문인력 요건 (8 KR, 4 Cond) |
 
 ---
 
 ## Summary Statistics
 * **전체 섹션 수**: 34개 (주요 18개 및 하위 섹션 포함)
-* **규제 핵심 타겟 (Phase 1: Dosing Section 7)**: 7개 하위 섹션 (7.1 ~ 7.7)
-* **규제 핵심 타겟 (Phase 2: Sentinel Dosing Section 8.2.6)**: 1개 섹션
+* **적재 완료 (Completed)**: **20개 섹션** (Section 7.1~7.7 전수 + Section 8.1~8.4 전수)
+* **총 구조화 데이터 규모 (EMA FIH)**: **289 KnowledgeRecords, 18 QuantitativeCriteria, 183 Conditions** (총 490개 엔티티)
+* **잔여 백로그 (Backlog)**: Section 4~6 (품질 및 비임상 관련성 10개 섹션)
+

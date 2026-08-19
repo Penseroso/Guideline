@@ -98,6 +98,8 @@ First real-usage checkpoint: 27 questions asked via `npm run chat` (mixed Korean
 ## M3 — Content extraction pulled by M2 gaps (2026-08-19, started)
 
 - **Document Coverage Manifest & EMA FIH Section 7 Ingestion (2026-08-19)**: Enforced the Document Coverage Matrix governance mechanism (`docs/coverage_ema_fih.md`) mapping 100% of the 34 subsections of the EMA FIH guideline (`EMA/CHMP/SWP/28367/07 Rev. 1`). Executed 3-pass self-consistent extraction and NLI entailment verification (`engine/pipeline.js`) on Section 7 (Dosing selection for FIH and early clinical trials, subsections 7.1~7.7), producing `data/pilots/ema_fih_dosing.json` containing 113 KnowledgeRecords, 8 QuantitativeCriteria, and 75 Conditions. Extended Scope Guard filtering to Option B candidate retrieval to enforce negative scope exclusions (e.g. ATMP exclusion). 123/123 tests pass (`npm test`); `npm run eval` 15/15 pass; `npm run validate:pilots` 4/4 bundles pass.
+- **EMA FIH Section 8 (Planning & Conduct, Sentinel Dosing, Stopping Rules) Ingestion (2026-08-19)**: Ingested all 13 subsections of Section 8 (8.1~8.4) via 3-pass self-consistent extraction and NLI entailment verification, expanding `data/pilots/ema_fih_dosing.json` to 289 KnowledgeRecords, 18 QuantitativeCriteria, and 183 Conditions (490 total entities across 20 structured sections). Direct answers enabled for Sentinel Dosing (§8.2.6: 1 active, 1 placebo, observation interval, data review gate), Stopping Rules (§8.2.9: immediate stop, 1 serious AR in 1 subject, 2 severe non-serious ARs in same cohort, max exposure Cmax/AUC bounds), and Integrated Protocol transition (§8.2.2). 123/123 tests pass (`npm test`); `npm run eval` 15/15 pass; `npm run validate:pilots` 4/4 bundles pass.
+
 
 
 
