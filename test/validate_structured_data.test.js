@@ -201,6 +201,24 @@ test("negative fraction denominator fails", () => {
   assertInvalid(result, "must be greater than zero");
 });
 
+test("is_default_with_exception with empty condition_ids fails", () => {
+  const result = validatePilotCopies((first) => {
+    first.quantitative_criteria[0].is_default_with_exception = true;
+    first.quantitative_criteria[0].condition_ids = [];
+  });
+
+  assertInvalid(result, "is_default_with_exception");
+});
+
+test("is_default_with_exception with a real condition_ids entry passes", () => {
+  const result = validatePilotCopies((first) => {
+    first.quantitative_criteria[0].is_default_with_exception = true;
+    first.quantitative_criteria[0].condition_ids = ["ich_m10.cond.3_2_5_2.001"];
+  });
+
+  assertValid(result);
+});
+
 test("unresolved CrossReference with non-null target_id fails", () => {
   const result = validatePilotCopies((first) => {
     first.cross_references.push({

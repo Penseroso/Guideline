@@ -83,7 +83,16 @@ function formatAnswer(record) {
     const value = record.value_fraction
       ? `${record.value_fraction.numerator}/${record.value_fraction.denominator}`
       : record.value;
-    return `${record.parameter}: ${record.comparator} ${value}${record.unit ? " " + record.unit : ""}` +
+    // Surface is_default_with_exception/is_illustrative_example (schema.md
+    // Model 0.4.0) so a user isn't misled into treating a soft default or
+    // an example figure as a hard rule — same hallucination-defense
+    // principle as never hiding review_status (product_roadmap.md TPP §1.3).
+    const qualifier = record.is_illustrative_example
+      ? "(illustrative example, not a specified requirement) "
+      : record.is_default_with_exception
+        ? "(default value — exceptions may apply) "
+        : "";
+    return `${qualifier}${record.parameter}: ${record.comparator} ${value}${record.unit ? " " + record.unit : ""}` +
       (record.denominator_or_reference ? ` (${record.denominator_or_reference})` : "") +
       `\nSource: "${record.source_text}" — ${cite}`;
   }

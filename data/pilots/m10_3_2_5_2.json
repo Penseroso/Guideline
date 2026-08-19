@@ -8,7 +8,7 @@
       "document_version_label": "Final version, adopted on 24 May 2022",
       "source_file_path": "source_pdfs/ICH M10.pdf",
       "source_file_checksum": "E306F3B6DC367EB2913CE242093A8F6C9DCD095A139A9FDB6D6F5E25201FA6AF",
-      "schema_model_version": "0.3.0"
+      "schema_model_version": "0.4.0"
     }
   ],
   "sections": [
@@ -349,6 +349,8 @@
       "denominator_or_reference": "each QC concentration level in each analytical run",
       "condition_ids": ["ich_m10.cond.3_2_5_2.001"],
       "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "source_text": "at least 5 replicates at each QC concentration level in each analytical run",
       "review_status": "reviewed"
     },
@@ -365,6 +367,8 @@
       "denominator_or_reference": "each QC concentration level",
       "condition_ids": ["ich_m10.cond.3_2_5_2.002"],
       "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "source_text": "at least 3 analytical runs",
       "review_status": "reviewed"
     },
@@ -381,6 +385,8 @@
       "denominator_or_reference": "between-run accuracy and precision evaluation",
       "condition_ids": ["ich_m10.cond.3_2_5_2.002"],
       "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "source_text": "over at least two days",
       "review_status": "reviewed"
     },
@@ -397,6 +403,8 @@
       "denominator_or_reference": "evaluation of trends over time within one run",
       "condition_ids": [],
       "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "source_text": "over at least one of the runs in a size equivalent to a prospective analytical run of study samples",
       "review_status": "reviewed"
     },
@@ -413,6 +421,8 @@
       "denominator_or_reference": "calibration curves for these assessments",
       "condition_ids": [],
       "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "source_text": "in at least one run",
       "review_status": "reviewed"
     },
@@ -429,6 +439,8 @@
       "denominator_or_reference": "nominal concentration at each concentration level except LLOQ",
       "condition_ids": [],
       "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "source_text": "within ±15% of the nominal concentration",
       "review_status": "reviewed"
     },
@@ -445,6 +457,8 @@
       "denominator_or_reference": "nominal concentration at the LLOQ",
       "condition_ids": ["ich_m10.cond.3_2_5_2.007"],
       "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "source_text": "except at the LLOQ, where it should be within ±20%",
       "review_status": "reviewed"
     },
@@ -461,6 +475,8 @@
       "denominator_or_reference": "%CV of concentrations determined at each level except LLOQ",
       "condition_ids": [],
       "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "source_text": "should not exceed 15%",
       "review_status": "reviewed"
     },
@@ -477,6 +493,8 @@
       "denominator_or_reference": "%CV at the LLOQ",
       "condition_ids": ["ich_m10.cond.3_2_5_2.007"],
       "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "source_text": "except at the LLOQ, where it should not exceed 20%",
       "review_status": "reviewed"
     },
@@ -496,6 +514,8 @@
       "denominator_or_reference": "total QCs in non-accuracy and precision validation runs",
       "condition_ids": ["ich_m10.cond.3_2_5_2.008"],
       "joint_with_ids": ["ich_m10.qc.3_2_5_2.011", "ich_m10.qc.3_2_5_2.012"],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "source_text": "at least 2/3 of the total QCs",
       "review_status": "reviewed"
     },
@@ -512,6 +532,8 @@
       "denominator_or_reference": "each concentration level in non-accuracy and precision validation runs",
       "condition_ids": ["ich_m10.cond.3_2_5_2.008"],
       "joint_with_ids": ["ich_m10.qc.3_2_5_2.010", "ich_m10.qc.3_2_5_2.012"],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "source_text": "at least 50% at each concentration level",
       "review_status": "reviewed"
     },
@@ -528,6 +550,8 @@
       "denominator_or_reference": "nominal values",
       "condition_ids": ["ich_m10.cond.3_2_5_2.008"],
       "joint_with_ids": ["ich_m10.qc.3_2_5_2.010", "ich_m10.qc.3_2_5_2.011"],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "source_text": "should be within ±15% of the nominal values",
       "review_status": "reviewed"
     }

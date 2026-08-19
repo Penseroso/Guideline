@@ -45,6 +45,32 @@ test("claimTextFor asserts 'specified criterion, not illustrative' without hardc
   assert.match(claim, /specified criterion value/);
 });
 
+// --- claimTextFor: is_default_with_exception / is_illustrative_example
+// (docs/schema.md Model 0.4.0, found live on S6(R1) 3.3) ---
+
+test("claimTextFor asserts 'default/typical, not absolute' phrasing for is_default_with_exception", () => {
+  const qc = { type: "quantitative_criterion", parameter: "relevant species count", comparator: "at_least", value: 2, value_fraction: null, unit: " species", is_default_with_exception: true };
+  const claim = claimTextFor(qc);
+  assert.match(claim, /normally at least 2/);
+  assert.match(claim, /default\/typical value/);
+  assert.doesNotMatch(claim, /not merely an illustrative example/);
+});
+
+test("claimTextFor asserts the opposite ('illustrative example, not specified') for is_illustrative_example", () => {
+  const qc = { type: "quantitative_criterion", parameter: "repeated dose toxicity study duration", comparator: "not_exceed", value: 14, value_fraction: null, unit: " days", is_illustrative_example: true };
+  const claim = claimTextFor(qc);
+  assert.match(claim, /not exceeding 14/);
+  assert.match(claim, /illustrative example/);
+  assert.match(claim, /not a specified requirement/);
+  assert.doesNotMatch(claim, /specified criterion value/);
+});
+
+test("claimTextFor keeps the ordinary 'specified, not illustrative' phrasing when both flags are false/absent", () => {
+  const qc = { type: "quantitative_criterion", parameter: "replicates", comparator: "at_least", value: 5, value_fraction: null, unit: " replicates", is_default_with_exception: false, is_illustrative_example: false };
+  const claim = claimTextFor(qc);
+  assert.match(claim, /specified criterion value/);
+});
+
 test("verifyRecord round-trips a real answerable record through the (mocked) verification agent", async () => {
   const { records } = loadStore();
   const qc = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");

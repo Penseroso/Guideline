@@ -154,7 +154,9 @@ async function verifyQuantitativeCriterion(qc, { sourceUnits, allCriteria, knowl
     value: qc.value,
     value_fraction: qc.value_fraction,
     unit: qc.unit,
-    denominator_or_reference: qc.denominator_or_reference
+    denominator_or_reference: qc.denominator_or_reference,
+    is_default_with_exception: qc.is_default_with_exception,
+    is_illustrative_example: qc.is_illustrative_example
   });
 
   // A criterion whose linked KnowledgeRecord uses a modality softer than
@@ -173,7 +175,7 @@ async function verifyQuantitativeCriterion(qc, { sourceUnits, allCriteria, knowl
   // denominator_or_reference fixes, one hop further via siblingCriteria().
   const siblings = siblingCriteria(qc, allCriteria);
   const siblingHint = siblings.length
-    ? ` This is one of several jointly-applicable criterion values from the same statement, also including: ${siblings.map((s) => claimTextFor({ type: "quantitative_criterion", parameter: s.parameter, comparator: s.comparator, value: s.value, value_fraction: s.value_fraction, unit: s.unit })).join("; ")}.`
+    ? ` This is one of several jointly-applicable criterion values from the same statement, also including: ${siblings.map((s) => claimTextFor({ type: "quantitative_criterion", parameter: s.parameter, comparator: s.comparator, value: s.value, value_fraction: s.value_fraction, unit: s.unit, is_default_with_exception: s.is_default_with_exception, is_illustrative_example: s.is_illustrative_example })).join("; ")}.`
     : "";
 
   // A criterion qualified by its own exception/precondition Condition

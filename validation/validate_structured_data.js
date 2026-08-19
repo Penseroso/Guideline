@@ -184,6 +184,9 @@ function checkReferencesAndRules(file, bundle, archiveIds, errors) {
     if (hasFraction && criterion.value_fraction.denominator <= 0) {
       addError(errors, file, criterion.criterion_id, "value_fraction.denominator", "must be greater than zero");
     }
+    if (criterion.is_default_with_exception && (criterion.condition_ids || []).length === 0) {
+      addError(errors, file, criterion.criterion_id, "is_default_with_exception", "requires at least one condition_ids entry (the exception)");
+    }
   }
 
   const conditionTargets = ["source_units", "knowledge_records", "quantitative_criteria"];

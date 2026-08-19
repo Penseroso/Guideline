@@ -88,7 +88,7 @@
         "document_version_label": { "type": "string", "minLength": 1 },
         "source_file_path": { "type": "string", "minLength": 1 },
         "source_file_checksum": { "type": "string", "minLength": 1 },
-        "schema_model_version": { "const": "0.3.0" }
+        "schema_model_version": { "const": "0.4.0" }
       }
     },
     "section": {
@@ -288,6 +288,8 @@
         "denominator_or_reference",
         "condition_ids",
         "joint_with_ids",
+        "is_default_with_exception",
+        "is_illustrative_example",
         "source_text",
         "review_status"
       ],
@@ -312,6 +314,8 @@
         "denominator_or_reference": { "$ref": "#/definitions/nullableString" },
         "condition_ids": { "$ref": "#/definitions/stringArray" },
         "joint_with_ids": { "$ref": "#/definitions/stringArray" },
+        "is_default_with_exception": { "type": "boolean" },
+        "is_illustrative_example": { "type": "boolean" },
         "source_text": { "type": "string", "minLength": 1 },
         "review_status": { "$ref": "#/definitions/reviewStatus" }
       },

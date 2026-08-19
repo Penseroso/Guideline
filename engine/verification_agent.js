@@ -88,6 +88,22 @@ const COMPARATOR_PHRASE = {
   within: (value, unit) => `within ${value}${unit} (this is the specified criterion value for this parameter, not merely an illustrative example or descriptive range)`
 };
 
+// schema.md Model 0.4.0: two patterns COMPARATOR_PHRASE's "specified, not
+// illustrative" framing gets wrong, found live on S6(R1) 3.3 — a default
+// value with a recognized exception always read as an unconditional bound
+// and failed verification; an illustrative "e.g." example always read as a
+// specified requirement and failed verification for the opposite reason.
+const DEFAULT_WITH_EXCEPTION_PHRASE = {
+  at_least: (value, unit) => `normally at least ${value}${unit} (this is the default/typical value for this parameter, not an absolute floor — a recognized exception may permit a different value)`,
+  not_exceed: (value, unit) => `normally not exceeding ${value}${unit} (this is the default/typical value for this parameter, not an absolute ceiling — a recognized exception may permit a different value)`,
+  within: (value, unit) => `normally within ${value}${unit} (this is the default/typical value for this parameter, not an absolute bound — a recognized exception may permit a different value)`
+};
+const ILLUSTRATIVE_EXAMPLE_PHRASE = {
+  at_least: (value, unit) => `at least ${value}${unit} (this is given as one illustrative example for this parameter, not a specified requirement)`,
+  not_exceed: (value, unit) => `not exceeding ${value}${unit} (this is given as one illustrative example for this parameter, not a specified requirement)`,
+  within: (value, unit) => `within ${value}${unit} (this is given as one illustrative example for this parameter, not a specified requirement)`
+};
+
 /**
  * Builds the natural-language claim to verify for one of
  * engine/data_store.js's flattened "answerable record" shapes.
@@ -98,7 +114,12 @@ function claimTextFor(record) {
       ? `${record.value_fraction.numerator}/${record.value_fraction.denominator}`
       : record.value;
     const unitSuffix = record.unit ? ` ${record.unit}` : "";
-    const phrase = COMPARATOR_PHRASE[record.comparator];
+    const phraseMap = record.is_illustrative_example
+      ? ILLUSTRATIVE_EXAMPLE_PHRASE
+      : record.is_default_with_exception
+        ? DEFAULT_WITH_EXCEPTION_PHRASE
+        : COMPARATOR_PHRASE;
+    const phrase = phraseMap[record.comparator];
     const base = phrase ? `${record.parameter} ${phrase(value, unitSuffix)}` : `${record.parameter} ${record.comparator} ${value}${unitSuffix}`;
     // Include denominator_or_reference (the criterion's own applicable
     // circumstance, e.g. "at the LLOQ", "for non-accuracy and precision

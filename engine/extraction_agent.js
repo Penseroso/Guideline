@@ -44,7 +44,7 @@ function draftQuantitativeCriterionSchema() {
   const src = bundleSchema.definitions.quantitativeCriterion;
   const schema = withTempId(src, {
     drop: ["criterion_id", "review_status"],
-    keep: ["source_unit_id", "parameter", "comparator", "value", "value_fraction", "unit", "value_status", "denominator_or_reference", "source_text"],
+    keep: ["source_unit_id", "parameter", "comparator", "value", "value_fraction", "unit", "value_status", "denominator_or_reference", "is_default_with_exception", "is_illustrative_example", "source_text"],
     replaceWithTempIdArray: { knowledge_record_id: "knowledge_record_temp_id", condition_ids: "condition_temp_ids", joint_with_ids: "joint_with_temp_ids" }
   });
   schema.properties.value_fraction = nullableFractionSchema();
@@ -59,6 +59,19 @@ function draftQuantitativeCriterionSchema() {
     "temp_ids of Condition drafts in this same call that qualify, restrict, or except this criterion " +
     "(e.g. \"normally X, except in justified cases\" — link the exception Condition here). Leave empty " +
     "when the criterion is unconditional.";
+  // Two independent booleans (schema.md Model 0.4.0) for patterns
+  // `comparator` alone can't represent — found live on S6(R1) 3.3.
+  schema.properties.is_default_with_exception.description =
+    "true when this value is the normal/typical case, not an absolute bound, and the source names a " +
+    "specific exception that may permit a different value (e.g. \"should normally include two relevant " +
+    "species... in certain justified cases one relevant species may suffice\"). REQUIRED when true: also " +
+    "add the exception Condition's temp_id to THIS record's own condition_temp_ids above, not only to the " +
+    "exception's own record — verification reads this record's condition_temp_ids. false otherwise.";
+  schema.properties.is_illustrative_example.description =
+    "true when the source introduces this value only as one example (\"e.g.\", \"for example\") of a " +
+    "broader, less specific requirement, not itself a specified threshold (e.g. \"...a limited toxicity " +
+    "evaluation..., e.g., a repeated dose toxicity study of ≤14 days duration\" — the 14-day figure is " +
+    "illustrative, not a specified requirement). false otherwise.";
   // Reciprocity (schema.md: "A.joint_with_ids includes B => B.joint_with_ids
   // includes A") is enforced in code below (see the symmetrization pass in
   // finalizeDraft), not left to the model to get right on its own — same
@@ -280,6 +293,8 @@ function finalizeDraft(draft, { section, allowedSourceUnitIds }) {
     joint_with_ids: (qc.joint_with_temp_ids || [])
       .map((t) => qcIdByTempId.get(t))
       .filter((id) => id && id !== qcIdByTempId.get(qc.temp_id)),
+    is_default_with_exception: qc.is_default_with_exception ?? false,
+    is_illustrative_example: qc.is_illustrative_example ?? false,
     source_text: qc.source_text,
     review_status: "needs_review"
   }));

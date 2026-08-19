@@ -203,6 +203,76 @@ test("verifyQuantitativeCriterion surfaces a linked exception Condition instead 
   assert.equal(draft.quantitative_criteria[0].review_status, "reviewed");
 });
 
+// --- verifyQuantitativeCriterion: is_default_with_exception /
+// is_illustrative_example (docs/schema.md Model 0.4.0, found live on
+// S6(R1) 3.3) ---
+
+test("verifyQuantitativeCriterion phrases a default-with-exception claim as 'normally X' plus the linked exception, not an absolute bound", async () => {
+  const qc = {
+    criterion_id: "qc.001",
+    source_unit_id: "su.001",
+    knowledge_record_id: null,
+    parameter: "number of relevant species",
+    comparator: "at_least",
+    value: 2,
+    value_fraction: null,
+    unit: "species",
+    value_status: "known",
+    denominator_or_reference: null,
+    condition_ids: ["cond.001"],
+    joint_with_ids: [],
+    is_default_with_exception: true,
+    is_illustrative_example: false,
+    source_text: "should normally include two relevant species",
+    review_status: "needs_review"
+  };
+  const condition = {
+    condition_id: "cond.001",
+    source_unit_id: "su.001",
+    condition_type: "exception",
+    condition_text: "in certain justified cases, one relevant species may suffice",
+    applies_to_ids: ["qc.001"],
+    review_status: "needs_review"
+  };
+  const su = [{ source_unit_id: "su.001", unit_order: 1, source_text: "Safety evaluation programs should normally include two relevant species; in certain justified cases, one relevant species may suffice." }];
+  const captured = [];
+  const client = { complete: async (args) => { captured.push(args.messages[0].content); return { entailed: true, reason: "ok" }; } };
+  const { draft } = await verifyDraft({ knowledge_records: [], quantitative_criteria: [qc], conditions: [condition] }, { sourceUnits: su, client });
+  const claim = captured[0].split("Claim to check:")[1];
+  assert.match(claim, /normally at least 2/);
+  assert.match(claim, /one relevant species may suffice/, "the conditionHint must still be appended alongside the new phrasing");
+  assert.equal(draft.quantitative_criteria[0].review_status, "reviewed");
+});
+
+test("verifyQuantitativeCriterion phrases an illustrative-example claim as an example, not a specified requirement", async () => {
+  const qc = {
+    criterion_id: "qc.002",
+    source_unit_id: "su.001",
+    knowledge_record_id: null,
+    parameter: "repeated dose toxicity study duration",
+    comparator: "not_exceed",
+    value: 14,
+    value_fraction: null,
+    unit: "days",
+    value_status: "known",
+    denominator_or_reference: "limited toxicity evaluation in a single species",
+    condition_ids: [],
+    joint_with_ids: [],
+    is_default_with_exception: false,
+    is_illustrative_example: true,
+    source_text: "a repeated dose toxicity study of ≤ 14 days duration",
+    review_status: "needs_review"
+  };
+  const su = [{ source_unit_id: "su.001", unit_order: 1, source_text: "it may still be prudent to assess some aspects of potential toxicity in a limited toxicity evaluation in a single species, e.g., a repeated dose toxicity study of ≤ 14 days duration." }];
+  const captured = [];
+  const client = { complete: async (args) => { captured.push(args.messages[0].content); return { entailed: true, reason: "ok" }; } };
+  const { draft } = await verifyDraft({ knowledge_records: [], quantitative_criteria: [qc], conditions: [] }, { sourceUnits: su, client });
+  const claim = captured[0].split("Claim to check:")[1];
+  assert.match(claim, /illustrative example/);
+  assert.match(claim, /not a specified requirement/);
+  assert.equal(draft.quantitative_criteria[0].review_status, "reviewed");
+});
+
 // --- verifyKnowledgeRecord: record_type=example is a special case
 // (docs/milestone_log.md M1, found on real M10 6.1) ---
 

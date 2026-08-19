@@ -8,7 +8,7 @@
       "document_version_label": "Current Step 4 version; Parent Guideline dated 16 July 1997; Addendum dated 12 June 2011 incorporated at the end of June 2011",
       "source_file_path": "source_pdfs/ICH S6.pdf",
       "source_file_checksum": "05C41D25575259D9C931FCAD33A8227089A8B2F704C0922C0B5F7F411D812E22",
-      "schema_model_version": "0.3.0"
+      "schema_model_version": "0.4.0"
     }
   ],
   "sections": [
@@ -1529,6 +1529,8 @@
       "denominator_or_reference": "limited toxicity evaluation in a single species",
       "condition_ids": ["ich_s6_r1.cond.part1.3_3.008"],
       "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
       "source_text": "a repeated dose toxicity study of ≤ 14 days duration",
       "review_status": "reviewed"
     },
@@ -1545,6 +1547,8 @@
       "denominator_or_reference": "short-term general toxicology studies",
       "condition_ids": ["ich_s6_r1.cond.part2.2_2.001"],
       "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "source_text": "up to 1 month duration",
       "review_status": "reviewed"
     },
@@ -1561,6 +1565,8 @@
       "denominator_or_reference": "additional short-term study or arm in a short-term study",
       "condition_ids": ["ich_s6_r1.cond.part2.notes.005"],
       "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "source_text": "at least one species with the unconjugated toxin",
       "review_status": "reviewed"
     }
