@@ -2,7 +2,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 
 const { loadStore } = require("../engine/data_store");
-const { structuredQuery, answer, answerOptionB, NOT_FOUND, tokenize } = require("../engine/query_router");
+const { structuredQuery, formatAnswer, answer, answerOptionB, NOT_FOUND, tokenize } = require("../engine/query_router");
 
 const { records } = loadStore();
 
@@ -102,3 +102,35 @@ test("answerOptionB returns the generated answer with sources once verification 
   assert.equal(result.answered, true);
   assert.match(result.text, /Sources: M10 §3\.2\.5\.2/);
 });
+
+// --- Korean tokenization & Structured Routing Fixes ---
+
+test("tokenize maps Korean regulatory synonyms and strips Korean particles", () => {
+  const tokens = tokenize("LLOQ에서 accuracy 허용범위는?");
+  assert.ok(tokens.includes("lloq"));
+  assert.ok(tokens.includes("accuracy"));
+  assert.ok(tokens.includes("acceptance") || tokens.includes("criteria"));
+});
+
+test("structuredQuery picks LLOQ accuracy (20%) over general accuracy (15%) when querying LLOQ", () => {
+  const match = structuredQuery("LLOQ에서 accuracy 허용범위는?", records);
+  assert.ok(match, "expected match");
+  assert.equal(match.record.value, 20);
+  assert.match(match.record.denominator_or_reference, /LLOQ/);
+  const text = formatAnswer(match);
+  assert.match(text, /20 %/);
+});
+
+test("structuredQuery formats composite sibling criteria when querying general parameter", () => {
+  const match = structuredQuery("accuracy 허용기준", records);
+  assert.ok(match, "expected match");
+  const text = formatAnswer(match);
+  assert.match(text, /15 %/);
+  assert.match(text, /20 %/);
+});
+
+test("structuredQuery abstains (returns null) on ambiguous queries with no clear single or sibling winner", () => {
+  const match = structuredQuery("Full validation 항목이 뭐야", records);
+  assert.equal(match, null);
+});
+

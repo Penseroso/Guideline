@@ -3,68 +3,167 @@ const { tokenize } = require("./text_utils");
 const { verifyClaim } = require("./verification_agent");
 
 /**
- * Fields searched for Option A structured matching. Kept explicit
- * (not "search everything") so a match reflects a real structured
- * field hit, not an accidental substring in unrelated free text.
+ * Minimum score and token count required for Option A structured matching.
  */
-function searchableText(record) {
-  return [
-    record.section_number,
-    record.guideline_code,
-    record.parameter,
-    record.record_type,
-    record.condition_type,
-    record.comparator,
-    record.denominator_or_reference,
-    record.source_text
-  ]
-    .filter(Boolean)
-    .join(" ");
+const MIN_CONFIDENT_MATCH_SCORE = 3.0;
+const MIN_MATCHED_TOKENS = 2;
+
+// When scores are close, prefer the more precise structured type over
+// the raw paragraph it was extracted from.
+const TYPE_PRIORITY = { quantitative_criterion: 0, condition: 1, knowledge_record: 2 };
+
+/**
+ * Scores a record against query tokens using field-weighted matching.
+ * Structural fields (parameter, section, condition) receive higher weights
+ * than unconstrained source text. Exception mentions (e.g. 'except LLOQ')
+ * are penalized when the query did not ask for exclusions.
+ */
+function scoreRecord(record, qTokens) {
+  let score = 0;
+  const matchedTokens = new Set();
+
+  const paramTokens = new Set(tokenize(record.parameter));
+  const denomTokens = new Set(tokenize(record.denominator_or_reference));
+  const sourceTokens = new Set(tokenize(record.source_text));
+  const secTokens = new Set(tokenize(record.section_number));
+  const codeTokens = new Set(tokenize(record.guideline_code));
+  const actionTokens = new Set(tokenize(record.action));
+  const objectTokens = new Set(tokenize(record.object));
+  const condTypeTokens = new Set(tokenize(record.condition_type));
+
+  const hasNegativeQueryToken = qTokens.has("except") || qTokens.has("excluding") || qTokens.has("제외");
+
+  // If query asks for criteria/acceptance, quantitative_criterion records represent that entity type
+  if (record.type === "quantitative_criterion") {
+    if (qTokens.has("criteria") || qTokens.has("criterion")) {
+      matchedTokens.add("criteria");
+      score += 2.0;
+    }
+    if (qTokens.has("acceptance")) {
+      matchedTokens.add("acceptance");
+      score += 1.5;
+    }
+  }
+
+  const paramLower = (record.parameter || "").toLowerCase().trim();
+
+  for (const t of qTokens) {
+    if (t === "criteria" || t === "criterion" || t === "acceptance") continue;
+    let tokenScore = 0;
+    if (paramLower === t) {
+      tokenScore = Math.max(tokenScore, 5.0);
+    } else if (paramTokens.has(t)) {
+      tokenScore = Math.max(tokenScore, 3.5);
+    }
+    if (condTypeTokens.has(t)) {
+      tokenScore = Math.max(tokenScore, 3.0);
+    }
+    if (secTokens.has(t) || codeTokens.has(t)) {
+      tokenScore = Math.max(tokenScore, 2.5);
+    }
+    if (denomTokens.has(t)) {
+      const denomLower = (record.denominator_or_reference || "").toLowerCase();
+      const isNegativeMention = denomLower.includes(`except ${t}`) ||
+                                denomLower.includes(`except at the ${t}`) ||
+                                denomLower.includes(`except at ${t}`) ||
+                                denomLower.includes(`excluding ${t}`);
+
+      if (isNegativeMention && !hasNegativeQueryToken) {
+        tokenScore = Math.max(tokenScore, 0.1);
+      } else {
+        tokenScore = Math.max(tokenScore, 2.5);
+      }
+    }
+    if (actionTokens.has(t) || objectTokens.has(t)) {
+      tokenScore = Math.max(tokenScore, 1.5);
+    }
+    if (sourceTokens.has(t)) {
+      tokenScore = Math.max(tokenScore, 1.0);
+    }
+
+    if (tokenScore > 0) {
+      matchedTokens.add(t);
+      score += tokenScore;
+    }
+  }
+
+  return { score, matchedCount: matchedTokens.size };
+}
+
+function areSiblings(a, b) {
+  if (a.type !== "quantitative_criterion" || b.type !== "quantitative_criterion") return false;
+  if (a.parameter !== b.parameter) return false;
+  if (a.knowledge_record_id && b.knowledge_record_id && a.knowledge_record_id === b.knowledge_record_id) return true;
+  if (a.source_unit_ids && b.source_unit_ids && a.source_unit_ids[0] && b.source_unit_ids[0] && a.source_unit_ids[0] === b.source_unit_ids[0]) return true;
+  return false;
 }
 
 /**
- * Option A: structured keyword match, no generation. Returns the
- * best-scoring answerable record plus a confidence score, or null
- * if nothing scores above MIN_CONFIDENT_MATCHES shared tokens.
+ * Option A: structured match, no generation. Returns the best-scoring
+ * answerable match (single or sibling composite), or null if nothing scores
+ * above the confidence threshold or if top candidates are in conflict (abstention).
  */
-const MIN_CONFIDENT_MATCHES = 2;
-
-// When scores are close, prefer the more precise structured type over
-// the raw paragraph it was extracted from — a long KnowledgeRecord
-// paragraph tends to share more query tokens by sheer length than the
-// terse QuantitativeCriterion/Condition it contains, which would
-// otherwise bury the more useful, more precise answer.
-const TYPE_PRIORITY = { quantitative_criterion: 0, condition: 1, knowledge_record: 2 };
-// Exact ties only. A margin > 0 was tried and found to let a barely-relevant
-// QuantitativeCriterion (e.g. score 1) outrank a clearly better-matched
-// KnowledgeRecord (e.g. score 2) purely on type, which is worse than doing
-// no type preference at all — verified against real query data before fixing.
-const NEAR_MAX_MARGIN = 0;
-
 function structuredQuery(question, records) {
   const qTokens = new Set(tokenize(question));
   if (qTokens.size === 0) return null;
 
   const scored = [];
   for (const record of records) {
-    const recordTokens = new Set(tokenize(searchableText(record)));
-    let shared = 0;
-    for (const t of qTokens) if (recordTokens.has(t)) shared += 1;
-    if (shared > 0) scored.push({ record, score: shared });
+    const { score, matchedCount } = scoreRecord(record, qTokens);
+    if (score >= MIN_CONFIDENT_MATCH_SCORE && matchedCount >= MIN_MATCHED_TOKENS) {
+      scored.push({ record, score, matchedCount });
+    }
   }
   if (scored.length === 0) return null;
 
-  const maxScore = Math.max(...scored.map((s) => s.score));
-  if (maxScore < MIN_CONFIDENT_MATCHES) return null;
-
-  const nearMax = scored.filter((s) => s.score >= maxScore - NEAR_MAX_MARGIN);
-  nearMax.sort((a, b) => {
+  scored.sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
     const typeDelta = TYPE_PRIORITY[a.record.type] - TYPE_PRIORITY[b.record.type];
     if (typeDelta !== 0) return typeDelta;
-    return b.score - a.score;
+    return b.matchedCount - a.matchedCount;
   });
 
-  return nearMax[0];
+  const maxScore = scored[0].score;
+  const topTied = scored.filter((s) => s.score === maxScore);
+
+  // Case 1: Single clear winner
+  if (topTied.length === 1) {
+    return {
+      record: topTied[0].record,
+      score: topTied[0].score,
+      isComposite: false
+    };
+  }
+
+  // Case 2: Sibling criteria forming a composite rule set (e.g. default + exception)
+  const allQCs = topTied.every((t) => t.record.type === "quantitative_criterion");
+  if (allQCs) {
+    const first = topTied[0].record;
+    const allSiblings = topTied.every((t) => areSiblings(first, t.record));
+    if (allSiblings) {
+      return {
+        record: first,
+        score: maxScore,
+        isComposite: true,
+        compositeRecords: topTied.map((t) => t.record)
+      };
+    }
+  }
+
+  // Case 3: All top-tied records refer to the exact same source_unit and same text
+  const firstUnit = topTied[0].record.source_unit_ids ? topTied[0].record.source_unit_ids[0] : null;
+  const sameUnit = firstUnit && topTied.every((t) => t.record.source_unit_ids && t.record.source_unit_ids[0] === firstUnit);
+  if (sameUnit && topTied[0].record.type === "knowledge_record") {
+    return {
+      record: topTied[0].record,
+      score: maxScore,
+      isComposite: false
+    };
+  }
+
+  // Case 4: Ambiguous / conflicting tie between different records
+  // -> ABSTAIN to prevent arbitrary lottery winner, safely delegate to Option B
+  return null;
 }
 
 function formatCitation(citation) {
@@ -75,26 +174,42 @@ function formatCitation(citation) {
   return `${citation.guideline_code || citation.document_id} §${citation.section_number || "?"}, ${page} [${citation.source_unit_id}]`;
 }
 
-function formatAnswer(record) {
-  const citation = record.citations[0];
+function formatSingleCriterion(record) {
+  const value = record.value_fraction
+    ? `${record.value_fraction.numerator}/${record.value_fraction.denominator}`
+    : record.value;
+  const qualifier = record.is_illustrative_example
+    ? "(illustrative example, not a specified requirement) "
+    : record.is_default_with_exception
+      ? "(default value — exceptions may apply) "
+      : "";
+  return `${qualifier}${record.parameter}: ${record.comparator} ${value}${record.unit ? " " + record.unit : ""}` +
+    (record.denominator_or_reference ? ` (${record.denominator_or_reference})` : "");
+}
+
+function formatCompositeAnswer(records) {
+  const primary = records[0];
+  const citation = primary.citations[0];
+  const cite = formatCitation(citation);
+
+  const lines = records.map((r) => `• ${formatSingleCriterion(r)}`);
+  return `Criteria for ${primary.parameter}:\n${lines.join("\n")}\nSource: "${primary.source_text}" — ${cite}`;
+}
+
+function formatAnswer(match) {
+  // Support both raw record or structured match object
+  const isMatchObj = match && match.record;
+  const record = isMatchObj ? match.record : match;
+
+  if (isMatchObj && match.isComposite && match.compositeRecords && match.compositeRecords.length > 1) {
+    return formatCompositeAnswer(match.compositeRecords);
+  }
+
+  const citation = record.citations ? record.citations[0] : null;
   const cite = formatCitation(citation);
 
   if (record.type === "quantitative_criterion") {
-    const value = record.value_fraction
-      ? `${record.value_fraction.numerator}/${record.value_fraction.denominator}`
-      : record.value;
-    // Surface is_default_with_exception/is_illustrative_example (schema.md
-    // Model 0.4.0) so a user isn't misled into treating a soft default or
-    // an example figure as a hard rule — same hallucination-defense
-    // principle as never hiding review_status (product_roadmap.md TPP §1.3).
-    const qualifier = record.is_illustrative_example
-      ? "(illustrative example, not a specified requirement) "
-      : record.is_default_with_exception
-        ? "(default value — exceptions may apply) "
-        : "";
-    return `${qualifier}${record.parameter}: ${record.comparator} ${value}${record.unit ? " " + record.unit : ""}` +
-      (record.denominator_or_reference ? ` (${record.denominator_or_reference})` : "") +
-      `\nSource: "${record.source_text}" — ${cite}`;
+    return `${formatSingleCriterion(record)}\nSource: "${record.source_text}" — ${cite}`;
   }
 
   if (record.type === "condition") {
@@ -164,7 +279,7 @@ async function answerOptionB(question, records, { client, store }) {
 
 /**
  * Answers a question: Option A (structured query, no LLM) first;
- * Option B (grounded RAG fallback) only when A finds nothing AND a
+ * Option B (grounded RAG fallback) only when A finds nothing/abstains AND a
  * `client` (engine/llm_client.js) and `store` (engine/vector_store.js)
  * are supplied — omit both to run Option A only, with zero LLM cost
  * (product_roadmap.md §2.4.1).
@@ -174,7 +289,7 @@ async function answer(question, records, { client, store } = {}) {
   if (match) {
     return {
       answered: true,
-      text: formatAnswer(match.record),
+      text: formatAnswer(match),
       record: match.record,
       score: match.score,
       path: "A",
@@ -207,7 +322,7 @@ if (require.main === module) {
 
 module.exports = {
   tokenize,
-  searchableText,
+  scoreRecord,
   structuredQuery,
   formatCitation,
   formatAnswer,

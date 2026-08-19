@@ -42,11 +42,10 @@
       "note": "Sanity check: completely unrelated question must refuse."
     },
     {
-      "id": "q8_known_imprecision",
+      "id": "q8_refusal",
       "question": "stability of whole blood samples storage conditions",
-      "expect_answered": true,
-      "expect_citation_contains": "M10 §6.1",
-      "note": "KNOWN LIMITATION, not a bug to silently accept: whole-blood-specific stability content (M10 §3.2.8) is not yet structured (see docs/milestone_log.md M0 gap-finding scan), so Option A's keyword match lands on a same-guideline 'storage conditions' record via generic term overlap rather than refusing outright. Not a fabrication (the cited record is real and accurately cited), but not the ideal answer either. Tracked here so M2/M3 can decide whether to extract §3.2.8 or improve Option A relevance scoring."
+      "expect_answered": false,
+      "note": "Whole-blood-specific stability content (M10 §3.2.8) is not yet structured in pilot data. Option A's improved relevance and conflict abstention correctly refuses rather than returning an imprecise match from M10 §6.1."
     },
     {
       "id": "q9",
@@ -61,6 +60,26 @@
       "expect_answered": true,
       "expect_citation_contains": "M10 §3.2.5.2",
       "expect_text_contains": "2/3"
+    },
+    {
+      "id": "q11_ko_lloq_accuracy",
+      "question": "LLOQ에서 accuracy 허용범위는?",
+      "expect_answered": true,
+      "expect_citation_contains": "M10 §3.2.5.2",
+      "expect_text_contains": "20"
+    },
+    {
+      "id": "q12_ko_qc_replicates",
+      "question": "한 run에서 QC 몇 개 넣어야 해?",
+      "expect_answered": true,
+      "expect_citation_contains": "M10 §3.2.5.2",
+      "expect_text_contains": "5"
+    },
+    {
+      "id": "q13_ko_full_val_refusal",
+      "question": "Full validation 항목이 뭐야",
+      "expect_answered": false,
+      "note": "Full validation is not structured in the pilot archive. Must refuse instead of returning Partial validation."
     }
   ]
 }

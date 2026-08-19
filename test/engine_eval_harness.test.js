@@ -41,8 +41,8 @@ test("summarize returns null (not 0 or NaN) for a metric with no applicable case
 
 test("runEval against the real fixture and real pilot data currently passes end to end (regression guard)", async () => {
   const { summary } = await runEval();
-  assert.equal(summary.total, 9);
-  assert.equal(summary.passed, 9, `unexpected failures: ${JSON.stringify(summary.failures)}`);
+  assert.equal(summary.total, 12);
+  assert.equal(summary.passed, 12, `unexpected failures: ${JSON.stringify(summary.failures)}`);
   assert.equal(summary.citation_precision, 1);
   assert.equal(summary.refusal_correctness, 1);
 });
