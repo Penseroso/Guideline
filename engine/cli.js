@@ -4,6 +4,7 @@ const { loadStore } = require("./data_store");
 const { answer } = require("./query_router");
 const { createStore } = require("./vector_store");
 const { createClient, availableProviders } = require("./llm_client");
+const { logInteraction } = require("./query_log");
 
 /**
  * Option B only activates when a provider is actually configured
@@ -57,6 +58,7 @@ async function main() {
           console.log(`[review_status: ${result.review_status} — not fully reviewed]`);
         }
         console.log("");
+        logInteraction(question, result);
       }
       rl.prompt();
     });

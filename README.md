@@ -17,6 +17,7 @@ A hallucination-resistant conversational assistant for regulatory guidelines, bu
 - `engine/`: the chatbot/extraction/verification application layer.
 - `validation/`: reproducible validation scripts.
 - `test/`: unit tests (mocked LLM clients — no live API calls in CI) and schema validation tests.
+- `logs/`: `m2_queries.jsonl`, the M2 real-usage log (`npm run chat`) — every question, its answer, path (A/B), and review_status; the coverage-expansion backlog for M3 (`docs/product_roadmap.md` §3 M2).
 
 ## Key Documents
 
