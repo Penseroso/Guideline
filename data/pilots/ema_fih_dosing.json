@@ -1263,10 +1263,10 @@
       "modality": "should",
       "original_modal_text": "should",
       "subject": "all relevant data",
-      "action": "be integrated",
-      "object": "in a suitable modelling approach for the determination of the MABEL, PAD and/or ATD",
+      "action": "be integrated in",
+      "object": "a suitable modelling approach for the determination of the MABEL, PAD and/or ATD",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.7_2.014",
@@ -1334,9 +1334,9 @@
       "original_modal_text": "may",
       "subject": "A scientific rationale for the starting dose",
       "action": "be included",
-      "object": "in the IB",
+      "object": "in the IB (in addition to the protocol)",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.7_2.019",
@@ -1518,7 +1518,7 @@
       "action": "be integrated in",
       "object": "a suitable modelling approach for the determination of the MABEL, PAD and/or ATD",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.7_2.032",
@@ -1697,10 +1697,10 @@
       "modality": "may",
       "original_modal_text": "may not be appropriate",
       "subject": "a starting dose that is substantially lower than the human expected pharmacological dose",
-      "action": "be appropriate",
-      "object": null,
+      "action": "not be appropriate",
+      "object": "in some instances (when substantially lower than expected pharmacological dose)",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.7_3.007",
@@ -1739,10 +1739,10 @@
       "modality": "may",
       "original_modal_text": "may not limit",
       "subject": "the highest dose or exposure tested in the non-clinical studies",
-      "action": "limit",
-      "object": "the dose-escalation or highest dose investigated in a CT",
+      "action": "not limit",
+      "object": "the dose-escalation or highest dose investigated in a CT in patients with advanced cancer if appropriately justified",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.7_3.010",
@@ -1795,10 +1795,10 @@
       "modality": "other",
       "original_modal_text": "may not limit",
       "subject": "the highest dose or exposure tested in the non-clinical studies",
-      "action": "limit",
-      "object": "the dose-escalation or highest dose investigated in a CT",
+      "action": "not limit",
+      "object": "the dose-escalation or highest dose investigated in a CT in patients with advanced cancer if appropriately justified",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.7_3.014",
@@ -1823,10 +1823,10 @@
       "modality": "may",
       "original_modal_text": "may not limit",
       "subject": "the highest dose or exposure tested in the non-clinical studies",
-      "action": "limit",
-      "object": "the dose-escalation or highest dose investigated in a CT",
+      "action": "not limit",
+      "object": "the dose-escalation or highest dose investigated in a CT in patients with advanced cancer if appropriately justified",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.7_3.016",
@@ -1935,10 +1935,10 @@
       "modality": "should",
       "original_modal_text": "should",
       "subject": "The dose increment between two dose levels",
-      "action": "be adapted",
-      "object": null,
+      "action": "be guided by non-clinical dose/exposure relationships and adapted",
+      "object": "following review of emerging clinical data from previous cohorts",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.7_4.007",
@@ -1950,9 +1950,9 @@
       "original_modal_text": "should",
       "subject": "smaller dose increments",
       "action": "be considered",
-      "object": null,
+      "object": "in later parts of SAD/MAD when non-linear PK indicates supra-proportional exposure",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.7_4.008",
@@ -2271,10 +2271,10 @@
       "modality": "may",
       "original_modal_text": "can be considered",
       "subject": "higher exposures in a MAD part",
-      "action": "be considered",
-      "object": null,
+      "action": "be considered in a MAD part",
+      "object": "if emerging clinical data suggests tolerance to adverse effects seen in SAD, provided pre-specified and below max exposure",
       "normalized_ko": "MAD 파트에서 더 높은 노출량을 고려할 수 있다.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.7_6.006",
@@ -2396,7 +2396,7 @@
       "is_default_with_exception": false,
       "is_illustrative_example": false,
       "source_text": "below the set maximum exposure",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ema_fih.qc.7_6.002",
@@ -2417,7 +2417,7 @@
       "is_default_with_exception": false,
       "is_illustrative_example": true,
       "source_text": "once daily dosing",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ema_fih.qc.7_6.003",
@@ -2438,7 +2438,7 @@
       "is_default_with_exception": false,
       "is_illustrative_example": true,
       "source_text": "twice daily dosing",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ema_fih.qc.7_6.004",
@@ -2458,7 +2458,7 @@
       "is_default_with_exception": false,
       "is_illustrative_example": true,
       "source_text": "once daily dosing",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ema_fih.qc.7_6.005",
