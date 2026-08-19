@@ -208,7 +208,13 @@ async function extractSection({ section, sourceUnits, client }) {
     "but are not limited to, the following\"), use record_type=example, modality=none, source_unit_ids " +
     "containing only that item's own source unit (not the framing sentence's), action=\"includes\", " +
     "object=the item's own text (verbatim from its source unit), and subject=a short category name — " +
-    "do not restate the framing sentence's scope claim as if the item's own text asserted it independently.";
+    "do not restate the framing sentence's scope claim as if the item's own text asserted it independently. " +
+    // Rule 1: Negation preservation
+    "PRESERVE NEGATION IN ACTION: If the source text contains negative modal expressions (e.g. 'should not', 'may not', 'is not appropriate', 'cannot', 'not limit', 'not exceed'), action MUST explicitly contain 'not' (e.g. 'not be appropriate', 'not limit', 'not exceed'). Never emit a positive action for a negative statement. " +
+    // Rule 2: Clause markers & Condition linking
+    "CONDITION EXTRACTION & LINKING: Sentences with framing or qualification clauses starting with 'Whenever possible', 'If', 'Unless', 'Provided that', 'In cases where', 'Depending on' MUST produce a Condition record, and its temp_id MUST be referenced in condition_temp_ids or applies_to_temp_ids. " +
+    // Rule 3: Illustrative numbers vs specified criteria
+    "ILLUSTRATIVE NUMBERS VS SPECIFIED CRITERIA: Numbers introduced with 'e.g.', 'such as', 'for example', 'exemplified by' (e.g. 'such as a move from once daily to twice daily dosing', 'e.g. a study of ≤ 14 days') MUST have is_illustrative_example: true. Do not mark them as specified requirements.";
   // A follow-up instruction telling the model not to duplicate Condition
   // objects was tried and measured against the same section: it fixed
   // one duplicate (LLOQ merged correctly via applies_to_temp_ids) but

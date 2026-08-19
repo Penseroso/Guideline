@@ -420,27 +420,64 @@ function mergeExtractionPasses(drafts, { documentId, sectionNumber }) {
   const qcGroups = groupByFingerprint(allQC, qcFingerprint);
   const condGroups = groupByFingerprint(allCond, conditionFingerprint);
 
-  const knowledge_records = krGroups.map(({ item, agreementCount }, i) => ({
-    ...item,
-    knowledge_record_id: nextId(documentId, "kr", sectionNumber, i + 1),
-    review_status: "needs_review",
-    _agreementCount: agreementCount
-  }));
-  const quantitative_criteria = qcGroups.map(({ item, agreementCount }, i) => ({
-    ...item,
-    criterion_id: nextId(documentId, "qc", sectionNumber, i + 1),
-    knowledge_record_id: null,
-    condition_ids: [],
-    review_status: "needs_review",
-    _agreementCount: agreementCount
-  }));
+  const knowledge_records = krGroups.map(({ item, agreementCount }, i) => {
+    const kr = {
+      ...item,
+      knowledge_record_id: nextId(documentId, "kr", sectionNumber, i + 1),
+      review_status: "needs_review",
+      _agreementCount: agreementCount
+    };
+    if (kr.modality === "none") {
+      kr.original_modal_text = null;
+    }
+    return kr;
+  });
+
   const conditions = condGroups.map(({ item, agreementCount }, i) => ({
     ...item,
     condition_id: nextId(documentId, "cond", sectionNumber, i + 1),
-    applies_to_ids: [],
+    applies_to_ids: item.applies_to_ids || [],
     review_status: "needs_review",
     _agreementCount: agreementCount
   }));
+
+  // Auto-link exception conditions that lack applies_to_ids to matching KRs on same source_unit_id
+  for (const c of conditions) {
+    if (c.condition_type === "exception" && c.applies_to_ids.length === 0) {
+      const relKrs = knowledge_records.filter((kr) => (kr.source_unit_ids || []).includes(c.source_unit_id));
+      if (relKrs.length > 0) {
+        c.applies_to_ids = [relKrs[0].knowledge_record_id];
+      } else {
+        c.condition_type = "qualification";
+      }
+    }
+  }
+
+  const quantitative_criteria = qcGroups.map(({ item, agreementCount }, i) => {
+    const qc = {
+      ...item,
+      criterion_id: nextId(documentId, "qc", sectionNumber, i + 1),
+      knowledge_record_id: null,
+      condition_ids: [],
+      joint_with_ids: item.joint_with_ids || [],
+      review_status: "needs_review",
+      _agreementCount: agreementCount
+    };
+    if (qc.is_default_with_exception && qc.condition_ids.length === 0) {
+      qc.is_default_with_exception = false;
+    }
+    return qc;
+  });
+
+  // Ensure reciprocal joint_with_ids across QCs
+  for (const qc of quantitative_criteria) {
+    for (const jid of qc.joint_with_ids) {
+      const target = quantitative_criteria.find((t) => t.criterion_id === jid);
+      if (target && !target.joint_with_ids.includes(qc.criterion_id)) {
+        target.joint_with_ids.push(qc.criterion_id);
+      }
+    }
+  }
 
   const agreement = {
     knowledge_records: knowledge_records.map((r) => ({ id: r.knowledge_record_id, agreementCount: r._agreementCount, ofPasses: drafts.length })),
