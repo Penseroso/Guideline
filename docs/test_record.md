@@ -117,3 +117,36 @@ Root cause of Entry 002's new finding: the default record and its own separately
 
 The targeted false-conjunction pattern (present in 2 of 3 Entry-002 runs) did not reappear in any of these 3 runs. `npm run validate:pilots` and `npm run eval` (9/9) unaffected — code-only change, no data migration.
 
+---
+
+## Entry 004 — M1 acceptance bar + M1's last run
+
+- **Date**: 2026-08-19
+- **Engine version**: `0.2.1` (commit `9d6b0b9`, unchanged since Entry 003 — measurement only, no code/data change)
+- **Schema model version**: `0.4.0`
+- **Model(s)**: `gpt-5.6-terra`
+- **Run**: full 7-section `extractAndVerifySection` dry run, same methodology as Entries 001/002
+
+### Acceptance bar decided
+
+KR ≥ 90%, QC ≥ 85%, Cond ≥ 95% (reviewed-of-extracted). Explicitly a **forward-tracking target for M2+**, not an M1 completion gate — decided by the user after clarifying that a target need not already be met by current measurements; KR and QC in particular are acknowledged as needing further improvement over time. This entry records the baseline to track against.
+
+### Results — 7-section aggregate (M1's last run)
+
+| section | trueKR | extractedKR | reviewedKR | trueQC | extractedQC | reviewedQC | trueCond | extractedCond | reviewedCond |
+|---|---|---|---|---|---|---|---|---|---|
+| ich_m10.sec.3_2_5_2 | 14 | 17 | 16 | 12 | 13 | 11 | 7 | 7 | 6 |
+| ich_m10.sec.6_1 | 23 | 23 | 22 | 0 | 1 | 1 | 6 | 2 | 2 |
+| ich_s6_r1.sec.part1.3_3 | 21 | 37 | 34 | 1 | 6 | 2 | 10 | 7 | 7 |
+| ich_s6_r1.sec.part1.notes | 3 | 4 | 4 | 0 | 0 | 0 | 0 | 1 | 1 |
+| ich_s6_r1.sec.part2.2_1 | 16 | 18 | 18 | 0 | 0 | 0 | 8 | 9 | 9 |
+| ich_s6_r1.sec.part2.2_2 | 6 | 7 | 5 | 1 | 1 | 1 | 4 | 5 | 5 |
+| ich_s6_r1.sec.part2.notes | 19 | 23 | 15 | 1 | 0 | 0 | 8 | 11 | 11 |
+| **TOTAL** | **102** | **129** | **114** | **15** | **21** | **15** | **43** | **42** | **41** |
+
+**Reviewed/extracted vs. target**: KR 88.4% (target 90%, -1.6pt), QC 71.4% (target 85%, -13.6pt), Cond 97.6% (target 95%, +2.6pt, already clear). Single run, still subject to the documented run-to-run variance — not a precise measurement, but the honest current baseline against the newly-set target.
+
+### M1 status
+
+Closed 2026-08-19 (see `docs/milestone_log.md` and `docs/product_roadmap.md` §3). Cond already clears its target; KR is close; QC has real, tracked headroom (the acceptance bar's own text acknowledges this) — carried forward as an M2+ improvement target, not blocking M1 closure.
+
