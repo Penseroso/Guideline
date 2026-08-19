@@ -115,14 +115,14 @@ test("extractAndVerifySection composes extraction then verification into one cal
   assert.equal(summary.total, 1);
 });
 
-// --- siblingCriteria: multi-signal grouping (working_docs/milestone_log.md M1) ---
+// --- siblingCriteria: multi-signal grouping (docs/milestone_log.md M1) ---
 // Multiple independent relational signals, not a fixed pair — see the
 // SIBLING_SIGNALS list in engine/pipeline.js for why each one is included
 // (or, for shared source_unit_id, deliberately excluded).
 
 // --- verifyKnowledgeRecord: surface original_modal_text when the
 // recomposed subject/action/object claim doesn't already carry it
-// (working_docs/milestone_log.md M1, found on real M10 3.2.5.2 kr.005) ---
+// (docs/milestone_log.md M1, found on real M10 3.2.5.2 kr.005) ---
 
 test("verifyKnowledgeRecord appends the source's own modal wording when it is a soft modality not echoed in action (e.g. 'it is recommended')", async () => {
   const kr = {

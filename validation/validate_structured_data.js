@@ -3,7 +3,7 @@ const path = require("path");
 const Ajv = require("ajv");
 
 const ROOT = path.resolve(__dirname, "..");
-const SCHEMA_PATH = path.join(ROOT, "structured_data", "schemas", "guideline_bundle.schema.json");
+const SCHEMA_PATH = path.join(ROOT, "data", "schemas", "guideline_bundle.schema.json");
 
 const COLLECTIONS = [
   ["documents", "document_id"],

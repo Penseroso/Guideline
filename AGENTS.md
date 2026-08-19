@@ -19,9 +19,9 @@ Lower-level materials must never overwrite or be represented as higher-level sou
 ## Directory contract
 
 * `source_pdfs/`: immutable original source PDFs
-* `structured_data/`: machine-readable structured outputs and schemas
-* `working_docs/`: project scope, schema definitions, extraction rules, the product roadmap, and the milestone log (`milestone_log.md`)
-* `scripts/`: reproducible extraction and validation scripts
+* `data/`: machine-readable structured outputs and schemas
+* `docs/`: project scope, schema definitions, extraction rules, the product roadmap, and the milestone log (`milestone_log.md`)
+* `validation/`: reproducible extraction and validation scripts
 * `.agents/skills/`: reusable workflows only after the workflow has been validated
 
 ## Source integrity
@@ -70,8 +70,8 @@ Preserve the original modal verb or wording in the source record.
 * For complex or ambiguous work, prepare a plan before implementation.
 * Structure a small representative sample before processing a full document.
 * Do not expand the assigned section range without explicit instruction.
-* Update `working_docs/schema.md` when the data model changes.
-* Record milestone-level outcomes in `working_docs/milestone_log.md`, one entry per roadmap milestone (`working_docs/product_roadmap.md` §3) — not one entry per individual decision. The prior per-decision `DEC-`/`REV-` convention is retired. Keep entries high-level (milestone status, decisions with lasting consequences) — not a blow-by-blow of every small fix.
+* Update `docs/schema.md` when the data model changes.
+* Record milestone-level outcomes in `docs/milestone_log.md`, one entry per roadmap milestone (`docs/product_roadmap.md` §3) — not one entry per individual decision. The prior per-decision `DEC-`/`REV-` convention is retired. Keep entries high-level (milestone status, decisions with lasting consequences) — not a blow-by-blow of every small fix.
 * Run the relevant validation script after modifying structured data.
 * Review the Git diff before declaring completion.
 
@@ -97,7 +97,7 @@ At the end of each task, report only:
 
 1. Files changed
 2. Validation commands and results
-3. Items the verification pipeline flagged as `needs_review` or otherwise unresolved (`working_docs/product_roadmap.md` §2.5/§2.6) — extraction/review is agent-driven by default, not gated on human read-through
+3. Items the verification pipeline flagged as `needs_review` or otherwise unresolved (`docs/product_roadmap.md` §2.5/§2.6) — extraction/review is agent-driven by default, not gated on human read-through
 4. Scope intentionally not completed
 
 ## Current exclusions
@@ -111,4 +111,4 @@ Do not implement unless explicitly requested:
 * scoring systems
 * extraction of the entire guideline in one uncontrolled pass
 
-Superseded: a prior version of this list also excluded "a web application," and separately, `working_docs/project_scope.md` excluded search, embeddings, RAG, and any application layer. That boundary is outdated — see `working_docs/product_roadmap.md`. The product is now explicitly building a retrieval/chat application layer on top of this archive. The remaining exclusions above are a different kind of boundary (regulatory-advice scope, not implementation-layer scope) and stay in force: the product answers with grounded, cited source content, never regulatory conclusions or decisions, regardless of how much application layer gets built.
+Superseded: a prior version of this list also excluded "a web application," and separately, `docs/project_scope.md` excluded search, embeddings, RAG, and any application layer. That boundary is outdated — see `docs/product_roadmap.md`. The product is now explicitly building a retrieval/chat application layer on top of this archive. The remaining exclusions above are a different kind of boundary (regulatory-advice scope, not implementation-layer scope) and stay in force: the product answers with grounded, cited source content, never regulatory conclusions or decisions, regardless of how much application layer gets built.

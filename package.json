@@ -5,8 +5,8 @@
   },
   "scripts": {
     "test": "node --test \"test/**/*.test.js\"",
-    "validate": "node scripts/validate_structured_data.js",
-    "validate:pilots": "node scripts/validate_pilots.js",
+    "validate": "node validation/validate_structured_data.js",
+    "validate:pilots": "node validation/validate_pilots.js",
     "chat": "node engine/cli.js",
     "eval": "node engine/eval_harness.js"
   },

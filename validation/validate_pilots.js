@@ -4,7 +4,7 @@ const path = require("path");
 const { validateFiles } = require("./validate_structured_data");
 
 const ROOT = path.resolve(__dirname, "..");
-const PILOTS_DIR = path.join(ROOT, "structured_data", "pilots");
+const PILOTS_DIR = path.join(ROOT, "data", "pilots");
 
 function discoverJsonFiles(directory) {
   const entries = fs.readdirSync(directory, { withFileTypes: true });

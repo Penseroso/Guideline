@@ -6,7 +6,7 @@ Build a traceable regulatory knowledge archive that preserves official guideline
 
 ## Users and Initial Product Target
 
-The primary users are internal reviewers and analysts who need to inspect and verify regulatory guideline content. The initial product target is a hallucination-resistant conversational guideline assistant: a chat interface that answers regulatory questions from the structured archive with mandatory source citation, refusing or flagging uncertainty rather than inventing content. Full target-product-profile detail lives in `working_docs/product_roadmap.md`.
+The primary users are internal reviewers and analysts who need to inspect and verify regulatory guideline content. The initial product target is a hallucination-resistant conversational guideline assistant: a chat interface that answers regulatory questions from the structured archive with mandatory source citation, refusing or flagging uncertainty rather than inventing content. Full target-product-profile detail lives in `docs/product_roadmap.md`.
 
 ## Canonical Data and Design Principles
 
@@ -16,7 +16,7 @@ The foundation must preserve source traceability, separate source-derived record
 
 ## Current Status
 
-See `working_docs/milestone_log.md` for the active, up-to-date status and decision record — it is updated with every roadmap milestone, this file is not.
+See `docs/milestone_log.md` for the active, up-to-date status and decision record — it is updated with every roadmap milestone, this file is not.
 
 ## Non-Goals
 
@@ -28,4 +28,4 @@ The following remain outside scope unless explicitly requested, because they are
 - Go/No-Go judgments.
 - Scoring systems.
 
-Schema changes and extraction-automation changes are live decisions requiring a `working_docs/milestone_log.md` entry, not pre-ruled-out — see `working_docs/schema.md`'s evidence-first extension policy.
+Schema changes and extraction-automation changes are live decisions requiring a `docs/milestone_log.md` entry, not pre-ruled-out — see `docs/schema.md`'s evidence-first extension policy.

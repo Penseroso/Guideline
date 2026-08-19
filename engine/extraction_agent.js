@@ -1,12 +1,12 @@
 const path = require("path");
 
-const bundleSchema = require("../structured_data/schemas/guideline_bundle.schema.json");
+const bundleSchema = require("../data/schemas/guideline_bundle.schema.json");
 
 /**
  * Schema-constrained extraction (product_roadmap.md §2.5 step 2).
  * One call per Section. The LLM never invents object IDs (those are
  * assigned deterministically after the call, following the existing
- * ID convention in working_docs/schema.md) and never generates
+ * ID convention in docs/schema.md) and never generates
  * SourceUnit-level source_text (that's mechanical, from step 1 — the
  * LLM only ever sees it as input, never re-emits it as its own text).
  * Cross-links within one extraction call (e.g. a QuantitativeCriterion
@@ -166,7 +166,7 @@ async function extractSection({ section, sourceUnits, client }) {
   // Reverted. Three prompt versions on one section produced non-monotonic
   // results (QC 11->12->10, Condition 5->10->12) — tuning further against
   // a single section is not reliable signal; needs a multi-section eval
-  // before another attempt (see working_docs/milestone_log.md).
+  // before another attempt (see docs/milestone_log.md).
 
   const userText = [
     `Section ${section.section_number}: ${section.title}`,
@@ -262,7 +262,7 @@ function finalizeDraft(draft, { section, allowedSourceUnitIds }) {
   // q1 declares {q2,q3}, q3 declares {q1}, q2 declares nothing) is closed
   // into the full clique everyone in the chain belongs to, not just made
   // pairwise-reciprocal. Enforces the schema.md reciprocity invariant
-  // (validated by scripts/validate_structured_data.js) without trusting
+  // (validated by validation/validate_structured_data.js) without trusting
   // the model to declare every direction itself.
   const adjacency = new Map(quantitativeCriteria.map((qc) => [qc.criterion_id, new Set(qc.joint_with_ids)]));
   for (const qc of quantitativeCriteria) {

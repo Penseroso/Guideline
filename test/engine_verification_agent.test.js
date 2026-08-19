@@ -35,7 +35,7 @@ test("claimTextFor asserts 'specified criterion, not illustrative' without hardc
   // source actually used — comparator (at_least/not_exceed/within) is a
   // math relationship, not a modality, and the claim must not conflate
   // them. This version (v3) must not reintroduce "must"/"required
-  // minimum" wording. working_docs/milestone_log.md M1 has the full history.
+  // minimum" wording. docs/milestone_log.md M1 has the full history.
   const { records } = loadStore();
   const qc = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
   const claim = claimTextFor(qc);

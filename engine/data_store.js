@@ -1,10 +1,10 @@
 const fs = require("fs");
 const path = require("path");
 
-const { discoverJsonFiles } = require("../scripts/validate_pilots");
+const { discoverJsonFiles } = require("../validation/validate_pilots");
 
 const ROOT = path.resolve(__dirname, "..");
-const PILOTS_DIR = path.join(ROOT, "structured_data", "pilots");
+const PILOTS_DIR = path.join(ROOT, "data", "pilots");
 
 function loadBundles(pilotsDir = PILOTS_DIR) {
   const files = discoverJsonFiles(pilotsDir);

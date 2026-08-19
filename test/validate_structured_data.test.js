@@ -3,11 +3,11 @@ const fs = require("node:fs");
 const path = require("node:path");
 const test = require("node:test");
 
-const { validateBundles } = require("../scripts/validate_structured_data");
+const { validateBundles } = require("../validation/validate_structured_data");
 
 const ROOT = path.resolve(__dirname, "..");
-const PILOT_3_2_5_2 = path.join(ROOT, "structured_data", "pilots", "m10_3_2_5_2.json");
-const PILOT_6_1 = path.join(ROOT, "structured_data", "pilots", "m10_6_1.json");
+const PILOT_3_2_5_2 = path.join(ROOT, "data", "pilots", "m10_3_2_5_2.json");
+const PILOT_6_1 = path.join(ROOT, "data", "pilots", "m10_6_1.json");
 
 const pilot3252 = JSON.parse(fs.readFileSync(PILOT_3_2_5_2, "utf8"));
 const pilot61 = JSON.parse(fs.readFileSync(PILOT_6_1, "utf8"));

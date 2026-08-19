@@ -6,7 +6,7 @@ Schema model version: `0.3.0`
 
 ## Purpose and scope
 
-This document defines the minimum data model for preserving regulatory guideline content as traceable structured data, and grounds the retrieval/answer layer built on top of it (`engine/`, `working_docs/product_roadmap.md`). Three sections are fully reviewed under this model (content-fidelity and recall audited against the source PDFs, not just schema-valid):
+This document defines the minimum data model for preserving regulatory guideline content as traceable structured data, and grounds the retrieval/answer layer built on top of it (`engine/`, `docs/product_roadmap.md`). Three sections are fully reviewed under this model (content-fidelity and recall audited against the source PDFs, not just schema-valid):
 
 - ICH M10 `3.2.5.2 Evaluation of Accuracy and Precision`
 - ICH M10 `6.1 Partial Validation`
@@ -14,7 +14,7 @@ This document defines the minimum data model for preserving regulatory guideline
 
 The model is intended for source preservation and knowledge structuring. It is not a regulatory decision engine and must not create requirements, recommendations, study-design advice, or suitability conclusions that are not present in the source.
 
-Model `0.3.0` is implemented as a machine-validatable JSON bundle contract with JSON Schema (`structured_data/schemas/guideline_bundle.schema.json`) plus a reusable validator (`scripts/validate_structured_data.js`). It defines source preservation and knowledge structuring only — extraction/verification agents, retrieval, and generation live in `engine/`, not in this model.
+Model `0.3.0` is implemented as a machine-validatable JSON bundle contract with JSON Schema (`data/schemas/guideline_bundle.schema.json`) plus a reusable validator (`validation/validate_structured_data.js`). It defines source preservation and knowledge structuring only — extraction/verification agents, retrieval, and generation live in `engine/`, not in this model.
 
 An earlier derived-layer design (AmendmentMapping, EffectiveRecord, a family/edition registry) was explored but never adopted into the product build, so it is not described here as current.
 
@@ -240,7 +240,7 @@ For `QuantitativeCriterion`:
 
 Use multiple `QuantitativeCriterion` records when one sentence contains both a general criterion and an exception criterion, such as a general threshold and an LLOQ threshold. Do not link a general criterion and its own exception via `joint_with_ids` — they are alternatives (the exception's circumstance excludes the general one), not a compound statement that must hold all at once. `joint_with_ids` is reserved for records that split one sentence's *concurrent* numeric facts, such as a count-fraction threshold and the tolerance value that fraction must meet (e.g. "at least 2/3 of QCs... within ±15%").
 
-`joint_with_ids` must be declared reciprocally: if `A.joint_with_ids` includes `B`, `B.joint_with_ids` must include `A`. This is enforced by the validator (`scripts/validate_structured_data.js`) so the relationship is always a grounded, extractor-time fact rather than inferred later from incidental structural similarity (e.g. a shared `knowledge_record_id`), which was found to produce false positives (`working_docs/milestone_log.md` M1: a general accuracy criterion and its own LLOQ exception were once wrongly inferred as "jointly applicable" from a shared `knowledge_record_id` alone).
+`joint_with_ids` must be declared reciprocally: if `A.joint_with_ids` includes `B`, `B.joint_with_ids` must include `A`. This is enforced by the validator (`validation/validate_structured_data.js`) so the relationship is always a grounded, extractor-time fact rather than inferred later from incidental structural similarity (e.g. a shared `knowledge_record_id`), which was found to produce false positives (`docs/milestone_log.md` M1: a general accuracy criterion and its own LLOQ exception were once wrongly inferred as "jointly applicable" from a shared `knowledge_record_id` alone).
 
 `QuantitativeCriterion` uses `condition_ids` and `joint_with_ids` only. There is no separate `exception_ids` field.
 
@@ -298,7 +298,7 @@ JSON Schema validates object structure, required fields, primitive and nullable 
 
 The reusable validator validates JSON parsing, JSON Schema conformance, object ID uniqueness, reference resolution, self-contained bundle rules, repeated `Document` and `Section` consistency across files, `SourceUnit` ordering, provenance consistency, value/status consistency, and actionable non-zero failures.
 
-Use `npm run validate -- <json-file> [json-file ...]` to validate explicit files. Use `npm run validate:pilots` to discover and validate all JSON files under `structured_data/pilots/` without relying on shell wildcard expansion.
+Use `npm run validate -- <json-file> [json-file ...]` to validate explicit files. Use `npm run validate:pilots` to discover and validate all JSON files under `data/pilots/` without relying on shell wildcard expansion.
 
 ## Relationships
 
@@ -348,7 +348,7 @@ Guideline-specific controlled vocabularies for condition types, species, study t
 
 ## Deliberate non-extraction (not an omission)
 
-A recall/completeness audit (`working_docs/milestone_log.md` M1, 2026-08-18) found real omissions in `s6_r1_species_selection.json` and also surfaced a separate category that looks like an omission but isn't one: source text that is deliberately not given its own `KnowledgeRecord`/`Condition`. Three patterns, confirmed against actual source text, not to be re-flagged as missing in future audits unless the specific instance carries independent, freestanding regulatory content:
+A recall/completeness audit (`docs/milestone_log.md` M1, 2026-08-18) found real omissions in `s6_r1_species_selection.json` and also surfaced a separate category that looks like an omission but isn't one: source text that is deliberately not given its own `KnowledgeRecord`/`Condition`. Three patterns, confirmed against actual source text, not to be re-flagged as missing in future audits unless the specific instance carries independent, freestanding regulatory content:
 
 - **Narrative/scene-setting sentences** with no discrete regulatory content of their own (e.g. "In recent years, there has been much progress in the development of animal models that are thought to be similar to the human disease.") — context for the sentences that follow, not itself an assertion to preserve separately.
 - **Incidental parentheticals embedded in another sentence's directive** (e.g. "(choice of species to be justified by the sponsor)" inside a sentence about when a short-term safety study can be considered) — part of the host sentence's own record, not a separate `Condition`.
@@ -358,4 +358,4 @@ A compound sentence combining a descriptive clause and a regulatory determinatio
 
 ## Model 0.3.0: `QuantitativeCriterion.joint_with_ids`
 
-Added 2026-08-18 (`working_docs/milestone_log.md` M1) after a verification-agent investigation found that the "is this criterion part of a larger compound statement" relationship had no grounded representation anywhere in the archive — it was being inferred after the fact from incidental structural similarity (a shared `knowledge_record_id`, overlapping `condition_ids`), and that inference was demonstrably wrong at least once (grouping a general rule with its own exception as if they were concurrent facts). A schema change was considered and rejected for the underlying values themselves — `QuantitativeCriterion` still holds exactly one of `value`/`value_fraction` per record, because the sub-facts of a compound statement (e.g. a count-fraction threshold and the tolerance it must meet) are independently true and may vary independently in a future amendment, and merging them into one multi-value record would only relocate the same complexity, not remove it. What the archive was actually missing was a place to *state* the joint relationship as a fact grounded at extraction time, instead of leaving it to be inferred later. `joint_with_ids` fills that gap as an additive, reciprocal-only link field; it does not replace or loosen the existing one-value-per-record rule.
+Added 2026-08-18 (`docs/milestone_log.md` M1) after a verification-agent investigation found that the "is this criterion part of a larger compound statement" relationship had no grounded representation anywhere in the archive — it was being inferred after the fact from incidental structural similarity (a shared `knowledge_record_id`, overlapping `condition_ids`), and that inference was demonstrably wrong at least once (grouping a general rule with its own exception as if they were concurrent facts). A schema change was considered and rejected for the underlying values themselves — `QuantitativeCriterion` still holds exactly one of `value`/`value_fraction` per record, because the sub-facts of a compound statement (e.g. a count-fraction threshold and the tolerance it must meet) are independently true and may vary independently in a future amendment, and merging them into one multi-value record would only relocate the same complexity, not remove it. What the archive was actually missing was a place to *state* the joint relationship as a fact grounded at extraction time, instead of leaving it to be inferred later. `joint_with_ids` fills that gap as an additive, reciprocal-only link field; it does not replace or loosen the existing one-value-per-record rule.

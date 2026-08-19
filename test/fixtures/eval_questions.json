@@ -46,7 +46,7 @@
       "question": "stability of whole blood samples storage conditions",
       "expect_answered": true,
       "expect_citation_contains": "M10 §6.1",
-      "note": "KNOWN LIMITATION, not a bug to silently accept: whole-blood-specific stability content (M10 §3.2.8) is not yet structured (see working_docs/milestone_log.md M0 gap-finding scan), so Option A's keyword match lands on a same-guideline 'storage conditions' record via generic term overlap rather than refusing outright. Not a fabrication (the cited record is real and accurately cited), but not the ideal answer either. Tracked here so M2/M3 can decide whether to extract §3.2.8 or improve Option A relevance scoring."
+      "note": "KNOWN LIMITATION, not a bug to silently accept: whole-blood-specific stability content (M10 §3.2.8) is not yet structured (see docs/milestone_log.md M0 gap-finding scan), so Option A's keyword match lands on a same-guideline 'storage conditions' record via generic term overlap rather than refusing outright. Not a fabrication (the cited record is real and accurately cited), but not the ideal answer either. Tracked here so M2/M3 can decide whether to extract §3.2.8 or improve Option A relevance scoring."
     },
     {
       "id": "q9",
