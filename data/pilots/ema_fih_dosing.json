@@ -1,0 +1,3135 @@
+{
+  "documents": [
+    {
+      "document_id": "ema_fih",
+      "title": "Guideline on strategies to identify and mitigate risks for first-in-human and early clinical trials with investigational medicinal products",
+      "guideline_code": "EMA/CHMP/SWP/28367/07 Rev. 1",
+      "issuing_body": "EMA",
+      "document_version_label": "Revision 1, adopted 20 July 2017",
+      "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+      "source_file_checksum": "6D05CACD3B6DA723F15D608DED724B620D76309E275BC6424A229E804411D719",
+      "schema_model_version": "0.5.0"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "ema_fih.sec.7",
+      "document_id": "ema_fih",
+      "section_number": "7",
+      "title": "Dosing selection for FIH and early clinical trials",
+      "parent_section_id": null,
+      "section_order": 7,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7.001"
+    },
+    {
+      "section_id": "ema_fih.sec.7_1",
+      "document_id": "ema_fih",
+      "section_number": "7.1",
+      "title": "General aspects",
+      "parent_section_id": "ema_fih.sec.7",
+      "section_order": 71,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7_1.001"
+    },
+    {
+      "section_id": "ema_fih.sec.7_2",
+      "document_id": "ema_fih",
+      "section_number": "7.2",
+      "title": "Starting dose for healthy volunteers",
+      "parent_section_id": "ema_fih.sec.7",
+      "section_order": 72,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7_2.001"
+    },
+    {
+      "section_id": "ema_fih.sec.7_3",
+      "document_id": "ema_fih",
+      "section_number": "7.3",
+      "title": "Starting Dose for patients",
+      "parent_section_id": "ema_fih.sec.7",
+      "section_order": 73,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7_3.001"
+    },
+    {
+      "section_id": "ema_fih.sec.7_4",
+      "document_id": "ema_fih",
+      "section_number": "7.4",
+      "title": "Dose escalation",
+      "parent_section_id": "ema_fih.sec.7",
+      "section_order": 74,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7_4.001"
+    },
+    {
+      "section_id": "ema_fih.sec.7_5",
+      "document_id": "ema_fih",
+      "section_number": "7.5",
+      "title": "Maximum exposure and dose",
+      "parent_section_id": "ema_fih.sec.7",
+      "section_order": 75,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7_5.001"
+    },
+    {
+      "section_id": "ema_fih.sec.7_6",
+      "document_id": "ema_fih",
+      "section_number": "7.6",
+      "title": "Moving from single to multiple dosing",
+      "parent_section_id": "ema_fih.sec.7",
+      "section_order": 76,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7_6.001"
+    },
+    {
+      "section_id": "ema_fih.sec.7_7",
+      "document_id": "ema_fih",
+      "section_number": "7.7",
+      "title": "Route of administration",
+      "parent_section_id": "ema_fih.sec.7",
+      "section_order": 77,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7_7.001"
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "ema_fih.su.7.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7",
+      "unit_type": "heading",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "7. Dosing selection for FIH and early clinical trials",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_1.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_1",
+      "unit_type": "heading",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "7.1. General aspects",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_1",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_1.002",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_1",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "Careful dosing selection of an IMP is a vital element to safeguard the subjects participating in FIH and early CTs. Special attention should be given to the estimation of the exposure anticipated to be reached at the initial dose to be used in humans and to subsequent dose escalations to a predefined maximum expected exposure. The expected exposure in humans at a dose to be given, in comparison to the exposure at which certain effects were observed in animals or earlier in the study in humans, is considered more relevant than the relative dose levels between animals and humans.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_1",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_1.003",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_1",
+      "unit_type": "paragraph",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "source_text": "All available non-clinical information (PD, PK, TK and toxicological profiles, dose or exposure/effect relationships, etc.) should be taken into consideration for the calculation of the starting dose, dose escalation steps and maximum exposure. Furthermore, clinical data (e.g. PK, PD and reports of adverse events) emerging during the trial from previous dosed cohorts/individuals will also need to be taken into account (see section 8.2.7). Experience, both non-clinical and clinical, with molecules having a similar mode of action can also be useful.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_1",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_1.004",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_1",
+      "unit_type": "paragraph",
+      "unit_order": 4,
+      "unit_order_status": "known",
+      "source_text": "The starting dose and a maximum exposure, as well as dose escalation steps during the CT, should be justified and outlined in the protocol. Decision-making criteria for adapting the planned dose escalation steps based on emerging clinical data should also be described in detail. Deviations from the pre-specified dose escalation and decision-making criteria would warrant the submission of (a) substantial amendment(s). Substantial amendments will also be needed where the dose escalation has reached a pre-defined maximum exposure and an integrated analysis of available data leads to the Sponsor’s conclusion that further careful escalation is warranted.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_1",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_1.005",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_1",
+      "unit_type": "paragraph",
+      "unit_order": 5,
+      "unit_order_status": "known",
+      "source_text": "The methods used and calculations on how doses and estimated exposure levels were determined, including methods for modelling (e.g. PK/PD and physiologically-based pharmacokinetic (PBPK)) should be included in the protocol and may be summarised in the IB.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_1",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_1.006",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_1",
+      "unit_type": "paragraph",
+      "unit_order": 6,
+      "unit_order_status": "known",
+      "source_text": "For starting and maximum doses (exposures) for Exploratory Clinical Trials, reference is made to the ICH M3(R2) guideline. If an IMP has been administered to humans under the paradigm of microdose trials, as outlined in ICH M3(R2), any subsequent study using a non-microdose should be considered within the scope of the present FIH/early CT guideline.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_1",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_2.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_2",
+      "unit_type": "heading",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "7.2. Starting dose for healthy volunteers",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_2",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_2.002",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_2",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "In general, the no observed adverse effect level (NOAEL) should be determined in the non-clinical safety studies performed. The NOAEL is a generally accepted benchmark for safety when derived from appropriate animal studies and can serve as the starting point for determining a reasonably safe starting dose. The exposures achieved at the NOAEL in the most relevant animal species used (which might not necessarily be the most sensitive species) should be used for estimation of an equivalent exposure for humans. Estimation should be based on state-of-the-art modelling (e.g. PK/PD and PBPK) and/or using allometric factors.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_2",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_2.003",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_2",
+      "unit_type": "paragraph",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "source_text": "Exposure showing PD effects in the non-clinical pharmacology studies, including ex vivo and in vitro studies in human tissues if feasible, should also be determined and these data should be used to determine the minimal anticipated biological effect level (MABEL) in humans and an estimation of the pharmacologically active dose (PAD) and/or anticipated therapeutic dose range (ATD) in humans. When using these approaches, potential differences in sensitivity for the mode of action of the IMP between humans and animals need to be taken into consideration. In addition, the calculation of the MABEL, PAD and/or ATD should consider target binding and receptor occupancy studies in vitro in target cells from human and the relevant animal species and exposures at pharmacological doses in the relevant animal species. Whenever possible, all relevant data should be integrated in a suitable modelling approach for the determination of the MABEL, PAD and/or ATD.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_2",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_2.004",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_2",
+      "unit_type": "paragraph",
+      "unit_order": 4,
+      "unit_order_status": "known",
+      "source_text": "The starting dose for healthy volunteers should be a dose expected to result in an exposure lower than the PAD, unless a robust scientific rationale can be provided for a higher dose. Depending on the level of uncertainty regarding the human relevance of findings observed in nonclinical studies (see sections 4.1 to 4.4) and the knowledge of the intended target (see sections 6.1 and 6.2), the starting dose should either be related to the MABEL, PAD or NOAEL. A scientific rationale for the starting dose should be included in the protocol and may be included in the IB.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_2",
+        "pdf_page_index_zero_based": 11,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "12",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_2.005",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_2",
+      "unit_type": "paragraph",
+      "unit_order": 5,
+      "unit_order_status": "known",
+      "source_text": "In order to further limit the potential for adverse reactions in humans, safety factors are generally applied in the calculation of the starting dose in humans. Safety factors should take into account potential risks related to: the novelty of the active substance; its pharmacodynamic characteristics, including irreversible or long lasting findings and the shape of the dose-response curve; the relevance of the animal models used for safety testing; the characteristics of the safety findings; uncertainties related to the estimation of the MABEL, PAD and the expected exposure in humans.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_2",
+        "pdf_page_index_zero_based": 11,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "12",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_2.006",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_2",
+      "unit_type": "paragraph",
+      "unit_order": 6,
+      "unit_order_status": "known",
+      "source_text": "Furthermore, findings in the non-clinical studies and how well potential target organ effects can be monitored in the CT should also be addressed and may influence the safety factors used. The reasoning behind the safety factors used should be detailed in the IB and protocol.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_2",
+        "pdf_page_index_zero_based": 11,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "12",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_3.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_3",
+      "unit_type": "heading",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "7.3. Starting Dose for patients",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_3",
+        "pdf_page_index_zero_based": 11,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "12",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_3.002",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_3",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "Similar considerations as outlined in section 7.2 apply for the identification of a safe starting dose in patients. The goal of selecting the starting dose for FIH/early CTs in patients, i.e. where there are no previous data in healthy volunteers, is to identify a dose that is expected to have a minimal pharmacological effect and is safe to use. The starting dose should also take into account the nature of disease under investigation and its severity in the patient population included in the CT. In some instances, a starting dose that is substantially lower than the human expected pharmacological dose may not be appropriate. In all cases, a rationale should be provided and the subjects included in the CT should be informed.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_3",
+        "pdf_page_index_zero_based": 11,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "12",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_3.003",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_3",
+      "unit_type": "paragraph",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "source_text": "If potential differences in target distribution, pharmacokinetics or safety profile of the IMP between healthy volunteers and patients can be foreseen, consideration should be given to reverting to a SAD design (with dose escalation as appropriate) in the first patient cohort.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_3",
+        "pdf_page_index_zero_based": 11,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "12",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_3.004",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_3",
+      "unit_type": "paragraph",
+      "unit_order": 4,
+      "unit_order_status": "known",
+      "source_text": "Other approaches may also be considered in specific situations, e.g. for studies in oncology patients (see ICH S9) or other severe or life-limiting diseases. In general, the highest dose or exposure tested in the non-clinical studies may not limit the dose-escalation or highest dose investigated in a CT in patients with advanced cancer or life-limiting diseases if appropriately justified.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_3",
+        "pdf_page_index_zero_based": 11,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "12",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_3.005",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_3",
+      "unit_type": "paragraph",
+      "unit_order": 5,
+      "unit_order_status": "known",
+      "source_text": "Special populations, such as paediatrics (see ICH E11), deserve additional specific considerations.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_3",
+        "pdf_page_index_zero_based": 11,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "12",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_4.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_4",
+      "unit_type": "heading",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "7.4. Dose escalation",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_4",
+        "pdf_page_index_zero_based": 12,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "13",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_4",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "In addition to defining a starting dose and a maximum exposure (see sections 7.5 and 8.2.10), criteria for dose increases during a CT should be outlined in the protocol (see section 8.2.9). The maximum fold increase in dose/exposure from one cohort to the next, as well as a maximum number of cohorts to be evaluated, should be stated. The choice of the dose levels should include an estimate of exposure levels to be achieved, potential adverse effects (if any), and if relevant and feasible, an estimate of potential PD effects. The calculated PAD/ATD should also be taken into account. The dose increment between two dose levels should be guided by the dose/exposure-toxicity or the dose/exposure-effect relationship defined in the non-clinical studies and adapted following review of emerging clinical data from previous cohorts (see sections 8.2.7 and 8.2.9). The size of the dose increments should take into account the steepness of the dose/exposure-toxicity or dose/exposure-effect curves and uncertainties in the estimation of these relationships. Another factor for consideration is the reliability with which potential adverse effects can be monitored in humans before potential serious/irreversible effects develop. Furthermore, if there is evidence of non-linear PK potentially resulting in a supra-proportional increases in exposure, smaller dose increments, particularly in the later parts of SAD/MAD, should be considered. If emerging clinical data reveal substantial differences from non-clinical or modelling and simulation data, adjustment of the planned dose levels may be warranted. A change of the planned dose levels should take aspects such as steepness of dose-response curve or saturation of target into account. If available data indicate a plateauing of exposure, this should be taken into account when deciding on dose escalation steps (and frequency of dosing in MAD parts). Changes in dose levels may require a substantial amendment unless such changes are covered by predefined decision criteria in the protocol.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_4",
+        "pdf_page_index_zero_based": 12,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "13",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_5.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_5",
+      "unit_type": "heading",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "7.5. Maximum exposure and dose",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_5",
+        "pdf_page_index_zero_based": 12,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "13",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_5.002",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_5",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "An expected maximum exposure level, which should not be exceeded in the study without approval of a substantial amendment, should be pre-defined in the protocol for each study part. The maximum exposure should be justified based on all available non-clinical and clinical data, including PD, PK, findings in toxicity studies and exposure at the expected therapeutic dose range. Target saturation should be taken into account when appropriate, then the maximum exposure should consider when complete inhibition or activation of the target is achieved and no further therapeutic effect is to be expected by increasing the dose.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_5",
+        "pdf_page_index_zero_based": 12,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "13",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_5.003",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_5",
+      "unit_type": "paragraph",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "source_text": "The use of a maximum dose can in some instances be warranted, e.g. in studies where exposure cannot be adequately measured.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_5",
+        "pdf_page_index_zero_based": 12,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "13",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_5.004",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_5",
+      "unit_type": "paragraph",
+      "unit_order": 4,
+      "unit_order_status": "known",
+      "source_text": "In general, the maximum exposure of healthy volunteers should be within the estimated human pharmacodynamic dose range. However, exposure levels exceeding the pharmacodynamic dose range can, if scientifically justified and considered acceptable from a safety perspective, be carefully explored, taking into consideration the uncertainty as outlined in section 4.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_5",
+        "pdf_page_index_zero_based": 12,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "13",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_5.005",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_5",
+      "unit_type": "paragraph",
+      "unit_order": 5,
+      "unit_order_status": "known",
+      "source_text": "For trials or trial parts that include patients, the maximum tolerated dose (MTD) (if applicable) should be clearly defined and not be exceeded once it has been determined. The potential therapeutic/clinically relevant dose (exposure) and the expected benefit/risk balance should always be considered when defining the dose range. A trial design using a MTD approach is considered to be inappropriate for healthy volunteers.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_5",
+        "pdf_page_index_zero_based": 12,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "13",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_6.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_6",
+      "unit_type": "heading",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "7.6. Moving from single to multiple dosing",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_6",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_6.002",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_6",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "The selection of an appropriate dosing interval and duration of dosing for all multiple dosing cohorts and study parts should take into account the specific PK and PD characteristics of the IMP, the available non-clinical safety data, and all data from subjects in previous single dose cohorts. Particular attention should be paid to linear versus non-linear PK in the expected concentration range, the PK half-life versus duration of action, and the potential for accumulation.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_6",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_6",
+      "unit_type": "paragraph",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "source_text": "A maximum duration of dosing should be stated in the protocol for every cohort. The expected exposure after multiple dosing (Cmax and AUC0-tau) should have been covered during preceding SAD parts/trials. If, however, emerging clinical data following multiple dosing suggests tolerance to adverse effects seen in a SAD part of a study, higher exposures in a MAD part can be considered, provided this option is pre-specified and below the set maximum exposure. Multiple dosing parts can also explore different dosing regimens and schedules, such as a move from once daily dosing to twice daily dosing.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_6",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_7.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_7",
+      "unit_type": "heading",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "7.7. Route of administration",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_7",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_7.002",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_7",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "The choice of route of administration for dosing in humans should be based on the non-clinical data, the characteristics of the IMP, and the intended therapeutic use.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_7",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.7_7.003",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.7_7",
+      "unit_type": "paragraph",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "source_text": "In the case of an intravenous administration, a slow infusion may be more appropriate than a bolus injection. This would allow for a timely discontinuation of the infusion to mitigate an adverse outcome.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.7_7",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    }
+  ],
+  "knowledge_records": [
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.001",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Special attention",
+      "action": "be given to",
+      "object": "the estimation of the exposure anticipated to be reached at the initial dose to be used in humans and to subsequent dose escalations to a predefined maximum expected exposure",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.002",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The expected exposure in humans at a dose to be given",
+      "action": "is considered more relevant than",
+      "object": "the relative dose levels between animals and humans",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.003",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Careful dosing selection of an IMP",
+      "action": "is",
+      "object": "a vital element to safeguard the subjects participating in FIH and early CTs",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.004",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "All available non-clinical information",
+      "action": "be taken into consideration for",
+      "object": "the calculation of the starting dose, dose escalation steps and maximum exposure",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.005",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.003"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "will also need to be taken into account",
+      "subject": "clinical data emerging during the trial from previous dosed cohorts/individuals",
+      "action": "be taken into account",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.006",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can also be useful",
+      "subject": "Experience, both non-clinical and clinical, with molecules having a similar mode of action",
+      "action": "be useful",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.007",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can also be useful",
+      "subject": "Experience, both non-clinical and clinical, with molecules having a similar mode of action",
+      "action": "be",
+      "object": "useful",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.008",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The starting dose and a maximum exposure, as well as dose escalation steps",
+      "action": "be justified and outlined in",
+      "object": "the protocol",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.009",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Decision-making criteria for adapting the planned dose escalation steps",
+      "action": "be described in detail",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.010",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.004"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "would warrant",
+      "subject": "Deviations from the pre-specified dose escalation and decision-making criteria",
+      "action": "warrant the submission of",
+      "object": "(a) substantial amendment(s)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.011",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.004"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "will also be needed",
+      "subject": "Substantial amendments",
+      "action": "be needed",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.012",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.005"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The methods used and calculations on how doses and estimated exposure levels were determined, including methods for modelling",
+      "action": "be included in",
+      "object": "the protocol",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.013",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.005"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "The methods used and calculations on how doses and estimated exposure levels were determined, including methods for modelling",
+      "action": "be summarised in",
+      "object": "the IB",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.014",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.006"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "starting and maximum doses (exposures) for Exploratory Clinical Trials",
+      "action": "reference is made to",
+      "object": "the ICH M3(R2) guideline",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.015",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.006"
+      ],
+      "record_type": "scope_statement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "any subsequent study using a non-microdose",
+      "action": "be considered within the scope of",
+      "object": "the present FIH/early CT guideline",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.016",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.003"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "will also need to be taken into account",
+      "subject": "clinical data",
+      "action": "be taken into account",
+      "object": "for the calculation of the starting dose, dose escalation steps and maximum exposure",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.017",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.004"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "will also be needed",
+      "subject": "Substantial amendments",
+      "action": "be needed",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.018",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.006"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "starting and maximum doses (exposures) for Exploratory Clinical Trials",
+      "action": "reference is made to",
+      "object": "the ICH M3(R2) guideline",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.019",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.006"
+      ],
+      "record_type": "scope_statement",
+      "modality": "must",
+      "original_modal_text": "should be considered",
+      "subject": "any subsequent study using a non-microdose",
+      "action": "be considered within the scope of",
+      "object": "the present FIH/early CT guideline",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.020",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.003"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "non-clinical information",
+      "action": "includes",
+      "object": "PD",
+      "normalized_ko": "비임상 정보에는 PD가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.021",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Experience, both non-clinical and clinical, with molecules having a similar mode of action",
+      "action": "can be",
+      "object": "useful",
+      "normalized_ko": "유사한 작용 기전을 가진 분자에 대한 비임상 및 임상 경험은 유용할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_1.022",
+      "source_unit_ids": [
+        "ema_fih.su.7_1.005"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "methods for modelling",
+      "action": "includes",
+      "object": "PK/PD",
+      "normalized_ko": "모델링 방법에는 PK/PD가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.001",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Starting dose",
+      "action": "for",
+      "object": "healthy volunteers",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.002",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Section 7.2",
+      "action": "addresses",
+      "object": "Starting dose for healthy volunteers",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.003",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.002"
+      ],
+      "record_type": "requirement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "the no observed adverse effect level (NOAEL)",
+      "action": "be determined",
+      "object": "in the non-clinical safety studies performed",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.004",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.002"
+      ],
+      "record_type": "requirement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The exposures achieved at the NOAEL in the most relevant animal species used",
+      "action": "be used",
+      "object": "for estimation of an equivalent exposure for humans",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.005",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.002"
+      ],
+      "record_type": "requirement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Estimation",
+      "action": "be based on",
+      "object": "state-of-the-art modelling (e.g. PK/PD and PBPK) and/or using allometric factors",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.006",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The NOAEL",
+      "action": "is",
+      "object": "a generally accepted benchmark for safety when derived from appropriate animal studies",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.007",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The NOAEL",
+      "action": "can serve as",
+      "object": "the starting point for determining a reasonably safe starting dose",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.008",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "The NOAEL",
+      "action": "serve as",
+      "object": "the starting point for determining a reasonably safe starting dose",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.009",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "might",
+      "subject": "the most relevant animal species used",
+      "action": "not necessarily be",
+      "object": "the most sensitive species",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.010",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.003"
+      ],
+      "record_type": "requirement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Exposure showing PD effects in the non-clinical pharmacology studies",
+      "action": "be determined",
+      "object": "including ex vivo and in vitro studies in human tissues",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.011",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.003"
+      ],
+      "record_type": "requirement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "these data",
+      "action": "be used",
+      "object": "to determine the minimal anticipated biological effect level (MABEL) in humans and an estimation of the pharmacologically active dose (PAD) and/or anticipated therapeutic dose range (ATD) in humans",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.012",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.003"
+      ],
+      "record_type": "requirement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "the calculation of the MABEL, PAD and/or ATD",
+      "action": "consider",
+      "object": "target binding and receptor occupancy studies in vitro in target cells from human and the relevant animal species and exposures at pharmacological doses in the relevant animal species",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.013",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.003"
+      ],
+      "record_type": "requirement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "all relevant data",
+      "action": "be integrated",
+      "object": "in a suitable modelling approach for the determination of the MABEL, PAD and/or ATD",
+      "normalized_ko": null,
+      "review_status": "needs_review"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.014",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.003"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "need to be",
+      "subject": "potential differences in sensitivity for the mode of action of the IMP between humans and animals",
+      "action": "be taken into consideration",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.015",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.004"
+      ],
+      "record_type": "requirement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The starting dose for healthy volunteers",
+      "action": "be",
+      "object": "a dose expected to result in an exposure lower than the PAD",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.016",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.004"
+      ],
+      "record_type": "requirement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "the starting dose",
+      "action": "be related to",
+      "object": "the MABEL, PAD or NOAEL",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.017",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.004"
+      ],
+      "record_type": "requirement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "A scientific rationale for the starting dose",
+      "action": "be included",
+      "object": "in the protocol",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.018",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "A scientific rationale for the starting dose",
+      "action": "be included",
+      "object": "in the IB",
+      "normalized_ko": null,
+      "review_status": "needs_review"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.019",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.005"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "safety factors",
+      "action": "are applied",
+      "object": "in the calculation of the starting dose in humans",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.020",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.005"
+      ],
+      "record_type": "requirement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Safety factors",
+      "action": "take into account",
+      "object": "potential risks related to the novelty of the active substance",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.021",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.006"
+      ],
+      "record_type": "requirement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "findings in the non-clinical studies and how well potential target organ effects can be monitored in the CT",
+      "action": "be addressed",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.022",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.006"
+      ],
+      "record_type": "requirement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The reasoning behind the safety factors used",
+      "action": "be detailed",
+      "object": "in the IB and protocol",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.023",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.006"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "findings in the non-clinical studies and how well potential target organ effects can be monitored in the CT",
+      "action": "influence",
+      "object": "the safety factors used",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.024",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "the no observed adverse effect level (NOAEL)",
+      "action": "be determined",
+      "object": "in the non-clinical safety studies performed",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.025",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The exposures achieved at the NOAEL",
+      "action": "be used",
+      "object": "for estimation of an equivalent exposure for humans",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.026",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Estimation",
+      "action": "be based on",
+      "object": "state-of-the-art modelling and/or using allometric factors",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.027",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.002"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "state-of-the-art modelling",
+      "action": "includes",
+      "object": "PK/PD and PBPK",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.028",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Exposure showing PD effects in the non-clinical pharmacology studies",
+      "action": "be determined",
+      "object": "including ex vivo and in vitro studies in human tissues",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.029",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "these data",
+      "action": "be used to determine",
+      "object": "the minimal anticipated biological effect level (MABEL) in humans and an estimation of the pharmacologically active dose (PAD) and/or anticipated therapeutic dose range (ATD) in humans",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.030",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "the calculation of the MABEL, PAD and/or ATD",
+      "action": "consider",
+      "object": "target binding and receptor occupancy studies in vitro in target cells from human and the relevant animal species and exposures at pharmacological doses in the relevant animal species",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.031",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "all relevant data",
+      "action": "be integrated in",
+      "object": "a suitable modelling approach for the determination of the MABEL, PAD and/or ATD",
+      "normalized_ko": null,
+      "review_status": "needs_review"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.032",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The starting dose for healthy volunteers",
+      "action": "be",
+      "object": "a dose expected to result in an exposure lower than the PAD",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.033",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "the starting dose",
+      "action": "be related to",
+      "object": "the MABEL, PAD or NOAEL",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.034",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "A scientific rationale for the starting dose",
+      "action": "be included in",
+      "object": "the protocol",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.035",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.005"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Safety factors",
+      "action": "take into account potential risks related to",
+      "object": "the novelty of the active substance",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.036",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.006"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "findings in the non-clinical studies and how well potential target organ effects can be monitored in the CT",
+      "action": "be addressed",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.037",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.006"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The reasoning behind the safety factors used",
+      "action": "be detailed in",
+      "object": "the IB and protocol",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_2.038",
+      "source_unit_ids": [
+        "ema_fih.su.7_2.006"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "findings in the non-clinical studies and how well potential target organ effects can be monitored in the CT",
+      "action": "influence",
+      "object": "the safety factors used",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.001",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Similar considerations as outlined in section 7.2",
+      "action": "apply for",
+      "object": "the identification of a safe starting dose in patients",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.002",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The goal of selecting the starting dose for FIH/early CTs in patients",
+      "action": "is to identify",
+      "object": "a dose that is expected to have a minimal pharmacological effect and is safe to use",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.003",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The starting dose",
+      "action": "take into account",
+      "object": "the nature of disease under investigation and its severity in the patient population included in the CT",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.004",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "a rationale",
+      "action": "be provided",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.005",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "the subjects included in the CT",
+      "action": "be informed",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.006",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may not be appropriate",
+      "subject": "a starting dose that is substantially lower than the human expected pharmacological dose",
+      "action": "be appropriate",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "needs_review"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.007",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "consideration",
+      "action": "be given to",
+      "object": "reverting to a SAD design (with dose escalation as appropriate) in the first patient cohort",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.008",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may also be considered",
+      "subject": "Other approaches",
+      "action": "be considered",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.009",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may not limit",
+      "subject": "the highest dose or exposure tested in the non-clinical studies",
+      "action": "limit",
+      "object": "the dose-escalation or highest dose investigated in a CT",
+      "normalized_ko": null,
+      "review_status": "needs_review"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.010",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.005"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "deserve",
+      "subject": "Special populations, such as paediatrics",
+      "action": "deserve",
+      "object": "additional specific considerations",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.011",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.002"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Similar considerations",
+      "action": "apply",
+      "object": "for the identification of a safe starting dose in patients",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.012",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.002"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "may not be appropriate",
+      "subject": "a starting dose that is substantially lower than the human expected pharmacological dose",
+      "action": "be appropriate",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.013",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.004"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "may not limit",
+      "subject": "the highest dose or exposure tested in the non-clinical studies",
+      "action": "limit",
+      "object": "the dose-escalation or highest dose investigated in a CT",
+      "normalized_ko": null,
+      "review_status": "needs_review"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.014",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.004"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "specific situations",
+      "action": "include",
+      "object": "studies in oncology patients (see ICH S9) or other severe or life-limiting diseases",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.015",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.004"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may not limit",
+      "subject": "the highest dose or exposure tested in the non-clinical studies",
+      "action": "limit",
+      "object": "the dose-escalation or highest dose investigated in a CT",
+      "normalized_ko": null,
+      "review_status": "needs_review"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.016",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.005"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Special populations",
+      "action": "deserve",
+      "object": "additional specific considerations",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_3.017",
+      "source_unit_ids": [
+        "ema_fih.su.7_3.005"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Special populations",
+      "action": "includes",
+      "object": "paediatrics (see ICH E11)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_4.001",
+      "source_unit_ids": [
+        "ema_fih.su.7_4.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "criteria for dose increases",
+      "action": "be outlined",
+      "object": "in the protocol",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_4.002",
+      "source_unit_ids": [
+        "ema_fih.su.7_4.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The maximum fold increase in dose/exposure from one cohort to the next, as well as a maximum number of cohorts to be evaluated",
+      "action": "be stated",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_4.003",
+      "source_unit_ids": [
+        "ema_fih.su.7_4.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The choice of the dose levels",
+      "action": "include",
+      "object": "an estimate of exposure levels to be achieved",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_4.004",
+      "source_unit_ids": [
+        "ema_fih.su.7_4.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The calculated PAD/ATD",
+      "action": "be taken into account",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_4.005",
+      "source_unit_ids": [
+        "ema_fih.su.7_4.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The dose increment between two dose levels",
+      "action": "be guided by",
+      "object": "the dose/exposure-toxicity or the dose/exposure-effect relationship defined in the non-clinical studies",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_4.006",
+      "source_unit_ids": [
+        "ema_fih.su.7_4.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The dose increment between two dose levels",
+      "action": "be adapted",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "needs_review"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_4.007",
+      "source_unit_ids": [
+        "ema_fih.su.7_4.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "smaller dose increments",
+      "action": "be considered",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "needs_review"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_4.008",
+      "source_unit_ids": [
+        "ema_fih.su.7_4.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Another factor for consideration",
+      "action": "is",
+      "object": "the reliability with which potential adverse effects can be monitored in humans before potential serious/irreversible effects develop",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_4.009",
+      "source_unit_ids": [
+        "ema_fih.su.7_4.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "adjustment of the planned dose levels",
+      "action": "be warranted",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_4.010",
+      "source_unit_ids": [
+        "ema_fih.su.7_4.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "Changes in dose levels",
+      "action": "require",
+      "object": "a substantial amendment",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_4.011",
+      "source_unit_ids": [
+        "ema_fih.su.7_4.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Section 7.4",
+      "action": "addresses",
+      "object": "Dose escalation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_5.001",
+      "source_unit_ids": [
+        "ema_fih.su.7_5.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should not be exceeded",
+      "subject": "An expected maximum exposure level",
+      "action": "not be exceeded in the study",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_5.002",
+      "source_unit_ids": [
+        "ema_fih.su.7_5.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be pre-defined",
+      "subject": "An expected maximum exposure level",
+      "action": "be pre-defined in the protocol",
+      "object": "for each study part",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_5.003",
+      "source_unit_ids": [
+        "ema_fih.su.7_5.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be justified",
+      "subject": "The maximum exposure",
+      "action": "be justified",
+      "object": "based on all available non-clinical and clinical data, including PD, PK, findings in toxicity studies and exposure at the expected therapeutic dose range",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_5.004",
+      "source_unit_ids": [
+        "ema_fih.su.7_5.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be taken into account",
+      "subject": "Target saturation",
+      "action": "be taken into account",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_5.005",
+      "source_unit_ids": [
+        "ema_fih.su.7_5.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should consider",
+      "subject": "the maximum exposure",
+      "action": "consider",
+      "object": "when complete inhibition or activation of the target is achieved and no further therapeutic effect is to be expected by increasing the dose",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_5.006",
+      "source_unit_ids": [
+        "ema_fih.su.7_5.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can in some instances be warranted",
+      "subject": "The use of a maximum dose",
+      "action": "be warranted",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_5.007",
+      "source_unit_ids": [
+        "ema_fih.su.7_5.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be within",
+      "subject": "the maximum exposure of healthy volunteers",
+      "action": "be within",
+      "object": "the estimated human pharmacodynamic dose range",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_5.008",
+      "source_unit_ids": [
+        "ema_fih.su.7_5.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can...be carefully explored",
+      "subject": "exposure levels exceeding the pharmacodynamic dose range",
+      "action": "be carefully explored",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_5.009",
+      "source_unit_ids": [
+        "ema_fih.su.7_5.005"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be clearly defined",
+      "subject": "the maximum tolerated dose (MTD)",
+      "action": "be clearly defined",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_5.010",
+      "source_unit_ids": [
+        "ema_fih.su.7_5.005"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should...not be exceeded",
+      "subject": "the maximum tolerated dose (MTD)",
+      "action": "not be exceeded",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_5.011",
+      "source_unit_ids": [
+        "ema_fih.su.7_5.005"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should always be considered",
+      "subject": "The potential therapeutic/clinically relevant dose (exposure) and the expected benefit/risk balance",
+      "action": "always be considered",
+      "object": "when defining the dose range",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_5.012",
+      "source_unit_ids": [
+        "ema_fih.su.7_5.005"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is considered to be inappropriate",
+      "subject": "A trial design using a MTD approach",
+      "action": "be inappropriate",
+      "object": "for healthy volunteers",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_5.013",
+      "source_unit_ids": [
+        "ema_fih.su.7_5.002"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "available data",
+      "action": "includes",
+      "object": "PD",
+      "normalized_ko": "이용 가능한 데이터에는 PD가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_5.014",
+      "source_unit_ids": [
+        "ema_fih.su.7_5.005"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "A trial design using a MTD approach",
+      "action": "is considered to be inappropriate for",
+      "object": "healthy volunteers",
+      "normalized_ko": "MTD 접근법을 사용하는 시험 설계는 건강한 자원자에게 부적절한 것으로 간주된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_6.001",
+      "source_unit_ids": [
+        "ema_fih.su.7_6.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The selection of an appropriate dosing interval and duration of dosing",
+      "action": "take into account",
+      "object": "the specific PK and PD characteristics of the IMP, the available non-clinical safety data, and all data from subjects in previous single dose cohorts",
+      "normalized_ko": "적절한 투여 간격 및 투여 기간을 선정할 때 IMP의 특정 PK 및 PD 특성, 이용 가능한 비임상 안전성 자료 및 이전 단회 투여 코호트 대상자 자료를 고려해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_6.002",
+      "source_unit_ids": [
+        "ema_fih.su.7_6.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Particular attention",
+      "action": "be paid to",
+      "object": "linear versus non-linear PK in the expected concentration range, the PK half-life versus duration of action, and the potential for accumulation",
+      "normalized_ko": "예상 농도 범위에서의 선형 대 비선형 PK, PK 반감기 대 작용 지속시간 및 축적 가능성에 특히 주의를 기울여야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_6.003",
+      "source_unit_ids": [
+        "ema_fih.su.7_6.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "A maximum duration of dosing",
+      "action": "be stated in",
+      "object": "the protocol",
+      "normalized_ko": "최대 투여 기간은 프로토콜에 명시되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_6.004",
+      "source_unit_ids": [
+        "ema_fih.su.7_6.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The expected exposure after multiple dosing (Cmax and AUC0-tau)",
+      "action": "have been covered during",
+      "object": "preceding SAD parts/trials",
+      "normalized_ko": "다회 투여 후 예상 노출량(Cmax 및 AUC0-tau)은 선행 SAD 파트/시험에서 다루어졌어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_6.005",
+      "source_unit_ids": [
+        "ema_fih.su.7_6.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can be considered",
+      "subject": "higher exposures in a MAD part",
+      "action": "be considered",
+      "object": null,
+      "normalized_ko": "MAD 파트에서 더 높은 노출량을 고려할 수 있다.",
+      "review_status": "needs_review"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_6.006",
+      "source_unit_ids": [
+        "ema_fih.su.7_6.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can also",
+      "subject": "Multiple dosing parts",
+      "action": "explore",
+      "object": "different dosing regimens and schedules",
+      "normalized_ko": "다회 투여 파트는 서로 다른 투여 요법 및 일정을 탐색할 수도 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_6.007",
+      "source_unit_ids": [
+        "ema_fih.su.7_6.003"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "dosing regimens and schedules",
+      "action": "includes",
+      "object": "a move from once daily dosing to twice daily dosing",
+      "normalized_ko": "투여 요법 및 일정의 예에는 1일 1회 투여에서 1일 2회 투여로의 전환이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_6.008",
+      "source_unit_ids": [
+        "ema_fih.su.7_6.003"
+      ],
+      "record_type": "requirement",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "A maximum duration of dosing",
+      "action": "be stated in",
+      "object": "the protocol",
+      "normalized_ko": "최대 투여 기간은 프로토콜에 명시되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_7.001",
+      "source_unit_ids": [
+        "ema_fih.su.7_7.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The choice of route of administration for dosing in humans",
+      "action": "be based on",
+      "object": "the non-clinical data, the characteristics of the IMP, and the intended therapeutic use",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_7.002",
+      "source_unit_ids": [
+        "ema_fih.su.7_7.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "a slow infusion",
+      "action": "be more appropriate than",
+      "object": "a bolus injection",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_7.003",
+      "source_unit_ids": [
+        "ema_fih.su.7_7.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This",
+      "action": "would allow for",
+      "object": "a timely discontinuation of the infusion to mitigate an adverse outcome",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    }
+  ],
+  "quantitative_criteria": [
+    {
+      "criterion_id": "ema_fih.qc.7_5.001",
+      "source_unit_id": "ema_fih.su.7_5.004",
+      "knowledge_record_id": null,
+      "parameter": "maximum exposure of healthy volunteers",
+      "comparator": "within",
+      "value": null,
+      "value_fraction": null,
+      "unit": null,
+      "value_status": "unknown",
+      "denominator_or_reference": "the estimated human pharmacodynamic dose range",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "the maximum exposure of healthy volunteers should be within the estimated human pharmacodynamic dose range",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ema_fih.qc.7_6.001",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "knowledge_record_id": null,
+      "parameter": "exposure in a MAD part",
+      "comparator": "not_exceed",
+      "value": null,
+      "value_fraction": null,
+      "unit": null,
+      "value_status": "unknown",
+      "denominator_or_reference": "the set maximum exposure",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "below the set maximum exposure",
+      "review_status": "needs_review"
+    },
+    {
+      "criterion_id": "ema_fih.qc.7_6.002",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "knowledge_record_id": null,
+      "parameter": "dosing frequency",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "daily dosing",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ema_fih.qc.7_6.003",
+        "ema_fih.qc.7_6.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "once daily dosing",
+      "review_status": "needs_review"
+    },
+    {
+      "criterion_id": "ema_fih.qc.7_6.003",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "knowledge_record_id": null,
+      "parameter": "dosing frequency",
+      "comparator": "equals",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "daily dosing",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ema_fih.qc.7_6.002",
+        "ema_fih.qc.7_6.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "twice daily dosing",
+      "review_status": "needs_review"
+    },
+    {
+      "criterion_id": "ema_fih.qc.7_6.004",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "knowledge_record_id": null,
+      "parameter": "dosing frequency (initial regimen)",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "dose/day",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ema_fih.qc.7_6.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "once daily dosing",
+      "review_status": "needs_review"
+    },
+    {
+      "criterion_id": "ema_fih.qc.7_6.005",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "knowledge_record_id": null,
+      "parameter": "dosing frequency (subsequent regimen)",
+      "comparator": "equals",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "doses/day",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ema_fih.qc.7_6.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "twice daily dosing",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ema_fih.qc.7_6.006",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "knowledge_record_id": null,
+      "parameter": "dosing frequency",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "dose per day",
+      "value_status": "known",
+      "denominator_or_reference": "daily dosing",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "once daily dosing",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ema_fih.qc.7_6.007",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "knowledge_record_id": null,
+      "parameter": "dosing frequency",
+      "comparator": "equals",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "doses per day",
+      "value_status": "known",
+      "denominator_or_reference": "daily dosing",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "twice daily dosing",
+      "review_status": "reviewed"
+    }
+  ],
+  "conditions": [
+    {
+      "condition_id": "ema_fih.cond.7_1.001",
+      "source_unit_id": "ema_fih.su.7_1.004",
+      "condition_text": "during the CT",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_1.002",
+      "source_unit_id": "ema_fih.su.7_1.004",
+      "condition_text": "based on emerging clinical data",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_1.003",
+      "source_unit_id": "ema_fih.su.7_1.004",
+      "condition_text": "where the dose escalation has reached a pre-defined maximum exposure and an integrated analysis of available data leads to the Sponsor’s conclusion that further careful escalation is warranted",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_1.004",
+      "source_unit_id": "ema_fih.su.7_1.006",
+      "condition_text": "If an IMP has been administered to humans under the paradigm of microdose trials, as outlined in ICH M3(R2)",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_1.005",
+      "source_unit_id": "ema_fih.su.7_1.003",
+      "condition_text": "emerging during the trial from previous dosed cohorts/individuals",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_1.006",
+      "source_unit_id": "ema_fih.su.7_1.006",
+      "condition_text": "If an IMP has been administered to humans under the paradigm of microdose trials, as outlined in ICH M3(R2)",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_1.007",
+      "source_unit_id": "ema_fih.su.7_1.003",
+      "condition_text": "emerging during the trial from previous dosed cohorts/individuals",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_2.001",
+      "source_unit_id": "ema_fih.su.7_2.002",
+      "condition_text": "In general",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_2.002",
+      "source_unit_id": "ema_fih.su.7_2.003",
+      "condition_text": "if feasible",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_2.003",
+      "source_unit_id": "ema_fih.su.7_2.003",
+      "condition_text": "When using these approaches",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_2.004",
+      "source_unit_id": "ema_fih.su.7_2.003",
+      "condition_text": "Whenever possible",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_2.005",
+      "source_unit_id": "ema_fih.su.7_2.004",
+      "condition_text": "unless a robust scientific rationale can be provided for a higher dose",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ema_fih.kr.7_2.015"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_2.006",
+      "source_unit_id": "ema_fih.su.7_2.004",
+      "condition_text": "Depending on the level of uncertainty regarding the human relevance of findings observed in nonclinical studies (see sections 4.1 to 4.4) and the knowledge of the intended target (see sections 6.1 and 6.2)",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_2.007",
+      "source_unit_id": "ema_fih.su.7_2.002",
+      "condition_text": "when derived from appropriate animal studies",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_2.008",
+      "source_unit_id": "ema_fih.su.7_2.002",
+      "condition_text": "in the most relevant animal species used",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_2.009",
+      "source_unit_id": "ema_fih.su.7_2.002",
+      "condition_text": "which might not necessarily be the most sensitive species",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ema_fih.kr.7_2.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_2.010",
+      "source_unit_id": "ema_fih.su.7_2.003",
+      "condition_text": "Whenever possible",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_2.011",
+      "source_unit_id": "ema_fih.su.7_2.002",
+      "condition_text": "which might not necessarily be the most sensitive species",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_3.001",
+      "source_unit_id": "ema_fih.su.7_3.002",
+      "condition_text": "where there are no previous data in healthy volunteers",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_3.002",
+      "source_unit_id": "ema_fih.su.7_3.002",
+      "condition_text": "In some instances",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_3.003",
+      "source_unit_id": "ema_fih.su.7_3.002",
+      "condition_text": "In all cases",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_3.004",
+      "source_unit_id": "ema_fih.su.7_3.003",
+      "condition_text": "If potential differences in target distribution, pharmacokinetics or safety profile of the IMP between healthy volunteers and patients can be foreseen",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_3.005",
+      "source_unit_id": "ema_fih.su.7_3.004",
+      "condition_text": "in specific situations",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_3.006",
+      "source_unit_id": "ema_fih.su.7_3.004",
+      "condition_text": "for studies in oncology patients (see ICH S9) or other severe or life-limiting diseases",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_3.007",
+      "source_unit_id": "ema_fih.su.7_3.004",
+      "condition_text": "in a CT in patients with advanced cancer or life-limiting diseases",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_3.008",
+      "source_unit_id": "ema_fih.su.7_3.004",
+      "condition_text": "if appropriately justified",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_3.009",
+      "source_unit_id": "ema_fih.su.7_3.002",
+      "condition_text": "In all cases",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_3.010",
+      "source_unit_id": "ema_fih.su.7_3.004",
+      "condition_text": "in specific situations",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_3.011",
+      "source_unit_id": "ema_fih.su.7_3.004",
+      "condition_text": "in patients with advanced cancer or life-limiting diseases if appropriately justified",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ema_fih.kr.7_3.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_3.012",
+      "source_unit_id": "ema_fih.su.7_3.002",
+      "condition_text": "In some instances",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_3.013",
+      "source_unit_id": "ema_fih.su.7_3.003",
+      "condition_text": "with dose escalation as appropriate",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_3.014",
+      "source_unit_id": "ema_fih.su.7_3.003",
+      "condition_text": "in the first patient cohort",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.001",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "during a CT",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.002",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "if any",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.003",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "if relevant and feasible",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.004",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "following review of emerging clinical data from previous cohorts",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.005",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "if there is evidence of non-linear PK potentially resulting in a supra-proportional increases in exposure",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.006",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "particularly in the later parts of SAD/MAD",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.007",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "If emerging clinical data reveal substantial differences from non-clinical or modelling and simulation data",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.008",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "If available data indicate a plateauing of exposure",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.009",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "unless such changes are covered by predefined decision criteria in the protocol",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.010",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "In addition to defining a starting dose and a maximum exposure",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.011",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "defined in the non-clinical studies",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.012",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "if there is evidence of non-linear PK potentially resulting in a supra-proportional increases in exposure",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.013",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "If emerging clinical data reveal substantial differences from non-clinical or modelling and simulation data",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.014",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "If available data indicate a plateauing of exposure",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_4.015",
+      "source_unit_id": "ema_fih.su.7_4.002",
+      "condition_text": "before potential serious/irreversible effects develop",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.001",
+      "source_unit_id": "ema_fih.su.7_5.002",
+      "condition_text": "without approval of a substantial amendment",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.002",
+      "source_unit_id": "ema_fih.su.7_5.002",
+      "condition_text": "when appropriate",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.003",
+      "source_unit_id": "ema_fih.su.7_5.002",
+      "condition_text": "when complete inhibition or activation of the target is achieved and no further therapeutic effect is to be expected by increasing the dose",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.004",
+      "source_unit_id": "ema_fih.su.7_5.003",
+      "condition_text": "in studies where exposure cannot be adequately measured",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.005",
+      "source_unit_id": "ema_fih.su.7_5.004",
+      "condition_text": "In general",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.006",
+      "source_unit_id": "ema_fih.su.7_5.004",
+      "condition_text": "if scientifically justified and considered acceptable from a safety perspective",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.007",
+      "source_unit_id": "ema_fih.su.7_5.004",
+      "condition_text": "taking into consideration the uncertainty as outlined in section 4",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.008",
+      "source_unit_id": "ema_fih.su.7_5.005",
+      "condition_text": "For trials or trial parts that include patients",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.009",
+      "source_unit_id": "ema_fih.su.7_5.005",
+      "condition_text": "(if applicable)",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.010",
+      "source_unit_id": "ema_fih.su.7_5.005",
+      "condition_text": "once it has been determined",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.011",
+      "source_unit_id": "ema_fih.su.7_5.005",
+      "condition_text": "when defining the dose range",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.012",
+      "source_unit_id": "ema_fih.su.7_5.005",
+      "condition_text": "For trials or trial parts that include patients",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.013",
+      "source_unit_id": "ema_fih.su.7_5.005",
+      "condition_text": "for healthy volunteers",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.014",
+      "source_unit_id": "ema_fih.su.7_5.002",
+      "condition_text": "for each study part",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.015",
+      "source_unit_id": "ema_fih.su.7_5.004",
+      "condition_text": "if scientifically justified and considered acceptable from a safety perspective",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.007"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_5.016",
+      "source_unit_id": "ema_fih.su.7_5.005",
+      "condition_text": "when defining the dose range",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_6.001",
+      "source_unit_id": "ema_fih.su.7_6.002",
+      "condition_text": "for all multiple dosing cohorts and study parts",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_6.002",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "condition_text": "for every cohort",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_6.003",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "condition_text": "emerging clinical data following multiple dosing suggests tolerance to adverse effects seen in a SAD part of a study",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_6.004",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "condition_text": "this option is pre-specified",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_6.005",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "condition_text": "If, however, emerging clinical data following multiple dosing suggests tolerance to adverse effects seen in a SAD part of a study",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_6.006",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "condition_text": "provided this option is pre-specified",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_6.007",
+      "source_unit_id": "ema_fih.su.7_6.002",
+      "condition_text": "in the expected concentration range",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_6.008",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "condition_text": "for every cohort",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_6.009",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "condition_text": "during preceding SAD parts/trials",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_6.010",
+      "source_unit_id": "ema_fih.su.7_6.003",
+      "condition_text": "below the set maximum exposure",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_7.001",
+      "source_unit_id": "ema_fih.su.7_7.003",
+      "condition_text": "In the case of an intravenous administration",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.7_7.002",
+      "source_unit_id": "ema_fih.su.7_7.002",
+      "condition_text": "for dosing in humans",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    }
+  ],
+  "cross_references": []
+}

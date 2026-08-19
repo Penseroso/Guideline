@@ -273,7 +273,27 @@ const OPTION_B_TOP_K = 5;
  * refused, never shown "maybe right."
  */
 async function answerOptionB(question, records, { client, store }) {
-  const candidates = await store.search(question, OPTION_B_TOP_K);
+  const qTokens = new Set(tokenize(question));
+  const queryScope = extractQueryScope(question, qTokens);
+
+  let rawCandidates = await store.search(question, OPTION_B_TOP_K * 2);
+
+  // Apply Scope Guard to Option B candidates to prevent cross-domain contamination
+  let candidates = rawCandidates;
+  if (queryScope.target_molecule || queryScope.target_assay) {
+    candidates = rawCandidates.filter(({ record }) => {
+      if (queryScope.target_molecule && record.explicit_exclusions && record.explicit_exclusions.includes(queryScope.target_molecule)) {
+        return false;
+      }
+      if (queryScope.target_assay && record.explicit_exclusions && record.explicit_exclusions.includes(queryScope.target_assay)) {
+        return false;
+      }
+      return true;
+    });
+  }
+
+  candidates = candidates.slice(0, OPTION_B_TOP_K);
+
   if (candidates.length === 0) {
     return { answered: false, text: NOT_FOUND, record: null, path: "B" };
   }

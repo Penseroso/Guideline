@@ -3,9 +3,9 @@ const assert = require("node:assert/strict");
 
 const { loadStore, buildIndex, citationFor, sourceTextFor } = require("../engine/data_store");
 
-test("loadStore joins all 5 pilot bundles into one index", () => {
+test("loadStore joins all pilot bundles into one index", () => {
   const { index, records } = loadStore();
-  assert.equal(index.documents.size, 2, "ICH M10 + ICH S6(R1)");
+  assert.equal(index.documents.size, 3, "ICH M10 + ICH S6(R1) + EMA FIH");
   assert.equal(
     records.length,
     index.knowledgeRecords.size + index.quantitativeCriteria.size + index.conditions.size
