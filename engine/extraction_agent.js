@@ -214,7 +214,9 @@ async function extractSection({ section, sourceUnits, client }) {
     // Rule 2: Clause markers & Condition linking
     "CONDITION EXTRACTION & LINKING: Sentences with framing or qualification clauses starting with 'Whenever possible', 'If', 'Unless', 'Provided that', 'In cases where', 'Depending on' MUST produce a Condition record, and its temp_id MUST be referenced in condition_temp_ids or applies_to_temp_ids. " +
     // Rule 3: Illustrative numbers vs specified criteria
-    "ILLUSTRATIVE NUMBERS VS SPECIFIED CRITERIA: Numbers introduced with 'e.g.', 'such as', 'for example', 'exemplified by' (e.g. 'such as a move from once daily to twice daily dosing', 'e.g. a study of ≤ 14 days') MUST have is_illustrative_example: true. Do not mark them as specified requirements.";
+    "ILLUSTRATIVE NUMBERS VS SPECIFIED CRITERIA: Numbers introduced with 'e.g.', 'such as', 'for example', 'exemplified by' (e.g. 'such as a move from once daily to twice daily dosing', 'e.g. a study of ≤ 14 days') MUST have is_illustrative_example: true. Do not mark them as specified requirements. " +
+    // Rule 4: Compound action decomposition
+    "COMPOUND ACTION DECOMPOSITION: When a single sentence prescribes multiple distinct, co-equal regulatory determinations or actions connected by 'and', 'as well as', or 'in addition to' (e.g. 'X should be guided by A and adapted following B'), DECOMPOSE them into separate atomic KnowledgeRecord records (e.g. KR1: action='be guided by', object='A'; KR2: action='be adapted following', object='B'), both citing the same source_unit_ids. Do not mash multiple parallel actions into one convoluted action string.";
   // A follow-up instruction telling the model not to duplicate Condition
   // objects was tried and measured against the same section: it fixed
   // one duplicate (LLOQ merged correctly via applies_to_temp_ids) but

@@ -1935,13 +1935,27 @@
       "modality": "should",
       "original_modal_text": "should",
       "subject": "The dose increment between two dose levels",
-      "action": "be guided by non-clinical dose/exposure relationships and adapted",
-      "object": "following review of emerging clinical data from previous cohorts",
-      "normalized_ko": null,
+      "action": "be guided by",
+      "object": "the dose/exposure-toxicity or the dose/exposure-effect relationship defined in the non-clinical studies",
+      "normalized_ko": "두 용량 수준 간의 용량 증량 폭은 비임상 시험에서 정의된 용량/노출-독성 또는 용량/노출-효능 관계에 의해 결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.7_4.007",
+      "source_unit_ids": [
+        "ema_fih.su.7_4.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The dose increment between two dose levels",
+      "action": "be adapted",
+      "object": "following review of emerging clinical data from previous cohorts",
+      "normalized_ko": "용량 증량 폭은 이전 코호트로부터 도출된 임상 데이터를 검토한 후 상황에 맞게 조정되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.7_4.008",
       "source_unit_ids": [
         "ema_fih.su.7_4.002"
       ],
@@ -1955,7 +1969,7 @@
       "review_status": "reviewed"
     },
     {
-      "knowledge_record_id": "ema_fih.kr.7_4.008",
+      "knowledge_record_id": "ema_fih.kr.7_4.009",
       "source_unit_ids": [
         "ema_fih.su.7_4.002"
       ],
@@ -1969,7 +1983,7 @@
       "review_status": "reviewed"
     },
     {
-      "knowledge_record_id": "ema_fih.kr.7_4.009",
+      "knowledge_record_id": "ema_fih.kr.7_4.010",
       "source_unit_ids": [
         "ema_fih.su.7_4.002"
       ],
@@ -1983,7 +1997,7 @@
       "review_status": "reviewed"
     },
     {
-      "knowledge_record_id": "ema_fih.kr.7_4.010",
+      "knowledge_record_id": "ema_fih.kr.7_4.011",
       "source_unit_ids": [
         "ema_fih.su.7_4.002"
       ],
@@ -1997,7 +2011,7 @@
       "review_status": "reviewed"
     },
     {
-      "knowledge_record_id": "ema_fih.kr.7_4.011",
+      "knowledge_record_id": "ema_fih.kr.7_4.012",
       "source_unit_ids": [
         "ema_fih.su.7_4.001"
       ],
