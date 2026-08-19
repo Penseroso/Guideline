@@ -18,7 +18,7 @@ Lower-level materials must never overwrite or be represented as higher-level sou
 
 ## Directory contract
 
-* `Guideline Files/`: immutable original source PDFs
+* `source_pdfs/`: immutable original source PDFs
 * `structured_data/`: machine-readable structured outputs and schemas
 * `working_docs/`: project scope, schema definitions, extraction rules, the product roadmap, and the milestone log (`milestone_log.md`)
 * `scripts/`: reproducible extraction and validation scripts
@@ -26,7 +26,7 @@ Lower-level materials must never overwrite or be represented as higher-level sou
 
 ## Source integrity
 
-* Never modify, rename, move, or overwrite files in `Guideline Files/`.
+* Never modify, rename, move, or overwrite files in `source_pdfs/`.
 * Do not create regulatory requirements that are not present in the source.
 * Preserve sufficient source text to verify every structured record.
 * Every structured record must be traceable to a document, section, and PDF page.

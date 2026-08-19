@@ -2,7 +2,7 @@
 
 ## Source file
 
-- File path: `Guideline Files/ICH S6.pdf`
+- File path: `source_pdfs/ICH S6.pdf`
 - Exact filename: `ICH S6.pdf`
 - File size: 271,514 bytes
 - SHA-256: `05C41D25575259D9C931FCAD33A8227089A8B2F704C0922C0B5F7F411D812E22`

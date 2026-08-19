@@ -4,23 +4,23 @@
 
 - 프로젝트 경로: `C:\Users\User\Desktop\FILE\AI\Guideline`
 - 요청된 원본 PDF 폴더명: `가이드라인 파일/`
-- 실제 확인된 원본 PDF 폴더명: `Guideline Files/`
+- 실제 확인된 원본 PDF 폴더명: `source_pdfs/`
 - 파일럿 PDF 정확한 파일명: `ICH M10.pdf`
-- 실제 파일 경로: `Guideline Files/ICH M10.pdf`
+- 실제 파일 경로: `source_pdfs/ICH M10.pdf`
 - 파일 크기: 753,778 bytes
 - 최종 수정 시각: 2026-06-30 09:30:54
 
-참고: 현재 작업공간에는 `가이드라인 파일/` 폴더가 없고, `Guideline Files/` 폴더에 ICH M10 PDF가 존재한다. 원본 PDF는 이동, 수정, 이름 변경, 덮어쓰기하지 않았다.
+참고: 현재 작업공간에는 `가이드라인 파일/` 폴더가 없고, `source_pdfs/` 폴더에 ICH M10 PDF가 존재한다. 원본 PDF는 이동, 수정, 이름 변경, 덮어쓰기하지 않았다.
 
 ## 2. 현재 작업공간 파일 목록 확인 결과
 
 점검 시작 시점의 최상위 항목:
 
-- `Guideline Files/`
+- `source_pdfs/`
 
 확인된 원본 PDF:
 
-- `Guideline Files/ICH M10.pdf`
+- `source_pdfs/ICH M10.pdf`
 
 이번 단계에서 생성한 영문 폴더:
 

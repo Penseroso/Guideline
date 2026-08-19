@@ -6,7 +6,7 @@
       "guideline_code": "S6(R1)",
       "issuing_body": "ICH",
       "document_version_label": "Current Step 4 version; Parent Guideline dated 16 July 1997; Addendum dated 12 June 2011 incorporated at the end of June 2011",
-      "source_file_path": "Guideline Files/ICH S6.pdf",
+      "source_file_path": "source_pdfs/ICH S6.pdf",
       "source_file_checksum": "05C41D25575259D9C931FCAD33A8227089A8B2F704C0922C0B5F7F411D812E22",
       "schema_model_version": "0.3.0"
     }
@@ -105,7 +105,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part1.3_3",
         "pdf_page_index_zero_based": 6,
@@ -127,7 +127,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part1.3_3",
         "pdf_page_index_zero_based": 6,
@@ -149,7 +149,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part1.3_3",
         "pdf_page_index_zero_based": 7,
@@ -171,7 +171,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part1.3_3",
         "pdf_page_index_zero_based": 7,
@@ -193,7 +193,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part1.3_3",
         "pdf_page_index_zero_based": 7,
@@ -215,7 +215,7 @@
       "related_source_unit_ids": ["ich_s6_r1.su.part1.notes.note1.001"],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part1.3_3",
         "pdf_page_index_zero_based": 7,
@@ -237,7 +237,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part1.notes",
         "pdf_page_index_zero_based": 12,
@@ -259,7 +259,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part1.notes",
         "pdf_page_index_zero_based": 12,
@@ -281,7 +281,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.2",
         "pdf_page_index_zero_based": 14,
@@ -303,7 +303,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.2_1",
         "pdf_page_index_zero_based": 14,
@@ -325,7 +325,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.2_1",
         "pdf_page_index_zero_based": 14,
@@ -347,7 +347,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.2_1",
         "pdf_page_index_zero_based": 14,
@@ -369,7 +369,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.2_1",
         "pdf_page_index_zero_based": 14,
@@ -391,7 +391,7 @@
       "related_source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.001"],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.2_1",
         "pdf_page_index_zero_based": 14,
@@ -413,7 +413,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.2_1",
         "pdf_page_index_zero_based": 14,
@@ -435,7 +435,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.2_1",
         "pdf_page_index_zero_based": 14,
@@ -457,7 +457,7 @@
       "related_source_unit_ids": ["ich_s6_r1.su.part2.notes.note2.001"],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.2_1",
         "pdf_page_index_zero_based": 14,
@@ -479,7 +479,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.2_2",
         "pdf_page_index_zero_based": 14,
@@ -501,7 +501,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.2_2",
         "pdf_page_index_zero_based": 14,
@@ -523,7 +523,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.2_2",
         "pdf_page_index_zero_based": 15,
@@ -545,7 +545,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.notes",
         "pdf_page_index_zero_based": 19,
@@ -567,7 +567,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.notes",
         "pdf_page_index_zero_based": 19,
@@ -589,7 +589,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.notes",
         "pdf_page_index_zero_based": 20,
@@ -611,7 +611,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.notes",
         "pdf_page_index_zero_based": 20,
@@ -633,7 +633,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.notes",
         "pdf_page_index_zero_based": 20,
@@ -655,7 +655,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.notes",
         "pdf_page_index_zero_based": 20,
@@ -677,7 +677,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.notes",
         "pdf_page_index_zero_based": 20,
@@ -699,7 +699,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.notes",
         "pdf_page_index_zero_based": 20,
@@ -721,7 +721,7 @@
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
-        "source_file_path": "Guideline Files/ICH S6.pdf",
+        "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.notes",
         "pdf_page_index_zero_based": 20,

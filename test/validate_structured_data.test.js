@@ -92,7 +92,7 @@ test("repeated non-context Section across files fails", () => {
       related_source_unit_ids: [],
       table_context: null,
       trace: {
-        source_file_path: "Guideline Files/ICH M10.pdf",
+        source_file_path: "source_pdfs/ICH M10.pdf",
         document_id: "ich_m10",
         section_id: repeatedSection.section_id,
         pdf_page_index_zero_based: 13,
@@ -220,7 +220,7 @@ test("unresolved CrossReference with non-null target_id fails", () => {
 
 test("provenance source path mismatch fails", () => {
   const result = validatePilotCopies((first) => {
-    first.source_units[0].trace.source_file_path = "Guideline Files/Other.pdf";
+    first.source_units[0].trace.source_file_path = "source_pdfs/Other.pdf";
   });
 
   assertInvalid(result, "must match Document.source_file_path");

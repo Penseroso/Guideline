@@ -11,7 +11,7 @@ A hallucination-resistant conversational assistant for regulatory guidelines, bu
 
 ## Repository Map
 
-- `Guideline Files/`: immutable original guideline PDFs.
+- `source_pdfs/`: immutable original guideline PDFs.
 - `working_docs/`: active project scope, conceptual data model, PDF assessments, the product roadmap, and the milestone log.
 - `structured_data/`: the reviewed pilot bundles and the source JSON Schema.
 - `engine/`: the chatbot/extraction/verification application layer.
