@@ -118,18 +118,25 @@ function deriveRecordScope(record, ancestorSections, document) {
 
   // Section- & Record-level topic refinement
   const paramLower = (record.parameter || "").toLowerCase();
-  if (sectionPathLower.includes("species selection") || paramLower.includes("species")) {
-    topicScope = "species_selection";
-  } else if (sectionPathLower.includes("study design") || paramLower.includes("duration")) {
+  if (paramLower.includes("duration")) {
     topicScope = "study_duration";
-  } else if (sectionPathLower.includes("partial validation")) {
-    topicScope = "partial_validation";
   } else if (
-    sectionPathLower.includes("accuracy and precision") ||
     paramLower === "accuracy" ||
     paramLower === "precision" ||
     paramLower.includes("qcs")
   ) {
+    topicScope = "acceptance_criteria";
+  } else if (
+    paramLower.includes("species") ||
+    sectionPathLower.includes("species selection") ||
+    sectionPathLower.includes("species/model selection")
+  ) {
+    topicScope = "species_selection";
+  } else if (sectionPathLower.includes("study design")) {
+    topicScope = "study_duration";
+  } else if (sectionPathLower.includes("partial validation")) {
+    topicScope = "partial_validation";
+  } else if (sectionPathLower.includes("accuracy and precision")) {
     topicScope = "acceptance_criteria";
   } else if (sectionPathLower.includes("starting dose") || paramLower.includes("dose")) {
     topicScope = "starting_dose";
