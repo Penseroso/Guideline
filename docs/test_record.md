@@ -150,3 +150,30 @@ KR ≥ 90%, QC ≥ 85%, Cond ≥ 95% (reviewed-of-extracted). Explicitly a **for
 
 Closed 2026-08-19 (see `docs/milestone_log.md` and `docs/product_roadmap.md` §3). Cond already clears its target; KR is close; QC has real, tracked headroom (the acceptance bar's own text acknowledges this) — carried forward as an M2+ improvement target, not blocking M1 closure.
 
+---
+
+## Entry 005 — sibling-veto extended to `is_illustrative_example`, then `comparator=equals`
+
+- **Date**: 2026-08-19 (post-M1)
+- **Engine version**: `0.3.0` (commit `45cc6ae`)
+- **Schema model version**: `0.5.0` (bumped from `0.4.0`)
+- **Model(s)**: `gpt-5.6-terra`
+- **Run**: 3 targeted repeated runs on `ich_s6_r1.sec.part1.3_3` after each of the two fixes below (6 runs total)
+
+### Changes since Entry 004
+
+M1's last run (Entry 004) re-broke `ich_s6_r1.sec.part1.3_3` down to 0-2 reviewed QC out of 4-6. Two real, distinct root causes found and fixed in sequence:
+
+1. **Sibling-veto gap** (commit `38dc33a`): the `is_default_with_exception` veto added in Entry 003 didn't also cover `is_illustrative_example`, so an illustrative QC sharing its `condition_ids` with an unrelated criterion still got grouped as "jointly applicable." Fixed by extending the veto. Live re-check (3 runs): the "jointly applicable" wording is gone from every rejection reason; what's left converges entirely on pattern 2.
+2. **`comparator` can't express an exact count** (commit `45cc6ae`): "two relevant species," "a single species" rendered as `at_least N`, correctly rejected for asserting an open-ended floor. Added `comparator=equals` (schema `0.5.0`).
+
+### Results — targeted S6(R1) §3.3, after `equals` (3 runs)
+
+| run | extracted QC | reviewed QC |
+|---|---|---|
+| 1 | 4 | 4 |
+| 2 | 5 | 4 |
+| 3 | 6 | 5 |
+
+Up from 0-2 reviewed out of 4-6 before this pair of fixes. Remaining rejections (1 in run 2, 1 in run 3) are a distinct, narrower pattern: modal-possibility language ("may suffice," "may be necessary") asserted as an unconditional exact requirement via `equals`, missing a modality qualifier — not fixed here, noted as a further residual for a future pass. `npm run validate:pilots` and `npm run eval` (9/9) unaffected.
+
