@@ -202,6 +202,7 @@ Record-type classification for evaluative language:
 - Use `record_type=description` only when the statement describes information value, function, capability, or factual characteristics without directing a regulatory choice.
 - `record_type` and `modality` remain independent: a statement can be a `recommendation` while its modality is `other`.
 - Preserve non-enum evaluative wording — for example `appropriate`, `sufficient`, `justified`, `critical`, `prudent`, `recommended`, `not warranted`, `there is no need`, and `calls for` — with `modality=other` and the exact wording in `original_modal_text`. Do not convert these expressions to `must`, `should`, or `may`.
+- Use `record_type=example` with `modality=none` for one item of an enumerated list introduced by a framing sentence (e.g. "typical modifications ... include, but are not limited to, the following"). Link only that item's own source unit, not the framing sentence's — and do not restate the framing sentence's scope claim (e.g. "is a typical modification applicable to X") as the item's own `action`; that claim belongs to the framing sentence, not to each list item, so asserting it per-item fails citation verification against the item's own source text. Keep the action minimal (e.g. `includes`), matching the framing's own list relationship rather than re-deriving it (established pattern: `ich_m10.kr.6_1.005`-`007`).
 
 ### QuantitativeCriterion
 

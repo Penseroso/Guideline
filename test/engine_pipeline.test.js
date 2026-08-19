@@ -167,6 +167,51 @@ test("verifyKnowledgeRecord does not duplicate the modal wording when action alr
   assert.equal(occurrences, 1, "must not append a redundant duplicate of wording already present in the recomposed claim");
 });
 
+// --- verifyKnowledgeRecord: record_type=example is a special case
+// (docs/milestone_log.md M1, found on real M10 6.1) ---
+
+test("verifyKnowledgeRecord verifies only the list item's own text for record_type=example, not a 'category includes item' claim the item's own source_text can't support", async () => {
+  const kr = {
+    knowledge_record_id: "kr.example.1",
+    source_unit_ids: ["su.001"],
+    record_type: "example",
+    modality: "none",
+    original_modal_text: null,
+    subject: "Chromatographic method modification or change",
+    action: "includes",
+    object: "A change in sample processing procedures",
+    normalized_ko: null,
+    review_status: "needs_review"
+  };
+  const su = [{ source_unit_id: "su.001", unit_order: 1, source_text: "• A change in sample processing procedures" }];
+  const captured = [];
+  const client = { complete: async (args) => { captured.push(args.messages[0].content); return { entailed: true, reason: "ok" }; } };
+  const { draft } = await verifyDraft({ knowledge_records: [kr], quantitative_criteria: [], conditions: [] }, { sourceUnits: su, client });
+  assert.match(captured[0], /A change in sample processing procedures/);
+  assert.doesNotMatch(captured[0].split("Claim to check:")[1], /Chromatographic method modification or change/, "must not assert the framing sentence's category, which this record's own source_text doesn't state");
+  assert.equal(draft.knowledge_records[0].review_status, "reviewed");
+});
+
+test("verifyKnowledgeRecord falls back to subject for record_type=example when the model left object null", async () => {
+  const kr = {
+    knowledge_record_id: "kr.example.2",
+    source_unit_ids: ["su.001"],
+    record_type: "example",
+    modality: "none",
+    original_modal_text: null,
+    subject: "A change in storage conditions",
+    action: "includes",
+    object: null,
+    normalized_ko: null,
+    review_status: "needs_review"
+  };
+  const su = [{ source_unit_id: "su.001", unit_order: 1, source_text: "• A change in storage conditions" }];
+  const captured = [];
+  const client = { complete: async (args) => { captured.push(args.messages[0].content); return { entailed: true, reason: "ok" }; } };
+  await verifyDraft({ knowledge_records: [kr], quantitative_criteria: [], conditions: [] }, { sourceUnits: su, client });
+  assert.match(captured[0].split("Claim to check:")[1], /A change in storage conditions/);
+});
+
 test("siblingCriteria trusts an explicitly-declared joint_with_ids over heuristic signals, even when they'd disagree", () => {
   // Explicit field says "not joint" despite a heuristic signal (shared
   // knowledge_record_id + equal condition_ids) that would otherwise group

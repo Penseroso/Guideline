@@ -156,7 +156,18 @@ async function extractSection({ section, sourceUnits, client }) {
     "at the first record type that fits — if a sentence already captured as a KnowledgeRecord " +
     "also contains a number+comparator+unit, or a distinct applicability/scope/precondition/exception " +
     "clause, extract those too as their own records, exactly as you would if the sentence had not " +
-    "already produced a KnowledgeRecord.";
+    "already produced a KnowledgeRecord. " +
+    // Added after a live dry-run (M10 6.1) showed reviewedKR collapsing to
+    // 4/23: each bullet under a "typical modifications ... include:" framing
+    // sentence was extracted as its own recommendation/description asserting
+    // that framing sentence's scope ("is a typical modification applicable to
+    // X"), which the bullet's own source text does not itself state — a real
+    // over-generalization the verification step correctly caught.
+    "For one item of an enumerated list introduced by a framing sentence (e.g. \"typical X include, " +
+    "but are not limited to, the following\"), use record_type=example, modality=none, source_unit_ids " +
+    "containing only that item's own source unit (not the framing sentence's), action=\"includes\", " +
+    "object=the item's own text (verbatim from its source unit), and subject=a short category name — " +
+    "do not restate the framing sentence's scope claim as if the item's own text asserted it independently.";
   // A follow-up instruction telling the model not to duplicate Condition
   // objects was tried and measured against the same section: it fixed
   // one duplicate (LLOQ merged correctly via applies_to_temp_ids) but

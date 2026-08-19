@@ -30,6 +30,21 @@ function sourceTextForUnits(sourceUnits, ids) {
 }
 
 async function verifyKnowledgeRecord(kr, { sourceUnits, conditions, client, model }) {
+  // record_type=example (one item of an enumerated list under a framing
+  // sentence, docs/schema.md) is a special case: the natural "[category]
+  // includes [item]" phrasing asserts the framing sentence's category, which
+  // is a different SourceUnit than the one this record links (by design —
+  // only the item's own unit is linked, docs/schema.md). Checking that
+  // framing claim against just the item's own source_text always fails, and
+  // the model inconsistently puts the item text in `subject` (leaving
+  // `object` null) or in `object` — found live on M10 6.1. Verify only the
+  // item's own text against its own source_text, not the "includes" framing.
+  if (kr.record_type === "example") {
+    const itemText = kr.object || kr.subject || kr.action || "";
+    const sourceText = sourceTextForUnits(sourceUnits, kr.source_unit_ids);
+    return verifyClaim({ claim: itemText, sourceText, client, model });
+  }
+
   const subjectActionObject = [kr.subject, kr.action, kr.object].filter(Boolean).join(" ");
   const base = subjectActionObject || kr.original_modal_text || "";
   // subject/action/object is a re-composed sentence, not a verbatim quote
@@ -271,8 +286,49 @@ function conditionFingerprint(c) {
   return `${c.source_unit_id}|${c.condition_type}|${normalizeText(c.condition_text).slice(0, 40)}`;
 }
 
+// `krFingerprint`'s bucket key (source_unit_ids + record_type + modality)
+// is a reliable exact-match signal — same fact, re-extracted, should land
+// on the same source unit(s) with the same classification every time.
+// The action *text* is not: live self-consistency runs (docs/milestone_log.md
+// M1) showed the model phrasing the same fact differently across passes
+// on identical input ("be evaluated" vs. "be evaluated using peak area" vs.
+// "be evaluated by analysing spiked samples") — comparing a truncated
+// normalized prefix treated each phrasing as a distinct fact and roughly
+// doubled the merged KR count instead of collapsing near-duplicates.
 function krFingerprint(kr) {
-  return `${[...kr.source_unit_ids].sort().join(",")}|${kr.record_type}|${kr.modality}|${normalizeText(kr.action).slice(0, 40)}`;
+  return `${[...kr.source_unit_ids].sort().join(",")}|${kr.record_type}|${kr.modality}`;
+}
+
+const ACTION_STOPWORDS = new Set([
+  "be", "is", "are", "was", "were", "been", "the", "a", "an", "to", "of",
+  "for", "and", "or", "that", "this", "it", "by", "using", "via", "with"
+]);
+
+function actionContentWords(action) {
+  return normalizeText(action)
+    .split(" ")
+    .filter((w) => w && !ACTION_STOPWORDS.has(w));
+}
+
+// Two actions are treated as the same underlying fact when their content
+// words overlap enough, but any numeral present must match exactly — a
+// differing number (e.g. "within 15 percent" vs. "within 20 percent") is
+// always a different fact regardless of word overlap.
+function actionsSimilar(a, b, threshold = 0.5) {
+  const wa = actionContentWords(a);
+  const wb = actionContentWords(b);
+  if (wa.length === 0 || wb.length === 0) return normalizeText(a) === normalizeText(b);
+
+  const numsA = wa.filter((w) => /^\d+$/.test(w));
+  const numsB = wb.filter((w) => /^\d+$/.test(w));
+  if (numsA.length > 0 || numsB.length > 0) {
+    if (numsA.length !== numsB.length || !numsA.every((n) => numsB.includes(n))) return false;
+  }
+
+  const setA = new Set(wa);
+  const setB = new Set(wb);
+  const overlap = [...setA].filter((w) => setB.has(w)).length;
+  return overlap / Math.min(setA.size, setB.size) >= threshold;
 }
 
 function groupByFingerprint(items, fingerprintFn) {
@@ -285,12 +341,38 @@ function groupByFingerprint(items, fingerprintFn) {
   return [...groups.values()].map((group) => ({ item: group[0], agreementCount: group.length }));
 }
 
+// Same idea as groupByFingerprint, but the exact bucket key (krFingerprint)
+// only narrows candidates — items sharing a bucket are then greedily
+// clustered by actionsSimilar against each cluster's first member, so
+// same-source-unit facts with genuinely different actions ("be evaluated"
+// vs. "be reported") still end up in separate groups.
+function groupKnowledgeRecords(items) {
+  const buckets = new Map();
+  for (const item of items) {
+    const key = krFingerprint(item);
+    if (!buckets.has(key)) buckets.set(key, []);
+    buckets.get(key).push(item);
+  }
+
+  const groups = [];
+  for (const bucket of buckets.values()) {
+    const clusters = [];
+    for (const item of bucket) {
+      const cluster = clusters.find((c) => actionsSimilar(c[0].action, item.action));
+      if (cluster) cluster.push(item);
+      else clusters.push([item]);
+    }
+    for (const cluster of clusters) groups.push({ item: cluster[0], agreementCount: cluster.length });
+  }
+  return groups;
+}
+
 function mergeExtractionPasses(drafts, { documentId, sectionNumber }) {
   const allKR = drafts.flatMap((d) => d.knowledge_records);
   const allQC = drafts.flatMap((d) => d.quantitative_criteria);
   const allCond = drafts.flatMap((d) => d.conditions);
 
-  const krGroups = groupByFingerprint(allKR, krFingerprint);
+  const krGroups = groupKnowledgeRecords(allKR);
   const qcGroups = groupByFingerprint(allQC, qcFingerprint);
   const condGroups = groupByFingerprint(allCond, conditionFingerprint);
 
@@ -388,5 +470,7 @@ module.exports = {
   verifyClaimEnsemble,
   qcFingerprint,
   conditionFingerprint,
-  krFingerprint
+  krFingerprint,
+  actionsSimilar,
+  groupKnowledgeRecords
 };

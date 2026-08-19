@@ -6,7 +6,9 @@ const {
   extractSectionSelfConsistent,
   verifyClaimEnsemble,
   qcFingerprint,
-  krFingerprint
+  krFingerprint,
+  actionsSimilar,
+  groupKnowledgeRecords
 } = require("../engine/pipeline");
 
 test("qcFingerprint matches two QuantitativeCriteria with the same fact but different wording", () => {
@@ -21,12 +23,43 @@ test("qcFingerprint does NOT match two different values", () => {
   assert.notEqual(qcFingerprint(a), qcFingerprint(b));
 });
 
-test("krFingerprint is insensitive to minor wording differences but sensitive to a different action", () => {
+test("krFingerprint buckets by source_unit_ids/record_type/modality only, not action text", () => {
   const a = { source_unit_ids: ["su.1"], record_type: "recommendation", modality: "should", action: "be within 15 percent" };
-  const b = { source_unit_ids: ["su.1"], record_type: "recommendation", modality: "should", action: "be  within   15 PERCENT" };
   const c = { source_unit_ids: ["su.1"], record_type: "recommendation", modality: "should", action: "be within 20 percent" };
-  assert.equal(krFingerprint(a), krFingerprint(b));
-  assert.notEqual(krFingerprint(a), krFingerprint(c));
+  assert.equal(krFingerprint(a), krFingerprint(c), "action text is not part of the bucket key — see actionsSimilar for that");
+});
+
+test("actionsSimilar treats reworded phrasing of the same fact as similar", () => {
+  assert.ok(actionsSimilar("be evaluated", "be evaluated using peak area ratio"));
+  assert.ok(actionsSimilar("be evaluated", "be evaluated by analysing spiked samples"));
+  assert.ok(actionsSimilar("be within 15 percent", "be  within   15 PERCENT"));
+});
+
+test("actionsSimilar rejects a genuinely different action on the same source unit", () => {
+  assert.ok(!actionsSimilar("be evaluated", "be reported"));
+  assert.ok(!actionsSimilar("be evaluated", "be calculated"));
+});
+
+test("actionsSimilar rejects same wording with a different embedded number", () => {
+  assert.ok(!actionsSimilar("be within 15 percent", "be within 20 percent"));
+});
+
+test("groupKnowledgeRecords merges reworded near-duplicates across passes but keeps distinct facts on the same source unit separate", () => {
+  const mk = (action) => ({ source_unit_ids: ["su.1"], record_type: "recommendation", modality: "should", action });
+  const items = [
+    mk("be evaluated"),
+    mk("be evaluated using peak area ratio"),
+    mk("be evaluated by analysing spiked samples"),
+    mk("be reported"),
+    mk("be reported"),
+    mk("be calculated")
+  ];
+  const groups = groupKnowledgeRecords(items);
+  assert.equal(groups.length, 3, "3 distinct facts (evaluated/reported/calculated) despite phrasing drift within each");
+  const byAction = Object.fromEntries(groups.map((g) => [g.item.action, g.agreementCount]));
+  assert.equal(byAction["be evaluated"], 3);
+  assert.equal(byAction["be reported"], 2);
+  assert.equal(byAction["be calculated"], 1);
 });
 
 test("mergeExtractionPasses dedupes a fact found in multiple passes and records agreement count", () => {
@@ -46,6 +79,22 @@ test("mergeExtractionPasses dedupes a fact found in multiple passes and records 
   assert.equal(draft.quantitative_criteria.length, 1, "same fact from 2 passes must collapse to 1 record");
   assert.equal(agreement.quantitative_criteria[0].agreementCount, 2);
   assert.equal(agreement.quantitative_criteria[0].ofPasses, 3);
+});
+
+test("mergeExtractionPasses dedupes a KnowledgeRecord reworded differently across passes (regression: previously roughly doubled KR count instead of collapsing)", () => {
+  const mkDraft = (action) => ({
+    knowledge_records: [{ source_unit_ids: ["su.1"], record_type: "recommendation", modality: "should", action, original_modal_text: "should", subject: null, object: null, normalized_ko: null }],
+    quantitative_criteria: [],
+    conditions: []
+  });
+  const drafts = [
+    mkDraft("be evaluated"),
+    mkDraft("be evaluated using peak area ratio"),
+    mkDraft("be evaluated by analysing spiked samples")
+  ];
+  const { draft, agreement } = mergeExtractionPasses(drafts, { documentId: "doc", sectionNumber: "1.1" });
+  assert.equal(draft.knowledge_records.length, 1, "3 reworded passes of the same fact must collapse to 1 record");
+  assert.equal(agreement.knowledge_records[0].agreementCount, 3);
 });
 
 test("mergeExtractionPasses keeps a fact found in only 1 of N passes (union, not intersection)", () => {
