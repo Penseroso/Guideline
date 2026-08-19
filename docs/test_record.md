@@ -93,3 +93,27 @@ Runs 2-3 confirm both patterns keep working, but surfaced a **new, third pattern
 
 `ich_m10.sec.3_2_5_2` (general/exception-via-domain-partition pattern, unaffected by this change): 13/13 QC reviewed — matches pre-change behavior, no regression.
 
+---
+
+## Entry 003 — sibling-grouping veto for `is_default_with_exception`
+
+- **Date**: 2026-08-19
+- **Engine version**: `0.2.1` (commit `0749e87`)
+- **Schema model version**: `0.4.0` (unchanged — code-only fix)
+- **Model(s)**: `gpt-5.6-terra`
+- **Run**: 3 repeated `extractAndVerifySection` runs on `ich_s6_r1.sec.part1.3_3`, same section Entry 002's "third pattern" finding came from
+
+### Changes since Entry 002
+
+Root cause of Entry 002's new finding: the default record and its own separately-extracted exception record both correctly link the same exception `Condition` (per the extraction guidance added for `is_default_with_exception`), giving them an identical `condition_ids` set — which satisfies `SIBLING_SIGNALS[0]`'s exact-match requirement and got them heuristically grouped as "jointly applicable," reasserting the false "2 AND 1 both hold" conjunction. `siblingCriteria()` now vetoes heuristic grouping whenever either side has `is_default_with_exception=true`.
+
+### Results — targeted S6(R1) §3.3 (3 runs)
+
+| run | extracted QC | reviewed QC | "jointly applicable" false-conjunction present? |
+|---|---|---|---|
+| 1 | 2 | 1 | No (the 1 rejection is an unrelated, pre-existing wrong-condition-link issue) |
+| 2 | 5 | 5 | No |
+| 3 | 2 | 2 | No |
+
+The targeted false-conjunction pattern (present in 2 of 3 Entry-002 runs) did not reappear in any of these 3 runs. `npm run validate:pilots` and `npm run eval` (9/9) unaffected — code-only change, no data migration.
+
