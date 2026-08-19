@@ -22,6 +22,7 @@ A hallucination-resistant conversational assistant for regulatory guidelines, bu
 
 - `docs/product_roadmap.md`: target product profile, implementation-approach decision (RAG and alternatives, agent-driven extraction/verification), and the active roadmap.
 - `docs/milestone_log.md`: active decision record, one entry per roadmap milestone — the source of truth for what changed, why, and what it affects.
+- `docs/test_record.md`: QbD-style engine test log — per-run extraction/verification measurements against a versioned engine baseline (`package.json` `version`), one entry per run with what changed since the last one.
 - `docs/schema.md`: the current data model.
 - `docs/project_scope.md`: mission, users, design principles, and non-goals.
 - `docs/audit_2026-08-18.md`: independent repository audit that grounded the pivot to this roadmap.
