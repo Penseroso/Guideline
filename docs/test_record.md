@@ -47,3 +47,49 @@ N/A — baseline.
 ### Notes
 
 This baseline reflects the engine state after today's (2026-08-19) fixes: self-consistency KR dedup (word-overlap clustering instead of exact-prefix fingerprint), `record_type=example` claim construction, `QuantitativeCriterion` condition-hint surfacing, and the `SIBLING_SIGNALS` exact-set-equality tightening — see `docs/milestone_log.md` M1 for the full narrative. Two open findings from that work are *not* reflected as fixes here (tracked as known limitations, not engine bugs): (1) "normally X, except Y" statements don't fit any `comparator` value; (2) "e.g."-illustrative values keep getting extracted as definite criteria, and `value_status` has no state for "illustrative example." Both need a schema decision before they can move.
+
+---
+
+## Entry 002 — `is_default_with_exception` / `is_illustrative_example`
+
+- **Date**: 2026-08-19
+- **Engine version**: `0.2.0` (commit `849080e`)
+- **Schema model version**: `0.4.0` (bumped from `0.3.0`)
+- **Model(s)**: `gpt-5.6-terra` (extraction and verification both — no `verifyModel` override)
+- **Tooling**: Node v24.2.0, npm 11.19.0, OpenAI provider (`ANTHROPIC_API_KEY` unset)
+- **Run**: same 7-section `extractAndVerifySection` dry run as Entry 001, plus 3 targeted repeated runs on `ich_s6_r1.sec.part1.3_3` specifically (the section that motivated this change) and a spot-check on `ich_m10.sec.3_2_5_2` for regressions
+
+### Changes since Entry 001
+
+Added two new required `QuantitativeCriterion` boolean fields (`is_default_with_exception`, `is_illustrative_example`) closing the two open findings noted in Entry 001 — see `docs/schema.md`'s "Model 0.4.0" section and the commit above for the full design/rationale. `claimTextFor` now branches its phrasing on these flags instead of always asserting "specified, not illustrative."
+
+### Results — 7-section aggregate
+
+| section | trueKR | extractedKR | reviewedKR | trueQC | extractedQC | reviewedQC | trueCond | extractedCond | reviewedCond |
+|---|---|---|---|---|---|---|---|---|---|
+| ich_m10.sec.3_2_5_2 | 14 | 17 | 17 | 12 | 11 | 11 | 7 | 6 | 6 |
+| ich_m10.sec.6_1 | 23 | 23 | 19 | 0 | 1 | 0 | 6 | 3 | 3 |
+| ich_s6_r1.sec.part1.3_3 | 21 | 25 | 24 | 1 | 5 | 1 | 10 | 9 | 9 |
+| ich_s6_r1.sec.part1.notes | 3 | 3 | 3 | 0 | 0 | 0 | 0 | 1 | 1 |
+| ich_s6_r1.sec.part2.2_1 | 16 | 17 | 17 | 0 | 1 | 1 | 8 | 11 | 11 |
+| ich_s6_r1.sec.part2.2_2 | 6 | 7 | 7 | 1 | 1 | 1 | 4 | 4 | 4 |
+| ich_s6_r1.sec.part2.notes | 19 | 21 | 18 | 1 | 1 | 1 | 8 | 8 | 8 |
+| **TOTAL** | **102** | **113** | **105** | **15** | **20** | **15** | **43** | **42** | **42** |
+
+**Reviewed/extracted**: KR 92.9% (Entry 001: 90.9%), QC 75.0% (Entry 001: 84.2% — down, see note below), Cond 100.0% (unchanged). Single run each; per the standing variance caveat, not directly comparable run-to-run without repeats.
+
+### Results — targeted S6(R1) §3.3 verification (3 repeated runs)
+
+The specific patterns this change targets: run 1 extracted exactly the two intended records and both passed —
+
+```
+[reviewed] relevant species included in safety evaluation programs  at_least 2   default:true  illustrative:false  cond:[cond.3_3.002]
+[reviewed] repeated dose toxicity study duration                    not_exceed 14 default:false illustrative:true   cond:[cond.3_3.005]
+```
+
+Runs 2-3 confirm both patterns keep working, but surfaced a **new, third pattern** not in scope for this change: the exception's own value ("one relevant species may suffice") is sometimes drafted as a *separate* `QuantitativeCriterion` (`comparator=at_least, value=1`) rather than folded into the default record's `condition_ids`, and that separate record fails verification — `at_least 1` is trivially true and doesn't capture "exactly/only 1, as a permitted exception," which is a different comparator semantics gap than the two just fixed. This is why the aggregate QC rate (75.0%) is lower than Entry 001 (84.2%) despite the targeted fix working — not a regression of the fix itself, but a new gap it made visible. Not fixed here; flagged for a future decision (`docs/milestone_log.md`).
+
+### Regression spot-check
+
+`ich_m10.sec.3_2_5_2` (general/exception-via-domain-partition pattern, unaffected by this change): 13/13 QC reviewed — matches pre-change behavior, no regression.
+
