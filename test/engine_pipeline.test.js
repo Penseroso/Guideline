@@ -167,6 +167,42 @@ test("verifyKnowledgeRecord does not duplicate the modal wording when action alr
   assert.equal(occurrences, 1, "must not append a redundant duplicate of wording already present in the recomposed claim");
 });
 
+// --- verifyQuantitativeCriterion: condition_ids must be surfaced as a
+// caveat, same pattern as verifyKnowledgeRecord's `applicable` hint
+// (docs/milestone_log.md M1, found on real S6(R1) 3.3) ---
+
+test("verifyQuantitativeCriterion surfaces a linked exception Condition instead of asserting an unconditional rule", async () => {
+  const qc = {
+    criterion_id: "qc.001",
+    source_unit_id: "su.001",
+    knowledge_record_id: null,
+    parameter: "number of relevant species",
+    comparator: "at_least",
+    value: 2,
+    value_fraction: null,
+    unit: "species",
+    value_status: "known",
+    denominator_or_reference: null,
+    condition_ids: ["cond.001"],
+    source_text: "should normally include two relevant species",
+    review_status: "needs_review"
+  };
+  const condition = {
+    condition_id: "cond.001",
+    source_unit_id: "su.001",
+    condition_type: "exception",
+    condition_text: "in certain justified cases, one relevant species may suffice",
+    applies_to_ids: ["qc.001"],
+    review_status: "needs_review"
+  };
+  const su = [{ source_unit_id: "su.001", unit_order: 1, source_text: "Safety evaluation programs should normally include two relevant species; in certain justified cases, one relevant species may suffice." }];
+  const captured = [];
+  const client = { complete: async (args) => { captured.push(args.messages[0].content); return { entailed: true, reason: "ok" }; } };
+  const { draft } = await verifyDraft({ knowledge_records: [], quantitative_criteria: [qc], conditions: [condition] }, { sourceUnits: su, client });
+  assert.match(captured[0].split("Claim to check:")[1], /one relevant species may suffice/, "the exception must be surfaced, not left implicit");
+  assert.equal(draft.quantitative_criteria[0].review_status, "reviewed");
+});
+
 // --- verifyKnowledgeRecord: record_type=example is a special case
 // (docs/milestone_log.md M1, found on real M10 6.1) ---
 
@@ -231,11 +267,18 @@ test("siblingCriteria groups criteria sharing a knowledge_record_id", () => {
   assert.deepEqual(siblings.map((s) => s.criterion_id), ["qc.b"]);
 });
 
-test("siblingCriteria groups criteria sharing an overlapping condition_ids entry, even with different knowledge_record_id", () => {
+test("siblingCriteria groups criteria sharing the exact same condition_ids set, even with different knowledge_record_id", () => {
   const qcA = { criterion_id: "qc.a", knowledge_record_id: "kr.001", condition_ids: ["cond.001"] };
-  const qcB = { criterion_id: "qc.b", knowledge_record_id: "kr.002", condition_ids: ["cond.001", "cond.002"] };
+  const qcB = { criterion_id: "qc.b", knowledge_record_id: "kr.002", condition_ids: ["cond.001"] };
   const siblings = siblingCriteria(qcA, [qcA, qcB]);
   assert.deepEqual(siblings.map((s) => s.criterion_id), ["qc.b"]);
+});
+
+test("siblingCriteria does NOT group criteria whose condition_ids merely overlap (not equal) — regression: a general rule scoped to condition A and its own exception scoped to A+B+C used to be grouped as 'jointly applicable' once condition_ids started being populated (docs/milestone_log.md M1, S6(R1) 3.3)", () => {
+  const general = { criterion_id: "qc.general", knowledge_record_id: null, condition_ids: ["cond.001"] };
+  const exception = { criterion_id: "qc.exception", knowledge_record_id: null, condition_ids: ["cond.001", "cond.002", "cond.003"] };
+  assert.deepEqual(siblingCriteria(general, [general, exception]), []);
+  assert.deepEqual(siblingCriteria(exception, [general, exception]), []);
 });
 
 test("siblingCriteria does not group unrelated criteria (no shared signal) and excludes self", () => {

@@ -89,10 +89,18 @@ function sameIdSet(a, b) {
 // independent relational signals link them — a list, not a fixed pair, so
 // a future signal can be added without redesigning the caller. Each signal
 // is a formally-declared relational field, not an inferred/fuzzy one:
-//   - shared/overlapping condition_ids: Condition objects formally declare
-//     which records they govern (validator-enforced), so an overlap isn't
-//     coincidental — the strongest signal, usable on its own regardless
-//     of knowledge_record_id.
+//   - an equal (not just overlapping), non-empty condition_ids set: two
+//     criteria genuinely scoped under the identical precondition are
+//     jointly true under it, usable on its own regardless of
+//     knowledge_record_id. Originally required only *some* overlap, which
+//     was mostly dormant while extraction rarely populated condition_ids —
+//     once that was fixed (docs/milestone_log.md M1, S6(R1) 3.3), it
+//     started firing on a general rule and its own exception sharing one
+//     condition out of a larger set (e.g. general "≥2 species" scoped to
+//     precondition A, exception "≥1 species" scoped to A+B+C) and grouped
+//     them as jointly-applicable, the exact anti-pattern signal 2's
+//     exact-set requirement already guards against below. Tightened to
+//     require the full sets to match, not just intersect.
 //   - same knowledge_record_id, PLUS an equal (not just overlapping)
 //     condition_ids set: a shared parent KR alone is NOT sufficient — a
 //     KR frequently bundles a general rule with its own exception (e.g.
@@ -116,7 +124,7 @@ function sameIdSet(a, b) {
 // intent, so new relational fields (e.g. a future shared cross_reference)
 // can be appended to SIBLING_SIGNALS below without touching the caller.
 const SIBLING_SIGNALS = [
-  (qc, other) => (qc.condition_ids || []).some((id) => (other.condition_ids || []).includes(id)),
+  (qc, other) => (qc.condition_ids || []).length > 0 && sameIdSet(qc.condition_ids, other.condition_ids),
   (qc, other) => Boolean(qc.knowledge_record_id) && other.knowledge_record_id === qc.knowledge_record_id && sameIdSet(qc.condition_ids, other.condition_ids)
 ];
 
@@ -138,7 +146,7 @@ function siblingCriteria(qc, allCriteria) {
   });
 }
 
-async function verifyQuantitativeCriterion(qc, { sourceUnits, allCriteria, knowledgeRecords, client, model }) {
+async function verifyQuantitativeCriterion(qc, { sourceUnits, allCriteria, knowledgeRecords, conditions, client, model }) {
   const base = claimTextFor({
     type: "quantitative_criterion",
     parameter: qc.parameter,
@@ -168,7 +176,20 @@ async function verifyQuantitativeCriterion(qc, { sourceUnits, allCriteria, knowl
     ? ` This is one of several jointly-applicable criterion values from the same statement, also including: ${siblings.map((s) => claimTextFor({ type: "quantitative_criterion", parameter: s.parameter, comparator: s.comparator, value: s.value, value_fraction: s.value_fraction, unit: s.unit })).join("; ")}.`
     : "";
 
-  const claim = `${base}${modalHint}${siblingHint}`;
+  // A criterion qualified by its own exception/precondition Condition
+  // (QuantitativeCriterion.condition_ids, docs/schema.md) reads as an
+  // unconditional rule without it — e.g. "at least 2 species" fails
+  // verification against a source that says "normally 2 ... except in
+  // certain justified cases [1 suffices]" unless the exception is
+  // surfaced. Same pattern as verifyKnowledgeRecord's `applicable` hint
+  // and the denominator_or_reference/modalHint/siblingHint fixes above,
+  // found live on S6(R1) 3.3 (docs/milestone_log.md M1).
+  const linkedConditions = (conditions || []).filter((c) => (qc.condition_ids || []).includes(c.condition_id));
+  const conditionHint = linkedConditions.length
+    ? ` (qualified by: ${linkedConditions.map((c) => c.condition_text).join("; ")})`
+    : "";
+
+  const claim = `${base}${modalHint}${siblingHint}${conditionHint}`;
 
   // Verified against the FULL SourceUnit paragraph, not the criterion's
   // own minimal source_text quote. Fixed after a live-API triage
@@ -217,6 +238,7 @@ async function verifyDraft(draft, { sourceUnits, client, model }) {
       sourceUnits,
       allCriteria: draft.quantitative_criteria,
       knowledgeRecords: draft.knowledge_records,
+      conditions: draft.conditions,
       client,
       model
     });

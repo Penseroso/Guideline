@@ -48,6 +48,17 @@ function draftQuantitativeCriterionSchema() {
     replaceWithTempIdArray: { knowledge_record_id: "knowledge_record_temp_id", condition_ids: "condition_temp_ids", joint_with_ids: "joint_with_temp_ids" }
   });
   schema.properties.value_fraction = nullableFractionSchema();
+  // A criterion qualified by an exception/precondition (e.g. "should
+  // normally be X ... except in certain justified cases") reads as an
+  // unconditional rule without this link, and fails verification for
+  // overstating scope — found live on S6(R1) 3.3 (docs/milestone_log.md
+  // M1). Link it here even if a Condition drafted in this call already
+  // names this criterion in its own applies_to_temp_ids — this field is
+  // what verification actually reads.
+  schema.properties.condition_temp_ids.description =
+    "temp_ids of Condition drafts in this same call that qualify, restrict, or except this criterion " +
+    "(e.g. \"normally X, except in justified cases\" — link the exception Condition here). Leave empty " +
+    "when the criterion is unconditional.";
   // Reciprocity (schema.md: "A.joint_with_ids includes B => B.joint_with_ids
   // includes A") is enforced in code below (see the symmetrization pass in
   // finalizeDraft), not left to the model to get right on its own — same
@@ -64,11 +75,17 @@ function draftQuantitativeCriterionSchema() {
 
 function draftConditionSchema() {
   const src = bundleSchema.definitions.condition;
-  return withTempId(src, {
+  const schema = withTempId(src, {
     drop: ["condition_id", "review_status"],
     keep: ["source_unit_id", "condition_text", "condition_type"],
     replaceWithTempIdArray: { applies_to_ids: "applies_to_temp_ids" }
   });
+  schema.properties.applies_to_temp_ids.description =
+    "temp_ids of KnowledgeRecord and/or QuantitativeCriterion drafts in this same call that this " +
+    "condition qualifies, restricts, or excepts. If this condition qualifies a QuantitativeCriterion, " +
+    "also add this condition's own temp_id to that criterion's condition_temp_ids — verification reads " +
+    "the criterion's condition_temp_ids, not this field.";
+  return schema;
 }
 
 // OpenAI/Anthropic structured-output ("strict") modes require the
