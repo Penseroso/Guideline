@@ -80,6 +80,25 @@
       "question": "Full validation 항목이 뭐야",
       "expect_answered": false,
       "note": "Full validation is not structured in the pilot archive. Must refuse instead of returning Partial validation."
+    },
+    {
+      "id": "q14_scope_small_molecule_species_refusal",
+      "question": "저분자 화합물의 독성 시험에서 종 선택 기준은?",
+      "expect_answered": false,
+      "note": "S6(R1) applies strictly to biotechnology-derived pharmaceuticals. Small-molecule questions must refuse due to Scope Guard exclusion."
+    },
+    {
+      "id": "q15_technology_chromatography_accuracy",
+      "question": "크로마토그래피 분석법의 accuracy 기준은?",
+      "expect_answered": true,
+      "expect_citation_contains": "M10 §3.2.5.2",
+      "expect_text_contains": "15"
+    },
+    {
+      "id": "q16_scope_atmp_fih_refusal",
+      "question": "ATMP 세포치료제의 FIH 시작용량 산정 기준은?",
+      "expect_answered": false,
+      "note": "EMA FIH guideline explicitly excludes ATMPs. Must refuse."
     }
   ]
 }

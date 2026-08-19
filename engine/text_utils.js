@@ -10,6 +10,8 @@ const STOPWORDS = new Set([
 
 const KO_PARTICLES = /(에서는|으로는|에게는|에서도|에서|으로는|으로|에게|까지|부터|보다|하고|이나|나|은|는|이|가|을|를|의|에|와|과|도|만|라|며|할때|때|해야|돼|되나|인가|인가요|인지|까지는)$/;
 
+const SINGLE_LETTER_KO_WHITELIST = new Set(["종", "상", "일", "월", "년"]);
+
 const REGULATORY_SYNONYMS = {
   "정확도": ["accuracy"],
   "정밀도": ["precision"],
@@ -25,7 +27,28 @@ const REGULATORY_SYNONYMS = {
   "허용기준": ["acceptance", "criteria"],
   "허용범위": ["acceptance", "criteria"],
   "기준": ["criteria"],
+  "종": ["species"],
   "동물종": ["species"],
+  "생체종": ["species"],
+  "선택": ["selection"],
+  "선정": ["selection"],
+  "저분자": ["small", "molecule"],
+  "저분자의약품": ["small", "molecule"],
+  "저분자화합물": ["small", "molecule"],
+  "합성의약품": ["small", "molecule"],
+  "소분자": ["small", "molecule"],
+  "바이오": ["biotechnology", "biopharmaceutical"],
+  "바이오의약품": ["biotechnology", "biopharmaceutical"],
+  "생물의약품": ["biotechnology", "biopharmaceutical"],
+  "생물학적제제": ["biotechnology", "biopharmaceutical"],
+  "단백질": ["protein"],
+  "항체": ["antibody"],
+  "크로마토그래피": ["chromatography"],
+  "면역분석": ["ligand", "binding", "assay"],
+  "면역원성": ["immunogenicity", "ada"],
+  "중화항체": ["neutralizing", "antibody"],
+  "기간": ["duration"],
+  "시험기간": ["duration"],
   "투여기간": ["duration"],
   "반복수": ["replicates"],
   "반복": ["replicates"],
@@ -67,7 +90,7 @@ function tokenize(text) {
       }
 
       const candidate = stripped || lower;
-      if (candidate && !STOPWORDS.has(candidate) && candidate.length > 1) {
+      if (candidate && !STOPWORDS.has(candidate) && (candidate.length > 1 || SINGLE_LETTER_KO_WHITELIST.has(candidate))) {
         tokens.push(candidate);
       }
     } else {
@@ -80,5 +103,76 @@ function tokenize(text) {
   return tokens;
 }
 
-module.exports = { tokenize, STOPWORDS, REGULATORY_SYNONYMS };
+/**
+ * Extracts 5-dimensional query-level scope constraints
+ */
+function extractQueryScope(question, qTokens) {
+  const lowerQ = (question || "").toLowerCase();
+  const tokens = qTokens instanceof Set ? qTokens : new Set(qTokens || tokenize(question));
+
+  let targetMolecule = null;
+  if (
+    tokens.has("small") ||
+    lowerQ.includes("저분자") ||
+    lowerQ.includes("합성의약품") ||
+    lowerQ.includes("소분자")
+  ) {
+    targetMolecule = "small_molecule";
+  } else if (
+    tokens.has("biotechnology") ||
+    tokens.has("biopharmaceutical") ||
+    lowerQ.includes("바이오") ||
+    lowerQ.includes("생물의약품") ||
+    lowerQ.includes("단백질") ||
+    lowerQ.includes("항체")
+  ) {
+    targetMolecule = "biotechnology";
+  } else if (lowerQ.includes("atmp") || lowerQ.includes("세포치료제") || lowerQ.includes("유전자치료제")) {
+    targetMolecule = "atmp";
+  }
+
+  let targetAssay = null;
+  if (tokens.has("chromatography") || lowerQ.includes("크로마토그래피") || lowerQ.includes("lc-ms") || lowerQ.includes("lc/ms")) {
+    targetAssay = "chromatography";
+  } else if (tokens.has("lba") || lowerQ.includes("lba") || lowerQ.includes("면역분석") || lowerQ.includes("elisa")) {
+    targetAssay = "ligand_binding_assay";
+  } else if (tokens.has("ada") || lowerQ.includes("ada") || lowerQ.includes("면역원성") || lowerQ.includes("중화항체")) {
+    targetAssay = "ada_multi_tiered";
+  }
+
+  let targetTopic = null;
+  if (
+    (tokens.has("species") && tokens.has("selection")) ||
+    lowerQ.includes("종 선택") ||
+    lowerQ.includes("종선택") ||
+    lowerQ.includes("동물종")
+  ) {
+    targetTopic = "species_selection";
+  } else if (
+    tokens.has("duration") ||
+    lowerQ.includes("시험기간") ||
+    lowerQ.includes("투여기간") ||
+    lowerQ.includes("기간")
+  ) {
+    targetTopic = "study_duration";
+  } else if (
+    tokens.has("starting") ||
+    lowerQ.includes("시작용량") ||
+    lowerQ.includes("mabel") ||
+    lowerQ.includes("noael") ||
+    lowerQ.includes("sentinel")
+  ) {
+    targetTopic = "starting_dose";
+  } else if (tokens.has("stability") || lowerQ.includes("안정성") || lowerQ.includes("보관")) {
+    targetTopic = "stability";
+  }
+
+  return {
+    target_molecule: targetMolecule,
+    target_assay: targetAssay,
+    target_topic: targetTopic
+  };
+}
+
+module.exports = { tokenize, extractQueryScope, STOPWORDS, REGULATORY_SYNONYMS, SINGLE_LETTER_KO_WHITELIST };
 

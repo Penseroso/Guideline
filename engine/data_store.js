@@ -65,17 +65,104 @@ function sourceTextFor(index, sourceUnitIds) {
     .join("\n");
 }
 
+function getAncestorSections(index, sectionId) {
+  const path = [];
+  let curr = index.sections.get(sectionId);
+  while (curr) {
+    path.unshift(curr);
+    curr = curr.parent_section_id ? index.sections.get(curr.parent_section_id) : null;
+  }
+  return path;
+}
+
+function deriveRecordScope(record, ancestorSections, document) {
+  const docId = (document && document.document_id) || (record.document_id || "");
+  const docTitle = (document && document.title) || "";
+  const sectionPath = ancestorSections.map((s) => s.title);
+  const sectionPathLower = sectionPath.join(" > ").toLowerCase();
+
+  let moleculeScope = "all";
+  const explicitExclusions = [];
+  let studyContextScope = "unknown";
+  let assayTechnologyScope = "none";
+  let topicScope = "general";
+
+  // Document-level domain ontology
+  if (docId.includes("s6") || docTitle.toLowerCase().includes("biotechnology")) {
+    moleculeScope = "biotechnology";
+    explicitExclusions.push("small_molecule", "atmp");
+    studyContextScope = "nonclinical_safety";
+    assayTechnologyScope = "in_vivo_toxicology";
+  } else if (docId.includes("m10") || docTitle.toLowerCase().includes("bioanalytical")) {
+    moleculeScope = "all";
+    studyContextScope = "bioanalytical_validation";
+  } else if (docId.includes("fda") && docTitle.toLowerCase().includes("immunogenicity")) {
+    moleculeScope = "biotechnology";
+    explicitExclusions.push("nonclinical", "small_molecule", "ivd");
+    studyContextScope = "clinical_immunogenicity";
+    assayTechnologyScope = "ada_multi_tiered";
+  } else if (docId.includes("ema") && docTitle.toLowerCase().includes("first-in-human")) {
+    moleculeScope = "all";
+    explicitExclusions.push("atmp");
+    studyContextScope = "early_clinical_fih";
+  }
+
+  // Section-level assay technology refinement
+  if (sectionPathLower.includes("chromatography")) {
+    assayTechnologyScope = "chromatography";
+    explicitExclusions.push("ligand_binding_assay");
+  } else if (sectionPathLower.includes("ligand binding")) {
+    assayTechnologyScope = "ligand_binding_assay";
+    explicitExclusions.push("chromatography");
+  }
+
+  // Section- & Record-level topic refinement
+  const paramLower = (record.parameter || "").toLowerCase();
+  if (sectionPathLower.includes("species selection") || paramLower.includes("species")) {
+    topicScope = "species_selection";
+  } else if (sectionPathLower.includes("study design") || paramLower.includes("duration")) {
+    topicScope = "study_duration";
+  } else if (sectionPathLower.includes("partial validation")) {
+    topicScope = "partial_validation";
+  } else if (
+    sectionPathLower.includes("accuracy and precision") ||
+    paramLower === "accuracy" ||
+    paramLower === "precision" ||
+    paramLower.includes("qcs")
+  ) {
+    topicScope = "acceptance_criteria";
+  } else if (sectionPathLower.includes("starting dose") || paramLower.includes("dose")) {
+    topicScope = "starting_dose";
+  }
+
+  return {
+    section_path: sectionPath,
+    document_title: docTitle,
+    molecule_scope: moleculeScope,
+    study_context_scope: studyContextScope,
+    assay_technology_scope: assayTechnologyScope,
+    topic_scope: topicScope,
+    explicit_exclusions: explicitExclusions
+  };
+}
+
 /**
  * Flattens KnowledgeRecord/QuantitativeCriterion/Condition into one
  * search/citation-ready shape for the query router. Each answerable
- * record carries its own resolved citations and verbatim source text
- * so downstream code never has to re-join the raw bundle arrays.
+ * record carries its own resolved citations, verbatim source text, and
+ * hierarchical 5-dimensional Scope metadata.
  */
 function answerableRecords(index) {
   const records = [];
 
   for (const kr of index.knowledgeRecords.values()) {
     const citations = kr.source_unit_ids.map((id) => citationFor(index, id)).filter(Boolean);
+    const sectionId = citations[0] ? citations[0].section_id : null;
+    const documentId = citations[0] ? citations[0].document_id : null;
+    const ancestorSections = sectionId ? getAncestorSections(index, sectionId) : [];
+    const document = documentId ? index.documents.get(documentId) : null;
+    const scope = deriveRecordScope(kr, ancestorSections, document);
+
     records.push({
       type: "knowledge_record",
       id: kr.knowledge_record_id,
@@ -90,15 +177,22 @@ function answerableRecords(index) {
       source_unit_ids: kr.source_unit_ids,
       source_text: sourceTextFor(index, kr.source_unit_ids),
       citations,
-      document_id: citations[0] ? citations[0].document_id : null,
+      document_id: documentId,
       guideline_code: citations[0] ? citations[0].guideline_code : null,
-      section_id: citations[0] ? citations[0].section_id : null,
-      section_number: citations[0] ? citations[0].section_number : null
+      section_id: sectionId,
+      section_number: citations[0] ? citations[0].section_number : null,
+      ...scope
     });
   }
 
   for (const qc of index.quantitativeCriteria.values()) {
     const citation = citationFor(index, qc.source_unit_id);
+    const sectionId = citation ? citation.section_id : null;
+    const documentId = citation ? citation.document_id : null;
+    const ancestorSections = sectionId ? getAncestorSections(index, sectionId) : [];
+    const document = documentId ? index.documents.get(documentId) : null;
+    const scope = deriveRecordScope(qc, ancestorSections, document);
+
     records.push({
       type: "quantitative_criterion",
       id: qc.criterion_id,
@@ -118,15 +212,22 @@ function answerableRecords(index) {
       source_unit_ids: [qc.source_unit_id],
       source_text: qc.source_text,
       citations: citation ? [citation] : [],
-      document_id: citation ? citation.document_id : null,
+      document_id: documentId,
       guideline_code: citation ? citation.guideline_code : null,
-      section_id: citation ? citation.section_id : null,
-      section_number: citation ? citation.section_number : null
+      section_id: sectionId,
+      section_number: citation ? citation.section_number : null,
+      ...scope
     });
   }
 
   for (const c of index.conditions.values()) {
     const citation = citationFor(index, c.source_unit_id);
+    const sectionId = citation ? citation.section_id : null;
+    const documentId = citation ? citation.document_id : null;
+    const ancestorSections = sectionId ? getAncestorSections(index, sectionId) : [];
+    const document = documentId ? index.documents.get(documentId) : null;
+    const scope = deriveRecordScope(c, ancestorSections, document);
+
     records.push({
       type: "condition",
       id: c.condition_id,
@@ -136,10 +237,11 @@ function answerableRecords(index) {
       source_unit_ids: [c.source_unit_id],
       source_text: c.condition_text,
       citations: citation ? [citation] : [],
-      document_id: citation ? citation.document_id : null,
+      document_id: documentId,
       guideline_code: citation ? citation.guideline_code : null,
-      section_id: citation ? citation.section_id : null,
-      section_number: citation ? citation.section_number : null
+      section_id: sectionId,
+      section_number: citation ? citation.section_number : null,
+      ...scope
     });
   }
 

@@ -134,3 +134,29 @@ test("structuredQuery abstains (returns null) on ambiguous queries with no clear
   assert.equal(match, null);
 });
 
+// --- 5-Dimensional Scope Guard Tests ---
+
+test("Scope Guard blocks small molecule query from matching biotechnology-exclusive S6 records", () => {
+  const match = structuredQuery("저분자 화합물의 독성 시험에서 종 선택 기준은?", records);
+  assert.equal(match, null, "expected null due to small_molecule exclusion in S6");
+});
+
+test("Scope Guard blocks species selection query from falsely matching study duration criteria", () => {
+  const s6DurationQc = records.find((r) => r.id === "ich_s6_r1.qc.part2.2_2.004");
+  assert.ok(s6DurationQc, "duration QC must exist in store");
+  const match = structuredQuery("바이오의약품의 독성 시험에서 종 선택 기준은?", [s6DurationQc]);
+  assert.equal(match, null, "expected topic anchor to block duration QC on species query");
+});
+
+test("records in data_store carry 5-dimensional Scope metadata", () => {
+  const s6Record = records.find((r) => r.guideline_code === "S6(R1)");
+  assert.equal(s6Record.molecule_scope, "biotechnology");
+  assert.ok(s6Record.explicit_exclusions.includes("small_molecule"));
+  assert.ok(Array.isArray(s6Record.section_path));
+
+  const m10Record = records.find((r) => r.guideline_code === "M10");
+  assert.equal(m10Record.study_context_scope, "bioanalytical_validation");
+  assert.ok(Array.isArray(m10Record.section_path));
+});
+
+

@@ -1,5 +1,5 @@
 const { loadStore } = require("./data_store");
-const { tokenize } = require("./text_utils");
+const { tokenize, extractQueryScope } = require("./text_utils");
 const { verifyClaim } = require("./verification_agent");
 
 /**
@@ -13,12 +13,37 @@ const MIN_MATCHED_TOKENS = 2;
 const TYPE_PRIORITY = { quantitative_criterion: 0, condition: 1, knowledge_record: 2 };
 
 /**
- * Scores a record against query tokens using field-weighted matching.
+ * Scores a record against query tokens using field-weighted matching and Scope Guard.
  * Structural fields (parameter, section, condition) receive higher weights
  * than unconstrained source text. Exception mentions (e.g. 'except LLOQ')
  * are penalized when the query did not ask for exclusions.
+ * Scope Guard rejects records that conflict with the query's molecule, assay, or topic.
  */
-function scoreRecord(record, qTokens) {
+function scoreRecord(record, qTokens, queryScope = {}) {
+  // 1. Scope Guard: Hard exclusion and mismatch checks
+  if (queryScope.target_molecule && record.explicit_exclusions && record.explicit_exclusions.includes(queryScope.target_molecule)) {
+    return { score: 0, matchedCount: 0 };
+  }
+  if (queryScope.target_assay && record.explicit_exclusions && record.explicit_exclusions.includes(queryScope.target_assay)) {
+    return { score: 0, matchedCount: 0 };
+  }
+  if (queryScope.target_assay && record.assay_technology_scope && record.assay_technology_scope !== "none" && record.assay_technology_scope !== queryScope.target_assay) {
+    return { score: 0, matchedCount: 0 };
+  }
+  if (queryScope.target_topic === "species_selection") {
+    // If asking about species selection, hard-reject study duration or unrelated criteria
+    if (record.topic_scope === "study_duration" || (record.parameter && record.parameter.includes("duration"))) {
+      return { score: 0, matchedCount: 0 };
+    }
+  }
+  if (queryScope.target_topic === "starting_dose") {
+    // If asking about starting dose, hard-reject study duration or repeated dose toxicity
+    if (record.topic_scope !== "starting_dose") {
+      return { score: 0, matchedCount: 0 };
+    }
+  }
+
+  // 2. Base field scoring
   let score = 0;
   const matchedTokens = new Set();
 
@@ -30,6 +55,8 @@ function scoreRecord(record, qTokens) {
   const actionTokens = new Set(tokenize(record.action));
   const objectTokens = new Set(tokenize(record.object));
   const condTypeTokens = new Set(tokenize(record.condition_type));
+  const sectionPathTokens = new Set(tokenize((record.section_path || []).join(" ")));
+  const docTitleTokens = new Set(tokenize(record.document_title || ""));
 
   const hasNegativeQueryToken = qTokens.has("except") || qTokens.has("excluding") || qTokens.has("제외");
 
@@ -58,7 +85,7 @@ function scoreRecord(record, qTokens) {
     if (condTypeTokens.has(t)) {
       tokenScore = Math.max(tokenScore, 3.0);
     }
-    if (secTokens.has(t) || codeTokens.has(t)) {
+    if (secTokens.has(t) || codeTokens.has(t) || sectionPathTokens.has(t)) {
       tokenScore = Math.max(tokenScore, 2.5);
     }
     if (denomTokens.has(t)) {
@@ -77,6 +104,9 @@ function scoreRecord(record, qTokens) {
     if (actionTokens.has(t) || objectTokens.has(t)) {
       tokenScore = Math.max(tokenScore, 1.5);
     }
+    if (docTitleTokens.has(t)) {
+      tokenScore = Math.max(tokenScore, 1.5);
+    }
     if (sourceTokens.has(t)) {
       tokenScore = Math.max(tokenScore, 1.0);
     }
@@ -85,6 +115,15 @@ function scoreRecord(record, qTokens) {
       matchedTokens.add(t);
       score += tokenScore;
     }
+  }
+
+  // Topic bonus: if record's topic_scope matches query's target_topic
+  if (queryScope.target_topic && record.topic_scope === queryScope.target_topic) {
+    score += 2.0;
+  }
+  // Molecule bonus: if record's molecule_scope matches query's target_molecule
+  if (queryScope.target_molecule && record.molecule_scope === queryScope.target_molecule) {
+    score += 1.5;
   }
 
   return { score, matchedCount: matchedTokens.size };
@@ -107,9 +146,11 @@ function structuredQuery(question, records) {
   const qTokens = new Set(tokenize(question));
   if (qTokens.size === 0) return null;
 
+  const queryScope = extractQueryScope(question, qTokens);
+
   const scored = [];
   for (const record of records) {
-    const { score, matchedCount } = scoreRecord(record, qTokens);
+    const { score, matchedCount } = scoreRecord(record, qTokens, queryScope);
     if (score >= MIN_CONFIDENT_MATCH_SCORE && matchedCount >= MIN_MATCHED_TOKENS) {
       scored.push({ record, score, matchedCount });
     }
