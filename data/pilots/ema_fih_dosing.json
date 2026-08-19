@@ -3634,11 +3634,11 @@
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should",
-      "subject": "These criteria",
+      "subject": "Dose selection criteria",
       "action": "integrate",
       "object": "data from previous study parts",
       "normalized_ko": "Dose-selection criteria should integrate data from previous study parts.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_2.006",
@@ -3650,9 +3650,9 @@
       "original_modal_text": "should also",
       "subject": "Feasibility to review and adapt the planned study design based on emerging clinical data",
       "action": "be considered",
-      "object": null,
+      "object": "in the integrated protocol",
       "normalized_ko": "The feasibility of reviewing and adapting the planned study design based on emerging clinical data should be considered.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_2.007",
@@ -3660,13 +3660,13 @@
         "ema_fih.su.8_2_2.002"
       ],
       "record_type": "recommendation",
-      "modality": "should",
+      "modality": "must",
       "original_modal_text": "should",
-      "subject": "Any changes",
+      "subject": "Any changes outside predefined criteria",
       "action": "be implemented",
       "object": "via a substantial amendment",
       "normalized_ko": "Changes outside predefined criteria should be implemented via a substantial amendment.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_2.008",
@@ -3694,7 +3694,7 @@
       "action": "apply",
       "object": "Regarding the time sequence for the conduct of different parts",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_2.010",
@@ -3718,11 +3718,11 @@
       "record_type": "recommendation",
       "modality": "may",
       "original_modal_text": "could",
-      "subject": "Other single dose parts",
+      "subject": "Other single dose parts (e.g. food interaction)",
       "action": "be conducted in parallel to",
-      "object": "the SAD part",
+      "object": "the SAD part provided dose and exposure are equal to or lower than preceding concluded SAD cohort without stopping criteria",
       "normalized_ko": "Other single-dose parts could be conducted in parallel to the SAD part.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_2.012",
@@ -3760,11 +3760,11 @@
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should generally not",
-      "subject": "Other study parts that involve multiple dosing",
+      "subject": "Other study parts that involve multiple dosing (e.g. drug-drug interaction)",
       "action": "not overlap with",
-      "object": "earlier SAD or MAD cohorts",
+      "object": "earlier SAD or MAD cohorts unless justified in the protocol",
       "normalized_ko": "Other multiple-dosing study parts should generally not overlap with earlier SAD or MAD cohorts.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_2.015",
@@ -3776,9 +3776,9 @@
       "original_modal_text": "should",
       "subject": "All relevant SAD and MAD data",
       "action": "be reviewed",
-      "object": null,
+      "object": "before starting other multiple dosing parts",
       "normalized_ko": "All relevant SAD and MAD data should be reviewed.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_2.016",
@@ -3792,7 +3792,7 @@
       "action": "be analysed and integrated into an assessment",
       "object": "in a limited timeframe prior to making a decision on proceeding to the next part",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_2.017",
@@ -3802,11 +3802,11 @@
       "record_type": "requirement",
       "modality": "must",
       "original_modal_text": "should be implemented",
-      "subject": "Any changes outside these predefined criteria",
+      "subject": "Any changes outside predefined criteria",
       "action": "be implemented",
       "object": "via a substantial amendment",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_2.018",
@@ -4002,7 +4002,7 @@
       "action": "describe how",
       "object": "safety monitoring should be extended",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_4.010",
@@ -4072,7 +4072,7 @@
       "action": "be crucial for",
       "object": "the recognition of developing toxicity at an early stage",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_5.001",
@@ -4128,7 +4128,7 @@
       "action": "be allowed for",
       "object": "the number of cohorts to be investigated",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_5.005",
@@ -4142,7 +4142,7 @@
       "action": "be possible",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_5.006",
@@ -4154,9 +4154,9 @@
       "original_modal_text": "should be clearly pre-defined",
       "subject": "any plan to include optional additional cohorts",
       "action": "be clearly pre-defined",
-      "object": null,
+      "object": "in the protocol with the underlying rationale provided",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_5.007",
@@ -4170,7 +4170,7 @@
       "action": "be provided",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_5.008",
@@ -4184,7 +4184,7 @@
       "action": "be scientifically justified",
       "object": "in the protocol",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_5.009",
@@ -4196,9 +4196,9 @@
       "original_modal_text": "It is not acceptable",
       "subject": "repeating a dose level",
       "action": "not be acceptable",
-      "object": null,
+      "object": "where any dose escalation stopping rule has been met",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_5.010",
@@ -4226,7 +4226,7 @@
       "action": "be possible",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_5.012",
@@ -4324,7 +4324,7 @@
       "action": "be used",
       "object": "for all single and multiple dosing cohorts",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_6.004",
@@ -4338,7 +4338,7 @@
       "action": "be dosed simultaneously",
       "object": "prior to dosing the remaining subjects in the cohort",
       "normalized_ko": "활성군 1명과 위약군 1명은 코호트의 나머지 피험자 투여 전에 동시에 투여하는 것이 적절하다.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_6.005",
@@ -4352,7 +4352,7 @@
       "action": "be expected for",
       "object": "all single and multiple dosing cohorts",
       "normalized_ko": "이 접근법은 모든 단회 및 반복 투여 코호트에서 예상된다.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_6.006",
@@ -4366,7 +4366,7 @@
       "action": "is often known as",
       "object": "sentinel dosing",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_6.007",
@@ -4380,7 +4380,7 @@
       "action": "be allowed",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_6.008",
@@ -4422,7 +4422,7 @@
       "action": "have",
       "object": "a clear scientific rationale",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_6.011",
@@ -4434,9 +4434,9 @@
       "original_modal_text": "considered appropriate",
       "subject": "administration of the first dose in any cohort",
       "action": "be designed so that",
-      "object": "a single subject receives a single dose of the active IMP",
+      "object": "a single subject receives a single dose of active IMP (sentinel dosing)",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_6.012",
@@ -4446,11 +4446,11 @@
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "would be appropriate",
-      "subject": "study design",
+      "subject": "placebo-controlled study design",
       "action": "allow for",
-      "object": "one subject on active and one on placebo to be dosed simultaneously prior to dosing the remaining subjects in the cohort",
+      "object": "one subject on active and one on placebo to be dosed simultaneously prior to remaining subjects",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_6.013",
@@ -4460,11 +4460,11 @@
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should",
-      "subject": "period of time between the administration of treatment to these first subjects in a cohort and the remaining subjects in the cohort",
-      "action": "be",
-      "object": "adequate to observe for any reactions and adverse events",
+      "subject": "the observation period between sentinel subjects and remaining subjects",
+      "action": "be adequate to",
+      "object": "observe for any reactions and adverse events based on PK/PD and uncertainty",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_6.014",
@@ -4502,11 +4502,11 @@
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should",
-      "subject": "a review of all available data for the sentinel subjects",
-      "action": "be clearly defined",
-      "object": null,
+      "subject": "review of all available data for the sentinel subjects",
+      "action": "occur",
+      "object": "before dosing further subjects in the cohort, with dose stopping rules in place",
       "normalized_ko": "센티널 피험자에 대한 모든 가용 데이터의 검토는 명확히 정의되어야 한다.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_6.017",
@@ -4632,7 +4632,7 @@
       "action": "be more cautious",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_7.006",
@@ -4646,7 +4646,7 @@
       "action": "be acceptable",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_7.007",
@@ -4660,7 +4660,7 @@
       "action": "require",
       "object": "a revised dose escalation",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_7.008",
@@ -4686,9 +4686,9 @@
       "original_modal_text": "should",
       "subject": "The planned dose(s)",
       "action": "be adapted accordingly",
-      "object": null,
+      "object": "following review of PK, PD, and safety data from the preceding cohort",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_7.010",
@@ -4702,7 +4702,7 @@
       "action": "consider whether adaptation of the protocol in other areas is required",
       "object": "to ensure continuing safety of trial participants",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_7.011",
@@ -4716,7 +4716,7 @@
       "action": "be stated",
       "object": "in the protocol",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_7.012",
@@ -4744,7 +4744,7 @@
       "action": "be available",
       "object": "from completed preceding parts or/and cohorts to ensure safety of selected dose/exposure prior decision to start the part",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_7.014",
@@ -4772,7 +4772,7 @@
       "action": "be considered",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_7.016",
@@ -4780,13 +4780,13 @@
         "ema_fih.su.8_2_7.003"
       ],
       "record_type": "requirement",
-      "modality": "should",
+      "modality": "must",
       "original_modal_text": "should always require",
       "subject": "shortening of the review time for any dose escalation",
       "action": "require",
       "object": "a substantial amendment",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_7.017",
@@ -4800,7 +4800,7 @@
       "action": "be acceptable",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_7.018",
@@ -4828,7 +4828,7 @@
       "action": "require",
       "object": "a revised dose escalation",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_8.001",
@@ -4912,7 +4912,7 @@
       "action": "clearly define",
       "object": "the minimum number of evaluable subjects required for review",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_8.007",
@@ -4926,7 +4926,7 @@
       "action": "be adequate for",
       "object": "data review and reliable decision-making",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_8.008",
@@ -4940,7 +4940,7 @@
       "action": "be complete",
       "object": "to proceed to the next dose cohort",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_8.009",
@@ -4954,7 +4954,7 @@
       "action": "are regarded as",
       "object": "minimum criteria for data review",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_8.010",
@@ -5006,11 +5006,11 @@
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should",
-      "subject": "Any submitted substantial amendment",
+      "subject": "Any submitted substantial amendment after a stop",
       "action": "include",
-      "object": "a rationale for the proposed dosing",
+      "object": "a rationale for proposed dosing, continuation of trial, and safety monitoring adjustments",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_9.004",
@@ -5020,11 +5020,11 @@
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should",
-      "subject": "the rule",
+      "subject": "the stopping rule",
       "action": "specify",
       "object": "if the stop is a final end of dosing or a temporary halt",
       "normalized_ko": "The rule should specify whether a stop is final or temporary.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_9.005",
@@ -5034,11 +5034,11 @@
       "record_type": "description",
       "modality": "may",
       "original_modal_text": "is possible",
-      "subject": "Restart",
+      "subject": "Restart of dosing",
       "action": "be possible without a substantial amendment",
-      "object": null,
+      "object": "if review concludes fully within predefined conditions for the relevant stopping criterion",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_9.006",
@@ -5050,9 +5050,9 @@
       "original_modal_text": "should",
       "subject": "Stopping rules",
       "action": "be defined for",
-      "object": "final stop to dosing and termination of the trial",
+      "object": "final termination, individual subjects, within cohort (staggered/MAD), and dose escalation",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_9.007",
@@ -5080,7 +5080,7 @@
       "action": "be in place for",
       "object": "each of the bullet points above",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_9.009",
@@ -5150,7 +5150,7 @@
       "action": "be given to",
       "object": "stopping criteria based on a rolling review of the data that takes account of ‘moderate’ non-serious adverse reactions in blinded or unblinded fashion and their relation to PD effects, the number of subjects in which they occur, concurrency of more than one within the same subject and potential safety signals identified for other IMPs in the same class",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_9.014",
@@ -5176,9 +5176,9 @@
       "original_modal_text": "should generally",
       "subject": "A dose stopping criterion comprising a maximum clinical exposure (Cmax or AUC)",
       "action": "be included",
-      "object": null,
+      "object": "taking into account individual maximum exposure rather than mean exposure",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_9.016",
@@ -5248,7 +5248,7 @@
       "action": "result in",
       "object": "an immediate stop to dosing",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_9.021",
@@ -5262,7 +5262,7 @@
       "action": "be possible without",
       "object": "a substantial amendment",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_9.022",
@@ -5286,11 +5286,11 @@
       "record_type": "definition",
       "modality": "none",
       "original_modal_text": null,
-      "subject": "a ‘serious’ adverse reaction",
-      "action": "means",
-      "object": "a serious adverse event considered at least possibly related to the IMP administration",
+      "subject": "a serious adverse reaction in healthy volunteer trials",
+      "action": "require",
+      "object": "stopping dosing when occurring in one subject (considered at least possibly related to IMP)",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_10.001",
@@ -5354,13 +5354,13 @@
         "ema_fih.su.8_2_10.002"
       ],
       "record_type": "requirement",
-      "modality": "other",
+      "modality": "must",
       "original_modal_text": "imperative",
-      "subject": "the protocol",
-      "action": "include",
-      "object": "clear instructions for unblinding",
+      "subject": "the double-blind study protocol",
+      "action": "contain",
+      "object": "clear instructions for unblinding in the case of an emergency",
       "normalized_ko": "프로토콜에는 눈가림 해제에 관한 명확한 지침이 포함되어야 한다.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_10.006",
@@ -5382,13 +5382,13 @@
         "ema_fih.su.8_2_10.002"
       ],
       "record_type": "requirement",
-      "modality": "other",
+      "modality": "must",
       "original_modal_text": "imperative",
-      "subject": "the protocol",
+      "subject": "the double-blind study protocol",
       "action": "contain",
-      "object": "clear instructions for unblinding",
+      "object": "clear instructions for unblinding in the case of an emergency",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_10.008",
@@ -5402,7 +5402,7 @@
       "action": "be described in",
       "object": "the protocol",
       "normalized_ko": "잠재적 위험/이상반응에 대한 치료 전략은 프로토콜에 기술해야 한다.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_10.009",
@@ -5428,9 +5428,9 @@
       "original_modal_text": "should",
       "subject": "the Sponsor",
       "action": "inform",
-      "object": "investigators and participants (at any site) as soon as possible, and at least prior to any planned next dosing",
+      "object": "investigators and participants at any site as soon as possible and prior to next dosing in case of emerging safety issues",
       "normalized_ko": "스폰서는 가능한 한 신속히, 그리고 계획된 다음 투여 전에 연구자와 시험대상자에게 알려야 한다.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_10.011",
@@ -5440,11 +5440,11 @@
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should also",
-      "subject": "Any SUSAR",
+      "subject": "Any SUSAR in a healthy volunteer",
       "action": "be reported to",
       "object": "the Member States concerned without undue delay",
       "normalized_ko": "모든 SUSAR는 부당한 지체 없이 관련 회원국에 보고되어야 한다.",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_10.012",
@@ -5500,7 +5500,7 @@
       "action": "define processes for communication of",
       "object": "safety data between the sponsor and all study sites and investigators and trial subjects",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_10.016",
@@ -5514,7 +5514,7 @@
       "action": "include",
       "object": "a plan for prompt communication of serious adverse events and suspected unexpected serious adverse reactions (SUSARs) or serious safety-related protocol deviations between the sponsor, all study sites and investigators and trial subjects",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_10.017",
@@ -5528,7 +5528,7 @@
       "action": "be clearly defined for communication of",
       "object": "safety data between the sponsor and all study sites and investigators and trial subjects",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_2_10.018",
@@ -5598,7 +5598,7 @@
       "action": "be given to",
       "object": "the inclusion of independent experts who are (at least) external to the study",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_3.005",
@@ -5679,10 +5679,10 @@
       "modality": "none",
       "original_modal_text": null,
       "subject": "unblinding in an emergency",
-      "action": "can be done at",
-      "object": "the investigators discretion without involvement of the monitor or sponsor",
+      "action": "be done at the investigator's discretion",
+      "object": "without involvement of the monitor or sponsor when needed for immediate management of a subject",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_3.011",
@@ -5693,10 +5693,10 @@
       "modality": "may",
       "original_modal_text": "can be done",
       "subject": "unblinding in an emergency",
-      "action": "be done at the investigators discretion",
-      "object": null,
+      "action": "be done at the investigator's discretion",
+      "object": "without involvement of the monitor or sponsor when needed for immediate management of a subject",
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_3.012",
@@ -5710,7 +5710,7 @@
       "action": "not involve the monitor or sponsor",
       "object": null,
       "normalized_ko": null,
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "knowledge_record_id": "ema_fih.kr.8_4.001",
@@ -6108,7 +6108,7 @@
       "is_default_with_exception": false,
       "is_illustrative_example": false,
       "source_text": "the minimum number of evaluable subjects required for review",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ema_fih.qc.8_2_9.001",
@@ -6133,7 +6133,7 @@
       "source_unit_id": "ema_fih.su.8_2_9.004",
       "knowledge_record_id": null,
       "parameter": "subjects with ‘severe’ non-serious adverse reactions",
-      "comparator": "equals",
+      "comparator": "at_least",
       "value": 2,
       "value_fraction": null,
       "unit": "subjects",
@@ -6144,7 +6144,7 @@
       "is_default_with_exception": false,
       "is_illustrative_example": false,
       "source_text": "‘severe’ non-serious adverse reactions (i.e. severe non-serious adverse events considered as, at least, possibly related to the IMP administration) in two subjects in the same cohort, independent of within or not within the same system-organ-class",
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "criterion_id": "ema_fih.qc.8_2_9.003",
@@ -6828,8 +6828,7 @@
       "condition_text": "prior to making a decision on proceeding to the next part",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_2.001",
-        "ema_fih.kr.8_2_2.002"
+        "ema_fih.kr.8_2_2.001"
       ],
       "review_status": "reviewed"
     },
@@ -6849,8 +6848,7 @@
       "condition_text": "When definite doses cannot be predefined in all study parts",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_2.006",
-        "ema_fih.kr.8_2_2.007"
+        "ema_fih.kr.8_2_2.006"
       ],
       "review_status": "reviewed"
     },
@@ -6870,14 +6868,7 @@
       "condition_text": "Regarding the time sequence for the conduct of different parts",
       "condition_type": "scope",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_2.011",
-        "ema_fih.kr.8_2_2.012",
-        "ema_fih.kr.8_2_2.013",
-        "ema_fih.kr.8_2_2.014",
-        "ema_fih.kr.8_2_2.015",
-        "ema_fih.kr.8_2_2.016",
-        "ema_fih.kr.8_2_2.017",
-        "ema_fih.kr.8_2_2.018"
+        "ema_fih.kr.8_2_2.011"
       ],
       "review_status": "reviewed"
     },
@@ -6917,9 +6908,7 @@
       "condition_text": "Deviation from this",
       "condition_type": "exception",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_2.016",
-        "ema_fih.kr.8_2_2.017",
-        "ema_fih.kr.8_2_2.018"
+        "ema_fih.kr.8_2_2.016"
       ],
       "review_status": "reviewed"
     },
@@ -6939,8 +6928,7 @@
       "condition_text": "in a limited timeframe prior to making a decision on proceeding to the next part",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_2.001",
-        "ema_fih.kr.8_2_2.002"
+        "ema_fih.kr.8_2_2.001"
       ],
       "review_status": "reviewed"
     },
@@ -7100,7 +7088,6 @@
       "condition_text": "If repetition of cohorts is allowed in the protocol",
       "condition_type": "applicability",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_5.007",
         "ema_fih.kr.8_2_5.008"
       ],
       "review_status": "reviewed"
@@ -7141,7 +7128,6 @@
       "condition_text": "If repetition of cohorts is allowed in the protocol",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_5.007",
         "ema_fih.kr.8_2_5.008"
       ],
       "review_status": "reviewed"
@@ -7152,8 +7138,7 @@
       "condition_text": "any plan to include optional additional cohorts",
       "condition_type": "applicability",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_5.004",
-        "ema_fih.kr.8_2_5.005"
+        "ema_fih.kr.8_2_5.004"
       ],
       "review_status": "reviewed"
     },
@@ -7173,9 +7158,7 @@
       "condition_text": "for any proposals not to use this strategy",
       "condition_type": "exception",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_6.003",
-        "ema_fih.kr.8_2_6.004",
-        "ema_fih.kr.8_2_6.005"
+        "ema_fih.kr.8_2_6.003"
       ],
       "review_status": "reviewed"
     },
@@ -7245,8 +7228,7 @@
       "condition_text": "At the end of the observation period",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_6.011",
-        "ema_fih.kr.8_2_6.012"
+        "ema_fih.kr.8_2_6.011"
       ],
       "review_status": "reviewed"
     },
@@ -7286,7 +7268,6 @@
       "condition_text": "at later stages of study design",
       "condition_type": "scope",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_6.007",
         "ema_fih.kr.8_2_6.008"
       ],
       "review_status": "reviewed"
@@ -7337,9 +7318,7 @@
       "condition_text": "In specific situations where PK, PK/PD models are of limited value",
       "condition_type": "applicability",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_7.010",
-        "ema_fih.kr.8_2_7.011",
-        "ema_fih.kr.8_2_7.012"
+        "ema_fih.kr.8_2_7.010"
       ],
       "review_status": "reviewed"
     },
@@ -7465,7 +7444,6 @@
       "condition_text": "in alignment with the predefined criteria in the protocol",
       "condition_type": "scope",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_8.001",
         "ema_fih.kr.8_2_8.002"
       ],
       "review_status": "reviewed"
@@ -7486,8 +7464,7 @@
       "condition_text": "at least until the time of the decision as detailed in the protocol",
       "condition_type": "scope",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_8.007",
-        "ema_fih.kr.8_2_8.008"
+        "ema_fih.kr.8_2_8.007"
       ],
       "review_status": "reviewed"
     },
@@ -7547,13 +7524,7 @@
       "condition_text": "for healthy volunteer trials",
       "condition_type": "scope",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_9.016",
-        "ema_fih.kr.8_2_9.017",
-        "ema_fih.kr.8_2_9.018",
-        "ema_fih.kr.8_2_9.019",
-        "ema_fih.kr.8_2_9.020",
-        "ema_fih.kr.8_2_9.021",
-        "ema_fih.kr.8_2_9.022"
+        "ema_fih.kr.8_2_9.019"
       ],
       "review_status": "reviewed"
     },
@@ -7593,7 +7564,6 @@
       "condition_text": "Any submitted substantial amendment",
       "condition_type": "scope",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_9.004",
         "ema_fih.kr.8_2_9.005"
       ],
       "review_status": "reviewed"
@@ -7604,9 +7574,6 @@
       "condition_text": "for healthy volunteer trials",
       "condition_type": "applicability",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_9.016",
-        "ema_fih.kr.8_2_9.017",
-        "ema_fih.kr.8_2_9.018",
         "ema_fih.kr.8_2_9.019"
       ],
       "review_status": "reviewed"
@@ -7717,8 +7684,7 @@
       "condition_text": "in the case of multicentre trials",
       "condition_type": "applicability",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_10.013",
-        "ema_fih.kr.8_2_10.014"
+        "ema_fih.kr.8_2_10.013"
       ],
       "review_status": "reviewed"
     },
@@ -7778,8 +7744,7 @@
       "condition_text": "where knowledge of the treatment received is needed for the immediate management of a subject",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "ema_fih.kr.8_3.004",
-        "ema_fih.kr.8_3.005"
+        "ema_fih.kr.8_3.004"
       ],
       "review_status": "reviewed"
     },
@@ -7799,8 +7764,7 @@
       "condition_text": "before allowing trial progression at the noted times as per protocol",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "ema_fih.kr.8_3.010",
-        "ema_fih.kr.8_3.011"
+        "ema_fih.kr.8_3.010"
       ],
       "review_status": "reviewed"
     },
@@ -7820,8 +7784,7 @@
       "condition_text": "at the noted times as per protocol",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "ema_fih.kr.8_3.011",
-        "ema_fih.kr.8_3.012"
+        "ema_fih.kr.8_3.011"
       ],
       "review_status": "reviewed"
     },

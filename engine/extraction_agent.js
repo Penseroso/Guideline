@@ -216,7 +216,9 @@ async function extractSection({ section, sourceUnits, client }) {
     // Rule 3: Illustrative numbers vs specified criteria
     "ILLUSTRATIVE NUMBERS VS SPECIFIED CRITERIA: Numbers introduced with 'e.g.', 'such as', 'for example', 'exemplified by' (e.g. 'such as a move from once daily to twice daily dosing', 'e.g. a study of ≤ 14 days') MUST have is_illustrative_example: true. Do not mark them as specified requirements. " +
     // Rule 4: Compound action decomposition
-    "COMPOUND ACTION DECOMPOSITION: When a single sentence prescribes multiple distinct, co-equal regulatory determinations or actions connected by 'and', 'as well as', or 'in addition to' (e.g. 'X should be guided by A and adapted following B'), DECOMPOSE them into separate atomic KnowledgeRecord records (e.g. KR1: action='be guided by', object='A'; KR2: action='be adapted following', object='B'), both citing the same source_unit_ids. Do not mash multiple parallel actions into one convoluted action string.";
+    "COMPOUND ACTION DECOMPOSITION: When a single sentence prescribes multiple distinct, co-equal regulatory determinations or actions connected by 'and', 'as well as', or 'in addition to' (e.g. 'X should be guided by A and adapted following B'), DECOMPOSE them into separate atomic KnowledgeRecord records (e.g. KR1: action='be guided by', object='A'; KR2: action='be adapted following', object='B'), both citing the same source_unit_ids. Do not mash multiple parallel actions into one convoluted action string. " +
+    // Rule 5: Condition scoping precision
+    "CONDITION SCOPING PRECISION: When multiple condition clauses exist in a section (e.g. general rules vs healthy-volunteer rules vs multicentre rules), strictly bind each Condition only to its relevant KnowledgeRecord in applies_to_temp_ids. Do NOT cross-pollinate unrelated conditions across different bullet points.";
   // A follow-up instruction telling the model not to duplicate Condition
   // objects was tried and measured against the same section: it fixed
   // one duplicate (LLOQ merged correctly via applies_to_temp_ids) but
