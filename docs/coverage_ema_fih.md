@@ -52,6 +52,6 @@
 ## Summary Statistics
 * **전체 섹션 수**: 34개 (주요 18개 및 하위 섹션 포함)
 * **적재 완료 (Completed)**: **20개 섹션** (Section 7.1~7.7 전수 + Section 8.1~8.4 전수)
-* **총 구조화 데이터 규모 (EMA FIH)**: **289 KnowledgeRecords, 18 QuantitativeCriteria, 183 Conditions** (총 490개 엔티티)
+* **총 구조화 데이터 규모 (EMA FIH)**: **290 KnowledgeRecords, 18 QuantitativeCriteria, 183 Conditions** (총 491개 엔티티, needs_review 0건 — 100% reviewed)
 * **잔여 백로그 (Backlog)**: Section 4~6 (품질 및 비임상 관련성 10개 섹션)
 
