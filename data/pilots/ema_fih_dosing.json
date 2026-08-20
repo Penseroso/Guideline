@@ -7504,9 +7504,9 @@
       "condition_text": "if applicable",
       "condition_type": "applicability",
       "applies_to_ids": [
-        "ema_fih.kr.8_2_9.006"
+        "ema_fih.kr.8_2_9.003"
       ],
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "condition_id": "ema_fih.cond.8_2_9.004",
