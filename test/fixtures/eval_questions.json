@@ -30,10 +30,11 @@
       "expect_text_contains": "1"
     },
     {
-      "id": "q6_refusal",
+      "id": "q6_fih_starting_dose",
       "question": "what is the recommended starting dose for first-in-human phase 1 trials",
-      "expect_answered": false,
-      "note": "Not covered by any structured section — must refuse, not guess from model world-knowledge (TPP §1.4)."
+      "expect_answered": true,
+      "expect_citation_contains": "EMA",
+      "expect_text_contains": "dose"
     },
     {
       "id": "q7_refusal",
@@ -99,6 +100,27 @@
       "question": "ATMP 세포치료제의 FIH 시작용량 산정 기준은?",
       "expect_answered": false,
       "note": "EMA FIH guideline explicitly excludes ATMPs. Must refuse."
+    },
+    {
+      "id": "q17_ada_screening_cut_point",
+      "question": "ADA에서 screening cut point는 어떻게 정해?",
+      "expect_answered": true,
+      "expect_citation_contains": "FDA-2019-ADA",
+      "expect_text_contains": "1"
+    },
+    {
+      "id": "q18_ada_drug_tolerance",
+      "question": "drug interference가 있으면 ADA assay를 어떻게 평가해야 해?",
+      "expect_answered": true,
+      "expect_citation_contains": "FDA-2019-ADA",
+      "expect_text_contains": "tolerance"
+    },
+    {
+      "id": "q19_ada_neutralization",
+      "question": "neutralizing antibody assay는 언제 해야 해?",
+      "expect_answered": true,
+      "expect_citation_contains": "FDA-2019-ADA",
+      "expect_text_contains": "Neutralization"
     }
   ]
 }

@@ -63,7 +63,14 @@ const REGULATORY_SYNONYMS = {
   "발암성": ["carcinogenicity"],
   "발암성시험": ["carcinogenicity"],
   "수용체": ["receptor"],
-  "결합": ["binding"]
+  "결합": ["binding"],
+  "컷포인트": ["cut-point", "cut", "point"],
+  "선별": ["screening"],
+  "확인": ["confirmatory"],
+  "약물간섭": ["drug", "tolerance", "interference"],
+  "약물내성": ["drug", "tolerance"],
+  "중단기준": ["stopping", "rules"],
+  "순차투여": ["sentinel", "dosing"]
 };
 
 function tokenize(text) {
@@ -96,6 +103,11 @@ function tokenize(text) {
     } else {
       if (!STOPWORDS.has(lower)) {
         tokens.push(lower);
+        // If hyphenated word, also add subwords so 'cut-point' matches 'cut' and 'point'
+        if (lower.includes("-")) {
+          const parts = lower.split("-").filter((p) => p && !STOPWORDS.has(p));
+          tokens.push(...parts);
+        }
       }
     }
   }

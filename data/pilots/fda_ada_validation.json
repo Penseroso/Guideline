@@ -1,0 +1,3715 @@
+{
+  "documents": [
+    {
+      "document_id": "fda_ada",
+      "title": "Immunogenicity Testing of Therapeutic Protein Products — Developing and Validating Assays for Anti-Drug Antibody Detection",
+      "guideline_code": "FDA-2019-ADA",
+      "issuing_body": "FDA",
+      "document_version_label": "Final Guidance, January 2019",
+      "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+      "source_file_checksum": "32BD0579B97B01428A22EAFFE3E6EE2F3C754D92A0953A7A92C30DBFCBDF25",
+      "schema_model_version": "0.5.0"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "fda_ada.sec.4",
+      "document_id": "fda_ada",
+      "section_number": "IV",
+      "parent_section_id": null,
+      "heading_source_unit_id": "fda_ada.su.4.001",
+      "title": "ASSAY DESIGN ELEMENTS",
+      "section_order": 1,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.4_a_1",
+      "document_id": "fda_ada",
+      "section_number": "IV.A.1",
+      "parent_section_id": "fda_ada.sec.4",
+      "heading_source_unit_id": "fda_ada.su.4_a_1.001",
+      "title": "Multi-Tiered Testing Approach",
+      "section_order": 2,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.4_b",
+      "document_id": "fda_ada",
+      "section_number": "IV.B",
+      "parent_section_id": "fda_ada.sec.4",
+      "heading_source_unit_id": "fda_ada.su.4_b.001",
+      "title": "Assay Cut-Point",
+      "section_order": 3,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.4_c_2",
+      "document_id": "fda_ada",
+      "section_number": "IV.C.2",
+      "parent_section_id": "fda_ada.sec.4",
+      "heading_source_unit_id": "fda_ada.su.4_c_2.001",
+      "title": "Drug Tolerance, Sensitivity, and Assay Suitability",
+      "section_order": 4,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.5",
+      "document_id": "fda_ada",
+      "section_number": "V",
+      "parent_section_id": null,
+      "heading_source_unit_id": "fda_ada.su.5.001",
+      "title": "ASSAY DEVELOPMENT",
+      "section_order": 5,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.5_d",
+      "document_id": "fda_ada",
+      "section_number": "V.D",
+      "parent_section_id": "fda_ada.sec.5",
+      "heading_source_unit_id": "fda_ada.su.5_d.001",
+      "title": "Development of Neutralization Assay",
+      "section_order": 6,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.6",
+      "document_id": "fda_ada",
+      "section_number": "VI",
+      "parent_section_id": null,
+      "heading_source_unit_id": "fda_ada.su.6.001",
+      "title": "ASSAY VALIDATION",
+      "section_order": 7,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.6_a",
+      "document_id": "fda_ada",
+      "section_number": "VI.A",
+      "parent_section_id": "fda_ada.sec.6",
+      "heading_source_unit_id": "fda_ada.su.6_a.001",
+      "title": "General Considerations for Assay Validation",
+      "section_order": 8,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.6_b",
+      "document_id": "fda_ada",
+      "section_number": "VI.B",
+      "parent_section_id": "fda_ada.sec.6",
+      "heading_source_unit_id": "fda_ada.su.6_b.001",
+      "title": "Validation of Screening Assay",
+      "section_order": 9,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.6_c",
+      "document_id": "fda_ada",
+      "section_number": "VI.C",
+      "parent_section_id": "fda_ada.sec.6",
+      "heading_source_unit_id": "fda_ada.su.6_c.001",
+      "title": "Validation of Confirmatory Assay",
+      "section_order": 10,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.6_e",
+      "document_id": "fda_ada",
+      "section_number": "VI.E",
+      "parent_section_id": "fda_ada.sec.6",
+      "heading_source_unit_id": "fda_ada.su.6_e.001",
+      "title": "Validation of Neutralization Assay",
+      "section_order": 11,
+      "section_order_status": "known"
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "fda_ada.su.4.001",
+      "section_id": "fda_ada.sec.4",
+      "unit_type": "heading",
+      "source_text": "IV. ASSAY DESIGN ELEMENTS",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "5",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_a_1.001",
+      "section_id": "fda_ada.sec.4_a_1",
+      "unit_type": "heading",
+      "source_text": "1. Multi-Tiered Testing Approach",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_a_1",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "5",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_a_1.002",
+      "section_id": "fda_ada.sec.4_a_1",
+      "unit_type": "paragraph",
+      "source_text": "FDA recommends a multi-tiered ADA testing approach. In this paradigm, a sensitive screening assay is initially used to assess clinical samples. To gain a more accurate understanding of the natural history of the ADA response, the screening assay should be sensitive and designed to detect low levels of low- and high-affinity ADA; for example, by minimizing wash steps. However, in most cases it is not necessary to empirically determine the affinity of antibodies that are detected by the initial screening assay. Samples testing positive in the screening assay are then subjected to a confirmatory assay to demonstrate that ADAs are specific for the therapeutic protein product. For example, a competition assay could confirm that an antibody is specifically binding to the therapeutic protein product and that the positive finding in the screening assay is not a result of non-specific interactions of the test serum or detection reagent with other materials in the assay milieu such as plastic or other proteins.",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_a_1",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "5",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_a_1.003",
+      "section_id": "fda_ada.sec.4_a_1",
+      "unit_type": "paragraph",
+      "source_text": "Samples identified as positive in the confirmatory assay should be further characterized in other assays, such as titration and neutralization assays. In some cases, assays to detect cross-reactivity to other proteins, such as the corresponding endogenous protein, may be needed. For example, assessment of cross-reactivity may be needed when the therapeutic protein product belongs to a family of proteins with high homology and it is important to know whether other family members are affected by ADA. Further, in some cases tests to assess the isotype of the antibodies or their epitope specificity may also be recommended once samples containing antibodies are confirmed as positive. Epitope specificity determination of the ADA response is not frequently performed, although it is common to perform a more general assessment of domain specificity for multi-domain products such as pegylated proteins, antibody-drug conjugates, and bispecific antibodies.",
+      "unit_order": 4,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_a_1",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "5-6",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_b.001",
+      "section_id": "fda_ada.sec.4_b",
+      "unit_type": "heading",
+      "source_text": "B. Assay Cut-Point",
+      "unit_order": 5,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_b",
+        "pdf_page_index_zero_based": 9,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "7",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_b.002",
+      "section_id": "fda_ada.sec.4_b",
+      "unit_type": "paragraph",
+      "source_text": "The cut-point of the assay is the level of response of the assay that defines the sample response as positive or negative. Information specific to establishing the cut-point for the respective assay types is provided in sections V and VI. Establishing the appropriate cut-point is critical to minimizing the risk of false-negative results. The cut-point of the assay can be influenced by a myriad of interfering product or matrix components. These components should be considered early on in assay development when defining the cut-point. Because samples from different target populations and disease states may have components that can cause the background signal from the assay to vary, different cut-points may be needed for discrete populations.",
+      "unit_order": 6,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_b",
+        "pdf_page_index_zero_based": 9,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "7",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_b.003",
+      "section_id": "fda_ada.sec.4_b",
+      "unit_type": "paragraph",
+      "source_text": "Where feasible, the cut-point should be statistically determined using samples from treatment-naïve subjects. By performing replicate assay runs with these samples, the variability of the assay can be estimated. The statistical approach employed to determine the cut-point may entail various processes, such as removing statistical outliers from analyses, and using an approach to account for pre-existing antibodies. The sponsor should consider the impact of statistically determined outlier values and true-positive samples when establishing the cut-point. The sponsor should provide justification for the removal of any data points, along with the respective method used to determine their status as outliers.",
+      "unit_order": 7,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_b",
+        "pdf_page_index_zero_based": 9,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "7",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_b.004",
+      "section_id": "fda_ada.sec.4_b",
+      "unit_type": "paragraph",
+      "source_text": "Apparent positive values and samples may derive from the presence of pre-existing antibodies or other serum factors in subject samples. Although pre-existing antibodies to a variety of endogenous proteins are present in healthy individuals, these can be much higher in some disease states. The sponsor should identify those samples with pre-existing antibodies (for example, through competition with drug) and remove them from the cut-point analysis. If subjects in the study have pre-existing antibodies, it may be necessary to assign positive responses using a cut-point based on the difference between individual subject results before and after exposure to identify subjects in whom ADA increases following treatment, also known as treatment-boosted ADA. A common approach to evaluating treatment-boosted ADA responses is to assess changes in antibody titers.",
+      "unit_order": 8,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_b",
+        "pdf_page_index_zero_based": 9,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "7-8",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_c_2.001",
+      "section_id": "fda_ada.sec.4_c_2",
+      "unit_type": "heading",
+      "source_text": "2. Drug Tolerance, Sensitivity, and Assay Suitability",
+      "unit_order": 9,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_c_2",
+        "pdf_page_index_zero_based": 11,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "9",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_c_2.002",
+      "section_id": "fda_ada.sec.4_c_2",
+      "unit_type": "paragraph",
+      "source_text": "The therapeutic protein product or its endogenous counterpart present in the serum may interfere with the sensitivity of the assay. The assessment of assay sensitivity in the presence of the expected levels of interfering therapeutic protein product, also known as the assay’s drug tolerance, is critical to understanding the sensitivity and suitability of the method for detecting ADA in dosed subjects. FDA recommends that sponsors examine assay drug tolerance early in assay development. The sponsor may examine drug tolerance by deliberately adding different known amounts of positive control antibody into ADA-negative control samples in the absence or presence of different quantities of the therapeutic protein product to determine whether the therapeutic protein product interferes with ADA detection. Results obtained in the absence and presence of different quantities of the therapeutic protein product under consideration should be compared.",
+      "unit_order": 10,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_c_2",
+        "pdf_page_index_zero_based": 11,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "9",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_c_2.003",
+      "section_id": "fda_ada.sec.4_c_2",
+      "unit_type": "paragraph",
+      "source_text": "Drug tolerance may be improved using approaches such as acid dissociation that disrupt circulating ADA-drug complexes. The selectivity of the assay, the nature of the target, and the type of positive control should be taken into consideration when developing the assay because these factors impact the assessment of drug tolerance. For example, acid dissociation may not be appropriate when antibodies are acid labile or the drug target is soluble. Interference from the therapeutic protein product can be minimized by collecting subject samples at trough drug levels.",
+      "unit_order": 11,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_c_2",
+        "pdf_page_index_zero_based": 11,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "9",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.5.001",
+      "section_id": "fda_ada.sec.5",
+      "unit_type": "heading",
+      "source_text": "V. ASSAY DEVELOPMENT",
+      "unit_order": 12,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.5",
+        "pdf_page_index_zero_based": 19,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "17",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.5_d.001",
+      "section_id": "fda_ada.sec.5_d",
+      "unit_type": "heading",
+      "source_text": "D. Development of Neutralization Assay",
+      "unit_order": 13,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.5_d",
+        "pdf_page_index_zero_based": 20,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "18",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.5_d.002",
+      "section_id": "fda_ada.sec.5_d",
+      "unit_type": "paragraph",
+      "source_text": "NAb are antibodies that inhibit the specific pharmacologic effect of the therapeutic protein product. Neutralization assays assess the neutralizing potential of antibodies that bind the therapeutic protein product. The neutralizing capacity of antibodies can be assessed using a cell-based bioassay or a non-cell-based competitive ligand-binding assay. Cell-based bioassays are generally preferred over competitive ligand-binding assays for assessing NAb because cell-based bioassays are more likely to reflect the in vivo mechanism of action of the therapeutic protein product. However, non-cell-based competitive ligand-binding assays may be acceptable if cell-based bioassays are not feasible, such as when therapeutic protein products function solely by binding soluble ligands or when a cell-based assay lacks adequate sensitivity or is subject to insurmountable matrix interference.",
+      "unit_order": 14,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.5_d",
+        "pdf_page_index_zero_based": 20,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "18-19",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.5_d.003",
+      "section_id": "fda_ada.sec.5_d",
+      "unit_type": "paragraph",
+      "source_text": "For neutralization assays, an activity curve should be generated to establish the concentration of therapeutic protein product to use in the assay. The selected concentration should fall on the linear portion of the concentration-response curve (for example, EC50 to EC80) to maximize assay sensitivity to detecting neutralizing antibodies. A cut-point for the neutralization assay should be established using statistical methods similar to those for screening and confirmatory assays. Because neutralization assays are used after screening and confirmatory tiers, a 1% false-positive rate is generally recommended for calculating the neutralization cut-point.",
+      "unit_order": 15,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.5_d",
+        "pdf_page_index_zero_based": 21,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "19-21",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.6.001",
+      "section_id": "fda_ada.sec.6",
+      "unit_type": "heading",
+      "source_text": "VI. ASSAY VALIDATION",
+      "unit_order": 16,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.6",
+        "pdf_page_index_zero_based": 24,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "22",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.6_a.001",
+      "section_id": "fda_ada.sec.6_a",
+      "unit_type": "heading",
+      "source_text": "A. General Considerations for Assay Validation",
+      "unit_order": 17,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.6_a",
+        "pdf_page_index_zero_based": 24,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "22",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.6_a.002",
+      "section_id": "fda_ada.sec.6_a",
+      "unit_type": "paragraph",
+      "source_text": "Validation of an ADA assay is the process of demonstrating through scientific studies that the performance characteristics of the assay are suitable for its intended purpose. Assay validation should be performed using standard operating procedures that detail assay procedures, reagent specifications, and acceptance criteria. Assay validation typically assesses cut-point, sensitivity, specificity, selectivity, precision, reproducibility, drug tolerance, robustness, and stability. Validation should be conducted with samples from the appropriate target population. For cut-point determination, FDA recommends evaluating at least 50 individual treatment-naïve subject samples across at least 3 different days by at least two analysts, generating at least six independent assay runs.",
+      "unit_order": 18,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.6_a",
+        "pdf_page_index_zero_based": 24,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "22-23",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.6_b.001",
+      "section_id": "fda_ada.sec.6_b",
+      "unit_type": "heading",
+      "source_text": "B. Validation of Screening Assay",
+      "unit_order": 19,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.6_b",
+        "pdf_page_index_zero_based": 26,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "24",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "section_id": "fda_ada.sec.6_b",
+      "unit_type": "paragraph",
+      "source_text": "FDA recommends that screening assays have a sensitivity of at least 100 ng/mL. In some cases, higher sensitivity may be needed (for example, for high-risk products). Assay sensitivity should be determined using a positive control antibody. The screening cut-point should be determined statistically with an appropriate number of treatment-naïve samples, generally around 50, from the subject population. Each sample should be tested by at least two analysts on at least three different days for a total of at least six individual measurements. One approach that allows for high assurance of a 5% false-positive rate is to apply a 90% one-sided lower confidence interval for the 95th percentile of the negative control population. This will assure at least a 5% false-positive rate with a 90% confidence level. For normally distributed data, the 95th percentile is estimated by the mean plus 1.645 standard deviations.",
+      "unit_order": 20,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.6_b",
+        "pdf_page_index_zero_based": 26,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "24",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.6_b.003",
+      "section_id": "fda_ada.sec.6_b",
+      "unit_type": "paragraph",
+      "source_text": "When the mean varies between assays, plates, or analysts but the variance around the mean is constant, a normalization factor can be statistically determined and applied in-study. This is known as a floating cut-point and is the most common type of cut-point used. When the mean is constant, a cut-point established during validation may be applied in-study (known as a fixed cut-point), but the use of a fixed cut-point is discouraged because it does not allow for in-study negative control variation. When both the mean and variance vary, a dynamic cut-point may be needed, although further assay development is recommended instead.",
+      "unit_order": 21,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.6_b",
+        "pdf_page_index_zero_based": 26,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "24",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.6_c.001",
+      "section_id": "fda_ada.sec.6_c",
+      "unit_type": "heading",
+      "source_text": "C. Validation of Confirmatory Assay",
+      "unit_order": 22,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.6_c",
+        "pdf_page_index_zero_based": 26,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "24",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.6_c.002",
+      "section_id": "fda_ada.sec.6_c",
+      "unit_type": "paragraph",
+      "source_text": "Confirmatory assays should be fully validated in a manner similar to screening and neutralization assays. If these assays are based on competition for antigen binding by the antibodies in subject samples and the measurement is loss of response, it is critical to identify the degree of inhibition or depletion that will be used to ascribe positivity to a sample. FDA recommends establishing a cut-point based on the assessment of the binding changes observed in negative control samples that are known to lack the antibodies when competing antigen is added. FDA also recommends that the sensitivity of the confirmatory assay be demonstrated using a low concentration of the positive control antibody.",
+      "unit_order": 23,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.6_c",
+        "pdf_page_index_zero_based": 26,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "24-25",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.6_c.003",
+      "section_id": "fda_ada.sec.6_c",
+      "unit_type": "paragraph",
+      "source_text": "One approach for the estimation of the confirmatory assay cut-point is to use an 80% to 90% one-sided lower confidence interval for the 99th percentile. Because the purpose of this assay is to eliminate false-positive samples arising as a result of non-specific binding, it is adequate to use a 1% false-positive rate for the calculation of the confirmatory cut-point. The use of tighter false-positive rates such as 0.1% is not recommended, but may be acceptable for larger studies. The confirmatory assay format is frequently a competition assay in which a competitor, usually an unlabeled therapeutic protein product, is added to the reaction mixture to inhibit ADA binding to the capture reagent. For this assay format, the same concentration of unlabeled therapeutic protein product should be added to the negative control samples when determining the confirmatory cut-point.",
+      "unit_order": 24,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.6_c",
+        "pdf_page_index_zero_based": 27,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "25",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.6_e.001",
+      "section_id": "fda_ada.sec.6_e",
+      "unit_type": "heading",
+      "source_text": "E. Validation of Neutralization Assay",
+      "unit_order": 25,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.6_e",
+        "pdf_page_index_zero_based": 27,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "25",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.6_e.002",
+      "section_id": "fda_ada.sec.6_e",
+      "unit_type": "paragraph",
+      "source_text": "A minimum of 30 samples tested on at least 3 different days by at least two analysts should be used to determine the cut-point, using suitable statistical methods. The positive control for neutralization assays can be either monoclonal or affinity purified polyclonal antibodies. Sponsors should validate assay specificity for cell-based neutralization bioassays to demonstrate that NAb only inhibit the response to the therapeutic protein product and not the response to other stimuli. Cell-based neutralization bioassays frequently have reduced precision when compared to ligand binding assays because biologic responses can be inherently more variable. When assay precision is poor, the sponsor may consider performing more replicates for assessment of precision and subject responses.",
+      "unit_order": 26,
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed",
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.6_e",
+        "pdf_page_index_zero_based": 27,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "25-26",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "document_id": "fda_ada"
+    }
+  ],
+  "knowledge_records": [
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.001",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "recommends",
+      "subject": "FDA",
+      "action": "recommends",
+      "object": "a multi-tiered ADA testing approach",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.002",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "the screening assay",
+      "action": "be sensitive",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.003",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "the screening assay",
+      "action": "be designed to detect",
+      "object": "low levels of low- and high-affinity ADA",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.004",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "a sensitive screening assay",
+      "action": "is initially used to assess",
+      "object": "clinical samples",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.005",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Samples testing positive in the screening assay",
+      "action": "are then subjected to",
+      "object": "a confirmatory assay",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.006",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "a confirmatory assay",
+      "action": "demonstrate",
+      "object": "that ADAs are specific for the therapeutic protein product",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.007",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.002"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "screening assay design approach",
+      "action": "includes",
+      "object": "minimizing wash steps",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.008",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.002"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "the positive finding in the screening assay",
+      "action": "is not a result of",
+      "object": "non-specific interactions of the test serum or detection reagent with other materials in the assay milieu such as plastic or other proteins",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.009",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is not necessary",
+      "subject": "it",
+      "action": "is not necessary to empirically determine",
+      "object": "the affinity of antibodies that are detected by the initial screening assay",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.010",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.002"
+      ],
+      "record_type": "example",
+      "modality": "other",
+      "original_modal_text": "could",
+      "subject": "a competition assay",
+      "action": "confirm",
+      "object": "that an antibody is specifically binding to the therapeutic protein product",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.011",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Samples identified as positive in the confirmatory assay",
+      "action": "be further characterized in",
+      "object": "other assays",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.012",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.003"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "other assays",
+      "action": "includes",
+      "object": "titration and neutralization assays",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.013",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may be needed",
+      "subject": "assays to detect cross-reactivity to other proteins",
+      "action": "be needed",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.014",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may also be recommended",
+      "subject": "tests to assess the isotype of the antibodies or their epitope specificity",
+      "action": "be recommended",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.015",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Epitope specificity determination of the ADA response",
+      "action": "is not frequently performed",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.016",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "a more general assessment of domain specificity",
+      "action": "is common to perform for",
+      "object": "multi-domain products",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.017",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.002"
+      ],
+      "record_type": "example",
+      "modality": "may",
+      "original_modal_text": "could",
+      "subject": "a competition assay",
+      "action": "could confirm that an antibody is specifically binding to",
+      "object": "the therapeutic protein product",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_A_1.018",
+      "source_unit_ids": [
+        "fda_ada.su.4_a_1.002"
+      ],
+      "record_type": "example",
+      "modality": "may",
+      "original_modal_text": "could",
+      "subject": "a competition assay",
+      "action": "could confirm that the positive finding in the screening assay is not a result of",
+      "object": "non-specific interactions of the test serum or detection reagent with other materials in the assay milieu",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.001",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.002"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The cut-point of the assay",
+      "action": "is",
+      "object": "the level of response of the assay that defines the sample response as positive or negative",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.002",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Information specific to establishing the cut-point",
+      "action": "is provided",
+      "object": "in sections V and VI",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.003",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Establishing the appropriate cut-point",
+      "action": "is critical to minimizing",
+      "object": "the risk of false-negative results",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.004",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "The cut-point of the assay",
+      "action": "can be influenced by",
+      "object": "a myriad of interfering product or matrix components",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.005",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "components",
+      "action": "cause",
+      "object": "the background signal from the assay to vary",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.006",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "different cut-points",
+      "action": "be needed for",
+      "object": "discrete populations",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.007",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "These components",
+      "action": "be considered",
+      "object": "early on in assay development",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.008",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "different cut-points",
+      "action": "be needed",
+      "object": "for discrete populations",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.009",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "the cut-point",
+      "action": "be statistically determined",
+      "object": "using samples from treatment-naïve subjects",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.010",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The sponsor",
+      "action": "consider",
+      "object": "the impact of statistically determined outlier values and true-positive samples",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.011",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The sponsor",
+      "action": "provide justification for",
+      "object": "the removal of any data points",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.012",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.003"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "the variability of the assay",
+      "action": "can be estimated",
+      "object": "by performing replicate assay runs with these samples",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.013",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.003"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "The statistical approach employed to determine the cut-point",
+      "action": "entail",
+      "object": "various processes",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.014",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.003"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "statistical processes",
+      "action": "includes",
+      "object": "removing statistical outliers from analyses",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.015",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.004"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "Apparent positive values and samples",
+      "action": "may derive from",
+      "object": "the presence of pre-existing antibodies or other serum factors in subject samples",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.016",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.004"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "pre-existing antibodies",
+      "action": "can be much higher",
+      "object": "in some disease states",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.017",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.004"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "pre-existing antibodies to a variety of endogenous proteins",
+      "action": "are present",
+      "object": "in healthy individuals",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.018",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.004"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "A common approach to evaluating treatment-boosted ADA responses",
+      "action": "is to assess",
+      "object": "changes in antibody titers",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.019",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.004"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "pre-existing antibodies",
+      "action": "can be much higher in",
+      "object": "some disease states",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.020",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.004"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "treatment-boosted ADA",
+      "action": "identifies",
+      "object": "subjects in whom ADA increases following treatment",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.021",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The sponsor",
+      "action": "identify",
+      "object": "those samples with pre-existing antibodies",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.022",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The sponsor",
+      "action": "remove",
+      "object": "those samples with pre-existing antibodies from the cut-point analysis",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.023",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may be necessary",
+      "subject": "it",
+      "action": "may be necessary to assign",
+      "object": "positive responses using a cut-point based on the difference between individual subject results before and after exposure",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.024",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may be necessary",
+      "subject": "the sponsor",
+      "action": "assign positive responses",
+      "object": "using a cut-point based on the difference between individual subject results before and after exposure",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.025",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.002"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Information specific to establishing the cut-point for the respective assay types",
+      "action": "is provided in",
+      "object": "sections V and VI",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.026",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.004"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "identification methods",
+      "action": "includes",
+      "object": "through competition with drug",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.027",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "the variability of the assay",
+      "action": "can be estimated",
+      "object": "by performing replicate assay runs with these samples",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_B.028",
+      "source_unit_ids": [
+        "fda_ada.su.4_b.004"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "ADA increases following treatment",
+      "action": "is also known as",
+      "object": "treatment-boosted ADA",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.001",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "The therapeutic protein product or its endogenous counterpart present in the serum",
+      "action": "may interfere with",
+      "object": "the sensitivity of the assay",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.002",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "The sponsor",
+      "action": "examine",
+      "object": "drug tolerance by deliberately adding different known amounts of positive control antibody into ADA-negative control samples in the absence or presence of different quantities of the therapeutic protein product to determine whether the therapeutic protein product interferes with ADA detection",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.003",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The assessment of assay sensitivity",
+      "action": "is critical to understanding",
+      "object": "the sensitivity and suitability of the method for detecting ADA in dosed subjects",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.004",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "recommends that",
+      "subject": "sponsors",
+      "action": "examine",
+      "object": "assay drug tolerance early in assay development",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.005",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Results obtained in the absence and presence of different quantities of the therapeutic protein product under consideration",
+      "action": "be compared",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.006",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "The sponsor",
+      "action": "examine",
+      "object": "drug tolerance by deliberately adding different known amounts of positive control antibody into ADA-negative control samples",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.007",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "Drug tolerance",
+      "action": "be improved using",
+      "object": "approaches such as acid dissociation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.008",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may not",
+      "subject": "acid dissociation",
+      "action": "may not be appropriate",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.009",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Interference from the therapeutic protein product",
+      "action": "can be minimized by collecting",
+      "object": "subject samples at trough drug levels",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.010",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The selectivity of the assay",
+      "action": "be taken into consideration",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.011",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "these factors",
+      "action": "impact",
+      "object": "the assessment of drug tolerance",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.012",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.003"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "Drug tolerance",
+      "action": "may be improved using",
+      "object": "approaches such as acid dissociation that disrupt circulating ADA-drug complexes",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.013",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.003"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Interference from the therapeutic protein product",
+      "action": "can be minimized by",
+      "object": "collecting subject samples at trough drug levels",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.014",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.003"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can be minimized",
+      "subject": "Interference from the therapeutic protein product",
+      "action": "can be minimized by",
+      "object": "collecting subject samples at trough drug levels",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_C_2.015",
+      "source_unit_ids": [
+        "fda_ada.su.4_c_2.003"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "approaches to improve drug tolerance",
+      "action": "includes",
+      "object": "acid dissociation that disrupt circulating ADA-drug complexes",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.V_D.001",
+      "source_unit_ids": [
+        "fda_ada.su.5_d.002"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "NAb",
+      "action": "are",
+      "object": "antibodies that inhibit the specific pharmacologic effect of the therapeutic protein product",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.V_D.002",
+      "source_unit_ids": [
+        "fda_ada.su.5_d.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Neutralization assays",
+      "action": "assess",
+      "object": "the neutralizing potential of antibodies that bind the therapeutic protein product",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.V_D.003",
+      "source_unit_ids": [
+        "fda_ada.su.5_d.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Cell-based bioassays",
+      "action": "are more likely to reflect",
+      "object": "the in vivo mechanism of action of the therapeutic protein product",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.V_D.004",
+      "source_unit_ids": [
+        "fda_ada.su.5_d.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can be",
+      "subject": "The neutralizing capacity of antibodies",
+      "action": "be assessed using",
+      "object": "a cell-based bioassay",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.V_D.005",
+      "source_unit_ids": [
+        "fda_ada.su.5_d.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may be acceptable",
+      "subject": "non-cell-based competitive ligand-binding assays",
+      "action": "be acceptable",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.V_D.006",
+      "source_unit_ids": [
+        "fda_ada.su.5_d.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "are generally preferred",
+      "subject": "Cell-based bioassays",
+      "action": "be preferred over",
+      "object": "competitive ligand-binding assays for assessing NAb",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.V_D.007",
+      "source_unit_ids": [
+        "fda_ada.su.5_d.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be generated",
+      "subject": "an activity curve",
+      "action": "be generated",
+      "object": "to establish the concentration of therapeutic protein product to use in the assay",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.V_D.008",
+      "source_unit_ids": [
+        "fda_ada.su.5_d.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should fall",
+      "subject": "The selected concentration",
+      "action": "fall on",
+      "object": "the linear portion of the concentration-response curve",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.V_D.009",
+      "source_unit_ids": [
+        "fda_ada.su.5_d.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be established",
+      "subject": "A cut-point for the neutralization assay",
+      "action": "be established using",
+      "object": "statistical methods similar to those for screening and confirmatory assays",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.V_D.010",
+      "source_unit_ids": [
+        "fda_ada.su.5_d.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "is generally recommended",
+      "subject": "a 1% false-positive rate",
+      "action": "be used for calculating",
+      "object": "the neutralization cut-point",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.V_D.011",
+      "source_unit_ids": [
+        "fda_ada.su.5_d.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can be",
+      "subject": "The neutralizing capacity of antibodies",
+      "action": "be assessed using",
+      "object": "a cell-based bioassay or a non-cell-based competitive ligand-binding assay",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.V_D.012",
+      "source_unit_ids": [
+        "fda_ada.su.5_d.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "are generally preferred",
+      "subject": "Cell-based bioassays",
+      "action": "be preferred over",
+      "object": "competitive ligand-binding assays for assessing NAb",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.V_D.013",
+      "source_unit_ids": [
+        "fda_ada.su.5_d.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is generally recommended",
+      "subject": "a 1% false-positive rate",
+      "action": "be used for",
+      "object": "calculating the neutralization cut-point",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_A.001",
+      "source_unit_ids": [
+        "fda_ada.su.6_a.002"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Validation of an ADA assay",
+      "action": "is",
+      "object": "the process of demonstrating through scientific studies that the performance characteristics of the assay are suitable for its intended purpose",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_A.002",
+      "source_unit_ids": [
+        "fda_ada.su.6_a.002"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Validation of an ADA assay",
+      "action": "is the process of demonstrating through scientific studies",
+      "object": "that the performance characteristics of the assay are suitable for its intended purpose",
+      "normalized_ko": "ADA assay validation is the scientific demonstration that assay performance characteristics are suitable for the intended purpose.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_A.003",
+      "source_unit_ids": [
+        "fda_ada.su.6_a.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Assay validation",
+      "action": "be performed using",
+      "object": "standard operating procedures",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_A.004",
+      "source_unit_ids": [
+        "fda_ada.su.6_a.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Validation",
+      "action": "be conducted with",
+      "object": "samples from the appropriate target population",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_A.005",
+      "source_unit_ids": [
+        "fda_ada.su.6_a.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "recommends",
+      "subject": "FDA",
+      "action": "recommend evaluating",
+      "object": "individual treatment-naïve subject samples across different days by analysts, generating independent assay runs",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_A.006",
+      "source_unit_ids": [
+        "fda_ada.su.6_a.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "standard operating procedures",
+      "action": "detail",
+      "object": "assay procedures, reagent specifications, and acceptance criteria",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_A.007",
+      "source_unit_ids": [
+        "fda_ada.su.6_a.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Assay validation",
+      "action": "typically assesses",
+      "object": "cut-point, sensitivity, specificity, selectivity, precision, reproducibility, drug tolerance, robustness, and stability",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_A.008",
+      "source_unit_ids": [
+        "fda_ada.su.6_a.002"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "typically",
+      "subject": "Assay validation",
+      "action": "assesses",
+      "object": "cut-point, sensitivity, specificity, selectivity, precision, reproducibility, drug tolerance, robustness, and stability",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_A.009",
+      "source_unit_ids": [
+        "fda_ada.su.6_a.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "recommends",
+      "subject": "FDA",
+      "action": "recommends evaluating",
+      "object": "individual treatment-naïve subject samples across different days by analysts, generating independent assay runs",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.001",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "recommends that",
+      "subject": "screening assays",
+      "action": "have",
+      "object": "a sensitivity of at least 100 ng/mL",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.002",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Assay sensitivity",
+      "action": "be determined using",
+      "object": "a positive control antibody",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.003",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be tested",
+      "subject": "each sample",
+      "action": "be tested by",
+      "object": "at least two analysts",
+      "normalized_ko": "Each sample should be tested by at least two analysts.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.004",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may be needed",
+      "subject": "higher sensitivity",
+      "action": "be needed",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.005",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.002"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "should be tested by at least",
+      "subject": "Each sample",
+      "action": "be tested by",
+      "object": "at least two analysts",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.006",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.002"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "for a total of at least",
+      "subject": "Each sample",
+      "action": "have",
+      "object": "six individual measurements",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.007",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "One approach",
+      "action": "allows for high assurance of",
+      "object": "a 5% false-positive rate",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.008",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This",
+      "action": "will assure",
+      "object": "at least a 5% false-positive rate with a 90% confidence level",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.009",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "the 95th percentile",
+      "action": "is estimated by",
+      "object": "the mean plus 1.645 standard deviations",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.010",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "one approach",
+      "action": "apply",
+      "object": "a 90% one-sided lower confidence interval for the 95th percentile of the negative control population",
+      "normalized_ko": "An approach for high assurance of a 5% false-positive rate applies a 90% one-sided lower confidence interval for the 95th percentile of the negative control population.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.011",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "each sample",
+      "action": "have",
+      "object": "a total of at least six individual measurements",
+      "normalized_ko": "Each sample has a total of at least six individual measurements.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.012",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "one approach",
+      "action": "allow for",
+      "object": "high assurance of a 5% false-positive rate",
+      "normalized_ko": "One approach allows high assurance of a 5% false-positive rate.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.013",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can be",
+      "subject": "a normalization factor",
+      "action": "be statistically determined and applied in-study",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.014",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may be needed",
+      "subject": "a dynamic cut-point",
+      "action": "be needed",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.015",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.003"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "a normalization factor",
+      "action": "is known as",
+      "object": "a floating cut-point",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.016",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "a floating cut-point",
+      "action": "is",
+      "object": "the most common type of cut-point used",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.017",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "the use of a fixed cut-point",
+      "action": "not allow for",
+      "object": "in-study negative control variation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.018",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "a floating cut-point",
+      "action": "be",
+      "object": "the most common type of cut-point used",
+      "normalized_ko": "A floating cut-point is the most common type of cut-point used.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.019",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is discouraged",
+      "subject": "the use of a fixed cut-point",
+      "action": "be discouraged",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.020",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is recommended",
+      "subject": "further assay development",
+      "action": "be recommended instead",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.021",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.003"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can be",
+      "subject": "a normalization factor",
+      "action": "be statistically determined and applied in-study",
+      "object": null,
+      "normalized_ko": "A normalization factor can be statistically determined and applied in-study when the mean varies but variance is constant.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.022",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.003"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may be needed",
+      "subject": "a dynamic cut-point",
+      "action": "be needed",
+      "object": null,
+      "normalized_ko": "A dynamic cut-point may be needed.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.023",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may be needed",
+      "subject": "higher sensitivity",
+      "action": "be needed",
+      "object": null,
+      "normalized_ko": "Higher sensitivity may be needed.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_B.024",
+      "source_unit_ids": [
+        "fda_ada.su.6_b.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "is recommended",
+      "subject": "further assay development",
+      "action": "be recommended instead",
+      "object": null,
+      "normalized_ko": "Further assay development is recommended instead.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.001",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Confirmatory assays",
+      "action": "be fully validated",
+      "object": "in a manner similar to screening and neutralization assays",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.002",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "FDA recommends",
+      "subject": "the confirmatory assay cut-point",
+      "action": "be established based on",
+      "object": "the assessment of the binding changes observed in negative control samples",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.003",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "FDA also recommends",
+      "subject": "the sensitivity of the confirmatory assay",
+      "action": "be demonstrated using",
+      "object": "a low concentration of the positive control antibody",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.004",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.002"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "it is critical to",
+      "subject": null,
+      "action": "identify",
+      "object": "the degree of inhibition or depletion that will be used to ascribe positivity to a sample",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.005",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.002"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "it is critical to",
+      "subject": "the degree of inhibition or depletion",
+      "action": "be identified",
+      "object": "that will be used to ascribe positivity to a sample",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.006",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "FDA recommends",
+      "subject": "FDA",
+      "action": "establish",
+      "object": "a cut-point based on the assessment of the binding changes observed in negative control samples that are known to lack the antibodies when competing antigen is added",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.007",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "FDA also recommends",
+      "subject": "FDA",
+      "action": "demonstrate",
+      "object": "the sensitivity of the confirmatory assay using a low concentration of the positive control antibody",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.008",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "One approach for the estimation of the confirmatory assay cut-point",
+      "action": "is to use",
+      "object": "an 80% to 90% one-sided lower confidence interval for the 99th percentile",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.009",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "the purpose of this assay",
+      "action": "is to eliminate",
+      "object": "false-positive samples arising as a result of non-specific binding",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.010",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The confirmatory assay format",
+      "action": "is frequently",
+      "object": "a competition assay",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.011",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "a competitor",
+      "action": "is added",
+      "object": "to the reaction mixture to inhibit ADA binding to the capture reagent",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.012",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is not recommended",
+      "subject": "The use of tighter false-positive rates such as 0.1%",
+      "action": "is not recommended",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.013",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "it is adequate to",
+      "subject": "a 1% false-positive rate",
+      "action": "be used",
+      "object": "for the calculation of the confirmatory cut-point",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.014",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "it is adequate to",
+      "subject": null,
+      "action": "use",
+      "object": "a 1% false-positive rate for the calculation of the confirmatory cut-point",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.015",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "the same concentration of unlabeled therapeutic protein product",
+      "action": "be added",
+      "object": "to the negative control samples when determining the confirmatory cut-point",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.016",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "is not recommended",
+      "subject": "The use of tighter false-positive rates such as 0.1%",
+      "action": "not be recommended",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_C.017",
+      "source_unit_ids": [
+        "fda_ada.su.6_c.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may be acceptable",
+      "subject": "The use of tighter false-positive rates such as 0.1%",
+      "action": "be acceptable",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_E.001",
+      "source_unit_ids": [
+        "fda_ada.su.6_e.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be used",
+      "subject": "A minimum of 30 samples tested on at least 3 different days by at least two analysts",
+      "action": "be used to determine",
+      "object": "the cut-point, using suitable statistical methods",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_E.002",
+      "source_unit_ids": [
+        "fda_ada.su.6_e.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should validate",
+      "subject": "Sponsors",
+      "action": "validate",
+      "object": "assay specificity for cell-based neutralization bioassays to demonstrate that NAb only inhibit the response to the therapeutic protein product and not the response to other stimuli",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_E.003",
+      "source_unit_ids": [
+        "fda_ada.su.6_e.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can be",
+      "subject": "The positive control for neutralization assays",
+      "action": "be either",
+      "object": "monoclonal or affinity purified polyclonal antibodies",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_E.004",
+      "source_unit_ids": [
+        "fda_ada.su.6_e.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Cell-based neutralization bioassays",
+      "action": "have reduced precision",
+      "object": "when compared to ligand binding assays because biologic responses can be inherently more variable",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_E.005",
+      "source_unit_ids": [
+        "fda_ada.su.6_e.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "biologic responses",
+      "action": "can be",
+      "object": "inherently more variable",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_E.006",
+      "source_unit_ids": [
+        "fda_ada.su.6_e.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may consider",
+      "subject": "the sponsor",
+      "action": "consider performing",
+      "object": "more replicates for assessment of precision and subject responses",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_E.007",
+      "source_unit_ids": [
+        "fda_ada.su.6_e.002"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can be",
+      "subject": "The positive control for neutralization assays",
+      "action": "can be",
+      "object": "either monoclonal or affinity purified polyclonal antibodies",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VI_E.008",
+      "source_unit_ids": [
+        "fda_ada.su.6_e.002"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "frequently",
+      "subject": "Cell-based neutralization bioassays",
+      "action": "have",
+      "object": "reduced precision when compared to ligand binding assays",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    }
+  ],
+  "quantitative_criteria": [
+    {
+      "criterion_id": "fda_ada.qc.V_D.001",
+      "source_unit_id": "fda_ada.su.5_d.003",
+      "knowledge_record_id": null,
+      "parameter": "selected concentration on the concentration-response curve",
+      "comparator": "within",
+      "value": null,
+      "value_fraction": null,
+      "unit": "EC50 to EC80",
+      "value_status": "needs_review",
+      "denominator_or_reference": "linear portion of the concentration-response curve",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.V_D.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "(for example, EC50 to EC80)",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.V_D.002",
+      "source_unit_id": "fda_ada.su.5_d.003",
+      "knowledge_record_id": null,
+      "parameter": "false-positive rate for calculating the neutralization cut-point",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.V_D.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "a 1% false-positive rate is generally recommended",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.V_D.003",
+      "source_unit_id": "fda_ada.su.5_d.003",
+      "knowledge_record_id": null,
+      "parameter": "selected concentration on concentration-response curve",
+      "comparator": "within",
+      "value": null,
+      "value_fraction": null,
+      "unit": null,
+      "value_status": "needs_review",
+      "denominator_or_reference": "EC50 to EC80",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "(for example, EC50 to EC80)",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.V_D.004",
+      "source_unit_id": "fda_ada.su.5_d.003",
+      "knowledge_record_id": null,
+      "parameter": "selected concentration-response level",
+      "comparator": "at_least",
+      "value": 50,
+      "value_fraction": null,
+      "unit": "EC",
+      "value_status": "known",
+      "denominator_or_reference": "EC50",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.V_D.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "EC50 to EC80",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.V_D.005",
+      "source_unit_id": "fda_ada.su.5_d.003",
+      "knowledge_record_id": null,
+      "parameter": "selected concentration-response level",
+      "comparator": "not_exceed",
+      "value": 80,
+      "value_fraction": null,
+      "unit": "EC",
+      "value_status": "known",
+      "denominator_or_reference": "EC80",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.V_D.001"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "EC50 to EC80",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_A.001",
+      "source_unit_id": "fda_ada.su.6_a.002",
+      "knowledge_record_id": null,
+      "parameter": "individual treatment-naïve subject samples",
+      "comparator": "at_least",
+      "value": 50,
+      "value_fraction": null,
+      "unit": "samples",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_A.002",
+        "fda_ada.qc.VI_A.003",
+        "fda_ada.qc.VI_A.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 50 individual treatment-naïve subject samples",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_A.002",
+      "source_unit_id": "fda_ada.su.6_a.002",
+      "knowledge_record_id": null,
+      "parameter": "different days",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_A.001",
+        "fda_ada.qc.VI_A.003",
+        "fda_ada.qc.VI_A.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "across at least 3 different days",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_A.003",
+      "source_unit_id": "fda_ada.su.6_a.002",
+      "knowledge_record_id": null,
+      "parameter": "analysts",
+      "comparator": "at_least",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "analysts",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_A.001",
+        "fda_ada.qc.VI_A.002",
+        "fda_ada.qc.VI_A.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "by at least two analysts",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_A.004",
+      "source_unit_id": "fda_ada.su.6_a.002",
+      "knowledge_record_id": null,
+      "parameter": "independent assay runs",
+      "comparator": "at_least",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "assay runs",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_A.001",
+        "fda_ada.qc.VI_A.002",
+        "fda_ada.qc.VI_A.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "generating at least six independent assay runs",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_B.001",
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "knowledge_record_id": null,
+      "parameter": "screening assay sensitivity",
+      "comparator": "at_least",
+      "value": 100,
+      "value_fraction": null,
+      "unit": "ng/mL",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "sensitivity of at least 100 ng/mL",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_B.002",
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "knowledge_record_id": null,
+      "parameter": "treatment-naïve samples",
+      "comparator": "within",
+      "value": 50,
+      "value_fraction": null,
+      "unit": "samples",
+      "value_status": "known",
+      "denominator_or_reference": "subject population",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "generally around 50",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_B.003",
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "knowledge_record_id": null,
+      "parameter": "analysts testing each sample",
+      "comparator": "at_least",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "analysts",
+      "value_status": "known",
+      "denominator_or_reference": "each sample",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_B.004",
+        "fda_ada.qc.VI_B.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least two analysts",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_B.004",
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "knowledge_record_id": null,
+      "parameter": "different days each sample is tested",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "different days",
+      "value_status": "known",
+      "denominator_or_reference": "each sample",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_B.003",
+        "fda_ada.qc.VI_B.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least three different days",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_B.005",
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "knowledge_record_id": null,
+      "parameter": "individual measurements",
+      "comparator": "at_least",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "individual measurements",
+      "value_status": "known",
+      "denominator_or_reference": "each sample",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_B.003",
+        "fda_ada.qc.VI_B.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "a total of at least six individual measurements",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_B.006",
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "knowledge_record_id": null,
+      "parameter": "one-sided lower confidence interval",
+      "comparator": "equals",
+      "value": 90,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "for the 95th percentile of the negative control population",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_B.007"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "a 90% one-sided lower confidence interval for the 95th percentile of the negative control population",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_B.007",
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "knowledge_record_id": null,
+      "parameter": "percentile of the negative control population",
+      "comparator": "equals",
+      "value": 95,
+      "value_fraction": null,
+      "unit": "percentile",
+      "value_status": "known",
+      "denominator_or_reference": "negative control population",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_B.006",
+        "fda_ada.qc.VI_B.010"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "the 95th percentile of the negative control population",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_B.008",
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "knowledge_record_id": null,
+      "parameter": "false-positive rate",
+      "comparator": "at_least",
+      "value": 5,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_B.009",
+        "fda_ada.qc.VI_B.010"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least a 5% false-positive rate",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_B.009",
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "knowledge_record_id": null,
+      "parameter": "standard deviations added to the mean for estimation of the 95th percentile",
+      "comparator": "equals",
+      "value": 1.645,
+      "value_fraction": null,
+      "unit": "standard deviations",
+      "value_status": "known",
+      "denominator_or_reference": "mean",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_B.008"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "the mean plus 1.645 standard deviations",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_B.010",
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "knowledge_record_id": null,
+      "parameter": "false-positive rate",
+      "comparator": "equals",
+      "value": 5,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_B.007",
+        "fda_ada.qc.VI_B.008"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "a 5% false-positive rate",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_C.001",
+      "source_unit_id": "fda_ada.su.6_c.003",
+      "knowledge_record_id": null,
+      "parameter": "one-sided lower confidence interval",
+      "comparator": "within",
+      "value": null,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "needs_review",
+      "denominator_or_reference": "for the 99th percentile",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_C.002",
+        "fda_ada.qc.VI_C.006",
+        "fda_ada.qc.VI_C.007"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "80% to 90% one-sided lower confidence interval",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_C.002",
+      "source_unit_id": "fda_ada.su.6_c.003",
+      "knowledge_record_id": null,
+      "parameter": "percentile",
+      "comparator": "equals",
+      "value": 99,
+      "value_fraction": null,
+      "unit": "percentile",
+      "value_status": "known",
+      "denominator_or_reference": "one-sided lower confidence interval",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_C.001",
+        "fda_ada.qc.VI_C.005",
+        "fda_ada.qc.VI_C.007"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "99th percentile",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_C.003",
+      "source_unit_id": "fda_ada.su.6_c.003",
+      "knowledge_record_id": null,
+      "parameter": "false-positive rate",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "for the calculation of the confirmatory cut-point",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_C.005",
+        "fda_ada.qc.VI_C.006"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "1% false-positive rate",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_C.004",
+      "source_unit_id": "fda_ada.su.6_c.003",
+      "knowledge_record_id": null,
+      "parameter": "false-positive rate",
+      "comparator": "equals",
+      "value": 0.1,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "such as 0.1%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_C.005",
+      "source_unit_id": "fda_ada.su.6_c.003",
+      "knowledge_record_id": null,
+      "parameter": "one-sided lower confidence interval level",
+      "comparator": "at_least",
+      "value": 80,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "for the 99th percentile",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_C.002",
+        "fda_ada.qc.VI_C.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "80% to 90% one-sided lower confidence interval for the 99th percentile",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_C.006",
+      "source_unit_id": "fda_ada.su.6_c.003",
+      "knowledge_record_id": null,
+      "parameter": "one-sided lower confidence interval level",
+      "comparator": "not_exceed",
+      "value": 90,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "for the 99th percentile",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_C.001",
+        "fda_ada.qc.VI_C.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "80% to 90% one-sided lower confidence interval for the 99th percentile",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_C.007",
+      "source_unit_id": "fda_ada.su.6_c.003",
+      "knowledge_record_id": null,
+      "parameter": "percentile",
+      "comparator": "equals",
+      "value": 99,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "one-sided lower confidence interval",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_C.001",
+        "fda_ada.qc.VI_C.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "for the 99th percentile",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_E.001",
+      "source_unit_id": "fda_ada.su.6_e.002",
+      "knowledge_record_id": null,
+      "parameter": "samples",
+      "comparator": "at_least",
+      "value": 30,
+      "value_fraction": null,
+      "unit": "samples",
+      "value_status": "known",
+      "denominator_or_reference": "tested to determine the cut-point",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_E.002",
+        "fda_ada.qc.VI_E.003",
+        "fda_ada.qc.VI_E.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "A minimum of 30 samples",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_E.002",
+      "source_unit_id": "fda_ada.su.6_e.002",
+      "knowledge_record_id": null,
+      "parameter": "different days",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": "samples tested to determine the cut-point",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_E.001",
+        "fda_ada.qc.VI_E.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 3 different days",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_E.003",
+      "source_unit_id": "fda_ada.su.6_e.002",
+      "knowledge_record_id": null,
+      "parameter": "analysts",
+      "comparator": "at_least",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "analysts",
+      "value_status": "known",
+      "denominator_or_reference": "samples tested to determine the cut-point",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_E.001",
+        "fda_ada.qc.VI_E.002",
+        "fda_ada.qc.VI_E.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least two analysts",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VI_E.004",
+      "source_unit_id": "fda_ada.su.6_e.002",
+      "knowledge_record_id": null,
+      "parameter": "different days",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "different days",
+      "value_status": "known",
+      "denominator_or_reference": "samples tested",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_E.001",
+        "fda_ada.qc.VI_E.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 3 different days",
+      "review_status": "reviewed"
+    }
+  ],
+  "conditions": [
+    {
+      "condition_id": "fda_ada.cond.IV_A_1.001",
+      "source_unit_id": "fda_ada.su.4_a_1.002",
+      "condition_text": "In most cases",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_A_1.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_A_1.002",
+      "source_unit_id": "fda_ada.su.4_a_1.003",
+      "condition_text": "In some cases",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_A_1.013"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_A_1.003",
+      "source_unit_id": "fda_ada.su.4_a_1.003",
+      "condition_text": "when the therapeutic protein product belongs to a family of proteins with high homology and it is important to know whether other family members are affected by ADA",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_A_1.015"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_A_1.004",
+      "source_unit_id": "fda_ada.su.4_a_1.003",
+      "condition_text": "once samples containing antibodies are confirmed as positive",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_A_1.016"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_A_1.005",
+      "source_unit_id": "fda_ada.su.4_a_1.002",
+      "condition_text": "in most cases",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_A_1.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_A_1.006",
+      "source_unit_id": "fda_ada.su.4_a_1.002",
+      "condition_text": "Samples testing positive in the screening assay",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_A_1.007"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_A_1.007",
+      "source_unit_id": "fda_ada.su.4_a_1.003",
+      "condition_text": "Samples identified as positive in the confirmatory assay",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_A_1.010"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_A_1.008",
+      "source_unit_id": "fda_ada.su.4_a_1.003",
+      "condition_text": "for multi-domain products",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_A_1.017"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_A_1.009",
+      "source_unit_id": "fda_ada.su.4_a_1.003",
+      "condition_text": "when the therapeutic protein product belongs to a family of proteins with high homology and it is important to know whether other family members are affected by ADA",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_A_1.016"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_B.001",
+      "source_unit_id": "fda_ada.su.4_b.002",
+      "condition_text": "when defining the cut-point",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_B.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_B.002",
+      "source_unit_id": "fda_ada.su.4_b.002",
+      "condition_text": "Because samples from different target populations and disease states may have components that can cause the background signal from the assay to vary",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_B.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_B.003",
+      "source_unit_id": "fda_ada.su.4_b.003",
+      "condition_text": "Where feasible",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_B.007"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_B.004",
+      "source_unit_id": "fda_ada.su.4_b.003",
+      "condition_text": "when establishing the cut-point",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_B.011"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_B.005",
+      "source_unit_id": "fda_ada.su.4_b.004",
+      "condition_text": "in some disease states",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_B.016"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_B.006",
+      "source_unit_id": "fda_ada.su.4_b.004",
+      "condition_text": "for example, through competition with drug",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_B.017"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_B.007",
+      "source_unit_id": "fda_ada.su.4_b.004",
+      "condition_text": "If subjects in the study have pre-existing antibodies",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_B.019"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_B.008",
+      "source_unit_id": "fda_ada.su.4_b.002",
+      "condition_text": "Because samples from different target populations and disease states may have components that can cause the background signal from the assay to vary",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_B.006",
+        "fda_ada.kr.IV_B.007"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_C_2.001",
+      "source_unit_id": "fda_ada.su.4_c_2.002",
+      "condition_text": "in the presence of the expected levels of interfering therapeutic protein product",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_C_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_C_2.002",
+      "source_unit_id": "fda_ada.su.4_c_2.002",
+      "condition_text": "in the absence or presence of different quantities of the therapeutic protein product",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_C_2.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_C_2.003",
+      "source_unit_id": "fda_ada.su.4_c_2.003",
+      "condition_text": "when developing the assay",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_C_2.007",
+        "fda_ada.kr.IV_C_2.008",
+        "fda_ada.kr.IV_C_2.009"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_C_2.004",
+      "source_unit_id": "fda_ada.su.4_c_2.003",
+      "condition_text": "when antibodies are acid labile or the drug target is soluble",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_C_2.011"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_C_2.005",
+      "source_unit_id": "fda_ada.su.4_c_2.003",
+      "condition_text": "when developing the assay",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_C_2.007"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_C_2.006",
+      "source_unit_id": "fda_ada.su.4_c_2.002",
+      "condition_text": "in the presence of the expected levels of interfering therapeutic protein product",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_C_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.V_D.001",
+      "source_unit_id": "fda_ada.su.5_d.002",
+      "condition_text": "if cell-based bioassays are not feasible",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "fda_ada.kr.V_D.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.V_D.002",
+      "source_unit_id": "fda_ada.su.5_d.002",
+      "condition_text": "when therapeutic protein products function solely by binding soluble ligands",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.V_D.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.V_D.003",
+      "source_unit_id": "fda_ada.su.5_d.003",
+      "condition_text": "Because neutralization assays are used after screening and confirmatory tiers",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.V_D.010"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.V_D.004",
+      "source_unit_id": "fda_ada.su.5_d.002",
+      "condition_text": "when a cell-based assay lacks adequate sensitivity",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.V_D.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.V_D.005",
+      "source_unit_id": "fda_ada.su.5_d.002",
+      "condition_text": "when a cell-based assay is subject to insurmountable matrix interference",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.V_D.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.V_D.006",
+      "source_unit_id": "fda_ada.su.5_d.003",
+      "condition_text": "Because neutralization assays are used after screening and confirmatory tiers",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.V_D.010"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.V_D.007",
+      "source_unit_id": "fda_ada.su.5_d.002",
+      "condition_text": "if cell-based bioassays are not feasible",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.V_D.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.V_D.008",
+      "source_unit_id": "fda_ada.su.5_d.003",
+      "condition_text": "For neutralization assays",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.V_D.006",
+        "fda_ada.kr.V_D.007",
+        "fda_ada.kr.V_D.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_A.001",
+      "source_unit_id": "fda_ada.su.6_a.002",
+      "condition_text": "For cut-point determination",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_A.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_A.002",
+      "source_unit_id": "fda_ada.su.6_a.002",
+      "condition_text": "For cut-point determination",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_A.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_A.003",
+      "source_unit_id": "fda_ada.su.6_a.002",
+      "condition_text": "For cut-point determination",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_A.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_B.001",
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "condition_text": "from the subject population",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_B.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_B.002",
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "condition_text": "For normally distributed data",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_B.010"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_B.003",
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "condition_text": "for high-risk products",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_B.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_B.004",
+      "source_unit_id": "fda_ada.su.6_b.003",
+      "condition_text": "When the mean varies between assays, plates, or analysts but the variance around the mean is constant",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_B.011",
+        "fda_ada.kr.VI_B.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_B.005",
+      "source_unit_id": "fda_ada.su.6_b.003",
+      "condition_text": "When the mean is constant",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_B.014",
+        "fda_ada.kr.VI_B.015",
+        "fda_ada.kr.VI_B.016",
+        "fda_ada.kr.VI_B.017"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_B.006",
+      "source_unit_id": "fda_ada.su.6_b.003",
+      "condition_text": "When both the mean and variance vary",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_B.018",
+        "fda_ada.kr.VI_B.019"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_B.007",
+      "source_unit_id": "fda_ada.su.6_b.002",
+      "condition_text": "One approach that allows for high assurance of a 5% false-positive rate",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_B.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_C.001",
+      "source_unit_id": "fda_ada.su.6_c.003",
+      "condition_text": "for larger studies",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_C.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_C.002",
+      "source_unit_id": "fda_ada.su.6_c.002",
+      "condition_text": "If these assays are based on competition for antigen binding by the antibodies in subject samples and the measurement is loss of response",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_C.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_C.003",
+      "source_unit_id": "fda_ada.su.6_c.002",
+      "condition_text": "when competing antigen is added",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_C.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_C.004",
+      "source_unit_id": "fda_ada.su.6_c.003",
+      "condition_text": "For this assay format",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_C.011"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_C.005",
+      "source_unit_id": "fda_ada.su.6_c.002",
+      "condition_text": "If these assays are based on competition for antigen binding by the antibodies in subject samples and the measurement is loss of response",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_C.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_C.006",
+      "source_unit_id": "fda_ada.su.6_c.003",
+      "condition_text": "for larger studies",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_C.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_C.007",
+      "source_unit_id": "fda_ada.su.6_c.003",
+      "condition_text": "For this assay format",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_C.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_C.008",
+      "source_unit_id": "fda_ada.su.6_c.003",
+      "condition_text": "when determining the confirmatory cut-point",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_C.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_E.001",
+      "source_unit_id": "fda_ada.su.6_e.002",
+      "condition_text": "When assay precision is poor",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_E.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_E.002",
+      "source_unit_id": "fda_ada.su.6_e.002",
+      "condition_text": "using suitable statistical methods",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_E.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_E.003",
+      "source_unit_id": "fda_ada.su.6_e.002",
+      "condition_text": "for cell-based neutralization bioassays",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_E.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VI_E.004",
+      "source_unit_id": "fda_ada.su.6_e.002",
+      "condition_text": "for cell-based neutralization bioassays",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.VI_E.003"
+      ],
+      "review_status": "reviewed"
+    }
+  ],
+  "cross_references": []
+}

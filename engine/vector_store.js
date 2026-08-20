@@ -43,7 +43,19 @@ function createKeywordStore() {
         })
         .filter((s) => s.score > 0)
         .sort((a, b) => b.score - a.score);
-      return scored.slice(0, k);
+
+      // Deduplicate by source_text to yield diverse, distinct paragraphs across sections
+      const seen = new Set();
+      const diverse = [];
+      for (const item of scored) {
+        const key = item.record.source_text;
+        if (!seen.has(key)) {
+          seen.add(key);
+          diverse.push(item);
+          if (diverse.length >= k) break;
+        }
+      }
+      return diverse;
     }
   };
 }
@@ -87,7 +99,17 @@ function createVectorStore(embed) {
 }
 
 function searchableTextOf(record) {
-  return [record.section_number, record.parameter, record.condition_type, record.source_text]
+  return [
+    record.section_number,
+    record.parameter,
+    record.subject,
+    record.action,
+    record.object,
+    record.condition_type,
+    record.condition_text,
+    record.normalized_ko,
+    record.source_text
+  ]
     .filter(Boolean)
     .join(" ");
 }

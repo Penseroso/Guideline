@@ -5,7 +5,7 @@ const { loadStore, buildIndex, citationFor, sourceTextFor } = require("../engine
 
 test("loadStore joins all pilot bundles into one index", () => {
   const { index, records } = loadStore();
-  assert.equal(index.documents.size, 3, "ICH M10 + ICH S6(R1) + EMA FIH");
+  assert.equal(index.documents.size, 4, "ICH M10 + ICH S6(R1) + EMA FIH + FDA ADA");
   assert.equal(
     records.length,
     index.knowledgeRecords.size + index.quantitativeCriteria.size + index.conditions.size
