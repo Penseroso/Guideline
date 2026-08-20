@@ -212,7 +212,9 @@
       "unit_order": 6,
       "unit_order_status": "known",
       "source_text": "In recent years, there has been much progress in the development of animal models that are thought to be similar to the human disease. These animal models include induced and spontaneous models of disease, gene knockout(s), and transgenic animals. These models may provide further insight, not only in determining the pharmacological action of the product, pharmacokinetics, and dosimetry, but may also be useful in the determination of safety (e.g., evaluation of undesirable promotion of disease progression). In certain cases, studies performed in animal models of disease may be used as an acceptable alternative to toxicity studies in normal animals (Note 1). The scientific justification for the use of these animal models of disease to support safety should be provided.",
-      "related_source_unit_ids": ["ich_s6_r1.su.part1.notes.note1.001"],
+      "related_source_unit_ids": [
+        "ich_s6_r1.su.part1.notes.note1.001"
+      ],
       "table_context": null,
       "trace": {
         "source_file_path": "source_pdfs/ICH S6.pdf",
@@ -388,7 +390,9 @@
       "unit_order": 5,
       "unit_order_status": "known",
       "source_text": "Assessment of tissue cross reactivity in animal tissues is of limited value for species selection (see Note 1). However, in specific cases (i.e., where the approaches described above cannot be used to demonstrate a pharmacologically relevant species) tissue cross-reactivity (TCR) studies can be used to guide selection of toxicology species by comparison of tissue binding profiles in human and those animal tissues where target binding is expected.",
-      "related_source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.001"],
+      "related_source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.001"
+      ],
       "table_context": null,
       "trace": {
         "source_file_path": "source_pdfs/ICH S6.pdf",
@@ -454,7 +458,9 @@
       "unit_order": 8,
       "unit_order_status": "known",
       "source_text": "Species selection for an antibody-drug/toxin conjugate (ADC) incorporating a novel toxin/toxicant should follow the same general principles as an unconjugated antibody (see above and see Note 2).",
-      "related_source_unit_ids": ["ich_s6_r1.su.part2.notes.note2.001"],
+      "related_source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note2.001"
+      ],
       "table_context": null,
       "trace": {
         "source_file_path": "source_pdfs/ICH S6.pdf",
@@ -736,7 +742,9 @@
   "knowledge_records": [
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.001",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.002"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.002"
+      ],
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should include",
@@ -748,7 +756,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.002",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.002"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.002"
+      ],
       "record_type": "definition",
       "modality": "none",
       "original_modal_text": null,
@@ -760,7 +770,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.003",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.002"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.002"
+      ],
       "record_type": "description",
       "modality": "other",
       "original_modal_text": "can be used",
@@ -772,7 +784,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.015",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.002"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.002"
+      ],
       "record_type": "description",
       "modality": "none",
       "original_modal_text": null,
@@ -784,7 +798,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.016",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.002"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.002"
+      ],
       "record_type": "description",
       "modality": "other",
       "original_modal_text": "can provide",
@@ -796,7 +812,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.004",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.003"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.003"
+      ],
       "record_type": "description",
       "modality": "none",
       "original_modal_text": null,
@@ -808,7 +826,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.017",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.003"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.003"
+      ],
       "record_type": "description",
       "modality": "other",
       "original_modal_text": "would optimise",
@@ -820,7 +840,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.005",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.003"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.003"
+      ],
       "record_type": "description",
       "modality": "other",
       "original_modal_text": "may still be of some relevance",
@@ -832,7 +854,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.006",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.004"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.004"
+      ],
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should normally include",
@@ -844,7 +868,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.007",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.004"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.004"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "may suffice",
@@ -856,7 +882,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.008",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.004"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.004"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "may be possible",
@@ -868,7 +896,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.009",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.005"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.005"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "may be misleading and are discouraged",
@@ -880,7 +910,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.010",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.005"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.005"
+      ],
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should be considered",
@@ -892,7 +924,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.011",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.005"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.005"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "may still be prudent",
@@ -904,7 +938,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.018",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.005"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.005"
+      ],
       "record_type": "description",
       "modality": "none",
       "original_modal_text": null,
@@ -916,7 +952,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.019",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.005"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.005"
+      ],
       "record_type": "description",
       "modality": "other",
       "original_modal_text": "may also be gained",
@@ -928,7 +966,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.020",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.005"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.005"
+      ],
       "record_type": "description",
       "modality": "other",
       "original_modal_text": "should be noted",
@@ -940,7 +980,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.021",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.006"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.006"
+      ],
       "record_type": "definition",
       "modality": "none",
       "original_modal_text": null,
@@ -952,7 +994,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.012",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.006"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.006"
+      ],
       "record_type": "description",
       "modality": "other",
       "original_modal_text": "may provide further insight",
@@ -964,7 +1008,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.013",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.006"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.006"
+      ],
       "record_type": "recommendation",
       "modality": "may",
       "original_modal_text": "may be used",
@@ -976,7 +1022,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.3_3.014",
-      "source_unit_ids": ["ich_s6_r1.su.part1.3_3.006"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_3.006"
+      ],
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should be provided",
@@ -988,7 +1036,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.notes.001",
-      "source_unit_ids": ["ich_s6_r1.su.part1.notes.note1.001"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.notes.note1.001"
+      ],
       "record_type": "description",
       "modality": "other",
       "original_modal_text": "may be useful",
@@ -1000,7 +1050,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.notes.002",
-      "source_unit_ids": ["ich_s6_r1.su.part1.notes.note1.001"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.notes.note1.001"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "is critical",
@@ -1012,7 +1064,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part1.notes.003",
-      "source_unit_ids": ["ich_s6_r1.su.part1.notes.note1.001"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.notes.note1.001"
+      ],
       "record_type": "description",
       "modality": "other",
       "original_modal_text": "should be noted",
@@ -1024,7 +1078,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.001",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.002"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.002"
+      ],
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should be taken into account",
@@ -1036,7 +1092,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.002",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.002"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.002"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "can be",
@@ -1048,7 +1106,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.015",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.002"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.002"
+      ],
       "record_type": "description",
       "modality": "none",
       "original_modal_text": null,
@@ -1060,7 +1120,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.003",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.003"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.003"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "are also recommended",
@@ -1072,7 +1134,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.004",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.003"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.003"
+      ],
       "record_type": "description",
       "modality": "other",
       "original_modal_text": "can be demonstrated",
@@ -1084,7 +1148,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.016",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.003"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.003"
+      ],
       "record_type": "description",
       "modality": "other",
       "original_modal_text": "can provide",
@@ -1096,7 +1162,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.005",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.004"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.004"
+      ],
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should provide confidence",
@@ -1108,7 +1176,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.006",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.004"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.004"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "can be sufficient",
@@ -1120,7 +1190,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.007",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.005"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.005"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "is of limited value",
@@ -1132,7 +1204,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.008",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.005"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.005"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "can be used",
@@ -1144,7 +1218,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.009",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.006"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.006"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "can be considered",
@@ -1156,7 +1232,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.010",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.007"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.007"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "can be considered",
@@ -1168,7 +1246,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.011",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.007"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.007"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "no additional toxicity studies, including reproductive toxicity studies, are appropriate",
@@ -1180,7 +1260,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.012",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.007"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.007"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "can be included",
@@ -1192,7 +1274,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.013",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.007"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.007"
+      ],
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should be adopted",
@@ -1204,7 +1288,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_1.014",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_1.008"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_1.008"
+      ],
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should follow",
@@ -1216,7 +1302,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_2.001",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_2.002"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_2.002"
+      ],
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should be used",
@@ -1228,7 +1316,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_2.002",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_2.002"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_2.002"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "are usually considered sufficient",
@@ -1240,7 +1330,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_2.003",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_2.002"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_2.002"
+      ],
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should be considered",
@@ -1252,7 +1344,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_2.004",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_2.002"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_2.002"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "are not appropriate",
@@ -1264,7 +1358,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_2.005",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_2.003"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_2.003"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "is justified",
@@ -1276,7 +1372,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.2_2.006",
-      "source_unit_ids": ["ich_s6_r1.su.part2.2_2.003"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_2.003"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "are not considered to add further value for risk assessment and are not recommended",
@@ -1288,7 +1386,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.001",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.001"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.001"
+      ],
       "record_type": "definition",
       "modality": "none",
       "original_modal_text": null,
@@ -1300,7 +1400,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.016",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.001"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.001"
+      ],
       "record_type": "description",
       "modality": "other",
       "original_modal_text": "can be employed",
@@ -1312,7 +1414,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.002",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.002"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.002"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "is a recommended component",
@@ -1324,7 +1428,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.003",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.003"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.003"
+      ],
       "record_type": "description",
       "modality": "other",
       "original_modal_text": "can provide",
@@ -1336,7 +1442,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.004",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.003"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.003"
+      ],
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should be evaluated and interpreted",
@@ -1348,7 +1456,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.017",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.003"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.003"
+      ],
       "record_type": "description",
       "modality": "none",
       "original_modal_text": null,
@@ -1360,7 +1470,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.018",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.003"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.003"
+      ],
       "record_type": "description",
       "modality": "none",
       "original_modal_text": null,
@@ -1372,7 +1484,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.005",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.004"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.004"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "is not recommended",
@@ -1384,7 +1498,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.014",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.004"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.004"
+      ],
       "record_type": "description",
       "modality": "other",
       "original_modal_text": "can provide",
@@ -1396,7 +1512,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.006",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.005"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.005"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "there is no need",
@@ -1408,7 +1526,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.007",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.006"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.006"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "does not provide additional value ... and is not recommended",
@@ -1420,7 +1540,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.008",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.007"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.007"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "are not recommended",
@@ -1432,7 +1554,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.019",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note1.007"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.007"
+      ],
       "record_type": "description",
       "modality": "none",
       "original_modal_text": null,
@@ -1444,7 +1568,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.009",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note2.001"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note2.001"
+      ],
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should be conducted",
@@ -1456,7 +1582,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.015",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note2.001"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note2.001"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "is preferred",
@@ -1468,7 +1596,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.010",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note2.001"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note2.001"
+      ],
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should be tested",
@@ -1480,7 +1610,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.011",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note2.001"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note2.001"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "calls for",
@@ -1492,7 +1624,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.012",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note2.001"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note2.001"
+      ],
       "record_type": "recommendation",
       "modality": "other",
       "original_modal_text": "is not warranted",
@@ -1504,7 +1638,9 @@
     },
     {
       "knowledge_record_id": "ich_s6_r1.kr.part2.notes.013",
-      "source_unit_ids": ["ich_s6_r1.su.part2.notes.note2.001"],
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note2.001"
+      ],
       "record_type": "recommendation",
       "modality": "should",
       "original_modal_text": "should be provided",
@@ -1527,7 +1663,9 @@
       "unit": "days",
       "value_status": "known",
       "denominator_or_reference": "limited toxicity evaluation in a single species",
-      "condition_ids": ["ich_s6_r1.cond.part1.3_3.008"],
+      "condition_ids": [
+        "ich_s6_r1.cond.part1.3_3.008"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": true,
@@ -1545,7 +1683,9 @@
       "unit": "month",
       "value_status": "known",
       "denominator_or_reference": "short-term general toxicology studies",
-      "condition_ids": ["ich_s6_r1.cond.part2.2_2.001"],
+      "condition_ids": [
+        "ich_s6_r1.cond.part2.2_2.001"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -1563,7 +1703,9 @@
       "unit": "species",
       "value_status": "known",
       "denominator_or_reference": "additional short-term study or arm in a short-term study",
-      "condition_ids": ["ich_s6_r1.cond.part2.notes.005"],
+      "condition_ids": [
+        "ich_s6_r1.cond.part2.notes.005"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -1577,7 +1719,9 @@
       "source_unit_id": "ich_s6_r1.su.part1.3_3.002",
       "condition_text": "in the case of monoclonal antibodies",
       "condition_type": "applicability",
-      "applies_to_ids": ["ich_s6_r1.kr.part1.3_3.002"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part1.3_3.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1585,7 +1729,9 @@
       "source_unit_id": "ich_s6_r1.su.part1.3_3.003",
       "condition_text": "for testing of monoclonal antibodies",
       "condition_type": "applicability",
-      "applies_to_ids": ["ich_s6_r1.kr.part1.3_3.004"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part1.3_3.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1593,7 +1739,9 @@
       "source_unit_id": "ich_s6_r1.su.part1.3_3.003",
       "condition_text": "if comparable unintentional tissue cross-reactivity to humans is demonstrated",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part1.3_3.005"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part1.3_3.005"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1601,7 +1749,9 @@
       "source_unit_id": "ich_s6_r1.su.part1.3_3.004",
       "condition_text": "in certain justified cases",
       "condition_type": "applicability",
-      "applies_to_ids": ["ich_s6_r1.kr.part1.3_3.007"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part1.3_3.007"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1609,7 +1759,9 @@
       "source_unit_id": "ich_s6_r1.su.part1.3_3.004",
       "condition_text": "when only one relevant species can be identified or where the biological activity of the biopharmaceutical is well understood",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part1.3_3.007"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part1.3_3.007"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1617,7 +1769,9 @@
       "source_unit_id": "ich_s6_r1.su.part1.3_3.004",
       "condition_text": "if the toxicity profile in the two species is comparable in the short term",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part1.3_3.008"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part1.3_3.008"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1625,7 +1779,9 @@
       "source_unit_id": "ich_s6_r1.su.part1.3_3.005",
       "condition_text": "When no relevant species exists",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part1.3_3.010"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part1.3_3.010"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1633,7 +1789,10 @@
       "source_unit_id": "ich_s6_r1.su.part1.3_3.005",
       "condition_text": "Where it is not possible to use transgenic animal models or homologous proteins",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part1.3_3.011", "ich_s6_r1.qc.part1.3_3.001"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part1.3_3.011",
+        "ich_s6_r1.qc.part1.3_3.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1641,7 +1800,9 @@
       "source_unit_id": "ich_s6_r1.su.part1.3_3.005",
       "condition_text": "when the interaction of the product and the humanised receptor has similar physiological consequences to those expected in humans",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part1.3_3.018"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part1.3_3.018"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1649,7 +1810,9 @@
       "source_unit_id": "ich_s6_r1.su.part1.3_3.006",
       "condition_text": "In certain cases",
       "condition_type": "applicability",
-      "applies_to_ids": ["ich_s6_r1.kr.part1.3_3.013"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part1.3_3.013"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1657,7 +1820,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.2_1.002",
       "condition_text": "when determining species relevancy",
       "condition_type": "applicability",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.2_1.001"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.2_1.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1665,7 +1830,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.2_1.004",
       "condition_text": "When the target is expressed at very low levels in typical healthy preclinical species (e.g., inflammatory cytokines or tumour antigens)",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.2_1.006"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.2_1.006"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1673,7 +1840,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.2_1.005",
       "condition_text": "where the approaches described above cannot be used to demonstrate a pharmacologically relevant species",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.2_1.008"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.2_1.008"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1681,7 +1850,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.2_1.006",
       "condition_text": "when no relevant species can be identified because the biopharmaceutical does not interact with the orthologous target in any species",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.2_1.009"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.2_1.009"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1689,7 +1860,10 @@
       "source_unit_id": "ich_s6_r1.su.part2.2_1.007",
       "condition_text": "For monoclonal antibodies and other related antibody products directed at foreign targets (i.e., bacterial, viral targets etc.)",
       "condition_type": "applicability",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.2_1.010", "ich_s6_r1.kr.part2.2_1.011"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.2_1.010",
+        "ich_s6_r1.kr.part2.2_1.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1697,7 +1871,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.2_1.007",
       "condition_text": "when animal models of disease are used to evaluate proof of principle",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.2_1.012"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.2_1.012"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1705,7 +1881,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.2_1.007",
       "condition_text": "Where this is not feasible",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.2_1.013"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.2_1.013"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1713,7 +1891,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.2_1.008",
       "condition_text": "for an antibody-drug/toxin conjugate (ADC) incorporating a novel toxin/toxicant",
       "condition_type": "applicability",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.2_1.014"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.2_1.014"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1721,7 +1901,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.2_2.002",
       "condition_text": "If there are two pharmacologically relevant species for the clinical candidate (one rodent and one non-rodent)",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.2_2.001"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.2_2.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1729,7 +1911,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.2_2.002",
       "condition_text": "If the toxicological findings from these studies are similar or the findings are understood from the mechanism of action of the product",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.2_2.002"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.2_2.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1737,7 +1921,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.2_2.002",
       "condition_text": "unless there is a scientific rationale for using non-rodents",
       "condition_type": "exception",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.2_2.003"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.2_2.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1745,7 +1931,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.2_2.003",
       "condition_text": "when the clinical candidate is pharmacologically active in only one species",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.2_2.005"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.2_2.005"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1753,15 +1941,19 @@
       "source_unit_id": "ich_s6_r1.su.part2.notes.note1.002",
       "condition_text": "in some cases the clinical candidate is not a good IHC reagent and a TCR study might not be technically feasible",
       "condition_type": "exception",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.notes.002"],
-      "review_status": "needs_review"
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.notes.002"
+      ],
+      "review_status": "reviewed"
     },
     {
       "condition_id": "ich_s6_r1.cond.part2.notes.002",
       "source_unit_id": "ich_s6_r1.su.part2.notes.note1.004",
       "condition_text": "When there is unexpected binding in human tissues",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.notes.014"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.notes.014"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1769,7 +1961,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.notes.note1.005",
       "condition_text": "Since a bi-specific antibody product will be evaluated in a TCR study using a panel of human tissues",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.notes.006"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.notes.006"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1777,7 +1971,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.notes.note1.006",
       "condition_text": "when TCR studies have been conducted with the clinical candidate in a human tissue panel",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.notes.007"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.notes.007"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1785,7 +1981,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.notes.note2.001",
       "condition_text": "If two species have been used to assess the safety of the ADC",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.notes.009"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.notes.009"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1793,7 +1991,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.notes.note2.001",
       "condition_text": "unless the toxin is not active in the rodent",
       "condition_type": "exception",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.notes.015"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.notes.015"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1801,7 +2001,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.notes.note2.001",
       "condition_text": "If only one pharmacologically relevant species is available",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.notes.010"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.notes.010"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -1809,7 +2011,9 @@
       "source_unit_id": "ich_s6_r1.su.part2.notes.note2.001",
       "condition_text": "For toxins or toxicants which are not novel and for which there is a sufficient body of scientific information available",
       "condition_type": "precondition",
-      "applies_to_ids": ["ich_s6_r1.kr.part2.notes.012"],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2.notes.012"
+      ],
       "review_status": "reviewed"
     }
   ],
