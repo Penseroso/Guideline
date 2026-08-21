@@ -304,7 +304,9 @@ async function answerOptionB(question, records, { client, store }) {
 
   const system =
     "Answer the question using ONLY the numbered excerpts below. Quote or closely paraphrase — " +
-    `never add information not present in them. If the excerpts don't answer the question, reply with exactly "${NOT_FOUND}" and nothing else.`;
+    "never add information not present in them. Strictly preserve modal strength: do NOT upgrade discretionary or optional phrasing " +
+    "('may', 'can', 'optional') into recommendations ('should') or requirements ('must', 'have to'), and do not upgrade recommendations ('should') " +
+    `into requirements ('must'). If the excerpts don't answer the question, reply with exactly "${NOT_FOUND}" and nothing else.`;
 
   const generation = await client.complete({
     system,
