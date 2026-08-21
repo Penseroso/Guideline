@@ -1939,7 +1939,7 @@
       "modality": "must",
       "original_modal_text": "for a total of at least",
       "subject": "Each sample",
-      "action": "have",
+      "action": "should have a total of at least",
       "object": "six individual measurements",
       "normalized_ko": null,
       "review_status": "reviewed"
@@ -2272,10 +2272,10 @@
         "fda_ada.su.6_c.002"
       ],
       "record_type": "recommendation",
-      "modality": "other",
-      "original_modal_text": "FDA recommends",
-      "subject": "FDA",
-      "action": "establish",
+      "modality": "recommendation",
+      "original_modal_text": "FDA recommends establishing",
+      "subject": "The sponsor",
+      "action": "should establish",
       "object": "a cut-point based on the assessment of the binding changes observed in negative control samples that are known to lack the antibodies when competing antigen is added",
       "normalized_ko": null,
       "review_status": "reviewed"
@@ -2286,11 +2286,11 @@
         "fda_ada.su.6_c.002"
       ],
       "record_type": "recommendation",
-      "modality": "other",
-      "original_modal_text": "FDA also recommends",
-      "subject": "FDA",
-      "action": "demonstrate",
-      "object": "the sensitivity of the confirmatory assay using a low concentration of the positive control antibody",
+      "modality": "recommendation",
+      "original_modal_text": "FDA also recommends that the sensitivity of the confirmatory assay be demonstrated",
+      "subject": "The sensitivity of the confirmatory assay",
+      "action": "should be demonstrated",
+      "object": "using a low concentration of the positive control antibody",
       "normalized_ko": null,
       "review_status": "reviewed"
     },
@@ -2454,10 +2454,10 @@
         "fda_ada.su.6_e.002"
       ],
       "record_type": "recommendation",
-      "modality": "should",
+      "modality": "recommendation",
       "original_modal_text": "should validate",
       "subject": "Sponsors",
-      "action": "validate",
+      "action": "should validate",
       "object": "assay specificity for cell-based neutralization bioassays to demonstrate that NAb only inhibit the response to the therapeutic protein product and not the response to other stimuli",
       "normalized_ko": null,
       "review_status": "reviewed"
@@ -2471,8 +2471,8 @@
       "modality": "may",
       "original_modal_text": "can be",
       "subject": "The positive control for neutralization assays",
-      "action": "be either",
-      "object": "monoclonal or affinity purified polyclonal antibodies",
+      "action": "can be",
+      "object": "either monoclonal or affinity purified polyclonal antibodies",
       "normalized_ko": null,
       "review_status": "reviewed"
     },
@@ -2551,621 +2551,414 @@
     {
       "criterion_id": "fda_ada.qc.V_D.001",
       "source_unit_id": "fda_ada.su.5_d.003",
-      "knowledge_record_id": null,
+      "section_number": "V.D",
       "parameter": "selected concentration on the concentration-response curve",
       "comparator": "within",
-      "value": null,
-      "value_fraction": null,
+      "numeric_value_standard": null,
+      "numeric_value_raw": "EC50 to EC80",
       "unit": "EC50 to EC80",
-      "value_status": "needs_review",
-      "denominator_or_reference": "linear portion of the concentration-response curve",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.V_D.005"
-      ],
+      "fraction_numerator": null,
+      "fraction_denominator": null,
+      "value_status": "known",
       "is_default_with_exception": false,
       "is_illustrative_example": true,
-      "source_text": "(for example, EC50 to EC80)",
+      "condition_ids": [],
+      "joint_with_ids": [],
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.V_D.002",
       "source_unit_id": "fda_ada.su.5_d.003",
-      "knowledge_record_id": null,
+      "section_number": "V.D",
       "parameter": "false-positive rate for calculating the neutralization cut-point",
       "comparator": "equals",
-      "value": 1,
-      "value_fraction": null,
+      "numeric_value_standard": 1,
+      "numeric_value_raw": "1%",
       "unit": "%",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": null,
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.V_D.004"
-      ],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
-      "source_text": "a 1% false-positive rate is generally recommended",
-      "review_status": "reviewed"
-    },
-    {
-      "criterion_id": "fda_ada.qc.V_D.003",
-      "source_unit_id": "fda_ada.su.5_d.003",
-      "knowledge_record_id": null,
-      "parameter": "selected concentration on concentration-response curve",
-      "comparator": "within",
-      "value": null,
-      "value_fraction": null,
-      "unit": null,
-      "value_status": "needs_review",
-      "denominator_or_reference": "EC50 to EC80",
       "condition_ids": [],
       "joint_with_ids": [],
-      "is_default_with_exception": false,
-      "is_illustrative_example": true,
-      "source_text": "(for example, EC50 to EC80)",
-      "review_status": "reviewed"
-    },
-    {
-      "criterion_id": "fda_ada.qc.V_D.004",
-      "source_unit_id": "fda_ada.su.5_d.003",
-      "knowledge_record_id": null,
-      "parameter": "selected concentration-response level",
-      "comparator": "at_least",
-      "value": 50,
-      "value_fraction": null,
-      "unit": "EC",
-      "value_status": "known",
-      "denominator_or_reference": "EC50",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.V_D.002"
-      ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": true,
-      "source_text": "EC50 to EC80",
-      "review_status": "reviewed"
-    },
-    {
-      "criterion_id": "fda_ada.qc.V_D.005",
-      "source_unit_id": "fda_ada.su.5_d.003",
-      "knowledge_record_id": null,
-      "parameter": "selected concentration-response level",
-      "comparator": "not_exceed",
-      "value": 80,
-      "value_fraction": null,
-      "unit": "EC",
-      "value_status": "known",
-      "denominator_or_reference": "EC80",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.V_D.001"
-      ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": true,
-      "source_text": "EC50 to EC80",
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_A.001",
       "source_unit_id": "fda_ada.su.6_a.002",
-      "knowledge_record_id": null,
+      "section_number": "VI.A",
       "parameter": "individual treatment-naïve subject samples",
       "comparator": "at_least",
-      "value": 50,
-      "value_fraction": null,
+      "numeric_value_standard": 50,
+      "numeric_value_raw": "50",
       "unit": "samples",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": null,
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "condition_ids": [],
       "joint_with_ids": [
         "fda_ada.qc.VI_A.002",
         "fda_ada.qc.VI_A.003",
         "fda_ada.qc.VI_A.004"
       ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "at least 50 individual treatment-naïve subject samples",
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_A.002",
       "source_unit_id": "fda_ada.su.6_a.002",
-      "knowledge_record_id": null,
+      "section_number": "VI.A",
       "parameter": "different days",
       "comparator": "at_least",
-      "value": 3,
-      "value_fraction": null,
+      "numeric_value_standard": 3,
+      "numeric_value_raw": "3",
       "unit": "days",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": null,
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "condition_ids": [],
       "joint_with_ids": [
         "fda_ada.qc.VI_A.001",
         "fda_ada.qc.VI_A.003",
         "fda_ada.qc.VI_A.004"
       ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "across at least 3 different days",
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_A.003",
       "source_unit_id": "fda_ada.su.6_a.002",
-      "knowledge_record_id": null,
+      "section_number": "VI.A",
       "parameter": "analysts",
       "comparator": "at_least",
-      "value": 2,
-      "value_fraction": null,
+      "numeric_value_standard": 2,
+      "numeric_value_raw": "2",
       "unit": "analysts",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": null,
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "condition_ids": [],
       "joint_with_ids": [
         "fda_ada.qc.VI_A.001",
         "fda_ada.qc.VI_A.002",
         "fda_ada.qc.VI_A.004"
       ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "by at least two analysts",
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_A.004",
       "source_unit_id": "fda_ada.su.6_a.002",
-      "knowledge_record_id": null,
+      "section_number": "VI.A",
       "parameter": "independent assay runs",
       "comparator": "at_least",
-      "value": 6,
-      "value_fraction": null,
+      "numeric_value_standard": 6,
+      "numeric_value_raw": "6",
       "unit": "assay runs",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": null,
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "condition_ids": [],
       "joint_with_ids": [
         "fda_ada.qc.VI_A.001",
         "fda_ada.qc.VI_A.002",
         "fda_ada.qc.VI_A.003"
       ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "generating at least six independent assay runs",
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_B.001",
       "source_unit_id": "fda_ada.su.6_b.002",
-      "knowledge_record_id": null,
+      "section_number": "VI.B",
       "parameter": "screening assay sensitivity",
       "comparator": "at_least",
-      "value": 100,
-      "value_fraction": null,
+      "numeric_value_standard": 100,
+      "numeric_value_raw": "100 ng/mL",
       "unit": "ng/mL",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": null,
-      "condition_ids": [],
-      "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
-      "source_text": "sensitivity of at least 100 ng/mL",
+      "condition_ids": [],
+      "joint_with_ids": [],
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_B.002",
       "source_unit_id": "fda_ada.su.6_b.002",
-      "knowledge_record_id": null,
-      "parameter": "treatment-naïve samples",
-      "comparator": "within",
-      "value": 50,
-      "value_fraction": null,
+      "section_number": "VI.B",
+      "parameter": "treatment-naïve samples from the subject population",
+      "comparator": "equals",
+      "numeric_value_standard": 50,
+      "numeric_value_raw": "around 50",
       "unit": "samples",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": "subject population",
+      "is_default_with_exception": true,
+      "is_illustrative_example": true,
       "condition_ids": [],
       "joint_with_ids": [],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "generally around 50",
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_B.003",
       "source_unit_id": "fda_ada.su.6_b.002",
-      "knowledge_record_id": null,
+      "section_number": "VI.B",
       "parameter": "analysts testing each sample",
       "comparator": "at_least",
-      "value": 2,
-      "value_fraction": null,
+      "numeric_value_standard": 2,
+      "numeric_value_raw": "2",
       "unit": "analysts",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": "each sample",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.VI_B.004",
-        "fda_ada.qc.VI_B.005"
-      ],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
-      "source_text": "at least two analysts",
+      "condition_ids": [],
+      "joint_with_ids": [],
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_B.004",
       "source_unit_id": "fda_ada.su.6_b.002",
-      "knowledge_record_id": null,
+      "section_number": "VI.B",
       "parameter": "different days each sample is tested",
       "comparator": "at_least",
-      "value": 3,
-      "value_fraction": null,
-      "unit": "different days",
+      "numeric_value_standard": 3,
+      "numeric_value_raw": "3",
+      "unit": "days",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": "each sample",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.VI_B.003",
-        "fda_ada.qc.VI_B.005"
-      ],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
-      "source_text": "at least three different days",
+      "condition_ids": [],
+      "joint_with_ids": [],
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_B.005",
       "source_unit_id": "fda_ada.su.6_b.002",
-      "knowledge_record_id": null,
-      "parameter": "individual measurements",
+      "section_number": "VI.B",
+      "parameter": "individual measurements per sample",
       "comparator": "at_least",
-      "value": 6,
-      "value_fraction": null,
+      "numeric_value_standard": 6,
+      "numeric_value_raw": "6",
       "unit": "individual measurements",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": "each sample",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.VI_B.003",
-        "fda_ada.qc.VI_B.004"
-      ],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
-      "source_text": "a total of at least six individual measurements",
+      "condition_ids": [],
+      "joint_with_ids": [],
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_B.006",
       "source_unit_id": "fda_ada.su.6_b.002",
-      "knowledge_record_id": null,
-      "parameter": "one-sided lower confidence interval",
+      "section_number": "VI.B",
+      "parameter": "one-sided lower confidence interval for 95th percentile",
       "comparator": "equals",
-      "value": 90,
-      "value_fraction": null,
+      "numeric_value_standard": 90,
+      "numeric_value_raw": "90%",
       "unit": "%",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": "for the 95th percentile of the negative control population",
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "condition_ids": [],
       "joint_with_ids": [
         "fda_ada.qc.VI_B.007"
       ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "a 90% one-sided lower confidence interval for the 95th percentile of the negative control population",
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_B.007",
       "source_unit_id": "fda_ada.su.6_b.002",
-      "knowledge_record_id": null,
-      "parameter": "percentile of the negative control population",
-      "comparator": "equals",
-      "value": 95,
-      "value_fraction": null,
-      "unit": "percentile",
+      "section_number": "VI.B",
+      "parameter": "false-positive rate for screening cut-point",
+      "comparator": "at_least",
+      "numeric_value_standard": 5,
+      "numeric_value_raw": "5%",
+      "unit": "%",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": "negative control population",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.VI_B.006",
-        "fda_ada.qc.VI_B.010"
-      ],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
-      "source_text": "the 95th percentile of the negative control population",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_B.006"
+      ],
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_B.008",
       "source_unit_id": "fda_ada.su.6_b.002",
-      "knowledge_record_id": null,
-      "parameter": "false-positive rate",
-      "comparator": "at_least",
-      "value": 5,
-      "value_fraction": null,
-      "unit": "%",
-      "value_status": "known",
-      "denominator_or_reference": null,
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.VI_B.009",
-        "fda_ada.qc.VI_B.010"
-      ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "at least a 5% false-positive rate",
-      "review_status": "reviewed"
-    },
-    {
-      "criterion_id": "fda_ada.qc.VI_B.009",
-      "source_unit_id": "fda_ada.su.6_b.002",
-      "knowledge_record_id": null,
-      "parameter": "standard deviations added to the mean for estimation of the 95th percentile",
+      "section_number": "VI.B",
+      "parameter": "standard deviations added to the mean for normal distribution",
       "comparator": "equals",
-      "value": 1.645,
-      "value_fraction": null,
+      "numeric_value_standard": 1.645,
+      "numeric_value_raw": "1.645",
       "unit": "standard deviations",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": "mean",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.VI_B.008"
-      ],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
-      "source_text": "the mean plus 1.645 standard deviations",
-      "review_status": "reviewed"
-    },
-    {
-      "criterion_id": "fda_ada.qc.VI_B.010",
-      "source_unit_id": "fda_ada.su.6_b.002",
-      "knowledge_record_id": null,
-      "parameter": "false-positive rate",
-      "comparator": "equals",
-      "value": 5,
-      "value_fraction": null,
-      "unit": "%",
-      "value_status": "known",
-      "denominator_or_reference": null,
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.VI_B.007",
-        "fda_ada.qc.VI_B.008"
+      "condition_ids": [
+        "fda_ada.cond.VI_B.002"
       ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "a 5% false-positive rate",
+      "joint_with_ids": [],
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_C.001",
       "source_unit_id": "fda_ada.su.6_c.003",
-      "knowledge_record_id": null,
-      "parameter": "one-sided lower confidence interval",
-      "comparator": "within",
-      "value": null,
-      "value_fraction": null,
+      "section_number": "VI.C",
+      "parameter": "one-sided lower confidence interval for the 99th percentile",
+      "comparator": "at_least",
+      "numeric_value_standard": 80,
+      "numeric_value_raw": "80% to 90%",
       "unit": "%",
-      "value_status": "needs_review",
-      "denominator_or_reference": "for the 99th percentile",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.VI_C.002",
-        "fda_ada.qc.VI_C.006",
-        "fda_ada.qc.VI_C.007"
-      ],
+      "fraction_numerator": null,
+      "fraction_denominator": null,
+      "value_status": "known",
       "is_default_with_exception": false,
       "is_illustrative_example": false,
-      "source_text": "80% to 90% one-sided lower confidence interval",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_C.002"
+      ],
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_C.002",
       "source_unit_id": "fda_ada.su.6_c.003",
-      "knowledge_record_id": null,
-      "parameter": "percentile",
-      "comparator": "equals",
-      "value": 99,
-      "value_fraction": null,
-      "unit": "percentile",
+      "section_number": "VI.C",
+      "parameter": "one-sided lower confidence interval upper range limit for the 99th percentile",
+      "comparator": "not_exceed",
+      "numeric_value_standard": 90,
+      "numeric_value_raw": "80% to 90%",
+      "unit": "%",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": "one-sided lower confidence interval",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.VI_C.001",
-        "fda_ada.qc.VI_C.005",
-        "fda_ada.qc.VI_C.007"
-      ],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
-      "source_text": "99th percentile",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VI_C.001"
+      ],
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_C.003",
       "source_unit_id": "fda_ada.su.6_c.003",
-      "knowledge_record_id": null,
-      "parameter": "false-positive rate",
+      "section_number": "VI.C",
+      "parameter": "false-positive rate for confirmatory cut-point calculation",
       "comparator": "equals",
-      "value": 1,
-      "value_fraction": null,
+      "numeric_value_standard": 1,
+      "numeric_value_raw": "1%",
       "unit": "%",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": "for the calculation of the confirmatory cut-point",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.VI_C.005",
-        "fda_ada.qc.VI_C.006"
-      ],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
-      "source_text": "1% false-positive rate",
+      "condition_ids": [],
+      "joint_with_ids": [],
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_C.004",
       "source_unit_id": "fda_ada.su.6_c.003",
-      "knowledge_record_id": null,
-      "parameter": "false-positive rate",
+      "section_number": "VI.C",
+      "parameter": "tighter false-positive rate for larger studies",
       "comparator": "equals",
-      "value": 0.1,
-      "value_fraction": null,
+      "numeric_value_standard": 0.1,
+      "numeric_value_raw": "0.1%",
       "unit": "%",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": null,
+      "is_default_with_exception": true,
+      "is_illustrative_example": true,
       "condition_ids": [],
       "joint_with_ids": [],
-      "is_default_with_exception": false,
-      "is_illustrative_example": true,
-      "source_text": "such as 0.1%",
-      "review_status": "reviewed"
-    },
-    {
-      "criterion_id": "fda_ada.qc.VI_C.005",
-      "source_unit_id": "fda_ada.su.6_c.003",
-      "knowledge_record_id": null,
-      "parameter": "one-sided lower confidence interval level",
-      "comparator": "at_least",
-      "value": 80,
-      "value_fraction": null,
-      "unit": "%",
-      "value_status": "known",
-      "denominator_or_reference": "for the 99th percentile",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.VI_C.002",
-        "fda_ada.qc.VI_C.003"
-      ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "80% to 90% one-sided lower confidence interval for the 99th percentile",
-      "review_status": "reviewed"
-    },
-    {
-      "criterion_id": "fda_ada.qc.VI_C.006",
-      "source_unit_id": "fda_ada.su.6_c.003",
-      "knowledge_record_id": null,
-      "parameter": "one-sided lower confidence interval level",
-      "comparator": "not_exceed",
-      "value": 90,
-      "value_fraction": null,
-      "unit": "%",
-      "value_status": "known",
-      "denominator_or_reference": "for the 99th percentile",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.VI_C.001",
-        "fda_ada.qc.VI_C.003"
-      ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "80% to 90% one-sided lower confidence interval for the 99th percentile",
-      "review_status": "reviewed"
-    },
-    {
-      "criterion_id": "fda_ada.qc.VI_C.007",
-      "source_unit_id": "fda_ada.su.6_c.003",
-      "knowledge_record_id": null,
-      "parameter": "percentile",
-      "comparator": "equals",
-      "value": 99,
-      "value_fraction": null,
-      "unit": "%",
-      "value_status": "known",
-      "denominator_or_reference": "one-sided lower confidence interval",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.VI_C.001",
-        "fda_ada.qc.VI_C.002"
-      ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "for the 99th percentile",
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_E.001",
       "source_unit_id": "fda_ada.su.6_e.002",
-      "knowledge_record_id": null,
-      "parameter": "samples",
+      "section_number": "VI.E",
+      "parameter": "samples for neutralization cut-point determination",
       "comparator": "at_least",
-      "value": 30,
-      "value_fraction": null,
+      "numeric_value_standard": 30,
+      "numeric_value_raw": "30",
       "unit": "samples",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": "tested to determine the cut-point",
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "condition_ids": [],
       "joint_with_ids": [
         "fda_ada.qc.VI_E.002",
-        "fda_ada.qc.VI_E.003",
-        "fda_ada.qc.VI_E.004"
+        "fda_ada.qc.VI_E.003"
       ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "A minimum of 30 samples",
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_E.002",
       "source_unit_id": "fda_ada.su.6_e.002",
-      "knowledge_record_id": null,
-      "parameter": "different days",
+      "section_number": "VI.E",
+      "parameter": "different days for neutralization cut-point testing",
       "comparator": "at_least",
-      "value": 3,
-      "value_fraction": null,
+      "numeric_value_standard": 3,
+      "numeric_value_raw": "3",
       "unit": "days",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": "samples tested to determine the cut-point",
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "condition_ids": [],
       "joint_with_ids": [
         "fda_ada.qc.VI_E.001",
         "fda_ada.qc.VI_E.003"
       ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "at least 3 different days",
       "review_status": "reviewed"
     },
     {
       "criterion_id": "fda_ada.qc.VI_E.003",
       "source_unit_id": "fda_ada.su.6_e.002",
-      "knowledge_record_id": null,
-      "parameter": "analysts",
+      "section_number": "VI.E",
+      "parameter": "analysts for neutralization cut-point testing",
       "comparator": "at_least",
-      "value": 2,
-      "value_fraction": null,
+      "numeric_value_standard": 2,
+      "numeric_value_raw": "2",
       "unit": "analysts",
+      "fraction_numerator": null,
+      "fraction_denominator": null,
       "value_status": "known",
-      "denominator_or_reference": "samples tested to determine the cut-point",
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
       "condition_ids": [],
       "joint_with_ids": [
         "fda_ada.qc.VI_E.001",
-        "fda_ada.qc.VI_E.002",
-        "fda_ada.qc.VI_E.004"
+        "fda_ada.qc.VI_E.002"
       ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "at least two analysts",
-      "review_status": "reviewed"
-    },
-    {
-      "criterion_id": "fda_ada.qc.VI_E.004",
-      "source_unit_id": "fda_ada.su.6_e.002",
-      "knowledge_record_id": null,
-      "parameter": "different days",
-      "comparator": "at_least",
-      "value": 3,
-      "value_fraction": null,
-      "unit": "different days",
-      "value_status": "known",
-      "denominator_or_reference": "samples tested",
-      "condition_ids": [],
-      "joint_with_ids": [
-        "fda_ada.qc.VI_E.001",
-        "fda_ada.qc.VI_E.003"
-      ],
-      "is_default_with_exception": false,
-      "is_illustrative_example": false,
-      "source_text": "at least 3 different days",
       "review_status": "reviewed"
     }
   ],
@@ -3176,7 +2969,10 @@
       "condition_text": "In most cases",
       "condition_type": "applicability",
       "applies_to_ids": [
-        "fda_ada.kr.IV_A_1.006"
+        "fda_ada.kr.IV_A_1.003",
+        "fda_ada.kr.IV_A_1.009",
+        "fda_ada.kr.VI_E.003",
+        "fda_ada.kr.VI_E.007"
       ],
       "review_status": "reviewed"
     },
@@ -3196,7 +2992,7 @@
       "condition_text": "when the therapeutic protein product belongs to a family of proteins with high homology and it is important to know whether other family members are affected by ADA",
       "condition_type": "applicability",
       "applies_to_ids": [
-        "fda_ada.kr.IV_A_1.015"
+        "fda_ada.kr.IV_A_1.013"
       ],
       "review_status": "reviewed"
     },
@@ -3206,7 +3002,12 @@
       "condition_text": "once samples containing antibodies are confirmed as positive",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "fda_ada.kr.IV_A_1.016"
+        "fda_ada.kr.IV_A_1.014",
+        "fda_ada.kr.V_D.009",
+        "fda_ada.kr.VI_E.003",
+        "fda_ada.kr.VI_E.004",
+        "fda_ada.kr.VI_E.007",
+        "fda_ada.kr.VI_E.008"
       ],
       "review_status": "reviewed"
     },
@@ -3286,7 +3087,9 @@
       "condition_text": "Where feasible",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "fda_ada.kr.IV_B.007"
+        "fda_ada.kr.IV_B.009",
+        "fda_ada.kr.VI_A.005",
+        "fda_ada.kr.VI_A.009"
       ],
       "review_status": "reviewed"
     },
@@ -3326,7 +3129,11 @@
       "condition_text": "If subjects in the study have pre-existing antibodies",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "fda_ada.kr.IV_B.019"
+        "fda_ada.kr.IV_B.018",
+        "fda_ada.kr.IV_B.020",
+        "fda_ada.kr.IV_B.023",
+        "fda_ada.kr.IV_B.024",
+        "fda_ada.kr.IV_B.028"
       ],
       "review_status": "reviewed"
     },
@@ -3347,7 +3154,7 @@
       "condition_text": "in the presence of the expected levels of interfering therapeutic protein product",
       "condition_type": "scope",
       "applies_to_ids": [
-        "fda_ada.kr.IV_C_2.002"
+        "fda_ada.kr.IV_C_2.003"
       ],
       "review_status": "reviewed"
     },
@@ -3379,7 +3186,10 @@
       "condition_text": "when antibodies are acid labile or the drug target is soluble",
       "condition_type": "exception",
       "applies_to_ids": [
-        "fda_ada.kr.IV_C_2.011"
+        "fda_ada.kr.IV_C_2.007",
+        "fda_ada.kr.IV_C_2.008",
+        "fda_ada.kr.IV_C_2.012",
+        "fda_ada.kr.IV_C_2.015"
       ],
       "review_status": "reviewed"
     },
@@ -3531,7 +3341,7 @@
       "condition_text": "For normally distributed data",
       "condition_type": "applicability",
       "applies_to_ids": [
-        "fda_ada.kr.VI_B.010"
+        "fda_ada.kr.VI_B.009"
       ],
       "review_status": "reviewed"
     },
@@ -3551,8 +3361,7 @@
       "condition_text": "When the mean varies between assays, plates, or analysts but the variance around the mean is constant",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "fda_ada.kr.VI_B.011",
-        "fda_ada.kr.VI_B.012"
+        "fda_ada.kr.VI_B.019"
       ],
       "review_status": "reviewed"
     },
@@ -3575,8 +3384,7 @@
       "condition_text": "When both the mean and variance vary",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "fda_ada.kr.VI_B.018",
-        "fda_ada.kr.VI_B.019"
+        "fda_ada.kr.VI_B.024"
       ],
       "review_status": "reviewed"
     },
@@ -3596,7 +3404,9 @@
       "condition_text": "for larger studies",
       "condition_type": "applicability",
       "applies_to_ids": [
-        "fda_ada.kr.VI_C.008"
+        "fda_ada.kr.VI_C.012",
+        "fda_ada.kr.VI_C.016",
+        "fda_ada.kr.VI_C.017"
       ],
       "review_status": "reviewed"
     },
@@ -3616,7 +3426,13 @@
       "condition_text": "when competing antigen is added",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "fda_ada.kr.VI_C.003"
+        "fda_ada.kr.IV_C_2.002",
+        "fda_ada.kr.IV_C_2.006",
+        "fda_ada.kr.VI_B.010",
+        "fda_ada.kr.VI_B.017",
+        "fda_ada.kr.VI_C.002",
+        "fda_ada.kr.VI_C.006",
+        "fda_ada.kr.VI_C.015"
       ],
       "review_status": "reviewed"
     },
@@ -3676,7 +3492,7 @@
       "condition_text": "When assay precision is poor",
       "condition_type": "precondition",
       "applies_to_ids": [
-        "fda_ada.kr.VI_E.005"
+        "fda_ada.kr.VI_E.006"
       ],
       "review_status": "reviewed"
     },

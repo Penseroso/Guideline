@@ -171,8 +171,11 @@ async function verifyQuantitativeCriterion(qc, { sourceUnits, allCriteria, knowl
     type: "quantitative_criterion",
     parameter: qc.parameter,
     comparator: qc.comparator,
-    value: qc.value,
-    value_fraction: qc.value_fraction,
+    value: qc.numeric_value_standard !== undefined && qc.numeric_value_standard !== null ? qc.numeric_value_standard : qc.value,
+    value_fraction:
+      qc.fraction_numerator !== undefined && qc.fraction_numerator !== null && qc.fraction_denominator !== undefined && qc.fraction_denominator !== null
+        ? { numerator: qc.fraction_numerator, denominator: qc.fraction_denominator }
+        : qc.value_fraction,
     unit: qc.unit,
     denominator_or_reference: qc.denominator_or_reference,
     is_default_with_exception: qc.is_default_with_exception,
@@ -195,7 +198,23 @@ async function verifyQuantitativeCriterion(qc, { sourceUnits, allCriteria, knowl
   // denominator_or_reference fixes, one hop further via siblingCriteria().
   const siblings = siblingCriteria(qc, allCriteria);
   const siblingHint = siblings.length
-    ? ` This is one of several jointly-applicable criterion values from the same statement, also including: ${siblings.map((s) => claimTextFor({ type: "quantitative_criterion", parameter: s.parameter, comparator: s.comparator, value: s.value, value_fraction: s.value_fraction, unit: s.unit, is_default_with_exception: s.is_default_with_exception, is_illustrative_example: s.is_illustrative_example })).join("; ")}.`
+    ? ` This is one of several jointly-applicable criterion values from the same statement, also including: ${siblings
+        .map((s) =>
+          claimTextFor({
+            type: "quantitative_criterion",
+            parameter: s.parameter,
+            comparator: s.comparator,
+            value: s.numeric_value_standard !== undefined && s.numeric_value_standard !== null ? s.numeric_value_standard : s.value,
+            value_fraction:
+              s.fraction_numerator !== undefined && s.fraction_numerator !== null && s.fraction_denominator !== undefined && s.fraction_denominator !== null
+                ? { numerator: s.fraction_numerator, denominator: s.fraction_denominator }
+                : s.value_fraction,
+            unit: s.unit,
+            is_default_with_exception: s.is_default_with_exception,
+            is_illustrative_example: s.is_illustrative_example
+          })
+        )
+        .join("; ")}.`
     : "";
 
   // A criterion qualified by its own exception/precondition Condition
