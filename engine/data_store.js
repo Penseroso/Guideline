@@ -5,6 +5,15 @@ const { discoverJsonFiles } = require("../validation/validate_pilots");
 
 const ROOT = path.resolve(__dirname, "..");
 const PILOTS_DIR = path.join(ROOT, "data", "pilots");
+const SCOPE_PROFILES_PATH = path.join(ROOT, "data", "ontology", "document_scope_profiles.json");
+
+let scopeProfilesCache = null;
+function loadScopeProfiles() {
+  if (!scopeProfilesCache) {
+    scopeProfilesCache = JSON.parse(fs.readFileSync(SCOPE_PROFILES_PATH, "utf8"));
+  }
+  return scopeProfilesCache;
+}
 
 function loadBundles(pilotsDir = PILOTS_DIR) {
   const files = discoverJsonFiles(pilotsDir);
@@ -33,7 +42,26 @@ function buildIndex(bundles) {
     for (const x of bundle.cross_references || []) crossReferences.set(x.xref_id, x);
   }
 
-  return { documents, sections, sourceUnits, knowledgeRecords, quantitativeCriteria, conditions, crossReferences };
+  const conditionsByTarget = buildConditionsByTarget(conditions);
+
+  return { documents, sections, sourceUnits, knowledgeRecords, quantitativeCriteria, conditions, crossReferences, conditionsByTarget };
+}
+
+/**
+ * Reverse index: target_id (KnowledgeRecord/QuantitativeCriterion/SourceUnit)
+ * -> [condition_id, ...] whose applies_to_ids names it. KnowledgeRecord has no
+ * native condition_ids field in the schema (only QuantitativeCriterion does) —
+ * this is the only place a KR's applicable Conditions can be recovered from.
+ */
+function buildConditionsByTarget(conditions) {
+  const byTarget = new Map();
+  for (const c of conditions.values()) {
+    for (const targetId of c.applies_to_ids || []) {
+      if (!byTarget.has(targetId)) byTarget.set(targetId, []);
+      byTarget.get(targetId).push(c.condition_id);
+    }
+  }
+  return byTarget;
 }
 
 function citationFor(index, sourceUnitId) {
@@ -75,71 +103,53 @@ function getAncestorSections(index, sectionId) {
   return path;
 }
 
+/**
+ * Data-driven replacement for the formerly-hardcoded document/section
+ * classification chain (docs/schema.md Model 0.6.0; applicability_model_version
+ * 0.1.0, data/ontology/document_scope_profiles.json). Kept as a pure function
+ * of (record, ancestorSections, document) so behavior stays a deterministic
+ * table lookup, not a growing if/else chain. Only change from the prior
+ * hardcoded version: document matching is exact document_id equality instead
+ * of substring .includes() (docId.includes("s6") etc. was a latent false-
+ * positive risk on any future document_id incidentally containing that
+ * substring), and topic_rules gained FDA-ADA-specific entries appended after
+ * all legacy entries so no legacy record's topic_scope changes.
+ */
 function deriveRecordScope(record, ancestorSections, document) {
+  const profiles = loadScopeProfiles();
   const docId = (document && document.document_id) || (record.document_id || "");
   const docTitle = (document && document.title) || "";
   const sectionPath = ancestorSections.map((s) => s.title);
   const sectionPathLower = sectionPath.join(" > ").toLowerCase();
 
-  let moleculeScope = "all";
-  const explicitExclusions = [];
-  let studyContextScope = "unknown";
-  let assayTechnologyScope = "none";
-  let topicScope = "general";
+  const docProfile = profiles.document_profiles.find((p) => p.document_id === docId) || profiles.default_profile;
+  let moleculeScope = docProfile.molecule_scope;
+  let studyContextScope = docProfile.study_context_scope;
+  let assayTechnologyScope = docProfile.assay_technology_scope;
+  const explicitExclusions = [...docProfile.explicit_exclusions];
 
-  // Document-level domain ontology
-  if (docId.includes("s6") || docTitle.toLowerCase().includes("biotechnology")) {
-    moleculeScope = "biotechnology";
-    explicitExclusions.push("small_molecule", "atmp");
-    studyContextScope = "nonclinical_safety";
-    assayTechnologyScope = "in_vivo_toxicology";
-  } else if (docId.includes("m10") || docTitle.toLowerCase().includes("bioanalytical")) {
-    moleculeScope = "all";
-    studyContextScope = "bioanalytical_validation";
-  } else if (docId.includes("fda") && docTitle.toLowerCase().includes("immunogenicity")) {
-    moleculeScope = "biotechnology";
-    explicitExclusions.push("nonclinical", "small_molecule", "ivd");
-    studyContextScope = "clinical_immunogenicity";
-    assayTechnologyScope = "ada_multi_tiered";
-  } else if (docId.includes("ema") && docTitle.toLowerCase().includes("first-in-human")) {
-    moleculeScope = "all";
-    explicitExclusions.push("atmp");
-    studyContextScope = "early_clinical_fih";
+  // Section-level assay technology refinement (first matching rule wins, same
+  // as the original if/else-if chain)
+  for (const rule of profiles.section_assay_rules) {
+    if (sectionPathLower.includes(rule.when_section_path_includes)) {
+      assayTechnologyScope = rule.assay_technology_scope;
+      explicitExclusions.push(...rule.explicit_exclusions_add);
+      break;
+    }
   }
 
-  // Section-level assay technology refinement
-  if (sectionPathLower.includes("chromatography")) {
-    assayTechnologyScope = "chromatography";
-    explicitExclusions.push("ligand_binding_assay");
-  } else if (sectionPathLower.includes("ligand binding")) {
-    assayTechnologyScope = "ligand_binding_assay";
-    explicitExclusions.push("chromatography");
-  }
-
-  // Section- & Record-level topic refinement
+  // Section- & Record-level topic refinement (first matching rule wins)
   const paramLower = (record.parameter || "").toLowerCase();
-  if (paramLower.includes("duration")) {
-    topicScope = "study_duration";
-  } else if (
-    paramLower === "accuracy" ||
-    paramLower === "precision" ||
-    paramLower.includes("qcs")
-  ) {
-    topicScope = "acceptance_criteria";
-  } else if (
-    paramLower.includes("species") ||
-    sectionPathLower.includes("species selection") ||
-    sectionPathLower.includes("species/model selection")
-  ) {
-    topicScope = "species_selection";
-  } else if (sectionPathLower.includes("study design")) {
-    topicScope = "study_duration";
-  } else if (sectionPathLower.includes("partial validation")) {
-    topicScope = "partial_validation";
-  } else if (sectionPathLower.includes("accuracy and precision")) {
-    topicScope = "acceptance_criteria";
-  } else if (sectionPathLower.includes("starting dose") || paramLower.includes("dose")) {
-    topicScope = "starting_dose";
+  let topicScope = profiles.default_topic_scope;
+  for (const rule of profiles.topic_rules) {
+    const matches =
+      (rule.when_parameter_includes && paramLower.includes(rule.when_parameter_includes)) ||
+      (rule.when_parameter_equals_any && rule.when_parameter_equals_any.includes(paramLower)) ||
+      (rule.when_section_path_includes && sectionPathLower.includes(rule.when_section_path_includes));
+    if (matches) {
+      topicScope = rule.topic_scope;
+      break;
+    }
   }
 
   return {
@@ -178,7 +188,7 @@ function answerableRecords(index) {
       subject: kr.subject,
       action: kr.action,
       object: kr.object,
-      condition_ids: kr.condition_ids || [],
+      condition_ids: index.conditionsByTarget.get(kr.knowledge_record_id) || [],
       original_modal_text: kr.original_modal_text,
       review_status: kr.review_status,
       source_unit_ids: kr.source_unit_ids,
@@ -274,8 +284,11 @@ if (require.main === module) {
 module.exports = {
   loadBundles,
   buildIndex,
+  buildConditionsByTarget,
   citationFor,
   sourceTextFor,
+  getAncestorSections,
+  deriveRecordScope,
   answerableRecords,
   loadStore
 };

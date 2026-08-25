@@ -8,6 +8,7 @@
     "test": "node --test \"test/**/*.test.js\"",
     "validate": "node validation/validate_structured_data.js",
     "validate:pilots": "node validation/validate_pilots.js",
+    "validate:bindings": "node validation/validate_bindings.js",
     "chat": "node engine/cli.js",
     "eval": "node engine/eval_harness.js"
   },

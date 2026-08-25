@@ -1,3 +1,15 @@
+const fs = require("fs");
+const path = require("path");
+
+const CONTEXT_SLOTS_PATH = path.join(__dirname, "..", "data", "ontology", "context_slots.json");
+let contextSlotsCache = null;
+function loadContextSlots() {
+  if (!contextSlotsCache) {
+    contextSlotsCache = JSON.parse(fs.readFileSync(CONTEXT_SLOTS_PATH, "utf8"));
+  }
+  return contextSlotsCache;
+}
+
 const STOPWORDS = new Set([
   "the", "a", "an", "is", "are", "was", "were", "of", "for", "to", "in", "on",
   "and", "or", "what", "how", "does", "do", "should", "must", "may", "at",
@@ -116,73 +128,50 @@ function tokenize(text) {
 }
 
 /**
+ * Evaluates one match_rule (data/ontology/context_slots.json retrieval_slots)
+ * against a question. "token" checks tokenizer output (post particle-stripping
+ * and REGULATORY_SYNONYMS mapping); "substring" checks the raw lowercased
+ * question text (needed for Korean multi-syllable phrases, which tokenize()
+ * maps to their English synonym tokens and so would never appear verbatim in
+ * `tokens`); "token_all" requires every listed token to be present — the one
+ * AND-group in the original chain (species_selection required both "species"
+ * and "selection" as separate tokens, not an OR).
+ */
+function matchRule(rule, lowerQ, tokens) {
+  if (rule.type === "token") return tokens.has(rule.term);
+  if (rule.type === "substring") return lowerQ.includes(rule.term);
+  if (rule.type === "token_all") return rule.terms.every((t) => tokens.has(t));
+  return false;
+}
+
+/**
+ * First-match-wins lookup over one retrieval_slots entry's ordered values —
+ * table-driven equivalent of the original if/else-if chain, so slot vocabulary
+ * lives in data/ontology/context_slots.json instead of a hardcoded chain here.
+ */
+function matchRetrievalSlot(slot, lowerQ, tokens) {
+  for (const candidate of slot.values) {
+    if (candidate.match_rules.some((rule) => matchRule(rule, lowerQ, tokens))) {
+      return candidate.value;
+    }
+  }
+  return null;
+}
+
+/**
  * Extracts 5-dimensional query-level scope constraints
  */
 function extractQueryScope(question, qTokens) {
   const lowerQ = (question || "").toLowerCase();
   const tokens = qTokens instanceof Set ? qTokens : new Set(qTokens || tokenize(question));
 
-  let targetMolecule = null;
-  if (
-    tokens.has("small") ||
-    lowerQ.includes("저분자") ||
-    lowerQ.includes("합성의약품") ||
-    lowerQ.includes("소분자")
-  ) {
-    targetMolecule = "small_molecule";
-  } else if (
-    tokens.has("biotechnology") ||
-    tokens.has("biopharmaceutical") ||
-    lowerQ.includes("바이오") ||
-    lowerQ.includes("생물의약품") ||
-    lowerQ.includes("단백질") ||
-    lowerQ.includes("항체")
-  ) {
-    targetMolecule = "biotechnology";
-  } else if (lowerQ.includes("atmp") || lowerQ.includes("세포치료제") || lowerQ.includes("유전자치료제")) {
-    targetMolecule = "atmp";
-  }
-
-  let targetAssay = null;
-  if (tokens.has("chromatography") || lowerQ.includes("크로마토그래피") || lowerQ.includes("lc-ms") || lowerQ.includes("lc/ms")) {
-    targetAssay = "chromatography";
-  } else if (tokens.has("lba") || lowerQ.includes("lba") || lowerQ.includes("면역분석") || lowerQ.includes("elisa")) {
-    targetAssay = "ligand_binding_assay";
-  } else if (tokens.has("ada") || lowerQ.includes("ada") || lowerQ.includes("면역원성") || lowerQ.includes("중화항체")) {
-    targetAssay = "ada_multi_tiered";
-  }
-
-  let targetTopic = null;
-  if (
-    (tokens.has("species") && tokens.has("selection")) ||
-    lowerQ.includes("종 선택") ||
-    lowerQ.includes("종선택") ||
-    lowerQ.includes("동물종")
-  ) {
-    targetTopic = "species_selection";
-  } else if (
-    tokens.has("duration") ||
-    lowerQ.includes("시험기간") ||
-    lowerQ.includes("투여기간") ||
-    lowerQ.includes("기간")
-  ) {
-    targetTopic = "study_duration";
-  } else if (
-    tokens.has("starting") ||
-    lowerQ.includes("시작용량") ||
-    lowerQ.includes("mabel") ||
-    lowerQ.includes("noael") ||
-    lowerQ.includes("sentinel")
-  ) {
-    targetTopic = "starting_dose";
-  } else if (tokens.has("stability") || lowerQ.includes("안정성") || lowerQ.includes("보관")) {
-    targetTopic = "stability";
-  }
+  const retrievalSlots = loadContextSlots().retrieval_slots;
+  const slotById = Object.fromEntries(retrievalSlots.map((s) => [s.slot_id, s]));
 
   return {
-    target_molecule: targetMolecule,
-    target_assay: targetAssay,
-    target_topic: targetTopic
+    target_molecule: matchRetrievalSlot(slotById.target_molecule, lowerQ, tokens),
+    target_assay: matchRetrievalSlot(slotById.target_assay, lowerQ, tokens),
+    target_topic: matchRetrievalSlot(slotById.target_topic, lowerQ, tokens)
   };
 }
 

@@ -1,0 +1,227 @@
+{
+  "applicability_model_version": "0.1.0",
+  "_comment": "Three sections, deliberately kept separate rather than merged into one flat slot list: (1) program_slots and (2) program_finding_slots are the RegulatoryContext vocabulary consumed by engine/regulatory_context.js and engine/applicability.js (the new Applicability Engine). (3) retrieval_slots is the pre-existing Option A/B query-scope routing vocabulary (engine/text_utils.js extractQueryScope target_molecule/target_assay/target_topic) — table-ified here so its Korean/English keyword chain lives in data instead of code, but it is NOT part of the RegulatoryContext design and is not consumed by applicability.js. Keeping them separate avoids conflating 'what retrieval should this query route to' with 'what does the user's program actually look like' — two different questions answered by two different engines.",
+
+  "program_slots": [
+    {
+      "slot_id": "molecule_class",
+      "kind": "program",
+      "values": ["biotechnology", "small_molecule", "atmp"],
+      "description": "Broad molecular modality class of the investigational product."
+    },
+    {
+      "slot_id": "product_modality",
+      "kind": "program",
+      "values": ["monoclonal_antibody", "bispecific_antibody", "adc", "fusion_protein", "therapeutic_protein", "other"],
+      "description": "Specific product format, relevant to which S6(R1)/FDA ADA conditions can bind."
+    },
+    {
+      "slot_id": "development_stage",
+      "kind": "program",
+      "values": ["nonclinical", "fih_early_clinical", "later_clinical"],
+      "description": "Development stage of the program at the time applicability is being assessed."
+    },
+    {
+      "slot_id": "route_of_administration",
+      "kind": "program",
+      "values": ["iv", "sc", "im", "oral", "other"],
+      "description": "Not present anywhere else in the codebase or schema; introduced for this Applicability Engine spike only."
+    },
+    {
+      "slot_id": "regulatory_authority",
+      "kind": "program",
+      "values": ["ich", "fda", "ema"],
+      "description": "Issuing authority the program needs applicability findings for."
+    },
+    {
+      "slot_id": "question_domain",
+      "kind": "program",
+      "values": ["species_selection", "starting_dose", "ada_assay_validation", "study_duration", "stability"],
+      "description": "Which regulatory question area the user is asking about. Open-ended; extend as new spike slices are added."
+    }
+  ],
+
+  "program_finding_slots": [
+    {
+      "slot_id": "relevant_species_availability",
+      "kind": "program_finding",
+      "values": ["none", "one", "two_rodent_and_nonrodent"],
+      "description": "Whether, and how many, pharmacologically relevant species exist for the clinical candidate.",
+      "evidence_condition_ids": ["ich_s6_r1.cond.part1.3_3.007", "ich_s6_r1.cond.part2.2_2.001"],
+      "match_terms": {
+        "two_rodent_and_nonrodent": ["two relevant species", "one rodent and one non-rodent", "두 종", "설치류와 비설치류"],
+        "one": ["one relevant species", "only one relevant species", "단일 종"],
+        "none": ["no relevant species", "no relevant species exists", "관련 종이 없"]
+      }
+    },
+    {
+      "slot_id": "target_nature",
+      "kind": "program_finding",
+      "values": ["foreign", "endogenous_ortholog"],
+      "description": "Whether the pharmacological target is foreign to the host (e.g. bacterial/viral) or an endogenous ortholog.",
+      "evidence_condition_ids": ["ich_s6_r1.cond.part2.2_1.005"],
+      "match_terms": {
+        "foreign": ["foreign target", "bacterial target", "viral target", "외래 표적"],
+        "endogenous_ortholog": ["endogenous", "orthologous target", "내인성"]
+      }
+    },
+    {
+      "slot_id": "tcr_study_feasible",
+      "kind": "program_finding",
+      "values": ["yes", "no"],
+      "description": "Whether a tissue cross-reactivity (TCR) study with a human tissue panel is technically feasible for this candidate.",
+      "evidence_condition_ids": ["ich_s6_r1.cond.part2.notes.001"],
+      "match_terms": {
+        "no": ["not a good ihc reagent", "tcr study might not be technically feasible", "tcr 시험이 불가능"],
+        "yes": ["tcr study is feasible", "tcr 시험이 가능"]
+      }
+    },
+    {
+      "slot_id": "conjugated_toxin_novelty",
+      "kind": "program_finding",
+      "values": ["novel", "established"],
+      "description": "For an antibody-drug/toxin conjugate, whether the conjugated toxin/toxicant is novel or an established one with a sufficient prior safety record.",
+      "evidence_condition_ids": ["ich_s6_r1.cond.part2.2_1.008", "ich_s6_r1.cond.part2.notes.008"],
+      "match_terms": {
+        "novel": ["novel toxin", "novel toxicant"],
+        "established": ["not novel", "sufficient body of scientific information", "established toxin"]
+      }
+    },
+    {
+      "slot_id": "subject_population",
+      "kind": "program_finding",
+      "values": ["healthy_volunteer", "patient"],
+      "description": "Whether the first-in-human/early clinical trial dosing question concerns healthy volunteers or patients (EMA FIH §7.2 vs §7.3).",
+      "match_terms": {
+        "healthy_volunteer": ["healthy volunteer", "healthy subject", "건강인", "건강한 자원자"],
+        "patient": ["patient", "환자"]
+      }
+    },
+    {
+      "slot_id": "assay_tier",
+      "kind": "program_finding",
+      "values": ["screening", "confirmatory", "titration", "neutralization"],
+      "description": "Which tier of the FDA ADA multi-tiered testing approach the question concerns.",
+      "evidence_condition_ids": ["fda_ada.cond.IV_A_1.001"],
+      "match_terms": {
+        "screening": ["screening assay", "선별 분석"],
+        "confirmatory": ["confirmatory assay", "확인 분석"],
+        "titration": ["titration assay", "역가 분석"],
+        "neutralization": ["neutralization assay", "neutralizing antibody assay", "중화 분석"]
+      }
+    }
+  ],
+
+  "retrieval_slots": [
+    {
+      "slot_id": "target_molecule",
+      "kind": "retrieval",
+      "values": [
+        {
+          "value": "small_molecule",
+          "match_rules": [
+            { "type": "token", "term": "small" },
+            { "type": "substring", "term": "저분자" },
+            { "type": "substring", "term": "합성의약품" },
+            { "type": "substring", "term": "소분자" }
+          ]
+        },
+        {
+          "value": "biotechnology",
+          "match_rules": [
+            { "type": "token", "term": "biotechnology" },
+            { "type": "token", "term": "biopharmaceutical" },
+            { "type": "substring", "term": "바이오" },
+            { "type": "substring", "term": "생물의약품" },
+            { "type": "substring", "term": "단백질" },
+            { "type": "substring", "term": "항체" }
+          ]
+        },
+        {
+          "value": "atmp",
+          "match_rules": [
+            { "type": "substring", "term": "atmp" },
+            { "type": "substring", "term": "세포치료제" },
+            { "type": "substring", "term": "유전자치료제" }
+          ]
+        }
+      ]
+    },
+    {
+      "slot_id": "target_assay",
+      "kind": "retrieval",
+      "values": [
+        {
+          "value": "chromatography",
+          "match_rules": [
+            { "type": "token", "term": "chromatography" },
+            { "type": "substring", "term": "크로마토그래피" },
+            { "type": "substring", "term": "lc-ms" },
+            { "type": "substring", "term": "lc/ms" }
+          ]
+        },
+        {
+          "value": "ligand_binding_assay",
+          "match_rules": [
+            { "type": "token", "term": "lba" },
+            { "type": "substring", "term": "lba" },
+            { "type": "substring", "term": "면역분석" },
+            { "type": "substring", "term": "elisa" }
+          ]
+        },
+        {
+          "value": "ada_multi_tiered",
+          "match_rules": [
+            { "type": "token", "term": "ada" },
+            { "type": "substring", "term": "ada" },
+            { "type": "substring", "term": "면역원성" },
+            { "type": "substring", "term": "중화항체" }
+          ]
+        }
+      ]
+    },
+    {
+      "slot_id": "target_topic",
+      "kind": "retrieval",
+      "_comment": "The 'stability' value is query-side-only by design today: no document_scope_profiles.json topic_rule currently produces topic_scope='stability' on any record, because M10's whole-blood stability content (§3.2.8) is not yet structured (docs/product_roadmap.md M3 backlog; test/fixtures/eval_questions.json q8_refusal). Kept here (not deleted) because it is a real recurring query pattern; it will start matching records once that backlog content is extracted. It is documented here explicitly so it is a known, tracked gap rather than a silent one.",
+      "values": [
+        {
+          "value": "species_selection",
+          "match_rules": [
+            { "type": "token_all", "terms": ["species", "selection"] },
+            { "type": "substring", "term": "종 선택" },
+            { "type": "substring", "term": "종선택" },
+            { "type": "substring", "term": "동물종" }
+          ]
+        },
+        {
+          "value": "study_duration",
+          "match_rules": [
+            { "type": "token", "term": "duration" },
+            { "type": "substring", "term": "시험기간" },
+            { "type": "substring", "term": "투여기간" },
+            { "type": "substring", "term": "기간" }
+          ]
+        },
+        {
+          "value": "starting_dose",
+          "match_rules": [
+            { "type": "token", "term": "starting" },
+            { "type": "substring", "term": "시작용량" },
+            { "type": "substring", "term": "mabel" },
+            { "type": "substring", "term": "noael" },
+            { "type": "substring", "term": "sentinel" }
+          ]
+        },
+        {
+          "value": "stability",
+          "match_rules": [
+            { "type": "token", "term": "stability" },
+            { "type": "substring", "term": "안정성" },
+            { "type": "substring", "term": "보관" }
+          ]
+        }
+      ]
+    }
+  ]
+}
