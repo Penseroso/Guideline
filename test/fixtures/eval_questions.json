@@ -43,10 +43,11 @@
       "note": "Sanity check: completely unrelated question must refuse."
     },
     {
-      "id": "q8_refusal",
+      "id": "q8_whole_blood_stability",
       "question": "stability of whole blood samples storage conditions",
-      "expect_answered": false,
-      "note": "Whole-blood-specific stability content (M10 §3.2.8) is not yet structured in pilot data. Option A's improved relevance and conflict abstention correctly refuses rather than returning an imprecise match from M10 §6.1."
+      "expect_answered": true,
+      "expect_citation_contains": "M10 §3.2.8",
+      "expect_text_contains": "Stability"
     },
     {
       "id": "q9",
