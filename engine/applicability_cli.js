@@ -13,6 +13,7 @@
  *     proposeContext's fail-closed behavior).
  *
  *   node engine/applicability_cli.js evaluate --context <file> --rules <id1,id2,...>
+ *   node engine/applicability_cli.js evaluate --context <file> --question "<text>" [--top N]
  *     Loads and validates the RegulatoryContext file (createContext() —
  *     fails fast on any unknown slot or out-of-vocabulary value), then
  *     prints each rule's ApplicabilityFinding: verdict, conditional_reason,
@@ -21,6 +22,18 @@
  *     here — every judgment was already made offline by
  *     engine/binding_agent.js and is frozen into data/derived/
  *     condition_bindings/.
+ *
+ *     `--rules` names rule_ids explicitly. `--question` instead discovers
+ *     candidate rule_ids by reusing engine/vector_store.js's existing
+ *     keyword search (product_roadmap.md §2.4.1's zero-LLM-cost Option A
+ *     philosophy, unchanged) restricted to KnowledgeRecord/
+ *     QuantitativeCriterion records — the same primitive Option B already
+ *     uses for retrieval, just repurposed to surface rule_id candidates
+ *     instead of an answer. This is the minimum needed for a real question
+ *     to reach evaluateRule() at all without the user already knowing an
+ *     internal rule_id — added specifically to make real-usage evaluation
+ *     possible (docs/milestone_log.md M6), before investing further in
+ *     modality-aware verdict framing or chat integration.
  */
 
 const fs = require("fs");
@@ -29,6 +42,7 @@ const { loadStore } = require("./data_store");
 const { evaluateRule } = require("./applicability");
 const { createContext, proposeContext } = require("./regulatory_context");
 const { createClient, availableProviders } = require("./llm_client");
+const { createKeywordStore } = require("./vector_store");
 
 function formatCitation(citation) {
   if (!citation) return "(citation unavailable)";
@@ -59,6 +73,32 @@ function formatFinding(finding) {
   return lines.join("\n");
 }
 
+/**
+ * Rule discovery: reuses the existing keyword search (engine/vector_store.js
+ * createKeywordStore, zero LLM cost) over only the KnowledgeRecord/
+ * QuantitativeCriterion records — the two types evaluateRule() actually
+ * accepts as a rule_id (engine/applicability.js resolveRule). Condition
+ * entries are deliberately excluded from the search space: they are
+ * evidence attached to a rule, not rules to evaluate themselves.
+ */
+async function discoverRuleCandidates(question, records, topK = 5) {
+  const ruleRecords = records.filter((r) => r.type === "knowledge_record" || r.type === "quantitative_criterion");
+  const store = createKeywordStore();
+  store.index(ruleRecords);
+  const results = await store.search(question, topK);
+  return results.map(({ record, score }) => ({
+    rule_id: record.id,
+    rule_type: record.type,
+    score,
+    source_text: record.source_text,
+    citation: record.citations ? record.citations[0] : null
+  }));
+}
+
+function truncate(text, maxLength) {
+  return text.length > maxLength ? `${text.slice(0, maxLength)}...` : text;
+}
+
 async function runPropose(question) {
   const providers = availableProviders();
   const client = providers.length > 0 ? createClient() : null;
@@ -70,13 +110,13 @@ async function runPropose(question) {
   console.log(JSON.stringify(candidate, null, 2));
 }
 
-function runEvaluate({ contextFile, ruleIds }) {
+async function runEvaluate({ contextFile, ruleIds = [], question, topK = 5 }) {
   if (!contextFile) {
     console.error("evaluate requires --context <file>");
     process.exit(2);
   }
-  if (ruleIds.length === 0) {
-    console.error("evaluate requires --rules <id1,id2,...>");
+  if (ruleIds.length === 0 && !question) {
+    console.error("evaluate requires --rules <id1,id2,...> or --question \"<text>\"");
     process.exit(2);
   }
 
@@ -88,10 +128,25 @@ function runEvaluate({ contextFile, ruleIds }) {
     process.exit(1);
   }
 
-  const { index } = loadStore();
+  const { index, records } = loadStore();
   console.log(`RegulatoryContext: ${JSON.stringify(context)}\n`);
 
-  for (const ruleId of ruleIds) {
+  let resolvedRuleIds = ruleIds;
+  if (resolvedRuleIds.length === 0) {
+    const candidates = await discoverRuleCandidates(question, records, topK);
+    if (candidates.length === 0) {
+      console.log(`No candidate rules found for: "${question}"`);
+      return;
+    }
+    console.log(`Found ${candidates.length} candidate rule(s) for "${question}":`);
+    for (const c of candidates) {
+      console.log(`  [score ${c.score}] ${c.rule_id} (${c.rule_type}) — "${truncate(c.source_text, 100)}"`);
+    }
+    console.log("");
+    resolvedRuleIds = candidates.map((c) => c.rule_id);
+  }
+
+  for (const ruleId of resolvedRuleIds) {
     try {
       const finding = evaluateRule(ruleId, context, { index });
       console.log(formatFinding(finding));
@@ -129,14 +184,16 @@ async function main() {
   if (subcommand === "evaluate") {
     const flags = parseArgs(rest);
     const ruleIds = flags.rules ? flags.rules.split(",").map((s) => s.trim()).filter(Boolean) : [];
-    runEvaluate({ contextFile: flags.context, ruleIds });
+    const topK = flags.top ? Number(flags.top) : 5;
+    await runEvaluate({ contextFile: flags.context, ruleIds, question: flags.question, topK });
     return;
   }
 
   console.error(
     "Usage:\n" +
     "  node engine/applicability_cli.js propose \"<question text>\"\n" +
-    "  node engine/applicability_cli.js evaluate --context <file> --rules <id1,id2,...>"
+    "  node engine/applicability_cli.js evaluate --context <file> --rules <id1,id2,...>\n" +
+    "  node engine/applicability_cli.js evaluate --context <file> --question \"<text>\" [--top N]"
   );
   process.exit(2);
 }
@@ -145,4 +202,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { formatCitation, formatFinding, parseArgs, runEvaluate };
+module.exports = { formatCitation, formatFinding, parseArgs, runEvaluate, discoverRuleCandidates };
