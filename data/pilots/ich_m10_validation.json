@@ -513,13 +513,33 @@
       "section_order_status": "known"
     },
     {
+      "section_id": "ich_m10.sec.7",
+      "document_id": "ich_m10",
+      "section_number": "7",
+      "title": "ADDITIONAL CONSIDERATIONS",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 51,
+      "section_order_status": "known"
+    },
+    {
       "section_id": "ich_m10.sec.4_3_2",
       "document_id": "ich_m10",
       "section_number": "4.3.2",
       "title": "Acceptance Criteria for an Analytical Run",
       "parent_section_id": "ich_m10.sec.4_3",
       "heading_source_unit_id": null,
-      "section_order": 51,
+      "section_order": 52,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.7_1",
+      "document_id": "ich_m10",
+      "section_number": "7.1",
+      "title": "Endogenous Compounds",
+      "parent_section_id": "ich_m10.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 53,
       "section_order_status": "known"
     },
     {
@@ -529,7 +549,17 @@
       "title": "Calibration Range",
       "parent_section_id": "ich_m10.sec.4_3",
       "heading_source_unit_id": null,
-      "section_order": 52,
+      "section_order": 54,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.7_2",
+      "document_id": "ich_m10",
+      "section_number": "7.2",
+      "title": "Parallelism",
+      "parent_section_id": "ich_m10.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 55,
       "section_order_status": "known"
     },
     {
@@ -539,7 +569,17 @@
       "title": "Reanalysis of Study Samples",
       "parent_section_id": "ich_m10.sec.4_3",
       "heading_source_unit_id": null,
-      "section_order": 53,
+      "section_order": 56,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.7_3",
+      "document_id": "ich_m10",
+      "section_number": "7.3",
+      "title": "Recovery",
+      "parent_section_id": "ich_m10.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 57,
       "section_order_status": "known"
     },
     {
@@ -549,7 +589,87 @@
       "title": "INCURRED SAMPLE REANALYSIS (ISR)",
       "parent_section_id": null,
       "heading_source_unit_id": null,
-      "section_order": 54,
+      "section_order": 58,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.7_4",
+      "document_id": "ich_m10",
+      "section_number": "7.4",
+      "title": "Minimum Required Dilution",
+      "parent_section_id": "ich_m10.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 59,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.7_5",
+      "document_id": "ich_m10",
+      "section_number": "7.5",
+      "title": "Commercial and Diagnostic Kits",
+      "parent_section_id": "ich_m10.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 60,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.7_6",
+      "document_id": "ich_m10",
+      "section_number": "7.6",
+      "title": "New or Alternative Technologies",
+      "parent_section_id": "ich_m10.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 61,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.7_6_1",
+      "document_id": "ich_m10",
+      "section_number": "7.6.1",
+      "title": "Dried Matrix Methods",
+      "parent_section_id": "ich_m10.sec.7_6",
+      "heading_source_unit_id": null,
+      "section_order": 62,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.8",
+      "document_id": "ich_m10",
+      "section_number": "8",
+      "title": "DOCUMENTATION",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 63,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.8_1",
+      "document_id": "ich_m10",
+      "section_number": "8.1",
+      "title": "Summary Information",
+      "parent_section_id": "ich_m10.sec.8",
+      "heading_source_unit_id": null,
+      "section_order": 64,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.8_2",
+      "document_id": "ich_m10",
+      "section_number": "8.2",
+      "title": "Documentation for Validation and Bioanalytical Reports",
+      "parent_section_id": "ich_m10.sec.8",
+      "heading_source_unit_id": null,
+      "section_order": 65,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.9",
+      "document_id": "ich_m10",
+      "section_number": "9",
+      "title": "GLOSSARY",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 66,
       "section_order_status": "known"
     }
   ],
@@ -1451,6 +1571,204 @@
         "pdf_page_index_zero_based": 32,
         "pdf_page_index_status": "known",
         "printed_page_label": "33",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.7_1.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.7_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Endogenous compounds are analytes that are naturally present in biological matrix. When the endogenous compound is identical to the drug to be administered, bioanalytical method validation should consider endogenous background levels. Four approaches are recognized: 1) Surrogate Matrix Approach: using a matrix that resembles biological matrix but lacks the endogenous analyte (e.g., dialysed or stripped matrix, buffer). Parallelism between surrogate and authentic matrix should be demonstrated; 2) Surrogate Analyte Approach: using a stable isotope-labelled analyte as surrogate in authentic matrix; 3) Background Subtraction Approach: subtracting the endogenous background response from spiked authentic matrix; 4) Standard Addition Approach: adding known quantities of standard to authentic sample aliquots. In all approaches, validation parameters (selectivity, accuracy, precision, stability) should meet typical acceptance criteria.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.7_1",
+        "pdf_page_index_zero_based": 36,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "37",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.7_2.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.7_2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Parallelism is defined as parallel dose-response relationships between calibration standards and serial dilutions of study samples. Parallelism should be evaluated when the authentic analyte in study samples may not behave identically to the calibrator (e.g., LBA for endogenous macromolecules or biomarker assays). Parallelism is investigated by serially diluting at least 3 individual study samples with high endogenous analyte concentrations (or spiked authentic samples) using surrogate or blank matrix. The precision (%CV) across dilution-adjusted concentrations should not exceed 30%.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.7_2",
+        "pdf_page_index_zero_based": 39,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "40",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.7_3.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.7_3",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "For chromatographic methods, recovery is the detector response obtained from an amount of the analyte added to and extracted from the biological matrix, compared to the detector response obtained for the true concentration of the pure authentic standard. Recovery should be consistent, precise and reproducible across the concentration range. Recovery should be evaluated by comparing extracted QC samples at low, medium and high concentrations to post-extraction spiked matrix or pure standard solutions.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.7_3",
+        "pdf_page_index_zero_based": 40,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "41",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.7_4.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.7_4",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Minimum Required Dilution (MRD) is a sample dilution factor applied to all study samples and QCs in LBA to reduce matrix effects and non-specific binding. The MRD should be defined during method development and confirmed during validation. All calibration standards and QC samples should be prepared in the biological matrix at the same MRD as study samples. The LLOQ and ULOQ of the assay should be reported after considering the MRD.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.7_4",
+        "pdf_page_index_zero_based": 40,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "41",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.7_5.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.7_5",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "When commercial or diagnostic kits (including RUO kits) are repurposed to measure chemical or biological drug concentrations in regulatory studies, the kit assay should be fully validated in-house to meet this guideline standards. Key requirements include: 1) Reference standards and critical reagents in kits should be characterized; 2) Calibration curves with sparse standards (e.g. 1-2 points) must be re-established across full range; 3) QC concentrations must be known quantitative values, not concentration ranges; 4) Calibration standards and QCs must be prepared in the study sample matrix; 5) Kit lot-to-lot variability must be verified if multiple lots are used.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.7_5",
+        "pdf_page_index_zero_based": 41,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "42",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.7_6.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.7_6",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "When a new or alternative analytical platform replaces an existing platform in drug development, data generated from the previous platform should be cross-validated to the new platform. For Dried Matrix Methods (DMM/DBS), additional validation parameters must be evaluated: haematocrit effects (for whole blood spotting), sample homogeneity (sub-punching), extraction efficiency from dried matrix, and sample collection retention for ISR (duplicate spotting or multiple punches). Cross-validation between DMM and conventional liquid plasma methods is required if both are used in the same study.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.7_6",
+        "pdf_page_index_zero_based": 42,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "43",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.8_1.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.8_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Summary information should be included in Section 2.6.4/2.7.1 of the eCTD: 1) Summary of methods used for each study (method ID, title, assay type, Bioanalytical Report code, Validation Report code); 2) Summary table of all relevant Validation Reports (including Partial and Cross Validation Reports); 3) Cross-referencing table of multiple identification codes; 4) Discussion of method evolution and revisions; 5) For comparative BA/BE studies, a list of regulatory site inspections and outcomes within the last 3 years and 1 year post-study.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.8_1",
+        "pdf_page_index_zero_based": 44,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "45",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.8_2.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.8_2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Validation and Bioanalytical Reports should provide complete and contemporaneous documentation supporting method performance and study sample analysis. Table 1 defines recommended documentation for submission and inspection (e.g., SOPs, validation summaries, chromatograms/raw data, reanalysis summary, ISR results, run failure investigation). Table 2 provides template summary tables for method validation (Table 2.1), sample analysis (Table 2.2), and ISR (Table 2.3).",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.8_2",
+        "pdf_page_index_zero_based": 44,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "45",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.9.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.9",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Glossary defines key regulatory bioanalytical terms: Accuracy, Analyte, Analytical Run, Anchor calibrators, Bioanalytical method, Biological matrix, Blank sample, Calibration range, Calibration standard, Carry-over, Critical reagent, Cross validation, Dilution integrity, Full validation, Incurred Sample Reanalysis (ISR), Ligand Binding Assay (LBA), Lower Limit of Quantification (LLOQ), Matrix effect, Minimum Required Dilution (MRD), Parallelism, Partial validation, Precision, Quality Control (QC) sample, Recovery, Selectivity, Specificity, Stability, Surrogate matrix, Total error, Upper Limit of Quantification (ULOQ).",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.9",
+        "pdf_page_index_zero_based": 52,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "53",
         "printed_page_label_status": "known",
         "extraction_method": "automated text extraction with manual verification"
       },
@@ -4959,6 +5277,426 @@
       "object": "nonclinical studies",
       "normalized_ko": null,
       "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_1.001",
+      "source_unit_ids": [
+        "ich_m10.su.7_1.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Endogenous compounds",
+      "action": "are",
+      "object": "analytes that are naturally present in biological matrix",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_1.002",
+      "source_unit_ids": [
+        "ich_m10.su.7_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Bioanalytical method validation",
+      "action": "should consider",
+      "object": "endogenous background levels",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_1.003",
+      "source_unit_ids": [
+        "ich_m10.su.7_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Four approaches",
+      "action": "are recognized",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_1.004",
+      "source_unit_ids": [
+        "ich_m10.su.7_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Surrogate Matrix Approach",
+      "action": "uses",
+      "object": "a matrix that resembles biological matrix but lacks the endogenous analyte (e.g., dialysed or stripped matrix, buffer)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_1.005",
+      "source_unit_ids": [
+        "ich_m10.su.7_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Background Subtraction Approach",
+      "action": "subtracts",
+      "object": "the endogenous background response from spiked authentic matrix",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_1.006",
+      "source_unit_ids": [
+        "ich_m10.su.7_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Standard Addition Approach",
+      "action": "adds",
+      "object": "known quantities of standard to authentic sample aliquots",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_1.007",
+      "source_unit_ids": [
+        "ich_m10.su.7_1.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Recognized approaches",
+      "action": "includes",
+      "object": "Surrogate Matrix Approach: using a matrix that resembles biological matrix but lacks the endogenous analyte (e.g., dialysed or stripped matrix, buffer)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_2.001",
+      "source_unit_ids": [
+        "ich_m10.su.7_2.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Parallelism",
+      "action": "is defined as",
+      "object": "parallel dose-response relationships between calibration standards and serial dilutions of study samples",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_2.002",
+      "source_unit_ids": [
+        "ich_m10.su.7_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Parallelism",
+      "action": "should be evaluated",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_2.003",
+      "source_unit_ids": [
+        "ich_m10.su.7_2.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Assays",
+      "action": "includes",
+      "object": "LBA for endogenous macromolecules or biomarker assays",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_2.004",
+      "source_unit_ids": [
+        "ich_m10.su.7_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Parallelism",
+      "action": "is investigated by serially diluting",
+      "object": "at least 3 individual study samples with high endogenous analyte concentrations (or spiked authentic samples) using surrogate or blank matrix",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_3.001",
+      "source_unit_ids": [
+        "ich_m10.su.7_3.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "recovery",
+      "action": "is",
+      "object": "the detector response obtained from an amount of the analyte added to and extracted from the biological matrix, compared to the detector response obtained for the true concentration of the pure authentic standard",
+      "normalized_ko": "Recovery is the comparative detector response of extracted analyte versus pure authentic standard at the true concentration.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_3.002",
+      "source_unit_ids": [
+        "ich_m10.su.7_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Recovery",
+      "action": "should be consistent",
+      "object": null,
+      "normalized_ko": "Recovery should be consistent across the concentration range.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_4.001",
+      "source_unit_ids": [
+        "ich_m10.su.7_4.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Minimum Required Dilution (MRD)",
+      "action": "is",
+      "object": "a sample dilution factor",
+      "normalized_ko": "MRD is a sample dilution factor.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_4.002",
+      "source_unit_ids": [
+        "ich_m10.su.7_4.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "MRD",
+      "action": "is applied to",
+      "object": "all study samples and QCs",
+      "normalized_ko": "MRD is applied to all study samples and QCs to reduce matrix effects and non-specific binding.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_4.003",
+      "source_unit_ids": [
+        "ich_m10.su.7_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The MRD",
+      "action": "should be defined",
+      "object": "during method development",
+      "normalized_ko": "The MRD should be defined during method development.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_5.001",
+      "source_unit_ids": [
+        "ich_m10.su.7_5.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "the kit assay",
+      "action": "should be fully validated in-house",
+      "object": "to meet this guideline standards",
+      "normalized_ko": "The kit assay should be fully validated in-house to meet this guideline standards.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_5.002",
+      "source_unit_ids": [
+        "ich_m10.su.7_5.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "must",
+      "subject": "Calibration curves with sparse standards",
+      "action": "must be re-established",
+      "object": "across full range",
+      "normalized_ko": "Calibration curves with sparse standards must be re-established across full range.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_5.003",
+      "source_unit_ids": [
+        "ich_m10.su.7_5.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "must",
+      "subject": "Calibration standards and QCs",
+      "action": "must be prepared in",
+      "object": "the study sample matrix",
+      "normalized_ko": "Calibration standards and QCs must be prepared in the study sample matrix.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_6.001",
+      "source_unit_ids": [
+        "ich_m10.su.7_6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "data generated from the previous platform",
+      "action": "should be cross-validated to",
+      "object": "the new platform",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_6.002",
+      "source_unit_ids": [
+        "ich_m10.su.7_6.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "must",
+      "subject": "additional validation parameters",
+      "action": "must be evaluated",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.7_6.003",
+      "source_unit_ids": [
+        "ich_m10.su.7_6.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "is required",
+      "subject": "Cross-validation between DMM and conventional liquid plasma methods",
+      "action": "is required",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.8_1.001",
+      "source_unit_ids": [
+        "ich_m10.su.8_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Summary information",
+      "action": "should be included in",
+      "object": "Section 2.6.4/2.7.1 of the eCTD",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.8_1.002",
+      "source_unit_ids": [
+        "ich_m10.su.8_1.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Summary information",
+      "action": "includes",
+      "object": "Summary of methods used for each study (method ID, title, assay type, Bioanalytical Report code, Validation Report code)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.8_2.001",
+      "source_unit_ids": [
+        "ich_m10.su.8_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Validation and Bioanalytical Reports",
+      "action": "provide",
+      "object": "complete and contemporaneous documentation supporting method performance and study sample analysis",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.8_2.002",
+      "source_unit_ids": [
+        "ich_m10.su.8_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Table 1",
+      "action": "defines",
+      "object": "recommended documentation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.8_2.003",
+      "source_unit_ids": [
+        "ich_m10.su.8_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Table 2",
+      "action": "provides",
+      "object": "template summary tables for method validation (Table 2.1), sample analysis (Table 2.2), and ISR (Table 2.3)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.8_2.004",
+      "source_unit_ids": [
+        "ich_m10.su.8_2.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "recommended documentation",
+      "action": "includes",
+      "object": "SOPs",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.9.001",
+      "source_unit_ids": [
+        "ich_m10.su.9.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Glossary",
+      "action": "defines",
+      "object": "key regulatory bioanalytical terms",
+      "normalized_ko": "Glossary defines key regulatory bioanalytical terms.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.9.002",
+      "source_unit_ids": [
+        "ich_m10.su.9.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Glossary term",
+      "action": "includes",
+      "object": "Accuracy",
+      "normalized_ko": null,
+      "review_status": "reviewed"
     }
   ],
   "quantitative_criteria": [
@@ -7611,6 +8349,200 @@
       "is_illustrative_example": false,
       "source_text": "at least once per species",
       "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.7_1.001",
+      "source_unit_id": "ich_m10.su.7_1.001",
+      "knowledge_record_id": null,
+      "parameter": "recognized approaches",
+      "comparator": "equals",
+      "value": 4,
+      "value_fraction": null,
+      "unit": "approaches",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "Four approaches are recognized",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.7_2.001",
+      "source_unit_id": "ich_m10.su.7_2.001",
+      "knowledge_record_id": null,
+      "parameter": "individual study samples serially diluted",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "individual study samples",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 3 individual study samples",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.7_2.002",
+      "source_unit_id": "ich_m10.su.7_2.001",
+      "knowledge_record_id": null,
+      "parameter": "precision (%CV) across dilution-adjusted concentrations",
+      "comparator": "not_exceed",
+      "value": 30,
+      "value_fraction": null,
+      "unit": "%CV",
+      "value_status": "known",
+      "denominator_or_reference": "across dilution-adjusted concentrations",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "should not exceed 30%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.7_5.001",
+      "source_unit_id": "ich_m10.su.7_5.001",
+      "knowledge_record_id": null,
+      "parameter": "number of sparse calibration standards",
+      "comparator": "within",
+      "value": null,
+      "value_fraction": null,
+      "unit": "points",
+      "value_status": "needs_review",
+      "denominator_or_reference": "Calibration curves with sparse standards",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.7_5.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "1-2 points",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.7_5.002",
+      "source_unit_id": "ich_m10.su.7_5.001",
+      "knowledge_record_id": null,
+      "parameter": "number of sparse standards on calibration curves",
+      "comparator": "at_least",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "points",
+      "value_status": "known",
+      "denominator_or_reference": "calibration curves with sparse standards",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "e.g. 1-2 points",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.7_5.003",
+      "source_unit_id": "ich_m10.su.7_5.001",
+      "knowledge_record_id": null,
+      "parameter": "number of sparse standards on calibration curves",
+      "comparator": "not_exceed",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "points",
+      "value_status": "known",
+      "denominator_or_reference": "calibration curves with sparse standards",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.7_5.001"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "e.g. 1-2 points",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.8_1.001",
+      "source_unit_id": "ich_m10.su.8_1.001",
+      "knowledge_record_id": null,
+      "parameter": "regulatory site inspections and outcomes period before the study",
+      "comparator": "within",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "years",
+      "value_status": "known",
+      "denominator_or_reference": "the last period before the study",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.8_1.002",
+        "ich_m10.qc.8_1.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "within the last 3 years",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.8_1.002",
+      "source_unit_id": "ich_m10.su.8_1.001",
+      "knowledge_record_id": null,
+      "parameter": "regulatory site inspections and outcomes period after the study",
+      "comparator": "within",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "year",
+      "value_status": "known",
+      "denominator_or_reference": "post-study",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.8_1.001",
+        "ich_m10.qc.8_1.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "1 year post-study",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.8_1.003",
+      "source_unit_id": "ich_m10.su.8_1.001",
+      "knowledge_record_id": null,
+      "parameter": "period for regulatory site inspections and outcomes",
+      "comparator": "not_exceed",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "years",
+      "value_status": "known",
+      "denominator_or_reference": "last",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.8_1.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "within the last 3 years",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.8_1.004",
+      "source_unit_id": "ich_m10.su.8_1.001",
+      "knowledge_record_id": null,
+      "parameter": "post-study period for regulatory site inspections and outcomes",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "year",
+      "value_status": "known",
+      "denominator_or_reference": "post-study",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.8_1.001"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "1 year post-study",
+      "review_status": "reviewed"
     }
   ],
   "conditions": [
@@ -9257,6 +10189,299 @@
       "condition_text": "for LBAs",
       "condition_type": "applicability",
       "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_1.001",
+      "source_unit_id": "ich_m10.su.7_1.001",
+      "condition_text": "When the endogenous compound is identical to the drug to be administered",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.7_1.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_1.002",
+      "source_unit_id": "ich_m10.su.7_1.001",
+      "condition_text": "In all approaches",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_1.003",
+      "source_unit_id": "ich_m10.su.7_1.001",
+      "condition_text": "Surrogate Matrix Approach",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.7_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_2.001",
+      "source_unit_id": "ich_m10.su.7_2.001",
+      "condition_text": "when the authentic analyte in study samples may not behave identically to the calibrator",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.7_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_2.002",
+      "source_unit_id": "ich_m10.su.7_2.001",
+      "condition_text": "across dilution-adjusted concentrations",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_3.001",
+      "source_unit_id": "ich_m10.su.7_3.001",
+      "condition_text": "For chromatographic methods",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.7_3.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_3.002",
+      "source_unit_id": "ich_m10.su.7_3.001",
+      "condition_text": "across the concentration range",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.7_3.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_3.003",
+      "source_unit_id": "ich_m10.su.7_3.001",
+      "condition_text": "at low, medium and high concentrations",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_3.004",
+      "source_unit_id": "ich_m10.su.7_3.001",
+      "condition_text": "For chromatographic methods",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.7_3.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_4.001",
+      "source_unit_id": "ich_m10.su.7_4.001",
+      "condition_text": "in LBA",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.7_4.001",
+        "ich_m10.kr.7_4.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_4.002",
+      "source_unit_id": "ich_m10.su.7_4.001",
+      "condition_text": "during method development",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.7_4.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_4.003",
+      "source_unit_id": "ich_m10.su.7_4.001",
+      "condition_text": "during validation",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_4.004",
+      "source_unit_id": "ich_m10.su.7_4.001",
+      "condition_text": "after considering the MRD",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_4.005",
+      "source_unit_id": "ich_m10.su.7_4.001",
+      "condition_text": "in LBA",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.7_4.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_5.001",
+      "source_unit_id": "ich_m10.su.7_5.001",
+      "condition_text": "When commercial or diagnostic kits (including RUO kits) are repurposed to measure chemical or biological drug concentrations in regulatory studies",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.7_5.001",
+        "ich_m10.kr.7_5.002",
+        "ich_m10.kr.7_5.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_5.002",
+      "source_unit_id": "ich_m10.su.7_5.001",
+      "condition_text": "with sparse standards (e.g. 1-2 points)",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.7_5.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_5.003",
+      "source_unit_id": "ich_m10.su.7_5.001",
+      "condition_text": "if multiple lots are used",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_5.004",
+      "source_unit_id": "ich_m10.su.7_5.001",
+      "condition_text": "with sparse standards",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.7_5.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_6.001",
+      "source_unit_id": "ich_m10.su.7_6.001",
+      "condition_text": "When a new or alternative analytical platform replaces an existing platform in drug development",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.7_6.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_6.002",
+      "source_unit_id": "ich_m10.su.7_6.001",
+      "condition_text": "For Dried Matrix Methods (DMM/DBS)",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.7_6.002",
+        "ich_m10.kr.7_6.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_6.003",
+      "source_unit_id": "ich_m10.su.7_6.001",
+      "condition_text": "for whole blood spotting",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.7_6.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_6.004",
+      "source_unit_id": "ich_m10.su.7_6.001",
+      "condition_text": "if both are used in the same study",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_6.005",
+      "source_unit_id": "ich_m10.su.7_6.001",
+      "condition_text": "When a new or alternative analytical platform replaces an existing platform in drug development",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.7_6.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_6.006",
+      "source_unit_id": "ich_m10.su.7_6.001",
+      "condition_text": "for whole blood spotting",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.7_6.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_6.007",
+      "source_unit_id": "ich_m10.su.7_6.001",
+      "condition_text": "sub-punching",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.7_6.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_6.008",
+      "source_unit_id": "ich_m10.su.7_6.001",
+      "condition_text": "for ISR",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_6.009",
+      "source_unit_id": "ich_m10.su.7_6.001",
+      "condition_text": "if both are used in the same study",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_6.010",
+      "source_unit_id": "ich_m10.su.7_6.001",
+      "condition_text": "For Dried Matrix Methods (DMM/DBS)",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.7_6.002",
+        "ich_m10.kr.7_6.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.7_6.011",
+      "source_unit_id": "ich_m10.su.7_6.001",
+      "condition_text": "duplicate spotting or multiple punches",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.8_1.001",
+      "source_unit_id": "ich_m10.su.8_1.001",
+      "condition_text": "For comparative BA/BE studies",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.8_2.001",
+      "source_unit_id": "ich_m10.su.8_2.001",
+      "condition_text": "for submission and inspection",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.8_2.002"
+      ],
       "review_status": "reviewed"
     }
   ],

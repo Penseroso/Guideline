@@ -34,15 +34,15 @@
 | **5** | Incurred Sample Reanalysis (ISR) | p. 33-35 | `COMPLETED` | **ISR 대상 시험(비임상 동물종별 1회, BA/BE, 최초 임상), 검체수 비율(1,000개까지 10%, 초과분 5%), 수락 기준(크로마토그래피 4-6-20 규칙, LBA 4-6-30 규칙)** (4 KR, 15 QC, 13 Cond) |
 | **6.1** | Partial Validation (Details) | p. 35-36 | `COMPLETED` | **크로마토그래피 및 LBA 부분 밸리데이션 대상 변경 상황 목록** (23 KR, 0 QC, 6 Cond) |
 | **6.2** | Cross Validation (Details) | p. 36-37 | `COMPLETED` | **동일 시험 내/시험 간 교차 밸리데이션 요건 (QC 3농도 3반복, 검체 n≥30, Bland-Altman/Deming 회귀)** (11 KR, 2 QC, 9 Cond) |
-| **7.1-6** | Additional Considerations | p. 37-44 | `BACKLOG` | 내인성 물질 분석(대체기질/표준물질첨가법), Parallelism, 회수율, MRD, 키트, 건조기질법(DBS) |
-| **8** | Documentation | p. 44-53 | `BACKLOG` | 요약 정보, 밸리데이션 보고서, 분석 보고서, Table 1 & Table 2 요약표 |
-| **9** | Glossary | p. 53-59 | `BACKLOG` | 용어 정의 |
+| **7.1-6** | Additional Considerations | p. 37-44 | `COMPLETED` | **내인성 물질 분석(4대 접근법: 대체기질/대체분석물질/배경차감/표준물질첨가법), Parallelism(%CV≤30%), 회수율, MRD, 상용/진단용 키트 밸리데이션, 신기술 및 건조기질법(DBS/DMM)** (22 KR, 6 QC, 30 Cond) |
+| **8** | Documentation | p. 44-53 | `COMPLETED` | **eCTD 2.6.4/2.7.1 요약 정보, 밸리데이션 보고서, 생체분석 보고서 기재 항목, Table 1(제출/실사 문서 요건) 및 Table 2(요약 템플릿 표 1/2/3)** (6 KR, 4 QC, 2 Cond) |
+| **9** | Glossary | p. 53-59 | `COMPLETED` | **ICH M10 핵심 생체분석 용어 정의 28종** (2 KR, 0 QC, 0 Cond) |
 
 ---
 
 ## Summary Statistics
-* **전체 섹션 수**: 26개 주요 단원
-* **적재 완료 섹션 수 (Completed)**: **23개 섹션** (전체 가이던스의 88% 완료, Section 1, 2, 3, 4, 5, 6 100% 완결)
-* **총 구조화 데이터 규모 (ICH M10)**: **207 KnowledgeRecords, 135 QuantitativeCriteria, 172 Conditions** (총 514개 엔티티, 100% `reviewed`)
-* **아카이브 전체 엔티티 규모**: **1,770개 엔티티** (ICH M10 514 + ICH S6 98 + EMA FIH 491 + FDA ADA 667)
-* **잔여 백로그 (Backlog)**: Batch 4 (Section 7 특수고려사항 및 Section 8 문서화/용어집 - 마지막 최종 완결 배치)
+* **전체 섹션 수**: 26개 주요 단원 (총 66개 서브섹션)
+* **적재 완료 섹션 수 (Completed)**: **26개 섹션 (100% 전수 적재 완료)**
+* **총 구조화 데이터 규모 (ICH M10)**: **237 KnowledgeRecords, 145 QuantitativeCriteria, 203 Conditions** (총 585개 엔티티, 100% `reviewed`)
+* **아카이브 전체 엔티티 규모**: **1,841개 엔티티** (ICH M10 585 + ICH S6 98 + EMA FIH 491 + FDA ADA 667)
+* **잔여 백로그 (Backlog)**: **없음 (ICH M10 전수 100% Ingestion 달성)**
