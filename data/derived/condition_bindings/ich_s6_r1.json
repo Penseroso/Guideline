@@ -1,0 +1,416 @@
+{
+  "document_id": "ich_s6_r1",
+  "bindings": [
+    {
+      "binding_id": "ich_s6_r1.bind.part1.3_3.001",
+      "condition_id": "ich_s6_r1.cond.part1.3_3.001",
+      "bindability": "bindable",
+      "non_bindable_reason": null,
+      "binding_role": "partial_scope",
+      "predicate": {
+        "all_of": [
+          {
+            "slot": "product_modality",
+            "operator": "equals",
+            "value": "monoclonal_antibody"
+          }
+        ]
+      },
+      "evidence_span": "monoclonal antibodies",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part1.3_3.002",
+      "condition_id": "ich_s6_r1.cond.part1.3_3.002",
+      "bindability": "bindable",
+      "non_bindable_reason": null,
+      "binding_role": "partial_scope",
+      "predicate": {
+        "all_of": [
+          {
+            "slot": "product_modality",
+            "operator": "equals",
+            "value": "monoclonal_antibody"
+          }
+        ]
+      },
+      "evidence_span": "monoclonal antibodies",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part1.3_3.003",
+      "condition_id": "ich_s6_r1.cond.part1.3_3.003",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "comparable unintentional tissue cross-reactivity to humans is demonstrated",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part1.3_3.004",
+      "condition_id": "ich_s6_r1.cond.part1.3_3.004",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "in certain justified cases",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part1.3_3.005",
+      "condition_id": "ich_s6_r1.cond.part1.3_3.005",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "where the biological activity of the biopharmaceutical is well understood",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part1.3_3.006",
+      "condition_id": "ich_s6_r1.cond.part1.3_3.006",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "the toxicity profile in the two species is comparable in the short term",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part1.3_3.007",
+      "condition_id": "ich_s6_r1.cond.part1.3_3.007",
+      "bindability": "bindable",
+      "non_bindable_reason": null,
+      "binding_role": "partial_scope",
+      "predicate": {
+        "all_of": [
+          {
+            "slot": "relevant_species_availability",
+            "operator": "equals",
+            "value": "none"
+          }
+        ]
+      },
+      "evidence_span": "no relevant species exists",
+      "verification_status": "needs_review"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part1.3_3.008",
+      "condition_id": "ich_s6_r1.cond.part1.3_3.008",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "Where it is not possible to use transgenic animal models or homologous proteins",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part1.3_3.010",
+      "condition_id": "ich_s6_r1.cond.part1.3_3.010",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "the interaction of the product and the humanised receptor has similar physiological consequences to those expected in humans",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part1.3_3.009",
+      "condition_id": "ich_s6_r1.cond.part1.3_3.009",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "In certain cases",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.2_1.001",
+      "condition_id": "ich_s6_r1.cond.part2.2_1.001",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "narrative_reference",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "when determining species relevancy",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.2_1.002",
+      "condition_id": "ich_s6_r1.cond.part2.2_1.002",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "epistemic_hedge",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "very low levels in typical healthy preclinical species",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.2_1.003",
+      "condition_id": "ich_s6_r1.cond.part2.2_1.003",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "where the approaches described above cannot be used to demonstrate a pharmacologically relevant species",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.2_1.004",
+      "condition_id": "ich_s6_r1.cond.part2.2_1.004",
+      "bindability": "bindable",
+      "non_bindable_reason": null,
+      "binding_role": "partial_scope",
+      "predicate": {
+        "all_of": [
+          {
+            "slot": "relevant_species_availability",
+            "operator": "equals",
+            "value": "none"
+          }
+        ]
+      },
+      "evidence_span": "no relevant species can be identified",
+      "verification_status": "needs_review"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.2_1.005",
+      "condition_id": "ich_s6_r1.cond.part2.2_1.005",
+      "bindability": "bindable",
+      "non_bindable_reason": null,
+      "binding_role": "partial_scope",
+      "predicate": {
+        "all_of": [
+          {
+            "slot": "product_modality",
+            "operator": "equals",
+            "value": "monoclonal_antibody"
+          },
+          {
+            "slot": "target_nature",
+            "operator": "equals",
+            "value": "foreign"
+          }
+        ]
+      },
+      "evidence_span": "monoclonal antibodies and other related antibody products directed at foreign targets",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.2_1.006",
+      "condition_id": "ich_s6_r1.cond.part2.2_1.006",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "narrative_reference",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "when animal models of disease are used to evaluate proof of principle",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.2_1.007",
+      "condition_id": "ich_s6_r1.cond.part2.2_1.007",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "epistemic_hedge",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "Where this is not feasible",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.2_1.008",
+      "condition_id": "ich_s6_r1.cond.part2.2_1.008",
+      "bindability": "bindable",
+      "non_bindable_reason": null,
+      "binding_role": "partial_scope",
+      "predicate": {
+        "all_of": [
+          {
+            "slot": "product_modality",
+            "operator": "equals",
+            "value": "adc"
+          },
+          {
+            "slot": "conjugated_toxin_novelty",
+            "operator": "equals",
+            "value": "novel"
+          }
+        ]
+      },
+      "evidence_span": "an antibody-drug/toxin conjugate (ADC) incorporating a novel toxin/toxicant",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.2_2.001",
+      "condition_id": "ich_s6_r1.cond.part2.2_2.001",
+      "bindability": "bindable",
+      "non_bindable_reason": null,
+      "binding_role": "partial_scope",
+      "predicate": {
+        "all_of": [
+          {
+            "slot": "relevant_species_availability",
+            "operator": "equals",
+            "value": "two_rodent_and_nonrodent"
+          }
+        ]
+      },
+      "evidence_span": "two pharmacologically relevant species for the clinical candidate (one rodent and one non-rodent)",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.2_2.002",
+      "condition_id": "ich_s6_r1.cond.part2.2_2.002",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "the toxicological findings from these studies are similar or the findings are understood from the mechanism of action of the product",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.2_2.003",
+      "condition_id": "ich_s6_r1.cond.part2.2_2.003",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "there is a scientific rationale for using non-rodents",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.2_2.004",
+      "condition_id": "ich_s6_r1.cond.part2.2_2.004",
+      "bindability": "bindable",
+      "non_bindable_reason": null,
+      "binding_role": "partial_scope",
+      "predicate": {
+        "all_of": [
+          {
+            "slot": "relevant_species_availability",
+            "operator": "equals",
+            "value": "one"
+          }
+        ]
+      },
+      "evidence_span": "pharmacologically active in only one species",
+      "verification_status": "needs_review"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.notes.001",
+      "condition_id": "ich_s6_r1.cond.part2.notes.001",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "epistemic_hedge",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "in some cases",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.notes.002",
+      "condition_id": "ich_s6_r1.cond.part2.notes.002",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "narrative_reference",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "When there is unexpected binding in human tissues",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.notes.003",
+      "condition_id": "ich_s6_r1.cond.part2.notes.003",
+      "bindability": "bindable",
+      "non_bindable_reason": null,
+      "binding_role": "partial_scope",
+      "predicate": {
+        "all_of": [
+          {
+            "slot": "product_modality",
+            "operator": "equals",
+            "value": "bispecific_antibody"
+          },
+          {
+            "slot": "tcr_study_feasible",
+            "operator": "equals",
+            "value": "yes"
+          }
+        ]
+      },
+      "evidence_span": "a bi-specific antibody product will be evaluated in a TCR study using a panel of human tissues",
+      "verification_status": "needs_review"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.notes.004",
+      "condition_id": "ich_s6_r1.cond.part2.notes.004",
+      "bindability": "bindable",
+      "non_bindable_reason": null,
+      "binding_role": "partial_scope",
+      "predicate": {
+        "all_of": [
+          {
+            "slot": "tcr_study_feasible",
+            "operator": "equals",
+            "value": "yes"
+          }
+        ]
+      },
+      "evidence_span": "when TCR studies have been conducted with the clinical candidate in a human tissue panel",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.notes.005",
+      "condition_id": "ich_s6_r1.cond.part2.notes.005",
+      "bindability": "bindable",
+      "non_bindable_reason": null,
+      "binding_role": "partial_scope",
+      "predicate": {
+        "all_of": [
+          {
+            "slot": "product_modality",
+            "operator": "equals",
+            "value": "adc"
+          }
+        ]
+      },
+      "evidence_span": "ADC",
+      "verification_status": "needs_review"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.notes.006",
+      "condition_id": "ich_s6_r1.cond.part2.notes.006",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "the toxin is not active in the rodent",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.notes.007",
+      "condition_id": "ich_s6_r1.cond.part2.notes.007",
+      "bindability": "bindable",
+      "non_bindable_reason": null,
+      "binding_role": "partial_scope",
+      "predicate": {
+        "all_of": [
+          {
+            "slot": "relevant_species_availability",
+            "operator": "equals",
+            "value": "one"
+          }
+        ]
+      },
+      "evidence_span": "only one pharmacologically relevant species is available",
+      "verification_status": "needs_review"
+    },
+    {
+      "binding_id": "ich_s6_r1.bind.part2.notes.008",
+      "condition_id": "ich_s6_r1.cond.part2.notes.008",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "sufficient body of scientific information available",
+      "verification_status": "verified"
+    }
+  ]
+}

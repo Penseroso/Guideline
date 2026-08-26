@@ -5,10 +5,16 @@ const {
   runDeterministicGates,
   buildPredicate,
   resolveBindingRole,
+  finalizeBindingShape,
   bindingIdFor,
   claimTextForBinding,
   proposeAndVerifyBinding
 } = require("../engine/binding_agent");
+
+const { validateBindingFiles } = require("../validation/validate_bindings");
+const fs = require("node:fs");
+const os = require("node:os");
+const path = require("node:path");
 
 function sequentialClient(responses) {
   let i = 0;
@@ -62,6 +68,11 @@ test("bindingIdFor derives the binding_id from the condition_id's own namespace"
   assert.equal(bindingIdFor("ich_s6_r1.cond.part2.2_2.001"), "ich_s6_r1.bind.part2.2_2.001");
 });
 
+test("resolveBindingRole returns null for a non_bindable draft even when condition_type=exception (a structurally-exception condition can still be non-machine-bindable)", () => {
+  const draft = draftNonBindable();
+  assert.equal(resolveBindingRole(draft, EXCEPTION_CONDITION), null);
+});
+
 test("resolveBindingRole forces exception role from condition_type regardless of the model's proposal", () => {
   const draft = draftBindable({ binding_role: "partial_scope" });
   assert.equal(resolveBindingRole(draft, EXCEPTION_CONDITION), "exception");
@@ -82,13 +93,65 @@ test("buildPredicate returns null for a non_bindable draft", () => {
   assert.equal(buildPredicate(draftNonBindable()), null);
 });
 
-test("claimTextForBinding renders an all_of predicate as a natural-language restriction", () => {
+// --- finalizeBindingShape: guarantees the persisted shape is always
+// structurally schema-valid, regardless of what the model proposed (real
+// gaps found on a live S6(R1) run, docs/milestone_log.md M6) ---
+
+test("finalizeBindingShape substitutes a fallback reason when the model proposed non_bindable with a missing/invalid reason", () => {
+  const shape = finalizeBindingShape(draftNonBindable({ non_bindable_reason: null }), CONDITION);
+  assert.equal(shape.bindability, "non_bindable");
+  assert.ok(shape.non_bindable_reason, "must never persist a null reason for a non_bindable binding");
+  assert.equal(shape.binding_role, null);
+  assert.equal(shape.predicate, null);
+});
+
+test("finalizeBindingShape downgrades a bindable draft with zero usable leaves to non_bindable instead of persisting an empty predicate", () => {
+  const shape = finalizeBindingShape(draftBindable({ leaves: [] }), CONDITION);
+  assert.equal(shape.bindability, "non_bindable");
+  assert.equal(shape.predicate, null);
+  assert.equal(shape.binding_role, null);
+});
+
+test("finalizeBindingShape falls back to the full condition_text when evidence_span is not a real substring", () => {
+  const shape = finalizeBindingShape(draftBindable({ evidence_span: "text nowhere in the condition" }), CONDITION);
+  assert.equal(shape.evidence_span, CONDITION.condition_text);
+});
+
+test("finalizeBindingShape passes a well-formed draft through unchanged", () => {
+  const draft = draftBindable();
+  const shape = finalizeBindingShape(draft, CONDITION);
+  assert.equal(shape.bindability, "bindable");
+  assert.equal(shape.binding_role, "partial_scope");
+  assert.deepEqual(shape.predicate, buildPredicate(draft));
+  assert.equal(shape.evidence_span, draft.evidence_span);
+});
+
+test("a gate-failing proposal (missing non_bindable_reason) still produces a structurally schema-valid binding file, needs_review but never malformed — the exact defect found on a live S6(R1) run", async () => {
+  const client = { complete: async () => draftNonBindable({ non_bindable_reason: null }) };
+  const { binding } = await proposeAndVerifyBinding({ condition: CONDITION, client });
+  assert.equal(binding.verification_status, "needs_review");
+
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "binding_shape_e2e_"));
+  try {
+    const file = path.join(dir, "test_doc.json");
+    fs.writeFileSync(file, JSON.stringify({ document_id: "test_doc", bindings: [binding] }));
+    const index = { conditions: new Map([[CONDITION.condition_id, CONDITION]]) };
+    const { buildSlotIndex } = require("../validation/validate_bindings");
+    const result = validateBindingFiles([file], { index, slotById: buildSlotIndex() });
+    assert.equal(result.ok, true, JSON.stringify(result.errors));
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test("claimTextForBinding renders an all_of predicate using the slot's natural-language value_labels, never the raw enum token or the long description", () => {
   const binding = {
     predicate: { all_of: [{ slot: "relevant_species_availability", operator: "equals", value: "two_rodent_and_nonrodent" }] }
   };
   const claim = claimTextForBinding(binding);
-  assert.match(claim, /applies only when/);
-  assert.match(claim, /two_rodent_and_nonrodent/);
+  assert.match(claim, /two pharmacologically relevant species/);
+  assert.doesNotMatch(claim, /two_rodent_and_nonrodent/);
+  assert.doesNotMatch(claim, /Whether, and how many/);
 });
 
 // --- runDeterministicGates ---
@@ -219,5 +282,17 @@ test("condition_type=exception always yields binding_role=exception regardless o
   ]);
   const { binding } = await proposeAndVerifyBinding({ condition: EXCEPTION_CONDITION, client, hasTargetRule: true });
   assert.equal(binding.binding_role, "exception");
+  assert.equal(binding.verification_status, "verified");
+});
+
+test("a non_bindable proposal on a condition_type=exception condition produces binding_role=null, not a schema-invalid exception role (real bug found on a live S6(R1) run)", async () => {
+  const client = sequentialClient([
+    draftNonBindable({ non_bindable_reason: "expert_judgment_required", evidence_span: "scientific rationale" })
+    // non_bindable requires no entailment call
+  ]);
+  const { binding } = await proposeAndVerifyBinding({ condition: EXCEPTION_CONDITION, client, hasTargetRule: true });
+  assert.equal(binding.bindability, "non_bindable");
+  assert.equal(binding.binding_role, null, "schema requires binding_role=null whenever bindability=non_bindable, even for a structurally-exception condition");
+  assert.equal(binding.predicate, null);
   assert.equal(binding.verification_status, "verified");
 });
