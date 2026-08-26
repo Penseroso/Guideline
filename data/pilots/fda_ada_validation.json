@@ -203,13 +203,53 @@
       "section_order_status": "known"
     },
     {
+      "section_id": "fda_ada.sec.4_i",
+      "document_id": "fda_ada",
+      "section_number": "IV.I",
+      "title": "Selection of Format",
+      "parent_section_id": "fda_ada.sec.4",
+      "heading_source_unit_id": null,
+      "section_order": 20,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.4_j_1",
+      "document_id": "fda_ada",
+      "section_number": "IV.J.1",
+      "title": "Development of Positive Control Antibodies",
+      "parent_section_id": "fda_ada.sec.4",
+      "heading_source_unit_id": null,
+      "section_order": 21,
+      "section_order_status": "known"
+    },
+    {
       "section_id": "fda_ada.sec.4_g",
       "document_id": "fda_ada",
       "section_number": "IV.G",
       "title": "Reproducibility",
       "parent_section_id": "fda_ada.sec.4",
       "heading_source_unit_id": null,
-      "section_order": 20,
+      "section_order": 22,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.4_j_2",
+      "document_id": "fda_ada",
+      "section_number": "IV.J.2",
+      "title": "Development of Negative Controls",
+      "parent_section_id": "fda_ada.sec.4",
+      "heading_source_unit_id": null,
+      "section_order": 23,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.4_j_3",
+      "document_id": "fda_ada",
+      "section_number": "IV.J.3",
+      "title": "Controlling Non-Specific Binding",
+      "parent_section_id": "fda_ada.sec.4",
+      "heading_source_unit_id": null,
+      "section_order": 24,
       "section_order_status": "known"
     },
     {
@@ -219,7 +259,27 @@
       "title": "Robustness and Sample Stability",
       "parent_section_id": "fda_ada.sec.4",
       "heading_source_unit_id": null,
-      "section_order": 21,
+      "section_order": 25,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.4_k",
+      "document_id": "fda_ada",
+      "section_number": "IV.K",
+      "title": "Reporting Results for Qualitative and Quasi-Quantitative Assays",
+      "parent_section_id": "fda_ada.sec.4",
+      "heading_source_unit_id": null,
+      "section_order": 26,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.4_l_1",
+      "document_id": "fda_ada",
+      "section_number": "IV.L.1",
+      "title": "Pre-Existing Antibodies",
+      "parent_section_id": "fda_ada.sec.4",
+      "heading_source_unit_id": null,
+      "section_order": 27,
       "section_order_status": "known"
     },
     {
@@ -229,7 +289,27 @@
       "parent_section_id": "fda_ada.sec.6",
       "heading_source_unit_id": "fda_ada.su.6_a.001",
       "title": "General Considerations for Assay Validation",
-      "section_order": 22,
+      "section_order": 28,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.4_l_2",
+      "document_id": "fda_ada",
+      "section_number": "IV.L.2",
+      "title": "Rheumatoid Factor and Other Endogenous Human Antibodies",
+      "parent_section_id": "fda_ada.sec.4",
+      "heading_source_unit_id": null,
+      "section_order": 29,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.4_l_3",
+      "document_id": "fda_ada",
+      "section_number": "IV.L.3",
+      "title": "Monoclonal Antibodies",
+      "parent_section_id": "fda_ada.sec.4",
+      "heading_source_unit_id": null,
+      "section_order": 30,
       "section_order_status": "known"
     },
     {
@@ -239,7 +319,17 @@
       "parent_section_id": "fda_ada.sec.6",
       "heading_source_unit_id": "fda_ada.su.6_b.001",
       "title": "Validation of Screening Assay",
-      "section_order": 23,
+      "section_order": 31,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.4_l_4",
+      "document_id": "fda_ada",
+      "section_number": "IV.L.4",
+      "title": "Conjugated Proteins and Multi-Domain Molecules",
+      "parent_section_id": "fda_ada.sec.4",
+      "heading_source_unit_id": null,
+      "section_order": 32,
       "section_order_status": "known"
     },
     {
@@ -249,7 +339,7 @@
       "parent_section_id": "fda_ada.sec.6",
       "heading_source_unit_id": "fda_ada.su.6_c.001",
       "title": "Validation of Confirmatory Assay",
-      "section_order": 24,
+      "section_order": 33,
       "section_order_status": "known"
     },
     {
@@ -259,7 +349,7 @@
       "parent_section_id": "fda_ada.sec.6",
       "heading_source_unit_id": "fda_ada.su.6_e.001",
       "title": "Validation of Neutralization Assay",
-      "section_order": 25,
+      "section_order": 34,
       "section_order_status": "known"
     }
   ],
@@ -595,6 +685,204 @@
       "review_status": "reviewed"
     },
     {
+      "source_unit_id": "fda_ada.su.4_i.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.4_i",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Different assay formats and instrumentation are available that can be used for detection of ADA. These include, but are not limited to, direct binding assays, bridging assays, and soluble-phase binding assays; for example, radioimmunoprecipitation assay. Each assay format has advantages and disadvantages, including throughput, sensitivity, selectivity, dynamic range, ability to detect various Ig isotypes, ability to detect rapidly dissociating antibodies, and availability of reagents. Bridging assay formats may be subject to false-negative results when the antigen (for example, PEG) has repetitive motifs. One of the major differences between these assay formats is the number and vigor of washes, which can influence assay sensitivity. Epitope exposure is also important to consider because binding to plastic or coupling to other agents (for example, fluorochrome, enzyme, or biotin reporters) can result in conformational changes of the antigen that can obscure, expose, modify, or destroy relevant antibody binding sites on the therapeutic protein product in question.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_i",
+        "pdf_page_index_zero_based": 15,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "12",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_j_1.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.4_j_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Sponsors may use the same or different positive control antibodies to develop, validate, and monitor system suitability during routine assessment of assay performance. For system suitability controls, a positive control antibody, either mono- or polyclonal, used at concentrations adjusted to ensure assay sensitivity and detect hook effects, should be included. Most frequently, positive control antibodies are generated by immunizing animals in the absence or presence of adjuvants. FDA recommends that positive control antibodies generated by immunizing animals be affinity purified using the therapeutic protein product. This approach enriches the polyclonal antibody preparation for ADA, which enables a better interpretation of sensitivity assessment results. The selection of animal species when generating positive control antibodies should be carefully considered. For therapeutic mAb, the sponsor should select a positive control antibody that binds to the variable region of the therapeutic mAb.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_j_1",
+        "pdf_page_index_zero_based": 16,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "13",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_j_2.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.4_j_2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "FDA recommends that sponsors establish a negative control for validation studies and subject-sample testing. In this regard, a pool of sera from an appropriate number of treatment-naïve subjects can serve as a negative control. Importantly, the value obtained for the negative control should be below but close to the cut-point determined for the assay in the subject population being tested. Negative controls that yield values far below the mean value derived from individual serum samples used to establish the cut-point may not be useful in ensuring proper assay performance.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_j_2",
+        "pdf_page_index_zero_based": 17,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_j_3.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.4_j_3",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Every test component, from the plastic of the microtiter plates to the developing agent, can affect assay sensitivity and non-specific binding. One of the most critical elements is the selection of the proper assay buffer and blocking reagents used to prevent non-specific binding. The sponsor should carefully consider the number and timing of wash steps as well as the detergents added to the assay buffer (for example, blocking or wash buffer) to reduce background noise while maintaining sensitivity. Moreover, including uncoated wells is insufficient to assess non-specific binding. Rather, determining the capacity of ADAs to bind to an unrelated protein of similar size and charge that may be present in the sample may prove to be a better test of binding specificity.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_j_3",
+        "pdf_page_index_zero_based": 17,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_k.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.4_k",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Several approaches may be used to report positive antibody responses. The most common approach is qualitative, with subjects reported as having a positive or negative antibody response. For subjects who are confirmed to be ADA positive, determining antibody levels can be informative because it allows for stratified assessment of ADAs and their impact on safety and efficacy. Positive antibody levels may be evaluated using a titer. Most frequently titer is determined from the reciprocal of the highest dilution that gives a value at or just above the cut-point of the assay. Alternatively, titer may be determined by extrapolating the dilution to the assay cut-point using the linear portion of the dose response curve. All sample dilutions, such as the MRD and acid dissociations, should be factored into the calculations of titers and provided when reporting titers.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_k",
+        "pdf_page_index_zero_based": 18,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "15",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_l_1.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.4_l_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Pre-existing antibodies may have clinical effects that affect the efficacy of the therapeutic protein product being tested. An alternative to the qualitative screening assay approach may be needed to assess the quantity and quality of ADA when pre-existing antibodies are present. For example, testing samples for an increase in ADA using a semi-quantitative assay such as a titration assay can provide information on the impact of a therapeutic protein product on product immunogenicity that is not provided by a qualitative assay. When there are pre-existing antibodies and the titer of antibodies increases after exposure to the therapeutic protein product, they can be reported as treatment-boosted to differentiate them from treatment-induced antibody titers. For example, a boosted ADA response may be defined as a titer that is two dilution steps greater than the pre-treatment titer, when twofold dilutions are used to determine the titer.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_l_1",
+        "pdf_page_index_zero_based": 19,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "16",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_l_2.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.4_l_2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Measuring immune responses to therapeutic protein products that possess Fc regions, such as mAb and Fc-fusion proteins, may be particularly difficult when RF is present in the matrix. RF is generally an IgM antibody that recognizes IgG. Consequently, RF will bind Fc regions, making it appear that specific antibody to the therapeutic protein product exists. Several approaches for minimizing interference from RF have proven useful, including treatment with aspartame and careful optimization of reagent concentrations so as to reduce background binding. When examining immune responses to Fc-fusion proteins in clinical settings where RF generates false-positive results during development, FDA recommends developing an assay specific for the non-Fc region of the proteins rather than against the intact biotherapeutics.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_l_2",
+        "pdf_page_index_zero_based": 19,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "16",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_l_3.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.4_l_3",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Technologies reducing the presence of non-human sequences in mAb, such as chimerization and humanization, have reduced but not eliminated ADA. In these cases, the immune responses are directed largely against the variable regions of the mAb. The assays that can detect the reactivity against variable regions are considered more appropriate to evaluate the potential impact of antibodies against mAb-based therapeutics in subjects. If the Fc region is engineered or bound to another molecule, an assay that characterizes this response may be needed.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_l_3",
+        "pdf_page_index_zero_based": 19,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "16",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_l_4.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.4_l_4",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Antibody-drug conjugates (ADCs) are antibodies conjugated with small molecule drugs, so they represent a classic hapten-carrier molecule. Therefore, the immunogenicity assays should measure the responses to all components of the ADC therapeutic protein product, including the antibody, linker-drug, and new epitopes that may result from conjugation. When ADCs need to be labeled for immunogenicity assays, the conjugation should consider the potential for increased hydrophobicity of the labeled molecules because they may cause aggregation.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_l_4",
+        "pdf_page_index_zero_based": 19,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "16",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "fda_ada.su.4_a_1.001",
       "section_id": "fda_ada.sec.4_a_1",
       "unit_type": "heading",
@@ -809,6 +1097,72 @@
         "pdf_page_index_zero_based": 15,
         "pdf_page_index_status": "known",
         "printed_page_label": "12",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_j_1.002",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.4_j_1",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "Once a source of a positive control antibody has been identified, the sponsor should use that source to assess assay performance characteristics such as sensitivity, selectivity, specificity, drug tolerance, and reproducibility. FDA recommends that sponsors generate and reserve positive control antibody for use as a quality control or system suitability control during routine performance of the assay. For assay development and validation, dilutions should generate high, intermediate, and low assay signal values. The intermediate value is useful for assessing precision during assay validation. Intermediate-value QC samples for detection of ADA are generally not needed for monitoring system suitability during routine assay performance.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_j_1",
+        "pdf_page_index_zero_based": 17,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_j_2.002",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.4_j_2",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "When possible, negative control samples should be collected from treatment-naïve subjects with the medical condition being studied and should include subjects with similar sex, age, and concomitant medications so that the sample matrix is representative of the study population. Control samples should be collected and handled in the same manner as study samples with respect to type of anticoagulant used, volume, and sample preparation and storage. When target-population control samples are not available during development, it is acceptable to use purchased samples or samples from healthy donors, but cut-point, sensitivity, and selectivity should be confirmed when samples from treatment-naïve subjects from the appropriate target population become available.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_j_2",
+        "pdf_page_index_zero_based": 17,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.4_k.002",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.4_k",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "When reporting results for neutralization assays, values may also be reported as amount of mass units of therapeutic protein product neutralized per volume serum with the caveat that these are arbitrary in vitro assay units and cannot be used to estimate in vivo availability of the therapeutic protein product. Unless the assay method used allows for independent determination of mass per volume of undiluted matrix, antibody levels reported in mass units are generally not acceptable. FDA does not consider it necessary or desirable for the sponsor to report subject antibody results in terms of mass units unless (1) the results are determined by quantitative means or (2) a universally accepted and accessible source of validated antibody is available as a control and parallelism between the dilution curves of the control antibody and subject samples has been demonstrated.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.4_k",
+        "pdf_page_index_zero_based": 18,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "15",
         "printed_page_label_status": "known",
         "extraction_method": "automated text extraction with manual verification"
       },
@@ -4873,6 +5227,1154 @@
       "object": "freeze-thaw cycle stability of positive control antibodies",
       "normalized_ko": "An example of a short-term stability study is evaluation of freeze-thaw cycle stability of positive control antibodies.",
       "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_I.001",
+      "source_unit_ids": [
+        "fda_ada.su.4_i.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Different assay formats and instrumentation",
+      "action": "are available",
+      "object": "for detection of ADA",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_I.002",
+      "source_unit_ids": [
+        "fda_ada.su.4_i.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Each assay format",
+      "action": "has",
+      "object": "advantages and disadvantages, including throughput, sensitivity, selectivity, dynamic range, ability to detect various Ig isotypes, ability to detect rapidly dissociating antibodies, and availability of reagents",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_I.003",
+      "source_unit_ids": [
+        "fda_ada.su.4_i.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "One of the major differences between assay formats",
+      "action": "is",
+      "object": "the number and vigor of washes",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_I.004",
+      "source_unit_ids": [
+        "fda_ada.su.4_i.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Different assay formats and instrumentation",
+      "action": "may be used",
+      "object": "for detection of ADA",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_I.005",
+      "source_unit_ids": [
+        "fda_ada.su.4_i.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can influence",
+      "subject": "The number and vigor of washes",
+      "action": "can influence",
+      "object": "assay sensitivity",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_I.006",
+      "source_unit_ids": [
+        "fda_ada.su.4_i.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "ADA assay formats",
+      "action": "includes",
+      "object": "direct binding assays",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_I.007",
+      "source_unit_ids": [
+        "fda_ada.su.4_i.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "important to consider",
+      "subject": "Epitope exposure",
+      "action": "is important to consider",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_I.008",
+      "source_unit_ids": [
+        "fda_ada.su.4_i.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "important to consider",
+      "subject": "Epitope exposure",
+      "action": "should be considered",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_1.001",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "Sponsors",
+      "action": "may use",
+      "object": "the same or different positive control antibodies to develop",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_1.002",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "A positive control antibody, either mono- or polyclonal",
+      "action": "should be included",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_1.003",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Positive control antibodies",
+      "action": "are generated",
+      "object": "by immunizing animals in the absence or presence of adjuvants",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_1.004",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This approach",
+      "action": "enriches",
+      "object": "the polyclonal antibody preparation for ADA",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_1.005",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This approach",
+      "action": "enables",
+      "object": "a better interpretation of sensitivity assessment results",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_1.006",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_1.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The sponsor",
+      "action": "should use",
+      "object": "that source to assess assay performance characteristics",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_1.007",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_1.002"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Assay performance characteristics",
+      "action": "includes",
+      "object": "sensitivity",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_1.008",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_1.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The intermediate value",
+      "action": "is useful for assessing",
+      "object": "precision",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_1.009",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_1.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Intermediate-value QC samples for detection of ADA",
+      "action": "are generally not needed",
+      "object": "for monitoring system suitability",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_1.010",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_1.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "generally not needed",
+      "subject": "Intermediate-value QC samples for detection of ADA",
+      "action": "are generally not needed for monitoring",
+      "object": "system suitability",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_2.001",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "recommends",
+      "subject": "The sponsor",
+      "action": "should establish",
+      "object": "a negative control for validation studies and subject-sample testing",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_2.002",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_2.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "a pool of sera from an appropriate number of treatment-naïve subjects",
+      "action": "can serve as",
+      "object": "a negative control",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_2.003",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_2.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may not",
+      "subject": "Negative controls that yield values far below the mean value derived from individual serum samples used to establish the cut-point",
+      "action": "may not be useful in ensuring",
+      "object": "proper assay performance",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_2.004",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may not",
+      "subject": "Negative controls that yield values far below the mean value derived from individual serum samples used to establish the cut-point",
+      "action": "may not be useful in ensuring",
+      "object": "proper assay performance",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_2.005",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "negative control samples",
+      "action": "should be collected from",
+      "object": "treatment-naïve subjects with the medical condition being studied",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_2.006",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Control samples",
+      "action": "should be handled in the same manner as",
+      "object": "study samples with respect to type of anticoagulant used, volume, and sample preparation and storage",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_2.007",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "acceptable",
+      "subject": "The sponsor",
+      "action": "may use",
+      "object": "purchased samples or samples from healthy donors",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_2.008",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "acceptable",
+      "subject": "Purchased samples or samples from healthy donors",
+      "action": "may be used",
+      "object": "as control samples",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_3.001",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Every test component",
+      "action": "can affect",
+      "object": "assay sensitivity and non-specific binding",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_3.002",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "One of the most critical elements",
+      "action": "is",
+      "object": "the selection of the proper assay buffer and blocking reagents used to prevent non-specific binding",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_3.003",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "including uncoated wells",
+      "action": "is not sufficient to assess",
+      "object": "non-specific binding",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_3.004",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The sponsor",
+      "action": "should carefully consider",
+      "object": "the number and timing of wash steps",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_3.005",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_3.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "is insufficient",
+      "subject": "including uncoated wells",
+      "action": "is not sufficient to assess",
+      "object": "non-specific binding",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_3.006",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_3.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may prove to be",
+      "subject": "determining the capacity of ADAs to bind to an unrelated protein of similar size and charge that may be present in the sample",
+      "action": "may prove to be",
+      "object": "a better test of binding specificity",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_3.007",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_3.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Every test component",
+      "action": "can affect",
+      "object": "assay sensitivity and non-specific binding",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_J_3.008",
+      "source_unit_ids": [
+        "fda_ada.su.4_j_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may prove",
+      "subject": "Determining the capacity of ADAs to bind to an unrelated protein of similar size and charge",
+      "action": "may prove to be",
+      "object": "a better test of binding specificity",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.001",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may be used",
+      "subject": "Several approaches",
+      "action": "may be used to report",
+      "object": "positive antibody responses",
+      "normalized_ko": "Several approaches may be used to report positive antibody responses.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.002",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may be determined",
+      "subject": "Titer",
+      "action": "may be determined by extrapolating",
+      "object": "the dilution to the assay cut-point using the linear portion of the dose response curve",
+      "normalized_ko": "Titer may be determined by extrapolation to the assay cut-point using the linear dose-response portion.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.003",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The most common approach",
+      "action": "is",
+      "object": "qualitative",
+      "normalized_ko": "The most common approach is qualitative.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.004",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Subjects",
+      "action": "are reported as having",
+      "object": "a positive or negative antibody response",
+      "normalized_ko": "Subjects are reported as having a positive or negative antibody response.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.005",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Titer",
+      "action": "is determined from",
+      "object": "the reciprocal of the highest dilution that gives a value at or just above the cut-point of the assay",
+      "normalized_ko": "Titer is determined from the reciprocal of the highest dilution at or just above the assay cut-point.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.006",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Determining antibody levels",
+      "action": "allows for",
+      "object": "stratified assessment of ADAs and their impact on safety and efficacy",
+      "normalized_ko": "Determining antibody levels allows for stratified assessment of ADAs and their impact on safety and efficacy.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.007",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "determining antibody levels",
+      "action": "can be informative",
+      "object": "it allows for stratified assessment of ADAs and their impact on safety and efficacy",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.008",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can be informative",
+      "subject": "determining antibody levels",
+      "action": "can be informative",
+      "object": "it allows for stratified assessment of ADAs and their impact on safety and efficacy",
+      "normalized_ko": "Determining antibody levels can inform stratified assessment of ADA safety and efficacy impact.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.009",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be factored",
+      "subject": "All sample dilutions",
+      "action": "should be factored into",
+      "object": "the calculations of titers",
+      "normalized_ko": "All sample dilutions should be factored into titer calculations.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.010",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be ... provided",
+      "subject": "All sample dilutions",
+      "action": "should be provided when reporting",
+      "object": "titers",
+      "normalized_ko": "All sample dilutions should be provided when reporting titers.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.011",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may also be reported",
+      "subject": "Values",
+      "action": "may be reported as",
+      "object": "amount of mass units of therapeutic protein product neutralized per volume serum",
+      "normalized_ko": "Neutralization assay values may be reported as mass units of therapeutic protein product neutralized per serum volume.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.012",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "these",
+      "action": "are",
+      "object": "arbitrary in vitro assay units",
+      "normalized_ko": "These are arbitrary in vitro assay units.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.013",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "arbitrary in vitro assay units",
+      "action": "cannot be used to estimate",
+      "object": "in vivo availability of the therapeutic protein product",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.014",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "cannot be used",
+      "subject": "these",
+      "action": "should not be used to estimate",
+      "object": "in vivo availability of the therapeutic protein product",
+      "normalized_ko": "These units should not be used to estimate in vivo availability of the therapeutic protein product.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.015",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may be used",
+      "subject": "Several approaches",
+      "action": "may be used to report",
+      "object": "positive antibody responses",
+      "normalized_ko": "Several approaches may be used to report positive antibody responses.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.016",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may also be reported",
+      "subject": "Values",
+      "action": "may also be reported as",
+      "object": "amount of mass units of therapeutic protein product neutralized per volume serum",
+      "normalized_ko": "Values may be reported as mass units of therapeutic protein product neutralized per volume serum.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.017",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "cannot be used",
+      "subject": "Mass units of therapeutic protein product neutralized per volume serum",
+      "action": "cannot be used to estimate",
+      "object": "in vivo availability of the therapeutic protein product",
+      "normalized_ko": "These mass units cannot be used to estimate in vivo availability of the therapeutic protein product.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_K.018",
+      "source_unit_ids": [
+        "fda_ada.su.4_k.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "generally not acceptable",
+      "subject": "Antibody levels reported in mass units",
+      "action": "are generally not acceptable",
+      "object": null,
+      "normalized_ko": "Antibody levels reported in mass units are generally not acceptable unless the assay method permits independent determination of mass per volume of undiluted matrix.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_1.001",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_1.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "Pre-existing antibodies",
+      "action": "may have",
+      "object": "clinical effects that affect the efficacy of the therapeutic protein product being tested",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_1.002",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_1.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Testing samples for an increase in ADA using a semi-quantitative assay such as a titration assay",
+      "action": "can provide",
+      "object": "information on the impact of a therapeutic protein product on product immunogenicity",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_1.003",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may be needed",
+      "subject": "An alternative to the qualitative screening assay approach",
+      "action": "may be needed",
+      "object": "to assess the quantity and quality of ADA",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_1.004",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can be reported",
+      "subject": "Pre-existing antibodies with increased titers after exposure to the therapeutic protein product",
+      "action": "can be reported as",
+      "object": "treatment-boosted to differentiate them from treatment-induced antibody titers",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_1.005",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_1.001"
+      ],
+      "record_type": "example",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Testing samples for an increase in ADA using a semi-quantitative assay such as a titration assay",
+      "action": "can provide",
+      "object": "information on the impact of a therapeutic protein product on product immunogenicity that is not provided by a qualitative assay",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_1.006",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_1.001"
+      ],
+      "record_type": "example",
+      "modality": "may",
+      "original_modal_text": "may be defined",
+      "subject": "A boosted ADA response",
+      "action": "may be defined as",
+      "object": "a titer that is two dilution steps greater than the pre-treatment titer",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_1.007",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_1.001"
+      ],
+      "record_type": "definition",
+      "modality": "may",
+      "original_modal_text": "may be defined as",
+      "subject": "a boosted ADA response",
+      "action": "may be defined as",
+      "object": "a titer that is two dilution steps greater than the pre-treatment titer",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_1.008",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_1.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Semi-quantitative assay",
+      "action": "includes",
+      "object": "a titration assay",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_1.009",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "A qualitative assay",
+      "action": "does not provide",
+      "object": "information on the impact of a therapeutic protein product on product immunogenicity",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_2.001",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_2.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may be particularly difficult",
+      "subject": "Measuring immune responses to therapeutic protein products that possess Fc regions, such as mAb and Fc-fusion proteins",
+      "action": "may be particularly difficult",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_2.002",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "RF",
+      "action": "is generally",
+      "object": "an IgM antibody",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_2.003",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "RF",
+      "action": "recognizes",
+      "object": "IgG",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_2.004",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "RF binding Fc regions",
+      "action": "makes it appear",
+      "object": "that specific antibody to the therapeutic protein product exists",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_2.005",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "RF",
+      "action": "will bind",
+      "object": "Fc regions",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_2.006",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Measuring immune responses to therapeutic protein products that possess Fc regions",
+      "action": "may be particularly difficult",
+      "object": "when RF is present in the matrix",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_2.007",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_2.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "will",
+      "subject": "RF",
+      "action": "will bind",
+      "object": "Fc regions",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_2.008",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_2.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Approaches for minimizing interference from RF",
+      "action": "includes",
+      "object": "treatment with aspartame",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_2.009",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "recommends",
+      "subject": "The sponsor",
+      "action": "should develop",
+      "object": "an assay specific for the non-Fc region of the proteins",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_2.010",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_2.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "RF",
+      "action": "is generally",
+      "object": "an IgM antibody that recognizes IgG",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_3.001",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Technologies reducing the presence of non-human sequences in mAb",
+      "action": "have reduced",
+      "object": "ADA",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_3.002",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "the immune responses",
+      "action": "are directed largely against",
+      "object": "the variable regions of the mAb",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_3.003",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_3.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Technologies reducing the presence of non-human sequences in mAb",
+      "action": "includes",
+      "object": "chimerization and humanization",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_3.004",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "are considered more appropriate",
+      "subject": "The assays that can detect the reactivity against variable regions",
+      "action": "are considered more appropriate to evaluate",
+      "object": "the potential impact of antibodies against mAb-based therapeutics in subjects",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_3.005",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may be needed",
+      "subject": "an assay",
+      "action": "may be needed to characterize",
+      "object": "this response",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_4.001",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_4.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Antibody-drug conjugates (ADCs)",
+      "action": "are",
+      "object": "antibodies conjugated with small molecule drugs",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_4.002",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_4.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "ADCs",
+      "action": "represent",
+      "object": "a classic hapten-carrier molecule",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_4.003",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The immunogenicity assays",
+      "action": "should measure",
+      "object": "the responses to all components of the ADC therapeutic protein product, including the antibody, linker-drug, and new epitopes that may result from conjugation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_4.004",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_4.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "the labeled molecules",
+      "action": "may cause",
+      "object": "aggregation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_4.005",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_4.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "components of the ADC therapeutic protein product",
+      "action": "includes",
+      "object": "the antibody",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.IV_L_4.006",
+      "source_unit_ids": [
+        "fda_ada.su.4_l_4.001"
+      ],
+      "record_type": "example",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "components of the ADC therapeutic protein product",
+      "action": "includes",
+      "object": "new epitopes that may result from conjugation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
     }
   ],
   "quantitative_criteria": [
@@ -5783,6 +7285,42 @@
       "is_default_with_exception": false,
       "is_illustrative_example": false,
       "source_text": "two or more independent laboratories",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.IV_L_1.001",
+      "source_unit_id": "fda_ada.su.4_l_1.001",
+      "knowledge_record_id": null,
+      "parameter": "Boosted ADA response titer increase relative to the pre-treatment titer",
+      "comparator": "equals",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "dilution steps",
+      "value_status": "known",
+      "denominator_or_reference": "the pre-treatment titer",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "two dilution steps greater than the pre-treatment titer",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.IV_L_1.002",
+      "source_unit_id": "fda_ada.su.4_l_1.001",
+      "knowledge_record_id": null,
+      "parameter": "Boosted ADA response titer relative to the pre-treatment titer",
+      "comparator": "at_least",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "dilution steps",
+      "value_status": "known",
+      "denominator_or_reference": "the pre-treatment titer",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "a titer that is two dilution steps greater than the pre-treatment titer",
       "review_status": "reviewed"
     }
   ],
@@ -6851,6 +8389,409 @@
       "condition_type": "scope",
       "applies_to_ids": [
         "fda_ada.kr.IV_H.009"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_I.001",
+      "source_unit_id": "fda_ada.su.4_i.001",
+      "condition_text": "when the antigen (for example, PEG) has repetitive motifs",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_I.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_I.002",
+      "source_unit_id": "fda_ada.su.4_i.001",
+      "condition_text": "when the antigen (for example, PEG) has repetitive motifs",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_I.007"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_I.003",
+      "source_unit_id": "fda_ada.su.4_i.001",
+      "condition_text": "because binding to plastic or coupling to other agents (for example, fluorochrome, enzyme, or biotin reporters)",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_I.004",
+      "source_unit_id": "fda_ada.su.4_i.001",
+      "condition_text": "because binding to plastic or coupling to other agents (for example, fluorochrome, enzyme, or biotin reporters)",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_1.001",
+      "source_unit_id": "fda_ada.su.4_j_1.001",
+      "condition_text": "during routine assessment of assay performance",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_1.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_1.002",
+      "source_unit_id": "fda_ada.su.4_j_1.001",
+      "condition_text": "For system suitability controls",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_1.003",
+      "source_unit_id": "fda_ada.su.4_j_1.001",
+      "condition_text": "at concentrations adjusted to ensure assay sensitivity and detect hook effects",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_1.004",
+      "source_unit_id": "fda_ada.su.4_j_1.001",
+      "condition_text": "For therapeutic mAb",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_1.010"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_1.005",
+      "source_unit_id": "fda_ada.su.4_j_1.002",
+      "condition_text": "Once a source of a positive control antibody has been identified",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_1.006",
+      "source_unit_id": "fda_ada.su.4_j_1.002",
+      "condition_text": "during routine performance of the assay",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_1.007",
+      "source_unit_id": "fda_ada.su.4_j_1.002",
+      "condition_text": "For assay development and validation",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_1.008",
+      "source_unit_id": "fda_ada.su.4_j_1.002",
+      "condition_text": "during assay validation",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_1.009",
+      "source_unit_id": "fda_ada.su.4_j_1.002",
+      "condition_text": "during routine assay performance",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_1.010",
+      "source_unit_id": "fda_ada.su.4_j_1.002",
+      "condition_text": "for detection of ADA",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_1.011",
+      "source_unit_id": "fda_ada.su.4_j_1.001",
+      "condition_text": "generated by immunizing animals",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_1.012",
+      "source_unit_id": "fda_ada.su.4_j_1.001",
+      "condition_text": "For therapeutic mAb",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_1.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_2.001",
+      "source_unit_id": "fda_ada.su.4_j_2.002",
+      "condition_text": "When possible",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_2.005",
+        "fda_ada.kr.IV_J_2.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_2.002",
+      "source_unit_id": "fda_ada.su.4_j_2.002",
+      "condition_text": "When target-population control samples are not available during development",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_2.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_2.003",
+      "source_unit_id": "fda_ada.su.4_j_2.002",
+      "condition_text": "when samples from treatment-naïve subjects from the appropriate target population become available",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_2.004",
+      "source_unit_id": "fda_ada.su.4_j_2.001",
+      "condition_text": "for validation studies and subject-sample testing",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_2.005",
+      "source_unit_id": "fda_ada.su.4_j_2.001",
+      "condition_text": "that yield values far below the mean value derived from individual serum samples used to establish the cut-point",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_2.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_2.006",
+      "source_unit_id": "fda_ada.su.4_j_2.002",
+      "condition_text": "When target-population control samples are not available during development",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_J_3.001",
+      "source_unit_id": "fda_ada.su.4_j_3.001",
+      "condition_text": "that may be present in the sample",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_3.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_K.001",
+      "source_unit_id": "fda_ada.su.4_k.001",
+      "condition_text": "For subjects who are confirmed to be ADA positive",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_K.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_K.002",
+      "source_unit_id": "fda_ada.su.4_k.001",
+      "condition_text": "when reporting titers",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_K.009"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_K.003",
+      "source_unit_id": "fda_ada.su.4_k.002",
+      "condition_text": "When reporting results for neutralization assays",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_K.010",
+        "fda_ada.kr.IV_K.011",
+        "fda_ada.kr.IV_K.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_K.004",
+      "source_unit_id": "fda_ada.su.4_k.002",
+      "condition_text": "Unless the assay method used allows for independent determination of mass per volume of undiluted matrix",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_K.013"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_K.005",
+      "source_unit_id": "fda_ada.su.4_k.002",
+      "condition_text": "unless (1) the results are determined by quantitative means or (2) a universally accepted and accessible source of validated antibody is available as a control and parallelism between the dilution curves of the control antibody and subject samples has been demonstrated",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_K.014"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_K.006",
+      "source_unit_id": "fda_ada.su.4_k.002",
+      "condition_text": "When reporting results for neutralization assays",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_K.010",
+        "fda_ada.kr.IV_K.011"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_K.007",
+      "source_unit_id": "fda_ada.su.4_k.002",
+      "condition_text": "or (2) a universally accepted and accessible source of validated antibody is available as a control and parallelism between the dilution curves of the control antibody and subject samples has been demonstrated",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_K.013"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_L_1.001",
+      "source_unit_id": "fda_ada.su.4_l_1.001",
+      "condition_text": "when pre-existing antibodies are present",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_L_1.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_L_1.002",
+      "source_unit_id": "fda_ada.su.4_l_1.001",
+      "condition_text": "When there are pre-existing antibodies and the titer of antibodies increases after exposure to the therapeutic protein product",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_L_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_L_1.003",
+      "source_unit_id": "fda_ada.su.4_l_1.001",
+      "condition_text": "when twofold dilutions are used to determine the titer",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_L_1.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_L_1.004",
+      "source_unit_id": "fda_ada.su.4_l_1.001",
+      "condition_text": "when pre-existing antibodies are present",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_L_1.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_L_1.005",
+      "source_unit_id": "fda_ada.su.4_l_1.001",
+      "condition_text": "When there are pre-existing antibodies and the titer of antibodies increases after exposure to the therapeutic protein product",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_L_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_L_1.006",
+      "source_unit_id": "fda_ada.su.4_l_1.001",
+      "condition_text": "when twofold dilutions are used to determine the titer",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_L_1.007"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_L_2.001",
+      "source_unit_id": "fda_ada.su.4_l_2.001",
+      "condition_text": "when RF is present in the matrix",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_L_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_L_2.002",
+      "source_unit_id": "fda_ada.su.4_l_2.001",
+      "condition_text": "When examining immune responses to Fc-fusion proteins in clinical settings where RF generates false-positive results during development",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_L_2.008",
+        "fda_ada.kr.IV_L_2.009"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_L_2.003",
+      "source_unit_id": "fda_ada.su.4_l_2.001",
+      "condition_text": "when RF is present in the matrix",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_L_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_L_3.001",
+      "source_unit_id": "fda_ada.su.4_l_3.001",
+      "condition_text": "If the Fc region is engineered or bound to another molecule",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_L_3.002",
+      "source_unit_id": "fda_ada.su.4_l_3.001",
+      "condition_text": "In these cases",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_L_3.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.IV_L_4.001",
+      "source_unit_id": "fda_ada.su.4_l_4.001",
+      "condition_text": "When ADCs need to be labeled for immunogenicity assays",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.IV_L_4.004"
       ],
       "review_status": "reviewed"
     }

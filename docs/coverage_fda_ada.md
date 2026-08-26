@@ -27,10 +27,10 @@
 | **IV.F** | Precision | p. 11 | `COMPLETED` | **분석 내(Repeatability)/분석 간(Intermediate precision) 정밀도, 컷포인트 변동성 기초** (5 KR, 2 Cond) |
 | **IV.G** | Reproducibility | p. 12 | `COMPLETED` | **2개 이상 독립 실험실 간 재현성 및 데이터 동등성(민감도, 약물내성, 정밀도)** (2 KR, 1 QC, 1 Cond) |
 | **IV.H** | Robustness and Sample Stability | p. 12 | `COMPLETED` | **완건성(온도/시간/pH/염/세포계대) 및 동결-융해 최소화, PC 단기안정성** (14 KR, 6 Cond) |
-| **IV.I** | Selection of Format | p. 12 | `BACKLOG` | 직접/간접 ELISA, Bridging, ECL, SPR 플랫폼 비교 |
-| **IV.J.1-3**| Selection of Reagents (PC, NC, NSB) | p. 13-14 | `BACKLOG` | 양성대조항체(PC), 음성대조(NC), 비특이 결합 억제 |
-| **IV.K** | Reporting Results for Quasi-Quantitative Assays | p. 15 | `BACKLOG` | 정성/준정량 결과 보고 형식 |
-| **IV.L.1-4**| Other Considerations (Pre-existing, RF, mAb, ADC)| p. 15-16 | `BACKLOG` | 기저 항체, 류마티스 인자(RF), 단일클론항체, ADC 고려사항 |
+| **IV.I** | Selection of Format | p. 12 | `COMPLETED` | **직접/간접 ELISA, Bridging, ECL, SPR 플랫폼 비교, 세척/에피토프 변형** (8 KR, 4 Cond) |
+| **IV.J.1-3**| Selection of Reagents (PC, NC, NSB) | p. 13-14 | `COMPLETED` | **양성대조항체 PC(동물면역/친화성정제/가변부위결합/Hook효과), 음성대조 NC(미치료 풀/컷포인트 인접값), 비특이결합(차단제/유사단백질)** (26 KR, 19 Cond) |
+| **IV.K** | Reporting Results for Quasi-Quantitative Assays | p. 15 | `COMPLETED` | **정성/역가(Titer) 보고 형식, 질량 단위(Mass units) 보고 불인정 원칙 및 예외** (18 KR, 7 Cond) |
+| **IV.L.1-4**| Other Considerations (Pre-existing, RF, mAb, ADC)| p. 15-16 | `COMPLETED` | **기저 항체(Treatment-boosted 기준), 류마티스 인자(RF/비-Fc 영역 분석법), 단일클론항체 가변부위, ADC 모든 구성요소 측정** (30 KR, 2 QC, 12 Cond) |
 | **V.A** | Development of Screening Assay | p. 17 | `BACKLOG` | 선별 분석법 개발 |
 | **V.B.1-2**| Development of Confirmatory Assay | p. 17-18 | `BACKLOG` | 확인 분석법 개발 및 Confirmatory Cut Point |
 | **V.C** | Development of Titration Assay | p. 18 | `BACKLOG` | 역가 분석법 개발 |
@@ -48,7 +48,7 @@
 
 ## Summary Statistics
 * **전체 섹션 수**: 33개
-* **적재 완료 섹션 수 (Completed)**: **21개 섹션** (전체 섹션의 64%)
-* **총 구조화 데이터 규모 (FDA ADA)**: **249 KnowledgeRecords, 45 QuantitativeCriteria, 105 Conditions** (총 399개 엔티티, 100% `reviewed`)
-* **아카이브 전체 엔티티 규모**: **1,050개 엔티티** (ICH M10 62 + ICH S6 98 + EMA FIH 491 + FDA ADA 399)
-* **잔여 백로그 (Backlog)**: 12개 섹션 (Section IV.I~IV.L 플랫폼/시약/특수고려사항, Section V/VI.D 개발/역가, Section VII/VIII 임상검체/문서화)
+* **적재 완료 섹션 수 (Completed)**: **25개 섹션** (전체 가이던스의 76% 완료, Section IV 100% 완결)
+* **총 구조화 데이터 규모 (FDA ADA)**: **331 KnowledgeRecords, 47 QuantitativeCriteria, 147 Conditions** (총 525개 엔티티, 100% `reviewed`)
+* **아카이브 전체 엔티티 규모**: **1,176개 엔티티** (ICH M10 62 + ICH S6 98 + EMA FIH 491 + FDA ADA 525)
+* **잔여 백로그 (Backlog)**: 8개 섹션 (Section V.A~C 개발/역가, Section VI.D 역가 밸리데이션, Section VII 임상 검체 채취/QC, Section VIII 문서화, Appendix 흐름도)
