@@ -313,13 +313,33 @@
       "section_order_status": "known"
     },
     {
+      "section_id": "ich_m10.sec.4",
+      "document_id": "ich_m10",
+      "section_number": "4",
+      "title": "LIGAND BINDING ASSAYS",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 31,
+      "section_order_status": "known"
+    },
+    {
       "section_id": "ich_m10.sec.3_3_3",
       "document_id": "ich_m10",
       "section_number": "3.3.3",
       "title": "Calibration Range",
       "parent_section_id": "ich_m10.sec.3_3",
       "heading_source_unit_id": null,
-      "section_order": 31,
+      "section_order": 32,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_1",
+      "document_id": "ich_m10",
+      "section_number": "4.1",
+      "title": "Key Reagents",
+      "parent_section_id": "ich_m10.sec.4",
+      "heading_source_unit_id": null,
+      "section_order": 33,
       "section_order_status": "known"
     },
     {
@@ -329,7 +349,17 @@
       "title": "Reanalysis of Study Samples",
       "parent_section_id": "ich_m10.sec.3_3",
       "heading_source_unit_id": null,
-      "section_order": 32,
+      "section_order": 34,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_1_1",
+      "document_id": "ich_m10",
+      "section_number": "4.1.1",
+      "title": "Reference Standard",
+      "parent_section_id": "ich_m10.sec.4_1",
+      "heading_source_unit_id": null,
+      "section_order": 35,
       "section_order_status": "known"
     },
     {
@@ -339,7 +369,17 @@
       "title": "Reinjection of Study Samples",
       "parent_section_id": "ich_m10.sec.3_3",
       "heading_source_unit_id": null,
-      "section_order": 33,
+      "section_order": 36,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_1_2",
+      "document_id": "ich_m10",
+      "section_number": "4.1.2",
+      "title": "Critical Reagents",
+      "parent_section_id": "ich_m10.sec.4_1",
+      "heading_source_unit_id": null,
+      "section_order": 37,
       "section_order_status": "known"
     },
     {
@@ -349,7 +389,167 @@
       "title": "Integration of Chromatograms",
       "parent_section_id": "ich_m10.sec.3_3",
       "heading_source_unit_id": null,
-      "section_order": 34,
+      "section_order": 38,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_2",
+      "document_id": "ich_m10",
+      "section_number": "4.2",
+      "title": "Validation",
+      "parent_section_id": "ich_m10.sec.4",
+      "heading_source_unit_id": null,
+      "section_order": 39,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_2_1",
+      "document_id": "ich_m10",
+      "section_number": "4.2.1",
+      "title": "Specificity",
+      "parent_section_id": "ich_m10.sec.4_2",
+      "heading_source_unit_id": null,
+      "section_order": 40,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_2_2",
+      "document_id": "ich_m10",
+      "section_number": "4.2.2",
+      "title": "Selectivity",
+      "parent_section_id": "ich_m10.sec.4_2",
+      "heading_source_unit_id": null,
+      "section_order": 41,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_2_3",
+      "document_id": "ich_m10",
+      "section_number": "4.2.3",
+      "title": "Calibration Curve and Range",
+      "parent_section_id": "ich_m10.sec.4_2",
+      "heading_source_unit_id": null,
+      "section_order": 42,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_2_4",
+      "document_id": "ich_m10",
+      "section_number": "4.2.4",
+      "title": "Accuracy and Precision",
+      "parent_section_id": "ich_m10.sec.4_2",
+      "heading_source_unit_id": null,
+      "section_order": 43,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_2_4_1",
+      "document_id": "ich_m10",
+      "section_number": "4.2.4.1",
+      "title": "Preparation of Quality Control Samples",
+      "parent_section_id": "ich_m10.sec.4_2_4",
+      "heading_source_unit_id": null,
+      "section_order": 44,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_2_4_2",
+      "document_id": "ich_m10",
+      "section_number": "4.2.4.2",
+      "title": "Evaluation of Accuracy and Precision",
+      "parent_section_id": "ich_m10.sec.4_2_4",
+      "heading_source_unit_id": null,
+      "section_order": 45,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_2_5",
+      "document_id": "ich_m10",
+      "section_number": "4.2.5",
+      "title": "Carry-over",
+      "parent_section_id": "ich_m10.sec.4_2",
+      "heading_source_unit_id": null,
+      "section_order": 46,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_2_6",
+      "document_id": "ich_m10",
+      "section_number": "4.2.6",
+      "title": "Dilution Linearity and Hook Effect",
+      "parent_section_id": "ich_m10.sec.4_2",
+      "heading_source_unit_id": null,
+      "section_order": 47,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_2_7",
+      "document_id": "ich_m10",
+      "section_number": "4.2.7",
+      "title": "Stability",
+      "parent_section_id": "ich_m10.sec.4_2",
+      "heading_source_unit_id": null,
+      "section_order": 48,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_3",
+      "document_id": "ich_m10",
+      "section_number": "4.3",
+      "title": "Study Sample Analysis",
+      "parent_section_id": "ich_m10.sec.4",
+      "heading_source_unit_id": null,
+      "section_order": 49,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_3_1",
+      "document_id": "ich_m10",
+      "section_number": "4.3.1",
+      "title": "Analytical Run",
+      "parent_section_id": "ich_m10.sec.4_3",
+      "heading_source_unit_id": null,
+      "section_order": 50,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_3_2",
+      "document_id": "ich_m10",
+      "section_number": "4.3.2",
+      "title": "Acceptance Criteria for an Analytical Run",
+      "parent_section_id": "ich_m10.sec.4_3",
+      "heading_source_unit_id": null,
+      "section_order": 51,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_3_3",
+      "document_id": "ich_m10",
+      "section_number": "4.3.3",
+      "title": "Calibration Range",
+      "parent_section_id": "ich_m10.sec.4_3",
+      "heading_source_unit_id": null,
+      "section_order": 52,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.4_3_4",
+      "document_id": "ich_m10",
+      "section_number": "4.3.4",
+      "title": "Reanalysis of Study Samples",
+      "parent_section_id": "ich_m10.sec.4_3",
+      "heading_source_unit_id": null,
+      "section_order": 53,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.5",
+      "document_id": "ich_m10",
+      "section_number": "5",
+      "title": "INCURRED SAMPLE REANALYSIS (ISR)",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 54,
       "section_order_status": "known"
     }
   ],
@@ -921,6 +1121,336 @@
         "pdf_page_index_zero_based": 22,
         "pdf_page_index_status": "known",
         "printed_page_label": "23",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.4_1_1.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.4_1_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "The reference standard should be well characterised and documented (e.g., CoA and origin). It is recommended that the manufacturing batch of the reference standard used for the preparation of calibration standards and QCs is derived from the same batch of drug substance as that used for dosing in the nonclinical and clinical studies whenever possible. If the reference standard batch used for bioanalysis is changed, bioanalytical evaluation should be carried out with QCs from the original material and the new material prior to use to ensure that the performance characteristics of the method are within the acceptance criteria.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.4_1_1",
+        "pdf_page_index_zero_based": 22,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "23",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.4_1_2.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.4_1_2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Critical reagents, including binding reagents (e.g., binding proteins, aptamers, antibodies or conjugated antibodies) and those containing enzymatic moieties, have direct impact on the results of the assay and, therefore, their quality should be assured. Critical reagents bind the analyte and, upon interaction, lead to an instrument signal corresponding to the analyte concentration. Critical reagents should be appropriately characterised and stored under defined conditions. Critical reagent lifecycle management (e.g., retesting, qualification upon lot change) should be documented.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.4_1_2",
+        "pdf_page_index_zero_based": 22,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "23",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.4_2_1.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.4_2_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Specificity is the ability of a bioanalytical method to detect and differentiate the analyte from other related substances (e.g., structurally similar compounds, metabolites, concomitant medications, soluble target/receptor, endogenous substances). Specificity should be evaluated by spiking blank matrix samples with potential interfering substances at the highest anticipated concentrations in study samples, in the absence and presence of the analyte (at low and high QC concentrations). Accuracy should be within ±20% of nominal concentration at low and high QC levels.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.4_2_1",
+        "pdf_page_index_zero_based": 24,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "25",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.4_2_2.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.4_2_2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Selectivity is the ability of an analytical method to differentiate and measure the analyte in the presence of interfering substances in the biological matrix. Selectivity should be evaluated using blank matrix samples from at least 10 individual sources (or fewer for rare matrices). Individual blank matrix samples should be evaluated unspiked and spiked at the LLOQ and the high QC concentration. At least 80% of the individual sources evaluated should meet the criteria: the unspiked blank sample response should be below the LLOQ, and the accuracy of the spiked LLOQ and high QC samples should be within ±25% and ±20% of the nominal concentration, respectively.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.4_2_2",
+        "pdf_page_index_zero_based": 24,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "25",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.4_2_3.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.4_2_3",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "A calibration curve should be generated with a blank sample, an anchor sample (if appropriate), and at least 6 concentration levels of calibration standards, including LLOQ and ULOQ. Non-linear regression models (such as 4-parameter or 5-parameter logistic models) are typically used for LBAs. The back-calculated concentrations of calibration standards should be within ±20% of nominal concentration, except at LLOQ and ULOQ where they should be within ±25%. At least 75% of calibration standards (minimum 6 levels) should meet these criteria. In the case that replicates are used, at least 50% of calibration standards tested per concentration level should meet the criteria.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.4_2_3",
+        "pdf_page_index_zero_based": 25,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "26",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.4_2_4_1.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.4_2_4_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "During method validation, QCs for accuracy and precision runs should be prepared at a minimum of 5 concentration levels within the calibration curve range: the LLOQ, within three times of the LLOQ (low QC), around the geometric mean or mid-point of the calibration curve range (medium QC), at least 75% of the ULOQ (high QC), and the ULOQ.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.4_2_4_1",
+        "pdf_page_index_zero_based": 26,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "27",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.4_2_4_2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Within-run and between-run accuracy and precision should be evaluated by analysing at least 3 replicates at each of the 5 QC concentration levels in at least 6 analytical runs over at least two days (or 3 runs over two days with 5 replicates per QC level). The overall within-run and between-run accuracy at each QC level should be within ±20% of nominal value, except for LLOQ and ULOQ which should be within ±25%. Precision (%CV) should not exceed 20%, except at LLOQ and ULOQ where it should not exceed 25%. Total error (sum of absolute error in accuracy and precision) should not exceed 30% (40% at LLOQ and ULOQ). For non-accuracy and precision validation runs, at least 2/3 of total QCs and 50% at each QC level should be within ±20%.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.4_2_4_2",
+        "pdf_page_index_zero_based": 26,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "27",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.4_2_5.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.4_2_5",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "If the analytical platform is prone to carry-over, the potential of carry-over should be investigated by placing blank samples after the calibration standard at the ULOQ. The response of blank samples should be below the LLOQ.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.4_2_5",
+        "pdf_page_index_zero_based": 27,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "28",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.4_2_6.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.4_2_6",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Dilution linearity should be assessed to confirm: (i) that measured concentrations are not affected by dilution within the calibration range and (ii) that sample concentrations above ULOQ are not impacted by hook effect (signal suppression caused by high analyte concentration). Dilution linearity should be demonstrated by spiking matrix with an analyte concentration above ULOQ, analysed undiluted (for hook effect) and diluting this sample (to at least 3 different dilution factors) with blank matrix to within the calibration range. For each dilution factor, at least 3 independently prepared dilution series should be performed. The calculated mean concentration for each dilution should be within ±20% of nominal concentration after correction for dilution and precision should not exceed 20%.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.4_2_6",
+        "pdf_page_index_zero_based": 27,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "28",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.4_2_7",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Stability of the analyte in matrix should be evaluated using low and high concentration QCs. A minimum of 3 aliquots should be analysed at each concentration level. The mean concentration at each QC level should be within ±20% of nominal concentration. Stability testing includes: 1) Freeze-thaw stability in matrix (minimum of 3 cycles, kept frozen at least 12 hours between cycles); 2) Bench-top (short-term) stability at room temperature or sample preparation temperature; 3) Long-term stability in matrix stored in freezer for duration of study sample storage. For chemical drugs, stability at -20°C can be extrapolated to -70/-80°C. For biological drugs, bracketing between -70/-80°C and -20°C can be applied.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.4_2_7",
+        "pdf_page_index_zero_based": 28,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "29",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.4_3_1.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.4_3_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "An analytical run consists of a blank sample, calibration standards at a minimum of 6 concentration levels, at least 3 levels of QCs (low, medium, high) applied as two sets (or at least 5% of the number of study samples, whichever is higher) and the study samples to be analysed. Study samples should always be bracketed by QCs. If microtitre plates are used and each plate contains its own calibration standards and QCs, each plate should be assessed on its own. If sample capacity is limited, sets of calibration standards may be placed on the first and last plate, but QCs should be placed on every single plate (at beginning and end).",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.4_3_1",
+        "pdf_page_index_zero_based": 29,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "30",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.4_3_2.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.4_3_2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Criteria for acceptance of an analytical run in LBA: The calibration curve accuracy should be within ±20% (±25% at LLOQ and ULOQ) for at least 75% of calibration standards (minimum 6 levels). For QCs, at least 67% (2/3) of the total QCs and at least 50% of the QCs at each concentration level should be within ±20% of their nominal concentration (4-6-20 rule for LBA). If an analytical run fails, the run should be rejected and study samples reanalysed.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.4_3_2",
+        "pdf_page_index_zero_based": 30,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "31",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.4_3_3.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.4_3_3",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "At least 2 QC levels should fall within the range of concentrations measured in study samples. If an unanticipated clustering of study samples is observed or a large number of samples are above ULOQ, the calibration curve range should be changed (partial validation) and QCs adjusted, or samples diluted according to the validated dilution method.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.4_3_3",
+        "pdf_page_index_zero_based": 31,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "32",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.4_3_4.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.4_3_4",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Possible reasons for reanalysis of study samples, number of replicates and decision criteria should be predefined in protocol, study plan or SOP. In comparative BA/BE studies, reanalysis for PK reasons is not acceptable. The number and percentage of reanalysed samples should be reported and discussed in the Bioanalytical Report.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.4_3_4",
+        "pdf_page_index_zero_based": 31,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "32",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.5.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.5",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "ISR is intended to verify the reliability of reported sample analyte concentrations. ISR should be performed at least for nonclinical studies (at least once per species), all pivotal comparative BA/BE studies, first clinical trial in subjects, pivotal early patient trials (once per patient population), and trials in patients with impaired hepatic and/or renal function. ISR is conducted by repeating analysis of a subset of study samples in separate runs on different days using the same bioanalytical method. Sample size: If total study samples ≤ 1000, 10% of samples should be reanalysed; if total samples > 1000, 10% of the first 1000 samples (100) plus 5% of samples exceeding 1000 should be assessed. Samples should be chosen around Cmax and in elimination phase, representative of whole study. Acceptance criteria: The percent difference between repeat value and initial value relative to mean should be within ±20% for at least 2/3 of repeats for chromatographic methods (4-6-20 rule), and within ±30% for at least 2/3 of repeats for LBAs (4-6-30 rule).",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.5",
+        "pdf_page_index_zero_based": 32,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "33",
         "printed_page_label_status": "known",
         "extraction_method": "automated text extraction with manual verification"
       },
@@ -3505,6 +4035,930 @@
       "object": "a study plan, protocol or SOP",
       "normalized_ko": null,
       "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_1_1.001",
+      "source_unit_ids": [
+        "ich_m10.su.4_1_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The reference standard",
+      "action": "should be well characterised",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_1_1.002",
+      "source_unit_ids": [
+        "ich_m10.su.4_1_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "It is recommended",
+      "subject": "The manufacturing batch of the reference standard used for the preparation of calibration standards and QCs",
+      "action": "should be derived from",
+      "object": "the same batch of drug substance as that used for dosing in the nonclinical and clinical studies",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_1_1.003",
+      "source_unit_ids": [
+        "ich_m10.su.4_1_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Bioanalytical evaluation",
+      "action": "should be carried out",
+      "object": "with QCs from the original material and the new material",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_1_1.004",
+      "source_unit_ids": [
+        "ich_m10.su.4_1_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The performance characteristics of the method",
+      "action": "be within",
+      "object": "the acceptance criteria",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_1_1.005",
+      "source_unit_ids": [
+        "ich_m10.su.4_1_1.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Documentation",
+      "action": "includes",
+      "object": "CoA and origin",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_1_2.001",
+      "source_unit_ids": [
+        "ich_m10.su.4_1_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Critical reagents",
+      "action": "have direct impact on",
+      "object": "the results of the assay",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_1_2.002",
+      "source_unit_ids": [
+        "ich_m10.su.4_1_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Critical reagents",
+      "action": "bind",
+      "object": "the analyte",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_1_2.003",
+      "source_unit_ids": [
+        "ich_m10.su.4_1_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Critical reagents",
+      "action": "lead to",
+      "object": "an instrument signal corresponding to the analyte concentration",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_1_2.004",
+      "source_unit_ids": [
+        "ich_m10.su.4_1_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The quality of critical reagents",
+      "action": "should be assured",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_1_2.005",
+      "source_unit_ids": [
+        "ich_m10.su.4_1_2.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Binding reagents",
+      "action": "includes",
+      "object": "binding proteins",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_1_2.006",
+      "source_unit_ids": [
+        "ich_m10.su.4_1_2.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Critical reagents",
+      "action": "include",
+      "object": "binding reagents",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_1_2.007",
+      "source_unit_ids": [
+        "ich_m10.su.4_1_2.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Critical reagents",
+      "action": "bind",
+      "object": "the analyte",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_1.001",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_1.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Specificity",
+      "action": "is",
+      "object": "the ability of a bioanalytical method to detect and differentiate the analyte from other related substances",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_1.002",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_1.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "related substances",
+      "action": "includes",
+      "object": "structurally similar compounds",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_1.003",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Specificity",
+      "action": "should be evaluated by spiking",
+      "object": "blank matrix samples with potential interfering substances",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_2.001",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_2.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Selectivity",
+      "action": "is the ability to differentiate and measure",
+      "object": "the analyte in the presence of interfering substances in the biological matrix",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_2.002",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_2.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Selectivity",
+      "action": "is",
+      "object": "the ability of an analytical method to differentiate and measure the analyte in the presence of interfering substances in the biological matrix",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_2.003",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Selectivity",
+      "action": "should be evaluated using",
+      "object": "blank matrix samples from at least 10 individual sources",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_3.001",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "A calibration curve",
+      "action": "should be generated with",
+      "object": "a blank sample, an anchor sample, and concentration levels of calibration standards, including LLOQ and ULOQ",
+      "normalized_ko": "A calibration curve should be generated with a blank sample, an appropriate anchor sample, and calibration standards including LLOQ and ULOQ.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_3.002",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Non-linear regression models",
+      "action": "are typically used for",
+      "object": "LBAs",
+      "normalized_ko": "Non-linear regression models are typically used for LBAs.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_3.003",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_3.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "typically",
+      "subject": "Non-linear regression models",
+      "action": "are typically used for",
+      "object": "LBAs",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_3.004",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_3.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Non-linear regression models",
+      "action": "includes",
+      "object": "4-parameter or 5-parameter logistic models",
+      "normalized_ko": "Examples of non-linear regression models include 4-parameter or 5-parameter logistic models.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_4_1.001",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_4_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "QCs for accuracy and precision runs",
+      "action": "should be prepared",
+      "object": "at a minimum of 5 concentration levels",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_4_2.001",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_4_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Within-run and between-run accuracy and precision",
+      "action": "should be evaluated by analysing",
+      "object": "at least 3 replicates at each of the 5 QC concentration levels in at least 6 analytical runs over at least two days",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_4_2.002",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_4_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should not",
+      "subject": "Precision (%CV)",
+      "action": "should not exceed",
+      "object": "20%",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_4_2.003",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_4_2.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Total error",
+      "action": "is",
+      "object": "sum of absolute error in accuracy and precision",
+      "normalized_ko": "Total error is the sum of absolute error in accuracy and precision.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_5.001",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_5.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The potential of carry-over",
+      "action": "should be investigated",
+      "object": "by placing blank samples after the calibration standard at the ULOQ",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_6.001",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Dilution linearity",
+      "action": "should be assessed to confirm",
+      "object": "that measured concentrations are not affected by dilution",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_6.002",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Dilution linearity",
+      "action": "should be demonstrated by spiking",
+      "object": "matrix with an analyte concentration above ULOQ",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_6.003",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The sample",
+      "action": "should be analysed undiluted",
+      "object": "for hook effect",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_6.004",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should not exceed",
+      "subject": "Precision",
+      "action": "should not exceed",
+      "object": "20%",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_6.005",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The calculated mean concentration for each dilution",
+      "action": "should be within ±20% of",
+      "object": "nominal concentration after correction for dilution",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_6.006",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_6.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Hook effect",
+      "action": "is",
+      "object": "signal suppression caused by high analyte concentration",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_6.007",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_6.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "measured concentrations",
+      "action": "are not affected by dilution",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_6.008",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_6.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "sample concentrations",
+      "action": "are not impacted by hook effect",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_6.009",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_6.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Hook effect",
+      "action": "is",
+      "object": "signal suppression caused by high analyte concentration",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_7.001",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_7.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Stability of the analyte in matrix",
+      "action": "should be evaluated using",
+      "object": "low and high concentration QCs",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_7.002",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_7.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Stability testing",
+      "action": "includes",
+      "object": "Freeze-thaw stability in matrix",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_7.003",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_7.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "stability at -20°C",
+      "action": "may be extrapolated to",
+      "object": "-70/-80°C",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_7.004",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_7.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Bracketing between -70/-80°C and -20°C",
+      "action": "can be applied",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_7.005",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_7.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can be",
+      "subject": "stability at -20°C",
+      "action": "can be extrapolated to",
+      "object": "-70/-80°C",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_2_7.006",
+      "source_unit_ids": [
+        "ich_m10.su.4_2_7.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Stability testing",
+      "action": "includes",
+      "object": "Freeze-thaw stability in matrix (minimum of 3 cycles, kept frozen at least 12 hours between cycles)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_1.001",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_1.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "An analytical run",
+      "action": "consists of",
+      "object": "a blank sample, calibration standards, QCs, and study samples",
+      "normalized_ko": "An analytical run consists of a blank sample, calibration standards, QCs, and study samples.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_1.002",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "QC levels",
+      "action": "include",
+      "object": "low, medium, high",
+      "normalized_ko": "QC levels include low, medium, and high levels.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_1.003",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "An analytical run",
+      "action": "consists of",
+      "object": "a blank sample, calibration standards, QCs and the study samples to be analysed",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_1.004",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should always",
+      "subject": "Study samples",
+      "action": "should always be bracketed by",
+      "object": "QCs",
+      "normalized_ko": "Study samples should always be bracketed by QCs.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_1.005",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "each plate",
+      "action": "should be assessed on its own",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_1.006",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "Sets of calibration standards",
+      "action": "may be placed",
+      "object": "on the first and last plate",
+      "normalized_ko": "Sets of calibration standards may be placed on the first and last plate.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_2.001",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The calibration curve accuracy",
+      "action": "should be within",
+      "object": "±20%",
+      "normalized_ko": "Calibration curve accuracy should be within ±20%.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_2.002",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The analytical run",
+      "action": "be rejected",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_2.003",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Study samples",
+      "action": "be reanalysed",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_2.004",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Calibration standards",
+      "action": "should have at least 75% within the calibration curve accuracy criterion",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_2.005",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Total QCs",
+      "action": "should have at least 67% (2/3) within ±20% of their nominal concentration",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_2.006",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "QCs at each concentration level",
+      "action": "should have at least 50% within ±20% of their nominal concentration",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_2.007",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The QC acceptance criteria",
+      "action": "are referred to as",
+      "object": "4-6-20 rule for LBA",
+      "normalized_ko": "The QC acceptance criteria are referred to as the 4-6-20 rule for LBA.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_2.008",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The QC acceptance criterion",
+      "action": "is",
+      "object": "the 4-6-20 rule for LBA",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_3.001",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "At least 2 QC levels",
+      "action": "should fall within",
+      "object": "the range of concentrations measured in study samples",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_3.002",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "samples",
+      "action": "should be diluted according to",
+      "object": "the validated dilution method",
+      "normalized_ko": "Samples should be diluted according to the validated dilution method.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_4.001",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Possible reasons for reanalysis of study samples, number of replicates and decision criteria",
+      "action": "should be predefined",
+      "object": "in protocol, study plan or SOP",
+      "normalized_ko": "Predefine reasons for study-sample reanalysis, replicate numbers, and decision criteria in the protocol, study plan, or SOP.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_4.002",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "is not acceptable",
+      "subject": "Reanalysis for PK reasons",
+      "action": "is not acceptable",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_4.003",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_4.001"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "is not acceptable",
+      "subject": "Reanalysis for PK reasons",
+      "action": "is not acceptable",
+      "object": null,
+      "normalized_ko": "Reanalysis for PK reasons is not acceptable in comparative BA/BE studies.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.4_3_4.004",
+      "source_unit_ids": [
+        "ich_m10.su.4_3_4.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "is not acceptable",
+      "subject": "Reanalysis for PK reasons",
+      "action": "is not acceptable",
+      "object": null,
+      "normalized_ko": "Reanalysis for PK reasons is not acceptable in comparative BA/BE studies.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.5.001",
+      "source_unit_ids": [
+        "ich_m10.su.5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "ISR",
+      "action": "is intended to verify",
+      "object": "the reliability of reported sample analyte concentrations",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.5.002",
+      "source_unit_ids": [
+        "ich_m10.su.5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "ISR",
+      "action": "is conducted by repeating analysis of",
+      "object": "a subset of study samples in separate runs on different days using the same bioanalytical method",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.5.003",
+      "source_unit_ids": [
+        "ich_m10.su.5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "ISR",
+      "action": "uses",
+      "object": "the same bioanalytical method",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.5.004",
+      "source_unit_ids": [
+        "ich_m10.su.5.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "ISR",
+      "action": "should be performed",
+      "object": "nonclinical studies",
+      "normalized_ko": null,
+      "review_status": "reviewed"
     }
   ],
   "quantitative_criteria": [
@@ -4787,6 +6241,1376 @@
       "is_illustrative_example": false,
       "source_text": "At least 2 QC levels should fall within the range of concentrations measured in study samples.",
       "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_1.001",
+      "source_unit_id": "ich_m10.su.4_2_1.001",
+      "knowledge_record_id": null,
+      "parameter": "specificity accuracy (LBA)",
+      "comparator": "within",
+      "value": 20,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal concentration",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "within ±20% of nominal concentration",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_2.001",
+      "source_unit_id": "ich_m10.su.4_2_2.001",
+      "knowledge_record_id": null,
+      "parameter": "number of individual blank matrix sources",
+      "comparator": "at_least",
+      "value": 10,
+      "value_fraction": null,
+      "unit": "individual sources",
+      "value_status": "known",
+      "denominator_or_reference": "blank matrix samples",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 10 individual sources (or fewer for rare matrices)",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_2.002",
+      "source_unit_id": "ich_m10.su.4_2_2.001",
+      "knowledge_record_id": null,
+      "parameter": "individual sources evaluated that should meet the criteria",
+      "comparator": "at_least",
+      "value": 80,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "individual sources evaluated",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_2.003",
+        "ich_m10.qc.4_2_2.004",
+        "ich_m10.qc.4_2_2.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "At least 80% of the individual sources evaluated should meet the criteria",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_2.003",
+      "source_unit_id": "ich_m10.su.4_2_2.001",
+      "knowledge_record_id": null,
+      "parameter": "unspiked blank sample response",
+      "comparator": "not_exceed",
+      "value": null,
+      "value_fraction": null,
+      "unit": null,
+      "value_status": "unknown",
+      "denominator_or_reference": "LLOQ",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_2.002",
+        "ich_m10.qc.4_2_2.004",
+        "ich_m10.qc.4_2_2.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "the unspiked blank sample response should be below the LLOQ",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_2.004",
+      "source_unit_id": "ich_m10.su.4_2_2.001",
+      "knowledge_record_id": null,
+      "parameter": "accuracy of the spiked LLOQ samples",
+      "comparator": "within",
+      "value": 25,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal concentration",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_2.002",
+        "ich_m10.qc.4_2_2.003",
+        "ich_m10.qc.4_2_2.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "the accuracy of the spiked LLOQ and high QC samples should be within ±25% and ±20% of the nominal concentration, respectively",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_2.005",
+      "source_unit_id": "ich_m10.su.4_2_2.001",
+      "knowledge_record_id": null,
+      "parameter": "accuracy of the high QC samples",
+      "comparator": "within",
+      "value": 20,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal concentration",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_2.002",
+        "ich_m10.qc.4_2_2.003",
+        "ich_m10.qc.4_2_2.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "the accuracy of the spiked LLOQ and high QC samples should be within ±25% and ±20% of the nominal concentration, respectively",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_3.001",
+      "source_unit_id": "ich_m10.su.4_2_3.001",
+      "knowledge_record_id": null,
+      "parameter": "concentration levels of calibration standards",
+      "comparator": "at_least",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "levels",
+      "value_status": "known",
+      "denominator_or_reference": "calibration standards",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 6 concentration levels of calibration standards",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_3.002",
+      "source_unit_id": "ich_m10.su.4_2_3.001",
+      "knowledge_record_id": null,
+      "parameter": "back-calculated concentrations of calibration standards relative to nominal concentration",
+      "comparator": "within",
+      "value": 20,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal concentration",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "within ±20% of nominal concentration, except at LLOQ and ULOQ",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_3.003",
+      "source_unit_id": "ich_m10.su.4_2_3.001",
+      "knowledge_record_id": null,
+      "parameter": "back-calculated concentrations at LLOQ and ULOQ relative to nominal concentration",
+      "comparator": "within",
+      "value": 25,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal concentration",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at LLOQ and ULOQ where they should be within ±25%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_3.004",
+      "source_unit_id": "ich_m10.su.4_2_3.001",
+      "knowledge_record_id": null,
+      "parameter": "calibration standards meeting the criteria",
+      "comparator": "at_least",
+      "value": 75,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "calibration standards",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_3.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "At least 75% of calibration standards",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_3.005",
+      "source_unit_id": "ich_m10.su.4_2_3.001",
+      "knowledge_record_id": null,
+      "parameter": "calibration standards tested per concentration level meeting the criteria",
+      "comparator": "at_least",
+      "value": 50,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "calibration standards tested per concentration level",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_3.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 50% of calibration standards tested per concentration level should meet the criteria",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_1.001",
+      "source_unit_id": "ich_m10.su.4_2_4_1.001",
+      "knowledge_record_id": null,
+      "parameter": "number of QC concentration levels",
+      "comparator": "at_least",
+      "value": 5,
+      "value_fraction": null,
+      "unit": "concentration levels",
+      "value_status": "known",
+      "denominator_or_reference": "calibration curve range",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at a minimum of 5 concentration levels within the calibration curve range",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_1.002",
+      "source_unit_id": "ich_m10.su.4_2_4_1.001",
+      "knowledge_record_id": null,
+      "parameter": "low QC concentration",
+      "comparator": "within",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "times the LLOQ",
+      "value_status": "known",
+      "denominator_or_reference": "LLOQ",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "within three times of the LLOQ (low QC)",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_1.003",
+      "source_unit_id": "ich_m10.su.4_2_4_1.001",
+      "knowledge_record_id": null,
+      "parameter": "high QC concentration",
+      "comparator": "at_least",
+      "value": 75,
+      "value_fraction": null,
+      "unit": "% of the ULOQ",
+      "value_status": "known",
+      "denominator_or_reference": "ULOQ",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 75% of the ULOQ (high QC)",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.001",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "QC replicates (LBA)",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "replicates",
+      "value_status": "known",
+      "denominator_or_reference": "each of the 5 QC concentration levels",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_4_2.002",
+        "ich_m10.qc.4_2_4_2.003",
+        "ich_m10.qc.4_2_4_2.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 3 replicates at each of the 5 QC concentration levels",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.002",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "QC concentration levels",
+      "comparator": "equals",
+      "value": 5,
+      "value_fraction": null,
+      "unit": "QC concentration levels",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_4_2.001",
+        "ich_m10.qc.4_2_4_2.003",
+        "ich_m10.qc.4_2_4_2.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "each of the 5 QC concentration levels",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.003",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "analytical runs",
+      "comparator": "at_least",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "analytical runs",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_4_2.001",
+        "ich_m10.qc.4_2_4_2.002",
+        "ich_m10.qc.4_2_4_2.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 6 analytical runs",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.004",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "days",
+      "comparator": "at_least",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_4_2.001",
+        "ich_m10.qc.4_2_4_2.002",
+        "ich_m10.qc.4_2_4_2.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "over at least two days",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.005",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "analytical runs",
+      "comparator": "equals",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "runs",
+      "value_status": "known",
+      "denominator_or_reference": "alternative evaluation design",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_4_2.006",
+        "ich_m10.qc.4_2_4_2.007"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "3 runs over two days with 5 replicates per QC level",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.006",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "days",
+      "comparator": "equals",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": "alternative evaluation design",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_4_2.005",
+        "ich_m10.qc.4_2_4_2.007"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "3 runs over two days with 5 replicates per QC level",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.007",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "QC replicates (LBA)",
+      "comparator": "equals",
+      "value": 5,
+      "value_fraction": null,
+      "unit": "replicates",
+      "value_status": "known",
+      "denominator_or_reference": "alternative evaluation design",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_4_2.005",
+        "ich_m10.qc.4_2_4_2.006"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "5 replicates per QC level",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.008",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "overall within-run and between-run accuracy at each QC level relative to nominal value",
+      "comparator": "within",
+      "value": 20,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal value",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "should be within ±20% of nominal value",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.009",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "overall within-run and between-run accuracy at LLOQ and ULOQ relative to nominal value",
+      "comparator": "within",
+      "value": 25,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal value",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "LLOQ and ULOQ which should be within ±25%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.010",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "Precision (%CV)",
+      "comparator": "not_exceed",
+      "value": 20,
+      "value_fraction": null,
+      "unit": "%CV",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "Precision (%CV) should not exceed 20%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.011",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "Precision (%CV) at LLOQ and ULOQ",
+      "comparator": "not_exceed",
+      "value": 25,
+      "value_fraction": null,
+      "unit": "%CV",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at LLOQ and ULOQ where it should not exceed 25%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.012",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "Total error (sum of absolute error in accuracy and precision)",
+      "comparator": "not_exceed",
+      "value": 30,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "Total error (sum of absolute error in accuracy and precision) should not exceed 30%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.013",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "Total error (sum of absolute error in accuracy and precision) at LLOQ and ULOQ",
+      "comparator": "not_exceed",
+      "value": 40,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "40% at LLOQ and ULOQ",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.014",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "total QCs within ±20%",
+      "comparator": "at_least",
+      "value": null,
+      "value_fraction": {
+        "numerator": 2,
+        "denominator": 3
+      },
+      "unit": "fraction",
+      "value_status": "known",
+      "denominator_or_reference": "total QCs",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_4_2.015",
+        "ich_m10.qc.4_2_4_2.016"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 2/3 of total QCs",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.015",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "QCs at each QC level within ±20%",
+      "comparator": "at_least",
+      "value": 50,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "each QC level",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_4_2.014",
+        "ich_m10.qc.4_2_4_2.016",
+        "ich_m10.qc.4_2_4_2.018"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "50% at each QC level",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.016",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "overall within-run and between-run accuracy at each QC level",
+      "comparator": "within",
+      "value": 20,
+      "value_fraction": null,
+      "unit": "% of nominal value",
+      "value_status": "known",
+      "denominator_or_reference": "nominal value",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_4_2.014",
+        "ich_m10.qc.4_2_4_2.015"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "should be within ±20% of nominal value, except for LLOQ and ULOQ",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.017",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "overall within-run and between-run accuracy at LLOQ and ULOQ",
+      "comparator": "within",
+      "value": 25,
+      "value_fraction": null,
+      "unit": "% of nominal value",
+      "value_status": "known",
+      "denominator_or_reference": "nominal value",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "LLOQ and ULOQ which should be within ±25%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_4_2.018",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "knowledge_record_id": null,
+      "parameter": "total QCs within ±20%",
+      "comparator": "at_least",
+      "value": null,
+      "value_fraction": {
+        "numerator": 2,
+        "denominator": 3
+      },
+      "unit": "of total QCs",
+      "value_status": "known",
+      "denominator_or_reference": "total QCs",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_4_2.015"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 2/3 of total QCs",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_5.001",
+      "source_unit_id": "ich_m10.su.4_2_5.001",
+      "knowledge_record_id": null,
+      "parameter": "response of blank samples",
+      "comparator": "not_exceed",
+      "value": null,
+      "value_fraction": null,
+      "unit": null,
+      "value_status": "unknown",
+      "denominator_or_reference": "the LLOQ",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "The response of blank samples should be below the LLOQ.",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_6.001",
+      "source_unit_id": "ich_m10.su.4_2_6.001",
+      "knowledge_record_id": null,
+      "parameter": "analyte concentration for spiking matrix",
+      "comparator": "not_exceed",
+      "value": null,
+      "value_fraction": null,
+      "unit": null,
+      "value_status": "unknown",
+      "denominator_or_reference": "ULOQ",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "an analyte concentration above ULOQ",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_6.002",
+      "source_unit_id": "ich_m10.su.4_2_6.001",
+      "knowledge_record_id": null,
+      "parameter": "number of different dilution factors",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "different dilution factors",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 3 different dilution factors",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_6.003",
+      "source_unit_id": "ich_m10.su.4_2_6.001",
+      "knowledge_record_id": null,
+      "parameter": "number of independently prepared dilution series",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "independently prepared dilution series",
+      "value_status": "known",
+      "denominator_or_reference": "for each dilution factor",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "For each dilution factor, at least 3 independently prepared dilution series",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_6.004",
+      "source_unit_id": "ich_m10.su.4_2_6.001",
+      "knowledge_record_id": null,
+      "parameter": "calculated mean concentration",
+      "comparator": "within",
+      "value": 20,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal concentration",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_6.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "within ±20% of nominal concentration",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_6.005",
+      "source_unit_id": "ich_m10.su.4_2_6.001",
+      "knowledge_record_id": null,
+      "parameter": "precision",
+      "comparator": "not_exceed",
+      "value": 20,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_6.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "precision should not exceed 20%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_6.006",
+      "source_unit_id": "ich_m10.su.4_2_6.001",
+      "knowledge_record_id": null,
+      "parameter": "number of independently prepared dilution series",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "dilution series",
+      "value_status": "known",
+      "denominator_or_reference": "for each dilution factor",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 3 independently prepared dilution series",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_7.001",
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "knowledge_record_id": null,
+      "parameter": "aliquots analysed",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "aliquots",
+      "value_status": "known",
+      "denominator_or_reference": "each concentration level",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "A minimum of 3 aliquots should be analysed at each concentration level.",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_7.002",
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "knowledge_record_id": null,
+      "parameter": "mean concentration at each QC level relative to nominal concentration",
+      "comparator": "within",
+      "value": 20,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal concentration",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "The mean concentration at each QC level should be within ±20% of nominal concentration.",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_7.003",
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "knowledge_record_id": null,
+      "parameter": "freeze-thaw cycles",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "cycles",
+      "value_status": "known",
+      "denominator_or_reference": "Freeze-thaw stability in matrix",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_7.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "Freeze-thaw stability in matrix (minimum of 3 cycles, kept frozen at least 12 hours between cycles)",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_2_7.004",
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "knowledge_record_id": null,
+      "parameter": "frozen duration",
+      "comparator": "at_least",
+      "value": 12,
+      "value_fraction": null,
+      "unit": "hours",
+      "value_status": "known",
+      "denominator_or_reference": "between cycles",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_2_7.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "kept frozen at least 12 hours between cycles",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_3_1.001",
+      "source_unit_id": "ich_m10.su.4_3_1.001",
+      "knowledge_record_id": null,
+      "parameter": "Calibration standard concentration levels",
+      "comparator": "at_least",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "concentration levels",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "calibration standards at a minimum of 6 concentration levels",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_3_1.002",
+      "source_unit_id": "ich_m10.su.4_3_1.001",
+      "knowledge_record_id": null,
+      "parameter": "QC levels",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "levels",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 3 levels of QCs",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_3_1.003",
+      "source_unit_id": "ich_m10.su.4_3_1.001",
+      "knowledge_record_id": null,
+      "parameter": "QC sets",
+      "comparator": "at_least",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "sets",
+      "value_status": "known",
+      "denominator_or_reference": "analytical run",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_3_1.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "applied as two sets (or at least 5% of the number of study samples, whichever is higher)",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_3_1.004",
+      "source_unit_id": "ich_m10.su.4_3_1.001",
+      "knowledge_record_id": null,
+      "parameter": "QC sets",
+      "comparator": "at_least",
+      "value": 5,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "number of study samples",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_3_1.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 5% of the number of study samples, whichever is higher",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_3_1.005",
+      "source_unit_id": "ich_m10.su.4_3_1.001",
+      "knowledge_record_id": null,
+      "parameter": "QC sets",
+      "comparator": "equals",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "sets",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "applied as two sets",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_3_2.001",
+      "source_unit_id": "ich_m10.su.4_3_2.001",
+      "knowledge_record_id": null,
+      "parameter": "calibration curve accuracy deviation",
+      "comparator": "within",
+      "value": 20,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "calibration standards",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_3_2.002",
+        "ich_m10.qc.4_3_2.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "within ±20%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_3_2.002",
+      "source_unit_id": "ich_m10.su.4_3_2.001",
+      "knowledge_record_id": null,
+      "parameter": "proportion of calibration standards meeting calibration curve accuracy",
+      "comparator": "at_least",
+      "value": 75,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "calibration standards",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_3_2.001",
+        "ich_m10.qc.4_3_2.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "for at least 75% of calibration standards",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_3_2.003",
+      "source_unit_id": "ich_m10.su.4_3_2.001",
+      "knowledge_record_id": null,
+      "parameter": "number of calibration standard levels",
+      "comparator": "at_least",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "levels",
+      "value_status": "known",
+      "denominator_or_reference": "calibration standards",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_3_2.001",
+        "ich_m10.qc.4_3_2.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "minimum 6 levels",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_3_2.004",
+      "source_unit_id": "ich_m10.su.4_3_2.001",
+      "knowledge_record_id": null,
+      "parameter": "calibration curve accuracy deviation",
+      "comparator": "within",
+      "value": 25,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "calibration standards at LLOQ and ULOQ",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "±25% at LLOQ and ULOQ",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_3_2.005",
+      "source_unit_id": "ich_m10.su.4_3_2.001",
+      "knowledge_record_id": null,
+      "parameter": "proportion of total QCs within ±20% of nominal concentration",
+      "comparator": "at_least",
+      "value": 67,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "total QCs",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_3_2.006"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 67% (2/3) of the total QCs",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_3_2.006",
+      "source_unit_id": "ich_m10.su.4_3_2.001",
+      "knowledge_record_id": null,
+      "parameter": "proportion of QCs at each concentration level within ±20% of nominal concentration",
+      "comparator": "at_least",
+      "value": 50,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "QCs at each concentration level",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.4_3_2.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 50% of the QCs at each concentration level",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.4_3_3.001",
+      "source_unit_id": "ich_m10.su.4_3_3.001",
+      "knowledge_record_id": null,
+      "parameter": "QC levels falling within the range of concentrations measured in study samples",
+      "comparator": "at_least",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "QC levels",
+      "value_status": "known",
+      "denominator_or_reference": "the range of concentrations measured in study samples",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "At least 2 QC levels should fall within the range of concentrations measured in study samples.",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.001",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "ISR frequency per species",
+      "comparator": "at_least",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "time",
+      "value_status": "known",
+      "denominator_or_reference": "per species",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least once per species",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.002",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "ISR frequency per patient population",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "time",
+      "value_status": "known",
+      "denominator_or_reference": "per patient population",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "once per patient population",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.003",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "total study samples",
+      "comparator": "not_exceed",
+      "value": 1000,
+      "value_fraction": null,
+      "unit": "samples",
+      "value_status": "known",
+      "denominator_or_reference": "total study samples",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "total study samples ≤ 1000",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.004",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "samples reanalysed",
+      "comparator": "equals",
+      "value": 10,
+      "value_fraction": null,
+      "unit": "% of samples",
+      "value_status": "known",
+      "denominator_or_reference": "total study samples",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.5.014"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "10% of samples",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.005",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "total samples",
+      "comparator": "at_least",
+      "value": 1000,
+      "value_fraction": null,
+      "unit": "samples",
+      "value_status": "known",
+      "denominator_or_reference": "total samples, excluding 1000",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.5.014"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "total samples > 1000",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.006",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "samples assessed among the first 1000 samples",
+      "comparator": "equals",
+      "value": 10,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "the first 1000 samples",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.5.007"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "10% of the first 1000 samples (100)",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.007",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "samples assessed among the first 1000 samples",
+      "comparator": "equals",
+      "value": 100,
+      "value_fraction": null,
+      "unit": "samples",
+      "value_status": "known",
+      "denominator_or_reference": "the first 1000 samples",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.5.006"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "(100)",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.008",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "samples assessed exceeding 1000",
+      "comparator": "equals",
+      "value": 5,
+      "value_fraction": null,
+      "unit": "% of samples",
+      "value_status": "known",
+      "denominator_or_reference": "samples exceeding 1000",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "5% of samples exceeding 1000",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.009",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "percent difference between repeat value and initial value relative to mean",
+      "comparator": "within",
+      "value": 20,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "±20%",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.5.010"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "within ±20%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.010",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "repeats within ±20%",
+      "comparator": "at_least",
+      "value": null,
+      "value_fraction": {
+        "numerator": 2,
+        "denominator": 3
+      },
+      "unit": "of repeats",
+      "value_status": "known",
+      "denominator_or_reference": "repeats",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.5.009"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 2/3 of repeats",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.011",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "percent difference between repeat value and initial value relative to mean",
+      "comparator": "within",
+      "value": 30,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "±30%",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.5.012"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "within ±30%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.012",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "ISR frequency",
+      "comparator": "at_least",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "time per species",
+      "value_status": "known",
+      "denominator_or_reference": "nonclinical studies",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.5.011"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least once per species",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.013",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "ISR frequency",
+      "comparator": "at_least",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "time per patient population",
+      "value_status": "known",
+      "denominator_or_reference": "pivotal early patient trials",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "once per patient population",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.014",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "study samples to be assessed",
+      "comparator": "equals",
+      "value": 5,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "samples exceeding 1000",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.5.004",
+        "ich_m10.qc.5.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "plus 5% of samples exceeding 1000 should be assessed",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.5.015",
+      "source_unit_id": "ich_m10.su.5.001",
+      "knowledge_record_id": null,
+      "parameter": "ISR frequency",
+      "comparator": "at_least",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "once",
+      "value_status": "known",
+      "denominator_or_reference": "per species",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least once per species",
+      "review_status": "reviewed"
     }
   ],
   "conditions": [
@@ -5791,6 +8615,648 @@
       "applies_to_ids": [
         "ich_m10.kr.3_3_5.002"
       ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_1_1.001",
+      "source_unit_id": "ich_m10.su.4_1_1.001",
+      "condition_text": "whenever possible",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.4_1_1.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_1_1.002",
+      "source_unit_id": "ich_m10.su.4_1_1.001",
+      "condition_text": "If the reference standard batch used for bioanalysis is changed",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.4_1_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_1_1.003",
+      "source_unit_id": "ich_m10.su.4_1_1.001",
+      "condition_text": "prior to use",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.4_1_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_1_1.004",
+      "source_unit_id": "ich_m10.su.4_1_1.001",
+      "condition_text": "If the reference standard batch used for bioanalysis is changed",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.4_1_1.004",
+        "ich_m10.kr.4_1_1.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_1_2.001",
+      "source_unit_id": "ich_m10.su.4_1_2.001",
+      "condition_text": "upon interaction",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.4_1_2.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_1.001",
+      "source_unit_id": "ich_m10.su.4_2_1.001",
+      "condition_text": "at the highest anticipated concentrations in study samples",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_1.002",
+      "source_unit_id": "ich_m10.su.4_2_1.001",
+      "condition_text": "in the absence and presence of the analyte (at low and high QC concentrations)",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_1.003",
+      "source_unit_id": "ich_m10.su.4_2_1.001",
+      "condition_text": "at low and high QC levels",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_1.004",
+      "source_unit_id": "ich_m10.su.4_2_1.001",
+      "condition_text": "at the highest anticipated concentrations in study samples",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_1.005",
+      "source_unit_id": "ich_m10.su.4_2_1.001",
+      "condition_text": "in the absence and presence of the analyte",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_1.006",
+      "source_unit_id": "ich_m10.su.4_2_1.001",
+      "condition_text": "at low and high QC levels",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_2.001",
+      "source_unit_id": "ich_m10.su.4_2_2.001",
+      "condition_text": "or fewer for rare matrices",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_2.002",
+      "source_unit_id": "ich_m10.su.4_2_2.001",
+      "condition_text": "for rare matrices",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_3.001",
+      "source_unit_id": "ich_m10.su.4_2_3.001",
+      "condition_text": "except at LLOQ and ULOQ",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_3.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_3.002",
+      "source_unit_id": "ich_m10.su.4_2_3.001",
+      "condition_text": "In the case that replicates are used",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_3.003",
+      "source_unit_id": "ich_m10.su.4_2_3.001",
+      "condition_text": "In the case that replicates are used",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_3.004",
+      "source_unit_id": "ich_m10.su.4_2_3.001",
+      "condition_text": "if appropriate",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_3.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_3.005",
+      "source_unit_id": "ich_m10.su.4_2_3.001",
+      "condition_text": "at LLOQ and ULOQ",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_4_1.001",
+      "source_unit_id": "ich_m10.su.4_2_4_1.001",
+      "condition_text": "During method validation",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_4_1.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_4_1.002",
+      "source_unit_id": "ich_m10.su.4_2_4_1.001",
+      "condition_text": "for accuracy and precision runs",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_4_1.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_4_1.003",
+      "source_unit_id": "ich_m10.su.4_2_4_1.001",
+      "condition_text": "within the calibration curve range",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_4_1.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_4_2.001",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "condition_text": "except for LLOQ and ULOQ",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_4_2.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_4_2.002",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "condition_text": "except at LLOQ and ULOQ",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_4_2.003",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "condition_text": "at LLOQ and ULOQ",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_4_2.004",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "condition_text": "For non-accuracy and precision validation runs",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_4_2.005",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "condition_text": "or 3 runs over two days with 5 replicates per QC level",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_4_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_4_2.006",
+      "source_unit_id": "ich_m10.su.4_2_4_2.001",
+      "condition_text": "40% at LLOQ and ULOQ",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_4_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_5.001",
+      "source_unit_id": "ich_m10.su.4_2_5.001",
+      "condition_text": "If the analytical platform is prone to carry-over",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_5.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_6.001",
+      "source_unit_id": "ich_m10.su.4_2_6.001",
+      "condition_text": "to within the calibration range",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_6.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_6.002",
+      "source_unit_id": "ich_m10.su.4_2_6.001",
+      "condition_text": "For each dilution factor",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_6.007"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_6.003",
+      "source_unit_id": "ich_m10.su.4_2_6.001",
+      "condition_text": "for each dilution",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_6.008",
+        "ich_m10.kr.4_2_6.009"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_6.004",
+      "source_unit_id": "ich_m10.su.4_2_6.001",
+      "condition_text": "after correction for dilution",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_6.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_6.005",
+      "source_unit_id": "ich_m10.su.4_2_6.001",
+      "condition_text": "within the calibration range",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_6.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_6.006",
+      "source_unit_id": "ich_m10.su.4_2_6.001",
+      "condition_text": "above ULOQ",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_6.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_6.007",
+      "source_unit_id": "ich_m10.su.4_2_6.001",
+      "condition_text": "for hook effect",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_6.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_7.001",
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "condition_text": "at each concentration level",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_7.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_7.002",
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "condition_text": "at each QC level",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_7.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_7.003",
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "condition_text": "between cycles",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_7.004",
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "condition_text": "For chemical drugs",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_7.005",
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "condition_text": "For biological drugs",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_7.006",
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "condition_text": "at each concentration level",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_7.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_7.007",
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "condition_text": "at each QC level",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_7.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_7.008",
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "condition_text": "between cycles",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_7.009",
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "condition_text": "For chemical drugs",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_2_7.010",
+      "source_unit_id": "ich_m10.su.4_2_7.001",
+      "condition_text": "For biological drugs",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_3_1.001",
+      "source_unit_id": "ich_m10.su.4_3_1.001",
+      "condition_text": "If microtitre plates are used and each plate contains its own calibration standards and QCs",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.4_3_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_3_1.002",
+      "source_unit_id": "ich_m10.su.4_3_1.001",
+      "condition_text": "If sample capacity is limited",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.4_3_1.005",
+        "ich_m10.kr.4_3_1.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_3_1.003",
+      "source_unit_id": "ich_m10.su.4_3_1.001",
+      "condition_text": "whichever is higher",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_3_1.004",
+      "source_unit_id": "ich_m10.su.4_3_1.001",
+      "condition_text": "If microtitre plates are used and each plate contains its own calibration standards and QCs",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.4_3_1.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_3_2.001",
+      "source_unit_id": "ich_m10.su.4_3_2.001",
+      "condition_text": "at LLOQ and ULOQ",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_m10.kr.4_3_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_3_2.002",
+      "source_unit_id": "ich_m10.su.4_3_2.001",
+      "condition_text": "at each concentration level",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.4_3_2.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_3_2.003",
+      "source_unit_id": "ich_m10.su.4_3_2.001",
+      "condition_text": "If an analytical run fails",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.4_3_2.005",
+        "ich_m10.kr.4_3_2.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_3_2.004",
+      "source_unit_id": "ich_m10.su.4_3_2.001",
+      "condition_text": "For QCs",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.4_3_2.005",
+        "ich_m10.kr.4_3_2.006",
+        "ich_m10.kr.4_3_2.007"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_3_3.001",
+      "source_unit_id": "ich_m10.su.4_3_3.001",
+      "condition_text": "If an unanticipated clustering of study samples is observed or a large number of samples are above ULOQ",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.4_3_3.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_3_3.002",
+      "source_unit_id": "ich_m10.su.4_3_3.001",
+      "condition_text": "according to the validated dilution method",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.4_3_4.001",
+      "source_unit_id": "ich_m10.su.4_3_4.001",
+      "condition_text": "In comparative BA/BE studies",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.4_3_4.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.5.001",
+      "source_unit_id": "ich_m10.su.5.001",
+      "condition_text": "for nonclinical studies",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.5.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.5.002",
+      "source_unit_id": "ich_m10.su.5.001",
+      "condition_text": "for pivotal early patient trials",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.5.003",
+      "source_unit_id": "ich_m10.su.5.001",
+      "condition_text": "If total study samples ≤ 1000",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.5.004",
+      "source_unit_id": "ich_m10.su.5.001",
+      "condition_text": "if total samples > 1000",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.5.005",
+      "source_unit_id": "ich_m10.su.5.001",
+      "condition_text": "for chromatographic methods (4-6-20 rule)",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.5.006",
+      "source_unit_id": "ich_m10.su.5.001",
+      "condition_text": "for LBAs (4-6-30 rule)",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.5.007",
+      "source_unit_id": "ich_m10.su.5.001",
+      "condition_text": "nonclinical studies",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.5.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.5.008",
+      "source_unit_id": "ich_m10.su.5.001",
+      "condition_text": "all pivotal comparative BA/BE studies",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.5.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.5.009",
+      "source_unit_id": "ich_m10.su.5.001",
+      "condition_text": "first clinical trial in subjects",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.5.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.5.010",
+      "source_unit_id": "ich_m10.su.5.001",
+      "condition_text": "pivotal early patient trials",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.5.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.5.011",
+      "source_unit_id": "ich_m10.su.5.001",
+      "condition_text": "trials in patients with impaired hepatic and/or renal function",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.5.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.5.012",
+      "source_unit_id": "ich_m10.su.5.001",
+      "condition_text": "for chromatographic methods",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.5.013",
+      "source_unit_id": "ich_m10.su.5.001",
+      "condition_text": "for LBAs",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
       "review_status": "reviewed"
     }
   ],

@@ -30,8 +30,8 @@
 | **3.2.8** | Stability | p. 15-18 | `COMPLETED` | **전혈 안정성, 동결-융해(최소 3사이클 12시간), 단기 실온, 장기 동결, 자가주입기/추출액 안정성 (±15%)** (5 KR, 4 QC, 6 Cond) |
 | **3.2.9** | Reinjection Reproducibility | p. 18 | `COMPLETED` | **재주입 재현성 평가 (최소 5반복 Low/Med/High QC, ±15%, %CV ≤ 15%)** (2 KR, 4 QC, 1 Cond) |
 | **3.3.1-6**| Study Sample Analysis (Chromatography) | p. 18-23 | `COMPLETED` | **분석 런 수락 기준(4-6-15 규칙), 검량 범위 조정, 재분석(PK 사유 재분석 금지), 재주입, 크로마토그램 적분** (15 KR, 13 QC, 18 Cond) |
-| **4.1-3** | Ligand Binding Assays (LBA) | p. 23-33 | `BACKLOG` | LBA 핵심 시약, 특이성/선택성, 4/5-Parameter 검량선, 정밀도/정확도 20/25%, Hook 효과, 안정성 |
-| **5** | Incurred Sample Reanalysis (ISR) | p. 33-35 | `BACKLOG` | ISR 검체 선정 비율 (1,000개까지 10%, 초과분 5%), 수락 기준 (4-6-20/4-6-30 규칙) |
+| **4.1-3** | Ligand Binding Assays (LBA) | p. 23-33 | `COMPLETED` | **LBA 핵심 시약 관리, 특이성, 선택성(10명 검체 80%), 4/5-Parameter 검량선(20%/25%), 정확도/정밀도(20%/25%, Total Error 30%/40%), Carry-over, 희석선형성/Hook효과, 안정성, 4-6-20 런 수락 기준** (62 KR, 55 QC, 56 Cond) |
+| **5** | Incurred Sample Reanalysis (ISR) | p. 33-35 | `COMPLETED` | **ISR 대상 시험(비임상 동물종별 1회, BA/BE, 최초 임상), 검체수 비율(1,000개까지 10%, 초과분 5%), 수락 기준(크로마토그래피 4-6-20 규칙, LBA 4-6-30 규칙)** (4 KR, 15 QC, 13 Cond) |
 | **6.1** | Partial Validation (Details) | p. 35-36 | `COMPLETED` | **크로마토그래피 및 LBA 부분 밸리데이션 대상 변경 상황 목록** (23 KR, 0 QC, 6 Cond) |
 | **6.2** | Cross Validation (Details) | p. 36-37 | `COMPLETED` | **동일 시험 내/시험 간 교차 밸리데이션 요건 (QC 3농도 3반복, 검체 n≥30, Bland-Altman/Deming 회귀)** (11 KR, 2 QC, 9 Cond) |
 | **7.1-6** | Additional Considerations | p. 37-44 | `BACKLOG` | 내인성 물질 분석(대체기질/표준물질첨가법), Parallelism, 회수율, MRD, 키트, 건조기질법(DBS) |
@@ -42,7 +42,7 @@
 
 ## Summary Statistics
 * **전체 섹션 수**: 26개 주요 단원
-* **적재 완료 섹션 수 (Completed)**: **21개 섹션** (전체 가이던스의 81% 완료, Section 1, 2, 3, 6 100% 완결)
-* **총 구조화 데이터 규모 (ICH M10)**: **141 KnowledgeRecords, 65 QuantitativeCriteria, 103 Conditions** (총 309개 엔티티, 100% `reviewed`)
-* **아카이브 전체 엔티티 규모**: **1,565개 엔티티** (ICH M10 309 + ICH S6 98 + EMA FIH 491 + FDA ADA 667)
-* **잔여 백로그 (Backlog)**: Batch 3 (Section 4 LBA 면역분석법 및 Section 5 ISR 전수), Batch 4 (Section 7 특수고려사항 및 Section 8 문서화)
+* **적재 완료 섹션 수 (Completed)**: **23개 섹션** (전체 가이던스의 88% 완료, Section 1, 2, 3, 4, 5, 6 100% 완결)
+* **총 구조화 데이터 규모 (ICH M10)**: **207 KnowledgeRecords, 135 QuantitativeCriteria, 172 Conditions** (총 514개 엔티티, 100% `reviewed`)
+* **아카이브 전체 엔티티 규모**: **1,770개 엔티티** (ICH M10 514 + ICH S6 98 + EMA FIH 491 + FDA ADA 667)
+* **잔여 백로그 (Backlog)**: Batch 4 (Section 7 특수고려사항 및 Section 8 문서화/용어집 - 마지막 최종 완결 배치)

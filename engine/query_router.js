@@ -31,8 +31,7 @@ function scoreRecord(record, qTokens, queryScope = {}) {
     return { score: 0, matchedCount: 0 };
   }
   if (queryScope.target_topic === "species_selection") {
-    // If asking about species selection, hard-reject study duration or unrelated criteria
-    if (record.topic_scope === "study_duration" || (record.parameter && record.parameter.includes("duration"))) {
+    if (record.topic_scope !== "species_selection") {
       return { score: 0, matchedCount: 0 };
     }
   }
