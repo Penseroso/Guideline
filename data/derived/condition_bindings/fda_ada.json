@@ -1,0 +1,181 @@
+{
+  "document_id": "fda_ada",
+  "bindings": [
+    {
+      "binding_id": "fda_ada.bind.IV_A_1.001",
+      "condition_id": "fda_ada.cond.IV_A_1.001",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "epistemic_hedge",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "In most cases",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "fda_ada.bind.IV_A_1.002",
+      "condition_id": "fda_ada.cond.IV_A_1.002",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "epistemic_hedge",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "In some cases",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "fda_ada.bind.IV_A_1.003",
+      "condition_id": "fda_ada.cond.IV_A_1.003",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "it is important to know whether other family members are affected by ADA",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "fda_ada.bind.IV_A_1.004",
+      "condition_id": "fda_ada.cond.IV_A_1.004",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "narrative_reference",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "once samples containing antibodies are confirmed as positive",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "fda_ada.bind.IV_A_1.005",
+      "condition_id": "fda_ada.cond.IV_A_1.005",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "epistemic_hedge",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "in most cases",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "fda_ada.bind.IV_A_1.006",
+      "condition_id": "fda_ada.cond.IV_A_1.006",
+      "bindability": "bindable",
+      "non_bindable_reason": null,
+      "binding_role": "partial_scope",
+      "predicate": {
+        "all_of": [
+          {
+            "slot": "assay_tier",
+            "operator": "equals",
+            "value": "screening"
+          }
+        ]
+      },
+      "evidence_span": "screening assay",
+      "verification_status": "needs_review"
+    },
+    {
+      "binding_id": "fda_ada.bind.IV_A_1.007",
+      "condition_id": "fda_ada.cond.IV_A_1.007",
+      "bindability": "bindable",
+      "non_bindable_reason": null,
+      "binding_role": "partial_scope",
+      "predicate": {
+        "all_of": [
+          {
+            "slot": "assay_tier",
+            "operator": "equals",
+            "value": "confirmatory"
+          }
+        ]
+      },
+      "evidence_span": "confirmatory assay",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "fda_ada.bind.IV_A_1.008",
+      "condition_id": "fda_ada.cond.IV_A_1.008",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "for multi-domain products",
+      "verification_status": "needs_review"
+    },
+    {
+      "binding_id": "fda_ada.bind.IV_A_1.009",
+      "condition_id": "fda_ada.cond.IV_A_1.009",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "it is important to know whether other family members are affected by ADA",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "fda_ada.bind.VI_B.001",
+      "condition_id": "fda_ada.cond.VI_B.001",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "narrative_reference",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "from the subject population",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "fda_ada.bind.VI_B.002",
+      "condition_id": "fda_ada.cond.VI_B.002",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "normally distributed data",
+      "verification_status": "needs_review"
+    },
+    {
+      "binding_id": "fda_ada.bind.VI_B.003",
+      "condition_id": "fda_ada.cond.VI_B.003",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "high-risk products",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "fda_ada.bind.VI_B.004",
+      "condition_id": "fda_ada.cond.VI_B.004",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "the mean varies between assays, plates, or analysts but the variance around the mean is constant",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "fda_ada.bind.VI_B.005",
+      "condition_id": "fda_ada.cond.VI_B.005",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "When the mean is constant",
+      "verification_status": "verified"
+    },
+    {
+      "binding_id": "fda_ada.bind.VI_B.006",
+      "condition_id": "fda_ada.cond.VI_B.006",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "both the mean and variance vary",
+      "verification_status": "needs_review"
+    },
+    {
+      "binding_id": "fda_ada.bind.VI_B.007",
+      "condition_id": "fda_ada.cond.VI_B.007",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "discourse_marker",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "One approach that allows for high assurance of a 5% false-positive rate",
+      "verification_status": "verified"
+    }
+  ]
+}

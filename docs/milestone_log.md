@@ -120,6 +120,19 @@ Steps 1-5 of the spike's 10-step implementation order are done (steps 6-10 — r
 
 175/175 tests pass (`npm test`, 22 new since the last checkpoint: 7 added to `engine_binding_agent.test.js` for the three fixes above, plus a new `engine_applicability.test.js`, 15); `npm run eval` 18/18 unchanged; `npm run validate:pilots` 5/5 unchanged; `npm run validate:bindings` 1 file / 30 bindings, 0 errors.
 
+- **Step 8: extended the same unmodified pipeline to EMA FIH §7.2/§7.3 (25 conditions) and FDA ADA §IV.A.1/§VI.B (16 conditions) — the actual generalization test this spike exists to run.** No code changes between slices; `scripts/bind_conditions.js` ran as-is against two more real documents. **Result: 0 new RegulatoryContext slot *types* were needed anywhere.** All bindable predicates across all three guidelines resolved to slots already defined in `context_slots.json` before any live run: S6(R1) used `relevant_species_availability`, `target_nature`, `tcr_study_feasible`, `conjugated_toxin_novelty`, `product_modality`; EMA FIH used `subject_population`; FDA ADA used `assay_tier` — 7 slots total, all anticipated at design time, none invented mid-run. This is the headline finding: the applicability model's *slot vocabulary* generalizes across three structurally different guidelines (a nonclinical science guideline, a clinical trial-conduct guideline, and an assay-validation guideline) without needing new concepts, even though *binding coverage* (the fraction of conditions that turn out to be machine-bindable at all) varies sharply by guideline's own writing style — measured, not assumed:
+
+  | document | conditions | bindable | verified | notes |
+  |---|---:|---:|---:|---|
+  | `ich_s6_r1` | 30 | 12 (40%) | 24 (80%) | concrete scientific circumstances ("two relevant species," "no relevant species exists") |
+  | `ema_fih` | 25 | 1 (4%) | 24 (96%) | overwhelmingly epistemic hedges/expert-judgment language ("in general," "whenever possible," "if appropriately justified," "depending on the level of uncertainty") — inspected all 25 condition texts directly; this is a genuine content difference, not a vocabulary gap or extraction defect |
+  | `fda_ada` | 16 | 2 (12.5%) | 12 (75%) | mostly procedural/hedge language; the 2 bindable ones cleanly hit the pre-defined `assay_tier` slot |
+  | **total** | **71** | **15 (21%)** | **60 (85%)** | |
+
+  One real, borderline finding noted but not chased further (a spike-scope call, not an oversight): `ema_fih.cond.7_3.011` ("in patients with advanced cancer or life-limiting diseases if appropriately justified") mixes a checkable clause with a hedge clause, and the model classified the whole condition `non_bindable` rather than splitting it — the current single bindability judgment per condition doesn't yet support "partially checkable." Left as a documented limitation for a future slice, not patched blindly under spike time constraints. `npm run validate:bindings`: 3 files, 71 bindings, 0 schema or referential errors.
+
+175/175 tests pass (no code changes this step, data-only); `npm run eval` 18/18 unchanged; `npm run validate:pilots` 5/5 unchanged.
+
 
 
 
