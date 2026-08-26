@@ -156,6 +156,19 @@
       }
     },
     {
+      "slot_id": "disease_severity",
+      "kind": "program_finding",
+      "values": ["general", "severe_or_life_limiting"],
+      "description": "Ontology v0.2 (docs/milestone_log.md M6 'Context ontology v0.2'). Whether the patient population has a severe or life-limiting disease (e.g. advanced cancer, oncology) as opposed to a general/typical patient population. Only meaningful when subject_population=patient — it refines that axis, it does not replace it. Promoted from a binding semantic audit: 3 separate EMA FIH §7.3 Conditions (cond.7_3.006, cond.7_3.007, cond.7_3.011) all state this same distinguishing fact, and one (cond.7_3.006) was previously misclassified non_bindable/narrative_reference because the extraction anchored on a citation footnote ('see ICH S9') instead of the actual population-description text — an evidence_span mistake, not a genuine hedge, exposed once this slot existed to bind it to.",
+      "value_labels": {
+        "general": "the patient population does not have a severe or life-limiting disease",
+        "severe_or_life_limiting": "the patients have advanced cancer or another severe or life-limiting disease"
+      },
+      "match_terms": {
+        "severe_or_life_limiting": ["advanced cancer", "life-limiting disease", "life-limiting diseases", "oncology patients", "severe disease", "중증질환", "말기질환"]
+      }
+    },
+    {
       "slot_id": "assay_tier",
       "kind": "program_finding",
       "values": ["screening", "confirmatory", "titration", "neutralization"],
