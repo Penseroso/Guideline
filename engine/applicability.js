@@ -262,10 +262,24 @@ function evaluateRule(ruleId, context, { index, bindingsByConditionId: injectedB
         upgrade(state, "conditional", "unverified_binding");
       }
     } else if (binding.binding_role === "partial_scope" && !predicateHolds) {
+      // Already the conservative verdict regardless of trust — a false
+      // partial_scope predicate never reaches not_applicable either way,
+      // so there is no stronger claim here for verification_status to gate.
       basis.push({ ...entry, outcome: "partial_scope_mismatch", leaf_results: predicateEval.leaf_results });
       upgrade(state, "conditional", "partial_scope_mismatch");
-    } else {
+    } else if (trustedForExclusion) {
+      // Predicate holds and nothing disqualifies — the rule is applicable
+      // under this condition, and the binding is trusted enough to say so.
       basis.push({ ...entry, outcome: "satisfied", leaf_results: predicateEval.leaf_results });
+    } else {
+      // Same trust gate as the not_applicable-producing branches above,
+      // applied for consistency: a needs_review binding isn't trustworthy
+      // enough to silently resolve the rule as applicable either — that
+      // would hide exactly the kind of unverified evidence this layer
+      // exists to surface, just on the inclusion side instead of the
+      // exclusion side.
+      basis.push({ ...entry, outcome: "satisfied_unverified", leaf_results: predicateEval.leaf_results });
+      upgrade(state, "conditional", "unverified_binding");
     }
   }
 

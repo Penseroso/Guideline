@@ -1,6 +1,6 @@
 {
   "private": true,
-  "version": "0.3.0",
+  "version": "0.4.0",
   "engines": {
     "node": ">=22"
   },
@@ -10,7 +10,9 @@
     "validate:pilots": "node validation/validate_pilots.js",
     "validate:bindings": "node validation/validate_bindings.js",
     "chat": "node engine/cli.js",
-    "eval": "node engine/eval_harness.js"
+    "eval": "node engine/eval_harness.js",
+    "eval:applicability": "node engine/eval_applicability.js",
+    "applicability": "node engine/applicability_cli.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1",

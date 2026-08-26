@@ -141,6 +141,16 @@ test("a needs_review full_scope binding never produces not_applicable — downgr
   assert.equal(result.basis[0].binding_verification_status, "needs_review", "must still be exposed in the result");
 });
 
+test("a needs_review binding whose predicate holds does not silently resolve to applicable — downgraded to conditional for consistency with the not_applicable guard", () => {
+  const index = baseIndex();
+  addCondition(index, { id: "c1" });
+  const bindings = new Map([["c1", makeBinding({ binding_role: "partial_scope", verification_status: "needs_review" })]]);
+  const result = evaluateRule("rule1", { molecule_class: "biotechnology" }, { index, bindingsByConditionId: bindings });
+  assert.equal(result.verdict, "conditional");
+  assert.equal(result.conditional_reason, "unverified_binding");
+  assert.equal(result.basis[0].outcome, "satisfied_unverified");
+});
+
 test("a needs_review exception binding never produces not_applicable — downgraded to conditional instead", () => {
   const index = baseIndex();
   addCondition(index, { id: "c1", type: "exception" });

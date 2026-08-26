@@ -2,19 +2,15 @@
 
 Document status: Draft
 
-Schema model version: `0.3.0`
+Schema model version: `0.5.0`
 
 ## Purpose and scope
 
-This document defines the minimum data model for preserving regulatory guideline content as traceable structured data, and grounds the retrieval/answer layer built on top of it (`engine/`, `docs/product_roadmap.md`). Three sections are fully reviewed under this model (content-fidelity and recall audited against the source PDFs, not just schema-valid):
-
-- ICH M10 `3.2.5.2 Evaluation of Accuracy and Precision`
-- ICH M10 `6.1 Partial Validation`
-- ICH S6(R1) species selection
+This document defines the minimum data model for preserving regulatory guideline content as traceable structured data, and grounds the retrieval/answer layer built on top of it (`engine/`, `docs/product_roadmap.md`). See `docs/milestone_log.md` for the current, up-to-date list of reviewed sections and guidelines — this file describes the model, not a snapshot of coverage, which changes faster than this document is updated.
 
 The model is intended for source preservation and knowledge structuring. It is not a regulatory decision engine and must not create requirements, recommendations, study-design advice, or suitability conclusions that are not present in the source.
 
-Model `0.3.0` is implemented as a machine-validatable JSON bundle contract with JSON Schema (`data/schemas/guideline_bundle.schema.json`) plus a reusable validator (`validation/validate_structured_data.js`). It defines source preservation and knowledge structuring only — extraction/verification agents, retrieval, and generation live in `engine/`, not in this model.
+Model `0.5.0` is implemented as a machine-validatable JSON bundle contract with JSON Schema (`data/schemas/guideline_bundle.schema.json`) plus a reusable validator (`validation/validate_structured_data.js`). It defines source preservation and knowledge structuring only — extraction/verification agents, retrieval, and generation live in `engine/`, not in this model.
 
 An earlier derived-layer design (AmendmentMapping, EffectiveRecord, a family/edition registry) was explored but never adopted into the product build, so it is not described here as current.
 
@@ -102,7 +98,7 @@ Core fields:
 - `document_version_label`: Version or publication label as supported by the source.
 - `source_file_path`: Path to the immutable source file.
 - `source_file_checksum`: Checksum of the source file used for extraction or review.
-- `schema_model_version`: Model version used for records derived from the document. Current value: `0.3.0`.
+- `schema_model_version`: Model version used for records derived from the document. Current value: `0.5.0`.
 
 ### Section
 
@@ -297,9 +293,9 @@ For an unresolved external section reference, preserve the exact `raw_reference_
 
 ## Validation contract
 
-The machine-validatable contract for model `0.2.0` is split between JSON Schema and a reusable validator.
+The machine-validatable contract for model `0.5.0` is split between JSON Schema and a reusable validator.
 
-JSON Schema validates object structure, required fields, primitive and nullable types, controlled vocabularies, additional-property rejection, model version `0.2.0`, local value/status combinations, and positive fraction denominators.
+JSON Schema validates object structure, required fields, primitive and nullable types, controlled vocabularies, additional-property rejection, model version `0.5.0`, local value/status combinations, and positive fraction denominators.
 
 The reusable validator validates JSON parsing, JSON Schema conformance, object ID uniqueness, reference resolution, self-contained bundle rules, repeated `Document` and `Section` consistency across files, `SourceUnit` ordering, provenance consistency, value/status consistency, and actionable non-zero failures.
 
@@ -428,5 +424,5 @@ Status: `engine/data_store.js`, `engine/text_utils.js`, `data/schemas/condition_
 
 **`conditional_reason` (4 values, `engine/applicability.js`)**: `non_bindable_condition` (a condition attached to the rule is genuinely not machine-evaluable), `partial_scope_mismatch` (a `partial_scope` predicate evaluated false), `unbound_condition` (a condition is attached but has no authored binding yet — most of the archive's 279 conditions, outside this spike's ~71-condition slice), `unverified_binding` (a `full_scope`/`exception` binding's predicate would otherwise disqualify the rule, but `verification_status="needs_review"` — see finding 3 above). Only the first two were in the original spike design; the latter two were added during implementation once real gaps in binding coverage and verification trust turned out to need their own explicit reason rather than being silently folded into one of the first two or left unhandled.
 
-Not yet built: `engine/regulatory_context.js`, the EMA FIH and FDA ADA binding slices, and CLI integration — see `docs/milestone_log.md` M6.
+**Complete as of this entry**: `engine/regulatory_context.js` (RegulatoryContext validation, `matchSlotsFromText`, and a fail-closed `proposeContext` — never a validated context on its own), `engine/applicability_cli.js` (`npm run applicability propose "<question>"` / `evaluate --context <file> --rules <ids>`), `engine/cli.js`'s `:context` command and `--context <file>` flag, `test/fixtures/applicability_cases.json` + `engine/eval_applicability.js` (`npm run eval:applicability`, 29 real cases across all three guidelines, no LLM call, CI-wired). See `docs/milestone_log.md` M6 for the full narrative and `docs/test_record.md` Entry 006 for the measured numbers.
 

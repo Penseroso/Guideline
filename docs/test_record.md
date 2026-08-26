@@ -177,3 +177,45 @@ M1's last run (Entry 004) re-broke `ich_s6_r1.sec.part1.3_3` down to 0-2 reviewe
 
 Up from 0-2 reviewed out of 4-6 before this pair of fixes. Remaining rejections (1 in run 2, 1 in run 3) are a distinct, narrower pattern: modal-possibility language ("may suffice," "may be necessary") asserted as an unconditional exact requirement via `equals`, missing a modality qualifier — not fixed here, noted as a further residual for a future pass. `npm run validate:pilots` and `npm run eval` (9/9) unaffected.
 
+---
+
+## Entry 006 — Applicability Layer 0.1.0 binding pipeline, first live measurement (M6)
+
+- **Date**: 2026-08-26
+- **Engine version**: `0.4.0` (commits `72e48ba`, `c523c4a`, `326b7b7`)
+- **Applicability model version**: `0.1.0` (new artifact type — not part of `schema_model_version`, which stays `0.5.0`; see `docs/schema.md` "Applicability Layer 0.1.0")
+- **Model(s)**: `gpt-5.6-terra` for both proposal and verification (only `OPENAI_API_KEY` configured this run — product_roadmap.md §2.5.1's "prefer a different model/provider for verification" is unmet here, same as the source archive's own extraction/verification pipeline in this environment)
+- **Run**: full binding pipeline (`scripts/bind_conditions.js`) over 3 real slices: ICH S6(R1) (whole document, 30 conditions), EMA FIH §7.2/§7.3 (25 conditions), FDA ADA §IV.A.1/§VI.B (16 conditions) — 71 conditions total, first live run of this pipeline
+
+### What this measures (and does not)
+
+Unlike Entries 001-005 (extraction/verification of source archive records against `docs/schema.md`'s KR/QC/Cond reviewed-of-extracted targets), this entry measures the **derived binding layer**: does `engine/binding_agent.js` correctly classify a `Condition` as machine-bindable or not, and produce a `verification_status=verified` predicate when it is. There is no reviewed-of-extracted target set for this yet (no prior human-curated baseline exists to compare against — this pipeline is new). The number recorded here is the first measured baseline, analogous to Entry 001's role for the source pipeline.
+
+### Results
+
+| document | conditions | bindable | verified (of all) | binding_role distribution (bindable only) |
+|---|---:|---:|---:|---|
+| `ich_s6_r1` | 30 | 12 (40%) | 24 (80%) | `partial_scope`: 12 |
+| `ema_fih` | 25 | 1 (4%) | 24 (96%) | `partial_scope`: 1 |
+| `fda_ada` | 16 | 2 (12.5%) | 12 (75%) | `partial_scope`: 2 |
+| **total** | **71** | **15 (21%)** | **60 (85%)** | |
+
+No `full_scope` or `exception` binding_role survived any of the three runs (the model either didn't propose them, or — for `exception` — the underlying condition_type=exception conditions were themselves judged non-machine-bindable, correctly per the `resolveBindingRole` fix in this entry's own changes below). This means `not_applicable` is, in the current binding data, reachable only via the document-level scope-exclusion gate (`explicit_exclusions`), never via a Condition-level `full_scope`/`exception` binding — a real, measured gap in binding coverage, not a design limitation (the engine and schema both support these roles; the live data just hasn't produced one yet).
+
+### Changes made during this entry (all found live, not assumed — see `docs/schema.md` "Applicability Layer 0.1.0" for full detail)
+
+1. `claimTextForBinding` grammar/exclusivity/raw-token bug — first run scored 16/30 verified; fixed via `value_labels` + narrower `evidence_span`-based entailment check.
+2. `resolveBindingRole` precedence bug (`condition_type=exception` checked before `bindability`) — both a schema-invalidity bug and a correctness bug; fixed by checking bindability first.
+3. `finalizeBindingShape()` added so a gate-failing proposal (e.g. `non_bindable_reason` omitted) is still persisted as structurally schema-valid, `needs_review`, never malformed.
+4. `evaluateRule`'s `needs_review`-trust guard, both on the exclusionary side (`not_applicable`) and — added during this entry's own fixture-building, for consistency — the inclusionary side (`satisfied` → `satisfied_unverified`/`conditional` when `verification_status=needs_review`).
+
+Each fix was verified against the live archive before moving to the next slice, not assumed from code review alone — the same "measure, don't guess" discipline as Entries 001-005.
+
+### Slot generalization (the spike's primary research question)
+
+**0 new RegulatoryContext slot types were needed across all three guidelines.** All 15 bindable predicates resolved to one of 7 slots already declared in `data/ontology/context_slots.json` before any live run: `relevant_species_availability`, `target_nature`, `tcr_study_feasible`, `conjugated_toxin_novelty`, `product_modality` (all from S6(R1) design), `subject_population` (EMA), `assay_tier` (FDA). Binding *coverage* varies sharply by guideline (40% / 4% / 12.5%), traced to a genuine content difference — EMA FIH's §7.2/§7.3 conditions are overwhelmingly epistemic hedges ("in general," "whenever possible," "if appropriately justified") rather than checkable circumstances, confirmed by inspecting all 25 EMA condition texts directly, not inferred from the bindable/non-bindable counts alone.
+
+### M6 status
+
+In progress — see `docs/milestone_log.md` M6 for the full narrative and `docs/product_roadmap.md` §3 M6 for scope. Steps 1-10 of the spike's implementation plan are complete as of this entry (`engine/regulatory_context.js`, `engine/applicability_cli.js`, `npm run applicability`, `npm run eval:applicability`, CI wiring). `npm test` 214/214, `npm run eval` 18/18, `npm run validate:pilots` 5/5, `npm run validate:bindings` 3 files/71 bindings/0 errors, `npm run eval:applicability` 29/29 — all measured after every change in this entry, not before.
+

@@ -4,17 +4,17 @@ A hallucination-resistant conversational assistant for regulatory guidelines, bu
 
 ## Current Status
 
-- **Data model**: `docs/schema.md`, model version `0.3.0`, enforced by `data/schemas/guideline_bundle.schema.json`.
-- **Reviewed source data**: 3 fully-reviewed pilot bundles under `data/pilots/` — ICH M10 §3.2.5.2, ICH M10 §6.1, ICH S6(R1) species selection — content-fidelity and recall audited against the source PDFs, not just schema-valid.
+- **Data model**: `docs/schema.md`, model version `0.5.0`, enforced by `data/schemas/guideline_bundle.schema.json`. See `docs/milestone_log.md` for the current, up-to-date list of reviewed guidelines and sections — that count changes faster than this file is updated.
 - **Engine** (`engine/`): loads and indexes the pilot bundles; answers by structured lookup first (Option A, no LLM call) and falls back to retrieval-augmented generation with a mandatory citation-entailment check before showing any answer (Option B); a schema-constrained extraction agent and a separate, narrower verification agent automate drafting and checking new records. Try it with `npm run chat` (Option A works with zero API key/cost).
-- **Validation**: `npm test` (unit tests, mocked LLM calls, no network), `npm run validate:pilots` (schema + cross-reference validation over all pilot bundles), `npm run eval` (gold question/citation regression set, Option A only, zero API cost).
+- **Applicability Engine** (M6 spike, `docs/schema.md` "Applicability Layer 0.1.0"): given a structured RegulatoryContext, deterministically evaluates whether a specific rule applies, using the archive's own `Condition` graph plus a derived `Condition`→predicate binding layer (`data/derived/condition_bindings/`) as evidence — moving from "search and answer" toward "which rules apply, and why." Try it with `npm run applicability propose "<question>"` then `npm run applicability evaluate --context <file> --rules <ids>`.
+- **Validation**: `npm test` (unit tests, mocked LLM calls, no network), `npm run validate:pilots` (schema + cross-reference validation over all pilot bundles), `npm run eval` (gold question/citation regression set, Option A only, zero API cost), `npm run validate:bindings` (Applicability Layer binding schema + referential validation), `npm run eval:applicability` (Applicability Layer regression set, deterministic, zero API cost).
 
 ## Repository Map
 
 - `source_pdfs/`: immutable original guideline PDFs.
 - `docs/`: active project scope, conceptual data model, PDF assessments, the product roadmap, and the milestone log.
-- `data/`: the reviewed pilot bundles and the source JSON Schema.
-- `engine/`: the chatbot/extraction/verification application layer.
+- `data/`: the reviewed pilot bundles and the source JSON Schema (`data/pilots/`, `data/schemas/`), plus the Applicability Layer's declarative ontology and derived bindings (`data/ontology/`, `data/derived/`).
+- `engine/`: the chatbot/extraction/verification application layer, plus the Applicability Engine (`applicability.js`, `regulatory_context.js`, `binding_agent.js`, `applicability_cli.js`).
 - `validation/`: reproducible validation scripts.
 - `test/`: unit tests (mocked LLM clients — no live API calls in CI) and schema validation tests.
 - `logs/`: `m2_queries.jsonl`, the M2 real-usage log (`npm run chat`) — every question, its answer, path (A/B), and review_status; the coverage-expansion backlog for M3 (`docs/product_roadmap.md` §3 M2).
