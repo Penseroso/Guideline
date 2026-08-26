@@ -23,26 +23,6 @@
       "heading_source_unit_id": null
     },
     {
-      "section_id": "ich_s6_r1.sec.part1.3_3",
-      "document_id": "ich_s6_r1",
-      "section_number": "3.3",
-      "title": "Animal Species/Model Selection",
-      "parent_section_id": "ich_s6_r1.sec.part1",
-      "section_order": 33,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ich_s6_r1.su.part1.3_3.001"
-    },
-    {
-      "section_id": "ich_s6_r1.sec.part1.notes",
-      "document_id": "ich_s6_r1",
-      "section_number": "NOTES",
-      "title": "Notes",
-      "parent_section_id": "ich_s6_r1.sec.part1",
-      "section_order": 99,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ich_s6_r1.su.part1.notes.001"
-    },
-    {
       "section_id": "ich_s6_r1.sec.part2",
       "document_id": "ich_s6_r1",
       "section_number": "Part II",
@@ -58,9 +38,59 @@
       "section_number": "2",
       "title": "Species Selection",
       "parent_section_id": "ich_s6_r1.sec.part2",
-      "section_order": 2,
+      "section_order": 3,
       "section_order_status": "known",
       "heading_source_unit_id": "ich_s6_r1.su.part2.2.001"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.1",
+      "document_id": "ich_s6_r1",
+      "section_number": "1",
+      "title": "INTRODUCTION",
+      "parent_section_id": "ich_s6_r1.sec.part1",
+      "heading_source_unit_id": null,
+      "section_order": 4,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.1_1",
+      "document_id": "ich_s6_r1",
+      "section_number": "1.1",
+      "title": "Background",
+      "parent_section_id": "ich_s6_r1.sec.part1.1",
+      "heading_source_unit_id": null,
+      "section_order": 5,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.1_2",
+      "document_id": "ich_s6_r1",
+      "section_number": "1.2",
+      "title": "Objectives",
+      "parent_section_id": "ich_s6_r1.sec.part1.1",
+      "heading_source_unit_id": null,
+      "section_order": 6,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.1_3",
+      "document_id": "ich_s6_r1",
+      "section_number": "1.3",
+      "title": "Scope",
+      "parent_section_id": "ich_s6_r1.sec.part1.1",
+      "heading_source_unit_id": null,
+      "section_order": 7,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.2",
+      "document_id": "ich_s6_r1",
+      "section_number": "2",
+      "title": "SPECIFICATION OF THE TEST MATERIAL",
+      "parent_section_id": "ich_s6_r1.sec.part1",
+      "heading_source_unit_id": null,
+      "section_order": 8,
+      "section_order_status": "known"
     },
     {
       "section_id": "ich_s6_r1.sec.part2.2_1",
@@ -68,7 +98,7 @@
       "section_number": "2.1",
       "title": "General Principles",
       "parent_section_id": "ich_s6_r1.sec.part2.2",
-      "section_order": 21,
+      "section_order": 9,
       "section_order_status": "known",
       "heading_source_unit_id": "ich_s6_r1.su.part2.2_1.001"
     },
@@ -78,9 +108,179 @@
       "section_number": "2.2",
       "title": "One or Two Species",
       "parent_section_id": "ich_s6_r1.sec.part2.2",
-      "section_order": 22,
+      "section_order": 10,
       "section_order_status": "known",
       "heading_source_unit_id": "ich_s6_r1.su.part2.2_2.001"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.3_1",
+      "document_id": "ich_s6_r1",
+      "section_number": "3.1",
+      "title": "General Principles",
+      "parent_section_id": "ich_s6_r1.sec.part1",
+      "heading_source_unit_id": null,
+      "section_order": 11,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.3_2",
+      "document_id": "ich_s6_r1",
+      "section_number": "3.2",
+      "title": "Biological Activity/Pharmacodynamics",
+      "parent_section_id": "ich_s6_r1.sec.part1",
+      "heading_source_unit_id": null,
+      "section_order": 12,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.3_3",
+      "document_id": "ich_s6_r1",
+      "section_number": "3.3",
+      "title": "Animal Species/Model Selection",
+      "parent_section_id": "ich_s6_r1.sec.part1",
+      "section_order": 13,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ich_s6_r1.su.part1.3_3.001"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.3_4",
+      "document_id": "ich_s6_r1",
+      "section_number": "3.4",
+      "title": "Number/Gender of Animals",
+      "parent_section_id": "ich_s6_r1.sec.part1",
+      "heading_source_unit_id": null,
+      "section_order": 14,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.3_5",
+      "document_id": "ich_s6_r1",
+      "section_number": "3.5",
+      "title": "Administration/Dose Selection",
+      "parent_section_id": "ich_s6_r1.sec.part1",
+      "heading_source_unit_id": null,
+      "section_order": 15,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.3_6",
+      "document_id": "ich_s6_r1",
+      "section_number": "3.6",
+      "title": "Immunogenicity",
+      "parent_section_id": "ich_s6_r1.sec.part1",
+      "heading_source_unit_id": null,
+      "section_order": 16,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.4",
+      "document_id": "ich_s6_r1",
+      "section_number": "4",
+      "title": "SPECIFIC CONSIDERATIONS",
+      "parent_section_id": "ich_s6_r1.sec.part1",
+      "heading_source_unit_id": null,
+      "section_order": 17,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.4_1",
+      "document_id": "ich_s6_r1",
+      "section_number": "4.1",
+      "title": "Safety Pharmacology",
+      "parent_section_id": "ich_s6_r1.sec.part1.4",
+      "heading_source_unit_id": null,
+      "section_order": 18,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.4_2",
+      "document_id": "ich_s6_r1",
+      "section_number": "4.2",
+      "title": "Exposure Assessment",
+      "parent_section_id": "ich_s6_r1.sec.part1.4",
+      "heading_source_unit_id": null,
+      "section_order": 19,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.4_3",
+      "document_id": "ich_s6_r1",
+      "section_number": "4.3",
+      "title": "Single Dose Toxicity Studies",
+      "parent_section_id": "ich_s6_r1.sec.part1.4",
+      "heading_source_unit_id": null,
+      "section_order": 20,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.4_4",
+      "document_id": "ich_s6_r1",
+      "section_number": "4.4",
+      "title": "Repeated Dose Toxicity Studies",
+      "parent_section_id": "ich_s6_r1.sec.part1.4",
+      "heading_source_unit_id": null,
+      "section_order": 21,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.4_5",
+      "document_id": "ich_s6_r1",
+      "section_number": "4.5",
+      "title": "Immunotoxicity Studies",
+      "parent_section_id": "ich_s6_r1.sec.part1.4",
+      "heading_source_unit_id": null,
+      "section_order": 22,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.4_6",
+      "document_id": "ich_s6_r1",
+      "section_number": "4.6",
+      "title": "Reproductive Performance and Developmental Toxicity Studies",
+      "parent_section_id": "ich_s6_r1.sec.part1.4",
+      "heading_source_unit_id": null,
+      "section_order": 23,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.4_7",
+      "document_id": "ich_s6_r1",
+      "section_number": "4.7",
+      "title": "Genotoxicity Studies",
+      "parent_section_id": "ich_s6_r1.sec.part1.4",
+      "heading_source_unit_id": null,
+      "section_order": 24,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.4_8",
+      "document_id": "ich_s6_r1",
+      "section_number": "4.8",
+      "title": "Carcinogenicity Studies",
+      "parent_section_id": "ich_s6_r1.sec.part1.4",
+      "heading_source_unit_id": null,
+      "section_order": 25,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.4_9",
+      "document_id": "ich_s6_r1",
+      "section_number": "4.9",
+      "title": "Local Tolerance Studies",
+      "parent_section_id": "ich_s6_r1.sec.part1.4",
+      "heading_source_unit_id": null,
+      "section_order": 26,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part1.notes",
+      "document_id": "ich_s6_r1",
+      "section_number": "NOTES",
+      "title": "Notes",
+      "parent_section_id": "ich_s6_r1.sec.part1",
+      "section_order": 27,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ich_s6_r1.su.part1.notes.001"
     },
     {
       "section_id": "ich_s6_r1.sec.part2.notes",
@@ -88,7 +288,7 @@
       "section_number": "NOTES",
       "title": "Notes",
       "parent_section_id": "ich_s6_r1.sec.part2",
-      "section_order": 99,
+      "section_order": 28,
       "section_order_status": "known",
       "heading_source_unit_id": "ich_s6_r1.su.part2.notes.001"
     }
@@ -117,118 +317,6 @@
       "review_status": "reviewed"
     },
     {
-      "source_unit_id": "ich_s6_r1.su.part1.3_3.002",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part1.3_3",
-      "unit_type": "paragraph",
-      "unit_order": 2,
-      "unit_order_status": "known",
-      "source_text": "The biological activity together with species and/or tissue specificity of many biotechnology-derived pharmaceuticals often preclude standard toxicity testing designs in commonly used species (e.g., rats and dogs). Safety evaluation programs should include the use of relevant species. A relevant species is one in which the test material is pharmacologically active due to the expression of the receptor or an epitope (in the case of monoclonal antibodies). A variety of techniques (e.g., immunochemical or functional tests) can be used to identify a relevant species. Knowledge of receptor/epitope distribution can provide greater understanding of potential in vivo toxicity.",
-      "related_source_unit_ids": [],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part1.3_3",
-        "pdf_page_index_zero_based": 6,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "3",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
-      "source_unit_id": "ich_s6_r1.su.part1.3_3.003",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part1.3_3",
-      "unit_type": "paragraph",
-      "unit_order": 3,
-      "unit_order_status": "known",
-      "source_text": "Relevant animal species for testing of monoclonal antibodies are those that express the desired epitope and demonstrate a similar tissue cross-reactivity profile as for human tissues. This would optimise the ability to evaluate toxicity arising from the binding to the epitope and any unintentional tissue cross-reactivity. An animal species which does not express the desired epitope may still be of some relevance for assessing toxicity if comparable unintentional tissue cross-reactivity to humans is demonstrated.",
-      "related_source_unit_ids": [],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part1.3_3",
-        "pdf_page_index_zero_based": 7,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "4",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
-      "source_unit_id": "ich_s6_r1.su.part1.3_3.004",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part1.3_3",
-      "unit_type": "paragraph",
-      "unit_order": 4,
-      "unit_order_status": "known",
-      "source_text": "Safety evaluation programs should normally include two relevant species. However, in certain justified cases one relevant species may suffice (e.g., when only one relevant species can be identified or where the biological activity of the biopharmaceutical is well understood). In addition even where two species may be necessary to characterise toxicity in short term studies, it may be possible to justify the use of only one species for subsequent long term toxicity studies (e.g., if the toxicity profile in the two species is comparable in the short term).",
-      "related_source_unit_ids": [],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part1.3_3",
-        "pdf_page_index_zero_based": 7,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "4",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
-      "source_unit_id": "ich_s6_r1.su.part1.3_3.005",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part1.3_3",
-      "unit_type": "paragraph",
-      "unit_order": 5,
-      "unit_order_status": "known",
-      "source_text": "Toxicity studies in non-relevant species may be misleading and are discouraged. When no relevant species exists, the use of relevant transgenic animals expressing the human receptor or the use of homologous proteins should be considered. The information gained from use of a transgenic animal model expressing the human receptor is optimised when the interaction of the product and the humanised receptor has similar physiological consequences to those expected in humans. While useful information may also be gained from the use of homologous proteins, it should be noted that the production process, range of impurities/contaminants, pharmacokinetics, and exact pharmacological mechanism(s) may differ between the homologous form and the product intended for clinical use. Where it is not possible to use transgenic animal models or homologous proteins, it may still be prudent to assess some aspects of potential toxicity in a limited toxicity evaluation in a single species, e.g., a repeated dose toxicity study of ≤ 14 days duration that includes an evaluation of important functional endpoints (e.g., cardiovascular and respiratory).",
-      "related_source_unit_ids": [],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part1.3_3",
-        "pdf_page_index_zero_based": 7,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "4",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
-      "source_unit_id": "ich_s6_r1.su.part1.3_3.006",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part1.3_3",
-      "unit_type": "paragraph",
-      "unit_order": 6,
-      "unit_order_status": "known",
-      "source_text": "In recent years, there has been much progress in the development of animal models that are thought to be similar to the human disease. These animal models include induced and spontaneous models of disease, gene knockout(s), and transgenic animals. These models may provide further insight, not only in determining the pharmacological action of the product, pharmacokinetics, and dosimetry, but may also be useful in the determination of safety (e.g., evaluation of undesirable promotion of disease progression). In certain cases, studies performed in animal models of disease may be used as an acceptable alternative to toxicity studies in normal animals (Note 1). The scientific justification for the use of these animal models of disease to support safety should be provided.",
-      "related_source_unit_ids": [
-        "ich_s6_r1.su.part1.notes.note1.001"
-      ],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part1.3_3",
-        "pdf_page_index_zero_based": 7,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "4",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
       "source_unit_id": "ich_s6_r1.su.part1.notes.001",
       "document_id": "ich_s6_r1",
       "section_id": "ich_s6_r1.sec.part1.notes",
@@ -236,28 +324,6 @@
       "unit_order": 1,
       "unit_order_status": "known",
       "source_text": "NOTES",
-      "related_source_unit_ids": [],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part1.notes",
-        "pdf_page_index_zero_based": 12,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "9",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
-      "source_unit_id": "ich_s6_r1.su.part1.notes.note1.001",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part1.notes",
-      "unit_type": "paragraph",
-      "unit_order": 2,
-      "unit_order_status": "known",
-      "source_text": "Note 1 Animal models of disease may be useful in defining toxicity endpoints, selection of clinical indications, and determination of appropriate formulations, route of administration, and treatment regimen. It should be noted that with these models of disease there is often a paucity of historical data for use as a reference when evaluating study results. Therefore, the collection of concurrent control and baseline data is critical to optimise study design.",
       "related_source_unit_ids": [],
       "table_context": null,
       "trace": {
@@ -317,164 +383,6 @@
       "review_status": "reviewed"
     },
     {
-      "source_unit_id": "ich_s6_r1.su.part2.2_1.002",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part2.2_1",
-      "unit_type": "paragraph",
-      "unit_order": 2,
-      "unit_order_status": "known",
-      "source_text": "A number of factors should be taken into account when determining species relevancy. Comparisons of target sequence homology between species can be an appropriate starting point, followed by in vitro assays to make qualitative and quantitative cross-species comparisons of relative target binding affinities and receptor/ligand occupancy and kinetics.",
-      "related_source_unit_ids": [],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part2.2_1",
-        "pdf_page_index_zero_based": 14,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "11",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
-      "source_unit_id": "ich_s6_r1.su.part2.2_1.003",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part2.2_1",
-      "unit_type": "paragraph",
-      "unit_order": 3,
-      "unit_order_status": "known",
-      "source_text": "Assessments of functional activity are also recommended. Functional activity can be demonstrated in species-specific cell-based systems and/or in vivo pharmacology or toxicology studies. Modulation of a known biologic response or of a pharmacodynamic (PD) marker can provide evidence for functional activity to support species relevance.",
-      "related_source_unit_ids": [],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part2.2_1",
-        "pdf_page_index_zero_based": 14,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "11",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
-      "source_unit_id": "ich_s6_r1.su.part2.2_1.004",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part2.2_1",
-      "unit_type": "paragraph",
-      "unit_order": 4,
-      "unit_order_status": "known",
-      "source_text": "Consideration of species differences in target binding and functional activity in the context of the intended dosing regime should provide confidence that a model is capable of demonstrating potentially adverse consequences of target modulation. When the target is expressed at very low levels in typical healthy preclinical species (e.g., inflammatory cytokines or tumour antigens), binding affinity and activity in cell-based systems can be sufficient to guide species selection.",
-      "related_source_unit_ids": [],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part2.2_1",
-        "pdf_page_index_zero_based": 14,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "11",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
-      "source_unit_id": "ich_s6_r1.su.part2.2_1.005",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part2.2_1",
-      "unit_type": "paragraph",
-      "unit_order": 5,
-      "unit_order_status": "known",
-      "source_text": "Assessment of tissue cross reactivity in animal tissues is of limited value for species selection (see Note 1). However, in specific cases (i.e., where the approaches described above cannot be used to demonstrate a pharmacologically relevant species) tissue cross-reactivity (TCR) studies can be used to guide selection of toxicology species by comparison of tissue binding profiles in human and those animal tissues where target binding is expected.",
-      "related_source_unit_ids": [
-        "ich_s6_r1.su.part2.notes.note1.001"
-      ],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part2.2_1",
-        "pdf_page_index_zero_based": 14,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "11",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
-      "source_unit_id": "ich_s6_r1.su.part2.2_1.006",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part2.2_1",
-      "unit_type": "paragraph",
-      "unit_order": 6,
-      "unit_order_status": "known",
-      "source_text": "As described in ICH S6 Guideline, when no relevant species can be identified because the biopharmaceutical does not interact with the orthologous target in any species, use of homologous molecules or transgenic models can be considered.",
-      "related_source_unit_ids": [],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part2.2_1",
-        "pdf_page_index_zero_based": 14,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "11",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
-      "source_unit_id": "ich_s6_r1.su.part2.2_1.007",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part2.2_1",
-      "unit_type": "paragraph",
-      "unit_order": 7,
-      "unit_order_status": "known",
-      "source_text": "For monoclonal antibodies and other related antibody products directed at foreign targets (i.e., bacterial, viral targets etc.), a short-term safety study (see ICH S6 Guideline) in one species (choice of species to be justified by the sponsor) can be considered; no additional toxicity studies, including reproductive toxicity studies, are appropriate. Alternatively, when animal models of disease are used to evaluate proof of principle, a safety assessment can be included to provide information on potential target-associated safety aspects. Where this is not feasible, appropriate risk mitigation strategies should be adopted for clinical trials.",
-      "related_source_unit_ids": [],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part2.2_1",
-        "pdf_page_index_zero_based": 14,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "11",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
-      "source_unit_id": "ich_s6_r1.su.part2.2_1.008",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part2.2_1",
-      "unit_type": "paragraph",
-      "unit_order": 8,
-      "unit_order_status": "known",
-      "source_text": "Species selection for an antibody-drug/toxin conjugate (ADC) incorporating a novel toxin/toxicant should follow the same general principles as an unconjugated antibody (see above and see Note 2).",
-      "related_source_unit_ids": [
-        "ich_s6_r1.su.part2.notes.note2.001"
-      ],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part2.2_1",
-        "pdf_page_index_zero_based": 14,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "11",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
       "source_unit_id": "ich_s6_r1.su.part2.2_2.001",
       "document_id": "ich_s6_r1",
       "section_id": "ich_s6_r1.sec.part2.2_2",
@@ -488,6 +396,292 @@
         "source_file_path": "source_pdfs/ICH S6.pdf",
         "document_id": "ich_s6_r1",
         "section_id": "ich_s6_r1.sec.part2.2_2",
+        "pdf_page_index_zero_based": 14,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.notes.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.notes",
+      "unit_type": "heading",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "NOTES",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.notes",
+        "pdf_page_index_zero_based": 19,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "16",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part1.1_1.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.1_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Biotechnology-derived pharmaceuticals (biopharmaceuticals) require a flexible, science-based approach to preclinical safety evaluation. The primary goals of preclinical safety evaluation are to: 1) identify an initial safe starting dose and dose escalation scheme in humans; 2) identify potential target organs of toxicity and evaluate reversibility; 3) identify safety parameters for clinical monitoring.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.1_1",
+        "pdf_page_index_zero_based": 3,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "1",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part1.1_3.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.1_3",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "This guideline applies to biotechnology-derived pharmaceuticals including proteins and peptides produced by recombinant DNA technology, cell cultures, and monoclonal antibodies. It does not apply to small molecule pharmaceuticals, antibiotics, cellular therapies, gene therapies, or therapeutic vaccines, though some principles may be relevant.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.1_3",
+        "pdf_page_index_zero_based": 3,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "1",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part1.2.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "The test material used in preclinical safety studies should be well-characterised with respect to identity, purity, potency, and stability. The test material should be representative of the material intended for clinical use. When manufacturing process changes occur during development, comparability should be demonstrated using analytical bridging and/or nonclinical bridging studies.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.2",
+        "pdf_page_index_zero_based": 4,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "2",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part1.3_1.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.3_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Preclinical safety testing should be guided by the biological properties of the product. In vitro assays (such as receptor binding affinities and cell-based bioassays) and in vivo pharmacological studies should be performed in relevant species to determine pharmacodynamic activity and guide dose selection.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.3_1",
+        "pdf_page_index_zero_based": 5,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "3",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part1.3_4.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.3_4",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Both genders should generally be used in safety studies unless scientifically justified. Route and frequency of administration should reflect clinical use as closely as possible. Dose levels should provide information on dose-response, including a toxic dose and a NOAEL. For products with low toxicity, projected multiples of human exposure should justify high dose selection.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.3_4",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "4",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part1.3_6.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.3_6",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Antibody formation in animals against human biopharmaceuticals is common and should be measured in repeated dose toxicity studies to aid in interpretation of PK, PD, and toxicological findings. Antibody detection should not be the sole criterion for early termination of a safety study unless immune responses neutralize exposure in a large proportion of animals. Animal immunogenicity is not predictive of human immunogenicity.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.3_6",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "5",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part1.4_1.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.4_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Safety pharmacology studies should investigate potential undesirable functional effects on major vital organ systems (cardiovascular, respiratory, central nervous system). Safety pharmacology endpoints can often be integrated into toxicity studies. Exposure assessment (PK/TK) is essential to interpret toxicity data and establish safety margins.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.4_1",
+        "pdf_page_index_zero_based": 8,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "6",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part1.4_4.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.4_4",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Single dose toxicity studies can evaluate acute toxicity and dose escalation. Repeated dose toxicity studies evaluate target organ toxicity, dose-dependency, and reversibility. Study duration should equal or exceed intended clinical duration for short-term treatments (up to 1-3 months), while 6 months duration is generally sufficient for chronic biopharmaceutical indications (per Addendum).",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.4_4",
+        "pdf_page_index_zero_based": 9,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "7",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part1.4_7.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.4_7",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Standard genotoxicity test batteries (e.g. Ames test) are not applicable to intact biopharmaceuticals because large protein molecules cannot enter bacterial cells or interact directly with DNA. Reproductive toxicity studies should be conducted in relevant species when clinical population includes women of childbearing potential. Standard rodent 2-year bioassays for carcinogenicity are generally not appropriate for biopharmaceuticals due to species-specificity and neutralising antibody formation.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.4_7",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "8",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part1.3_3.002",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.3_3",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "The biological activity together with species and/or tissue specificity of many biotechnology-derived pharmaceuticals often preclude standard toxicity testing designs in commonly used species (e.g., rats and dogs). Safety evaluation programs should include the use of relevant species. A relevant species is one in which the test material is pharmacologically active due to the expression of the receptor or an epitope (in the case of monoclonal antibodies). A variety of techniques (e.g., immunochemical or functional tests) can be used to identify a relevant species. Knowledge of receptor/epitope distribution can provide greater understanding of potential in vivo toxicity.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.3_3",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "3",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part1.notes.note1.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.notes",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "Note 1 Animal models of disease may be useful in defining toxicity endpoints, selection of clinical indications, and determination of appropriate formulations, route of administration, and treatment regimen. It should be noted that with these models of disease there is often a paucity of historical data for use as a reference when evaluating study results. Therefore, the collection of concurrent control and baseline data is critical to optimise study design.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.notes",
+        "pdf_page_index_zero_based": 12,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "9",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.2_1.002",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.2_1",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "A number of factors should be taken into account when determining species relevancy. Comparisons of target sequence homology between species can be an appropriate starting point, followed by in vitro assays to make qualitative and quantitative cross-species comparisons of relative target binding affinities and receptor/ligand occupancy and kinetics.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.2_1",
         "pdf_page_index_zero_based": 14,
         "pdf_page_index_status": "known",
         "printed_page_label": "11",
@@ -519,50 +713,6 @@
       "review_status": "reviewed"
     },
     {
-      "source_unit_id": "ich_s6_r1.su.part2.2_2.003",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part2.2_2",
-      "unit_type": "paragraph",
-      "unit_order": 3,
-      "unit_order_status": "known",
-      "source_text": "The use of one species for all general toxicity studies is justified when the clinical candidate is pharmacologically active in only one species. Studies in a second species with a homologous product are not considered to add further value for risk assessment and are not recommended.",
-      "related_source_unit_ids": [],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part2.2_2",
-        "pdf_page_index_zero_based": 15,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "12",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
-      "source_unit_id": "ich_s6_r1.su.part2.notes.001",
-      "document_id": "ich_s6_r1",
-      "section_id": "ich_s6_r1.sec.part2.notes",
-      "unit_type": "heading",
-      "unit_order": 1,
-      "unit_order_status": "known",
-      "source_text": "NOTES",
-      "related_source_unit_ids": [],
-      "table_context": null,
-      "trace": {
-        "source_file_path": "source_pdfs/ICH S6.pdf",
-        "document_id": "ich_s6_r1",
-        "section_id": "ich_s6_r1.sec.part2.notes",
-        "pdf_page_index_zero_based": 19,
-        "pdf_page_index_status": "known",
-        "printed_page_label": "16",
-        "printed_page_label_status": "known",
-        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
-      },
-      "review_status": "reviewed"
-    },
-    {
       "source_unit_id": "ich_s6_r1.su.part2.notes.note1.001",
       "document_id": "ich_s6_r1",
       "section_id": "ich_s6_r1.sec.part2.notes",
@@ -579,6 +729,72 @@
         "pdf_page_index_zero_based": 19,
         "pdf_page_index_status": "known",
         "printed_page_label": "16",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part1.3_3.003",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.3_3",
+      "unit_type": "paragraph",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "source_text": "Relevant animal species for testing of monoclonal antibodies are those that express the desired epitope and demonstrate a similar tissue cross-reactivity profile as for human tissues. This would optimise the ability to evaluate toxicity arising from the binding to the epitope and any unintentional tissue cross-reactivity. An animal species which does not express the desired epitope may still be of some relevance for assessing toxicity if comparable unintentional tissue cross-reactivity to humans is demonstrated.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.3_3",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "4",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.2_1.003",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.2_1",
+      "unit_type": "paragraph",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "source_text": "Assessments of functional activity are also recommended. Functional activity can be demonstrated in species-specific cell-based systems and/or in vivo pharmacology or toxicology studies. Modulation of a known biologic response or of a pharmacodynamic (PD) marker can provide evidence for functional activity to support species relevance.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.2_1",
+        "pdf_page_index_zero_based": 14,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.2_2.003",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.2_2",
+      "unit_type": "paragraph",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "source_text": "The use of one species for all general toxicity studies is justified when the clinical candidate is pharmacologically active in only one species. Studies in a second species with a homologous product are not considered to add further value for risk assessment and are not recommended.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.2_2",
+        "pdf_page_index_zero_based": 15,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "12",
         "printed_page_label_status": "known",
         "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
       },
@@ -607,6 +823,50 @@
       "review_status": "reviewed"
     },
     {
+      "source_unit_id": "ich_s6_r1.su.part1.3_3.004",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.3_3",
+      "unit_type": "paragraph",
+      "unit_order": 4,
+      "unit_order_status": "known",
+      "source_text": "Safety evaluation programs should normally include two relevant species. However, in certain justified cases one relevant species may suffice (e.g., when only one relevant species can be identified or where the biological activity of the biopharmaceutical is well understood). In addition even where two species may be necessary to characterise toxicity in short term studies, it may be possible to justify the use of only one species for subsequent long term toxicity studies (e.g., if the toxicity profile in the two species is comparable in the short term).",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.3_3",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "4",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.2_1.004",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.2_1",
+      "unit_type": "paragraph",
+      "unit_order": 4,
+      "unit_order_status": "known",
+      "source_text": "Consideration of species differences in target binding and functional activity in the context of the intended dosing regime should provide confidence that a model is capable of demonstrating potentially adverse consequences of target modulation. When the target is expressed at very low levels in typical healthy preclinical species (e.g., inflammatory cytokines or tumour antigens), binding affinity and activity in cell-based systems can be sufficient to guide species selection.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.2_1",
+        "pdf_page_index_zero_based": 14,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "ich_s6_r1.su.part2.notes.note1.003",
       "document_id": "ich_s6_r1",
       "section_id": "ich_s6_r1.sec.part2.notes",
@@ -623,6 +883,52 @@
         "pdf_page_index_zero_based": 20,
         "pdf_page_index_status": "known",
         "printed_page_label": "17",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part1.3_3.005",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.3_3",
+      "unit_type": "paragraph",
+      "unit_order": 5,
+      "unit_order_status": "known",
+      "source_text": "Toxicity studies in non-relevant species may be misleading and are discouraged. When no relevant species exists, the use of relevant transgenic animals expressing the human receptor or the use of homologous proteins should be considered. The information gained from use of a transgenic animal model expressing the human receptor is optimised when the interaction of the product and the humanised receptor has similar physiological consequences to those expected in humans. While useful information may also be gained from the use of homologous proteins, it should be noted that the production process, range of impurities/contaminants, pharmacokinetics, and exact pharmacological mechanism(s) may differ between the homologous form and the product intended for clinical use. Where it is not possible to use transgenic animal models or homologous proteins, it may still be prudent to assess some aspects of potential toxicity in a limited toxicity evaluation in a single species, e.g., a repeated dose toxicity study of ≤ 14 days duration that includes an evaluation of important functional endpoints (e.g., cardiovascular and respiratory).",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.3_3",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "4",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.2_1.005",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.2_1",
+      "unit_type": "paragraph",
+      "unit_order": 5,
+      "unit_order_status": "known",
+      "source_text": "Assessment of tissue cross reactivity in animal tissues is of limited value for species selection (see Note 1). However, in specific cases (i.e., where the approaches described above cannot be used to demonstrate a pharmacologically relevant species) tissue cross-reactivity (TCR) studies can be used to guide selection of toxicology species by comparison of tissue binding profiles in human and those animal tissues where target binding is expected.",
+      "related_source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note1.001"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.2_1",
+        "pdf_page_index_zero_based": 14,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
         "printed_page_label_status": "known",
         "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
       },
@@ -651,6 +957,52 @@
       "review_status": "reviewed"
     },
     {
+      "source_unit_id": "ich_s6_r1.su.part1.3_3.006",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part1.3_3",
+      "unit_type": "paragraph",
+      "unit_order": 6,
+      "unit_order_status": "known",
+      "source_text": "In recent years, there has been much progress in the development of animal models that are thought to be similar to the human disease. These animal models include induced and spontaneous models of disease, gene knockout(s), and transgenic animals. These models may provide further insight, not only in determining the pharmacological action of the product, pharmacokinetics, and dosimetry, but may also be useful in the determination of safety (e.g., evaluation of undesirable promotion of disease progression). In certain cases, studies performed in animal models of disease may be used as an acceptable alternative to toxicity studies in normal animals (Note 1). The scientific justification for the use of these animal models of disease to support safety should be provided.",
+      "related_source_unit_ids": [
+        "ich_s6_r1.su.part1.notes.note1.001"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part1.3_3",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "4",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.2_1.006",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.2_1",
+      "unit_type": "paragraph",
+      "unit_order": 6,
+      "unit_order_status": "known",
+      "source_text": "As described in ICH S6 Guideline, when no relevant species can be identified because the biopharmaceutical does not interact with the orthologous target in any species, use of homologous molecules or transgenic models can be considered.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.2_1",
+        "pdf_page_index_zero_based": 14,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "ich_s6_r1.su.part2.notes.note1.005",
       "document_id": "ich_s6_r1",
       "section_id": "ich_s6_r1.sec.part2.notes",
@@ -673,6 +1025,28 @@
       "review_status": "reviewed"
     },
     {
+      "source_unit_id": "ich_s6_r1.su.part2.2_1.007",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.2_1",
+      "unit_type": "paragraph",
+      "unit_order": 7,
+      "unit_order_status": "known",
+      "source_text": "For monoclonal antibodies and other related antibody products directed at foreign targets (i.e., bacterial, viral targets etc.), a short-term safety study (see ICH S6 Guideline) in one species (choice of species to be justified by the sponsor) can be considered; no additional toxicity studies, including reproductive toxicity studies, are appropriate. Alternatively, when animal models of disease are used to evaluate proof of principle, a safety assessment can be included to provide information on potential target-associated safety aspects. Where this is not feasible, appropriate risk mitigation strategies should be adopted for clinical trials.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.2_1",
+        "pdf_page_index_zero_based": 14,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "ich_s6_r1.su.part2.notes.note1.006",
       "document_id": "ich_s6_r1",
       "section_id": "ich_s6_r1.sec.part2.notes",
@@ -689,6 +1063,30 @@
         "pdf_page_index_zero_based": 20,
         "pdf_page_index_status": "known",
         "printed_page_label": "17",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.2_1.008",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.2_1",
+      "unit_type": "paragraph",
+      "unit_order": 8,
+      "unit_order_status": "known",
+      "source_text": "Species selection for an antibody-drug/toxin conjugate (ADC) incorporating a novel toxin/toxicant should follow the same general principles as an unconjugated antibody (see above and see Note 2).",
+      "related_source_unit_ids": [
+        "ich_s6_r1.su.part2.notes.note2.001"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.2_1",
+        "pdf_page_index_zero_based": 14,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
         "printed_page_label_status": "known",
         "extraction_method": "manual verification against rendered PDF page with text-extraction assistance"
       },
@@ -1649,6 +2047,496 @@
       "object": "to compare the metabolic stability of the ADC in animals with human",
       "normalized_ko": "동물에서의 ADC 대사 안정성을 사람과 비교하기 위해 제공해야 한다.",
       "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.1_1.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.1_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Biotechnology-derived pharmaceuticals (biopharmaceuticals)",
+      "action": "require",
+      "object": "a flexible, science-based approach to preclinical safety evaluation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.1_1.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.1_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The primary goals of preclinical safety evaluation",
+      "action": "include",
+      "object": "identify an initial safe starting dose and dose escalation scheme in humans",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.1_1.003",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.1_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The primary goals of preclinical safety evaluation",
+      "action": "are to identify",
+      "object": "an initial safe starting dose and dose escalation scheme in humans",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.1_1.004",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.1_1.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The primary goals of preclinical safety evaluation",
+      "action": "are to identify",
+      "object": "an initial safe starting dose and dose escalation scheme in humans",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.1_1.005",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.1_1.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "require",
+      "subject": "Biotechnology-derived pharmaceuticals (biopharmaceuticals)",
+      "action": "require",
+      "object": "a flexible, science-based approach to preclinical safety evaluation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.1_3.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.1_3.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This guideline",
+      "action": "applies to",
+      "object": "biotechnology-derived pharmaceuticals including proteins and peptides produced by recombinant DNA technology, cell cultures, and monoclonal antibodies",
+      "normalized_ko": "This guideline applies to biotechnology-derived pharmaceuticals, including recombinant DNA technology-derived proteins and peptides, cell culture-derived products, and monoclonal antibodies.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.1_3.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.1_3.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This guideline",
+      "action": "does not apply to",
+      "object": "small molecule pharmaceuticals, antibiotics, cellular therapies, gene therapies, or therapeutic vaccines",
+      "normalized_ko": "This guideline does not apply to small molecule pharmaceuticals, antibiotics, cellular therapies, gene therapies, or therapeutic vaccines.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.1_3.003",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.1_3.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "some principles",
+      "action": "may be relevant",
+      "object": "to small molecule pharmaceuticals, antibiotics, cellular therapies, gene therapies, or therapeutic vaccines",
+      "normalized_ko": "Some principles may be relevant to excluded product categories.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.2.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The test material used in preclinical safety studies",
+      "action": "be well-characterised",
+      "object": "with respect to identity, purity, potency, and stability",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.2.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The test material",
+      "action": "be representative of",
+      "object": "the material intended for clinical use",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.2.003",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "comparability",
+      "action": "be demonstrated using",
+      "object": "analytical bridging and/or nonclinical bridging studies",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.3_1.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Preclinical safety testing",
+      "action": "should be guided by",
+      "object": "the biological properties of the product",
+      "normalized_ko": "Preclinical safety testing should be guided by the product's biological properties.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.3_1.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_1.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "In vitro assays",
+      "action": "includes",
+      "object": "receptor binding affinities",
+      "normalized_ko": "In vitro assays include receptor binding affinities.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.3_4.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should generally be used",
+      "subject": "Both genders",
+      "action": "should generally be used",
+      "object": "in safety studies",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.3_4.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Route and frequency of administration",
+      "action": "reflect",
+      "object": "clinical use as closely as possible",
+      "normalized_ko": "Route and frequency of administration should reflect clinical use as closely as possible.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.3_4.003",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Dose levels",
+      "action": "provide",
+      "object": "information on dose-response, including a toxic dose and a NOAEL",
+      "normalized_ko": "Dose levels should provide information on dose-response, including a toxic dose and a NOAEL.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.3_4.004",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Projected multiples of human exposure",
+      "action": "justify",
+      "object": "high dose selection",
+      "normalized_ko": "For products with low toxicity, projected multiples of human exposure should justify high dose selection.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.3_6.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_6.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Antibody formation in animals against human biopharmaceuticals",
+      "action": "is common",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.3_6.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_6.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Animal immunogenicity",
+      "action": "is not predictive of",
+      "object": "human immunogenicity",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.3_6.003",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.3_6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Antibody formation in animals against human biopharmaceuticals",
+      "action": "should be measured",
+      "object": "to aid in interpretation of PK, PD, and toxicological findings",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_1.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Safety pharmacology studies",
+      "action": "should investigate",
+      "object": "potential undesirable functional effects on major vital organ systems",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_1.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_1.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "major vital organ systems",
+      "action": "includes",
+      "object": "cardiovascular",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_1.003",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_1.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can often",
+      "subject": "Safety pharmacology endpoints",
+      "action": "can often be integrated into",
+      "object": "toxicity studies",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_1.004",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_1.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "is essential",
+      "subject": "Exposure assessment (PK/TK)",
+      "action": "is essential to interpret",
+      "object": "toxicity data",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_1.005",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is essential",
+      "subject": "Exposure assessment (PK/TK)",
+      "action": "is essential to interpret",
+      "object": "toxicity data",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_1.006",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_1.001"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "is essential",
+      "subject": "Exposure assessment (PK/TK)",
+      "action": "is essential to interpret",
+      "object": "toxicity data",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_4.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_4.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Single dose toxicity studies",
+      "action": "can evaluate",
+      "object": "acute toxicity",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_4.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Study duration",
+      "action": "should equal or exceed",
+      "object": "intended clinical duration",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_4.003",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "generally sufficient",
+      "subject": "6 months duration",
+      "action": "is generally sufficient for",
+      "object": "chronic biopharmaceutical indications",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_4.004",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_4.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Single dose toxicity studies",
+      "action": "can evaluate",
+      "object": "acute toxicity and dose escalation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_4.005",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_4.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "generally sufficient",
+      "subject": "6 months duration",
+      "action": "is generally sufficient for",
+      "object": "chronic biopharmaceutical indications",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_7.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_7.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Standard genotoxicity test batteries",
+      "action": "are not applicable to",
+      "object": "intact biopharmaceuticals",
+      "normalized_ko": "Standard genotoxicity test batteries are not applicable to intact biopharmaceuticals.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_7.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_7.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Standard genotoxicity test batteries",
+      "action": "includes",
+      "object": "Ames test",
+      "normalized_ko": "Ames test is an example of a standard genotoxicity test battery.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_7.003",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_7.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Reproductive toxicity studies",
+      "action": "should be conducted in",
+      "object": "relevant species",
+      "normalized_ko": "Reproductive toxicity studies should be conducted in relevant species.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.4_7.004",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part1.4_7.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "generally",
+      "subject": "Standard rodent 2-year bioassays for carcinogenicity",
+      "action": "are generally not appropriate for",
+      "object": "biopharmaceuticals",
+      "normalized_ko": "Standard rodent 2-year bioassays for carcinogenicity are generally not appropriate for biopharmaceuticals.",
+      "review_status": "reviewed"
     }
   ],
   "quantitative_criteria": [
@@ -1710,6 +2598,78 @@
       "is_default_with_exception": false,
       "is_illustrative_example": false,
       "source_text": "at least one species with the unconjugated toxin",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.4_4.001",
+      "source_unit_id": "ich_s6_r1.su.part1.4_4.001",
+      "knowledge_record_id": null,
+      "parameter": "Study duration",
+      "comparator": "at_least",
+      "value": null,
+      "value_fraction": null,
+      "unit": null,
+      "value_status": "unknown",
+      "denominator_or_reference": "intended clinical duration",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "Study duration should equal or exceed intended clinical duration",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.4_4.002",
+      "source_unit_id": "ich_s6_r1.su.part1.4_4.001",
+      "knowledge_record_id": null,
+      "parameter": "short-term treatment duration",
+      "comparator": "not_exceed",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "up to 1-3 months",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.4_4.003",
+      "source_unit_id": "ich_s6_r1.su.part1.4_4.001",
+      "knowledge_record_id": null,
+      "parameter": "duration",
+      "comparator": "equals",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "6 months duration is generally sufficient for chronic biopharmaceutical indications",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.4_4.004",
+      "source_unit_id": "ich_s6_r1.su.part1.4_4.001",
+      "knowledge_record_id": null,
+      "parameter": "short-term treatment duration",
+      "comparator": "within",
+      "value": null,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "needs_review",
+      "denominator_or_reference": "1-3 months",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "up to 1-3 months",
       "review_status": "reviewed"
     }
   ],
@@ -2013,6 +2973,123 @@
       "condition_type": "precondition",
       "applies_to_ids": [
         "ich_s6_r1.kr.part2.notes.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.1_3.001",
+      "source_unit_id": "ich_s6_r1.su.part1.1_3.001",
+      "condition_text": "to small molecule pharmaceuticals, antibiotics, cellular therapies, gene therapies, or therapeutic vaccines",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.1_3.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.1_3.002",
+      "source_unit_id": "ich_s6_r1.su.part1.1_3.001",
+      "condition_text": "though some principles may be relevant",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.1_3.002",
+        "ich_s6_r1.kr.1_3.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.2.001",
+      "source_unit_id": "ich_s6_r1.su.part1.2.001",
+      "condition_text": "When manufacturing process changes occur during development",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.2.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.3_1.001",
+      "source_unit_id": "ich_s6_r1.su.part1.3_1.001",
+      "condition_text": "in relevant species",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.3_1.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.3_1.002",
+      "source_unit_id": "ich_s6_r1.su.part1.3_1.001",
+      "condition_text": "in relevant species",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.3_1.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.3_4.001",
+      "source_unit_id": "ich_s6_r1.su.part1.3_4.001",
+      "condition_text": "unless scientifically justified",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.3_4.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.3_4.002",
+      "source_unit_id": "ich_s6_r1.su.part1.3_4.001",
+      "condition_text": "For products with low toxicity",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.3_4.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.3_6.001",
+      "source_unit_id": "ich_s6_r1.su.part1.3_6.001",
+      "condition_text": "in repeated dose toxicity studies",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.3_6.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.3_6.002",
+      "source_unit_id": "ich_s6_r1.su.part1.3_6.001",
+      "condition_text": "unless immune responses neutralize exposure in a large proportion of animals",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.3_6.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.4_4.001",
+      "source_unit_id": "ich_s6_r1.su.part1.4_4.001",
+      "condition_text": "for short-term treatments (up to 1-3 months)",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.4_4.002",
+      "source_unit_id": "ich_s6_r1.su.part1.4_4.001",
+      "condition_text": "for chronic biopharmaceutical indications",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.4_7.001",
+      "source_unit_id": "ich_s6_r1.su.part1.4_7.001",
+      "condition_text": "when clinical population includes women of childbearing potential",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.4_7.003"
       ],
       "review_status": "reviewed"
     }
