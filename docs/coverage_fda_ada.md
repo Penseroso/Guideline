@@ -31,14 +31,14 @@
 | **IV.J.1-3**| Selection of Reagents (PC, NC, NSB) | p. 13-14 | `COMPLETED` | **양성대조항체 PC(동물면역/친화성정제/가변부위결합/Hook효과), 음성대조 NC(미치료 풀/컷포인트 인접값), 비특이결합(차단제/유사단백질)** (26 KR, 19 Cond) |
 | **IV.K** | Reporting Results for Quasi-Quantitative Assays | p. 15 | `COMPLETED` | **정성/역가(Titer) 보고 형식, 질량 단위(Mass units) 보고 불인정 원칙 및 예외** (18 KR, 7 Cond) |
 | **IV.L.1-4**| Other Considerations (Pre-existing, RF, mAb, ADC)| p. 15-16 | `COMPLETED` | **기저 항체(Treatment-boosted 기준), 류마티스 인자(RF/비-Fc 영역 분석법), 단일클론항체 가변부위, ADC 모든 구성요소 측정** (30 KR, 2 QC, 12 Cond) |
-| **V.A** | Development of Screening Assay | p. 17 | `BACKLOG` | 선별 분석법 개발 |
-| **V.B.1-2**| Development of Confirmatory Assay | p. 17-18 | `BACKLOG` | 확인 분석법 개발 및 Confirmatory Cut Point |
-| **V.C** | Development of Titration Assay | p. 18 | `BACKLOG` | 역가 분석법 개발 |
+| **V.A** | Development of Screening Assay | p. 17 | `COMPLETED` | **초기 개발 단계 5~10명 검체 컷포인트 추정, 5% 위양성률(FPR) 목표** (3 KR, 3 QC, 6 Cond) |
+| **V.B.1-2**| Development of Confirmatory Assay | p. 17-18 | `COMPLETED` | **확인 분석법 형식 및 컷포인트 (동일 플랫폼 권고, 경쟁 저해제 농도 최적화, 기저항체 제외)** (12 KR, 3 QC, 10 Cond) |
+| **V.C** | Development of Titration Assay | p. 18 | `COMPLETED` | **역가 분석법 개발 및 Treatment-boosted 컷포인트 (2배 희석 시 2단계 이상 상승)** (4 KR, 2 QC, 4 Cond) |
 | **V.D.1-5**| Neutralization: Format, Activity, Matrix, Cut-Point | p. 18-21 | `COMPLETED` | **M2 Q24: 중화항체 플랫폼 (Cell-based vs Non-cell-based), 1% FPR** (13 KR, 5 QC, 8 Cond) |
 | **VI.A** | Assay Validation: General Considerations | p. 22 | `COMPLETED` | **M2 Q10: 밸리데이션 종합 요건 (최소 50명 미치료 검체, 3인 6런)** (9 KR, 4 QC, 3 Cond) |
 | **VI.B.1-2**| Validation of Screening Assay (Sens, Cut-Point) | p. 24 | `COMPLETED` | **선별 컷포인트 (5% FPR, 90% 신뢰수준 하한, 100 ng/mL)** (24 KR, 10 QC, 7 Cond) |
 | **VI.C** | Validation of Confirmatory Assay | p. 24 | `COMPLETED` | **확인 컷포인트 (1% FPR, % 억제율 기준)** (17 KR, 7 QC, 8 Cond) |
-| **VI.D** | Validation of Titration Assay | p. 25 | `BACKLOG` | 역가 컷포인트 밸리데이션 |
+| **VI.D** | Validation of Titration Assay | p. 25 | `COMPLETED` | **역가 컷포인트 밸리데이션 (스크리닝 겸용 시 5% FPR, 역가 전용 시 0.1% FPR)** (4 KR, 2 QC, 10 Cond) |
 | **VI.E** | Validation of Neutralization Assay | p. 25 | `COMPLETED` | **중화 밸리데이션 (최소 30명 3일 2인, 1% FPR, 특이성)** (8 KR, 4 QC, 4 Cond) |
 | **VII.A-C**| Implementation of Assay Testing | p. 26-28 | `BACKLOG` | 임상 검체 채취 시점, 동시 QC 관리, 타겟 환자군 컷포인트 재확인 |
 | **VIII** | Documentation | p. 28 | `BACKLOG` | 밸리데이션 보고서 및 임상시험계획서 기재 요건 |
@@ -48,7 +48,7 @@
 
 ## Summary Statistics
 * **전체 섹션 수**: 33개
-* **적재 완료 섹션 수 (Completed)**: **25개 섹션** (전체 가이던스의 76% 완료, Section IV 100% 완결)
-* **총 구조화 데이터 규모 (FDA ADA)**: **331 KnowledgeRecords, 47 QuantitativeCriteria, 147 Conditions** (총 525개 엔티티, 100% `reviewed`)
-* **아카이브 전체 엔티티 규모**: **1,176개 엔티티** (ICH M10 62 + ICH S6 98 + EMA FIH 491 + FDA ADA 525)
-* **잔여 백로그 (Backlog)**: 8개 섹션 (Section V.A~C 개발/역가, Section VI.D 역가 밸리데이션, Section VII 임상 검체 채취/QC, Section VIII 문서화, Appendix 흐름도)
+* **적재 완료 섹션 수 (Completed)**: **30개 섹션** (전체 가이던스의 91% 완료, Section IV, V, VI 100% 완결)
+* **총 구조화 데이터 규모 (FDA ADA)**: **354 KnowledgeRecords, 57 QuantitativeCriteria, 177 Conditions** (총 588개 엔티티, 100% `reviewed`)
+* **아카이브 전체 엔티티 규모**: **1,239개 엔티티** (ICH M10 62 + ICH S6 98 + EMA FIH 491 + FDA ADA 588)
+* **잔여 백로그 (Backlog)**: 3개 섹션 (Section VII 임상 검체 채취/QC 관리, Section VIII 밸리데이션 보고서/문서화, Appendix 다이어그램)
