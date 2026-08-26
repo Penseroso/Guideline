@@ -4,11 +4,13 @@ This directory holds the entire "Applicability Engine" explored during the M6 sp
 
 ## Layout
 
-- `engine/`: `applicability.js` (deterministic evaluator), `regulatory_context.js` (RegulatoryContext validation/proposal), `binding_agent.js` (the LLM Condition→predicate binding pipeline), `rule_discovery.js` (keyword-search rule candidates), `applicability_format.js` (finding display), `applicability_cli.js` (`npm run applicability`), `eval_applicability.js` (the applicability regression harness).
-- `validation/validate_bindings.js`: schema + referential validation for the binding data.
+All paths below are relative to this directory (`history/applicability_engine/`) — none of them exist at the repo-root path of the same name anymore; the `npm run applicability`/`validate:bindings`/`eval:applicability` scripts that once ran them were removed from `package.json` when this layer was discontinued.
+
+- `engine/`: `applicability.js` (deterministic evaluator), `regulatory_context.js` (RegulatoryContext validation/proposal), `binding_agent.js` (the LLM Condition→predicate binding pipeline), `rule_discovery.js` (keyword-search rule candidates), `applicability_format.js` (finding display), `applicability_cli.js` (formerly `npm run applicability`), `eval_applicability.js` (formerly `npm run eval:applicability`).
+- `validation/validate_bindings.js`: schema + referential validation for the binding data (formerly `npm run validate:bindings`).
 - `scripts/bind_conditions.js`: the script that ran the binding pipeline live against a document/section slice.
 - `data/schemas/condition_binding.schema.json`, `data/derived/condition_bindings/*.json`: the schema and the 71 actual Condition→predicate bindings produced across ICH S6(R1), EMA FIH, and FDA ADA.
-- `test/`: the full test suite for all of the above (`engine_applicability.test.js`, `engine_regulatory_context.test.js`, `engine_binding_agent.test.js`, `engine_rule_discovery.test.js`, `engine_applicability_format.test.js`, `engine_applicability_cli.test.js`, `engine_eval_applicability.test.js`, `validate_bindings.test.js`, `fixtures/applicability_cases.json`).
+- `test/`: the full test suite for all of the above (`engine_applicability.test.js`, `engine_regulatory_context.test.js`, `engine_binding_agent.test.js`, `engine_rule_discovery.test.js`, `engine_applicability_format.test.js`, `engine_applicability_cli.test.js`, `engine_eval_applicability.test.js`, `validate_bindings.test.js`, `fixtures/applicability_cases.json`) — these import from `../../../engine/...` in their original form and will not run as-is from this archived location without path fixes, consistent with `history/README.md`'s "rebuilding fresh... is expected to be cheaper than reviving it."
 
 ## What was kept, live, elsewhere (not archived here)
 
