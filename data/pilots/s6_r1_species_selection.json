@@ -291,6 +291,146 @@
       "section_order": 28,
       "section_order_status": "known",
       "heading_source_unit_id": "ich_s6_r1.su.part2.notes.001"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part2.1",
+      "document_id": "ich_s6_r1",
+      "section_number": "1",
+      "title": "INTRODUCTION (Addendum)",
+      "parent_section_id": "ich_s6_r1.sec.part2",
+      "heading_source_unit_id": null,
+      "section_order": 29,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part2.2_3",
+      "document_id": "ich_s6_r1",
+      "section_number": "2.3",
+      "title": "Use of Homologous Proteins",
+      "parent_section_id": "ich_s6_r1.sec.part2.2",
+      "heading_source_unit_id": null,
+      "section_order": 30,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part2.3",
+      "document_id": "ich_s6_r1",
+      "section_number": "3",
+      "title": "STUDY DESIGN",
+      "parent_section_id": "ich_s6_r1.sec.part2",
+      "heading_source_unit_id": null,
+      "section_order": 31,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part2.3_1",
+      "document_id": "ich_s6_r1",
+      "section_number": "3.1",
+      "title": "Dose Selection and Application of PK/PD Principles",
+      "parent_section_id": "ich_s6_r1.sec.part2.3",
+      "heading_source_unit_id": null,
+      "section_order": 32,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part2.3_2",
+      "document_id": "ich_s6_r1",
+      "section_number": "3.2",
+      "title": "Duration of Studies",
+      "parent_section_id": "ich_s6_r1.sec.part2.3",
+      "heading_source_unit_id": null,
+      "section_order": 33,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part2.3_3",
+      "document_id": "ich_s6_r1",
+      "section_number": "3.3",
+      "title": "Recovery",
+      "parent_section_id": "ich_s6_r1.sec.part2.3",
+      "heading_source_unit_id": null,
+      "section_order": 34,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part2.3_4",
+      "document_id": "ich_s6_r1",
+      "section_number": "3.4",
+      "title": "Exploratory Clinical Trials",
+      "parent_section_id": "ich_s6_r1.sec.part2.3",
+      "heading_source_unit_id": null,
+      "section_order": 35,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part2.4",
+      "document_id": "ich_s6_r1",
+      "section_number": "4",
+      "title": "IMMUNOGENICITY (Addendum)",
+      "parent_section_id": "ich_s6_r1.sec.part2",
+      "heading_source_unit_id": null,
+      "section_order": 36,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part2.5",
+      "document_id": "ich_s6_r1",
+      "section_number": "5",
+      "title": "REPRODUCTIVE AND DEVELOPMENTAL TOXICITY",
+      "parent_section_id": "ich_s6_r1.sec.part2",
+      "heading_source_unit_id": null,
+      "section_order": 37,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part2.5_1",
+      "document_id": "ich_s6_r1",
+      "section_number": "5.1",
+      "title": "General Comments",
+      "parent_section_id": "ich_s6_r1.sec.part2.5",
+      "heading_source_unit_id": null,
+      "section_order": 38,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part2.5_2",
+      "document_id": "ich_s6_r1",
+      "section_number": "5.2",
+      "title": "Fertility",
+      "parent_section_id": "ich_s6_r1.sec.part2.5",
+      "heading_source_unit_id": null,
+      "section_order": 39,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part2.5_3",
+      "document_id": "ich_s6_r1",
+      "section_number": "5.3",
+      "title": "Embryo-Fetal Development (EFD)",
+      "parent_section_id": "ich_s6_r1.sec.part2.5",
+      "heading_source_unit_id": null,
+      "section_order": 40,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part2.5_4",
+      "document_id": "ich_s6_r1",
+      "section_number": "5.4",
+      "title": "Pre- and Post-Natal Development (PPND)",
+      "parent_section_id": "ich_s6_r1.sec.part2.5",
+      "heading_source_unit_id": null,
+      "section_order": 41,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_s6_r1.sec.part2.6",
+      "document_id": "ich_s6_r1",
+      "section_number": "6",
+      "title": "CARCINOGENICITY (Addendum)",
+      "parent_section_id": "ich_s6_r1.sec.part2",
+      "heading_source_unit_id": null,
+      "section_order": 42,
+      "section_order_status": "known"
     }
   ],
   "source_units": [
@@ -619,6 +759,182 @@
         "pdf_page_index_zero_based": 10,
         "pdf_page_index_status": "known",
         "printed_page_label": "8",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.1.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "The purpose of this Addendum is to complement the parent ICH S6 guideline and provide further guidance on species selection, study design (dose selection, duration, recovery), immunogenicity, reproductive and developmental toxicity, and carcinogenicity for biotechnology-derived pharmaceuticals.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.1",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "10",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.2_3.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.2_3",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Studies with homologous proteins can be used for hazard detection and understanding potential adverse effects due to exaggerated pharmacology, but are generally not useful for quantitative risk assessment. For hazard identification, safety evaluation studies using a control group and one treatment group (at maximum pharmacological dose) can be conducted with scientific justification.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.2_3",
+        "pdf_page_index_zero_based": 15,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "12",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.3_1.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.3_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "A rationale should be provided for dose selection taking into account PK-PD principles. The high dose in preclinical toxicity studies should be chosen as the higher of: 1) a dose providing maximum intended pharmacological effect in the preclinical species; or 2) a dose providing approximately a 10-fold exposure multiple over the maximum clinical exposure, unless a lower dose (such as maximum feasible dose or 1000 mg/kg) is justified. Testing higher doses when no toxicity is observed at these levels is unlikely to provide additional useful information.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.3_1",
+        "pdf_page_index_zero_based": 15,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "12",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.3_2.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.3_2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "For chronic use biopharmaceutical products, repeated dose toxicity studies of 6 months duration in rodents or non-rodents are considered sufficient, providing the high dose is selected in accordance with PK-PD principles. Studies of longer duration (such as 12 months) have not generally provided useful information that changed the clinical course of development.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.3_2",
+        "pdf_page_index_zero_based": 15,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "12",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.3_3.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.3_3",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Recovery from pharmacological and toxicological effects should be examined by including a non-dosing period in at least one study at at least one dose level. The purpose of the non-dosing period is to examine reversibility of effects, not delayed toxicity. Complete recovery demonstration is not essential. Adding a recovery period solely to assess immunogenicity is not required.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.3_3",
+        "pdf_page_index_zero_based": 16,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "13",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.4.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.4",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Anti-drug antibody (ADA) measurement in nonclinical studies should be evaluated when there is: 1) evidence of altered PD activity; 2) unexpected changes in exposure in absence of PD marker; or 3) evidence of immune-mediated reactions (immune complex disease, vasculitis, anaphylaxis). Characterisation of neutralizing potential is warranted when ADAs are detected and there is no PD marker to demonstrate sustained in vivo activity.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.4",
+        "pdf_page_index_zero_based": 16,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "13",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.5.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.5",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Reproductive toxicity studies should be conducted in relevant species. When non-human primates (NHPs) are the only relevant species, an enhanced pre- and post-natal development (ePPND) study design can be used to evaluate embryo-fetal development, fetal loss, and post-natal development in a single comprehensive study, replacing separate EFD and PPND studies. Dosing can extend from gestation day 20 to parturition, with infant evaluation up to 6 months.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.5",
+        "pdf_page_index_zero_based": 17,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.6.001",
+      "document_id": "ich_s6_r1",
+      "section_id": "ich_s6_r1.sec.part2.6",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "The need for carcinogenicity testing should be evaluated using a weight-of-evidence approach based on target biology, intended patient population, treatment duration, and potential for proliferative or immunosuppressive effects. Rodent 2-year carcinogenicity bioassays are generally not required for biopharmaceuticals unless there is clear biological rationale and a relevant rodent model exists.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH S6.pdf",
+        "document_id": "ich_s6_r1",
+        "section_id": "ich_s6_r1.sec.part2.6",
+        "pdf_page_index_zero_based": 19,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "16",
         "printed_page_label_status": "known",
         "extraction_method": "automated text extraction with manual verification"
       },
@@ -2059,7 +2375,7 @@
       "subject": "Biotechnology-derived pharmaceuticals (biopharmaceuticals)",
       "action": "require",
       "object": "a flexible, science-based approach to preclinical safety evaluation",
-      "normalized_ko": null,
+      "normalized_ko": "전임상 안전성 평가에는 유연하고 과학 기반의 접근법이 요구된다.",
       "review_status": "reviewed"
     },
     {
@@ -2073,7 +2389,7 @@
       "subject": "The primary goals of preclinical safety evaluation",
       "action": "include",
       "object": "identify an initial safe starting dose and dose escalation scheme in humans",
-      "normalized_ko": null,
+      "normalized_ko": "인체에서의 초기 안전 시작 용량 및 용량 증량 계획을 확인하는 것을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -2087,7 +2403,7 @@
       "subject": "The primary goals of preclinical safety evaluation",
       "action": "are to identify",
       "object": "an initial safe starting dose and dose escalation scheme in humans",
-      "normalized_ko": null,
+      "normalized_ko": "인체에서의 초기 안전 시작 용량 및 용량 증량 계획을 확인하는 것을 목적으로 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2101,7 +2417,7 @@
       "subject": "The primary goals of preclinical safety evaluation",
       "action": "are to identify",
       "object": "an initial safe starting dose and dose escalation scheme in humans",
-      "normalized_ko": null,
+      "normalized_ko": "인체에서의 초기 안전 시작 용량 및 용량 증량 계획을 확인하는 것을 목적으로 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2115,7 +2431,7 @@
       "subject": "Biotechnology-derived pharmaceuticals (biopharmaceuticals)",
       "action": "require",
       "object": "a flexible, science-based approach to preclinical safety evaluation",
-      "normalized_ko": null,
+      "normalized_ko": "전임상 안전성 평가에는 유연하고 과학 기반의 접근법이 요구된다.",
       "review_status": "reviewed"
     },
     {
@@ -2129,7 +2445,7 @@
       "subject": "This guideline",
       "action": "applies to",
       "object": "biotechnology-derived pharmaceuticals including proteins and peptides produced by recombinant DNA technology, cell cultures, and monoclonal antibodies",
-      "normalized_ko": "This guideline applies to biotechnology-derived pharmaceuticals, including recombinant DNA technology-derived proteins and peptides, cell culture-derived products, and monoclonal antibodies.",
+      "normalized_ko": "본 지침은 재조합 DNA 기술, 세포 배양 및 단클론항체로 생산된 단백질 및 펩타이드를 포함하는 생명공학 유래 의약품에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -2143,7 +2459,7 @@
       "subject": "This guideline",
       "action": "does not apply to",
       "object": "small molecule pharmaceuticals, antibiotics, cellular therapies, gene therapies, or therapeutic vaccines",
-      "normalized_ko": "This guideline does not apply to small molecule pharmaceuticals, antibiotics, cellular therapies, gene therapies, or therapeutic vaccines.",
+      "normalized_ko": "본 지침은 저분자 의약품, 항생제, 세포치료제, 유전자치료제 또는 치료용 백신에는 적용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -2157,7 +2473,7 @@
       "subject": "some principles",
       "action": "may be relevant",
       "object": "to small molecule pharmaceuticals, antibiotics, cellular therapies, gene therapies, or therapeutic vaccines",
-      "normalized_ko": "Some principles may be relevant to excluded product categories.",
+      "normalized_ko": "저분자 의약품, 항생제, 세포치료제, 유전자치료제 또는 치료용 백신에도 관련될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2171,7 +2487,7 @@
       "subject": "The test material used in preclinical safety studies",
       "action": "be well-characterised",
       "object": "with respect to identity, purity, potency, and stability",
-      "normalized_ko": null,
+      "normalized_ko": "시험 물질은 동일성, 순도, 역가 및 안정성 측면에서 충분히 특성화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2185,7 +2501,7 @@
       "subject": "The test material",
       "action": "be representative of",
       "object": "the material intended for clinical use",
-      "normalized_ko": null,
+      "normalized_ko": "시험 물질은 임상 사용 예정 물질을 대표해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2199,7 +2515,7 @@
       "subject": "comparability",
       "action": "be demonstrated using",
       "object": "analytical bridging and/or nonclinical bridging studies",
-      "normalized_ko": null,
+      "normalized_ko": "분석적 브리징 및/또는 비임상 브리징 연구를 사용하여 입증되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2213,7 +2529,7 @@
       "subject": "Preclinical safety testing",
       "action": "should be guided by",
       "object": "the biological properties of the product",
-      "normalized_ko": "Preclinical safety testing should be guided by the product's biological properties.",
+      "normalized_ko": "제품의 생물학적 특성에 따라 결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2227,7 +2543,7 @@
       "subject": "In vitro assays",
       "action": "includes",
       "object": "receptor binding affinities",
-      "normalized_ko": "In vitro assays include receptor binding affinities.",
+      "normalized_ko": "수용체 결합 친화도를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -2241,7 +2557,7 @@
       "subject": "Both genders",
       "action": "should generally be used",
       "object": "in safety studies",
-      "normalized_ko": null,
+      "normalized_ko": "안전성 시험에서 일반적으로 사용되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2255,7 +2571,7 @@
       "subject": "Route and frequency of administration",
       "action": "reflect",
       "object": "clinical use as closely as possible",
-      "normalized_ko": "Route and frequency of administration should reflect clinical use as closely as possible.",
+      "normalized_ko": "임상 사용을 가능한 한 가깝게 반영해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2269,7 +2585,7 @@
       "subject": "Dose levels",
       "action": "provide",
       "object": "information on dose-response, including a toxic dose and a NOAEL",
-      "normalized_ko": "Dose levels should provide information on dose-response, including a toxic dose and a NOAEL.",
+      "normalized_ko": "독성 용량 및 무독성량(NOAEL)을 포함한 용량-반응 정보를 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2283,7 +2599,7 @@
       "subject": "Projected multiples of human exposure",
       "action": "justify",
       "object": "high dose selection",
-      "normalized_ko": "For products with low toxicity, projected multiples of human exposure should justify high dose selection.",
+      "normalized_ko": "고용량 선택을 정당화해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2297,7 +2613,7 @@
       "subject": "Antibody formation in animals against human biopharmaceuticals",
       "action": "is common",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "동물에서 항체가 발생하는 것은 흔하다.",
       "review_status": "reviewed"
     },
     {
@@ -2311,7 +2627,7 @@
       "subject": "Animal immunogenicity",
       "action": "is not predictive of",
       "object": "human immunogenicity",
-      "normalized_ko": null,
+      "normalized_ko": "동물에서의 항체 발생은 사람에서의 면역원성을 예측하지 못한다.",
       "review_status": "reviewed"
     },
     {
@@ -2325,7 +2641,7 @@
       "subject": "Antibody formation in animals against human biopharmaceuticals",
       "action": "should be measured",
       "object": "to aid in interpretation of PK, PD, and toxicological findings",
-      "normalized_ko": null,
+      "normalized_ko": "약동학(PK), 약력학(PD) 및 독성학적 결과의 해석을 돕기 위해 항체를 측정해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2339,7 +2655,7 @@
       "subject": "Safety pharmacology studies",
       "action": "should investigate",
       "object": "potential undesirable functional effects on major vital organ systems",
-      "normalized_ko": null,
+      "normalized_ko": "주요 생명유지 장기계에 대한 잠재적인 바람직하지 않은 기능적 영향을 조사해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2353,7 +2669,7 @@
       "subject": "major vital organ systems",
       "action": "includes",
       "object": "cardiovascular",
-      "normalized_ko": null,
+      "normalized_ko": "심혈관계를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -2367,7 +2683,7 @@
       "subject": "Safety pharmacology endpoints",
       "action": "can often be integrated into",
       "object": "toxicity studies",
-      "normalized_ko": null,
+      "normalized_ko": "독성시험에 종종 통합할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2381,7 +2697,7 @@
       "subject": "Exposure assessment (PK/TK)",
       "action": "is essential to interpret",
       "object": "toxicity data",
-      "normalized_ko": null,
+      "normalized_ko": "독성 데이터를 해석하는 데 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -2395,7 +2711,7 @@
       "subject": "Exposure assessment (PK/TK)",
       "action": "is essential to interpret",
       "object": "toxicity data",
-      "normalized_ko": null,
+      "normalized_ko": "독성 데이터를 해석하는 데 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -2409,7 +2725,7 @@
       "subject": "Exposure assessment (PK/TK)",
       "action": "is essential to interpret",
       "object": "toxicity data",
-      "normalized_ko": null,
+      "normalized_ko": "독성 데이터를 해석하는 데 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -2423,7 +2739,7 @@
       "subject": "Single dose toxicity studies",
       "action": "can evaluate",
       "object": "acute toxicity",
-      "normalized_ko": null,
+      "normalized_ko": "급성 독성을 평가할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2437,7 +2753,7 @@
       "subject": "Study duration",
       "action": "should equal or exceed",
       "object": "intended clinical duration",
-      "normalized_ko": null,
+      "normalized_ko": "의도된 임상 투여 기간과 같거나 이를 초과해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2451,7 +2767,7 @@
       "subject": "6 months duration",
       "action": "is generally sufficient for",
       "object": "chronic biopharmaceutical indications",
-      "normalized_ko": null,
+      "normalized_ko": "만성 바이오의약품 적응증에 일반적으로 충분하다.",
       "review_status": "reviewed"
     },
     {
@@ -2465,7 +2781,7 @@
       "subject": "Single dose toxicity studies",
       "action": "can evaluate",
       "object": "acute toxicity and dose escalation",
-      "normalized_ko": null,
+      "normalized_ko": "급성 독성 및 용량 증량을 평가할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2479,7 +2795,7 @@
       "subject": "6 months duration",
       "action": "is generally sufficient for",
       "object": "chronic biopharmaceutical indications",
-      "normalized_ko": null,
+      "normalized_ko": "만성 바이오의약품 적응증에 일반적으로 충분하다.",
       "review_status": "reviewed"
     },
     {
@@ -2493,7 +2809,7 @@
       "subject": "Standard genotoxicity test batteries",
       "action": "are not applicable to",
       "object": "intact biopharmaceuticals",
-      "normalized_ko": "Standard genotoxicity test batteries are not applicable to intact biopharmaceuticals.",
+      "normalized_ko": "온전한 바이오의약품에는 적용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -2507,7 +2823,7 @@
       "subject": "Standard genotoxicity test batteries",
       "action": "includes",
       "object": "Ames test",
-      "normalized_ko": "Ames test is an example of a standard genotoxicity test battery.",
+      "normalized_ko": "Ames 시험을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -2521,7 +2837,7 @@
       "subject": "Reproductive toxicity studies",
       "action": "should be conducted in",
       "object": "relevant species",
-      "normalized_ko": "Reproductive toxicity studies should be conducted in relevant species.",
+      "normalized_ko": "관련 종에서 수행해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2535,7 +2851,413 @@
       "subject": "Standard rodent 2-year bioassays for carcinogenicity",
       "action": "are generally not appropriate for",
       "object": "biopharmaceuticals",
-      "normalized_ko": "Standard rodent 2-year bioassays for carcinogenicity are generally not appropriate for biopharmaceuticals.",
+      "normalized_ko": "바이오의약품에는 일반적으로 적절하지 않다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_1.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The purpose of this Addendum",
+      "action": "is to complement",
+      "object": "the parent ICH S6 guideline",
+      "normalized_ko": "모(母) ICH S6 가이드라인을 보완하는 것이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_1.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The purpose of this Addendum",
+      "action": "is to provide",
+      "object": "further guidance on species selection, study design (dose selection, duration, recovery), immunogenicity, reproductive and developmental toxicity, and carcinogenicity for biotechnology-derived pharmaceuticals",
+      "normalized_ko": "생명공학 유래 의약품의 종 선택, 시험 설계(용량 선택, 기간, 회복), 면역원성, 생식 및 발생 독성 및 발암성에 관한 추가 지침을 제공하는 것이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_2_3.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_3.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can be used",
+      "subject": "Studies with homologous proteins",
+      "action": "can be used for",
+      "object": "hazard detection",
+      "normalized_ko": "위해요소 탐지에 사용할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_2_3.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Studies with homologous proteins",
+      "action": "are generally not useful for",
+      "object": "quantitative risk assessment",
+      "normalized_ko": "정량적 위험 평가에는 일반적으로 유용하지 않다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_2_3.003",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.2_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can be conducted",
+      "subject": "Safety evaluation studies",
+      "action": "may be conducted",
+      "object": "for hazard identification, using a control group and one treatment group",
+      "normalized_ko": "대조군 1개와 처리군 1개를 사용하여 위해요소 확인을 위해 수행할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_3_1.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.3_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "A rationale",
+      "action": "should be provided for",
+      "object": "dose selection taking into account PK-PD principles",
+      "normalized_ko": "PK-PD 원칙을 고려한 용량 선정을 위해 제공되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_3_1.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.3_1.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "is unlikely to",
+      "subject": "Testing higher doses",
+      "action": "is unlikely to provide",
+      "object": "additional useful information",
+      "normalized_ko": "추가적인 유용한 정보를 제공할 가능성은 낮다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_3_1.003",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.3_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Testing higher doses",
+      "action": "is unlikely to provide",
+      "object": "additional useful information",
+      "normalized_ko": "추가적인 유용한 정보를 제공할 가능성은 낮다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_3_2.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.3_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "repeated dose toxicity studies of 6 months duration in rodents or non-rodents",
+      "action": "are considered sufficient",
+      "object": null,
+      "normalized_ko": "충분한 것으로 간주된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_3_2.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.3_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Studies of longer duration",
+      "action": "have not generally provided",
+      "object": "useful information that changed the clinical course of development",
+      "normalized_ko": "임상 개발 경과를 변경한 유용한 정보를 일반적으로 제공하지 않았다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_3_2.003",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.3_2.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "are considered sufficient",
+      "subject": "Repeated dose toxicity studies of 6 months duration in rodents or non-rodents",
+      "action": "are considered sufficient",
+      "object": null,
+      "normalized_ko": "반복투여 독성시험은 충분한 것으로 간주된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_3_3.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.3_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Recovery from pharmacological and toxicological effects",
+      "action": "should be examined by including",
+      "object": "a non-dosing period",
+      "normalized_ko": "투여하지 않는 기간을 포함하여 검토되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_3_3.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.3_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The purpose of the non-dosing period",
+      "action": "is to examine",
+      "object": "reversibility of effects",
+      "normalized_ko": "효과의 가역성을 검토하는 것이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_3_3.003",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.3_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Complete recovery demonstration",
+      "action": "is not essential",
+      "object": null,
+      "normalized_ko": "필수적이지 않다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_3_3.004",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.3_3.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "not essential",
+      "subject": "Complete recovery demonstration",
+      "action": "is not essential",
+      "object": null,
+      "normalized_ko": "필수적이지 않다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_3_3.005",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.3_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "not required",
+      "subject": "Adding a recovery period solely to assess immunogenicity",
+      "action": "is not required",
+      "object": null,
+      "normalized_ko": "요구되지 않는다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_3_3.006",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.3_3.001"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "is not required",
+      "subject": "Adding a recovery period solely to assess immunogenicity",
+      "action": "is not required",
+      "object": null,
+      "normalized_ko": "요구되지 않는다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_3_3.007",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.3_3.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "is not required",
+      "subject": "Adding a recovery period",
+      "action": "must not be required",
+      "object": null,
+      "normalized_ko": "요구되어서는 안 된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_4.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Anti-drug antibody (ADA) measurement in nonclinical studies",
+      "action": "should be evaluated",
+      "object": null,
+      "normalized_ko": "비임상 연구에서 항약물항체(ADA) 측정은 특정 면역원성 관련 증거가 있을 때 평가해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_4.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is warranted",
+      "subject": "Characterisation of neutralizing potential",
+      "action": "is warranted",
+      "object": null,
+      "normalized_ko": "ADA가 검출되고 지속적인 in vivo 활성을 입증할 PD 표지자가 없는 경우 중화 가능성을 특성화하는 것이 타당하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_5.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.5.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Reproductive toxicity studies",
+      "action": "should be conducted in",
+      "object": "relevant species",
+      "normalized_ko": "생물학적으로 관련된 종에서 실시되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_5.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.5.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can be used",
+      "subject": "an enhanced pre- and post-natal development (ePPND) study design",
+      "action": "can be used to evaluate",
+      "object": "embryo-fetal development, fetal loss, and post-natal development in a single comprehensive study",
+      "normalized_ko": "단일 포괄적 시험에서 배아-태아 발달, 태아 손실 및 출생 후 발달을 평가하는 데 사용할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_5.003",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.5.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can extend",
+      "subject": "Dosing",
+      "action": "can extend from",
+      "object": "gestation day 20 to parturition",
+      "normalized_ko": "임신 20일부터 분만까지 연장할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_5.004",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.5.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "up to",
+      "subject": "infant evaluation",
+      "action": "can be conducted up to",
+      "object": "6 months",
+      "normalized_ko": "최대 6개월까지 실시할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_5.005",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "an enhanced pre- and post-natal development (ePPND) study design",
+      "action": "replacing",
+      "object": "separate EFD and PPND studies",
+      "normalized_ko": "별도의 EFD 및 PPND 시험을 대체한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_5.006",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.5.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "can",
+      "subject": "an enhanced pre- and post-natal development (ePPND) study design",
+      "action": "can be used to evaluate",
+      "object": "embryo-fetal development, fetal loss, and post-natal development in a single comprehensive study",
+      "normalized_ko": "단일 포괄적 시험에서 배아-태아 발달, 태아 손실 및 출생 후 발달을 평가하는 데 사용할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_5.007",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.5.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "can",
+      "subject": "Dosing",
+      "action": "can extend from",
+      "object": "gestation day 20 to parturition",
+      "normalized_ko": "임신 20일부터 분만까지 연장할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_6.001",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The need for carcinogenicity testing",
+      "action": "should be evaluated using",
+      "object": "a weight-of-evidence approach based on target biology, intended patient population, treatment duration, and potential for proliferative or immunosuppressive effects",
+      "normalized_ko": "표적 생물학, 의도된 환자 집단, 치료 기간 및 증식성 또는 면역억제 효과의 가능성에 기반한 증거 가중 접근법을 사용하여 평가되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_s6_r1.kr.part2_6.002",
+      "source_unit_ids": [
+        "ich_s6_r1.su.part2.6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "generally not required",
+      "subject": "Rodent 2-year carcinogenicity bioassays",
+      "action": "are generally not required for",
+      "object": "biopharmaceuticals",
+      "normalized_ko": "생물의약품에 대해서는 일반적으로 요구되지 않는다.",
       "review_status": "reviewed"
     }
   ],
@@ -2611,7 +3333,10 @@
       "unit": null,
       "value_status": "unknown",
       "denominator_or_reference": "intended clinical duration",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_s6_r1.cond.4_4.001",
+        "ich_s6_r1.cond.4_4.002"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -2629,7 +3354,10 @@
       "unit": "months",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_s6_r1.cond.4_4.001",
+        "ich_s6_r1.cond.4_4.002"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -2647,7 +3375,10 @@
       "unit": "months",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_s6_r1.cond.4_4.001",
+        "ich_s6_r1.cond.4_4.002"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -2665,11 +3396,246 @@
       "unit": "months",
       "value_status": "needs_review",
       "denominator_or_reference": "1-3 months",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_s6_r1.cond.4_4.001",
+        "ich_s6_r1.cond.4_4.002"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
       "source_text": "up to 1-3 months",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.part2_2_3.001",
+      "source_unit_id": "ich_s6_r1.su.part2.2_3.001",
+      "knowledge_record_id": null,
+      "parameter": "number of treatment groups",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "treatment group",
+      "value_status": "known",
+      "denominator_or_reference": "safety evaluation studies for hazard identification",
+      "condition_ids": [
+        "ich_s6_r1.cond.part2_2_3.001",
+        "ich_s6_r1.cond.part2_2_3.002"
+      ],
+      "joint_with_ids": [
+        "ich_s6_r1.qc.part2_2_3.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "one treatment group",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.part2_2_3.002",
+      "source_unit_id": "ich_s6_r1.su.part2.2_3.001",
+      "knowledge_record_id": null,
+      "parameter": "number of control groups",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "group",
+      "value_status": "known",
+      "denominator_or_reference": "safety evaluation studies for hazard identification",
+      "condition_ids": [
+        "ich_s6_r1.cond.part2_2_3.001",
+        "ich_s6_r1.cond.part2_2_3.002"
+      ],
+      "joint_with_ids": [
+        "ich_s6_r1.qc.part2_2_3.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "a control group",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.part2_2_3.003",
+      "source_unit_id": "ich_s6_r1.su.part2.2_3.001",
+      "knowledge_record_id": null,
+      "parameter": "treatment dose",
+      "comparator": "equals",
+      "value": null,
+      "value_fraction": null,
+      "unit": null,
+      "value_status": "unknown",
+      "denominator_or_reference": "maximum pharmacological dose",
+      "condition_ids": [
+        "ich_s6_r1.cond.part2_2_3.001",
+        "ich_s6_r1.cond.part2_2_3.002"
+      ],
+      "joint_with_ids": [
+        "ich_s6_r1.qc.part2_2_3.001",
+        "ich_s6_r1.qc.part2_2_3.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at maximum pharmacological dose",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.part2_3_1.001",
+      "source_unit_id": "ich_s6_r1.su.part2.3_1.001",
+      "knowledge_record_id": null,
+      "parameter": "exposure multiple over the maximum clinical exposure",
+      "comparator": "equals",
+      "value": 10,
+      "value_fraction": null,
+      "unit": "fold",
+      "value_status": "known",
+      "denominator_or_reference": "maximum clinical exposure",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "approximately a 10-fold exposure multiple over the maximum clinical exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.part2_3_1.002",
+      "source_unit_id": "ich_s6_r1.su.part2.3_1.001",
+      "knowledge_record_id": null,
+      "parameter": "lower dose",
+      "comparator": "equals",
+      "value": 1000,
+      "value_fraction": null,
+      "unit": "mg/kg",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "such as maximum feasible dose or 1000 mg/kg",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.part2_3_2.001",
+      "source_unit_id": "ich_s6_r1.su.part2.3_2.001",
+      "knowledge_record_id": null,
+      "parameter": "duration of repeated dose toxicity studies",
+      "comparator": "equals",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": "in rodents or non-rodents",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "repeated dose toxicity studies of 6 months duration in rodents or non-rodents are considered sufficient",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.part2_3_2.002",
+      "source_unit_id": "ich_s6_r1.su.part2.3_2.001",
+      "knowledge_record_id": null,
+      "parameter": "longer study duration",
+      "comparator": "equals",
+      "value": 12,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": true,
+      "source_text": "such as 12 months",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.part2_3_3.001",
+      "source_unit_id": "ich_s6_r1.su.part2.3_3.001",
+      "knowledge_record_id": null,
+      "parameter": "studies including a non-dosing period",
+      "comparator": "at_least",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "study",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "in at least one study",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.part2_3_3.002",
+      "source_unit_id": "ich_s6_r1.su.part2.3_3.001",
+      "knowledge_record_id": null,
+      "parameter": "dose levels including a non-dosing period",
+      "comparator": "at_least",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "dose level",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at at least one dose level",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.part2_5.001",
+      "source_unit_id": "ich_s6_r1.su.part2.5.001",
+      "knowledge_record_id": null,
+      "parameter": "dosing start",
+      "comparator": "equals",
+      "value": 20,
+      "value_fraction": null,
+      "unit": "gestation day",
+      "value_status": "known",
+      "denominator_or_reference": "from gestation day 20 to parturition",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "Dosing can extend from gestation day 20 to parturition",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.part2_5.002",
+      "source_unit_id": "ich_s6_r1.su.part2.5.001",
+      "knowledge_record_id": null,
+      "parameter": "infant evaluation duration",
+      "comparator": "not_exceed",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": "infant evaluation",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "with infant evaluation up to 6 months",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_s6_r1.qc.part2_6.001",
+      "source_unit_id": "ich_s6_r1.su.part2.6.001",
+      "knowledge_record_id": null,
+      "parameter": "Rodent carcinogenicity bioassay duration",
+      "comparator": "equals",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "years",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "Rodent 2-year carcinogenicity bioassays",
       "review_status": "reviewed"
     }
   ],
@@ -3072,7 +4038,17 @@
       "source_unit_id": "ich_s6_r1.su.part1.4_4.001",
       "condition_text": "for short-term treatments (up to 1-3 months)",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.4_4.001",
+        "ich_s6_r1.kr.4_4.002",
+        "ich_s6_r1.kr.4_4.003",
+        "ich_s6_r1.kr.4_4.004",
+        "ich_s6_r1.kr.4_4.005",
+        "ich_s6_r1.qc.4_4.001",
+        "ich_s6_r1.qc.4_4.002",
+        "ich_s6_r1.qc.4_4.003",
+        "ich_s6_r1.qc.4_4.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -3080,7 +4056,17 @@
       "source_unit_id": "ich_s6_r1.su.part1.4_4.001",
       "condition_text": "for chronic biopharmaceutical indications",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_s6_r1.kr.4_4.001",
+        "ich_s6_r1.kr.4_4.002",
+        "ich_s6_r1.kr.4_4.003",
+        "ich_s6_r1.kr.4_4.004",
+        "ich_s6_r1.kr.4_4.005",
+        "ich_s6_r1.qc.4_4.001",
+        "ich_s6_r1.qc.4_4.002",
+        "ich_s6_r1.qc.4_4.003",
+        "ich_s6_r1.qc.4_4.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -3090,6 +4076,260 @@
       "condition_type": "applicability",
       "applies_to_ids": [
         "ich_s6_r1.kr.4_7.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_1.001",
+      "source_unit_id": "ich_s6_r1.su.part2.1.001",
+      "condition_text": "for biotechnology-derived pharmaceuticals",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_1.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_2_3.001",
+      "source_unit_id": "ich_s6_r1.su.part2.2_3.001",
+      "condition_text": "For hazard identification",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_2_3.001",
+        "ich_s6_r1.kr.part2_2_3.002",
+        "ich_s6_r1.kr.part2_2_3.003",
+        "ich_s6_r1.qc.part2_2_3.001",
+        "ich_s6_r1.qc.part2_2_3.002",
+        "ich_s6_r1.qc.part2_2_3.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_2_3.002",
+      "source_unit_id": "ich_s6_r1.su.part2.2_3.001",
+      "condition_text": "with scientific justification",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_2_3.001",
+        "ich_s6_r1.kr.part2_2_3.002",
+        "ich_s6_r1.kr.part2_2_3.003",
+        "ich_s6_r1.qc.part2_2_3.001",
+        "ich_s6_r1.qc.part2_2_3.002",
+        "ich_s6_r1.qc.part2_2_3.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_2_3.003",
+      "source_unit_id": "ich_s6_r1.su.part2.2_3.001",
+      "condition_text": "For hazard identification",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_2_3.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_2_3.004",
+      "source_unit_id": "ich_s6_r1.su.part2.2_3.001",
+      "condition_text": "at maximum pharmacological dose",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_2_3.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_3_1.001",
+      "source_unit_id": "ich_s6_r1.su.part2.3_1.001",
+      "condition_text": "unless a lower dose (such as maximum feasible dose or 1000 mg/kg) is justified",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_3_1.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_3_1.002",
+      "source_unit_id": "ich_s6_r1.su.part2.3_1.001",
+      "condition_text": "when no toxicity is observed at these levels",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_3_1.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_3_2.001",
+      "source_unit_id": "ich_s6_r1.su.part2.3_2.001",
+      "condition_text": "For chronic use biopharmaceutical products",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_3_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_3_2.002",
+      "source_unit_id": "ich_s6_r1.su.part2.3_2.001",
+      "condition_text": "providing the high dose is selected in accordance with PK-PD principles",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_3_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_3_2.003",
+      "source_unit_id": "ich_s6_r1.su.part2.3_2.001",
+      "condition_text": "Studies of longer duration",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_3_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_3_2.004",
+      "source_unit_id": "ich_s6_r1.su.part2.3_2.001",
+      "condition_text": "For chronic use biopharmaceutical products",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_3_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_3_3.001",
+      "source_unit_id": "ich_s6_r1.su.part2.3_3.001",
+      "condition_text": "solely to assess immunogenicity",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_3_3.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_4.001",
+      "source_unit_id": "ich_s6_r1.su.part2.4.001",
+      "condition_text": "evidence of altered PD activity",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_4.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_4.002",
+      "source_unit_id": "ich_s6_r1.su.part2.4.001",
+      "condition_text": "unexpected changes in exposure in absence of PD marker",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_4.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_4.003",
+      "source_unit_id": "ich_s6_r1.su.part2.4.001",
+      "condition_text": "evidence of immune-mediated reactions (immune complex disease, vasculitis, anaphylaxis)",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_4.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_4.004",
+      "source_unit_id": "ich_s6_r1.su.part2.4.001",
+      "condition_text": "when ADAs are detected",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_4.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_4.005",
+      "source_unit_id": "ich_s6_r1.su.part2.4.001",
+      "condition_text": "there is no PD marker to demonstrate sustained in vivo activity",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_4.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_4.006",
+      "source_unit_id": "ich_s6_r1.su.part2.4.001",
+      "condition_text": "when ADAs are detected and there is no PD marker to demonstrate sustained in vivo activity",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_4.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_4.007",
+      "source_unit_id": "ich_s6_r1.su.part2.4.001",
+      "condition_text": "evidence of altered PD activity",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_4.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_4.008",
+      "source_unit_id": "ich_s6_r1.su.part2.4.001",
+      "condition_text": "unexpected changes in exposure in absence of PD marker",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_4.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_4.009",
+      "source_unit_id": "ich_s6_r1.su.part2.4.001",
+      "condition_text": "evidence of immune-mediated reactions (immune complex disease, vasculitis, anaphylaxis)",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_4.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_5.001",
+      "source_unit_id": "ich_s6_r1.su.part2.5.001",
+      "condition_text": "When non-human primates (NHPs) are the only relevant species",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_5.002",
+        "ich_s6_r1.kr.part2_5.003",
+        "ich_s6_r1.kr.part2_5.004",
+        "ich_s6_r1.kr.part2_5.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_5.002",
+      "source_unit_id": "ich_s6_r1.su.part2.5.001",
+      "condition_text": "When non-human primates (NHPs) are the only relevant species",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_5.002",
+        "ich_s6_r1.kr.part2_5.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_s6_r1.cond.part2_6.001",
+      "source_unit_id": "ich_s6_r1.su.part2.6.001",
+      "condition_text": "unless there is clear biological rationale and a relevant rodent model exists",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_s6_r1.kr.part2_6.002"
       ],
       "review_status": "reviewed"
     }
@@ -3122,8 +4362,8 @@
       "target_type": "guideline",
       "target_document_label": "ICH S6 Guideline",
       "target_id": null,
-      "resolution_status": "unresolved",
-      "review_status": "reviewed"
+      "resolution_status": "needs_review",
+      "review_status": "needs_review"
     },
     {
       "xref_id": "ich_s6_r1.xref.part2.2_1.003",
@@ -3132,8 +4372,8 @@
       "target_type": "guideline",
       "target_document_label": "ICH S6 Guideline",
       "target_id": null,
-      "resolution_status": "unresolved",
-      "review_status": "reviewed"
+      "resolution_status": "needs_review",
+      "review_status": "needs_review"
     },
     {
       "xref_id": "ich_s6_r1.xref.part2.2_1.004",
@@ -3162,7 +4402,37 @@
       "target_type": "guideline",
       "target_document_label": "ICH S9 Guideline",
       "target_id": null,
-      "resolution_status": "unresolved",
+      "resolution_status": "needs_review",
+      "review_status": "needs_review"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.3_2.001",
+      "target_id": "ich_s6_r1.su.part1.4_4.001",
+      "xref_id": "ich_s6_r1.xref.part2.gen.001",
+      "target_type": "section",
+      "target_document_label": "ICH S6(R1)",
+      "raw_reference_text": "see Section",
+      "resolution_status": "resolved",
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.3_1.001",
+      "target_id": "ich_s6_r1.su.part1.3_4.001",
+      "xref_id": "ich_s6_r1.xref.part2.gen.002",
+      "target_type": "section",
+      "target_document_label": "ICH S6(R1)",
+      "raw_reference_text": "see Section",
+      "resolution_status": "resolved",
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_s6_r1.su.part2.2_1.001",
+      "target_id": "ich_s6_r1.su.part1.3_3.001",
+      "xref_id": "ich_s6_r1.xref.part2.gen.003",
+      "target_type": "section",
+      "target_document_label": "ICH S6(R1)",
+      "raw_reference_text": "see Section",
+      "resolution_status": "resolved",
       "review_status": "reviewed"
     }
   ]

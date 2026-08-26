@@ -303,7 +303,7 @@ async function verifyDraft(draft, { sourceUnits, client, model }) {
   return { draft: { knowledge_records, quantitative_criteria, conditions }, report, summary };
 }
 
-const { extractSection, nextId } = require("./extraction_agent");
+const { extractSection, nextId, slugifySectionNumber } = require("./extraction_agent");
 
 /**
  * One automatic call: extract, then verify, then finalize review_status.
@@ -430,7 +430,11 @@ function groupKnowledgeRecords(items) {
   return groups;
 }
 
-function mergeExtractionPasses(drafts, { documentId, sectionNumber }) {
+function mergeExtractionPasses(drafts, { documentId, sectionNumber, sectionId }) {
+  const secSlug = sectionId && sectionId.startsWith(`${documentId}.sec.`)
+    ? sectionId.slice(`${documentId}.sec.`.length)
+    : slugifySectionNumber(sectionNumber);
+
   const allKR = drafts.flatMap((d) => d.knowledge_records);
   const allQC = drafts.flatMap((d) => d.quantitative_criteria);
   const allCond = drafts.flatMap((d) => d.conditions);
@@ -442,7 +446,7 @@ function mergeExtractionPasses(drafts, { documentId, sectionNumber }) {
   const knowledge_records = krGroups.map(({ item, agreementCount }, i) => {
     const kr = {
       ...item,
-      knowledge_record_id: nextId(documentId, "kr", sectionNumber, i + 1),
+      knowledge_record_id: nextId(documentId, "kr", secSlug, i + 1),
       review_status: "needs_review",
       _agreementCount: agreementCount
     };
@@ -454,7 +458,7 @@ function mergeExtractionPasses(drafts, { documentId, sectionNumber }) {
 
   const conditions = condGroups.map(({ item, agreementCount }, i) => ({
     ...item,
-    condition_id: nextId(documentId, "cond", sectionNumber, i + 1),
+    condition_id: nextId(documentId, "cond", secSlug, i + 1),
     applies_to_ids: item.applies_to_ids || [],
     review_status: "needs_review",
     _agreementCount: agreementCount
@@ -475,7 +479,7 @@ function mergeExtractionPasses(drafts, { documentId, sectionNumber }) {
   const quantitative_criteria = qcGroups.map(({ item, agreementCount }, i) => {
     const qc = {
       ...item,
-      criterion_id: nextId(documentId, "qc", sectionNumber, i + 1),
+      criterion_id: nextId(documentId, "qc", secSlug, i + 1),
       knowledge_record_id: null,
       condition_ids: [],
       joint_with_ids: item.joint_with_ids || [],
@@ -530,7 +534,8 @@ async function extractSectionSelfConsistent({ section, sourceUnits, client, pass
   }
   const { draft: merged, agreement } = mergeExtractionPasses(drafts, {
     documentId: section.document_id,
-    sectionNumber: section.section_number
+    sectionNumber: section.section_number,
+    sectionId: section.section_id
   });
   const verified = await verifyDraft(merged, { sourceUnits, client, model: verifyModel });
   return { ...verified, agreement, passes };

@@ -260,12 +260,20 @@ async function extractSection({ section, sourceUnits, client }) {
   return finalizeDraft(draft, { section, allowedSourceUnitIds });
 }
 
+function getSectionSlug(section) {
+  if (section.section_id && section.section_id.startsWith(`${section.document_id}.sec.`)) {
+    return section.section_id.slice(`${section.document_id}.sec.`.length);
+  }
+  return slugifySectionNumber(section.section_number);
+}
+
 function finalizeDraft(draft, { section, allowedSourceUnitIds }) {
   const documentId = section.document_id;
+  const secSlug = getSectionSlug(section);
 
   const conditionIdByTempId = new Map();
   const conditions = (draft.conditions || []).map((c, i) => {
-    const id = nextId(documentId, "cond", section.section_number, i + 1);
+    const id = nextId(documentId, "cond", secSlug, i + 1);
     conditionIdByTempId.set(c.temp_id, id);
     return {
       condition_id: id,
@@ -279,7 +287,7 @@ function finalizeDraft(draft, { section, allowedSourceUnitIds }) {
 
   const krIdByTempId = new Map();
   const knowledgeRecords = (draft.knowledge_records || []).map((kr, i) => {
-    const id = nextId(documentId, "kr", section.section_number, i + 1);
+    const id = nextId(documentId, "kr", secSlug, i + 1);
     krIdByTempId.set(kr.temp_id, id);
     return {
       knowledge_record_id: id,
@@ -300,7 +308,7 @@ function finalizeDraft(draft, { section, allowedSourceUnitIds }) {
   // referenced one-directionally) — a separate id-assignment pass first.
   const qcIdByTempId = new Map();
   (draft.quantitative_criteria || []).forEach((qc, i) => {
-    qcIdByTempId.set(qc.temp_id, nextId(documentId, "qc", section.section_number, i + 1));
+    qcIdByTempId.set(qc.temp_id, nextId(documentId, "qc", secSlug, i + 1));
   });
 
   const quantitativeCriteria = (draft.quantitative_criteria || []).map((qc) => ({

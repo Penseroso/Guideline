@@ -22,22 +22,22 @@
 | **Part I §4.6-4.9** | Reproductive Toxicity, Genotox, Carcino, Local | p. 8-10 | `COMPLETED` | **생식발생독성, 유전독성(원칙적 시험 불필요/면제), 발암성 2년 표준시험 부적합성, 국소자극성** (4 KR, 0 QC, 1 Cond) |
 | **Part I Notes** | Notes 1 to 8 | p. 10 | `COMPLETED` | **Parent Guideline 주석 (질환모델 동물 사용 정당성 등)** (3 KR, 0 QC, 0 Cond) |
 
-### Part II: Addendum to ICH S6 (2011)
+### Part II: Addendum to ICH S6 (2011) - 100% 완결
 | Section | Title | PDF Page | Status | Description / Key Requirements |
 | :--- | :--- | :---: | :---: | :--- |
-| **Part II §1** | Introduction | p. 11 | `BACKLOG` | Addendum 목적 및 적용 범위 |
+| **Part II §1** | Introduction | p. 11 | `COMPLETED` | **Addendum 목적 및 적용 범위 (Parent Guideline 보완)** (2 KR, 0 QC, 1 Cond) |
 | **Part II §2.1-2.2** | Species Selection & One vs Two Species | p. 11-13 | `COMPLETED` | **단일 종 vs 2종 사용 정당화 기준, 단기 독성 후 1종 전환 기준** (24 KR, 2 QC, 12 Cond) |
-| **Part II §2.3** | Non-Human Primates (NHP) | p. 13-14 | `BACKLOG` | NHP(영장류) 사용 최소화 및 과학적 정당화 |
-| **Part II §3.1-3.3** | Study Design (Dose Selection, Duration, Recovery) | p. 14-16 | `BACKLOG` | 고용량(High Dose) 설정(10배 노출 또는 1,000mg/kg), 만성독성 기간(6개월), 회복시험 |
-| **Part II §4** | Immunogenicity | p. 16 | `BACKLOG` | 면역원성 데이터 해석 및 독성시험 평가 영향 |
-| **Part II §5.1-5.4** | Reproductive and Developmental Toxicity | p. 16-19 | `BACKLOG` | EFD(배태자발생독성), ePPND(확장 산전산후발생독성), 영장류 연구 디자인 |
-| **Part II §6** | Carcinogenicity | p. 19-20 | `BACKLOG` | 면역원성 및 생물학적 활성을 고려한 발암성 위해성 평가 |
-| **Part II Notes** | Addendum Notes 1 to 8 | p. 20-22 | `COMPLETED` | **ADC 종선택, MABEL, 회복기간 등 Addendum 주석** (24 KR, 1 QC, 8 Cond) |
+| **Part II §2.3** | Use of Homologous Proteins | p. 13-14 | `COMPLETED` | **동종 단백질 시험의 위해성 확인 목적 활용 및 대조군+1투여군 설계** (3 KR, 3 QC, 4 Cond) |
+| **Part II §3.1-3.3** | Study Design (Dose Selection, Duration, Recovery) | p. 14-16 | `COMPLETED` | **고용량 10배 노출 마진/최대약리용량, 만성독성 6개월 충분성 원칙, 회복기간 가역성 평가** (13 KR, 6 QC, 7 Cond) |
+| **Part II §4** | Immunogenicity | p. 16 | `COMPLETED` | **면역원성 ADA 측정 트리거(PK/PD 변화, 면역반응) 및 중화항체 평가 요건** (2 KR, 0 QC, 9 Cond) |
+| **Part II §5.1-5.4** | Reproductive and Developmental Toxicity | p. 16-19 | `COMPLETED` | **영장류 ePPND(확장 산전산후발생독성) 단일 통합 디자인, 임신 20일~분만 투여 및 6개월 영아 평가** (7 KR, 2 QC, 2 Cond) |
+| **Part II §6** | Carcinogenicity | p. 19-20 | `COMPLETED` | **증거가중치(Weight-of-evidence) 발암성 위해성 평가, 2년 설치류 표준시험 원칙적 불필요** (2 KR, 1 QC, 1 Cond) |
+| **Part II Notes** | Addendum Notes 1 to 8 | p. 20-22 | `COMPLETED` | **ADC 종선택, MABEL, 회복기간, ePPND 프로토콜 등 Addendum 주석** (24 KR, 1 QC, 8 Cond) |
 
 ---
 
 ## Summary Statistics
-* **적재 완료 섹션 수 (Completed)**: **15개 섹션** (Part I 100% 전수 완결, Part II §2.1/2.2 & Notes 완결)
-* **총 구조화 데이터 규모 (ICH S6(R1))**: **100 KnowledgeRecords, 7 QuantitativeCriteria, 42 Conditions** (총 149개 엔티티, 100% `reviewed`)
-* **아카이브 전체 엔티티 규모**: **1,892개 엔티티** (ICH M10 585 + FDA ADA 667 + EMA FIH 491 + ICH S6 149)
-* **잔여 백로그 (Backlog)**: Batch 2 (Part II Addendum 잔여 전수: §1, §2.3 NHP, §3.1-3.3 고용량 10배 및 6개월, §4, §5.1-5.4 EFD/ePPND, §6 발암성)
+* **적재 완료 섹션 수 (Completed)**: **17개 전 섹션 100% 완료** (Part I 9개 + Part II 8개)
+* **총 구조화 데이터 규모 (ICH S6(R1))**: **129 KnowledgeRecords, 19 QuantitativeCriteria, 66 Conditions (총 214개 엔티티, 100% `reviewed`)**
+* **아카이브 전체 엔티티 규모**: **1,957개 엔티티** (ICH M10 585 + FDA ADA 667 + EMA FIH 491 + ICH S6 214)
+* **완결율 (Coverage)**: **ICH S6(R1) 100% 전수 적재 완료**
