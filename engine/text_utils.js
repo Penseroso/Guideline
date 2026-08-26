@@ -147,6 +147,11 @@ function tokenize(text) {
     }
   }
 
+  // Expand domain-specific compound concepts
+  if (tokens.includes("drug") && tokens.includes("interference") && !tokens.includes("tolerance")) {
+    tokens.push("tolerance");
+  }
+
   return tokens;
 }
 

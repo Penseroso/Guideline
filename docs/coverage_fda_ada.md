@@ -16,17 +16,17 @@
 | **III.A** | General Principles: Assays for ADA Detection | p. 3 | `COMPLETED` | **ADA 검출 기본 원칙, 역가/중화의 임상 연계, IND 제출 및 적기 검증** (16 KR, 12 Cond) |
 | **III.B** | Limitations in Comparing ADA Incidence | p. 4 | `COMPLETED` | **제품 간 면역원성 발현율 비교 한계 (동일 적응증/상동성 제품 간 비교 부적절, Head-to-head 필요성)** (9 KR, 5 Cond) |
 | **IV.A.1** | Assay Design: Multi-Tiered Testing Approach | p. 5 | `COMPLETED` | **M2 Q9: Multi-tiered 체계 (Screening ➔ Confirmatory ➔ Titration ➔ Neutralization)** (18 KR, 9 Cond) |
-| **IV.A.2** | Immunoglobulin Isotypes or Subtypes | p. 6 | `BACKLOG` | Ig 아이소타입(IgM, IgG, IgE, IgA) 평가 |
-| **IV.A.3** | Domain Specificity | p. 6 | `BACKLOG` | 다중 도메인 단백질(Fc-fusion, Bispecific 등) 도메인별 특이성 |
+| **IV.A.2** | Immunoglobulin Isotypes or Subtypes | p. 6 | `COMPLETED` | **Ig 아이소타입(IgM, IgG 서브클래스, IgE, IgA) 평가 요건** (4 KR, 1 Cond) |
+| **IV.A.3** | Domain Specificity | p. 6 | `COMPLETED` | **다중 도메인 단백질(Fc-fusion, ADC, Bispecific) 도메인별 특이성 특성화** (3 KR, 4 Cond) |
 | **IV.B** | Assay Cut-Point | p. 7 | `COMPLETED` | **M2 Q23: 컷포인트 기본 원리 (90% 신뢰수준 하한, 정규분포 vs 비모수)** (28 KR, 8 Cond) |
-| **IV.C.1** | Assay Sensitivity | p. 8 | `BACKLOG` | 민감도 요건 (최소 100 ng/mL 권고) |
-| **IV.C.2** | Drug Tolerance, Sensitivity, and Suitability | p. 9 | `COMPLETED` | **M2 Q25: 약물 간섭 및 Drug Tolerance Limit (DTL) 평가** (15 KR, 6 Cond) |
-| **IV.D** | Specificity | p. 9 | `BACKLOG` | 과량의 미표식 약물 경쟁 억제 특이성 |
-| **IV.E.1** | Matrix Interference | p. 10 | `BACKLOG` | 생체 기질(혈청/혈장) 간섭 |
-| **IV.E.2** | Minimal Required Dilution (MRD) | p. 11 | `BACKLOG` | 최소요구희석배수 선정 기준 |
-| **IV.F** | Precision | p. 11 | `BACKLOG` | 분석 내/분석 간 정밀도 (Inter/Intra-assay precision) |
-| **IV.G** | Reproducibility | p. 12 | `BACKLOG` | 분석자 간/실험실 간 재현성 |
-| **IV.H** | Robustness and Sample Stability | p. 12 | `BACKLOG` | 완건성 및 검체 보관 안정성 |
+| **IV.C.1** | Assay Sensitivity | p. 8 | `COMPLETED` | **민감도 요건 (최소 100 ng/mL 권고, 고위험 10-50 ng/mL, 5농도 희석곡선)** (9 KR, 8 QC, 7 Cond) |
+| **IV.C.2** | Drug Tolerance, Sensitivity, and Suitability | p. 9 | `COMPLETED` | **M2 Q25: 약물 간섭 및 Drug Tolerance Limit (DTL) 평가, 산 해리** (15 KR, 6 Cond) |
+| **IV.D** | Specificity | p. 9 | `COMPLETED` | **과량의 미표식 약물 경쟁 억제 특이성, 비특이 내인성 항체 및 mAb 간섭 배제** (12 KR, 2 Cond) |
+| **IV.E.1** | Matrix Interference | p. 10 | `COMPLETED` | **생체 기질(용혈, 지질혈, 황달, 항응고제, 계면활성제/Polysorbate) 간섭 및 스파이킹 회수율** (14 KR, 3 Cond) |
+| **IV.E.2** | Minimal Required Dilution (MRD) | p. 11 | `COMPLETED` | **최소요구희석배수 선정 기준 (1:5~1:100 범위, 10개 이상 미치료 검체, 1:100 초과 비권장)** (12 KR, 6 QC, 3 Cond) |
+| **IV.F** | Precision | p. 11 | `COMPLETED` | **분석 내(Repeatability)/분석 간(Intermediate precision) 정밀도, 컷포인트 변동성 기초** (5 KR, 2 Cond) |
+| **IV.G** | Reproducibility | p. 12 | `COMPLETED` | **2개 이상 독립 실험실 간 재현성 및 데이터 동등성(민감도, 약물내성, 정밀도)** (2 KR, 1 QC, 1 Cond) |
+| **IV.H** | Robustness and Sample Stability | p. 12 | `COMPLETED` | **완건성(온도/시간/pH/염/세포계대) 및 동결-융해 최소화, PC 단기안정성** (14 KR, 6 Cond) |
 | **IV.I** | Selection of Format | p. 12 | `BACKLOG` | 직접/간접 ELISA, Bridging, ECL, SPR 플랫폼 비교 |
 | **IV.J.1-3**| Selection of Reagents (PC, NC, NSB) | p. 13-14 | `BACKLOG` | 양성대조항체(PC), 음성대조(NC), 비특이 결합 억제 |
 | **IV.K** | Reporting Results for Quasi-Quantitative Assays | p. 15 | `BACKLOG` | 정성/준정량 결과 보고 형식 |
@@ -48,7 +48,7 @@
 
 ## Summary Statistics
 * **전체 섹션 수**: 33개
-* **적재 완료 섹션 수 (Completed)**: **12개 섹션** (`I`, `II`, `III.A`, `III.B`, `IV.A.1`, `IV.B`, `IV.C.2`, `V.D`, `VI.A`, `VI.B`, `VI.C`, `VI.E`)
-* **총 구조화 데이터 규모 (FDA ADA)**: **174 KnowledgeRecords, 30 QuantitativeCriteria, 76 Conditions** (총 280개 엔티티, 100% `reviewed`)
-* **아카이브 전체 엔티티 규모**: **931개 엔티티** (ICH M10 62 + ICH S6 98 + EMA FIH 491 + FDA ADA 280)
-* **잔여 백로그 (Backlog)**: 21개 섹션 (Section IV 잔여 파라미터/시약 요건, Section V/VI.D 개발/역가, Section VII/VIII 임상검체/문서화)
+* **적재 완료 섹션 수 (Completed)**: **21개 섹션** (전체 섹션의 64%)
+* **총 구조화 데이터 규모 (FDA ADA)**: **249 KnowledgeRecords, 45 QuantitativeCriteria, 105 Conditions** (총 399개 엔티티, 100% `reviewed`)
+* **아카이브 전체 엔티티 규모**: **1,050개 엔티티** (ICH M10 62 + ICH S6 98 + EMA FIH 491 + FDA ADA 399)
+* **잔여 백로그 (Backlog)**: 12개 섹션 (Section IV.I~IV.L 플랫폼/시약/특수고려사항, Section V/VI.D 개발/역가, Section VII/VIII 임상검체/문서화)
