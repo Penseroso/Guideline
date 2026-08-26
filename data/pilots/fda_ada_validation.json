@@ -363,13 +363,33 @@
       "section_order_status": "known"
     },
     {
+      "section_id": "fda_ada.sec.7",
+      "document_id": "fda_ada",
+      "section_number": "VII",
+      "title": "IMPLEMENTATION OF ASSAY TESTING",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 36,
+      "section_order_status": "known"
+    },
+    {
       "section_id": "fda_ada.sec.5_c",
       "document_id": "fda_ada",
       "section_number": "V.C",
       "title": "Development of Titration Assay",
       "parent_section_id": "fda_ada.sec.5",
       "heading_source_unit_id": null,
-      "section_order": 36,
+      "section_order": 37,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.7_a",
+      "document_id": "fda_ada",
+      "section_number": "VII.A",
+      "title": "Obtaining Subject Samples and Timing of Collection",
+      "parent_section_id": "fda_ada.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 38,
       "section_order_status": "known"
     },
     {
@@ -379,7 +399,17 @@
       "title": "Validation of Titration Assay",
       "parent_section_id": "fda_ada.sec.6",
       "heading_source_unit_id": null,
-      "section_order": 37,
+      "section_order": 39,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.7_b",
+      "document_id": "fda_ada",
+      "section_number": "VII.B",
+      "title": "Concurrent Positive and Negative Quality Controls",
+      "parent_section_id": "fda_ada.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 40,
       "section_order_status": "known"
     },
     {
@@ -389,7 +419,17 @@
       "title": "Conjugated Proteins and Multi-Domain Molecules",
       "parent_section_id": "fda_ada.sec.4",
       "heading_source_unit_id": null,
-      "section_order": 38,
+      "section_order": 41,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.7_c",
+      "document_id": "fda_ada",
+      "section_number": "VII.C",
+      "title": "Confirmation of Cut-Point in the Target Population",
+      "parent_section_id": "fda_ada.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 42,
       "section_order_status": "known"
     },
     {
@@ -399,7 +439,17 @@
       "parent_section_id": "fda_ada.sec.6",
       "heading_source_unit_id": "fda_ada.su.6_c.001",
       "title": "Validation of Confirmatory Assay",
-      "section_order": 39,
+      "section_order": 43,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.8",
+      "document_id": "fda_ada",
+      "section_number": "VIII",
+      "title": "DOCUMENTATION",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 44,
       "section_order_status": "known"
     },
     {
@@ -409,7 +459,17 @@
       "parent_section_id": "fda_ada.sec.6",
       "heading_source_unit_id": "fda_ada.su.6_e.001",
       "title": "Validation of Neutralization Assay",
-      "section_order": 40,
+      "section_order": 45,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.app",
+      "document_id": "fda_ada",
+      "section_number": "APPENDIX",
+      "title": "Multi-Tiered Approach to Anti-Drug Antibody Testing",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 46,
       "section_order_status": "known"
     }
   ],
@@ -1053,6 +1113,116 @@
       "review_status": "reviewed"
     },
     {
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.7_a",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "FDA recommends that sponsors obtain pre-treatment samples from all subjects. Because there is the potential for pre-existing antibodies or confounding components in the matrix, understanding the degree of reactivity before treatment is essential. The sponsor should obtain subsequent samples, with the timing depending on the frequency of dosing. Optimally, samples taken 7 to 14 days after the first exposure can help elucidate an early IgM response. Samples taken at 3 to 6 weeks after the first exposure are generally optimal for determining IgG responses. IgA responses may peak earlier than IgG responses, at around 2 to 3 weeks after antigen exposure. For individuals receiving a single dose of a therapeutic protein product, these time frames may be adequate. However, for subjects receiving a therapeutic protein product at multiple times during the trial, the sponsor should obtain samples at appropriate intervals throughout the trial and obtain a sample approximately 30 days after the last exposure. For products with long half-lives, samples should be obtained approximately five half-lives after last exposure. When there is a high risk of serious consequences from ADAs, sponsors should plan to collect samples from subjects until ADAs return to baseline levels.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.7_a",
+        "pdf_page_index_zero_based": 29,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "26",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.7_b.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.7_b",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Positive control and quality control (QC) samples are critical and should be run concurrently with subject samples. We recommend that these samples span a level of positivity with QC samples having a known negative, low, and high signal in the assay. More important, the QC samples should be diluted in the matrix in which subject samples will be examined. For example, the QC sample should be diluted in the same anticoagulant as the subject samples. For the low-positive QC sample, we recommend that a concentration be selected that, upon statistical analysis, would lead to the rejection of an assay run 1% of the time. In this way, the sponsor ensures that the assay is performing as expected and that subject samples are correctly evaluated. If the assay is subject to a prozone effect, the concentration of high-positive QC samples should be set to monitor prozone effects.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.7_b",
+        "pdf_page_index_zero_based": 30,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "27",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.7_c.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.7_c",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Samples from different populations can have different background activity in ADA assays. Similarly, the background activity can change when samples used to determine the cut-point during assay validation were not obtained and handled in a manner that represents how samples will be obtained and handled in-study. Therefore, it is necessary to confirm that the cut-point determined during assay validation is suitable for the population being studied. A sufficient number of samples from the target population should be used, and justification for the number used should be provided. If sufficient numbers of samples are not available, agreement with the Agency should be sought for the number of samples to be used.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.7_c",
+        "pdf_page_index_zero_based": 31,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "28",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.8.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.8",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "To facilitate the clinical development of therapeutic biologics, we recommend a life-cycle management approach to immunogenicity through the creation of an integrated immunogenicity summary report that sponsors begin populating early in therapeutic protein product development and update at regular intervals as the individual product clinical program progresses through IND stages into the BLA and even postapproval stages. We recommend that the document be arranged into distinct sections to be populated with stage-appropriate information as it becomes available, including (1) Immunogenicity Risk Assessment, (2) Tiered Bioanalytical Strategy and Assay Validation Summaries, (3) Clinical Study Design and Detailed Immunogenicity Sampling Plans, (4) Clinical Immunogenicity Data Analysis, and (5) Conclusions and Risk Evaluation and Mitigation Strategies (REMS). For the BLA file, we recommend that the applicant provide brief summaries of the immunogenicity results in relevant places in eCTD section 2.7 Clinical Summary and the full report in section 5.3.5.3 Reports of Analysis of Data from More than One Study.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.8",
+        "pdf_page_index_zero_based": 31,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "28",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.app.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.app",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "The multi-tiered approach to anti-drug antibody testing comprises: Tier 1 Screening Assay to detect antibody responses with approximately 5% false-positive rate; Tier 2 Confirmatory Assay with competing unlabeled therapeutic protein to confirm specific binding with 1% false-positive rate; Tier 3 Titration Assay to characterize antibody level and magnitude of response; and Tier 4 Neutralization Bioassay (cell-based or non-cell-based) to determine neutralizing capacity of confirmed ADA against the therapeutic protein product.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.app",
+        "pdf_page_index_zero_based": 36,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "33",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "fda_ada.su.4_a_1.001",
       "section_id": "fda_ada.sec.4_a_1",
       "unit_type": "heading",
@@ -1333,6 +1503,28 @@
         "pdf_page_index_zero_based": 18,
         "pdf_page_index_status": "known",
         "printed_page_label": "15",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.7_a.002",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.7_a",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "Obtaining samples at a time when there will be minimal interference from the therapeutic protein product present in the matrix is essential. A sponsor should consider the therapeutic protein product's half-life and dosing regimen to help determine appropriate times for sampling. If therapeutic protein product-free samples cannot be obtained during the treatment phase of the trial, the sponsor should take additional measures to ensure that the assay is sensitive in the presence of expected onboard drug; and samples should be obtained after an appropriate washout period, generally five half-lives. Obtaining samples to test for meaningful antibody response can also be complicated if the therapeutic protein product in question is itself an immune suppressant. In such instances, the sampling schedule should be adjusted in accordance with the immunosuppressant regimen, to the extent possible. Samples to determine serum concentrations of the therapeutic protein product should be obtained at the same time as immunogenicity samples.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.7_a",
+        "pdf_page_index_zero_based": 30,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "27",
         "printed_page_label_status": "known",
         "extraction_method": "automated text extraction with manual verification"
       },
@@ -6867,6 +7059,552 @@
       "object": "a 0.1% false-positive rate",
       "normalized_ko": null,
       "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.001",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "recommends",
+      "subject": "The sponsor",
+      "action": "should obtain",
+      "object": "pre-treatment samples from all subjects",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.002",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.001"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "essential",
+      "subject": "understanding the degree of reactivity before treatment",
+      "action": "is essential",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.003",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "the timing",
+      "action": "depends on",
+      "object": "the frequency of dosing",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.004",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "understanding the degree of reactivity before treatment",
+      "action": "is",
+      "object": "essential",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.005",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Samples taken at 3 to 6 weeks after the first exposure",
+      "action": "are generally optimal for determining",
+      "object": "IgG responses",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.006",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.002"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "essential",
+      "subject": "Obtaining samples",
+      "action": "is essential",
+      "object": "at a time when there will be minimal interference from the therapeutic protein product present in the matrix",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.007",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "A sponsor",
+      "action": "should consider",
+      "object": "the therapeutic protein product's half-life",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.008",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "samples taken 7 to 14 days after the first exposure",
+      "action": "can help elucidate",
+      "object": "an early IgM response",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.009",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "these time frames",
+      "action": "may be",
+      "object": "adequate",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.010",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "IgA responses",
+      "action": "may peak earlier than",
+      "object": "IgG responses",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.011",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Obtaining samples at a time when there will be minimal interference from the therapeutic protein product present in the matrix",
+      "action": "is",
+      "object": "essential",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.012",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Obtaining samples to test for meaningful antibody response",
+      "action": "can be complicated",
+      "object": "if the therapeutic protein product in question is itself an immune suppressant",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.013",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "essential",
+      "subject": null,
+      "action": "is essential",
+      "object": "understanding the degree of reactivity before treatment",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.014",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "Optimally",
+      "subject": "Samples taken 7 to 14 days after the first exposure",
+      "action": "can help elucidate",
+      "object": "an early IgM response",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.015",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "generally optimal",
+      "subject": "Samples taken at 3 to 6 weeks after the first exposure",
+      "action": "are generally optimal for determining",
+      "object": "IgG responses",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.016",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "essential",
+      "subject": null,
+      "action": "is essential",
+      "object": "obtaining samples at a time when there will be minimal interference from the therapeutic protein product present in the matrix",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_A.017",
+      "source_unit_ids": [
+        "fda_ada.su.7_a.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Obtaining samples to test for meaningful antibody response",
+      "action": "can be complicated",
+      "object": "if the therapeutic protein product in question is itself an immune suppressant",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_B.001",
+      "source_unit_ids": [
+        "fda_ada.su.7_b.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Positive control and quality control (QC) samples",
+      "action": "are",
+      "object": "critical",
+      "normalized_ko": "Positive and QC samples are critical.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_B.002",
+      "source_unit_ids": [
+        "fda_ada.su.7_b.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The sponsor",
+      "action": "ensures",
+      "object": "that the assay is performing as expected",
+      "normalized_ko": "The sponsor ensures that the assay performs as expected.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_B.003",
+      "source_unit_ids": [
+        "fda_ada.su.7_b.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Positive control and quality control (QC) samples",
+      "action": "should be run concurrently with",
+      "object": "subject samples",
+      "normalized_ko": "Positive and QC samples should be run concurrently with subject samples.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_B.004",
+      "source_unit_ids": [
+        "fda_ada.su.7_b.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "QC samples",
+      "action": "should be diluted in",
+      "object": "the matrix in which subject samples will be examined",
+      "normalized_ko": "QC samples should be diluted in the matrix used for subject samples.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_B.005",
+      "source_unit_ids": [
+        "fda_ada.su.7_b.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The concentration of high-positive QC samples",
+      "action": "should be set to monitor",
+      "object": "prozone effects",
+      "normalized_ko": "The high-positive QC concentration should be set to monitor prozone effects.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_B.006",
+      "source_unit_ids": [
+        "fda_ada.su.7_b.001"
+      ],
+      "record_type": "example",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "QC sample",
+      "action": "should be diluted in",
+      "object": "the same anticoagulant as the subject samples",
+      "normalized_ko": "A QC sample should be diluted in the same anticoagulant as subject samples.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_B.007",
+      "source_unit_ids": [
+        "fda_ada.su.7_b.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "QC sample dilution",
+      "action": "includes",
+      "object": "the QC sample should be diluted in the same anticoagulant as the subject samples",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_C.001",
+      "source_unit_ids": [
+        "fda_ada.su.7_c.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Samples from different populations",
+      "action": "can have",
+      "object": "different background activity in ADA assays",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_C.002",
+      "source_unit_ids": [
+        "fda_ada.su.7_c.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "the background activity",
+      "action": "change",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_C.003",
+      "source_unit_ids": [
+        "fda_ada.su.7_c.001"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "necessary",
+      "subject": "the cut-point determined during assay validation",
+      "action": "is necessary to confirm as suitable for",
+      "object": "the population being studied",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_C.004",
+      "source_unit_ids": [
+        "fda_ada.su.7_c.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "A sufficient number of samples from the target population",
+      "action": "should be used",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_C.005",
+      "source_unit_ids": [
+        "fda_ada.su.7_c.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "justification for the number used",
+      "action": "be provided",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VII_C.006",
+      "source_unit_ids": [
+        "fda_ada.su.7_c.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Samples from different populations",
+      "action": "can have",
+      "object": "different background activity in ADA assays",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VIII.001",
+      "source_unit_ids": [
+        "fda_ada.su.8.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "recommend",
+      "subject": "Sponsors",
+      "action": "should use",
+      "object": "a life-cycle management approach to immunogenicity through the creation of an integrated immunogenicity summary report",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VIII.002",
+      "source_unit_ids": [
+        "fda_ada.su.8.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Distinct sections",
+      "action": "includes",
+      "object": "(1) Immunogenicity Risk Assessment",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.VIII.003",
+      "source_unit_ids": [
+        "fda_ada.su.8.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The distinct sections",
+      "action": "include",
+      "object": "Immunogenicity Risk Assessment",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.APPENDIX.001",
+      "source_unit_ids": [
+        "fda_ada.su.app.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The multi-tiered approach to anti-drug antibody testing",
+      "action": "comprises",
+      "object": "Tier 1 Screening Assay; Tier 2 Confirmatory Assay; Tier 3 Titration Assay; and Tier 4 Neutralization Bioassay",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.APPENDIX.002",
+      "source_unit_ids": [
+        "fda_ada.su.app.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Tier 1 Screening Assay",
+      "action": "detect",
+      "object": "antibody responses",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.APPENDIX.003",
+      "source_unit_ids": [
+        "fda_ada.su.app.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Tier 2 Confirmatory Assay",
+      "action": "confirm",
+      "object": "specific binding",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.APPENDIX.004",
+      "source_unit_ids": [
+        "fda_ada.su.app.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Tier 3 Titration Assay",
+      "action": "characterize",
+      "object": "antibody level and magnitude of response",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.APPENDIX.005",
+      "source_unit_ids": [
+        "fda_ada.su.app.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Tier 4 Neutralization Bioassay",
+      "action": "determine",
+      "object": "neutralizing capacity of confirmed ADA against the therapeutic protein product",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.APPENDIX.006",
+      "source_unit_ids": [
+        "fda_ada.su.app.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Tier 4 Neutralization Bioassay",
+      "action": "may be",
+      "object": "cell-based or non-cell-based",
+      "normalized_ko": null,
+      "review_status": "reviewed"
     }
   ],
   "quantitative_criteria": [
@@ -7997,6 +8735,299 @@
       "is_default_with_exception": false,
       "is_illustrative_example": false,
       "source_text": "using a 5% false-positive rate",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_A.001",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "knowledge_record_id": null,
+      "parameter": "time after first exposure for early IgM response samples",
+      "comparator": "within",
+      "value": null,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "needs_review",
+      "denominator_or_reference": "after the first exposure",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VII_A.007"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "7 to 14 days after the first exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_A.002",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "knowledge_record_id": null,
+      "parameter": "time after first exposure for determining IgG responses",
+      "comparator": "within",
+      "value": null,
+      "value_fraction": null,
+      "unit": "weeks",
+      "value_status": "needs_review",
+      "denominator_or_reference": "after the first exposure",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VII_A.006"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "3 to 6 weeks after the first exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_A.003",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "knowledge_record_id": null,
+      "parameter": "time after last exposure for sample collection",
+      "comparator": "equals",
+      "value": 30,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": "after the last exposure",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VII_A.009"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "approximately 30 days after the last exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_A.004",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "knowledge_record_id": null,
+      "parameter": "time after last exposure for sample collection",
+      "comparator": "equals",
+      "value": 5,
+      "value_fraction": null,
+      "unit": "half-lives",
+      "value_status": "known",
+      "denominator_or_reference": "after last exposure",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VII_A.008"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "approximately five half-lives after last exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_A.005",
+      "source_unit_id": "fda_ada.su.7_a.002",
+      "knowledge_record_id": null,
+      "parameter": "washout period before samples are obtained",
+      "comparator": "equals",
+      "value": 5,
+      "value_fraction": null,
+      "unit": "half-lives",
+      "value_status": "known",
+      "denominator_or_reference": "appropriate washout period",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VII_A.011"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "generally five half-lives",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_A.006",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "knowledge_record_id": null,
+      "parameter": "time after first exposure for samples that can help elucidate an early IgM response",
+      "comparator": "at_least",
+      "value": 7,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": "after the first exposure",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VII_A.002",
+        "fda_ada.qc.VII_A.010"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "samples taken 7 to 14 days after the first exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_A.007",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "knowledge_record_id": null,
+      "parameter": "time after first exposure for samples that can help elucidate an early IgM response",
+      "comparator": "not_exceed",
+      "value": 14,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": "after the first exposure",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VII_A.001"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "samples taken 7 to 14 days after the first exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_A.008",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "knowledge_record_id": null,
+      "parameter": "time after first exposure for samples generally optimal for determining IgG responses",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "weeks",
+      "value_status": "known",
+      "denominator_or_reference": "after the first exposure",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VII_A.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "Samples taken at 3 to 6 weeks after the first exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_A.009",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "knowledge_record_id": null,
+      "parameter": "time after first exposure for samples generally optimal for determining IgG responses",
+      "comparator": "not_exceed",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "weeks",
+      "value_status": "known",
+      "denominator_or_reference": "after the first exposure",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VII_A.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "Samples taken at 3 to 6 weeks after the first exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_A.010",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "knowledge_record_id": null,
+      "parameter": "time after antigen exposure when IgA responses may peak",
+      "comparator": "at_least",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "weeks",
+      "value_status": "known",
+      "denominator_or_reference": "after antigen exposure",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VII_A.006"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at around 2 to 3 weeks after antigen exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_A.011",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "knowledge_record_id": null,
+      "parameter": "time after antigen exposure when IgA responses may peak",
+      "comparator": "not_exceed",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "weeks",
+      "value_status": "known",
+      "denominator_or_reference": "after antigen exposure",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada.qc.VII_A.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at around 2 to 3 weeks after antigen exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_A.012",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "knowledge_record_id": null,
+      "parameter": "Timing of sample collection after last exposure",
+      "comparator": "within",
+      "value": 30,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": "after the last exposure",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "approximately 30 days after the last exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_A.013",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "knowledge_record_id": null,
+      "parameter": "Timing of sample collection after last exposure",
+      "comparator": "within",
+      "value": 5,
+      "value_fraction": null,
+      "unit": "half-lives",
+      "value_status": "known",
+      "denominator_or_reference": "after last exposure",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "approximately five half-lives after last exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_B.001",
+      "source_unit_id": "fda_ada.su.7_b.001",
+      "knowledge_record_id": null,
+      "parameter": "assay-run rejection frequency",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "% of assay runs",
+      "value_status": "known",
+      "denominator_or_reference": "assay runs",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "would lead to the rejection of an assay run 1% of the time",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada.qc.VII_B.002",
+      "source_unit_id": "fda_ada.su.7_b.001",
+      "knowledge_record_id": null,
+      "parameter": "assay run rejection rate upon statistical analysis for the low-positive QC sample concentration",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "% of the time",
+      "value_status": "known",
+      "denominator_or_reference": "assay runs",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "lead to the rejection of an assay run 1% of the time",
       "review_status": "reviewed"
     }
   ],
@@ -9745,6 +10776,247 @@
       "condition_type": "scope",
       "applies_to_ids": [
         "fda_ada.kr.VI_D.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_A.001",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "condition_text": "For individuals receiving a single dose of a therapeutic protein product",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_A.002",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "condition_text": "for subjects receiving a therapeutic protein product at multiple times during the trial",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_A.005",
+        "fda_ada.kr.VII_A.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_A.003",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "condition_text": "For products with long half-lives",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_A.007"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_A.004",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "condition_text": "When there is a high risk of serious consequences from ADAs",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_A.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_A.005",
+      "source_unit_id": "fda_ada.su.7_a.002",
+      "condition_text": "If therapeutic protein product-free samples cannot be obtained during the treatment phase of the trial",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_A.012",
+        "fda_ada.kr.VII_A.013"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_A.006",
+      "source_unit_id": "fda_ada.su.7_a.002",
+      "condition_text": "if the therapeutic protein product in question is itself an immune suppressant",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_A.014"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_A.007",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "condition_text": "When there is a high risk of serious consequences from ADAs",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_A.011"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_A.008",
+      "source_unit_id": "fda_ada.su.7_a.002",
+      "condition_text": "if the therapeutic protein product in question is itself an immune suppressant",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_A.016",
+        "fda_ada.kr.VII_A.017"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_A.009",
+      "source_unit_id": "fda_ada.su.7_a.002",
+      "condition_text": "In such instances",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_A.017"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_A.010",
+      "source_unit_id": "fda_ada.su.7_a.002",
+      "condition_text": "to the extent possible",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_A.017"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_A.011",
+      "source_unit_id": "fda_ada.su.7_a.001",
+      "condition_text": "with the timing depending on the frequency of dosing",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_A.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_B.001",
+      "source_unit_id": "fda_ada.su.7_b.001",
+      "condition_text": "For the low-positive QC sample",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_B.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_B.002",
+      "source_unit_id": "fda_ada.su.7_b.001",
+      "condition_text": "upon statistical analysis",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_B.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_B.003",
+      "source_unit_id": "fda_ada.su.7_b.001",
+      "condition_text": "If the assay is subject to a prozone effect",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_B.004",
+      "source_unit_id": "fda_ada.su.7_b.001",
+      "condition_text": "in which subject samples will be examined",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_B.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_B.005",
+      "source_unit_id": "fda_ada.su.7_b.001",
+      "condition_text": "If the assay is subject to a prozone effect",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_C.001",
+      "source_unit_id": "fda_ada.su.7_c.001",
+      "condition_text": "when samples used to determine the cut-point during assay validation were not obtained and handled in a manner that represents how samples will be obtained and handled in-study",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_C.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_C.002",
+      "source_unit_id": "fda_ada.su.7_c.001",
+      "condition_text": "If sufficient numbers of samples are not available",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_C.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VII_C.003",
+      "source_unit_id": "fda_ada.su.7_c.001",
+      "condition_text": "when samples used to determine the cut-point during assay validation were not obtained and handled in a manner that represents how samples will be obtained and handled in-study",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.VII_C.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VIII.001",
+      "source_unit_id": "fda_ada.su.8.001",
+      "condition_text": "as the individual product clinical program progresses through IND stages into the BLA and even postapproval stages",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.VIII.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VIII.002",
+      "source_unit_id": "fda_ada.su.8.001",
+      "condition_text": "as it becomes available",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VIII.003",
+      "source_unit_id": "fda_ada.su.8.001",
+      "condition_text": "For the BLA file",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VIII.004",
+      "source_unit_id": "fda_ada.su.8.001",
+      "condition_text": "early in therapeutic protein product development",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.VIII.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.VIII.005",
+      "source_unit_id": "fda_ada.su.8.001",
+      "condition_text": "with stage-appropriate information as it becomes available",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.APPENDIX.001",
+      "source_unit_id": "fda_ada.su.app.001",
+      "condition_text": "confirmed ADA",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.APPENDIX.005"
       ],
       "review_status": "reviewed"
     }

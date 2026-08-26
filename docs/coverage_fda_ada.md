@@ -40,15 +40,15 @@
 | **VI.C** | Validation of Confirmatory Assay | p. 24 | `COMPLETED` | **확인 컷포인트 (1% FPR, % 억제율 기준)** (17 KR, 7 QC, 8 Cond) |
 | **VI.D** | Validation of Titration Assay | p. 25 | `COMPLETED` | **역가 컷포인트 밸리데이션 (스크리닝 겸용 시 5% FPR, 역가 전용 시 0.1% FPR)** (4 KR, 2 QC, 10 Cond) |
 | **VI.E** | Validation of Neutralization Assay | p. 25 | `COMPLETED` | **중화 밸리데이션 (최소 30명 3일 2인, 1% FPR, 특이성)** (8 KR, 4 QC, 4 Cond) |
-| **VII.A-C**| Implementation of Assay Testing | p. 26-28 | `BACKLOG` | 임상 검체 채취 시점, 동시 QC 관리, 타겟 환자군 컷포인트 재확인 |
-| **VIII** | Documentation | p. 28 | `BACKLOG` | 밸리데이션 보고서 및 임상시험계획서 기재 요건 |
-| **APP** | Appendix: Multi-tiered approach diagram | p. 33 | `BACKLOG` | Multi-tiered 시험 흐름도 |
+| **VII.A-C**| Implementation of Assay Testing | p. 26-28 | `COMPLETED` | **임상 검체 채취 시점(기저/IgM 7~14일/IgG 3~6주/투약종료 후 30일 또는 5반감기), 동시 QC(1% 기각률 저농도 QC/Hook효과 고농도 QC), 타겟 환자군 컷포인트 재확인** (30 KR, 12 QC, 19 Cond) |
+| **VIII** | Documentation | p. 28-32 | `COMPLETED` | **통합 면역원성 요약 보고서(Integrated Summary of Immunogenicity) eCTD 2.7 및 5.3.5.3 기재 요건 (위험평가/분석전략/임상설계/데이터분석/REMS)** (3 KR, 5 Cond) |
+| **APP** | Appendix: Multi-tiered approach diagram | p. 33 | `COMPLETED` | **Multi-tiered 4단계 시험 체계 흐름도 종합 구조화 (Screening ➔ Confirmatory ➔ Titration ➔ Neutralization)** (6 KR, 1 Cond) |
 
 ---
 
 ## Summary Statistics
 * **전체 섹션 수**: 33개
-* **적재 완료 섹션 수 (Completed)**: **30개 섹션** (전체 가이던스의 91% 완료, Section IV, V, VI 100% 완결)
-* **총 구조화 데이터 규모 (FDA ADA)**: **354 KnowledgeRecords, 57 QuantitativeCriteria, 177 Conditions** (총 588개 엔티티, 100% `reviewed`)
-* **아카이브 전체 엔티티 규모**: **1,239개 엔티티** (ICH M10 62 + ICH S6 98 + EMA FIH 491 + FDA ADA 588)
-* **잔여 백로그 (Backlog)**: 3개 섹션 (Section VII 임상 검체 채취/QC 관리, Section VIII 밸리데이션 보고서/문서화, Appendix 다이어그램)
+* **적재 완료 섹션 수 (Completed)**: **33개 섹션 전수 적재 완료 (100% COMPLETED)**
+* **총 구조화 데이터 규모 (FDA ADA)**: **393 KnowledgeRecords, 72 QuantitativeCriteria, 202 Conditions** (총 667개 엔티티, 100% `reviewed`)
+* **아카이브 전체 엔티티 규모**: **1,318개 엔티티** (ICH M10 62 + ICH S6 98 + EMA FIH 491 + FDA ADA 667)
+* **잔여 백로그 (Backlog)**: **0개 (FDA ADA 2019 가이던스 전 대단원/소단원 100% 완결)**

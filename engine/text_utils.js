@@ -64,6 +64,9 @@ const REGULATORY_SYNONYMS = {
   "투여기간": ["duration"],
   "반복수": ["replicates"],
   "반복": ["replicates"],
+  "몇개": ["replicates"],
+  "개수": ["replicates"],
+  "수량": ["replicates"],
   "회수율": ["recovery"],
   "안정성": ["stability"],
   "농도": ["concentration"],
@@ -110,7 +113,8 @@ const REGULATORY_SYNONYMS = {
 
 function tokenize(text) {
   if (!text) return [];
-  const rawMatches = String(text).match(/[a-z0-9%._-]+|[\uAC00-\uD7A3]+/gi) || [];
+  const normalizedText = String(text).replace(/몇\s*개/g, "몇개");
+  const rawMatches = normalizedText.match(/[a-z0-9%._-]+|[\uAC00-\uD7A3]+/gi) || [];
   const tokens = [];
 
   for (const raw of rawMatches) {
