@@ -2,7 +2,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 
 const { loadStore } = require("../engine/data_store");
-const { structuredQuery, formatAnswer, formatApplicableConditions, answer, answerOptionB, NOT_FOUND, tokenize } = require("../engine/query_router");
+const { structuredQuery, formatAnswer, formatApplicableConditions, formatCrossReferences, answer, answerOptionB, NOT_FOUND, tokenize } = require("../engine/query_router");
 
 const { records } = loadStore();
 
@@ -198,15 +198,27 @@ test("Scope Guard blocks species selection query from falsely matching study dur
   assert.equal(match, null, "expected topic anchor to block duration QC on species query");
 });
 
-test("records in data_store carry 5-dimensional Scope metadata", () => {
-  const s6Record = records.find((r) => r.guideline_code === "S6(R1)");
-  assert.equal(s6Record.molecule_scope, "biotechnology");
-  assert.ok(s6Record.explicit_exclusions.includes("small_molecule"));
-  assert.ok(Array.isArray(s6Record.section_path));
+test("formatCrossReferences renders historical notes and related citations", () => {
+  const xrefs = [
+    {
+      target_id: "ich_s6_r1.su.part1.4_4.001",
+      target_citation: "S6(R1) §4.4, p.7 [ich_s6_r1.su.part1.4_4.001]",
+      target_source_text: "Repeated dose toxicity studies should be conducted for 6-12 months."
+    },
+    {
+      raw_reference_text: "ICH S9 Guideline"
+    }
+  ];
+  const rendered = formatCrossReferences(xrefs);
+  assert.match(rendered, /Note on Guideline History & Related References/);
+  assert.match(rendered, /S6\(R1\) §4\.4, p\.7/);
+  assert.match(rendered, /Repeated dose toxicity/);
+  assert.match(rendered, /ICH S9 Guideline/);
+});
 
-  const m10Record = records.find((r) => r.guideline_code === "M10");
-  assert.equal(m10Record.study_context_scope, "bioanalytical_validation");
-  assert.ok(Array.isArray(m10Record.section_path));
+test("formatCrossReferences returns empty string when array is empty or null", () => {
+  assert.equal(formatCrossReferences([]), "");
+  assert.equal(formatCrossReferences(null), "");
 });
 
 

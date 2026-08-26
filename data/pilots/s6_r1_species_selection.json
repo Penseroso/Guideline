@@ -4339,21 +4339,21 @@
       "xref_id": "ich_s6_r1.xref.part1.3_3.001",
       "source_unit_id": "ich_s6_r1.su.part1.3_3.006",
       "raw_reference_text": "(Note 1)",
-      "target_type": "unknown",
-      "target_document_label": null,
-      "target_id": null,
-      "resolution_status": "needs_review",
-      "review_status": "needs_review"
+      "target_type": "section",
+      "target_document_label": "ICH S6(R1)",
+      "target_id": "ich_s6_r1.su.part1.notes.note1.001",
+      "resolution_status": "resolved",
+      "review_status": "reviewed"
     },
     {
       "xref_id": "ich_s6_r1.xref.part2.2_1.001",
       "source_unit_id": "ich_s6_r1.su.part2.2_1.005",
       "raw_reference_text": "(see Note 1)",
-      "target_type": "unknown",
-      "target_document_label": null,
-      "target_id": null,
-      "resolution_status": "needs_review",
-      "review_status": "needs_review"
+      "target_type": "section",
+      "target_document_label": "ICH S6(R1)",
+      "target_id": "ich_s6_r1.su.part2.notes.note1.001",
+      "resolution_status": "resolved",
+      "review_status": "reviewed"
     },
     {
       "xref_id": "ich_s6_r1.xref.part2.2_1.002",
@@ -4389,11 +4389,11 @@
       "xref_id": "ich_s6_r1.xref.part2.2_1.005",
       "source_unit_id": "ich_s6_r1.su.part2.2_1.008",
       "raw_reference_text": "see Note 2",
-      "target_type": "unknown",
-      "target_document_label": null,
-      "target_id": null,
-      "resolution_status": "needs_review",
-      "review_status": "needs_review"
+      "target_type": "section",
+      "target_document_label": "ICH S6(R1)",
+      "target_id": "ich_s6_r1.su.part2.notes.note2.001",
+      "resolution_status": "resolved",
+      "review_status": "reviewed"
     },
     {
       "xref_id": "ich_s6_r1.xref.part2.notes.001",

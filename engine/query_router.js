@@ -244,6 +244,25 @@ function formatApplicableConditions(conditions) {
   return `\nApplicable conditions:\n${lines.join("\n")}`;
 }
 
+function formatCrossReferences(crossReferences) {
+  if (!crossReferences || crossReferences.length === 0) return "";
+  const lines = [];
+  const seen = new Set();
+  for (const x of crossReferences) {
+    const key = x.target_id || x.raw_reference_text;
+    if (seen.has(key)) continue;
+    seen.add(key);
+
+    if (x.target_citation && x.target_source_text) {
+      lines.push(`  • [관련/개정 조항] ${x.target_citation}: "${x.target_source_text}"`);
+    } else if (x.raw_reference_text) {
+      lines.push(`  • [참조 조항] "${x.raw_reference_text}"`);
+    }
+  }
+  if (lines.length === 0) return "";
+  return `\n\n📎 규제 개정 및 관련 조항 참고 (Note on Guideline History & Related References):\n${lines.join("\n")}`;
+}
+
 function formatCompositeAnswer(records) {
   const primary = records[0];
   const citation = primary.citations[0];
@@ -252,7 +271,8 @@ function formatCompositeAnswer(records) {
   const lines = records.map((r) => `• ${formatSingleCriterion(r)}`);
   const allConditions = records.flatMap((r) => r.applicable_conditions || []);
   const uniqueConditions = [...new Map(allConditions.map((c) => [c.condition_text, c])).values()];
-  return `Criteria for ${primary.parameter}:\n${lines.join("\n")}\nSource: "${primary.source_text}" — ${cite}${formatApplicableConditions(uniqueConditions)}`;
+  const allXrefs = records.flatMap((r) => r.cross_references || []);
+  return `Criteria for ${primary.parameter}:\n${lines.join("\n")}\nSource: "${primary.source_text}" — ${cite}${formatApplicableConditions(uniqueConditions)}${formatCrossReferences(allXrefs)}`;
 }
 
 function formatAnswer(match) {
@@ -266,16 +286,17 @@ function formatAnswer(match) {
 
   const citation = record.citations ? record.citations[0] : null;
   const cite = formatCitation(citation);
+  const xrefBlock = formatCrossReferences(record.cross_references);
 
   if (record.type === "quantitative_criterion") {
-    return `${formatSingleCriterion(record)}\nSource: "${record.source_text}" — ${cite}${formatApplicableConditions(record.applicable_conditions)}`;
+    return `${formatSingleCriterion(record)}\nSource: "${record.source_text}" — ${cite}${formatApplicableConditions(record.applicable_conditions)}${xrefBlock}`;
   }
 
   if (record.type === "condition") {
-    return `Condition (${record.condition_type}): "${record.source_text}" — ${cite}`;
+    return `Condition (${record.condition_type}): "${record.source_text}" — ${cite}${xrefBlock}`;
   }
 
-  return `"${record.source_text}" — ${cite}${formatApplicableConditions(record.applicable_conditions)}`;
+  return `"${record.source_text}" — ${cite}${formatApplicableConditions(record.applicable_conditions)}${xrefBlock}`;
 }
 
 const NOT_FOUND = "Not found in the current archive.";
@@ -347,10 +368,12 @@ async function answerOptionB(question, records, { client, store }) {
     };
   }
 
+  const allCandidateXrefs = candidates.flatMap((c) => c.record.cross_references || []);
+  const xrefBlock = formatCrossReferences(allCandidateXrefs);
   const citations = candidates.map((c) => formatCitation(c.record.citations[0])).join("; ");
   return {
     answered: true,
-    text: `${generatedText}\nSources: ${citations}`,
+    text: `${generatedText}\nSources: ${citations}${xrefBlock}`,
     record: null,
     candidates: candidates.map((c) => c.record),
     path: "B",
@@ -407,6 +430,7 @@ module.exports = {
   structuredQuery,
   formatCitation,
   formatApplicableConditions,
+  formatCrossReferences,
   formatAnswer,
   answer,
   answerOptionB,

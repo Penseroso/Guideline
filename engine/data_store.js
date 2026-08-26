@@ -43,8 +43,53 @@ function buildIndex(bundles) {
   }
 
   const conditionsByTarget = buildConditionsByTarget(conditions);
+  const crossReferencesBySourceUnit = buildCrossReferencesBySourceUnit(crossReferences);
 
-  return { documents, sections, sourceUnits, knowledgeRecords, quantitativeCriteria, conditions, crossReferences, conditionsByTarget };
+  return { documents, sections, sourceUnits, knowledgeRecords, quantitativeCriteria, conditions, crossReferences, conditionsByTarget, crossReferencesBySourceUnit };
+}
+
+function buildCrossReferencesBySourceUnit(crossReferences) {
+  const bySu = new Map();
+  for (const x of crossReferences.values()) {
+    if (!bySu.has(x.source_unit_id)) bySu.set(x.source_unit_id, []);
+    bySu.get(x.source_unit_id).push(x);
+  }
+  return bySu;
+}
+
+function resolveCrossReferences(index, sourceUnitIds) {
+  const xrefs = [];
+  const seen = new Set();
+  for (const suId of sourceUnitIds || []) {
+    const list = index.crossReferencesBySourceUnit.get(suId) || [];
+    for (const x of list) {
+      if (seen.has(x.xref_id)) continue;
+      seen.add(x.xref_id);
+      let targetCitation = null;
+      let targetText = null;
+      if (x.target_id) {
+        const targetSu = index.sourceUnits.get(x.target_id);
+        if (targetSu) {
+          const targetSec = index.sections.get(targetSu.section_id);
+          const targetDoc = index.documents.get(targetSu.document_id);
+          const page = targetSu.trace && targetSu.trace.printed_page_label ? `p.${targetSu.trace.printed_page_label}` : `pdf page ${targetSu.trace?.pdf_page_index_zero_based ?? '?'}`;
+          targetCitation = `${targetDoc?.guideline_code || targetDoc?.document_id || 'Guideline'} §${targetSec?.section_number || '?'}, ${page} [${targetSu.source_unit_id}]`;
+          targetText = targetSu.source_text;
+        }
+      }
+      xrefs.push({
+        xref_id: x.xref_id,
+        source_unit_id: x.source_unit_id,
+        raw_reference_text: x.raw_reference_text,
+        target_type: x.target_type,
+        target_id: x.target_id,
+        resolution_status: x.resolution_status,
+        target_citation: targetCitation,
+        target_source_text: targetText
+      });
+    }
+  }
+  return xrefs;
 }
 
 /**
@@ -211,6 +256,7 @@ function answerableRecords(index) {
       source_unit_ids: kr.source_unit_ids,
       source_text: sourceTextFor(index, kr.source_unit_ids),
       citations,
+      cross_references: resolveCrossReferences(index, kr.source_unit_ids),
       document_id: documentId,
       guideline_code: citations[0] ? citations[0].guideline_code : null,
       section_id: sectionId,
@@ -247,6 +293,7 @@ function answerableRecords(index) {
       source_unit_ids: [qc.source_unit_id],
       source_text: qc.source_text,
       citations: citation ? [citation] : [],
+      cross_references: resolveCrossReferences(index, [qc.source_unit_id]),
       document_id: documentId,
       guideline_code: citation ? citation.guideline_code : null,
       section_id: sectionId,
@@ -272,6 +319,7 @@ function answerableRecords(index) {
       source_unit_ids: [c.source_unit_id],
       source_text: c.condition_text,
       citations: citation ? [citation] : [],
+      cross_references: resolveCrossReferences(index, [c.source_unit_id]),
       document_id: documentId,
       guideline_code: citation ? citation.guideline_code : null,
       section_id: sectionId,
