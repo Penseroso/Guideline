@@ -1775,7 +1775,7 @@
       "subject": "Special attention",
       "action": "be given to",
       "object": "the estimation of the exposure anticipated to be reached at the initial dose to be used in humans and to subsequent dose escalations to a predefined maximum expected exposure",
-      "normalized_ko": null,
+      "normalized_ko": "인체에 사용할 초기 용량에서 도달할 것으로 예상되는 노출 및 이후의 용량 증량 시 사전 정의된 최대 예상 노출의 추정치에 주의를 기울여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1789,7 +1789,7 @@
       "subject": "The expected exposure in humans at a dose to be given",
       "action": "is considered more relevant than",
       "object": "the relative dose levels between animals and humans",
-      "normalized_ko": null,
+      "normalized_ko": "동물과 사람 간의 상대적 용량 수준보다 더 관련성이 높은 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -1803,7 +1803,7 @@
       "subject": "Careful dosing selection of an IMP",
       "action": "is",
       "object": "a vital element to safeguard the subjects participating in FIH and early CTs",
-      "normalized_ko": null,
+      "normalized_ko": "FIH 및 초기 CT에 참여하는 시험대상자를 보호하기 위한 필수 요소이다.",
       "review_status": "reviewed"
     },
     {
@@ -1817,7 +1817,7 @@
       "subject": "All available non-clinical information",
       "action": "be taken into consideration for",
       "object": "the calculation of the starting dose, dose escalation steps and maximum exposure",
-      "normalized_ko": null,
+      "normalized_ko": "시작 용량, 용량 증량 단계 및 최대 노출의 계산을 위해 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1831,7 +1831,7 @@
       "subject": "clinical data emerging during the trial from previous dosed cohorts/individuals",
       "action": "be taken into account",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려할 필요가 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1845,7 +1845,7 @@
       "subject": "Experience, both non-clinical and clinical, with molecules having a similar mode of action",
       "action": "be useful",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "유용할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1859,7 +1859,7 @@
       "subject": "Experience, both non-clinical and clinical, with molecules having a similar mode of action",
       "action": "be",
       "object": "useful",
-      "normalized_ko": null,
+      "normalized_ko": "유용할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1873,7 +1873,7 @@
       "subject": "The starting dose and a maximum exposure, as well as dose escalation steps",
       "action": "be justified and outlined in",
       "object": "the protocol",
-      "normalized_ko": null,
+      "normalized_ko": "프로토콜에서 정당화되고 개요가 제시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1887,7 +1887,7 @@
       "subject": "Decision-making criteria for adapting the planned dose escalation steps",
       "action": "be described in detail",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "상세히 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1901,7 +1901,7 @@
       "subject": "Deviations from the pre-specified dose escalation and decision-making criteria",
       "action": "warrant the submission of",
       "object": "(a) substantial amendment(s)",
-      "normalized_ko": null,
+      "normalized_ko": "실질적 변경의 제출을 정당화한다.",
       "review_status": "reviewed"
     },
     {
@@ -1915,7 +1915,7 @@
       "subject": "Substantial amendments",
       "action": "be needed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -1929,7 +1929,7 @@
       "subject": "The methods used and calculations on how doses and estimated exposure levels were determined, including methods for modelling",
       "action": "be included in",
       "object": "the protocol",
-      "normalized_ko": null,
+      "normalized_ko": "프로토콜에 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1943,7 +1943,7 @@
       "subject": "The methods used and calculations on how doses and estimated exposure levels were determined, including methods for modelling",
       "action": "be summarised in",
       "object": "the IB",
-      "normalized_ko": null,
+      "normalized_ko": "IB에 요약될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1957,7 +1957,7 @@
       "subject": "starting and maximum doses (exposures) for Exploratory Clinical Trials",
       "action": "reference is made to",
       "object": "the ICH M3(R2) guideline",
-      "normalized_ko": null,
+      "normalized_ko": "ICH M3(R2) 가이드라인을 참조한다.",
       "review_status": "reviewed"
     },
     {
@@ -1971,7 +1971,7 @@
       "subject": "any subsequent study using a non-microdose",
       "action": "be considered within the scope of",
       "object": "the present FIH/early CT guideline",
-      "normalized_ko": null,
+      "normalized_ko": "현행 FIH/초기 CT 가이드라인의 범위 내에서 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1985,7 +1985,7 @@
       "subject": "clinical data",
       "action": "be taken into account",
       "object": "for the calculation of the starting dose, dose escalation steps and maximum exposure",
-      "normalized_ko": null,
+      "normalized_ko": "시작 용량, 용량 증량 단계 및 최대 노출의 계산을 위해 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1999,7 +1999,7 @@
       "subject": "Substantial amendments",
       "action": "be needed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "필수이다.",
       "review_status": "reviewed"
     },
     {
@@ -2013,7 +2013,7 @@
       "subject": "starting and maximum doses (exposures) for Exploratory Clinical Trials",
       "action": "reference is made to",
       "object": "the ICH M3(R2) guideline",
-      "normalized_ko": null,
+      "normalized_ko": "ICH M3(R2) 가이드라인을 참조한다.",
       "review_status": "reviewed"
     },
     {
@@ -2027,7 +2027,7 @@
       "subject": "any subsequent study using a non-microdose",
       "action": "be considered within the scope of",
       "object": "the present FIH/early CT guideline",
-      "normalized_ko": null,
+      "normalized_ko": "현행 FIH/초기 CT 가이드라인의 범위 내에서 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2083,7 +2083,7 @@
       "subject": "Starting dose",
       "action": "for",
       "object": "healthy volunteers",
-      "normalized_ko": null,
+      "normalized_ko": "건강한 자원자를 대상으로",
       "review_status": "reviewed"
     },
     {
@@ -2097,7 +2097,7 @@
       "subject": "Section 7.2",
       "action": "addresses",
       "object": "Starting dose for healthy volunteers",
-      "normalized_ko": null,
+      "normalized_ko": "건강한 자원자에서의 시작 용량을 다룬다.",
       "review_status": "reviewed"
     },
     {
@@ -2111,7 +2111,7 @@
       "subject": "the no observed adverse effect level (NOAEL)",
       "action": "be determined",
       "object": "in the non-clinical safety studies performed",
-      "normalized_ko": null,
+      "normalized_ko": "수행된 비임상 안전성 시험에서 결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2125,7 +2125,7 @@
       "subject": "The exposures achieved at the NOAEL in the most relevant animal species used",
       "action": "be used",
       "object": "for estimation of an equivalent exposure for humans",
-      "normalized_ko": null,
+      "normalized_ko": "인체에서의 동등한 노출을 추정하기 위해 사용되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2139,7 +2139,7 @@
       "subject": "Estimation",
       "action": "be based on",
       "object": "state-of-the-art modelling (e.g. PK/PD and PBPK) and/or using allometric factors",
-      "normalized_ko": null,
+      "normalized_ko": "최신 모델링(예: PK/PD 및 PBPK) 및/또는 이종척도 계수의 사용에 기반해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2153,7 +2153,7 @@
       "subject": "The NOAEL",
       "action": "is",
       "object": "a generally accepted benchmark for safety when derived from appropriate animal studies",
-      "normalized_ko": null,
+      "normalized_ko": "적절한 동물시험으로부터 도출된 경우 안전성에 대해 일반적으로 인정되는 기준점이다.",
       "review_status": "reviewed"
     },
     {
@@ -2167,7 +2167,7 @@
       "subject": "The NOAEL",
       "action": "can serve as",
       "object": "the starting point for determining a reasonably safe starting dose",
-      "normalized_ko": null,
+      "normalized_ko": "합리적으로 안전한 시작 용량을 결정하기 위한 출발점 역할을 할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2181,7 +2181,7 @@
       "subject": "The NOAEL",
       "action": "serve as",
       "object": "the starting point for determining a reasonably safe starting dose",
-      "normalized_ko": null,
+      "normalized_ko": "합리적으로 안전한 시작 용량을 결정하기 위한 출발점 역할을 할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2195,7 +2195,7 @@
       "subject": "the most relevant animal species used",
       "action": "not necessarily be",
       "object": "the most sensitive species",
-      "normalized_ko": null,
+      "normalized_ko": "반드시 가장 민감한 종일 필요는 없을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2209,7 +2209,7 @@
       "subject": "Exposure showing PD effects in the non-clinical pharmacology studies",
       "action": "be determined",
       "object": "including ex vivo and in vitro studies in human tissues",
-      "normalized_ko": null,
+      "normalized_ko": "인체 조직에서의 ex vivo 및 in vitro 연구를 포함하여 결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2223,7 +2223,7 @@
       "subject": "these data",
       "action": "be used",
       "object": "to determine the minimal anticipated biological effect level (MABEL) in humans and an estimation of the pharmacologically active dose (PAD) and/or anticipated therapeutic dose range (ATD) in humans",
-      "normalized_ko": null,
+      "normalized_ko": "인체에서의 최소 예상 생물학적 효과 수준(MABEL) 및 약리학적 활성 용량(PAD)과/또는 예상 치료 용량 범위(ATD)의 추정을 결정하기 위해 사용되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2237,7 +2237,7 @@
       "subject": "the calculation of the MABEL, PAD and/or ATD",
       "action": "consider",
       "object": "target binding and receptor occupancy studies in vitro in target cells from human and the relevant animal species and exposures at pharmacological doses in the relevant animal species",
-      "normalized_ko": null,
+      "normalized_ko": "인체 및 관련 동물 종 유래 표적 세포에서의 in vitro 표적 결합 및 수용체 점유 연구와 관련 동물 종에서의 약리학적 용량 시 노출을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2251,7 +2251,7 @@
       "subject": "all relevant data",
       "action": "be integrated in",
       "object": "a suitable modelling approach for the determination of the MABEL, PAD and/or ATD",
-      "normalized_ko": null,
+      "normalized_ko": "MABEL, PAD 및/또는 ATD 결정을 위한 적절한 모델링 접근법에 통합되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2265,7 +2265,7 @@
       "subject": "potential differences in sensitivity for the mode of action of the IMP between humans and animals",
       "action": "be taken into consideration",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2279,7 +2279,7 @@
       "subject": "The starting dose for healthy volunteers",
       "action": "be",
       "object": "a dose expected to result in an exposure lower than the PAD",
-      "normalized_ko": null,
+      "normalized_ko": "PAD보다 낮은 노출을 초래할 것으로 예상되는 용량이어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2293,7 +2293,7 @@
       "subject": "the starting dose",
       "action": "be related to",
       "object": "the MABEL, PAD or NOAEL",
-      "normalized_ko": null,
+      "normalized_ko": "MABEL, PAD 또는 NOAEL과 관련되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2307,7 +2307,7 @@
       "subject": "A scientific rationale for the starting dose",
       "action": "be included",
       "object": "in the protocol",
-      "normalized_ko": null,
+      "normalized_ko": "프로토콜에 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2321,7 +2321,7 @@
       "subject": "A scientific rationale for the starting dose",
       "action": "be included",
       "object": "in the IB (in addition to the protocol)",
-      "normalized_ko": null,
+      "normalized_ko": "프로토콜에 추가하여 IB에 포함될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2335,7 +2335,7 @@
       "subject": "safety factors",
       "action": "are applied",
       "object": "in the calculation of the starting dose in humans",
-      "normalized_ko": null,
+      "normalized_ko": "인체 시작 용량 계산에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -2349,7 +2349,7 @@
       "subject": "Safety factors",
       "action": "take into account",
       "object": "potential risks related to the novelty of the active substance",
-      "normalized_ko": null,
+      "normalized_ko": "유효성분의 신규성과 관련된 잠재적 위험을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2363,7 +2363,7 @@
       "subject": "findings in the non-clinical studies and how well potential target organ effects can be monitored in the CT",
       "action": "be addressed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "다루어져야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2377,7 +2377,7 @@
       "subject": "The reasoning behind the safety factors used",
       "action": "be detailed",
       "object": "in the IB and protocol",
-      "normalized_ko": null,
+      "normalized_ko": "IB 및 프로토콜에 상세히 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2391,7 +2391,7 @@
       "subject": "findings in the non-clinical studies and how well potential target organ effects can be monitored in the CT",
       "action": "influence",
       "object": "the safety factors used",
-      "normalized_ko": null,
+      "normalized_ko": "사용되는 안전계수에 영향을 미칠 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2405,7 +2405,7 @@
       "subject": "the no observed adverse effect level (NOAEL)",
       "action": "be determined",
       "object": "in the non-clinical safety studies performed",
-      "normalized_ko": null,
+      "normalized_ko": "수행된 비임상 안전성 시험에서 결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2419,7 +2419,7 @@
       "subject": "The exposures achieved at the NOAEL",
       "action": "be used",
       "object": "for estimation of an equivalent exposure for humans",
-      "normalized_ko": null,
+      "normalized_ko": "인체에서의 동등한 노출 추정에 사용되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2433,7 +2433,7 @@
       "subject": "Estimation",
       "action": "be based on",
       "object": "state-of-the-art modelling and/or using allometric factors",
-      "normalized_ko": null,
+      "normalized_ko": "최신 모델링 및/또는 알로메트릭 계수의 사용에 기반해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2447,7 +2447,7 @@
       "subject": "state-of-the-art modelling",
       "action": "includes",
       "object": "PK/PD and PBPK",
-      "normalized_ko": null,
+      "normalized_ko": "PK/PD 및 PBPK를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -2461,7 +2461,7 @@
       "subject": "Exposure showing PD effects in the non-clinical pharmacology studies",
       "action": "be determined",
       "object": "including ex vivo and in vitro studies in human tissues",
-      "normalized_ko": null,
+      "normalized_ko": "인체 조직에서의 ex vivo 및 in vitro 연구를 포함하여 결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2475,7 +2475,7 @@
       "subject": "these data",
       "action": "be used to determine",
       "object": "the minimal anticipated biological effect level (MABEL) in humans and an estimation of the pharmacologically active dose (PAD) and/or anticipated therapeutic dose range (ATD) in humans",
-      "normalized_ko": null,
+      "normalized_ko": "인체에서의 최소 예상 생물학적 효과 수준(MABEL) 및 인체에서의 약리학적 활성 용량(PAD) 및/또는 예상 치료 용량 범위(ATD)를 결정하는 데 사용되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2489,7 +2489,7 @@
       "subject": "the calculation of the MABEL, PAD and/or ATD",
       "action": "consider",
       "object": "target binding and receptor occupancy studies in vitro in target cells from human and the relevant animal species and exposures at pharmacological doses in the relevant animal species",
-      "normalized_ko": null,
+      "normalized_ko": "인체 및 관련 동물종 유래 표적 세포에서의 in vitro 표적 결합 및 수용체 점유 연구와 관련 동물종에서 약리학적 용량 시의 노출을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2503,7 +2503,7 @@
       "subject": "all relevant data",
       "action": "be integrated in",
       "object": "a suitable modelling approach for the determination of the MABEL, PAD and/or ATD",
-      "normalized_ko": null,
+      "normalized_ko": "MABEL, PAD 및/또는 ATD 결정을 위한 적절한 모델링 접근법에 통합되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2517,7 +2517,7 @@
       "subject": "The starting dose for healthy volunteers",
       "action": "be",
       "object": "a dose expected to result in an exposure lower than the PAD",
-      "normalized_ko": null,
+      "normalized_ko": "PAD보다 낮은 노출을 초래할 것으로 예상되는 용량이어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2531,7 +2531,7 @@
       "subject": "the starting dose",
       "action": "be related to",
       "object": "the MABEL, PAD or NOAEL",
-      "normalized_ko": null,
+      "normalized_ko": "MABEL, PAD 또는 NOAEL과 관련되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2545,7 +2545,7 @@
       "subject": "A scientific rationale for the starting dose",
       "action": "be included in",
       "object": "the protocol",
-      "normalized_ko": null,
+      "normalized_ko": "프로토콜에 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2559,7 +2559,7 @@
       "subject": "Safety factors",
       "action": "take into account potential risks related to",
       "object": "the novelty of the active substance",
-      "normalized_ko": null,
+      "normalized_ko": "활성 물질의 신규성과 관련된 잠재적 위험을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2573,7 +2573,7 @@
       "subject": "findings in the non-clinical studies and how well potential target organ effects can be monitored in the CT",
       "action": "be addressed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "다루어져야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2587,7 +2587,7 @@
       "subject": "The reasoning behind the safety factors used",
       "action": "be detailed in",
       "object": "the IB and protocol",
-      "normalized_ko": null,
+      "normalized_ko": "IB 및 프로토콜에 상세히 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2601,7 +2601,7 @@
       "subject": "findings in the non-clinical studies and how well potential target organ effects can be monitored in the CT",
       "action": "influence",
       "object": "the safety factors used",
-      "normalized_ko": null,
+      "normalized_ko": "사용되는 안전계수에 영향을 미칠 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2615,7 +2615,7 @@
       "subject": "Similar considerations as outlined in section 7.2",
       "action": "apply for",
       "object": "the identification of a safe starting dose in patients",
-      "normalized_ko": null,
+      "normalized_ko": "환자에서 안전한 시작 용량의 식별에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -2629,7 +2629,7 @@
       "subject": "The goal of selecting the starting dose for FIH/early CTs in patients",
       "action": "is to identify",
       "object": "a dose that is expected to have a minimal pharmacological effect and is safe to use",
-      "normalized_ko": null,
+      "normalized_ko": "최소한의 약리학적 효과가 예상되고 사용하기에 안전한 용량을 식별하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2643,7 +2643,7 @@
       "subject": "The starting dose",
       "action": "take into account",
       "object": "the nature of disease under investigation and its severity in the patient population included in the CT",
-      "normalized_ko": null,
+      "normalized_ko": "임상시험에 포함된 환자 집단에서 조사 중인 질환의 특성과 중증도를 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2657,7 +2657,7 @@
       "subject": "a rationale",
       "action": "be provided",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "제공되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2671,7 +2671,7 @@
       "subject": "the subjects included in the CT",
       "action": "be informed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "통보받아야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2685,7 +2685,7 @@
       "subject": "a starting dose that is substantially lower than the human expected pharmacological dose",
       "action": "not be appropriate",
       "object": "in some instances (when substantially lower than expected pharmacological dose)",
-      "normalized_ko": null,
+      "normalized_ko": "일부 경우(예상되는 약리학적 용량보다 상당히 낮은 경우)에는 적절하지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2699,7 +2699,7 @@
       "subject": "consideration",
       "action": "be given to",
       "object": "reverting to a SAD design (with dose escalation as appropriate) in the first patient cohort",
-      "normalized_ko": null,
+      "normalized_ko": "첫 번째 환자 코호트에서 적절한 용량 증량을 포함한 SAD 설계로 되돌리는 것을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2713,7 +2713,7 @@
       "subject": "Other approaches",
       "action": "be considered",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2727,7 +2727,7 @@
       "subject": "the highest dose or exposure tested in the non-clinical studies",
       "action": "not limit",
       "object": "the dose-escalation or highest dose investigated in a CT in patients with advanced cancer if appropriately justified",
-      "normalized_ko": null,
+      "normalized_ko": "적절한 근거가 제시되는 경우, 진행성 암 환자를 대상으로 한 임상시험에서의 용량 증량 또는 조사된 최고 용량을 제한하지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2741,7 +2741,7 @@
       "subject": "Special populations, such as paediatrics",
       "action": "deserve",
       "object": "additional specific considerations",
-      "normalized_ko": null,
+      "normalized_ko": "추가적인 구체적 고려가 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -2755,7 +2755,7 @@
       "subject": "Similar considerations",
       "action": "apply",
       "object": "for the identification of a safe starting dose in patients",
-      "normalized_ko": null,
+      "normalized_ko": "환자에서 안전한 시작 용량을 식별하는 데 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -2769,7 +2769,7 @@
       "subject": "a starting dose that is substantially lower than the human expected pharmacological dose",
       "action": "be appropriate",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "적절하다.",
       "review_status": "reviewed"
     },
     {
@@ -2783,7 +2783,7 @@
       "subject": "the highest dose or exposure tested in the non-clinical studies",
       "action": "not limit",
       "object": "the dose-escalation or highest dose investigated in a CT in patients with advanced cancer if appropriately justified",
-      "normalized_ko": null,
+      "normalized_ko": "적절한 근거가 제시되는 경우, 진행성 암 환자를 대상으로 한 임상시험에서의 용량 증량 또는 조사된 최고 용량을 제한하지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -2797,7 +2797,7 @@
       "subject": "specific situations",
       "action": "include",
       "object": "studies in oncology patients (see ICH S9) or other severe or life-limiting diseases",
-      "normalized_ko": null,
+      "normalized_ko": "종양 환자 대상 연구(ICH S9 참조) 또는 기타 중증 또는 생명 제한적 질환 대상 연구를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -2811,7 +2811,7 @@
       "subject": "the highest dose or exposure tested in the non-clinical studies",
       "action": "not limit",
       "object": "the dose-escalation or highest dose investigated in a CT in patients with advanced cancer if appropriately justified",
-      "normalized_ko": null,
+      "normalized_ko": "적절한 근거가 제시되는 경우, 진행성 암 환자를 대상으로 한 임상시험에서의 용량 증량 또는 조사된 최고 용량을 제한하지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2825,7 +2825,7 @@
       "subject": "Special populations",
       "action": "deserve",
       "object": "additional specific considerations",
-      "normalized_ko": null,
+      "normalized_ko": "추가적인 구체적 고려가 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -2839,7 +2839,7 @@
       "subject": "Special populations",
       "action": "includes",
       "object": "paediatrics (see ICH E11)",
-      "normalized_ko": null,
+      "normalized_ko": "소아(ICH E11 참조)를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -2853,7 +2853,7 @@
       "subject": "criteria for dose increases",
       "action": "be outlined",
       "object": "in the protocol",
-      "normalized_ko": null,
+      "normalized_ko": "프로토콜에 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2867,7 +2867,7 @@
       "subject": "The maximum fold increase in dose/exposure from one cohort to the next, as well as a maximum number of cohorts to be evaluated",
       "action": "be stated",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "명시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2881,7 +2881,7 @@
       "subject": "The choice of the dose levels",
       "action": "include",
       "object": "an estimate of exposure levels to be achieved",
-      "normalized_ko": null,
+      "normalized_ko": "달성될 노출 수준의 추정치를 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2895,7 +2895,7 @@
       "subject": "The calculated PAD/ATD",
       "action": "be taken into account",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2909,7 +2909,7 @@
       "subject": "The dose increment between two dose levels",
       "action": "be guided by",
       "object": "the dose/exposure-toxicity or the dose/exposure-effect relationship defined in the non-clinical studies",
-      "normalized_ko": null,
+      "normalized_ko": "비임상 연구에서 규명된 용량/노출-독성 또는 용량/노출-효과 관계를 지침으로 삼아야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2951,7 +2951,7 @@
       "subject": "smaller dose increments",
       "action": "be considered",
       "object": "in later parts of SAD/MAD when non-linear PK indicates supra-proportional exposure",
-      "normalized_ko": null,
+      "normalized_ko": "비선형 PK가 용량 비례 이상 노출을 나타내는 경우 SAD/MAD의 후반부에서 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2965,7 +2965,7 @@
       "subject": "Another factor for consideration",
       "action": "is",
       "object": "the reliability with which potential adverse effects can be monitored in humans before potential serious/irreversible effects develop",
-      "normalized_ko": null,
+      "normalized_ko": "잠재적 중대하거나 비가역적인 영향이 발생하기 전에 인간에서 잠재적 이상반응을 모니터링할 수 있는 신뢰성이다.",
       "review_status": "reviewed"
     },
     {
@@ -2979,7 +2979,7 @@
       "subject": "adjustment of the planned dose levels",
       "action": "be warranted",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2993,7 +2993,7 @@
       "subject": "Changes in dose levels",
       "action": "require",
       "object": "a substantial amendment",
-      "normalized_ko": null,
+      "normalized_ko": "대폭적인 개정이 필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3007,7 +3007,7 @@
       "subject": "Section 7.4",
       "action": "addresses",
       "object": "Dose escalation",
-      "normalized_ko": null,
+      "normalized_ko": "용량 증량을 다룬다.",
       "review_status": "reviewed"
     },
     {
@@ -3021,7 +3021,7 @@
       "subject": "An expected maximum exposure level",
       "action": "not be exceeded in the study",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "시험에서 초과해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -3035,7 +3035,7 @@
       "subject": "An expected maximum exposure level",
       "action": "be pre-defined in the protocol",
       "object": "for each study part",
-      "normalized_ko": null,
+      "normalized_ko": "각 시험 부분에 대해 프로토콜에서 사전에 정의해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3049,7 +3049,7 @@
       "subject": "The maximum exposure",
       "action": "be justified",
       "object": "based on all available non-clinical and clinical data, including PD, PK, findings in toxicity studies and exposure at the expected therapeutic dose range",
-      "normalized_ko": null,
+      "normalized_ko": "PD, PK, 독성시험 결과 및 예상 치료 용량 범위에서의 노출을 포함한 이용 가능한 모든 비임상 및 임상 데이터에 근거하여 정당화해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3063,7 +3063,7 @@
       "subject": "Target saturation",
       "action": "be taken into account",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3077,7 +3077,7 @@
       "subject": "the maximum exposure",
       "action": "consider",
       "object": "when complete inhibition or activation of the target is achieved and no further therapeutic effect is to be expected by increasing the dose",
-      "normalized_ko": null,
+      "normalized_ko": "표적의 완전한 억제 또는 활성화가 달성되고 용량을 증가시켜도 추가적인 치료 효과가 예상되지 않는 경우 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3091,7 +3091,7 @@
       "subject": "The use of a maximum dose",
       "action": "be warranted",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3105,7 +3105,7 @@
       "subject": "the maximum exposure of healthy volunteers",
       "action": "be within",
       "object": "the estimated human pharmacodynamic dose range",
-      "normalized_ko": null,
+      "normalized_ko": "추정된 인간 약력학적 용량 범위 내에 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3119,7 +3119,7 @@
       "subject": "exposure levels exceeding the pharmacodynamic dose range",
       "action": "be carefully explored",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "신중하게 탐색할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3133,7 +3133,7 @@
       "subject": "the maximum tolerated dose (MTD)",
       "action": "be clearly defined",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "명확하게 정의해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3147,7 +3147,7 @@
       "subject": "the maximum tolerated dose (MTD)",
       "action": "not be exceeded",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "초과해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -3161,7 +3161,7 @@
       "subject": "The potential therapeutic/clinically relevant dose (exposure) and the expected benefit/risk balance",
       "action": "always be considered",
       "object": "when defining the dose range",
-      "normalized_ko": null,
+      "normalized_ko": "용량 범위를 정의할 때 항상 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3175,7 +3175,7 @@
       "subject": "A trial design using a MTD approach",
       "action": "be inappropriate",
       "object": "for healthy volunteers",
-      "normalized_ko": null,
+      "normalized_ko": "건강한 자원자에게는 부적절하다.",
       "review_status": "reviewed"
     },
     {
@@ -3329,7 +3329,7 @@
       "subject": "The choice of route of administration for dosing in humans",
       "action": "be based on",
       "object": "the non-clinical data, the characteristics of the IMP, and the intended therapeutic use",
-      "normalized_ko": null,
+      "normalized_ko": "비임상 데이터, IMP의 특성 및 의도된 치료적 사용에 근거해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3343,7 +3343,7 @@
       "subject": "a slow infusion",
       "action": "be more appropriate than",
       "object": "a bolus injection",
-      "normalized_ko": null,
+      "normalized_ko": "일시주사보다 더 적절할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3357,7 +3357,7 @@
       "subject": "This",
       "action": "would allow for",
       "object": "a timely discontinuation of the infusion to mitigate an adverse outcome",
-      "normalized_ko": null,
+      "normalized_ko": "이상 결과를 완화하기 위해 주입을 적시에 중단할 수 있게 할 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -3371,7 +3371,7 @@
       "subject": "Trials",
       "action": "be designed to optimise",
       "object": "the knowledge to be gained from the study",
-      "normalized_ko": "Trials should be designed to optimise knowledge gained from the study.",
+      "normalized_ko": "시험으로부터 획득할 지식을 최적화하도록 설계해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3385,7 +3385,7 @@
       "subject": "Trials",
       "action": "not expose",
       "object": "excessive numbers of subjects",
-      "normalized_ko": "Trials should not expose excessive numbers of subjects.",
+      "normalized_ko": "과도한 수의 대상자가 노출되어서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -3399,7 +3399,7 @@
       "subject": "Trials",
       "action": "ensure",
       "object": "the safety of participants",
-      "normalized_ko": "Trials should ensure participant safety.",
+      "normalized_ko": "참여자의 안전을 보장해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3413,7 +3413,7 @@
       "subject": "The overall study design",
       "action": "justify",
       "object": "the inclusion of each study part",
-      "normalized_ko": "The overall study design should justify inclusion of each study part.",
+      "normalized_ko": "각 연구 파트의 포함을 정당화해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3427,7 +3427,7 @@
       "subject": "Risk mitigation activities",
       "action": "be proportionate to",
       "object": "the degree of uncertainty and the potential risks identified",
-      "normalized_ko": "Risk mitigation activities should be proportionate to uncertainty and identified potential risks.",
+      "normalized_ko": "확인된 불확실성의 정도 및 잠재적 위험에 비례해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3441,7 +3441,7 @@
       "subject": "study design aspects",
       "action": "includes",
       "object": "choice of study population",
-      "normalized_ko": "Study design aspects include choice of study population.",
+      "normalized_ko": "연구 대상 집단의 선택을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -3455,7 +3455,7 @@
       "subject": "a PD measure",
       "action": "be included",
       "object": "to facilitate the link with the non-clinical experience and support dose escalation decisions",
-      "normalized_ko": "A PD measure should be included to facilitate linkage with non-clinical experience and support dose-escalation decisions.",
+      "normalized_ko": "비임상 경험과의 연계를 용이하게 하고 용량 증량 결정을 지원하기 위해 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3469,7 +3469,7 @@
       "subject": "a PD measure",
       "action": "facilitate",
       "object": "the link with the non-clinical experience",
-      "normalized_ko": null,
+      "normalized_ko": "비임상 경험과의 연계를 용이하게 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3483,7 +3483,7 @@
       "subject": "a PD measure",
       "action": "support",
       "object": "dose escalation decisions",
-      "normalized_ko": null,
+      "normalized_ko": "용량 증량 결정을 지원한다.",
       "review_status": "reviewed"
     },
     {
@@ -3497,7 +3497,7 @@
       "subject": "The clinical trial protocol",
       "action": "is",
       "object": "a core document of a trial",
-      "normalized_ko": null,
+      "normalized_ko": "임상시험의 핵심 문서이다.",
       "review_status": "reviewed"
     },
     {
@@ -3511,7 +3511,7 @@
       "subject": "The clinical trial protocol",
       "action": "is drafted",
       "object": "as one of the first steps in any research project",
-      "normalized_ko": null,
+      "normalized_ko": "모든 연구 프로젝트에서 최초 단계 중 하나로 작성된다.",
       "review_status": "reviewed"
     },
     {
@@ -3525,7 +3525,7 @@
       "subject": "The protocol",
       "action": "describe",
       "object": "what is being done in the trial and the rationale behind key decisions",
-      "normalized_ko": null,
+      "normalized_ko": "임상시험에서 수행되는 내용과 주요 결정의 근거를 기술해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3539,7 +3539,7 @@
       "subject": "Graphical representation of the overall scheme of the proposed trial in real-time",
       "action": "be encouraged",
       "object": "showing intervals to allow rolling review, timing of all reviews and decision points and highlighting any overlap between study cohorts and parts",
-      "normalized_ko": null,
+      "normalized_ko": "순차적 검토가 가능하도록 하는 간격, 모든 검토 및 의사결정 시점, 그리고 연구 코호트 및 파트 간의 모든 중복을 강조하여 제시하는 것이 권장되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3553,7 +3553,7 @@
       "subject": "Details on the size of the cohorts",
       "action": "be included",
       "object": "including how many subjects are on active IMP and how many are on placebo treatment",
-      "normalized_ko": null,
+      "normalized_ko": "활성 IMP를 투여받는 대상자 수와 위약 치료를 받는 대상자 수를 포함하여 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3567,7 +3567,7 @@
       "subject": "Graphical representation of the overall scheme of the proposed trial",
       "action": "be provided",
       "object": "in real-time showing intervals to allow rolling review, timing of all reviews and decision points and highlighting any overlap between study cohorts and parts",
-      "normalized_ko": null,
+      "normalized_ko": "순차적 검토가 가능하도록 하는 간격, 모든 검토 및 의사결정 시점, 그리고 연구 코호트 및 파트 간의 모든 중복을 강조하여 실시간으로 제공되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3581,7 +3581,7 @@
       "subject": "information generated in previous parts",
       "action": "be analysed",
       "object": "into an assessment in a limited timeframe",
-      "normalized_ko": "Information from previous parts needs to be analysed into an assessment.",
+      "normalized_ko": "제한된 기간 내에 평가에 분석되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3595,7 +3595,7 @@
       "subject": "information generated in previous parts",
       "action": "be integrated",
       "object": "into an assessment in a limited timeframe",
-      "normalized_ko": "Information from previous parts needs to be integrated into an assessment.",
+      "normalized_ko": "제한된 기간 내에 평가에 통합되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3609,7 +3609,7 @@
       "subject": "All parts",
       "action": "be predefined",
       "object": "within an integrated protocol",
-      "normalized_ko": "All study parts should be predefined in an integrated protocol.",
+      "normalized_ko": "통합 프로토콜 내에서 사전에 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3623,7 +3623,7 @@
       "subject": "(dose selection) criteria",
       "action": "be established",
       "object": "in the protocol",
-      "normalized_ko": "Dose-selection criteria should be established in the protocol.",
+      "normalized_ko": "프로토콜에 확립되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3637,7 +3637,7 @@
       "subject": "Dose selection criteria",
       "action": "integrate",
       "object": "data from previous study parts",
-      "normalized_ko": "Dose-selection criteria should integrate data from previous study parts.",
+      "normalized_ko": "이전 연구 파트의 데이터를 통합해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3651,7 +3651,7 @@
       "subject": "Feasibility to review and adapt the planned study design based on emerging clinical data",
       "action": "be considered",
       "object": "in the integrated protocol",
-      "normalized_ko": "The feasibility of reviewing and adapting the planned study design based on emerging clinical data should be considered.",
+      "normalized_ko": "통합 프로토콜에서 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3665,7 +3665,7 @@
       "subject": "Any changes outside predefined criteria",
       "action": "be implemented",
       "object": "via a substantial amendment",
-      "normalized_ko": "Changes outside predefined criteria should be implemented via a substantial amendment.",
+      "normalized_ko": "실질적 변경을 통해 이행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3679,7 +3679,7 @@
       "subject": "the time sequence for the conduct of different parts",
       "action": "has",
       "object": "the following recommendations",
-      "normalized_ko": "The following recommendations concern the time sequence for conducting different parts.",
+      "normalized_ko": "다음 권고사항이 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3693,7 +3693,7 @@
       "subject": "the following recommendations",
       "action": "apply",
       "object": "Regarding the time sequence for the conduct of different parts",
-      "normalized_ko": null,
+      "normalized_ko": "서로 다른 부분의 수행 시간 순서와 관련하여 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -3707,7 +3707,7 @@
       "subject": "Overlap of SAD and MAD parts",
       "action": "be acceptable",
       "object": null,
-      "normalized_ko": "Overlap of SAD and MAD parts may be acceptable.",
+      "normalized_ko": "허용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3721,7 +3721,7 @@
       "subject": "Other single dose parts (e.g. food interaction)",
       "action": "be conducted in parallel to",
       "object": "the SAD part provided dose and exposure are equal to or lower than preceding concluded SAD cohort without stopping criteria",
-      "normalized_ko": "Other single-dose parts could be conducted in parallel to the SAD part.",
+      "normalized_ko": "선행하여 종료된 SAD 코호트에 중단 기준이 없고 용량 및 노출이 동일하거나 그보다 낮은 경우, SAD 부분과 병행하여 수행될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3735,7 +3735,7 @@
       "subject": "any overlap",
       "action": "be scientifically justified",
       "object": null,
-      "normalized_ko": "Any overlap should be scientifically justified.",
+      "normalized_ko": "과학적으로 정당화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3749,7 +3749,7 @@
       "subject": "any overlap",
       "action": "be supported by",
       "object": "decision points",
-      "normalized_ko": "Any overlap should be supported by decision points.",
+      "normalized_ko": "의사결정 시점에 의해 뒷받침되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3763,7 +3763,7 @@
       "subject": "Other study parts that involve multiple dosing (e.g. drug-drug interaction)",
       "action": "not overlap with",
       "object": "earlier SAD or MAD cohorts unless justified in the protocol",
-      "normalized_ko": "Other multiple-dosing study parts should generally not overlap with earlier SAD or MAD cohorts.",
+      "normalized_ko": "프로토콜에서 정당화되지 않는 한, 이전 SAD 또는 MAD 코호트와 중복되지 않아야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3777,7 +3777,7 @@
       "subject": "All relevant SAD and MAD data",
       "action": "be reviewed",
       "object": "before starting other multiple dosing parts",
-      "normalized_ko": "All relevant SAD and MAD data should be reviewed.",
+      "normalized_ko": "다른 다회 투여 부분을 시작하기 전에 검토되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3791,7 +3791,7 @@
       "subject": "the information generated in previous parts",
       "action": "be analysed and integrated into an assessment",
       "object": "in a limited timeframe prior to making a decision on proceeding to the next part",
-      "normalized_ko": null,
+      "normalized_ko": "다음 부분으로 진행할지 결정하기 전에 제한된 기간 내에 분석되고 평가에 통합된다.",
       "review_status": "reviewed"
     },
     {
@@ -3805,7 +3805,7 @@
       "subject": "Any changes outside predefined criteria",
       "action": "be implemented",
       "object": "via a substantial amendment",
-      "normalized_ko": null,
+      "normalized_ko": "실질적 변경을 통해 이행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3819,7 +3819,7 @@
       "subject": "other single dose parts",
       "action": "includes",
       "object": "food interaction",
-      "normalized_ko": null,
+      "normalized_ko": "음식물 상호작용을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -3833,7 +3833,7 @@
       "subject": "clinical factors",
       "action": "includes",
       "object": "whether the toxicities foreseen/risks associated can support the inclusion of healthy volunteers",
-      "normalized_ko": null,
+      "normalized_ko": "예상되는 독성/관련 위험이 건강한 자원자의 포함을 뒷받침할 수 있는지 여부를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -3847,7 +3847,7 @@
       "subject": "The key inclusion and exclusion criteria",
       "action": "consider",
       "object": "an adequate set of vital signs (including ECG), laboratory values and clinical assessments",
-      "normalized_ko": null,
+      "normalized_ko": "적절한 일련의 활력징후(ECG 포함), 검사실 수치 및 임상 평가를 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3861,7 +3861,7 @@
       "subject": "an adequate set of vital signs (including ECG), laboratory values and clinical assessments",
       "action": "be within",
       "object": "normal ranges",
-      "normalized_ko": null,
+      "normalized_ko": "정상 범위 내에 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3875,7 +3875,7 @@
       "subject": "Deviations outside these ranges",
       "action": "be possible",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "가능할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3889,7 +3889,7 @@
       "subject": "The subject safety assessments that will be routinely conducted, their timing and any additional monitoring actions or interventions",
       "action": "be pre-specified",
       "object": "in line with the known pharmacological and non-clinical safety profile",
-      "normalized_ko": null,
+      "normalized_ko": "알려진 약리학적 및 비임상 안전성 프로파일에 부합하도록 사전에 명시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3903,7 +3903,7 @@
       "subject": "The subject safety assessments that will be routinely conducted, their timing and any additional monitoring actions or interventions",
       "action": "be balanced against",
       "object": "the degree of uncertainty",
-      "normalized_ko": null,
+      "normalized_ko": "불확실성의 정도와 균형을 이루어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3917,7 +3917,7 @@
       "subject": "routine general monitoring",
       "action": "be conducted",
       "object": "to detect potential unexpected adverse effects that are not related to known properties of the IMP",
-      "normalized_ko": null,
+      "normalized_ko": "시험용 의약품의 알려진 특성과 관련되지 않은 잠재적인 예상치 못한 이상반응을 탐지하기 위해 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3931,7 +3931,7 @@
       "subject": "routine general monitoring",
       "action": "includes",
       "object": "vital signs",
-      "normalized_ko": null,
+      "normalized_ko": "활력징후를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -3945,7 +3945,7 @@
       "subject": "Repeated assessments, integrating available knowledge with rapid processing of emerging information",
       "action": "are crucial for",
       "object": "the recognition of developing toxicity at an early stage",
-      "normalized_ko": null,
+      "normalized_ko": "초기 단계에서 진행 중인 독성을 인지하는 데 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -3959,7 +3959,7 @@
       "subject": "The exact nature of the assessments and their timing",
       "action": "be provided in",
       "object": "the study protocol",
-      "normalized_ko": null,
+      "normalized_ko": "시험계획서에 제공되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3973,7 +3973,7 @@
       "subject": "Any proposal to routinely omit an assessment",
       "action": "be scientifically based",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "과학적 근거에 기반해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3987,7 +3987,7 @@
       "subject": "The length of follow-up of subjects",
       "action": "be specified within",
       "object": "the protocol",
-      "normalized_ko": null,
+      "normalized_ko": "시험계획서 내에 명시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4001,7 +4001,7 @@
       "subject": "The sponsor",
       "action": "describe how",
       "object": "safety monitoring should be extended",
-      "normalized_ko": null,
+      "normalized_ko": "안전성 모니터링을 어떻게 연장해야 하는지를 기술해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4015,7 +4015,7 @@
       "subject": "safety monitoring",
       "action": "be extended",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "연장되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4029,7 +4029,7 @@
       "subject": "Extended monitoring",
       "action": "be considered",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4043,7 +4043,7 @@
       "subject": "monitoring",
       "action": "continue",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "계속되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4057,7 +4057,7 @@
       "subject": "Emerging clinical data",
       "action": "be used to support",
       "object": "altering the frequency or timing of assessments",
-      "normalized_ko": null,
+      "normalized_ko": "평가의 빈도 또는 시기를 변경하는 것을 뒷받침하는 데 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4071,7 +4071,7 @@
       "subject": "Repeated assessments, integrating available knowledge with rapid processing of emerging information",
       "action": "be crucial for",
       "object": "the recognition of developing toxicity at an early stage",
-      "normalized_ko": null,
+      "normalized_ko": "초기 단계에서 진행 중인 독성을 인지하는 데 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -4085,7 +4085,7 @@
       "subject": "Section 8.2.5",
       "action": "covers",
       "object": "General considerations for all cohorts",
-      "normalized_ko": null,
+      "normalized_ko": "모든 코호트에 대한 일반적 고려사항을 다룬다.",
       "review_status": "reviewed"
     },
     {
@@ -4099,7 +4099,7 @@
       "subject": "General considerations",
       "action": "apply to",
       "object": "all cohorts",
-      "normalized_ko": null,
+      "normalized_ko": "모든 코호트에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -4113,7 +4113,7 @@
       "subject": "The number of subjects per cohort",
       "action": "depends on",
       "object": "the variability of both PK and PD parameters and the trial objectives",
-      "normalized_ko": null,
+      "normalized_ko": "PK 및 PD 파라미터 모두의 변동성과 시험 목적에 따라 달라진다.",
       "review_status": "reviewed"
     },
     {
@@ -4127,7 +4127,7 @@
       "subject": "Flexibility",
       "action": "be allowed for",
       "object": "the number of cohorts to be investigated",
-      "normalized_ko": null,
+      "normalized_ko": "조사할 코호트 수에 대해 허용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4141,7 +4141,7 @@
       "subject": "Inclusion of the same subjects across multiple cohorts",
       "action": "be possible",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "가능할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4155,7 +4155,7 @@
       "subject": "any plan to include optional additional cohorts",
       "action": "be clearly pre-defined",
       "object": "in the protocol with the underlying rationale provided",
-      "normalized_ko": null,
+      "normalized_ko": "근거가 제시된 상태로 시험계획서에 명확히 사전 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4169,7 +4169,7 @@
       "subject": "the underlying rationale",
       "action": "be provided",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "제공되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4183,7 +4183,7 @@
       "subject": "Inclusion of the same subjects across multiple cohorts",
       "action": "be scientifically justified",
       "object": "in the protocol",
-      "normalized_ko": null,
+      "normalized_ko": "시험계획서에서 과학적으로 정당화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4197,7 +4197,7 @@
       "subject": "repeating a dose level",
       "action": "not be acceptable",
       "object": "where any dose escalation stopping rule has been met",
-      "normalized_ko": null,
+      "normalized_ko": "용량 증량 중단 규칙이 충족된 경우에는 허용될 수 없다.",
       "review_status": "reviewed"
     },
     {
@@ -4211,7 +4211,7 @@
       "subject": "Re-enrolment into higher dose cohorts",
       "action": "only be possible",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "오직 가능하다.",
       "review_status": "reviewed"
     },
     {
@@ -4225,7 +4225,7 @@
       "subject": "Inclusion of the same subjects across multiple cohorts",
       "action": "be possible",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "가능할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4239,7 +4239,7 @@
       "subject": "Inclusion of the same subjects across multiple cohorts",
       "action": "includes",
       "object": "as part of an alternate cohort dosing scheme",
-      "normalized_ko": null,
+      "normalized_ko": "대체 코호트 투여 방식의 일부로 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4253,7 +4253,7 @@
       "subject": "any plan to include optional additional cohorts",
       "action": "be clearly pre-defined",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "명확하게 사전에 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4267,7 +4267,7 @@
       "subject": "the underlying rationale",
       "action": "be provided",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "제공되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4281,7 +4281,7 @@
       "subject": "Re-enrolment into higher dose cohorts",
       "action": "only be possible",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "오직 가능할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4295,7 +4295,7 @@
       "subject": "administration of the first dose in any cohort",
       "action": "be designed so that",
       "object": "a single subject receives a single dose of the active IMP",
-      "normalized_ko": null,
+      "normalized_ko": "단일 피험자가 활성 IMP의 단회 용량을 투여받도록 설계하는 것이 권장된다.",
       "review_status": "reviewed"
     },
     {
@@ -4309,7 +4309,7 @@
       "subject": "study design",
       "action": "allow for",
       "object": "one subject on active and one on placebo to be dosed simultaneously prior to dosing the remaining subjects in the cohort",
-      "normalized_ko": null,
+      "normalized_ko": "코호트 내 나머지 피험자에게 투여하기 전에 활성군 피험자 1명과 위약군 피험자 1명에게 동시에 투여할 수 있도록 하는 것이 권장된다.",
       "review_status": "reviewed"
     },
     {
@@ -4323,7 +4323,7 @@
       "subject": "this approach",
       "action": "be used",
       "object": "for all single and multiple dosing cohorts",
-      "normalized_ko": null,
+      "normalized_ko": "모든 단회 및 반복 투여 코호트에 사용하는 것이 권장된다.",
       "review_status": "reviewed"
     },
     {
@@ -4365,7 +4365,7 @@
       "subject": "a single subject receiving a single dose of the active IMP",
       "action": "is often known as",
       "object": "sentinel dosing",
-      "normalized_ko": null,
+      "normalized_ko": "흔히 센티널 투여(sentinel dosing)로 알려져 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4379,7 +4379,7 @@
       "subject": "flexibility in this approach",
       "action": "be allowed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "허용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4393,7 +4393,7 @@
       "subject": "this sentinel approach",
       "action": "continue or start to be appropriate",
       "object": "at later stages of study design",
-      "normalized_ko": null,
+      "normalized_ko": "연구 설계의 후반 단계에서 계속 적용하거나 새로 적용하는 것이 적절할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4407,7 +4407,7 @@
       "subject": "flexibility in this approach",
       "action": "be on",
       "object": "a risk-proportionate basis",
-      "normalized_ko": null,
+      "normalized_ko": "위험 비례 원칙에 근거해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4421,7 +4421,7 @@
       "subject": "proposals not to use this strategy",
       "action": "have",
       "object": "a clear scientific rationale",
-      "normalized_ko": null,
+      "normalized_ko": "명확한 과학적 근거를 가져야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4435,7 +4435,7 @@
       "subject": "administration of the first dose in any cohort",
       "action": "be designed so that",
       "object": "a single subject receives a single dose of active IMP (sentinel dosing)",
-      "normalized_ko": null,
+      "normalized_ko": "단일 피험자가 활성 IMP의 단회 용량을 투여받도록 설계되어야 한다(센티널 투여).",
       "review_status": "reviewed"
     },
     {
@@ -4449,7 +4449,7 @@
       "subject": "placebo-controlled study design",
       "action": "allow for",
       "object": "one subject on active and one on placebo to be dosed simultaneously prior to remaining subjects",
-      "normalized_ko": null,
+      "normalized_ko": "나머지 피험자에게 투여하기 전에 활성군 피험자 1명과 위약군 피험자 1명에게 동시에 투여할 수 있도록 해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4463,7 +4463,7 @@
       "subject": "the observation period between sentinel subjects and remaining subjects",
       "action": "be adequate to",
       "object": "observe for any reactions and adverse events based on PK/PD and uncertainty",
-      "normalized_ko": null,
+      "normalized_ko": "PK/PD 및 불확실성을 바탕으로 모든 반응 및 이상반응을 관찰하기에 충분해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4477,7 +4477,7 @@
       "subject": "dose stopping rules",
       "action": "be in place",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "마련되어 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4519,7 +4519,7 @@
       "subject": "duration of the interval of observation",
       "action": "will depend on",
       "object": "the PK and PD characteristics and the level of uncertainty associated with the product",
-      "normalized_ko": null,
+      "normalized_ko": "제품과 관련된 PK 및 PD 특성과 불확실성 수준에 따라 달라질 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -4533,7 +4533,7 @@
       "subject": "dose stopping rules",
       "action": "prevent further dosing",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "추가 투여를 방지한다.",
       "review_status": "reviewed"
     },
     {
@@ -4561,7 +4561,7 @@
       "subject": "This approach",
       "action": "be expected",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "예상된다.",
       "review_status": "reviewed"
     },
     {
@@ -4575,7 +4575,7 @@
       "subject": "Administration to the next cohort",
       "action": "not occur before",
       "object": "participants in the immediately preceding cohort have been treated and PK, PD and clinical safety data as appropriate from those participants are reviewed in accordance with the protocol",
-      "normalized_ko": null,
+      "normalized_ko": "직전 코호트의 참여자에게 투여가 이루어지고, 해당 참여자로부터 얻은 PK, PD 및 적절한 임상 안전성 자료가 시험계획서에 따라 검토되기 전에는 발생해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -4589,7 +4589,7 @@
       "subject": "Review of all previous cohorts’ data in a cumulative manner",
       "action": "be taken into account",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4603,7 +4603,7 @@
       "subject": "Late emerging safety issues",
       "action": "be considered",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4617,7 +4617,7 @@
       "subject": "safety data",
       "action": "not be delayed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "지연되어서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -4631,7 +4631,7 @@
       "subject": "dose escalation schemes",
       "action": "be more cautious",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "더 신중해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4645,7 +4645,7 @@
       "subject": "a lack of PD information or a reduced PK data set",
       "action": "be acceptable",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "수용 가능할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4659,7 +4659,7 @@
       "subject": "Unanticipated responses",
       "action": "require",
       "object": "a revised dose escalation",
-      "normalized_ko": null,
+      "normalized_ko": "수정된 용량 증량이 필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4673,7 +4673,7 @@
       "subject": "Flexibility to allow for a defined longer review time",
       "action": "be accepted",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "수용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4687,7 +4687,7 @@
       "subject": "The planned dose(s)",
       "action": "be adapted accordingly",
       "object": "following review of PK, PD, and safety data from the preceding cohort",
-      "normalized_ko": null,
+      "normalized_ko": "직전 코호트의 PK, PD 및 안전성 자료를 검토한 후 그에 따라 조정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4701,7 +4701,7 @@
       "subject": "the review",
       "action": "consider whether adaptation of the protocol in other areas is required",
       "object": "to ensure continuing safety of trial participants",
-      "normalized_ko": null,
+      "normalized_ko": "시험 참여자의 지속적인 안전성을 보장하기 위해 다른 영역에서 시험계획서의 조정이 필요한지 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4715,7 +4715,7 @@
       "subject": "Timing between cohorts",
       "action": "be stated",
       "object": "in the protocol",
-      "normalized_ko": null,
+      "normalized_ko": "시험계획서에 명시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4729,7 +4729,7 @@
       "subject": "shortening of the review time for any dose escalation",
       "action": "require",
       "object": "a substantial amendment",
-      "normalized_ko": null,
+      "normalized_ko": "중대한 변경이 필요해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4743,7 +4743,7 @@
       "subject": "sufficient information",
       "action": "be available",
       "object": "from completed preceding parts or/and cohorts to ensure safety of selected dose/exposure prior decision to start the part",
-      "normalized_ko": null,
+      "normalized_ko": "해당 파트 시작을 결정하기 전에 선택된 용량/노출의 안전성을 보장하기 위해, 완료된 선행 파트 또는/및 코호트의 자료가 이용 가능해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4757,7 +4757,7 @@
       "subject": "areas of protocol adaptation",
       "action": "includes",
       "object": "safety monitoring parameters and timings",
-      "normalized_ko": null,
+      "normalized_ko": "안전성 모니터링 매개변수 및 시점을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4771,7 +4771,7 @@
       "subject": "Late emerging safety issues",
       "action": "be considered",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4785,7 +4785,7 @@
       "subject": "shortening of the review time for any dose escalation",
       "action": "require",
       "object": "a substantial amendment",
-      "normalized_ko": null,
+      "normalized_ko": "중대한 변경이 필수이다.",
       "review_status": "reviewed"
     },
     {
@@ -4799,7 +4799,7 @@
       "subject": "a lack of PD information",
       "action": "be acceptable",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "수용 가능하다.",
       "review_status": "reviewed"
     },
     {
@@ -4813,7 +4813,7 @@
       "subject": "Flexibility to allow for a defined longer review time",
       "action": "be accepted",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "수용된다.",
       "review_status": "reviewed"
     },
     {
@@ -4827,7 +4827,7 @@
       "subject": "Unanticipated responses",
       "action": "require",
       "object": "a revised dose escalation",
-      "normalized_ko": null,
+      "normalized_ko": "수정된 용량 증량이 필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4841,7 +4841,7 @@
       "subject": "The data supporting dose escalation or beginning of a new study part",
       "action": "are",
       "object": "key",
-      "normalized_ko": null,
+      "normalized_ko": "핵심적이다.",
       "review_status": "reviewed"
     },
     {
@@ -4855,7 +4855,7 @@
       "subject": "The data supporting dose escalation or beginning of a new study part",
       "action": "be described in",
       "object": "the protocol",
-      "normalized_ko": null,
+      "normalized_ko": "프로토콜에 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4869,7 +4869,7 @@
       "subject": "The timing and data specified in the protocol for the decision",
       "action": "reflect",
       "object": "the uncertainty associated with the IMP",
-      "normalized_ko": null,
+      "normalized_ko": "IMP와 관련된 불확실성을 반영해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4883,7 +4883,7 @@
       "subject": "consideration",
       "action": "be given to",
       "object": "a review of all data generated until the time of the decision",
-      "normalized_ko": null,
+      "normalized_ko": "의사결정 시점까지 생성된 모든 데이터를 검토해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4897,7 +4897,7 @@
       "subject": "‘Evaluable’ subjects",
       "action": "be defined",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4911,7 +4911,7 @@
       "subject": "the protocol",
       "action": "clearly define",
       "object": "the minimum number of evaluable subjects required for review",
-      "normalized_ko": null,
+      "normalized_ko": "검토에 필요한 평가 가능한 피험자의 최소 수를 명확히 정의해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4925,7 +4925,7 @@
       "subject": "This number",
       "action": "be adequate for",
       "object": "data review and reliable decision-making",
-      "normalized_ko": null,
+      "normalized_ko": "데이터 검토 및 신뢰할 수 있는 의사결정에 충분해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4939,7 +4939,7 @@
       "subject": "Data collection as planned in the protocol in a given dosing cohort",
       "action": "be complete",
       "object": "to proceed to the next dose cohort",
-      "normalized_ko": null,
+      "normalized_ko": "다음 용량 코호트로 진행하기 위해 완료되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4953,7 +4953,7 @@
       "subject": "The following",
       "action": "are regarded as",
       "object": "minimum criteria for data review",
-      "normalized_ko": null,
+      "normalized_ko": "데이터 검토를 위한 최소 기준으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -4967,7 +4967,7 @@
       "subject": "‘Evaluable’ subjects",
       "action": "are",
       "object": "subjects who have completed all planned study visits at least until the time of the decision as detailed in the protocol",
-      "normalized_ko": null,
+      "normalized_ko": "프로토콜에 상세히 기술된 바와 같이, 적어도 의사결정 시점까지 계획된 모든 시험 방문을 완료한 피험자이다.",
       "review_status": "reviewed"
     },
     {
@@ -4981,7 +4981,7 @@
       "subject": "The protocol",
       "action": "define",
       "object": "unambiguous stopping rules which result in an immediate stop to dosing",
-      "normalized_ko": null,
+      "normalized_ko": "투여를 즉시 중단하게 하는 명확한 중단 규칙을 정의해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4995,7 +4995,7 @@
       "subject": "the final end of dosing or a temporary halt",
       "action": "be specified in",
       "object": "the rule",
-      "normalized_ko": null,
+      "normalized_ko": "규칙에 명시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5009,7 +5009,7 @@
       "subject": "Any submitted substantial amendment after a stop",
       "action": "include",
       "object": "a rationale for proposed dosing, continuation of trial, and safety monitoring adjustments",
-      "normalized_ko": null,
+      "normalized_ko": "제안된 투여, 시험 지속 및 안전성 모니터링 조정에 대한 근거를 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5023,7 +5023,7 @@
       "subject": "the stopping rule",
       "action": "specify",
       "object": "if the stop is a final end of dosing or a temporary halt",
-      "normalized_ko": "The rule should specify whether a stop is final or temporary.",
+      "normalized_ko": "중단이 투여의 최종 종료인지 또는 일시적 중지인지를 명시해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5037,7 +5037,7 @@
       "subject": "Restart of dosing",
       "action": "be possible without a substantial amendment",
       "object": "if review concludes fully within predefined conditions for the relevant stopping criterion",
-      "normalized_ko": null,
+      "normalized_ko": "검토 결과가 해당 중단 기준에 대해 사전 정의된 조건 내에 완전히 부합하는 경우, 중대한 변경 없이 가능할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5051,7 +5051,7 @@
       "subject": "Stopping rules",
       "action": "be defined for",
       "object": "final termination, individual subjects, within cohort (staggered/MAD), and dose escalation",
-      "normalized_ko": null,
+      "normalized_ko": "최종 종료, 개별 피험자, 코호트 내(순차적/MAD) 및 용량 증량에 대해 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5065,7 +5065,7 @@
       "subject": "Integrated protocols",
       "action": "clearly outline",
       "object": "decision points and criteria",
-      "normalized_ko": null,
+      "normalized_ko": "의사결정 시점 및 기준을 명확히 제시해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5079,7 +5079,7 @@
       "subject": "Separate rules",
       "action": "be in place for",
       "object": "each of the bullet points above",
-      "normalized_ko": null,
+      "normalized_ko": "상기 각 항목에 대해 마련되어 있을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5093,7 +5093,7 @@
       "subject": "the same criteria",
       "action": "be used for",
       "object": "several areas of the protocol",
-      "normalized_ko": null,
+      "normalized_ko": "프로토콜의 여러 영역에 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5107,7 +5107,7 @@
       "subject": "Separate rules",
       "action": "be in place for",
       "object": "each of the bullet points above",
-      "normalized_ko": null,
+      "normalized_ko": "상기 각 항목에 대해 마련되어 있을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5121,7 +5121,7 @@
       "subject": "Stopping rules for dose escalation",
       "action": "be the same as",
       "object": "those for within a cohort or those for individual subjects",
-      "normalized_ko": null,
+      "normalized_ko": "코호트 내 또는 개별 피험자에 대한 것과 동일할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5135,7 +5135,7 @@
       "subject": "Stopping rules",
       "action": "include",
       "object": "a ‘serious’ adverse reaction (i.e. a serious adverse event considered at least possibly related to the IMP administration) in one subject",
-      "normalized_ko": null,
+      "normalized_ko": "한 대상자에서 발생한 ‘중대한’ 약물이상반응(즉, IMP 투여와 적어도 관련 가능성이 있는 것으로 간주되는 중대한 이상사례)을 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5149,7 +5149,7 @@
       "subject": "Consideration",
       "action": "be given to",
       "object": "stopping criteria based on a rolling review of the data that takes account of ‘moderate’ non-serious adverse reactions in blinded or unblinded fashion and their relation to PD effects, the number of subjects in which they occur, concurrency of more than one within the same subject and potential safety signals identified for other IMPs in the same class",
-      "normalized_ko": null,
+      "normalized_ko": "눈가림 또는 비눈가림 방식으로 ‘중등도’ 비중대 이상반응과 그 PD 효과와의 관계, 해당 반응이 발생한 대상자 수, 동일 대상자 내에서 하나 이상의 반응이 동시 발생하는지 여부 및 동일 계열의 다른 IMP에서 확인된 잠재적 안전성 신호를 고려하는 데이터의 지속적 검토에 근거한 투여 중단 기준을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5163,7 +5163,7 @@
       "subject": "Changes from baseline measurements",
       "action": "be considered",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5177,7 +5177,7 @@
       "subject": "A dose stopping criterion comprising a maximum clinical exposure (Cmax or AUC)",
       "action": "be included",
       "object": "taking into account individual maximum exposure rather than mean exposure",
-      "normalized_ko": null,
+      "normalized_ko": "평균 노출량이 아니라 개별 최대 노출량을 고려하는 것이 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5191,7 +5191,7 @@
       "subject": "the maximum exposure observed in individual subjects within a cohort rather than the mean exposure",
       "action": "be taken into account",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5205,7 +5205,7 @@
       "subject": "Stopping rules",
       "action": "not be limited to",
       "object": "a ‘serious’ adverse reaction (i.e. a serious adverse event considered at least possibly related to the IMP administration) in one subject; ‘severe’ non-serious adverse reactions (i.e. severe non-serious adverse events considered as, at least, possibly related to the IMP administration) in two subjects in the same cohort",
-      "normalized_ko": "Healthy-volunteer stopping rules should not be limited to the listed adverse-reaction criteria.",
+      "normalized_ko": "투여 중단 기준은 한 대상자에서 발생한 ‘중대한’ 약물이상반응(즉, IMP 투여와 적어도 관련 가능성이 있는 것으로 간주되는 중대한 이상사례) 및 동일 코호트의 두 대상자에서 발생한 ‘중증’ 비중대 약물이상반응(즉, IMP 투여와 적어도 관련 가능성이 있는 것으로 간주되는 중증 비중대 이상사례)에만 국한되어서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -5219,7 +5219,7 @@
       "subject": "stopping rules for dose escalation",
       "action": "be the same as",
       "object": "those for within a cohort or those for individual subjects",
-      "normalized_ko": "Dose-escalation stopping rules may be the same as within-cohort or individual-subject rules.",
+      "normalized_ko": "코호트 내 기준 또는 개별 대상자에 대한 기준과 동일할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5233,7 +5233,7 @@
       "subject": "healthy-volunteer trial stopping rules",
       "action": "includes",
       "object": "a ‘serious’ adverse reaction (i.e. a serious adverse event considered at least possibly related to the IMP administration) in one subject",
-      "normalized_ko": "Example: serious adverse reaction in one subject.",
+      "normalized_ko": "한 대상자에서 발생한 ‘중대한’ 약물이상반응(즉, IMP 투여와 적어도 관련 가능성이 있는 것으로 간주되는 중대한 이상사례)을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -5247,7 +5247,7 @@
       "subject": "unambiguous stopping rules",
       "action": "result in",
       "object": "an immediate stop to dosing",
-      "normalized_ko": null,
+      "normalized_ko": "즉각적인 투여 중단을 초래한다.",
       "review_status": "reviewed"
     },
     {
@@ -5261,7 +5261,7 @@
       "subject": "Restart",
       "action": "be possible without",
       "object": "a substantial amendment",
-      "normalized_ko": null,
+      "normalized_ko": "중대한 변경 없이 가능할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5275,7 +5275,7 @@
       "subject": "Stopping rules for dose escalation",
       "action": "be the same as",
       "object": "those for within a cohort",
-      "normalized_ko": null,
+      "normalized_ko": "코호트 내 기준과 동일하다.",
       "review_status": "reviewed"
     },
     {
@@ -5289,7 +5289,7 @@
       "subject": "a serious adverse reaction in healthy volunteer trials",
       "action": "require",
       "object": "stopping dosing when occurring in one subject (considered at least possibly related to IMP)",
-      "normalized_ko": null,
+      "normalized_ko": "한 대상자에서 발생하는 경우 투여 중단을 요구한다(IMP와 적어도 관련 가능성이 있는 것으로 간주됨).",
       "review_status": "reviewed"
     },
     {
@@ -5373,7 +5373,7 @@
       "subject": "any double-blind study design",
       "action": "have",
       "object": "clear instructions in the protocol for unblinding",
-      "normalized_ko": null,
+      "normalized_ko": "프로토콜에는 눈가림 해제를 위한 명확한 지침이 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5387,7 +5387,7 @@
       "subject": "the double-blind study protocol",
       "action": "contain",
       "object": "clear instructions for unblinding in the case of an emergency",
-      "normalized_ko": null,
+      "normalized_ko": "프로토콜에는 응급 상황에서의 눈가림 해제를 위한 명확한 지침이 반드시 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5485,7 +5485,7 @@
       "subject": "the protocol",
       "action": "include",
       "object": "a plan for prompt communication of serious adverse events and suspected unexpected serious adverse reactions (SUSARs) or serious safety-related protocol deviations between the sponsor, all study sites and investigators and trial subjects",
-      "normalized_ko": null,
+      "normalized_ko": "스폰서, 모든 시험기관 및 연구자, 그리고 임상시험 대상자 간 중대한 이상사례 및 의심되는 예상하지 못한 중대한 약물이상반응(SUSAR) 또는 안전성과 관련된 중대한 프로토콜 위반의 신속한 의사소통 계획을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -5499,7 +5499,7 @@
       "subject": "multicentre trials",
       "action": "define processes for communication of",
       "object": "safety data between the sponsor and all study sites and investigators and trial subjects",
-      "normalized_ko": null,
+      "normalized_ko": "스폰서와 모든 시험기관 및 연구자, 그리고 임상시험 대상자 간 안전성 데이터의 의사소통 절차를 정의한다.",
       "review_status": "reviewed"
     },
     {
@@ -5513,7 +5513,7 @@
       "subject": "the protocol",
       "action": "include",
       "object": "a plan for prompt communication of serious adverse events and suspected unexpected serious adverse reactions (SUSARs) or serious safety-related protocol deviations between the sponsor, all study sites and investigators and trial subjects",
-      "normalized_ko": null,
+      "normalized_ko": "스폰서, 모든 시험기관 및 연구자, 그리고 임상시험 대상자 간 중대한 이상사례 및 의심되는 예상하지 못한 중대한 약물이상반응(SUSAR) 또는 안전성과 관련된 중대한 프로토콜 위반의 신속한 의사소통 계획을 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5527,7 +5527,7 @@
       "subject": "the processes",
       "action": "be clearly defined for communication of",
       "object": "safety data between the sponsor and all study sites and investigators and trial subjects",
-      "normalized_ko": null,
+      "normalized_ko": "스폰서와 모든 시험기관 및 연구자, 그리고 임상시험 대상자 간 안전성 데이터의 의사소통 절차가 명확히 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5541,7 +5541,7 @@
       "subject": "emerging safety issues",
       "action": "includes",
       "object": "severe or serious adverse reactions",
-      "normalized_ko": null,
+      "normalized_ko": "중증 또는 중대한 약물이상반응을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -5555,7 +5555,7 @@
       "subject": "Section 8.3",
       "action": "addresses",
       "object": "Documentation of sponsor and investigators responsibilities",
-      "normalized_ko": null,
+      "normalized_ko": "스폰서 및 연구자의 책임에 대한 문서화를 다룬다.",
       "review_status": "reviewed"
     },
     {
@@ -5569,7 +5569,7 @@
       "subject": "The responsibilities of the sponsor and investigator(s) (as well as any other experts or study staff) in decision making",
       "action": "be clearly defined in",
       "object": "the protocol",
-      "normalized_ko": null,
+      "normalized_ko": "시험계획서에 명확히 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5583,7 +5583,7 @@
       "subject": "Responsibility with regard to breaking the treatment code",
       "action": "be documented",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "문서화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5597,7 +5597,7 @@
       "subject": "Consideration",
       "action": "be given to",
       "object": "the inclusion of independent experts who are (at least) external to the study",
-      "normalized_ko": null,
+      "normalized_ko": "연구 외부에 있는 독립 전문가를 포함하는 것을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5611,7 +5611,7 @@
       "subject": "unblinding in an emergency",
       "action": "be done at",
       "object": "the investigators discretion without involvement of the monitor or sponsor",
-      "normalized_ko": null,
+      "normalized_ko": "모니터 또는 의뢰자의 관여 없이 연구자의 재량으로 수행된다.",
       "review_status": "reviewed"
     },
     {
@@ -5625,7 +5625,7 @@
       "subject": "Other details",
       "action": "include",
       "object": "the exact remit of the group",
-      "normalized_ko": null,
+      "normalized_ko": "그룹의 정확한 권한 범위를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -5639,7 +5639,7 @@
       "subject": "Written statements and conclusions by any decision-making or safety review group",
       "action": "be in place before allowing",
       "object": "trial progression",
-      "normalized_ko": null,
+      "normalized_ko": "시험 진행을 허용하기 전에 마련되어 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5653,7 +5653,7 @@
       "subject": "Written statements and conclusions by any decision-making or safety review group",
       "action": "include",
       "object": "documentation of appropriate quality control checks on the data reviewed",
-      "normalized_ko": null,
+      "normalized_ko": "검토된 데이터에 대한 적절한 품질관리 점검의 문서를 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5667,7 +5667,7 @@
       "subject": "This",
       "action": "includes",
       "object": "documentation of appropriate quality control checks on the data reviewed",
-      "normalized_ko": null,
+      "normalized_ko": "검토된 데이터에 대한 적절한 품질관리 점검의 문서를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -5681,7 +5681,7 @@
       "subject": "unblinding in an emergency",
       "action": "be done at the investigator's discretion",
       "object": "without involvement of the monitor or sponsor when needed for immediate management of a subject",
-      "normalized_ko": null,
+      "normalized_ko": "대상자의 즉각적인 관리에 필요한 경우, 모니터 또는 의뢰자의 관여 없이 연구자의 재량으로 수행된다.",
       "review_status": "reviewed"
     },
     {
@@ -5695,7 +5695,7 @@
       "subject": "unblinding in an emergency",
       "action": "be done at the investigator's discretion",
       "object": "without involvement of the monitor or sponsor when needed for immediate management of a subject",
-      "normalized_ko": null,
+      "normalized_ko": "대상자의 즉각적인 관리에 필요한 경우, 모니터 또는 의뢰자의 관여 없이 연구자의 재량으로 수행할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5709,7 +5709,7 @@
       "subject": "unblinding in an emergency",
       "action": "not involve the monitor or sponsor",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "모니터 또는 의뢰자를 관여시키지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5723,7 +5723,7 @@
       "subject": "FIH/early CTs",
       "action": "take place in",
       "object": "appropriate clinical facilities",
-      "normalized_ko": null,
+      "normalized_ko": "적절한 임상 시설에서 이루어져야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5737,7 +5737,7 @@
       "subject": "FIH/early CTs",
       "action": "be conducted by",
       "object": "trained investigators and medical staff with appropriate levels of training and experience of early phase trials",
-      "normalized_ko": null,
+      "normalized_ko": "초기 단계 시험에 관한 적절한 수준의 교육 및 경험을 갖춘 훈련된 시험책임자 및 의료진이 수행해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5751,7 +5751,7 @@
       "subject": "The training",
       "action": "include",
       "object": "relevant medical expertise and GCP training",
-      "normalized_ko": null,
+      "normalized_ko": "관련 의학 전문지식 및 GCP 교육을 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5765,7 +5765,7 @@
       "subject": "trained investigators and medical staff",
       "action": "understand",
       "object": "specific characteristics of the IMP and of its target and mode of action",
-      "normalized_ko": null,
+      "normalized_ko": "IMP 및 그 표적과 작용기전의 특정 특성을 이해해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5779,7 +5779,7 @@
       "subject": "FIH/early CTs",
       "action": "have",
       "object": "the possibility of close supervision of study subjects during and after dosing",
-      "normalized_ko": null,
+      "normalized_ko": "투여 중 및 투여 후 시험대상자를 면밀히 감독할 수 있는 가능성을 갖추어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5793,7 +5793,7 @@
       "subject": "Procedures",
       "action": "be established between",
       "object": "the clinical research unit and its nearby intensive care unit regarding the responsibilities and undertakings of each in the transfer and care of patients",
-      "normalized_ko": null,
+      "normalized_ko": "임상연구 유닛과 인근 중환자실 간에는 환자 이송 및 진료 시 각각의 책임과 의무에 관한 협약이 수립되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5807,7 +5807,7 @@
       "subject": "FIH/early CTs",
       "action": "provide the possibility of",
       "object": "close supervision of study subjects",
-      "normalized_ko": null,
+      "normalized_ko": "시험대상자에 대한 면밀한 감독의 가능성을 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5821,7 +5821,7 @@
       "subject": "controlled conditions",
       "action": "includes",
       "object": "inpatient care",
-      "normalized_ko": null,
+      "normalized_ko": "입원 치료를 포함한다.",
       "review_status": "reviewed"
     }
   ],
@@ -5837,7 +5837,11 @@
       "unit": null,
       "value_status": "unknown",
       "denominator_or_reference": "the estimated human pharmacodynamic dose range",
-      "condition_ids": [],
+      "condition_ids": [
+        "ema_fih.cond.7_5.005",
+        "ema_fih.cond.7_5.006",
+        "ema_fih.cond.7_5.007"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -5855,7 +5859,16 @@
       "unit": null,
       "value_status": "unknown",
       "denominator_or_reference": "the set maximum exposure",
-      "condition_ids": [],
+      "condition_ids": [
+        "ema_fih.cond.7_6.002",
+        "ema_fih.cond.7_6.003",
+        "ema_fih.cond.7_6.004",
+        "ema_fih.cond.7_6.005",
+        "ema_fih.cond.7_6.006",
+        "ema_fih.cond.7_6.008",
+        "ema_fih.cond.7_6.009",
+        "ema_fih.cond.7_6.010"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -5873,7 +5886,16 @@
       "unit": "daily dosing",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ema_fih.cond.7_6.002",
+        "ema_fih.cond.7_6.003",
+        "ema_fih.cond.7_6.004",
+        "ema_fih.cond.7_6.005",
+        "ema_fih.cond.7_6.006",
+        "ema_fih.cond.7_6.008",
+        "ema_fih.cond.7_6.009",
+        "ema_fih.cond.7_6.010"
+      ],
       "joint_with_ids": [
         "ema_fih.qc.7_6.003",
         "ema_fih.qc.7_6.005"
@@ -5894,7 +5916,16 @@
       "unit": "daily dosing",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ema_fih.cond.7_6.002",
+        "ema_fih.cond.7_6.003",
+        "ema_fih.cond.7_6.004",
+        "ema_fih.cond.7_6.005",
+        "ema_fih.cond.7_6.006",
+        "ema_fih.cond.7_6.008",
+        "ema_fih.cond.7_6.009",
+        "ema_fih.cond.7_6.010"
+      ],
       "joint_with_ids": [
         "ema_fih.qc.7_6.002",
         "ema_fih.qc.7_6.004"
@@ -5915,7 +5946,16 @@
       "unit": "dose/day",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ema_fih.cond.7_6.002",
+        "ema_fih.cond.7_6.003",
+        "ema_fih.cond.7_6.004",
+        "ema_fih.cond.7_6.005",
+        "ema_fih.cond.7_6.006",
+        "ema_fih.cond.7_6.008",
+        "ema_fih.cond.7_6.009",
+        "ema_fih.cond.7_6.010"
+      ],
       "joint_with_ids": [
         "ema_fih.qc.7_6.003"
       ],
@@ -5935,7 +5975,16 @@
       "unit": "doses/day",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ema_fih.cond.7_6.002",
+        "ema_fih.cond.7_6.003",
+        "ema_fih.cond.7_6.004",
+        "ema_fih.cond.7_6.005",
+        "ema_fih.cond.7_6.006",
+        "ema_fih.cond.7_6.008",
+        "ema_fih.cond.7_6.009",
+        "ema_fih.cond.7_6.010"
+      ],
       "joint_with_ids": [
         "ema_fih.qc.7_6.002"
       ],
@@ -5955,7 +6004,16 @@
       "unit": "dose per day",
       "value_status": "known",
       "denominator_or_reference": "daily dosing",
-      "condition_ids": [],
+      "condition_ids": [
+        "ema_fih.cond.7_6.002",
+        "ema_fih.cond.7_6.003",
+        "ema_fih.cond.7_6.004",
+        "ema_fih.cond.7_6.005",
+        "ema_fih.cond.7_6.006",
+        "ema_fih.cond.7_6.008",
+        "ema_fih.cond.7_6.009",
+        "ema_fih.cond.7_6.010"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": true,
@@ -5973,7 +6031,16 @@
       "unit": "doses per day",
       "value_status": "known",
       "denominator_or_reference": "daily dosing",
-      "condition_ids": [],
+      "condition_ids": [
+        "ema_fih.cond.7_6.002",
+        "ema_fih.cond.7_6.003",
+        "ema_fih.cond.7_6.004",
+        "ema_fih.cond.7_6.005",
+        "ema_fih.cond.7_6.006",
+        "ema_fih.cond.7_6.008",
+        "ema_fih.cond.7_6.009",
+        "ema_fih.cond.7_6.010"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": true,
@@ -6085,7 +6152,10 @@
       "unit": "administration",
       "value_status": "known",
       "denominator_or_reference": "Subjects who have discontinued for any reason",
-      "condition_ids": [],
+      "condition_ids": [
+        "ema_fih.cond.8_2_8.002",
+        "ema_fih.cond.8_2_8.003"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6103,7 +6173,10 @@
       "unit": "evaluable subjects",
       "value_status": "unknown",
       "denominator_or_reference": "required for review",
-      "condition_ids": [],
+      "condition_ids": [
+        "ema_fih.cond.8_2_8.002",
+        "ema_fih.cond.8_2_8.003"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6171,7 +6244,13 @@
       "source_unit_id": "ema_fih.su.7_1.004",
       "condition_text": "during the CT",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_1.008",
+        "ema_fih.kr.7_1.009",
+        "ema_fih.kr.7_1.010",
+        "ema_fih.kr.7_1.011",
+        "ema_fih.kr.7_1.017"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6179,7 +6258,13 @@
       "source_unit_id": "ema_fih.su.7_1.004",
       "condition_text": "based on emerging clinical data",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_1.008",
+        "ema_fih.kr.7_1.009",
+        "ema_fih.kr.7_1.010",
+        "ema_fih.kr.7_1.011",
+        "ema_fih.kr.7_1.017"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6187,7 +6272,13 @@
       "source_unit_id": "ema_fih.su.7_1.004",
       "condition_text": "where the dose escalation has reached a pre-defined maximum exposure and an integrated analysis of available data leads to the Sponsor’s conclusion that further careful escalation is warranted",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_1.008",
+        "ema_fih.kr.7_1.009",
+        "ema_fih.kr.7_1.010",
+        "ema_fih.kr.7_1.011",
+        "ema_fih.kr.7_1.017"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6195,7 +6286,12 @@
       "source_unit_id": "ema_fih.su.7_1.006",
       "condition_text": "If an IMP has been administered to humans under the paradigm of microdose trials, as outlined in ICH M3(R2)",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_1.014",
+        "ema_fih.kr.7_1.015",
+        "ema_fih.kr.7_1.018",
+        "ema_fih.kr.7_1.019"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6203,7 +6299,15 @@
       "source_unit_id": "ema_fih.su.7_1.003",
       "condition_text": "emerging during the trial from previous dosed cohorts/individuals",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_1.004",
+        "ema_fih.kr.7_1.005",
+        "ema_fih.kr.7_1.006",
+        "ema_fih.kr.7_1.007",
+        "ema_fih.kr.7_1.016",
+        "ema_fih.kr.7_1.020",
+        "ema_fih.kr.7_1.021"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6211,7 +6315,12 @@
       "source_unit_id": "ema_fih.su.7_1.006",
       "condition_text": "If an IMP has been administered to humans under the paradigm of microdose trials, as outlined in ICH M3(R2)",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_1.014",
+        "ema_fih.kr.7_1.015",
+        "ema_fih.kr.7_1.018",
+        "ema_fih.kr.7_1.019"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6219,7 +6328,15 @@
       "source_unit_id": "ema_fih.su.7_1.003",
       "condition_text": "emerging during the trial from previous dosed cohorts/individuals",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_1.004",
+        "ema_fih.kr.7_1.005",
+        "ema_fih.kr.7_1.006",
+        "ema_fih.kr.7_1.007",
+        "ema_fih.kr.7_1.016",
+        "ema_fih.kr.7_1.020",
+        "ema_fih.kr.7_1.021"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6227,7 +6344,19 @@
       "source_unit_id": "ema_fih.su.7_2.002",
       "condition_text": "In general",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_2.003",
+        "ema_fih.kr.7_2.004",
+        "ema_fih.kr.7_2.005",
+        "ema_fih.kr.7_2.006",
+        "ema_fih.kr.7_2.007",
+        "ema_fih.kr.7_2.008",
+        "ema_fih.kr.7_2.009",
+        "ema_fih.kr.7_2.024",
+        "ema_fih.kr.7_2.025",
+        "ema_fih.kr.7_2.026",
+        "ema_fih.kr.7_2.027"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6235,7 +6364,17 @@
       "source_unit_id": "ema_fih.su.7_2.003",
       "condition_text": "if feasible",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_2.010",
+        "ema_fih.kr.7_2.011",
+        "ema_fih.kr.7_2.012",
+        "ema_fih.kr.7_2.013",
+        "ema_fih.kr.7_2.014",
+        "ema_fih.kr.7_2.028",
+        "ema_fih.kr.7_2.029",
+        "ema_fih.kr.7_2.030",
+        "ema_fih.kr.7_2.031"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6243,7 +6382,17 @@
       "source_unit_id": "ema_fih.su.7_2.003",
       "condition_text": "When using these approaches",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_2.010",
+        "ema_fih.kr.7_2.011",
+        "ema_fih.kr.7_2.012",
+        "ema_fih.kr.7_2.013",
+        "ema_fih.kr.7_2.014",
+        "ema_fih.kr.7_2.028",
+        "ema_fih.kr.7_2.029",
+        "ema_fih.kr.7_2.030",
+        "ema_fih.kr.7_2.031"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6251,7 +6400,17 @@
       "source_unit_id": "ema_fih.su.7_2.003",
       "condition_text": "Whenever possible",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_2.010",
+        "ema_fih.kr.7_2.011",
+        "ema_fih.kr.7_2.012",
+        "ema_fih.kr.7_2.013",
+        "ema_fih.kr.7_2.014",
+        "ema_fih.kr.7_2.028",
+        "ema_fih.kr.7_2.029",
+        "ema_fih.kr.7_2.030",
+        "ema_fih.kr.7_2.031"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6269,7 +6428,15 @@
       "source_unit_id": "ema_fih.su.7_2.004",
       "condition_text": "Depending on the level of uncertainty regarding the human relevance of findings observed in nonclinical studies (see sections 4.1 to 4.4) and the knowledge of the intended target (see sections 6.1 and 6.2)",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_2.015",
+        "ema_fih.kr.7_2.016",
+        "ema_fih.kr.7_2.017",
+        "ema_fih.kr.7_2.018",
+        "ema_fih.kr.7_2.032",
+        "ema_fih.kr.7_2.033",
+        "ema_fih.kr.7_2.034"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6277,7 +6444,19 @@
       "source_unit_id": "ema_fih.su.7_2.002",
       "condition_text": "when derived from appropriate animal studies",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_2.003",
+        "ema_fih.kr.7_2.004",
+        "ema_fih.kr.7_2.005",
+        "ema_fih.kr.7_2.006",
+        "ema_fih.kr.7_2.007",
+        "ema_fih.kr.7_2.008",
+        "ema_fih.kr.7_2.009",
+        "ema_fih.kr.7_2.024",
+        "ema_fih.kr.7_2.025",
+        "ema_fih.kr.7_2.026",
+        "ema_fih.kr.7_2.027"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6285,7 +6464,19 @@
       "source_unit_id": "ema_fih.su.7_2.002",
       "condition_text": "in the most relevant animal species used",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_2.003",
+        "ema_fih.kr.7_2.004",
+        "ema_fih.kr.7_2.005",
+        "ema_fih.kr.7_2.006",
+        "ema_fih.kr.7_2.007",
+        "ema_fih.kr.7_2.008",
+        "ema_fih.kr.7_2.009",
+        "ema_fih.kr.7_2.024",
+        "ema_fih.kr.7_2.025",
+        "ema_fih.kr.7_2.026",
+        "ema_fih.kr.7_2.027"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6303,7 +6494,17 @@
       "source_unit_id": "ema_fih.su.7_2.003",
       "condition_text": "Whenever possible",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_2.010",
+        "ema_fih.kr.7_2.011",
+        "ema_fih.kr.7_2.012",
+        "ema_fih.kr.7_2.013",
+        "ema_fih.kr.7_2.014",
+        "ema_fih.kr.7_2.028",
+        "ema_fih.kr.7_2.029",
+        "ema_fih.kr.7_2.030",
+        "ema_fih.kr.7_2.031"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6311,7 +6512,19 @@
       "source_unit_id": "ema_fih.su.7_2.002",
       "condition_text": "which might not necessarily be the most sensitive species",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_2.003",
+        "ema_fih.kr.7_2.004",
+        "ema_fih.kr.7_2.005",
+        "ema_fih.kr.7_2.006",
+        "ema_fih.kr.7_2.007",
+        "ema_fih.kr.7_2.008",
+        "ema_fih.kr.7_2.009",
+        "ema_fih.kr.7_2.024",
+        "ema_fih.kr.7_2.025",
+        "ema_fih.kr.7_2.026",
+        "ema_fih.kr.7_2.027"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6319,7 +6532,16 @@
       "source_unit_id": "ema_fih.su.7_3.002",
       "condition_text": "where there are no previous data in healthy volunteers",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_3.001",
+        "ema_fih.kr.7_3.002",
+        "ema_fih.kr.7_3.003",
+        "ema_fih.kr.7_3.004",
+        "ema_fih.kr.7_3.005",
+        "ema_fih.kr.7_3.006",
+        "ema_fih.kr.7_3.011",
+        "ema_fih.kr.7_3.012"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6327,7 +6549,16 @@
       "source_unit_id": "ema_fih.su.7_3.002",
       "condition_text": "In some instances",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_3.001",
+        "ema_fih.kr.7_3.002",
+        "ema_fih.kr.7_3.003",
+        "ema_fih.kr.7_3.004",
+        "ema_fih.kr.7_3.005",
+        "ema_fih.kr.7_3.006",
+        "ema_fih.kr.7_3.011",
+        "ema_fih.kr.7_3.012"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6335,7 +6566,16 @@
       "source_unit_id": "ema_fih.su.7_3.002",
       "condition_text": "In all cases",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_3.001",
+        "ema_fih.kr.7_3.002",
+        "ema_fih.kr.7_3.003",
+        "ema_fih.kr.7_3.004",
+        "ema_fih.kr.7_3.005",
+        "ema_fih.kr.7_3.006",
+        "ema_fih.kr.7_3.011",
+        "ema_fih.kr.7_3.012"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6343,7 +6583,9 @@
       "source_unit_id": "ema_fih.su.7_3.003",
       "condition_text": "If potential differences in target distribution, pharmacokinetics or safety profile of the IMP between healthy volunteers and patients can be foreseen",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_3.007"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6351,7 +6593,13 @@
       "source_unit_id": "ema_fih.su.7_3.004",
       "condition_text": "in specific situations",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_3.008",
+        "ema_fih.kr.7_3.009",
+        "ema_fih.kr.7_3.013",
+        "ema_fih.kr.7_3.014",
+        "ema_fih.kr.7_3.015"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6359,7 +6607,13 @@
       "source_unit_id": "ema_fih.su.7_3.004",
       "condition_text": "for studies in oncology patients (see ICH S9) or other severe or life-limiting diseases",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_3.008",
+        "ema_fih.kr.7_3.009",
+        "ema_fih.kr.7_3.013",
+        "ema_fih.kr.7_3.014",
+        "ema_fih.kr.7_3.015"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6367,7 +6621,13 @@
       "source_unit_id": "ema_fih.su.7_3.004",
       "condition_text": "in a CT in patients with advanced cancer or life-limiting diseases",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_3.008",
+        "ema_fih.kr.7_3.009",
+        "ema_fih.kr.7_3.013",
+        "ema_fih.kr.7_3.014",
+        "ema_fih.kr.7_3.015"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6375,7 +6635,13 @@
       "source_unit_id": "ema_fih.su.7_3.004",
       "condition_text": "if appropriately justified",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_3.008",
+        "ema_fih.kr.7_3.009",
+        "ema_fih.kr.7_3.013",
+        "ema_fih.kr.7_3.014",
+        "ema_fih.kr.7_3.015"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6383,7 +6649,16 @@
       "source_unit_id": "ema_fih.su.7_3.002",
       "condition_text": "In all cases",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_3.001",
+        "ema_fih.kr.7_3.002",
+        "ema_fih.kr.7_3.003",
+        "ema_fih.kr.7_3.004",
+        "ema_fih.kr.7_3.005",
+        "ema_fih.kr.7_3.006",
+        "ema_fih.kr.7_3.011",
+        "ema_fih.kr.7_3.012"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6391,7 +6666,13 @@
       "source_unit_id": "ema_fih.su.7_3.004",
       "condition_text": "in specific situations",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_3.008",
+        "ema_fih.kr.7_3.009",
+        "ema_fih.kr.7_3.013",
+        "ema_fih.kr.7_3.014",
+        "ema_fih.kr.7_3.015"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6409,7 +6690,16 @@
       "source_unit_id": "ema_fih.su.7_3.002",
       "condition_text": "In some instances",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_3.001",
+        "ema_fih.kr.7_3.002",
+        "ema_fih.kr.7_3.003",
+        "ema_fih.kr.7_3.004",
+        "ema_fih.kr.7_3.005",
+        "ema_fih.kr.7_3.006",
+        "ema_fih.kr.7_3.011",
+        "ema_fih.kr.7_3.012"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6417,7 +6707,9 @@
       "source_unit_id": "ema_fih.su.7_3.003",
       "condition_text": "with dose escalation as appropriate",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_3.007"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6425,7 +6717,9 @@
       "source_unit_id": "ema_fih.su.7_3.003",
       "condition_text": "in the first patient cohort",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_3.007"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6433,7 +6727,19 @@
       "source_unit_id": "ema_fih.su.7_4.002",
       "condition_text": "during a CT",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001",
+        "ema_fih.kr.7_4.002",
+        "ema_fih.kr.7_4.003",
+        "ema_fih.kr.7_4.004",
+        "ema_fih.kr.7_4.005",
+        "ema_fih.kr.7_4.006",
+        "ema_fih.kr.7_4.007",
+        "ema_fih.kr.7_4.008",
+        "ema_fih.kr.7_4.009",
+        "ema_fih.kr.7_4.010",
+        "ema_fih.kr.7_4.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6441,7 +6747,19 @@
       "source_unit_id": "ema_fih.su.7_4.002",
       "condition_text": "if any",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001",
+        "ema_fih.kr.7_4.002",
+        "ema_fih.kr.7_4.003",
+        "ema_fih.kr.7_4.004",
+        "ema_fih.kr.7_4.005",
+        "ema_fih.kr.7_4.006",
+        "ema_fih.kr.7_4.007",
+        "ema_fih.kr.7_4.008",
+        "ema_fih.kr.7_4.009",
+        "ema_fih.kr.7_4.010",
+        "ema_fih.kr.7_4.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6449,7 +6767,19 @@
       "source_unit_id": "ema_fih.su.7_4.002",
       "condition_text": "if relevant and feasible",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001",
+        "ema_fih.kr.7_4.002",
+        "ema_fih.kr.7_4.003",
+        "ema_fih.kr.7_4.004",
+        "ema_fih.kr.7_4.005",
+        "ema_fih.kr.7_4.006",
+        "ema_fih.kr.7_4.007",
+        "ema_fih.kr.7_4.008",
+        "ema_fih.kr.7_4.009",
+        "ema_fih.kr.7_4.010",
+        "ema_fih.kr.7_4.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6457,7 +6787,19 @@
       "source_unit_id": "ema_fih.su.7_4.002",
       "condition_text": "following review of emerging clinical data from previous cohorts",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001",
+        "ema_fih.kr.7_4.002",
+        "ema_fih.kr.7_4.003",
+        "ema_fih.kr.7_4.004",
+        "ema_fih.kr.7_4.005",
+        "ema_fih.kr.7_4.006",
+        "ema_fih.kr.7_4.007",
+        "ema_fih.kr.7_4.008",
+        "ema_fih.kr.7_4.009",
+        "ema_fih.kr.7_4.010",
+        "ema_fih.kr.7_4.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6465,7 +6807,19 @@
       "source_unit_id": "ema_fih.su.7_4.002",
       "condition_text": "if there is evidence of non-linear PK potentially resulting in a supra-proportional increases in exposure",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001",
+        "ema_fih.kr.7_4.002",
+        "ema_fih.kr.7_4.003",
+        "ema_fih.kr.7_4.004",
+        "ema_fih.kr.7_4.005",
+        "ema_fih.kr.7_4.006",
+        "ema_fih.kr.7_4.007",
+        "ema_fih.kr.7_4.008",
+        "ema_fih.kr.7_4.009",
+        "ema_fih.kr.7_4.010",
+        "ema_fih.kr.7_4.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6473,7 +6827,19 @@
       "source_unit_id": "ema_fih.su.7_4.002",
       "condition_text": "particularly in the later parts of SAD/MAD",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001",
+        "ema_fih.kr.7_4.002",
+        "ema_fih.kr.7_4.003",
+        "ema_fih.kr.7_4.004",
+        "ema_fih.kr.7_4.005",
+        "ema_fih.kr.7_4.006",
+        "ema_fih.kr.7_4.007",
+        "ema_fih.kr.7_4.008",
+        "ema_fih.kr.7_4.009",
+        "ema_fih.kr.7_4.010",
+        "ema_fih.kr.7_4.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6481,7 +6847,19 @@
       "source_unit_id": "ema_fih.su.7_4.002",
       "condition_text": "If emerging clinical data reveal substantial differences from non-clinical or modelling and simulation data",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001",
+        "ema_fih.kr.7_4.002",
+        "ema_fih.kr.7_4.003",
+        "ema_fih.kr.7_4.004",
+        "ema_fih.kr.7_4.005",
+        "ema_fih.kr.7_4.006",
+        "ema_fih.kr.7_4.007",
+        "ema_fih.kr.7_4.008",
+        "ema_fih.kr.7_4.009",
+        "ema_fih.kr.7_4.010",
+        "ema_fih.kr.7_4.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6489,7 +6867,19 @@
       "source_unit_id": "ema_fih.su.7_4.002",
       "condition_text": "If available data indicate a plateauing of exposure",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001",
+        "ema_fih.kr.7_4.002",
+        "ema_fih.kr.7_4.003",
+        "ema_fih.kr.7_4.004",
+        "ema_fih.kr.7_4.005",
+        "ema_fih.kr.7_4.006",
+        "ema_fih.kr.7_4.007",
+        "ema_fih.kr.7_4.008",
+        "ema_fih.kr.7_4.009",
+        "ema_fih.kr.7_4.010",
+        "ema_fih.kr.7_4.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6507,7 +6897,19 @@
       "source_unit_id": "ema_fih.su.7_4.002",
       "condition_text": "In addition to defining a starting dose and a maximum exposure",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001",
+        "ema_fih.kr.7_4.002",
+        "ema_fih.kr.7_4.003",
+        "ema_fih.kr.7_4.004",
+        "ema_fih.kr.7_4.005",
+        "ema_fih.kr.7_4.006",
+        "ema_fih.kr.7_4.007",
+        "ema_fih.kr.7_4.008",
+        "ema_fih.kr.7_4.009",
+        "ema_fih.kr.7_4.010",
+        "ema_fih.kr.7_4.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6515,7 +6917,19 @@
       "source_unit_id": "ema_fih.su.7_4.002",
       "condition_text": "defined in the non-clinical studies",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001",
+        "ema_fih.kr.7_4.002",
+        "ema_fih.kr.7_4.003",
+        "ema_fih.kr.7_4.004",
+        "ema_fih.kr.7_4.005",
+        "ema_fih.kr.7_4.006",
+        "ema_fih.kr.7_4.007",
+        "ema_fih.kr.7_4.008",
+        "ema_fih.kr.7_4.009",
+        "ema_fih.kr.7_4.010",
+        "ema_fih.kr.7_4.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6523,7 +6937,19 @@
       "source_unit_id": "ema_fih.su.7_4.002",
       "condition_text": "if there is evidence of non-linear PK potentially resulting in a supra-proportional increases in exposure",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001",
+        "ema_fih.kr.7_4.002",
+        "ema_fih.kr.7_4.003",
+        "ema_fih.kr.7_4.004",
+        "ema_fih.kr.7_4.005",
+        "ema_fih.kr.7_4.006",
+        "ema_fih.kr.7_4.007",
+        "ema_fih.kr.7_4.008",
+        "ema_fih.kr.7_4.009",
+        "ema_fih.kr.7_4.010",
+        "ema_fih.kr.7_4.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6531,7 +6957,19 @@
       "source_unit_id": "ema_fih.su.7_4.002",
       "condition_text": "If emerging clinical data reveal substantial differences from non-clinical or modelling and simulation data",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001",
+        "ema_fih.kr.7_4.002",
+        "ema_fih.kr.7_4.003",
+        "ema_fih.kr.7_4.004",
+        "ema_fih.kr.7_4.005",
+        "ema_fih.kr.7_4.006",
+        "ema_fih.kr.7_4.007",
+        "ema_fih.kr.7_4.008",
+        "ema_fih.kr.7_4.009",
+        "ema_fih.kr.7_4.010",
+        "ema_fih.kr.7_4.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6539,7 +6977,19 @@
       "source_unit_id": "ema_fih.su.7_4.002",
       "condition_text": "If available data indicate a plateauing of exposure",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001",
+        "ema_fih.kr.7_4.002",
+        "ema_fih.kr.7_4.003",
+        "ema_fih.kr.7_4.004",
+        "ema_fih.kr.7_4.005",
+        "ema_fih.kr.7_4.006",
+        "ema_fih.kr.7_4.007",
+        "ema_fih.kr.7_4.008",
+        "ema_fih.kr.7_4.009",
+        "ema_fih.kr.7_4.010",
+        "ema_fih.kr.7_4.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6547,7 +6997,19 @@
       "source_unit_id": "ema_fih.su.7_4.002",
       "condition_text": "before potential serious/irreversible effects develop",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_4.001",
+        "ema_fih.kr.7_4.002",
+        "ema_fih.kr.7_4.003",
+        "ema_fih.kr.7_4.004",
+        "ema_fih.kr.7_4.005",
+        "ema_fih.kr.7_4.006",
+        "ema_fih.kr.7_4.007",
+        "ema_fih.kr.7_4.008",
+        "ema_fih.kr.7_4.009",
+        "ema_fih.kr.7_4.010",
+        "ema_fih.kr.7_4.011"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6565,7 +7027,14 @@
       "source_unit_id": "ema_fih.su.7_5.002",
       "condition_text": "when appropriate",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.001",
+        "ema_fih.kr.7_5.002",
+        "ema_fih.kr.7_5.003",
+        "ema_fih.kr.7_5.004",
+        "ema_fih.kr.7_5.005",
+        "ema_fih.kr.7_5.013"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6573,7 +7042,14 @@
       "source_unit_id": "ema_fih.su.7_5.002",
       "condition_text": "when complete inhibition or activation of the target is achieved and no further therapeutic effect is to be expected by increasing the dose",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.001",
+        "ema_fih.kr.7_5.002",
+        "ema_fih.kr.7_5.003",
+        "ema_fih.kr.7_5.004",
+        "ema_fih.kr.7_5.005",
+        "ema_fih.kr.7_5.013"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6581,7 +7057,9 @@
       "source_unit_id": "ema_fih.su.7_5.003",
       "condition_text": "in studies where exposure cannot be adequately measured",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.006"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6589,7 +7067,11 @@
       "source_unit_id": "ema_fih.su.7_5.004",
       "condition_text": "In general",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.007",
+        "ema_fih.kr.7_5.008",
+        "ema_fih.qc.7_5.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6597,7 +7079,11 @@
       "source_unit_id": "ema_fih.su.7_5.004",
       "condition_text": "if scientifically justified and considered acceptable from a safety perspective",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.007",
+        "ema_fih.kr.7_5.008",
+        "ema_fih.qc.7_5.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6605,7 +7091,11 @@
       "source_unit_id": "ema_fih.su.7_5.004",
       "condition_text": "taking into consideration the uncertainty as outlined in section 4",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.007",
+        "ema_fih.kr.7_5.008",
+        "ema_fih.qc.7_5.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6613,7 +7103,13 @@
       "source_unit_id": "ema_fih.su.7_5.005",
       "condition_text": "For trials or trial parts that include patients",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.009",
+        "ema_fih.kr.7_5.010",
+        "ema_fih.kr.7_5.011",
+        "ema_fih.kr.7_5.012",
+        "ema_fih.kr.7_5.014"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6621,7 +7117,13 @@
       "source_unit_id": "ema_fih.su.7_5.005",
       "condition_text": "(if applicable)",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.009",
+        "ema_fih.kr.7_5.010",
+        "ema_fih.kr.7_5.011",
+        "ema_fih.kr.7_5.012",
+        "ema_fih.kr.7_5.014"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6629,7 +7131,13 @@
       "source_unit_id": "ema_fih.su.7_5.005",
       "condition_text": "once it has been determined",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.009",
+        "ema_fih.kr.7_5.010",
+        "ema_fih.kr.7_5.011",
+        "ema_fih.kr.7_5.012",
+        "ema_fih.kr.7_5.014"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6637,7 +7145,13 @@
       "source_unit_id": "ema_fih.su.7_5.005",
       "condition_text": "when defining the dose range",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.009",
+        "ema_fih.kr.7_5.010",
+        "ema_fih.kr.7_5.011",
+        "ema_fih.kr.7_5.012",
+        "ema_fih.kr.7_5.014"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6645,7 +7159,13 @@
       "source_unit_id": "ema_fih.su.7_5.005",
       "condition_text": "For trials or trial parts that include patients",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.009",
+        "ema_fih.kr.7_5.010",
+        "ema_fih.kr.7_5.011",
+        "ema_fih.kr.7_5.012",
+        "ema_fih.kr.7_5.014"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6653,7 +7173,13 @@
       "source_unit_id": "ema_fih.su.7_5.005",
       "condition_text": "for healthy volunteers",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.009",
+        "ema_fih.kr.7_5.010",
+        "ema_fih.kr.7_5.011",
+        "ema_fih.kr.7_5.012",
+        "ema_fih.kr.7_5.014"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6661,7 +7187,14 @@
       "source_unit_id": "ema_fih.su.7_5.002",
       "condition_text": "for each study part",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.001",
+        "ema_fih.kr.7_5.002",
+        "ema_fih.kr.7_5.003",
+        "ema_fih.kr.7_5.004",
+        "ema_fih.kr.7_5.005",
+        "ema_fih.kr.7_5.013"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6679,7 +7212,13 @@
       "source_unit_id": "ema_fih.su.7_5.005",
       "condition_text": "when defining the dose range",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_5.009",
+        "ema_fih.kr.7_5.010",
+        "ema_fih.kr.7_5.011",
+        "ema_fih.kr.7_5.012",
+        "ema_fih.kr.7_5.014"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6687,7 +7226,10 @@
       "source_unit_id": "ema_fih.su.7_6.002",
       "condition_text": "for all multiple dosing cohorts and study parts",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_6.001",
+        "ema_fih.kr.7_6.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6695,7 +7237,21 @@
       "source_unit_id": "ema_fih.su.7_6.003",
       "condition_text": "for every cohort",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_6.003",
+        "ema_fih.kr.7_6.004",
+        "ema_fih.kr.7_6.005",
+        "ema_fih.kr.7_6.006",
+        "ema_fih.kr.7_6.007",
+        "ema_fih.kr.7_6.008",
+        "ema_fih.qc.7_6.001",
+        "ema_fih.qc.7_6.002",
+        "ema_fih.qc.7_6.003",
+        "ema_fih.qc.7_6.004",
+        "ema_fih.qc.7_6.005",
+        "ema_fih.qc.7_6.006",
+        "ema_fih.qc.7_6.007"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6703,7 +7259,21 @@
       "source_unit_id": "ema_fih.su.7_6.003",
       "condition_text": "emerging clinical data following multiple dosing suggests tolerance to adverse effects seen in a SAD part of a study",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_6.003",
+        "ema_fih.kr.7_6.004",
+        "ema_fih.kr.7_6.005",
+        "ema_fih.kr.7_6.006",
+        "ema_fih.kr.7_6.007",
+        "ema_fih.kr.7_6.008",
+        "ema_fih.qc.7_6.001",
+        "ema_fih.qc.7_6.002",
+        "ema_fih.qc.7_6.003",
+        "ema_fih.qc.7_6.004",
+        "ema_fih.qc.7_6.005",
+        "ema_fih.qc.7_6.006",
+        "ema_fih.qc.7_6.007"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6711,7 +7281,21 @@
       "source_unit_id": "ema_fih.su.7_6.003",
       "condition_text": "this option is pre-specified",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_6.003",
+        "ema_fih.kr.7_6.004",
+        "ema_fih.kr.7_6.005",
+        "ema_fih.kr.7_6.006",
+        "ema_fih.kr.7_6.007",
+        "ema_fih.kr.7_6.008",
+        "ema_fih.qc.7_6.001",
+        "ema_fih.qc.7_6.002",
+        "ema_fih.qc.7_6.003",
+        "ema_fih.qc.7_6.004",
+        "ema_fih.qc.7_6.005",
+        "ema_fih.qc.7_6.006",
+        "ema_fih.qc.7_6.007"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6719,7 +7303,21 @@
       "source_unit_id": "ema_fih.su.7_6.003",
       "condition_text": "If, however, emerging clinical data following multiple dosing suggests tolerance to adverse effects seen in a SAD part of a study",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_6.003",
+        "ema_fih.kr.7_6.004",
+        "ema_fih.kr.7_6.005",
+        "ema_fih.kr.7_6.006",
+        "ema_fih.kr.7_6.007",
+        "ema_fih.kr.7_6.008",
+        "ema_fih.qc.7_6.001",
+        "ema_fih.qc.7_6.002",
+        "ema_fih.qc.7_6.003",
+        "ema_fih.qc.7_6.004",
+        "ema_fih.qc.7_6.005",
+        "ema_fih.qc.7_6.006",
+        "ema_fih.qc.7_6.007"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6727,7 +7325,21 @@
       "source_unit_id": "ema_fih.su.7_6.003",
       "condition_text": "provided this option is pre-specified",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_6.003",
+        "ema_fih.kr.7_6.004",
+        "ema_fih.kr.7_6.005",
+        "ema_fih.kr.7_6.006",
+        "ema_fih.kr.7_6.007",
+        "ema_fih.kr.7_6.008",
+        "ema_fih.qc.7_6.001",
+        "ema_fih.qc.7_6.002",
+        "ema_fih.qc.7_6.003",
+        "ema_fih.qc.7_6.004",
+        "ema_fih.qc.7_6.005",
+        "ema_fih.qc.7_6.006",
+        "ema_fih.qc.7_6.007"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6735,7 +7347,10 @@
       "source_unit_id": "ema_fih.su.7_6.002",
       "condition_text": "in the expected concentration range",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_6.001",
+        "ema_fih.kr.7_6.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6743,7 +7358,21 @@
       "source_unit_id": "ema_fih.su.7_6.003",
       "condition_text": "for every cohort",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_6.003",
+        "ema_fih.kr.7_6.004",
+        "ema_fih.kr.7_6.005",
+        "ema_fih.kr.7_6.006",
+        "ema_fih.kr.7_6.007",
+        "ema_fih.kr.7_6.008",
+        "ema_fih.qc.7_6.001",
+        "ema_fih.qc.7_6.002",
+        "ema_fih.qc.7_6.003",
+        "ema_fih.qc.7_6.004",
+        "ema_fih.qc.7_6.005",
+        "ema_fih.qc.7_6.006",
+        "ema_fih.qc.7_6.007"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6751,7 +7380,21 @@
       "source_unit_id": "ema_fih.su.7_6.003",
       "condition_text": "during preceding SAD parts/trials",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_6.003",
+        "ema_fih.kr.7_6.004",
+        "ema_fih.kr.7_6.005",
+        "ema_fih.kr.7_6.006",
+        "ema_fih.kr.7_6.007",
+        "ema_fih.kr.7_6.008",
+        "ema_fih.qc.7_6.001",
+        "ema_fih.qc.7_6.002",
+        "ema_fih.qc.7_6.003",
+        "ema_fih.qc.7_6.004",
+        "ema_fih.qc.7_6.005",
+        "ema_fih.qc.7_6.006",
+        "ema_fih.qc.7_6.007"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6759,7 +7402,21 @@
       "source_unit_id": "ema_fih.su.7_6.003",
       "condition_text": "below the set maximum exposure",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_6.003",
+        "ema_fih.kr.7_6.004",
+        "ema_fih.kr.7_6.005",
+        "ema_fih.kr.7_6.006",
+        "ema_fih.kr.7_6.007",
+        "ema_fih.kr.7_6.008",
+        "ema_fih.qc.7_6.001",
+        "ema_fih.qc.7_6.002",
+        "ema_fih.qc.7_6.003",
+        "ema_fih.qc.7_6.004",
+        "ema_fih.qc.7_6.005",
+        "ema_fih.qc.7_6.006",
+        "ema_fih.qc.7_6.007"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6767,7 +7424,10 @@
       "source_unit_id": "ema_fih.su.7_7.003",
       "condition_text": "In the case of an intravenous administration",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_7.002",
+        "ema_fih.kr.7_7.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6775,7 +7435,9 @@
       "source_unit_id": "ema_fih.su.7_7.002",
       "condition_text": "for dosing in humans",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.7_7.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6783,7 +7445,10 @@
       "source_unit_id": "ema_fih.su.8_1.003",
       "condition_text": "if the same subjects are participating in multiple cohorts",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_1.005",
+        "ema_fih.kr.8_1.006"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6791,7 +7456,11 @@
       "source_unit_id": "ema_fih.su.8_1.004",
       "condition_text": "when appropriate and feasible",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_1.007",
+        "ema_fih.kr.8_1.008",
+        "ema_fih.kr.8_1.009"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6809,7 +7478,11 @@
       "source_unit_id": "ema_fih.su.8_1.004",
       "condition_text": "when appropriate and feasible",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_1.007",
+        "ema_fih.kr.8_1.008",
+        "ema_fih.kr.8_1.009"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6937,7 +7610,11 @@
       "source_unit_id": "ema_fih.su.8_2_3.003",
       "condition_text": "for trials involving healthy participants",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_2_3.002",
+        "ema_fih.kr.8_2_3.003",
+        "ema_fih.kr.8_2_3.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6945,7 +7622,11 @@
       "source_unit_id": "ema_fih.su.8_2_3.003",
       "condition_text": "if justified",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_2_3.002",
+        "ema_fih.kr.8_2_3.003",
+        "ema_fih.kr.8_2_3.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6983,7 +7664,16 @@
       "source_unit_id": "ema_fih.su.8_2_4.003",
       "condition_text": "until parameters return to within the normal range or to baseline",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_2_4.006",
+        "ema_fih.kr.8_2_4.007",
+        "ema_fih.kr.8_2_4.008",
+        "ema_fih.kr.8_2_4.009",
+        "ema_fih.kr.8_2_4.010",
+        "ema_fih.kr.8_2_4.011",
+        "ema_fih.kr.8_2_4.012",
+        "ema_fih.kr.8_2_4.013"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6991,7 +7681,16 @@
       "source_unit_id": "ema_fih.su.8_2_4.003",
       "condition_text": "as appropriate for the population",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_2_4.006",
+        "ema_fih.kr.8_2_4.007",
+        "ema_fih.kr.8_2_4.008",
+        "ema_fih.kr.8_2_4.009",
+        "ema_fih.kr.8_2_4.010",
+        "ema_fih.kr.8_2_4.011",
+        "ema_fih.kr.8_2_4.012",
+        "ema_fih.kr.8_2_4.013"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -6999,7 +7698,16 @@
       "source_unit_id": "ema_fih.su.8_2_4.003",
       "condition_text": "when the mechanism entails enzyme inhibition or activation",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_2_4.006",
+        "ema_fih.kr.8_2_4.007",
+        "ema_fih.kr.8_2_4.008",
+        "ema_fih.kr.8_2_4.009",
+        "ema_fih.kr.8_2_4.010",
+        "ema_fih.kr.8_2_4.011",
+        "ema_fih.kr.8_2_4.012",
+        "ema_fih.kr.8_2_4.013"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -7007,7 +7715,16 @@
       "source_unit_id": "ema_fih.su.8_2_4.003",
       "condition_text": "until enzyme activity has returned back to baseline or to an acceptable percentage of baseline",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_2_4.006",
+        "ema_fih.kr.8_2_4.007",
+        "ema_fih.kr.8_2_4.008",
+        "ema_fih.kr.8_2_4.009",
+        "ema_fih.kr.8_2_4.010",
+        "ema_fih.kr.8_2_4.011",
+        "ema_fih.kr.8_2_4.012",
+        "ema_fih.kr.8_2_4.013"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -7015,7 +7732,16 @@
       "source_unit_id": "ema_fih.su.8_2_4.003",
       "condition_text": "when prolonged PD effects are observed regardless of duration of target inhibition or PK profile of the IMP",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_2_4.006",
+        "ema_fih.kr.8_2_4.007",
+        "ema_fih.kr.8_2_4.008",
+        "ema_fih.kr.8_2_4.009",
+        "ema_fih.kr.8_2_4.010",
+        "ema_fih.kr.8_2_4.011",
+        "ema_fih.kr.8_2_4.012",
+        "ema_fih.kr.8_2_4.013"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -7033,7 +7759,16 @@
       "source_unit_id": "ema_fih.su.8_2_4.003",
       "condition_text": "either within pre-specified limits in the protocol or via a substantial amendment",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_2_4.006",
+        "ema_fih.kr.8_2_4.007",
+        "ema_fih.kr.8_2_4.008",
+        "ema_fih.kr.8_2_4.009",
+        "ema_fih.kr.8_2_4.010",
+        "ema_fih.kr.8_2_4.011",
+        "ema_fih.kr.8_2_4.012",
+        "ema_fih.kr.8_2_4.013"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -7041,7 +7776,16 @@
       "source_unit_id": "ema_fih.su.8_2_4.003",
       "condition_text": "for possible delayed adverse reactions",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_2_4.006",
+        "ema_fih.kr.8_2_4.007",
+        "ema_fih.kr.8_2_4.008",
+        "ema_fih.kr.8_2_4.009",
+        "ema_fih.kr.8_2_4.010",
+        "ema_fih.kr.8_2_4.011",
+        "ema_fih.kr.8_2_4.012",
+        "ema_fih.kr.8_2_4.013"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -7069,7 +7813,16 @@
       "source_unit_id": "ema_fih.su.8_2_4.003",
       "condition_text": "as appropriate for the population",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_2_4.006",
+        "ema_fih.kr.8_2_4.007",
+        "ema_fih.kr.8_2_4.008",
+        "ema_fih.kr.8_2_4.009",
+        "ema_fih.kr.8_2_4.010",
+        "ema_fih.kr.8_2_4.011",
+        "ema_fih.kr.8_2_4.012",
+        "ema_fih.kr.8_2_4.013"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -7427,7 +8180,20 @@
       "source_unit_id": "ema_fih.su.8_2_8.002",
       "condition_text": "if at least one administration (of IMP/placebo) has occurred",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_2_8.001",
+        "ema_fih.kr.8_2_8.002",
+        "ema_fih.kr.8_2_8.003",
+        "ema_fih.kr.8_2_8.004",
+        "ema_fih.kr.8_2_8.005",
+        "ema_fih.kr.8_2_8.006",
+        "ema_fih.kr.8_2_8.007",
+        "ema_fih.kr.8_2_8.008",
+        "ema_fih.kr.8_2_8.009",
+        "ema_fih.kr.8_2_8.010",
+        "ema_fih.qc.8_2_8.001",
+        "ema_fih.qc.8_2_8.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -7435,7 +8201,20 @@
       "source_unit_id": "ema_fih.su.8_2_8.002",
       "condition_text": "to proceed to the next dose cohort",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_2_8.001",
+        "ema_fih.kr.8_2_8.002",
+        "ema_fih.kr.8_2_8.003",
+        "ema_fih.kr.8_2_8.004",
+        "ema_fih.kr.8_2_8.005",
+        "ema_fih.kr.8_2_8.006",
+        "ema_fih.kr.8_2_8.007",
+        "ema_fih.kr.8_2_8.008",
+        "ema_fih.kr.8_2_8.009",
+        "ema_fih.kr.8_2_8.010",
+        "ema_fih.qc.8_2_8.001",
+        "ema_fih.qc.8_2_8.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -7803,7 +8582,16 @@
       "source_unit_id": "ema_fih.su.8_4.002",
       "condition_text": "If multiple sites must be involved",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_4.001",
+        "ema_fih.kr.8_4.002",
+        "ema_fih.kr.8_4.003",
+        "ema_fih.kr.8_4.004",
+        "ema_fih.kr.8_4.005",
+        "ema_fih.kr.8_4.006",
+        "ema_fih.kr.8_4.007",
+        "ema_fih.kr.8_4.008"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -7811,7 +8599,16 @@
       "source_unit_id": "ema_fih.su.8_4.002",
       "condition_text": "If multiple sites must be involved, e.g. in patient studies where multiple sites are often required for enrolment",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ema_fih.kr.8_4.001",
+        "ema_fih.kr.8_4.002",
+        "ema_fih.kr.8_4.003",
+        "ema_fih.kr.8_4.004",
+        "ema_fih.kr.8_4.005",
+        "ema_fih.kr.8_4.006",
+        "ema_fih.kr.8_4.007",
+        "ema_fih.kr.8_4.008"
+      ],
       "review_status": "reviewed"
     },
     {

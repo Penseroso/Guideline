@@ -751,7 +751,7 @@
       "subject": "Safety evaluation programs",
       "action": "include",
       "object": "the use of relevant species",
-      "normalized_ko": null,
+      "normalized_ko": "관련 종의 사용을 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -765,7 +765,7 @@
       "subject": "A relevant species",
       "action": "is",
       "object": "one in which the test material is pharmacologically active due to the expression of the receptor or an epitope",
-      "normalized_ko": null,
+      "normalized_ko": "수용체 또는 에피토프의 발현으로 인해 시험 물질이 약리활성을 나타내는 경우이다.",
       "review_status": "reviewed"
     },
     {
@@ -779,7 +779,7 @@
       "subject": "A variety of techniques",
       "action": "can be used",
       "object": "to identify a relevant species",
-      "normalized_ko": null,
+      "normalized_ko": "관련 종을 식별하는 데 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -793,7 +793,7 @@
       "subject": "The biological activity together with species and/or tissue specificity of many biotechnology-derived pharmaceuticals",
       "action": "often preclude",
       "object": "standard toxicity testing designs in commonly used species (e.g., rats and dogs)",
-      "normalized_ko": null,
+      "normalized_ko": "일반적으로 사용되는 종(예: 랫드 및 개)에서의 표준 독성시험 설계를 흔히 불가능하게 한다.",
       "review_status": "reviewed"
     },
     {
@@ -807,7 +807,7 @@
       "subject": "Knowledge of receptor/epitope distribution",
       "action": "can provide",
       "object": "greater understanding of potential in vivo toxicity",
-      "normalized_ko": null,
+      "normalized_ko": "잠재적인 생체 내 독성에 대한 더 큰 이해를 제공할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -821,7 +821,7 @@
       "subject": "Relevant animal species for testing of monoclonal antibodies",
       "action": "are",
       "object": "those that express the desired epitope and demonstrate a similar tissue cross-reactivity profile as for human tissues",
-      "normalized_ko": null,
+      "normalized_ko": "원하는 에피토프를 발현하고 인체 조직에서의 양상과 유사한 조직 교차반응성 프로파일을 나타내는 것들이다.",
       "review_status": "reviewed"
     },
     {
@@ -835,7 +835,7 @@
       "subject": "This",
       "action": "optimise",
       "object": "the ability to evaluate toxicity arising from the binding to the epitope and any unintentional tissue cross-reactivity",
-      "normalized_ko": null,
+      "normalized_ko": "에피토프 결합 및 비의도적 조직 교차반응성으로 인해 발생하는 독성을 평가하는 능력을 최적화한다.",
       "review_status": "reviewed"
     },
     {
@@ -849,7 +849,7 @@
       "subject": "An animal species which does not express the desired epitope",
       "action": "may still be of some relevance",
       "object": "for assessing toxicity if comparable unintentional tissue cross-reactivity to humans is demonstrated",
-      "normalized_ko": null,
+      "normalized_ko": "인체와 유사한 비의도적 조직 교차반응성이 입증되는 경우, 독성 평가에 여전히 어느 정도 관련성이 있을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -863,7 +863,7 @@
       "subject": "Safety evaluation programs",
       "action": "include",
       "object": "two relevant species",
-      "normalized_ko": null,
+      "normalized_ko": "두 관련 종을 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -877,7 +877,7 @@
       "subject": "One relevant species",
       "action": "may suffice",
       "object": "in certain justified cases",
-      "normalized_ko": null,
+      "normalized_ko": "특정 정당화된 경우에는 충분할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -891,7 +891,7 @@
       "subject": "Use of only one species for subsequent long term toxicity studies",
       "action": "may be possible to justify",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "정당화하는 것이 가능할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -905,7 +905,7 @@
       "subject": "Toxicity studies in non-relevant species",
       "action": "may be misleading and are discouraged",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "오도할 수 있으므로 권장되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -919,7 +919,7 @@
       "subject": "The use of relevant transgenic animals expressing the human receptor or the use of homologous proteins",
       "action": "be considered",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -933,7 +933,7 @@
       "subject": "Assessment of some aspects of potential toxicity in a limited toxicity evaluation in a single species",
       "action": "may still be prudent",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "여전히 신중한 조치일 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -947,7 +947,7 @@
       "subject": "The information gained from use of a transgenic animal model expressing the human receptor",
       "action": "is optimised",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "최적화된다.",
       "review_status": "reviewed"
     },
     {
@@ -961,7 +961,7 @@
       "subject": "Useful information",
       "action": "may also be gained",
       "object": "from the use of homologous proteins",
-      "normalized_ko": null,
+      "normalized_ko": "상동 단백질의 사용으로부터도 얻을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -975,7 +975,7 @@
       "subject": "The production process, range of impurities/contaminants, pharmacokinetics, and exact pharmacological mechanism(s)",
       "action": "may differ",
       "object": "between the homologous form and the product intended for clinical use",
-      "normalized_ko": null,
+      "normalized_ko": "상동 형태와 임상 사용을 목적으로 하는 제품 간에 다를 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -989,7 +989,7 @@
       "subject": "These animal models",
       "action": "include",
       "object": "induced and spontaneous models of disease, gene knockout(s), and transgenic animals",
-      "normalized_ko": null,
+      "normalized_ko": "유도성 및 자연발생 질환 모델, 유전자 녹아웃 및 형질전환 동물을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -1003,7 +1003,7 @@
       "subject": "Animal models similar to the human disease",
       "action": "may provide further insight",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "추가적인 통찰을 제공할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1017,7 +1017,7 @@
       "subject": "Studies performed in animal models of disease",
       "action": "may be used",
       "object": "as an acceptable alternative to toxicity studies in normal animals",
-      "normalized_ko": null,
+      "normalized_ko": "정상 동물에서의 독성시험에 대한 허용 가능한 대안으로 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1031,7 +1031,7 @@
       "subject": "The scientific justification for the use of these animal models of disease to support safety",
       "action": "be provided",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "제공되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1045,7 +1045,7 @@
       "subject": "Animal models of disease",
       "action": "may be useful",
       "object": "in defining toxicity endpoints, selection of clinical indications, and determination of appropriate formulations, route of administration, and treatment regimen",
-      "normalized_ko": null,
+      "normalized_ko": "독성 평가변수 정의, 임상 적응증 선정, 적절한 제형, 투여 경로 및 치료 요법 결정에 유용할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1059,7 +1059,7 @@
       "subject": "The collection of concurrent control and baseline data",
       "action": "is critical",
       "object": "to optimise study design",
-      "normalized_ko": null,
+      "normalized_ko": "연구 설계를 최적화하는 데 결정적이다.",
       "review_status": "reviewed"
     },
     {
@@ -1073,7 +1073,7 @@
       "subject": "These models of disease",
       "action": "often have",
       "object": "a paucity of historical data for use as a reference when evaluating study results",
-      "normalized_ko": null,
+      "normalized_ko": "연구 결과 평가 시 참고자료로 사용할 과거 데이터가 부족한 경우가 많다.",
       "review_status": "reviewed"
     },
     {
@@ -1087,7 +1087,7 @@
       "subject": "A number of factors",
       "action": "be taken into account",
       "object": "when determining species relevancy",
-      "normalized_ko": null,
+      "normalized_ko": "종의 관련성을 결정할 때 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1101,7 +1101,7 @@
       "subject": "Comparisons of target sequence homology between species",
       "action": "can be",
       "object": "an appropriate starting point",
-      "normalized_ko": null,
+      "normalized_ko": "적절한 출발점이 될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1115,7 +1115,7 @@
       "subject": "In vitro assays to make qualitative and quantitative cross-species comparisons of relative target binding affinities and receptor/ligand occupancy and kinetics",
       "action": "follow",
       "object": "comparisons of target sequence homology between species",
-      "normalized_ko": null,
+      "normalized_ko": "종 간 표적 서열 상동성 비교를 따른다.",
       "review_status": "reviewed"
     },
     {
@@ -1129,7 +1129,7 @@
       "subject": "Assessments of functional activity",
       "action": "are recommended",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "권장된다.",
       "review_status": "reviewed"
     },
     {
@@ -1143,7 +1143,7 @@
       "subject": "Functional activity",
       "action": "can be demonstrated",
       "object": "in species-specific cell-based systems and/or in vivo pharmacology or toxicology studies",
-      "normalized_ko": null,
+      "normalized_ko": "종 특이적 세포 기반 시스템 및/또는 생체 내 약리학 또는 독성학 연구에서 입증될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1157,7 +1157,7 @@
       "subject": "Modulation of a known biologic response or of a pharmacodynamic (PD) marker",
       "action": "can provide",
       "object": "evidence for functional activity to support species relevance",
-      "normalized_ko": null,
+      "normalized_ko": "종 관련성을 뒷받침하는 기능적 활성에 대한 근거를 제공할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1171,7 +1171,7 @@
       "subject": "Consideration of species differences in target binding and functional activity in the context of the intended dosing regime",
       "action": "provide confidence",
       "object": "that a model is capable of demonstrating potentially adverse consequences of target modulation",
-      "normalized_ko": null,
+      "normalized_ko": "모델이 표적 조절로 인해 발생할 수 있는 유해한 결과를 입증할 수 있다는 확신을 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1185,7 +1185,7 @@
       "subject": "Binding affinity and activity in cell-based systems",
       "action": "can be sufficient",
       "object": "to guide species selection",
-      "normalized_ko": null,
+      "normalized_ko": "종 선택을 안내하는 데 충분할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1199,7 +1199,7 @@
       "subject": "Assessment of tissue cross reactivity in animal tissues",
       "action": "is",
       "object": "of limited value for species selection",
-      "normalized_ko": null,
+      "normalized_ko": "종 선택에 있어 가치가 제한적이다.",
       "review_status": "reviewed"
     },
     {
@@ -1213,7 +1213,7 @@
       "subject": "Tissue cross-reactivity (TCR) studies",
       "action": "can be used",
       "object": "to guide selection of toxicology species by comparison of tissue binding profiles in human and those animal tissues where target binding is expected",
-      "normalized_ko": null,
+      "normalized_ko": "인체와 표적 결합이 예상되는 동물 조직 간의 조직 결합 프로파일 비교를 통해 독성시험 종 선택을 안내하는 데 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1227,7 +1227,7 @@
       "subject": "Use of homologous molecules or transgenic models",
       "action": "can be considered",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1241,7 +1241,7 @@
       "subject": "A short-term safety study in one species",
       "action": "can be considered",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1255,7 +1255,7 @@
       "subject": "Additional toxicity studies, including reproductive toxicity studies",
       "action": "are not appropriate",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "적절하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -1269,7 +1269,7 @@
       "subject": "A safety assessment",
       "action": "can be included",
       "object": "to provide information on potential target-associated safety aspects",
-      "normalized_ko": null,
+      "normalized_ko": "잠재적인 표적 관련 안전성 측면에 대한 정보를 제공하기 위해 포함될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1283,7 +1283,7 @@
       "subject": "Appropriate risk mitigation strategies",
       "action": "be adopted",
       "object": "for clinical trials",
-      "normalized_ko": null,
+      "normalized_ko": "임상시험을 위해 채택되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1297,7 +1297,7 @@
       "subject": "Species selection for an antibody-drug/toxin conjugate (ADC) incorporating a novel toxin/toxicant",
       "action": "follow",
       "object": "the same general principles as an unconjugated antibody",
-      "normalized_ko": null,
+      "normalized_ko": "비접합 항체와 동일한 일반 원칙을 따라야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1311,7 +1311,7 @@
       "subject": "Both pharmacologically relevant species",
       "action": "be used",
       "object": "for short-term general toxicology studies",
-      "normalized_ko": null,
+      "normalized_ko": "단기 일반독성시험에 사용해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1325,7 +1325,7 @@
       "subject": "Longer-term general toxicity studies in one species",
       "action": "are usually considered sufficient",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "통상 충분한 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -1339,7 +1339,7 @@
       "subject": "The rodent species",
       "action": "be considered",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1353,7 +1353,7 @@
       "subject": "Studies in two non-rodent species",
       "action": "are not appropriate",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "적절하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -1367,7 +1367,7 @@
       "subject": "The use of one species for all general toxicity studies",
       "action": "is justified",
       "object": "when the clinical candidate is pharmacologically active in only one species",
-      "normalized_ko": null,
+      "normalized_ko": "임상 후보물질이 한 종에서만 약리활성을 나타내는 경우 정당화된다.",
       "review_status": "reviewed"
     },
     {
@@ -1381,7 +1381,7 @@
       "subject": "Studies in a second species with a homologous product",
       "action": "are not considered to add further value and are not recommended",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "추가적인 가치를 제공하는 것으로 간주되지 않으며 권장되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -1395,7 +1395,7 @@
       "subject": "Tissue cross-reactivity (TCR) studies",
       "action": "are",
       "object": "in vitro tissue-binding assays employing immunohistochemical techniques",
-      "normalized_ko": null,
+      "normalized_ko": "면역조직화학 기법을 이용한 in vitro 조직 결합 분석이다.",
       "review_status": "reviewed"
     },
     {
@@ -1409,7 +1409,7 @@
       "subject": "Other technologies",
       "action": "can be employed",
       "object": "in place of IHC techniques to demonstrate target/binding site distribution",
-      "normalized_ko": null,
+      "normalized_ko": "표적/결합 부위 분포를 입증하기 위해 IHC 기법 대신 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1423,7 +1423,7 @@
       "subject": "A TCR study with a panel of human tissues",
       "action": "is a recommended component",
       "object": "of the safety assessment package supporting initial clinical dosing of these products",
-      "normalized_ko": null,
+      "normalized_ko": "이들 제품의 초기 임상 투여를 뒷받침하는 안전성 평가 패키지의 권장 구성요소이다.",
       "review_status": "reviewed"
     },
     {
@@ -1437,7 +1437,7 @@
       "subject": "TCR studies",
       "action": "can provide",
       "object": "useful information to supplement knowledge of target distribution and information on potential unexpected binding",
-      "normalized_ko": null,
+      "normalized_ko": "표적 분포에 관한 지식 및 예기치 않은 결합 가능성에 대한 정보를 보완하는 유용한 정보를 제공할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1451,7 +1451,7 @@
       "subject": "Findings",
       "action": "be evaluated and interpreted",
       "object": "in the context of the overall pharmacology and safety assessment data package",
-      "normalized_ko": null,
+      "normalized_ko": "전반적인 약리학 및 안전성 평가 데이터 패키지의 맥락에서 평가하고 해석해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1465,7 +1465,7 @@
       "subject": "Tissue binding per se",
       "action": "does not indicate",
       "object": "biological activity in vivo",
-      "normalized_ko": null,
+      "normalized_ko": "생체 내 생물학적 활성을 나타내지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -1479,7 +1479,7 @@
       "subject": "Binding to areas not typically accessible to the antibody in vivo (i.e., cytoplasm)",
       "action": "is generally not relevant",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "일반적으로 관련성이 없다.",
       "review_status": "reviewed"
     },
     {
@@ -1493,7 +1493,7 @@
       "subject": "TCR using a full panel of animal tissues",
       "action": "is not recommended",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "권장되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -1507,7 +1507,7 @@
       "subject": "An evaluation of selected animal tissues",
       "action": "can provide",
       "object": "supplemental information regarding potential correlations or lack thereof with preclinical toxicity",
-      "normalized_ko": null,
+      "normalized_ko": "전임상 독성과의 잠재적 상관관계 또는 상관관계 부재에 관한 보충 정보를 제공할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1521,7 +1521,7 @@
       "subject": "Study of the individual binding components",
       "action": "is not needed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "필요하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -1535,7 +1535,7 @@
       "subject": "Evaluating the tissue binding of homologous products",
       "action": "does not provide additional value and is not recommended",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "추가적인 가치를 제공하지 않으며 권장되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -1549,7 +1549,7 @@
       "subject": "TCR studies",
       "action": "are not recommended",
       "object": "for assessing comparability of the test article as a result of process changes over the course of a development program",
-      "normalized_ko": null,
+      "normalized_ko": "개발 프로그램 과정에서의 공정 변경으로 인한 시험물질의 비교가능성을 평가하기 위해 권장되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -1563,7 +1563,7 @@
       "subject": "TCR studies",
       "action": "cannot detect",
       "object": "subtle changes in critical quality attributes",
-      "normalized_ko": null,
+      "normalized_ko": "중요 품질 특성의 미세한 변화를 검출할 수 없다.",
       "review_status": "reviewed"
     },
     {
@@ -1577,7 +1577,7 @@
       "subject": "An additional short-term study or arm in a short-term study",
       "action": "be conducted",
       "object": "in at least one species with the unconjugated toxin",
-      "normalized_ko": null,
+      "normalized_ko": "비접합 독소를 사용하여 적어도 한 종에서 실시해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1591,7 +1591,7 @@
       "subject": "A rodent",
       "action": "is preferred",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "더 선호된다.",
       "review_status": "reviewed"
     },
     {
@@ -1605,7 +1605,7 @@
       "subject": "The ADC",
       "action": "be tested",
       "object": "in the only pharmacologically relevant species available",
-      "normalized_ko": null,
+      "normalized_ko": "이용 가능한 유일한 약리학적 관련 종에서 시험해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1619,7 +1619,7 @@
       "subject": "A novel toxicant",
       "action": "calls for",
       "object": "an approach to species selection similar to that used for a new chemical entity on a case-by case approach",
-      "normalized_ko": null,
+      "normalized_ko": "사례별 접근 방식으로 신규 화학물질에 사용되는 것과 유사한 종 선택 접근법이 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -1633,7 +1633,7 @@
       "subject": "Separate evaluation of the unconjugated toxin",
       "action": "is not warranted",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "정당화되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -1647,7 +1647,7 @@
       "subject": "Data",
       "action": "be provided",
       "object": "to compare the metabolic stability of the ADC in animals with human",
-      "normalized_ko": null,
+      "normalized_ko": "동물에서의 ADC 대사 안정성을 사람과 비교하기 위해 제공해야 한다.",
       "review_status": "reviewed"
     }
   ],

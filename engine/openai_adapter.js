@@ -18,7 +18,7 @@ function create() {
   // gpt-5.6-sol only if a real dry-run measurement shows Terra's accuracy
   // falling short of the existing human-reviewed baseline — not before.
   async function complete({ system, messages, schema, maxTokens = 1024, model = "gpt-5.6-terra" }) {
-    const chatMessages = [{ role: "system", content: system }, ...messages];
+    const chatMessages = system ? [{ role: "system", content: system }, ...messages] : [...messages];
 
     if (schema) {
       const response = await client.chat.completions.create({

@@ -2115,7 +2115,7 @@
       "subject": "FDA",
       "action": "recommends",
       "object": "a multi-tiered ADA testing approach",
-      "normalized_ko": null,
+      "normalized_ko": "다층적 ADA 시험 접근법이 권장된다.",
       "review_status": "reviewed"
     },
     {
@@ -2129,7 +2129,7 @@
       "subject": "the screening assay",
       "action": "be sensitive",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "민감해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2143,7 +2143,7 @@
       "subject": "the screening assay",
       "action": "be designed to detect",
       "object": "low levels of low- and high-affinity ADA",
-      "normalized_ko": null,
+      "normalized_ko": "낮은 친화도 및 높은 친화도의 ADA가 낮은 수준으로 존재하는 경우를 검출하도록 설계되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2157,7 +2157,7 @@
       "subject": "a sensitive screening assay",
       "action": "is initially used to assess",
       "object": "clinical samples",
-      "normalized_ko": null,
+      "normalized_ko": "임상 검체를 평가하기 위해 처음 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -2171,7 +2171,7 @@
       "subject": "Samples testing positive in the screening assay",
       "action": "are then subjected to",
       "object": "a confirmatory assay",
-      "normalized_ko": null,
+      "normalized_ko": "그 후 확인 분석법을 적용받는다.",
       "review_status": "reviewed"
     },
     {
@@ -2185,7 +2185,7 @@
       "subject": "a confirmatory assay",
       "action": "demonstrate",
       "object": "that ADAs are specific for the therapeutic protein product",
-      "normalized_ko": null,
+      "normalized_ko": "ADA가 치료용 단백질 제품에 특이적임을 입증한다.",
       "review_status": "reviewed"
     },
     {
@@ -2199,7 +2199,7 @@
       "subject": "screening assay design approach",
       "action": "includes",
       "object": "minimizing wash steps",
-      "normalized_ko": null,
+      "normalized_ko": "세척 단계를 최소화하는 것을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -2213,7 +2213,7 @@
       "subject": "the positive finding in the screening assay",
       "action": "is not a result of",
       "object": "non-specific interactions of the test serum or detection reagent with other materials in the assay milieu such as plastic or other proteins",
-      "normalized_ko": null,
+      "normalized_ko": "검사 혈청 또는 검출 시약이 플라스틱이나 기타 단백질 등 분석 환경 내 다른 물질과 비특이적으로 상호작용한 결과가 아니다.",
       "review_status": "reviewed"
     },
     {
@@ -2227,7 +2227,7 @@
       "subject": "it",
       "action": "is not necessary to empirically determine",
       "object": "the affinity of antibodies that are detected by the initial screening assay",
-      "normalized_ko": null,
+      "normalized_ko": "초기 스크리닝 분석법으로 검출된 항체의 친화도를 경험적으로 결정할 필요는 없다.",
       "review_status": "reviewed"
     },
     {
@@ -2241,7 +2241,7 @@
       "subject": "a competition assay",
       "action": "confirm",
       "object": "that an antibody is specifically binding to the therapeutic protein product",
-      "normalized_ko": null,
+      "normalized_ko": "항체가 치료용 단백질 제품에 특이적으로 결합함을 확인한다.",
       "review_status": "reviewed"
     },
     {
@@ -2255,7 +2255,7 @@
       "subject": "Samples identified as positive in the confirmatory assay",
       "action": "be further characterized in",
       "object": "other assays",
-      "normalized_ko": null,
+      "normalized_ko": "다른 분석법에서 추가로 특성화해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2269,7 +2269,7 @@
       "subject": "other assays",
       "action": "includes",
       "object": "titration and neutralization assays",
-      "normalized_ko": null,
+      "normalized_ko": "적정 분석법 및 중화 분석법을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -2283,7 +2283,7 @@
       "subject": "assays to detect cross-reactivity to other proteins",
       "action": "be needed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2297,7 +2297,7 @@
       "subject": "tests to assess the isotype of the antibodies or their epitope specificity",
       "action": "be recommended",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "권장될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2311,7 +2311,7 @@
       "subject": "Epitope specificity determination of the ADA response",
       "action": "is not frequently performed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "자주 수행되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -2325,7 +2325,7 @@
       "subject": "a more general assessment of domain specificity",
       "action": "is common to perform for",
       "object": "multi-domain products",
-      "normalized_ko": null,
+      "normalized_ko": "다중 도메인 제품에 대해 수행하는 것이 일반적이다.",
       "review_status": "reviewed"
     },
     {
@@ -2339,7 +2339,7 @@
       "subject": "a competition assay",
       "action": "could confirm that an antibody is specifically binding to",
       "object": "the therapeutic protein product",
-      "normalized_ko": null,
+      "normalized_ko": "항체가 치료용 단백질 제품에 특이적으로 결합함을 확인할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2353,7 +2353,7 @@
       "subject": "a competition assay",
       "action": "could confirm that the positive finding in the screening assay is not a result of",
       "object": "non-specific interactions of the test serum or detection reagent with other materials in the assay milieu",
-      "normalized_ko": null,
+      "normalized_ko": "스크리닝 분석법에서의 양성 결과가 검사 혈청 또는 검출 시약이 분석 환경 내 다른 물질과 비특이적으로 상호작용한 결과가 아님을 확인할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2367,7 +2367,7 @@
       "subject": "The cut-point of the assay",
       "action": "is",
       "object": "the level of response of the assay that defines the sample response as positive or negative",
-      "normalized_ko": null,
+      "normalized_ko": "검체 반응을 양성 또는 음성으로 정의하는 분석법의 반응 수준이다.",
       "review_status": "reviewed"
     },
     {
@@ -2381,7 +2381,7 @@
       "subject": "Information specific to establishing the cut-point",
       "action": "is provided",
       "object": "in sections V and VI",
-      "normalized_ko": null,
+      "normalized_ko": "V절 및 VI절에 제공된다.",
       "review_status": "reviewed"
     },
     {
@@ -2395,7 +2395,7 @@
       "subject": "Establishing the appropriate cut-point",
       "action": "is critical to minimizing",
       "object": "the risk of false-negative results",
-      "normalized_ko": null,
+      "normalized_ko": "위음성 결과의 위험을 최소화하는 데 매우 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -2409,7 +2409,7 @@
       "subject": "The cut-point of the assay",
       "action": "can be influenced by",
       "object": "a myriad of interfering product or matrix components",
-      "normalized_ko": null,
+      "normalized_ko": "수많은 간섭성 제품 또는 매트릭스 성분에 의해 영향을 받을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2423,7 +2423,7 @@
       "subject": "components",
       "action": "cause",
       "object": "the background signal from the assay to vary",
-      "normalized_ko": null,
+      "normalized_ko": "분석법의 배경 신호를 변동시킬 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2437,7 +2437,7 @@
       "subject": "different cut-points",
       "action": "be needed for",
       "object": "discrete populations",
-      "normalized_ko": null,
+      "normalized_ko": "특정 하위 집단에 필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2451,7 +2451,7 @@
       "subject": "These components",
       "action": "be considered",
       "object": "early on in assay development",
-      "normalized_ko": null,
+      "normalized_ko": "분석법 개발 초기 단계에서 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2465,7 +2465,7 @@
       "subject": "different cut-points",
       "action": "be needed",
       "object": "for discrete populations",
-      "normalized_ko": null,
+      "normalized_ko": "특정 하위 집단에 필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2479,7 +2479,7 @@
       "subject": "the cut-point",
       "action": "be statistically determined",
       "object": "using samples from treatment-naïve subjects",
-      "normalized_ko": null,
+      "normalized_ko": "치료 경험이 없는 피험자의 검체를 사용하여 통계적으로 결정해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2493,7 +2493,7 @@
       "subject": "The sponsor",
       "action": "consider",
       "object": "the impact of statistically determined outlier values and true-positive samples",
-      "normalized_ko": null,
+      "normalized_ko": "통계적으로 결정된 이상치 값 및 진양성 검체의 영향을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2507,7 +2507,7 @@
       "subject": "The sponsor",
       "action": "provide justification for",
       "object": "the removal of any data points",
-      "normalized_ko": null,
+      "normalized_ko": "모든 데이터 포인트 제거에 대한 근거를 제시해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2521,7 +2521,7 @@
       "subject": "the variability of the assay",
       "action": "can be estimated",
       "object": "by performing replicate assay runs with these samples",
-      "normalized_ko": null,
+      "normalized_ko": "이들 검체를 사용하여 반복 분석법 수행을 실시함으로써 추정할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2535,7 +2535,7 @@
       "subject": "The statistical approach employed to determine the cut-point",
       "action": "entail",
       "object": "various processes",
-      "normalized_ko": null,
+      "normalized_ko": "다양한 절차를 수반할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2549,7 +2549,7 @@
       "subject": "statistical processes",
       "action": "includes",
       "object": "removing statistical outliers from analyses",
-      "normalized_ko": null,
+      "normalized_ko": "분석에서 통계적 이상치를 제거하는 것을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -2563,7 +2563,7 @@
       "subject": "Apparent positive values and samples",
       "action": "may derive from",
       "object": "the presence of pre-existing antibodies or other serum factors in subject samples",
-      "normalized_ko": null,
+      "normalized_ko": "피험자 검체에 기존 항체 또는 기타 혈청 인자가 존재함으로써 발생할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2577,7 +2577,7 @@
       "subject": "pre-existing antibodies",
       "action": "can be much higher",
       "object": "in some disease states",
-      "normalized_ko": null,
+      "normalized_ko": "일부 질환 상태에서 훨씬 더 높을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2591,7 +2591,7 @@
       "subject": "pre-existing antibodies to a variety of endogenous proteins",
       "action": "are present",
       "object": "in healthy individuals",
-      "normalized_ko": null,
+      "normalized_ko": "건강한 개인에게 존재한다.",
       "review_status": "reviewed"
     },
     {
@@ -2605,7 +2605,7 @@
       "subject": "A common approach to evaluating treatment-boosted ADA responses",
       "action": "is to assess",
       "object": "changes in antibody titers",
-      "normalized_ko": null,
+      "normalized_ko": "항체 역가의 변화를 평가하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2619,7 +2619,7 @@
       "subject": "pre-existing antibodies",
       "action": "can be much higher in",
       "object": "some disease states",
-      "normalized_ko": null,
+      "normalized_ko": "일부 질환 상태에서 훨씬 더 높을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2633,7 +2633,7 @@
       "subject": "treatment-boosted ADA",
       "action": "identifies",
       "object": "subjects in whom ADA increases following treatment",
-      "normalized_ko": null,
+      "normalized_ko": "치료 후 ADA가 증가하는 피험자를 식별한다.",
       "review_status": "reviewed"
     },
     {
@@ -2647,7 +2647,7 @@
       "subject": "The sponsor",
       "action": "identify",
       "object": "those samples with pre-existing antibodies",
-      "normalized_ko": null,
+      "normalized_ko": "기존 항체가 있는 검체를 식별해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2661,7 +2661,7 @@
       "subject": "The sponsor",
       "action": "remove",
       "object": "those samples with pre-existing antibodies from the cut-point analysis",
-      "normalized_ko": null,
+      "normalized_ko": "기존 항체가 있는 검체를 컷포인트 분석에서 제외해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2675,7 +2675,7 @@
       "subject": "it",
       "action": "may be necessary to assign",
       "object": "positive responses using a cut-point based on the difference between individual subject results before and after exposure",
-      "normalized_ko": null,
+      "normalized_ko": "노출 전후 개별 피험자 결과의 차이에 기반한 컷포인트를 사용하여 양성 반응을 할당할 필요가 있을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2689,7 +2689,7 @@
       "subject": "the sponsor",
       "action": "assign positive responses",
       "object": "using a cut-point based on the difference between individual subject results before and after exposure",
-      "normalized_ko": null,
+      "normalized_ko": "노출 전후 개별 피험자 결과의 차이에 기반한 컷포인트를 사용하여 양성 반응을 할당할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2703,7 +2703,7 @@
       "subject": "Information specific to establishing the cut-point for the respective assay types",
       "action": "is provided in",
       "object": "sections V and VI",
-      "normalized_ko": null,
+      "normalized_ko": "섹션 V 및 VI에 제공된다.",
       "review_status": "reviewed"
     },
     {
@@ -2717,7 +2717,7 @@
       "subject": "identification methods",
       "action": "includes",
       "object": "through competition with drug",
-      "normalized_ko": null,
+      "normalized_ko": "약물과의 경쟁을 통한 것을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -2731,7 +2731,7 @@
       "subject": "the variability of the assay",
       "action": "can be estimated",
       "object": "by performing replicate assay runs with these samples",
-      "normalized_ko": null,
+      "normalized_ko": "이들 검체로 반복 분석시험을 수행하여 추정할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2745,7 +2745,7 @@
       "subject": "ADA increases following treatment",
       "action": "is also known as",
       "object": "treatment-boosted ADA",
-      "normalized_ko": null,
+      "normalized_ko": "치료 증강 ADA로도 알려져 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2759,7 +2759,7 @@
       "subject": "The therapeutic protein product or its endogenous counterpart present in the serum",
       "action": "may interfere with",
       "object": "the sensitivity of the assay",
-      "normalized_ko": null,
+      "normalized_ko": "분석법의 민감도를 방해할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2773,7 +2773,7 @@
       "subject": "The sponsor",
       "action": "examine",
       "object": "drug tolerance by deliberately adding different known amounts of positive control antibody into ADA-negative control samples in the absence or presence of different quantities of the therapeutic protein product to determine whether the therapeutic protein product interferes with ADA detection",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품이 ADA 검출을 방해하는지 여부를 판단하기 위해, ADA 음성 대조 검체에 서로 다른 알려진 양의 양성 대조 항체를 치료용 단백질 제품의 서로 다른 양의 부재 또는 존재하에 의도적으로 첨가하여 약물 내성을 검토할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2787,7 +2787,7 @@
       "subject": "The assessment of assay sensitivity",
       "action": "is critical to understanding",
       "object": "the sensitivity and suitability of the method for detecting ADA in dosed subjects",
-      "normalized_ko": null,
+      "normalized_ko": "투여된 피험자에서 ADA를 검출하기 위한 방법의 민감도 및 적합성을 이해하는 데 결정적으로 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -2801,7 +2801,7 @@
       "subject": "sponsors",
       "action": "examine",
       "object": "assay drug tolerance early in assay development",
-      "normalized_ko": null,
+      "normalized_ko": "분석법 개발 초기 단계에서 분석법의 약물 내성을 검토해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2815,7 +2815,7 @@
       "subject": "Results obtained in the absence and presence of different quantities of the therapeutic protein product under consideration",
       "action": "be compared",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "비교해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2829,7 +2829,7 @@
       "subject": "The sponsor",
       "action": "examine",
       "object": "drug tolerance by deliberately adding different known amounts of positive control antibody into ADA-negative control samples",
-      "normalized_ko": null,
+      "normalized_ko": "ADA 음성 대조 검체에 서로 다른 알려진 양의 양성 대조 항체를 의도적으로 첨가하여 약물 내성을 검토할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2843,7 +2843,7 @@
       "subject": "Drug tolerance",
       "action": "be improved using",
       "object": "approaches such as acid dissociation",
-      "normalized_ko": null,
+      "normalized_ko": "산 해리와 같은 접근법을 사용하여 개선할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2857,7 +2857,7 @@
       "subject": "acid dissociation",
       "action": "may not be appropriate",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "적절하지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2871,7 +2871,7 @@
       "subject": "Interference from the therapeutic protein product",
       "action": "can be minimized by collecting",
       "object": "subject samples at trough drug levels",
-      "normalized_ko": null,
+      "normalized_ko": "최저 약물 농도에서 피험자 검체를 채취함으로써 최소화할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2885,7 +2885,7 @@
       "subject": "The selectivity of the assay",
       "action": "be taken into consideration",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2899,7 +2899,7 @@
       "subject": "these factors",
       "action": "impact",
       "object": "the assessment of drug tolerance",
-      "normalized_ko": null,
+      "normalized_ko": "약물 내성 평가에 영향을 미친다.",
       "review_status": "reviewed"
     },
     {
@@ -2913,7 +2913,7 @@
       "subject": "Drug tolerance",
       "action": "may be improved using",
       "object": "approaches such as acid dissociation that disrupt circulating ADA-drug complexes",
-      "normalized_ko": null,
+      "normalized_ko": "순환 중인 ADA-약물 복합체를 파괴하는 산 해리와 같은 접근법을 사용하여 개선할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2927,7 +2927,7 @@
       "subject": "Interference from the therapeutic protein product",
       "action": "can be minimized by",
       "object": "collecting subject samples at trough drug levels",
-      "normalized_ko": null,
+      "normalized_ko": "최저 약물 농도에서 피험자 검체를 채취함으로써 최소화할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2941,7 +2941,7 @@
       "subject": "Interference from the therapeutic protein product",
       "action": "can be minimized by",
       "object": "collecting subject samples at trough drug levels",
-      "normalized_ko": null,
+      "normalized_ko": "최저 약물 농도에서 피험자 검체를 채취함으로써 최소화할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2955,7 +2955,7 @@
       "subject": "approaches to improve drug tolerance",
       "action": "includes",
       "object": "acid dissociation that disrupt circulating ADA-drug complexes",
-      "normalized_ko": null,
+      "normalized_ko": "순환 ADA-약물 복합체를 해리시키는 산 해리를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -2969,7 +2969,7 @@
       "subject": "NAb",
       "action": "are",
       "object": "antibodies that inhibit the specific pharmacologic effect of the therapeutic protein product",
-      "normalized_ko": null,
+      "normalized_ko": "중화항체는 치료용 단백질 제품의 특정 약리학적 효과를 억제하는 항체이다.",
       "review_status": "reviewed"
     },
     {
@@ -2983,7 +2983,7 @@
       "subject": "Neutralization assays",
       "action": "assess",
       "object": "the neutralizing potential of antibodies that bind the therapeutic protein product",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품에 결합하는 항체의 중화 가능성을 평가한다.",
       "review_status": "reviewed"
     },
     {
@@ -2997,7 +2997,7 @@
       "subject": "Cell-based bioassays",
       "action": "are more likely to reflect",
       "object": "the in vivo mechanism of action of the therapeutic protein product",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품의 생체 내 작용기전을 더 잘 반영할 가능성이 높다.",
       "review_status": "reviewed"
     },
     {
@@ -3011,7 +3011,7 @@
       "subject": "The neutralizing capacity of antibodies",
       "action": "be assessed using",
       "object": "a cell-based bioassay",
-      "normalized_ko": null,
+      "normalized_ko": "세포 기반 생물검정을 사용하여 평가할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3025,7 +3025,7 @@
       "subject": "non-cell-based competitive ligand-binding assays",
       "action": "be acceptable",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "허용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3039,7 +3039,7 @@
       "subject": "Cell-based bioassays",
       "action": "be preferred over",
       "object": "competitive ligand-binding assays for assessing NAb",
-      "normalized_ko": null,
+      "normalized_ko": "중화항체 평가를 위한 경쟁적 리간드 결합 분석법보다 세포 기반 생물검정법이 선호되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3053,7 +3053,7 @@
       "subject": "an activity curve",
       "action": "be generated",
       "object": "to establish the concentration of therapeutic protein product to use in the assay",
-      "normalized_ko": null,
+      "normalized_ko": "분석에 사용할 치료용 단백질 제품의 농도를 설정하기 위해 농도-반응 곡선을 생성해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3067,7 +3067,7 @@
       "subject": "The selected concentration",
       "action": "fall on",
       "object": "the linear portion of the concentration-response curve",
-      "normalized_ko": null,
+      "normalized_ko": "농도-반응 곡선의 선형 구간에 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3081,7 +3081,7 @@
       "subject": "A cut-point for the neutralization assay",
       "action": "be established using",
       "object": "statistical methods similar to those for screening and confirmatory assays",
-      "normalized_ko": null,
+      "normalized_ko": "스크리닝 분석 및 확인 분석에 사용되는 방법과 유사한 통계적 방법을 사용하여 설정해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3095,7 +3095,7 @@
       "subject": "a 1% false-positive rate",
       "action": "be used for calculating",
       "object": "the neutralization cut-point",
-      "normalized_ko": null,
+      "normalized_ko": "중화 컷포인트를 계산하는 데 사용해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3109,7 +3109,7 @@
       "subject": "The neutralizing capacity of antibodies",
       "action": "be assessed using",
       "object": "a cell-based bioassay or a non-cell-based competitive ligand-binding assay",
-      "normalized_ko": null,
+      "normalized_ko": "세포 기반 생물검정 또는 비세포 기반 경쟁적 리간드 결합 분석을 사용하여 평가할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3123,7 +3123,7 @@
       "subject": "Cell-based bioassays",
       "action": "be preferred over",
       "object": "competitive ligand-binding assays for assessing NAb",
-      "normalized_ko": null,
+      "normalized_ko": "중화항체 평가를 위한 경쟁적 리간드 결합 분석법보다 세포 기반 생물검정법이 선호된다.",
       "review_status": "reviewed"
     },
     {
@@ -3137,7 +3137,7 @@
       "subject": "a 1% false-positive rate",
       "action": "be used for",
       "object": "calculating the neutralization cut-point",
-      "normalized_ko": null,
+      "normalized_ko": "중화 컷포인트를 계산하는 데 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -3151,7 +3151,7 @@
       "subject": "Validation of an ADA assay",
       "action": "is",
       "object": "the process of demonstrating through scientific studies that the performance characteristics of the assay are suitable for its intended purpose",
-      "normalized_ko": null,
+      "normalized_ko": "분석법 밸리데이션은 과학적 연구를 통해 분석법의 성능 특성이 의도된 목적에 적합함을 입증하는 과정이다.",
       "review_status": "reviewed"
     },
     {
@@ -3165,7 +3165,7 @@
       "subject": "Validation of an ADA assay",
       "action": "is the process of demonstrating through scientific studies",
       "object": "that the performance characteristics of the assay are suitable for its intended purpose",
-      "normalized_ko": "ADA assay validation is the scientific demonstration that assay performance characteristics are suitable for the intended purpose.",
+      "normalized_ko": "분석법의 성능 특성이 의도된 목적에 적합함을 과학적 연구를 통해 입증하는 과정이다.",
       "review_status": "reviewed"
     },
     {
@@ -3179,7 +3179,7 @@
       "subject": "Assay validation",
       "action": "be performed using",
       "object": "standard operating procedures",
-      "normalized_ko": null,
+      "normalized_ko": "표준작업절차를 사용하여 수행해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3193,7 +3193,7 @@
       "subject": "Validation",
       "action": "be conducted with",
       "object": "samples from the appropriate target population",
-      "normalized_ko": null,
+      "normalized_ko": "적절한 표적 모집단의 검체를 사용하여 수행해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3207,7 +3207,7 @@
       "subject": "FDA",
       "action": "recommend evaluating",
       "object": "individual treatment-naïve subject samples across different days by analysts, generating independent assay runs",
-      "normalized_ko": null,
+      "normalized_ko": "독립적인 분석 런을 생성하는 분석자가 서로 다른 날에 개별 치료 미경험 피험자 검체를 평가할 것을 권장해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3221,7 +3221,7 @@
       "subject": "standard operating procedures",
       "action": "detail",
       "object": "assay procedures, reagent specifications, and acceptance criteria",
-      "normalized_ko": null,
+      "normalized_ko": "분석 절차, 시약 규격 및 허용 기준을 상세히 기술한다.",
       "review_status": "reviewed"
     },
     {
@@ -3235,7 +3235,7 @@
       "subject": "Assay validation",
       "action": "typically assesses",
       "object": "cut-point, sensitivity, specificity, selectivity, precision, reproducibility, drug tolerance, robustness, and stability",
-      "normalized_ko": null,
+      "normalized_ko": "일반적으로 컷포인트, 민감도, 특이도, 선택성, 정밀도, 재현성, 약물 내성, 견고성 및 안정성을 평가한다.",
       "review_status": "reviewed"
     },
     {
@@ -3249,7 +3249,7 @@
       "subject": "Assay validation",
       "action": "assesses",
       "object": "cut-point, sensitivity, specificity, selectivity, precision, reproducibility, drug tolerance, robustness, and stability",
-      "normalized_ko": null,
+      "normalized_ko": "컷포인트, 민감도, 특이도, 선택성, 정밀도, 재현성, 약물 내성, 견고성 및 안정성을 평가한다.",
       "review_status": "reviewed"
     },
     {
@@ -3263,7 +3263,7 @@
       "subject": "FDA",
       "action": "recommends evaluating",
       "object": "individual treatment-naïve subject samples across different days by analysts, generating independent assay runs",
-      "normalized_ko": null,
+      "normalized_ko": "분석자가 서로 다른 날에 독립적인 분석 실행을 생성하여 개별 치료 경험이 없는 대상자 검체를 평가하는 것이 권장된다.",
       "review_status": "reviewed"
     },
     {
@@ -3277,7 +3277,7 @@
       "subject": "screening assays",
       "action": "have",
       "object": "a sensitivity of at least 100 ng/mL",
-      "normalized_ko": null,
+      "normalized_ko": "최소 100 ng/mL의 민감도를 가져야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3291,7 +3291,7 @@
       "subject": "Assay sensitivity",
       "action": "be determined using",
       "object": "a positive control antibody",
-      "normalized_ko": null,
+      "normalized_ko": "양성 대조 항체를 사용하여 결정해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3305,7 +3305,7 @@
       "subject": "each sample",
       "action": "be tested by",
       "object": "at least two analysts",
-      "normalized_ko": "Each sample should be tested by at least two analysts.",
+      "normalized_ko": "최소 두 명의 분석자가 시험해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3319,7 +3319,7 @@
       "subject": "higher sensitivity",
       "action": "be needed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3333,7 +3333,7 @@
       "subject": "Each sample",
       "action": "be tested by",
       "object": "at least two analysts",
-      "normalized_ko": null,
+      "normalized_ko": "최소 두 명의 분석자가 시험해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3347,7 +3347,7 @@
       "subject": "Each sample",
       "action": "should have a total of at least",
       "object": "six individual measurements",
-      "normalized_ko": null,
+      "normalized_ko": "총 최소 6개의 개별 측정값을 가져야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3361,7 +3361,7 @@
       "subject": "One approach",
       "action": "allows for high assurance of",
       "object": "a 5% false-positive rate",
-      "normalized_ko": null,
+      "normalized_ko": "5% 위양성률에 대한 높은 보증을 제공한다.",
       "review_status": "reviewed"
     },
     {
@@ -3375,7 +3375,7 @@
       "subject": "This",
       "action": "will assure",
       "object": "at least a 5% false-positive rate with a 90% confidence level",
-      "normalized_ko": null,
+      "normalized_ko": "90% 신뢰수준에서 최소 5%의 위양성률을 보장한다.",
       "review_status": "reviewed"
     },
     {
@@ -3389,7 +3389,7 @@
       "subject": "the 95th percentile",
       "action": "is estimated by",
       "object": "the mean plus 1.645 standard deviations",
-      "normalized_ko": null,
+      "normalized_ko": "평균에 1.645 표준편차를 더한 값으로 추정된다.",
       "review_status": "reviewed"
     },
     {
@@ -3403,7 +3403,7 @@
       "subject": "one approach",
       "action": "apply",
       "object": "a 90% one-sided lower confidence interval for the 95th percentile of the negative control population",
-      "normalized_ko": "An approach for high assurance of a 5% false-positive rate applies a 90% one-sided lower confidence interval for the 95th percentile of the negative control population.",
+      "normalized_ko": "음성 대조군 모집단의 95번째 백분위수에 대한 90% 단측 하한 신뢰구간을 적용한다.",
       "review_status": "reviewed"
     },
     {
@@ -3417,7 +3417,7 @@
       "subject": "each sample",
       "action": "have",
       "object": "a total of at least six individual measurements",
-      "normalized_ko": "Each sample has a total of at least six individual measurements.",
+      "normalized_ko": "총 최소 6개의 개별 측정값을 가진다.",
       "review_status": "reviewed"
     },
     {
@@ -3431,7 +3431,7 @@
       "subject": "one approach",
       "action": "allow for",
       "object": "high assurance of a 5% false-positive rate",
-      "normalized_ko": "One approach allows high assurance of a 5% false-positive rate.",
+      "normalized_ko": "5% 위양성률에 대한 높은 보증을 제공한다.",
       "review_status": "reviewed"
     },
     {
@@ -3445,7 +3445,7 @@
       "subject": "a normalization factor",
       "action": "be statistically determined and applied in-study",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "통계적으로 결정하여 연구 중 적용할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3459,7 +3459,7 @@
       "subject": "a dynamic cut-point",
       "action": "be needed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3473,7 +3473,7 @@
       "subject": "a normalization factor",
       "action": "is known as",
       "object": "a floating cut-point",
-      "normalized_ko": null,
+      "normalized_ko": "부동 컷포인트로 알려져 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3487,7 +3487,7 @@
       "subject": "a floating cut-point",
       "action": "is",
       "object": "the most common type of cut-point used",
-      "normalized_ko": null,
+      "normalized_ko": "사용되는 컷포인트 중 가장 일반적인 유형이다.",
       "review_status": "reviewed"
     },
     {
@@ -3501,7 +3501,7 @@
       "subject": "the use of a fixed cut-point",
       "action": "not allow for",
       "object": "in-study negative control variation",
-      "normalized_ko": null,
+      "normalized_ko": "연구 중 음성 대조군 변이를 허용하지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3515,7 +3515,7 @@
       "subject": "a floating cut-point",
       "action": "be",
       "object": "the most common type of cut-point used",
-      "normalized_ko": "A floating cut-point is the most common type of cut-point used.",
+      "normalized_ko": "가장 일반적으로 사용되는 컷포인트 유형이다.",
       "review_status": "reviewed"
     },
     {
@@ -3529,7 +3529,7 @@
       "subject": "the use of a fixed cut-point",
       "action": "be discouraged",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "권장되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3543,7 +3543,7 @@
       "subject": "further assay development",
       "action": "be recommended instead",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "대신 권장된다.",
       "review_status": "reviewed"
     },
     {
@@ -3557,7 +3557,7 @@
       "subject": "a normalization factor",
       "action": "be statistically determined and applied in-study",
       "object": null,
-      "normalized_ko": "A normalization factor can be statistically determined and applied in-study when the mean varies but variance is constant.",
+      "normalized_ko": "통계적으로 결정되어 시험 내에서 적용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3571,7 +3571,7 @@
       "subject": "a dynamic cut-point",
       "action": "be needed",
       "object": null,
-      "normalized_ko": "A dynamic cut-point may be needed.",
+      "normalized_ko": "필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3585,7 +3585,7 @@
       "subject": "higher sensitivity",
       "action": "be needed",
       "object": null,
-      "normalized_ko": "Higher sensitivity may be needed.",
+      "normalized_ko": "필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3599,7 +3599,7 @@
       "subject": "further assay development",
       "action": "be recommended instead",
       "object": null,
-      "normalized_ko": "Further assay development is recommended instead.",
+      "normalized_ko": "대신 권장되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3613,7 +3613,7 @@
       "subject": "Confirmatory assays",
       "action": "be fully validated",
       "object": "in a manner similar to screening and neutralization assays",
-      "normalized_ko": null,
+      "normalized_ko": "스크리닝 및 중화 분석과 유사한 방식으로 완전히 밸리데이션되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3627,7 +3627,7 @@
       "subject": "the confirmatory assay cut-point",
       "action": "be established based on",
       "object": "the assessment of the binding changes observed in negative control samples",
-      "normalized_ko": null,
+      "normalized_ko": "음성 대조 검체에서 관찰된 결합 변화의 평가를 기반으로 설정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3641,7 +3641,7 @@
       "subject": "the sensitivity of the confirmatory assay",
       "action": "be demonstrated using",
       "object": "a low concentration of the positive control antibody",
-      "normalized_ko": null,
+      "normalized_ko": "양성 대조 항체의 낮은 농도를 사용하여 입증되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3655,7 +3655,7 @@
       "subject": null,
       "action": "identify",
       "object": "the degree of inhibition or depletion that will be used to ascribe positivity to a sample",
-      "normalized_ko": null,
+      "normalized_ko": "검체를 양성으로 판정하는 데 사용될 억제 또는 고갈 정도를 식별한다.",
       "review_status": "reviewed"
     },
     {
@@ -3669,7 +3669,7 @@
       "subject": "the degree of inhibition or depletion",
       "action": "be identified",
       "object": "that will be used to ascribe positivity to a sample",
-      "normalized_ko": null,
+      "normalized_ko": "검체를 양성으로 판정하는 데 사용될 사항이 식별된다.",
       "review_status": "reviewed"
     },
     {
@@ -3683,7 +3683,7 @@
       "subject": "The sponsor",
       "action": "should establish",
       "object": "a cut-point based on the assessment of the binding changes observed in negative control samples that are known to lack the antibodies when competing antigen is added",
-      "normalized_ko": null,
+      "normalized_ko": "경쟁 항원이 첨가되었을 때 항체가 없는 것으로 알려진 음성 대조 검체에서 관찰된 결합 변화의 평가를 기반으로 컷포인트를 설정해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3697,7 +3697,7 @@
       "subject": "The sensitivity of the confirmatory assay",
       "action": "should be demonstrated",
       "object": "using a low concentration of the positive control antibody",
-      "normalized_ko": null,
+      "normalized_ko": "양성 대조 항체의 낮은 농도를 사용하여 입증되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3711,7 +3711,7 @@
       "subject": "One approach for the estimation of the confirmatory assay cut-point",
       "action": "is to use",
       "object": "an 80% to 90% one-sided lower confidence interval for the 99th percentile",
-      "normalized_ko": null,
+      "normalized_ko": "99번째 백분위수에 대한 80%~90% 단측 하한 신뢰구간을 사용하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -3725,7 +3725,7 @@
       "subject": "the purpose of this assay",
       "action": "is to eliminate",
       "object": "false-positive samples arising as a result of non-specific binding",
-      "normalized_ko": null,
+      "normalized_ko": "비특이적 결합으로 인해 발생하는 위양성 검체를 제거하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -3739,7 +3739,7 @@
       "subject": "The confirmatory assay format",
       "action": "is frequently",
       "object": "a competition assay",
-      "normalized_ko": null,
+      "normalized_ko": "흔히 경쟁 분석이다.",
       "review_status": "reviewed"
     },
     {
@@ -3753,7 +3753,7 @@
       "subject": "a competitor",
       "action": "is added",
       "object": "to the reaction mixture to inhibit ADA binding to the capture reagent",
-      "normalized_ko": null,
+      "normalized_ko": "ADA의 포획 시약 결합을 억제하기 위해 반응 혼합물에 첨가된다.",
       "review_status": "reviewed"
     },
     {
@@ -3767,7 +3767,7 @@
       "subject": "The use of tighter false-positive rates such as 0.1%",
       "action": "is not recommended",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "권장되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3781,7 +3781,7 @@
       "subject": "a 1% false-positive rate",
       "action": "be used",
       "object": "for the calculation of the confirmatory cut-point",
-      "normalized_ko": null,
+      "normalized_ko": "확인 컷포인트 계산에 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -3795,7 +3795,7 @@
       "subject": null,
       "action": "use",
       "object": "a 1% false-positive rate for the calculation of the confirmatory cut-point",
-      "normalized_ko": null,
+      "normalized_ko": "확증 컷포인트 계산에는 1% 위양성률을 사용하는 것이 권장된다.",
       "review_status": "reviewed"
     },
     {
@@ -3809,7 +3809,7 @@
       "subject": "the same concentration of unlabeled therapeutic protein product",
       "action": "be added",
       "object": "to the negative control samples when determining the confirmatory cut-point",
-      "normalized_ko": null,
+      "normalized_ko": "확증 컷포인트를 결정할 때 음성 대조군 검체에 추가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3823,7 +3823,7 @@
       "subject": "The use of tighter false-positive rates such as 0.1%",
       "action": "not be recommended",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "권장되지 않아야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3837,7 +3837,7 @@
       "subject": "The use of tighter false-positive rates such as 0.1%",
       "action": "be acceptable",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "허용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3851,7 +3851,7 @@
       "subject": "A minimum of 30 samples tested on at least 3 different days by at least two analysts",
       "action": "be used to determine",
       "object": "the cut-point, using suitable statistical methods",
-      "normalized_ko": null,
+      "normalized_ko": "적절한 통계 방법을 사용하여 컷포인트를 결정하는 데 사용되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3865,7 +3865,7 @@
       "subject": "Sponsors",
       "action": "should validate",
       "object": "assay specificity for cell-based neutralization bioassays to demonstrate that NAb only inhibit the response to the therapeutic protein product and not the response to other stimuli",
-      "normalized_ko": null,
+      "normalized_ko": "NAb가 다른 자극에 대한 반응이 아니라 치료용 단백질 제품에 대한 반응만을 억제함을 입증하기 위해 세포 기반 중화 바이오분석법의 분석 특이성을 검증해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3879,7 +3879,7 @@
       "subject": "The positive control for neutralization assays",
       "action": "can be",
       "object": "either monoclonal or affinity purified polyclonal antibodies",
-      "normalized_ko": null,
+      "normalized_ko": "단클론항체 또는 친화성 정제 다클론항체일 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3893,7 +3893,7 @@
       "subject": "Cell-based neutralization bioassays",
       "action": "have reduced precision",
       "object": "when compared to ligand binding assays because biologic responses can be inherently more variable",
-      "normalized_ko": null,
+      "normalized_ko": "생물학적 반응은 본질적으로 더 가변적일 수 있으므로 리간드 결합 분석과 비교하여 정밀도가 낮다.",
       "review_status": "reviewed"
     },
     {
@@ -3907,7 +3907,7 @@
       "subject": "biologic responses",
       "action": "can be",
       "object": "inherently more variable",
-      "normalized_ko": null,
+      "normalized_ko": "본질적으로 더 가변적일 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3921,7 +3921,7 @@
       "subject": "the sponsor",
       "action": "consider performing",
       "object": "more replicates for assessment of precision and subject responses",
-      "normalized_ko": null,
+      "normalized_ko": "정밀도 및 피험자 반응 평가를 위해 더 많은 반복 측정 수행을 고려할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3935,7 +3935,7 @@
       "subject": "The positive control for neutralization assays",
       "action": "can be",
       "object": "either monoclonal or affinity purified polyclonal antibodies",
-      "normalized_ko": null,
+      "normalized_ko": "단클론항체 또는 친화성 정제 다클론항체일 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3949,7 +3949,7 @@
       "subject": "Cell-based neutralization bioassays",
       "action": "have",
       "object": "reduced precision when compared to ligand binding assays",
-      "normalized_ko": null,
+      "normalized_ko": "리간드 결합 분석과 비교하여 정밀도가 낮다.",
       "review_status": "reviewed"
     },
     {
@@ -3963,7 +3963,7 @@
       "subject": "This guidance",
       "action": "provides recommendations for",
       "object": "developing and validating assays for the detection of anti-drug antibodies (ADAs)",
-      "normalized_ko": null,
+      "normalized_ko": "항약물항체(ADA) 검출을 위한 분석법의 개발 및 검증에 관한 권고를 제공한다.",
       "review_status": "reviewed"
     },
     {
@@ -3977,7 +3977,7 @@
       "subject": "This guidance",
       "action": "may also apply to",
       "object": "some peptides, oligonucleotides, and combination products",
-      "normalized_ko": null,
+      "normalized_ko": "일부 펩타이드, 올리고뉴클레오타이드 및 복합제품에도 적용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3991,7 +3991,7 @@
       "subject": "this document",
       "action": "does not discuss",
       "object": "the rationale for ADA testing or the subject- and product-specific risk factors that may contribute to immunogenicity",
-      "normalized_ko": null,
+      "normalized_ko": "ADA 검사에 대한 근거 또는 면역원성에 기여할 수 있는 피험자 및 제품 특이적 위험 요인은 논의하지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4005,7 +4005,7 @@
       "subject": "this guidance, including any discussions of terminology used in this guidance",
       "action": "does not apply to",
       "object": "in vitro diagnostic products",
-      "normalized_ko": null,
+      "normalized_ko": "체외진단 제품에는 적용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4019,7 +4019,7 @@
       "subject": "This guidance",
       "action": "provides recommendations for",
       "object": "developing and validating assays for the detection of anti-drug antibodies (ADAs)",
-      "normalized_ko": null,
+      "normalized_ko": "항약물항체(ADA) 검출을 위한 분석법의 개발 및 검증에 관한 권고를 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4033,7 +4033,7 @@
       "subject": "Therapeutic protein products",
       "action": "may elicit",
       "object": "immune responses in subjects",
-      "normalized_ko": null,
+      "normalized_ko": "피험자에서 면역반응을 유발할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4047,7 +4047,7 @@
       "subject": "The clinical consequences of an immune response to a therapeutic protein product",
       "action": "can range from",
       "object": "no observable effect to life-threatening complications",
-      "normalized_ko": null,
+      "normalized_ko": "관찰 가능한 영향 없음부터 생명을 위협하는 합병증까지 다양할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4061,7 +4061,7 @@
       "subject": "Immune responses to therapeutic protein products",
       "action": "result in",
       "object": "the generation of anti-drug antibodies",
-      "normalized_ko": null,
+      "normalized_ko": "항약물항체의 생성을 초래한다.",
       "review_status": "reviewed"
     },
     {
@@ -4075,7 +4075,7 @@
       "subject": "Life-threatening complications",
       "action": "includes",
       "object": "anaphylaxis",
-      "normalized_ko": null,
+      "normalized_ko": "아나필락시스를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4089,7 +4089,7 @@
       "subject": "Life-threatening complications",
       "action": "include",
       "object": "anaphylaxis or cross-reactive neutralization of an essential endogenous protein",
-      "normalized_ko": null,
+      "normalized_ko": "아나필락시스 또는 필수 내인성 단백질의 교차반응성 중화를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4103,7 +4103,7 @@
       "subject": "ADAs",
       "action": "may alter",
       "object": "the pharmacokinetics of the therapeutic protein product",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품의 약동학을 변경할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4117,7 +4117,7 @@
       "subject": "The development of valid, sensitive, specific, and selective assays to measure ADA responses",
       "action": "is",
       "object": "a key aspect of therapeutic protein product development",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품 개발의 핵심 측면이다.",
       "review_status": "reviewed"
     },
     {
@@ -4131,7 +4131,7 @@
       "subject": "The clinical consequences of an immune response to a therapeutic protein product",
       "action": "can range from",
       "object": "no observable effect to life-threatening complications",
-      "normalized_ko": null,
+      "normalized_ko": "관찰 가능한 영향이 없는 상태부터 생명을 위협하는 합병증까지 다양할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4145,7 +4145,7 @@
       "subject": "The risk to subjects from mounting an ADA-generating immune response to a therapeutic protein product",
       "action": "will vary with",
       "object": "the product",
-      "normalized_ko": null,
+      "normalized_ko": "제품에 따라 달라질 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -4159,7 +4159,7 @@
       "subject": "The sponsor",
       "action": "should adopt",
       "object": "a risk-based approach to evaluating and managing immune responses to — or immunologically related adverse clinical events associated with — therapeutic protein products",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품에 대한 면역 반응 또는 이와 면역학적으로 관련된 임상적 이상반응을 평가하고 관리하기 위한 위험 기반 접근법을 채택해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4173,7 +4173,7 @@
       "subject": "unwanted biological or physiological consequences",
       "action": "includes",
       "object": "neutralizing activity",
-      "normalized_ko": null,
+      "normalized_ko": "중화 활성을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4187,7 +4187,7 @@
       "subject": "The risk to subjects from mounting an ADA-generating immune response to a therapeutic protein product",
       "action": "will vary with",
       "object": "the product",
-      "normalized_ko": null,
+      "normalized_ko": "제품에 따라 달라질 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -4201,7 +4201,7 @@
       "subject": "Screening assays",
       "action": "are used to detect",
       "object": "antibodies that bind to the therapeutic protein product",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품에 결합하는 항체를 검출하는 데 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -4215,7 +4215,7 @@
       "subject": "ADAs",
       "action": "are characterized further using",
       "object": "titration assays",
-      "normalized_ko": null,
+      "normalized_ko": "적정 분석을 사용하여 추가로 특성화된다.",
       "review_status": "reviewed"
     },
     {
@@ -4229,7 +4229,7 @@
       "subject": "Titration assays",
       "action": "characterize",
       "object": "the magnitude of the ADA response",
-      "normalized_ko": null,
+      "normalized_ko": "ADA 반응의 크기를 특성화한다.",
       "review_status": "reviewed"
     },
     {
@@ -4243,7 +4243,7 @@
       "subject": "The specificity of ADA for the therapeutic protein product",
       "action": "is established by",
       "object": "competition with a therapeutic protein in a confirmatory assay",
-      "normalized_ko": null,
+      "normalized_ko": "확인 분석에서 치료용 단백질과의 경쟁에 의해 확립된다.",
       "review_status": "reviewed"
     },
     {
@@ -4257,7 +4257,7 @@
       "subject": "The magnitude of the ADA response",
       "action": "should be characterized with",
       "object": "titration assays",
-      "normalized_ko": null,
+      "normalized_ko": "적정 분석으로 특성화해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4271,7 +4271,7 @@
       "subject": "The magnitude of the ADA response",
       "action": "is important to characterize with",
       "object": "titration assays",
-      "normalized_ko": null,
+      "normalized_ko": "적정 분석으로 특성화하는 것이 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -4285,7 +4285,7 @@
       "subject": "The impact of ADA on pharmacokinetics, pharmacodynamics, safety, and efficacy",
       "action": "may correlate with",
       "object": "ADA titer and persistence rather than incidence",
-      "normalized_ko": null,
+      "normalized_ko": "발생률보다는 ADA 역가 및 지속성과 상관관계가 있을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4299,7 +4299,7 @@
       "subject": "Neutralizing antibodies (NAbs)",
       "action": "refer to",
       "object": "those ADA with the ability to interfere with interactions between the therapeutic protein product and its target",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품과 그 표적 간의 상호작용을 방해할 수 있는 능력을 가진 ADA를 의미한다.",
       "review_status": "reviewed"
     },
     {
@@ -4313,7 +4313,7 @@
       "subject": "Neutralization assays",
       "action": "assess ADA for",
       "object": "neutralizing activity",
-      "normalized_ko": null,
+      "normalized_ko": "ADA의 중화 활성을 평가한다.",
       "review_status": "reviewed"
     },
     {
@@ -4327,7 +4327,7 @@
       "subject": "The optimal time to design, develop, and validate ADA assays",
       "action": "depends on",
       "object": "the risk assessment of the product",
-      "normalized_ko": null,
+      "normalized_ko": "제품의 위험 평가에 따라 달라진다.",
       "review_status": "reviewed"
     },
     {
@@ -4341,7 +4341,7 @@
       "subject": "The sponsor",
       "action": "should provide",
       "object": "an immunogenicity risk assessment",
-      "normalized_ko": null,
+      "normalized_ko": "면역원성 위험 평가를 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4355,7 +4355,7 @@
       "subject": "The sponsor",
       "action": "may be requested to develop",
       "object": "assays suitable for their intended purpose before initiating clinical studies",
-      "normalized_ko": null,
+      "normalized_ko": "임상시험을 시작하기 전에 의도된 목적에 적합한 분석법을 개발하도록 요청받을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4369,7 +4369,7 @@
       "subject": "The sponsor",
       "action": "may store",
       "object": "subject samples so they can be tested when suitable assays are available",
-      "normalized_ko": null,
+      "normalized_ko": "적절한 분석법이 이용 가능해질 때 시험할 수 있도록 피험자 검체를 보관할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4383,7 +4383,7 @@
       "subject": "The sponsor",
       "action": "should provide",
       "object": "data supporting full validation of the assays",
-      "normalized_ko": null,
+      "normalized_ko": "분석법의 완전한 밸리데이션을 뒷받침하는 데이터를 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4397,7 +4397,7 @@
       "subject": "Screening assays",
       "action": "are also known as",
       "object": "binding antibody assays",
-      "normalized_ko": null,
+      "normalized_ko": "결합 항체 분석법으로도 알려져 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4411,7 +4411,7 @@
       "subject": "Screening assays",
       "action": "are used to detect",
       "object": "antibodies that bind to the therapeutic protein product",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품에 결합하는 항체를 검출하는 데 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -4425,7 +4425,7 @@
       "subject": "Comparison of ADA incidence across products",
       "action": "can be misleading",
       "object": null,
-      "normalized_ko": "Comparison of ADA incidence across products can be misleading.",
+      "normalized_ko": "오해를 불러일으킬 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4439,7 +4439,7 @@
       "subject": "Detection of ADA formation",
       "action": "is highly dependent on",
       "object": "the sensitivity, specificity, and drug tolerance level of the assay",
-      "normalized_ko": "ADA detection depends on assay sensitivity, specificity, and drug tolerance.",
+      "normalized_ko": "분석법의 민감도, 특이도 및 약물 내성 수준에 크게 의존한다.",
       "review_status": "reviewed"
     },
     {
@@ -4453,7 +4453,7 @@
       "subject": "The observed incidence of ADA",
       "action": "is influenced by",
       "object": "multiple factors",
-      "normalized_ko": "Observed ADA incidence is influenced by multiple factors.",
+      "normalized_ko": "여러 요인의 영향을 받는다.",
       "review_status": "reviewed"
     },
     {
@@ -4467,7 +4467,7 @@
       "subject": "Comparing immunogenicity rates across therapeutic protein products with structural homology for the same indication",
       "action": "is unsound",
       "object": null,
-      "normalized_ko": "Comparing immunogenicity rates across structurally homologous therapeutic protein products for the same indication is unsound.",
+      "normalized_ko": "타당하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -4481,7 +4481,7 @@
       "subject": "Influencing factors",
       "action": "includes",
       "object": "method",
-      "normalized_ko": "An influencing factor is method.",
+      "normalized_ko": "방법을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4495,7 +4495,7 @@
       "subject": "Comparison data",
       "action": "should be obtained by conducting",
       "object": "a head-to-head clinical study",
-      "normalized_ko": "Comparison data should be obtained through a head-to-head clinical study.",
+      "normalized_ko": "직접 비교 임상시험을 수행하여 확보해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4509,7 +4509,7 @@
       "subject": "Comparison of ADA incidence across products",
       "action": "can be misleading",
       "object": "because detection of ADA formation is highly dependent on the sensitivity, specificity, and drug tolerance level of the assay",
-      "normalized_ko": "Comparison of ADA incidence across products can be misleading because ADA detection depends heavily on assay sensitivity, specificity, and drug tolerance.",
+      "normalized_ko": "ADA 형성의 검출은 분석법의 민감도, 특이도 및 약물 내성 수준에 크게 의존하므로 오해를 불러일으킬 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4523,7 +4523,7 @@
       "subject": "Comparing immunogenicity rates",
       "action": "is unsound",
       "object": "across therapeutic protein products with structural homology for the same indication",
-      "normalized_ko": "Comparing immunogenicity rates across structurally homologous therapeutic protein products for the same indication is unsound.",
+      "normalized_ko": "동일 적응증에 대해 구조적 상동성을 가진 치료용 단백질 제품 전반에 걸쳐 타당하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -4551,7 +4551,7 @@
       "subject": "ADA responses",
       "action": "are predominantly of",
       "object": "the IgG isotype",
-      "normalized_ko": null,
+      "normalized_ko": "주로 IgG 아이소타입이다.",
       "review_status": "reviewed"
     },
     {
@@ -4565,7 +4565,7 @@
       "subject": "IgM and other isotypes",
       "action": "may be",
       "object": "clinically relevant",
-      "normalized_ko": null,
+      "normalized_ko": "임상적으로 관련성이 있을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4579,7 +4579,7 @@
       "subject": "IgM",
       "action": "may be important when assessing",
       "object": "early immune responses",
-      "normalized_ko": null,
+      "normalized_ko": "초기 면역 반응을 평가할 때 중요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4593,7 +4593,7 @@
       "subject": "The ability of screening assays to detect",
       "action": "should be considered",
       "object": "IgM and different IgG subclasses",
-      "normalized_ko": null,
+      "normalized_ko": "IgM 및 서로 다른 IgG 아형을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4607,7 +4607,7 @@
       "subject": "Therapeutic protein products with distinct functional domains",
       "action": "may elicit",
       "object": "ADA responses to different domains",
-      "normalized_ko": null,
+      "normalized_ko": "서로 다른 도메인에 대한 ADA 반응을 유발할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4621,7 +4621,7 @@
       "subject": "Therapeutic protein products with distinct functional domains",
       "action": "includes",
       "object": "multi-domain proteins",
-      "normalized_ko": null,
+      "normalized_ko": "다중 도메인 단백질을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4635,7 +4635,7 @@
       "subject": "The sponsor",
       "action": "should characterize",
       "object": "the domain specificity of ADA responses",
-      "normalized_ko": null,
+      "normalized_ko": "ADA 반응의 도메인 특이성을 특성화해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4649,7 +4649,7 @@
       "subject": "Assay sensitivity",
       "action": "represents",
       "object": "the lowest concentration of ADA that consistently produces a positive result in an assay",
-      "normalized_ko": null,
+      "normalized_ko": "분석에서 일관되게 양성 결과를 생성하는 ADA의 최저 농도를 나타낸다.",
       "review_status": "reviewed"
     },
     {
@@ -4663,7 +4663,7 @@
       "subject": "An assay sensitivity of at least 100 ng/mL",
       "action": "should be used",
       "object": "for screening and confirmatory assays",
-      "normalized_ko": null,
+      "normalized_ko": "스크리닝 및 확인 분석에 사용해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4677,7 +4677,7 @@
       "subject": "the level of sensitivity needed",
       "action": "depends on",
       "object": "the clinical risk of immunogenicity",
-      "normalized_ko": null,
+      "normalized_ko": "면역원성의 임상적 위험에 따라 달라진다.",
       "review_status": "reviewed"
     },
     {
@@ -4691,7 +4691,7 @@
       "subject": "high-risk therapeutic proteins",
       "action": "may require",
       "object": "more sensitive assays",
-      "normalized_ko": null,
+      "normalized_ko": "더 높은 민감도의 분석이 필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4705,7 +4705,7 @@
       "subject": "sensitivity",
       "action": "may be assessed",
       "object": "by testing serial dilutions of a positive control antibody of known concentration",
-      "normalized_ko": null,
+      "normalized_ko": "알려진 농도의 양성 대조 항체를 연속 희석하여 시험함으로써 평가할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4719,7 +4719,7 @@
       "subject": "The dilution series",
       "action": "should be no greater than",
       "object": "two- or threefold",
-      "normalized_ko": null,
+      "normalized_ko": "2배 또는 3배를 초과해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -4733,7 +4733,7 @@
       "subject": "A purified preparation of antibodies specific to the therapeutic protein product",
       "action": "should be used as",
       "object": "the positive control to determine the sensitivity of the assay",
-      "normalized_ko": "A purified antibody preparation specific to the therapeutic protein product should be used as the positive control for assay sensitivity determination.",
+      "normalized_ko": "분석의 민감도를 결정하기 위한 양성 대조군으로 사용해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4747,7 +4747,7 @@
       "subject": "The sensitivity",
       "action": "can be calculated",
       "object": "by interpolating the linear portion of the dilution curve to the assay cut-point",
-      "normalized_ko": null,
+      "normalized_ko": "희석 곡선의 선형 구간을 분석 컷포인트까지 보간하여 계산할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4761,7 +4761,7 @@
       "subject": "The sensitivity",
       "action": "can be calculated by interpolating",
       "object": "the linear portion of the dilution curve to the assay cut-point",
-      "normalized_ko": "Sensitivity can be calculated by interpolating the linear dilution-curve portion to the assay cut-point.",
+      "normalized_ko": "희석 곡선의 선형 구간을 분석 컷포인트까지 보간하여 계산할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4775,7 +4775,7 @@
       "subject": "Specificity",
       "action": "refers to",
       "object": "the ability of a method to exclusively detect the target analyte, in this case the ADA",
-      "normalized_ko": null,
+      "normalized_ko": "이 경우 ADA인 표적 분석물을 배타적으로 검출하는 방법의 능력을 의미한다.",
       "review_status": "reviewed"
     },
     {
@@ -4789,7 +4789,7 @@
       "subject": "Lack of assay specificity",
       "action": "could lead to",
       "object": "false-positive results",
-      "normalized_ko": null,
+      "normalized_ko": "위양성 결과를 초래할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4803,7 +4803,7 @@
       "subject": "Demonstrating the specificity of antibody responses to mAb, Fc-fusion proteins, and Ig-fusion proteins",
       "action": "poses",
       "object": "challenges",
-      "normalized_ko": null,
+      "normalized_ko": "어려움을 초래한다.",
       "review_status": "reviewed"
     },
     {
@@ -4817,7 +4817,7 @@
       "subject": "The assay",
       "action": "should specifically detect",
       "object": "anti-mAb antibodies",
-      "normalized_ko": null,
+      "normalized_ko": "항-mAb 항체를 특이적으로 검출해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4831,7 +4831,7 @@
       "subject": "A straightforward approach to addressing specificity",
       "action": "is to demonstrate",
       "object": "that binding can be blocked by soluble or unlabeled purified therapeutic protein product",
-      "normalized_ko": null,
+      "normalized_ko": "결합이 가용성 또는 비표지 정제 치료용 단백질 제품에 의해 차단될 수 있음을 입증하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -4845,7 +4845,7 @@
       "subject": "One approach",
       "action": "is to incubate",
       "object": "positive and negative control antibody samples with the purified therapeutic protein product or its components under consideration",
-      "normalized_ko": null,
+      "normalized_ko": "양성 및 음성 대조 항체 검체를 고려 중인 정제 치료용 단백질 제품 또는 그 구성요소와 함께 배양하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -4859,7 +4859,7 @@
       "subject": "Inhibition of signal in the presence of the relevant therapeutic protein product or its components",
       "action": "indicates",
       "object": "that the response is specific",
-      "normalized_ko": null,
+      "normalized_ko": "반응이 특이적임을 나타낸다.",
       "review_status": "reviewed"
     },
     {
@@ -4873,7 +4873,7 @@
       "subject": "the addition of that therapeutic protein product or its components in solution",
       "action": "will reduce",
       "object": "the assay signal",
-      "normalized_ko": null,
+      "normalized_ko": "분석 신호를 감소시킨다.",
       "review_status": "reviewed"
     },
     {
@@ -4887,7 +4887,7 @@
       "subject": "the addition of that therapeutic protein product or its components in solution",
       "action": "will reduce",
       "object": "the assay signal",
-      "normalized_ko": null,
+      "normalized_ko": "분석 신호를 감소시킨다.",
       "review_status": "reviewed"
     },
     {
@@ -4901,7 +4901,7 @@
       "subject": "addition of the therapeutic protein product or its components",
       "action": "should have",
       "object": "little effect on antibodies of other specificities",
-      "normalized_ko": null,
+      "normalized_ko": "다른 특이성을 가진 항체에는 거의 영향을 미치지 않아야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4915,7 +4915,7 @@
       "subject": "Lack of assay specificity",
       "action": "can lead to",
       "object": "false-positive results",
-      "normalized_ko": null,
+      "normalized_ko": "위양성 결과를 초래할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4929,7 +4929,7 @@
       "subject": "false-positive results",
       "action": "could obscure",
       "object": "relationships between ADA generating immune response, pharmacokinetics, pharmacodynamics, and clinical safety and efficacy measures",
-      "normalized_ko": null,
+      "normalized_ko": "ADA를 생성하는 면역반응, 약동학, 약력학 및 임상 안전성·유효성 측정치 간의 관계를 불분명하게 할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4943,7 +4943,7 @@
       "subject": "The sample matrix",
       "action": "can affect",
       "object": "assay performance",
-      "normalized_ko": "Sample matrix can affect assay performance.",
+      "normalized_ko": "분석법 성능에 영향을 미칠 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4957,7 +4957,7 @@
       "subject": "Endogenous and exogenous components in a matrix",
       "action": "may influence",
       "object": "assay results",
-      "normalized_ko": "Endogenous and exogenous matrix components may influence assay results.",
+      "normalized_ko": "분석 결과에 영향을 미칠 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4971,7 +4971,7 @@
       "subject": "Sample matrix",
       "action": "includes",
       "object": "plasma",
-      "normalized_ko": "Plasma is an example of a sample matrix.",
+      "normalized_ko": "혈장을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4985,7 +4985,7 @@
       "subject": "Some degree of signal suppression",
       "action": "is expected",
       "object": "when comparing assay performance in diluent versus matrix",
-      "normalized_ko": "Signal suppression is expected when comparing assay performance in diluent versus matrix.",
+      "normalized_ko": "희석액과 매트릭스에서의 분석법 성능을 비교할 때 예상된다.",
       "review_status": "reviewed"
     },
     {
@@ -4999,7 +4999,7 @@
       "subject": "Various substances in the matrix",
       "action": "can interfere with",
       "object": "assay results",
-      "normalized_ko": null,
+      "normalized_ko": "분석 결과를 방해할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5013,7 +5013,7 @@
       "subject": "Subject samples",
       "action": "should be diluted for testing",
       "object": "to minimize such effects",
-      "normalized_ko": "Subject samples should usually be diluted for testing to minimize matrix-component effects.",
+      "normalized_ko": "이러한 영향을 최소화하기 위해 시험용으로 희석해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5027,7 +5027,7 @@
       "subject": "The sponsor",
       "action": "should define",
       "object": "the matrix that will be used for preparation of subject samples",
-      "normalized_ko": "The sponsor should define the matrix used to prepare subject samples.",
+      "normalized_ko": "피험자 검체의 준비에 사용될 매트릭스를 정의해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5041,7 +5041,7 @@
       "subject": "Buffer components that are chemically related to the therapeutic protein product",
       "action": "may cause",
       "object": "interference in the assay",
-      "normalized_ko": "Chemically related buffer components may cause assay interference.",
+      "normalized_ko": "분석에서 간섭을 일으킬 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5055,7 +5055,7 @@
       "subject": "Polysorbate",
       "action": "is chemically similar to",
       "object": "polyethylene glycol (PEG)",
-      "normalized_ko": "Polysorbate is chemically similar to polyethylene glycol (PEG).",
+      "normalized_ko": "폴리에틸렌글리콜(PEG)과 화학적으로 유사하다.",
       "review_status": "reviewed"
     },
     {
@@ -5069,7 +5069,7 @@
       "subject": "Polysorbate",
       "action": "may interfere in",
       "object": "the detection of anti-PEG antibodies",
-      "normalized_ko": "Polysorbate may interfere in detection of anti-PEG antibodies.",
+      "normalized_ko": "항-PEG 항체의 검출을 방해할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5083,7 +5083,7 @@
       "subject": "The chemical composition of the buffer",
       "action": "should be carefully considered",
       "object": null,
-      "normalized_ko": "The chemical composition of the buffer should be carefully considered during assay development.",
+      "normalized_ko": "신중히 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5097,7 +5097,7 @@
       "subject": "The sample matrix",
       "action": "can affect",
       "object": "assay performance",
-      "normalized_ko": null,
+      "normalized_ko": "분석법 성능에 영향을 미칠 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5111,7 +5111,7 @@
       "subject": "Some degree of signal suppression",
       "action": "is expected",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "예상된다.",
       "review_status": "reviewed"
     },
     {
@@ -5125,7 +5125,7 @@
       "subject": "Polysorbate",
       "action": "is chemically similar to",
       "object": "polyethylene glycol (PEG)",
-      "normalized_ko": null,
+      "normalized_ko": "폴리에틸렌글리콜(PEG)과 화학적으로 유사하다.",
       "review_status": "reviewed"
     },
     {
@@ -5139,7 +5139,7 @@
       "subject": "Matrix components",
       "action": "can contribute to",
       "object": "non-specific signal",
-      "normalized_ko": null,
+      "normalized_ko": "비특이적 신호에 기여할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5153,7 +5153,7 @@
       "subject": "Non-specific signal",
       "action": "obscures",
       "object": "positive results",
-      "normalized_ko": null,
+      "normalized_ko": "양성 결과를 가린다.",
       "review_status": "reviewed"
     },
     {
@@ -5167,7 +5167,7 @@
       "subject": "non-specific signal",
       "action": "obscuring",
       "object": "positive results",
-      "normalized_ko": null,
+      "normalized_ko": "양성 결과를 가리는 것.",
       "review_status": "reviewed"
     },
     {
@@ -5181,7 +5181,7 @@
       "subject": "subject samples",
       "action": "need to be diluted",
       "object": "to maintain a reasonable ability to detect ADA",
-      "normalized_ko": null,
+      "normalized_ko": "ADA 검출의 합리적인 능력을 유지하기 위해 희석할 필요가 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5195,7 +5195,7 @@
       "subject": "Subject samples",
       "action": "need to be diluted",
       "object": "to maintain a reasonable ability to detect ADA",
-      "normalized_ko": null,
+      "normalized_ko": "ADA 검출의 합리적인 능력을 유지하기 위해 희석할 필요가 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5209,7 +5209,7 @@
       "subject": "The MRD",
       "action": "take into consideration",
       "object": "the final dilution of the sample in the assay",
-      "normalized_ko": null,
+      "normalized_ko": "분석에서 검체의 최종 희석배율을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5223,7 +5223,7 @@
       "subject": "The sponsor",
       "action": "should determine",
       "object": "the MRD from a panel of appropriate number of samples from treatment-naïve subjects",
-      "normalized_ko": null,
+      "normalized_ko": "치료 경험이 없는 대상자로부터 적절한 수의 검체 패널을 사용하여 MRD를 결정해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5237,7 +5237,7 @@
       "subject": "Determination of MRD",
       "action": "involves",
       "object": "serially diluting treatment-naïve ADA-negative samples",
-      "normalized_ko": null,
+      "normalized_ko": "치료 경험이 없는 ADA 음성 검체를 연속 희석하는 것을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -5251,7 +5251,7 @@
       "subject": "Higher MRD",
       "action": "may result in",
       "object": "false-negative responses",
-      "normalized_ko": null,
+      "normalized_ko": "위음성 반응을 초래할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5265,7 +5265,7 @@
       "subject": "Matrix components",
       "action": "can contribute to",
       "object": "non-specific signal",
-      "normalized_ko": "Matrix components can contribute to non-specific signal.",
+      "normalized_ko": "비특이적 신호에 기여할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5279,7 +5279,7 @@
       "subject": "Determination of MRD",
       "action": "usually involves serially diluting",
       "object": "treatment-naïve ADA-negative samples",
-      "normalized_ko": "MRD determination usually involves serial dilution of treatment-naïve ADA-negative samples.",
+      "normalized_ko": "일반적으로 치료 경험이 없는 ADA 음성 검체를 연속 희석하는 것을 수반한다.",
       "review_status": "reviewed"
     },
     {
@@ -5293,7 +5293,7 @@
       "subject": "The MRD ultimately selected by the sponsor",
       "action": "will depend on",
       "object": "the assay design and subject population",
-      "normalized_ko": "The MRD ultimately selected by the sponsor will depend on assay design and subject population.",
+      "normalized_ko": "분석 설계 및 대상자 집단에 따라 달라진다.",
       "review_status": "reviewed"
     },
     {
@@ -5307,7 +5307,7 @@
       "subject": "Precision",
       "action": "is a measure of",
       "object": "the variability in a series of measurements for the same material run in a method",
-      "normalized_ko": "Precision measures variability across measurements of the same material in a method.",
+      "normalized_ko": "동일한 물질을 하나의 방법으로 측정한 일련의 측정값에서의 변동성을 나타내는 척도이다.",
       "review_status": "reviewed"
     },
     {
@@ -5321,7 +5321,7 @@
       "subject": "Results",
       "action": "should be reproducible",
       "object": "within and between assay runs",
-      "normalized_ko": "Results should be reproducible within and between assay runs.",
+      "normalized_ko": "분석 내 및 분석 간 실행에서 재현 가능해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5335,7 +5335,7 @@
       "subject": "Demonstrating assay precision",
       "action": "is critical to",
       "object": "the assessment of ADA",
-      "normalized_ko": "Assay precision is critical to ADA assessment.",
+      "normalized_ko": "ADA 평가에 매우 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -5349,7 +5349,7 @@
       "subject": "Assay variability",
       "action": "is the basis for determining",
       "object": "the cut-points and ensuring that low positive samples are detected as positive",
-      "normalized_ko": "Assay variability underlies cut-point determination and detection of low positive samples.",
+      "normalized_ko": "컷포인트를 결정하고 낮은 양성 검체가 양성으로 검출되도록 보장하는 근거이다.",
       "review_status": "reviewed"
     },
     {
@@ -5363,7 +5363,7 @@
       "subject": "Inter-assay precision",
       "action": "may be calculated using",
       "object": "normalized values",
-      "normalized_ko": "Inter-assay precision may be calculated using normalized values when a floating cut-point is needed.",
+      "normalized_ko": "정규화된 값을 사용하여 계산할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5377,7 +5377,7 @@
       "subject": "Reproducibility",
       "action": "is",
       "object": "an important consideration",
-      "normalized_ko": "Reproducibility is an important consideration.",
+      "normalized_ko": "중요한 고려사항이다.",
       "review_status": "reviewed"
     },
     {
@@ -5391,7 +5391,7 @@
       "subject": "A sponsor",
       "action": "should establish",
       "object": "the comparability of the data produced by each laboratory",
-      "normalized_ko": "A sponsor should establish comparability of data produced by each laboratory.",
+      "normalized_ko": "각 실험실에서 생성된 데이터의 비교가능성을 확립해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5405,7 +5405,7 @@
       "subject": "Assay robustness",
       "action": "is an indication of",
       "object": "the assay's reliability during normal usage",
-      "normalized_ko": null,
+      "normalized_ko": "정상적인 사용 중 분석법의 신뢰성을 나타내는 지표이다.",
       "review_status": "reviewed"
     },
     {
@@ -5419,7 +5419,7 @@
       "subject": "Assay robustness",
       "action": "is assessed by",
       "object": "the capacity of the assay to remain unaffected by small but deliberate variations in method and instrument performance",
-      "normalized_ko": null,
+      "normalized_ko": "방법 및 기기 성능의 작지만 의도적인 변동에 영향을 받지 않는 분석법의 능력으로 평가된다.",
       "review_status": "reviewed"
     },
     {
@@ -5433,7 +5433,7 @@
       "subject": "The complexity of bioassays",
       "action": "makes them particularly susceptible to",
       "object": "variations in assay conditions",
-      "normalized_ko": null,
+      "normalized_ko": "분석 조건의 변동에 특히 취약하게 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5447,7 +5447,7 @@
       "subject": "Changes in temperature, incubation times, or buffer characteristics such as pH and salt concentration",
       "action": "may impact",
       "object": "assay results",
-      "normalized_ko": null,
+      "normalized_ko": "분석 결과에 영향을 미칠 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5461,7 +5461,7 @@
       "subject": "The sponsor",
       "action": "should evaluate",
       "object": "parameters such as cell passage number, incubation times, and culture media components",
-      "normalized_ko": null,
+      "normalized_ko": "세포 계대 수, 배양 시간 및 배지 구성성분과 같은 파라미터를 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5475,7 +5475,7 @@
       "subject": "The sponsor",
       "action": "should store",
       "object": "subject samples in a manner that preserves antibody reactivity at the time of testing",
-      "normalized_ko": null,
+      "normalized_ko": "시험 시점의 항체 반응성을 보존하는 방식으로 대상자 검체를 보관해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5489,7 +5489,7 @@
       "subject": "Freezing and thawing such samples",
       "action": "may affect",
       "object": "assay results",
-      "normalized_ko": null,
+      "normalized_ko": "시험 결과에 영향을 미칠 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5503,7 +5503,7 @@
       "subject": "Studies evaluating short-term stability",
       "action": "may be useful",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "유용할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5517,7 +5517,7 @@
       "subject": "Factors that can impact assay results",
       "action": "includes",
       "object": "changes in temperature, incubation times, or buffer characteristics such as pH and salt concentration",
-      "normalized_ko": "Examples of factors that can affect assay results include temperature, incubation time, pH, and salt concentration changes.",
+      "normalized_ko": "온도, 배양 시간 또는 pH 및 염 농도와 같은 완충액 특성의 변화를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -5531,7 +5531,7 @@
       "subject": "Changes in assay conditions",
       "action": "can impact",
       "object": "assay results",
-      "normalized_ko": "Changes in assay conditions can impact assay results.",
+      "normalized_ko": "시험 결과에 영향을 줄 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5545,7 +5545,7 @@
       "subject": "Parameters such as cell passage number, incubation times, and culture media components",
       "action": "be evaluated",
       "object": null,
-      "normalized_ko": "Relevant assay parameters should be evaluated.",
+      "normalized_ko": "평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5559,7 +5559,7 @@
       "subject": "Parameters such as cell passage number, incubation times, and culture media components",
       "action": "be optimized",
       "object": null,
-      "normalized_ko": "Relevant assay parameters should be optimized.",
+      "normalized_ko": "최적화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5573,7 +5573,7 @@
       "subject": "The stability of subject samples",
       "action": "is generally not feasible to establish",
       "object": null,
-      "normalized_ko": "Establishing subject-sample stability is generally not feasible.",
+      "normalized_ko": "확립하는 것은 일반적으로 실행 가능하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -5587,7 +5587,7 @@
       "subject": "Short-term stability studies",
       "action": "includes",
       "object": "freeze-thaw cycle stability of positive control antibodies",
-      "normalized_ko": "An example of a short-term stability study is evaluation of freeze-thaw cycle stability of positive control antibodies.",
+      "normalized_ko": "양성 대조 항체의 동결-해동 주기 안정성을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -5601,7 +5601,7 @@
       "subject": "Different assay formats and instrumentation",
       "action": "are available",
       "object": "for detection of ADA",
-      "normalized_ko": null,
+      "normalized_ko": "ADA 검출을 위해 이용 가능하다.",
       "review_status": "reviewed"
     },
     {
@@ -5615,7 +5615,7 @@
       "subject": "Each assay format",
       "action": "has",
       "object": "advantages and disadvantages, including throughput, sensitivity, selectivity, dynamic range, ability to detect various Ig isotypes, ability to detect rapidly dissociating antibodies, and availability of reagents",
-      "normalized_ko": null,
+      "normalized_ko": "처리량, 민감도, 선택성, 동적 범위, 다양한 Ig 동형의 검출 능력, 신속히 해리되는 항체의 검출 능력 및 시약의 이용 가능성을 포함한 장점과 단점을 가진다.",
       "review_status": "reviewed"
     },
     {
@@ -5629,7 +5629,7 @@
       "subject": "One of the major differences between assay formats",
       "action": "is",
       "object": "the number and vigor of washes",
-      "normalized_ko": null,
+      "normalized_ko": "세척 횟수 및 세척 강도이다.",
       "review_status": "reviewed"
     },
     {
@@ -5643,7 +5643,7 @@
       "subject": "Different assay formats and instrumentation",
       "action": "may be used",
       "object": "for detection of ADA",
-      "normalized_ko": null,
+      "normalized_ko": "ADA 검출을 위해 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5657,7 +5657,7 @@
       "subject": "The number and vigor of washes",
       "action": "can influence",
       "object": "assay sensitivity",
-      "normalized_ko": null,
+      "normalized_ko": "분석 민감도에 영향을 줄 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5671,7 +5671,7 @@
       "subject": "ADA assay formats",
       "action": "includes",
       "object": "direct binding assays",
-      "normalized_ko": null,
+      "normalized_ko": "직접 결합 분석을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -5685,7 +5685,7 @@
       "subject": "Epitope exposure",
       "action": "is important to consider",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려하는 것이 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -5699,7 +5699,7 @@
       "subject": "Epitope exposure",
       "action": "should be considered",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5713,7 +5713,7 @@
       "subject": "Sponsors",
       "action": "may use",
       "object": "the same or different positive control antibodies to develop",
-      "normalized_ko": null,
+      "normalized_ko": "개발하기 위해 동일하거나 서로 다른 양성 대조 항체를 사용할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5727,7 +5727,7 @@
       "subject": "A positive control antibody, either mono- or polyclonal",
       "action": "should be included",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5741,7 +5741,7 @@
       "subject": "Positive control antibodies",
       "action": "are generated",
       "object": "by immunizing animals in the absence or presence of adjuvants",
-      "normalized_ko": null,
+      "normalized_ko": "보조제의 부재 또는 존재하에 동물을 면역하여 생성된다.",
       "review_status": "reviewed"
     },
     {
@@ -5755,7 +5755,7 @@
       "subject": "This approach",
       "action": "enriches",
       "object": "the polyclonal antibody preparation for ADA",
-      "normalized_ko": null,
+      "normalized_ko": "ADA에 대한 다클론 항체 제제를 농축한다.",
       "review_status": "reviewed"
     },
     {
@@ -5769,7 +5769,7 @@
       "subject": "This approach",
       "action": "enables",
       "object": "a better interpretation of sensitivity assessment results",
-      "normalized_ko": null,
+      "normalized_ko": "민감도 평가 결과의 더 나은 해석을 가능하게 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5783,7 +5783,7 @@
       "subject": "The sponsor",
       "action": "should use",
       "object": "that source to assess assay performance characteristics",
-      "normalized_ko": null,
+      "normalized_ko": "분석법 성능 특성을 평가하기 위해 해당 출처를 사용해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5797,7 +5797,7 @@
       "subject": "Assay performance characteristics",
       "action": "includes",
       "object": "sensitivity",
-      "normalized_ko": null,
+      "normalized_ko": "민감도를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -5811,7 +5811,7 @@
       "subject": "The intermediate value",
       "action": "is useful for assessing",
       "object": "precision",
-      "normalized_ko": null,
+      "normalized_ko": "정밀도 평가에 유용하다.",
       "review_status": "reviewed"
     },
     {
@@ -5825,7 +5825,7 @@
       "subject": "Intermediate-value QC samples for detection of ADA",
       "action": "are generally not needed",
       "object": "for monitoring system suitability",
-      "normalized_ko": null,
+      "normalized_ko": "시스템 적합성 모니터링에는 일반적으로 필요하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -5839,7 +5839,7 @@
       "subject": "Intermediate-value QC samples for detection of ADA",
       "action": "are generally not needed for monitoring",
       "object": "system suitability",
-      "normalized_ko": null,
+      "normalized_ko": "시스템 적합성 모니터링에 일반적으로 필요하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -5853,7 +5853,7 @@
       "subject": "The sponsor",
       "action": "should establish",
       "object": "a negative control for validation studies and subject-sample testing",
-      "normalized_ko": null,
+      "normalized_ko": "밸리데이션 연구 및 피험자 검체 시험을 위한 음성 대조군을 확립해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5867,7 +5867,7 @@
       "subject": "a pool of sera from an appropriate number of treatment-naïve subjects",
       "action": "can serve as",
       "object": "a negative control",
-      "normalized_ko": null,
+      "normalized_ko": "음성 대조군으로 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5881,7 +5881,7 @@
       "subject": "Negative controls that yield values far below the mean value derived from individual serum samples used to establish the cut-point",
       "action": "may not be useful in ensuring",
       "object": "proper assay performance",
-      "normalized_ko": null,
+      "normalized_ko": "적절한 분석법 성능을 보장하는 데 유용하지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5895,7 +5895,7 @@
       "subject": "Negative controls that yield values far below the mean value derived from individual serum samples used to establish the cut-point",
       "action": "may not be useful in ensuring",
       "object": "proper assay performance",
-      "normalized_ko": null,
+      "normalized_ko": "적절한 분석법 성능을 보장하는 데 유용하지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5909,7 +5909,7 @@
       "subject": "negative control samples",
       "action": "should be collected from",
       "object": "treatment-naïve subjects with the medical condition being studied",
-      "normalized_ko": null,
+      "normalized_ko": "연구 중인 의학적 상태를 가진 치료 미경험 피험자로부터 채취되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5923,7 +5923,7 @@
       "subject": "Control samples",
       "action": "should be handled in the same manner as",
       "object": "study samples with respect to type of anticoagulant used, volume, and sample preparation and storage",
-      "normalized_ko": null,
+      "normalized_ko": "사용된 항응고제의 유형, 용량 및 검체 준비와 보관 측면에서 연구 검체와 동일한 방식으로 취급되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5937,7 +5937,7 @@
       "subject": "The sponsor",
       "action": "may use",
       "object": "purchased samples or samples from healthy donors",
-      "normalized_ko": null,
+      "normalized_ko": "구매 검체 또는 건강한 공여자 유래 검체를 사용할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5951,7 +5951,7 @@
       "subject": "Purchased samples or samples from healthy donors",
       "action": "may be used",
       "object": "as control samples",
-      "normalized_ko": null,
+      "normalized_ko": "대조 검체로 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5965,7 +5965,7 @@
       "subject": "Every test component",
       "action": "can affect",
       "object": "assay sensitivity and non-specific binding",
-      "normalized_ko": null,
+      "normalized_ko": "분석법 민감도 및 비특이적 결합에 영향을 미칠 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5979,7 +5979,7 @@
       "subject": "One of the most critical elements",
       "action": "is",
       "object": "the selection of the proper assay buffer and blocking reagents used to prevent non-specific binding",
-      "normalized_ko": null,
+      "normalized_ko": "비특이적 결합을 방지하기 위해 사용되는 적절한 분석법 완충액 및 차단 시약의 선택이다.",
       "review_status": "reviewed"
     },
     {
@@ -5993,7 +5993,7 @@
       "subject": "including uncoated wells",
       "action": "is not sufficient to assess",
       "object": "non-specific binding",
-      "normalized_ko": null,
+      "normalized_ko": "비특이적 결합을 평가하기에 충분하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -6007,7 +6007,7 @@
       "subject": "The sponsor",
       "action": "should carefully consider",
       "object": "the number and timing of wash steps",
-      "normalized_ko": null,
+      "normalized_ko": "세척 단계의 횟수와 시기를 신중하게 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6021,7 +6021,7 @@
       "subject": "including uncoated wells",
       "action": "is not sufficient to assess",
       "object": "non-specific binding",
-      "normalized_ko": null,
+      "normalized_ko": "비특이적 결합을 평가하기에 충분하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -6035,7 +6035,7 @@
       "subject": "determining the capacity of ADAs to bind to an unrelated protein of similar size and charge that may be present in the sample",
       "action": "may prove to be",
       "object": "a better test of binding specificity",
-      "normalized_ko": null,
+      "normalized_ko": "결합 특이성에 대한 더 나은 시험으로 판명될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6049,7 +6049,7 @@
       "subject": "Every test component",
       "action": "can affect",
       "object": "assay sensitivity and non-specific binding",
-      "normalized_ko": null,
+      "normalized_ko": "검정 민감도 및 비특이적 결합에 영향을 미칠 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6063,7 +6063,7 @@
       "subject": "Determining the capacity of ADAs to bind to an unrelated protein of similar size and charge",
       "action": "may prove to be",
       "object": "a better test of binding specificity",
-      "normalized_ko": null,
+      "normalized_ko": "결합 특이성에 대한 더 나은 시험으로 판명될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6077,7 +6077,7 @@
       "subject": "Several approaches",
       "action": "may be used to report",
       "object": "positive antibody responses",
-      "normalized_ko": "Several approaches may be used to report positive antibody responses.",
+      "normalized_ko": "양성 항체 반응을 보고하는 데 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6091,7 +6091,7 @@
       "subject": "Titer",
       "action": "may be determined by extrapolating",
       "object": "the dilution to the assay cut-point using the linear portion of the dose response curve",
-      "normalized_ko": "Titer may be determined by extrapolation to the assay cut-point using the linear dose-response portion.",
+      "normalized_ko": "용량-반응 곡선의 선형 부분을 사용하여 검정 컷포인트까지의 희석을 외삽함으로써 결정될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6105,7 +6105,7 @@
       "subject": "The most common approach",
       "action": "is",
       "object": "qualitative",
-      "normalized_ko": "The most common approach is qualitative.",
+      "normalized_ko": "정성적이다.",
       "review_status": "reviewed"
     },
     {
@@ -6119,7 +6119,7 @@
       "subject": "Subjects",
       "action": "are reported as having",
       "object": "a positive or negative antibody response",
-      "normalized_ko": "Subjects are reported as having a positive or negative antibody response.",
+      "normalized_ko": "양성 또는 음성 항체 반응을 보이는 것으로 보고된다.",
       "review_status": "reviewed"
     },
     {
@@ -6133,7 +6133,7 @@
       "subject": "Titer",
       "action": "is determined from",
       "object": "the reciprocal of the highest dilution that gives a value at or just above the cut-point of the assay",
-      "normalized_ko": "Titer is determined from the reciprocal of the highest dilution at or just above the assay cut-point.",
+      "normalized_ko": "검정의 컷포인트와 같거나 그보다 약간 높은 값을 나타내는 최고 희석도의 역수로부터 결정된다.",
       "review_status": "reviewed"
     },
     {
@@ -6147,7 +6147,7 @@
       "subject": "Determining antibody levels",
       "action": "allows for",
       "object": "stratified assessment of ADAs and their impact on safety and efficacy",
-      "normalized_ko": "Determining antibody levels allows for stratified assessment of ADAs and their impact on safety and efficacy.",
+      "normalized_ko": "ADA 및 ADA가 안전성과 유효성에 미치는 영향에 대한 층화 평가를 가능하게 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6161,7 +6161,7 @@
       "subject": "determining antibody levels",
       "action": "can be informative",
       "object": "it allows for stratified assessment of ADAs and their impact on safety and efficacy",
-      "normalized_ko": null,
+      "normalized_ko": "ADA 및 ADA가 안전성과 유효성에 미치는 영향에 대한 층화 평가를 가능하게 하므로 유익할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6175,7 +6175,7 @@
       "subject": "determining antibody levels",
       "action": "can be informative",
       "object": "it allows for stratified assessment of ADAs and their impact on safety and efficacy",
-      "normalized_ko": "Determining antibody levels can inform stratified assessment of ADA safety and efficacy impact.",
+      "normalized_ko": "ADA 및 ADA가 안전성과 유효성에 미치는 영향에 대한 층화 평가를 가능하게 하므로 유익할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6189,7 +6189,7 @@
       "subject": "All sample dilutions",
       "action": "should be factored into",
       "object": "the calculations of titers",
-      "normalized_ko": "All sample dilutions should be factored into titer calculations.",
+      "normalized_ko": "역가 계산에 반영되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6203,7 +6203,7 @@
       "subject": "All sample dilutions",
       "action": "should be provided when reporting",
       "object": "titers",
-      "normalized_ko": "All sample dilutions should be provided when reporting titers.",
+      "normalized_ko": "역가를 보고할 때 제공되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6217,7 +6217,7 @@
       "subject": "Values",
       "action": "may be reported as",
       "object": "amount of mass units of therapeutic protein product neutralized per volume serum",
-      "normalized_ko": "Neutralization assay values may be reported as mass units of therapeutic protein product neutralized per serum volume.",
+      "normalized_ko": "혈청 용적당 중화된 치료용 단백질 제품의 질량 단위량으로 보고될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6231,7 +6231,7 @@
       "subject": "these",
       "action": "are",
       "object": "arbitrary in vitro assay units",
-      "normalized_ko": "These are arbitrary in vitro assay units.",
+      "normalized_ko": "임의의 시험관 내 검정 단위이다.",
       "review_status": "reviewed"
     },
     {
@@ -6245,7 +6245,7 @@
       "subject": "arbitrary in vitro assay units",
       "action": "cannot be used to estimate",
       "object": "in vivo availability of the therapeutic protein product",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품의 생체 내 이용 가능성을 추정하는 데 사용할 수 없다.",
       "review_status": "reviewed"
     },
     {
@@ -6259,7 +6259,7 @@
       "subject": "these",
       "action": "should not be used to estimate",
       "object": "in vivo availability of the therapeutic protein product",
-      "normalized_ko": "These units should not be used to estimate in vivo availability of the therapeutic protein product.",
+      "normalized_ko": "치료용 단백질 제품의 생체 내 이용 가능성을 추정하는 데 사용해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -6273,7 +6273,7 @@
       "subject": "Several approaches",
       "action": "may be used to report",
       "object": "positive antibody responses",
-      "normalized_ko": "Several approaches may be used to report positive antibody responses.",
+      "normalized_ko": "양성 항체 반응을 보고하는 데 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6287,7 +6287,7 @@
       "subject": "Values",
       "action": "may also be reported as",
       "object": "amount of mass units of therapeutic protein product neutralized per volume serum",
-      "normalized_ko": "Values may be reported as mass units of therapeutic protein product neutralized per volume serum.",
+      "normalized_ko": "혈청 용적당 중화된 치료용 단백질 제품의 질량 단위량으로도 보고될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6301,7 +6301,7 @@
       "subject": "Mass units of therapeutic protein product neutralized per volume serum",
       "action": "cannot be used to estimate",
       "object": "in vivo availability of the therapeutic protein product",
-      "normalized_ko": "These mass units cannot be used to estimate in vivo availability of the therapeutic protein product.",
+      "normalized_ko": "치료용 단백질 제품의 생체 내 이용 가능성을 추정하는 데 사용할 수 없다.",
       "review_status": "reviewed"
     },
     {
@@ -6315,7 +6315,7 @@
       "subject": "Antibody levels reported in mass units",
       "action": "are generally not acceptable",
       "object": null,
-      "normalized_ko": "Antibody levels reported in mass units are generally not acceptable unless the assay method permits independent determination of mass per volume of undiluted matrix.",
+      "normalized_ko": "일반적으로 허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -6329,7 +6329,7 @@
       "subject": "Pre-existing antibodies",
       "action": "may have",
       "object": "clinical effects that affect the efficacy of the therapeutic protein product being tested",
-      "normalized_ko": null,
+      "normalized_ko": "시험 중인 치료용 단백질 제품의 유효성에 영향을 미치는 임상적 효과를 가질 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6343,7 +6343,7 @@
       "subject": "Testing samples for an increase in ADA using a semi-quantitative assay such as a titration assay",
       "action": "can provide",
       "object": "information on the impact of a therapeutic protein product on product immunogenicity",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품이 제품 면역원성에 미치는 영향에 관한 정보를 제공할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6357,7 +6357,7 @@
       "subject": "An alternative to the qualitative screening assay approach",
       "action": "may be needed",
       "object": "to assess the quantity and quality of ADA",
-      "normalized_ko": null,
+      "normalized_ko": "ADA의 양과 질을 평가하기 위해 필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6371,7 +6371,7 @@
       "subject": "Pre-existing antibodies with increased titers after exposure to the therapeutic protein product",
       "action": "can be reported as",
       "object": "treatment-boosted to differentiate them from treatment-induced antibody titers",
-      "normalized_ko": null,
+      "normalized_ko": "치료 유도 항체 역가와 구별하기 위해 치료-증강으로 보고할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6385,7 +6385,7 @@
       "subject": "Testing samples for an increase in ADA using a semi-quantitative assay such as a titration assay",
       "action": "can provide",
       "object": "information on the impact of a therapeutic protein product on product immunogenicity that is not provided by a qualitative assay",
-      "normalized_ko": null,
+      "normalized_ko": "정성 분석법으로는 제공되지 않는 치료용 단백질 제품이 제품 면역원성에 미치는 영향에 관한 정보를 제공할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6399,7 +6399,7 @@
       "subject": "A boosted ADA response",
       "action": "may be defined as",
       "object": "a titer that is two dilution steps greater than the pre-treatment titer",
-      "normalized_ko": null,
+      "normalized_ko": "치료 전 역가보다 희석 단계가 두 단계 더 높은 역가로 정의할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6413,7 +6413,7 @@
       "subject": "a boosted ADA response",
       "action": "may be defined as",
       "object": "a titer that is two dilution steps greater than the pre-treatment titer",
-      "normalized_ko": null,
+      "normalized_ko": "치료 전 역가보다 희석 단계가 두 단계 더 높은 역가로 정의할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6427,7 +6427,7 @@
       "subject": "Semi-quantitative assay",
       "action": "includes",
       "object": "a titration assay",
-      "normalized_ko": null,
+      "normalized_ko": "적정 분석법을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -6441,7 +6441,7 @@
       "subject": "A qualitative assay",
       "action": "does not provide",
       "object": "information on the impact of a therapeutic protein product on product immunogenicity",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품이 제품 면역원성에 미치는 영향에 관한 정보를 제공하지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -6455,7 +6455,7 @@
       "subject": "Measuring immune responses to therapeutic protein products that possess Fc regions, such as mAb and Fc-fusion proteins",
       "action": "may be particularly difficult",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "특히 어려울 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6469,7 +6469,7 @@
       "subject": "RF",
       "action": "is generally",
       "object": "an IgM antibody",
-      "normalized_ko": null,
+      "normalized_ko": "일반적으로 IgM 항체이다.",
       "review_status": "reviewed"
     },
     {
@@ -6483,7 +6483,7 @@
       "subject": "RF",
       "action": "recognizes",
       "object": "IgG",
-      "normalized_ko": null,
+      "normalized_ko": "IgG를 인식한다.",
       "review_status": "reviewed"
     },
     {
@@ -6497,7 +6497,7 @@
       "subject": "RF binding Fc regions",
       "action": "makes it appear",
       "object": "that specific antibody to the therapeutic protein product exists",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품에 대한 특이 항체가 존재하는 것처럼 보이게 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6511,7 +6511,7 @@
       "subject": "RF",
       "action": "will bind",
       "object": "Fc regions",
-      "normalized_ko": null,
+      "normalized_ko": "Fc 영역에 결합한다.",
       "review_status": "reviewed"
     },
     {
@@ -6525,7 +6525,7 @@
       "subject": "Measuring immune responses to therapeutic protein products that possess Fc regions",
       "action": "may be particularly difficult",
       "object": "when RF is present in the matrix",
-      "normalized_ko": null,
+      "normalized_ko": "매트릭스에 RF가 존재하는 경우 특히 어려울 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6539,7 +6539,7 @@
       "subject": "RF",
       "action": "will bind",
       "object": "Fc regions",
-      "normalized_ko": null,
+      "normalized_ko": "Fc 영역에 결합한다.",
       "review_status": "reviewed"
     },
     {
@@ -6553,7 +6553,7 @@
       "subject": "Approaches for minimizing interference from RF",
       "action": "includes",
       "object": "treatment with aspartame",
-      "normalized_ko": null,
+      "normalized_ko": "아스파탐 치료를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -6567,7 +6567,7 @@
       "subject": "The sponsor",
       "action": "should develop",
       "object": "an assay specific for the non-Fc region of the proteins",
-      "normalized_ko": null,
+      "normalized_ko": "단백질의 비-Fc 영역에 특이적인 분석법을 개발해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6581,7 +6581,7 @@
       "subject": "RF",
       "action": "is generally",
       "object": "an IgM antibody that recognizes IgG",
-      "normalized_ko": null,
+      "normalized_ko": "일반적으로 IgG를 인식하는 IgM 항체이다.",
       "review_status": "reviewed"
     },
     {
@@ -6595,7 +6595,7 @@
       "subject": "Technologies reducing the presence of non-human sequences in mAb",
       "action": "have reduced",
       "object": "ADA",
-      "normalized_ko": null,
+      "normalized_ko": "ADA가 감소되어 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6609,7 +6609,7 @@
       "subject": "the immune responses",
       "action": "are directed largely against",
       "object": "the variable regions of the mAb",
-      "normalized_ko": null,
+      "normalized_ko": "mAb의 가변 영역에 주로 지향된다.",
       "review_status": "reviewed"
     },
     {
@@ -6623,7 +6623,7 @@
       "subject": "Technologies reducing the presence of non-human sequences in mAb",
       "action": "includes",
       "object": "chimerization and humanization",
-      "normalized_ko": null,
+      "normalized_ko": "키메라화 및 인간화를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -6637,7 +6637,7 @@
       "subject": "The assays that can detect the reactivity against variable regions",
       "action": "are considered more appropriate to evaluate",
       "object": "the potential impact of antibodies against mAb-based therapeutics in subjects",
-      "normalized_ko": null,
+      "normalized_ko": "피험자에서 mAb 기반 치료제에 대한 항체의 잠재적 영향을 평가하는 데 더 적절한 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -6651,7 +6651,7 @@
       "subject": "an assay",
       "action": "may be needed to characterize",
       "object": "this response",
-      "normalized_ko": null,
+      "normalized_ko": "이 반응을 특성화하기 위해 필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6665,7 +6665,7 @@
       "subject": "Antibody-drug conjugates (ADCs)",
       "action": "are",
       "object": "antibodies conjugated with small molecule drugs",
-      "normalized_ko": null,
+      "normalized_ko": "소분자 약물과 접합된 항체이다.",
       "review_status": "reviewed"
     },
     {
@@ -6679,7 +6679,7 @@
       "subject": "ADCs",
       "action": "represent",
       "object": "a classic hapten-carrier molecule",
-      "normalized_ko": null,
+      "normalized_ko": "전형적인 합텐-운반체 분자를 나타낸다.",
       "review_status": "reviewed"
     },
     {
@@ -6693,7 +6693,7 @@
       "subject": "The immunogenicity assays",
       "action": "should measure",
       "object": "the responses to all components of the ADC therapeutic protein product, including the antibody, linker-drug, and new epitopes that may result from conjugation",
-      "normalized_ko": null,
+      "normalized_ko": "항체, 링커-약물 및 접합으로 인해 생성될 수 있는 새로운 에피토프를 포함하여 ADC 치료용 단백질 제품의 모든 구성요소에 대한 반응을 측정해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6707,7 +6707,7 @@
       "subject": "the labeled molecules",
       "action": "may cause",
       "object": "aggregation",
-      "normalized_ko": null,
+      "normalized_ko": "응집을 유발할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6721,7 +6721,7 @@
       "subject": "components of the ADC therapeutic protein product",
       "action": "includes",
       "object": "the antibody",
-      "normalized_ko": null,
+      "normalized_ko": "항체를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -6735,7 +6735,7 @@
       "subject": "components of the ADC therapeutic protein product",
       "action": "includes",
       "object": "new epitopes that may result from conjugation",
-      "normalized_ko": null,
+      "normalized_ko": "접합으로 인해 생성될 수 있는 새로운 에피토프를 포함할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6749,7 +6749,7 @@
       "subject": "the first assay to be employed for detection of ADA",
       "action": "should be",
       "object": "a highly sensitive screening assay",
-      "normalized_ko": null,
+      "normalized_ko": "고감도 스크리닝 분석법이어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6763,7 +6763,7 @@
       "subject": "Approximately 5 to 10 individual samples",
       "action": "may be used",
       "object": "to estimate the cut-point early in assay development",
-      "normalized_ko": null,
+      "normalized_ko": "분석법 개발 초기 단계에서 컷포인트를 추정하는 데 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6777,7 +6777,7 @@
       "subject": "A low but defined false-positive rate of approximately 5%",
       "action": "is desirable",
       "object": "for the initial screening assay",
-      "normalized_ko": null,
+      "normalized_ko": "초기 스크리닝 분석법에 바람직하다.",
       "review_status": "reviewed"
     },
     {
@@ -6847,7 +6847,7 @@
       "subject": "The screening assay",
       "action": "is designed to broadly detect",
       "object": "the presence of antibodies that bind product in serum samples",
-      "normalized_ko": "The screening assay is designed to broadly detect product-binding antibodies in serum samples.",
+      "normalized_ko": "혈청 검체에서 제품에 결합하는 항체의 존재를 광범위하게 검출하도록 설계된다.",
       "review_status": "reviewed"
     },
     {
@@ -6889,7 +6889,7 @@
       "subject": "The selected confirmatory assay",
       "action": "will have",
       "object": "similar sensitivity to the screening assay",
-      "normalized_ko": null,
+      "normalized_ko": "스크리닝 분석법과 유사한 민감도를 가질 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -6903,7 +6903,7 @@
       "subject": "A recommended approach to determining the cut-point",
       "action": "should use",
       "object": "the data from the signal generated by antibody-negative treatment-naïve subject samples in the presence of the competitor",
-      "normalized_ko": null,
+      "normalized_ko": "경쟁물질 존재하에 항체 음성인 치료 전 피험자 검체에서 생성된 신호의 데이터를 사용해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6917,7 +6917,7 @@
       "subject": "the competitor",
       "action": "is usually",
       "object": "the therapeutic protein product",
-      "normalized_ko": null,
+      "normalized_ko": "일반적으로 치료용 단백질 제품이다.",
       "review_status": "reviewed"
     },
     {
@@ -6931,7 +6931,7 @@
       "subject": "this approach",
       "action": "may not be appropriate",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "적절하지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6945,7 +6945,7 @@
       "subject": "the competitor",
       "action": "is usually",
       "object": "the therapeutic protein product",
-      "normalized_ko": "The competitor is usually the therapeutic protein product.",
+      "normalized_ko": "일반적으로 치료용 단백질 제품이다.",
       "review_status": "reviewed"
     },
     {
@@ -6959,7 +6959,7 @@
       "subject": "treatment-boosted ADA responses",
       "action": "may be identified by",
       "object": "post-treatment increases in titer",
-      "normalized_ko": "Treatment-boosted ADA responses may be identified by post-treatment titer increases.",
+      "normalized_ko": "치료 후 역가 증가에 의해 확인될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6973,7 +6973,7 @@
       "subject": "treatment-induced responses",
       "action": "be determined using",
       "object": "estimates of assay variability",
-      "normalized_ko": null,
+      "normalized_ko": "분석법 변동성의 추정치를 사용하여 결정될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6987,7 +6987,7 @@
       "subject": "A cut-point for defining the treatment-boosted responses",
       "action": "should be determined",
       "object": null,
-      "normalized_ko": "A cut-point should be determined for defining treatment-boosted responses.",
+      "normalized_ko": "결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7001,7 +7001,7 @@
       "subject": "a boosted ADA response",
       "action": "may be defined as",
       "object": "a titer that is two dilution steps greater than the pre-treatment titer",
-      "normalized_ko": "Example: a boosted ADA response may be defined by a titer two dilution steps greater than the pre-treatment titer.",
+      "normalized_ko": "치료 전 역가보다 두 희석 단계 높은 역가로 정의될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7015,7 +7015,7 @@
       "subject": "The principles of assay validation described in section VI.A",
       "action": "apply",
       "object": "in general to validation of titration assays",
-      "normalized_ko": null,
+      "normalized_ko": "일반적으로 적정 분석법의 밸리데이션에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -7029,7 +7029,7 @@
       "subject": "The cut-point of the titration assay",
       "action": "may be",
       "object": "the same as or different from that of the screening assay",
-      "normalized_ko": null,
+      "normalized_ko": "스크리닝 분석법의 것과 동일하거나 다를 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7043,7 +7043,7 @@
       "subject": "The sponsor",
       "action": "should establish",
       "object": "a titration assay cut-point",
-      "normalized_ko": null,
+      "normalized_ko": "적정 분석법 컷포인트를 설정해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7057,7 +7057,7 @@
       "subject": "The cut-point",
       "action": "may be established using",
       "object": "a 0.1% false-positive rate",
-      "normalized_ko": null,
+      "normalized_ko": "0.1% 위양성률을 사용하여 설정할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7071,7 +7071,7 @@
       "subject": "The sponsor",
       "action": "should obtain",
       "object": "pre-treatment samples from all subjects",
-      "normalized_ko": null,
+      "normalized_ko": "모든 피험자로부터 치료 전 검체를 확보해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7085,7 +7085,7 @@
       "subject": "understanding the degree of reactivity before treatment",
       "action": "is essential",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -7099,7 +7099,7 @@
       "subject": "the timing",
       "action": "depends on",
       "object": "the frequency of dosing",
-      "normalized_ko": null,
+      "normalized_ko": "투여 빈도에 따라 달라진다.",
       "review_status": "reviewed"
     },
     {
@@ -7113,7 +7113,7 @@
       "subject": "understanding the degree of reactivity before treatment",
       "action": "is",
       "object": "essential",
-      "normalized_ko": null,
+      "normalized_ko": "필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -7127,7 +7127,7 @@
       "subject": "Samples taken at 3 to 6 weeks after the first exposure",
       "action": "are generally optimal for determining",
       "object": "IgG responses",
-      "normalized_ko": null,
+      "normalized_ko": "IgG 반응을 결정하는 데 일반적으로 최적이다.",
       "review_status": "reviewed"
     },
     {
@@ -7141,7 +7141,7 @@
       "subject": "Obtaining samples",
       "action": "is essential",
       "object": "at a time when there will be minimal interference from the therapeutic protein product present in the matrix",
-      "normalized_ko": null,
+      "normalized_ko": "매트릭스에 존재하는 치료용 단백질 제품으로 인한 간섭이 최소화되는 시점에 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -7155,7 +7155,7 @@
       "subject": "A sponsor",
       "action": "should consider",
       "object": "the therapeutic protein product's half-life",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품의 반감기를 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7169,7 +7169,7 @@
       "subject": "samples taken 7 to 14 days after the first exposure",
       "action": "can help elucidate",
       "object": "an early IgM response",
-      "normalized_ko": null,
+      "normalized_ko": "초기 IgM 반응을 규명하는 데 도움이 될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7183,7 +7183,7 @@
       "subject": "these time frames",
       "action": "may be",
       "object": "adequate",
-      "normalized_ko": null,
+      "normalized_ko": "적절할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7197,7 +7197,7 @@
       "subject": "IgA responses",
       "action": "may peak earlier than",
       "object": "IgG responses",
-      "normalized_ko": null,
+      "normalized_ko": "IgG 반응보다 더 일찍 최고치에 도달할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7211,7 +7211,7 @@
       "subject": "Obtaining samples at a time when there will be minimal interference from the therapeutic protein product present in the matrix",
       "action": "is",
       "object": "essential",
-      "normalized_ko": null,
+      "normalized_ko": "필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -7225,7 +7225,7 @@
       "subject": "Obtaining samples to test for meaningful antibody response",
       "action": "can be complicated",
       "object": "if the therapeutic protein product in question is itself an immune suppressant",
-      "normalized_ko": null,
+      "normalized_ko": "해당 치료용 단백질 제품 자체가 면역억제제인 경우 복잡해질 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7239,7 +7239,7 @@
       "subject": null,
       "action": "is essential",
       "object": "understanding the degree of reactivity before treatment",
-      "normalized_ko": null,
+      "normalized_ko": "치료 전 반응성의 정도를 이해하는 것은 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -7253,7 +7253,7 @@
       "subject": "Samples taken 7 to 14 days after the first exposure",
       "action": "can help elucidate",
       "object": "an early IgM response",
-      "normalized_ko": null,
+      "normalized_ko": "초기 IgM 반응을 규명하는 데 도움이 될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7267,7 +7267,7 @@
       "subject": "Samples taken at 3 to 6 weeks after the first exposure",
       "action": "are generally optimal for determining",
       "object": "IgG responses",
-      "normalized_ko": null,
+      "normalized_ko": "IgG 반응을 결정하는 데 일반적으로 최적이다.",
       "review_status": "reviewed"
     },
     {
@@ -7281,7 +7281,7 @@
       "subject": null,
       "action": "is essential",
       "object": "obtaining samples at a time when there will be minimal interference from the therapeutic protein product present in the matrix",
-      "normalized_ko": null,
+      "normalized_ko": "매트릭스에 존재하는 치료용 단백질 제품으로 인한 간섭이 최소화되는 시점에 검체를 채취하는 것은 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -7295,7 +7295,7 @@
       "subject": "Obtaining samples to test for meaningful antibody response",
       "action": "can be complicated",
       "object": "if the therapeutic protein product in question is itself an immune suppressant",
-      "normalized_ko": null,
+      "normalized_ko": "해당 치료용 단백질 제품 자체가 면역억제제인 경우 복잡해질 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7309,7 +7309,7 @@
       "subject": "Positive control and quality control (QC) samples",
       "action": "are",
       "object": "critical",
-      "normalized_ko": "Positive and QC samples are critical.",
+      "normalized_ko": "매우 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -7323,7 +7323,7 @@
       "subject": "The sponsor",
       "action": "ensures",
       "object": "that the assay is performing as expected",
-      "normalized_ko": "The sponsor ensures that the assay performs as expected.",
+      "normalized_ko": "분석법이 예상대로 수행되고 있음을 보장한다.",
       "review_status": "reviewed"
     },
     {
@@ -7337,7 +7337,7 @@
       "subject": "Positive control and quality control (QC) samples",
       "action": "should be run concurrently with",
       "object": "subject samples",
-      "normalized_ko": "Positive and QC samples should be run concurrently with subject samples.",
+      "normalized_ko": "피험자 검체와 동시에 수행해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7351,7 +7351,7 @@
       "subject": "QC samples",
       "action": "should be diluted in",
       "object": "the matrix in which subject samples will be examined",
-      "normalized_ko": "QC samples should be diluted in the matrix used for subject samples.",
+      "normalized_ko": "피험자 검체를 검사할 매트릭스에서 희석해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7365,7 +7365,7 @@
       "subject": "The concentration of high-positive QC samples",
       "action": "should be set to monitor",
       "object": "prozone effects",
-      "normalized_ko": "The high-positive QC concentration should be set to monitor prozone effects.",
+      "normalized_ko": "프로존 효과를 모니터링하도록 설정해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7379,7 +7379,7 @@
       "subject": "QC sample",
       "action": "should be diluted in",
       "object": "the same anticoagulant as the subject samples",
-      "normalized_ko": "A QC sample should be diluted in the same anticoagulant as subject samples.",
+      "normalized_ko": "피험자 검체와 동일한 항응고제에서 희석해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7393,7 +7393,7 @@
       "subject": "QC sample dilution",
       "action": "includes",
       "object": "the QC sample should be diluted in the same anticoagulant as the subject samples",
-      "normalized_ko": null,
+      "normalized_ko": "QC 검체는 피험자 검체와 동일한 항응고제에서 희석해야 하는 것을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -7407,7 +7407,7 @@
       "subject": "Samples from different populations",
       "action": "can have",
       "object": "different background activity in ADA assays",
-      "normalized_ko": null,
+      "normalized_ko": "ADA 분석에서 서로 다른 배경 활성을 가질 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7421,7 +7421,7 @@
       "subject": "the background activity",
       "action": "change",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "변경될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7435,7 +7435,7 @@
       "subject": "the cut-point determined during assay validation",
       "action": "is necessary to confirm as suitable for",
       "object": "the population being studied",
-      "normalized_ko": null,
+      "normalized_ko": "연구 대상 집단에 적합함을 확인하는 것이 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -7449,7 +7449,7 @@
       "subject": "A sufficient number of samples from the target population",
       "action": "should be used",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "사용해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7463,7 +7463,7 @@
       "subject": "justification for the number used",
       "action": "be provided",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "제공되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7477,7 +7477,7 @@
       "subject": "Samples from different populations",
       "action": "can have",
       "object": "different background activity in ADA assays",
-      "normalized_ko": null,
+      "normalized_ko": "ADA 분석에서 서로 다른 배경 활성을 가질 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7491,7 +7491,7 @@
       "subject": "Sponsors",
       "action": "should use",
       "object": "a life-cycle management approach to immunogenicity through the creation of an integrated immunogenicity summary report",
-      "normalized_ko": null,
+      "normalized_ko": "통합 면역원성 요약 보고서를 작성하여 면역원성에 대한 수명주기 관리 접근법을 사용해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7505,7 +7505,7 @@
       "subject": "Distinct sections",
       "action": "includes",
       "object": "(1) Immunogenicity Risk Assessment",
-      "normalized_ko": null,
+      "normalized_ko": "면역원성 위험 평가를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -7519,7 +7519,7 @@
       "subject": "The distinct sections",
       "action": "include",
       "object": "Immunogenicity Risk Assessment",
-      "normalized_ko": null,
+      "normalized_ko": "면역원성 위험 평가를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -7533,7 +7533,7 @@
       "subject": "The multi-tiered approach to anti-drug antibody testing",
       "action": "comprises",
       "object": "Tier 1 Screening Assay; Tier 2 Confirmatory Assay; Tier 3 Titration Assay; and Tier 4 Neutralization Bioassay",
-      "normalized_ko": null,
+      "normalized_ko": "Tier 1 스크리닝 분석법, Tier 2 확인 분석법, Tier 3 역가 분석법 및 Tier 4 중화 바이오분석법으로 구성된다.",
       "review_status": "reviewed"
     },
     {
@@ -7547,7 +7547,7 @@
       "subject": "Tier 1 Screening Assay",
       "action": "detect",
       "object": "antibody responses",
-      "normalized_ko": null,
+      "normalized_ko": "항체 반응을 검출한다.",
       "review_status": "reviewed"
     },
     {
@@ -7561,7 +7561,7 @@
       "subject": "Tier 2 Confirmatory Assay",
       "action": "confirm",
       "object": "specific binding",
-      "normalized_ko": null,
+      "normalized_ko": "특이적 결합을 확인한다.",
       "review_status": "reviewed"
     },
     {
@@ -7575,7 +7575,7 @@
       "subject": "Tier 3 Titration Assay",
       "action": "characterize",
       "object": "antibody level and magnitude of response",
-      "normalized_ko": null,
+      "normalized_ko": "항체 수준 및 반응의 크기를 특성화한다.",
       "review_status": "reviewed"
     },
     {
@@ -7589,7 +7589,7 @@
       "subject": "Tier 4 Neutralization Bioassay",
       "action": "determine",
       "object": "neutralizing capacity of confirmed ADA against the therapeutic protein product",
-      "normalized_ko": null,
+      "normalized_ko": "치료용 단백질 제품에 대한 확인된 ADA의 중화 능력을 결정한다.",
       "review_status": "reviewed"
     },
     {
@@ -7603,7 +7603,7 @@
       "subject": "Tier 4 Neutralization Bioassay",
       "action": "may be",
       "object": "cell-based or non-cell-based",
-      "normalized_ko": null,
+      "normalized_ko": "세포 기반 또는 비세포 기반일 수 있다.",
       "review_status": "reviewed"
     }
   ],
@@ -8564,7 +8564,12 @@
       "unit": "individual samples",
       "value_status": "known",
       "denominator_or_reference": "to estimate the cut-point early in assay development",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.V_A.001",
+        "fda_ada.cond.V_A.002",
+        "fda_ada.cond.V_A.005",
+        "fda_ada.cond.V_A.006"
+      ],
       "joint_with_ids": [
         "fda_ada.qc.V_A.002"
       ],
@@ -8584,7 +8589,12 @@
       "unit": "individual samples",
       "value_status": "known",
       "denominator_or_reference": "to estimate the cut-point early in assay development",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.V_A.001",
+        "fda_ada.cond.V_A.002",
+        "fda_ada.cond.V_A.005",
+        "fda_ada.cond.V_A.006"
+      ],
       "joint_with_ids": [
         "fda_ada.qc.V_A.001"
       ],
@@ -8604,7 +8614,12 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "initial screening assay",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.V_A.001",
+        "fda_ada.cond.V_A.002",
+        "fda_ada.cond.V_A.005",
+        "fda_ada.cond.V_A.006"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8622,7 +8637,10 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "serum samples",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.V_B_1.002",
+        "fda_ada.cond.V_B_1.003"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8640,7 +8658,10 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "defined false-positive rate",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.V_B_1.002",
+        "fda_ada.cond.V_B_1.003"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8658,7 +8679,10 @@
       "unit": null,
       "value_status": "unknown",
       "denominator_or_reference": "the amount of therapeutic protein product that will be used as a competitive inhibitor in the assay",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.V_B_2.003",
+        "fda_ada.cond.V_B_2.006"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8712,7 +8736,12 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VI_D.004",
+        "fda_ada.cond.VI_D.005",
+        "fda_ada.cond.VI_D.006",
+        "fda_ada.cond.VI_D.008"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8730,7 +8759,12 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VI_D.004",
+        "fda_ada.cond.VI_D.005",
+        "fda_ada.cond.VI_D.006",
+        "fda_ada.cond.VI_D.008"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8748,7 +8782,9 @@
       "unit": "days",
       "value_status": "needs_review",
       "denominator_or_reference": "after the first exposure",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VII_A.001"
+      ],
       "joint_with_ids": [
         "fda_ada.qc.VII_A.007"
       ],
@@ -8768,7 +8804,9 @@
       "unit": "weeks",
       "value_status": "needs_review",
       "denominator_or_reference": "after the first exposure",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VII_A.001"
+      ],
       "joint_with_ids": [
         "fda_ada.qc.VII_A.006"
       ],
@@ -8788,7 +8826,9 @@
       "unit": "days",
       "value_status": "known",
       "denominator_or_reference": "after the last exposure",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VII_A.001"
+      ],
       "joint_with_ids": [
         "fda_ada.qc.VII_A.009"
       ],
@@ -8808,7 +8848,9 @@
       "unit": "half-lives",
       "value_status": "known",
       "denominator_or_reference": "after last exposure",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VII_A.001"
+      ],
       "joint_with_ids": [
         "fda_ada.qc.VII_A.008"
       ],
@@ -8848,7 +8890,9 @@
       "unit": "days",
       "value_status": "known",
       "denominator_or_reference": "after the first exposure",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VII_A.001"
+      ],
       "joint_with_ids": [
         "fda_ada.qc.VII_A.002",
         "fda_ada.qc.VII_A.010"
@@ -8869,7 +8913,9 @@
       "unit": "days",
       "value_status": "known",
       "denominator_or_reference": "after the first exposure",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VII_A.001"
+      ],
       "joint_with_ids": [
         "fda_ada.qc.VII_A.001"
       ],
@@ -8889,7 +8935,9 @@
       "unit": "weeks",
       "value_status": "known",
       "denominator_or_reference": "after the first exposure",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VII_A.001"
+      ],
       "joint_with_ids": [
         "fda_ada.qc.VII_A.004"
       ],
@@ -8909,7 +8957,9 @@
       "unit": "weeks",
       "value_status": "known",
       "denominator_or_reference": "after the first exposure",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VII_A.001"
+      ],
       "joint_with_ids": [
         "fda_ada.qc.VII_A.003"
       ],
@@ -8929,7 +8979,9 @@
       "unit": "weeks",
       "value_status": "known",
       "denominator_or_reference": "after antigen exposure",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VII_A.001"
+      ],
       "joint_with_ids": [
         "fda_ada.qc.VII_A.006"
       ],
@@ -8949,7 +9001,9 @@
       "unit": "weeks",
       "value_status": "known",
       "denominator_or_reference": "after antigen exposure",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VII_A.001"
+      ],
       "joint_with_ids": [
         "fda_ada.qc.VII_A.005"
       ],
@@ -8969,7 +9023,9 @@
       "unit": "days",
       "value_status": "known",
       "denominator_or_reference": "after the last exposure",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VII_A.001"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8987,7 +9043,9 @@
       "unit": "half-lives",
       "value_status": "known",
       "denominator_or_reference": "after last exposure",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VII_A.001"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -9005,7 +9063,10 @@
       "unit": "% of assay runs",
       "value_status": "known",
       "denominator_or_reference": "assay runs",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VII_B.003",
+        "fda_ada.cond.VII_B.005"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -9023,7 +9084,10 @@
       "unit": "% of the time",
       "value_status": "known",
       "denominator_or_reference": "assay runs",
-      "condition_ids": [],
+      "condition_ids": [
+        "fda_ada.cond.VII_B.003",
+        "fda_ada.cond.VII_B.005"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -9702,7 +9766,11 @@
       "source_unit_id": "fda_ada.su.3_a.004",
       "condition_text": "In other situations",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.III_A.012",
+        "fda_ada.kr.III_A.013",
+        "fda_ada.kr.III_A.014"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9710,7 +9778,11 @@
       "source_unit_id": "fda_ada.su.3_a.004",
       "condition_text": "At the time of license application",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.III_A.012",
+        "fda_ada.kr.III_A.013",
+        "fda_ada.kr.III_A.014"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9739,7 +9811,11 @@
       "source_unit_id": "fda_ada.su.3_a.004",
       "condition_text": "when suitable assays are available",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.III_A.012",
+        "fda_ada.kr.III_A.013",
+        "fda_ada.kr.III_A.014"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9767,7 +9843,11 @@
       "source_unit_id": "fda_ada.su.3_a.004",
       "condition_text": "At the time of license application",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.III_A.012",
+        "fda_ada.kr.III_A.013",
+        "fda_ada.kr.III_A.014"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9795,7 +9875,9 @@
       "source_unit_id": "fda_ada.su.3_b.002",
       "condition_text": "When a direct comparison of immunogenicity across different therapeutic protein products that have homology — or across similar therapeutic proteins from different sources — is needed",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.III_B.006"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9823,7 +9905,12 @@
       "source_unit_id": "fda_ada.su.4_a_2.001",
       "condition_text": "When clinically relevant",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_A_2.001",
+        "fda_ada.kr.IV_A_2.002",
+        "fda_ada.kr.IV_A_2.003",
+        "fda_ada.kr.IV_A_2.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9841,7 +9928,11 @@
       "source_unit_id": "fda_ada.su.4_a_3.001",
       "condition_text": "For multi-domain products",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_A_3.001",
+        "fda_ada.kr.IV_A_3.002",
+        "fda_ada.kr.IV_A_3.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9849,7 +9940,11 @@
       "source_unit_id": "fda_ada.su.4_a_3.001",
       "condition_text": "for multi-domain therapeutic protein products",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_A_3.001",
+        "fda_ada.kr.IV_A_3.002",
+        "fda_ada.kr.IV_A_3.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9857,7 +9952,11 @@
       "source_unit_id": "fda_ada.su.4_a_3.001",
       "condition_text": "for multi-domain therapeutic protein products",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_A_3.001",
+        "fda_ada.kr.IV_A_3.002",
+        "fda_ada.kr.IV_A_3.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9969,7 +10068,13 @@
       "source_unit_id": "fda_ada.su.4_e_1.002",
       "condition_text": "during assay development",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_E_1.008",
+        "fda_ada.kr.IV_E_1.009",
+        "fda_ada.kr.IV_E_1.010",
+        "fda_ada.kr.IV_E_1.011",
+        "fda_ada.kr.IV_E_1.014"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10017,7 +10122,13 @@
       "source_unit_id": "fda_ada.su.4_f.001",
       "condition_text": "In cases where a floating cut-point is needed",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_F.001",
+        "fda_ada.kr.IV_F.002",
+        "fda_ada.kr.IV_F.003",
+        "fda_ada.kr.IV_F.004",
+        "fda_ada.kr.IV_F.005"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10025,7 +10136,13 @@
       "source_unit_id": "fda_ada.su.4_f.001",
       "condition_text": "In cases where a floating cut-point is needed",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_F.001",
+        "fda_ada.kr.IV_F.002",
+        "fda_ada.kr.IV_F.003",
+        "fda_ada.kr.IV_F.004",
+        "fda_ada.kr.IV_F.005"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10124,7 +10241,16 @@
       "source_unit_id": "fda_ada.su.4_i.001",
       "condition_text": "because binding to plastic or coupling to other agents (for example, fluorochrome, enzyme, or biotin reporters)",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_I.001",
+        "fda_ada.kr.IV_I.002",
+        "fda_ada.kr.IV_I.003",
+        "fda_ada.kr.IV_I.004",
+        "fda_ada.kr.IV_I.005",
+        "fda_ada.kr.IV_I.006",
+        "fda_ada.kr.IV_I.007",
+        "fda_ada.kr.IV_I.008"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10132,7 +10258,16 @@
       "source_unit_id": "fda_ada.su.4_i.001",
       "condition_text": "because binding to plastic or coupling to other agents (for example, fluorochrome, enzyme, or biotin reporters)",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_I.001",
+        "fda_ada.kr.IV_I.002",
+        "fda_ada.kr.IV_I.003",
+        "fda_ada.kr.IV_I.004",
+        "fda_ada.kr.IV_I.005",
+        "fda_ada.kr.IV_I.006",
+        "fda_ada.kr.IV_I.007",
+        "fda_ada.kr.IV_I.008"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10180,7 +10315,13 @@
       "source_unit_id": "fda_ada.su.4_j_1.002",
       "condition_text": "Once a source of a positive control antibody has been identified",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_1.006",
+        "fda_ada.kr.IV_J_1.007",
+        "fda_ada.kr.IV_J_1.008",
+        "fda_ada.kr.IV_J_1.009",
+        "fda_ada.kr.IV_J_1.010"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10188,7 +10329,13 @@
       "source_unit_id": "fda_ada.su.4_j_1.002",
       "condition_text": "during routine performance of the assay",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_1.006",
+        "fda_ada.kr.IV_J_1.007",
+        "fda_ada.kr.IV_J_1.008",
+        "fda_ada.kr.IV_J_1.009",
+        "fda_ada.kr.IV_J_1.010"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10196,7 +10343,13 @@
       "source_unit_id": "fda_ada.su.4_j_1.002",
       "condition_text": "For assay development and validation",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_1.006",
+        "fda_ada.kr.IV_J_1.007",
+        "fda_ada.kr.IV_J_1.008",
+        "fda_ada.kr.IV_J_1.009",
+        "fda_ada.kr.IV_J_1.010"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10204,7 +10357,13 @@
       "source_unit_id": "fda_ada.su.4_j_1.002",
       "condition_text": "during assay validation",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_1.006",
+        "fda_ada.kr.IV_J_1.007",
+        "fda_ada.kr.IV_J_1.008",
+        "fda_ada.kr.IV_J_1.009",
+        "fda_ada.kr.IV_J_1.010"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10212,7 +10371,13 @@
       "source_unit_id": "fda_ada.su.4_j_1.002",
       "condition_text": "during routine assay performance",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_1.006",
+        "fda_ada.kr.IV_J_1.007",
+        "fda_ada.kr.IV_J_1.008",
+        "fda_ada.kr.IV_J_1.009",
+        "fda_ada.kr.IV_J_1.010"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10220,7 +10385,13 @@
       "source_unit_id": "fda_ada.su.4_j_1.002",
       "condition_text": "for detection of ADA",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_1.006",
+        "fda_ada.kr.IV_J_1.007",
+        "fda_ada.kr.IV_J_1.008",
+        "fda_ada.kr.IV_J_1.009",
+        "fda_ada.kr.IV_J_1.010"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10269,7 +10440,12 @@
       "source_unit_id": "fda_ada.su.4_j_2.002",
       "condition_text": "when samples from treatment-naïve subjects from the appropriate target population become available",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_2.005",
+        "fda_ada.kr.IV_J_2.006",
+        "fda_ada.kr.IV_J_2.007",
+        "fda_ada.kr.IV_J_2.008"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10297,7 +10473,12 @@
       "source_unit_id": "fda_ada.su.4_j_2.002",
       "condition_text": "When target-population control samples are not available during development",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_J_2.005",
+        "fda_ada.kr.IV_J_2.006",
+        "fda_ada.kr.IV_J_2.007",
+        "fda_ada.kr.IV_J_2.008"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10479,7 +10660,13 @@
       "source_unit_id": "fda_ada.su.4_l_3.001",
       "condition_text": "If the Fc region is engineered or bound to another molecule",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.IV_L_3.001",
+        "fda_ada.kr.IV_L_3.002",
+        "fda_ada.kr.IV_L_3.003",
+        "fda_ada.kr.IV_L_3.004",
+        "fda_ada.kr.IV_L_3.005"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10507,7 +10694,14 @@
       "source_unit_id": "fda_ada.su.5_a.001",
       "condition_text": "when treatment-naïve samples from the target population become available",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.V_A.001",
+        "fda_ada.kr.V_A.002",
+        "fda_ada.kr.V_A.003",
+        "fda_ada.qc.V_A.001",
+        "fda_ada.qc.V_A.002",
+        "fda_ada.qc.V_A.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10515,7 +10709,14 @@
       "source_unit_id": "fda_ada.su.5_a.001",
       "condition_text": "when determining the true incidence of immunogenicity",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.V_A.001",
+        "fda_ada.kr.V_A.002",
+        "fda_ada.kr.V_A.003",
+        "fda_ada.qc.V_A.001",
+        "fda_ada.qc.V_A.002",
+        "fda_ada.qc.V_A.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10543,7 +10744,14 @@
       "source_unit_id": "fda_ada.su.5_a.001",
       "condition_text": "when determining the true incidence of immunogenicity",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.V_A.001",
+        "fda_ada.kr.V_A.002",
+        "fda_ada.kr.V_A.003",
+        "fda_ada.qc.V_A.001",
+        "fda_ada.qc.V_A.002",
+        "fda_ada.qc.V_A.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10551,7 +10759,14 @@
       "source_unit_id": "fda_ada.su.5_a.001",
       "condition_text": "for the initial screening assay",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.V_A.001",
+        "fda_ada.kr.V_A.002",
+        "fda_ada.kr.V_A.003",
+        "fda_ada.qc.V_A.001",
+        "fda_ada.qc.V_A.002",
+        "fda_ada.qc.V_A.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10569,7 +10784,18 @@
       "source_unit_id": "fda_ada.su.5_b_1.001",
       "condition_text": "In such cases",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.V_B_1.001",
+        "fda_ada.kr.V_B_1.002",
+        "fda_ada.kr.V_B_1.003",
+        "fda_ada.kr.V_B_1.004",
+        "fda_ada.kr.V_B_1.005",
+        "fda_ada.kr.V_B_1.006",
+        "fda_ada.kr.V_B_1.007",
+        "fda_ada.kr.V_B_1.008",
+        "fda_ada.qc.V_B_1.001",
+        "fda_ada.qc.V_B_1.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10577,7 +10803,18 @@
       "source_unit_id": "fda_ada.su.5_b_1.001",
       "condition_text": "When using a binding competition assay",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.V_B_1.001",
+        "fda_ada.kr.V_B_1.002",
+        "fda_ada.kr.V_B_1.003",
+        "fda_ada.kr.V_B_1.004",
+        "fda_ada.kr.V_B_1.005",
+        "fda_ada.kr.V_B_1.006",
+        "fda_ada.kr.V_B_1.007",
+        "fda_ada.kr.V_B_1.008",
+        "fda_ada.qc.V_B_1.001",
+        "fda_ada.qc.V_B_1.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10616,7 +10853,13 @@
       "source_unit_id": "fda_ada.su.5_b_2.001",
       "condition_text": "In rare cases when baseline negative samples are not available",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.V_B_2.001",
+        "fda_ada.kr.V_B_2.002",
+        "fda_ada.kr.V_B_2.003",
+        "fda_ada.kr.V_B_2.004",
+        "fda_ada.qc.V_B_2.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10644,7 +10887,13 @@
       "source_unit_id": "fda_ada.su.5_b_2.001",
       "condition_text": "samples that screen positive",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.V_B_2.001",
+        "fda_ada.kr.V_B_2.002",
+        "fda_ada.kr.V_B_2.003",
+        "fda_ada.kr.V_B_2.004",
+        "fda_ada.qc.V_B_2.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10722,7 +10971,14 @@
       "source_unit_id": "fda_ada.su.6_d.001",
       "condition_text": "When the titration assay is not used for screening",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.VI_D.001",
+        "fda_ada.kr.VI_D.002",
+        "fda_ada.kr.VI_D.003",
+        "fda_ada.kr.VI_D.004",
+        "fda_ada.qc.VI_D.001",
+        "fda_ada.qc.VI_D.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10730,7 +10986,14 @@
       "source_unit_id": "fda_ada.su.6_d.001",
       "condition_text": "When the titration assay is used for screening",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.VI_D.001",
+        "fda_ada.kr.VI_D.002",
+        "fda_ada.kr.VI_D.003",
+        "fda_ada.kr.VI_D.004",
+        "fda_ada.qc.VI_D.001",
+        "fda_ada.qc.VI_D.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10738,7 +11001,14 @@
       "source_unit_id": "fda_ada.su.6_d.001",
       "condition_text": "when the subject population has a high incidence of pre-existing ADA",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.VI_D.001",
+        "fda_ada.kr.VI_D.002",
+        "fda_ada.kr.VI_D.003",
+        "fda_ada.kr.VI_D.004",
+        "fda_ada.qc.VI_D.001",
+        "fda_ada.qc.VI_D.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10756,7 +11026,14 @@
       "source_unit_id": "fda_ada.su.6_d.001",
       "condition_text": "when the subject population has a high incidence of pre-existing ADA",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.VI_D.001",
+        "fda_ada.kr.VI_D.002",
+        "fda_ada.kr.VI_D.003",
+        "fda_ada.kr.VI_D.004",
+        "fda_ada.qc.VI_D.001",
+        "fda_ada.qc.VI_D.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10784,7 +11061,31 @@
       "source_unit_id": "fda_ada.su.7_a.001",
       "condition_text": "For individuals receiving a single dose of a therapeutic protein product",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.VII_A.001",
+        "fda_ada.kr.VII_A.002",
+        "fda_ada.kr.VII_A.003",
+        "fda_ada.kr.VII_A.004",
+        "fda_ada.kr.VII_A.005",
+        "fda_ada.kr.VII_A.008",
+        "fda_ada.kr.VII_A.009",
+        "fda_ada.kr.VII_A.010",
+        "fda_ada.kr.VII_A.013",
+        "fda_ada.kr.VII_A.014",
+        "fda_ada.kr.VII_A.015",
+        "fda_ada.qc.VII_A.001",
+        "fda_ada.qc.VII_A.002",
+        "fda_ada.qc.VII_A.003",
+        "fda_ada.qc.VII_A.004",
+        "fda_ada.qc.VII_A.006",
+        "fda_ada.qc.VII_A.007",
+        "fda_ada.qc.VII_A.008",
+        "fda_ada.qc.VII_A.009",
+        "fda_ada.qc.VII_A.010",
+        "fda_ada.qc.VII_A.011",
+        "fda_ada.qc.VII_A.012",
+        "fda_ada.qc.VII_A.013"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10915,7 +11216,17 @@
       "source_unit_id": "fda_ada.su.7_b.001",
       "condition_text": "If the assay is subject to a prozone effect",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.VII_B.001",
+        "fda_ada.kr.VII_B.002",
+        "fda_ada.kr.VII_B.003",
+        "fda_ada.kr.VII_B.004",
+        "fda_ada.kr.VII_B.005",
+        "fda_ada.kr.VII_B.006",
+        "fda_ada.kr.VII_B.007",
+        "fda_ada.qc.VII_B.001",
+        "fda_ada.qc.VII_B.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10933,7 +11244,17 @@
       "source_unit_id": "fda_ada.su.7_b.001",
       "condition_text": "If the assay is subject to a prozone effect",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.VII_B.001",
+        "fda_ada.kr.VII_B.002",
+        "fda_ada.kr.VII_B.003",
+        "fda_ada.kr.VII_B.004",
+        "fda_ada.kr.VII_B.005",
+        "fda_ada.kr.VII_B.006",
+        "fda_ada.kr.VII_B.007",
+        "fda_ada.qc.VII_B.001",
+        "fda_ada.qc.VII_B.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10981,7 +11302,11 @@
       "source_unit_id": "fda_ada.su.8.001",
       "condition_text": "as it becomes available",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.VIII.001",
+        "fda_ada.kr.VIII.002",
+        "fda_ada.kr.VIII.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10989,7 +11314,11 @@
       "source_unit_id": "fda_ada.su.8.001",
       "condition_text": "For the BLA file",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.VIII.001",
+        "fda_ada.kr.VIII.002",
+        "fda_ada.kr.VIII.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -11007,7 +11336,11 @@
       "source_unit_id": "fda_ada.su.8.001",
       "condition_text": "with stage-appropriate information as it becomes available",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "fda_ada.kr.VIII.001",
+        "fda_ada.kr.VIII.002",
+        "fda_ada.kr.VIII.003"
+      ],
       "review_status": "reviewed"
     },
     {

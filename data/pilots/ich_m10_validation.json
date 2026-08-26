@@ -2391,7 +2391,7 @@
       "subject": "Accuracy and precision",
       "action": "be determined",
       "object": "by analysing the QCs within each run (within-run) and in different runs (between-run)",
-      "normalized_ko": null,
+      "normalized_ko": "각 런 내 QC 분석(런 내) 및 서로 다른 런에서의 QC 분석(런 간)을 통해 결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2405,7 +2405,7 @@
       "subject": "Accuracy and precision",
       "action": "be evaluated",
       "object": "using the same runs and data",
-      "normalized_ko": null,
+      "normalized_ko": "동일한 런 및 데이터를 사용하여 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2419,7 +2419,7 @@
       "subject": "Within-run accuracy and precision",
       "action": "be evaluated",
       "object": "by analysing at least 5 replicates at each QC concentration level in each analytical run",
-      "normalized_ko": null,
+      "normalized_ko": "각 분석 런에서 각 QC 농도 수준의 최소 5개 반복을 분석하여 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2433,7 +2433,7 @@
       "subject": "Between-run accuracy and precision",
       "action": "be evaluated",
       "object": "by analysing each QC concentration level in at least 3 analytical runs over at least two days",
-      "normalized_ko": null,
+      "normalized_ko": "최소 2일에 걸쳐 최소 3개의 분석 런에서 각 QC 농도 수준을 분석하여 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2447,7 +2447,7 @@
       "subject": "Accuracy and precision of the QCs",
       "action": "be demonstrated",
       "object": "over at least one of the runs in a size equivalent to a prospective analytical run of study samples",
-      "normalized_ko": null,
+      "normalized_ko": "시험 검체의 향후 분석 런과 동등한 규모로, 최소 하나의 런에서 입증되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2461,7 +2461,7 @@
       "subject": "Reported method validation data and the determination of accuracy and precision",
       "action": "include",
       "object": "all results obtained, including individual QCs outside of the acceptance criteria",
-      "normalized_ko": null,
+      "normalized_ko": "허용 기준을 벗어난 개별 QC를 포함하여 획득된 모든 결과를 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2475,7 +2475,7 @@
       "subject": "Within-run accuracy and precision data",
       "action": "be reported",
       "object": "for each run",
-      "normalized_ko": null,
+      "normalized_ko": "각 런에 대해 보고되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2489,7 +2489,7 @@
       "subject": "An overall estimate of within-run accuracy and precision for each QC level",
       "action": "be calculated",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "계산되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2503,7 +2503,7 @@
       "subject": "Between-run (intermediate) precision and accuracy",
       "action": "be calculated",
       "object": "by combining the data from all runs",
-      "normalized_ko": null,
+      "normalized_ko": "모든 런의 데이터를 결합하여 계산되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2517,7 +2517,7 @@
       "subject": "The calibration curves for these assessments",
       "action": "be prepared",
       "object": "using freshly spiked calibration standards in at least one run",
-      "normalized_ko": null,
+      "normalized_ko": "최소 하나의 런에서 새로 첨가하여 제조한 검량 표준품을 사용하여 준비되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2531,7 +2531,7 @@
       "subject": "Stability of the frozen calibration standards",
       "action": "be demonstrated",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "입증되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2545,7 +2545,7 @@
       "subject": "The accuracy at each concentration level",
       "action": "be within",
       "object": "±15% of the nominal concentration, except at the LLOQ, where it should be within ±20%",
-      "normalized_ko": null,
+      "normalized_ko": "명목 농도의 ±15% 이내여야 하며, LLOQ에서는 ±20% 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2559,7 +2559,7 @@
       "subject": "The precision (%CV) of the concentrations determined at each level",
       "action": "not exceed",
       "object": "15%, except at the LLOQ, where it should not exceed 20%",
-      "normalized_ko": null,
+      "normalized_ko": "15%를 초과해서는 안 되며, LLOQ에서는 20%를 초과해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -2573,7 +2573,7 @@
       "subject": "At least 2/3 of the total QCs and at least 50% at each concentration level",
       "action": "be within",
       "object": "±15% of the nominal values",
-      "normalized_ko": null,
+      "normalized_ko": "명목값의 ±15% 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2587,7 +2587,7 @@
       "subject": "This guideline",
       "action": "is intended to provide recommendations",
       "object": "for the validation of bioanalytical methods for chemical and biological drug quantification and their application in the analysis of study samples",
-      "normalized_ko": "The guideline provides recommendations on validating bioanalytical methods for chemical and biological drug quantification and applying them to study-sample analysis.",
+      "normalized_ko": "화학 및 생물학적 의약품 정량을 위한 생체분석법의 밸리데이션 및 시험 검체 분석에의 적용에 관한 권고를 제공하기 위한 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2601,7 +2601,7 @@
       "subject": "Adherence to the principles presented in this guideline",
       "action": "will ensure",
       "object": "the quality and consistency of the bioanalytical data in support of the development and market approval of both chemical and biological drugs",
-      "normalized_ko": "Adherence to the guideline principles will ensure quality and consistency of bioanalytical data supporting development and market approval of chemical and biological drugs.",
+      "normalized_ko": "화학 및 생물학적 의약품의 개발 및 시판 허가를 뒷받침하는 생체분석 데이터의 품질과 일관성을 보장할 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2615,7 +2615,7 @@
       "subject": "The objective of the validation of a bioanalytical method",
       "action": "is to demonstrate",
       "object": "that it is suitable for its intended purpose",
-      "normalized_ko": "Bioanalytical method validation aims to demonstrate that the method is suitable for its intended purpose.",
+      "normalized_ko": "의도된 목적에 적합함을 입증하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2629,7 +2629,7 @@
       "subject": "Changes from the recommendations in this guideline",
       "action": "may be acceptable",
       "object": null,
-      "normalized_ko": "Departures from the guideline recommendations may be acceptable with appropriate scientific justification.",
+      "normalized_ko": "허용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2643,7 +2643,7 @@
       "subject": "Concentration measurements of chemical and biological drug(s) and their metabolite(s) in biological matrices",
       "action": "are",
       "object": "an important aspect of drug development",
-      "normalized_ko": null,
+      "normalized_ko": "의약품 개발의 중요한 측면이다.",
       "review_status": "reviewed"
     },
     {
@@ -2657,7 +2657,7 @@
       "subject": "The results of studies employing such methods",
       "action": "contribute to",
       "object": "regulatory decisions regarding the safety and efficacy of drug products",
-      "normalized_ko": null,
+      "normalized_ko": "의약품의 안전성 및 유효성에 관한 규제 결정에 기여한다.",
       "review_status": "reviewed"
     },
     {
@@ -2671,7 +2671,7 @@
       "subject": "This guideline",
       "action": "intends to facilitate",
       "object": "development of drugs in accordance with the principles of 3Rs (Reduce, Refine, Replace) for animal studies",
-      "normalized_ko": null,
+      "normalized_ko": "동물시험의 3R 원칙(감소, 개선, 대체)에 따른 의약품 개발을 촉진하고자 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2685,7 +2685,7 @@
       "subject": "the bioanalytical methods used",
       "action": "be well characterised",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "충분히 특성화되는 것이 권장된다.",
       "review_status": "reviewed"
     },
     {
@@ -2699,7 +2699,7 @@
       "subject": "the bioanalytical methods used",
       "action": "be appropriately validated",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "적절히 밸리데이션되는 것이 권장된다.",
       "review_status": "reviewed"
     },
     {
@@ -2713,7 +2713,7 @@
       "subject": "the bioanalytical methods used",
       "action": "be documented",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "문서화되는 것이 권장된다.",
       "review_status": "reviewed"
     },
     {
@@ -2727,7 +2727,7 @@
       "subject": "This guideline",
       "action": "intends to facilitate",
       "object": "development of drugs in accordance with the principles of 3Rs (Reduce, Refine, Replace) for animal studies",
-      "normalized_ko": "The guideline intends to facilitate drug development in accordance with 3Rs principles for animal studies.",
+      "normalized_ko": "동물시험의 3R 원칙(감소, 개선, 대체)에 따른 의약품 개발을 촉진하고자 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2741,7 +2741,7 @@
       "subject": "the bioanalytical methods used",
       "action": "be well characterised",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "충분히 특성화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2755,7 +2755,7 @@
       "subject": "the bioanalytical methods used",
       "action": "be appropriately validated",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "적절히 밸리데이션되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2769,7 +2769,7 @@
       "subject": "the bioanalytical methods used",
       "action": "be documented",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "문서화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2783,7 +2783,7 @@
       "subject": "This guideline",
       "action": "describes",
       "object": "the validation of bioanalytical methods and study sample analysis",
-      "normalized_ko": "The guideline describes validation of bioanalytical methods and study sample analysis.",
+      "normalized_ko": "생물분석법의 밸리데이션 및 시험 시료 분석을 기술한다.",
       "review_status": "reviewed"
     },
     {
@@ -2797,7 +2797,7 @@
       "subject": "This guideline",
       "action": "is applicable to",
       "object": "the bioanalytical methods used to measure concentrations of chemical and biological drug(s) and their metabolite(s) in biological samples",
-      "normalized_ko": "The guideline applies to bioanalytical methods measuring chemical and biological drugs and metabolites in biological samples.",
+      "normalized_ko": "생물학적 시료에서 화학적 및 생물학적 의약품과 그 대사체의 농도를 측정하는 데 사용되는 생물분석법에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -2811,7 +2811,7 @@
       "subject": "The biological samples",
       "action": "are obtained in",
       "object": "nonclinical toxicokinetic (TK) studies conducted according to the principles of GLP, nonclinical pharmacokinetic (PK) studies conducted as surrogates for clinical studies, and all phases of clinical trials, including comparative bioavailability/bioequivalence (BA/BE) studies, in regulatory submissions",
-      "normalized_ko": "Covered biological samples are obtained in specified nonclinical and clinical studies in regulatory submissions.",
+      "normalized_ko": "규제 제출에서 GLP 원칙에 따라 수행되는 비임상 독성동태학(TK) 연구, 임상시험의 대리로 수행되는 비임상 약동학(PK) 연구 및 비교 생체이용률/생물학적동등성(BA/BE) 연구를 포함한 모든 단계의 임상시험에서 얻어진다.",
       "review_status": "reviewed"
     },
     {
@@ -2825,7 +2825,7 @@
       "subject": "This guideline",
       "action": "describes",
       "object": "the validation of bioanalytical methods and study sample analysis",
-      "normalized_ko": "The guideline describes validation of bioanalytical methods and study sample analysis.",
+      "normalized_ko": "생물분석법의 밸리데이션 및 시험 시료 분석을 기술한다.",
       "review_status": "reviewed"
     },
     {
@@ -2839,7 +2839,7 @@
       "subject": "Full method validation",
       "action": "is expected for",
       "object": "the primary matrix intended to support regulatory submissions",
-      "normalized_ko": "Full method validation is expected for the primary matrix supporting regulatory submissions.",
+      "normalized_ko": "규제 제출을 지원하기 위해 의도된 주 매트릭스에 대해 기대된다.",
       "review_status": "reviewed"
     },
     {
@@ -2853,7 +2853,7 @@
       "subject": "Additional matrices",
       "action": "should be validated",
       "object": "as necessary",
-      "normalized_ko": "Additional matrices should be validated as necessary.",
+      "normalized_ko": "필요에 따라 밸리데이션해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2867,7 +2867,7 @@
       "subject": "Applicants",
       "action": "may decide on",
       "object": "the level of qualification that supports their own internal decision making",
-      "normalized_ko": "Applicants may decide the qualification level supporting internal decision making.",
+      "normalized_ko": "자체 내부 의사결정을 지원하는 적격성평가 수준을 결정할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2881,7 +2881,7 @@
       "subject": "The information in this guideline",
       "action": "applies to",
       "object": "the quantitative analysis by ligand binding assays (LBAs) and chromatographic methods such as liquid chromatography (LC) or gas chromatography (GC)",
-      "normalized_ko": "The guideline applies to quantitative analysis by LBAs and chromatographic methods.",
+      "normalized_ko": "리간드 결합 분석법(LBA) 및 액체 크로마토그래피(LC) 또는 기체 크로마토그래피(GC)와 같은 크로마토그래피 방법에 의한 정량 분석에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -2895,7 +2895,7 @@
       "subject": "The bioanalysis of biomarkers and bioanalytical methods used for the assessment of immunogenicity",
       "action": "are not within the scope of",
       "object": "this guideline",
-      "normalized_ko": "Biomarker bioanalysis and bioanalytical methods for immunogenicity assessment are not within the guideline's scope.",
+      "normalized_ko": "이 지침의 범위에 포함되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -2909,7 +2909,7 @@
       "subject": "Liquid chromatography (LC) or gas chromatography (GC)",
       "action": "are typically used in combination with",
       "object": "mass spectrometry (MS) detection",
-      "normalized_ko": "LC and GC are typically used with MS detection.",
+      "normalized_ko": "일반적으로 질량분석(MS) 검출과 함께 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -2923,7 +2923,7 @@
       "subject": "The bioanalysis of study samples",
       "action": "should also conform to",
       "object": "their requirements",
-      "normalized_ko": "Bioanalysis of study samples should also conform to GLP or GCP requirements.",
+      "normalized_ko": "그 요구사항도 준수해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2951,7 +2951,7 @@
       "subject": "Chromatographic methods",
       "action": "includes",
       "object": "liquid chromatography (LC)",
-      "normalized_ko": "Chromatographic methods include liquid chromatography (LC).",
+      "normalized_ko": "액체 크로마토그래피(LC)를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -2965,7 +2965,7 @@
       "subject": "The purpose of bioanalytical method development",
       "action": "is to define",
       "object": "the design, operating conditions, limitations and suitability of the method for its intended purpose",
-      "normalized_ko": null,
+      "normalized_ko": "의도된 목적에 대한 방법의 설계, 운용 조건, 한계 및 적합성을 정의하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2979,7 +2979,7 @@
       "subject": "The purpose of bioanalytical method development",
       "action": "is to ensure",
       "object": "that the method is ready for validation",
-      "normalized_ko": null,
+      "normalized_ko": "방법이 밸리데이션 준비가 되도록 보장하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2993,7 +2993,7 @@
       "subject": "Bioanalytical method development",
       "action": "does not require",
       "object": "extensive record keeping or notation",
-      "normalized_ko": null,
+      "normalized_ko": "광범위한 기록 보관 또는 표기는 요구하지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3007,7 +3007,7 @@
       "subject": "The applicant",
       "action": "should understand",
       "object": "the analyte of interest",
-      "normalized_ko": null,
+      "normalized_ko": "관심 분석대상물질을 이해해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3021,7 +3021,7 @@
       "subject": "Analyte characteristics",
       "action": "includes",
       "object": "the physicochemical properties of the drug",
-      "normalized_ko": null,
+      "normalized_ko": "의약품의 물리화학적 특성을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -3035,7 +3035,7 @@
       "subject": "Method development",
       "action": "can include",
       "object": "the characterisation of reference standards, critical reagents, calibration curve, quality control samples (QCs), selectivity and specificity, sensitivity, accuracy, precision, recovery, stability of the analyte, minimum required dilution (MRD)",
-      "normalized_ko": null,
+      "normalized_ko": "표준물질, 중요 시약, 검량선, 품질관리 시료(QC), 선택성 및 특이성, 감도, 정확성, 정밀성, 회수율, 분석대상물질의 안정성 및 최소 요구 희석(MRD)의 특성규명을 포함할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3049,7 +3049,7 @@
       "subject": "The purpose of bioanalytical method development",
       "action": "is to define",
       "object": "the design, operating conditions, limitations and suitability of the method for its intended purpose",
-      "normalized_ko": null,
+      "normalized_ko": "의도된 목적에 대한 방법의 설계, 운용 조건, 한계 및 적합성을 정의하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -3063,7 +3063,7 @@
       "subject": "The purpose of bioanalytical method development",
       "action": "is to ensure",
       "object": "that the method is ready for validation",
-      "normalized_ko": null,
+      "normalized_ko": "방법이 밸리데이션 준비가 되도록 보장하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -3077,7 +3077,7 @@
       "subject": "Bioanalytical method validation",
       "action": "is essential to ensure",
       "object": "the acceptability of assay performance and the reliability of analytical results",
-      "normalized_ko": null,
+      "normalized_ko": "분석 성능의 수용 가능성 및 분석 결과의 신뢰성을 보장하는 데 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -3091,7 +3091,7 @@
       "subject": "A full validation of a bioanalytical method",
       "action": "should be performed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "수행해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3105,7 +3105,7 @@
       "subject": "Full method validation",
       "action": "is expected for",
       "object": "the primary matrix intended to support regulatory submissions",
-      "normalized_ko": null,
+      "normalized_ko": "규제 제출을 지원하기 위해 의도된 주 매트릭스에 대해 기대된다.",
       "review_status": "reviewed"
     },
     {
@@ -3119,7 +3119,7 @@
       "subject": "Full method validation",
       "action": "is expected",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "기대된다.",
       "review_status": "reviewed"
     },
     {
@@ -3133,7 +3133,7 @@
       "subject": "Partial validations",
       "action": "evaluate",
       "object": "modifications to already fully validated bioanalytical methods",
-      "normalized_ko": null,
+      "normalized_ko": "이미 완전히 밸리데이션된 생체분석 방법의 변경사항을 평가한다.",
       "review_status": "reviewed"
     },
     {
@@ -3147,7 +3147,7 @@
       "subject": "Partial validation",
       "action": "can range from",
       "object": "as little as one within-run accuracy and precision determination, to a nearly full validation",
-      "normalized_ko": null,
+      "normalized_ko": "최소 1회의 런 내 정확성 및 정밀성 결정부터 거의 완전한 밸리데이션까지 범위가 될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3161,7 +3161,7 @@
       "subject": "Partial validations",
       "action": "evaluate",
       "object": "modifications to already fully validated bioanalytical methods",
-      "normalized_ko": null,
+      "normalized_ko": "이미 완전히 밸리데이션된 생체분석 방법의 변경사항을 평가한다.",
       "review_status": "reviewed"
     },
     {
@@ -3175,7 +3175,7 @@
       "subject": "Partial validation",
       "action": "can range from",
       "object": "as little as one within-run accuracy and precision determination, to a nearly full validation",
-      "normalized_ko": null,
+      "normalized_ko": "최소 1회의 런 내 정확성 및 정밀성 결정부터 거의 완전한 밸리데이션까지 범위가 될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3189,7 +3189,7 @@
       "subject": "Cross validation",
       "action": "is required to demonstrate",
       "object": "how the reported data are related",
-      "normalized_ko": null,
+      "normalized_ko": "보고된 데이터가 어떻게 관련되는지를 입증해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3203,7 +3203,7 @@
       "subject": "Cross validation",
       "action": "is required to demonstrate",
       "object": "how the reported data are related",
-      "normalized_ko": null,
+      "normalized_ko": "보고된 데이터가 어떻게 관련되는지를 입증해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3217,7 +3217,7 @@
       "subject": "Cross validation",
       "action": "is not generally required",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "일반적으로 요구되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3231,7 +3231,7 @@
       "subject": "Cross validation",
       "action": "should be performed in advance of",
       "object": "study samples being analysed",
-      "normalized_ko": null,
+      "normalized_ko": "시험 시료를 분석하기 전에 수행해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3245,7 +3245,7 @@
       "subject": "Cross validation",
       "action": "should be assessed by measuring",
       "object": "the same set of QCs (low, medium and high) at least in triplicate and study samples",
-      "normalized_ko": null,
+      "normalized_ko": "동일한 QC 세트(저농도, 중간농도 및 고농도)를 적어도 3회씩 및 시험 검체를 측정하여 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3259,7 +3259,7 @@
       "subject": "The use of multiple bioanalytical methods for the measurement of the same analyte in the conduct of one comparative BA/BE study",
       "action": "should not be used",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "사용해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -3273,7 +3273,7 @@
       "subject": "The use of multiple bioanalytical methods for the measurement of the same analyte",
       "action": "is strongly discouraged",
       "object": null,
-      "normalized_ko": "Using multiple bioanalytical methods to measure the same analyte is strongly discouraged in one comparative BA/BE study.",
+      "normalized_ko": "강력히 권고되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3287,7 +3287,7 @@
       "subject": "Bias",
       "action": "may be assessed by",
       "object": "Bland-Altman plots",
-      "normalized_ko": null,
+      "normalized_ko": "Bland-Altman 플롯으로 평가할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3301,7 +3301,7 @@
       "subject": "Other methods appropriate for assessing agreement between two methods",
       "action": "may be used",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "사용할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3315,7 +3315,7 @@
       "subject": "Cross validation",
       "action": "is not generally required",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "일반적으로 요구되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3329,7 +3329,7 @@
       "subject": "Bias",
       "action": "can be assessed by",
       "object": "Bland-Altman plots or Deming regression",
-      "normalized_ko": "Bias can be assessed using Bland-Altman plots or Deming regression.",
+      "normalized_ko": "Bland-Altman 플롯 또는 Deming 회귀분석으로 평가할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3343,7 +3343,7 @@
       "subject": "The concentration vs. time curves for study samples",
       "action": "could be plotted",
       "object": "to assess bias",
-      "normalized_ko": "Concentration-versus-time curves for study samples could be plotted to assess bias.",
+      "normalized_ko": "편향을 평가하기 위해 도표로 나타낼 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3357,7 +3357,7 @@
       "subject": "Partial validations",
       "action": "evaluate",
       "object": "modifications to already fully validated bioanalytical methods",
-      "normalized_ko": null,
+      "normalized_ko": "이미 완전히 밸리데이션된 생체분석법에 대한 변경을 평가한다.",
       "review_status": "reviewed"
     },
     {
@@ -3371,7 +3371,7 @@
       "subject": "Partial validation",
       "action": "range",
       "object": "from as little as one within-run accuracy and precision determination, to a nearly full validation",
-      "normalized_ko": null,
+      "normalized_ko": "범위는 1회의 런 내 정확성 및 정밀성 결정만을 수행하는 것부터 거의 완전한 밸리데이션까지일 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3385,7 +3385,7 @@
       "subject": "Stability established at one facility",
       "action": "does not necessarily need to be repeated",
       "object": "at another facility",
-      "normalized_ko": null,
+      "normalized_ko": "다른 시설에서 반드시 반복할 필요는 없다.",
       "review_status": "reviewed"
     },
     {
@@ -3399,7 +3399,7 @@
       "subject": "Typical bioanalytical method modifications or changes for chromatographic methods",
       "action": "include",
       "object": "the following situations, but are not limited to them",
-      "normalized_ko": null,
+      "normalized_ko": "다음 상황을 포함하되, 이에 국한되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3413,7 +3413,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "Analytical site change using same method (i.e., bioanalytical method transfers between laboratories)",
-      "normalized_ko": null,
+      "normalized_ko": "동일한 방법을 사용하는 분석 시설 변경(즉, 실험실 간 생체분석법 이전)을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -3427,7 +3427,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "A change in analytical method (e.g., change in detection systems, platform)",
-      "normalized_ko": null,
+      "normalized_ko": "분석법의 변경(예: 검출 시스템, 플랫폼의 변경)을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -3441,7 +3441,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "A change in sample processing procedures",
-      "normalized_ko": null,
+      "normalized_ko": "검체 처리 절차의 변경을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -3455,7 +3455,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "A change in sample volume (e.g., the smaller volume of paediatric samples)",
-      "normalized_ko": null,
+      "normalized_ko": "검체 용량의 변경(예: 소아 검체의 더 적은 용량)을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -3469,7 +3469,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "Changes to the calibration concentration range",
-      "normalized_ko": null,
+      "normalized_ko": "검량 농도 범위의 변경을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -3483,7 +3483,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "A change in anticoagulant (but not changes in the counter-ion) in biological fluids (e.g., heparin to ethylenediaminetetraacetic acid (EDTA))",
-      "normalized_ko": null,
+      "normalized_ko": "생물학적 체액에서 항응고제의 변경(대이온의 변경은 제외)(예: 헤파린에서 에틸렌디아민테트라아세트산(EDTA)으로의 변경)을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -3497,7 +3497,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "Change from one matrix within a species to another or changes to the species within the matrix",
-      "normalized_ko": null,
+      "normalized_ko": "동일 종 내 한 매트릭스에서 다른 매트릭스로의 변경 또는 매트릭스 내 종의 변경을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -3511,7 +3511,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "A change in storage conditions",
-      "normalized_ko": null,
+      "normalized_ko": "보관 조건의 변경을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -3525,7 +3525,7 @@
       "subject": "Typical bioanalytical method modifications or changes for LBAs",
       "action": "include",
       "object": "the following situations, but are not limited to them",
-      "normalized_ko": null,
+      "normalized_ko": "다음과 같은 상황을 포함하나, 이에 한정되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3539,7 +3539,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "Changes in LBA critical reagents (e.g., lot-to-lot changes)",
-      "normalized_ko": null,
+      "normalized_ko": "LBA 핵심 시약의 변경(예: 로트 간 변경)",
       "review_status": "reviewed"
     },
     {
@@ -3553,7 +3553,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "Changes in MRD",
-      "normalized_ko": null,
+      "normalized_ko": "MRD의 변경",
       "review_status": "reviewed"
     },
     {
@@ -3567,7 +3567,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "A change in storage conditions",
-      "normalized_ko": null,
+      "normalized_ko": "보관 조건의 변경",
       "review_status": "reviewed"
     },
     {
@@ -3581,7 +3581,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "Changes to the calibration concentration range",
-      "normalized_ko": null,
+      "normalized_ko": "보정 농도 범위의 변경",
       "review_status": "reviewed"
     },
     {
@@ -3595,7 +3595,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "A change in analytical method (e.g., change in detection systems, platform)",
-      "normalized_ko": null,
+      "normalized_ko": "분석 방법의 변경(예: 검출 시스템, 플랫폼의 변경)",
       "review_status": "reviewed"
     },
     {
@@ -3609,7 +3609,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "Analytical site change using same method (i.e., bioanalytical method transfers between laboratories)",
-      "normalized_ko": null,
+      "normalized_ko": "동일한 방법을 사용하는 분석 장소의 변경(즉, 실험실 간 생체분석법 이전)",
       "review_status": "reviewed"
     },
     {
@@ -3623,7 +3623,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "A change in sample preparation",
-      "normalized_ko": null,
+      "normalized_ko": "검체 전처리의 변경",
       "review_status": "reviewed"
     },
     {
@@ -3637,7 +3637,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "A change in anticoagulant (but not changes in the counter-ion) in biological fluids (e.g., heparin to ethylenediaminetetraacetic acid (EDTA))",
-      "normalized_ko": null,
+      "normalized_ko": "생물학적 유체에서 항응고제의 변경(대이온의 변경은 제외)(예: 헤파린에서 에틸렌디아민테트라아세트산[EDTA]으로의 변경)",
       "review_status": "reviewed"
     },
     {
@@ -3651,7 +3651,7 @@
       "subject": "The parameters of the partial validations",
       "action": "meet",
       "object": "the full validation criteria",
-      "normalized_ko": null,
+      "normalized_ko": "완전 밸리데이션 기준을 충족해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3665,7 +3665,7 @@
       "subject": "Additional investigation and validation",
       "action": "is warranted",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "완전 밸리데이션이 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -3679,7 +3679,7 @@
       "subject": "A blank biological matrix",
       "action": "is spiked with",
       "object": "the analyte(s) of interest using solutions of reference standard(s) to prepare calibration standards and QCs",
-      "normalized_ko": null,
+      "normalized_ko": "보정표준물질 및 QC를 제조하기 위해 참조표준품 용액을 사용하여 관심 분석물질을 첨가한다.",
       "review_status": "reviewed"
     },
     {
@@ -3693,7 +3693,7 @@
       "subject": "A blank biological matrix",
       "action": "is used to prepare",
       "object": "calibration standards and QCs",
-      "normalized_ko": null,
+      "normalized_ko": "보정표준물질 및 QC를 제조하는 데 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -3707,7 +3707,7 @@
       "subject": "Calibration standards and QCs",
       "action": "should be prepared from",
       "object": "separate stock solutions",
-      "normalized_ko": null,
+      "normalized_ko": "보정표준물질 및 QC는 별도의 원액으로부터 제조해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3721,7 +3721,7 @@
       "subject": "The accurate preparation and stability of the stock solution",
       "action": "should have been verified",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "정확성과 정밀도는 검증되어 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3735,7 +3735,7 @@
       "subject": "Calibration standards and QCs",
       "action": "may be prepared from",
       "object": "the same stock solution",
-      "normalized_ko": null,
+      "normalized_ko": "동일한 원액으로부터 제조할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3749,7 +3749,7 @@
       "subject": "A certificate of analysis (CoA) or an equivalent alternative",
       "action": "is required",
       "object": "to ensure quality and to provide information on the purity, storage conditions, retest/expiration date and batch number of the reference standard",
-      "normalized_ko": null,
+      "normalized_ko": "품질을 보장하고 참조표준품의 순도, 보관 조건, 재시험일/사용기한 및 배치 번호에 관한 정보를 제공하기 위해 필수이다.",
       "review_status": "reviewed"
     },
     {
@@ -3847,7 +3847,7 @@
       "subject": "Specificity",
       "action": "is",
       "object": "the ability of an analytical method to detect and differentiate the analyte from other substances",
-      "normalized_ko": null,
+      "normalized_ko": "분석법이 분석물질을 다른 물질로부터 검출하고 구별할 수 있는 능력이다.",
       "review_status": "reviewed"
     },
     {
@@ -3861,7 +3861,7 @@
       "subject": "Specificity",
       "action": "is the ability to detect and differentiate",
       "object": "the analyte from other substances",
-      "normalized_ko": null,
+      "normalized_ko": "분석물질을 다른 물질로부터 검출하고 구별할 수 있는 능력이다.",
       "review_status": "reviewed"
     },
     {
@@ -3875,7 +3875,7 @@
       "subject": "Related substances",
       "action": "includes",
       "object": "substances with similar physicochemical properties",
-      "normalized_ko": null,
+      "normalized_ko": "유사한 물리화학적 특성을 가진 물질을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -3889,7 +3889,7 @@
       "subject": "The lack of specificity",
       "action": "should be justified",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "정당화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3903,7 +3903,7 @@
       "subject": "A matrix effect",
       "action": "is defined as",
       "object": "an alteration of the analyte response due to interfering and often unidentified component(s) in the sample matrix",
-      "normalized_ko": null,
+      "normalized_ko": "시료 매트릭스 내 간섭성이고 흔히 미확인된 성분으로 인해 발생하는 분석물질 반응의 변화로 정의된다.",
       "review_status": "reviewed"
     },
     {
@@ -3917,7 +3917,7 @@
       "subject": "The matrix effect",
       "action": "should be evaluated",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3945,7 +3945,7 @@
       "subject": "The calibration curve",
       "action": "demonstrates",
       "object": "the relationship between nominal analyte concentration and detector response",
-      "normalized_ko": null,
+      "normalized_ko": "명목 분석물질 농도와 검출기 반응 간의 관계를 나타낸다.",
       "review_status": "reviewed"
     },
     {
@@ -3959,7 +3959,7 @@
       "subject": "A calibration curve",
       "action": "should be generated with",
       "object": "a blank sample, a zero sample (blank with IS), and at least 6 concentration levels of calibration standards, including LLOQ and ULOQ",
-      "normalized_ko": null,
+      "normalized_ko": "공시료, 제로 시료(IS가 첨가된 공시료), 및 LLOQ와 ULOQ를 포함하는 최소 6개 농도 수준의 검량 표준물질을 사용하여 작성되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3973,7 +3973,7 @@
       "subject": "The calibration curve",
       "action": "demonstrates",
       "object": "the relationship between nominal analyte concentration and detector response",
-      "normalized_ko": null,
+      "normalized_ko": "명목 분석물질 농도와 검출기 반응 간의 관계를 나타낸다.",
       "review_status": "reviewed"
     },
     {
@@ -3987,7 +3987,7 @@
       "subject": "the QCs for accuracy and precision runs",
       "action": "should be prepared",
       "object": "at a minimum of 4 concentration levels",
-      "normalized_ko": null,
+      "normalized_ko": "최소 4개 농도 수준으로 준비되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4001,7 +4001,7 @@
       "subject": "low, medium and high QCs",
       "action": "may be analysed",
       "object": "in duplicate",
-      "normalized_ko": null,
+      "normalized_ko": "2회 반복 분석할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4015,7 +4015,7 @@
       "subject": "Carry-over",
       "action": "should be assessed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4029,7 +4029,7 @@
       "subject": "Dilution integrity",
       "action": "should be demonstrated by spiking",
       "object": "the matrix with an analyte concentration above the ULOQ",
-      "normalized_ko": null,
+      "normalized_ko": "ULOQ를 초과하는 분석물질 농도를 매트릭스에 첨가하여 입증되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4043,7 +4043,7 @@
       "subject": "the precision (%CV)",
       "action": "should not exceed",
       "object": "15%",
-      "normalized_ko": null,
+      "normalized_ko": "15%를 초과해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -4057,7 +4057,7 @@
       "subject": "Stability evaluations",
       "action": "should cover",
       "object": "the conditions experienced by study samples, including sample collection, handling, storage, and processing",
-      "normalized_ko": null,
+      "normalized_ko": "시료 채취, 취급, 보관 및 처리를 포함하여 시험 시료가 경험하는 조건을 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4071,7 +4071,7 @@
       "subject": "Stability of the analyte in matrix",
       "action": "is evaluated using",
       "object": "low and high concentration QCs",
-      "normalized_ko": null,
+      "normalized_ko": "저농도 및 고농도 QC를 사용하여 평가된다.",
       "review_status": "reviewed"
     },
     {
@@ -4085,7 +4085,7 @@
       "subject": "Stability testing",
       "action": "includes",
       "object": "Freeze-Thaw Stability in matrix (minimum of 3 cycles, kept frozen at least 12 hours between cycles)",
-      "normalized_ko": null,
+      "normalized_ko": "매트릭스 내 동결-해동 안정성(최소 3회 주기, 각 주기 사이에 최소 12시간 동안 냉동 상태 유지)을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4099,7 +4099,7 @@
       "subject": "Freeze-Thaw Stability in matrix",
       "action": "include at least",
       "object": "3 cycles",
-      "normalized_ko": null,
+      "normalized_ko": "최소 3회 주기를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4113,7 +4113,7 @@
       "subject": "Samples",
       "action": "be kept frozen",
       "object": "at least 12 hours",
-      "normalized_ko": null,
+      "normalized_ko": "최소 12시간 동안 냉동 상태로 유지한다.",
       "review_status": "reviewed"
     },
     {
@@ -4127,7 +4127,7 @@
       "subject": "Reinjection reproducibility",
       "action": "is assessed by reinjecting",
       "object": "a run that is comprised of calibration standards and a minimum of 5 replicates of the low, middle and high QCs",
-      "normalized_ko": null,
+      "normalized_ko": "검량 표준물질 및 저농도, 중간농도 및 고농도 QC 각각의 최소 5회 반복으로 구성된 런을 재주입하여 평가된다.",
       "review_status": "reviewed"
     },
     {
@@ -4141,7 +4141,7 @@
       "subject": "The precision and accuracy of the reinjected QCs",
       "action": "establish",
       "object": "the viability of the processed samples",
-      "normalized_ko": null,
+      "normalized_ko": "처리된 시료의 유효성을 확립한다.",
       "review_status": "reviewed"
     },
     {
@@ -4155,7 +4155,7 @@
       "subject": "An analytical run",
       "action": "consists of",
       "object": "a blank sample",
-      "normalized_ko": null,
+      "normalized_ko": "공시료로 구성된다.",
       "review_status": "reviewed"
     },
     {
@@ -4169,7 +4169,7 @@
       "subject": "The calibration curve accuracy",
       "action": "should be within",
       "object": "±20% at LLOQ",
-      "normalized_ko": "Calibration curve accuracy should be within ±20% at LLOQ.",
+      "normalized_ko": "LLOQ에서 ±20% 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4183,7 +4183,7 @@
       "subject": "At least 2 QC levels",
       "action": "should fall within",
       "object": "the range of concentrations measured in study samples",
-      "normalized_ko": null,
+      "normalized_ko": "연구 검체에서 측정된 농도 범위 내에 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4197,7 +4197,7 @@
       "subject": "samples",
       "action": "should be diluted according to",
       "object": "the validated dilution method",
-      "normalized_ko": "Samples should be diluted according to the validated dilution method.",
+      "normalized_ko": "검증된 희석 방법에 따라 희석해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4211,7 +4211,7 @@
       "subject": "Possible reasons for reanalysis of study samples, number of replicates and decision criteria",
       "action": "be predefined",
       "object": "in protocol, study plan or SOP",
-      "normalized_ko": null,
+      "normalized_ko": "프로토콜, 시험계획서 또는 SOP에 사전에 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4225,7 +4225,7 @@
       "subject": "reanalysis for PK reasons",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "허용되지 않아야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4239,7 +4239,7 @@
       "subject": "The number and percentage of reanalysed samples",
       "action": "be reported",
       "object": "in the Bioanalytical Report",
-      "normalized_ko": null,
+      "normalized_ko": "생체분석 보고서에 보고되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4253,7 +4253,7 @@
       "subject": "The number and percentage of reanalysed samples",
       "action": "be discussed",
       "object": "in the Bioanalytical Report",
-      "normalized_ko": null,
+      "normalized_ko": "생체분석 보고서에서 논의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4267,7 +4267,7 @@
       "subject": "reanalysis for PK reasons",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4281,7 +4281,7 @@
       "subject": "Reanalysis",
       "action": "is not acceptable",
       "object": "for PK reasons",
-      "normalized_ko": null,
+      "normalized_ko": "PK상의 이유로 허용되어서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -4295,7 +4295,7 @@
       "subject": "Reinjection of processed samples",
       "action": "can be made",
       "object": null,
-      "normalized_ko": "Processed samples may be reinjected following equipment failure when reinjection reproducibility was demonstrated during validation.",
+      "normalized_ko": "수행할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4309,7 +4309,7 @@
       "subject": "Reinjection of a full run or individual calibration standards or QCs",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": "Reinjection of a full run, calibration standards, or QCs is not acceptable solely because they failed without an analytical cause.",
+      "normalized_ko": "허용되어서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -4323,7 +4323,7 @@
       "subject": "Reinjection of a full run or individual calibration standards or QCs",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4337,7 +4337,7 @@
       "subject": "Reinjection of a full run or individual calibration standards or QCs",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": "Reinjection of a full run or individual calibration standards or QCs is not acceptable merely because they failed without an analytical cause.",
+      "normalized_ko": "허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4351,7 +4351,7 @@
       "subject": "Chromatogram integration and reintegration",
       "action": "be described in",
       "object": "a study plan, protocol or SOP",
-      "normalized_ko": null,
+      "normalized_ko": "시험계획서, 프로토콜 또는 SOP에 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4365,7 +4365,7 @@
       "subject": "The reference standard",
       "action": "should be well characterised",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "충분히 특성규명되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4379,7 +4379,7 @@
       "subject": "The manufacturing batch of the reference standard used for the preparation of calibration standards and QCs",
       "action": "should be derived from",
       "object": "the same batch of drug substance as that used for dosing in the nonclinical and clinical studies",
-      "normalized_ko": null,
+      "normalized_ko": "비임상 및 임상시험에서 투여에 사용된 원료의약품과 동일한 배치에서 유래해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4393,7 +4393,7 @@
       "subject": "Bioanalytical evaluation",
       "action": "should be carried out",
       "object": "with QCs from the original material and the new material",
-      "normalized_ko": null,
+      "normalized_ko": "원래 물질 및 신규 물질의 QC를 사용하여 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4407,7 +4407,7 @@
       "subject": "The performance characteristics of the method",
       "action": "be within",
       "object": "the acceptance criteria",
-      "normalized_ko": null,
+      "normalized_ko": "허용 기준 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4421,7 +4421,7 @@
       "subject": "Documentation",
       "action": "includes",
       "object": "CoA and origin",
-      "normalized_ko": null,
+      "normalized_ko": "분석성적서(CoA) 및 출처를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4435,7 +4435,7 @@
       "subject": "Critical reagents",
       "action": "have direct impact on",
       "object": "the results of the assay",
-      "normalized_ko": null,
+      "normalized_ko": "시험 결과에 직접적인 영향을 미친다.",
       "review_status": "reviewed"
     },
     {
@@ -4449,7 +4449,7 @@
       "subject": "Critical reagents",
       "action": "bind",
       "object": "the analyte",
-      "normalized_ko": null,
+      "normalized_ko": "분석대상물질에 결합한다.",
       "review_status": "reviewed"
     },
     {
@@ -4463,7 +4463,7 @@
       "subject": "Critical reagents",
       "action": "lead to",
       "object": "an instrument signal corresponding to the analyte concentration",
-      "normalized_ko": null,
+      "normalized_ko": "분석물질 농도에 상응하는 기기 신호로 이어진다.",
       "review_status": "reviewed"
     },
     {
@@ -4477,7 +4477,7 @@
       "subject": "The quality of critical reagents",
       "action": "should be assured",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "보장되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4491,7 +4491,7 @@
       "subject": "Binding reagents",
       "action": "includes",
       "object": "binding proteins",
-      "normalized_ko": null,
+      "normalized_ko": "결합 단백질을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4505,7 +4505,7 @@
       "subject": "Critical reagents",
       "action": "include",
       "object": "binding reagents",
-      "normalized_ko": null,
+      "normalized_ko": "결합 시약을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4519,7 +4519,7 @@
       "subject": "Critical reagents",
       "action": "bind",
       "object": "the analyte",
-      "normalized_ko": null,
+      "normalized_ko": "분석물질에 결합한다.",
       "review_status": "reviewed"
     },
     {
@@ -4533,7 +4533,7 @@
       "subject": "Specificity",
       "action": "is",
       "object": "the ability of a bioanalytical method to detect and differentiate the analyte from other related substances",
-      "normalized_ko": null,
+      "normalized_ko": "생체분석법이 분석물질을 기타 관련 물질로부터 검출하고 구별하는 능력이다.",
       "review_status": "reviewed"
     },
     {
@@ -4547,7 +4547,7 @@
       "subject": "related substances",
       "action": "includes",
       "object": "structurally similar compounds",
-      "normalized_ko": null,
+      "normalized_ko": "구조적으로 유사한 화합물을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4561,7 +4561,7 @@
       "subject": "Specificity",
       "action": "should be evaluated by spiking",
       "object": "blank matrix samples with potential interfering substances",
-      "normalized_ko": null,
+      "normalized_ko": "잠재적 간섭물질을 공시료 매트릭스 검체에 첨가하여 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4575,7 +4575,7 @@
       "subject": "Selectivity",
       "action": "is the ability to differentiate and measure",
       "object": "the analyte in the presence of interfering substances in the biological matrix",
-      "normalized_ko": null,
+      "normalized_ko": "생물학적 매트릭스 내 간섭물질의 존재하에서 분석물질을 구별하고 측정하는 능력이다.",
       "review_status": "reviewed"
     },
     {
@@ -4589,7 +4589,7 @@
       "subject": "Selectivity",
       "action": "is",
       "object": "the ability of an analytical method to differentiate and measure the analyte in the presence of interfering substances in the biological matrix",
-      "normalized_ko": null,
+      "normalized_ko": "분석법이 생물학적 매트릭스 내 간섭물질의 존재하에서 분석물질을 구별하고 측정하는 능력이다.",
       "review_status": "reviewed"
     },
     {
@@ -4603,7 +4603,7 @@
       "subject": "Selectivity",
       "action": "should be evaluated using",
       "object": "blank matrix samples from at least 10 individual sources",
-      "normalized_ko": null,
+      "normalized_ko": "최소 10개의 개별 출처에서 얻은 공시료 매트릭스 검체를 사용하여 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4617,7 +4617,7 @@
       "subject": "A calibration curve",
       "action": "should be generated with",
       "object": "a blank sample, an anchor sample, and concentration levels of calibration standards, including LLOQ and ULOQ",
-      "normalized_ko": "A calibration curve should be generated with a blank sample, an appropriate anchor sample, and calibration standards including LLOQ and ULOQ.",
+      "normalized_ko": "공시료, 앵커 검체 및 LLOQ와 ULOQ를 포함하는 검량 표준물질의 농도 수준으로 작성해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4631,7 +4631,7 @@
       "subject": "Non-linear regression models",
       "action": "are typically used for",
       "object": "LBAs",
-      "normalized_ko": "Non-linear regression models are typically used for LBAs.",
+      "normalized_ko": "LBA에 일반적으로 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -4645,7 +4645,7 @@
       "subject": "Non-linear regression models",
       "action": "are typically used for",
       "object": "LBAs",
-      "normalized_ko": null,
+      "normalized_ko": "LBA에 일반적으로 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -4659,7 +4659,7 @@
       "subject": "Non-linear regression models",
       "action": "includes",
       "object": "4-parameter or 5-parameter logistic models",
-      "normalized_ko": "Examples of non-linear regression models include 4-parameter or 5-parameter logistic models.",
+      "normalized_ko": "4-파라미터 또는 5-파라미터 로지스틱 모델을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4673,7 +4673,7 @@
       "subject": "QCs for accuracy and precision runs",
       "action": "should be prepared",
       "object": "at a minimum of 5 concentration levels",
-      "normalized_ko": null,
+      "normalized_ko": "최소 5개 농도 수준으로 준비해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4687,7 +4687,7 @@
       "subject": "Within-run and between-run accuracy and precision",
       "action": "should be evaluated by analysing",
       "object": "at least 3 replicates at each of the 5 QC concentration levels in at least 6 analytical runs over at least two days",
-      "normalized_ko": null,
+      "normalized_ko": "최소 2일에 걸쳐 수행한 최소 6회의 분석 런에서 5개 QC 농도 수준 각각에 대해 최소 3개 반복 검체를 분석하여 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4701,7 +4701,7 @@
       "subject": "Precision (%CV)",
       "action": "should not exceed",
       "object": "20%",
-      "normalized_ko": null,
+      "normalized_ko": "20%를 초과해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -4715,7 +4715,7 @@
       "subject": "Total error",
       "action": "is",
       "object": "sum of absolute error in accuracy and precision",
-      "normalized_ko": "Total error is the sum of absolute error in accuracy and precision.",
+      "normalized_ko": "정확도 및 정밀도의 절대오차 합계이다.",
       "review_status": "reviewed"
     },
     {
@@ -4729,7 +4729,7 @@
       "subject": "The potential of carry-over",
       "action": "should be investigated",
       "object": "by placing blank samples after the calibration standard at the ULOQ",
-      "normalized_ko": null,
+      "normalized_ko": "ULOQ에서의 검량 표준물질 후에 공시료를 배치하여 조사해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4743,7 +4743,7 @@
       "subject": "Dilution linearity",
       "action": "should be assessed to confirm",
       "object": "that measured concentrations are not affected by dilution",
-      "normalized_ko": null,
+      "normalized_ko": "측정 농도가 희석의 영향을 받지 않는지를 확인하기 위해 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4757,7 +4757,7 @@
       "subject": "Dilution linearity",
       "action": "should be demonstrated by spiking",
       "object": "matrix with an analyte concentration above ULOQ",
-      "normalized_ko": null,
+      "normalized_ko": "ULOQ를 초과하는 분석물질 농도가 되도록 매트릭스에 분석물질을 첨가하여 입증해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4771,7 +4771,7 @@
       "subject": "The sample",
       "action": "should be analysed undiluted",
       "object": "for hook effect",
-      "normalized_ko": null,
+      "normalized_ko": "후크 효과에 대해 희석하지 않고 분석해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4785,7 +4785,7 @@
       "subject": "Precision",
       "action": "should not exceed",
       "object": "20%",
-      "normalized_ko": null,
+      "normalized_ko": "20%를 초과해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -4799,7 +4799,7 @@
       "subject": "The calculated mean concentration for each dilution",
       "action": "should be within ±20% of",
       "object": "nominal concentration after correction for dilution",
-      "normalized_ko": null,
+      "normalized_ko": "희석 보정 후 명목 농도의 ±20% 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4813,7 +4813,7 @@
       "subject": "Hook effect",
       "action": "is",
       "object": "signal suppression caused by high analyte concentration",
-      "normalized_ko": null,
+      "normalized_ko": "고농도 분석물질 농도로 인해 발생하는 신호 억제이다.",
       "review_status": "reviewed"
     },
     {
@@ -4827,7 +4827,7 @@
       "subject": "measured concentrations",
       "action": "are not affected by dilution",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "희석의 영향을 받지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4841,7 +4841,7 @@
       "subject": "sample concentrations",
       "action": "are not impacted by hook effect",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "후크 효과의 영향을 받지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4855,7 +4855,7 @@
       "subject": "Hook effect",
       "action": "is",
       "object": "signal suppression caused by high analyte concentration",
-      "normalized_ko": null,
+      "normalized_ko": "고농도 분석물질 농도로 인해 발생하는 신호 억제이다.",
       "review_status": "reviewed"
     },
     {
@@ -4869,7 +4869,7 @@
       "subject": "Stability of the analyte in matrix",
       "action": "should be evaluated using",
       "object": "low and high concentration QCs",
-      "normalized_ko": null,
+      "normalized_ko": "저농도 및 고농도 QC를 사용하여 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4883,7 +4883,7 @@
       "subject": "Stability testing",
       "action": "includes",
       "object": "Freeze-thaw stability in matrix",
-      "normalized_ko": null,
+      "normalized_ko": "매트릭스 내 동결-해동 안정성을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4897,7 +4897,7 @@
       "subject": "stability at -20°C",
       "action": "may be extrapolated to",
       "object": "-70/-80°C",
-      "normalized_ko": null,
+      "normalized_ko": "-70/-80°C로 외삽할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4911,7 +4911,7 @@
       "subject": "Bracketing between -70/-80°C and -20°C",
       "action": "can be applied",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "적용할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4925,7 +4925,7 @@
       "subject": "stability at -20°C",
       "action": "can be extrapolated to",
       "object": "-70/-80°C",
-      "normalized_ko": null,
+      "normalized_ko": "-70/-80°C로 외삽할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4939,7 +4939,7 @@
       "subject": "Stability testing",
       "action": "includes",
       "object": "Freeze-thaw stability in matrix (minimum of 3 cycles, kept frozen at least 12 hours between cycles)",
-      "normalized_ko": null,
+      "normalized_ko": "매트릭스 내 동결-해동 안정성(최소 3회 사이클, 사이클 간 최소 12시간 동안 동결 상태 유지)을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4953,7 +4953,7 @@
       "subject": "An analytical run",
       "action": "consists of",
       "object": "a blank sample, calibration standards, QCs, and study samples",
-      "normalized_ko": "An analytical run consists of a blank sample, calibration standards, QCs, and study samples.",
+      "normalized_ko": "공시료, 검량 표준물질, QC 및 시험 검체로 구성된다.",
       "review_status": "reviewed"
     },
     {
@@ -4967,7 +4967,7 @@
       "subject": "QC levels",
       "action": "include",
       "object": "low, medium, high",
-      "normalized_ko": "QC levels include low, medium, and high levels.",
+      "normalized_ko": "저농도, 중간농도 및 고농도를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -4981,7 +4981,7 @@
       "subject": "An analytical run",
       "action": "consists of",
       "object": "a blank sample, calibration standards, QCs and the study samples to be analysed",
-      "normalized_ko": null,
+      "normalized_ko": "공시료, 검량 표준물질, QC 및 분석할 시험 검체로 구성된다.",
       "review_status": "reviewed"
     },
     {
@@ -4995,7 +4995,7 @@
       "subject": "Study samples",
       "action": "should always be bracketed by",
       "object": "QCs",
-      "normalized_ko": "Study samples should always be bracketed by QCs.",
+      "normalized_ko": "항상 QC로 전후가 둘러싸여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5009,7 +5009,7 @@
       "subject": "each plate",
       "action": "should be assessed on its own",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "그 자체로 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5023,7 +5023,7 @@
       "subject": "Sets of calibration standards",
       "action": "may be placed",
       "object": "on the first and last plate",
-      "normalized_ko": "Sets of calibration standards may be placed on the first and last plate.",
+      "normalized_ko": "첫 번째 및 마지막 플레이트에 배치할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5037,7 +5037,7 @@
       "subject": "The calibration curve accuracy",
       "action": "should be within",
       "object": "±20%",
-      "normalized_ko": "Calibration curve accuracy should be within ±20%.",
+      "normalized_ko": "±20% 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5051,7 +5051,7 @@
       "subject": "The analytical run",
       "action": "be rejected",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "거부되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5065,7 +5065,7 @@
       "subject": "Study samples",
       "action": "be reanalysed",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "재분석되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5079,7 +5079,7 @@
       "subject": "Calibration standards",
       "action": "should have at least 75% within the calibration curve accuracy criterion",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "검량선 정확도 기준 이내인 것이 최소 75%여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5093,7 +5093,7 @@
       "subject": "Total QCs",
       "action": "should have at least 67% (2/3) within ±20% of their nominal concentration",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "명목 농도의 ±20% 이내인 것이 최소 67%(2/3)여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5107,7 +5107,7 @@
       "subject": "QCs at each concentration level",
       "action": "should have at least 50% within ±20% of their nominal concentration",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "명목 농도의 ±20% 이내인 것이 최소 50%여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5121,7 +5121,7 @@
       "subject": "The QC acceptance criteria",
       "action": "are referred to as",
       "object": "4-6-20 rule for LBA",
-      "normalized_ko": "The QC acceptance criteria are referred to as the 4-6-20 rule for LBA.",
+      "normalized_ko": "LBA의 4-6-20 규칙으로 지칭된다.",
       "review_status": "reviewed"
     },
     {
@@ -5135,7 +5135,7 @@
       "subject": "The QC acceptance criterion",
       "action": "is",
       "object": "the 4-6-20 rule for LBA",
-      "normalized_ko": null,
+      "normalized_ko": "LBA의 4-6-20 규칙이다.",
       "review_status": "reviewed"
     },
     {
@@ -5149,7 +5149,7 @@
       "subject": "At least 2 QC levels",
       "action": "should fall within",
       "object": "the range of concentrations measured in study samples",
-      "normalized_ko": null,
+      "normalized_ko": "시험 검체에서 측정된 농도 범위 내에 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5163,7 +5163,7 @@
       "subject": "samples",
       "action": "should be diluted according to",
       "object": "the validated dilution method",
-      "normalized_ko": "Samples should be diluted according to the validated dilution method.",
+      "normalized_ko": "밸리데이션된 희석 방법에 따라 희석되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5177,7 +5177,7 @@
       "subject": "Possible reasons for reanalysis of study samples, number of replicates and decision criteria",
       "action": "should be predefined",
       "object": "in protocol, study plan or SOP",
-      "normalized_ko": "Predefine reasons for study-sample reanalysis, replicate numbers, and decision criteria in the protocol, study plan, or SOP.",
+      "normalized_ko": "프로토콜, 시험 계획서 또는 SOP에 사전에 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5191,7 +5191,7 @@
       "subject": "Reanalysis for PK reasons",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "허용되지 않아야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5205,7 +5205,7 @@
       "subject": "Reanalysis for PK reasons",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": "Reanalysis for PK reasons is not acceptable in comparative BA/BE studies.",
+      "normalized_ko": "허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -5219,7 +5219,7 @@
       "subject": "Reanalysis for PK reasons",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": "Reanalysis for PK reasons is not acceptable in comparative BA/BE studies.",
+      "normalized_ko": "허용되어서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -5233,7 +5233,7 @@
       "subject": "ISR",
       "action": "is intended to verify",
       "object": "the reliability of reported sample analyte concentrations",
-      "normalized_ko": null,
+      "normalized_ko": "보고된 검체 분석물질 농도의 신뢰성을 확인하기 위한 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -5247,7 +5247,7 @@
       "subject": "ISR",
       "action": "is conducted by repeating analysis of",
       "object": "a subset of study samples in separate runs on different days using the same bioanalytical method",
-      "normalized_ko": null,
+      "normalized_ko": "동일한 생체분석 방법을 사용하여 서로 다른 날에 별도의 런에서 시험 검체의 일부를 반복 분석하여 수행된다.",
       "review_status": "reviewed"
     },
     {
@@ -5261,7 +5261,7 @@
       "subject": "ISR",
       "action": "uses",
       "object": "the same bioanalytical method",
-      "normalized_ko": null,
+      "normalized_ko": "동일한 생체분석 방법을 사용한다.",
       "review_status": "reviewed"
     },
     {
@@ -5275,7 +5275,7 @@
       "subject": "ISR",
       "action": "should be performed",
       "object": "nonclinical studies",
-      "normalized_ko": null,
+      "normalized_ko": "비임상시험에서 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5289,7 +5289,7 @@
       "subject": "Endogenous compounds",
       "action": "are",
       "object": "analytes that are naturally present in biological matrix",
-      "normalized_ko": null,
+      "normalized_ko": "생물학적 매트릭스에 자연적으로 존재하는 분석물질이다.",
       "review_status": "reviewed"
     },
     {
@@ -5303,7 +5303,7 @@
       "subject": "Bioanalytical method validation",
       "action": "should consider",
       "object": "endogenous background levels",
-      "normalized_ko": null,
+      "normalized_ko": "내인성 배경 수준을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5317,7 +5317,7 @@
       "subject": "Four approaches",
       "action": "are recognized",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "인정된다.",
       "review_status": "reviewed"
     },
     {
@@ -5331,7 +5331,7 @@
       "subject": "Surrogate Matrix Approach",
       "action": "uses",
       "object": "a matrix that resembles biological matrix but lacks the endogenous analyte (e.g., dialysed or stripped matrix, buffer)",
-      "normalized_ko": null,
+      "normalized_ko": "생물학적 매트릭스와 유사하지만 내인성 분석물질을 포함하지 않는 매트릭스(예: 투석 또는 제거 처리 매트릭스, 완충액)를 사용한다.",
       "review_status": "reviewed"
     },
     {
@@ -5345,7 +5345,7 @@
       "subject": "Background Subtraction Approach",
       "action": "subtracts",
       "object": "the endogenous background response from spiked authentic matrix",
-      "normalized_ko": null,
+      "normalized_ko": "스파이크 처리된 실제 매트릭스에서 내인성 배경 반응을 차감한다.",
       "review_status": "reviewed"
     },
     {
@@ -5359,7 +5359,7 @@
       "subject": "Standard Addition Approach",
       "action": "adds",
       "object": "known quantities of standard to authentic sample aliquots",
-      "normalized_ko": null,
+      "normalized_ko": "알려진 양의 표준물질을 실제 시료 분취량에 첨가한다.",
       "review_status": "reviewed"
     },
     {
@@ -5373,7 +5373,7 @@
       "subject": "Recognized approaches",
       "action": "includes",
       "object": "Surrogate Matrix Approach: using a matrix that resembles biological matrix but lacks the endogenous analyte (e.g., dialysed or stripped matrix, buffer)",
-      "normalized_ko": null,
+      "normalized_ko": "대체 매트릭스 접근법: 생물학적 매트릭스와 유사하지만 내인성 분석물질을 포함하지 않는 매트릭스(예: 투석 또는 제거 처리 매트릭스, 완충액)를 사용하는 것을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -5387,7 +5387,7 @@
       "subject": "Parallelism",
       "action": "is defined as",
       "object": "parallel dose-response relationships between calibration standards and serial dilutions of study samples",
-      "normalized_ko": null,
+      "normalized_ko": "교정 표준물질과 시험 시료의 연속 희석액 간의 평행 용량-반응 관계로 정의된다.",
       "review_status": "reviewed"
     },
     {
@@ -5401,7 +5401,7 @@
       "subject": "Parallelism",
       "action": "should be evaluated",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5415,7 +5415,7 @@
       "subject": "Assays",
       "action": "includes",
       "object": "LBA for endogenous macromolecules or biomarker assays",
-      "normalized_ko": null,
+      "normalized_ko": "내인성 거대분자 또는 바이오마커 분석을 위한 LBA를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -5429,7 +5429,7 @@
       "subject": "Parallelism",
       "action": "is investigated by serially diluting",
       "object": "at least 3 individual study samples with high endogenous analyte concentrations (or spiked authentic samples) using surrogate or blank matrix",
-      "normalized_ko": null,
+      "normalized_ko": "대체 또는 공시 매트릭스를 사용하여 내인성 분석물질 농도가 높은 개별 시험 시료 최소 3개(또는 스파이크 처리된 실제 시료)를 연속 희석하여 조사한다.",
       "review_status": "reviewed"
     },
     {
@@ -5443,7 +5443,7 @@
       "subject": "recovery",
       "action": "is",
       "object": "the detector response obtained from an amount of the analyte added to and extracted from the biological matrix, compared to the detector response obtained for the true concentration of the pure authentic standard",
-      "normalized_ko": "Recovery is the comparative detector response of extracted analyte versus pure authentic standard at the true concentration.",
+      "normalized_ko": "생물학적 매트릭스에 첨가되고 여기서 추출된 분석물질의 양으로부터 얻은 검출기 반응을 순수한 실제 표준물질의 실제 농도에서 얻은 검출기 반응과 비교한 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -5457,7 +5457,7 @@
       "subject": "Recovery",
       "action": "should be consistent",
       "object": null,
-      "normalized_ko": "Recovery should be consistent across the concentration range.",
+      "normalized_ko": "일관성이 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5471,7 +5471,7 @@
       "subject": "Minimum Required Dilution (MRD)",
       "action": "is",
       "object": "a sample dilution factor",
-      "normalized_ko": "MRD is a sample dilution factor.",
+      "normalized_ko": "시료 희석 계수이다.",
       "review_status": "reviewed"
     },
     {
@@ -5485,7 +5485,7 @@
       "subject": "MRD",
       "action": "is applied to",
       "object": "all study samples and QCs",
-      "normalized_ko": "MRD is applied to all study samples and QCs to reduce matrix effects and non-specific binding.",
+      "normalized_ko": "모든 시험 시료와 QC에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -5499,7 +5499,7 @@
       "subject": "The MRD",
       "action": "should be defined",
       "object": "during method development",
-      "normalized_ko": "The MRD should be defined during method development.",
+      "normalized_ko": "방법 개발 중에 정의해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5513,7 +5513,7 @@
       "subject": "the kit assay",
       "action": "should be fully validated in-house",
       "object": "to meet this guideline standards",
-      "normalized_ko": "The kit assay should be fully validated in-house to meet this guideline standards.",
+      "normalized_ko": "이 가이드라인의 기준을 충족하도록 사내에서 완전하게 밸리데이션해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5527,7 +5527,7 @@
       "subject": "Calibration curves with sparse standards",
       "action": "must be re-established",
       "object": "across full range",
-      "normalized_ko": "Calibration curves with sparse standards must be re-established across full range.",
+      "normalized_ko": "전 범위에 걸쳐 재확립해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5541,7 +5541,7 @@
       "subject": "Calibration standards and QCs",
       "action": "must be prepared in",
       "object": "the study sample matrix",
-      "normalized_ko": "Calibration standards and QCs must be prepared in the study sample matrix.",
+      "normalized_ko": "시험 시료 매트릭스에서 준비해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5555,7 +5555,7 @@
       "subject": "data generated from the previous platform",
       "action": "should be cross-validated to",
       "object": "the new platform",
-      "normalized_ko": null,
+      "normalized_ko": "새 플랫폼에 대해 교차 밸리데이션해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5569,7 +5569,7 @@
       "subject": "additional validation parameters",
       "action": "must be evaluated",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5583,7 +5583,7 @@
       "subject": "Cross-validation between DMM and conventional liquid plasma methods",
       "action": "is required",
       "object": null,
-      "normalized_ko": null,
+      "normalized_ko": "필수이다.",
       "review_status": "reviewed"
     },
     {
@@ -5597,7 +5597,7 @@
       "subject": "Summary information",
       "action": "should be included in",
       "object": "Section 2.6.4/2.7.1 of the eCTD",
-      "normalized_ko": null,
+      "normalized_ko": "eCTD 제2.6.4/2.7.1절에 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5611,7 +5611,7 @@
       "subject": "Summary information",
       "action": "includes",
       "object": "Summary of methods used for each study (method ID, title, assay type, Bioanalytical Report code, Validation Report code)",
-      "normalized_ko": null,
+      "normalized_ko": "각 연구에 사용된 방법의 요약(방법 ID, 제목, 분석 유형, 생물분석 보고서 코드, 밸리데이션 보고서 코드)을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -5625,7 +5625,7 @@
       "subject": "Validation and Bioanalytical Reports",
       "action": "provide",
       "object": "complete and contemporaneous documentation supporting method performance and study sample analysis",
-      "normalized_ko": null,
+      "normalized_ko": "방법 성능 및 연구 검체 분석을 뒷받침하는 완전하고 동시대에 작성된 문서를 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5639,7 +5639,7 @@
       "subject": "Table 1",
       "action": "defines",
       "object": "recommended documentation",
-      "normalized_ko": null,
+      "normalized_ko": "권장 문서를 정의한다.",
       "review_status": "reviewed"
     },
     {
@@ -5653,7 +5653,7 @@
       "subject": "Table 2",
       "action": "provides",
       "object": "template summary tables for method validation (Table 2.1), sample analysis (Table 2.2), and ISR (Table 2.3)",
-      "normalized_ko": null,
+      "normalized_ko": "방법 밸리데이션(표 2.1), 검체 분석(표 2.2) 및 ISR(표 2.3)을 위한 템플릿 요약 표를 제공한다.",
       "review_status": "reviewed"
     },
     {
@@ -5667,7 +5667,7 @@
       "subject": "recommended documentation",
       "action": "includes",
       "object": "SOPs",
-      "normalized_ko": null,
+      "normalized_ko": "SOP를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -5681,7 +5681,7 @@
       "subject": "Glossary",
       "action": "defines",
       "object": "key regulatory bioanalytical terms",
-      "normalized_ko": "Glossary defines key regulatory bioanalytical terms.",
+      "normalized_ko": "주요 규제 생물분석 용어를 정의한다.",
       "review_status": "reviewed"
     },
     {
@@ -5695,7 +5695,7 @@
       "subject": "Glossary term",
       "action": "includes",
       "object": "Accuracy",
-      "normalized_ko": null,
+      "normalized_ko": "정확도를 포함한다.",
       "review_status": "reviewed"
     }
   ],
@@ -5973,7 +5973,9 @@
       "unit": "replicates",
       "value_status": "known",
       "denominator_or_reference": "same set of QCs (low, medium and high)",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.6_2.009"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.6_2.002"
       ],
@@ -5993,7 +5995,9 @@
       "unit": "samples",
       "value_status": "known",
       "denominator_or_reference": "study sample concentration range",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.6_2.009"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.6_2.001"
       ],
@@ -6013,7 +6017,9 @@
       "unit": "individual sources/lots",
       "value_status": "known",
       "denominator_or_reference": "blank samples",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_1.002"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6031,7 +6037,9 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "analyte response at the LLOQ",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_1.002"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6049,7 +6057,9 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "response for the IS",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_1.002"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6067,7 +6077,11 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "the analyte response at the LLOQ",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_2.001",
+        "ich_m10.cond.3_2_2.003",
+        "ich_m10.cond.3_2_2.004"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.3_2_2.002"
       ],
@@ -6087,7 +6101,11 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "the response for the IS",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_2.001",
+        "ich_m10.cond.3_2_2.003",
+        "ich_m10.cond.3_2_2.004"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.3_2_2.001"
       ],
@@ -6107,7 +6125,10 @@
       "unit": "lots",
       "value_status": "known",
       "denominator_or_reference": "blank matrix from individual donors",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_3.002",
+        "ich_m10.cond.3_2_3.003"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6125,7 +6146,10 @@
       "unit": "%CV",
       "value_status": "known",
       "denominator_or_reference": "at each concentration level",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_3.002",
+        "ich_m10.cond.3_2_3.003"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6143,7 +6167,10 @@
       "unit": "individual lots",
       "value_status": "known",
       "denominator_or_reference": "blank matrix from individual donors",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_3.002",
+        "ich_m10.cond.3_2_3.003"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6161,7 +6188,10 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "IS-normalized MF calculated from the 6 individual lots",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_3.002",
+        "ich_m10.cond.3_2_3.003"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6179,7 +6209,12 @@
       "unit": "concentration levels",
       "value_status": "known",
       "denominator_or_reference": "calibration standards",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_4.002",
+        "ich_m10.cond.3_2_4.003",
+        "ich_m10.cond.3_2_4.004",
+        "ich_m10.cond.3_2_4.005"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6197,7 +6232,12 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "nominal concentration",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_4.002",
+        "ich_m10.cond.3_2_4.003",
+        "ich_m10.cond.3_2_4.004",
+        "ich_m10.cond.3_2_4.005"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6215,7 +6255,12 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "nominal concentration",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_4.002",
+        "ich_m10.cond.3_2_4.003",
+        "ich_m10.cond.3_2_4.004",
+        "ich_m10.cond.3_2_4.005"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6233,7 +6278,12 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "calibration standards",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_4.002",
+        "ich_m10.cond.3_2_4.003",
+        "ich_m10.cond.3_2_4.004",
+        "ich_m10.cond.3_2_4.005"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.3_2_4.005"
       ],
@@ -6253,7 +6303,12 @@
       "unit": "calibration standard levels",
       "value_status": "known",
       "denominator_or_reference": "calibration standards meeting the criteria",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_4.002",
+        "ich_m10.cond.3_2_4.003",
+        "ich_m10.cond.3_2_4.004",
+        "ich_m10.cond.3_2_4.005"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.3_2_4.004"
       ],
@@ -6273,7 +6328,12 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "calibration standards tested per concentration level",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_4.002",
+        "ich_m10.cond.3_2_4.003",
+        "ich_m10.cond.3_2_4.004",
+        "ich_m10.cond.3_2_4.005"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6291,7 +6351,12 @@
       "unit": "% of nominal concentration",
       "value_status": "known",
       "denominator_or_reference": "each calibration standard",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_4.002",
+        "ich_m10.cond.3_2_4.003",
+        "ich_m10.cond.3_2_4.004",
+        "ich_m10.cond.3_2_4.005"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6309,7 +6374,12 @@
       "unit": "% of nominal concentration",
       "value_status": "known",
       "denominator_or_reference": "each calibration standard",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_4.002",
+        "ich_m10.cond.3_2_4.003",
+        "ich_m10.cond.3_2_4.004",
+        "ich_m10.cond.3_2_4.005"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6488,7 +6558,13 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "analyte response at the LLOQ",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_6.002",
+        "ich_m10.cond.3_2_6.003",
+        "ich_m10.cond.3_2_6.004",
+        "ich_m10.cond.3_2_6.005",
+        "ich_m10.cond.3_2_6.006"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.3_2_6.002"
       ],
@@ -6508,7 +6584,13 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "response for the IS",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_6.002",
+        "ich_m10.cond.3_2_6.003",
+        "ich_m10.cond.3_2_6.004",
+        "ich_m10.cond.3_2_6.005",
+        "ich_m10.cond.3_2_6.006"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.3_2_6.001"
       ],
@@ -6528,7 +6610,10 @@
       "unit": "replicates",
       "value_status": "known",
       "denominator_or_reference": "per dilution factor",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_7.001",
+        "ich_m10.cond.3_2_7.002"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6546,7 +6631,10 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "of the nominal concentration",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_7.001",
+        "ich_m10.cond.3_2_7.002"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6564,7 +6652,10 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_7.001",
+        "ich_m10.cond.3_2_7.002"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6582,7 +6673,12 @@
       "unit": "aliquots",
       "value_status": "known",
       "denominator_or_reference": "each concentration level",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_8.003",
+        "ich_m10.cond.3_2_8.004",
+        "ich_m10.cond.3_2_8.005",
+        "ich_m10.cond.3_2_8.006"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6600,7 +6696,12 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "nominal concentration",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_8.003",
+        "ich_m10.cond.3_2_8.004",
+        "ich_m10.cond.3_2_8.005",
+        "ich_m10.cond.3_2_8.006"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6618,7 +6719,12 @@
       "unit": "cycles",
       "value_status": "known",
       "denominator_or_reference": "Freeze-Thaw Stability in matrix",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_8.003",
+        "ich_m10.cond.3_2_8.004",
+        "ich_m10.cond.3_2_8.005",
+        "ich_m10.cond.3_2_8.006"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6636,7 +6742,12 @@
       "unit": "hours",
       "value_status": "known",
       "denominator_or_reference": "between cycles",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_2_8.003",
+        "ich_m10.cond.3_2_8.004",
+        "ich_m10.cond.3_2_8.005",
+        "ich_m10.cond.3_2_8.006"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6733,7 +6844,9 @@
       "unit": "concentration levels",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_3_1.001"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6751,7 +6864,9 @@
       "unit": "concentration levels",
       "value_status": "known",
       "denominator_or_reference": "low, medium, high",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_3_1.001"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6769,7 +6884,9 @@
       "unit": "replicates",
       "value_status": "known",
       "denominator_or_reference": "each QC concentration level",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_3_1.001"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.3_3_1.006"
       ],
@@ -6789,7 +6906,9 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "the total number of study samples",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_3_1.001"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6807,7 +6926,9 @@
       "unit": "replicates",
       "value_status": "known",
       "denominator_or_reference": "each QC concentration level, or at least 5% of the total number of study samples",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_3_1.001"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -6825,7 +6946,9 @@
       "unit": "percent",
       "value_status": "known",
       "denominator_or_reference": "the total number of study samples",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_3_1.001"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.3_3_1.003"
       ],
@@ -6845,7 +6968,16 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "LLOQ",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_3_2.002",
+        "ich_m10.cond.3_3_2.003",
+        "ich_m10.cond.3_3_2.004",
+        "ich_m10.cond.3_3_2.005",
+        "ich_m10.cond.3_3_2.007",
+        "ich_m10.cond.3_3_2.008",
+        "ich_m10.cond.3_3_2.009",
+        "ich_m10.cond.3_3_2.011"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.3_3_2.002",
         "ich_m10.qc.3_3_2.003",
@@ -6867,7 +6999,16 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "all other levels",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_3_2.002",
+        "ich_m10.cond.3_3_2.003",
+        "ich_m10.cond.3_3_2.004",
+        "ich_m10.cond.3_3_2.005",
+        "ich_m10.cond.3_3_2.007",
+        "ich_m10.cond.3_3_2.008",
+        "ich_m10.cond.3_3_2.009",
+        "ich_m10.cond.3_3_2.011"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.3_3_2.001",
         "ich_m10.qc.3_3_2.003",
@@ -6889,7 +7030,16 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "calibration standards",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_3_2.002",
+        "ich_m10.cond.3_3_2.003",
+        "ich_m10.cond.3_3_2.004",
+        "ich_m10.cond.3_3_2.005",
+        "ich_m10.cond.3_3_2.007",
+        "ich_m10.cond.3_3_2.008",
+        "ich_m10.cond.3_3_2.009",
+        "ich_m10.cond.3_3_2.011"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.3_3_2.001",
         "ich_m10.qc.3_3_2.002",
@@ -6911,7 +7061,16 @@
       "unit": "levels",
       "value_status": "known",
       "denominator_or_reference": "calibration standards",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_3_2.002",
+        "ich_m10.cond.3_3_2.003",
+        "ich_m10.cond.3_3_2.004",
+        "ich_m10.cond.3_3_2.005",
+        "ich_m10.cond.3_3_2.007",
+        "ich_m10.cond.3_3_2.008",
+        "ich_m10.cond.3_3_2.009",
+        "ich_m10.cond.3_3_2.011"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.3_3_2.001",
         "ich_m10.qc.3_3_2.002",
@@ -6933,7 +7092,16 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "total QCs",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_3_2.002",
+        "ich_m10.cond.3_3_2.003",
+        "ich_m10.cond.3_3_2.004",
+        "ich_m10.cond.3_3_2.005",
+        "ich_m10.cond.3_3_2.007",
+        "ich_m10.cond.3_3_2.008",
+        "ich_m10.cond.3_3_2.009",
+        "ich_m10.cond.3_3_2.011"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.3_3_2.006"
       ],
@@ -6953,7 +7121,16 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "QCs at each concentration level",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.3_3_2.002",
+        "ich_m10.cond.3_3_2.003",
+        "ich_m10.cond.3_3_2.004",
+        "ich_m10.cond.3_3_2.005",
+        "ich_m10.cond.3_3_2.007",
+        "ich_m10.cond.3_3_2.008",
+        "ich_m10.cond.3_3_2.009",
+        "ich_m10.cond.3_3_2.011"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.3_3_2.005"
       ],
@@ -6991,7 +7168,14 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "nominal concentration",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_1.001",
+        "ich_m10.cond.4_2_1.002",
+        "ich_m10.cond.4_2_1.003",
+        "ich_m10.cond.4_2_1.004",
+        "ich_m10.cond.4_2_1.005",
+        "ich_m10.cond.4_2_1.006"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7115,7 +7299,11 @@
       "unit": "levels",
       "value_status": "known",
       "denominator_or_reference": "calibration standards",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_3.002",
+        "ich_m10.cond.4_2_3.003",
+        "ich_m10.cond.4_2_3.005"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7133,7 +7321,11 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "nominal concentration",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_3.002",
+        "ich_m10.cond.4_2_3.003",
+        "ich_m10.cond.4_2_3.005"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7151,7 +7343,11 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "nominal concentration",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_3.002",
+        "ich_m10.cond.4_2_3.003",
+        "ich_m10.cond.4_2_3.005"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7169,7 +7365,11 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "calibration standards",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_3.002",
+        "ich_m10.cond.4_2_3.003",
+        "ich_m10.cond.4_2_3.005"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_3.005"
       ],
@@ -7189,7 +7389,11 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "calibration standards tested per concentration level",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_3.002",
+        "ich_m10.cond.4_2_3.003",
+        "ich_m10.cond.4_2_3.005"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_3.004"
       ],
@@ -7263,7 +7467,11 @@
       "unit": "replicates",
       "value_status": "known",
       "denominator_or_reference": "each of the 5 QC concentration levels",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_4_2.002",
         "ich_m10.qc.4_2_4_2.003",
@@ -7285,7 +7493,11 @@
       "unit": "QC concentration levels",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_4_2.001",
         "ich_m10.qc.4_2_4_2.003",
@@ -7307,7 +7519,11 @@
       "unit": "analytical runs",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_4_2.001",
         "ich_m10.qc.4_2_4_2.002",
@@ -7329,7 +7545,11 @@
       "unit": "days",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_4_2.001",
         "ich_m10.qc.4_2_4_2.002",
@@ -7351,7 +7571,11 @@
       "unit": "runs",
       "value_status": "known",
       "denominator_or_reference": "alternative evaluation design",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_4_2.006",
         "ich_m10.qc.4_2_4_2.007"
@@ -7372,7 +7596,11 @@
       "unit": "days",
       "value_status": "known",
       "denominator_or_reference": "alternative evaluation design",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_4_2.005",
         "ich_m10.qc.4_2_4_2.007"
@@ -7393,7 +7621,11 @@
       "unit": "replicates",
       "value_status": "known",
       "denominator_or_reference": "alternative evaluation design",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_4_2.005",
         "ich_m10.qc.4_2_4_2.006"
@@ -7414,7 +7646,11 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "nominal value",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7432,7 +7668,11 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "nominal value",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7450,7 +7690,11 @@
       "unit": "%CV",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7468,7 +7712,11 @@
       "unit": "%CV",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7486,7 +7734,11 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7504,7 +7756,11 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7525,7 +7781,11 @@
       "unit": "fraction",
       "value_status": "known",
       "denominator_or_reference": "total QCs",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_4_2.015",
         "ich_m10.qc.4_2_4_2.016"
@@ -7546,7 +7806,11 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "each QC level",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_4_2.014",
         "ich_m10.qc.4_2_4_2.016",
@@ -7568,7 +7832,11 @@
       "unit": "% of nominal value",
       "value_status": "known",
       "denominator_or_reference": "nominal value",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_4_2.014",
         "ich_m10.qc.4_2_4_2.015"
@@ -7589,7 +7857,11 @@
       "unit": "% of nominal value",
       "value_status": "known",
       "denominator_or_reference": "nominal value",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7610,7 +7882,11 @@
       "unit": "of total QCs",
       "value_status": "known",
       "denominator_or_reference": "total QCs",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_4_2.002",
+        "ich_m10.cond.4_2_4_2.003",
+        "ich_m10.cond.4_2_4_2.004"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_4_2.015"
       ],
@@ -7760,7 +8036,14 @@
       "unit": "aliquots",
       "value_status": "known",
       "denominator_or_reference": "each concentration level",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_7.003",
+        "ich_m10.cond.4_2_7.004",
+        "ich_m10.cond.4_2_7.005",
+        "ich_m10.cond.4_2_7.008",
+        "ich_m10.cond.4_2_7.009",
+        "ich_m10.cond.4_2_7.010"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7778,7 +8061,14 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "nominal concentration",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_7.003",
+        "ich_m10.cond.4_2_7.004",
+        "ich_m10.cond.4_2_7.005",
+        "ich_m10.cond.4_2_7.008",
+        "ich_m10.cond.4_2_7.009",
+        "ich_m10.cond.4_2_7.010"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7796,7 +8086,14 @@
       "unit": "cycles",
       "value_status": "known",
       "denominator_or_reference": "Freeze-thaw stability in matrix",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_7.003",
+        "ich_m10.cond.4_2_7.004",
+        "ich_m10.cond.4_2_7.005",
+        "ich_m10.cond.4_2_7.008",
+        "ich_m10.cond.4_2_7.009",
+        "ich_m10.cond.4_2_7.010"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_7.004"
       ],
@@ -7816,7 +8113,14 @@
       "unit": "hours",
       "value_status": "known",
       "denominator_or_reference": "between cycles",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_2_7.003",
+        "ich_m10.cond.4_2_7.004",
+        "ich_m10.cond.4_2_7.005",
+        "ich_m10.cond.4_2_7.008",
+        "ich_m10.cond.4_2_7.009",
+        "ich_m10.cond.4_2_7.010"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_2_7.003"
       ],
@@ -7836,7 +8140,9 @@
       "unit": "concentration levels",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_3_1.003"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7854,7 +8160,9 @@
       "unit": "levels",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_3_1.003"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -7872,7 +8180,9 @@
       "unit": "sets",
       "value_status": "known",
       "denominator_or_reference": "analytical run",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_3_1.003"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_3_1.004"
       ],
@@ -7892,7 +8202,9 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "number of study samples",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_3_1.003"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.4_3_1.003"
       ],
@@ -7912,7 +8224,9 @@
       "unit": "sets",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_3_1.003"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8051,7 +8365,9 @@
       "unit": "QC levels",
       "value_status": "known",
       "denominator_or_reference": "the range of concentrations measured in study samples",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.4_3_3.002"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8069,7 +8385,15 @@
       "unit": "time",
       "value_status": "known",
       "denominator_or_reference": "per species",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8087,7 +8411,15 @@
       "unit": "time",
       "value_status": "known",
       "denominator_or_reference": "per patient population",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8105,7 +8437,15 @@
       "unit": "samples",
       "value_status": "known",
       "denominator_or_reference": "total study samples",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8123,7 +8463,15 @@
       "unit": "% of samples",
       "value_status": "known",
       "denominator_or_reference": "total study samples",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.5.014"
       ],
@@ -8143,7 +8491,15 @@
       "unit": "samples",
       "value_status": "known",
       "denominator_or_reference": "total samples, excluding 1000",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.5.014"
       ],
@@ -8163,7 +8519,15 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "the first 1000 samples",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.5.007"
       ],
@@ -8183,7 +8547,15 @@
       "unit": "samples",
       "value_status": "known",
       "denominator_or_reference": "the first 1000 samples",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.5.006"
       ],
@@ -8203,7 +8575,15 @@
       "unit": "% of samples",
       "value_status": "known",
       "denominator_or_reference": "samples exceeding 1000",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8221,7 +8601,15 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "±20%",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.5.010"
       ],
@@ -8244,7 +8632,15 @@
       "unit": "of repeats",
       "value_status": "known",
       "denominator_or_reference": "repeats",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.5.009"
       ],
@@ -8264,7 +8660,15 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "±30%",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.5.012"
       ],
@@ -8284,7 +8688,15 @@
       "unit": "time per species",
       "value_status": "known",
       "denominator_or_reference": "nonclinical studies",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.5.011"
       ],
@@ -8304,7 +8716,15 @@
       "unit": "time per patient population",
       "value_status": "known",
       "denominator_or_reference": "pivotal early patient trials",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8322,7 +8742,15 @@
       "unit": "%",
       "value_status": "known",
       "denominator_or_reference": "samples exceeding 1000",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.5.004",
         "ich_m10.qc.5.005"
@@ -8343,7 +8771,15 @@
       "unit": "once",
       "value_status": "known",
       "denominator_or_reference": "per species",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.5.002",
+        "ich_m10.cond.5.003",
+        "ich_m10.cond.5.004",
+        "ich_m10.cond.5.005",
+        "ich_m10.cond.5.006",
+        "ich_m10.cond.5.012",
+        "ich_m10.cond.5.013"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8361,7 +8797,9 @@
       "unit": "approaches",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.7_1.002"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8379,7 +8817,9 @@
       "unit": "individual study samples",
       "value_status": "known",
       "denominator_or_reference": null,
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.7_2.002"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8397,7 +8837,9 @@
       "unit": "%CV",
       "value_status": "known",
       "denominator_or_reference": "across dilution-adjusted concentrations",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.7_2.002"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8415,7 +8857,9 @@
       "unit": "points",
       "value_status": "needs_review",
       "denominator_or_reference": "Calibration curves with sparse standards",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.7_5.003"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.7_5.003"
       ],
@@ -8435,7 +8879,9 @@
       "unit": "points",
       "value_status": "known",
       "denominator_or_reference": "calibration curves with sparse standards",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.7_5.003"
+      ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": true,
@@ -8453,7 +8899,9 @@
       "unit": "points",
       "value_status": "known",
       "denominator_or_reference": "calibration curves with sparse standards",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.7_5.003"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.7_5.001"
       ],
@@ -8473,7 +8921,9 @@
       "unit": "years",
       "value_status": "known",
       "denominator_or_reference": "the last period before the study",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.8_1.001"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.8_1.002",
         "ich_m10.qc.8_1.004"
@@ -8494,7 +8944,9 @@
       "unit": "year",
       "value_status": "known",
       "denominator_or_reference": "post-study",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.8_1.001"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.8_1.001",
         "ich_m10.qc.8_1.003"
@@ -8515,7 +8967,9 @@
       "unit": "years",
       "value_status": "known",
       "denominator_or_reference": "last",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.8_1.001"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.8_1.002"
       ],
@@ -8535,7 +8989,9 @@
       "unit": "year",
       "value_status": "known",
       "denominator_or_reference": "post-study",
-      "condition_ids": [],
+      "condition_ids": [
+        "ich_m10.cond.8_1.001"
+      ],
       "joint_with_ids": [
         "ich_m10.qc.8_1.001"
       ],
@@ -8761,7 +9217,16 @@
       "source_unit_id": "ich_m10.su.2_1.001",
       "condition_text": "If a problem is encountered with the method during the analysis of nonclinical or clinical study samples that requires that the analysis be stopped",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.2_1.001",
+        "ich_m10.kr.2_1.002",
+        "ich_m10.kr.2_1.003",
+        "ich_m10.kr.2_1.004",
+        "ich_m10.kr.2_1.005",
+        "ich_m10.kr.2_1.006",
+        "ich_m10.kr.2_1.007",
+        "ich_m10.kr.2_1.008"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -8840,7 +9305,12 @@
       "source_unit_id": "ich_m10.su.2_2_1.001",
       "condition_text": "For chromatographic methods",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.2_2_1.001",
+        "ich_m10.kr.2_2_1.002",
+        "ich_m10.kr.2_2_1.003",
+        "ich_m10.kr.2_2_1.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -8848,7 +9318,12 @@
       "source_unit_id": "ich_m10.su.2_2_1.001",
       "condition_text": "For LBAs",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.2_2_1.001",
+        "ich_m10.kr.2_2_1.002",
+        "ich_m10.kr.2_2_1.003",
+        "ich_m10.kr.2_2_1.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -8856,7 +9331,12 @@
       "source_unit_id": "ich_m10.su.2_2_1.001",
       "condition_text": "for the primary matrix intended to support regulatory submissions",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.2_2_1.001",
+        "ich_m10.kr.2_2_1.002",
+        "ich_m10.kr.2_2_1.003",
+        "ich_m10.kr.2_2_1.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -8864,7 +9344,12 @@
       "source_unit_id": "ich_m10.su.2_2_1.001",
       "condition_text": "intended to support regulatory submissions",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.2_2_1.001",
+        "ich_m10.kr.2_2_1.002",
+        "ich_m10.kr.2_2_1.003",
+        "ich_m10.kr.2_2_1.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -8963,7 +9448,17 @@
       "source_unit_id": "ich_m10.su.6_2.002",
       "condition_text": "in the conduct of one comparative BA/BE study",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.6_2.004",
+        "ich_m10.kr.6_2.005",
+        "ich_m10.kr.6_2.006",
+        "ich_m10.kr.6_2.007",
+        "ich_m10.kr.6_2.008",
+        "ich_m10.kr.6_2.010",
+        "ich_m10.kr.6_2.011",
+        "ich_m10.qc.6_2.001",
+        "ich_m10.qc.6_2.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9084,7 +9579,17 @@
       "source_unit_id": "ich_m10.su.3_2_1.001",
       "condition_text": "For non-polar matrices",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_1.001",
+        "ich_m10.kr.3_2_1.002",
+        "ich_m10.kr.3_2_1.003",
+        "ich_m10.kr.3_2_1.004",
+        "ich_m10.kr.3_2_1.005",
+        "ich_m10.kr.3_2_1.006",
+        "ich_m10.qc.3_2_1.001",
+        "ich_m10.qc.3_2_1.002",
+        "ich_m10.qc.3_2_1.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9112,7 +9617,14 @@
       "source_unit_id": "ich_m10.su.3_2_2.001",
       "condition_text": "If the method cannot distinguish the analyte from related substances",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_2.001",
+        "ich_m10.kr.3_2_2.002",
+        "ich_m10.kr.3_2_2.003",
+        "ich_m10.kr.3_2_2.004",
+        "ich_m10.qc.3_2_2.001",
+        "ich_m10.qc.3_2_2.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9130,7 +9642,14 @@
       "source_unit_id": "ich_m10.su.3_2_2.001",
       "condition_text": "at the highest concentrations anticipated in study samples",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_2.001",
+        "ich_m10.kr.3_2_2.002",
+        "ich_m10.kr.3_2_2.003",
+        "ich_m10.kr.3_2_2.004",
+        "ich_m10.qc.3_2_2.001",
+        "ich_m10.qc.3_2_2.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9138,7 +9657,14 @@
       "source_unit_id": "ich_m10.su.3_2_2.001",
       "condition_text": "in blank samples spiked with potential interfering substances",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_2.001",
+        "ich_m10.kr.3_2_2.002",
+        "ich_m10.kr.3_2_2.003",
+        "ich_m10.kr.3_2_2.004",
+        "ich_m10.qc.3_2_2.001",
+        "ich_m10.qc.3_2_2.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9156,7 +9682,15 @@
       "source_unit_id": "ich_m10.su.3_2_3.001",
       "condition_text": "at low and high QC concentrations",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_3.001",
+        "ich_m10.kr.3_2_3.002",
+        "ich_m10.kr.3_2_3.003",
+        "ich_m10.qc.3_2_3.001",
+        "ich_m10.qc.3_2_3.002",
+        "ich_m10.qc.3_2_3.003",
+        "ich_m10.qc.3_2_3.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9164,7 +9698,15 @@
       "source_unit_id": "ich_m10.su.3_2_3.001",
       "condition_text": "at each concentration level",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_3.001",
+        "ich_m10.kr.3_2_3.002",
+        "ich_m10.kr.3_2_3.003",
+        "ich_m10.qc.3_2_3.001",
+        "ich_m10.qc.3_2_3.002",
+        "ich_m10.qc.3_2_3.003",
+        "ich_m10.qc.3_2_3.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9182,7 +9724,19 @@
       "source_unit_id": "ich_m10.su.3_2_4.001",
       "condition_text": "at all other levels",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_4.001",
+        "ich_m10.kr.3_2_4.002",
+        "ich_m10.kr.3_2_4.003",
+        "ich_m10.qc.3_2_4.001",
+        "ich_m10.qc.3_2_4.002",
+        "ich_m10.qc.3_2_4.003",
+        "ich_m10.qc.3_2_4.004",
+        "ich_m10.qc.3_2_4.005",
+        "ich_m10.qc.3_2_4.006",
+        "ich_m10.qc.3_2_4.007",
+        "ich_m10.qc.3_2_4.008"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9190,7 +9744,19 @@
       "source_unit_id": "ich_m10.su.3_2_4.001",
       "condition_text": "In the case that replicates are used",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_4.001",
+        "ich_m10.kr.3_2_4.002",
+        "ich_m10.kr.3_2_4.003",
+        "ich_m10.qc.3_2_4.001",
+        "ich_m10.qc.3_2_4.002",
+        "ich_m10.qc.3_2_4.003",
+        "ich_m10.qc.3_2_4.004",
+        "ich_m10.qc.3_2_4.005",
+        "ich_m10.qc.3_2_4.006",
+        "ich_m10.qc.3_2_4.007",
+        "ich_m10.qc.3_2_4.008"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9198,7 +9764,19 @@
       "source_unit_id": "ich_m10.su.3_2_4.001",
       "condition_text": "per concentration level",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_4.001",
+        "ich_m10.kr.3_2_4.002",
+        "ich_m10.kr.3_2_4.003",
+        "ich_m10.qc.3_2_4.001",
+        "ich_m10.qc.3_2_4.002",
+        "ich_m10.qc.3_2_4.003",
+        "ich_m10.qc.3_2_4.004",
+        "ich_m10.qc.3_2_4.005",
+        "ich_m10.qc.3_2_4.006",
+        "ich_m10.qc.3_2_4.007",
+        "ich_m10.qc.3_2_4.008"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9206,7 +9784,19 @@
       "source_unit_id": "ich_m10.su.3_2_4.001",
       "condition_text": "In the case that replicates are used",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_4.001",
+        "ich_m10.kr.3_2_4.002",
+        "ich_m10.kr.3_2_4.003",
+        "ich_m10.qc.3_2_4.001",
+        "ich_m10.qc.3_2_4.002",
+        "ich_m10.qc.3_2_4.003",
+        "ich_m10.qc.3_2_4.004",
+        "ich_m10.qc.3_2_4.005",
+        "ich_m10.qc.3_2_4.006",
+        "ich_m10.qc.3_2_4.007",
+        "ich_m10.qc.3_2_4.008"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9264,7 +9854,11 @@
       "source_unit_id": "ich_m10.su.3_2_6.001",
       "condition_text": "in the blank samples following the highest calibration standard",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_6.001",
+        "ich_m10.qc.3_2_6.001",
+        "ich_m10.qc.3_2_6.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9272,7 +9866,11 @@
       "source_unit_id": "ich_m10.su.3_2_6.001",
       "condition_text": "During validation",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_6.001",
+        "ich_m10.qc.3_2_6.001",
+        "ich_m10.qc.3_2_6.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9280,7 +9878,11 @@
       "source_unit_id": "ich_m10.su.3_2_6.001",
       "condition_text": "If carry-over is unavoidable",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_6.001",
+        "ich_m10.qc.3_2_6.001",
+        "ich_m10.qc.3_2_6.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9288,7 +9890,11 @@
       "source_unit_id": "ich_m10.su.3_2_6.001",
       "condition_text": "during study sample analysis",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_6.001",
+        "ich_m10.qc.3_2_6.001",
+        "ich_m10.qc.3_2_6.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9296,7 +9902,11 @@
       "source_unit_id": "ich_m10.su.3_2_6.001",
       "condition_text": "During validation",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_6.001",
+        "ich_m10.qc.3_2_6.001",
+        "ich_m10.qc.3_2_6.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9304,7 +9914,13 @@
       "source_unit_id": "ich_m10.su.3_2_7.001",
       "condition_text": "per dilution factor",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_7.001",
+        "ich_m10.kr.3_2_7.002",
+        "ich_m10.qc.3_2_7.001",
+        "ich_m10.qc.3_2_7.002",
+        "ich_m10.qc.3_2_7.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9312,7 +9928,13 @@
       "source_unit_id": "ich_m10.su.3_2_7.001",
       "condition_text": "in one run",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_7.001",
+        "ich_m10.kr.3_2_7.002",
+        "ich_m10.qc.3_2_7.001",
+        "ich_m10.qc.3_2_7.002",
+        "ich_m10.qc.3_2_7.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9350,7 +9972,17 @@
       "source_unit_id": "ich_m10.su.3_2_8.001",
       "condition_text": "between cycles",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_8.001",
+        "ich_m10.kr.3_2_8.002",
+        "ich_m10.kr.3_2_8.003",
+        "ich_m10.kr.3_2_8.004",
+        "ich_m10.kr.3_2_8.005",
+        "ich_m10.qc.3_2_8.001",
+        "ich_m10.qc.3_2_8.002",
+        "ich_m10.qc.3_2_8.003",
+        "ich_m10.qc.3_2_8.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9358,7 +9990,17 @@
       "source_unit_id": "ich_m10.su.3_2_8.001",
       "condition_text": "covering handling conditions",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_8.001",
+        "ich_m10.kr.3_2_8.002",
+        "ich_m10.kr.3_2_8.003",
+        "ich_m10.kr.3_2_8.004",
+        "ich_m10.kr.3_2_8.005",
+        "ich_m10.qc.3_2_8.001",
+        "ich_m10.qc.3_2_8.002",
+        "ich_m10.qc.3_2_8.003",
+        "ich_m10.qc.3_2_8.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9366,7 +10008,17 @@
       "source_unit_id": "ich_m10.su.3_2_8.001",
       "condition_text": "stored in freezer for duration of study sample storage",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_8.001",
+        "ich_m10.kr.3_2_8.002",
+        "ich_m10.kr.3_2_8.003",
+        "ich_m10.kr.3_2_8.004",
+        "ich_m10.kr.3_2_8.005",
+        "ich_m10.qc.3_2_8.001",
+        "ich_m10.qc.3_2_8.002",
+        "ich_m10.qc.3_2_8.003",
+        "ich_m10.qc.3_2_8.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9374,7 +10026,17 @@
       "source_unit_id": "ich_m10.su.3_2_8.001",
       "condition_text": "directly after collection prior to storage",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_8.001",
+        "ich_m10.kr.3_2_8.002",
+        "ich_m10.kr.3_2_8.003",
+        "ich_m10.kr.3_2_8.004",
+        "ich_m10.kr.3_2_8.005",
+        "ich_m10.qc.3_2_8.001",
+        "ich_m10.qc.3_2_8.002",
+        "ich_m10.qc.3_2_8.003",
+        "ich_m10.qc.3_2_8.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9392,7 +10054,15 @@
       "source_unit_id": "ich_m10.su.3_3_1.001",
       "condition_text": "whichever is greater",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_3_1.001",
+        "ich_m10.qc.3_3_1.001",
+        "ich_m10.qc.3_3_1.002",
+        "ich_m10.qc.3_3_1.003",
+        "ich_m10.qc.3_3_1.004",
+        "ich_m10.qc.3_3_1.005",
+        "ich_m10.qc.3_3_1.006"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9410,7 +10080,15 @@
       "source_unit_id": "ich_m10.su.3_3_2.001",
       "condition_text": "at all other levels",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_3_2.001",
+        "ich_m10.qc.3_3_2.001",
+        "ich_m10.qc.3_3_2.002",
+        "ich_m10.qc.3_3_2.003",
+        "ich_m10.qc.3_3_2.004",
+        "ich_m10.qc.3_3_2.005",
+        "ich_m10.qc.3_3_2.006"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9418,7 +10096,15 @@
       "source_unit_id": "ich_m10.su.3_3_2.001",
       "condition_text": "For QCs",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_3_2.001",
+        "ich_m10.qc.3_3_2.001",
+        "ich_m10.qc.3_3_2.002",
+        "ich_m10.qc.3_3_2.003",
+        "ich_m10.qc.3_3_2.004",
+        "ich_m10.qc.3_3_2.005",
+        "ich_m10.qc.3_3_2.006"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9426,7 +10112,15 @@
       "source_unit_id": "ich_m10.su.3_3_2.001",
       "condition_text": "at each concentration level",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_3_2.001",
+        "ich_m10.qc.3_3_2.001",
+        "ich_m10.qc.3_3_2.002",
+        "ich_m10.qc.3_3_2.003",
+        "ich_m10.qc.3_3_2.004",
+        "ich_m10.qc.3_3_2.005",
+        "ich_m10.qc.3_3_2.006"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9434,7 +10128,15 @@
       "source_unit_id": "ich_m10.su.3_3_2.001",
       "condition_text": "If an analytical run fails",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_3_2.001",
+        "ich_m10.qc.3_3_2.001",
+        "ich_m10.qc.3_3_2.002",
+        "ich_m10.qc.3_3_2.003",
+        "ich_m10.qc.3_3_2.004",
+        "ich_m10.qc.3_3_2.005",
+        "ich_m10.qc.3_3_2.006"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9452,7 +10154,15 @@
       "source_unit_id": "ich_m10.su.3_3_2.001",
       "condition_text": "at all other levels",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_3_2.001",
+        "ich_m10.qc.3_3_2.001",
+        "ich_m10.qc.3_3_2.002",
+        "ich_m10.qc.3_3_2.003",
+        "ich_m10.qc.3_3_2.004",
+        "ich_m10.qc.3_3_2.005",
+        "ich_m10.qc.3_3_2.006"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9460,7 +10170,15 @@
       "source_unit_id": "ich_m10.su.3_3_2.001",
       "condition_text": "For QCs",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_3_2.001",
+        "ich_m10.qc.3_3_2.001",
+        "ich_m10.qc.3_3_2.002",
+        "ich_m10.qc.3_3_2.003",
+        "ich_m10.qc.3_3_2.004",
+        "ich_m10.qc.3_3_2.005",
+        "ich_m10.qc.3_3_2.006"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9468,7 +10186,15 @@
       "source_unit_id": "ich_m10.su.3_3_2.001",
       "condition_text": "at each concentration level",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_3_2.001",
+        "ich_m10.qc.3_3_2.001",
+        "ich_m10.qc.3_3_2.002",
+        "ich_m10.qc.3_3_2.003",
+        "ich_m10.qc.3_3_2.004",
+        "ich_m10.qc.3_3_2.005",
+        "ich_m10.qc.3_3_2.006"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9486,7 +10212,15 @@
       "source_unit_id": "ich_m10.su.3_3_2.001",
       "condition_text": "of their nominal concentration",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.3_3_2.001",
+        "ich_m10.qc.3_3_2.001",
+        "ich_m10.qc.3_3_2.002",
+        "ich_m10.qc.3_3_2.003",
+        "ich_m10.qc.3_3_2.004",
+        "ich_m10.qc.3_3_2.005",
+        "ich_m10.qc.3_3_2.006"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9605,7 +10339,12 @@
       "source_unit_id": "ich_m10.su.4_2_1.001",
       "condition_text": "at the highest anticipated concentrations in study samples",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_1.001",
+        "ich_m10.kr.4_2_1.002",
+        "ich_m10.kr.4_2_1.003",
+        "ich_m10.qc.4_2_1.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9613,7 +10352,12 @@
       "source_unit_id": "ich_m10.su.4_2_1.001",
       "condition_text": "in the absence and presence of the analyte (at low and high QC concentrations)",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_1.001",
+        "ich_m10.kr.4_2_1.002",
+        "ich_m10.kr.4_2_1.003",
+        "ich_m10.qc.4_2_1.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9621,7 +10365,12 @@
       "source_unit_id": "ich_m10.su.4_2_1.001",
       "condition_text": "at low and high QC levels",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_1.001",
+        "ich_m10.kr.4_2_1.002",
+        "ich_m10.kr.4_2_1.003",
+        "ich_m10.qc.4_2_1.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9629,7 +10378,12 @@
       "source_unit_id": "ich_m10.su.4_2_1.001",
       "condition_text": "at the highest anticipated concentrations in study samples",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_1.001",
+        "ich_m10.kr.4_2_1.002",
+        "ich_m10.kr.4_2_1.003",
+        "ich_m10.qc.4_2_1.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9637,7 +10391,12 @@
       "source_unit_id": "ich_m10.su.4_2_1.001",
       "condition_text": "in the absence and presence of the analyte",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_1.001",
+        "ich_m10.kr.4_2_1.002",
+        "ich_m10.kr.4_2_1.003",
+        "ich_m10.qc.4_2_1.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9645,7 +10404,12 @@
       "source_unit_id": "ich_m10.su.4_2_1.001",
       "condition_text": "at low and high QC levels",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_1.001",
+        "ich_m10.kr.4_2_1.002",
+        "ich_m10.kr.4_2_1.003",
+        "ich_m10.qc.4_2_1.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9683,7 +10447,17 @@
       "source_unit_id": "ich_m10.su.4_2_3.001",
       "condition_text": "In the case that replicates are used",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_3.001",
+        "ich_m10.kr.4_2_3.002",
+        "ich_m10.kr.4_2_3.003",
+        "ich_m10.kr.4_2_3.004",
+        "ich_m10.qc.4_2_3.001",
+        "ich_m10.qc.4_2_3.002",
+        "ich_m10.qc.4_2_3.003",
+        "ich_m10.qc.4_2_3.004",
+        "ich_m10.qc.4_2_3.005"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9691,7 +10465,17 @@
       "source_unit_id": "ich_m10.su.4_2_3.001",
       "condition_text": "In the case that replicates are used",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_3.001",
+        "ich_m10.kr.4_2_3.002",
+        "ich_m10.kr.4_2_3.003",
+        "ich_m10.kr.4_2_3.004",
+        "ich_m10.qc.4_2_3.001",
+        "ich_m10.qc.4_2_3.002",
+        "ich_m10.qc.4_2_3.003",
+        "ich_m10.qc.4_2_3.004",
+        "ich_m10.qc.4_2_3.005"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9709,7 +10493,17 @@
       "source_unit_id": "ich_m10.su.4_2_3.001",
       "condition_text": "at LLOQ and ULOQ",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_3.001",
+        "ich_m10.kr.4_2_3.002",
+        "ich_m10.kr.4_2_3.003",
+        "ich_m10.kr.4_2_3.004",
+        "ich_m10.qc.4_2_3.001",
+        "ich_m10.qc.4_2_3.002",
+        "ich_m10.qc.4_2_3.003",
+        "ich_m10.qc.4_2_3.004",
+        "ich_m10.qc.4_2_3.005"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9757,7 +10551,29 @@
       "source_unit_id": "ich_m10.su.4_2_4_2.001",
       "condition_text": "except at LLOQ and ULOQ",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_4_2.001",
+        "ich_m10.kr.4_2_4_2.002",
+        "ich_m10.kr.4_2_4_2.003",
+        "ich_m10.qc.4_2_4_2.001",
+        "ich_m10.qc.4_2_4_2.002",
+        "ich_m10.qc.4_2_4_2.003",
+        "ich_m10.qc.4_2_4_2.004",
+        "ich_m10.qc.4_2_4_2.005",
+        "ich_m10.qc.4_2_4_2.006",
+        "ich_m10.qc.4_2_4_2.007",
+        "ich_m10.qc.4_2_4_2.008",
+        "ich_m10.qc.4_2_4_2.009",
+        "ich_m10.qc.4_2_4_2.010",
+        "ich_m10.qc.4_2_4_2.011",
+        "ich_m10.qc.4_2_4_2.012",
+        "ich_m10.qc.4_2_4_2.013",
+        "ich_m10.qc.4_2_4_2.014",
+        "ich_m10.qc.4_2_4_2.015",
+        "ich_m10.qc.4_2_4_2.016",
+        "ich_m10.qc.4_2_4_2.017",
+        "ich_m10.qc.4_2_4_2.018"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9765,7 +10581,29 @@
       "source_unit_id": "ich_m10.su.4_2_4_2.001",
       "condition_text": "at LLOQ and ULOQ",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_4_2.001",
+        "ich_m10.kr.4_2_4_2.002",
+        "ich_m10.kr.4_2_4_2.003",
+        "ich_m10.qc.4_2_4_2.001",
+        "ich_m10.qc.4_2_4_2.002",
+        "ich_m10.qc.4_2_4_2.003",
+        "ich_m10.qc.4_2_4_2.004",
+        "ich_m10.qc.4_2_4_2.005",
+        "ich_m10.qc.4_2_4_2.006",
+        "ich_m10.qc.4_2_4_2.007",
+        "ich_m10.qc.4_2_4_2.008",
+        "ich_m10.qc.4_2_4_2.009",
+        "ich_m10.qc.4_2_4_2.010",
+        "ich_m10.qc.4_2_4_2.011",
+        "ich_m10.qc.4_2_4_2.012",
+        "ich_m10.qc.4_2_4_2.013",
+        "ich_m10.qc.4_2_4_2.014",
+        "ich_m10.qc.4_2_4_2.015",
+        "ich_m10.qc.4_2_4_2.016",
+        "ich_m10.qc.4_2_4_2.017",
+        "ich_m10.qc.4_2_4_2.018"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9773,7 +10611,29 @@
       "source_unit_id": "ich_m10.su.4_2_4_2.001",
       "condition_text": "For non-accuracy and precision validation runs",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_4_2.001",
+        "ich_m10.kr.4_2_4_2.002",
+        "ich_m10.kr.4_2_4_2.003",
+        "ich_m10.qc.4_2_4_2.001",
+        "ich_m10.qc.4_2_4_2.002",
+        "ich_m10.qc.4_2_4_2.003",
+        "ich_m10.qc.4_2_4_2.004",
+        "ich_m10.qc.4_2_4_2.005",
+        "ich_m10.qc.4_2_4_2.006",
+        "ich_m10.qc.4_2_4_2.007",
+        "ich_m10.qc.4_2_4_2.008",
+        "ich_m10.qc.4_2_4_2.009",
+        "ich_m10.qc.4_2_4_2.010",
+        "ich_m10.qc.4_2_4_2.011",
+        "ich_m10.qc.4_2_4_2.012",
+        "ich_m10.qc.4_2_4_2.013",
+        "ich_m10.qc.4_2_4_2.014",
+        "ich_m10.qc.4_2_4_2.015",
+        "ich_m10.qc.4_2_4_2.016",
+        "ich_m10.qc.4_2_4_2.017",
+        "ich_m10.qc.4_2_4_2.018"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9902,7 +10762,18 @@
       "source_unit_id": "ich_m10.su.4_2_7.001",
       "condition_text": "between cycles",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_7.001",
+        "ich_m10.kr.4_2_7.002",
+        "ich_m10.kr.4_2_7.003",
+        "ich_m10.kr.4_2_7.004",
+        "ich_m10.kr.4_2_7.005",
+        "ich_m10.kr.4_2_7.006",
+        "ich_m10.qc.4_2_7.001",
+        "ich_m10.qc.4_2_7.002",
+        "ich_m10.qc.4_2_7.003",
+        "ich_m10.qc.4_2_7.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9910,7 +10781,18 @@
       "source_unit_id": "ich_m10.su.4_2_7.001",
       "condition_text": "For chemical drugs",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_7.001",
+        "ich_m10.kr.4_2_7.002",
+        "ich_m10.kr.4_2_7.003",
+        "ich_m10.kr.4_2_7.004",
+        "ich_m10.kr.4_2_7.005",
+        "ich_m10.kr.4_2_7.006",
+        "ich_m10.qc.4_2_7.001",
+        "ich_m10.qc.4_2_7.002",
+        "ich_m10.qc.4_2_7.003",
+        "ich_m10.qc.4_2_7.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9918,7 +10800,18 @@
       "source_unit_id": "ich_m10.su.4_2_7.001",
       "condition_text": "For biological drugs",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_7.001",
+        "ich_m10.kr.4_2_7.002",
+        "ich_m10.kr.4_2_7.003",
+        "ich_m10.kr.4_2_7.004",
+        "ich_m10.kr.4_2_7.005",
+        "ich_m10.kr.4_2_7.006",
+        "ich_m10.qc.4_2_7.001",
+        "ich_m10.qc.4_2_7.002",
+        "ich_m10.qc.4_2_7.003",
+        "ich_m10.qc.4_2_7.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9946,7 +10839,18 @@
       "source_unit_id": "ich_m10.su.4_2_7.001",
       "condition_text": "between cycles",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_7.001",
+        "ich_m10.kr.4_2_7.002",
+        "ich_m10.kr.4_2_7.003",
+        "ich_m10.kr.4_2_7.004",
+        "ich_m10.kr.4_2_7.005",
+        "ich_m10.kr.4_2_7.006",
+        "ich_m10.qc.4_2_7.001",
+        "ich_m10.qc.4_2_7.002",
+        "ich_m10.qc.4_2_7.003",
+        "ich_m10.qc.4_2_7.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9954,7 +10858,18 @@
       "source_unit_id": "ich_m10.su.4_2_7.001",
       "condition_text": "For chemical drugs",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_7.001",
+        "ich_m10.kr.4_2_7.002",
+        "ich_m10.kr.4_2_7.003",
+        "ich_m10.kr.4_2_7.004",
+        "ich_m10.kr.4_2_7.005",
+        "ich_m10.kr.4_2_7.006",
+        "ich_m10.qc.4_2_7.001",
+        "ich_m10.qc.4_2_7.002",
+        "ich_m10.qc.4_2_7.003",
+        "ich_m10.qc.4_2_7.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9962,7 +10877,18 @@
       "source_unit_id": "ich_m10.su.4_2_7.001",
       "condition_text": "For biological drugs",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_2_7.001",
+        "ich_m10.kr.4_2_7.002",
+        "ich_m10.kr.4_2_7.003",
+        "ich_m10.kr.4_2_7.004",
+        "ich_m10.kr.4_2_7.005",
+        "ich_m10.kr.4_2_7.006",
+        "ich_m10.qc.4_2_7.001",
+        "ich_m10.qc.4_2_7.002",
+        "ich_m10.qc.4_2_7.003",
+        "ich_m10.qc.4_2_7.004"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -9991,7 +10917,19 @@
       "source_unit_id": "ich_m10.su.4_3_1.001",
       "condition_text": "whichever is higher",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_3_1.001",
+        "ich_m10.kr.4_3_1.002",
+        "ich_m10.kr.4_3_1.003",
+        "ich_m10.kr.4_3_1.004",
+        "ich_m10.kr.4_3_1.005",
+        "ich_m10.kr.4_3_1.006",
+        "ich_m10.qc.4_3_1.001",
+        "ich_m10.qc.4_3_1.002",
+        "ich_m10.qc.4_3_1.003",
+        "ich_m10.qc.4_3_1.004",
+        "ich_m10.qc.4_3_1.005"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10062,7 +11000,11 @@
       "source_unit_id": "ich_m10.su.4_3_3.001",
       "condition_text": "according to the validated dilution method",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.4_3_3.001",
+        "ich_m10.kr.4_3_3.002",
+        "ich_m10.qc.4_3_3.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10090,7 +11032,27 @@
       "source_unit_id": "ich_m10.su.5.001",
       "condition_text": "for pivotal early patient trials",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.5.001",
+        "ich_m10.kr.5.002",
+        "ich_m10.kr.5.003",
+        "ich_m10.kr.5.004",
+        "ich_m10.qc.5.001",
+        "ich_m10.qc.5.002",
+        "ich_m10.qc.5.003",
+        "ich_m10.qc.5.004",
+        "ich_m10.qc.5.005",
+        "ich_m10.qc.5.006",
+        "ich_m10.qc.5.007",
+        "ich_m10.qc.5.008",
+        "ich_m10.qc.5.009",
+        "ich_m10.qc.5.010",
+        "ich_m10.qc.5.011",
+        "ich_m10.qc.5.012",
+        "ich_m10.qc.5.013",
+        "ich_m10.qc.5.014",
+        "ich_m10.qc.5.015"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10098,7 +11060,27 @@
       "source_unit_id": "ich_m10.su.5.001",
       "condition_text": "If total study samples ≤ 1000",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.5.001",
+        "ich_m10.kr.5.002",
+        "ich_m10.kr.5.003",
+        "ich_m10.kr.5.004",
+        "ich_m10.qc.5.001",
+        "ich_m10.qc.5.002",
+        "ich_m10.qc.5.003",
+        "ich_m10.qc.5.004",
+        "ich_m10.qc.5.005",
+        "ich_m10.qc.5.006",
+        "ich_m10.qc.5.007",
+        "ich_m10.qc.5.008",
+        "ich_m10.qc.5.009",
+        "ich_m10.qc.5.010",
+        "ich_m10.qc.5.011",
+        "ich_m10.qc.5.012",
+        "ich_m10.qc.5.013",
+        "ich_m10.qc.5.014",
+        "ich_m10.qc.5.015"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10106,7 +11088,27 @@
       "source_unit_id": "ich_m10.su.5.001",
       "condition_text": "if total samples > 1000",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.5.001",
+        "ich_m10.kr.5.002",
+        "ich_m10.kr.5.003",
+        "ich_m10.kr.5.004",
+        "ich_m10.qc.5.001",
+        "ich_m10.qc.5.002",
+        "ich_m10.qc.5.003",
+        "ich_m10.qc.5.004",
+        "ich_m10.qc.5.005",
+        "ich_m10.qc.5.006",
+        "ich_m10.qc.5.007",
+        "ich_m10.qc.5.008",
+        "ich_m10.qc.5.009",
+        "ich_m10.qc.5.010",
+        "ich_m10.qc.5.011",
+        "ich_m10.qc.5.012",
+        "ich_m10.qc.5.013",
+        "ich_m10.qc.5.014",
+        "ich_m10.qc.5.015"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10114,7 +11116,27 @@
       "source_unit_id": "ich_m10.su.5.001",
       "condition_text": "for chromatographic methods (4-6-20 rule)",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.5.001",
+        "ich_m10.kr.5.002",
+        "ich_m10.kr.5.003",
+        "ich_m10.kr.5.004",
+        "ich_m10.qc.5.001",
+        "ich_m10.qc.5.002",
+        "ich_m10.qc.5.003",
+        "ich_m10.qc.5.004",
+        "ich_m10.qc.5.005",
+        "ich_m10.qc.5.006",
+        "ich_m10.qc.5.007",
+        "ich_m10.qc.5.008",
+        "ich_m10.qc.5.009",
+        "ich_m10.qc.5.010",
+        "ich_m10.qc.5.011",
+        "ich_m10.qc.5.012",
+        "ich_m10.qc.5.013",
+        "ich_m10.qc.5.014",
+        "ich_m10.qc.5.015"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10122,7 +11144,27 @@
       "source_unit_id": "ich_m10.su.5.001",
       "condition_text": "for LBAs (4-6-30 rule)",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.5.001",
+        "ich_m10.kr.5.002",
+        "ich_m10.kr.5.003",
+        "ich_m10.kr.5.004",
+        "ich_m10.qc.5.001",
+        "ich_m10.qc.5.002",
+        "ich_m10.qc.5.003",
+        "ich_m10.qc.5.004",
+        "ich_m10.qc.5.005",
+        "ich_m10.qc.5.006",
+        "ich_m10.qc.5.007",
+        "ich_m10.qc.5.008",
+        "ich_m10.qc.5.009",
+        "ich_m10.qc.5.010",
+        "ich_m10.qc.5.011",
+        "ich_m10.qc.5.012",
+        "ich_m10.qc.5.013",
+        "ich_m10.qc.5.014",
+        "ich_m10.qc.5.015"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10180,7 +11222,27 @@
       "source_unit_id": "ich_m10.su.5.001",
       "condition_text": "for chromatographic methods",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.5.001",
+        "ich_m10.kr.5.002",
+        "ich_m10.kr.5.003",
+        "ich_m10.kr.5.004",
+        "ich_m10.qc.5.001",
+        "ich_m10.qc.5.002",
+        "ich_m10.qc.5.003",
+        "ich_m10.qc.5.004",
+        "ich_m10.qc.5.005",
+        "ich_m10.qc.5.006",
+        "ich_m10.qc.5.007",
+        "ich_m10.qc.5.008",
+        "ich_m10.qc.5.009",
+        "ich_m10.qc.5.010",
+        "ich_m10.qc.5.011",
+        "ich_m10.qc.5.012",
+        "ich_m10.qc.5.013",
+        "ich_m10.qc.5.014",
+        "ich_m10.qc.5.015"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10188,7 +11250,27 @@
       "source_unit_id": "ich_m10.su.5.001",
       "condition_text": "for LBAs",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.5.001",
+        "ich_m10.kr.5.002",
+        "ich_m10.kr.5.003",
+        "ich_m10.kr.5.004",
+        "ich_m10.qc.5.001",
+        "ich_m10.qc.5.002",
+        "ich_m10.qc.5.003",
+        "ich_m10.qc.5.004",
+        "ich_m10.qc.5.005",
+        "ich_m10.qc.5.006",
+        "ich_m10.qc.5.007",
+        "ich_m10.qc.5.008",
+        "ich_m10.qc.5.009",
+        "ich_m10.qc.5.010",
+        "ich_m10.qc.5.011",
+        "ich_m10.qc.5.012",
+        "ich_m10.qc.5.013",
+        "ich_m10.qc.5.014",
+        "ich_m10.qc.5.015"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10206,7 +11288,16 @@
       "source_unit_id": "ich_m10.su.7_1.001",
       "condition_text": "In all approaches",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.7_1.001",
+        "ich_m10.kr.7_1.002",
+        "ich_m10.kr.7_1.003",
+        "ich_m10.kr.7_1.004",
+        "ich_m10.kr.7_1.005",
+        "ich_m10.kr.7_1.006",
+        "ich_m10.kr.7_1.007",
+        "ich_m10.qc.7_1.001"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10234,7 +11325,14 @@
       "source_unit_id": "ich_m10.su.7_2.001",
       "condition_text": "across dilution-adjusted concentrations",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.7_2.001",
+        "ich_m10.kr.7_2.002",
+        "ich_m10.kr.7_2.003",
+        "ich_m10.kr.7_2.004",
+        "ich_m10.qc.7_2.001",
+        "ich_m10.qc.7_2.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10262,7 +11360,10 @@
       "source_unit_id": "ich_m10.su.7_3.001",
       "condition_text": "at low, medium and high concentrations",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.7_3.001",
+        "ich_m10.kr.7_3.002"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10301,7 +11402,11 @@
       "source_unit_id": "ich_m10.su.7_4.001",
       "condition_text": "during validation",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.7_4.001",
+        "ich_m10.kr.7_4.002",
+        "ich_m10.kr.7_4.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10309,7 +11414,11 @@
       "source_unit_id": "ich_m10.su.7_4.001",
       "condition_text": "after considering the MRD",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.7_4.001",
+        "ich_m10.kr.7_4.002",
+        "ich_m10.kr.7_4.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10349,7 +11458,14 @@
       "source_unit_id": "ich_m10.su.7_5.001",
       "condition_text": "if multiple lots are used",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.7_5.001",
+        "ich_m10.kr.7_5.002",
+        "ich_m10.kr.7_5.003",
+        "ich_m10.qc.7_5.001",
+        "ich_m10.qc.7_5.002",
+        "ich_m10.qc.7_5.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10398,7 +11514,11 @@
       "source_unit_id": "ich_m10.su.7_6.001",
       "condition_text": "if both are used in the same study",
       "condition_type": "precondition",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.7_6.001",
+        "ich_m10.kr.7_6.002",
+        "ich_m10.kr.7_6.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10436,7 +11556,11 @@
       "source_unit_id": "ich_m10.su.7_6.001",
       "condition_text": "for ISR",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.7_6.001",
+        "ich_m10.kr.7_6.002",
+        "ich_m10.kr.7_6.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10444,7 +11568,11 @@
       "source_unit_id": "ich_m10.su.7_6.001",
       "condition_text": "if both are used in the same study",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.7_6.001",
+        "ich_m10.kr.7_6.002",
+        "ich_m10.kr.7_6.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10463,7 +11591,11 @@
       "source_unit_id": "ich_m10.su.7_6.001",
       "condition_text": "duplicate spotting or multiple punches",
       "condition_type": "scope",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.7_6.001",
+        "ich_m10.kr.7_6.002",
+        "ich_m10.kr.7_6.003"
+      ],
       "review_status": "reviewed"
     },
     {
@@ -10471,7 +11603,14 @@
       "source_unit_id": "ich_m10.su.8_1.001",
       "condition_text": "For comparative BA/BE studies",
       "condition_type": "applicability",
-      "applies_to_ids": [],
+      "applies_to_ids": [
+        "ich_m10.kr.8_1.001",
+        "ich_m10.kr.8_1.002",
+        "ich_m10.qc.8_1.001",
+        "ich_m10.qc.8_1.002",
+        "ich_m10.qc.8_1.003",
+        "ich_m10.qc.8_1.004"
+      ],
       "review_status": "reviewed"
     },
     {
