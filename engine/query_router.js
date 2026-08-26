@@ -108,7 +108,7 @@ function scoreRecord(record, qTokens, queryScope = {}) {
       tokenScore = Math.max(tokenScore, 1.5);
     }
     if (sourceTokens.has(t)) {
-      tokenScore = Math.max(tokenScore, 1.0);
+      tokenScore = Math.max(tokenScore, 0.5);
     }
 
     if (tokenScore > 0) {

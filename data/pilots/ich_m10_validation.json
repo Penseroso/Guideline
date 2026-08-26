@@ -1,0 +1,3121 @@
+{
+  "documents": [
+    {
+      "document_id": "ich_m10",
+      "title": "Bioanalytical Method Validation and Study Sample Analysis",
+      "guideline_code": "M10",
+      "issuing_body": "ICH",
+      "document_version_label": "Final version, adopted on 24 May 2022",
+      "source_file_path": "source_pdfs/ICH M10.pdf",
+      "source_file_checksum": "E306F3B6DC367EB2913CE242093A8F6C9DCD095A139A9FDB6D6F5E25201FA6AF",
+      "schema_model_version": "0.5.0"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "ich_m10.sec.3",
+      "document_id": "ich_m10",
+      "section_number": "3",
+      "title": "CHROMATOGRAPHY",
+      "parent_section_id": null,
+      "section_order": 1,
+      "section_order_status": "known",
+      "heading_source_unit_id": null
+    },
+    {
+      "section_id": "ich_m10.sec.3_2",
+      "document_id": "ich_m10",
+      "section_number": "3.2",
+      "title": "Validation",
+      "parent_section_id": "ich_m10.sec.3",
+      "section_order": 2,
+      "section_order_status": "known",
+      "heading_source_unit_id": null
+    },
+    {
+      "section_id": "ich_m10.sec.3_2_5",
+      "document_id": "ich_m10",
+      "section_number": "3.2.5",
+      "title": "Accuracy and Precision",
+      "parent_section_id": "ich_m10.sec.3_2",
+      "section_order": 3,
+      "section_order_status": "known",
+      "heading_source_unit_id": null
+    },
+    {
+      "section_id": "ich_m10.sec.3_2_5_2",
+      "document_id": "ich_m10",
+      "section_number": "3.2.5.2",
+      "title": "Evaluation of Accuracy and Precision",
+      "parent_section_id": "ich_m10.sec.3_2_5",
+      "section_order": 4,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ich_m10.su.3_2_5_2.001"
+    },
+    {
+      "section_id": "ich_m10.sec.1",
+      "document_id": "ich_m10",
+      "section_number": "1",
+      "title": "INTRODUCTION",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 5,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.1_1",
+      "document_id": "ich_m10",
+      "section_number": "1.1",
+      "title": "Objective",
+      "parent_section_id": "ich_m10.sec.1",
+      "heading_source_unit_id": null,
+      "section_order": 6,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.1_2",
+      "document_id": "ich_m10",
+      "section_number": "1.2",
+      "title": "Background",
+      "parent_section_id": "ich_m10.sec.1",
+      "heading_source_unit_id": null,
+      "section_order": 7,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.1_3",
+      "document_id": "ich_m10",
+      "section_number": "1.3",
+      "title": "Scope",
+      "parent_section_id": "ich_m10.sec.1",
+      "heading_source_unit_id": null,
+      "section_order": 8,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.2",
+      "document_id": "ich_m10",
+      "section_number": "2",
+      "title": "GENERAL PRINCIPLES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 9,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.2_1",
+      "document_id": "ich_m10",
+      "section_number": "2.1",
+      "title": "Method Development",
+      "parent_section_id": "ich_m10.sec.2",
+      "heading_source_unit_id": null,
+      "section_order": 10,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.2_2",
+      "document_id": "ich_m10",
+      "section_number": "2.2",
+      "title": "Method Validation",
+      "parent_section_id": "ich_m10.sec.2",
+      "heading_source_unit_id": null,
+      "section_order": 11,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.2_2_1",
+      "document_id": "ich_m10",
+      "section_number": "2.2.1",
+      "title": "Full Validation",
+      "parent_section_id": "ich_m10.sec.2_2",
+      "heading_source_unit_id": null,
+      "section_order": 12,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.2_2_2",
+      "document_id": "ich_m10",
+      "section_number": "2.2.2",
+      "title": "Partial Validation",
+      "parent_section_id": "ich_m10.sec.2_2",
+      "heading_source_unit_id": null,
+      "section_order": 13,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.2_2_3",
+      "document_id": "ich_m10",
+      "section_number": "2.2.3",
+      "title": "Cross Validation",
+      "parent_section_id": "ich_m10.sec.2_2",
+      "heading_source_unit_id": null,
+      "section_order": 14,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.6",
+      "document_id": "ich_m10",
+      "section_number": "6",
+      "title": "PARTIAL AND CROSS VALIDATION",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 15,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.6_1",
+      "document_id": "ich_m10",
+      "section_number": "6.1",
+      "title": "Partial Validation",
+      "parent_section_id": "ich_m10.sec.6",
+      "heading_source_unit_id": null,
+      "section_order": 16,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m10.sec.6_2",
+      "document_id": "ich_m10",
+      "section_number": "6.2",
+      "title": "Cross Validation",
+      "parent_section_id": "ich_m10.sec.6",
+      "heading_source_unit_id": null,
+      "section_order": 17,
+      "section_order_status": "known"
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "ich_m10.su.3_2_5_2.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.3_2_5_2",
+      "unit_type": "heading",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "3.2.5.2 Evaluation of Accuracy and Precision",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.3_2_5_2",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.1_1.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.1_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "This guideline is intended to provide recommendations for the validation of bioanalytical methods for chemical and biological drug quantification and their application in the analysis of study samples. Adherence to the principles presented in this guideline will ensure the quality and consistency of the bioanalytical data in support of the development and market approval of both chemical and biological drugs. The objective of the validation of a bioanalytical method is to demonstrate that it is suitable for its intended purpose. Changes from the recommendations in this guideline may be acceptable if appropriate scientific justification is provided.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.1_1",
+        "pdf_page_index_zero_based": 5,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "6",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.1_2.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.1_2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Concentration measurements of chemical and biological drug(s) and their metabolite(s) in biological matrices are an important aspect of drug development. The results of studies employing such methods contribute to regulatory decisions regarding the safety and efficacy of drug products. It is therefore critical that the bioanalytical methods used are well characterised, appropriately validated and documented in order to ensure reliable data to support regulatory decisions. This guideline intends to facilitate development of drugs in accordance with the principles of 3Rs (Reduce, Refine, Replace) for animal studies, where valid.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.1_2",
+        "pdf_page_index_zero_based": 5,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "6",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.1_3.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.1_3",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "This guideline describes the validation of bioanalytical methods and study sample analysis that are expected to support regulatory decisions. The guideline is applicable to the bioanalytical methods used to measure concentrations of chemical and biological drug(s) and their metabolite(s) in biological samples (e.g., blood, plasma, serum, other body fluids or tissues) obtained in nonclinical toxicokinetic (TK) studies conducted according to the principles of GLP, nonclinical pharmacokinetic (PK) studies conducted as surrogates for clinical studies, and all phases of clinical trials, including comparative bioavailability/bioequivalence (BA/BE) studies, in regulatory submissions. Full method validation is expected for the primary matrix intended to support regulatory submissions. Additional matrices should be validated as necessary. For studies that are not submitted for regulatory approval or not considered for regulatory decisions regarding safety, efficacy or labelling (e.g., exploratory investigations), applicants may decide on the level of qualification that supports their own internal decision making.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.1_3",
+        "pdf_page_index_zero_based": 5,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "6",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.2_1.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.2_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "The purpose of bioanalytical method development is to define the design, operating conditions, limitations and suitability of the method for its intended purpose and to ensure that the method is ready for validation. Before or during the development of a bioanalytical method, the applicant is encouraged to, if feasible, understand the analyte of interest (e.g., the physicochemical properties of the drug, in vitro and in vivo metabolism, preferential distribution between red blood cells and plasma, and protein binding) and consider aspects of any prior analytical methods that may be applicable. Method development can include the characterisation of reference standards, critical reagents, calibration curve, quality control samples (QCs), selectivity and specificity, sensitivity, accuracy, precision, recovery, stability of the analyte, minimum required dilution (MRD). Bioanalytical method development does not require extensive record keeping or notation. If a problem is encountered with the method during the analysis of nonclinical or clinical study samples that requires that the analysis be stopped, any changes to the method and the rationale should be documented.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.2_1",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "7",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.2_2_1.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.2_2_1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Bioanalytical method validation is essential to ensure the acceptability of assay performance and the reliability of analytical results. A full validation of a bioanalytical method should be performed when establishing a bioanalytical method for the quantification of an analyte in clinical and in applicable nonclinical studies. Full validation should also be performed when implementing an analytical method that is reported in the literature and when a commercial kit is repurposed for bioanalytical use in drug development. For chromatographic methods a full validation should include selectivity, specificity, matrix effect, calibration curve (response function), range (LLOQ to ULOQ), accuracy, precision, carry-over, dilution integrity, stability and reinjection reproducibility. For LBAs the following elements should be evaluated: specificity, selectivity, calibration curve, range, accuracy, precision, carry-over, dilution linearity, and stability. Full method validation is expected for the primary matrix intended to support regulatory submissions.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.2_2_1",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "8",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.2_2_2.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.2_2_2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Partial validations evaluate modifications to already fully validated bioanalytical methods. Partial validation can range from as little as one within-run accuracy and precision determination, to a nearly full validation. (Refer to Section 6.1)",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.2_2_2",
+        "pdf_page_index_zero_based": 8,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "9",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.2_2_3.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.2_2_3",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Cross validation is required to demonstrate how the reported data are related when multiple bioanalytical methods and/or multiple bioanalytical laboratories are involved. (Refer to Section 6.2)",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.2_2_3",
+        "pdf_page_index_zero_based": 8,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "9",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_2.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Cross validation is required to demonstrate how the reported data are related when multiple bioanalytical methods and/or multiple bioanalytical laboratories are involved. Cross validation is required under the following situations: Data are obtained from different fully validated methods within a study; Data are obtained within a study from different laboratories with the same bioanalytical method; Data are obtained from different fully validated methods across studies that are going to be combined or compared to support special dosing regimens, or regulatory decisions regarding safety, efficacy and labelling. If data are obtained from different fully validated methods, and these data are not to be combined across studies, cross validation is not generally required. Cross validation should be performed in advance of study samples being analysed, if possible.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_2",
+        "pdf_page_index_zero_based": 35,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "36",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.3_2_5_2.002",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.3_2_5_2",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "Accuracy and precision should be determined by analysing the QCs within each run (within-run) and in different runs (between-run). Accuracy and precision should be evaluated using the same runs and data.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.3_2_5_2",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.1_3.002",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.1_3",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "The information in this guideline applies to the quantitative analysis by ligand binding assays (LBAs) and chromatographic methods such as liquid chromatography (LC) or gas chromatography (GC), which are typically used in combination with mass spectrometry (MS) detection. For studies that are subject to Good Laboratory Practice (GLP) or Good Clinical Practice (GCP) the bioanalysis of study samples should also conform to their requirements. The bioanalysis of biomarkers and bioanalytical methods used for the assessment of immunogenicity are not within the scope of this guideline.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.1_3",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "7",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_2.002",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_2",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "Cross validation should be assessed by measuring the same set of QCs (low, medium and high) at least in triplicate and study samples (if available) that span the study sample concentration range (n≥30) with both methods, or in both laboratories. Bias can be assessed by Bland-Altman plots or Deming regression. Other methods appropriate for assessing agreement between two methods (e.g., concordance correlation coefficient) may be used too. Alternatively, the concentration vs. time curves for study samples could be plotted for samples analysed by each method to assess bias. The use of multiple bioanalytical methods for the measurement of the same analyte in the conduct of one comparative BA/BE study is strongly discouraged.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_2",
+        "pdf_page_index_zero_based": 36,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "37",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.3_2_5_2",
+      "unit_type": "paragraph",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "source_text": "Within-run accuracy and precision should be evaluated by analysing at least 5 replicates at each QC concentration level in each analytical run. Between-run accuracy and precision should be evaluated by analysing each QC concentration level in at least 3 analytical runs over at least two days. To enable the evaluation of any trends over time within one run, it is recommended to demonstrate accuracy and precision of the QCs over at least one of the runs in a size equivalent to a prospective analytical run of study samples. Reported method validation data and the determination of accuracy and precision should include all results obtained, including individual QCs outside of the acceptance criteria, except those cases where errors are obvious and documented. Within-run accuracy and precision data should be reported for each run. If the within-run accuracy or precision criteria are not met in all runs, an overall estimate of within-run accuracy and precision for each QC level should be calculated. Between-run (intermediate) precision and accuracy should be calculated by combining the data from all runs.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.3_2_5_2",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.3_2_5_2.004",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.3_2_5_2",
+      "unit_type": "paragraph",
+      "unit_order": 4,
+      "unit_order_status": "known",
+      "source_text": "The calibration curves for these assessments should be prepared using freshly spiked calibration standards in at least one run. If freshly spiked calibration standards are not used in the other runs, stability of the frozen calibration standards should be demonstrated.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.3_2_5_2",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.3_2_5_2",
+      "unit_type": "paragraph",
+      "unit_order": 5,
+      "unit_order_status": "known",
+      "source_text": "The accuracy at each concentration level should be within ±15% of the nominal concentration, except at the LLOQ, where it should be within ±20%. The precision (%CV) of the concentrations determined at each level should not exceed 15%, except at the LLOQ, where it should not exceed 20%. For non-accuracy and precision validation runs, at least 2/3 of the total QCs and at least 50% at each concentration level should be within ±15% of the nominal values.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.3_2_5_2",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.001",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "heading",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "6.1 Partial Validation",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 34,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "35",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.002",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "Partial validations evaluate modifications to already fully validated bioanalytical methods. Partial validation can range from as little as one within-run accuracy and precision determination, to a nearly full validation. If stability is established at one facility it does not necessarily need to be repeated at another facility.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 34,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "35",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.003",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "paragraph",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "source_text": "For chromatographic methods, typical bioanalytical method modifications or changes that fall into this category include, but are not limited to, the following situations:",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 34,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "35",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.004",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 4,
+      "unit_order_status": "known",
+      "source_text": "• Analytical site change using same method (i.e., bioanalytical method transfers between laboratories)",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.003"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 34,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "35",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.005",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 5,
+      "unit_order_status": "known",
+      "source_text": "• A change in analytical method (e.g., change in detection systems, platform)",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.003"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 34,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "35",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.006",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 6,
+      "unit_order_status": "known",
+      "source_text": "• A change in sample processing procedures",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.003"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 34,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "35",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.007",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 7,
+      "unit_order_status": "known",
+      "source_text": "• A change in sample volume (e.g., the smaller volume of paediatric samples)",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.003"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 34,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "35",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.008",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 8,
+      "unit_order_status": "known",
+      "source_text": "• Changes to the calibration concentration range",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.003"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 34,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "35",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.009",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 9,
+      "unit_order_status": "known",
+      "source_text": "• A change in anticoagulant (but not changes in the counter-ion) in biological fluids (e.g., heparin to ethylenediaminetetraacetic acid (EDTA))",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.003"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 34,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "35",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.010",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 10,
+      "unit_order_status": "known",
+      "source_text": "• Change from one matrix within a species to another (e.g., switching from human plasma to serum or cerebrospinal fluid) or changes to the species within the matrix (e.g., switching from rat plasma to mouse plasma)",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.003"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 34,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "35",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.011",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 11,
+      "unit_order_status": "known",
+      "source_text": "• A change in storage conditions",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.003"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 34,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "35",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.012",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "paragraph",
+      "unit_order": 12,
+      "unit_order_status": "known",
+      "source_text": "For LBAs, typical bioanalytical method modifications or changes that fall into this category include, but are not limited to, the following situations:",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 35,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "36",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.013",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 13,
+      "unit_order_status": "known",
+      "source_text": "• Changes in LBA critical reagents (e.g., lot-to-lot changes)",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.012"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 35,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "36",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.014",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 14,
+      "unit_order_status": "known",
+      "source_text": "• Changes in MRD",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.012"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 35,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "36",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.015",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 15,
+      "unit_order_status": "known",
+      "source_text": "• A change in storage conditions",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.012"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 35,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "36",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.016",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 16,
+      "unit_order_status": "known",
+      "source_text": "• Changes to the calibration concentration range",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.012"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 35,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "36",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.017",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 17,
+      "unit_order_status": "known",
+      "source_text": "• A change in analytical method (e.g., change in detection systems, platform)",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.012"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 35,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "36",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.018",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 18,
+      "unit_order_status": "known",
+      "source_text": "• Analytical site change using same method (i.e., bioanalytical method transfers between laboratories)",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.012"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 35,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "36",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.019",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 19,
+      "unit_order_status": "known",
+      "source_text": "• A change in sample preparation",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.012"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 35,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "36",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.020",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "list_item",
+      "unit_order": 20,
+      "unit_order_status": "known",
+      "source_text": "• A change in anticoagulant (but not changes in the counter-ion) in biological fluids (e.g., heparin to ethylenediaminetetraacetic acid (EDTA))",
+      "related_source_unit_ids": [
+        "ich_m10.su.6_1.012"
+      ],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 35,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "36",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m10.su.6_1.021",
+      "document_id": "ich_m10",
+      "section_id": "ich_m10.sec.6_1",
+      "unit_type": "paragraph",
+      "unit_order": 21,
+      "unit_order_status": "known",
+      "source_text": "The parameters of the partial validations should meet the full validation criteria. If these criteria are not satisfied, additional investigation and validation is warranted.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M10.pdf",
+        "document_id": "ich_m10",
+        "section_id": "ich_m10.sec.6_1",
+        "pdf_page_index_zero_based": 35,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "36",
+        "printed_page_label_status": "known",
+        "extraction_method": "manual verification against PDF page image with pdftotext assistance"
+      },
+      "review_status": "reviewed"
+    }
+  ],
+  "knowledge_records": [
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.001",
+      "source_unit_ids": [
+        "ich_m10.su.3_2_5_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be determined",
+      "subject": "Accuracy and precision",
+      "action": "be determined",
+      "object": "by analysing the QCs within each run (within-run) and in different runs (between-run)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.002",
+      "source_unit_ids": [
+        "ich_m10.su.3_2_5_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be evaluated",
+      "subject": "Accuracy and precision",
+      "action": "be evaluated",
+      "object": "using the same runs and data",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.003",
+      "source_unit_ids": [
+        "ich_m10.su.3_2_5_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be evaluated",
+      "subject": "Within-run accuracy and precision",
+      "action": "be evaluated",
+      "object": "by analysing at least 5 replicates at each QC concentration level in each analytical run",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.004",
+      "source_unit_ids": [
+        "ich_m10.su.3_2_5_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be evaluated",
+      "subject": "Between-run accuracy and precision",
+      "action": "be evaluated",
+      "object": "by analysing each QC concentration level in at least 3 analytical runs over at least two days",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.005",
+      "source_unit_ids": [
+        "ich_m10.su.3_2_5_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "it is recommended",
+      "subject": "Accuracy and precision of the QCs",
+      "action": "be demonstrated",
+      "object": "over at least one of the runs in a size equivalent to a prospective analytical run of study samples",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.006",
+      "source_unit_ids": [
+        "ich_m10.su.3_2_5_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should include",
+      "subject": "Reported method validation data and the determination of accuracy and precision",
+      "action": "include",
+      "object": "all results obtained, including individual QCs outside of the acceptance criteria",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.007",
+      "source_unit_ids": [
+        "ich_m10.su.3_2_5_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be reported",
+      "subject": "Within-run accuracy and precision data",
+      "action": "be reported",
+      "object": "for each run",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.008",
+      "source_unit_ids": [
+        "ich_m10.su.3_2_5_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be calculated",
+      "subject": "An overall estimate of within-run accuracy and precision for each QC level",
+      "action": "be calculated",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.009",
+      "source_unit_ids": [
+        "ich_m10.su.3_2_5_2.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be calculated",
+      "subject": "Between-run (intermediate) precision and accuracy",
+      "action": "be calculated",
+      "object": "by combining the data from all runs",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.010",
+      "source_unit_ids": [
+        "ich_m10.su.3_2_5_2.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be prepared",
+      "subject": "The calibration curves for these assessments",
+      "action": "be prepared",
+      "object": "using freshly spiked calibration standards in at least one run",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.011",
+      "source_unit_ids": [
+        "ich_m10.su.3_2_5_2.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be demonstrated",
+      "subject": "Stability of the frozen calibration standards",
+      "action": "be demonstrated",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.012",
+      "source_unit_ids": [
+        "ich_m10.su.3_2_5_2.005"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be within",
+      "subject": "The accuracy at each concentration level",
+      "action": "be within",
+      "object": "±15% of the nominal concentration, except at the LLOQ, where it should be within ±20%",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.013",
+      "source_unit_ids": [
+        "ich_m10.su.3_2_5_2.005"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should not exceed",
+      "subject": "The precision (%CV) of the concentrations determined at each level",
+      "action": "not exceed",
+      "object": "15%, except at the LLOQ, where it should not exceed 20%",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.014",
+      "source_unit_ids": [
+        "ich_m10.su.3_2_5_2.005"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be within",
+      "subject": "At least 2/3 of the total QCs and at least 50% at each concentration level",
+      "action": "be within",
+      "object": "±15% of the nominal values",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_1.001",
+      "source_unit_ids": [
+        "ich_m10.su.1_1.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This guideline",
+      "action": "is intended to provide recommendations",
+      "object": "for the validation of bioanalytical methods for chemical and biological drug quantification and their application in the analysis of study samples",
+      "normalized_ko": "The guideline provides recommendations on validating bioanalytical methods for chemical and biological drug quantification and applying them to study-sample analysis.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_1.002",
+      "source_unit_ids": [
+        "ich_m10.su.1_1.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "will",
+      "subject": "Adherence to the principles presented in this guideline",
+      "action": "will ensure",
+      "object": "the quality and consistency of the bioanalytical data in support of the development and market approval of both chemical and biological drugs",
+      "normalized_ko": "Adherence to the guideline principles will ensure quality and consistency of bioanalytical data supporting development and market approval of chemical and biological drugs.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_1.003",
+      "source_unit_ids": [
+        "ich_m10.su.1_1.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The objective of the validation of a bioanalytical method",
+      "action": "is to demonstrate",
+      "object": "that it is suitable for its intended purpose",
+      "normalized_ko": "Bioanalytical method validation aims to demonstrate that the method is suitable for its intended purpose.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_1.004",
+      "source_unit_ids": [
+        "ich_m10.su.1_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may be acceptable",
+      "subject": "Changes from the recommendations in this guideline",
+      "action": "may be acceptable",
+      "object": null,
+      "normalized_ko": "Departures from the guideline recommendations may be acceptable with appropriate scientific justification.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_2.001",
+      "source_unit_ids": [
+        "ich_m10.su.1_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Concentration measurements of chemical and biological drug(s) and their metabolite(s) in biological matrices",
+      "action": "are",
+      "object": "an important aspect of drug development",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_2.002",
+      "source_unit_ids": [
+        "ich_m10.su.1_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The results of studies employing such methods",
+      "action": "contribute to",
+      "object": "regulatory decisions regarding the safety and efficacy of drug products",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_2.003",
+      "source_unit_ids": [
+        "ich_m10.su.1_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This guideline",
+      "action": "intends to facilitate",
+      "object": "development of drugs in accordance with the principles of 3Rs (Reduce, Refine, Replace) for animal studies",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_2.004",
+      "source_unit_ids": [
+        "ich_m10.su.1_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "critical",
+      "subject": "the bioanalytical methods used",
+      "action": "be well characterised",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_2.005",
+      "source_unit_ids": [
+        "ich_m10.su.1_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "critical",
+      "subject": "the bioanalytical methods used",
+      "action": "be appropriately validated",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_2.006",
+      "source_unit_ids": [
+        "ich_m10.su.1_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "critical",
+      "subject": "the bioanalytical methods used",
+      "action": "be documented",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_2.007",
+      "source_unit_ids": [
+        "ich_m10.su.1_2.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This guideline",
+      "action": "intends to facilitate",
+      "object": "development of drugs in accordance with the principles of 3Rs (Reduce, Refine, Replace) for animal studies",
+      "normalized_ko": "The guideline intends to facilitate drug development in accordance with 3Rs principles for animal studies.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_2.008",
+      "source_unit_ids": [
+        "ich_m10.su.1_2.001"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "critical",
+      "subject": "the bioanalytical methods used",
+      "action": "be well characterised",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_2.009",
+      "source_unit_ids": [
+        "ich_m10.su.1_2.001"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "critical",
+      "subject": "the bioanalytical methods used",
+      "action": "be appropriately validated",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_2.010",
+      "source_unit_ids": [
+        "ich_m10.su.1_2.001"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "critical",
+      "subject": "the bioanalytical methods used",
+      "action": "be documented",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_3.001",
+      "source_unit_ids": [
+        "ich_m10.su.1_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This guideline",
+      "action": "describes",
+      "object": "the validation of bioanalytical methods and study sample analysis",
+      "normalized_ko": "The guideline describes validation of bioanalytical methods and study sample analysis.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_3.002",
+      "source_unit_ids": [
+        "ich_m10.su.1_3.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This guideline",
+      "action": "is applicable to",
+      "object": "the bioanalytical methods used to measure concentrations of chemical and biological drug(s) and their metabolite(s) in biological samples",
+      "normalized_ko": "The guideline applies to bioanalytical methods measuring chemical and biological drugs and metabolites in biological samples.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_3.003",
+      "source_unit_ids": [
+        "ich_m10.su.1_3.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The biological samples",
+      "action": "are obtained in",
+      "object": "nonclinical toxicokinetic (TK) studies conducted according to the principles of GLP, nonclinical pharmacokinetic (PK) studies conducted as surrogates for clinical studies, and all phases of clinical trials, including comparative bioavailability/bioequivalence (BA/BE) studies, in regulatory submissions",
+      "normalized_ko": "Covered biological samples are obtained in specified nonclinical and clinical studies in regulatory submissions.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_3.004",
+      "source_unit_ids": [
+        "ich_m10.su.1_3.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This guideline",
+      "action": "describes",
+      "object": "the validation of bioanalytical methods and study sample analysis",
+      "normalized_ko": "The guideline describes validation of bioanalytical methods and study sample analysis.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_3.005",
+      "source_unit_ids": [
+        "ich_m10.su.1_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is expected",
+      "subject": "Full method validation",
+      "action": "is expected for",
+      "object": "the primary matrix intended to support regulatory submissions",
+      "normalized_ko": "Full method validation is expected for the primary matrix supporting regulatory submissions.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_3.006",
+      "source_unit_ids": [
+        "ich_m10.su.1_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Additional matrices",
+      "action": "should be validated",
+      "object": "as necessary",
+      "normalized_ko": "Additional matrices should be validated as necessary.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_3.007",
+      "source_unit_ids": [
+        "ich_m10.su.1_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "Applicants",
+      "action": "may decide on",
+      "object": "the level of qualification that supports their own internal decision making",
+      "normalized_ko": "Applicants may decide the qualification level supporting internal decision making.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_3.008",
+      "source_unit_ids": [
+        "ich_m10.su.1_3.002"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The information in this guideline",
+      "action": "applies to",
+      "object": "the quantitative analysis by ligand binding assays (LBAs) and chromatographic methods such as liquid chromatography (LC) or gas chromatography (GC)",
+      "normalized_ko": "The guideline applies to quantitative analysis by LBAs and chromatographic methods.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_3.009",
+      "source_unit_ids": [
+        "ich_m10.su.1_3.002"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The bioanalysis of biomarkers and bioanalytical methods used for the assessment of immunogenicity",
+      "action": "are not within the scope of",
+      "object": "this guideline",
+      "normalized_ko": "Biomarker bioanalysis and bioanalytical methods for immunogenicity assessment are not within the guideline's scope.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_3.010",
+      "source_unit_ids": [
+        "ich_m10.su.1_3.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Liquid chromatography (LC) or gas chromatography (GC)",
+      "action": "are typically used in combination with",
+      "object": "mass spectrometry (MS) detection",
+      "normalized_ko": "LC and GC are typically used with MS detection.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_3.011",
+      "source_unit_ids": [
+        "ich_m10.su.1_3.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The bioanalysis of study samples",
+      "action": "should also conform to",
+      "object": "their requirements",
+      "normalized_ko": "Bioanalysis of study samples should also conform to GLP or GCP requirements.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_3.012",
+      "source_unit_ids": [
+        "ich_m10.su.1_3.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "studies not submitted for regulatory approval or not considered for regulatory decisions",
+      "action": "includes",
+      "object": "exploratory investigations",
+      "normalized_ko": "규제 승인 제출 또는 안전성·유효성·표시사항 관련 규제 의사결정 대상으로 고려되지 않는 연구의 예에는 탐색적 조사가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.1_3.013",
+      "source_unit_ids": [
+        "ich_m10.su.1_3.002"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Chromatographic methods",
+      "action": "includes",
+      "object": "liquid chromatography (LC)",
+      "normalized_ko": "Chromatographic methods include liquid chromatography (LC).",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_1.001",
+      "source_unit_ids": [
+        "ich_m10.su.2_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The purpose of bioanalytical method development",
+      "action": "is to define",
+      "object": "the design, operating conditions, limitations and suitability of the method for its intended purpose",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_1.002",
+      "source_unit_ids": [
+        "ich_m10.su.2_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The purpose of bioanalytical method development",
+      "action": "is to ensure",
+      "object": "that the method is ready for validation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_1.003",
+      "source_unit_ids": [
+        "ich_m10.su.2_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Bioanalytical method development",
+      "action": "does not require",
+      "object": "extensive record keeping or notation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_1.004",
+      "source_unit_ids": [
+        "ich_m10.su.2_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "encouraged",
+      "subject": "The applicant",
+      "action": "should understand",
+      "object": "the analyte of interest",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_1.005",
+      "source_unit_ids": [
+        "ich_m10.su.2_1.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Analyte characteristics",
+      "action": "includes",
+      "object": "the physicochemical properties of the drug",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_1.006",
+      "source_unit_ids": [
+        "ich_m10.su.2_1.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Method development",
+      "action": "can include",
+      "object": "the characterisation of reference standards, critical reagents, calibration curve, quality control samples (QCs), selectivity and specificity, sensitivity, accuracy, precision, recovery, stability of the analyte, minimum required dilution (MRD)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_1.007",
+      "source_unit_ids": [
+        "ich_m10.su.2_1.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The purpose of bioanalytical method development",
+      "action": "is to define",
+      "object": "the design, operating conditions, limitations and suitability of the method for its intended purpose",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_1.008",
+      "source_unit_ids": [
+        "ich_m10.su.2_1.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The purpose of bioanalytical method development",
+      "action": "is to ensure",
+      "object": "that the method is ready for validation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_2_1.001",
+      "source_unit_ids": [
+        "ich_m10.su.2_2_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Bioanalytical method validation",
+      "action": "is essential to ensure",
+      "object": "the acceptability of assay performance and the reliability of analytical results",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_2_1.002",
+      "source_unit_ids": [
+        "ich_m10.su.2_2_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "A full validation of a bioanalytical method",
+      "action": "should be performed",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_2_1.003",
+      "source_unit_ids": [
+        "ich_m10.su.2_2_1.001"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "is expected",
+      "subject": "Full method validation",
+      "action": "is expected for",
+      "object": "the primary matrix intended to support regulatory submissions",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_2_1.004",
+      "source_unit_ids": [
+        "ich_m10.su.2_2_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is expected",
+      "subject": "Full method validation",
+      "action": "is expected",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_2_2.001",
+      "source_unit_ids": [
+        "ich_m10.su.2_2_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Partial validations",
+      "action": "evaluate",
+      "object": "modifications to already fully validated bioanalytical methods",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_2_2.002",
+      "source_unit_ids": [
+        "ich_m10.su.2_2_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Partial validation",
+      "action": "can range from",
+      "object": "as little as one within-run accuracy and precision determination, to a nearly full validation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_2_2.003",
+      "source_unit_ids": [
+        "ich_m10.su.2_2_2.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Partial validations",
+      "action": "evaluate",
+      "object": "modifications to already fully validated bioanalytical methods",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_2_2.004",
+      "source_unit_ids": [
+        "ich_m10.su.2_2_2.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Partial validation",
+      "action": "can range from",
+      "object": "as little as one within-run accuracy and precision determination, to a nearly full validation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.2_2_3.001",
+      "source_unit_ids": [
+        "ich_m10.su.2_2_3.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "is required",
+      "subject": "Cross validation",
+      "action": "is required to demonstrate",
+      "object": "how the reported data are related",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_2.001",
+      "source_unit_ids": [
+        "ich_m10.su.6_2.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "is required",
+      "subject": "Cross validation",
+      "action": "is required to demonstrate",
+      "object": "how the reported data are related",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_2.002",
+      "source_unit_ids": [
+        "ich_m10.su.6_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Cross validation",
+      "action": "is not generally required",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_2.003",
+      "source_unit_ids": [
+        "ich_m10.su.6_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Cross validation",
+      "action": "should be performed in advance of",
+      "object": "study samples being analysed",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_2.004",
+      "source_unit_ids": [
+        "ich_m10.su.6_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Cross validation",
+      "action": "should be assessed by measuring",
+      "object": "the same set of QCs (low, medium and high) at least in triplicate and study samples",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_2.005",
+      "source_unit_ids": [
+        "ich_m10.su.6_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "is strongly discouraged",
+      "subject": "The use of multiple bioanalytical methods for the measurement of the same analyte in the conduct of one comparative BA/BE study",
+      "action": "should not be used",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_2.006",
+      "source_unit_ids": [
+        "ich_m10.su.6_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "strongly discouraged",
+      "subject": "The use of multiple bioanalytical methods for the measurement of the same analyte",
+      "action": "is strongly discouraged",
+      "object": null,
+      "normalized_ko": "Using multiple bioanalytical methods to measure the same analyte is strongly discouraged in one comparative BA/BE study.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_2.007",
+      "source_unit_ids": [
+        "ich_m10.su.6_2.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Bias",
+      "action": "may be assessed by",
+      "object": "Bland-Altman plots",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_2.008",
+      "source_unit_ids": [
+        "ich_m10.su.6_2.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "Other methods appropriate for assessing agreement between two methods",
+      "action": "may be used",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_2.009",
+      "source_unit_ids": [
+        "ich_m10.su.6_2.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Cross validation",
+      "action": "is not generally required",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_2.010",
+      "source_unit_ids": [
+        "ich_m10.su.6_2.002"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can",
+      "subject": "Bias",
+      "action": "can be assessed by",
+      "object": "Bland-Altman plots or Deming regression",
+      "normalized_ko": "Bias can be assessed using Bland-Altman plots or Deming regression.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_2.011",
+      "source_unit_ids": [
+        "ich_m10.su.6_2.002"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "could",
+      "subject": "The concentration vs. time curves for study samples",
+      "action": "could be plotted",
+      "object": "to assess bias",
+      "normalized_ko": "Concentration-versus-time curves for study samples could be plotted to assess bias.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.001",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Partial validations",
+      "action": "evaluate",
+      "object": "modifications to already fully validated bioanalytical methods",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.002",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.002"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can range",
+      "subject": "Partial validation",
+      "action": "range",
+      "object": "from as little as one within-run accuracy and precision determination, to a nearly full validation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.003",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "does not necessarily need to be repeated",
+      "subject": "Stability established at one facility",
+      "action": "does not necessarily need to be repeated",
+      "object": "at another facility",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.004",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.003"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Typical bioanalytical method modifications or changes for chromatographic methods",
+      "action": "include",
+      "object": "the following situations, but are not limited to them",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.005",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.004"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Chromatographic method modification or change",
+      "action": "includes",
+      "object": "Analytical site change using same method (i.e., bioanalytical method transfers between laboratories)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.006",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.005"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Chromatographic method modification or change",
+      "action": "includes",
+      "object": "A change in analytical method (e.g., change in detection systems, platform)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.007",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.006"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Chromatographic method modification or change",
+      "action": "includes",
+      "object": "A change in sample processing procedures",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.008",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.007"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Chromatographic method modification or change",
+      "action": "includes",
+      "object": "A change in sample volume (e.g., the smaller volume of paediatric samples)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.009",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.008"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Chromatographic method modification or change",
+      "action": "includes",
+      "object": "Changes to the calibration concentration range",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.010",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.009"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Chromatographic method modification or change",
+      "action": "includes",
+      "object": "A change in anticoagulant (but not changes in the counter-ion) in biological fluids (e.g., heparin to ethylenediaminetetraacetic acid (EDTA))",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.011",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.010"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Chromatographic method modification or change",
+      "action": "includes",
+      "object": "Change from one matrix within a species to another or changes to the species within the matrix",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.012",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.011"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Chromatographic method modification or change",
+      "action": "includes",
+      "object": "A change in storage conditions",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.013",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.012"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Typical bioanalytical method modifications or changes for LBAs",
+      "action": "include",
+      "object": "the following situations, but are not limited to them",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.014",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.013"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "LBA modification or change",
+      "action": "includes",
+      "object": "Changes in LBA critical reagents (e.g., lot-to-lot changes)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.015",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.014"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "LBA modification or change",
+      "action": "includes",
+      "object": "Changes in MRD",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.016",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.015"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "LBA modification or change",
+      "action": "includes",
+      "object": "A change in storage conditions",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.017",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.016"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "LBA modification or change",
+      "action": "includes",
+      "object": "Changes to the calibration concentration range",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.018",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.017"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "LBA modification or change",
+      "action": "includes",
+      "object": "A change in analytical method (e.g., change in detection systems, platform)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.019",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.018"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "LBA modification or change",
+      "action": "includes",
+      "object": "Analytical site change using same method (i.e., bioanalytical method transfers between laboratories)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.020",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.019"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "LBA modification or change",
+      "action": "includes",
+      "object": "A change in sample preparation",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.021",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.020"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "LBA modification or change",
+      "action": "includes",
+      "object": "A change in anticoagulant (but not changes in the counter-ion) in biological fluids (e.g., heparin to ethylenediaminetetraacetic acid (EDTA))",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.022",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.021"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should meet",
+      "subject": "The parameters of the partial validations",
+      "action": "meet",
+      "object": "the full validation criteria",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m10.kr.6_1.023",
+      "source_unit_ids": [
+        "ich_m10.su.6_1.021"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is warranted",
+      "subject": "Additional investigation and validation",
+      "action": "is warranted",
+      "object": null,
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    }
+  ],
+  "quantitative_criteria": [
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.001",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.003",
+      "parameter": "replicates",
+      "comparator": "at_least",
+      "value": 5,
+      "value_fraction": null,
+      "unit": "replicates",
+      "value_status": "known",
+      "denominator_or_reference": "each QC concentration level in each analytical run",
+      "condition_ids": [
+        "ich_m10.cond.3_2_5_2.001"
+      ],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 5 replicates at each QC concentration level in each analytical run",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.002",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.004",
+      "parameter": "analytical runs",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "analytical runs",
+      "value_status": "known",
+      "denominator_or_reference": "each QC concentration level",
+      "condition_ids": [
+        "ich_m10.cond.3_2_5_2.002"
+      ],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 3 analytical runs",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.003",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.004",
+      "parameter": "days",
+      "comparator": "at_least",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": "between-run accuracy and precision evaluation",
+      "condition_ids": [
+        "ich_m10.cond.3_2_5_2.002"
+      ],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "over at least two days",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.004",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.005",
+      "parameter": "runs sized equivalent to a prospective analytical run of study samples",
+      "comparator": "at_least",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "run",
+      "value_status": "known",
+      "denominator_or_reference": "evaluation of trends over time within one run",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "over at least one of the runs in a size equivalent to a prospective analytical run of study samples",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.005",
+      "source_unit_id": "ich_m10.su.3_2_5_2.004",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.010",
+      "parameter": "freshly spiked calibration standard runs",
+      "comparator": "at_least",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "run",
+      "value_status": "known",
+      "denominator_or_reference": "calibration curves for these assessments",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "in at least one run",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.006",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.012",
+      "parameter": "accuracy",
+      "comparator": "within",
+      "value": 15,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal concentration at each concentration level except LLOQ",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "within ±15% of the nominal concentration",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.007",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.012",
+      "parameter": "accuracy",
+      "comparator": "within",
+      "value": 20,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal concentration at the LLOQ",
+      "condition_ids": [
+        "ich_m10.cond.3_2_5_2.007"
+      ],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "except at the LLOQ, where it should be within ±20%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.008",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.013",
+      "parameter": "precision",
+      "comparator": "not_exceed",
+      "value": 15,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "%CV of concentrations determined at each level except LLOQ",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "should not exceed 15%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.009",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.013",
+      "parameter": "precision",
+      "comparator": "not_exceed",
+      "value": 20,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "%CV at the LLOQ",
+      "condition_ids": [
+        "ich_m10.cond.3_2_5_2.007"
+      ],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "except at the LLOQ, where it should not exceed 20%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.010",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.014",
+      "parameter": "total QCs within nominal values",
+      "comparator": "at_least",
+      "value": null,
+      "value_fraction": {
+        "numerator": 2,
+        "denominator": 3
+      },
+      "unit": "fraction",
+      "value_status": "known",
+      "denominator_or_reference": "total QCs in non-accuracy and precision validation runs",
+      "condition_ids": [
+        "ich_m10.cond.3_2_5_2.008"
+      ],
+      "joint_with_ids": [
+        "ich_m10.qc.3_2_5_2.011",
+        "ich_m10.qc.3_2_5_2.012"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 2/3 of the total QCs",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.011",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.014",
+      "parameter": "QCs within nominal values at each concentration level",
+      "comparator": "at_least",
+      "value": 50,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "each concentration level in non-accuracy and precision validation runs",
+      "condition_ids": [
+        "ich_m10.cond.3_2_5_2.008"
+      ],
+      "joint_with_ids": [
+        "ich_m10.qc.3_2_5_2.010",
+        "ich_m10.qc.3_2_5_2.012"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least 50% at each concentration level",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.3_2_5_2.012",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "knowledge_record_id": "ich_m10.kr.3_2_5_2.014",
+      "parameter": "QC values relative to nominal values in non-accuracy and precision validation runs",
+      "comparator": "within",
+      "value": 15,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "nominal values",
+      "condition_ids": [
+        "ich_m10.cond.3_2_5_2.008"
+      ],
+      "joint_with_ids": [
+        "ich_m10.qc.3_2_5_2.010",
+        "ich_m10.qc.3_2_5_2.011"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "should be within ±15% of the nominal values",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.2_2_2.001",
+      "source_unit_id": "ich_m10.su.2_2_2.001",
+      "knowledge_record_id": null,
+      "parameter": "within-run accuracy and precision determination",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "determination",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "as little as one within-run accuracy and precision determination",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.6_2.001",
+      "source_unit_id": "ich_m10.su.6_2.002",
+      "knowledge_record_id": null,
+      "parameter": "measurements of the same set of QCs",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "replicates",
+      "value_status": "known",
+      "denominator_or_reference": "same set of QCs (low, medium and high)",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.6_2.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "at least in triplicate",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m10.qc.6_2.002",
+      "source_unit_id": "ich_m10.su.6_2.002",
+      "knowledge_record_id": null,
+      "parameter": "study samples spanning the study sample concentration range",
+      "comparator": "at_least",
+      "value": 30,
+      "value_fraction": null,
+      "unit": "samples",
+      "value_status": "known",
+      "denominator_or_reference": "study sample concentration range",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m10.qc.6_2.001"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "study samples (if available) that span the study sample concentration range (n≥30)",
+      "review_status": "reviewed"
+    }
+  ],
+  "conditions": [
+    {
+      "condition_id": "ich_m10.cond.3_2_5_2.001",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "condition_text": "Within-run accuracy and precision",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_5_2.003",
+        "ich_m10.qc.3_2_5_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.3_2_5_2.002",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "condition_text": "Between-run accuracy and precision",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_5_2.004",
+        "ich_m10.qc.3_2_5_2.002",
+        "ich_m10.qc.3_2_5_2.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.3_2_5_2.004",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "condition_text": "except those cases where errors are obvious and documented",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_5_2.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.3_2_5_2.005",
+      "source_unit_id": "ich_m10.su.3_2_5_2.003",
+      "condition_text": "If the within-run accuracy or precision criteria are not met in all runs",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_5_2.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.3_2_5_2.006",
+      "source_unit_id": "ich_m10.su.3_2_5_2.004",
+      "condition_text": "If freshly spiked calibration standards are not used in the other runs",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_5_2.011"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.3_2_5_2.007",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "condition_text": "at the LLOQ",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_5_2.012",
+        "ich_m10.kr.3_2_5_2.013",
+        "ich_m10.qc.3_2_5_2.007",
+        "ich_m10.qc.3_2_5_2.009"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.3_2_5_2.008",
+      "source_unit_id": "ich_m10.su.3_2_5_2.005",
+      "condition_text": "For non-accuracy and precision validation runs",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.3_2_5_2.014",
+        "ich_m10.qc.3_2_5_2.010",
+        "ich_m10.qc.3_2_5_2.011",
+        "ich_m10.qc.3_2_5_2.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.1_1.001",
+      "source_unit_id": "ich_m10.su.1_1.001",
+      "condition_text": "if appropriate scientific justification is provided",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.1_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.1_2.001",
+      "source_unit_id": "ich_m10.su.1_2.001",
+      "condition_text": "where valid",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.1_2.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.1_3.001",
+      "source_unit_id": "ich_m10.su.1_3.001",
+      "condition_text": "For studies that are not submitted for regulatory approval or not considered for regulatory decisions regarding safety, efficacy or labelling",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.1_3.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.1_3.002",
+      "source_unit_id": "ich_m10.su.1_3.002",
+      "condition_text": "For studies that are subject to Good Laboratory Practice (GLP) or Good Clinical Practice (GCP)",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.1_3.009"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.1_3.003",
+      "source_unit_id": "ich_m10.su.1_3.001",
+      "condition_text": "that are expected to support regulatory decisions",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.1_3.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.1_3.004",
+      "source_unit_id": "ich_m10.su.1_3.001",
+      "condition_text": "obtained in nonclinical toxicokinetic (TK) studies conducted according to the principles of GLP, nonclinical pharmacokinetic (PK) studies conducted as surrogates for clinical studies, and all phases of clinical trials, including comparative bioavailability/bioequivalence (BA/BE) studies, in regulatory submissions",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.1_3.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.1_3.005",
+      "source_unit_id": "ich_m10.su.1_3.001",
+      "condition_text": "intended to support regulatory submissions",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.1_3.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.1_3.006",
+      "source_unit_id": "ich_m10.su.1_3.001",
+      "condition_text": "as necessary",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.1_3.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.1_3.007",
+      "source_unit_id": "ich_m10.su.1_3.001",
+      "condition_text": "that are expected to support regulatory decisions",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.1_3.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.1_3.008",
+      "source_unit_id": "ich_m10.su.1_3.001",
+      "condition_text": "obtained in nonclinical toxicokinetic (TK) studies conducted according to the principles of GLP, nonclinical pharmacokinetic (PK) studies conducted as surrogates for clinical studies, and all phases of clinical trials, including comparative bioavailability/bioequivalence (BA/BE) studies, in regulatory submissions",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.1_3.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.1_3.009",
+      "source_unit_id": "ich_m10.su.1_3.001",
+      "condition_text": "intended to support regulatory submissions",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.1_3.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_1.001",
+      "source_unit_id": "ich_m10.su.2_1.001",
+      "condition_text": "Before or during the development of a bioanalytical method",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.2_1.003",
+        "ich_m10.kr.2_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_1.002",
+      "source_unit_id": "ich_m10.su.2_1.001",
+      "condition_text": "if feasible",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.2_1.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_1.003",
+      "source_unit_id": "ich_m10.su.2_1.001",
+      "condition_text": "If a problem is encountered with the method during the analysis of nonclinical or clinical study samples that requires that the analysis be stopped",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_1.004",
+      "source_unit_id": "ich_m10.su.2_1.001",
+      "condition_text": "Before or during the development of a bioanalytical method",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.2_1.003",
+        "ich_m10.kr.2_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_1.005",
+      "source_unit_id": "ich_m10.su.2_1.001",
+      "condition_text": "for its intended purpose",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.2_1.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_2_1.001",
+      "source_unit_id": "ich_m10.su.2_2_1.001",
+      "condition_text": "when establishing a bioanalytical method for the quantification of an analyte in clinical and in applicable nonclinical studies",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.2_2_1.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_2_1.002",
+      "source_unit_id": "ich_m10.su.2_2_1.001",
+      "condition_text": "when implementing an analytical method that is reported in the literature",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.2_2_1.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_2_1.003",
+      "source_unit_id": "ich_m10.su.2_2_1.001",
+      "condition_text": "when a commercial kit is repurposed for bioanalytical use in drug development",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.2_2_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_2_1.004",
+      "source_unit_id": "ich_m10.su.2_2_1.001",
+      "condition_text": "when implementing an analytical method that is reported in the literature",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.2_2_1.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_2_1.005",
+      "source_unit_id": "ich_m10.su.2_2_1.001",
+      "condition_text": "when a commercial kit is repurposed for bioanalytical use in drug development",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.2_2_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_2_1.006",
+      "source_unit_id": "ich_m10.su.2_2_1.001",
+      "condition_text": "For chromatographic methods",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_2_1.007",
+      "source_unit_id": "ich_m10.su.2_2_1.001",
+      "condition_text": "For LBAs",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_2_1.008",
+      "source_unit_id": "ich_m10.su.2_2_1.001",
+      "condition_text": "for the primary matrix intended to support regulatory submissions",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_2_1.009",
+      "source_unit_id": "ich_m10.su.2_2_1.001",
+      "condition_text": "intended to support regulatory submissions",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.2_2_3.001",
+      "source_unit_id": "ich_m10.su.2_2_3.001",
+      "condition_text": "when multiple bioanalytical methods and/or multiple bioanalytical laboratories are involved",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.2_2_3.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_2.001",
+      "source_unit_id": "ich_m10.su.6_2.001",
+      "condition_text": "when multiple bioanalytical methods and/or multiple bioanalytical laboratories are involved",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.6_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_2.002",
+      "source_unit_id": "ich_m10.su.6_2.001",
+      "condition_text": "Data are obtained from different fully validated methods within a study",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.6_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_2.003",
+      "source_unit_id": "ich_m10.su.6_2.001",
+      "condition_text": "Data are obtained within a study from different laboratories with the same bioanalytical method",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.6_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_2.004",
+      "source_unit_id": "ich_m10.su.6_2.001",
+      "condition_text": "If data are obtained from different fully validated methods, and these data are not to be combined across studies",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_m10.kr.6_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_2.005",
+      "source_unit_id": "ich_m10.su.6_2.001",
+      "condition_text": "if possible",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.6_2.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_2.006",
+      "source_unit_id": "ich_m10.su.6_2.002",
+      "condition_text": "if available",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.6_2.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_2.007",
+      "source_unit_id": "ich_m10.su.6_2.002",
+      "condition_text": "for samples analysed by each method",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.6_2.010"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_2.008",
+      "source_unit_id": "ich_m10.su.6_2.002",
+      "condition_text": "with both methods, or in both laboratories",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.6_2.007",
+        "ich_m10.kr.6_2.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_2.009",
+      "source_unit_id": "ich_m10.su.6_2.002",
+      "condition_text": "in the conduct of one comparative BA/BE study",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_1.001",
+      "source_unit_id": "ich_m10.su.6_1.002",
+      "condition_text": "If stability is established at one facility",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.6_1.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_1.002",
+      "source_unit_id": "ich_m10.su.6_1.003",
+      "condition_text": "For chromatographic methods",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.6_1.004",
+        "ich_m10.kr.6_1.005",
+        "ich_m10.kr.6_1.006",
+        "ich_m10.kr.6_1.007",
+        "ich_m10.kr.6_1.008",
+        "ich_m10.kr.6_1.009",
+        "ich_m10.kr.6_1.010",
+        "ich_m10.kr.6_1.011",
+        "ich_m10.kr.6_1.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_1.003",
+      "source_unit_id": "ich_m10.su.6_1.003",
+      "condition_text": "typical bioanalytical method modifications or changes that fall into this category include, but are not limited to",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.6_1.004",
+        "ich_m10.kr.6_1.005",
+        "ich_m10.kr.6_1.006",
+        "ich_m10.kr.6_1.007",
+        "ich_m10.kr.6_1.008",
+        "ich_m10.kr.6_1.009",
+        "ich_m10.kr.6_1.010",
+        "ich_m10.kr.6_1.011",
+        "ich_m10.kr.6_1.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_1.004",
+      "source_unit_id": "ich_m10.su.6_1.012",
+      "condition_text": "For LBAs",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m10.kr.6_1.013",
+        "ich_m10.kr.6_1.014",
+        "ich_m10.kr.6_1.015",
+        "ich_m10.kr.6_1.016",
+        "ich_m10.kr.6_1.017",
+        "ich_m10.kr.6_1.018",
+        "ich_m10.kr.6_1.019",
+        "ich_m10.kr.6_1.020",
+        "ich_m10.kr.6_1.021"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_1.005",
+      "source_unit_id": "ich_m10.su.6_1.012",
+      "condition_text": "typical bioanalytical method modifications or changes that fall into this category include, but are not limited to",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m10.kr.6_1.013",
+        "ich_m10.kr.6_1.014",
+        "ich_m10.kr.6_1.015",
+        "ich_m10.kr.6_1.016",
+        "ich_m10.kr.6_1.017",
+        "ich_m10.kr.6_1.018",
+        "ich_m10.kr.6_1.019",
+        "ich_m10.kr.6_1.020",
+        "ich_m10.kr.6_1.021"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m10.cond.6_1.006",
+      "source_unit_id": "ich_m10.su.6_1.021",
+      "condition_text": "If these criteria are not satisfied",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m10.kr.6_1.023"
+      ],
+      "review_status": "reviewed"
+    }
+  ],
+  "cross_references": []
+}
