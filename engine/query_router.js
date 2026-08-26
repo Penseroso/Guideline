@@ -136,6 +136,67 @@ function areSiblings(a, b) {
   return false;
 }
 
+function isListQuery(question, qTokens) {
+  const lowerQ = (question || "").toLowerCase();
+  const listTerms = [
+    "항목", "리스트", "목록", "요건", "요구사항", "체크리스트", "사항", "원칙들", "기준들",
+    "list", "items", "requirements", "checklist", "principles", "components", "factors", "steps", "rules"
+  ];
+  return listTerms.some((k) => lowerQ.includes(k) || qTokens.has(k));
+}
+
+function tryListCompositeQuery(scored, qTokens, question) {
+  if (!isListQuery(question, qTokens)) return null;
+
+  // Group scored records by section_id (or topic_scope if section_id is missing)
+  const groups = new Map();
+  for (const { record, score, matchedCount } of scored) {
+    const key = record.section_id || record.topic_scope || "global";
+    if (!groups.has(key)) {
+      const cite = record.citations ? record.citations[0] : null;
+      const title = `${record.guideline_code || record.document_id || 'Guideline'} §${record.section_number || ''} ${(record.section_path && record.section_path.slice(-1)[0]) || record.topic_scope || ''}`;
+      groups.set(key, { key, title, maxScore: 0, totalScore: 0, items: [] });
+    }
+    const g = groups.get(key);
+    g.maxScore = Math.max(g.maxScore, score);
+    g.totalScore += score;
+    // Deduplicate records by source_text to keep list concise
+    if (!g.items.some((it) => it.source_text === record.source_text || (it.parameter && it.parameter === record.parameter))) {
+      g.items.push(record);
+    }
+  }
+
+  const sortedGroups = [...groups.values()].sort((a, b) => {
+    if (b.maxScore !== a.maxScore) return b.maxScore - a.maxScore;
+    return b.totalScore - a.totalScore;
+  });
+
+  if (sortedGroups.length === 0) return null;
+  const topGroup = sortedGroups[0];
+
+  // Must have a confident score and at least 2 distinct items
+  if (topGroup.maxScore < 4.0 || topGroup.items.length < 2) {
+    return null;
+  }
+
+  // If there is a second group with an equal max score and comparable total score from a completely different document/topic, abstain
+  if (sortedGroups.length > 1) {
+    const secondGroup = sortedGroups[1];
+    if (secondGroup.maxScore === topGroup.maxScore && secondGroup.totalScore >= topGroup.totalScore * 0.9) {
+      return null;
+    }
+  }
+
+  return {
+    record: topGroup.items[0],
+    score: topGroup.maxScore,
+    isComposite: true,
+    isListComposite: true,
+    bundleTitle: topGroup.title,
+    compositeRecords: topGroup.items.slice(0, 10)
+  };
+}
+
 /**
  * Option A: structured match, no generation. Returns the best-scoring
  * answerable match (single or sibling composite), or null if nothing scores
@@ -162,6 +223,12 @@ function structuredQuery(question, records) {
     if (typeDelta !== 0) return typeDelta;
     return b.matchedCount - a.matchedCount;
   });
+
+  // Check if this is a multi-item list / requirements query
+  const listCompositeMatch = tryListCompositeQuery(scored, qTokens, question);
+  if (listCompositeMatch) {
+    return listCompositeMatch;
+  }
 
   const maxScore = scored[0].score;
   const topTied = scored.filter((s) => s.score === maxScore);
@@ -227,17 +294,6 @@ function formatSingleCriterion(record) {
     (record.denominator_or_reference ? ` (${record.denominator_or_reference})` : "");
 }
 
-/**
- * Renders a KR/QC's own attached Conditions (record.applicable_conditions,
- * engine/data_store.js) as a verbatim caveat block. Cherry-picked from the
- * M6 Applicability Engine spike's audit finding that this data was already
- * being computed correctly (the condition_ids reverse-index fix) but never
- * shown to the end user — docs/milestone_log.md M6 "Cherry-pick audit".
- * Shows only the source's own condition_text, never a judgment about
- * whether it holds for the reader's situation (that determination was the
- * discarded Applicability layer's job, out of scope here per
- * docs/project_scope.md's non-goals).
- */
 function formatApplicableConditions(conditions) {
   if (!conditions || conditions.length === 0) return "";
   const lines = conditions.map((c) => `  - (${c.condition_type}) "${c.condition_text}"`);
@@ -263,6 +319,30 @@ function formatCrossReferences(crossReferences) {
   return `\n\n📎 규제 개정 및 관련 조항 참고 (Note on Guideline History & Related References):\n${lines.join("\n")}`;
 }
 
+function formatListCompositeAnswer(match) {
+  const records = match.compositeRecords;
+  const title = (match.bundleTitle || "").trim();
+  const header = title ? `📋 [${title}] 관련 주요 요건 및 기준 목록:` : "📋 관련 주요 요건 및 기준 목록:";
+
+  const items = [];
+  for (const r of records) {
+    const cite = formatCitation(r.citations ? r.citations[0] : null);
+    if (r.type === "quantitative_criterion") {
+      items.push(`  • ${formatSingleCriterion(r)} (출처: ${cite})`);
+    } else if (r.type === "knowledge_record") {
+      items.push(`  • [${r.record_type || '요건'}] "${r.source_text}" — ${cite}`);
+    } else if (r.type === "condition") {
+      items.push(`  • [단서조항 (${r.condition_type})] "${r.source_text}" — ${cite}`);
+    }
+  }
+
+  const allConditions = records.flatMap((r) => r.applicable_conditions || []);
+  const uniqueConditions = [...new Map(allConditions.map((c) => [c.condition_text, c])).values()];
+  const allXrefs = records.flatMap((r) => r.cross_references || []);
+
+  return `${header}\n\n${items.join("\n")}${formatApplicableConditions(uniqueConditions)}${formatCrossReferences(allXrefs)}`;
+}
+
 function formatCompositeAnswer(records) {
   const primary = records[0];
   const citation = primary.citations[0];
@@ -280,8 +360,13 @@ function formatAnswer(match) {
   const isMatchObj = match && match.record;
   const record = isMatchObj ? match.record : match;
 
-  if (isMatchObj && match.isComposite && match.compositeRecords && match.compositeRecords.length > 1) {
-    return formatCompositeAnswer(match.compositeRecords);
+  if (isMatchObj && match.isComposite) {
+    if (match.isListComposite && match.compositeRecords && match.compositeRecords.length > 1) {
+      return formatListCompositeAnswer(match);
+    }
+    if (match.compositeRecords && match.compositeRecords.length > 1) {
+      return formatCompositeAnswer(match.compositeRecords);
+    }
   }
 
   const citation = record.citations ? record.citations[0] : null;

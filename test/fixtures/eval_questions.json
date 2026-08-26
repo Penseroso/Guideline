@@ -78,10 +78,12 @@
       "expect_text_contains": "5"
     },
     {
-      "id": "q13_ko_full_val_refusal",
+      "id": "q13_ko_full_val_list",
       "question": "Full validation 항목이 뭐야",
-      "expect_answered": false,
-      "note": "Full validation is not structured in the pilot archive. Must refuse instead of returning Partial validation."
+      "expect_answered": true,
+      "expect_citation_contains": "M10 §2.2.1",
+      "expect_text_contains": "Full Validation",
+      "note": "Full validation is 100% structured in ICH M10 §2.2.1 and returned via Option A list composite query."
     },
     {
       "id": "q14_scope_small_molecule_species_refusal",

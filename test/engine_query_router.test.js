@@ -137,8 +137,18 @@ test("structuredQuery formats composite sibling criteria when querying general p
 });
 
 test("structuredQuery abstains (returns null) on ambiguous queries with no clear single or sibling winner", () => {
-  const match = structuredQuery("Full validation 항목이 뭐야", records);
+  const match = structuredQuery("unknown ambiguous non-existing random protocol", records);
   assert.equal(match, null);
+});
+
+test("structuredQuery handles list composite query for structured sections", () => {
+  const match = structuredQuery("LBA 밸리데이션 항목", records);
+  assert.ok(match);
+  assert.equal(match.isListComposite, true);
+  assert.ok(match.compositeRecords.length >= 2);
+  const text = formatAnswer(match);
+  assert.match(text, /관련 주요 요건 및 기준 목록/);
+  assert.match(text, /M10/);
 });
 
 // --- Applicable-conditions caveat (cherry-picked from the M6 spike's
