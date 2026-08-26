@@ -1,5 +1,5 @@
 {
-  "applicability_model_version": "0.1.0",
+  "scope_profiles_version": "0.1.0",
   "_comment": "Data-driven replacement for the hardcoded table formerly inline in engine/data_store.js deriveRecordScope() (docs/schema.md Model 0.6.0). Behavior-preserving transcription except: (1) document matching is now exact document_id equality instead of substring includes() (docId.includes('s6')/.includes('m10')/.includes('fda')/.includes('ema') — a latent false-positive risk on any future document_id containing those substrings incidentally); (2) topic_rules gained FDA ADA-specific entries appended after all legacy entries, so no legacy record's topic_scope changes — this closes the defect where all 132 FDA ADA KnowledgeRecords fell through to topic_scope='general' with no section-path branch ever matching them.",
 
   "document_profiles": [

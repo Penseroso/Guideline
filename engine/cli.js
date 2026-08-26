@@ -1,4 +1,3 @@
-const fs = require("fs");
 const readline = require("readline");
 
 const { loadStore } = require("./data_store");
@@ -6,50 +5,11 @@ const { answer } = require("./query_router");
 const { createStore } = require("./vector_store");
 const { createClient, availableProviders } = require("./llm_client");
 const { logInteraction } = require("./query_log");
-const { createContext } = require("./regulatory_context");
 
 // Case-insensitive: a real M2 session logged "EXIT" (all-caps) as a
 // refused question instead of quitting — found live, docs/milestone_log.md M2.
 function isExitCommand(question) {
   return /^(exit|quit)$/i.test(question);
-}
-
-function isContextCommand(line) {
-  return /^:context\b/i.test(line.trim());
-}
-
-/**
- * Pure parse+apply for the interactive `:context` command (Applicability
- * Layer 0.1.0). Kept side-effect-free and separate from main()'s readline
- * loop so it's directly unit-testable, the same pattern as isExitCommand.
- * Never applies an invalid slot/value silently — createContext() throwing
- * is caught here and reported as a message, leaving the prior context
- * (`current`) untouched.
- *
- * `:context`             -> show the current context
- * `:context set K V`     -> validate and set one slot (all-or-nothing:
- *                            the whole resulting context must validate)
- * `:context clear`       -> reset to {}
- */
-function applyContextCommand(current, line) {
-  const parts = line.trim().split(/\s+/);
-  const [, sub, key, value] = parts;
-
-  if (!sub) {
-    return { context: current, message: `Current context: ${JSON.stringify(current)}` };
-  }
-  if (sub === "clear") {
-    return { context: {}, message: "Context cleared." };
-  }
-  if (sub === "set" && key && value !== undefined) {
-    try {
-      const next = createContext({ ...current, [key]: value });
-      return { context: next, message: `Set ${key}=${value}. Context: ${JSON.stringify(next)}` };
-    } catch (error) {
-      return { context: current, message: error.message };
-    }
-  }
-  return { context: current, message: "Usage: :context | :context set <slot> <value> | :context clear" };
 }
 
 /**
@@ -67,30 +27,9 @@ function setUpOptionB(records) {
   return { client, store, provider: client.provider };
 }
 
-// --context <file>: load a starting RegulatoryContext at startup. Fails
-// fast (exit 1) on an invalid file — a confirmed context is the only thing
-// this CLI will ever hand to the applicability engine, so an invalid
-// --context argument is a usage error, not something to silently ignore.
-function loadInitialContext(argv) {
-  const flagIndex = argv.indexOf("--context");
-  if (flagIndex === -1) return {};
-  const file = argv[flagIndex + 1];
-  if (!file) {
-    console.error("--context requires a file path");
-    process.exit(2);
-  }
-  try {
-    return createContext(JSON.parse(fs.readFileSync(file, "utf8")));
-  } catch (error) {
-    console.error(`Failed to load --context ${file}: ${error.message}`);
-    process.exit(1);
-  }
-}
-
 async function main() {
   const { records, index } = loadStore();
   const { client, store, provider } = setUpOptionB(records);
-  let context = loadInitialContext(process.argv.slice(2));
 
   console.log(
     `Regulatory Guideline Archive — MVP CLI.\n` +
@@ -98,7 +37,7 @@ async function main() {
     (provider
       ? `Option B fallback active (${provider}).`
       : `Option A (structured query) only — no LLM provider configured, see .env.example.`) +
-    `\nType a question, ":context" to inspect/set the RegulatoryContext, or "exit" to quit.\n`
+    `\nType a question, or "exit" to quit.\n`
   );
 
   const rl = readline.createInterface({ input: process.stdin, output: process.stdout, prompt: "> " });
@@ -116,14 +55,6 @@ async function main() {
       const question = line.trim();
       if (isExitCommand(question)) {
         rl.close();
-        return;
-      }
-      if (isContextCommand(question)) {
-        const result = applyContextCommand(context, question);
-        context = result.context;
-        console.log(result.message);
-        console.log("");
-        rl.prompt();
         return;
       }
       if (question) {
@@ -148,4 +79,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { main, setUpOptionB, isExitCommand, isContextCommand, applyContextCommand, loadInitialContext };
+module.exports = { main, setUpOptionB, isExitCommand };

@@ -82,7 +82,30 @@ const REGULATORY_SYNONYMS = {
   "약물간섭": ["drug", "tolerance", "interference"],
   "약물내성": ["drug", "tolerance"],
   "중단기준": ["stopping", "rules"],
-  "순차투여": ["sentinel", "dosing"]
+  "순차투여": ["sentinel", "dosing"],
+  // Cherry-picked from the M6 Applicability Engine spike's RegulatoryContext
+  // slot vocabulary (docs/milestone_log.md M6 "Cherry-pick audit") — real
+  // regulatory terms found missing from this dictionary while authoring
+  // that ontology's match_terms, for content this archive already has
+  // (S6(R1) species selection, EMA FIH patient population, FDA ADA assay
+  // tiers). "가능"/"불가능" were deliberately left out despite also
+  // appearing in that vocabulary — too generic in everyday Korean to add
+  // as a blanket synonym without real risk of noisy false matches.
+  "건강인": ["healthy", "volunteer"],
+  "환자": ["patient"],
+  "중증질환": ["severe", "disease"],
+  "말기질환": ["life-limiting", "disease"],
+  "내인성": ["endogenous"],
+  // "외래" is ambiguous in Korean (also commonly "outpatient" in a clinical
+  // context); mapped to "foreign" here since that's the only sense this
+  // archive's current content (S6(R1) target nature) uses.
+  "외래": ["foreign"],
+  "표적": ["target"],
+  "설치류": ["rodent"],
+  "비설치류": ["non", "rodent"],
+  "분석": ["assay"],
+  "역가": ["titration"],
+  "중화": ["neutralization"]
 };
 
 function tokenize(text) {

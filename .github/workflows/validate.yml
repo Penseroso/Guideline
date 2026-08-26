@@ -31,9 +31,3 @@ jobs:
 
       - name: Run eval harness (Option A only, no API key needed)
         run: npm run eval
-
-      - name: Validate condition bindings (Applicability Layer 0.1.0)
-        run: npm run validate:bindings
-
-      - name: Run applicability eval (deterministic, no API key needed)
-        run: npm run eval:applicability

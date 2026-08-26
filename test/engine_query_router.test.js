@@ -2,7 +2,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 
 const { loadStore } = require("../engine/data_store");
-const { structuredQuery, formatAnswer, answer, answerOptionB, NOT_FOUND, tokenize } = require("../engine/query_router");
+const { structuredQuery, formatAnswer, formatApplicableConditions, answer, answerOptionB, NOT_FOUND, tokenize } = require("../engine/query_router");
 
 const { records } = loadStore();
 
@@ -112,6 +112,13 @@ test("tokenize maps Korean regulatory synonyms and strips Korean particles", () 
   assert.ok(tokens.includes("acceptance") || tokens.includes("criteria"));
 });
 
+test("tokenize maps the Korean synonyms cherry-picked from the M6 Applicability spike's ontology (docs/milestone_log.md M6 'Cherry-pick audit')", () => {
+  assert.ok(tokenize("건강인 대상 시험").includes("healthy"));
+  assert.ok(tokenize("설치류와 비설치류").includes("rodent"));
+  assert.ok(tokenize("중증질환 환자군").includes("severe"));
+  assert.ok(tokenize("선별 분석").includes("assay"));
+});
+
 test("structuredQuery picks LLOQ accuracy (20%) over general accuracy (15%) when querying LLOQ", () => {
   const match = structuredQuery("LLOQ에서 accuracy 허용범위는?", records);
   assert.ok(match, "expected match");
@@ -132,6 +139,49 @@ test("structuredQuery formats composite sibling criteria when querying general p
 test("structuredQuery abstains (returns null) on ambiguous queries with no clear single or sibling winner", () => {
   const match = structuredQuery("Full validation 항목이 뭐야", records);
   assert.equal(match, null);
+});
+
+// --- Applicable-conditions caveat (cherry-picked from the M6 spike's
+// audit finding that a KR/QC's own attached Conditions were already
+// correctly computed via data_store.js's conditionsByTarget reverse index,
+// but never shown to the end user, docs/milestone_log.md M6 "Cherry-pick
+// audit") ---
+
+test("formatApplicableConditions renders each condition's verbatim type and text", () => {
+  const text = formatApplicableConditions([
+    { condition_type: "exception", condition_text: "unless justified" },
+    { condition_type: "precondition", condition_text: "if the study is ongoing" }
+  ]);
+  assert.match(text, /Applicable conditions:/);
+  assert.match(text, /\(exception\) "unless justified"/);
+  assert.match(text, /\(precondition\) "if the study is ongoing"/);
+});
+
+test("formatApplicableConditions returns an empty string for no conditions, undefined, or null", () => {
+  assert.equal(formatApplicableConditions([]), "");
+  assert.equal(formatApplicableConditions(undefined), "");
+  assert.equal(formatApplicableConditions(null), "");
+});
+
+test("formatAnswer appends applicable_conditions for a knowledge_record answer, verbatim, never a judgment about whether it applies", () => {
+  const record = {
+    type: "knowledge_record",
+    source_text: "some source text",
+    citations: [{ guideline_code: "TEST", section_number: "1", printed_page_label: "1", source_unit_id: "su1" }],
+    applicable_conditions: [{ condition_type: "exception", condition_text: "unless a robust rationale is provided" }]
+  };
+  const text = formatAnswer(record);
+  assert.match(text, /some source text/);
+  assert.match(text, /Applicable conditions:/);
+  assert.match(text, /unless a robust rationale is provided/);
+});
+
+test("formatAnswer against the real archive: a KR with a real attached Condition shows it as a caveat", () => {
+  const withCondition = records.find((r) => r.type === "knowledge_record" && r.applicable_conditions && r.applicable_conditions.length > 0);
+  assert.ok(withCondition, "the real archive must have at least one KR with an attached Condition");
+  const text = formatAnswer(withCondition);
+  assert.match(text, /Applicable conditions:/);
+  assert.match(text, new RegExp(withCondition.applicable_conditions[0].condition_text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
 });
 
 // --- 5-Dimensional Scope Guard Tests ---

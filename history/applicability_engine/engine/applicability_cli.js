@@ -42,62 +42,8 @@ const { loadStore } = require("./data_store");
 const { evaluateRule } = require("./applicability");
 const { createContext, proposeContext } = require("./regulatory_context");
 const { createClient, availableProviders } = require("./llm_client");
-const { createKeywordStore } = require("./vector_store");
-
-function formatCitation(citation) {
-  if (!citation) return "(citation unavailable)";
-  const page = citation.printed_page_label ? `p.${citation.printed_page_label}` : `pdf page ${citation.pdf_page_index_zero_based}`;
-  return `${citation.guideline_code || citation.document_id} §${citation.section_number || "?"}, ${page} [${citation.source_unit_id}]`;
-}
-
-function formatFinding(finding) {
-  const lines = [];
-  lines.push(`Rule ${finding.rule_id} (${finding.rule_type}, review_status=${finding.rule_review_status})`);
-  lines.push(`  Verdict: ${finding.verdict}${finding.conditional_reason ? ` (${finding.conditional_reason})` : ""}`);
-  lines.push(`  Citation: ${finding.citations.map(formatCitation).join("; ")}`);
-
-  if (finding.scope_basis.exclusions_triggered.length > 0) {
-    lines.push(`  Scope exclusion: ${finding.scope_basis.exclusions_triggered.map((e) => `${e.slot}=${e.value} excluded by ${finding.scope_basis.document_id}`).join("; ")}`);
-  }
-  if (finding.unresolved_slots.length > 0) {
-    lines.push(`  Unresolved context slots: ${finding.unresolved_slots.join(", ")}`);
-  }
-  if (finding.basis.length === 0) {
-    lines.push(`  Basis: no attached conditions.`);
-  } else {
-    lines.push(`  Basis:`);
-    for (const b of finding.basis) {
-      lines.push(`    [${b.outcome}] (${b.condition_type}) "${b.condition_text}"${b.binding_id ? ` — binding ${b.binding_id} (${b.binding_verification_status})` : ""}`);
-    }
-  }
-  return lines.join("\n");
-}
-
-/**
- * Rule discovery: reuses the existing keyword search (engine/vector_store.js
- * createKeywordStore, zero LLM cost) over only the KnowledgeRecord/
- * QuantitativeCriterion records — the two types evaluateRule() actually
- * accepts as a rule_id (engine/applicability.js resolveRule). Condition
- * entries are deliberately excluded from the search space: they are
- * evidence attached to a rule, not rules to evaluate themselves.
- */
-async function discoverRuleCandidates(question, records, topK = 5) {
-  const ruleRecords = records.filter((r) => r.type === "knowledge_record" || r.type === "quantitative_criterion");
-  const store = createKeywordStore();
-  store.index(ruleRecords);
-  const results = await store.search(question, topK);
-  return results.map(({ record, score }) => ({
-    rule_id: record.id,
-    rule_type: record.type,
-    score,
-    source_text: record.source_text,
-    citation: record.citations ? record.citations[0] : null
-  }));
-}
-
-function truncate(text, maxLength) {
-  return text.length > maxLength ? `${text.slice(0, maxLength)}...` : text;
-}
+const { discoverRuleCandidates } = require("./rule_discovery");
+const { formatFinding, truncate } = require("./applicability_format");
 
 async function runPropose(question) {
   const providers = availableProviders();
@@ -202,4 +148,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { formatCitation, formatFinding, parseArgs, runEvaluate, discoverRuleCandidates };
+module.exports = { parseArgs, runEvaluate };

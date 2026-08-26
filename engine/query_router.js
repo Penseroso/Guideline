@@ -228,13 +228,32 @@ function formatSingleCriterion(record) {
     (record.denominator_or_reference ? ` (${record.denominator_or_reference})` : "");
 }
 
+/**
+ * Renders a KR/QC's own attached Conditions (record.applicable_conditions,
+ * engine/data_store.js) as a verbatim caveat block. Cherry-picked from the
+ * M6 Applicability Engine spike's audit finding that this data was already
+ * being computed correctly (the condition_ids reverse-index fix) but never
+ * shown to the end user — docs/milestone_log.md M6 "Cherry-pick audit".
+ * Shows only the source's own condition_text, never a judgment about
+ * whether it holds for the reader's situation (that determination was the
+ * discarded Applicability layer's job, out of scope here per
+ * docs/project_scope.md's non-goals).
+ */
+function formatApplicableConditions(conditions) {
+  if (!conditions || conditions.length === 0) return "";
+  const lines = conditions.map((c) => `  - (${c.condition_type}) "${c.condition_text}"`);
+  return `\nApplicable conditions:\n${lines.join("\n")}`;
+}
+
 function formatCompositeAnswer(records) {
   const primary = records[0];
   const citation = primary.citations[0];
   const cite = formatCitation(citation);
 
   const lines = records.map((r) => `• ${formatSingleCriterion(r)}`);
-  return `Criteria for ${primary.parameter}:\n${lines.join("\n")}\nSource: "${primary.source_text}" — ${cite}`;
+  const allConditions = records.flatMap((r) => r.applicable_conditions || []);
+  const uniqueConditions = [...new Map(allConditions.map((c) => [c.condition_text, c])).values()];
+  return `Criteria for ${primary.parameter}:\n${lines.join("\n")}\nSource: "${primary.source_text}" — ${cite}${formatApplicableConditions(uniqueConditions)}`;
 }
 
 function formatAnswer(match) {
@@ -250,14 +269,14 @@ function formatAnswer(match) {
   const cite = formatCitation(citation);
 
   if (record.type === "quantitative_criterion") {
-    return `${formatSingleCriterion(record)}\nSource: "${record.source_text}" — ${cite}`;
+    return `${formatSingleCriterion(record)}\nSource: "${record.source_text}" — ${cite}${formatApplicableConditions(record.applicable_conditions)}`;
   }
 
   if (record.type === "condition") {
     return `Condition (${record.condition_type}): "${record.source_text}" — ${cite}`;
   }
 
-  return `"${record.source_text}" — ${cite}`;
+  return `"${record.source_text}" — ${cite}${formatApplicableConditions(record.applicable_conditions)}`;
 }
 
 const NOT_FOUND = "Not found in the current archive.";
@@ -388,6 +407,7 @@ module.exports = {
   scoreRecord,
   structuredQuery,
   formatCitation,
+  formatApplicableConditions,
   formatAnswer,
   answer,
   answerOptionB,

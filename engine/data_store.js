@@ -105,7 +105,7 @@ function getAncestorSections(index, sectionId) {
 
 /**
  * Data-driven replacement for the formerly-hardcoded document/section
- * classification chain (docs/schema.md Model 0.6.0; applicability_model_version
+ * classification chain (docs/schema.md Model 0.6.0; scope_profiles_version
  * 0.1.0, data/ontology/document_scope_profiles.json). Kept as a pure function
  * of (record, ancestorSections, document) so behavior stays a deterministic
  * table lookup, not a growing if/else chain. Only change from the prior
@@ -164,6 +164,21 @@ function deriveRecordScope(record, ancestorSections, document) {
 }
 
 /**
+ * Resolves a list of Condition ids into their type/text, for display as a
+ * caveat alongside an answer — verbatim condition_text only, never a
+ * judgment about whether the condition holds (that's a product-boundary
+ * line, docs/project_scope.md non-goals: this only shows what the source
+ * itself says applies, it never concludes suitability or applicability
+ * for the reader's own situation).
+ */
+function resolveConditionSummaries(index, conditionIds) {
+  return conditionIds
+    .map((id) => index.conditions.get(id))
+    .filter(Boolean)
+    .map((c) => ({ condition_type: c.condition_type, condition_text: c.condition_text }));
+}
+
+/**
  * Flattens KnowledgeRecord/QuantitativeCriterion/Condition into one
  * search/citation-ready shape for the query router. Each answerable
  * record carries its own resolved citations, verbatim source text, and
@@ -179,6 +194,7 @@ function answerableRecords(index) {
     const ancestorSections = sectionId ? getAncestorSections(index, sectionId) : [];
     const document = documentId ? index.documents.get(documentId) : null;
     const scope = deriveRecordScope(kr, ancestorSections, document);
+    const conditionIds = index.conditionsByTarget.get(kr.knowledge_record_id) || [];
 
     records.push({
       type: "knowledge_record",
@@ -188,7 +204,8 @@ function answerableRecords(index) {
       subject: kr.subject,
       action: kr.action,
       object: kr.object,
-      condition_ids: index.conditionsByTarget.get(kr.knowledge_record_id) || [],
+      condition_ids: conditionIds,
+      applicable_conditions: resolveConditionSummaries(index, conditionIds),
       original_modal_text: kr.original_modal_text,
       review_status: kr.review_status,
       source_unit_ids: kr.source_unit_ids,
@@ -221,6 +238,7 @@ function answerableRecords(index) {
       unit: qc.unit,
       denominator_or_reference: qc.denominator_or_reference,
       condition_ids: qc.condition_ids || [],
+      applicable_conditions: resolveConditionSummaries(index, qc.condition_ids || []),
       joint_with_ids: qc.joint_with_ids || [],
       is_default_with_exception: qc.is_default_with_exception || false,
       is_illustrative_example: qc.is_illustrative_example || false,
