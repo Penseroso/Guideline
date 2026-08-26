@@ -1,0 +1,608 @@
+[
+  {
+    "index": 1,
+    "question": "반복투여 독성시험 기간은 얼마나 해야 돼?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "A",
+      "text": "short-term general toxicology study duration: not_exceed 1 month (short-term general toxicology studies)\nSource: \"up to 1 month duration\" — S6(R1) §2.2, p.11 [ich_s6_r1.su.part2.2_2.002]\nApplicable conditions:\n  - (precondition) \"If there are two pharmacologically relevant species for the clinical candidate (one rodent and one non-rodent)\"",
+      "citations": [
+        {
+          "source_unit_id": "ich_s6_r1.su.part2.2_2.002",
+          "document_id": "ich_s6_r1",
+          "guideline_code": "S6(R1)",
+          "section_id": "ich_s6_r1.sec.part2.2_2",
+          "section_number": "2.2",
+          "section_title": "One or Two Species",
+          "pdf_page_index_zero_based": 14,
+          "pdf_page_index_status": "known",
+          "printed_page_label": "11",
+          "printed_page_label_status": "known",
+          "source_file_path": "source_pdfs/ICH S6.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "index": 2,
+    "question": "LLOQ에서 accuracy 허용범위는?",
+    "original": {
+      "answered": true,
+      "path": "A",
+      "text": "accuracy: within 15 % (nominal concentration at each concentration level except LLOQ)\nSource: \"within ±15% of the nominal concentration\" — M10 §3.2.5.2, p.14 [ich_m10.su.3_2_5_2.005]"
+    },
+    "current": {
+      "answered": true,
+      "path": "A",
+      "text": "accuracy: within 20 % (nominal concentration at the LLOQ)\nSource: \"except at the LLOQ, where it should be within ±20%\" — M10 §3.2.5.2, p.14 [ich_m10.su.3_2_5_2.005]\nApplicable conditions:\n  - (exception) \"at the LLOQ\"",
+      "citations": [
+        {
+          "source_unit_id": "ich_m10.su.3_2_5_2.005",
+          "document_id": "ich_m10",
+          "guideline_code": "M10",
+          "section_id": "ich_m10.sec.3_2_5_2",
+          "section_number": "3.2.5.2",
+          "section_title": "Evaluation of Accuracy and Precision",
+          "pdf_page_index_zero_based": 13,
+          "pdf_page_index_status": "known",
+          "printed_page_label": "14",
+          "printed_page_label_status": "known",
+          "source_file_path": "source_pdfs/ICH M10.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "index": 3,
+    "question": "한 run에서 QC 몇 개 넣어야 해?",
+    "original": {
+      "answered": true,
+      "path": "A",
+      "text": "replicates: at_least 5 replicates (each QC concentration level in each analytical run)\nSource: \"at least 5 replicates at each QC concentration level in each analytical run\" — M10 §3.2.5.2, p.14 [ich_m10.su.3_2_5_2.003]"
+    },
+    "current": {
+      "answered": true,
+      "path": "A",
+      "text": "replicates: at_least 5 replicates (each QC concentration level in each analytical run)\nSource: \"at least 5 replicates at each QC concentration level in each analytical run\" — M10 §3.2.5.2, p.14 [ich_m10.su.3_2_5_2.003]\nApplicable conditions:\n  - (applicability) \"Within-run accuracy and precision\"",
+      "citations": [
+        {
+          "source_unit_id": "ich_m10.su.3_2_5_2.003",
+          "document_id": "ich_m10",
+          "guideline_code": "M10",
+          "section_id": "ich_m10.sec.3_2_5_2",
+          "section_number": "3.2.5.2",
+          "section_title": "Evaluation of Accuracy and Precision",
+          "pdf_page_index_zero_based": 13,
+          "pdf_page_index_status": "known",
+          "printed_page_label": "14",
+          "printed_page_label_status": "known",
+          "source_file_path": "source_pdfs/ICH M10.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "index": 4,
+    "question": "FIH에서 시작용량 어떻게 산정해?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "FIH 시작용량은 다음을 고려해 산정합니다.\n\n- 목표는 **최소한의 약리학적 효과가 예상되면서 안전한 용량**을 찾는 것입니다.\n- 초기 용량에서 예상되는 **인체 노출**과 이후 증량 시 사전에 정한 최대 예상 노출을 특히 검토합니다. 동물과 사람 간 상대 용량보다, 동물에서 특정 효과가 관찰된 노출 또는 이전 인체 연구에서의 노출과 비교한 인체 예상 노출이 더 관련성이 큽니다.\n- 모든 비임상 정보—PD, PK, TK, 독성 프로파일, 용량/노출-효과 관계 등—를 고려합니다.\n- 시험 중 이전 코호트 또는 피험자에서 나오는 PK, PD 및 이상반응 보고 등의 임상 자료도 반영합니다. 유사한 작용기전의 분자에 대한 비임상·임상 경험도 유용할 수 있습니다.\n- 환자에서 건강한 자원자 자료 없이 FIH/초기 임상시험을 하는 경우, 질환의 특성과 포함 환자군에서의 중증도도 고려합니다. 일부 경우에는 인간 예상 약리용량보다 상당히 낮은 시작용량이 적절하지 않을 수 있습니다.\n- 시작용량, 최대 노출 및 증량 단계는 근거를 제시하여 프로토콜에 기술해야 하며, 새로운 임상 자료에 따라 증량 계획을 조정하는 의사결정 기준도 상세히 기술해야 합니다.\nSources: EMA/CHMP/SWP/28367/07 Rev. 1 §7.3, p.12 [ema_fih.su.7_3.002]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.1, p.11 [ema_fih.su.7_1.002]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.1, p.11 [ema_fih.su.7_1.003]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.1, p.11 [ema_fih.su.7_1.004]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.1, p.11 [ema_fih.su.7_1.006]",
+      "citations": []
+    }
+  },
+  {
+    "index": 5,
+    "question": "펩타이드에서 비임상 안전성을 볼때 종 선택은 어떻게 해?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive.",
+      "citations": []
+    }
+  },
+  {
+    "index": 6,
+    "question": "저분자 화합물에서 비임상 안전성을 볼때 종 선택은 어떻게 해?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive. (a generated answer failed citation verification: NOAEL 관련 부분과 ‘가장 관련성 있는 종이 반드시 가장 민감한 종일 필요는 없다’는 부분은 원문에 직접 있습니다. 그러나 원문은 사람·동물 간 민감도 차이는 ‘고려해야 한다’고 하고, 표적 결합·수용체 점유율 및 약리 용량 노출은 MABEL/PAD/ATD 계산에서 ‘고려해야 한다’고 합니다. 청구문은 이를 단지 ‘고려할 수 있다’로 바꾸어 원문의 의무적 표현을 약화시켰습니다.)",
+      "citations": []
+    }
+  },
+  {
+    "index": 7,
+    "question": "partial validation은 어느 정도까지 해야 함?",
+    "original": {
+      "answered": true,
+      "path": "A",
+      "text": "\"Partial validations evaluate modifications to already fully validated bioanalytical methods. Partial validation can range from as little as one within-run accuracy and precision determination, to a nearly full validation. If stability is established at one facility it does not necessarily need to be repeated at another facility.\" — M10 §6.1, p.35 [ich_m10.su.6_1.002]"
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "Partial validation은 이미 완전히 검증된 bioanalytical method의 변경을 평가하며, 한 번의 within-run accuracy 및 precision determination만으로도 가능하고 거의 full validation 수준까지 범위가 달라질 수 있습니다. Partial validation의 파라미터는 full validation criteria를 충족해야 하며, 충족하지 못하면 추가 조사 및 validation이 필요합니다.\nSources: M10 §6.1, p.35 [ich_m10.su.6_1.002]; M10 §6.1, p.36 [ich_m10.su.6_1.021]; FDA-2019-ADA §VI.A, p.22-23 [fda_ada.su.6_a.002]; FDA-2019-ADA §VI.B, p.24 [fda_ada.su.6_b.003]; M10 §3.2.5.2, p.14 [ich_m10.su.3_2_5_2.003]",
+      "citations": []
+    }
+  },
+  {
+    "index": 8,
+    "question": "독성시험에서 high dose는 어떻게 산정해?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "제시된 발췌문에는 독성시험에서의 high dose 산정 방법은 명시되어 있지 않습니다. 다만, 비임상 안전성시험에서 NOAEL을 결정해야 하며, 가장 관련성 높은 동물종에서 NOAEL 시 달성된 노출을 이용해 사람에서의 등가 노출을 추정한다고 되어 있습니다. 이 추정은 최신 모델링(PK/PD, PBPK 등) 및/또는 알로메트릭 계수를 기반으로 할 수 있습니다.\nSources: EMA/CHMP/SWP/28367/07 Rev. 1 §7.1, p.11 [ema_fih.su.7_1.002]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.1, p.11 [ema_fih.su.7_1.003]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.1, p.11 [ema_fih.su.7_1.004]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.2, p.11 [ema_fih.su.7_2.001]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.2, p.11 [ema_fih.su.7_2.002]",
+      "citations": []
+    }
+  },
+  {
+    "index": 9,
+    "question": "ADA assay에 종류가 있어?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "있습니다. FDA는 다층 ADA 시험 접근법을 권고하며, 일반적으로 다음 종류의 시험이 포함됩니다.\n\n1. **스크리닝 분석**: 임상 검체에서 ADA를 처음 평가하는 민감한 분석입니다. 낮은 수준의 저·고친화도 ADA를 검출하도록 설계될 수 있습니다.  \n2. **확인 분석**: 스크리닝 양성 검체에서 ADA가 치료 단백질 제품에 특이적인지 확인합니다. 예를 들어 경쟁 분석을 사용할 수 있습니다.  \n3. **추가 특성화 분석**: 확인 양성 검체에 대해 적정(titration) 분석 및 중화(neutralization) 분석을 수행할 수 있습니다.  \n4. **교차반응성 분석**: 치료 단백질과 상응하는 내인성 단백질 등 다른 단백질에 대한 교차반응성을 검출하기 위한 분석이 일부 경우 필요할 수 있습니다.  \n5. **항체 특성 분석**: 일부 경우 항체 동형(isotype) 또는 에피토프 특이성을 평가하는 시험이 권고될 수 있습니다. 다중 도메인 제품에서는 보다 일반적인 도메인 특이성 평가가 흔합니다.\nSources: FDA-2019-ADA §IV.A.1, p.5 [fda_ada.su.4_a_1.002]; FDA-2019-ADA §IV.A.1, p.5-6 [fda_ada.su.4_a_1.003]; FDA-2019-ADA §IV.C.2, p.9 [fda_ada.su.4_c_2.002]; FDA-2019-ADA §IV.C.2, p.9 [fda_ada.su.4_c_2.003]; FDA-2019-ADA §VI.A, p.22-23 [fda_ada.su.6_a.002]",
+      "citations": []
+    }
+  },
+  {
+    "index": 10,
+    "question": "ADA validation 방법은?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "ADA 분석법 검증은 과학적 연구를 통해 분석법 성능 특성이 의도된 목적에 적합함을 입증하는 과정입니다. 표준작업절차에 따라 수행되어야 하며, 절차·시약 규격·허용 기준을 상세히 포함합니다.\n\n일반적으로 다음을 평가합니다: cut-point, 민감도, 특이성, 선택성, 정밀성, 재현성, 약물 내성, 견고성 및 안정성. 검증은 적절한 표적 집단의 검체로 수행해야 합니다.\n\nFDA는 다단계 ADA 시험 접근법을 권고합니다.\n1. 민감한 스크리닝 분석으로 임상 검체를 평가합니다.\n2. 스크리닝 양성 검체는 치료용 단백질 제품에 특이적인 ADA인지 확인하는 확인 분석을 수행합니다.\n3. 확인 양성 검체는 적정 및 중화 분석 등의 추가 분석으로 특성화해야 합니다. 경우에 따라 교차반응성, 항체 isotype 또는 epitope/domain 특이성 평가가 필요하거나 권고될 수 있습니다.\n\nCut-point 결정 시 FDA는 최소 50명의 치료 경험이 없는 개별 대상자 검체를, 최소 2명의 분석자가 최소 3일에 걸쳐 평가하여 최소 6회의 독립 분석 run을 생성할 것을 권고합니다. 기존 항체가 있는 검체는 확인하여 cut-point 분석에서 제외해야 하며, 필요한 경우 치료 전후 개별 결과 차이를 기반으로 treatment-boosted ADA를 판정할 수 있습니다.\n\n약물 내성은 개발 초기부터 평가하는 것이 권고됩니다. ADA 음성 대조 검체에 알려진 양의 양성 대조 항체를 넣고, 치료용 단백질 제품의 유무 및 여러 농도에서 ADA 검출 간섭 여부를 비교하는 방식으로 평가할 수 있습니다.\nSources: FDA-2019-ADA §VI.A, p.22-23 [fda_ada.su.6_a.002]; FDA-2019-ADA §IV.A.1, p.5 [fda_ada.su.4_a_1.002]; FDA-2019-ADA §IV.A.1, p.5-6 [fda_ada.su.4_a_1.003]; FDA-2019-ADA §IV.B, p.7-8 [fda_ada.su.4_b.004]; FDA-2019-ADA §IV.C.2, p.9 [fda_ada.su.4_c_2.002]",
+      "citations": []
+    }
+  },
+  {
+    "index": 11,
+    "question": "Full validation 항목이 뭐야",
+    "original": {
+      "answered": true,
+      "path": "A",
+      "text": "\"Partial validations evaluate modifications to already fully validated bioanalytical methods. Partial validation can range from as little as one within-run accuracy and precision determination, to a nearly full validation. If stability is established at one facility it does not necessarily need to be repeated at another facility.\" — M10 §6.1, p.35 [ich_m10.su.6_1.002]"
+    },
+    "current": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive. (a generated answer failed citation verification: The source states that \"Assay validation typically assesses\" the listed characteristics, not that full validation does. It does state that validation should be conducted with samples from the appropriate target population, but the claim's attribution of the assessment list specifically to full validation is unsupported.)",
+      "citations": []
+    }
+  },
+  {
+    "index": 12,
+    "question": "생식독성시험은 임상 몇 상 전에 끝내야 해?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive.",
+      "citations": []
+    }
+  },
+  {
+    "index": 13,
+    "question": "발암성 시험은 언제까지 해야 해?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive.",
+      "citations": []
+    }
+  },
+  {
+    "index": 14,
+    "question": "임상 1상 들어갈 때 필요한 비임상 시험이 뭐야?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive.",
+      "citations": []
+    }
+  },
+  {
+    "index": 15,
+    "question": "2주 임상시험이면 독성시험도 2주면 충분해?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive.",
+      "citations": []
+    }
+  },
+  {
+    "index": 16,
+    "question": "precision 기준은 어떻게 돼?",
+    "original": {
+      "answered": true,
+      "path": "B",
+      "text": "정밀도는 QC를 사용하여 동일 run 내(within-run)와 서로 다른 run 간(between-run)에서 평가해야 하며, 정확도와 동일한 run 및 데이터로 평가해야 합니다.\n\n- **Within-run 정밀도:** 각 분석 run에서 각 QC 농도 수준당 최소 5개 반복 분석.\n- **Between-run 정밀도:** 각 QC 농도 수준을 최소 2일에 걸쳐 최소 3개 분석 run에서 분석.\n- 각 run별 within-run 정밀도 데이터를 보고해야 합니다.\n- 모든 run에서 within-run 기준을 충족하지 못하면, 각 QC 수준별 overall within-run 정밀도 추정치를 계산해야 합니다.\n- Between-run(중간) 정밀도는 모든 run의 데이터를 합쳐 계산합니다.\n- 명백하고 문서화된 오류를 제외하고, 허용기준 밖의 개별 QC 결과를 포함한 모든 결과를 포함해야 합니다.\nSources: M10 §3.2.5.2, p.14 [ich_m10.su.3_2_5_2.002]; M10 §3.2.5.2, p.14 [ich_m10.su.3_2_5_2.002]; M10 §3.2.5.2, p.14 [ich_m10.su.3_2_5_2.003]; M10 §3.2.5.2, p.14 [ich_m10.su.3_2_5_2.003]; M10 §3.2.5.2, p.14 [ich_m10.su.3_2_5_2.003]"
+    },
+    "current": {
+      "answered": true,
+      "path": "A",
+      "text": "Criteria for precision:\n• precision: not_exceed 15 % (%CV of concentrations determined at each level except LLOQ)\n• precision: not_exceed 20 % (%CV at the LLOQ)\nSource: \"should not exceed 15%\" — M10 §3.2.5.2, p.14 [ich_m10.su.3_2_5_2.005]\nApplicable conditions:\n  - (exception) \"at the LLOQ\"",
+      "citations": [
+        {
+          "source_unit_id": "ich_m10.su.3_2_5_2.005",
+          "document_id": "ich_m10",
+          "guideline_code": "M10",
+          "section_id": "ich_m10.sec.3_2_5_2",
+          "section_number": "3.2.5.2",
+          "section_title": "Evaluation of Accuracy and Precision",
+          "pdf_page_index_zero_based": 13,
+          "pdf_page_index_status": "known",
+          "printed_page_label": "14",
+          "printed_page_label_status": "known",
+          "source_file_path": "source_pdfs/ICH M10.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "index": 17,
+    "question": "바이오의약품 동물종 선정할 때 receptor binding만 확인하면 돼?",
+    "original": {
+      "answered": true,
+      "path": "A",
+      "text": "\"A number of factors should be taken into account when determining species relevancy. Comparisons of target sequence homology between species can be an appropriate starting point, followed by in vitro assays to make qualitative and quantitative cross-species comparisons of relative target binding affinities and receptor/ligand occupancy and kinetics.\" — S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.002]"
+    },
+    "current": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive. (a generated answer failed citation verification: 출처는 종 적합성 평가에서 ‘표적 서열 상동성 비교’가 적절한 출발점이 될 수 있다고 하며, 그 후 in vitro 시험으로 종 간 표적 결합 친화도, receptor/ligand 점유율 및 kinetics를 비교한다고 합니다. 그러나 claim은 ‘receptor binding 확인’ 자체가 출발점이라고 표현하여 출처의 순서와 내용을 정확히 반영하지 않습니다. 나머지 relevant species 및 monoclonal antibody 관련 설명은 출처에 의해 뒷받침됩니다.)",
+      "citations": []
+    }
+  },
+  {
+    "index": 18,
+    "question": "바이ㅗ의약품에서 관련 동물종이 없으면 독성시험을 어떻게 해?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "제시된 발췌문에는 관련 동물종이 없는 경우의 독성시험 수행 방법이 명시되어 있지 않습니다.\nSources: S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.003]; S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.005]; S6(R1) §2.2, p.11 [ich_s6_r1.su.part2.2_2.002]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.2, p.11 [ema_fih.su.7_2.002]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.2, p.11 [ema_fih.su.7_2.003]",
+      "citations": []
+    }
+  },
+  {
+    "index": 19,
+    "question": "바이오 의약품에서 관련 동물종이 없으면 독성시험을 어떻게 해?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "관련 동물종을 확인할 수 없는 경우, 해당 바이오의약품이 어떤 종에서도 orthologous target과 상호작용하지 않기 때문이라면 **homologous molecules 또는 transgenic models의 사용을 고려할 수 있다**.\nSources: S6(R1) §3.3, p.3 [ich_s6_r1.su.part1.3_3.002]; S6(R1) §3.3, p.4 [ich_s6_r1.su.part1.3_3.004]; S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.003]; S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.005]; S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.006]",
+      "citations": []
+    }
+  },
+  {
+    "index": 20,
+    "question": "FIH 산정 시 NOAEL 기준으로만 시작용량 정하면 돼?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "A",
+      "text": "\"The starting dose for healthy volunteers should be a dose expected to result in an exposure lower than the PAD, unless a robust scientific rationale can be provided for a higher dose. Depending on the level of uncertainty regarding the human relevance of findings observed in nonclinical studies (see sections 4.1 to 4.4) and the knowledge of the intended target (see sections 6.1 and 6.2), the starting dose should either be related to the MABEL, PAD or NOAEL. A scientific rationale for the starting dose should be included in the protocol and may be included in the IB.\" — EMA/CHMP/SWP/28367/07 Rev. 1 §7.2, p.12 [ema_fih.su.7_2.004]",
+      "citations": [
+        {
+          "source_unit_id": "ema_fih.su.7_2.004",
+          "document_id": "ema_fih",
+          "guideline_code": "EMA/CHMP/SWP/28367/07 Rev. 1",
+          "section_id": "ema_fih.sec.7_2",
+          "section_number": "7.2",
+          "section_title": "Starting dose for healthy volunteers",
+          "pdf_page_index_zero_based": 11,
+          "pdf_page_index_status": "known",
+          "printed_page_label": "12",
+          "printed_page_label_status": "known",
+          "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "index": 21,
+    "question": "FIH 산정 시 MABEL은 언제 써야 해?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "FIH 시작용량은 비임상 소견의 인간 관련성에 대한 불확실성과 의도된 표적에 대한 지식 수준에 따라 MABEL, PAD 또는 NOAEL에 연계해야 합니다. 비임상 약리시험에서 PD 효과를 보인 노출을 바탕으로 MABEL을 산정하며, 사람과 동물 간 작용기전 민감도 차이, 표적 결합·수용체 점유율, 관련 동물종의 약리용량 노출을 고려해야 합니다. 가능하면 관련 자료를 모델링으로 통합해 MABEL을 결정합니다.\nSources: EMA/CHMP/SWP/28367/07 Rev. 1 §7.1, p.11 [ema_fih.su.7_1.002]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.1, p.11 [ema_fih.su.7_1.006]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.2, p.11 [ema_fih.su.7_2.003]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.2, p.12 [ema_fih.su.7_2.004]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.2, p.12 [ema_fih.su.7_2.005]",
+      "citations": []
+    }
+  },
+  {
+    "index": 22,
+    "question": "sentinel dosing은 언제 필요한 거야?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "첫 투여 코호트에서는 단일 피험자에게 활성 IMP 단회 투여하는 센티널 투여가 적절한 것으로 고려되며, 단회 및 반복투여 코호트 모두에서 이 접근이 예상된다. 위약 사용 설계에서는 나머지 코호트 투여 전 활성 1명과 위약 1명을 동시에 투여하는 것이 적절하다.\n\n또한 센티널 접근은 이후 단계에서도, 예를 들어 용량-반응 곡선의 가파른 구간, 표적 포화 수준 또는 프로토콜상 최대 임상 노출 수준에 접근할 때, 비선형 PK가 있는 경우, 또는 중단 기준에는 해당하지 않지만 임상 징후나 이상반응이 새로 나타나는 경우에 계속 적용하거나 새로 적용하는 것이 적절할 수 있다.\nSources: EMA/CHMP/SWP/28367/07 Rev. 1 §8.2.6, p.17 [ema_fih.su.8_2_6.002]; EMA/CHMP/SWP/28367/07 Rev. 1 §8.2.6, p.17 [ema_fih.su.8_2_6.003]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.1, p.11 [ema_fih.su.7_1.002]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.4, p.13 [ema_fih.su.7_4.002]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.6, p.14 [ema_fih.su.7_6.002]",
+      "citations": []
+    }
+  },
+  {
+    "index": 23,
+    "question": "ADA에서 screening cut point는 어떻게 정해?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "A",
+      "text": "false-positive rate for calculating the neutralization cut-point: equals 1 %\nSource: \"a 1% false-positive rate is generally recommended\" — FDA-2019-ADA §V.D, p.19-21 [fda_ada.su.5_d.003]",
+      "citations": [
+        {
+          "source_unit_id": "fda_ada.su.5_d.003",
+          "document_id": "fda_ada",
+          "guideline_code": "FDA-2019-ADA",
+          "section_id": "fda_ada.sec.5_d",
+          "section_number": "V.D",
+          "section_title": "Development of Neutralization Assay",
+          "pdf_page_index_zero_based": 21,
+          "pdf_page_index_status": "known",
+          "printed_page_label": "19-21",
+          "printed_page_label_status": "known",
+          "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "index": 24,
+    "question": "neutralizing antibody assay는 언제 해야 해?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "A",
+      "text": "\"NAb are antibodies that inhibit the specific pharmacologic effect of the therapeutic protein product. Neutralization assays assess the neutralizing potential of antibodies that bind the therapeutic protein product. The neutralizing capacity of antibodies can be assessed using a cell-based bioassay or a non-cell-based competitive ligand-binding assay. Cell-based bioassays are generally preferred over competitive ligand-binding assays for assessing NAb because cell-based bioassays are more likely to reflect the in vivo mechanism of action of the therapeutic protein product. However, non-cell-based competitive ligand-binding assays may be acceptable if cell-based bioassays are not feasible, such as when therapeutic protein products function solely by binding soluble ligands or when a cell-based assay lacks adequate sensitivity or is subject to insurmountable matrix interference.\" — FDA-2019-ADA §V.D, p.18-19 [fda_ada.su.5_d.002]",
+      "citations": [
+        {
+          "source_unit_id": "fda_ada.su.5_d.002",
+          "document_id": "fda_ada",
+          "guideline_code": "FDA-2019-ADA",
+          "section_id": "fda_ada.sec.5_d",
+          "section_number": "V.D",
+          "section_title": "Development of Neutralization Assay",
+          "pdf_page_index_zero_based": 20,
+          "pdf_page_index_status": "known",
+          "printed_page_label": "18-19",
+          "printed_page_label_status": "known",
+          "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "index": 25,
+    "question": "drug interference가 있으면 ADA assay를 어떻게 평가해야 해?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "A",
+      "text": "\"Drug tolerance may be improved using approaches such as acid dissociation that disrupt circulating ADA-drug complexes. The selectivity of the assay, the nature of the target, and the type of positive control should be taken into consideration when developing the assay because these factors impact the assessment of drug tolerance. For example, acid dissociation may not be appropriate when antibodies are acid labile or the drug target is soluble. Interference from the therapeutic protein product can be minimized by collecting subject samples at trough drug levels.\" — FDA-2019-ADA §IV.C.2, p.9 [fda_ada.su.4_c_2.003]\nApplicable conditions:\n  - (scope) \"when developing the assay\"\n  - (exception) \"when antibodies are acid labile or the drug target is soluble\"\n  - (precondition) \"when developing the assay\"",
+      "citations": [
+        {
+          "source_unit_id": "fda_ada.su.4_c_2.003",
+          "document_id": "fda_ada",
+          "guideline_code": "FDA-2019-ADA",
+          "section_id": "fda_ada.sec.4_c_2",
+          "section_number": "IV.C.2",
+          "section_title": "Drug Tolerance, Sensitivity, and Assay Suitability",
+          "pdf_page_index_zero_based": 11,
+          "pdf_page_index_status": "known",
+          "printed_page_label": "9",
+          "printed_page_label_status": "known",
+          "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "index": 26,
+    "question": "바이오의약품 독성 시험에서 원숭이를 꼭 써야 하는 건 아니지?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "A",
+      "text": "short-term general toxicology study duration: not_exceed 1 month (short-term general toxicology studies)\nSource: \"up to 1 month duration\" — S6(R1) §2.2, p.11 [ich_s6_r1.su.part2.2_2.002]\nApplicable conditions:\n  - (precondition) \"If there are two pharmacologically relevant species for the clinical candidate (one rodent and one non-rodent)\"",
+      "citations": [
+        {
+          "source_unit_id": "ich_s6_r1.su.part2.2_2.002",
+          "document_id": "ich_s6_r1",
+          "guideline_code": "S6(R1)",
+          "section_id": "ich_s6_r1.sec.part2.2_2",
+          "section_number": "2.2",
+          "section_title": "One or Two Species",
+          "pdf_page_index_zero_based": 14,
+          "pdf_page_index_status": "known",
+          "printed_page_label": "11",
+          "printed_page_label_status": "known",
+          "source_file_path": "source_pdfs/ICH S6.pdf"
+        }
+      ]
+    }
+  },
+  {
+    "index": 27,
+    "question": "바이오의약품의 Full validation 항목이 뭐야?",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive."
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "ADA assay validation은 일반적으로 다음 성능 특성을 평가합니다: cut-point, sensitivity, specificity, selectivity, precision, reproducibility, drug tolerance, robustness, stability. Validation은 assay의 성능 특성이 intended purpose에 적합함을 과학적 연구로 입증하는 과정입니다.\nSources: M10 §6.1, p.35 [ich_m10.su.6_1.002]; M10 §6.1, p.36 [ich_m10.su.6_1.021]; FDA-2019-ADA §VI.A, p.22-23 [fda_ada.su.6_a.002]; FDA-2019-ADA §VI.B, p.24 [fda_ada.su.6_b.003]; M10 §3.2.5.2, p.14 [ich_m10.su.3_2_5_2.003]",
+      "citations": []
+    }
+  },
+  {
+    "index": 28,
+    "question": "바이오의약품의 독성 시험에서 종 선택 기준은?",
+    "original": {
+      "answered": true,
+      "path": "A",
+      "text": "short-term general toxicology study duration: not_exceed 1 month (short-term general toxicology studies)\nSource: \"up to 1 month duration\" — S6(R1) §2.2, p.11 [ich_s6_r1.su.part2.2_2.002]"
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "바이오의약품 독성평가 프로그램은 시험물질이 약리학적으로 활성인 **관련 종(relevant species)** 을 사용해야 합니다. 관련 종은 수용체 또는, 단클론항체의 경우 에피토프가 발현되어 시험물질이 약리활성을 나타내는 종입니다.\n\n- 관련 종은 면역화학적 또는 기능적 시험 등으로 확인할 수 있습니다.\n- 기능적 활성 평가는 권고되며, 종 특이적 세포 기반 시스템 및/또는 in vivo 약리·독성시험에서 입증될 수 있습니다. 알려진 생물학적 반응 또는 PD 표지자의 조절은 종 관련성을 뒷받침하는 기능적 활성의 증거가 될 수 있습니다.\n- 수용체/에피토프 분포에 대한 지식은 잠재적 in vivo 독성 이해에 도움이 될 수 있습니다.\n- 일반적으로 두 개의 관련 종을 포함해야 하나, 하나의 관련 종만 확인되거나 생물학적 활성이 잘 이해된 경우 등 정당화된 경우에는 한 종으로 충분할 수 있습니다.\n- 단기시험에서 두 종이 필요하더라도, 단기 독성 프로파일이 두 종에서 유사한 경우 등에는 이후 장기 독성시험에서 한 종 사용을 정당화할 수 있습니다.\n- 동물 조직 교차반응성 평가는 종 선택에 제한적 가치가 있으나, 약리학적으로 관련된 종을 입증할 수 없는 특정 경우에는 사람과 표적 결합이 예상되는 동물 조직의 조직 결합 프로파일 비교를 통해 독성 종 선택의 지침으로 사용할 수 있습니다.\nSources: S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.005]; EMA/CHMP/SWP/28367/07 Rev. 1 §8.2.2, p.15 [ema_fih.su.8_2_2.002]; S6(R1) §3.3, p.3 [ich_s6_r1.su.part1.3_3.002]; S6(R1) §3.3, p.4 [ich_s6_r1.su.part1.3_3.004]; S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.003]",
+      "citations": []
+    }
+  },
+  {
+    "index": 29,
+    "question": "저분자 화합물의 독성 시험에서 종 선택 기준은?",
+    "original": {
+      "answered": true,
+      "path": "A",
+      "text": "short-term general toxicology study duration: not_exceed 1 month (short-term general toxicology studies)\nSource: \"up to 1 month duration\" — S6(R1) §2.2, p.11 [ich_s6_r1.su.part2.2_2.002]"
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "가장 관련성 있는 동물 종을 사용하며, 이는 반드시 가장 민감한 종일 필요는 없다. 적절한 동물시험에서 도출된 NOAEL을 사용하고, 해당 종에서 NOAEL 시 달성된 노출을 인간 등가 노출 추정에 사용한다. 추정은 최신 모델링(예: PK/PD, PBPK) 및/또는 알로메트릭 인자에 기반해야 한다.\nSources: EMA/CHMP/SWP/28367/07 Rev. 1 §8.2.2, p.15 [ema_fih.su.8_2_2.002]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.1, p.11 [ema_fih.su.7_1.002]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.1, p.11 [ema_fih.su.7_1.004]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.2, p.11 [ema_fih.su.7_2.002]",
+      "citations": []
+    }
+  },
+  {
+    "index": 30,
+    "question": "바이오의약품에서 종 선택 기준은?",
+    "original": {
+      "answered": true,
+      "path": "B",
+      "text": "안전성 평가 프로그램은 일반적으로 **관련성이 있는 두 종**을 포함해야 합니다. 다만, 다음과 같은 정당화된 경우에는 **한 종만으로 충분할 수 있습니다**.\n\n- 관련 종을 하나만 확인할 수 있는 경우\n- 바이오의약품의 생물학적 활성이 잘 이해되어 있는 경우\n- 단기 독성시험에서 두 종의 독성 프로파일이 유사하여, 이후 장기 독성시험에는 한 종 사용이 정당화될 수 있는 경우\n\n동물 조직의 조직교차반응성 평가는 종 선택에 제한적인 가치가 있습니다. 그러나 약리학적으로 관련된 종을 입증하기 위한 다른 접근법을 사용할 수 없는 특정 경우에는, 표적 결합이 예상되는 사람 및 동물 조직의 결합 프로파일을 비교하는 TCR 시험이 독성시험 종 선택을 안내하는 데 사용될 수 있습니다.\nSources: S6(R1) §3.3, p.4 [ich_s6_r1.su.part1.3_3.004]; S6(R1) §3.3, p.4 [ich_s6_r1.su.part1.3_3.004]; S6(R1) §3.3, p.4 [ich_s6_r1.su.part1.3_3.004]; S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.005]; S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.005]"
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "바이오의약품의 안전성 평가에서는 시험물질이 수용체 또는 에피토프 발현 때문에 약리학적으로 활성인 **relevant species**를 사용해야 합니다. relevant species는 면역화학적 또는 기능적 시험으로 확인할 수 있으며, 수용체/에피토프 분포 지식은 잠재적 in vivo 독성 이해에 도움이 될 수 있습니다. [2]\n\n종 선택 시에는 의도된 투여 요법의 맥락에서 표적 결합과 기능적 활성의 종 차이를 고려하여, 해당 모델이 표적 조절의 잠재적 유해 결과를 보여줄 수 있다는 신뢰를 제공해야 합니다. 일반적인 건강한 전임상 종에서 표적 발현이 매우 낮은 경우에는 세포 기반 시스템에서의 결합 친화도와 활성이 종 선택을 안내하기에 충분할 수 있습니다. [4]\n\n안전성 평가 프로그램은 통상 두 relevant species를 포함해야 하나, 하나의 relevant species만 확인되거나 바이오의약품의 생물학적 활성이 잘 이해된 경우 등 정당화된 경우에는 한 종으로 충분할 수 있습니다. [3]\n\n동물 조직의 조직교차반응성 평가는 종 선택에 제한적인 가치가 있습니다. 다만 위 접근법으로 약리학적으로 relevant species를 입증할 수 없는 특정 경우에는, 사람과 표적 결합이 예상되는 동물 조직 간 조직 결합 프로파일을 비교하는 TCR 연구가 독성시험 종 선택을 안내하는 데 사용될 수 있습니다. [5]\nSources: EMA/CHMP/SWP/28367/07 Rev. 1 §8.2.2, p.15 [ema_fih.su.8_2_2.002]; S6(R1) §3.3, p.3 [ich_s6_r1.su.part1.3_3.002]; S6(R1) §3.3, p.4 [ich_s6_r1.su.part1.3_3.004]; S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.004]; S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.005]",
+      "citations": []
+    }
+  },
+  {
+    "index": 31,
+    "question": "small molecule 의약품에서 종 선택 기준은?",
+    "original": {
+      "answered": true,
+      "path": "B",
+      "text": "새로운 독성물질을 포함한 ADC의 경우, 종 선택은 새로운 화학적 실체(new chemical entity)에 사용하는 접근법과 유사하게 사례별로 이루어져야 합니다. 예를 들어 항암제품은 ICH S9 가이드라인에 따릅니다.\nSources: S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.005]; S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.005]; S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.008]; S6(R1) §NOTES, p.17 [ich_s6_r1.su.part2.notes.note2.001]; S6(R1) §NOTES, p.17 [ich_s6_r1.su.part2.notes.note2.001]"
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "가장 관련성 있는 동물 종에서 얻은 NOAEL 노출을 사람 등가 노출 추정에 사용해야 하며, 이 종이 반드시 가장 민감한 종일 필요는 없다. 사람과 동물 간 IMP 작용기전 민감도 차이도 고려해야 한다. MABEL, PAD 또는 ATD 산정 시에는 사람 및 관련 동물 종의 표적 세포에서 수행한 in vitro 표적 결합·수용체 점유 연구와 관련 동물 종에서의 약리학적 용량 노출을 고려해야 한다.\nSources: EMA/CHMP/SWP/28367/07 Rev. 1 §8.2.2, p.15 [ema_fih.su.8_2_2.002]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.1, p.11 [ema_fih.su.7_1.002]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.1, p.11 [ema_fih.su.7_1.004]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.2, p.11 [ema_fih.su.7_2.002]; EMA/CHMP/SWP/28367/07 Rev. 1 §7.2, p.11 [ema_fih.su.7_2.003]",
+      "citations": []
+    }
+  },
+  {
+    "index": 32,
+    "question": "species selection monoclonal antibody",
+    "original": {
+      "answered": false,
+      "path": "B",
+      "text": "Not found in the current archive. (a generated answer failed citation verification: The claim closely paraphrases the source, but it states that the specified characteristics “optimise” toxicity evaluation, whereas the source says they “would optimise” the ability to evaluate it. This removes the source’s conditional qualification and makes the assertion more definite.)"
+    },
+    "current": {
+      "answered": true,
+      "path": "B",
+      "text": "For monoclonal antibodies, relevant animal species are those that express the desired epitope and demonstrate a tissue cross-reactivity profile similar to human tissues. A species that does not express the desired epitope may still have some relevance if it demonstrates comparable unintended tissue cross-reactivity to humans.\n\nSafety evaluation programs should use relevant species—species in which the test material is pharmacologically active because of receptor expression or, for monoclonal antibodies, epitope expression. Immunochemical or functional tests can identify a relevant species, and receptor/epitope distribution can help understand potential in vivo toxicity.\n\nSpecies differences in target binding and functional activity, in the intended dosing context, should provide confidence that the model can demonstrate potentially adverse consequences of target modulation. If the target is expressed at very low levels in typical healthy preclinical species, cell-based binding affinity and activity can be sufficient to guide species selection.\nSources: S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.007]; S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.008]; S6(R1) §3.3, p.3 [ich_s6_r1.su.part1.3_3.002]; S6(R1) §3.3, p.4 [ich_s6_r1.su.part1.3_3.003]; S6(R1) §2.1, p.11 [ich_s6_r1.su.part2.2_1.004]",
+      "citations": []
+    }
+  }
+]

@@ -23,13 +23,33 @@
       "section_order_status": "known"
     },
     {
+      "section_id": "fda_ada.sec.1",
+      "document_id": "fda_ada",
+      "section_number": "I",
+      "title": "INTRODUCTION",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 2,
+      "section_order_status": "known"
+    },
+    {
       "section_id": "fda_ada.sec.4_a_1",
       "document_id": "fda_ada",
       "section_number": "IV.A.1",
       "parent_section_id": "fda_ada.sec.4",
       "heading_source_unit_id": "fda_ada.su.4_a_1.001",
       "title": "Multi-Tiered Testing Approach",
-      "section_order": 2,
+      "section_order": 3,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.2",
+      "document_id": "fda_ada",
+      "section_number": "II",
+      "title": "BACKGROUND",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 4,
       "section_order_status": "known"
     },
     {
@@ -39,7 +59,17 @@
       "parent_section_id": "fda_ada.sec.4",
       "heading_source_unit_id": "fda_ada.su.4_b.001",
       "title": "Assay Cut-Point",
-      "section_order": 3,
+      "section_order": 5,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.3",
+      "document_id": "fda_ada",
+      "section_number": "III",
+      "title": "GENERAL PRINCIPLES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 6,
       "section_order_status": "known"
     },
     {
@@ -49,7 +79,17 @@
       "parent_section_id": "fda_ada.sec.4",
       "heading_source_unit_id": "fda_ada.su.4_c_2.001",
       "title": "Drug Tolerance, Sensitivity, and Assay Suitability",
-      "section_order": 4,
+      "section_order": 7,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.3_a",
+      "document_id": "fda_ada",
+      "section_number": "III.A",
+      "title": "Assays for ADA Detection",
+      "parent_section_id": "fda_ada.sec.3",
+      "heading_source_unit_id": null,
+      "section_order": 8,
       "section_order_status": "known"
     },
     {
@@ -59,7 +99,17 @@
       "parent_section_id": null,
       "heading_source_unit_id": "fda_ada.su.5.001",
       "title": "ASSAY DEVELOPMENT",
-      "section_order": 5,
+      "section_order": 9,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada.sec.3_b",
+      "document_id": "fda_ada",
+      "section_number": "III.B",
+      "title": "Limitations in Comparing ADA Incidence Across Products",
+      "parent_section_id": "fda_ada.sec.3",
+      "heading_source_unit_id": null,
+      "section_order": 10,
       "section_order_status": "known"
     },
     {
@@ -69,7 +119,7 @@
       "parent_section_id": "fda_ada.sec.5",
       "heading_source_unit_id": "fda_ada.su.5_d.001",
       "title": "Development of Neutralization Assay",
-      "section_order": 6,
+      "section_order": 11,
       "section_order_status": "known"
     },
     {
@@ -79,7 +129,7 @@
       "parent_section_id": null,
       "heading_source_unit_id": "fda_ada.su.6.001",
       "title": "ASSAY VALIDATION",
-      "section_order": 7,
+      "section_order": 12,
       "section_order_status": "known"
     },
     {
@@ -89,7 +139,7 @@
       "parent_section_id": "fda_ada.sec.6",
       "heading_source_unit_id": "fda_ada.su.6_a.001",
       "title": "General Considerations for Assay Validation",
-      "section_order": 8,
+      "section_order": 13,
       "section_order_status": "known"
     },
     {
@@ -99,7 +149,7 @@
       "parent_section_id": "fda_ada.sec.6",
       "heading_source_unit_id": "fda_ada.su.6_b.001",
       "title": "Validation of Screening Assay",
-      "section_order": 9,
+      "section_order": 14,
       "section_order_status": "known"
     },
     {
@@ -109,7 +159,7 @@
       "parent_section_id": "fda_ada.sec.6",
       "heading_source_unit_id": "fda_ada.su.6_c.001",
       "title": "Validation of Confirmatory Assay",
-      "section_order": 10,
+      "section_order": 15,
       "section_order_status": "known"
     },
     {
@@ -119,7 +169,7 @@
       "parent_section_id": "fda_ada.sec.6",
       "heading_source_unit_id": "fda_ada.su.6_e.001",
       "title": "Validation of Neutralization Assay",
-      "section_order": 11,
+      "section_order": 16,
       "section_order_status": "known"
     }
   ],
@@ -147,6 +197,116 @@
       "document_id": "fda_ada"
     },
     {
+      "source_unit_id": "fda_ada.su.1.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.1",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "This guidance provides recommendations for developing and validating assays for the detection of anti-drug antibodies (ADAs). This guidance may also apply to some peptides, oligonucleotides, and combination products on a case-by-case basis.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.1",
+        "pdf_page_index_zero_based": 4,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "1",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.2.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.2",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Therapeutic protein products may elicit immune responses in subjects, resulting in the generation of anti-drug antibodies. The clinical consequences of an immune response to a therapeutic protein product can range from no observable effect to life-threatening complications, such as anaphylaxis or cross-reactive neutralization of an essential endogenous protein.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.2",
+        "pdf_page_index_zero_based": 5,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "2",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.3.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.3",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "The risk to subjects from mounting an ADA-generating immune response to a therapeutic protein product will vary with the product. FDA recommends adopting a risk-based approach to evaluating and managing immune responses to — or immunologically related adverse clinical events associated with — therapeutic protein products that affect their pharmacokinetics, pharmacodynamics, safety, and efficacy. Immunogenicity tests should be designed to detect ADA that could mediate unwanted biological or physiological consequences such as neutralizing activity or hypersensitivity responses.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.3",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "3",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.3_a.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.3_a",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "Screening assays, also known as binding antibody assays, are used to detect antibodies that bind to the therapeutic protein product. The specificity of ADA for the therapeutic protein product is usually established by competition with a therapeutic protein in a confirmatory assay. ADAs are characterized further using titration and neutralization assays. Titration assays characterize the magnitude of the ADA response.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.3_a",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "3",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.3_b.001",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.3_b",
+      "unit_type": "paragraph",
+      "unit_order": 1,
+      "unit_order_status": "known",
+      "source_text": "FDA cautions that comparison of ADA incidence across products, even for products that share sequence or structural homology, can be misleading because detection of ADA formation is highly dependent on the sensitivity, specificity, and drug tolerance level of the assay. Additionally, the observed incidence of ADA is influenced by multiple factors including method, sample handling, timing of sample collection, concomitant medications, and disease condition. Therefore, comparing immunogenicity rates across therapeutic protein products with structural homology for the same indication is unsound, even though fully validated assays are employed.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.3_b",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "4",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "fda_ada.su.4_a_1.001",
       "section_id": "fda_ada.sec.4_a_1",
       "unit_type": "heading",
@@ -167,6 +327,94 @@
         "extraction_method": "automated text extraction with manual verification"
       },
       "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.1.002",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.1",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "In general, this document does not discuss the rationale for ADA testing or the subject- and product-specific risk factors that may contribute to immunogenicity. Also, this guidance, including any discussions of terminology used in this guidance, does not apply to in vitro diagnostic products.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.1",
+        "pdf_page_index_zero_based": 5,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "2",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.2.002",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.2",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "ADAs may alter the pharmacokinetics, pharmacodynamics, safety, and efficacy of the therapeutic protein product. Therefore, the development of valid, sensitive, specific, and selective assays to measure ADA responses is a key aspect of therapeutic protein product development.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.2",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "3",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.3_a.002",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.3_a",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "It is important to characterize this magnitude with titration assays because the impact of ADA on pharmacokinetics, pharmacodynamics, safety, and efficacy may correlate with ADA titer and persistence rather than incidence. Neutralizing antibodies (NAbs) refer to those ADA with the ability to interfere with interactions between the therapeutic protein product and its target. Neutralization assays assess ADA for neutralizing activity.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.3_a",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "3",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada.su.3_b.002",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.3_b",
+      "unit_type": "paragraph",
+      "unit_order": 2,
+      "unit_order_status": "known",
+      "source_text": "When a direct comparison of immunogenicity across different therapeutic protein products that have homology — or across similar therapeutic proteins from different sources — is needed, the comparison data should be obtained by conducting a head-to-head clinical study from which samples obtained are tested using an assay demonstrated to have equivalent sensitivity and specificity for antibodies against both therapeutic protein products.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.3_b",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "4",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
     },
     {
       "source_unit_id": "fda_ada.su.4_a_1.002",
@@ -191,6 +439,28 @@
       "document_id": "fda_ada"
     },
     {
+      "source_unit_id": "fda_ada.su.3_a.003",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.3_a",
+      "unit_type": "paragraph",
+      "unit_order": 3,
+      "unit_order_status": "known",
+      "source_text": "The optimal time to design, develop, and validate ADA assays during therapeutic protein product development depends on the risk assessment of the product. The sponsor should provide an immunogenicity risk assessment as well as a rationale for the immunogenicity testing paradigm in the original investigational new drug application (IND). FDA encourages sponsors to test samples during phase 1 and phase 2 studies using suitable screening, confirmatory, and in some instances neutralization assays. Samples derived from pivotal clinical studies should be tested with fully validated assays.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.3_a",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "3",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "fda_ada.su.4_a_1.003",
       "section_id": "fda_ada.sec.4_a_1",
       "unit_type": "paragraph",
@@ -211,6 +481,28 @@
         "extraction_method": "automated text extraction with manual verification"
       },
       "document_id": "fda_ada"
+    },
+    {
+      "source_unit_id": "fda_ada.su.3_a.004",
+      "document_id": "fda_ada",
+      "section_id": "fda_ada.sec.3_a",
+      "unit_type": "paragraph",
+      "unit_order": 4,
+      "unit_order_status": "known",
+      "source_text": "When immunogenicity poses a high clinical risk and real-time data concerning subject responses are needed (for example, when there is an endogenous counterpart with non-redundant function), FDA may request that assays suitable for their intended purpose be developed before initiating clinical studies and that testing be performed in real time. In other situations, the sponsor may store subject samples so they can be tested when suitable assays are available. At the time of license application, the sponsor should provide data supporting full validation of the assays.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf",
+        "document_id": "fda_ada",
+        "section_id": "fda_ada.sec.3_a",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "4",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
     },
     {
       "source_unit_id": "fda_ada.su.4_b.001",
@@ -2545,6 +2837,594 @@
       "object": "reduced precision when compared to ligand binding assays",
       "normalized_ko": null,
       "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.I.001",
+      "source_unit_ids": [
+        "fda_ada.su.1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This guidance",
+      "action": "provides recommendations for",
+      "object": "developing and validating assays for the detection of anti-drug antibodies (ADAs)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.I.002",
+      "source_unit_ids": [
+        "fda_ada.su.1.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "This guidance",
+      "action": "may also apply to",
+      "object": "some peptides, oligonucleotides, and combination products",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.I.003",
+      "source_unit_ids": [
+        "fda_ada.su.1.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "this document",
+      "action": "does not discuss",
+      "object": "the rationale for ADA testing or the subject- and product-specific risk factors that may contribute to immunogenicity",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.I.004",
+      "source_unit_ids": [
+        "fda_ada.su.1.002"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "this guidance, including any discussions of terminology used in this guidance",
+      "action": "does not apply to",
+      "object": "in vitro diagnostic products",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.I.005",
+      "source_unit_ids": [
+        "fda_ada.su.1.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "should",
+      "original_modal_text": "recommendations",
+      "subject": "This guidance",
+      "action": "provides recommendations for",
+      "object": "developing and validating assays for the detection of anti-drug antibodies (ADAs)",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.II.001",
+      "source_unit_ids": [
+        "fda_ada.su.2.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "Therapeutic protein products",
+      "action": "may elicit",
+      "object": "immune responses in subjects",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.II.002",
+      "source_unit_ids": [
+        "fda_ada.su.2.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "The clinical consequences of an immune response to a therapeutic protein product",
+      "action": "can range from",
+      "object": "no observable effect to life-threatening complications",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.II.003",
+      "source_unit_ids": [
+        "fda_ada.su.2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Immune responses to therapeutic protein products",
+      "action": "result in",
+      "object": "the generation of anti-drug antibodies",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.II.004",
+      "source_unit_ids": [
+        "fda_ada.su.2.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Life-threatening complications",
+      "action": "includes",
+      "object": "anaphylaxis",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.II.005",
+      "source_unit_ids": [
+        "fda_ada.su.2.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Life-threatening complications",
+      "action": "include",
+      "object": "anaphylaxis or cross-reactive neutralization of an essential endogenous protein",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.II.006",
+      "source_unit_ids": [
+        "fda_ada.su.2.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "ADAs",
+      "action": "may alter",
+      "object": "the pharmacokinetics of the therapeutic protein product",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.II.007",
+      "source_unit_ids": [
+        "fda_ada.su.2.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The development of valid, sensitive, specific, and selective assays to measure ADA responses",
+      "action": "is",
+      "object": "a key aspect of therapeutic protein product development",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.II.008",
+      "source_unit_ids": [
+        "fda_ada.su.2.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can",
+      "subject": "The clinical consequences of an immune response to a therapeutic protein product",
+      "action": "can range from",
+      "object": "no observable effect to life-threatening complications",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III.001",
+      "source_unit_ids": [
+        "fda_ada.su.3.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "will",
+      "subject": "The risk to subjects from mounting an ADA-generating immune response to a therapeutic protein product",
+      "action": "will vary with",
+      "object": "the product",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III.002",
+      "source_unit_ids": [
+        "fda_ada.su.3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "recommends",
+      "subject": "The sponsor",
+      "action": "should adopt",
+      "object": "a risk-based approach to evaluating and managing immune responses to — or immunologically related adverse clinical events associated with — therapeutic protein products",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III.003",
+      "source_unit_ids": [
+        "fda_ada.su.3.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "unwanted biological or physiological consequences",
+      "action": "includes",
+      "object": "neutralizing activity",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III.004",
+      "source_unit_ids": [
+        "fda_ada.su.3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The risk to subjects from mounting an ADA-generating immune response to a therapeutic protein product",
+      "action": "will vary with",
+      "object": "the product",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.001",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Screening assays",
+      "action": "are used to detect",
+      "object": "antibodies that bind to the therapeutic protein product",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.002",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "ADAs",
+      "action": "are characterized further using",
+      "object": "titration assays",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.003",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Titration assays",
+      "action": "characterize",
+      "object": "the magnitude of the ADA response",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.004",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "usually",
+      "subject": "The specificity of ADA for the therapeutic protein product",
+      "action": "is established by",
+      "object": "competition with a therapeutic protein in a confirmatory assay",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.005",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "important to",
+      "subject": "The magnitude of the ADA response",
+      "action": "should be characterized with",
+      "object": "titration assays",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.006",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "important",
+      "subject": "The magnitude of the ADA response",
+      "action": "is important to characterize with",
+      "object": "titration assays",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.007",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "The impact of ADA on pharmacokinetics, pharmacodynamics, safety, and efficacy",
+      "action": "may correlate with",
+      "object": "ADA titer and persistence rather than incidence",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.008",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.002"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Neutralizing antibodies (NAbs)",
+      "action": "refer to",
+      "object": "those ADA with the ability to interfere with interactions between the therapeutic protein product and its target",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.009",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Neutralization assays",
+      "action": "assess ADA for",
+      "object": "neutralizing activity",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.010",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The optimal time to design, develop, and validate ADA assays",
+      "action": "depends on",
+      "object": "the risk assessment of the product",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.011",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The sponsor",
+      "action": "should provide",
+      "object": "an immunogenicity risk assessment",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.012",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "may request",
+      "subject": "The sponsor",
+      "action": "may be requested to develop",
+      "object": "assays suitable for their intended purpose before initiating clinical studies",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.013",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.004"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "The sponsor",
+      "action": "may store",
+      "object": "subject samples so they can be tested when suitable assays are available",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.014",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.004"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The sponsor",
+      "action": "should provide",
+      "object": "data supporting full validation of the assays",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.015",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Screening assays",
+      "action": "are also known as",
+      "object": "binding antibody assays",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_A.016",
+      "source_unit_ids": [
+        "fda_ada.su.3_a.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Screening assays",
+      "action": "are used to detect",
+      "object": "antibodies that bind to the therapeutic protein product",
+      "normalized_ko": null,
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_B.001",
+      "source_unit_ids": [
+        "fda_ada.su.3_b.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can be misleading",
+      "subject": "Comparison of ADA incidence across products",
+      "action": "can be misleading",
+      "object": null,
+      "normalized_ko": "Comparison of ADA incidence across products can be misleading.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_B.002",
+      "source_unit_ids": [
+        "fda_ada.su.3_b.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Detection of ADA formation",
+      "action": "is highly dependent on",
+      "object": "the sensitivity, specificity, and drug tolerance level of the assay",
+      "normalized_ko": "ADA detection depends on assay sensitivity, specificity, and drug tolerance.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_B.003",
+      "source_unit_ids": [
+        "fda_ada.su.3_b.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The observed incidence of ADA",
+      "action": "is influenced by",
+      "object": "multiple factors",
+      "normalized_ko": "Observed ADA incidence is influenced by multiple factors.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_B.004",
+      "source_unit_ids": [
+        "fda_ada.su.3_b.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Comparing immunogenicity rates across therapeutic protein products with structural homology for the same indication",
+      "action": "is unsound",
+      "object": null,
+      "normalized_ko": "Comparing immunogenicity rates across structurally homologous therapeutic protein products for the same indication is unsound.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_B.005",
+      "source_unit_ids": [
+        "fda_ada.su.3_b.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Influencing factors",
+      "action": "includes",
+      "object": "method",
+      "normalized_ko": "An influencing factor is method.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_B.006",
+      "source_unit_ids": [
+        "fda_ada.su.3_b.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Comparison data",
+      "action": "should be obtained by conducting",
+      "object": "a head-to-head clinical study",
+      "normalized_ko": "Comparison data should be obtained through a head-to-head clinical study.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_B.007",
+      "source_unit_ids": [
+        "fda_ada.su.3_b.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can be misleading",
+      "subject": "Comparison of ADA incidence across products",
+      "action": "can be misleading",
+      "object": "because detection of ADA formation is highly dependent on the sensitivity, specificity, and drug tolerance level of the assay",
+      "normalized_ko": "Comparison of ADA incidence across products can be misleading because ADA detection depends heavily on assay sensitivity, specificity, and drug tolerance.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_B.008",
+      "source_unit_ids": [
+        "fda_ada.su.3_b.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Comparing immunogenicity rates",
+      "action": "is unsound",
+      "object": "across therapeutic protein products with structural homology for the same indication",
+      "normalized_ko": "Comparing immunogenicity rates across structurally homologous therapeutic protein products for the same indication is unsound.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada.kr.III_B.009",
+      "source_unit_ids": [
+        "fda_ada.su.3_b.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "cautions",
+      "subject": "comparison of ADA incidence across products",
+      "action": "can be misleading",
+      "object": null,
+      "normalized_ko": "제품 간 ADA 발생률 비교는 오해를 불러일으킬 수 있다.",
+      "review_status": "reviewed"
     }
   ],
   "quantitative_criteria": [
@@ -3730,6 +4610,229 @@
       "condition_type": "applicability",
       "applies_to_ids": [
         "fda_ada.kr.VI_E.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.I.001",
+      "source_unit_id": "fda_ada.su.1.001",
+      "condition_text": "on a case-by-case basis",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.I.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.I.002",
+      "source_unit_id": "fda_ada.su.1.001",
+      "condition_text": "on a case-by-case basis",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.I.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.I.003",
+      "source_unit_id": "fda_ada.su.1.002",
+      "condition_text": "In general",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.I.003",
+        "fda_ada.kr.I.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III.001",
+      "source_unit_id": "fda_ada.su.3.001",
+      "condition_text": "therapeutic protein products that affect their pharmacokinetics, pharmacodynamics, safety, and efficacy",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.III.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III.002",
+      "source_unit_id": "fda_ada.su.3.001",
+      "condition_text": "that could mediate unwanted biological or physiological consequences",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.III.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III.003",
+      "source_unit_id": "fda_ada.su.3.001",
+      "condition_text": "that affect their pharmacokinetics, pharmacodynamics, safety, and efficacy",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.III.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_A.001",
+      "source_unit_id": "fda_ada.su.3_a.003",
+      "condition_text": "in the original investigational new drug application (IND)",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.III_A.011",
+        "fda_ada.kr.III_A.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_A.002",
+      "source_unit_id": "fda_ada.su.3_a.003",
+      "condition_text": "in some instances",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.III_A.014"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_A.003",
+      "source_unit_id": "fda_ada.su.3_a.003",
+      "condition_text": "derived from pivotal clinical studies",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.III_A.015"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_A.004",
+      "source_unit_id": "fda_ada.su.3_a.004",
+      "condition_text": "When immunogenicity poses a high clinical risk and real-time data concerning subject responses are needed",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.III_A.016"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_A.005",
+      "source_unit_id": "fda_ada.su.3_a.004",
+      "condition_text": "In other situations",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_A.006",
+      "source_unit_id": "fda_ada.su.3_a.004",
+      "condition_text": "At the time of license application",
+      "condition_type": "scope",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_A.007",
+      "source_unit_id": "fda_ada.su.3_a.003",
+      "condition_text": "during phase 1 and phase 2 studies",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.III_A.013"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_A.008",
+      "source_unit_id": "fda_ada.su.3_a.004",
+      "condition_text": "when there is an endogenous counterpart with non-redundant function",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.III_A.015",
+        "fda_ada.kr.III_A.016"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_A.009",
+      "source_unit_id": "fda_ada.su.3_a.004",
+      "condition_text": "when suitable assays are available",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_A.010",
+      "source_unit_id": "fda_ada.su.3_a.004",
+      "condition_text": "before initiating clinical studies",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada.kr.III_A.014"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_A.011",
+      "source_unit_id": "fda_ada.su.3_a.004",
+      "condition_text": "in real time",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.III_A.015"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_A.012",
+      "source_unit_id": "fda_ada.su.3_a.004",
+      "condition_text": "At the time of license application",
+      "condition_type": "applicability",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_B.001",
+      "source_unit_id": "fda_ada.su.3_b.001",
+      "condition_text": "even for products that share sequence or structural homology",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.III_B.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_B.002",
+      "source_unit_id": "fda_ada.su.3_b.001",
+      "condition_text": "even though fully validated assays are employed",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.III_B.009"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_B.003",
+      "source_unit_id": "fda_ada.su.3_b.002",
+      "condition_text": "When a direct comparison of immunogenicity across different therapeutic protein products that have homology — or across similar therapeutic proteins from different sources — is needed",
+      "condition_type": "precondition",
+      "applies_to_ids": [],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_B.004",
+      "source_unit_id": "fda_ada.su.3_b.001",
+      "condition_text": "even for products that share sequence or structural homology",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada.kr.III_B.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada.cond.III_B.005",
+      "source_unit_id": "fda_ada.su.3_b.001",
+      "condition_text": "across therapeutic protein products with structural homology for the same indication",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada.kr.III_B.003"
       ],
       "review_status": "reviewed"
     }

@@ -11,10 +11,10 @@
 
 | Section ID | Section Title | Printed Page | Target Priority / Status | Scope & Regulatory Focus |
 | :--- | :--- | :--- | :--- | :--- |
-| **I** | Introduction | p. 1 | `BACKLOG` | 가이던스 적용 범위 및 법적 성격 |
-| **II** | Background | p. 2 | `BACKLOG` | 면역원성 발생 기전 및 임상적 영향 |
-| **III.A** | General Principles: Assays for ADA Detection | p. 3 | `BACKLOG` | ADA 검출 기본 원칙 |
-| **III.B** | Limitations in Comparing ADA Incidence | p. 4 | `BACKLOG` | 제품 간 면역원성 발현율 비교 한계 |
+| **I** | Introduction | p. 1 | `COMPLETED` | **가이던스 적용 범위 (펩타이드/올리고/복합제제), IVD 적용 제외** (5 KR, 3 Cond) |
+| **II** | Background | p. 2 | `COMPLETED` | **면역원성 발생 기전 및 임상적 영향 (PK/PD/안전성/유효성 변동)** (8 KR) |
+| **III.A** | General Principles: Assays for ADA Detection | p. 3 | `COMPLETED` | **ADA 검출 기본 원칙, 역가/중화의 임상 연계, IND 제출 및 적기 검증** (16 KR, 12 Cond) |
+| **III.B** | Limitations in Comparing ADA Incidence | p. 4 | `COMPLETED` | **제품 간 면역원성 발현율 비교 한계 (동일 적응증/상동성 제품 간 비교 부적절, Head-to-head 필요성)** (9 KR, 5 Cond) |
 | **IV.A.1** | Assay Design: Multi-Tiered Testing Approach | p. 5 | `COMPLETED` | **M2 Q9: Multi-tiered 체계 (Screening ➔ Confirmatory ➔ Titration ➔ Neutralization)** (18 KR, 9 Cond) |
 | **IV.A.2** | Immunoglobulin Isotypes or Subtypes | p. 6 | `BACKLOG` | Ig 아이소타입(IgM, IgG, IgE, IgA) 평가 |
 | **IV.A.3** | Domain Specificity | p. 6 | `BACKLOG` | 다중 도메인 단백질(Fc-fusion, Bispecific 등) 도메인별 특이성 |
@@ -48,7 +48,7 @@
 
 ## Summary Statistics
 * **전체 섹션 수**: 33개
-* **Phase 1 적재 완료 (Completed)**: **8개 핵심 섹션** (`IV.A.1`, `IV.B`, `IV.C.2`, `V.D`, `VI.A`, `VI.B`, `VI.C`, `VI.E`)
-* **총 구조화 데이터 규모 (FDA ADA)**: **132 KnowledgeRecords, 30 QuantitativeCriteria, 53 Conditions** (총 215개 엔티티, 100% `reviewed`)
-* **M2 질의 해소율**: 5대 핵심 질문 (`Q9`, `Q10`, `Q23`, `Q24`, `Q25`) 100% 인용 가능
-* **잔여 백로그 (Backlog)**: 25개 섹션 (시약 선정, 정밀도/완건성, 면역글로불린 아이소타입, 다중도메인 특이성 등)
+* **적재 완료 섹션 수 (Completed)**: **12개 섹션** (`I`, `II`, `III.A`, `III.B`, `IV.A.1`, `IV.B`, `IV.C.2`, `V.D`, `VI.A`, `VI.B`, `VI.C`, `VI.E`)
+* **총 구조화 데이터 규모 (FDA ADA)**: **174 KnowledgeRecords, 30 QuantitativeCriteria, 76 Conditions** (총 280개 엔티티, 100% `reviewed`)
+* **아카이브 전체 엔티티 규모**: **931개 엔티티** (ICH M10 62 + ICH S6 98 + EMA FIH 491 + FDA ADA 280)
+* **잔여 백로그 (Backlog)**: 21개 섹션 (Section IV 잔여 파라미터/시약 요건, Section V/VI.D 개발/역가, Section VII/VIII 임상검체/문서화)
