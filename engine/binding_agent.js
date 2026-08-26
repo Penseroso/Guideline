@@ -16,7 +16,14 @@ const { verifyClaim } = require("./verification_agent");
  *      the declared RegulatoryContext vocabulary (runDeterministicGates).
  *   3. A separate, narrower verification-agent call checks the predicate's
  *      natural-language restatement is actually entailed by condition_text
- *      (same primitive as verification_agent.js, reused not duplicated).
+ *      (same primitive as verification_agent.js, reused not duplicated) —
+ *      catches an ADDED, unsupported claim.
+ *   3b. A separate completeness gate checks the restatement doesn't OMIT a
+ *      named alternative or the source's real conditioning fact — the
+ *      complementary failure mode entailment structurally cannot catch
+ *      (added after a live semantic audit found 6 of 15 bindable
+ *      predicates lost real information despite passing entailment,
+ *      docs/milestone_log.md M6).
  *   4. A binding_role="full_scope" claim is never trusted from the proposal
  *      step alone — it passes a stricter, separate gate first, or is
  *      demoted to "partial_scope" (never rejected outright: the weaker
@@ -137,6 +144,33 @@ function systemPrompt() {
     "whenever unsure, since a wrong full_scope claim can wrongly tell a user a rule does not apply. Never " +
     "propose \"exception\" yourself. " +
     "evidence_span MUST be an exact, minimal verbatim substring of the condition text — never a paraphrase." +
+    "\n\n" +
+    // Three rules added after a live semantic audit (docs/milestone_log.md M6)
+    // found real information loss in otherwise schema-valid, entailment-passing
+    // bindings — entailment alone only catches an added claim, never a dropped
+    // one, so these patterns slipped through until a human read all 15
+    // bindable predicates against their source text.
+    "CAPTURE EVERY NAMED ALTERNATIVE: If the condition text names multiple product types, categories, or " +
+    "values that are ALL covered by the same condition (e.g. \"X and other related Y products\", \"A, B, or " +
+    "C\"), use operator \"in\" with an array listing every one of them that has a corresponding declared " +
+    "slot value — do not pick only the first and silently drop the rest. Found live: \"monoclonal antibodies " +
+    "and other related antibody products directed at foreign targets\" was bound with operator \"equals\" to " +
+    "only \"monoclonal_antibody\", silently excluding every other antibody format the source itself includes. " +
+    "DO NOT BIND A STATUS/HISTORY FACT TO A FEASIBILITY SLOT: A slot asking whether something is POSSIBLE or " +
+    "FEASIBLE is a different semantic axis from a source statement describing something that HAS ALREADY " +
+    "HAPPENED, IS PLANNED, or IS CURRENTLY BEING DONE — even when topically related, do not bind a status/" +
+    "history statement to a feasibility-type slot. Found live: \"a TCR study WILL BE evaluated\" (a plan) and " +
+    "\"TCR studies HAVE BEEN CONDUCTED\" (a completed fact) were both wrongly bound to a slot meaning " +
+    "\"technically feasible to conduct.\" If no slot exists for the status/history axis, mark the condition " +
+    "non_bindable rather than force-fit it to the nearest topically-related slot. " +
+    "AVOID TAUTOLOGICAL PREDICATES: Before finalizing a predicate, check whether the slot=value pair you are " +
+    "about to assert would ALREADY be true for essentially every condition in this same document/section " +
+    "regardless of the source text's own actual conditioning language (e.g. asserting \"product_modality=adc\" " +
+    "inside a section that is entirely about ADCs). If so, you have captured background context, not the " +
+    "condition's real distinguishing fact — look for what the source text is ACTUALLY conditioning on instead " +
+    "(e.g. a count, an outcome, a comparison) and bind to that if a slot exists, or mark non_bindable if none " +
+    "does. Found live: \"If two species have been used to assess the safety of the ADC\" was bound only to " +
+    "\"product_modality=adc\" — true, but capturing none of the actual condition (whether two species were used)." +
     "\n\nAvailable slots:\n" +
     slotVocabularyText()
   );
@@ -408,6 +442,69 @@ async function checkFullScopeGate({ condition, siblingConditionTexts = [], clien
   return { confirmed: Boolean(result.full_scope_confirmed), reason: result.reason };
 }
 
+// --- Completeness gate ---------------------------------------------------
+//
+// A separate, narrower check from entailment, added after a live semantic
+// audit (docs/milestone_log.md M6) found 6 of 15 bindable predicates lost
+// real applicability-relevant information even though every one of them
+// passed entailment. Entailment only asks "does the predicate assert
+// something the source doesn't say" (catches an ADDED claim); it structurally
+// cannot catch a DROPPED one — a predicate naming only one of several
+// alternatives, or a tautological fact instead of the source's real
+// conditioning language, is not "wrong," just incomplete, and entailment has
+// no way to flag that. This gate asks the complementary question directly.
+//
+// Deliberately checked against the FULL condition_text, not evidence_span
+// (unlike the entailment gate) — evidence_span is itself the model's own
+// selection and can be the exact thing that's too narrow (found live: one
+// binding's evidence_span was the single word "ADC," which is trivially
+// "complete" relative to itself but says nothing about whether the
+// surrounding condition_text's real conditioning fact was captured).
+// Checking against evidence_span would make this gate unable to ever catch
+// its own motivating failure mode.
+
+const COMPLETENESS_SYSTEM_PROMPT =
+  "You judge whether a predicate's natural-language restatement captures ALL of the applicability-relevant, " +
+  "distinguishing information in a Condition's full source text, or whether the source describes a broader " +
+  "scope, an additional alternative, or an additional qualifying detail that the restatement omits. " +
+  "This is NOT the same question as whether the restatement is technically true — a restatement can be " +
+  "accurate as far as it goes and still be materially incomplete (e.g. the source names two alternative " +
+  "product types but the restatement names only one; the source states a specific conditioning fact but the " +
+  "restatement only restates an unrelated, already-true-anyway background fact instead of that condition). " +
+  "Answer complete=false whenever the source contains a distinguishing detail — an additional alternative, " +
+  "category, or qualifying fact material to when the rule applies — that the restatement does not capture, " +
+  "even partially. Answer complete=true only when the restatement captures the full applicability-relevant " +
+  "scope the source actually states — reasonable generalization vocabulary is fine, the restatement is not " +
+  "expected to quote the source verbatim.";
+
+function completenessGateSchema() {
+  return {
+    type: "object",
+    additionalProperties: false,
+    required: ["complete", "missing_aspect", "reason"],
+    properties: {
+      complete: { type: "boolean" },
+      missing_aspect: {
+        type: ["string", "null"],
+        description: "If complete=false, the specific distinguishing detail the restatement omits. Null if complete=true."
+      },
+      reason: { type: "string", minLength: 1 }
+    }
+  };
+}
+
+async function checkCompletenessGate({ condition, binding, client, model }) {
+  const claim = claimTextForBinding(binding);
+  const userText = `Condition's full source text:\n"""${condition.condition_text}"""\n\nPredicate's restatement:\n"""${claim}"""`;
+  const result = await client.complete({
+    system: COMPLETENESS_SYSTEM_PROMPT,
+    messages: [{ role: "user", content: userText }],
+    schema: completenessGateSchema(),
+    ...(model ? { model } : {})
+  });
+  return { complete: Boolean(result.complete), missing_aspect: result.missing_aspect || null, reason: result.reason };
+}
+
 // --- Orchestration -------------------------------------------------------
 
 /**
@@ -476,6 +573,15 @@ async function proposeAndVerifyBinding({
     return { binding, reasons: [`entailment failed: ${entailment.reason}`] };
   }
 
+  // Completeness is checked separately from entailment (see the gate's own
+  // comment for why one check cannot cover both directions) — a predicate
+  // that passed entailment can still have silently dropped a named
+  // alternative or the source's real conditioning fact.
+  const completeness = await checkCompletenessGate({ condition, binding, client, model: verificationModel });
+  if (!completeness.complete) {
+    return { binding, reasons: [`completeness failed: ${completeness.reason}${completeness.missing_aspect ? ` (missing: ${completeness.missing_aspect})` : ""}`] };
+  }
+
   if (binding.binding_role === "full_scope") {
     if (!hasTargetRule) {
       binding.binding_role = "partial_scope";
@@ -501,6 +607,7 @@ module.exports = {
   bindingIdFor,
   claimTextForBinding,
   checkFullScopeGate,
+  checkCompletenessGate,
   proposeAndVerifyBinding,
   findSlot,
   slotVocabulary,

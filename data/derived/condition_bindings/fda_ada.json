@@ -35,11 +35,11 @@
       "binding_id": "fda_ada.bind.IV_A_1.004",
       "condition_id": "fda_ada.cond.IV_A_1.004",
       "bindability": "non_bindable",
-      "non_bindable_reason": "narrative_reference",
+      "non_bindable_reason": "expert_judgment_required",
       "binding_role": null,
       "predicate": null,
       "evidence_span": "once samples containing antibodies are confirmed as positive",
-      "verification_status": "verified"
+      "verification_status": "needs_review"
     },
     {
       "binding_id": "fda_ada.bind.IV_A_1.005",
@@ -72,20 +72,12 @@
     {
       "binding_id": "fda_ada.bind.IV_A_1.007",
       "condition_id": "fda_ada.cond.IV_A_1.007",
-      "bindability": "bindable",
-      "non_bindable_reason": null,
-      "binding_role": "partial_scope",
-      "predicate": {
-        "all_of": [
-          {
-            "slot": "assay_tier",
-            "operator": "equals",
-            "value": "confirmatory"
-          }
-        ]
-      },
-      "evidence_span": "confirmatory assay",
-      "verification_status": "verified"
+      "bindability": "non_bindable",
+      "non_bindable_reason": "expert_judgment_required",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "Samples identified as positive in the confirmatory assay",
+      "verification_status": "needs_review"
     },
     {
       "binding_id": "fda_ada.bind.IV_A_1.008",
@@ -104,7 +96,7 @@
       "non_bindable_reason": "expert_judgment_required",
       "binding_role": null,
       "predicate": null,
-      "evidence_span": "it is important to know whether other family members are affected by ADA",
+      "evidence_span": "when the therapeutic protein product belongs to a family of proteins with high homology and it is important to know whether other family members are affected by ADA",
       "verification_status": "verified"
     },
     {
@@ -121,11 +113,11 @@
       "binding_id": "fda_ada.bind.VI_B.002",
       "condition_id": "fda_ada.cond.VI_B.002",
       "bindability": "non_bindable",
-      "non_bindable_reason": "expert_judgment_required",
+      "non_bindable_reason": "epistemic_hedge",
       "binding_role": null,
       "predicate": null,
-      "evidence_span": "normally distributed data",
-      "verification_status": "needs_review"
+      "evidence_span": "normally",
+      "verification_status": "verified"
     },
     {
       "binding_id": "fda_ada.bind.VI_B.003",
@@ -145,13 +137,13 @@
       "binding_role": null,
       "predicate": null,
       "evidence_span": "the mean varies between assays, plates, or analysts but the variance around the mean is constant",
-      "verification_status": "verified"
+      "verification_status": "needs_review"
     },
     {
       "binding_id": "fda_ada.bind.VI_B.005",
       "condition_id": "fda_ada.cond.VI_B.005",
       "bindability": "non_bindable",
-      "non_bindable_reason": "expert_judgment_required",
+      "non_bindable_reason": "narrative_reference",
       "binding_role": null,
       "predicate": null,
       "evidence_span": "When the mean is constant",
@@ -161,11 +153,11 @@
       "binding_id": "fda_ada.bind.VI_B.006",
       "condition_id": "fda_ada.cond.VI_B.006",
       "bindability": "non_bindable",
-      "non_bindable_reason": "expert_judgment_required",
+      "non_bindable_reason": "narrative_reference",
       "binding_role": null,
       "predicate": null,
-      "evidence_span": "both the mean and variance vary",
-      "verification_status": "needs_review"
+      "evidence_span": "When both the mean and variance vary",
+      "verification_status": "verified"
     },
     {
       "binding_id": "fda_ada.bind.VI_B.007",
@@ -174,7 +166,7 @@
       "non_bindable_reason": "discourse_marker",
       "binding_role": null,
       "predicate": null,
-      "evidence_span": "One approach that allows for high assurance of a 5% false-positive rate",
+      "evidence_span": "One approach",
       "verification_status": "verified"
     }
   ]

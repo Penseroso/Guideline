@@ -43,6 +43,6 @@ test("summarize counts total/passed/failures correctly", () => {
 
 test("runApplicabilityEval against the real fixture and real archive currently passes end to end (regression guard, no LLM call)", () => {
   const { summary } = runApplicabilityEval();
-  assert.equal(summary.total, 29);
-  assert.equal(summary.passed, 29, `unexpected failures: ${JSON.stringify(summary.failures)}`);
+  assert.equal(summary.total, 30);
+  assert.equal(summary.passed, 30, `unexpected failures: ${JSON.stringify(summary.failures)}`);
 });

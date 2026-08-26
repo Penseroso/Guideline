@@ -88,7 +88,7 @@
       "non_bindable_reason": "epistemic_hedge",
       "binding_role": null,
       "predicate": null,
-      "evidence_span": "might not necessarily",
+      "evidence_span": "might not necessarily be",
       "verification_status": "verified"
     },
     {
@@ -108,18 +108,18 @@
       "non_bindable_reason": "epistemic_hedge",
       "binding_role": null,
       "predicate": null,
-      "evidence_span": "might not necessarily be",
+      "evidence_span": "might not necessarily",
       "verification_status": "verified"
     },
     {
       "binding_id": "ema_fih.bind.7_3.001",
       "condition_id": "ema_fih.cond.7_3.001",
       "bindability": "non_bindable",
-      "non_bindable_reason": "expert_judgment_required",
+      "non_bindable_reason": "narrative_reference",
       "binding_role": null,
       "predicate": null,
       "evidence_span": "where there are no previous data in healthy volunteers",
-      "verification_status": "needs_review"
+      "verification_status": "verified"
     },
     {
       "binding_id": "ema_fih.bind.7_3.002",
@@ -135,7 +135,7 @@
       "binding_id": "ema_fih.bind.7_3.003",
       "condition_id": "ema_fih.cond.7_3.003",
       "bindability": "non_bindable",
-      "non_bindable_reason": "epistemic_hedge",
+      "non_bindable_reason": "discourse_marker",
       "binding_role": null,
       "predicate": null,
       "evidence_span": "In all cases",
@@ -148,7 +148,7 @@
       "non_bindable_reason": "expert_judgment_required",
       "binding_role": null,
       "predicate": null,
-      "evidence_span": "potential differences in target distribution, pharmacokinetics or safety profile of the IMP between healthy volunteers and patients can be foreseen",
+      "evidence_span": "If potential differences in target distribution, pharmacokinetics or safety profile of the IMP between healthy volunteers and patients can be foreseen",
       "verification_status": "verified"
     },
     {
@@ -168,25 +168,17 @@
       "non_bindable_reason": "narrative_reference",
       "binding_role": null,
       "predicate": null,
-      "evidence_span": "see ICH S9",
+      "evidence_span": "for studies in oncology patients (see ICH S9) or other severe or life-limiting diseases",
       "verification_status": "verified"
     },
     {
       "binding_id": "ema_fih.bind.7_3.007",
       "condition_id": "ema_fih.cond.7_3.007",
-      "bindability": "bindable",
-      "non_bindable_reason": null,
-      "binding_role": "partial_scope",
-      "predicate": {
-        "all_of": [
-          {
-            "slot": "subject_population",
-            "operator": "equals",
-            "value": "patient"
-          }
-        ]
-      },
-      "evidence_span": "patients with advanced cancer or life-limiting diseases",
+      "bindability": "non_bindable",
+      "non_bindable_reason": "narrative_reference",
+      "binding_role": null,
+      "predicate": null,
+      "evidence_span": "in a CT in patients with advanced cancer or life-limiting diseases",
       "verification_status": "verified"
     },
     {

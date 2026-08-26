@@ -8,6 +8,7 @@ const {
   finalizeBindingShape,
   bindingIdFor,
   claimTextForBinding,
+  checkCompletenessGate,
   proposeAndVerifyBinding
 } = require("../engine/binding_agent");
 
@@ -237,11 +238,51 @@ test("entailment failure leaves the binding needs_review — kept, not discarded
   assert.ok(reasons.some((r) => r.includes("entailment failed")));
 });
 
+test("completeness gate failure leaves the binding needs_review — kept, not discarded, and checked against the full condition_text", async () => {
+  let captured = null;
+  const client = sequentialClient([
+    draftBindable(), // proposal
+    { entailed: true, reason: "ok" }, // entailment check
+    { complete: false, missing_aspect: "the source names other related antibody products too", reason: "predicate only captures one of several named alternatives" } // completeness check
+  ]);
+  // capture the completeness call's userText to confirm it's the full condition_text, not evidence_span
+  const originalComplete = client.complete;
+  let call = 0;
+  client.complete = async (args) => {
+    call++;
+    if (call === 3) captured = args;
+    return originalComplete(args);
+  };
+  const { binding, reasons } = await proposeAndVerifyBinding({ condition: CONDITION, client, hasTargetRule: true });
+  assert.equal(binding.verification_status, "needs_review");
+  assert.ok(binding.predicate, "the binding object itself is still returned, not dropped");
+  assert.ok(reasons.some((r) => r.includes("completeness failed")));
+  assert.ok(reasons.some((r) => r.includes("missing:")));
+  assert.match(captured.messages[0].content, new RegExp(CONDITION.condition_text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), "completeness gate must check against the full condition_text, not just evidence_span");
+});
+
+test("checkCompletenessGate sends the condition_text and the binding's rendered claim, and returns the model's verdict directly", async () => {
+  let captured = null;
+  const client = {
+    complete: async (args) => {
+      captured = args;
+      return { complete: false, missing_aspect: "other antibody products", reason: "only one alternative captured" };
+    }
+  };
+  const binding = { predicate: { all_of: [{ slot: "product_modality", operator: "equals", value: "monoclonal_antibody" }] } };
+  const result = await checkCompletenessGate({ condition: CONDITION, binding, client });
+  assert.equal(result.complete, false);
+  assert.equal(result.missing_aspect, "other antibody products");
+  assert.ok(captured.schema, "must request structured output");
+  assert.match(captured.messages[0].content, /monoclonal antibody/);
+});
+
 test("a full_scope proposal with no target rule is demoted to partial_scope without an LLM full-scope-gate call", async () => {
   const client = sequentialClient([
     draftBindable({ binding_role: "full_scope" }), // proposal
-    { entailed: true, reason: "ok" } // entailment check
-    // no third response queued — must not call complete() a third time
+    { entailed: true, reason: "ok" }, // entailment check
+    { complete: true, missing_aspect: null, reason: "ok" } // completeness check
+    // no fourth response queued — must not call the full-scope gate
   ]);
   const { binding } = await proposeAndVerifyBinding({ condition: CONDITION, client, hasTargetRule: false });
   assert.equal(binding.binding_role, "partial_scope");
@@ -252,6 +293,7 @@ test("full_scope gate demotes to partial_scope when the gate is not confirmed, b
   const client = sequentialClient([
     draftBindable({ binding_role: "full_scope" }), // proposal
     { entailed: true, reason: "ok" }, // entailment check
+    { complete: true, missing_aspect: null, reason: "ok" }, // completeness check
     { full_scope_confirmed: false, reason: "a sibling condition also restricts this rule" } // full-scope gate
   ]);
   const { binding } = await proposeAndVerifyBinding({ condition: CONDITION, client, hasTargetRule: true, siblingConditionTexts: ["some other condition"] });
@@ -263,6 +305,7 @@ test("full_scope gate confirmed keeps binding_role as full_scope", async () => {
   const client = sequentialClient([
     draftBindable({ binding_role: "full_scope" }),
     { entailed: true, reason: "ok" },
+    { complete: true, missing_aspect: null, reason: "ok" },
     { full_scope_confirmed: true, reason: "no sibling conditions and the wording is exhaustive" }
   ]);
   const { binding } = await proposeAndVerifyBinding({ condition: CONDITION, client, hasTargetRule: true });
@@ -277,7 +320,8 @@ test("condition_type=exception always yields binding_role=exception regardless o
       leaves: [{ slot: "relevant_species_availability", operator: "equals", value: "one", values: null }],
       evidence_span: "scientific rationale for using non-rodents"
     }),
-    { entailed: true, reason: "ok" }
+    { entailed: true, reason: "ok" },
+    { complete: true, missing_aspect: null, reason: "ok" }
     // no full-scope-gate call expected: exception role bypasses that gate entirely
   ]);
   const { binding } = await proposeAndVerifyBinding({ condition: EXCEPTION_CONDITION, client, hasTargetRule: true });
