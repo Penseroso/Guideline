@@ -1,0 +1,176 @@
+{
+  "sections": [
+    {
+      "section_id": "ich_m3_r2.sec.8",
+      "document_id": "ich_m3_r2",
+      "section_number": "8",
+      "title": "LOCAL TOLERANCE STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 80,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.9",
+      "document_id": "ich_m3_r2",
+      "section_number": "9",
+      "title": "GENOTOXICITY STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 90,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.10",
+      "document_id": "ich_m3_r2",
+      "section_number": "10",
+      "title": "CARCINOGENICITY STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 100,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.11",
+      "document_id": "ich_m3_r2",
+      "section_number": "11",
+      "title": "REPRODUCTION TOXICITY STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 110,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.11_1",
+      "document_id": "ich_m3_r2",
+      "section_number": "11.1",
+      "title": "Men",
+      "parent_section_id": "ich_m3_r2.sec.11",
+      "heading_source_unit_id": null,
+      "section_order": 111,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.11_2",
+      "document_id": "ich_m3_r2",
+      "section_number": "11.2",
+      "title": "Women Not of Childbearing Potential",
+      "parent_section_id": "ich_m3_r2.sec.11",
+      "heading_source_unit_id": null,
+      "section_order": 112,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.11_3",
+      "document_id": "ich_m3_r2",
+      "section_number": "11.3",
+      "title": "Women of Childbearing Potential",
+      "parent_section_id": "ich_m3_r2.sec.11",
+      "heading_source_unit_id": null,
+      "section_order": 113,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.11_4",
+      "document_id": "ich_m3_r2",
+      "section_number": "11.4",
+      "title": "Pregnant Women",
+      "parent_section_id": "ich_m3_r2.sec.11",
+      "heading_source_unit_id": null,
+      "section_order": 114,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.12",
+      "document_id": "ich_m3_r2",
+      "section_number": "12",
+      "title": "CLINICAL TRIALS IN PEDIATRIC POPULATIONS",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 120,
+      "section_order_status": "known"
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "ich_m3_r2.su.8.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.8",
+      "unit_order": 800,
+      "unit_type": "paragraph",
+      "source_text": "It is preferable to evaluate local tolerance by the intended therapeutic route as part of the general toxicity studies; stand alone studies are generally not recommended. To support limited human administration by non-therapeutic routes (e.g., a single i.v. dose to determine absolute bioavailability of an oral drug), a single dose local tolerance study in a single species is considered appropriate.",
+      "pdfPage": 23,
+      "printedPage": "17"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.9.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.9",
+      "unit_order": 900,
+      "unit_type": "paragraph",
+      "source_text": "Prior to first-in-human clinical trials, an assay for gene mutation (Ames test) and an in vitro mammalian cell assay or an in vivo test for chromosomal damage should be completed. A complete battery of tests for genotoxicity (Option 1 or Option 2 in ICH S2) should be completed before the initiation of Phase II clinical trials.",
+      "pdfPage": 23,
+      "printedPage": "17"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.10.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.10",
+      "unit_order": 1000,
+      "unit_type": "paragraph",
+      "source_text": "Carcinogenicity studies are recommended for pharmaceuticals whose expected clinical use is continuous for at least 6 months, or is frequently intermittent for chronic or recurrent conditions. Carcinogenicity studies should be completed and submitted with the marketing authorization application (MAA/NDA), unless clinical safety concerns warrant earlier conduct before Phase III or Phase II.",
+      "pdfPage": 23,
+      "printedPage": "17-18"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.11_1.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.11_1",
+      "unit_order": 1110,
+      "unit_type": "paragraph",
+      "source_text": "Men can be included in Phase I and II trials before the conduct of the male fertility study since an evaluation of the male reproductive organs is performed in the repeated-dose toxicity studies. A male fertility study (ICH S5) should be completed before the initiation of large scale or long duration clinical trials (e.g., Phase III trials).",
+      "pdfPage": 24,
+      "printedPage": "18"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.11_2.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.11_2",
+      "unit_order": 1120,
+      "unit_type": "paragraph",
+      "source_text": "Women not of childbearing potential (i.e., permanently sterilised, postmenopausal) can be included in clinical trials without reproduction toxicity studies if the relevant repeated-dose toxicity studies (which include an evaluation of the female reproductive organs) have been conducted. Postmenopausal is defined as 12 months with no menses without an alternative medical cause.",
+      "pdfPage": 24,
+      "printedPage": "18"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.11_3.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.11_3",
+      "unit_order": 1130,
+      "unit_type": "paragraph",
+      "source_text": "Women of childbearing potential (WOCBP) can be included in early clinical trials when precautions to prevent pregnancy are used. Precautions include pregnancy testing and use of highly effective contraceptive methods. Preliminary embryofetal developmental toxicity studies in two species can support the inclusion of up to 150 WOCBP receiving investigational treatment for up to 3 months before definitive reprotox testing. Definitive embryo-fetal development studies in two species must be completed prior to the inclusion of WOCBP in Phase III or extensive clinical trials.",
+      "pdfPage": 24,
+      "printedPage": "18-19"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.11_4.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.11_4",
+      "unit_order": 1140,
+      "unit_type": "paragraph",
+      "source_text": "Before pregnant women are included in clinical trials, female reproduction toxicity studies (fertility, embryo-fetal development, and pre- and post-natal development) in two species and the standard battery of genotoxicity studies should be completed, and safety data from previous human exposure should be available.",
+      "pdfPage": 25,
+      "printedPage": "19"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.12.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.12",
+      "unit_order": 1200,
+      "unit_type": "paragraph",
+      "source_text": "When pediatric populations are to be included in clinical trials, safety data from previous adult animal and human exposure should be evaluated. The conduct of any juvenile animal toxicity studies should be considered only when previous animal data and human safety data are judged to be insufficient. If a juvenile study is warranted, one relevant species, preferably rodent, is generally considered adequate.",
+      "pdfPage": 25,
+      "printedPage": "19-20"
+    }
+  ]
+}

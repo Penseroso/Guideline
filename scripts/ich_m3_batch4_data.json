@@ -1,0 +1,146 @@
+{
+  "sections": [
+    {
+      "section_id": "ich_m3_r2.sec.13",
+      "document_id": "ich_m3_r2",
+      "section_number": "13",
+      "title": "IMMUNOTOXICITY",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 130,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.14",
+      "document_id": "ich_m3_r2",
+      "section_number": "14",
+      "title": "PHOTOSAFETY TESTING",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 140,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.15",
+      "document_id": "ich_m3_r2",
+      "section_number": "15",
+      "title": "NONCLINICAL ABUSE LIABILITY",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 150,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.16",
+      "document_id": "ich_m3_r2",
+      "section_number": "16",
+      "title": "OTHER TOXICITY STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 160,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.17",
+      "document_id": "ich_m3_r2",
+      "section_number": "17",
+      "title": "COMBINATION DRUG TOXICITY TESTING",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 170,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.18",
+      "document_id": "ich_m3_r2",
+      "section_number": "18",
+      "title": "CONTINUING EFFORTS TO IMPROVE HARMONIZATION",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 180,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.19",
+      "document_id": "ich_m3_r2",
+      "section_number": "19",
+      "title": "ENDNOTES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 190,
+      "section_order_status": "known"
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "ich_m3_r2.su.13.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.13",
+      "unit_order": 1300,
+      "unit_type": "paragraph",
+      "source_text": "All new pharmaceuticals should be evaluated for the potential to produce immunotoxicity using standard repeated-dose toxicity studies (hematology, lymphoid organ weights, and histology). If signs of immunotoxic potential are observed, additional immunotoxicity studies (in accordance with ICH S8) should be conducted before Phase III or earlier.",
+      "pdfPage": 26,
+      "printedPage": "20"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.14.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.14",
+      "unit_order": 1400,
+      "unit_type": "paragraph",
+      "source_text": "An initial assessment of phototoxicity potential based on photochemical properties (UV/Vis light absorption between 290 and 700 nm with molar extinction coefficient > 1000 M-1 cm-1) should be performed. If phototoxic potential is identified and the drug distributes to skin or eye, experimental testing (in vitro 3T3 NRU phototoxicity assay, in vivo, or clinical phototoxicity testing) should be completed prior to Phase III.",
+      "pdfPage": 26,
+      "printedPage": "20-21"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.15.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.15",
+      "unit_order": 1500,
+      "unit_type": "paragraph",
+      "source_text": "For pharmaceuticals that produce central nervous system (CNS) effects, nonclinical abuse liability studies should support Phase III clinical trials. The evaluation includes receptor binding profiles, behavioral pharmacology (drug discrimination and self-administration), and physical dependence assessments.",
+      "pdfPage": 27,
+      "printedPage": "21-22"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.16.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.16",
+      "unit_order": 1600,
+      "unit_type": "paragraph",
+      "source_text": "Nonclinical qualification of impurities and degradants should be conducted in accordance with ICH Q3A and Q3B. For human drug metabolites, nonclinical safety qualification (MIST) is warranted when a metabolite is formed at > 10% of total drug-related exposure in humans and at significantly lower exposure in toxicity animal species.",
+      "pdfPage": 28,
+      "printedPage": "22"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.17.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.17",
+      "unit_order": 1700,
+      "unit_type": "paragraph",
+      "source_text": "For combination drug development, combination toxicity studies of duration equivalent to the clinical trial up to a maximum duration of 90 days are recommended. A 90-day combination toxicity study in a single relevant species supports marketing authorization. If both individual entities are well characterized and no pharmacokinetic or toxicological interaction is anticipated, nonclinical combination studies might not be warranted.",
+      "pdfPage": 28,
+      "printedPage": "22-23"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.18.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.18",
+      "unit_order": 1800,
+      "unit_type": "paragraph",
+      "source_text": "Continuing efforts are underway among ICH regions to further harmonize nonclinical safety requirements and reduce unnecessary animal use while maintaining high safety standards for human clinical trials.",
+      "pdfPage": 29,
+      "printedPage": "23"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.19.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.19",
+      "unit_order": 1900,
+      "unit_type": "paragraph",
+      "source_text": "Endnotes define specific quantitative parameters: Note 1 defines the 50-fold exposure margin based on group mean AUC; Note 2 defines male reproductive evaluation in repeated-dose toxicity; Note 3 defines highly effective contraception requirements; Note 4 defines preliminary embryo-fetal studies with a minimum of 6 dams per group; Note 5 details pregnancy risk baseline rates.",
+      "pdfPage": 29,
+      "printedPage": "23-24"
+    }
+  ]
+}

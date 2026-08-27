@@ -140,6 +140,22 @@
       "expect_citation_contains": "S6(R1)",
       "expect_text_contains": "개정 이력",
       "note": "M4 Guideline Amendment query on ICH S6(R1) Addendum Notes."
+    },
+    {
+      "id": "q22_ich_m3_microdose_criteria",
+      "question": "ICH M3(R2) 마이크로도즈 임상시험(Approach 1)의 최대 투여 용량 및 NOAEL 기준은?",
+      "expect_answered": true,
+      "expect_citation_contains": "M3(R2)",
+      "expect_text_contains": "100",
+      "note": "ICH M3(R2) Section 7.1 Microdose Approach 1 requirement (100 µg / 1/100th NOAEL)."
+    },
+    {
+      "id": "q23_ich_m3_repeated_dose_duration",
+      "question": "ICH M3(R2) 기준 임상시험 기간이 3개월일 때 필요한 비임상 반복투여 독성시험 기간은?",
+      "expect_answered": true,
+      "expect_citation_contains": "M3(R2)",
+      "expect_text_contains": "3",
+      "note": "ICH M3(R2) Section 5.1 Table 1 repeated-dose toxicity duration."
     }
   ]
 }

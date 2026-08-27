@@ -15,7 +15,8 @@ const DOC_KEYWORDS = {
   ich_m10: ["m10", "ich_m10", "ich m10", "바이오분석", "생체시료", "bioanalytical", "lba", "크로마토그래피"],
   fda_ada: ["fda", "ada", "fda_ada", "면역원성", "항약물항체", "immunogenicity", "cut point", "컷포인트", "nab"],
   ema_fih: ["ema", "fih", "ema_fih", "초기임상", "임상1상", "first in human", "mabel", "sentinel", "stopping rule"],
-  ich_s6_r1: ["s6", "s6(r1)", "ich_s6", "ich s6", "비임상", "동물종", "종선택", "preclinical", "생명공학", "biotechnology"]
+  ich_s6_r1: ["s6", "s6(r1)", "ich_s6", "ich s6", "비임상", "동물종", "종선택", "preclinical", "생명공학", "biotechnology"],
+  ich_m3_r2: ["m3", "m3(r2)", "ich_m3", "ich m3", "탐색적", "마이크로도즈", "microdose", "독성시험기간", "고용량", "wocbp", "가임기"]
 };
 
 function isComparisonQuery(question) {

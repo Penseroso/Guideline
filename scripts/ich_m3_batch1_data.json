@@ -1,0 +1,236 @@
+{
+  "sections": [
+    {
+      "section_id": "ich_m3_r2.sec.1",
+      "document_id": "ich_m3_r2",
+      "section_number": "1",
+      "title": "INTRODUCTION",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 10,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.1_1",
+      "document_id": "ich_m3_r2",
+      "section_number": "1.1",
+      "title": "Objectives of the Guideline",
+      "parent_section_id": "ich_m3_r2.sec.1",
+      "heading_source_unit_id": null,
+      "section_order": 11,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.1_2",
+      "document_id": "ich_m3_r2",
+      "section_number": "1.2",
+      "title": "Background",
+      "parent_section_id": "ich_m3_r2.sec.1",
+      "heading_source_unit_id": null,
+      "section_order": 12,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.1_3",
+      "document_id": "ich_m3_r2",
+      "section_number": "1.3",
+      "title": "Scope of the Guideline",
+      "parent_section_id": "ich_m3_r2.sec.1",
+      "heading_source_unit_id": null,
+      "section_order": 13,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.1_4",
+      "document_id": "ich_m3_r2",
+      "section_number": "1.4",
+      "title": "General Principles",
+      "parent_section_id": "ich_m3_r2.sec.1",
+      "heading_source_unit_id": null,
+      "section_order": 14,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.1_5",
+      "document_id": "ich_m3_r2",
+      "section_number": "1.5",
+      "title": "High Dose Selection for General Toxicity Studies",
+      "parent_section_id": "ich_m3_r2.sec.1",
+      "heading_source_unit_id": null,
+      "section_order": 15,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.2",
+      "document_id": "ich_m3_r2",
+      "section_number": "2",
+      "title": "PHARMACOLOGY STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 20,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.3",
+      "document_id": "ich_m3_r2",
+      "section_number": "3",
+      "title": "TOXICOKINETIC AND PHARMACOKINETIC STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 30,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.4",
+      "document_id": "ich_m3_r2",
+      "section_number": "4",
+      "title": "ACUTE TOXICITY STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 40,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.5",
+      "document_id": "ich_m3_r2",
+      "section_number": "5",
+      "title": "REPEATED-DOSE TOXICITY STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 50,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.5_1",
+      "document_id": "ich_m3_r2",
+      "section_number": "5.1",
+      "title": "Clinical Development Trials",
+      "parent_section_id": "ich_m3_r2.sec.5",
+      "heading_source_unit_id": null,
+      "section_order": 51,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.5_2",
+      "document_id": "ich_m3_r2",
+      "section_number": "5.2",
+      "title": "Marketing Authorization",
+      "parent_section_id": "ich_m3_r2.sec.5",
+      "heading_source_unit_id": null,
+      "section_order": 52,
+      "section_order_status": "known"
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "ich_m3_r2.su.1_1.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.1_1",
+      "unit_order": 110,
+      "unit_type": "paragraph",
+      "source_text": "The purpose of this document is to recommend international standards for, and promote harmonisation of, the nonclinical safety studies recommended to support human clinical trials of a given scope and duration as well as marketing authorization for pharmaceuticals. Harmonisation of the guidance for nonclinical safety studies will help to define the current recommendations and reduce the likelihood that substantial differences will exist among regions. This guidance should facilitate the timely conduct of clinical trials, reduce the use of animals in accordance with the 3R (reduce/refine/replace) principles and reduce the use of other drug development resources.",
+      "pdfPage": 6,
+      "printedPage": "1"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.1_2.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.1_2",
+      "unit_order": 120,
+      "unit_type": "paragraph",
+      "source_text": "The development of a pharmaceutical is a stepwise process involving an evaluation of both animal and human safety information. The goals of the nonclinical safety evaluation generally include a characterisation of toxic effects with respect to target organs, dose dependence, relationship to exposure, and, when appropriate, potential reversibility. This information is used to estimate an initial safe starting dose and dose range for the human trials and to identify parameters for clinical monitoring for potential adverse effects.",
+      "pdfPage": 6,
+      "printedPage": "1"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.1_3.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.1_3",
+      "unit_order": 130,
+      "unit_type": "paragraph",
+      "source_text": "This guideline applies to the situations usually encountered during the development of pharmaceuticals and should be viewed as providing general guidance for drug development. For biotechnology-derived products, refer to ICH Guideline S6. Biotechnology-derived products can refer to this M3(R2) guideline for issues not covered in ICH S6. Pharmaceuticals under development for indications in life-threatening or serious diseases (e.g., advanced cancer, resistant HIV infection) without current effective therapy also warrant a case-by-case approach. Nonclinical safety studies for anticancer pharmaceuticals are specifically outlined in ICH S9.",
+      "pdfPage": 6,
+      "printedPage": "1-2"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.1_4.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.1_4",
+      "unit_order": 140,
+      "unit_type": "paragraph",
+      "source_text": "The nonclinical safety studies should be conducted in compliance with Good Laboratory Practice (GLP). The nonclinical safety studies should be designed and performed with high scientific standard and conduct. Consideration should be given to the 3R principles to reduce the number of animals used.",
+      "pdfPage": 7,
+      "printedPage": "2"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.1_5.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.1_5",
+      "unit_order": 150,
+      "unit_type": "paragraph",
+      "source_text": "In general toxicity studies, the high dose should be selected based on one of the following endpoints: (1) Maximum Tolerated Dose (MTD), (2) Saturating exposure, (3) Maximum Feasible Dose (MFD), (4) Limit dose of 1000 mg/kg/day, or (5) 50-fold exposure margin relative to clinical exposure. A dose of 1000 mg/kg/day is generally considered the maximum limit dose for general toxicity studies. However, if 1000 mg/kg/day does not result in a 10-fold exposure margin and the clinical dose exceeds 1 g/day, testing up to 2000 mg/kg/day or the MFD should be considered.",
+      "pdfPage": 7,
+      "printedPage": "2-3"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.1_5.002",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.1_5",
+      "unit_order": 151,
+      "unit_type": "paragraph",
+      "source_text": "Doses providing a 50-fold margin of exposure (group mean AUC of parent drug or active metabolite) to the clinical exposure are generally considered an acceptable endpoint for high dose selection in general toxicity studies in rodents and non-rodents for pharmaceuticals with low toxicity potential.",
+      "pdfPage": 8,
+      "printedPage": "3-4"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.2.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.2",
+      "unit_order": 200,
+      "unit_type": "paragraph",
+      "source_text": "The core battery of safety pharmacology studies includes the assessment of vital organ functions on cardiovascular, central nervous (CNS) and respiratory systems, and should generally be conducted before human exposure, in accordance with ICH S7A and S7B. Supplemental and follow-up safety pharmacology studies (e.g., renal, gastrointestinal) can be conducted during later clinical development when warranted. Secondary pharmacodynamics (off-target effects) should also be evaluated.",
+      "pdfPage": 10,
+      "printedPage": "5"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.3.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.3",
+      "unit_order": 300,
+      "unit_type": "paragraph",
+      "source_text": "In vitro metabolic and plasma protein binding data for animals and humans and systemic exposure data in species used for repeated-dose toxicity studies (ICH S3A) should be evaluated before initiating clinical trials. Further information on absorption, distribution, metabolism and excretion (ADME) in animals should be generated during clinical development.",
+      "pdfPage": 10,
+      "printedPage": "5"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.4.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.4",
+      "unit_order": 400,
+      "unit_type": "paragraph",
+      "source_text": "Data on acute toxicity can be obtained from appropriately conducted dose escalation or range-finding studies and can support single dose clinical trials in humans. Non-lethal acute toxicity studies should be conducted rather than classic LD50 testing. Acute toxicity data are also useful to predict the consequences of human overdose situations and should be available to support Phase III.",
+      "pdfPage": 10,
+      "printedPage": "5-6"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.5_1",
+      "unit_order": 510,
+      "unit_type": "paragraph",
+      "source_text": "The recommended duration of repeated-dose toxicity studies to support clinical trials depends on the intended duration of the clinical trial. For a single dose clinical trial, minimum repeated-dose toxicity study duration is 2 weeks in rodents and 2 weeks in non-rodents. For clinical trials up to 2 weeks, repeated-dose toxicity duration is 2 weeks in rodents and non-rodents. For clinical trials up to 1 month, toxicity study duration is 1 month in rodents and non-rodents. For clinical trials up to 3 months, toxicity duration is 3 months in rodents and non-rodents. For clinical trials up to 6 months, toxicity duration is 6 months in rodents and non-rodents. For clinical trials exceeding 6 months, 6 months in rodents and 9 months in non-rodents are recommended (Table 1).",
+      "pdfPage": 11,
+      "printedPage": "6"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.5_2.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.5_2",
+      "unit_order": 520,
+      "unit_type": "paragraph",
+      "source_text": "To support marketing authorization (MA), repeated-dose toxicity studies of 6 months duration in rodents and 9 months duration in non-rodents are recommended for pharmaceuticals intended for clinical administration longer than 3 months or for chronic use (Table 2). For clinical indications up to 2 weeks, 1 month rodent and non-rodent studies are recommended. For indications up to 1 month, 3 months studies are recommended.",
+      "pdfPage": 12,
+      "printedPage": "7"
+    }
+  ]
+}

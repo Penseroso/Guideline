@@ -95,6 +95,32 @@ const GUIDELINE_REVISIONS = {
         sourceUnitId: "fda_ada.su.6_b.001"
       }
     ]
+  },
+  ich_m3_r2: {
+    docId: "ich_m3_r2",
+    title: "ICH M3(R2) Guidance on Nonclinical Safety Studies for Conduct of Clinical Trials",
+    parentVersion: "ICH M3(R1) (2000 개정판)",
+    currentVersion: "ICH M3(R2) Step 4 (2009 전면 개정판)",
+    keyNotes: [
+      {
+        note: "Exploratory Clinical Trials (Approaches 1-5)",
+        section: "§7 (p. 8-16)",
+        topic: "마이크로도즈(≤100 µg / 1/100th NOAEL) 및 14일 탐색적 조기 임상 진입을 위한 비임상 시험 패키지 표준화",
+        sourceUnitId: "ich_m3_r2.su.7_1.001"
+      },
+      {
+        note: "High Dose Selection (50-fold Margin)",
+        section: "§1.5 & Note 1 (p. 2-4, 23)",
+        topic: "일반 독성시험 고용량 선정 시 50배 노출도(AUC) 상한선 및 1000 mg/kg 한계용량 기준 명문화",
+        sourceUnitId: "ich_m3_r2.su.1_5.001"
+      },
+      {
+        note: "WOCBP & Reproduction Toxicity",
+        section: "§11.3 & Note 4 (p. 18-19, 24)",
+        topic: "예비 배태자 발생독성(Preliminary DART 6 dams/group) 기반 최대 150명 가임기 여성 3개월 임상 진입 허용",
+        sourceUnitId: "ich_m3_r2.su.11_3.001"
+      }
+    ]
   }
 };
 
@@ -117,6 +143,9 @@ function identifyAmendmentDoc(question) {
   }
   if (qLower.includes("ada") || qLower.includes("fda") || qLower.includes("면역원성")) {
     return "fda_ada";
+  }
+  if (qLower.includes("m3") || qLower.includes("ich_m3") || qLower.includes("m3(r2)") || qLower.includes("탐색적")) {
+    return "ich_m3_r2";
   }
   if (qLower.includes("m10") || qLower.includes("ich_m10")) {
     return "ich_m10";

@@ -252,6 +252,7 @@ function answerableRecords(index) {
       condition_ids: conditionIds,
       applicable_conditions: resolveConditionSummaries(index, conditionIds),
       original_modal_text: kr.original_modal_text,
+      normalized_ko: kr.normalized_ko || null,
       review_status: kr.review_status,
       source_unit_ids: kr.source_unit_ids,
       source_text: sourceTextFor(index, kr.source_unit_ids),

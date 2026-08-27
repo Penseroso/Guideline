@@ -38,6 +38,13 @@
       "explicit_exclusions": [
         "atmp"
       ]
+    },
+    {
+      "document_id": "ich_m3_r2",
+      "molecule_scope": "pharmaceuticals",
+      "study_context_scope": "nonclinical_safety",
+      "assay_technology_scope": "in_vivo_toxicology",
+      "explicit_exclusions": []
     }
   ],
   "default_profile": {
@@ -82,6 +89,11 @@
       "rule_id": "qcs_param",
       "when_parameter_includes": "qcs",
       "topic_scope": "acceptance_criteria"
+    },
+    {
+      "rule_id": "local_tolerance_section",
+      "when_section_path_includes": "local tolerance",
+      "topic_scope": "local_tolerance"
     },
     {
       "rule_id": "species_param",

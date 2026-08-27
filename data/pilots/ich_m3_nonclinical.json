@@ -1,0 +1,4618 @@
+{
+  "documents": [
+    {
+      "document_id": "ich_m3_r2",
+      "title": "Guidance on Nonclinical Safety Studies for the Conduct of Human Clinical Trials and Marketing Authorization for Pharmaceuticals",
+      "guideline_code": "ICH M3(R2)",
+      "issuing_body": "ICH",
+      "document_version_label": "Step 4 version, dated 11 June 2009",
+      "source_file_path": "source_pdfs/ICH M3.pdf",
+      "source_file_checksum": "DA8BC18C11D224D23B2B3C391A32E5AA87FD49FBDC6BF515C9787BB4C41F8552",
+      "schema_model_version": "0.5.0"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "ich_m3_r2.sec.1",
+      "document_id": "ich_m3_r2",
+      "section_number": "1",
+      "title": "INTRODUCTION",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 10,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.1_1",
+      "document_id": "ich_m3_r2",
+      "section_number": "1.1",
+      "title": "Objectives of the Guideline",
+      "parent_section_id": "ich_m3_r2.sec.1",
+      "heading_source_unit_id": null,
+      "section_order": 11,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.1_2",
+      "document_id": "ich_m3_r2",
+      "section_number": "1.2",
+      "title": "Background",
+      "parent_section_id": "ich_m3_r2.sec.1",
+      "heading_source_unit_id": null,
+      "section_order": 12,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.1_3",
+      "document_id": "ich_m3_r2",
+      "section_number": "1.3",
+      "title": "Scope of the Guideline",
+      "parent_section_id": "ich_m3_r2.sec.1",
+      "heading_source_unit_id": null,
+      "section_order": 13,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.1_4",
+      "document_id": "ich_m3_r2",
+      "section_number": "1.4",
+      "title": "General Principles",
+      "parent_section_id": "ich_m3_r2.sec.1",
+      "heading_source_unit_id": null,
+      "section_order": 14,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.1_5",
+      "document_id": "ich_m3_r2",
+      "section_number": "1.5",
+      "title": "High Dose Selection for General Toxicity Studies",
+      "parent_section_id": "ich_m3_r2.sec.1",
+      "heading_source_unit_id": null,
+      "section_order": 15,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.2",
+      "document_id": "ich_m3_r2",
+      "section_number": "2",
+      "title": "PHARMACOLOGY STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 20,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.3",
+      "document_id": "ich_m3_r2",
+      "section_number": "3",
+      "title": "TOXICOKINETIC AND PHARMACOKINETIC STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 30,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.4",
+      "document_id": "ich_m3_r2",
+      "section_number": "4",
+      "title": "ACUTE TOXICITY STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 40,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.5",
+      "document_id": "ich_m3_r2",
+      "section_number": "5",
+      "title": "REPEATED-DOSE TOXICITY STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 50,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.5_1",
+      "document_id": "ich_m3_r2",
+      "section_number": "5.1",
+      "title": "Clinical Development Trials",
+      "parent_section_id": "ich_m3_r2.sec.5",
+      "heading_source_unit_id": null,
+      "section_order": 51,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.5_2",
+      "document_id": "ich_m3_r2",
+      "section_number": "5.2",
+      "title": "Marketing Authorization",
+      "parent_section_id": "ich_m3_r2.sec.5",
+      "heading_source_unit_id": null,
+      "section_order": 52,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.6",
+      "document_id": "ich_m3_r2",
+      "section_number": "6",
+      "title": "ESTIMATION OF THE FIRST DOSE IN HUMAN",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 60,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.7",
+      "document_id": "ich_m3_r2",
+      "section_number": "7",
+      "title": "EXPLORATORY CLINICAL TRIALS",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 70,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.7_1",
+      "document_id": "ich_m3_r2",
+      "section_number": "7.1",
+      "title": "Microdose Trials",
+      "parent_section_id": "ich_m3_r2.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 71,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.7_2",
+      "document_id": "ich_m3_r2",
+      "section_number": "7.2",
+      "title": "Single-Dose Trials at Sub-therapeutic Doses or into the Anticipated Therapeutic Range",
+      "parent_section_id": "ich_m3_r2.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 72,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.7_3",
+      "document_id": "ich_m3_r2",
+      "section_number": "7.3",
+      "title": "Multiple Dose Trials",
+      "parent_section_id": "ich_m3_r2.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 73,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.8",
+      "document_id": "ich_m3_r2",
+      "section_number": "8",
+      "title": "LOCAL TOLERANCE STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 80,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.9",
+      "document_id": "ich_m3_r2",
+      "section_number": "9",
+      "title": "GENOTOXICITY STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 90,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.10",
+      "document_id": "ich_m3_r2",
+      "section_number": "10",
+      "title": "CARCINOGENICITY STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 100,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.11",
+      "document_id": "ich_m3_r2",
+      "section_number": "11",
+      "title": "REPRODUCTION TOXICITY STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 110,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.11_1",
+      "document_id": "ich_m3_r2",
+      "section_number": "11.1",
+      "title": "Men",
+      "parent_section_id": "ich_m3_r2.sec.11",
+      "heading_source_unit_id": null,
+      "section_order": 111,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.11_2",
+      "document_id": "ich_m3_r2",
+      "section_number": "11.2",
+      "title": "Women Not of Childbearing Potential",
+      "parent_section_id": "ich_m3_r2.sec.11",
+      "heading_source_unit_id": null,
+      "section_order": 112,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.11_3",
+      "document_id": "ich_m3_r2",
+      "section_number": "11.3",
+      "title": "Women of Childbearing Potential",
+      "parent_section_id": "ich_m3_r2.sec.11",
+      "heading_source_unit_id": null,
+      "section_order": 113,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.11_4",
+      "document_id": "ich_m3_r2",
+      "section_number": "11.4",
+      "title": "Pregnant Women",
+      "parent_section_id": "ich_m3_r2.sec.11",
+      "heading_source_unit_id": null,
+      "section_order": 114,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.12",
+      "document_id": "ich_m3_r2",
+      "section_number": "12",
+      "title": "CLINICAL TRIALS IN PEDIATRIC POPULATIONS",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 120,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.13",
+      "document_id": "ich_m3_r2",
+      "section_number": "13",
+      "title": "IMMUNOTOXICITY",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 130,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.14",
+      "document_id": "ich_m3_r2",
+      "section_number": "14",
+      "title": "PHOTOSAFETY TESTING",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 140,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.15",
+      "document_id": "ich_m3_r2",
+      "section_number": "15",
+      "title": "NONCLINICAL ABUSE LIABILITY",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 150,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.16",
+      "document_id": "ich_m3_r2",
+      "section_number": "16",
+      "title": "OTHER TOXICITY STUDIES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 160,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.17",
+      "document_id": "ich_m3_r2",
+      "section_number": "17",
+      "title": "COMBINATION DRUG TOXICITY TESTING",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 170,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.18",
+      "document_id": "ich_m3_r2",
+      "section_number": "18",
+      "title": "CONTINUING EFFORTS TO IMPROVE HARMONIZATION",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 180,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.19",
+      "document_id": "ich_m3_r2",
+      "section_number": "19",
+      "title": "ENDNOTES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 190,
+      "section_order_status": "known"
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "ich_m3_r2.su.1_1.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.1_1",
+      "unit_order": 110,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "The purpose of this document is to recommend international standards for, and promote harmonisation of, the nonclinical safety studies recommended to support human clinical trials of a given scope and duration as well as marketing authorization for pharmaceuticals. Harmonisation of the guidance for nonclinical safety studies will help to define the current recommendations and reduce the likelihood that substantial differences will exist among regions. This guidance should facilitate the timely conduct of clinical trials, reduce the use of animals in accordance with the 3R (reduce/refine/replace) principles and reduce the use of other drug development resources.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.1_1",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "1",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.1_2.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.1_2",
+      "unit_order": 120,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "The development of a pharmaceutical is a stepwise process involving an evaluation of both animal and human safety information. The goals of the nonclinical safety evaluation generally include a characterisation of toxic effects with respect to target organs, dose dependence, relationship to exposure, and, when appropriate, potential reversibility. This information is used to estimate an initial safe starting dose and dose range for the human trials and to identify parameters for clinical monitoring for potential adverse effects.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.1_2",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "1",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.1_3.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.1_3",
+      "unit_order": 130,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "This guideline applies to the situations usually encountered during the development of pharmaceuticals and should be viewed as providing general guidance for drug development. For biotechnology-derived products, refer to ICH Guideline S6. Biotechnology-derived products can refer to this M3(R2) guideline for issues not covered in ICH S6. Pharmaceuticals under development for indications in life-threatening or serious diseases (e.g., advanced cancer, resistant HIV infection) without current effective therapy also warrant a case-by-case approach. Nonclinical safety studies for anticancer pharmaceuticals are specifically outlined in ICH S9.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.1_3",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "1-2",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.1_4.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.1_4",
+      "unit_order": 140,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "The nonclinical safety studies should be conducted in compliance with Good Laboratory Practice (GLP). The nonclinical safety studies should be designed and performed with high scientific standard and conduct. Consideration should be given to the 3R principles to reduce the number of animals used.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.1_4",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "2",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.1_5.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.1_5",
+      "unit_order": 150,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "In general toxicity studies, the high dose should be selected based on one of the following endpoints: (1) Maximum Tolerated Dose (MTD), (2) Saturating exposure, (3) Maximum Feasible Dose (MFD), (4) Limit dose of 1000 mg/kg/day, or (5) 50-fold exposure margin relative to clinical exposure. A dose of 1000 mg/kg/day is generally considered the maximum limit dose for general toxicity studies. However, if 1000 mg/kg/day does not result in a 10-fold exposure margin and the clinical dose exceeds 1 g/day, testing up to 2000 mg/kg/day or the MFD should be considered.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.1_5",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "2-3",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.1_5.002",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.1_5",
+      "unit_order": 151,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Doses providing a 50-fold margin of exposure (group mean AUC of parent drug or active metabolite) to the clinical exposure are generally considered an acceptable endpoint for high dose selection in general toxicity studies in rodents and non-rodents for pharmaceuticals with low toxicity potential.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.1_5",
+        "pdf_page_index_zero_based": 8,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "3-4",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.2.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.2",
+      "unit_order": 200,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "The core battery of safety pharmacology studies includes the assessment of vital organ functions on cardiovascular, central nervous (CNS) and respiratory systems, and should generally be conducted before human exposure, in accordance with ICH S7A and S7B. Supplemental and follow-up safety pharmacology studies (e.g., renal, gastrointestinal) can be conducted during later clinical development when warranted. Secondary pharmacodynamics (off-target effects) should also be evaluated.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.2",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "5",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.3.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.3",
+      "unit_order": 300,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "In vitro metabolic and plasma protein binding data for animals and humans and systemic exposure data in species used for repeated-dose toxicity studies (ICH S3A) should be evaluated before initiating clinical trials. Further information on absorption, distribution, metabolism and excretion (ADME) in animals should be generated during clinical development.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.3",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "5",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.4.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.4",
+      "unit_order": 400,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Data on acute toxicity can be obtained from appropriately conducted dose escalation or range-finding studies and can support single dose clinical trials in humans. Non-lethal acute toxicity studies should be conducted rather than classic LD50 testing. Acute toxicity data are also useful to predict the consequences of human overdose situations and should be available to support Phase III.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.4",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "5-6",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.5_1",
+      "unit_order": 510,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "The recommended duration of repeated-dose toxicity studies to support clinical trials depends on the intended duration of the clinical trial. For a single dose clinical trial, minimum repeated-dose toxicity study duration is 2 weeks in rodents and 2 weeks in non-rodents. For clinical trials up to 2 weeks, repeated-dose toxicity duration is 2 weeks in rodents and non-rodents. For clinical trials up to 1 month, toxicity study duration is 1 month in rodents and non-rodents. For clinical trials up to 3 months, toxicity duration is 3 months in rodents and non-rodents. For clinical trials up to 6 months, toxicity duration is 6 months in rodents and non-rodents. For clinical trials exceeding 6 months, 6 months in rodents and 9 months in non-rodents are recommended (Table 1).",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.5_1",
+        "pdf_page_index_zero_based": 11,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "6",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.5_2.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.5_2",
+      "unit_order": 520,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "To support marketing authorization (MA), repeated-dose toxicity studies of 6 months duration in rodents and 9 months duration in non-rodents are recommended for pharmaceuticals intended for clinical administration longer than 3 months or for chronic use (Table 2). For clinical indications up to 2 weeks, 1 month rodent and non-rodent studies are recommended. For indications up to 1 month, 3 months studies are recommended.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.5_2",
+        "pdf_page_index_zero_based": 12,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "7",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.6.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.6",
+      "unit_order": 600,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "The estimation of the first dose in humans is an important element to safeguard subjects participating in first-in-human studies. All of the relevant nonclinical data, including the pharmacological dose response, the pharmacological/toxicological profile, and pharmacokinetics, should be considered when determining the recommended starting dose in humans. In general, the No Observed Adverse Effect Level (NOAEL) determined in the most relevant animal species, combined with appropriate safety factors, is used to estimate the initial clinical dose. When biologically active pharmaceuticals have potent agonistic effects or high species specificity, MABEL or other pharmacologically based approaches should be considered.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.6",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "8",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.7.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.7",
+      "unit_order": 700,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Exploratory clinical trials can be conducted early in human drug development under specific approaches (Approaches 1 through 5) before standard full repeated-dose toxicity testing. These approaches involve limited human exposure, have no therapeutic intent, and are used to investigate PK, PD, receptor occupancy, or target selection.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.7",
+        "pdf_page_index_zero_based": 14,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "8-9",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.7_1.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.7_1",
+      "unit_order": 710,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Approach 1 (Microdose Approach 1) involves administering a total dose of not more than 100 µg (as a single dose or divided doses) that is also not more than 1/100th of the NOAEL and not more than 1/100th of the pharmacologically active dose. Approach 1 is supported by an extended single-dose toxicity study in one mammalian species (usually rodent) with 14-day observation.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.7_1",
+        "pdf_page_index_zero_based": 14,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "9",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.7_1.002",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.7_1",
+      "unit_order": 711,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Approach 2 (Microdose Approach 2) involves up to 5 administrations of not more than 100 µg per administration (total accumulated dose not more than 500 µg), with each dose not exceeding 1/100th of the NOAEL. Approach 2 can be used for PET receptor occupancy studies and is supported by a 7-day or 14-day toxicity study in a single mammalian species.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.7_1",
+        "pdf_page_index_zero_based": 14,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "9",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.7_2.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.7_2",
+      "unit_order": 720,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Approach 3 involves single-dose trials at sub-therapeutic doses or into the anticipated therapeutic range. The clinical starting dose should be based on safety factors from animal NOAELs. Approach 3 is supported by a 2-week repeated-dose toxicity study in a rodent and a 2-week repeated-dose toxicity study in a non-rodent.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.7_2",
+        "pdf_page_index_zero_based": 15,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "9",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.7_3.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.7_3",
+      "unit_order": 730,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Approach 4 involves multiple dose clinical trials of up to 14 days duration into the therapeutic range. Approach 4 is supported by 2-week repeated-dose toxicity studies in both a rodent and a non-rodent species. Approach 5 involves multiple dose clinical trials of up to 14 days duration supported by a 2-week rodent toxicity study and a non-rodent confirmatory study showing that the rodent NOAEL is non-toxic in the non-rodent.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.7_3",
+        "pdf_page_index_zero_based": 15,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "9-10",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.8.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.8",
+      "unit_order": 800,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "It is preferable to evaluate local tolerance by the intended therapeutic route as part of the general toxicity studies; stand alone studies are generally not recommended. To support limited human administration by non-therapeutic routes (e.g., a single i.v. dose to determine absolute bioavailability of an oral drug), a single dose local tolerance study in a single species is considered appropriate.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.8",
+        "pdf_page_index_zero_based": 23,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "17",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.9.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.9",
+      "unit_order": 900,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Prior to first-in-human clinical trials, an assay for gene mutation (Ames test) and an in vitro mammalian cell assay or an in vivo test for chromosomal damage should be completed. A complete battery of tests for genotoxicity (Option 1 or Option 2 in ICH S2) should be completed before the initiation of Phase II clinical trials.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.9",
+        "pdf_page_index_zero_based": 23,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "17",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.10.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.10",
+      "unit_order": 1000,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Carcinogenicity studies are recommended for pharmaceuticals whose expected clinical use is continuous for at least 6 months, or is frequently intermittent for chronic or recurrent conditions. Carcinogenicity studies should be completed and submitted with the marketing authorization application (MAA/NDA), unless clinical safety concerns warrant earlier conduct before Phase III or Phase II.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.10",
+        "pdf_page_index_zero_based": 23,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "17-18",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.11_1.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.11_1",
+      "unit_order": 1110,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Men can be included in Phase I and II trials before the conduct of the male fertility study since an evaluation of the male reproductive organs is performed in the repeated-dose toxicity studies. A male fertility study (ICH S5) should be completed before the initiation of large scale or long duration clinical trials (e.g., Phase III trials).",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.11_1",
+        "pdf_page_index_zero_based": 24,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "18",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.11_2.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.11_2",
+      "unit_order": 1120,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Women not of childbearing potential (i.e., permanently sterilised, postmenopausal) can be included in clinical trials without reproduction toxicity studies if the relevant repeated-dose toxicity studies (which include an evaluation of the female reproductive organs) have been conducted. Postmenopausal is defined as 12 months with no menses without an alternative medical cause.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.11_2",
+        "pdf_page_index_zero_based": 24,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "18",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.11_3.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.11_3",
+      "unit_order": 1130,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Women of childbearing potential (WOCBP) can be included in early clinical trials when precautions to prevent pregnancy are used. Precautions include pregnancy testing and use of highly effective contraceptive methods. Preliminary embryofetal developmental toxicity studies in two species can support the inclusion of up to 150 WOCBP receiving investigational treatment for up to 3 months before definitive reprotox testing. Definitive embryo-fetal development studies in two species must be completed prior to the inclusion of WOCBP in Phase III or extensive clinical trials.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.11_3",
+        "pdf_page_index_zero_based": 24,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "18-19",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.11_4.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.11_4",
+      "unit_order": 1140,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Before pregnant women are included in clinical trials, female reproduction toxicity studies (fertility, embryo-fetal development, and pre- and post-natal development) in two species and the standard battery of genotoxicity studies should be completed, and safety data from previous human exposure should be available.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.11_4",
+        "pdf_page_index_zero_based": 25,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "19",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.12.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.12",
+      "unit_order": 1200,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "When pediatric populations are to be included in clinical trials, safety data from previous adult animal and human exposure should be evaluated. The conduct of any juvenile animal toxicity studies should be considered only when previous animal data and human safety data are judged to be insufficient. If a juvenile study is warranted, one relevant species, preferably rodent, is generally considered adequate.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.12",
+        "pdf_page_index_zero_based": 25,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "19-20",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.13.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.13",
+      "unit_order": 1300,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "All new pharmaceuticals should be evaluated for the potential to produce immunotoxicity using standard repeated-dose toxicity studies (hematology, lymphoid organ weights, and histology). If signs of immunotoxic potential are observed, additional immunotoxicity studies (in accordance with ICH S8) should be conducted before Phase III or earlier.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.13",
+        "pdf_page_index_zero_based": 26,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "20",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.14.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.14",
+      "unit_order": 1400,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "An initial assessment of phototoxicity potential based on photochemical properties (UV/Vis light absorption between 290 and 700 nm with molar extinction coefficient > 1000 M-1 cm-1) should be performed. If phototoxic potential is identified and the drug distributes to skin or eye, experimental testing (in vitro 3T3 NRU phototoxicity assay, in vivo, or clinical phototoxicity testing) should be completed prior to Phase III.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.14",
+        "pdf_page_index_zero_based": 26,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "20-21",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.15.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.15",
+      "unit_order": 1500,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "For pharmaceuticals that produce central nervous system (CNS) effects, nonclinical abuse liability studies should support Phase III clinical trials. The evaluation includes receptor binding profiles, behavioral pharmacology (drug discrimination and self-administration), and physical dependence assessments.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.15",
+        "pdf_page_index_zero_based": 27,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "21-22",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.16.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.16",
+      "unit_order": 1600,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Nonclinical qualification of impurities and degradants should be conducted in accordance with ICH Q3A and Q3B. For human drug metabolites, nonclinical safety qualification (MIST) is warranted when a metabolite is formed at > 10% of total drug-related exposure in humans and at significantly lower exposure in toxicity animal species.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.16",
+        "pdf_page_index_zero_based": 28,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "22",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.17.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.17",
+      "unit_order": 1700,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "For combination drug development, combination toxicity studies of duration equivalent to the clinical trial up to a maximum duration of 90 days are recommended. A 90-day combination toxicity study in a single relevant species supports marketing authorization. If both individual entities are well characterized and no pharmacokinetic or toxicological interaction is anticipated, nonclinical combination studies might not be warranted.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.17",
+        "pdf_page_index_zero_based": 28,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "22-23",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.18.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.18",
+      "unit_order": 1800,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Continuing efforts are underway among ICH regions to further harmonize nonclinical safety requirements and reduce unnecessary animal use while maintaining high safety standards for human clinical trials.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.18",
+        "pdf_page_index_zero_based": 29,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "23",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.19.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.19",
+      "unit_order": 1900,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Endnotes define specific quantitative parameters: Note 1 defines the 50-fold exposure margin based on group mean AUC; Note 2 defines male reproductive evaluation in repeated-dose toxicity; Note 3 defines highly effective contraception requirements; Note 4 defines preliminary embryo-fetal studies with a minimum of 6 dams per group; Note 5 details pregnancy risk baseline rates.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/ICH M3.pdf",
+        "document_id": "ich_m3_r2",
+        "section_id": "ich_m3_r2.sec.19",
+        "pdf_page_index_zero_based": 29,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "23-24",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    }
+  ],
+  "knowledge_records": [
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_1.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_1.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This document",
+      "action": "is to recommend",
+      "object": "international standards for the nonclinical safety studies recommended to support human clinical trials of a given scope and duration as well as marketing authorization for pharmaceuticals",
+      "normalized_ko": "권고하는 것이다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_1.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_1.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This document",
+      "action": "is to promote",
+      "object": "harmonisation of the nonclinical safety studies recommended to support human clinical trials of a given scope and duration as well as marketing authorization for pharmaceuticals",
+      "normalized_ko": "촉진하는 것이다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_1.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_1.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The nonclinical safety studies",
+      "action": "are recommended to support",
+      "object": "human clinical trials of a given scope and duration as well as marketing authorization for pharmaceuticals",
+      "normalized_ko": "지원하기 위해 권고된다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_1.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Harmonisation of the guidance for nonclinical safety studies",
+      "action": "will help to define",
+      "object": "the current recommendations",
+      "normalized_ko": "정의하는 데 도움이 될 것이다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_1.005",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The purpose of this document",
+      "action": "is to recommend",
+      "object": "international standards for the nonclinical safety studies recommended to support human clinical trials of a given scope and duration as well as marketing authorization for pharmaceuticals",
+      "normalized_ko": "권고하는 것이다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_1.006",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The purpose of this document",
+      "action": "is to promote harmonisation of",
+      "object": "the nonclinical safety studies recommended to support human clinical trials of a given scope and duration as well as marketing authorization for pharmaceuticals",
+      "normalized_ko": "조화를 촉진하는 것이다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_1.007",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "This guidance",
+      "action": "should facilitate",
+      "object": "the timely conduct of clinical trials",
+      "normalized_ko": "해야 한다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_2.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The development of a pharmaceutical",
+      "action": "is",
+      "object": "a stepwise process involving an evaluation of both animal and human safety information",
+      "normalized_ko": "이다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_2.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This information",
+      "action": "is used to estimate",
+      "object": "an initial safe starting dose and dose range for the human trials",
+      "normalized_ko": "추정하는 데 사용된다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_2.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The goals of the nonclinical safety evaluation",
+      "action": "generally include",
+      "object": "a characterisation of toxic effects with respect to target organs, dose dependence, relationship to exposure, and potential reversibility",
+      "normalized_ko": "일반적으로 포함한다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_2.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_2.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "generally include",
+      "subject": "The goals of the nonclinical safety evaluation",
+      "action": "generally include",
+      "object": "a characterisation of toxic effects with respect to target organs, dose dependence, and relationship to exposure",
+      "normalized_ko": "일반적으로 포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_3.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_3.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This guideline",
+      "action": "applies to",
+      "object": "the situations usually encountered during the development of pharmaceuticals",
+      "normalized_ko": "적용된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_3.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_3.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Nonclinical safety studies for anticancer pharmaceuticals",
+      "action": "are specifically outlined in",
+      "object": "ICH S9",
+      "normalized_ko": "~에 구체적으로 명시되어 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_3.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "This guideline",
+      "action": "should be viewed as providing",
+      "object": "general guidance for drug development",
+      "normalized_ko": "하여야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_3.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "refer to",
+      "subject": "For biotechnology-derived products",
+      "action": "refer to",
+      "object": "ICH Guideline S6",
+      "normalized_ko": "참조할 것.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_3.005",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "warrant",
+      "subject": "Pharmaceuticals under development for indications in life-threatening or serious diseases without current effective therapy",
+      "action": "warrant",
+      "object": "a case-by-case approach",
+      "normalized_ko": "보증하다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_3.006",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Biotechnology-derived products",
+      "action": "may refer to",
+      "object": "this M3(R2) guideline",
+      "normalized_ko": "할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_3.007",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_3.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "warrant",
+      "subject": "Pharmaceuticals under development for indications in life-threatening or serious diseases",
+      "action": "warrant",
+      "object": "a case-by-case approach",
+      "normalized_ko": "보증하다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_3.008",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_3.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "life-threatening or serious diseases",
+      "action": "includes",
+      "object": "advanced cancer",
+      "normalized_ko": "포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_3.009",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Nonclinical safety studies for anticancer pharmaceuticals",
+      "action": "are specifically outlined in",
+      "object": "ICH S9",
+      "normalized_ko": "…에 구체적으로 명시되어 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_4.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The nonclinical safety studies",
+      "action": "should be conducted in compliance with",
+      "object": "Good Laboratory Practice (GLP)",
+      "normalized_ko": "비임상 안전성 시험은 의약품 우수실험실관리기준(GLP)을 준수하여 수행해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_4.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The nonclinical safety studies",
+      "action": "should be designed and performed with",
+      "object": "high scientific standard and conduct",
+      "normalized_ko": "비임상 안전성 시험은 높은 과학적 수준과 적절한 수행 기준에 따라 설계 및 실시해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_5.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_5.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "the high dose",
+      "action": "should be selected based on",
+      "object": "one of the following endpoints: (1) Maximum Tolerated Dose (MTD), (2) Saturating exposure, (3) Maximum Feasible Dose (MFD), (4) Limit dose of 1000 mg/kg/day, or (5) 50-fold exposure margin relative to clinical exposure",
+      "normalized_ko": "일반독성시험에서 고용량은 다음 종점 중 하나에 근거하여 선택해야 한다: (1) 최대내약용량(MTD), (2) 포화 노출, (3) 최대실현가능용량(MFD), (4) 1,000 mg/kg/일의 한계용량 또는 (5) 임상 노출 대비 50배의 노출 여유.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_5.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_5.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be considered",
+      "subject": "Testing",
+      "action": "should be considered up to",
+      "object": "2000 mg/kg/day or the MFD",
+      "normalized_ko": "그러나 1,000 mg/kg/일에서 10배의 노출 여유가 확보되지 않고 임상 용량이 1 g/일을 초과하는 경우, 최대 2,000 mg/kg/일 또는 최대실현가능용량(MFD)까지의 시험을 고려해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_5.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_5.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "generally considered",
+      "subject": "A dose of 1000 mg/kg/day",
+      "action": "is generally considered",
+      "object": "the maximum limit dose for general toxicity studies",
+      "normalized_ko": "1,000 mg/kg/일의 용량은 일반독성시험에서 일반적으로 최대 한계용량으로 간주된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_5.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_5.002"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "generally considered",
+      "subject": "Doses providing a 50-fold margin of exposure",
+      "action": "are generally considered",
+      "object": "an acceptable endpoint for high dose selection",
+      "normalized_ko": "임상 노출 대비 50배의 노출 여유(모약물 또는 활성 대사체의 군 평균 AUC)를 제공하는 용량은 독성 가능성이 낮은 의약품의 설치류 및 비설치류 일반독성시험에서 고용량 선택을 위한 허용 가능한 종점으로 일반적으로 간주된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_5.005",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "A dose of 1000 mg/kg/day",
+      "action": "is generally considered",
+      "object": "the maximum limit dose",
+      "normalized_ko": "1,000 mg/kg/일의 용량은 일반독성시험에서 일반적으로 최대 한계용량으로 간주된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.1_5.006",
+      "source_unit_ids": [
+        "ich_m3_r2.su.1_5.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Doses providing a 50-fold margin of exposure",
+      "action": "are generally considered",
+      "object": "an acceptable endpoint for high dose selection",
+      "normalized_ko": "임상 노출 대비 50배의 노출 여유(모약물 또는 활성 대사체의 군 평균 AUC)를 제공하는 용량은 독성 가능성이 낮은 의약품의 설치류 및 비설치류 일반독성시험에서 고용량 선택을 위한 허용 가능한 종점으로 일반적으로 간주된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.2.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The core battery of safety pharmacology studies",
+      "action": "includes",
+      "object": "the assessment of vital organ functions on cardiovascular, central nervous (CNS) and respiratory systems",
+      "normalized_ko": "안전성약리시험의 핵심 시험군에는 심혈관계, 중추신경계(CNS) 및 호흡기계의 주요 장기 기능에 대한 평가가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.2.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should generally",
+      "subject": "The core battery of safety pharmacology studies",
+      "action": "should be conducted",
+      "object": "in accordance with ICH S7A and S7B",
+      "normalized_ko": "안전성약리시험의 핵심 시험군은 ICH S7A 및 S7B에 따라 일반적으로 사람에게 노출되기 전에 수행해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.2.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Supplemental and follow-up safety pharmacology studies",
+      "action": "can be conducted",
+      "object": "during later clinical development",
+      "normalized_ko": "보완적 및 후속 안전성 약리시험(예: 신장, 위장관)은 필요한 경우 후기 임상개발 단계에서 실시할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.2.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.2.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Supplemental and follow-up safety pharmacology studies",
+      "action": "includes",
+      "object": "renal",
+      "normalized_ko": "안전성 약리시험의 핵심 시험군에는 심혈관계, 중추신경계(CNS) 및 호흡기계의 생명유지 장기 기능 평가가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.3.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "In vitro metabolic and plasma protein binding data for animals and humans and systemic exposure data in species used for repeated-dose toxicity studies (ICH S3A)",
+      "action": "be evaluated",
+      "object": null,
+      "normalized_ko": "동물 및 사람에 대한 시험관 내 대사 및 혈장 단백결합 자료와 반복투여 독성시험(ICH S3A)에 사용된 동물종의 전신 노출 자료는 임상시험 개시 전에 평가되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.3.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Further information on absorption, distribution, metabolism and excretion (ADME) in animals",
+      "action": "be generated",
+      "object": null,
+      "normalized_ko": "동물에서의 흡수, 분포, 대사 및 배설(ADME)에 관한 추가 정보는 임상개발 중에 생성되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.4.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.4.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can be obtained",
+      "subject": "Data on acute toxicity",
+      "action": "can be obtained from",
+      "object": "appropriately conducted dose escalation or range-finding studies",
+      "normalized_ko": "급성 독성 자료는 적절하게 수행된 용량 증량시험 또는 용량범위 탐색시험으로부터 얻을 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.4.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.4.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Data on acute toxicity",
+      "action": "support",
+      "object": "single dose clinical trials",
+      "normalized_ko": "급성 독성 자료는 사람에서의 단회투여 임상시험을 뒷받침할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.4.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be conducted",
+      "subject": "Non-lethal acute toxicity studies",
+      "action": "should be conducted rather than",
+      "object": "classic LD50 testing",
+      "normalized_ko": "고전적 LD50 시험보다는 비치사적 급성 독성시험을 실시해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.4.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should be available",
+      "subject": "Acute toxicity data",
+      "action": "should be available to support",
+      "object": "Phase III",
+      "normalized_ko": "급성 독성 자료는 제III상을 뒷받침할 수 있도록 उपलब्ध해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.4.005",
+      "source_unit_ids": [
+        "ich_m3_r2.su.4.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Acute toxicity data",
+      "action": "are useful to predict",
+      "object": "the consequences of human overdose situations",
+      "normalized_ko": "급성 독성 자료는 사람에서의 과량투여 상황의 결과를 예측하는 데에도 유용하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.4.006",
+      "source_unit_ids": [
+        "ich_m3_r2.su.4.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can",
+      "subject": "Data on acute toxicity",
+      "action": "can be obtained from",
+      "object": "appropriately conducted dose escalation or range-finding studies",
+      "normalized_ko": "급성 독성 자료는 사람에서의 단회투여 임상시험을 뒷받침할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.5_1.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.5_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The recommended duration of repeated-dose toxicity studies to support clinical trials",
+      "action": "depends on",
+      "object": "the intended duration of the clinical trial",
+      "normalized_ko": "…에 따라 달라진다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.5_1.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.5_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "minimum",
+      "subject": "Repeated-dose toxicity study duration",
+      "action": "should be at least",
+      "object": "2 weeks in rodents and 2 weeks in non-rodents",
+      "normalized_ko": "최소",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.5_1.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.5_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": null,
+      "subject": "repeated-dose toxicity duration",
+      "action": "be",
+      "object": "2 weeks in rodents and non-rodents",
+      "normalized_ko": "이어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.5_1.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.5_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "minimum",
+      "subject": "Repeated-dose toxicity studies",
+      "action": "have a minimum duration of",
+      "object": "2 weeks in rodents",
+      "normalized_ko": "최소",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.5_2.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.5_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "are recommended",
+      "subject": "Repeated-dose toxicity studies in rodents",
+      "action": "should have a duration of",
+      "object": "6 months",
+      "normalized_ko": "권고된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.5_2.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.5_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "are recommended",
+      "subject": "Repeated-dose toxicity studies of 6 months duration in rodents and 9 months duration in non-rodents",
+      "action": "are recommended",
+      "object": "for pharmaceuticals intended for clinical administration longer than 3 months or for chronic use",
+      "normalized_ko": "권고된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.6.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.6.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The estimation of the first dose in humans",
+      "action": "is",
+      "object": "an important element to safeguard subjects participating in first-in-human studies",
+      "normalized_ko": "이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.6.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.6.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "the No Observed Adverse Effect Level (NOAEL) determined in the most relevant animal species, combined with appropriate safety factors",
+      "action": "is used",
+      "object": "to estimate the initial clinical dose",
+      "normalized_ko": "사용된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.6.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "All of the relevant nonclinical data, including the pharmacological dose response, the pharmacological/toxicological profile, and pharmacokinetics",
+      "action": "should be considered",
+      "object": null,
+      "normalized_ko": "~하는 것이 바람직하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.6.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.6.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "is used",
+      "subject": "the No Observed Adverse Effect Level (NOAEL) determined in the most relevant animal species, combined with appropriate safety factors",
+      "action": "is used to estimate",
+      "object": "the initial clinical dose",
+      "normalized_ko": "사용된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can be conducted",
+      "subject": "Exploratory clinical trials",
+      "action": "can be conducted",
+      "object": "early in human drug development",
+      "normalized_ko": "탐색적 임상시험은 표준적인 완전 반복투여 독성시험 전에 특정 접근법(접근법 1부터 5)에 따라 사람 대상 의약품 개발 초기 단계에서 실시할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "These approaches",
+      "action": "involve",
+      "object": "limited human exposure",
+      "normalized_ko": "이러한 접근법은 제한적인 사람 노출을 수반한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "These approaches",
+      "action": "have no",
+      "object": "therapeutic intent",
+      "normalized_ko": "이러한 접근법은 치료 목적이 없다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "These approaches",
+      "action": "are used to investigate",
+      "object": "PK, PD, receptor occupancy, or target selection",
+      "normalized_ko": "이러한 접근법은 약동학(PK), 약력학(PD), 수용체 점유율 또는 표적 선정에 대해 조사하는 데 사용된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7_1.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Approach 1 (Microdose Approach 1)",
+      "action": "involves administering",
+      "object": "a total dose",
+      "normalized_ko": "접근법 1(마이크로도즈 접근법 1)은 총 투여량이 100 µg 이하이고(단회 투여 또는 분할 투여), 무독성관찰용량(NO AEL)의 1/100 이하이며 약리학적 활성 용량의 1/100 이하인 용량을 투여하는 것을 포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7_1.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Approach 1",
+      "action": "is supported by",
+      "object": "an extended single-dose toxicity study in one mammalian species (usually rodent) with 14-day observation",
+      "normalized_ko": "접근법 1은 한 종의 포유류(일반적으로 설치류)에서 14일 관찰을 포함하는 연장 단회투여 독성시험으로 뒷받침된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7_1.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7_1.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Approach 2 (Microdose Approach 2)",
+      "action": "involves",
+      "object": "up to 5 administrations",
+      "normalized_ko": "접근법 2(마이크로도즈 접근법 2)는 회당 100 µg 이하의 용량을 최대 5회 투여하는 것을 포함하며, 총 누적 투여량은 500 µg 이하이고 각 용량은 무독성관찰용량(NO AEL)의 1/100을 초과하지 않는다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7_1.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7_1.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Approach 2",
+      "action": "is supported by",
+      "object": "a 7-day or 14-day toxicity study in a single mammalian species",
+      "normalized_ko": "접근법 2는 한 종의 포유류에서 실시한 7일 또는 14일 독성시험으로 뒷받침된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7_1.005",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7_1.002"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can be used",
+      "subject": "Approach 2",
+      "action": "can be used for",
+      "object": "PET receptor occupancy studies",
+      "normalized_ko": "접근법 2는 PET 수용체 점유율 연구에 사용할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7_1.006",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7_1.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Approach 2",
+      "action": "can be used for",
+      "object": "PET receptor occupancy studies",
+      "normalized_ko": "접근법 2는 PET 수용체 점유율 연구에 사용할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7_2.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Approach 3",
+      "action": "involves",
+      "object": "single-dose trials at sub-therapeutic doses or into the anticipated therapeutic range",
+      "normalized_ko": "포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7_2.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Approach 3",
+      "action": "is supported by",
+      "object": "a 2-week repeated-dose toxicity study in a rodent and a 2-week repeated-dose toxicity study in a non-rodent",
+      "normalized_ko": "~에 의해 뒷받침된다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7_2.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The clinical starting dose",
+      "action": "should be based on",
+      "object": "safety factors from animal NOAELs",
+      "normalized_ko": "해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7_2.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7_2.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Approach 3",
+      "action": "involves",
+      "object": "single-dose trials at sub-therapeutic doses or into the anticipated therapeutic range",
+      "normalized_ko": "수반한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7_3.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Approach 4",
+      "action": "involves",
+      "object": "multiple dose clinical trials of up to 14 days duration into the therapeutic range",
+      "normalized_ko": "수반한다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7_3.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Approach 4",
+      "action": "is supported by",
+      "object": "2-week repeated-dose toxicity studies in both a rodent and a non-rodent species",
+      "normalized_ko": "…에 의해 뒷받침된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.7_3.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.7_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The non-rodent confirmatory study",
+      "action": "shows that",
+      "object": "the rodent NOAEL is non-toxic in the non-rodent",
+      "normalized_ko": "…임을 보여준다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.8.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.8.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "preferable",
+      "subject": "Local tolerance",
+      "action": "should be evaluated",
+      "object": "by the intended therapeutic route as part of the general toxicity studies",
+      "normalized_ko": "바람직한",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.8.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.8.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "is considered appropriate",
+      "subject": "A single dose local tolerance study in a single species",
+      "action": "is considered appropriate",
+      "object": null,
+      "normalized_ko": "적절한 것으로 간주된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.8.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.8.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is considered appropriate",
+      "subject": "A single dose local tolerance study in a single species",
+      "action": "is considered appropriate",
+      "object": null,
+      "normalized_ko": "적절한 것으로 간주된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.8.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.8.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Non-therapeutic route administration",
+      "action": "includes",
+      "object": "a single i.v. dose to determine absolute bioavailability of an oral drug",
+      "normalized_ko": "포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.9.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.9.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "An assay for gene mutation (Ames test) and an in vitro mammalian cell assay or an in vivo test for chromosomal damage",
+      "action": "be completed",
+      "object": null,
+      "normalized_ko": "하여야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.10.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.10.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "recommended",
+      "subject": "Carcinogenicity studies",
+      "action": "are recommended for",
+      "object": "pharmaceuticals",
+      "normalized_ko": "권장된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.10.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.10.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Carcinogenicity studies",
+      "action": "should be completed",
+      "object": null,
+      "normalized_ko": "하여야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_1.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can be",
+      "subject": "Men",
+      "action": "may be included in",
+      "object": "Phase I and II trials",
+      "normalized_ko": "될 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_1.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "An evaluation of the male reproductive organs",
+      "action": "is performed in",
+      "object": "the repeated-dose toxicity studies",
+      "normalized_ko": "에서 수행된다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_1.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "A male fertility study (ICH S5)",
+      "action": "should be completed before",
+      "object": "the initiation of large scale or long duration clinical trials",
+      "normalized_ko": "하는 것이 바람직하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_1.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_1.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Large scale or long duration clinical trials",
+      "action": "includes",
+      "object": "Phase III trials",
+      "normalized_ko": "포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_1.005",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_1.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Men",
+      "action": "can be included in",
+      "object": "Phase I and II trials",
+      "normalized_ko": "할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_2.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_2.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Women not of childbearing potential",
+      "action": "are",
+      "object": "permanently sterilised, postmenopausal",
+      "normalized_ko": "입니다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_2.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_2.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Postmenopausal",
+      "action": "is defined as",
+      "object": "12 months with no menses without an alternative medical cause",
+      "normalized_ko": "폐경은 다른 의학적 원인 없이 12개월간 월경이 없는 상태로 정의된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_2.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_2.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Women not of childbearing potential",
+      "action": "include",
+      "object": "permanently sterilised, postmenopausal",
+      "normalized_ko": "여성 생식기관에 대한 평가를 포함하는 관련 반복투여 독성시험",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_2.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can be included",
+      "subject": "Women not of childbearing potential",
+      "action": "be included without",
+      "object": "reproduction toxicity studies",
+      "normalized_ko": "가임 가능성이 없는 여성(즉, 영구 불임수술을 받았거나 폐경한 여성)은 관련 반복투여 독성시험(여성 생식기관에 대한 평가를 포함함)이 수행된 경우 생식독성시험 없이 임상시험에 포함될 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_2.005",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The relevant repeated-dose toxicity studies",
+      "action": "include",
+      "object": "an evaluation of the female reproductive organs",
+      "normalized_ko": "여성 생식기관에 대한 평가를 포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_3.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Women of childbearing potential (WOCBP)",
+      "action": "can be included in",
+      "object": "early clinical trials",
+      "normalized_ko": "가임기 여성(WOCBP)은 임신 예방 조치가 사용되는 경우 초기 임상시험에 포함될 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_3.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Preliminary embryofetal developmental toxicity studies in two species",
+      "action": "can support the inclusion of",
+      "object": "up to 150 WOCBP receiving investigational treatment for up to 3 months",
+      "normalized_ko": "2종에서의 예비 배아·태아 발생독성시험은 최종 생식독성시험 전에 시험약을 최대 3개월간 투여받는 가임기 여성(WOCBP) 최대 150명의 포함을 뒷받침할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_3.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_3.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Precautions",
+      "action": "includes",
+      "object": "pregnancy testing",
+      "normalized_ko": "예방 조치에는 임신검사 및 매우 효과적인 피임 방법의 사용이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_3.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_3.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "must",
+      "subject": "Definitive embryo-fetal development studies in two species",
+      "action": "must be completed",
+      "object": null,
+      "normalized_ko": "가임기 여성(WOCBP)을 제III상 또는 대규모 임상시험에 포함하기 전에 2종에서의 최종 배아·태아 발생시험을 완료해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_3.005",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Precautions",
+      "action": "include",
+      "object": "pregnancy testing and use of highly effective contraceptive methods",
+      "normalized_ko": "가임기 여성(WOCBP)을 제III상 또는 대규모 임상시험에 포함하는 것",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_4.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Female reproduction toxicity studies (fertility, embryo-fetal development, and pre- and post-natal development)",
+      "action": "be completed",
+      "object": null,
+      "normalized_ko": "임신부를 임상시험에 포함하기 전에, 2종에서의 암컷 생식독성시험(수태능, 배아·태아 발생 및 출생 전·후 발생) 및 표준 유전독성시험 배터리를 완료하고, 이전의 인체 노출로부터의 안전성 자료를 확보해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.11_4.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.11_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Safety data from previous human exposure",
+      "action": "be available",
+      "object": null,
+      "normalized_ko": "해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.12.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.12.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Safety data from previous adult animal and human exposure",
+      "action": "should be evaluated",
+      "object": null,
+      "normalized_ko": "하여야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.12.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.12.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "One relevant species",
+      "action": "is generally considered adequate",
+      "object": null,
+      "normalized_ko": "일반적으로 적절한 것으로 간주된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.12.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.12.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "generally considered adequate",
+      "subject": "One relevant species",
+      "action": "is generally considered adequate",
+      "object": null,
+      "normalized_ko": "일반적으로 적절한 것으로 간주된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.13.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.13.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "All new pharmaceuticals",
+      "action": "be evaluated for",
+      "object": "the potential to produce immunotoxicity using standard repeated-dose toxicity studies (hematology, lymphoid organ weights, and histology)",
+      "normalized_ko": "하는 것이 바람직하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.13.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.13.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "additional immunotoxicity studies (in accordance with ICH S8)",
+      "action": "be conducted",
+      "object": "before Phase III or earlier",
+      "normalized_ko": "하여야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.14.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.14.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "An initial assessment of phototoxicity potential",
+      "action": "should be performed",
+      "object": "based on photochemical properties",
+      "normalized_ko": "하여야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.15.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.15.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "nonclinical abuse liability studies",
+      "action": "should support",
+      "object": "Phase III clinical trials",
+      "normalized_ko": "해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.15.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.15.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The evaluation",
+      "action": "includes",
+      "object": "receptor binding profiles",
+      "normalized_ko": "포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.16.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.16.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Nonclinical qualification of impurities and degradants",
+      "action": "should be conducted in accordance with",
+      "object": "ICH Q3A and Q3B",
+      "normalized_ko": "하여야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.16.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.16.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "is warranted",
+      "subject": "Nonclinical safety qualification (MIST)",
+      "action": "is warranted",
+      "object": "for human drug metabolites",
+      "normalized_ko": "타당하다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.16.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.16.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is warranted",
+      "subject": "nonclinical safety qualification (MIST)",
+      "action": "is warranted",
+      "object": null,
+      "normalized_ko": "타당하다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.17.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.17.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "are recommended",
+      "subject": "Combination toxicity studies",
+      "action": "should be of duration equivalent to the clinical trial",
+      "object": "up to a maximum duration of 90 days",
+      "normalized_ko": "권고된다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.17.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.17.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "recommended",
+      "subject": "Combination toxicity studies",
+      "action": "should have duration equivalent to the clinical trial, up to a maximum duration of 90 days",
+      "object": null,
+      "normalized_ko": "권고된다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.17.003",
+      "source_unit_ids": [
+        "ich_m3_r2.su.17.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "A 90-day combination toxicity study in a single relevant species",
+      "action": "supports",
+      "object": "marketing authorization",
+      "normalized_ko": "뒷받침한다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.17.004",
+      "source_unit_ids": [
+        "ich_m3_r2.su.17.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "might not be warranted",
+      "subject": "Nonclinical combination studies",
+      "action": "might not be warranted",
+      "object": null,
+      "normalized_ko": "필요하지 않을 수 있다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.18.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.18.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Continuing efforts among ICH regions",
+      "action": "are underway to further harmonize",
+      "object": "nonclinical safety requirements",
+      "normalized_ko": "추가적인 조화를 위한 지속적인 노력이 진행 중이다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.18.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.18.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Continuing efforts among ICH regions",
+      "action": "are underway while maintaining",
+      "object": "high safety standards for human clinical trials",
+      "normalized_ko": "인체 임상시험을 위한 높은 안전성 기준을 유지하면서 지속적인 노력이 진행 중이다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.19.001",
+      "source_unit_ids": [
+        "ich_m3_r2.su.19.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Note 1",
+      "action": "defines",
+      "object": "the 50-fold exposure margin based on group mean AUC",
+      "normalized_ko": "정의한다",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ich_m3_r2.kr.19.002",
+      "source_unit_ids": [
+        "ich_m3_r2.su.19.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Note 5",
+      "action": "details",
+      "object": "pregnancy risk baseline rates",
+      "normalized_ko": "상세히 기술한다",
+      "review_status": "reviewed"
+    }
+  ],
+  "quantitative_criteria": [
+    {
+      "criterion_id": "ich_m3_r2.qc.1_5.001",
+      "source_unit_id": "ich_m3_r2.su.1_5.001",
+      "knowledge_record_id": null,
+      "parameter": "maximum limit dose for general toxicity studies",
+      "comparator": "not_exceed",
+      "value": 1000,
+      "value_fraction": null,
+      "unit": "mg/kg/day",
+      "value_status": "known",
+      "denominator_or_reference": "general toxicity studies limit dose",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "A dose of 1000 mg/kg/day is generally considered the maximum limit dose for general toxicity studies.",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.1_5.002",
+      "source_unit_id": "ich_m3_r2.su.1_5.001",
+      "knowledge_record_id": null,
+      "parameter": "clinical dose",
+      "comparator": "at_least",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "g/day",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.1_5.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "the clinical dose exceeds 1 g/day",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.1_5.003",
+      "source_unit_id": "ich_m3_r2.su.1_5.001",
+      "knowledge_record_id": null,
+      "parameter": "exposure margin",
+      "comparator": "at_least",
+      "value": 10,
+      "value_fraction": null,
+      "unit": "fold",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.1_5.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "does not result in a 10-fold exposure margin",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.1_5.004",
+      "source_unit_id": "ich_m3_r2.su.1_5.001",
+      "knowledge_record_id": null,
+      "parameter": "high dose for general toxicity studies (clinical dose > 1 g/day)",
+      "comparator": "not_exceed",
+      "value": 2000,
+      "value_fraction": null,
+      "unit": "mg/kg/day",
+      "value_status": "known",
+      "denominator_or_reference": "clinical dose > 1 g/day",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "testing up to 2000 mg/kg/day",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.1_5.005",
+      "source_unit_id": "ich_m3_r2.su.1_5.002",
+      "knowledge_record_id": null,
+      "parameter": "margin of exposure",
+      "comparator": "equals",
+      "value": 50,
+      "value_fraction": null,
+      "unit": "fold",
+      "value_status": "known",
+      "denominator_or_reference": "clinical exposure; group mean AUC of parent drug or active metabolite",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "a 50-fold margin of exposure (group mean AUC of parent drug or active metabolite) to the clinical exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.1_5.006",
+      "source_unit_id": "ich_m3_r2.su.1_5.001",
+      "knowledge_record_id": null,
+      "parameter": "maximum limit dose for general toxicity studies",
+      "comparator": "equals",
+      "value": 1000,
+      "value_fraction": null,
+      "unit": "mg/kg/day",
+      "value_status": "known",
+      "denominator_or_reference": "general toxicity studies limit dose",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "Limit dose of 1000 mg/kg/day",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.1_5.007",
+      "source_unit_id": "ich_m3_r2.su.1_5.001",
+      "knowledge_record_id": null,
+      "parameter": "exposure margin limit for low toxicity pharmaceuticals",
+      "comparator": "equals",
+      "value": 50,
+      "value_fraction": null,
+      "unit": "fold",
+      "value_status": "known",
+      "denominator_or_reference": "clinical exposure (group mean AUC)",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "50-fold exposure margin relative to clinical exposure",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_1.001",
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "knowledge_record_id": null,
+      "parameter": "repeated-dose toxicity study duration (clinical trials up to 2 weeks)",
+      "comparator": "at_least",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "weeks",
+      "value_status": "known",
+      "denominator_or_reference": "clinical trials up to 2 weeks (rodents and non-rodents)",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.5_1.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "minimum repeated-dose toxicity study duration is 2 weeks in rodents",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_1.002",
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "knowledge_record_id": null,
+      "parameter": "repeated-dose toxicity study duration (clinical trials up to 2 weeks)",
+      "comparator": "equals",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "weeks",
+      "value_status": "known",
+      "denominator_or_reference": "clinical trials up to 2 weeks (rodents and non-rodents)",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.5_1.004",
+        "ich_m3_r2.qc.5_1.001"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "repeated-dose toxicity duration is 2 weeks in rodents",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_1.003",
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "knowledge_record_id": null,
+      "parameter": "repeated-dose toxicity study duration (clinical trials up to 1 month)",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "month",
+      "value_status": "known",
+      "denominator_or_reference": "clinical trials up to 1 month (rodents and non-rodents)",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.5_1.006"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "toxicity study duration is 1 month in rodents",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_1.004",
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "knowledge_record_id": null,
+      "parameter": "repeated-dose toxicity study duration (clinical trials up to 3 months)",
+      "comparator": "equals",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": "clinical trials up to 3 months (rodents and non-rodents)",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.5_1.008",
+        "ich_m3_r2.qc.5_1.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "toxicity duration is 3 months in rodents",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_1.005",
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "knowledge_record_id": null,
+      "parameter": "repeated-dose toxicity study duration (clinical trials up to 6 months)",
+      "comparator": "equals",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": "clinical trials up to 6 months (rodents and non-rodents)",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.5_1.010"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "toxicity duration is 6 months in rodents",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_1.006",
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "knowledge_record_id": null,
+      "parameter": "repeated-dose toxicity study duration (clinical trials exceeding 6 months)",
+      "comparator": "equals",
+      "value": 9,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": "clinical trials exceeding 6 months (non-rodents)",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.5_1.011",
+        "ich_m3_r2.qc.5_1.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "9 months in non-rodents are recommended",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_1.007",
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "knowledge_record_id": null,
+      "parameter": "clinical trial duration",
+      "comparator": "not_exceed",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "weeks",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "For clinical trials up to 2 weeks",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_1.008",
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "knowledge_record_id": null,
+      "parameter": "clinical trial duration",
+      "comparator": "not_exceed",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "month",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.5_1.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "For clinical trials up to 1 month",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_1.009",
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "knowledge_record_id": null,
+      "parameter": "clinical trial duration",
+      "comparator": "not_exceed",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "For clinical trials up to 3 months",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_1.010",
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "knowledge_record_id": null,
+      "parameter": "clinical trial duration",
+      "comparator": "not_exceed",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.5_1.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "For clinical trials up to 6 months",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_1.011",
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "knowledge_record_id": null,
+      "parameter": "clinical trial duration",
+      "comparator": "at_least",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": "exceeding 6 months",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.5_1.006"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "For clinical trials exceeding 6 months",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_2.001",
+      "source_unit_id": "ich_m3_r2.su.5_2.001",
+      "knowledge_record_id": null,
+      "parameter": "duration of repeated-dose toxicity studies in rodents",
+      "comparator": "equals",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.5_2.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "6 months duration in rodents",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_2.002",
+      "source_unit_id": "ich_m3_r2.su.5_2.001",
+      "knowledge_record_id": null,
+      "parameter": "duration of repeated-dose toxicity studies in non-rodents",
+      "comparator": "equals",
+      "value": 9,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.5_2.001"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "9 months duration in non-rodents",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_2.003",
+      "source_unit_id": "ich_m3_r2.su.5_2.001",
+      "knowledge_record_id": null,
+      "parameter": "clinical indication duration",
+      "comparator": "not_exceed",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "weeks",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "For clinical indications up to 2 weeks",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_2.004",
+      "source_unit_id": "ich_m3_r2.su.5_2.001",
+      "knowledge_record_id": null,
+      "parameter": "duration of rodent toxicity studies",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "month",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.5_2.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "1 month rodent",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_2.005",
+      "source_unit_id": "ich_m3_r2.su.5_2.001",
+      "knowledge_record_id": null,
+      "parameter": "clinical administration duration",
+      "comparator": "at_least",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": "longer than 3 months",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.5_2.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "clinical administration longer than 3 months",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_2.006",
+      "source_unit_id": "ich_m3_r2.su.5_2.001",
+      "knowledge_record_id": null,
+      "parameter": "intended use",
+      "comparator": "equals",
+      "value": null,
+      "value_fraction": null,
+      "unit": null,
+      "value_status": "not_applicable",
+      "denominator_or_reference": "chronic use",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "or for chronic use",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_2.007",
+      "source_unit_id": "ich_m3_r2.su.5_2.001",
+      "knowledge_record_id": null,
+      "parameter": "clinical indication duration",
+      "comparator": "not_exceed",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "month",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "For indications up to 1 month",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.5_2.008",
+      "source_unit_id": "ich_m3_r2.su.5_2.001",
+      "knowledge_record_id": null,
+      "parameter": "duration of toxicity studies",
+      "comparator": "equals",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "3 months studies",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_1.001",
+      "source_unit_id": "ich_m3_r2.su.7_1.001",
+      "knowledge_record_id": null,
+      "parameter": "total dose",
+      "comparator": "not_exceed",
+      "value": 100,
+      "value_fraction": null,
+      "unit": "µg",
+      "value_status": "known",
+      "denominator_or_reference": "Approach 1 microdose trial",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_1.002",
+        "ich_m3_r2.qc.7_1.003",
+        "ich_m3_r2.qc.7_1.013"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "a total dose of not more than 100 µg",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_1.002",
+      "source_unit_id": "ich_m3_r2.su.7_1.001",
+      "knowledge_record_id": null,
+      "parameter": "total dose relative to the NOAEL",
+      "comparator": "not_exceed",
+      "value": null,
+      "value_fraction": {
+        "numerator": 1,
+        "denominator": 100
+      },
+      "unit": null,
+      "value_status": "known",
+      "denominator_or_reference": "Approach 1 microdose trial",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_1.001",
+        "ich_m3_r2.qc.7_1.003",
+        "ich_m3_r2.qc.7_1.013"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "not more than 1/100th of the NOAEL",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_1.003",
+      "source_unit_id": "ich_m3_r2.su.7_1.001",
+      "knowledge_record_id": null,
+      "parameter": "number of mammalian species in the supporting toxicity study",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "mammalian species",
+      "value_status": "known",
+      "denominator_or_reference": "Approach 1 microdose trial",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_1.005",
+        "ich_m3_r2.qc.7_1.001",
+        "ich_m3_r2.qc.7_1.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "one mammalian species",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_1.004",
+      "source_unit_id": "ich_m3_r2.su.7_1.001",
+      "knowledge_record_id": null,
+      "parameter": "observation duration",
+      "comparator": "equals",
+      "value": 14,
+      "value_fraction": null,
+      "unit": "day",
+      "value_status": "known",
+      "denominator_or_reference": "Approach 1 microdose trial",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_1.014"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "14-day observation",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_1.005",
+      "source_unit_id": "ich_m3_r2.su.7_1.002",
+      "knowledge_record_id": null,
+      "parameter": "number of administrations",
+      "comparator": "not_exceed",
+      "value": 5,
+      "value_fraction": null,
+      "unit": "administrations",
+      "value_status": "known",
+      "denominator_or_reference": "Approach 2 microdose trial",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_1.007",
+        "ich_m3_r2.qc.7_1.008",
+        "ich_m3_r2.qc.7_1.009",
+        "ich_m3_r2.qc.7_1.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "up to 5 administrations",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_1.006",
+      "source_unit_id": "ich_m3_r2.su.7_1.002",
+      "knowledge_record_id": null,
+      "parameter": "dose per administration",
+      "comparator": "not_exceed",
+      "value": 100,
+      "value_fraction": null,
+      "unit": "µg per administration",
+      "value_status": "known",
+      "denominator_or_reference": "Approach 2 microdose trial",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_1.008",
+        "ich_m3_r2.qc.7_1.009",
+        "ich_m3_r2.qc.7_1.007"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "not more than 100 µg per administration",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_1.007",
+      "source_unit_id": "ich_m3_r2.su.7_1.002",
+      "knowledge_record_id": null,
+      "parameter": "total accumulated dose",
+      "comparator": "not_exceed",
+      "value": 500,
+      "value_fraction": null,
+      "unit": "µg",
+      "value_status": "known",
+      "denominator_or_reference": "Approach 2 microdose trial",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_1.006",
+        "ich_m3_r2.qc.7_1.009",
+        "ich_m3_r2.qc.7_1.005",
+        "ich_m3_r2.qc.7_1.008"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "total accumulated dose not more than 500 µg",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_1.008",
+      "source_unit_id": "ich_m3_r2.su.7_1.002",
+      "knowledge_record_id": null,
+      "parameter": "each dose relative to the NOAEL",
+      "comparator": "not_exceed",
+      "value": null,
+      "value_fraction": {
+        "numerator": 1,
+        "denominator": 100
+      },
+      "unit": null,
+      "value_status": "known",
+      "denominator_or_reference": "Approach 2 microdose trial",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_1.006",
+        "ich_m3_r2.qc.7_1.007",
+        "ich_m3_r2.qc.7_1.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "each dose not exceeding 1/100th of the NOAEL",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_1.009",
+      "source_unit_id": "ich_m3_r2.su.7_1.002",
+      "knowledge_record_id": null,
+      "parameter": "toxicity study duration",
+      "comparator": "equals",
+      "value": 7,
+      "value_fraction": null,
+      "unit": "day",
+      "value_status": "known",
+      "denominator_or_reference": "Approach 2 microdose trial",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_1.005",
+        "ich_m3_r2.qc.7_1.006",
+        "ich_m3_r2.qc.7_1.007"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "a 7-day or 14-day toxicity study",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_1.010",
+      "source_unit_id": "ich_m3_r2.su.7_1.002",
+      "knowledge_record_id": null,
+      "parameter": "toxicity study duration",
+      "comparator": "equals",
+      "value": 14,
+      "value_fraction": null,
+      "unit": "day",
+      "value_status": "known",
+      "denominator_or_reference": "Approach 2 microdose trial",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "a 7-day or 14-day toxicity study",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_1.011",
+      "source_unit_id": "ich_m3_r2.su.7_1.002",
+      "knowledge_record_id": null,
+      "parameter": "number of mammalian species in the supporting toxicity study",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "mammalian species",
+      "value_status": "known",
+      "denominator_or_reference": "Approach 2 microdose trial",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_1.016"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "a single mammalian species",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_1.013",
+      "source_unit_id": "ich_m3_r2.su.7_1.001",
+      "knowledge_record_id": null,
+      "parameter": "total dose relative to the pharmacologically active dose",
+      "comparator": "not_exceed",
+      "value": null,
+      "value_fraction": {
+        "numerator": 1,
+        "denominator": 100
+      },
+      "unit": "fraction of the pharmacologically active dose",
+      "value_status": "known",
+      "denominator_or_reference": "Approach 1 microdose trial",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_1.001",
+        "ich_m3_r2.qc.7_1.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "not more than 1/100th of the pharmacologically active dose",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_1.014",
+      "source_unit_id": "ich_m3_r2.su.7_1.001",
+      "knowledge_record_id": null,
+      "parameter": "observation duration",
+      "comparator": "equals",
+      "value": 14,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": "Approach 1 microdose trial",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_1.004"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "with 14-day observation",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_1.016",
+      "source_unit_id": "ich_m3_r2.su.7_1.002",
+      "knowledge_record_id": null,
+      "parameter": "toxicity study duration",
+      "comparator": "within",
+      "value": null,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "not_applicable",
+      "denominator_or_reference": "Approach 2 microdose trial",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_1.011"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "a 7-day or 14-day toxicity study",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_2.001",
+      "source_unit_id": "ich_m3_r2.su.7_2.001",
+      "knowledge_record_id": null,
+      "parameter": "duration of repeated-dose toxicity study in a rodent",
+      "comparator": "equals",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "week",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_2.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "a 2-week repeated-dose toxicity study in a rodent",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_2.002",
+      "source_unit_id": "ich_m3_r2.su.7_2.001",
+      "knowledge_record_id": null,
+      "parameter": "duration of repeated-dose toxicity study in a rodent",
+      "comparator": "equals",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "weeks",
+      "value_status": "known",
+      "denominator_or_reference": "repeated-dose toxicity study in a rodent",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.7_2.001"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "2-week repeated-dose toxicity study in a rodent",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_3.001",
+      "source_unit_id": "ich_m3_r2.su.7_3.001",
+      "knowledge_record_id": null,
+      "parameter": "multiple dose clinical trial duration for Approach 4",
+      "comparator": "not_exceed",
+      "value": 14,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "up to 14 days duration",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_3.002",
+      "source_unit_id": "ich_m3_r2.su.7_3.001",
+      "knowledge_record_id": null,
+      "parameter": "repeated-dose toxicity study duration for Approach 4",
+      "comparator": "equals",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "weeks",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "2-week repeated-dose toxicity studies",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.7_3.003",
+      "source_unit_id": "ich_m3_r2.su.7_3.001",
+      "knowledge_record_id": null,
+      "parameter": "species represented in Approach 4 repeated-dose toxicity studies",
+      "comparator": "equals",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "species",
+      "value_status": "known",
+      "denominator_or_reference": "a rodent and a non-rodent species",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "both a rodent and a non-rodent species",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.8.001",
+      "source_unit_id": "ich_m3_r2.su.8.001",
+      "knowledge_record_id": null,
+      "parameter": "local tolerance study dose count",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "dose",
+      "value_status": "known",
+      "denominator_or_reference": "local tolerance study",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.8.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "a single dose local tolerance study",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.8.002",
+      "source_unit_id": "ich_m3_r2.su.8.001",
+      "knowledge_record_id": null,
+      "parameter": "species count",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "species",
+      "value_status": "known",
+      "denominator_or_reference": "local tolerance study",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.8.001"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "in a single species",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.10.001",
+      "source_unit_id": "ich_m3_r2.su.10.001",
+      "knowledge_record_id": null,
+      "parameter": "expected clinical use continuous duration",
+      "comparator": "at_least",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": "expected clinical use",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "continuous for at least 6 months",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.11_2.001",
+      "source_unit_id": "ich_m3_r2.su.11_2.001",
+      "knowledge_record_id": null,
+      "parameter": "duration with no menses",
+      "comparator": "equals",
+      "value": 12,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": "no menses",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "12 months with no menses",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.11_3.001",
+      "source_unit_id": "ich_m3_r2.su.11_3.001",
+      "knowledge_record_id": null,
+      "parameter": "species for preliminary embryofetal developmental toxicity studies",
+      "comparator": "equals",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "species",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.11_3.002",
+        "ich_m3_r2.qc.11_3.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "Preliminary embryofetal developmental toxicity studies in two species",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.11_3.002",
+      "source_unit_id": "ich_m3_r2.su.11_3.001",
+      "knowledge_record_id": null,
+      "parameter": "WOCBP receiving investigational treatment",
+      "comparator": "not_exceed",
+      "value": 150,
+      "value_fraction": null,
+      "unit": "WOCBP",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.11_3.001",
+        "ich_m3_r2.qc.11_3.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "up to 150 WOCBP receiving investigational treatment",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.11_3.003",
+      "source_unit_id": "ich_m3_r2.su.11_3.001",
+      "knowledge_record_id": null,
+      "parameter": "duration of investigational treatment",
+      "comparator": "not_exceed",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "months",
+      "value_status": "known",
+      "denominator_or_reference": "WOCBP receiving investigational treatment",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.11_3.001",
+        "ich_m3_r2.qc.11_3.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "for up to 3 months",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.11_4.001",
+      "source_unit_id": "ich_m3_r2.su.11_4.001",
+      "knowledge_record_id": null,
+      "parameter": "Number of species for female reproduction toxicity studies",
+      "comparator": "equals",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "species",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "in two species",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.12.001",
+      "source_unit_id": "ich_m3_r2.su.12.001",
+      "knowledge_record_id": null,
+      "parameter": "number of relevant species",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "species",
+      "value_status": "known",
+      "denominator_or_reference": "juvenile study",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "one relevant species, preferably rodent, is generally considered adequate",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.12.002",
+      "source_unit_id": "ich_m3_r2.su.12.001",
+      "knowledge_record_id": null,
+      "parameter": "number of relevant species for a juvenile study",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "relevant species",
+      "value_status": "known",
+      "denominator_or_reference": "If a juvenile study is warranted",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "one relevant species",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.14.001",
+      "source_unit_id": "ich_m3_r2.su.14.001",
+      "knowledge_record_id": null,
+      "parameter": "UV/Vis light absorption",
+      "comparator": "at_least",
+      "value": 290,
+      "value_fraction": null,
+      "unit": "nm",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.14.002",
+        "ich_m3_r2.qc.14.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "UV/Vis light absorption between 290 and 700 nm",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.14.002",
+      "source_unit_id": "ich_m3_r2.su.14.001",
+      "knowledge_record_id": null,
+      "parameter": "UV/Vis light absorption",
+      "comparator": "not_exceed",
+      "value": 700,
+      "value_fraction": null,
+      "unit": "nm",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.14.001",
+        "ich_m3_r2.qc.14.003",
+        "ich_m3_r2.qc.14.005"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "UV/Vis light absorption between 290 and 700 nm",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.14.003",
+      "source_unit_id": "ich_m3_r2.su.14.001",
+      "knowledge_record_id": null,
+      "parameter": "molar extinction coefficient",
+      "comparator": "at_least",
+      "value": 1000,
+      "value_fraction": null,
+      "unit": "M-1 cm-1",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.14.001",
+        "ich_m3_r2.qc.14.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "molar extinction coefficient > 1000 M-1 cm-1",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.14.004",
+      "source_unit_id": "ich_m3_r2.su.14.001",
+      "knowledge_record_id": null,
+      "parameter": "completion of experimental testing",
+      "comparator": "not_exceed",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "Phase III",
+      "value_status": "known",
+      "denominator_or_reference": "prior to Phase III",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "prior to Phase III",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.14.005",
+      "source_unit_id": "ich_m3_r2.su.14.001",
+      "knowledge_record_id": null,
+      "parameter": "UV/Vis light absorption",
+      "comparator": "within",
+      "value": null,
+      "value_fraction": null,
+      "unit": "nm",
+      "value_status": "not_applicable",
+      "denominator_or_reference": "between 290 and 700 nm",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.14.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "UV/Vis light absorption between 290 and 700 nm",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.16.001",
+      "source_unit_id": "ich_m3_r2.su.16.001",
+      "knowledge_record_id": null,
+      "parameter": "metabolite exposure as a percentage of total drug-related exposure in humans",
+      "comparator": "at_least",
+      "value": 10,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": "total drug-related exposure in humans",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "> 10% of total drug-related exposure in humans",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.17.001",
+      "source_unit_id": "ich_m3_r2.su.17.001",
+      "knowledge_record_id": null,
+      "parameter": "maximum duration of combination toxicity studies",
+      "comparator": "not_exceed",
+      "value": 90,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": "clinical trial duration",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "up to a maximum duration of 90 days",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.17.002",
+      "source_unit_id": "ich_m3_r2.su.17.001",
+      "knowledge_record_id": null,
+      "parameter": "combination toxicity study duration supporting marketing authorization",
+      "comparator": "equals",
+      "value": 90,
+      "value_fraction": null,
+      "unit": "days",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.17.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "A 90-day combination toxicity study",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.17.003",
+      "source_unit_id": "ich_m3_r2.su.17.001",
+      "knowledge_record_id": null,
+      "parameter": "number of relevant species for a combination toxicity study supporting marketing authorization",
+      "comparator": "equals",
+      "value": 1,
+      "value_fraction": null,
+      "unit": "relevant species",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "ich_m3_r2.qc.17.002"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "a single relevant species",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.19.001",
+      "source_unit_id": "ich_m3_r2.su.19.001",
+      "knowledge_record_id": null,
+      "parameter": "exposure margin",
+      "comparator": "equals",
+      "value": 50,
+      "value_fraction": null,
+      "unit": "fold",
+      "value_status": "known",
+      "denominator_or_reference": "based on group mean AUC",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "50-fold exposure margin based on group mean AUC",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "ich_m3_r2.qc.19.002",
+      "source_unit_id": "ich_m3_r2.su.19.001",
+      "knowledge_record_id": null,
+      "parameter": "dams per group in preliminary embryo-fetal studies",
+      "comparator": "at_least",
+      "value": 6,
+      "value_fraction": null,
+      "unit": "dams per group",
+      "value_status": "known",
+      "denominator_or_reference": "preliminary embryo-fetal studies",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "minimum of 6 dams per group",
+      "review_status": "reviewed"
+    }
+  ],
+  "conditions": [
+    {
+      "condition_id": "ich_m3_r2.cond.1_1.001",
+      "source_unit_id": "ich_m3_r2.su.1_1.001",
+      "condition_text": "in accordance with the 3R (reduce/refine/replace) principles",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.1_1.007"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.1_2.001",
+      "source_unit_id": "ich_m3_r2.su.1_2.001",
+      "condition_text": "when appropriate",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.1_2.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.1_2.002",
+      "source_unit_id": "ich_m3_r2.su.1_2.001",
+      "condition_text": "when appropriate",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.1_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.1_3.001",
+      "source_unit_id": "ich_m3_r2.su.1_3.001",
+      "condition_text": "during the development of pharmaceuticals",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.1_3.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.1_3.002",
+      "source_unit_id": "ich_m3_r2.su.1_3.001",
+      "condition_text": "For biotechnology-derived products",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.1_3.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.1_3.003",
+      "source_unit_id": "ich_m3_r2.su.1_3.001",
+      "condition_text": "for issues not covered in ICH S6",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.1_3.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.1_3.004",
+      "source_unit_id": "ich_m3_r2.su.1_3.001",
+      "condition_text": "without current effective therapy",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.1_3.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.1_3.005",
+      "source_unit_id": "ich_m3_r2.su.1_3.001",
+      "condition_text": "under development for indications in life-threatening or serious diseases (e.g., advanced cancer, resistant HIV infection) without current effective therapy",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.1_3.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.1_3.006",
+      "source_unit_id": "ich_m3_r2.su.1_3.001",
+      "condition_text": "usually encountered during the development of pharmaceuticals",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.1_3.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.1_3.007",
+      "source_unit_id": "ich_m3_r2.su.1_3.001",
+      "condition_text": "for indications in life-threatening or serious diseases (e.g., advanced cancer, resistant HIV infection) without current effective therapy",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.1_3.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.1_3.008",
+      "source_unit_id": "ich_m3_r2.su.1_3.001",
+      "condition_text": "for anticancer pharmaceuticals",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.1_3.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.1_5.001",
+      "source_unit_id": "ich_m3_r2.su.1_5.001",
+      "condition_text": "In general toxicity studies",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.1_5.001",
+        "ich_m3_r2.kr.1_5.002",
+        "ich_m3_r2.kr.1_5.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.1_5.002",
+      "source_unit_id": "ich_m3_r2.su.1_5.001",
+      "condition_text": "if 1000 mg/kg/day does not result in a 10-fold exposure margin and the clinical dose exceeds 1 g/day",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.1_5.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.1_5.003",
+      "source_unit_id": "ich_m3_r2.su.1_5.002",
+      "condition_text": "in general toxicity studies in rodents and non-rodents for pharmaceuticals with low toxicity potential",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.1_5.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.2.001",
+      "source_unit_id": "ich_m3_r2.su.2.001",
+      "condition_text": "before human exposure",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.2.002",
+      "source_unit_id": "ich_m3_r2.su.2.001",
+      "condition_text": "when warranted",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.2.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.2.003",
+      "source_unit_id": "ich_m3_r2.su.2.001",
+      "condition_text": "in accordance with ICH S7A and S7B",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.3.001",
+      "source_unit_id": "ich_m3_r2.su.3.001",
+      "condition_text": "before initiating clinical trials",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.3.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.3.002",
+      "source_unit_id": "ich_m3_r2.su.3.001",
+      "condition_text": "during clinical development",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.3.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.3.003",
+      "source_unit_id": "ich_m3_r2.su.3.001",
+      "condition_text": "in species used for repeated-dose toxicity studies (ICH S3A)",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.3.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.4.001",
+      "source_unit_id": "ich_m3_r2.su.4.001",
+      "condition_text": "appropriately conducted",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.4.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.4.002",
+      "source_unit_id": "ich_m3_r2.su.4.001",
+      "condition_text": "in humans",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.4.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.5_1.001",
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "condition_text": "For a single dose clinical trial",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.5_1.002",
+        "ich_m3_r2.kr.5_1.001",
+        "ich_m3_r2.kr.5_1.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.5_1.002",
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "condition_text": "For clinical trials up to 2 weeks",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.5_1.003",
+        "ich_m3_r2.kr.5_1.003",
+        "ich_m3_r2.kr.5_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.5_1.003",
+      "source_unit_id": "ich_m3_r2.su.5_1.001",
+      "condition_text": "For clinical trials up to 1 month",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.5_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.5_2.001",
+      "source_unit_id": "ich_m3_r2.su.5_2.001",
+      "condition_text": "clinical administration longer than 3 months",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.5_2.001",
+        "ich_m3_r2.kr.5_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.5_2.002",
+      "source_unit_id": "ich_m3_r2.su.5_2.001",
+      "condition_text": "for chronic use",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.5_2.001",
+        "ich_m3_r2.kr.5_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.5_2.005",
+      "source_unit_id": "ich_m3_r2.su.5_2.001",
+      "condition_text": "To support marketing authorization (MA)",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.5_2.001",
+        "ich_m3_r2.kr.5_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.5_2.006",
+      "source_unit_id": "ich_m3_r2.su.5_2.001",
+      "condition_text": "for pharmaceuticals intended for clinical administration longer than 3 months or for chronic use",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.5_2.001",
+        "ich_m3_r2.kr.5_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.6.001",
+      "source_unit_id": "ich_m3_r2.su.6.001",
+      "condition_text": "when determining the recommended starting dose in humans",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.6.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.6.002",
+      "source_unit_id": "ich_m3_r2.su.6.001",
+      "condition_text": "In general",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.6.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.6.003",
+      "source_unit_id": "ich_m3_r2.su.6.001",
+      "condition_text": "When biologically active pharmaceuticals have potent agonistic effects or high species specificity",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.6.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.6.004",
+      "source_unit_id": "ich_m3_r2.su.6.001",
+      "condition_text": "when determining the recommended starting dose in humans",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.6.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.7.001",
+      "source_unit_id": "ich_m3_r2.su.7.001",
+      "condition_text": "under specific approaches (Approaches 1 through 5) before standard full repeated-dose toxicity testing",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.7.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.7.002",
+      "source_unit_id": "ich_m3_r2.su.7.001",
+      "condition_text": "under specific approaches (Approaches 1 through 5)",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.7.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.7.003",
+      "source_unit_id": "ich_m3_r2.su.7.001",
+      "condition_text": "before standard full repeated-dose toxicity testing",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.7.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.7_1.001",
+      "source_unit_id": "ich_m3_r2.su.7_1.001",
+      "condition_text": "as a single dose or divided doses",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.7_1.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.7_2.001",
+      "source_unit_id": "ich_m3_r2.su.7_2.001",
+      "condition_text": "at sub-therapeutic doses or into the anticipated therapeutic range",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.7_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.8.001",
+      "source_unit_id": "ich_m3_r2.su.8.001",
+      "condition_text": "To support limited human administration by non-therapeutic routes",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.8.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.8.002",
+      "source_unit_id": "ich_m3_r2.su.8.001",
+      "condition_text": "To support limited human administration by non-therapeutic routes",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.8.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.9.001",
+      "source_unit_id": "ich_m3_r2.su.9.001",
+      "condition_text": "Prior to first-in-human clinical trials",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.9.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.10.001",
+      "source_unit_id": "ich_m3_r2.su.10.001",
+      "condition_text": "whose expected clinical use is continuous for at least 6 months, or is frequently intermittent for chronic or recurrent conditions",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.10.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.10.002",
+      "source_unit_id": "ich_m3_r2.su.10.001",
+      "condition_text": "unless clinical safety concerns warrant earlier conduct before Phase III or Phase II",
+      "condition_type": "exception",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.10.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.10.003",
+      "source_unit_id": "ich_m3_r2.su.10.001",
+      "condition_text": "or is frequently intermittent for chronic or recurrent conditions",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.10.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.11_1.001",
+      "source_unit_id": "ich_m3_r2.su.11_1.001",
+      "condition_text": "before the conduct of the male fertility study",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.11_1.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.11_1.002",
+      "source_unit_id": "ich_m3_r2.su.11_1.001",
+      "condition_text": "before the initiation of large scale or long duration clinical trials",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.11_1.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.11_1.003",
+      "source_unit_id": "ich_m3_r2.su.11_1.001",
+      "condition_text": "before the initiation of large scale or long duration clinical trials",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.11_1.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.11_2.001",
+      "source_unit_id": "ich_m3_r2.su.11_2.001",
+      "condition_text": "if the relevant repeated-dose toxicity studies (which include an evaluation of the female reproductive organs) have been conducted",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.11_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.11_2.002",
+      "source_unit_id": "ich_m3_r2.su.11_2.001",
+      "condition_text": "without an alternative medical cause",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.11_2.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.11_2.003",
+      "source_unit_id": "ich_m3_r2.su.11_2.001",
+      "condition_text": "without an alternative medical cause",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.11_2.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.11_3.001",
+      "source_unit_id": "ich_m3_r2.su.11_3.001",
+      "condition_text": "when precautions to prevent pregnancy are used",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.11_3.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.11_3.002",
+      "source_unit_id": "ich_m3_r2.su.11_3.001",
+      "condition_text": "before definitive reprotox testing",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.11_3.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.11_3.003",
+      "source_unit_id": "ich_m3_r2.su.11_3.001",
+      "condition_text": "prior to the inclusion of WOCBP in Phase III or extensive clinical trials",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.11_3.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.11_3.004",
+      "source_unit_id": "ich_m3_r2.su.11_3.001",
+      "condition_text": "Preliminary embryofetal developmental toxicity studies in two species",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.11_3.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.11_3.005",
+      "source_unit_id": "ich_m3_r2.su.11_3.001",
+      "condition_text": "before definitive reprotox testing",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.11_3.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.11_3.006",
+      "source_unit_id": "ich_m3_r2.su.11_3.001",
+      "condition_text": "in Phase III or extensive clinical trials",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.11_3.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.11_4.001",
+      "source_unit_id": "ich_m3_r2.su.11_4.001",
+      "condition_text": "Before pregnant women are included in clinical trials",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.11_4.001",
+        "ich_m3_r2.kr.11_4.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.12.001",
+      "source_unit_id": "ich_m3_r2.su.12.001",
+      "condition_text": "When pediatric populations are to be included in clinical trials",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.12.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.12.002",
+      "source_unit_id": "ich_m3_r2.su.12.001",
+      "condition_text": "only when previous animal data and human safety data are judged to be insufficient",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.12.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.12.003",
+      "source_unit_id": "ich_m3_r2.su.12.001",
+      "condition_text": "If a juvenile study is warranted",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.12.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.13.001",
+      "source_unit_id": "ich_m3_r2.su.13.001",
+      "condition_text": "If signs of immunotoxic potential are observed",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.13.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.15.001",
+      "source_unit_id": "ich_m3_r2.su.15.001",
+      "condition_text": "For pharmaceuticals that produce central nervous system (CNS) effects",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.15.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.16.001",
+      "source_unit_id": "ich_m3_r2.su.16.001",
+      "condition_text": "For human drug metabolites",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.16.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.16.002",
+      "source_unit_id": "ich_m3_r2.su.16.001",
+      "condition_text": "a metabolite is formed at > 10% of total drug-related exposure in humans",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.16.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.16.003",
+      "source_unit_id": "ich_m3_r2.su.16.001",
+      "condition_text": "at significantly lower exposure in toxicity animal species",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.16.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.16.004",
+      "source_unit_id": "ich_m3_r2.su.16.001",
+      "condition_text": "when a metabolite is formed at > 10% of total drug-related exposure in humans and at significantly lower exposure in toxicity animal species",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.16.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.16.005",
+      "source_unit_id": "ich_m3_r2.su.16.001",
+      "condition_text": "For human drug metabolites",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.16.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.17.001",
+      "source_unit_id": "ich_m3_r2.su.17.001",
+      "condition_text": "If both individual entities are well characterized and no pharmacokinetic or toxicological interaction is anticipated",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.17.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.17.002",
+      "source_unit_id": "ich_m3_r2.su.17.001",
+      "condition_text": "For combination drug development",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.17.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ich_m3_r2.cond.17.003",
+      "source_unit_id": "ich_m3_r2.su.17.001",
+      "condition_text": "For combination drug development",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ich_m3_r2.kr.17.001"
+      ],
+      "review_status": "reviewed"
+    }
+  ],
+  "cross_references": []
+}

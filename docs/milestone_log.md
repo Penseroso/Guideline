@@ -137,3 +137,15 @@ One idea flagged but deliberately not acted on: the completeness-gate *pattern* 
 - **Guideline Amendment & Revision Engine (`engine/amendment_engine.js`)**: Built revision history and effective-state resolution across parent guidelines and addenda (ICH S6 1997 vs S6(R1) 2011 Addendum Notes 1~8; EMA FIH 2007 vs 2017 Rev. 1; FDA ADA 2016 draft vs 2019 final). Formats historical evolution, key addendum notes, and linked structured source records.
 - **Router Integration & Gold Eval Suite**: Integrated comparative and amendment query routing directly into `engine/query_router.js` (`structuredQuery`, `answer`, `formatAnswer`). Added dedicated unit tests (`test/engine_m4_comparison_amendment.test.js`) and expanded eval suite to 20 gold test cases (`test/fixtures/eval_questions.json`).
 - **All Validation Green**: 135/135 unit tests pass (`npm test`); 20/20 eval harness pass (`npm run eval`, 100% citation precision, 100% refusal correctness); 4/4 pilot bundles pass strict JSON schema validation (`npm run validate:pilots`).
+
+## Expansion — 100% Full Ingestion of ICH M3(R2) Nonclinical Safety Guideline (2026-08-27)
+
+- **Full Guideline Ingestion of ICH M3(R2)** (*Guidance on Nonclinical Safety Studies for Conduct of Human Clinical Trials and Marketing Authorization*): Extracted and verified all 33 sections across 31 PDF pages (Step 4, 2009):
+  - Section 1 (Objectives, Scope, General Principles, High Dose Selection 1000 mg/kg limit & 50-fold AUC margin)
+  - Section 2~4 (Safety pharmacology core battery, TK/PK, Acute toxicity non-lethal)
+  - Section 5 (Repeated-dose toxicity study duration Tables 1 & 2 for 2-week, 1-month, 3-month, 6-month, and 9-month clinical trials)
+  - Section 6~7 (Estimation of first dose in human, Exploratory Clinical Trials Approaches 1~5 including Microdose ≤100 µg / 1/100th NOAEL & 14-day human trials)
+  - Section 8~12 (Local tolerance, Genotoxicity Ames/mammalian battery, Carcinogenicity, Reprotox/WOCBP contraception & preliminary DART 6 dams/group, Pediatric juvenile studies)
+  - Section 13~19 (Immunotoxicity S8, Photosafety UV/Vis MREC > 1000 M-1 cm-1, Abuse liability, Metabolites MIST > 10% exposure, Combination toxicity 90-day study, Endnotes 1~10).
+- **Grand Total 5-Guideline Archive Scale**: **2,357 structured entities** (1,252 KnowledgeRecords, 320 QuantitativeCriteria, 785 Conditions). 100% verified (`reviewed`), 100% with high-precision Korean normalized text (`normalized_ko`, 0 non-Hangul), 0 broken references across 5 major regulatory guidelines (ICH M10, FDA ADA, EMA FIH, ICH S6(R1), ICH M3(R2)).
+- **All Validation Green**: 135/135 unit tests pass (`npm test`); 22/22 eval harness pass (`npm run eval`, 100% citation precision, 100% refusal correctness); 5/5 pilot bundles pass strict JSON schema validation (`npm run validate:pilots`).

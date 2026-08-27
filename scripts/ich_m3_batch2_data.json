@@ -1,0 +1,116 @@
+{
+  "sections": [
+    {
+      "section_id": "ich_m3_r2.sec.6",
+      "document_id": "ich_m3_r2",
+      "section_number": "6",
+      "title": "ESTIMATION OF THE FIRST DOSE IN HUMAN",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 60,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.7",
+      "document_id": "ich_m3_r2",
+      "section_number": "7",
+      "title": "EXPLORATORY CLINICAL TRIALS",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 70,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.7_1",
+      "document_id": "ich_m3_r2",
+      "section_number": "7.1",
+      "title": "Microdose Trials",
+      "parent_section_id": "ich_m3_r2.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 71,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.7_2",
+      "document_id": "ich_m3_r2",
+      "section_number": "7.2",
+      "title": "Single-Dose Trials at Sub-therapeutic Doses or into the Anticipated Therapeutic Range",
+      "parent_section_id": "ich_m3_r2.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 72,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ich_m3_r2.sec.7_3",
+      "document_id": "ich_m3_r2",
+      "section_number": "7.3",
+      "title": "Multiple Dose Trials",
+      "parent_section_id": "ich_m3_r2.sec.7",
+      "heading_source_unit_id": null,
+      "section_order": 73,
+      "section_order_status": "known"
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "ich_m3_r2.su.6.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.6",
+      "unit_order": 600,
+      "unit_type": "paragraph",
+      "source_text": "The estimation of the first dose in humans is an important element to safeguard subjects participating in first-in-human studies. All of the relevant nonclinical data, including the pharmacological dose response, the pharmacological/toxicological profile, and pharmacokinetics, should be considered when determining the recommended starting dose in humans. In general, the No Observed Adverse Effect Level (NOAEL) determined in the most relevant animal species, combined with appropriate safety factors, is used to estimate the initial clinical dose. When biologically active pharmaceuticals have potent agonistic effects or high species specificity, MABEL or other pharmacologically based approaches should be considered.",
+      "pdfPage": 13,
+      "printedPage": "8"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.7.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.7",
+      "unit_order": 700,
+      "unit_type": "paragraph",
+      "source_text": "Exploratory clinical trials can be conducted early in human drug development under specific approaches (Approaches 1 through 5) before standard full repeated-dose toxicity testing. These approaches involve limited human exposure, have no therapeutic intent, and are used to investigate PK, PD, receptor occupancy, or target selection.",
+      "pdfPage": 14,
+      "printedPage": "8-9"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.7_1.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.7_1",
+      "unit_order": 710,
+      "unit_type": "paragraph",
+      "source_text": "Approach 1 (Microdose Approach 1) involves administering a total dose of not more than 100 µg (as a single dose or divided doses) that is also not more than 1/100th of the NOAEL and not more than 1/100th of the pharmacologically active dose. Approach 1 is supported by an extended single-dose toxicity study in one mammalian species (usually rodent) with 14-day observation.",
+      "pdfPage": 14,
+      "printedPage": "9"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.7_1.002",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.7_1",
+      "unit_order": 711,
+      "unit_type": "paragraph",
+      "source_text": "Approach 2 (Microdose Approach 2) involves up to 5 administrations of not more than 100 µg per administration (total accumulated dose not more than 500 µg), with each dose not exceeding 1/100th of the NOAEL. Approach 2 can be used for PET receptor occupancy studies and is supported by a 7-day or 14-day toxicity study in a single mammalian species.",
+      "pdfPage": 14,
+      "printedPage": "9"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.7_2.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.7_2",
+      "unit_order": 720,
+      "unit_type": "paragraph",
+      "source_text": "Approach 3 involves single-dose trials at sub-therapeutic doses or into the anticipated therapeutic range. The clinical starting dose should be based on safety factors from animal NOAELs. Approach 3 is supported by a 2-week repeated-dose toxicity study in a rodent and a 2-week repeated-dose toxicity study in a non-rodent.",
+      "pdfPage": 15,
+      "printedPage": "9"
+    },
+    {
+      "source_unit_id": "ich_m3_r2.su.7_3.001",
+      "document_id": "ich_m3_r2",
+      "section_id": "ich_m3_r2.sec.7_3",
+      "unit_order": 730,
+      "unit_type": "paragraph",
+      "source_text": "Approach 4 involves multiple dose clinical trials of up to 14 days duration into the therapeutic range. Approach 4 is supported by 2-week repeated-dose toxicity studies in both a rodent and a non-rodent species. Approach 5 involves multiple dose clinical trials of up to 14 days duration supported by a 2-week rodent toxicity study and a non-rodent confirmatory study showing that the rodent NOAEL is non-toxic in the non-rodent.",
+      "pdfPage": 15,
+      "printedPage": "9-10"
+    }
+  ]
+}
