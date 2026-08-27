@@ -124,6 +124,22 @@
       "expect_answered": true,
       "expect_citation_contains": "FDA-2019-ADA",
       "expect_text_contains": "Neutralization"
+    },
+    {
+      "id": "q20_comparison_fda_ich_lba",
+      "question": "FDA ADA vs ICH M10의 LBA 및 면역원성 기준 차이점 비교",
+      "expect_answered": true,
+      "expect_citation_contains": "M10",
+      "expect_text_contains": "비교 분석",
+      "note": "M4 Cross-Guideline Comparison query between FDA ADA and ICH M10."
+    },
+    {
+      "id": "q21_amendment_ich_s6_addendum",
+      "question": "ICH S6 Addendum의 주요 개정 이력 및 Note 내용",
+      "expect_answered": true,
+      "expect_citation_contains": "S6(R1)",
+      "expect_text_contains": "개정 이력",
+      "note": "M4 Guideline Amendment query on ICH S6(R1) Addendum Notes."
     }
   ]
 }

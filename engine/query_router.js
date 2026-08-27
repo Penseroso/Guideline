@@ -1,6 +1,8 @@
 const { loadStore } = require("./data_store");
 const { tokenize, extractQueryScope } = require("./text_utils");
 const { verifyClaim } = require("./verification_agent");
+const { isComparisonQuery, answerComparison, formatComparativeAnswer } = require("./comparison_engine");
+const { isAmendmentQuery, answerAmendment, formatAmendmentAnswer } = require("./amendment_engine");
 
 /**
  * Minimum score and token count required for Option A structured matching.
@@ -202,7 +204,23 @@ function tryListCompositeQuery(scored, qTokens, question) {
  * answerable match (single or sibling composite), or null if nothing scores
  * above the confidence threshold or if top candidates are in conflict (abstention).
  */
-function structuredQuery(question, records) {
+function structuredQuery(question, records, index = null) {
+  if (!question || typeof question !== "string" || !records || records.length === 0) {
+    return null;
+  }
+
+  // M4: Check for Cross-Guideline Comparison queries
+  if (isComparisonQuery(question)) {
+    const compMatch = answerComparison(question, records, index);
+    if (compMatch) return compMatch;
+  }
+
+  // M4: Check for Guideline Amendment & Revision queries
+  if (isAmendmentQuery(question)) {
+    const amendMatch = answerAmendment(question, records, index);
+    if (amendMatch) return amendMatch;
+  }
+
   const qTokens = new Set(tokenize(question));
   if (qTokens.size === 0) return null;
 
@@ -356,6 +374,18 @@ function formatCompositeAnswer(records) {
 }
 
 function formatAnswer(match) {
+  if (!match) return "";
+
+  // M4: Comparative Answering
+  if (match.isComparison) {
+    return formatComparativeAnswer(match);
+  }
+
+  // M4: Amendment History Answering
+  if (match.isAmendment) {
+    return formatAmendmentAnswer(match);
+  }
+
   // Support both raw record or structured match object
   const isMatchObj = match && match.record;
   const record = isMatchObj ? match.record : match;
@@ -479,10 +509,10 @@ async function answer(question, records, { client, store } = {}) {
     return {
       answered: true,
       text: formatAnswer(match),
-      record: match.record,
-      score: match.score,
+      record: match.record || (match.docResults ? match.docResults[0].records[0] : null),
+      score: match.score || 5.0,
       path: "A",
-      review_status: match.record.review_status
+      review_status: (match.record && match.record.review_status) || "reviewed"
     };
   }
   if (!client || !store) {
