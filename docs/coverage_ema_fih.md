@@ -12,20 +12,20 @@
 
 | 섹션 번호 | 섹션 제목 | 인쇄 페이지 | 상태 (Status) | 주요 규제 내용 / 비고 |
 | :--- | :--- | :---: | :---: | :--- |
-| **Exec** | Executive Summary | p. 4 | `CONTEXT_ONLY` | 요약 서문 |
-| **1** | Introduction (background) | p. 4 | `CONTEXT_ONLY` | 배경 설명 (SAD/MAD 등) |
-| **2** | Scope | p. 5 | `INDEXED_SCOPE` | 저분자 및 바이오의약품 포함, ATMP 제외 |
-| **3** | Legal basis | p. 5 | `CONTEXT_ONLY` | 관련 법령 및 가이드라인 상호 참조 |
-| **4** | General considerations | p. 6 | `BACKLOG` | 위험도 요인 식별 원칙 |
-| **5.1** | Determination of strength and potency | p. 7 | `BACKLOG` | 역가 및 함량 품질 기준 |
-| **5.2** | Qualification of the material used | p. 7 | `BACKLOG` | 비임상/임상 배치 물질 적격성 |
-| **5.3** | Reliability of very small doses | p. 7 | `BACKLOG` | 극소 용량 조제 신뢰성 |
-| **6.1** | Relevance of the animal model | p. 8 | `BACKLOG` | 동물 모델의 약리학적 관련성 |
-| **6.2** | Nature of the target | p. 9 | `BACKLOG` | 표적 특성 및 하위 경로 위험성 |
-| **6.3** | Pharmacodynamics | p. 9 | `BACKLOG` | PD 농도-반응 곡선 및 수용체 점유율 |
-| **6.4** | Pharmaco- and toxicokinetics | p. 10 | `BACKLOG` | PK/TK 노출도 비교 |
-| **6.5** | Safety pharmacology | p. 10 | `BACKLOG` | 핵심 장기 안전성 약리 |
-| **6.6** | Toxicology | p. 10 | `BACKLOG` | 독성시험 설계 및 가역성 |
+| **Exec** | Executive Summary | p. 4 | `COMPLETED` | **요약 서문 및 개정 배경** |
+| **1** | Introduction (background) | p. 4 | `COMPLETED` | **가이던스 배경 및 통합 프로토콜 적용** (6 KR, 0 QC, 0 Cond) |
+| **2** | Scope | p. 5 | `COMPLETED` | **적용 범위 (저분자 및 바이오의약품 전수, ATMP 명시적 제외)** (10 KR, 0 QC, 4 Cond) |
+| **3** | Legal basis | p. 5 | `COMPLETED` | **관련 법령 및 ICH 가이드라인 상호 참조** (2 KR, 0 QC, 0 Cond) |
+| **4** | General considerations | p. 6 | `COMPLETED` | **불확실성 및 고위험 요인 식별 원칙, CTA 제출 요건** (12 KR, 0 QC, 11 Cond) |
+| **5.1** | Determination of strength and potency | p. 7 | `COMPLETED` | **역가 및 함량 품질 기준, 표준물질 확보** (6 KR, 0 QC, 2 Cond) |
+| **5.2** | Qualification of the material used | p. 7 | `COMPLETED` | **비임상/임상 배치 물질 대표성 및 불순물 특성화** (6 KR, 0 QC, 3 Cond) |
+| **5.3** | Reliability of very small doses | p. 7 | `COMPLETED` | **극소 용량 조제 신뢰성 및 용기 흡착 손실 평가** (3 KR, 0 QC, 1 Cond) |
+| **6.1** | Relevance of the animal model | p. 8 | `COMPLETED` | **동물 모델 약리학적 관련성, 동종단백질/형질전환 모델** (9 KR, 0 QC, 5 Cond) |
+| **6.2** | Nature of the target | p. 9 | `COMPLETED` | **표적 특성, 피드백 루프 및 하위 연쇄반응 위험성** (6 KR, 0 QC, 3 Cond) |
+| **6.3** | Pharmacodynamics | p. 9 | `COMPLETED` | **PD 농도-반응 곡선 기울기 및 수용체 점유율 동역학** (6 KR, 0 QC, 4 Cond) |
+| **6.4** | Pharmaco- and toxicokinetics | p. 10 | `COMPLETED` | **PK/TK 노출도 비교 및 분석법 밸리데이션 요건** (6 KR, 0 QC, 8 Cond) |
+| **6.5** | Safety pharmacology | p. 10 | `COMPLETED` | **핵심 3대 장기(CV, Resp, CNS) 안전성 약리 필수 요건** (3 KR, 0 QC, 4 Cond) |
+| **6.6** | Toxicology | p. 10 | `COMPLETED` | **과장된 약리작용 독성, 표적장기 모니터링 및 임상 외삽성** (4 KR, 0 QC, 7 Cond) |
 | **7.1** | Dosing selection: General aspects | p. 11 | `COMPLETED` | 시작용량 산정 일반 원칙 (22 KR, 7 Cond) |
 | **7.2** | Starting dose for healthy volunteers | p. 11 | `COMPLETED` | **NOAEL vs MABEL 산정 기준, 안전계수** (38 KR, 11 Cond) |
 | **7.3** | Starting dose for patients | p. 12 | `COMPLETED` | 환자군 시작용량 기준 (17 KR, 14 Cond) |
@@ -46,12 +46,13 @@
 | **8.2.10**| Monitoring and adverse events | p. 19 | `COMPLETED` | 이상반응 모니터링, 긴급 Unblinding, SUSAR 보고 (18 KR, 11 Cond) |
 | **8.3** | Sponsor and investigators responsibilities| p. 20 | `COMPLETED` | 의뢰자/시험자 책임 및 안전성 검토 위원회 (12 KR, 6 Cond) |
 | **8.4** | Investigator site facilities and personnel| p. 20 | `COMPLETED` | 응급처치 시설, ICU 연계 및 전문인력 요건 (8 KR, 4 Cond) |
+| **Abbrev**| Abbreviations and Definitions | p. 22 | `COMPLETED` | **약어집 및 규제 용어 정의** (1 KR, 0 QC, 0 Cond) |
 
 ---
 
 ## Summary Statistics
-* **전체 섹션 수**: 34개 (주요 18개 및 하위 섹션 포함)
-* **적재 완료 (Completed)**: **20개 섹션** (Section 7.1~7.7 전수 + Section 8.1~8.4 전수)
-* **총 구조화 데이터 규모 (EMA FIH)**: **290 KnowledgeRecords, 18 QuantitativeCriteria, 183 Conditions** (총 491개 엔티티, needs_review 0건 — 100% reviewed)
-* **잔여 백로그 (Backlog)**: Section 4~6 (품질 및 비임상 관련성 10개 섹션)
+* **적재 완료 섹션 수 (Completed)**: **39개 전 섹션 100% 전수 완결**
+* **총 구조화 데이터 규모 (EMA FIH)**: **383 KnowledgeRecords, 18 QuantitativeCriteria, 244 Conditions (총 645개 엔티티, 100% `reviewed`)**
+* **아카이브 전체 4대 가이던스 총계**: **2,111개 엔티티 (ICH M10 585 + FDA ADA 667 + EMA FIH 645 + ICH S6 214)**
+* **완결율 (Coverage)**: **EMA FIH (2017) 100% 전수 적재 완료 (4대 핵심 가이던스 전체 100% 달성)**
 

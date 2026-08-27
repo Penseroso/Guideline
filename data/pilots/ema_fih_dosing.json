@@ -13,84 +13,74 @@
   ],
   "sections": [
     {
+      "section_id": "ema_fih.sec.1",
+      "document_id": "ema_fih",
+      "section_number": "1",
+      "title": "Introduction (background)",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 1,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.2",
+      "document_id": "ema_fih",
+      "section_number": "2",
+      "title": "Scope",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 2,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.3",
+      "document_id": "ema_fih",
+      "section_number": "3",
+      "title": "Legal basis",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 3,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.4",
+      "document_id": "ema_fih",
+      "section_number": "4",
+      "title": "General considerations",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 4,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.5",
+      "document_id": "ema_fih",
+      "section_number": "5",
+      "title": "Quality aspects",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 5,
+      "section_order_status": "known"
+    },
+    {
       "section_id": "ema_fih.sec.7",
       "document_id": "ema_fih",
       "section_number": "7",
       "title": "Dosing selection for FIH and early clinical trials",
       "parent_section_id": null,
-      "section_order": 7,
+      "section_order": 6,
       "section_order_status": "known",
       "heading_source_unit_id": "ema_fih.su.7.001"
     },
     {
-      "section_id": "ema_fih.sec.7_1",
+      "section_id": "ema_fih.sec.6",
       "document_id": "ema_fih",
-      "section_number": "7.1",
-      "title": "General aspects",
-      "parent_section_id": "ema_fih.sec.7",
-      "section_order": 71,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.7_1.001"
-    },
-    {
-      "section_id": "ema_fih.sec.7_2",
-      "document_id": "ema_fih",
-      "section_number": "7.2",
-      "title": "Starting dose for healthy volunteers",
-      "parent_section_id": "ema_fih.sec.7",
-      "section_order": 72,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.7_2.001"
-    },
-    {
-      "section_id": "ema_fih.sec.7_3",
-      "document_id": "ema_fih",
-      "section_number": "7.3",
-      "title": "Starting Dose for patients",
-      "parent_section_id": "ema_fih.sec.7",
-      "section_order": 73,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.7_3.001"
-    },
-    {
-      "section_id": "ema_fih.sec.7_4",
-      "document_id": "ema_fih",
-      "section_number": "7.4",
-      "title": "Dose escalation",
-      "parent_section_id": "ema_fih.sec.7",
-      "section_order": 74,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.7_4.001"
-    },
-    {
-      "section_id": "ema_fih.sec.7_5",
-      "document_id": "ema_fih",
-      "section_number": "7.5",
-      "title": "Maximum exposure and dose",
-      "parent_section_id": "ema_fih.sec.7",
-      "section_order": 75,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.7_5.001"
-    },
-    {
-      "section_id": "ema_fih.sec.7_6",
-      "document_id": "ema_fih",
-      "section_number": "7.6",
-      "title": "Moving from single to multiple dosing",
-      "parent_section_id": "ema_fih.sec.7",
-      "section_order": 76,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.7_6.001"
-    },
-    {
-      "section_id": "ema_fih.sec.7_7",
-      "document_id": "ema_fih",
-      "section_number": "7.7",
-      "title": "Route of administration",
-      "parent_section_id": "ema_fih.sec.7",
-      "section_order": 77,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.7_7.001"
+      "section_number": "6",
+      "title": "Non-clinical aspects",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 7,
+      "section_order_status": "known"
     },
     {
       "section_id": "ema_fih.sec.8",
@@ -103,12 +93,112 @@
       "heading_source_unit_id": "ema_fih.su.8.001"
     },
     {
+      "section_id": "ema_fih.sec.5_1",
+      "document_id": "ema_fih",
+      "section_number": "5.1",
+      "title": "Determination of strength and potency",
+      "parent_section_id": "ema_fih.sec.5",
+      "heading_source_unit_id": null,
+      "section_order": 9,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.5_2",
+      "document_id": "ema_fih",
+      "section_number": "5.2",
+      "title": "Qualification of the material used",
+      "parent_section_id": "ema_fih.sec.5",
+      "heading_source_unit_id": null,
+      "section_order": 10,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.5_3",
+      "document_id": "ema_fih",
+      "section_number": "5.3",
+      "title": "Reliability of very small doses",
+      "parent_section_id": "ema_fih.sec.5",
+      "heading_source_unit_id": null,
+      "section_order": 11,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.7_1",
+      "document_id": "ema_fih",
+      "section_number": "7.1",
+      "title": "General aspects",
+      "parent_section_id": "ema_fih.sec.7",
+      "section_order": 12,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7_1.001"
+    },
+    {
+      "section_id": "ema_fih.sec.7_2",
+      "document_id": "ema_fih",
+      "section_number": "7.2",
+      "title": "Starting dose for healthy volunteers",
+      "parent_section_id": "ema_fih.sec.7",
+      "section_order": 13,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7_2.001"
+    },
+    {
+      "section_id": "ema_fih.sec.7_3",
+      "document_id": "ema_fih",
+      "section_number": "7.3",
+      "title": "Starting Dose for patients",
+      "parent_section_id": "ema_fih.sec.7",
+      "section_order": 14,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7_3.001"
+    },
+    {
+      "section_id": "ema_fih.sec.7_4",
+      "document_id": "ema_fih",
+      "section_number": "7.4",
+      "title": "Dose escalation",
+      "parent_section_id": "ema_fih.sec.7",
+      "section_order": 15,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7_4.001"
+    },
+    {
+      "section_id": "ema_fih.sec.7_5",
+      "document_id": "ema_fih",
+      "section_number": "7.5",
+      "title": "Maximum exposure and dose",
+      "parent_section_id": "ema_fih.sec.7",
+      "section_order": 16,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7_5.001"
+    },
+    {
+      "section_id": "ema_fih.sec.7_6",
+      "document_id": "ema_fih",
+      "section_number": "7.6",
+      "title": "Moving from single to multiple dosing",
+      "parent_section_id": "ema_fih.sec.7",
+      "section_order": 17,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7_6.001"
+    },
+    {
+      "section_id": "ema_fih.sec.7_7",
+      "document_id": "ema_fih",
+      "section_number": "7.7",
+      "title": "Route of administration",
+      "parent_section_id": "ema_fih.sec.7",
+      "section_order": 18,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.7_7.001"
+    },
+    {
       "section_id": "ema_fih.sec.8_1",
       "document_id": "ema_fih",
       "section_number": "8.1",
       "title": "General aspects",
       "parent_section_id": "ema_fih.sec.8",
-      "section_order": 81,
+      "section_order": 19,
       "section_order_status": "known",
       "heading_source_unit_id": "ema_fih.su.8_1.001"
     },
@@ -118,109 +208,9 @@
       "section_number": "8.2",
       "title": "Protocol",
       "parent_section_id": "ema_fih.sec.8",
-      "section_order": 82,
+      "section_order": 20,
       "section_order_status": "known",
       "heading_source_unit_id": "ema_fih.su.8_2.001"
-    },
-    {
-      "section_id": "ema_fih.sec.8_2_1",
-      "document_id": "ema_fih",
-      "section_number": "8.2.1",
-      "title": "Overall design",
-      "parent_section_id": "ema_fih.sec.8_2",
-      "section_order": 821,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.8_2_1.001"
-    },
-    {
-      "section_id": "ema_fih.sec.8_2_2",
-      "document_id": "ema_fih",
-      "section_number": "8.2.2",
-      "title": "Integrated protocols",
-      "parent_section_id": "ema_fih.sec.8_2",
-      "section_order": 822,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.8_2_2.001"
-    },
-    {
-      "section_id": "ema_fih.sec.8_2_3",
-      "document_id": "ema_fih",
-      "section_number": "8.2.3",
-      "title": "Choice of subjects",
-      "parent_section_id": "ema_fih.sec.8_2",
-      "section_order": 823,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.8_2_3.001"
-    },
-    {
-      "section_id": "ema_fih.sec.8_2_4",
-      "document_id": "ema_fih",
-      "section_number": "8.2.4",
-      "title": "Subject assessments and interventions",
-      "parent_section_id": "ema_fih.sec.8_2",
-      "section_order": 824,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.8_2_4.001"
-    },
-    {
-      "section_id": "ema_fih.sec.8_2_5",
-      "document_id": "ema_fih",
-      "section_number": "8.2.5",
-      "title": "General considerations for all cohorts",
-      "parent_section_id": "ema_fih.sec.8_2",
-      "section_order": 825,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.8_2_5.001"
-    },
-    {
-      "section_id": "ema_fih.sec.8_2_6",
-      "document_id": "ema_fih",
-      "section_number": "8.2.6",
-      "title": "Precautions to apply between treating subjects within a cohort",
-      "parent_section_id": "ema_fih.sec.8_2",
-      "section_order": 826,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.8_2_6.001"
-    },
-    {
-      "section_id": "ema_fih.sec.8_2_7",
-      "document_id": "ema_fih",
-      "section_number": "8.2.7",
-      "title": "Precautions to apply between cohorts and study parts",
-      "parent_section_id": "ema_fih.sec.8_2",
-      "section_order": 827,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.8_2_7.001"
-    },
-    {
-      "section_id": "ema_fih.sec.8_2_8",
-      "document_id": "ema_fih",
-      "section_number": "8.2.8",
-      "title": "Data review for decision",
-      "parent_section_id": "ema_fih.sec.8_2",
-      "section_order": 828,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.8_2_8.001"
-    },
-    {
-      "section_id": "ema_fih.sec.8_2_9",
-      "document_id": "ema_fih",
-      "section_number": "8.2.9",
-      "title": "Stopping rules",
-      "parent_section_id": "ema_fih.sec.8_2",
-      "section_order": 829,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.8_2_9.001"
-    },
-    {
-      "section_id": "ema_fih.sec.8_2_10",
-      "document_id": "ema_fih",
-      "section_number": "8.2.10",
-      "title": "Monitoring and communication of adverse events/reactions",
-      "parent_section_id": "ema_fih.sec.8_2",
-      "section_order": 8210,
-      "section_order_status": "known",
-      "heading_source_unit_id": "ema_fih.su.8_2_10.001"
     },
     {
       "section_id": "ema_fih.sec.8_3",
@@ -228,7 +218,7 @@
       "section_number": "8.3",
       "title": "Documentation of sponsor and investigators responsibilities",
       "parent_section_id": "ema_fih.sec.8",
-      "section_order": 83,
+      "section_order": 21,
       "section_order_status": "known",
       "heading_source_unit_id": "ema_fih.su.8_3.001"
     },
@@ -238,9 +228,179 @@
       "section_number": "8.4",
       "title": "Investigator site facilities and personnel",
       "parent_section_id": "ema_fih.sec.8",
-      "section_order": 84,
+      "section_order": 22,
       "section_order_status": "known",
       "heading_source_unit_id": "ema_fih.su.8_4.001"
+    },
+    {
+      "section_id": "ema_fih.sec.8_2_1",
+      "document_id": "ema_fih",
+      "section_number": "8.2.1",
+      "title": "Overall design",
+      "parent_section_id": "ema_fih.sec.8_2",
+      "section_order": 23,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.8_2_1.001"
+    },
+    {
+      "section_id": "ema_fih.sec.8_2_2",
+      "document_id": "ema_fih",
+      "section_number": "8.2.2",
+      "title": "Integrated protocols",
+      "parent_section_id": "ema_fih.sec.8_2",
+      "section_order": 24,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.8_2_2.001"
+    },
+    {
+      "section_id": "ema_fih.sec.8_2_3",
+      "document_id": "ema_fih",
+      "section_number": "8.2.3",
+      "title": "Choice of subjects",
+      "parent_section_id": "ema_fih.sec.8_2",
+      "section_order": 25,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.8_2_3.001"
+    },
+    {
+      "section_id": "ema_fih.sec.8_2_4",
+      "document_id": "ema_fih",
+      "section_number": "8.2.4",
+      "title": "Subject assessments and interventions",
+      "parent_section_id": "ema_fih.sec.8_2",
+      "section_order": 26,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.8_2_4.001"
+    },
+    {
+      "section_id": "ema_fih.sec.8_2_5",
+      "document_id": "ema_fih",
+      "section_number": "8.2.5",
+      "title": "General considerations for all cohorts",
+      "parent_section_id": "ema_fih.sec.8_2",
+      "section_order": 27,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.8_2_5.001"
+    },
+    {
+      "section_id": "ema_fih.sec.8_2_6",
+      "document_id": "ema_fih",
+      "section_number": "8.2.6",
+      "title": "Precautions to apply between treating subjects within a cohort",
+      "parent_section_id": "ema_fih.sec.8_2",
+      "section_order": 28,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.8_2_6.001"
+    },
+    {
+      "section_id": "ema_fih.sec.8_2_7",
+      "document_id": "ema_fih",
+      "section_number": "8.2.7",
+      "title": "Precautions to apply between cohorts and study parts",
+      "parent_section_id": "ema_fih.sec.8_2",
+      "section_order": 29,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.8_2_7.001"
+    },
+    {
+      "section_id": "ema_fih.sec.8_2_8",
+      "document_id": "ema_fih",
+      "section_number": "8.2.8",
+      "title": "Data review for decision",
+      "parent_section_id": "ema_fih.sec.8_2",
+      "section_order": 30,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.8_2_8.001"
+    },
+    {
+      "section_id": "ema_fih.sec.8_2_9",
+      "document_id": "ema_fih",
+      "section_number": "8.2.9",
+      "title": "Stopping rules",
+      "parent_section_id": "ema_fih.sec.8_2",
+      "section_order": 31,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.8_2_9.001"
+    },
+    {
+      "section_id": "ema_fih.sec.8_2_10",
+      "document_id": "ema_fih",
+      "section_number": "8.2.10",
+      "title": "Monitoring and communication of adverse events/reactions",
+      "parent_section_id": "ema_fih.sec.8_2",
+      "section_order": 32,
+      "section_order_status": "known",
+      "heading_source_unit_id": "ema_fih.su.8_2_10.001"
+    },
+    {
+      "section_id": "ema_fih.sec.6_1",
+      "document_id": "ema_fih",
+      "section_number": "6.1",
+      "title": "Relevance of the animal model",
+      "parent_section_id": "ema_fih.sec.6",
+      "heading_source_unit_id": null,
+      "section_order": 33,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.6_2",
+      "document_id": "ema_fih",
+      "section_number": "6.2",
+      "title": "Nature of the target",
+      "parent_section_id": "ema_fih.sec.6",
+      "heading_source_unit_id": null,
+      "section_order": 34,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.6_3",
+      "document_id": "ema_fih",
+      "section_number": "6.3",
+      "title": "Pharmacodynamics",
+      "parent_section_id": "ema_fih.sec.6",
+      "heading_source_unit_id": null,
+      "section_order": 35,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.6_4",
+      "document_id": "ema_fih",
+      "section_number": "6.4",
+      "title": "Pharmaco- and toxicokinetics",
+      "parent_section_id": "ema_fih.sec.6",
+      "heading_source_unit_id": null,
+      "section_order": 36,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.6_5",
+      "document_id": "ema_fih",
+      "section_number": "6.5",
+      "title": "Safety pharmacology",
+      "parent_section_id": "ema_fih.sec.6",
+      "heading_source_unit_id": null,
+      "section_order": 37,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.6_6",
+      "document_id": "ema_fih",
+      "section_number": "6.6",
+      "title": "Toxicology",
+      "parent_section_id": "ema_fih.sec.6",
+      "heading_source_unit_id": null,
+      "section_order": 38,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.abbrev",
+      "document_id": "ema_fih",
+      "section_number": "Abbreviations",
+      "title": "Abbreviations and Definitions",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 39,
+      "section_order_status": "known"
     }
   ],
   "source_units": [
@@ -465,6 +625,28 @@
       "review_status": "reviewed"
     },
     {
+      "source_unit_id": "ema_fih.su.1.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.1",
+      "unit_order": 10,
+      "unit_type": "paragraph",
+      "source_text": "This is the first revision of the Guideline on strategies to identify and mitigate risks for first-in-human clinical trials with investigational medicinal products. It extends the existing EU guidance to address first-in-human (FIH) and early phase clinical trials (CTs) with integrated protocols. The revision is intended to further assist stakeholders in the transition from non-clinical to early clinical development and in identifying factors influencing risk for new investigational medicinal products (IMPs). The document includes considerations on quality aspects, non-clinical and clinical testing strategies, and trial design and conduct.",
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.1",
+        "pdf_page_index_zero_based": 3,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "4",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "ema_fih.su.7_2.004",
       "document_id": "ema_fih",
       "section_id": "ema_fih.sec.7_2",
@@ -682,6 +864,28 @@
         "printed_page_label_status": "known",
         "extraction_method": "automated text extraction with manual verification"
       },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "ema_fih.su.2.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.2",
+      "unit_order": 20,
+      "unit_type": "paragraph",
+      "source_text": "This guideline covers FIH/early CTs including those which generate initial knowledge in humans on tolerability, safety, PK and PD. These trials may also include collection of data on e.g. food or drug interactions, different age groups or gender, proof of concept and relative bioavailability of different formulations. These trials are often undertaken in healthy volunteers but can also include patients. The guideline applies to all new chemical and biological IMPs. While advanced therapy medicinal products (ATMPs) (as defined in Article 2(1) of Regulation 1394/2007 tested or used in accordance with Article 3 of Directive 2001/83/EC) are not within the scope of this guideline, the general principles outlined in this document could be considered when designing early clinical trials for ATMPs.",
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.2",
+        "pdf_page_index_zero_based": 4,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "5",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
       "review_status": "reviewed"
     },
     {
@@ -905,6 +1109,28 @@
       "review_status": "reviewed"
     },
     {
+      "source_unit_id": "ema_fih.su.3.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.3",
+      "unit_order": 30,
+      "unit_type": "paragraph",
+      "source_text": "This guideline should be read in conjunction with relevant European and International guidelines and regulations, in particular Directive 2001/20/EC, Regulation (EU) No 536/2014 on clinical trials on medicinal products for human use, GMP guidelines (EudraLex Vol 4 Annex 13), GLP Directives 2004/9/EC and 2004/10/EC, ICH E6(R2) GCP, ICH M3(R2) non-clinical safety studies, ICH S6(R1) biotechnology-derived pharmaceuticals, ICH S7A/S7B safety pharmacology, and ICH S9 non-clinical evaluation for anticancer pharmaceuticals.",
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.3",
+        "pdf_page_index_zero_based": 4,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "5",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "ema_fih.su.7_7.003",
       "document_id": "ema_fih",
       "section_id": "ema_fih.sec.7_7",
@@ -1125,6 +1351,28 @@
       }
     },
     {
+      "source_unit_id": "ema_fih.su.4.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.4",
+      "unit_order": 40,
+      "unit_type": "paragraph",
+      "source_text": "The early clinical development of human medicinal products has an intrinsic element of uncertainty in relation to both the possible benefits and risks of a novel drug candidate. Uncertainty may arise from particular knowledge, or lack thereof, regarding the mode of action of the IMP, the presence or absence of biomarkers, the nature of the target, the relevance of available animal models and/or findings in non-clinical safety studies. In addition, risks may derive from the characteristics of the population to be studied, whether healthy volunteers or patients, including potential genetic and phenotypic polymorphisms influencing PD and PK (i.e. in the intended target or in enzymes and organ functions influencing PK).",
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.4",
+        "pdf_page_index_zero_based": 5,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "6",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "ema_fih.su.8_2_2.002",
       "document_id": "ema_fih",
       "section_id": "ema_fih.sec.8_2_2",
@@ -1147,6 +1395,28 @@
       }
     },
     {
+      "source_unit_id": "ema_fih.su.4.002",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.4",
+      "unit_order": 41,
+      "unit_type": "paragraph",
+      "source_text": "The process of designing a set of studies in a development programme is governed by the attempt to reduce this uncertainty step-by-step by gathering relevant knowledge. Sponsors and investigators should identify, a priori for each clinical study, the potential risks that might arise and apply appropriate risk mitigation strategies. Based on the degree of uncertainty, risk mitigation strategies include: ensuring adequate quality of the IMP (section 5); conducting additional non-clinical testing to obtain data of relevance for the risk assessment (section 6); applying a scientific rationale in the selection of the starting dose, dose escalation and maximum exposure (section 7); applying appropriate risk mitigating measures in the design and conduct of FIH/early CTs (section 8).",
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.4",
+        "pdf_page_index_zero_based": 5,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "6",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "ema_fih.su.8_2_2.003",
       "document_id": "ema_fih",
       "section_id": "ema_fih.sec.8_2_2",
@@ -1167,6 +1437,28 @@
         "printed_page_label_status": "known",
         "extraction_method": "automated text extraction with manual verification"
       }
+    },
+    {
+      "source_unit_id": "ema_fih.su.4.003",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.4",
+      "unit_order": 42,
+      "unit_type": "paragraph",
+      "source_text": "It is the sponsor responsibility to define the degree of uncertainty of the IMP and to provide a description of how the risk(s) associated to this will be handled within the design and conduct of the FIH/early CTs. Specific strategies to address identified and potential risks should also be appropriately detailed for all FIH/early CTs in the sponsor Clinical Trial Application (CTA). Of note, risks during FIH/early CTs do not only come from the IMP but also from e.g. challenge agents, or invasive study procedures. These should be considered in any assessment of risk. The quality of documents supporting the CTA should be adequate in format and scientific content to provide appropriate information to allow for a meaningful assessment of the adequacy of the risk minimisation efforts.",
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.4",
+        "pdf_page_index_zero_based": 5,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "6",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed"
     },
     {
       "source_unit_id": "ema_fih.su.8_2_3.001",
@@ -1345,6 +1637,28 @@
       }
     },
     {
+      "source_unit_id": "ema_fih.su.5.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.5",
+      "unit_order": 50,
+      "unit_type": "paragraph",
+      "source_text": "Ensuring adequate formulation of the drug candidate is an important condition to reduce uncertainty when administering to humans. The requirements regarding physico-chemical characterisation are the same for all IMPs while more extensive characterisation may be required for complex or biological products. Specific areas to be addressed include determination of strength and potency, qualification of the material used and reliability of (very) small doses.",
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.5",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "7",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "ema_fih.su.8_2_6.001",
       "document_id": "ema_fih",
       "section_id": "ema_fih.sec.8_2_6",
@@ -1365,6 +1679,28 @@
         "printed_page_label_status": "known",
         "extraction_method": "automated text extraction with manual verification"
       }
+    },
+    {
+      "source_unit_id": "ema_fih.su.5_1.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.5_1",
+      "unit_order": 51,
+      "unit_type": "paragraph",
+      "source_text": "To determine a safe starting dose, the methods used for determination of the strength and/or the potency of the product need to be relevant for the intended mechanism of action, reliable and qualified. As major clinical decisions are based on knowledge derived from the non-clinical data, it is important to reduce uncertainty by having a representative defined reference material early in the development programme to appropriately measure biological activity.",
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.5_1",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "7",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed"
     },
     {
       "source_unit_id": "ema_fih.su.8_2_6.002",
@@ -1389,6 +1725,28 @@
       }
     },
     {
+      "source_unit_id": "ema_fih.su.5_2.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.5_2",
+      "unit_order": 52,
+      "unit_type": "paragraph",
+      "source_text": "As investigational material composition and process changes may occur during development, the material used in pivotal non-clinical studies should be representative of the material to be used for FIH/early CT administration. Differences in formulations used for non-clinical studies versus humans which could impact on exposure should be considered. It is important to have an adequate level of quality characterisation even at this early point of development. The sponsor should ensure that a characterisation of the product including its heterogeneity, degradation profile, product- and process-related impurities is performed. Special consideration should be given to the suitability and qualification of methods to sufficiently characterise the active substance and finished product.",
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.5_2",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "7",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "ema_fih.su.8_2_6.003",
       "document_id": "ema_fih",
       "section_id": "ema_fih.sec.8_2_6",
@@ -1409,6 +1767,28 @@
         "printed_page_label_status": "known",
         "extraction_method": "automated text extraction with manual verification"
       }
+    },
+    {
+      "source_unit_id": "ema_fih.su.5_3.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.5_3",
+      "unit_order": 53,
+      "unit_type": "paragraph",
+      "source_text": "Applicants should demonstrate that the intended formulation is suitable to provide the intended dose. There is a risk of reduced accuracy in cases where the medicinal product needs to be diluted to prepare very small doses, or it is provided at very low concentrations as the product could be adsorbed to the wall of the container or infusion system. The compatibility of the product, e.g. adsorption losses, with primary packaging materials and administration systems should be addressed.",
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.5_3",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "7",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "unit_order_status": "known",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "review_status": "reviewed"
     },
     {
       "source_unit_id": "ema_fih.su.8_2_7.001",
@@ -1565,6 +1945,28 @@
       }
     },
     {
+      "source_unit_id": "ema_fih.su.6.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6",
+      "unit_order": 60,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "The development and evaluation of a new IMP is a stepwise process involving animal and human efficacy and safety information. The non-clinical data in PD, PK and toxicology and their translation to human are important basis for planning and conduct of a FIH/early CT. The recommendations in the Guidance on non-clinical safety studies for the conduct of human clinical trials and marketing authorization for pharmaceuticals (ICH M3(R2)) should be followed. A tabulated summary containing an overview of all relevant non-clinical data is considered helpful in the assessment process and should be included as an appendix to the Investigator Brochure (IB). The sponsor should confirm that all pivotal non-clinical safety studies in support of the CT application are conducted in compliance with Good Laboratory Practice (GLP). All other studies influencing the design of CTs should be of high scientific standard and conduct.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.6",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "8",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "ema_fih.su.8_2_9.003",
       "document_id": "ema_fih",
       "section_id": "ema_fih.sec.8_2_9",
@@ -1585,6 +1987,28 @@
         "printed_page_label_status": "known",
         "extraction_method": "automated text extraction with manual verification"
       }
+    },
+    {
+      "source_unit_id": "ema_fih.su.6_1.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6_1",
+      "unit_order": 61,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "The non-clinical pharmacology and toxicology programme should be performed in relevant animal species and/or other relevant experimental models. Animal models should be chosen based on similarities to humans with respect to target distribution, target binding and structural homology, cellular consequences of target binding, cellular regulatory mechanisms, metabolic pathways, or compensatory responses to an initial physiological perturbation. In this context, the use of in vitro human cell systems or human-derived material could provide relevant information about these translational differences and improve the understanding of the relevance of the animal models. High human-specificity of a medicinal product makes the non-clinical evaluation of the risk to humans more difficult in terms of degree of uncertainty.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.6_1",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "8",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
     },
     {
       "source_unit_id": "ema_fih.su.8_2_9.004",
@@ -1609,6 +2033,28 @@
       }
     },
     {
+      "source_unit_id": "ema_fih.su.6_1.002",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6_1",
+      "unit_order": 62,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Special consideration should be given to the selection of relevant animal models for non-clinical testing of biotechnology-derived products, as outlined in ICH S6(R1). Homologous proteins and transgenic models (where the human target is expressed in animals) could be considered as alternatives, in particular to evaluate specific potential risks (e.g. for identification of safety hazards or to clarify the mode of action). The use of homologous proteins or transgenic models could require specific considerations regarding e.g. quality, target expression, PK, and immunogenicity.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.6_1",
+        "pdf_page_index_zero_based": 8,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "9",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "ema_fih.su.8_2_10.001",
       "document_id": "ema_fih",
       "section_id": "ema_fih.sec.8_2_10",
@@ -1629,6 +2075,28 @@
         "printed_page_label_status": "known",
         "extraction_method": "automated text extraction with manual verification"
       }
+    },
+    {
+      "source_unit_id": "ema_fih.su.6_2.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6_2",
+      "unit_order": 63,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "The nature of the target and its downstream pathways should be carefully evaluated. Potential risks can arise from the biological role of the target, its distribution in humans (e.g. presence in multiple tissues or vital organs), lack of redundancy or presence of feedback loops in the targeted biological system, cross-reactivity with unintended targets, and potential for sustained receptor activation or exaggerated downstream cascading effects (e.g. cytokine release syndrome). Particular caution is needed for novel targets where there is limited clinical experience or where activation of the target triggers potent immune-modulatory responses.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.6_2",
+        "pdf_page_index_zero_based": 8,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "9",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
     },
     {
       "source_unit_id": "ema_fih.su.8_2_10.002",
@@ -1653,6 +2121,28 @@
       }
     },
     {
+      "source_unit_id": "ema_fih.su.6_3.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6_3",
+      "unit_order": 64,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Primary pharmacodynamics in vitro and in vivo should provide sufficient information on the mode of action, concentration/dose-response relationships, and receptor occupancy or target binding kinetics. Specificity and selectivity across target families and secondary pharmacodynamics (off-target effects) should be documented. The steepness of the dose-response relationship is of critical importance, as steep curves indicate that small increments in dose can lead to disproportionately large biological or toxicological effects. In vitro studies with human cells or tissues should be conducted when animal models show limited pharmacodynamic relevance or when potency in humans is anticipated to be substantially higher.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.6_3",
+        "pdf_page_index_zero_based": 9,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "10",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "ema_fih.su.8_2_10.003",
       "document_id": "ema_fih",
       "section_id": "ema_fih.sec.8_2_10",
@@ -1673,6 +2163,28 @@
         "printed_page_label_status": "known",
         "extraction_method": "automated text extraction with manual verification"
       }
+    },
+    {
+      "source_unit_id": "ema_fih.su.6_4.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6_4",
+      "unit_order": 65,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "PK and toxicokinetic (TK) data, as per ICH S3, S6(R1), M3(R2) and related Q&A documents, should be available in all species used for the non-clinical safety studies conducted. These data should adequately support the interpretation of data from in vivo PD models and safety/toxicological studies before starting FIH/early CTs. Sponsors should supply a brief summary of the analytical assays used to characterise the non-clinical PK and TK, including their accuracy, precision and limits of quantification. Systemic exposures at pharmacodynamically active doses in the relevant animal models should be determined and considered especially when PD effects are suspected to contribute to potential safety concerns. Possible polymorphisms e.g. in metabolic enzymes should be taken into account.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.6_4",
+        "pdf_page_index_zero_based": 9,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "10",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
     },
     {
       "source_unit_id": "ema_fih.su.8_3.001",
@@ -1697,6 +2209,28 @@
       }
     },
     {
+      "source_unit_id": "ema_fih.su.6_5.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6_5",
+      "unit_order": 66,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Standard core battery data should be available before the first administration in humans as outlined in ICH guidelines S7A, S7B, S6(R1), S9, M3(R2) and related Q&As. The core battery includes cardiovascular, respiratory, and central nervous system (CNS) evaluations. Additional studies to investigate effects in these and other organ systems (e.g. renal, gastrointestinal) should be conducted on a case-by-case basis where there is a cause for concern.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.6_5",
+        "pdf_page_index_zero_based": 9,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "10",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
       "source_unit_id": "ema_fih.su.8_3.002",
       "document_id": "ema_fih",
       "section_id": "ema_fih.sec.8_3",
@@ -1717,6 +2251,28 @@
         "printed_page_label_status": "known",
         "extraction_method": "automated text extraction with manual verification"
       }
+    },
+    {
+      "source_unit_id": "ema_fih.su.6_6.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6_6",
+      "unit_order": 67,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "The toxicology programme should be designed taking the characteristics of the IMP and the relevant ICH guidelines S6(R1), S9 and M3(R2) into account. Toxicity can be the result of exaggerated pharmacological actions. These types of effects should not be ignored when establishing a safe starting dose for humans and the exposures at which these toxicities are observed should be considered for the definition of the dose escalation range to be investigated in humans. An evaluation as to whether the target organs identified in the non-clinical studies warrant particular monitoring in the CT should be undertaken. Serious toxicity should lead to a more cautious approach when setting doses and applying risk mitigation strategies in the clinical setting.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.6_6",
+        "pdf_page_index_zero_based": 9,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "10",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
     },
     {
       "source_unit_id": "ema_fih.su.8_4.001",
@@ -1761,6 +2317,28 @@
         "printed_page_label_status": "known",
         "extraction_method": "automated text extraction with manual verification"
       }
+    },
+    {
+      "source_unit_id": "ema_fih.su.abbrev.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.abbrev",
+      "unit_order": 90,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Abbreviations: ATD - Anticipated therapeutic dose; ATMP - Advanced therapy medicinal product; AUC - Area under the curve; Cmax - Maximum concentration; CT - Clinical trial; CTA - Clinical trial application; FIH - First-in-human; GCP - Good Clinical Practice; GLP - Good Laboratory Practice; IB - Investigator Brochure; IMP - Investigational medicinal product; MABEL - Minimal anticipated biological effect level; MAD - Multiple ascending dose; MTD - Maximum tolerated dose; NOAEL - No observed adverse effect level; PAD - Pharmacologically active dose; PBPK - Physiologically-based pharmacokinetic; PD - Pharmacodynamic; PK - Pharmacokinetic; SAD - Single ascending dose; SUSAR - Suspected unexpected serious adverse reaction; TK - Toxicokinetic.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf",
+        "document_id": "ema_fih",
+        "section_id": "ema_fih.sec.abbrev",
+        "pdf_page_index_zero_based": 21,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "22",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
     }
   ],
   "knowledge_records": [
@@ -5823,6 +6401,1308 @@
       "object": "inpatient care",
       "normalized_ko": "입원 치료를 포함한다.",
       "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.1.001",
+      "source_unit_ids": [
+        "ema_fih.su.1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This",
+      "action": "is",
+      "object": "the first revision of the Guideline on strategies to identify and mitigate risks for first-in-human clinical trials with investigational medicinal products",
+      "normalized_ko": "이는 임상시험용 의약품을 사용한 최초 인체 대상 임상시험의 위험을 식별하고 완화하기 위한 전략에 관한 가이드라인의 첫 번째 개정본이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.1.002",
+      "source_unit_ids": [
+        "ema_fih.su.1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The revision",
+      "action": "is intended to further assist",
+      "object": "stakeholders in the transition from non-clinical to early clinical development and in identifying factors influencing risk for new investigational medicinal products (IMPs)",
+      "normalized_ko": "이는 비임상 개발에서 초기 임상 개발로의 전환 및 새로운 임상시험용 의약품(IMP)의 위험에 영향을 미치는 요인 식별에 있어 이해관계자를 추가로 지원하기 위한 것이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.1.003",
+      "source_unit_ids": [
+        "ema_fih.su.1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The document",
+      "action": "includes considerations on",
+      "object": "quality aspects, non-clinical and clinical testing strategies, and trial design and conduct",
+      "normalized_ko": "이는 품질 측면, 비임상 및 임상 시험 전략, 그리고 임상시험 설계 및 수행에 관한 고려사항을 포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.1.004",
+      "source_unit_ids": [
+        "ema_fih.su.1.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "It",
+      "action": "extends",
+      "object": "the existing EU guidance to address first-in-human (FIH) and early phase clinical trials (CTs) with integrated protocols",
+      "normalized_ko": "이는 통합 프로토콜을 사용하는 최초 인체 대상(FIH) 및 초기 단계 임상시험(CT)을 다루도록 기존 EU 지침을 확장한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.1.005",
+      "source_unit_ids": [
+        "ema_fih.su.1.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The document",
+      "action": "includes considerations on",
+      "object": "quality aspects, non-clinical and clinical testing strategies, and trial design and conduct",
+      "normalized_ko": "이는 품질 측면, 비임상 및 임상 시험 전략, 그리고 임상시험 설계 및 수행에 관한 고려사항을 포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.1.006",
+      "source_unit_ids": [
+        "ema_fih.su.1.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "is intended to",
+      "subject": "The revision",
+      "action": "is intended to further assist",
+      "object": "stakeholders in the transition from non-clinical to early clinical development",
+      "normalized_ko": "이는 비임상 개발에서 초기 임상 개발로의 전환에 있어 이해관계자를 추가로 지원하기 위한 것이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.2.001",
+      "source_unit_ids": [
+        "ema_fih.su.2.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This guideline",
+      "action": "covers",
+      "object": "FIH/early CTs",
+      "normalized_ko": "이는 최초 인체 대상(FIH)/초기 임상시험(CT)을 포괄한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.2.002",
+      "source_unit_ids": [
+        "ema_fih.su.2.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The guideline",
+      "action": "applies to",
+      "object": "all new chemical and biological IMPs",
+      "normalized_ko": "이는 모든 새로운 화학적 및 생물학적 임상시험용 의약품(IMP)에 적용된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.2.003",
+      "source_unit_ids": [
+        "ema_fih.su.2.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "advanced therapy medicinal products (ATMPs)",
+      "action": "are not within the scope of",
+      "object": "this guideline",
+      "normalized_ko": "이는 본 가이드라인의 범위에 포함되지 않는다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.2.004",
+      "source_unit_ids": [
+        "ema_fih.su.2.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "These trials",
+      "action": "may include",
+      "object": "collection of data",
+      "normalized_ko": "이는 데이터 수집을 포함할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.2.005",
+      "source_unit_ids": [
+        "ema_fih.su.2.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Data collection",
+      "action": "includes",
+      "object": "food or drug interactions",
+      "normalized_ko": "여기에는 음식 또는 약물 상호작용이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.2.006",
+      "source_unit_ids": [
+        "ema_fih.su.2.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "often",
+      "subject": "These trials",
+      "action": "are often undertaken in",
+      "object": "healthy volunteers",
+      "normalized_ko": "이는 건강한 자원자를 대상으로 흔히 수행된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.2.007",
+      "source_unit_ids": [
+        "ema_fih.su.2.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can also",
+      "subject": "These trials",
+      "action": "can also include",
+      "object": "patients",
+      "normalized_ko": "이는 환자도 포함할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.2.008",
+      "source_unit_ids": [
+        "ema_fih.su.2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "could",
+      "subject": "the general principles outlined in this document",
+      "action": "could be considered",
+      "object": "when designing early clinical trials for ATMPs",
+      "normalized_ko": "첨단바이오의약품(ATMP)의 초기 임상시험을 설계할 때 이를 고려할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.2.009",
+      "source_unit_ids": [
+        "ema_fih.su.2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "These trials",
+      "action": "are often undertaken in",
+      "object": "healthy volunteers",
+      "normalized_ko": "이는 건강한 자원자를 대상으로 흔히 수행된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.2.010",
+      "source_unit_ids": [
+        "ema_fih.su.2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "could",
+      "subject": "the general principles outlined in this document",
+      "action": "may be considered",
+      "object": "when designing early clinical trials for ATMPs",
+      "normalized_ko": "첨단바이오의약품(ATMP)의 초기 임상시험을 설계할 때 이를 고려할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.3.001",
+      "source_unit_ids": [
+        "ema_fih.su.3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "This guideline",
+      "action": "should be read in conjunction with",
+      "object": "relevant European and International guidelines and regulations",
+      "normalized_ko": "이는 관련 유럽 및 국제 가이드라인과 규정을 함께 검토해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.3.002",
+      "source_unit_ids": [
+        "ema_fih.su.3.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Relevant guidelines and regulations",
+      "action": "includes",
+      "object": "Directive 2001/20/EC",
+      "normalized_ko": "여기에는 지침 2001/20/EC가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.4.001",
+      "source_unit_ids": [
+        "ema_fih.su.4.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "Uncertainty",
+      "action": "may arise from",
+      "object": "particular knowledge, or lack thereof, regarding the mode of action of the IMP, the presence or absence of biomarkers, the nature of the target, the relevance of available animal models and/or findings in non-clinical safety studies",
+      "normalized_ko": "이는 임상시험용 의약품(IMP)의 작용기전에 관한 특정 지식 또는 그 부재, 바이오마커의 존재 또는 부재, 표적의 특성, 이용 가능한 동물 모델의 관련성 및/또는 비임상 안전성 시험에서의 결과로부터 발생할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.4.002",
+      "source_unit_ids": [
+        "ema_fih.su.4.002"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The process of designing a set of studies in a development programme",
+      "action": "is governed by",
+      "object": "the attempt to reduce this uncertainty step-by-step by gathering relevant knowledge",
+      "normalized_ko": "이는 관련 지식을 수집하여 이러한 불확실성을 단계적으로 줄이려는 시도에 의해 좌우된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.4.003",
+      "source_unit_ids": [
+        "ema_fih.su.4.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Sponsors and investigators",
+      "action": "should identify",
+      "object": "the potential risks that might arise",
+      "normalized_ko": "발생할 수 있는 잠재적 위험을 식별해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.4.004",
+      "source_unit_ids": [
+        "ema_fih.su.4.002"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Risk mitigation strategies",
+      "action": "includes",
+      "object": "ensuring adequate quality of the IMP (section 5)",
+      "normalized_ko": "임상시험용의약품(IMP)의 적절한 품질 보장(제5절)을 포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.4.005",
+      "source_unit_ids": [
+        "ema_fih.su.4.003"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "responsibility",
+      "subject": "The sponsor",
+      "action": "define",
+      "object": "the degree of uncertainty of the IMP",
+      "normalized_ko": "임상시험용의약품(IMP)의 불확실성 정도를 정의한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.4.006",
+      "source_unit_ids": [
+        "ema_fih.su.4.003"
+      ],
+      "record_type": "requirement",
+      "modality": "other",
+      "original_modal_text": "responsibility",
+      "subject": "The sponsor",
+      "action": "provide",
+      "object": "a description of how the risk(s) associated to this will be handled within the design and conduct of the FIH/early CTs",
+      "normalized_ko": "FIH/초기 임상시험의 설계 및 수행 내에서 이와 관련된 위험을 어떻게 관리할 것인지에 대한 설명을 제공한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.4.007",
+      "source_unit_ids": [
+        "ema_fih.su.4.003"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Specific strategies to address identified and potential risks",
+      "action": "should be appropriately detailed",
+      "object": "in the sponsor Clinical Trial Application (CTA)",
+      "normalized_ko": "의뢰자의 임상시험 승인신청서(CTA)에 적절히 상세하게 기술되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.4.008",
+      "source_unit_ids": [
+        "ema_fih.su.4.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Risks during FIH/early CTs",
+      "action": "do not only come from",
+      "object": "the IMP",
+      "normalized_ko": "임상시험용의약품(IMP)에서만 비롯되는 것은 아니다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.4.009",
+      "source_unit_ids": [
+        "ema_fih.su.4.003"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The quality of documents supporting the CTA",
+      "action": "is to provide",
+      "object": "appropriate information to allow for a meaningful assessment of the adequacy of the risk minimisation efforts",
+      "normalized_ko": "위험 최소화 노력의 적절성에 대한 의미 있는 평가가 가능하도록 적절한 정보를 제공하는 것이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.4.010",
+      "source_unit_ids": [
+        "ema_fih.su.4.003"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Sources of risks during FIH/early CTs",
+      "action": "includes",
+      "object": "challenge agents, or invasive study procedures",
+      "normalized_ko": "유발제 또는 침습적 연구 절차를 포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.4.011",
+      "source_unit_ids": [
+        "ema_fih.su.4.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The early clinical development of human medicinal products",
+      "action": "has",
+      "object": "an intrinsic element of uncertainty",
+      "normalized_ko": "내재적 불확실성 요소를 가진다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.4.012",
+      "source_unit_ids": [
+        "ema_fih.su.4.003"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "is the sponsor responsibility to",
+      "subject": "The sponsor",
+      "action": "must define",
+      "object": "the degree of uncertainty of the IMP",
+      "normalized_ko": "임상시험용의약품(IMP)의 불확실성 정도를 반드시 정의해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5.001",
+      "source_unit_ids": [
+        "ema_fih.su.5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Ensuring adequate formulation of the drug candidate",
+      "action": "is an important condition to reduce",
+      "object": "uncertainty",
+      "normalized_ko": "불확실성을 줄이기 위한 중요한 조건이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5.002",
+      "source_unit_ids": [
+        "ema_fih.su.5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The requirements regarding physico-chemical characterisation",
+      "action": "are the same for",
+      "object": "all IMPs",
+      "normalized_ko": "모든 임상시험용의약품(IMP)에 대해 동일하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5.003",
+      "source_unit_ids": [
+        "ema_fih.su.5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Ensuring adequate formulation of the drug candidate",
+      "action": "is",
+      "object": "an important condition to reduce uncertainty",
+      "normalized_ko": "불확실성을 줄이기 위한 중요한 조건이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5.004",
+      "source_unit_ids": [
+        "ema_fih.su.5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Specific areas to be addressed",
+      "action": "include",
+      "object": "determination of strength and potency",
+      "normalized_ko": "함량 및 역가의 결정을 포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5.005",
+      "source_unit_ids": [
+        "ema_fih.su.5.001"
+      ],
+      "record_type": "requirement",
+      "modality": "may",
+      "original_modal_text": "may be required",
+      "subject": "more extensive characterisation",
+      "action": "may be required for",
+      "object": "complex or biological products",
+      "normalized_ko": "복잡한 제품 또는 생물학적 제품에 필요할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5.006",
+      "source_unit_ids": [
+        "ema_fih.su.5.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Specific areas to be addressed",
+      "action": "includes",
+      "object": "determination of strength and potency",
+      "normalized_ko": "함량 및 역가의 결정을 포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5.007",
+      "source_unit_ids": [
+        "ema_fih.su.5.001"
+      ],
+      "record_type": "requirement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The requirements regarding physico-chemical characterisation",
+      "action": "are the same for",
+      "object": "all IMPs",
+      "normalized_ko": "모든 임상시험용의약품(IMP)에 대해 동일하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5.008",
+      "source_unit_ids": [
+        "ema_fih.su.5.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "requirements",
+      "subject": "The requirements regarding physico-chemical characterisation",
+      "action": "are the same",
+      "object": null,
+      "normalized_ko": "동일해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_1.001",
+      "source_unit_ids": [
+        "ema_fih.su.5_1.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "need to be",
+      "subject": "The methods used for determination of the strength and/or the potency of the product",
+      "action": "be relevant for",
+      "object": "the intended mechanism of action",
+      "normalized_ko": "의도된 작용기전과 관련되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_1.002",
+      "source_unit_ids": [
+        "ema_fih.su.5_1.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "need to be",
+      "subject": "The methods used for determination of the strength and/or the potency of the product",
+      "action": "be",
+      "object": "reliable",
+      "normalized_ko": "신뢰할 수 있어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_1.003",
+      "source_unit_ids": [
+        "ema_fih.su.5_1.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "need to be",
+      "subject": "the methods used for determination of the strength and/or the potency of the product",
+      "action": "need to be",
+      "object": "reliable",
+      "normalized_ko": "신뢰할 수 있어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_1.004",
+      "source_unit_ids": [
+        "ema_fih.su.5_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "it is important to",
+      "subject": null,
+      "action": "reduce uncertainty by having",
+      "object": "a representative defined reference material early in the development programme to appropriately measure biological activity",
+      "normalized_ko": "개발 프로그램 초기 단계에서 생물학적 활성을 적절히 측정할 수 있는 대표적이고 규정된 표준물질을 확보함으로써 불확실성을 줄여야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_1.005",
+      "source_unit_ids": [
+        "ema_fih.su.5_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "a representative defined reference material",
+      "action": "appropriately measure",
+      "object": "biological activity",
+      "normalized_ko": "생물학적 활성을 적절히 측정한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_1.006",
+      "source_unit_ids": [
+        "ema_fih.su.5_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "it is important",
+      "subject": "The development programme",
+      "action": "reduce uncertainty by having",
+      "object": "a representative defined reference material early in the development programme to appropriately measure biological activity",
+      "normalized_ko": "개발 프로그램 초기 단계에서 생물학적 활성을 적절히 측정할 수 있는 대표적이고 규정된 표준물질을 확보함으로써 불확실성을 줄인다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_2.001",
+      "source_unit_ids": [
+        "ema_fih.su.5_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "the material used in pivotal non-clinical studies",
+      "action": "should be representative of",
+      "object": "the material to be used for FIH/early CT administration",
+      "normalized_ko": "FIH/초기 CT 투여에 사용될 물질을 대표해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_2.002",
+      "source_unit_ids": [
+        "ema_fih.su.5_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "It is important to",
+      "subject": null,
+      "action": "have",
+      "object": "an adequate level of quality characterisation",
+      "normalized_ko": "적절한 수준의 품질 특성분석을 갖추어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_2.003",
+      "source_unit_ids": [
+        "ema_fih.su.5_2.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "investigational material composition and process changes",
+      "action": "may occur",
+      "object": "during development",
+      "normalized_ko": "개발 중에 발생할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_2.004",
+      "source_unit_ids": [
+        "ema_fih.su.5_2.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "It is important",
+      "subject": "an adequate level of quality characterisation",
+      "action": "is important",
+      "object": "even at this early point of development",
+      "normalized_ko": "개발의 이 초기 시점에서도 중요하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_2.005",
+      "source_unit_ids": [
+        "ema_fih.su.5_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "an adequate level of quality characterisation",
+      "action": "is important",
+      "object": "even at this early point of development",
+      "normalized_ko": "개발의 이 초기 시점에서도 중요하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_3.001",
+      "source_unit_ids": [
+        "ema_fih.su.5_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Applicants",
+      "action": "should demonstrate",
+      "object": "that the intended formulation is suitable to provide the intended dose",
+      "normalized_ko": "의도된 제형이 의도된 용량을 제공하기에 적합함을 입증해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_3.002",
+      "source_unit_ids": [
+        "ema_fih.su.5_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "There",
+      "action": "is",
+      "object": "a risk of reduced accuracy",
+      "normalized_ko": "정확도 저하의 위험이 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_3.003",
+      "source_unit_ids": [
+        "ema_fih.su.5_3.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "could",
+      "subject": "the product",
+      "action": "could be adsorbed",
+      "object": "to the wall of the container or infusion system",
+      "normalized_ko": "용기 또는 주입 시스템의 벽에 흡착될 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_3.004",
+      "source_unit_ids": [
+        "ema_fih.su.5_3.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "There is a risk of",
+      "subject": "Accuracy",
+      "action": "may be reduced",
+      "object": null,
+      "normalized_ko": "감소될 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.5_3.005",
+      "source_unit_ids": [
+        "ema_fih.su.5_3.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Product compatibility concern",
+      "action": "includes",
+      "object": "adsorption losses",
+      "normalized_ko": "흡착 손실을 포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6.001",
+      "source_unit_ids": [
+        "ema_fih.su.6.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The development and evaluation of a new IMP",
+      "action": "is",
+      "object": "a stepwise process involving animal and human efficacy and safety information",
+      "normalized_ko": "동물 및 인간에서의 유효성 및 안전성 정보를 포함하는 단계적 과정이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6.002",
+      "source_unit_ids": [
+        "ema_fih.su.6.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The non-clinical data in PD, PK and toxicology and their translation to human",
+      "action": "are",
+      "object": "important basis for planning and conduct of a FIH/early CT",
+      "normalized_ko": "FIH/초기 CT의 계획 및 수행을 위한 중요한 근거이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6.003",
+      "source_unit_ids": [
+        "ema_fih.su.6.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "A tabulated summary containing an overview of all relevant non-clinical data",
+      "action": "is considered",
+      "object": "helpful in the assessment process",
+      "normalized_ko": "평가 과정에서 유용한 것으로 간주된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6.004",
+      "source_unit_ids": [
+        "ema_fih.su.6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The recommendations in the Guidance on non-clinical safety studies for the conduct of human clinical trials and marketing authorization for pharmaceuticals (ICH M3(R2))",
+      "action": "should be followed",
+      "object": null,
+      "normalized_ko": "따라야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_1.001",
+      "source_unit_ids": [
+        "ema_fih.su.6_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The non-clinical pharmacology and toxicology programme",
+      "action": "should be performed in",
+      "object": "relevant animal species and/or other relevant experimental models",
+      "normalized_ko": "관련 동물 종 및/또는 기타 관련 실험 모델에서 수행해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_1.002",
+      "source_unit_ids": [
+        "ema_fih.su.6_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Animal models",
+      "action": "should be chosen based on",
+      "object": "similarities to humans with respect to target distribution, target binding and structural homology, cellular consequences of target binding, cellular regulatory mechanisms, metabolic pathways, or compensatory responses to an initial physiological perturbation",
+      "normalized_ko": "표적 분포, 표적 결합 및 구조적 상동성, 표적 결합의 세포 수준 결과, 세포 조절 기전, 대사 경로 또는 초기 생리학적 교란에 대한 보상 반응과 관련된 인간과의 유사성을 바탕으로 선택해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_1.003",
+      "source_unit_ids": [
+        "ema_fih.su.6_1.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "could",
+      "subject": "the use of in vitro human cell systems or human-derived material",
+      "action": "could provide",
+      "object": "relevant information about these translational differences",
+      "normalized_ko": "이러한 번역상 차이에 관한 관련 정보를 제공할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_1.004",
+      "source_unit_ids": [
+        "ema_fih.su.6_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "High human-specificity of a medicinal product",
+      "action": "makes",
+      "object": "the non-clinical evaluation of the risk to humans more difficult in terms of degree of uncertainty",
+      "normalized_ko": "불확실성의 정도 측면에서 인간에 대한 위험의 비임상 평가를 더욱 어렵게 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_1.005",
+      "source_unit_ids": [
+        "ema_fih.su.6_1.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Special consideration",
+      "action": "should be given to",
+      "object": "the selection of relevant animal models for non-clinical testing of biotechnology-derived products",
+      "normalized_ko": "생명공학 유래 제품의 비임상 시험을 위한 관련 동물 모델의 선정에 고려가 이루어져야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_1.006",
+      "source_unit_ids": [
+        "ema_fih.su.6_1.002"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "could",
+      "subject": "Homologous proteins",
+      "action": "could be considered as",
+      "object": "alternatives",
+      "normalized_ko": "대안으로 고려될 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_1.007",
+      "source_unit_ids": [
+        "ema_fih.su.6_1.002"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "specific potential risks",
+      "action": "includes",
+      "object": "for identification of safety hazards",
+      "normalized_ko": "안전성 위험요인의 식별을 포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_1.008",
+      "source_unit_ids": [
+        "ema_fih.su.6_1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "could",
+      "subject": "The use of in vitro human cell systems or human-derived material",
+      "action": "may provide",
+      "object": "relevant information about these translational differences",
+      "normalized_ko": "이러한 번역상 차이에 관한 관련 정보를 제공할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_1.009",
+      "source_unit_ids": [
+        "ema_fih.su.6_1.002"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "could",
+      "subject": "Homologous proteins and transgenic models",
+      "action": "may be considered as",
+      "object": "alternatives",
+      "normalized_ko": "대안으로 고려될 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_2.001",
+      "source_unit_ids": [
+        "ema_fih.su.6_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The nature of the target and its downstream pathways",
+      "action": "be carefully evaluated",
+      "object": null,
+      "normalized_ko": "신중하게 평가해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_2.002",
+      "source_unit_ids": [
+        "ema_fih.su.6_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "is needed",
+      "subject": "Novel targets",
+      "action": "receive particular caution",
+      "object": null,
+      "normalized_ko": "특별한 주의를 기울여야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_2.003",
+      "source_unit_ids": [
+        "ema_fih.su.6_2.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Potential risks",
+      "action": "can arise from",
+      "object": "the biological role of the target, its distribution in humans, lack of redundancy or presence of feedback loops in the targeted biological system, cross-reactivity with unintended targets, and potential for sustained receptor activation or exaggerated downstream cascading effects",
+      "normalized_ko": "표적의 생물학적 역할, 인간에서의 분포, 표적 생물학적 시스템에서 중복성의 부재 또는 피드백 루프의 존재, 비의도적 표적과의 교차반응성, 그리고 지속적인 수용체 활성화 또는 과도한 하위 연쇄 효과의 가능성으로부터 발생할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_2.004",
+      "source_unit_ids": [
+        "ema_fih.su.6_2.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Examples of target distribution in humans",
+      "action": "includes",
+      "object": "presence in multiple tissues or vital organs",
+      "normalized_ko": "다수의 조직 또는 생명 유지에 필수적인 장기에 존재하는 것을 포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_2.005",
+      "source_unit_ids": [
+        "ema_fih.su.6_2.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can",
+      "subject": "Potential risks",
+      "action": "can arise from",
+      "object": "the biological role of the target",
+      "normalized_ko": "표적의 생물학적 역할로부터 발생할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_2.006",
+      "source_unit_ids": [
+        "ema_fih.su.6_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is needed",
+      "subject": "The target",
+      "action": "requires particular caution",
+      "object": null,
+      "normalized_ko": "특별한 주의가 필요하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_3.001",
+      "source_unit_ids": [
+        "ema_fih.su.6_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Primary pharmacodynamics in vitro and in vivo",
+      "action": "should provide sufficient information on",
+      "object": "the mode of action",
+      "normalized_ko": "작용 기전에 관한 충분한 정보를 제공해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_3.002",
+      "source_unit_ids": [
+        "ema_fih.su.6_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Specificity and selectivity across target families and secondary pharmacodynamics (off-target effects)",
+      "action": "be documented",
+      "object": null,
+      "normalized_ko": "문서화해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_3.003",
+      "source_unit_ids": [
+        "ema_fih.su.6_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "In vitro studies with human cells or tissues",
+      "action": "be conducted",
+      "object": null,
+      "normalized_ko": "수행해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_3.004",
+      "source_unit_ids": [
+        "ema_fih.su.6_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The steepness of the dose-response relationship",
+      "action": "is of",
+      "object": "critical importance",
+      "normalized_ko": "매우 중요하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_3.005",
+      "source_unit_ids": [
+        "ema_fih.su.6_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Steep curves",
+      "action": "indicate that",
+      "object": "small increments in dose can lead to disproportionately large biological or toxicological effects",
+      "normalized_ko": "소량의 용량 증가가 불균형적으로 큰 생물학적 또는 독성학적 효과를 초래할 수 있음을 나타낸다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_3.006",
+      "source_unit_ids": [
+        "ema_fih.su.6_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The steepness of the dose-response relationship",
+      "action": "is",
+      "object": "of critical importance",
+      "normalized_ko": "매우 중요하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_4.001",
+      "source_unit_ids": [
+        "ema_fih.su.6_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "PK and toxicokinetic (TK) data",
+      "action": "should be available",
+      "object": "as per ICH S3, S6(R1), M3(R2) and related Q&A documents",
+      "normalized_ko": "ICH S3, S6(R1), M3(R2) 및 관련 질의응답 문서에 따라 이용 가능해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_4.002",
+      "source_unit_ids": [
+        "ema_fih.su.6_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "These data",
+      "action": "adequately support",
+      "object": "the interpretation of data from in vivo PD models and safety/toxicological studies",
+      "normalized_ko": "생체 내 PD 모델 및 안전성/독성시험에서 얻은 데이터의 해석을 적절히 뒷받침해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_4.003",
+      "source_unit_ids": [
+        "ema_fih.su.6_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Sponsors",
+      "action": "supply",
+      "object": "a brief summary of the analytical assays used to characterise the non-clinical PK and TK, including their accuracy, precision and limits of quantification",
+      "normalized_ko": "정확성, 정밀성 및 정량한계를 포함하여 비임상 PK 및 TK를 특성화하는 데 사용된 분석법에 대한 간략한 요약을 제공해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_4.004",
+      "source_unit_ids": [
+        "ema_fih.su.6_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Systemic exposures at pharmacodynamically active doses in the relevant animal models",
+      "action": "be determined",
+      "object": null,
+      "normalized_ko": "결정되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_4.005",
+      "source_unit_ids": [
+        "ema_fih.su.6_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Systemic exposures at pharmacodynamically active doses in the relevant animal models",
+      "action": "be considered",
+      "object": null,
+      "normalized_ko": "고려되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_4.006",
+      "source_unit_ids": [
+        "ema_fih.su.6_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Possible polymorphisms",
+      "action": "be taken into account",
+      "object": null,
+      "normalized_ko": "감안되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_5.001",
+      "source_unit_ids": [
+        "ema_fih.su.6_5.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Standard core battery data",
+      "action": "should be available",
+      "object": "Standard core battery data",
+      "normalized_ko": "표준 핵심 배터리 데이터는 이용 가능해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_5.002",
+      "source_unit_ids": [
+        "ema_fih.su.6_5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The core battery",
+      "action": "includes",
+      "object": "cardiovascular, respiratory, and central nervous system (CNS) evaluations",
+      "normalized_ko": "심혈관계, 호흡기계 및 중추신경계(CNS) 평가를 포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_5.003",
+      "source_unit_ids": [
+        "ema_fih.su.6_5.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Other organ systems",
+      "action": "includes",
+      "object": "renal",
+      "normalized_ko": "신장을 포함한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_6.001",
+      "source_unit_ids": [
+        "ema_fih.su.6_6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "The toxicology programme",
+      "action": "should be designed taking into account",
+      "object": "the characteristics of the IMP and the relevant ICH guidelines S6(R1), S9 and M3(R2)",
+      "normalized_ko": "IMP의 특성 및 관련 ICH 가이드라인 S6(R1), S9 및 M3(R2)를 고려하여 설계되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_6.002",
+      "source_unit_ids": [
+        "ema_fih.su.6_6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should not",
+      "subject": "These types of effects",
+      "action": "should not be ignored",
+      "object": null,
+      "normalized_ko": "무시되어서는 안 된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_6.003",
+      "source_unit_ids": [
+        "ema_fih.su.6_6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Serious toxicity",
+      "action": "should lead to a more cautious approach when setting",
+      "object": "doses",
+      "normalized_ko": "용량 설정 시 보다 신중한 접근으로 이어져야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.6_6.004",
+      "source_unit_ids": [
+        "ema_fih.su.6_6.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Toxicity",
+      "action": "can be the result of",
+      "object": "exaggerated pharmacological actions",
+      "normalized_ko": "과도한 약리작용의 결과일 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "ema_fih.kr.abbrev.001",
+      "source_unit_ids": [
+        "ema_fih.su.abbrev.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "ATD",
+      "action": "means",
+      "object": "Anticipated therapeutic dose",
+      "normalized_ko": "예상 치료 용량을 의미한다.",
+      "review_status": "reviewed"
     }
   ],
   "quantitative_criteria": [
@@ -8618,6 +10498,707 @@
       "condition_type": "scope",
       "applies_to_ids": [
         "ema_fih.kr.8_4.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.2.001",
+      "source_unit_id": "ema_fih.su.2.001",
+      "condition_text": "including those which generate initial knowledge in humans on tolerability, safety, PK and PD",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.2.002",
+      "source_unit_id": "ema_fih.su.2.001",
+      "condition_text": "as defined in Article 2(1) of Regulation 1394/2007 tested or used in accordance with Article 3 of Directive 2001/83/EC",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.2.010"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.2.003",
+      "source_unit_id": "ema_fih.su.2.001",
+      "condition_text": "when designing early clinical trials for ATMPs",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ema_fih.kr.2.001",
+        "ema_fih.kr.2.002",
+        "ema_fih.kr.2.003",
+        "ema_fih.kr.2.004",
+        "ema_fih.kr.2.005",
+        "ema_fih.kr.2.006",
+        "ema_fih.kr.2.007",
+        "ema_fih.kr.2.008",
+        "ema_fih.kr.2.009",
+        "ema_fih.kr.2.010"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.2.004",
+      "source_unit_id": "ema_fih.su.2.001",
+      "condition_text": "when designing early clinical trials for ATMPs",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.2.007"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.4.001",
+      "source_unit_id": "ema_fih.su.4.002",
+      "condition_text": "a priori for each clinical study",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ema_fih.kr.4.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.4.002",
+      "source_unit_id": "ema_fih.su.4.002",
+      "condition_text": "Based on the degree of uncertainty",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.4.006",
+        "ema_fih.kr.4.007",
+        "ema_fih.kr.4.008",
+        "ema_fih.kr.4.009"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.4.003",
+      "source_unit_id": "ema_fih.su.4.003",
+      "condition_text": "for all FIH/early CTs",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.4.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.4.004",
+      "source_unit_id": "ema_fih.su.4.003",
+      "condition_text": "in any assessment of risk",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.4.005",
+        "ema_fih.kr.4.006",
+        "ema_fih.kr.4.007",
+        "ema_fih.kr.4.008",
+        "ema_fih.kr.4.009",
+        "ema_fih.kr.4.010",
+        "ema_fih.kr.4.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.4.005",
+      "source_unit_id": "ema_fih.su.4.002",
+      "condition_text": "a priori for each clinical study",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.4.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.4.006",
+      "source_unit_id": "ema_fih.su.4.003",
+      "condition_text": "within the design and conduct of the FIH/early CTs",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.4.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.4.007",
+      "source_unit_id": "ema_fih.su.4.003",
+      "condition_text": "for all FIH/early CTs",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.4.005",
+        "ema_fih.kr.4.006",
+        "ema_fih.kr.4.007",
+        "ema_fih.kr.4.008",
+        "ema_fih.kr.4.009",
+        "ema_fih.kr.4.010",
+        "ema_fih.kr.4.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.4.008",
+      "source_unit_id": "ema_fih.su.4.003",
+      "condition_text": "during FIH/early CTs",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.4.005",
+        "ema_fih.kr.4.006",
+        "ema_fih.kr.4.007",
+        "ema_fih.kr.4.008",
+        "ema_fih.kr.4.009",
+        "ema_fih.kr.4.010",
+        "ema_fih.kr.4.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.4.009",
+      "source_unit_id": "ema_fih.su.4.003",
+      "condition_text": "supporting the CTA",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.4.005",
+        "ema_fih.kr.4.006",
+        "ema_fih.kr.4.007",
+        "ema_fih.kr.4.008",
+        "ema_fih.kr.4.009",
+        "ema_fih.kr.4.010",
+        "ema_fih.kr.4.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.4.010",
+      "source_unit_id": "ema_fih.su.4.002",
+      "condition_text": "Based on the degree of uncertainty",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ema_fih.kr.4.007",
+        "ema_fih.kr.4.008",
+        "ema_fih.kr.4.009",
+        "ema_fih.kr.4.010"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.4.011",
+      "source_unit_id": "ema_fih.su.4.003",
+      "condition_text": "in the sponsor Clinical Trial Application (CTA)",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.4.005",
+        "ema_fih.kr.4.006",
+        "ema_fih.kr.4.007",
+        "ema_fih.kr.4.008",
+        "ema_fih.kr.4.009",
+        "ema_fih.kr.4.010",
+        "ema_fih.kr.4.012"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.5.001",
+      "source_unit_id": "ema_fih.su.5.001",
+      "condition_text": "when administering to humans",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.5.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.5.002",
+      "source_unit_id": "ema_fih.su.5.001",
+      "condition_text": "for all IMPs",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.5.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.5.003",
+      "source_unit_id": "ema_fih.su.5.001",
+      "condition_text": "for complex or biological products",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.5.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.5.004",
+      "source_unit_id": "ema_fih.su.5.001",
+      "condition_text": "when administering to humans",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.5.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.5_1.001",
+      "source_unit_id": "ema_fih.su.5_1.001",
+      "condition_text": "To determine a safe starting dose",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.5_1.001",
+        "ema_fih.kr.5_1.002",
+        "ema_fih.kr.5_1.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.5_1.002",
+      "source_unit_id": "ema_fih.su.5_1.001",
+      "condition_text": "To determine a safe starting dose",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.5_1.001",
+        "ema_fih.kr.5_1.002",
+        "ema_fih.kr.5_1.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.5_2.001",
+      "source_unit_id": "ema_fih.su.5_2.001",
+      "condition_text": "As investigational material composition and process changes may occur during development",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ema_fih.kr.5_2.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.5_2.002",
+      "source_unit_id": "ema_fih.su.5_2.001",
+      "condition_text": "even at this early point of development",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.5_2.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.5_2.003",
+      "source_unit_id": "ema_fih.su.5_2.001",
+      "condition_text": "As investigational material composition and process changes may occur during development",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.5_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.5_2.004",
+      "source_unit_id": "ema_fih.su.5_2.001",
+      "condition_text": "which could impact on exposure",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.5_2.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.5_3.001",
+      "source_unit_id": "ema_fih.su.5_3.001",
+      "condition_text": "in cases where the medicinal product needs to be diluted to prepare very small doses, or it is provided at very low concentrations",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.5_3.002",
+        "ema_fih.kr.5_3.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6.001",
+      "source_unit_id": "ema_fih.su.6.001",
+      "condition_text": "in support of the CT application",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.6.001",
+        "ema_fih.kr.6.002",
+        "ema_fih.kr.6.003",
+        "ema_fih.kr.6.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6.002",
+      "source_unit_id": "ema_fih.su.6.001",
+      "condition_text": "influencing the design of CTs",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.6.001",
+        "ema_fih.kr.6.002",
+        "ema_fih.kr.6.003",
+        "ema_fih.kr.6.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6.003",
+      "source_unit_id": "ema_fih.su.6.001",
+      "condition_text": "in support of the CT application",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.6.001",
+        "ema_fih.kr.6.002",
+        "ema_fih.kr.6.003",
+        "ema_fih.kr.6.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6.004",
+      "source_unit_id": "ema_fih.su.6.001",
+      "condition_text": "influencing the design of CTs",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.6.001",
+        "ema_fih.kr.6.002",
+        "ema_fih.kr.6.003",
+        "ema_fih.kr.6.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_1.001",
+      "source_unit_id": "ema_fih.su.6_1.002",
+      "condition_text": "where the human target is expressed in animals",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.6_1.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_1.002",
+      "source_unit_id": "ema_fih.su.6_1.002",
+      "condition_text": "in particular to evaluate specific potential risks",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.6_1.007",
+        "ema_fih.kr.6_1.008"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_1.003",
+      "source_unit_id": "ema_fih.su.6_1.001",
+      "condition_text": "In this context",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.6_1.003",
+        "ema_fih.kr.6_1.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_1.004",
+      "source_unit_id": "ema_fih.su.6_1.002",
+      "condition_text": "for non-clinical testing of biotechnology-derived products",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.6_1.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_1.005",
+      "source_unit_id": "ema_fih.su.6_1.002",
+      "condition_text": "where the human target is expressed in animals",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ema_fih.kr.6_1.007"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_2.001",
+      "source_unit_id": "ema_fih.su.6_2.001",
+      "condition_text": "where there is limited clinical experience or where activation of the target triggers potent immune-modulatory responses",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.6_2.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_2.002",
+      "source_unit_id": "ema_fih.su.6_2.001",
+      "condition_text": "for novel targets where there is limited clinical experience",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.6_2.001",
+        "ema_fih.kr.6_2.002",
+        "ema_fih.kr.6_2.003",
+        "ema_fih.kr.6_2.004",
+        "ema_fih.kr.6_2.005",
+        "ema_fih.kr.6_2.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_2.003",
+      "source_unit_id": "ema_fih.su.6_2.001",
+      "condition_text": "where activation of the target triggers potent immune-modulatory responses",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.6_2.001",
+        "ema_fih.kr.6_2.002",
+        "ema_fih.kr.6_2.003",
+        "ema_fih.kr.6_2.004",
+        "ema_fih.kr.6_2.005",
+        "ema_fih.kr.6_2.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_3.001",
+      "source_unit_id": "ema_fih.su.6_3.001",
+      "condition_text": "when animal models show limited pharmacodynamic relevance or when potency in humans is anticipated to be substantially higher",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ema_fih.kr.6_3.001",
+        "ema_fih.kr.6_3.002",
+        "ema_fih.kr.6_3.003",
+        "ema_fih.kr.6_3.004",
+        "ema_fih.kr.6_3.005",
+        "ema_fih.kr.6_3.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_3.002",
+      "source_unit_id": "ema_fih.su.6_3.001",
+      "condition_text": "when potency in humans is anticipated to be substantially higher",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ema_fih.kr.6_3.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_3.003",
+      "source_unit_id": "ema_fih.su.6_3.001",
+      "condition_text": "when animal models show limited pharmacodynamic relevance",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.6_3.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_3.004",
+      "source_unit_id": "ema_fih.su.6_3.001",
+      "condition_text": "when potency in humans is anticipated to be substantially higher",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.6_3.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_4.001",
+      "source_unit_id": "ema_fih.su.6_4.001",
+      "condition_text": "in all species used for the non-clinical safety studies conducted",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.6_4.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_4.002",
+      "source_unit_id": "ema_fih.su.6_4.001",
+      "condition_text": "before starting FIH/early CTs",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ema_fih.kr.6_4.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_4.003",
+      "source_unit_id": "ema_fih.su.6_4.001",
+      "condition_text": "at pharmacodynamically active doses in the relevant animal models",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.6_4.004",
+        "ema_fih.kr.6_4.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_4.004",
+      "source_unit_id": "ema_fih.su.6_4.001",
+      "condition_text": "when PD effects are suspected to contribute to potential safety concerns",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.6_4.004",
+        "ema_fih.kr.6_4.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_4.005",
+      "source_unit_id": "ema_fih.su.6_4.001",
+      "condition_text": "in all species used for the non-clinical safety studies conducted",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.6_4.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_4.006",
+      "source_unit_id": "ema_fih.su.6_4.001",
+      "condition_text": "in the relevant animal models",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.6_4.004",
+        "ema_fih.kr.6_4.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_4.007",
+      "source_unit_id": "ema_fih.su.6_4.001",
+      "condition_text": "when PD effects are suspected to contribute to potential safety concerns",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ema_fih.kr.6_4.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_4.008",
+      "source_unit_id": "ema_fih.su.6_4.001",
+      "condition_text": "when PD effects are suspected to contribute to potential safety concerns",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.6_4.005"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_5.001",
+      "source_unit_id": "ema_fih.su.6_5.001",
+      "condition_text": "before the first administration in humans",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ema_fih.kr.6_5.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_5.002",
+      "source_unit_id": "ema_fih.su.6_5.001",
+      "condition_text": "on a case-by-case basis",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.6_5.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_5.003",
+      "source_unit_id": "ema_fih.su.6_5.001",
+      "condition_text": "where there is a cause for concern",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ema_fih.kr.6_5.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_5.004",
+      "source_unit_id": "ema_fih.su.6_5.001",
+      "condition_text": "where there is a cause for concern",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.6_5.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_6.001",
+      "source_unit_id": "ema_fih.su.6_6.001",
+      "condition_text": "when establishing a safe starting dose for humans",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.6_6.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_6.002",
+      "source_unit_id": "ema_fih.su.6_6.001",
+      "condition_text": "the target organs identified in the non-clinical studies",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "ema_fih.kr.6_6.001",
+        "ema_fih.kr.6_6.002",
+        "ema_fih.kr.6_6.003",
+        "ema_fih.kr.6_6.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_6.003",
+      "source_unit_id": "ema_fih.su.6_6.001",
+      "condition_text": "when establishing a safe starting dose for humans",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ema_fih.kr.6_6.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_6.004",
+      "source_unit_id": "ema_fih.su.6_6.001",
+      "condition_text": "at which these toxicities are observed",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.6_6.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_6.005",
+      "source_unit_id": "ema_fih.su.6_6.001",
+      "condition_text": "when setting doses and applying risk mitigation strategies in the clinical setting",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.6_6.001",
+        "ema_fih.kr.6_6.002",
+        "ema_fih.kr.6_6.003",
+        "ema_fih.kr.6_6.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_6.006",
+      "source_unit_id": "ema_fih.su.6_6.001",
+      "condition_text": "for the definition of the dose escalation range to be investigated in humans",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "ema_fih.kr.6_6.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "ema_fih.cond.6_6.007",
+      "source_unit_id": "ema_fih.su.6_6.001",
+      "condition_text": "Serious toxicity",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "ema_fih.kr.6_6.001",
+        "ema_fih.kr.6_6.002",
+        "ema_fih.kr.6_6.003",
+        "ema_fih.kr.6_6.004"
       ],
       "review_status": "reviewed"
     }

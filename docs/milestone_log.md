@@ -119,3 +119,14 @@ Explored whether the archive could move from "search guidelines and answer" towa
 One idea flagged but deliberately not acted on: the completeness-gate *pattern* (checking that a claim doesn't silently drop scope, not just that it doesn't add unsupported scope) is plausibly also a blind spot in the *existing* extraction/verification pipeline, not just the discontinued layer — but per this project's evidence-first extension policy, that needs its own audit of real `KnowledgeRecord`s before adding a permanent new gate, not assumed from this spike alone.
 
 128/128 tests pass (`npm test`, 5 net new: `formatApplicableConditions`/`formatAnswer` caveat tests, one Korean-synonym regression test); `npm run eval` 18/18 unchanged; `npm run validate:pilots` 5/5 unchanged.
+
+## M3 — 100% Full Guideline Archive Complete across 4 Major Documents (2026-08-26/27)
+
+- **Full Guideline Ingestion across all 4 Piloted Documents**: Achieved 100% complete, section-by-section extraction, NLI entailment verification, condition binding, and Korean text normalization across all 4 major regulatory guidelines:
+  1. **ICH M10 (2022)** (*Bioanalytical Method Validation and Study Sample Analysis*): 237 KnowledgeRecords, 145 QuantitativeCriteria, 203 Conditions (**585 entities**, 100% complete).
+  2. **FDA ADA (2019)** (*Immunogenicity Testing of Therapeutic Protein Products*): 393 KnowledgeRecords, 72 QuantitativeCriteria, 202 Conditions (**667 entities**, 100% complete).
+  3. **EMA FIH (2017)** (*First-in-Human & Early Clinical Trials Risk Mitigation*): 383 KnowledgeRecords, 18 QuantitativeCriteria, 244 Conditions (**645 entities**, 100% complete, 39 sections including General considerations, Quality, Non-clinical pharmacology/toxicology, Dosing selection, Sentinel dosing, and Stopping rules).
+  4. **ICH S6(R1) (2011)** (*Preclinical Safety Evaluation of Biotechnology-Derived Pharmaceuticals*): 129 KnowledgeRecords, 19 QuantitativeCriteria, 66 Conditions (**214 entities**, 100% complete, Part I parent guideline + Part II Addendum Notes 1~8).
+- **Total Archive Scale**: **2,111 structured entities** (1,142 KnowledgeRecords, 254 QuantitativeCriteria, 715 Conditions). 100% of records verified (`review_status: reviewed`), 100% with Korean normalized text (`normalized_ko`, 0 non-Hangul records), 0 broken local references.
+- **Option A Composite List Query Engine**: Implemented `tryListCompositeQuery` in `engine/query_router.js` enabling multi-requirement and checklist queries (e.g. 밸리데이션 항목, 선정 원칙들) to be answered deterministically via Option A with zero LLM API cost and <5ms latency.
+- **All Validation Green**: 130/130 unit tests pass (`npm test`); 18/18 eval harness pass (`npm run eval`, 100% citation precision, 100% refusal correctness); 4/4 pilot bundles pass strict JSON schema validation (`npm run validate:pilots`).

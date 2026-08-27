@@ -1,0 +1,176 @@
+{
+  "sections": [
+    {
+      "section_id": "ema_fih.sec.6",
+      "document_id": "ema_fih",
+      "section_number": "6",
+      "title": "Non-clinical aspects",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 6,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.6_1",
+      "document_id": "ema_fih",
+      "section_number": "6.1",
+      "title": "Relevance of the animal model",
+      "parent_section_id": "ema_fih.sec.6",
+      "heading_source_unit_id": null,
+      "section_order": 61,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.6_2",
+      "document_id": "ema_fih",
+      "section_number": "6.2",
+      "title": "Nature of the target",
+      "parent_section_id": "ema_fih.sec.6",
+      "heading_source_unit_id": null,
+      "section_order": 62,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.6_3",
+      "document_id": "ema_fih",
+      "section_number": "6.3",
+      "title": "Pharmacodynamics",
+      "parent_section_id": "ema_fih.sec.6",
+      "heading_source_unit_id": null,
+      "section_order": 63,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.6_4",
+      "document_id": "ema_fih",
+      "section_number": "6.4",
+      "title": "Pharmaco- and toxicokinetics",
+      "parent_section_id": "ema_fih.sec.6",
+      "heading_source_unit_id": null,
+      "section_order": 64,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.6_5",
+      "document_id": "ema_fih",
+      "section_number": "6.5",
+      "title": "Safety pharmacology",
+      "parent_section_id": "ema_fih.sec.6",
+      "heading_source_unit_id": null,
+      "section_order": 65,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.6_6",
+      "document_id": "ema_fih",
+      "section_number": "6.6",
+      "title": "Toxicology",
+      "parent_section_id": "ema_fih.sec.6",
+      "heading_source_unit_id": null,
+      "section_order": 66,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "ema_fih.sec.abbrev",
+      "document_id": "ema_fih",
+      "section_number": "Abbreviations",
+      "title": "Abbreviations and Definitions",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 90,
+      "section_order_status": "known"
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "ema_fih.su.6.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6",
+      "unit_order": 60,
+      "unit_type": "paragraph",
+      "source_text": "The development and evaluation of a new IMP is a stepwise process involving animal and human efficacy and safety information. The non-clinical data in PD, PK and toxicology and their translation to human are important basis for planning and conduct of a FIH/early CT. The recommendations in the Guidance on non-clinical safety studies for the conduct of human clinical trials and marketing authorization for pharmaceuticals (ICH M3(R2)) should be followed. A tabulated summary containing an overview of all relevant non-clinical data is considered helpful in the assessment process and should be included as an appendix to the Investigator Brochure (IB). The sponsor should confirm that all pivotal non-clinical safety studies in support of the CT application are conducted in compliance with Good Laboratory Practice (GLP). All other studies influencing the design of CTs should be of high scientific standard and conduct.",
+      "pdfPage": 7,
+      "printedPage": "8"
+    },
+    {
+      "source_unit_id": "ema_fih.su.6_1.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6_1",
+      "unit_order": 61,
+      "unit_type": "paragraph",
+      "source_text": "The non-clinical pharmacology and toxicology programme should be performed in relevant animal species and/or other relevant experimental models. Animal models should be chosen based on similarities to humans with respect to target distribution, target binding and structural homology, cellular consequences of target binding, cellular regulatory mechanisms, metabolic pathways, or compensatory responses to an initial physiological perturbation. In this context, the use of in vitro human cell systems or human-derived material could provide relevant information about these translational differences and improve the understanding of the relevance of the animal models. High human-specificity of a medicinal product makes the non-clinical evaluation of the risk to humans more difficult in terms of degree of uncertainty.",
+      "pdfPage": 7,
+      "printedPage": "8"
+    },
+    {
+      "source_unit_id": "ema_fih.su.6_1.002",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6_1",
+      "unit_order": 62,
+      "unit_type": "paragraph",
+      "source_text": "Special consideration should be given to the selection of relevant animal models for non-clinical testing of biotechnology-derived products, as outlined in ICH S6(R1). Homologous proteins and transgenic models (where the human target is expressed in animals) could be considered as alternatives, in particular to evaluate specific potential risks (e.g. for identification of safety hazards or to clarify the mode of action). The use of homologous proteins or transgenic models could require specific considerations regarding e.g. quality, target expression, PK, and immunogenicity.",
+      "pdfPage": 8,
+      "printedPage": "9"
+    },
+    {
+      "source_unit_id": "ema_fih.su.6_2.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6_2",
+      "unit_order": 63,
+      "unit_type": "paragraph",
+      "source_text": "The nature of the target and its downstream pathways should be carefully evaluated. Potential risks can arise from the biological role of the target, its distribution in humans (e.g. presence in multiple tissues or vital organs), lack of redundancy or presence of feedback loops in the targeted biological system, cross-reactivity with unintended targets, and potential for sustained receptor activation or exaggerated downstream cascading effects (e.g. cytokine release syndrome). Particular caution is needed for novel targets where there is limited clinical experience or where activation of the target triggers potent immune-modulatory responses.",
+      "pdfPage": 8,
+      "printedPage": "9"
+    },
+    {
+      "source_unit_id": "ema_fih.su.6_3.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6_3",
+      "unit_order": 64,
+      "unit_type": "paragraph",
+      "source_text": "Primary pharmacodynamics in vitro and in vivo should provide sufficient information on the mode of action, concentration/dose-response relationships, and receptor occupancy or target binding kinetics. Specificity and selectivity across target families and secondary pharmacodynamics (off-target effects) should be documented. The steepness of the dose-response relationship is of critical importance, as steep curves indicate that small increments in dose can lead to disproportionately large biological or toxicological effects. In vitro studies with human cells or tissues should be conducted when animal models show limited pharmacodynamic relevance or when potency in humans is anticipated to be substantially higher.",
+      "pdfPage": 9,
+      "printedPage": "10"
+    },
+    {
+      "source_unit_id": "ema_fih.su.6_4.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6_4",
+      "unit_order": 65,
+      "unit_type": "paragraph",
+      "source_text": "PK and toxicokinetic (TK) data, as per ICH S3, S6(R1), M3(R2) and related Q&A documents, should be available in all species used for the non-clinical safety studies conducted. These data should adequately support the interpretation of data from in vivo PD models and safety/toxicological studies before starting FIH/early CTs. Sponsors should supply a brief summary of the analytical assays used to characterise the non-clinical PK and TK, including their accuracy, precision and limits of quantification. Systemic exposures at pharmacodynamically active doses in the relevant animal models should be determined and considered especially when PD effects are suspected to contribute to potential safety concerns. Possible polymorphisms e.g. in metabolic enzymes should be taken into account.",
+      "pdfPage": 9,
+      "printedPage": "10"
+    },
+    {
+      "source_unit_id": "ema_fih.su.6_5.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6_5",
+      "unit_order": 66,
+      "unit_type": "paragraph",
+      "source_text": "Standard core battery data should be available before the first administration in humans as outlined in ICH guidelines S7A, S7B, S6(R1), S9, M3(R2) and related Q&As. The core battery includes cardiovascular, respiratory, and central nervous system (CNS) evaluations. Additional studies to investigate effects in these and other organ systems (e.g. renal, gastrointestinal) should be conducted on a case-by-case basis where there is a cause for concern.",
+      "pdfPage": 9,
+      "printedPage": "10"
+    },
+    {
+      "source_unit_id": "ema_fih.su.6_6.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.6_6",
+      "unit_order": 67,
+      "unit_type": "paragraph",
+      "source_text": "The toxicology programme should be designed taking the characteristics of the IMP and the relevant ICH guidelines S6(R1), S9 and M3(R2) into account. Toxicity can be the result of exaggerated pharmacological actions. These types of effects should not be ignored when establishing a safe starting dose for humans and the exposures at which these toxicities are observed should be considered for the definition of the dose escalation range to be investigated in humans. An evaluation as to whether the target organs identified in the non-clinical studies warrant particular monitoring in the CT should be undertaken. Serious toxicity should lead to a more cautious approach when setting doses and applying risk mitigation strategies in the clinical setting.",
+      "pdfPage": 9,
+      "printedPage": "10"
+    },
+    {
+      "source_unit_id": "ema_fih.su.abbrev.001",
+      "document_id": "ema_fih",
+      "section_id": "ema_fih.sec.abbrev",
+      "unit_order": 90,
+      "unit_type": "paragraph",
+      "source_text": "Abbreviations: ATD - Anticipated therapeutic dose; ATMP - Advanced therapy medicinal product; AUC - Area under the curve; Cmax - Maximum concentration; CT - Clinical trial; CTA - Clinical trial application; FIH - First-in-human; GCP - Good Clinical Practice; GLP - Good Laboratory Practice; IB - Investigator Brochure; IMP - Investigational medicinal product; MABEL - Minimal anticipated biological effect level; MAD - Multiple ascending dose; MTD - Maximum tolerated dose; NOAEL - No observed adverse effect level; PAD - Pharmacologically active dose; PBPK - Physiologically-based pharmacokinetic; PD - Pharmacodynamic; PK - Pharmacokinetic; SAD - Single ascending dose; SUSAR - Suspected unexpected serious adverse reaction; TK - Toxicokinetic.",
+      "pdfPage": 21,
+      "printedPage": "22"
+    }
+  ]
+}
