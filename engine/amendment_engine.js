@@ -121,6 +121,26 @@ const GUIDELINE_REVISIONS = {
         sourceUnitId: "ich_m3_r2.su.11_3.001"
       }
     ]
+  },
+  fda_ada_2014: {
+    docId: "fda_ada_2014",
+    title: "FDA Immunogenicity Assessment for Therapeutic Protein Products",
+    parentVersion: "FDA 2009 Draft Immunogenicity Guidance",
+    currentVersion: "Final Guidance (2014.08)",
+    keyNotes: [
+      {
+        note: "Risk-Based Clinical Sampling",
+        section: "§IV (p. 6-9)",
+        topic: "투약 전(Pre-dose) 베이스라인 채취 및 고위험 제제 실시간 분석 vs 저위험 아카이빙 분석 전략",
+        sourceUnitId: "fda_ada_2014.su.4.001"
+      },
+      {
+        note: "Product & Patient Risk Factors",
+        section: "§V (p. 9-21)",
+        topic: "단백질 응집체(0.1-10 µm 미립자), 당화(Neu5Gc/alpha-gal), 피하(SC) vs 정맥(IV) 투여경로 및 CRM 음성 환자 위험",
+        sourceUnitId: "fda_ada_2014.su.5_b_3.001"
+      }
+    ]
   }
 };
 
@@ -140,6 +160,9 @@ function identifyAmendmentDoc(question) {
   }
   if (qLower.includes("fih") || qLower.includes("ema") || qLower.includes("통합 프로토콜") || qLower.includes("sentinel")) {
     return "ema_fih";
+  }
+  if (qLower.includes("2014") || qLower.includes("임상면역원성") || qLower.includes("샘플링")) {
+    return "fda_ada_2014";
   }
   if (qLower.includes("ada") || qLower.includes("fda") || qLower.includes("면역원성")) {
     return "fda_ada";

@@ -16,16 +16,23 @@ const DOC_KEYWORDS = {
   fda_ada: ["fda", "ada", "fda_ada", "면역원성", "항약물항체", "immunogenicity", "cut point", "컷포인트", "nab"],
   ema_fih: ["ema", "fih", "ema_fih", "초기임상", "임상1상", "first in human", "mabel", "sentinel", "stopping rule"],
   ich_s6_r1: ["s6", "s6(r1)", "ich_s6", "ich s6", "비임상", "동물종", "종선택", "preclinical", "생명공학", "biotechnology"],
-  ich_m3_r2: ["m3", "m3(r2)", "ich_m3", "ich m3", "탐색적", "마이크로도즈", "microdose", "독성시험기간", "고용량", "wocbp", "가임기"]
+  ich_m3_r2: ["m3", "m3(r2)", "ich_m3", "ich m3", "탐색적", "마이크로도즈", "microdose", "독성시험기간", "고용량", "wocbp", "가임기"],
+  fda_ada_2014: ["2014", "임상면역원성", "샘플링", "내인성", "교차반응", "clinical immunogenicity", "sampling", "risk assessment", "prca", "anaphylaxis"]
 };
 
 function isComparisonQuery(question) {
   if (!question || typeof question !== "string") return false;
   const qLower = question.toLowerCase();
+  let hasMarker = false;
   for (const marker of COMPARISON_MARKERS) {
-    if (qLower.includes(marker)) return true;
+    if (qLower.includes(marker)) {
+      hasMarker = true;
+      break;
+    }
   }
-  return false;
+  if (!hasMarker) return false;
+  const targetDocs = identifyTargetDocs(question);
+  return targetDocs.length >= 2;
 }
 
 function identifyTargetDocs(question) {
@@ -41,7 +48,16 @@ function identifyTargetDocs(question) {
     }
   }
 
+  // Disambiguate FDA ADA 2014 vs FDA ADA 2019
+  if (qLower.includes("2014") && !qLower.includes("2019") && !qLower.includes("vs") && !qLower.includes("비교")) {
+    matchedDocs.delete("fda_ada");
+  }
+
   if (matchedDocs.size >= 2) {
+    return Array.from(matchedDocs);
+  }
+
+  if (matchedDocs.size === 1) {
     return Array.from(matchedDocs);
   }
 
@@ -55,7 +71,7 @@ function identifyTargetDocs(question) {
     return ["ich_s6_r1", "ema_fih"];
   }
 
-  return matchedDocs.size === 1 ? Array.from(matchedDocs) : ["ich_m10", "fda_ada"];
+  return ["ich_m10", "fda_ada"];
 }
 
 function extractTopicTokens(question) {

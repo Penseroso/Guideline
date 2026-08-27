@@ -1,0 +1,156 @@
+{
+  "sections": [
+    {
+      "section_id": "fda_ada_2014.sec.6",
+      "document_id": "fda_ada_2014",
+      "section_number": "VI",
+      "title": "CONCLUSION",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 60,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.app_a",
+      "document_id": "fda_ada_2014",
+      "section_number": "APPENDIX A",
+      "title": "SUPPLEMENTAL TECHNICAL DETAILS",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 70,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.app_a_1",
+      "document_id": "fda_ada_2014",
+      "section_number": "APPENDIX A.1",
+      "title": "Diagnosis of Anaphylaxis",
+      "parent_section_id": "fda_ada_2014.sec.app_a",
+      "heading_source_unit_id": null,
+      "section_order": 71,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.app_a_2",
+      "document_id": "fda_ada_2014",
+      "section_number": "APPENDIX A.2",
+      "title": "Cytokine Release Syndrome",
+      "parent_section_id": "fda_ada_2014.sec.app_a",
+      "heading_source_unit_id": null,
+      "section_order": 72,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.app_a_3",
+      "document_id": "fda_ada_2014",
+      "section_number": "APPENDIX A.3",
+      "title": "Non-Acute Immune Responses",
+      "parent_section_id": "fda_ada_2014.sec.app_a",
+      "heading_source_unit_id": null,
+      "section_order": 73,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.app_a_4",
+      "document_id": "fda_ada_2014",
+      "section_number": "APPENDIX A.4",
+      "title": "Antibody Responses to Therapeutic Protein Products",
+      "parent_section_id": "fda_ada_2014.sec.app_a",
+      "heading_source_unit_id": null,
+      "section_order": 74,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.app_a_5",
+      "document_id": "fda_ada_2014",
+      "section_number": "APPENDIX A.5",
+      "title": "Utility of Animal Studies",
+      "parent_section_id": "fda_ada_2014.sec.app_a",
+      "heading_source_unit_id": null,
+      "section_order": 75,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.app_a_6",
+      "document_id": "fda_ada_2014",
+      "section_number": "APPENDIX A.6",
+      "title": "Comparative Immunogenicity Studies",
+      "parent_section_id": "fda_ada_2014.sec.app_a",
+      "heading_source_unit_id": null,
+      "section_order": 76,
+      "section_order_status": "known"
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "fda_ada_2014.su.6.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.6",
+      "unit_order": 600,
+      "unit_type": "paragraph",
+      "source_text": "A risk-based approach should be employed to evaluate and mitigate the immunogenicity of therapeutic protein products throughout product development. Risk evaluation must integrate patient-specific factors, product-specific attributes, clinical consequences, and adequate assay methodologies.",
+      "pdfPage": 25,
+      "printedPage": "21-22"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.app_a_1.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.app_a_1",
+      "unit_order": 710,
+      "unit_type": "paragraph",
+      "source_text": "Anaphylaxis diagnosis is based on three Sampson 2006 clinical criteria: (1) Acute onset of skin/mucosal symptoms with respiratory compromise or reduced blood pressure; (2) Rapid occurrence of two or more symptoms (skin/mucosa, respiratory, reduced BP, gastrointestinal cramps/vomiting) after exposure to a likely allergen; (3) Reduced blood pressure after exposure to a known allergen (systolic BP drop greater than 30% or below age-specific normal).",
+      "pdfPage": 34,
+      "printedPage": "31-32"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.app_a_2.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.app_a_2",
+      "unit_order": 720,
+      "unit_type": "paragraph",
+      "source_text": "Cytokine Release Syndrome (CRS) is an acute systemic inflammatory response caused by massive release of cytokines (IL-6, IFN-gamma, TNF-alpha) upon target engagement or Fc receptor activation. Signs include fever, chills, hypotension, hypoxia, and multi-organ failure occurring within minutes to hours of infusion.",
+      "pdfPage": 35,
+      "printedPage": "32-33"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.app_a_3.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.app_a_3",
+      "unit_order": 730,
+      "unit_type": "paragraph",
+      "source_text": "Non-acute immune responses include immune complex disease (type III hypersensitivity causing glomerulonephritis, vasculitis, and arthritis) and cross-reactive neutralization of unique endogenous proteins (e.g., severe pure red cell aplasia PRCA from anti-erythropoietin antibodies).",
+      "pdfPage": 36,
+      "printedPage": "33"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.app_a_4.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.app_a_4",
+      "unit_order": 740,
+      "unit_type": "paragraph",
+      "source_text": "Antibody responses should be characterized as transient (resolving spontaneously during continued treatment) or persistent (sustained ADA positivity). Both antibody titer and neutralizing capacity should be evaluated relative to clinical pharmacokinetics, pharmacodynamics, efficacy, and adverse events.",
+      "pdfPage": 36,
+      "printedPage": "33-35"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.app_a_5.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.app_a_5",
+      "unit_order": 750,
+      "unit_type": "paragraph",
+      "source_text": "Animal immunogenicity studies are not predictive of human immunogenicity incidence or antibody titers due to interspecies differences in immune systems and human sequence recognition. However, animal studies are valuable for assessing the pharmacodynamic consequences of cross-reactive neutralizing antibodies to conserved endogenous proteins.",
+      "pdfPage": 38,
+      "printedPage": "35"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.app_a_6.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.app_a_6",
+      "unit_order": 760,
+      "unit_type": "paragraph",
+      "source_text": "In comparative immunogenicity studies (such as biosimilar development), head-to-head clinical comparisons must use the same single antibody assay format capable of detecting antibodies against both the proposed product and the reference product with equivalent sensitivity and specificity to ensure valid comparisons.",
+      "pdfPage": 38,
+      "printedPage": "35-36"
+    }
+  ]
+}

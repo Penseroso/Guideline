@@ -45,6 +45,15 @@
       "study_context_scope": "nonclinical_safety",
       "assay_technology_scope": "in_vivo_toxicology",
       "explicit_exclusions": []
+    },
+    {
+      "document_id": "fda_ada_2014",
+      "molecule_scope": "biotechnology",
+      "study_context_scope": "clinical_immunogenicity",
+      "assay_technology_scope": "ada_multi_tiered",
+      "explicit_exclusions": [
+        "small_molecule"
+      ]
     }
   ],
   "default_profile": {

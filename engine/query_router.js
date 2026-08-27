@@ -168,7 +168,24 @@ function tryListCompositeQuery(scored, qTokens, question) {
     }
   }
 
-  const sortedGroups = [...groups.values()].sort((a, b) => {
+  const lowerQ = (question || "").toLowerCase();
+  let explicitDocId = null;
+  if (lowerQ.includes("2014")) explicitDocId = "fda_ada_2014";
+  else if (lowerQ.includes("2019")) explicitDocId = "fda_ada";
+  else if (lowerQ.includes("m10")) explicitDocId = "ich_m10";
+  else if (lowerQ.includes("s6")) explicitDocId = "ich_s6_r1";
+  else if (lowerQ.includes("m3")) explicitDocId = "ich_m3_r2";
+  else if (lowerQ.includes("fih") || (lowerQ.includes("ema") && !lowerQ.includes("fda"))) explicitDocId = "ema_fih";
+
+  let candidateGroups = [...groups.values()];
+  if (explicitDocId) {
+    const docGroups = candidateGroups.filter((g) => g.items.some((it) => it.document_id === explicitDocId));
+    if (docGroups.length > 0) {
+      candidateGroups = docGroups;
+    }
+  }
+
+  const sortedGroups = candidateGroups.sort((a, b) => {
     if (b.maxScore !== a.maxScore) return b.maxScore - a.maxScore;
     return b.totalScore - a.totalScore;
   });

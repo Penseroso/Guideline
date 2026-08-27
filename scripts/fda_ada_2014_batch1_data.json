@@ -1,0 +1,106 @@
+{
+  "sections": [
+    {
+      "section_id": "fda_ada_2014.sec.1",
+      "document_id": "fda_ada_2014",
+      "section_number": "I",
+      "title": "INTRODUCTION",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 10,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.2",
+      "document_id": "fda_ada_2014",
+      "section_number": "II",
+      "title": "BACKGROUND",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 20,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.3_a",
+      "document_id": "fda_ada_2014",
+      "section_number": "III.A",
+      "title": "Consequences for Efficacy",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 31,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.3_b",
+      "document_id": "fda_ada_2014",
+      "section_number": "III.B",
+      "title": "Consequences for Safety",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 32,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.4",
+      "document_id": "fda_ada_2014",
+      "section_number": "IV",
+      "title": "RECOMMENDATIONS FOR IMMUNOGENICITY RISK MITIGATION IN THE CLINICAL PHASE OF DEVELOPMENT",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 40,
+      "section_order_status": "known"
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "fda_ada_2014.su.1.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.1",
+      "unit_order": 100,
+      "unit_type": "paragraph",
+      "source_text": "This guidance is intended to assist manufacturers and clinical investigators involved in the development of therapeutic protein products for human use. In this document, FDA outlines and recommends adoption of a risk-based approach to evaluating and mitigating immune responses to or adverse immunologically related responses associated with therapeutic protein products that affect their safety and efficacy. This guidance does not address assay development, which is covered in a separate guidance.",
+      "pdfPage": 4,
+      "printedPage": "1-2"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.2.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.2",
+      "unit_order": 200,
+      "unit_type": "paragraph",
+      "source_text": "Immune responses to therapeutic protein products may pose problems for both patient safety and product efficacy. Unwanted immune responses may neutralize biological activities and result in adverse events by inhibiting product efficacy or by cross-reacting to an endogenous protein counterpart (e.g., neutralizing antibodies to therapeutic erythropoietin cause pure red cell aplasia). Because most adverse effects appear to be mediated by humoral mechanisms, circulating antibody to the therapeutic protein product has been the chief criterion for defining an immune response.",
+      "pdfPage": 5,
+      "printedPage": "2"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.3_a.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.3_a",
+      "unit_order": 310,
+      "unit_type": "paragraph",
+      "source_text": "Development of antibodies can limit product efficacy in patients treated with therapeutic protein products. Neutralizing antibodies can block efficacy by specifically targeting domains critical for activity (e.g., uptake or catalytic domains). Both neutralizing and non-neutralizing antibodies may alter pharmacokinetics by accelerating clearance or prolonging serum half-life. Non-neutralizing antibodies may mistarget the product into Fc receptor-bearing cells or promote neutralizing antibody generation via epitope spreading.",
+      "pdfPage": 6,
+      "printedPage": "3"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.3_b.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.3_b",
+      "unit_order": 320,
+      "unit_type": "paragraph",
+      "source_text": "Major safety concerns associated with immunogenicity include: (1) Anaphylaxis, diagnosed by clinical diagnostic criteria regardless of presumed mechanism; (2) Cytokine Release Syndrome (CRS); (3) Infusion reactions, for which descriptive terminology noting timing and symptoms is recommended; (4) Non-acute reactions including immune complex disease, serum sickness, and glomerulonephritis; and (5) Cross-reactive neutralization of endogenous protein counterparts, which can cause severe deficiency syndromes (e.g., PRCA with erythropoietin, thrombocytopenia with thrombopoietin) or transplacental antibody transfer to neonates.",
+      "pdfPage": 7,
+      "printedPage": "4-6"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.4.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.4",
+      "unit_order": 400,
+      "unit_type": "paragraph",
+      "source_text": "Recommendations for clinical risk mitigation include: (1) Pre-treatment baseline samples should be drawn prior to product administration; (2) Scheduled serial sampling should occur prior to dosing (trough levels), supplemented by event-triggered unscheduled sampling upon suspected adverse events; (3) For high-risk products (e.g., nonredundant endogenous counterparts), real-time testing of samples is recommended; for lower-risk products, archived sample testing is acceptable; (4) A sufficient washout period should be observed at study end to allow drug clearance and avoid drug interference in antibody assays; (5) Premedication with antihistamines or corticosteroids may mask infusion reactions but does not prevent antibody generation.",
+      "pdfPage": 10,
+      "printedPage": "7-9"
+    }
+  ]
+}

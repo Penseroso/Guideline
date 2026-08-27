@@ -1,0 +1,2625 @@
+{
+  "documents": [
+    {
+      "document_id": "fda_ada_2014",
+      "title": "Immunogenicity Assessment for Therapeutic Protein Products",
+      "guideline_code": "FDA-2014-ADA-CLINICAL",
+      "issuing_body": "FDA",
+      "document_version_label": "Final Guidance, August 2014",
+      "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+      "source_file_checksum": "AC16A6FFDAE3CB6055C22E96476FDA075EF8FC7B63B623CD2DC4695E54E56B12",
+      "schema_model_version": "0.5.0"
+    }
+  ],
+  "sections": [
+    {
+      "section_id": "fda_ada_2014.sec.1",
+      "document_id": "fda_ada_2014",
+      "section_number": "I",
+      "title": "INTRODUCTION",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 10,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.2",
+      "document_id": "fda_ada_2014",
+      "section_number": "II",
+      "title": "BACKGROUND",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 20,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.3_a",
+      "document_id": "fda_ada_2014",
+      "section_number": "III.A",
+      "title": "Consequences for Efficacy",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 31,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.3_b",
+      "document_id": "fda_ada_2014",
+      "section_number": "III.B",
+      "title": "Consequences for Safety",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 32,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.4",
+      "document_id": "fda_ada_2014",
+      "section_number": "IV",
+      "title": "RECOMMENDATIONS FOR IMMUNOGENICITY RISK MITIGATION IN THE CLINICAL PHASE OF DEVELOPMENT",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 40,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_a",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.A",
+      "title": "Patient-Specific Factors That Affect Immunogenicity",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 51,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B",
+      "title": "Product-Specific Factors That Affect Immunogenicity",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 52,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.6",
+      "document_id": "fda_ada_2014",
+      "section_number": "VI",
+      "title": "CONCLUSION",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 60,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.app_a",
+      "document_id": "fda_ada_2014",
+      "section_number": "APPENDIX A",
+      "title": "SUPPLEMENTAL TECHNICAL DETAILS",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 70,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.app_a_1",
+      "document_id": "fda_ada_2014",
+      "section_number": "APPENDIX A.1",
+      "title": "Diagnosis of Anaphylaxis",
+      "parent_section_id": "fda_ada_2014.sec.app_a",
+      "heading_source_unit_id": null,
+      "section_order": 71,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.app_a_2",
+      "document_id": "fda_ada_2014",
+      "section_number": "APPENDIX A.2",
+      "title": "Cytokine Release Syndrome",
+      "parent_section_id": "fda_ada_2014.sec.app_a",
+      "heading_source_unit_id": null,
+      "section_order": 72,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.app_a_3",
+      "document_id": "fda_ada_2014",
+      "section_number": "APPENDIX A.3",
+      "title": "Non-Acute Immune Responses",
+      "parent_section_id": "fda_ada_2014.sec.app_a",
+      "heading_source_unit_id": null,
+      "section_order": 73,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.app_a_4",
+      "document_id": "fda_ada_2014",
+      "section_number": "APPENDIX A.4",
+      "title": "Antibody Responses to Therapeutic Protein Products",
+      "parent_section_id": "fda_ada_2014.sec.app_a",
+      "heading_source_unit_id": null,
+      "section_order": 74,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.app_a_5",
+      "document_id": "fda_ada_2014",
+      "section_number": "APPENDIX A.5",
+      "title": "Utility of Animal Studies",
+      "parent_section_id": "fda_ada_2014.sec.app_a",
+      "heading_source_unit_id": null,
+      "section_order": 75,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.app_a_6",
+      "document_id": "fda_ada_2014",
+      "section_number": "APPENDIX A.6",
+      "title": "Comparative Immunogenicity Studies",
+      "parent_section_id": "fda_ada_2014.sec.app_a",
+      "heading_source_unit_id": null,
+      "section_order": 76,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_a_1",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.A.1",
+      "title": "Immunologic Status and Competence of the Patient",
+      "parent_section_id": "fda_ada_2014.sec.5_a",
+      "heading_source_unit_id": null,
+      "section_order": 511,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_a_2",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.A.2",
+      "title": "Prior Sensitization/History of Allergy",
+      "parent_section_id": "fda_ada_2014.sec.5_a",
+      "heading_source_unit_id": null,
+      "section_order": 512,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_a_3",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.A.3",
+      "title": "Route of Administration, Dose, and Frequency of Administration",
+      "parent_section_id": "fda_ada_2014.sec.5_a",
+      "heading_source_unit_id": null,
+      "section_order": 513,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_a_4",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.A.4",
+      "title": "Genetic Status",
+      "parent_section_id": "fda_ada_2014.sec.5_a",
+      "heading_source_unit_id": null,
+      "section_order": 514,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_a_5",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.A.5",
+      "title": "Status of Immune Tolerance to Endogenous Protein",
+      "parent_section_id": "fda_ada_2014.sec.5_a",
+      "heading_source_unit_id": null,
+      "section_order": 515,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_1",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.1",
+      "title": "Product Origin (foreign or human)",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 521,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_2",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.2",
+      "title": "Primary Molecular Structure/Posttranslational Modifications",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 522,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_3",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.3",
+      "title": "Quaternary Structure: Product Aggregates and Measurement of Aggregates",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 523,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_4",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.4",
+      "title": "Glycosylation/Pegylation",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 524,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_5",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.5",
+      "title": "Impurities with Adjuvant Activity",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 525,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_6",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.6",
+      "title": "Immunomodulatory Properties of the Therapeutic Protein Product",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 526,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_7",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.7",
+      "title": "Formulation",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 527,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_8",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.8",
+      "title": "Container Closure Considerations",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 528,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_9",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.9",
+      "title": "Product Custody",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 529,
+      "section_order_status": "known"
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "fda_ada_2014.su.1.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.1",
+      "unit_order": 100,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "This guidance is intended to assist manufacturers and clinical investigators involved in the development of therapeutic protein products for human use. In this document, FDA outlines and recommends adoption of a risk-based approach to evaluating and mitigating immune responses to or adverse immunologically related responses associated with therapeutic protein products that affect their safety and efficacy. This guidance does not address assay development, which is covered in a separate guidance.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.1",
+        "pdf_page_index_zero_based": 4,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "1-2",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.2.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.2",
+      "unit_order": 200,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Immune responses to therapeutic protein products may pose problems for both patient safety and product efficacy. Unwanted immune responses may neutralize biological activities and result in adverse events by inhibiting product efficacy or by cross-reacting to an endogenous protein counterpart (e.g., neutralizing antibodies to therapeutic erythropoietin cause pure red cell aplasia). Because most adverse effects appear to be mediated by humoral mechanisms, circulating antibody to the therapeutic protein product has been the chief criterion for defining an immune response.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.2",
+        "pdf_page_index_zero_based": 5,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "2",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.3_a.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.3_a",
+      "unit_order": 310,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Development of antibodies can limit product efficacy in patients treated with therapeutic protein products. Neutralizing antibodies can block efficacy by specifically targeting domains critical for activity (e.g., uptake or catalytic domains). Both neutralizing and non-neutralizing antibodies may alter pharmacokinetics by accelerating clearance or prolonging serum half-life. Non-neutralizing antibodies may mistarget the product into Fc receptor-bearing cells or promote neutralizing antibody generation via epitope spreading.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.3_a",
+        "pdf_page_index_zero_based": 6,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "3",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.3_b.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.3_b",
+      "unit_order": 320,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Major safety concerns associated with immunogenicity include: (1) Anaphylaxis, diagnosed by clinical diagnostic criteria regardless of presumed mechanism; (2) Cytokine Release Syndrome (CRS); (3) Infusion reactions, for which descriptive terminology noting timing and symptoms is recommended; (4) Non-acute reactions including immune complex disease, serum sickness, and glomerulonephritis; and (5) Cross-reactive neutralization of endogenous protein counterparts, which can cause severe deficiency syndromes (e.g., PRCA with erythropoietin, thrombocytopenia with thrombopoietin) or transplacental antibody transfer to neonates.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.3_b",
+        "pdf_page_index_zero_based": 7,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "4-6",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.4.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.4",
+      "unit_order": 400,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Recommendations for clinical risk mitigation include: (1) Pre-treatment baseline samples should be drawn prior to product administration; (2) Scheduled serial sampling should occur prior to dosing (trough levels), supplemented by event-triggered unscheduled sampling upon suspected adverse events; (3) For high-risk products (e.g., nonredundant endogenous counterparts), real-time testing of samples is recommended; for lower-risk products, archived sample testing is acceptable; (4) A sufficient washout period should be observed at study end to allow drug clearance and avoid drug interference in antibody assays; (5) Premedication with antihistamines or corticosteroids may mask infusion reactions but does not prevent antibody generation.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.4",
+        "pdf_page_index_zero_based": 10,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "7-9",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.6.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.6",
+      "unit_order": 600,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "A risk-based approach should be employed to evaluate and mitigate the immunogenicity of therapeutic protein products throughout product development. Risk evaluation must integrate patient-specific factors, product-specific attributes, clinical consequences, and adequate assay methodologies.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.6",
+        "pdf_page_index_zero_based": 25,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "21-22",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.app_a_1.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.app_a_1",
+      "unit_order": 710,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Anaphylaxis diagnosis is based on three Sampson 2006 clinical criteria: (1) Acute onset of skin/mucosal symptoms with respiratory compromise or reduced blood pressure; (2) Rapid occurrence of two or more symptoms (skin/mucosa, respiratory, reduced BP, gastrointestinal cramps/vomiting) after exposure to a likely allergen; (3) Reduced blood pressure after exposure to a known allergen (systolic BP drop greater than 30% or below age-specific normal).",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.app_a_1",
+        "pdf_page_index_zero_based": 34,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "31-32",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.app_a_2.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.app_a_2",
+      "unit_order": 720,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Cytokine Release Syndrome (CRS) is an acute systemic inflammatory response caused by massive release of cytokines (IL-6, IFN-gamma, TNF-alpha) upon target engagement or Fc receptor activation. Signs include fever, chills, hypotension, hypoxia, and multi-organ failure occurring within minutes to hours of infusion.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.app_a_2",
+        "pdf_page_index_zero_based": 35,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "32-33",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.app_a_3.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.app_a_3",
+      "unit_order": 730,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Non-acute immune responses include immune complex disease (type III hypersensitivity causing glomerulonephritis, vasculitis, and arthritis) and cross-reactive neutralization of unique endogenous proteins (e.g., severe pure red cell aplasia PRCA from anti-erythropoietin antibodies).",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.app_a_3",
+        "pdf_page_index_zero_based": 36,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "33",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.app_a_4.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.app_a_4",
+      "unit_order": 740,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Antibody responses should be characterized as transient (resolving spontaneously during continued treatment) or persistent (sustained ADA positivity). Both antibody titer and neutralizing capacity should be evaluated relative to clinical pharmacokinetics, pharmacodynamics, efficacy, and adverse events.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.app_a_4",
+        "pdf_page_index_zero_based": 36,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "33-35",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.app_a_5.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.app_a_5",
+      "unit_order": 750,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Animal immunogenicity studies are not predictive of human immunogenicity incidence or antibody titers due to interspecies differences in immune systems and human sequence recognition. However, animal studies are valuable for assessing the pharmacodynamic consequences of cross-reactive neutralizing antibodies to conserved endogenous proteins.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.app_a_5",
+        "pdf_page_index_zero_based": 38,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "35",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.app_a_6.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.app_a_6",
+      "unit_order": 760,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "In comparative immunogenicity studies (such as biosimilar development), head-to-head clinical comparisons must use the same single antibody assay format capable of detecting antibodies against both the proposed product and the reference product with equivalent sensitivity and specificity to ensure valid comparisons.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.app_a_6",
+        "pdf_page_index_zero_based": 38,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "35-36",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_a_1.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_a_1",
+      "unit_order": 5110,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Immunocompromised patients (e.g., due to disease or concomitant immunosuppressive therapy) generally have lower rates of antibody development. Conversely, immunocompetent healthy volunteers may mount robust immune responses. Concomitant immunosuppressive agents (e.g., methotrexate with TNF-alpha blockers) significantly reduce ADA incidence.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.5_a_1",
+        "pdf_page_index_zero_based": 12,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "9-10",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_a_2.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_a_2",
+      "unit_order": 5120,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Prior exposure to therapeutic proteins or cross-reactive environmental antigens (e.g., galactose-alpha-1,3-galactose alpha-gal IgE antibodies from tick bites causing cetuximab hypersensitivity) can lead to pre-existing antibodies at baseline. Pre-existing antibodies should be evaluated prior to dosing.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.5_a_2",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "10",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_a_3.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_a_3",
+      "unit_order": 5130,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Subcutaneous (SC) and intramuscular (IM) administrations are generally more immunogenic than intravenous (IV) administration due to dendritic cell recruitment in the skin/muscle. Intermittent or interrupted dosing regimens carry higher immunogenicity risk than continuous, uninterrupted treatment.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.5_a_3",
+        "pdf_page_index_zero_based": 13,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "10-11",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_a_4.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_a_4",
+      "unit_order": 5140,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Genetic polymorphisms in human leukocyte antigen (HLA) alleles affect peptide presentation by antigen-presenting cells to T-cells and are associated with increased risk of antibody generation to specific therapeutic proteins (e.g., HLA-DRB1*0701 and interferon-beta antibodies).",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.5_a_4",
+        "pdf_page_index_zero_based": 14,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_a_5.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_a_5",
+      "unit_order": 5150,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Patients with genetic gene deletion mutations or null mutations who produce no endogenous protein (CRM negative, such as severe hemophilia A or Pompe disease) perceive therapeutic replacement proteins as completely foreign, resulting in high rates of neutralizing antibodies and inhibitors.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.5_a_5",
+        "pdf_page_index_zero_based": 14,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "11-12",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_1.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_1",
+      "unit_order": 5210,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Nonhuman origin proteins (e.g., bacterial, plant, or animal-derived) are inherently foreign and generally stimulate strong antibody responses. Humanization and fully human sequences reduce immunogenicity but do not eliminate the risk due to non-germline idiotype CDR sequences.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.5_b_1",
+        "pdf_page_index_zero_based": 16,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "13-14",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_2.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_2",
+      "unit_order": 5220,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Amino acid sequence modifications, novel junction sequences in fusion proteins, and chemical post-translational modifications (PTMs such as oxidation, deamidation, and isomerization) can create neo-epitopes that increase immunogenicity.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.5_b_2",
+        "pdf_page_index_zero_based": 17,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "14-15",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_3.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_3",
+      "unit_order": 5230,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Protein aggregates (soluble oligomers and sub-visible particles 0.1 to 10 µm) are potent inducers of immune responses by presenting repetitive epitope arrays that cross-link B-cell receptors and activate complement. Measurement and characterization of sub-visible particles using orthogonal analytical methods (e.g., light obscuration, flow imaging, micro-flow imaging) are critical for risk control.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.5_b_3",
+        "pdf_page_index_zero_based": 18,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "15-17",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_4.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_4",
+      "unit_order": 5240,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Glycosylation patterns can shield immunogenic protein epitopes. However, non-human glycan structures (such as N-glycolylneuraminic acid Neu5Gc or galactose-alpha-1,3-galactose) are immunogenic. PEGylation can reduce immunogenicity by steric hindrance, though antibodies against the PEG moiety itself can be generated.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.5_b_4",
+        "pdf_page_index_zero_based": 20,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "17-18",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_5.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_5",
+      "unit_order": 5250,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Host cell impurities (host cell proteins HCP, host cell DNA, endotoxins, beta-glucans, and flagellin) possess innate adjuvant activity that stimulates toll-like receptors (TLRs) and promotes breaking of immune tolerance to therapeutic proteins.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.5_b_5",
+        "pdf_page_index_zero_based": 21,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "18",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_6.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_6",
+      "unit_order": 5260,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "The intrinsic immunomodulatory mechanism of action of the product influences immunogenicity. Immunosuppressive cytokines (e.g., IL-10, TGF-beta) or cytotoxic agents reduce ADA formation, whereas immunostimulatory proteins (e.g., GM-CSF, IL-2, interferons) augment antibody responses.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.5_b_6",
+        "pdf_page_index_zero_based": 21,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "18-19",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_7.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_7",
+      "unit_order": 5270,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Formulation excipients (surfactants such as polysorbate 20/80, sugars, and amino acids) protect therapeutic proteins from interface-induced aggregation and chemical degradation during storage.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.5_b_7",
+        "pdf_page_index_zero_based": 22,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "19",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_8.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_8",
+      "unit_order": 5280,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Container closure systems can contribute to immunogenicity via extractables/leachables (e.g., organic leachables from rubber stoppers causing Eprex PRCA epidemic, tungsten oxide from syringe manufacturing, and silicone oil droplets acting as particle nucleation sites). Compatibility and leachable qualification should be evaluated.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.5_b_8",
+        "pdf_page_index_zero_based": 22,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "19-21",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_9.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_9",
+      "unit_order": 5290,
+      "unit_order_status": "known",
+      "unit_type": "paragraph",
+      "source_text": "Product custody, transportation stress (mechanical agitation and vibration), and cold chain storage excursions (freeze-thaw cycles and temperature spikes) induce protein unfolding and aggregation, elevating immunogenicity risk.",
+      "related_source_unit_ids": [],
+      "table_context": null,
+      "trace": {
+        "source_file_path": "source_pdfs/FDA Immunogenicity-Assessment-for-Therapeutic-Protein-Products.pdf",
+        "document_id": "fda_ada_2014",
+        "section_id": "fda_ada_2014.sec.5_b_9",
+        "pdf_page_index_zero_based": 24,
+        "pdf_page_index_status": "known",
+        "printed_page_label": "21",
+        "printed_page_label_status": "known",
+        "extraction_method": "automated text extraction with manual verification"
+      },
+      "review_status": "reviewed"
+    }
+  ],
+  "knowledge_records": [
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.1.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.1.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This guidance",
+      "action": "is intended to assist",
+      "object": "manufacturers and clinical investigators involved in the development of therapeutic protein products for human use",
+      "normalized_ko": "본 가이드라인은 사람용 치료용 단백질 제품의 개발에 관여하는 제조업자 및 임상시험자를 지원하기 위한 것이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.1.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.1.001"
+      ],
+      "record_type": "scope_statement",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "This guidance",
+      "action": "does not address",
+      "object": "assay development",
+      "normalized_ko": "본 가이드라인은 시험법 개발을 다루지 않는다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.1.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.1.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "recommends",
+      "subject": "Manufacturers and clinical investigators",
+      "action": "should adopt",
+      "object": "a risk-based approach to evaluating and mitigating immune responses to or adverse immunologically related responses associated with therapeutic protein products that affect their safety and efficacy",
+      "normalized_ko": "제조업자 및 임상시험자는 치료용 단백질 제품의 안전성 및 유효성에 영향을 미치는 해당 제품에 대한 면역반응 또는 면역학적으로 관련된 이상반응을 평가하고 완화하기 위해 위험 기반 접근법을 채택해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.1.004",
+      "source_unit_ids": [
+        "fda_ada_2014.su.1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Assay development",
+      "action": "is covered in",
+      "object": "a separate guidance",
+      "normalized_ko": "시험법 개발은 별도의 가이드라인에서 다룬다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.2.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.2.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "Immune responses to therapeutic protein products",
+      "action": "may pose",
+      "object": "problems for both patient safety and product efficacy",
+      "normalized_ko": "치료용 단백질 제품에 대한 면역반응은 환자 안전성과 제품 유효성 모두에 문제를 야기할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.2.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.2.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Unwanted immune responses",
+      "action": "includes",
+      "object": "neutralizing antibodies to therapeutic erythropoietin cause pure red cell aplasia",
+      "normalized_ko": "원치 않는 면역반응의 예로는 치료용 에리트로포이에틴에 대한 중화항체로 인한 순수 적혈구 무형성증이 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.2.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.2.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Neutralizing antibodies to therapeutic erythropoietin",
+      "action": "cause",
+      "object": "pure red cell aplasia",
+      "normalized_ko": "치료용 에리트로포이에틴에 대한 중화항체는 순수 적혈구 무형성증을 유발한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.2.004",
+      "source_unit_ids": [
+        "fda_ada_2014.su.2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Circulating antibody to the therapeutic protein product",
+      "action": "has been",
+      "object": "the chief criterion for defining an immune response",
+      "normalized_ko": "치료용 단백질 제품에 대한 순환 항체는 면역반응을 정의하는 주요 기준이었다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.2.005",
+      "source_unit_ids": [
+        "fda_ada_2014.su.2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Most adverse effects",
+      "action": "appear to be mediated by",
+      "object": "humoral mechanisms",
+      "normalized_ko": "대부분의 이상반응은 체액성 기전에 의해 매개되는 것으로 보인다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.3_a.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.3_a.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Development of antibodies",
+      "action": "can limit",
+      "object": "product efficacy in patients treated with therapeutic protein products",
+      "normalized_ko": "항체의 생성은 치료용 단백질 제품으로 치료받는 환자에서 제품 유효성을 제한할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.3_a.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.3_a.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "Both neutralizing and non-neutralizing antibodies",
+      "action": "may alter",
+      "object": "pharmacokinetics by accelerating clearance",
+      "normalized_ko": "중화항체 및 비중화항체 모두는 제거를 촉진함으로써 약동학을 변화시킬 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.3_a.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.3_a.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Domains critical for activity",
+      "action": "includes",
+      "object": "uptake or catalytic domains",
+      "normalized_ko": "활성에 중요한 도메인에는 흡수 도메인 또는 촉매 도메인이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.3_a.004",
+      "source_unit_ids": [
+        "fda_ada_2014.su.3_a.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can",
+      "subject": "Development of antibodies",
+      "action": "can limit",
+      "object": "product efficacy in patients treated with therapeutic protein products",
+      "normalized_ko": "항체의 발생은 치료용 단백질 제품으로 치료받는 환자에서 제품의 유효성을 제한할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.3_a.005",
+      "source_unit_ids": [
+        "fda_ada_2014.su.3_a.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Development of antibodies",
+      "action": "can limit",
+      "object": "product efficacy in patients treated with therapeutic protein products",
+      "normalized_ko": "항체의 발생은 치료용 단백질 제품으로 치료받는 환자에서 제품의 유효성을 제한할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.3_b.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.3_b.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Major safety concerns associated with immunogenicity",
+      "action": "includes",
+      "object": "Anaphylaxis, diagnosed by clinical diagnostic criteria regardless of presumed mechanism",
+      "normalized_ko": "면역원성과 관련된 주요 안전성 우려에는 추정되는 기전과 관계없이 임상 진단 기준에 따라 진단되는 아나필락시스가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.3_b.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.3_b.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "is recommended",
+      "subject": "Descriptive terminology",
+      "action": "should note",
+      "object": "timing and symptoms",
+      "normalized_ko": "기술적 용어에는 발생 시점 및 증상을 명시하는 것이 권고된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.3_b.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.3_b.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "recommended",
+      "subject": "Descriptive terminology noting timing and symptoms",
+      "action": "is recommended",
+      "object": "for infusion reactions",
+      "normalized_ko": "발생 시점 및 증상을 명시하는 기술적 용어는 주입 반응에 대해 권고된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.3_b.004",
+      "source_unit_ids": [
+        "fda_ada_2014.su.3_b.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Cross-reactive neutralization of endogenous protein counterparts",
+      "action": "may cause",
+      "object": "severe deficiency syndromes",
+      "normalized_ko": "내인성 상응 단백질에 대한 교차반응성 중화는 중증 결핍 증후군을 유발할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.4.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Pre-treatment baseline samples",
+      "action": "should be drawn",
+      "object": "prior to product administration",
+      "normalized_ko": "치료 전 기저치 검체는 제품 투여 전에 채취해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.4.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.4.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "high-risk products",
+      "action": "includes",
+      "object": "nonredundant endogenous counterparts",
+      "normalized_ko": "고위험 제품에는 기능적으로 중복되지 않는 내인성 상응 단백질이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.4.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "archived sample testing",
+      "action": "is acceptable",
+      "object": null,
+      "normalized_ko": "보관 검체 시험은 허용될 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.4.004",
+      "source_unit_ids": [
+        "fda_ada_2014.su.4.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "Premedication with antihistamines or corticosteroids",
+      "action": "may mask",
+      "object": "infusion reactions",
+      "normalized_ko": "항히스타민제 또는 코르티코스테로이드 전처치는 주입 반응을 가릴 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.4.005",
+      "source_unit_ids": [
+        "fda_ada_2014.su.4.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Premedication with antihistamines or corticosteroids",
+      "action": "does not prevent",
+      "object": "antibody generation",
+      "normalized_ko": "항히스타민제 또는 코르티코스테로이드 전처치는 항체 생성을 예방하지 않는다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.4.006",
+      "source_unit_ids": [
+        "fda_ada_2014.su.4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "may",
+      "original_modal_text": "acceptable",
+      "subject": "Archived sample testing",
+      "action": "may be acceptable",
+      "object": null,
+      "normalized_ko": "보관 검체 시험은 허용될 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.4.007",
+      "source_unit_ids": [
+        "fda_ada_2014.su.4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "is acceptable",
+      "subject": "Archived sample testing",
+      "action": "is acceptable",
+      "object": null,
+      "normalized_ko": "보관 검체 시험은 허용된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_1.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Immunocompromised patients",
+      "action": "generally have",
+      "object": "lower rates of antibody development",
+      "normalized_ko": "면역저하 환자는 일반적으로 항체 발생률이 더 낮다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_1.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Concomitant immunosuppressive agents",
+      "action": "significantly reduce",
+      "object": "ADA incidence",
+      "normalized_ko": "병용 면역억제제는 ADA 발생률을 유의하게 감소시킨다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_1.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_1.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Causes of immunocompromised status",
+      "action": "includes",
+      "object": "due to disease",
+      "normalized_ko": "면역저하 상태의 원인에는 질병으로 인한 경우가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_1.004",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_1.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "may",
+      "subject": "immunocompetent healthy volunteers",
+      "action": "may mount",
+      "object": "robust immune responses",
+      "normalized_ko": "면역능이 정상인 건강한 자원자는 강한 면역반응을 나타낼 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_2.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_2.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Prior exposure to therapeutic proteins or cross-reactive environmental antigens",
+      "action": "can lead to",
+      "object": "pre-existing antibodies at baseline",
+      "normalized_ko": "치료용 단백질 또는 교차반응성 환경 항원에 대한 사전 노출은 기저시점에서 기존 항체의 존재로 이어질 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_2.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_2.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Cross-reactive environmental antigens",
+      "action": "includes",
+      "object": "galactose-alpha-1,3-galactose alpha-gal IgE antibodies from tick bites causing cetuximab hypersensitivity",
+      "normalized_ko": "교차반응성 환경 항원에는 진드기 물림으로 인해 생성되어 세툭시맙 과민반응을 유발하는 갈락토스-알파-1,3-갈락토스(알파-gal) IgE 항체가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_2.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_2.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Pre-existing antibodies",
+      "action": "should be evaluated",
+      "object": null,
+      "normalized_ko": "기존 항체는 평가되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_3.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Subcutaneous (SC) and intramuscular (IM) administrations",
+      "action": "are generally more immunogenic than",
+      "object": "intravenous (IV) administration due to dendritic cell recruitment in the skin/muscle",
+      "normalized_ko": "피하(SC) 및 근육내(IM) 투여는 피부/근육 내 수지상세포 모집으로 인해 일반적으로 정맥내(IV) 투여보다 면역원성이 더 높다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_3.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Intermittent or interrupted dosing regimens",
+      "action": "carry higher immunogenicity risk than",
+      "object": "continuous, uninterrupted treatment",
+      "normalized_ko": "간헐적 또는 중단된 투여 요법은 지속적이고 중단 없는 치료보다 면역원성 위험이 더 높다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_3.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Dendritic cell recruitment in the skin/muscle",
+      "action": "is the basis for",
+      "object": "the greater immunogenicity of SC and IM administrations than IV administration",
+      "normalized_ko": "피부/근육 내 수지상세포 모집은 피하 및 근육내 투여가 정맥내 투여보다 더 높은 면역원성을 나타내는 근거이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_4.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_4.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Genetic polymorphisms in human leukocyte antigen (HLA) alleles",
+      "action": "affect",
+      "object": "peptide presentation by antigen-presenting cells to T-cells",
+      "normalized_ko": "인간 백혈구 항원(HLA) 대립유전자의 유전적 다형성은 항원제시세포에 의한 T세포로의 펩타이드 제시에 영향을 미친다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_4.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_4.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Genetic polymorphisms in human leukocyte antigen (HLA) alleles",
+      "action": "are associated with",
+      "object": "increased risk of antibody generation to specific therapeutic proteins",
+      "normalized_ko": "인간 백혈구 항원(HLA) 대립유전자의 유전적 다형성은 특정 치료용 단백질에 대한 항체 생성 위험 증가와 관련이 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_4.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_4.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "HLA allele-antibody association",
+      "action": "includes",
+      "object": "HLA-DRB1*0701 and interferon-beta antibodies",
+      "normalized_ko": "HLA 대립유전자-항체 연관성에는 HLA-DRB1*0701과 인터페론 베타 항체의 연관성이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_5.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Patients",
+      "action": "perceive",
+      "object": "therapeutic replacement proteins as completely foreign",
+      "normalized_ko": "환자는 치료적 대체 단백질을 완전히 외래성인 것으로 인식한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_5.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Patients",
+      "action": "have",
+      "object": "high rates of neutralizing antibodies and inhibitors",
+      "normalized_ko": "환자에서는 중화항체 및 억제제의 발생률이 높다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_a_5.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_a_5.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "CRM negative",
+      "action": "includes",
+      "object": "severe hemophilia A or Pompe disease",
+      "normalized_ko": "CRM 음성에는 중증 혈우병 A 또는 폼페병이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_1.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_1.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Nonhuman origin proteins",
+      "action": "are",
+      "object": "inherently foreign",
+      "normalized_ko": "비인간 유래 단백질은 본질적으로 외래성이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_1.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Nonhuman origin proteins",
+      "action": "generally stimulate",
+      "object": "strong antibody responses",
+      "normalized_ko": "비인간 유래 단백질은 일반적으로 강한 항체 반응을 유발한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_1.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Humanization and fully human sequences",
+      "action": "reduce",
+      "object": "immunogenicity",
+      "normalized_ko": "인간화 및 완전 인간 서열은 면역원성을 감소시킨다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_1.004",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Humanization and fully human sequences",
+      "action": "do not eliminate",
+      "object": "the risk due to non-germline idiotype CDR sequences",
+      "normalized_ko": "인간화 및 완전 인간 서열은 비생식세포계열 이디오타입 CDR 서열로 인한 위험을 제거하지는 않는다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_1.005",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Nonhuman origin proteins",
+      "action": "are",
+      "object": "inherently foreign",
+      "normalized_ko": "비인간 유래 단백질은 본질적으로 외래성이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_1.006",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_1.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Nonhuman origin proteins",
+      "action": "includes",
+      "object": "bacterial",
+      "normalized_ko": "비인간 유래 단백질에는 세균 유래 단백질이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_1.007",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_1.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "generally",
+      "subject": "Nonhuman origin proteins",
+      "action": "stimulate",
+      "object": "strong antibody responses",
+      "normalized_ko": "비인간 유래 단백질은 일반적으로 강한 항체 반응을 유발한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_2.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_2.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Amino acid sequence modifications, novel junction sequences in fusion proteins, and chemical post-translational modifications",
+      "action": "can create",
+      "object": "neo-epitopes that increase immunogenicity",
+      "normalized_ko": "아미노산 서열 변형, 융합 단백질의 신규 접합부 서열 및 화학적 번역 후 변형은 면역원성을 증가시키는 신규 에피토프를 생성할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_2.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_2.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Chemical post-translational modifications (PTMs)",
+      "action": "includes",
+      "object": "oxidation",
+      "normalized_ko": "화학적 번역 후 변형(PTM)에는 산화가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_2.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "neo-epitopes",
+      "action": "increase",
+      "object": "immunogenicity",
+      "normalized_ko": "신생 에피토프는 면역원성을 증가시킨다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_2.004",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_2.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "can",
+      "subject": "Amino acid sequence modifications, novel junction sequences in fusion proteins, and chemical post-translational modifications",
+      "action": "can create",
+      "object": "neo-epitopes",
+      "normalized_ko": "아미노산 서열 변형, 융합단백질의 신규 접합부 서열 및 화학적 번역 후 변형은 신생 에피토프를 생성할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_3.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Protein aggregates",
+      "action": "are",
+      "object": "potent inducers of immune responses",
+      "normalized_ko": "단백질 응집체는 면역반응의 강력한 유도인자이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_3.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Protein aggregates",
+      "action": "induce immune responses by",
+      "object": "presenting repetitive epitope arrays that cross-link B-cell receptors and activate complement",
+      "normalized_ko": "단백질 응집체는 B세포 수용체를 교차결합시키고 보체를 활성화하는 반복적 에피토프 배열을 제시함으로써 면역반응을 유도한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_3.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Protein aggregates",
+      "action": "present",
+      "object": "repetitive epitope arrays",
+      "normalized_ko": "단백질 응집체는 반복적 에피토프 배열을 제시한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_3.004",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "repetitive epitope arrays",
+      "action": "cross-link",
+      "object": "B-cell receptors",
+      "normalized_ko": "반복적 에피토프 배열은 B세포 수용체를 교차결합시킨다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_3.005",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "repetitive epitope arrays",
+      "action": "activate",
+      "object": "complement",
+      "normalized_ko": "반복적 에피토프 배열은 보체를 활성화한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_3.006",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Protein aggregates",
+      "action": "are potent inducers of",
+      "object": "immune responses",
+      "normalized_ko": "단백질 응집체는 면역반응의 강력한 유도인자이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_3.007",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Measurement and characterization of sub-visible particles using orthogonal analytical methods",
+      "action": "are critical for",
+      "object": "risk control",
+      "normalized_ko": "서로 다른 원리에 기반한 분석법을 사용하여 육안으로 관찰되지 않는 입자를 측정하고 특성화하는 것은 위험 관리에 필수적이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_3.008",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_3.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Protein aggregates",
+      "action": "include",
+      "object": "soluble oligomers and sub-visible particles",
+      "normalized_ko": "단백질 응집체에는 가용성 올리고머 및 육안으로 관찰되지 않는 입자가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_3.009",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_3.001"
+      ],
+      "record_type": "description",
+      "modality": "other",
+      "original_modal_text": "are critical",
+      "subject": "Measurement of sub-visible particles using orthogonal analytical methods",
+      "action": "are critical for",
+      "object": "risk control",
+      "normalized_ko": "직교 분석법을 이용한 준가시 입자의 측정은 위해 관리에 매우 중요하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_3.010",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_3.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Orthogonal analytical methods",
+      "action": "includes",
+      "object": "light obscuration",
+      "normalized_ko": "직교 분석법에는 광차폐법이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_3.011",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_3.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "other",
+      "original_modal_text": "are critical",
+      "subject": "Measurement and characterization of sub-visible particles using orthogonal analytical methods",
+      "action": "are critical for",
+      "object": "risk control",
+      "normalized_ko": "직교 분석법을 이용한 준가시 입자의 측정 및 특성규명은 위해 관리에 매우 중요하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_4.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_4.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Glycosylation patterns",
+      "action": "can shield",
+      "object": "immunogenic protein epitopes",
+      "normalized_ko": "당화 패턴은 면역원성 단백질 에피토프를 차폐할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_4.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_4.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "non-human glycan structures",
+      "action": "are",
+      "object": "immunogenic",
+      "normalized_ko": "비인간 유래 글리칸 구조는 면역원성을 가진다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_4.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_4.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Non-human glycan structures",
+      "action": "includes",
+      "object": "N-glycolylneuraminic acid Neu5Gc",
+      "normalized_ko": "비인간 유래 글리칸 구조에는 N-글리콜릴뉴라민산(Neu5Gc)이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_5.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Host cell impurities",
+      "action": "possess",
+      "object": "innate adjuvant activity",
+      "normalized_ko": "숙주세포 유래 불순물은 선천성 면역보조 활성를 가진다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_5.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Innate adjuvant activity",
+      "action": "stimulates",
+      "object": "toll-like receptors (TLRs)",
+      "normalized_ko": "선천성 면역보조 활성은 톨유사수용체(TLR)를 자극한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_5.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Innate adjuvant activity",
+      "action": "promotes",
+      "object": "breaking of immune tolerance to therapeutic proteins",
+      "normalized_ko": "선천성 면역보조 활성은 치료용 단백질에 대한 면역관용의 붕괴를 촉진한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_6.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_6.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "The intrinsic immunomodulatory mechanism of action of the product",
+      "action": "influences",
+      "object": "immunogenicity",
+      "normalized_ko": "제품의 내재적 면역조절 작용기전은 면역원성에 영향을 미친다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_6.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_6.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Immunosuppressive cytokines",
+      "action": "reduce",
+      "object": "ADA formation",
+      "normalized_ko": "면역억제성 사이토카인은 ADA 형성을 감소시킨다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_6.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_6.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "immunostimulatory proteins",
+      "action": "augment",
+      "object": "antibody responses",
+      "normalized_ko": "면역자극성 단백질은 항체 반응을 증강시킨다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_6.004",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_6.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Immunosuppressive cytokines",
+      "action": "includes",
+      "object": "IL-10",
+      "normalized_ko": "면역억제성 사이토카인에는 IL-10이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_7.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_7.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Formulation excipients",
+      "action": "protect",
+      "object": "therapeutic proteins from interface-induced aggregation and chemical degradation during storage",
+      "normalized_ko": "제형 첨가제는 보관 중 계면 유발 응집 및 화학적 분해로부터 치료용 단백질을 보호한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_7.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_7.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Formulation excipients",
+      "action": "include",
+      "object": "surfactants such as polysorbate 20/80, sugars, and amino acids",
+      "normalized_ko": "제형 첨가제에는 폴리소르베이트 20/80과 같은 계면활성제, 당류 및 아미노산이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_7.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_7.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Formulation excipients",
+      "action": "includes",
+      "object": "surfactants such as polysorbate 20/80",
+      "normalized_ko": "제형 첨가제에는 폴리소르베이트 20/80과 같은 계면활성제가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_8.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_8.001"
+      ],
+      "record_type": "description",
+      "modality": "may",
+      "original_modal_text": "can",
+      "subject": "Container closure systems",
+      "action": "can contribute to immunogenicity via",
+      "object": "extractables/leachables",
+      "normalized_ko": "용기 밀봉 시스템은 추출물질/용출물질을 통해 면역원성에 기여할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_8.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_8.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Extractables/leachables",
+      "action": "includes",
+      "object": "organic leachables from rubber stoppers causing Eprex PRCA epidemic",
+      "normalized_ko": "추출물질/용출물질에는 Eprex 순수적혈구무형성증(PRCA) 유행을 유발한 고무 마개 유래 유기 용출물질이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_8.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_8.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Compatibility and leachable qualification",
+      "action": "should be evaluated",
+      "object": null,
+      "normalized_ko": "적합성 및 용출물질 적격성은 평가되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_8.004",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_8.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Container closure systems",
+      "action": "can contribute to",
+      "object": "immunogenicity via extractables/leachables",
+      "normalized_ko": "용기 밀봉 시스템은 추출물질/용출물질을 통해 면역원성에 기여할 수 있다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_9.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_9.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Product custody, transportation stress (mechanical agitation and vibration), and cold chain storage excursions (freeze-thaw cycles and temperature spikes)",
+      "action": "induce",
+      "object": "protein unfolding and aggregation",
+      "normalized_ko": "제품의 보관·취급, 운송 중 스트레스(기계적 교반 및 진동), 그리고 콜드체인 보관 중 일탈(동결-해동 주기 및 온도 급상승)은 단백질 변성 및 응집을 유발한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.5_b_9.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.5_b_9.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Product custody, transportation stress (mechanical agitation and vibration), and cold chain storage excursions (freeze-thaw cycles and temperature spikes)",
+      "action": "elevate",
+      "object": "immunogenicity risk",
+      "normalized_ko": "제품의 보관·취급, 운송 중 스트레스(기계적 교반 및 진동), 그리고 콜드체인 보관 중 일탈(동결-해동 주기 및 온도 급상승)은 면역원성 위험을 증가시킨다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.6.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.6.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "A risk-based approach",
+      "action": "be employed",
+      "object": "to evaluate and mitigate the immunogenicity of therapeutic protein products",
+      "normalized_ko": "치료용 단백질 제품의 면역원성을 평가하고 완화하기 위해 위험 기반 접근법을 적용해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.6.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.6.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "must",
+      "subject": "Risk evaluation",
+      "action": "integrate",
+      "object": "patient-specific factors",
+      "normalized_ko": "위험 평가는 환자별 요인을 반드시 통합해야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_1.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Anaphylaxis diagnosis",
+      "action": "is based on",
+      "object": "three Sampson 2006 clinical criteria",
+      "normalized_ko": "아나필락시스의 진단은 Sampson 2006의 세 가지 임상 기준에 근거한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_1.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_1.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Clinical criterion",
+      "action": "includes",
+      "object": "Acute onset of skin/mucosal symptoms with respiratory compromise or reduced blood pressure",
+      "normalized_ko": "임상 기준에는 호흡기 손상 또는 혈압 저하를 동반한 피부/점막 증상의 급성 발현이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_1.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_1.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Sampson 2006 clinical criteria",
+      "action": "includes",
+      "object": "Acute onset of skin/mucosal symptoms with respiratory compromise or reduced blood pressure",
+      "normalized_ko": "Sampson 2006 임상 기준에는 호흡기 손상 또는 혈압 저하를 동반한 피부/점막 증상의 급성 발현이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_2.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_2.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Cytokine Release Syndrome (CRS)",
+      "action": "is",
+      "object": "an acute systemic inflammatory response",
+      "normalized_ko": "사이토카인 방출 증후군(CRS)은 급성 전신 염증 반응이다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_2.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Cytokine Release Syndrome (CRS)",
+      "action": "is caused by",
+      "object": "massive release of cytokines (IL-6, IFN-gamma, TNF-alpha)",
+      "normalized_ko": "사이토카인 방출 증후군(CRS)은 사이토카인(IL-6, IFN-γ, TNF-α)의 대량 방출로 인해 발생한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_2.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Signs of CRS",
+      "action": "include",
+      "object": "fever, chills, hypotension, hypoxia, and multi-organ failure",
+      "normalized_ko": "CRS의 징후에는 발열, 오한, 저혈압, 저산소증 및 다장기부전이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_2.004",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_2.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Signs of CRS",
+      "action": "occur",
+      "object": "within minutes to hours of infusion",
+      "normalized_ko": "사이토카인 방출 증후군(CRS)의 징후는 주입 후 수분에서 수시간 이내에 발생한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_2.005",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_2.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Cytokines",
+      "action": "include",
+      "object": "IL-6, IFN-gamma, TNF-alpha",
+      "normalized_ko": "사이토카인에는 IL-6, IFN-감마 및 TNF-알파가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_3.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_3.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Non-acute immune responses",
+      "action": "includes",
+      "object": "immune complex disease (type III hypersensitivity causing glomerulonephritis, vasculitis, and arthritis)",
+      "normalized_ko": "비급성 면역반응에는 사구체신염, 혈관염 및 관절염을 유발하는 III형 과민반응인 면역복합체 질환이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_3.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_3.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Non-acute immune responses",
+      "action": "include",
+      "object": "immune complex disease and cross-reactive neutralization of unique endogenous proteins",
+      "normalized_ko": "비급성 면역반응에는 면역복합체 질환 및 고유한 내인성 단백질에 대한 교차반응성 중화가 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_3.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.1.001"
+      ],
+      "record_type": "example",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Non-acute immune responses",
+      "action": "includes",
+      "object": "immune complex disease (type III hypersensitivity causing glomerulonephritis, vasculitis, and arthritis)",
+      "normalized_ko": "비급성 면역반응에는 사구체신염, 혈관염 및 관절염을 유발하는 III형 과민반응인 면역복합체 질환이 포함된다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_4.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Antibody responses",
+      "action": "be characterized as",
+      "object": "transient or persistent",
+      "normalized_ko": "항체 반응은 일과성 또는 지속성으로 특성화되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_4.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_4.001"
+      ],
+      "record_type": "recommendation",
+      "modality": "should",
+      "original_modal_text": "should",
+      "subject": "Antibody titer",
+      "action": "be evaluated relative to",
+      "object": "clinical pharmacokinetics, pharmacodynamics, efficacy, and adverse events",
+      "normalized_ko": "항체 역가는 임상 약동학, 약력학, 유효성 및 이상사례와 관련하여 평가되어야 한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_4.003",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_4.001"
+      ],
+      "record_type": "definition",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "transient",
+      "action": "means",
+      "object": "resolving spontaneously during continued treatment",
+      "normalized_ko": "일과성이란 치료를 지속하는 동안 자발적으로 소실되는 것을 의미한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_5.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "Animal immunogenicity studies",
+      "action": "are not predictive of",
+      "object": "human immunogenicity incidence or antibody titers",
+      "normalized_ko": "동물 면역원성 연구는 사람에서의 면역원성 발생률 또는 항체 역가를 예측하지 못한다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_5.002",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_5.001"
+      ],
+      "record_type": "description",
+      "modality": "none",
+      "original_modal_text": null,
+      "subject": "animal studies",
+      "action": "are valuable for assessing",
+      "object": "the pharmacodynamic consequences of cross-reactive neutralizing antibodies to conserved endogenous proteins",
+      "normalized_ko": "동물 연구는 보존된 내인성 단백질에 대한 교차반응성 중화항체의 약력학적 결과를 평가하는 데 유용하다.",
+      "review_status": "reviewed"
+    },
+    {
+      "knowledge_record_id": "fda_ada_2014.kr.app_a_6.001",
+      "source_unit_ids": [
+        "fda_ada_2014.su.app_a_6.001"
+      ],
+      "record_type": "requirement",
+      "modality": "must",
+      "original_modal_text": "must",
+      "subject": "head-to-head clinical comparisons",
+      "action": "must use",
+      "object": "the same single antibody assay format capable of detecting antibodies against both the proposed product and the reference product with equivalent sensitivity and specificity",
+      "normalized_ko": "대조 임상 비교시험에서는 제안된 제품과 대조 제품 모두에 대한 항체를 동등한 민감도와 특이도로 검출할 수 있는 동일한 단일 항체 분석법 형식을 사용해야 한다.",
+      "review_status": "reviewed"
+    }
+  ],
+  "quantitative_criteria": [
+    {
+      "criterion_id": "fda_ada_2014.qc.5_b_3.001",
+      "source_unit_id": "fda_ada_2014.su.5_b_3.001",
+      "knowledge_record_id": null,
+      "parameter": "sub-visible particle size",
+      "comparator": "within",
+      "value": null,
+      "value_fraction": null,
+      "unit": "µm",
+      "value_status": "not_applicable",
+      "denominator_or_reference": "0.1 to 10",
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada_2014.qc.5_b_3.003"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "sub-visible particles 0.1 to 10 µm",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada_2014.qc.5_b_3.002",
+      "source_unit_id": "fda_ada_2014.su.5_b_3.001",
+      "knowledge_record_id": null,
+      "parameter": "sub-visible particle size",
+      "comparator": "at_least",
+      "value": 0.1,
+      "value_fraction": null,
+      "unit": "µm",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "0.1 to 10 µm",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada_2014.qc.5_b_3.003",
+      "source_unit_id": "fda_ada_2014.su.5_b_3.001",
+      "knowledge_record_id": null,
+      "parameter": "sub-visible particle size",
+      "comparator": "not_exceed",
+      "value": 10,
+      "value_fraction": null,
+      "unit": "µm",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [
+        "fda_ada_2014.qc.5_b_3.001"
+      ],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "0.1 to 10 µm",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada_2014.qc.app_a_1.001",
+      "source_unit_id": "fda_ada_2014.su.app_a_1.001",
+      "knowledge_record_id": null,
+      "parameter": "number of Sampson 2006 clinical criteria",
+      "comparator": "equals",
+      "value": 3,
+      "value_fraction": null,
+      "unit": "criteria",
+      "value_status": "known",
+      "denominator_or_reference": "Anaphylaxis diagnosis",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "three Sampson 2006 clinical criteria",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada_2014.qc.app_a_1.002",
+      "source_unit_id": "fda_ada_2014.su.app_a_1.001",
+      "knowledge_record_id": null,
+      "parameter": "number of symptoms",
+      "comparator": "at_least",
+      "value": 2,
+      "value_fraction": null,
+      "unit": "symptoms",
+      "value_status": "known",
+      "denominator_or_reference": "skin/mucosa, respiratory, reduced BP, gastrointestinal cramps/vomiting",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "two or more symptoms",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada_2014.qc.app_a_1.003",
+      "source_unit_id": "fda_ada_2014.su.app_a_1.001",
+      "knowledge_record_id": null,
+      "parameter": "systolic BP drop",
+      "comparator": "at_least",
+      "value": 30,
+      "value_fraction": null,
+      "unit": "%",
+      "value_status": "known",
+      "denominator_or_reference": null,
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "systolic BP drop greater than 30%",
+      "review_status": "reviewed"
+    },
+    {
+      "criterion_id": "fda_ada_2014.qc.app_a_2.001",
+      "source_unit_id": "fda_ada_2014.su.app_a_2.001",
+      "knowledge_record_id": null,
+      "parameter": "time of CRS signs relative to infusion",
+      "comparator": "within",
+      "value": null,
+      "value_fraction": null,
+      "unit": "minutes to hours",
+      "value_status": "not_applicable",
+      "denominator_or_reference": "infusion",
+      "condition_ids": [],
+      "joint_with_ids": [],
+      "is_default_with_exception": false,
+      "is_illustrative_example": false,
+      "source_text": "within minutes to hours of infusion",
+      "review_status": "reviewed"
+    }
+  ],
+  "conditions": [
+    {
+      "condition_id": "fda_ada_2014.cond.1.001",
+      "source_unit_id": "fda_ada_2014.su.1.001",
+      "condition_text": "involved in the development of therapeutic protein products for human use",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.1.001",
+        "fda_ada_2014.kr.1.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.1.002",
+      "source_unit_id": "fda_ada_2014.su.1.001",
+      "condition_text": "that affect their safety and efficacy",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.1.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.1.003",
+      "source_unit_id": "fda_ada_2014.su.1.001",
+      "condition_text": "for human use",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.1.001",
+        "fda_ada_2014.kr.1.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.4.001",
+      "source_unit_id": "fda_ada_2014.su.4.001",
+      "condition_text": "prior to product administration",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.4.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.4.002",
+      "source_unit_id": "fda_ada_2014.su.4.001",
+      "condition_text": "upon suspected adverse events",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.4.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.4.003",
+      "source_unit_id": "fda_ada_2014.su.4.001",
+      "condition_text": "For high-risk products",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.4.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.4.004",
+      "source_unit_id": "fda_ada_2014.su.4.001",
+      "condition_text": "for lower-risk products",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.4.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.4.005",
+      "source_unit_id": "fda_ada_2014.su.4.001",
+      "condition_text": "at study end",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.4.007"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.4.006",
+      "source_unit_id": "fda_ada_2014.su.4.001",
+      "condition_text": "prior to dosing (trough levels)",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.4.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.4.007",
+      "source_unit_id": "fda_ada_2014.su.4.001",
+      "condition_text": "For high-risk products (e.g., nonredundant endogenous counterparts)",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.4.004"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.4.008",
+      "source_unit_id": "fda_ada_2014.su.4.001",
+      "condition_text": "at study end",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.4.006"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.5_a_2.001",
+      "source_unit_id": "fda_ada_2014.su.5_a_2.001",
+      "condition_text": "prior to dosing",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.5_a_2.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.5_a_5.001",
+      "source_unit_id": "fda_ada_2014.su.5_a_5.001",
+      "condition_text": "with genetic gene deletion mutations or null mutations who produce no endogenous protein (CRM negative, such as severe hemophilia A or Pompe disease)",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.5_a_5.001",
+        "fda_ada_2014.kr.5_a_5.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.5_a_5.002",
+      "source_unit_id": "fda_ada_2014.su.5_a_5.001",
+      "condition_text": "Patients with genetic gene deletion mutations or null mutations who produce no endogenous protein (CRM negative",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.5_a_5.001",
+        "fda_ada_2014.kr.5_a_5.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.6.001",
+      "source_unit_id": "fda_ada_2014.su.6.001",
+      "condition_text": "throughout product development",
+      "condition_type": "scope",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.6.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.app_a_1.001",
+      "source_unit_id": "fda_ada_2014.su.app_a_1.001",
+      "condition_text": "after exposure to a likely allergen",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.app_a_1.003"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.app_a_2.001",
+      "source_unit_id": "fda_ada_2014.su.app_a_2.001",
+      "condition_text": "upon target engagement or Fc receptor activation",
+      "condition_type": "precondition",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.app_a_2.002"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.app_a_6.001",
+      "source_unit_id": "fda_ada_2014.su.app_a_6.001",
+      "condition_text": "In comparative immunogenicity studies (such as biosimilar development)",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.app_a_6.001"
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "condition_id": "fda_ada_2014.cond.app_a_6.002",
+      "source_unit_id": "fda_ada_2014.su.app_a_6.001",
+      "condition_text": "In comparative immunogenicity studies",
+      "condition_type": "applicability",
+      "applies_to_ids": [
+        "fda_ada_2014.kr.app_a_6.001"
+      ],
+      "review_status": "reviewed"
+    }
+  ],
+  "cross_references": []
+}

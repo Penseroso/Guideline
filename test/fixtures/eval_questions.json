@@ -156,6 +156,22 @@
       "expect_citation_contains": "M3(R2)",
       "expect_text_contains": "3",
       "note": "ICH M3(R2) Section 5.1 Table 1 repeated-dose toxicity duration."
+    },
+    {
+      "id": "q24_fda_ada_2014_sampling_baseline",
+      "question": "FDA 2014 임상 면역원성 가이드라인에서 권고하는 검체 채취 시점과 베이스라인 요건은?",
+      "expect_answered": true,
+      "expect_citation_contains": "FDA-2014-ADA-CLINICAL",
+      "expect_text_contains": "baseline",
+      "note": "FDA 2014 Clinical Immunogenicity Section IV baseline and serial pre-dose sampling requirements."
+    },
+    {
+      "id": "q25_fda_ada_2014_sc_vs_iv_route",
+      "question": "FDA 2014 임상 면역원성 가이드라인에 따른 피하투여(SC)와 정맥투여(IV)의 면역원성 위험 차이는?",
+      "expect_answered": true,
+      "expect_citation_contains": "FDA-2014-ADA-CLINICAL",
+      "expect_text_contains": "Subcutaneous",
+      "note": "FDA 2014 Clinical Immunogenicity Section V.A.3 route of administration risk."
     }
   ]
 }

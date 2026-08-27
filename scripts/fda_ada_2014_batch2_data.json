@@ -1,0 +1,306 @@
+{
+  "sections": [
+    {
+      "section_id": "fda_ada_2014.sec.5_a",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.A",
+      "title": "Patient-Specific Factors That Affect Immunogenicity",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 51,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_a_1",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.A.1",
+      "title": "Immunologic Status and Competence of the Patient",
+      "parent_section_id": "fda_ada_2014.sec.5_a",
+      "heading_source_unit_id": null,
+      "section_order": 511,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_a_2",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.A.2",
+      "title": "Prior Sensitization/History of Allergy",
+      "parent_section_id": "fda_ada_2014.sec.5_a",
+      "heading_source_unit_id": null,
+      "section_order": 512,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_a_3",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.A.3",
+      "title": "Route of Administration, Dose, and Frequency of Administration",
+      "parent_section_id": "fda_ada_2014.sec.5_a",
+      "heading_source_unit_id": null,
+      "section_order": 513,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_a_4",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.A.4",
+      "title": "Genetic Status",
+      "parent_section_id": "fda_ada_2014.sec.5_a",
+      "heading_source_unit_id": null,
+      "section_order": 514,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_a_5",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.A.5",
+      "title": "Status of Immune Tolerance to Endogenous Protein",
+      "parent_section_id": "fda_ada_2014.sec.5_a",
+      "heading_source_unit_id": null,
+      "section_order": 515,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B",
+      "title": "Product-Specific Factors That Affect Immunogenicity",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 52,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_1",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.1",
+      "title": "Product Origin (foreign or human)",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 521,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_2",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.2",
+      "title": "Primary Molecular Structure/Posttranslational Modifications",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 522,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_3",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.3",
+      "title": "Quaternary Structure: Product Aggregates and Measurement of Aggregates",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 523,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_4",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.4",
+      "title": "Glycosylation/Pegylation",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 524,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_5",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.5",
+      "title": "Impurities with Adjuvant Activity",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 525,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_6",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.6",
+      "title": "Immunomodulatory Properties of the Therapeutic Protein Product",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 526,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_7",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.7",
+      "title": "Formulation",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 527,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_8",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.8",
+      "title": "Container Closure Considerations",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 528,
+      "section_order_status": "known"
+    },
+    {
+      "section_id": "fda_ada_2014.sec.5_b_9",
+      "document_id": "fda_ada_2014",
+      "section_number": "V.B.9",
+      "title": "Product Custody",
+      "parent_section_id": "fda_ada_2014.sec.5_b",
+      "heading_source_unit_id": null,
+      "section_order": 529,
+      "section_order_status": "known"
+    }
+  ],
+  "source_units": [
+    {
+      "source_unit_id": "fda_ada_2014.su.5_a_1.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_a_1",
+      "unit_order": 5110,
+      "unit_type": "paragraph",
+      "source_text": "Immunocompromised patients (e.g., due to disease or concomitant immunosuppressive therapy) generally have lower rates of antibody development. Conversely, immunocompetent healthy volunteers may mount robust immune responses. Concomitant immunosuppressive agents (e.g., methotrexate with TNF-alpha blockers) significantly reduce ADA incidence.",
+      "pdfPage": 12,
+      "printedPage": "9-10"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_a_2.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_a_2",
+      "unit_order": 5120,
+      "unit_type": "paragraph",
+      "source_text": "Prior exposure to therapeutic proteins or cross-reactive environmental antigens (e.g., galactose-alpha-1,3-galactose alpha-gal IgE antibodies from tick bites causing cetuximab hypersensitivity) can lead to pre-existing antibodies at baseline. Pre-existing antibodies should be evaluated prior to dosing.",
+      "pdfPage": 13,
+      "printedPage": "10"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_a_3.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_a_3",
+      "unit_order": 5130,
+      "unit_type": "paragraph",
+      "source_text": "Subcutaneous (SC) and intramuscular (IM) administrations are generally more immunogenic than intravenous (IV) administration due to dendritic cell recruitment in the skin/muscle. Intermittent or interrupted dosing regimens carry higher immunogenicity risk than continuous, uninterrupted treatment.",
+      "pdfPage": 13,
+      "printedPage": "10-11"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_a_4.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_a_4",
+      "unit_order": 5140,
+      "unit_type": "paragraph",
+      "source_text": "Genetic polymorphisms in human leukocyte antigen (HLA) alleles affect peptide presentation by antigen-presenting cells to T-cells and are associated with increased risk of antibody generation to specific therapeutic proteins (e.g., HLA-DRB1*0701 and interferon-beta antibodies).",
+      "pdfPage": 14,
+      "printedPage": "11"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_a_5.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_a_5",
+      "unit_order": 5150,
+      "unit_type": "paragraph",
+      "source_text": "Patients with genetic gene deletion mutations or null mutations who produce no endogenous protein (CRM negative, such as severe hemophilia A or Pompe disease) perceive therapeutic replacement proteins as completely foreign, resulting in high rates of neutralizing antibodies and inhibitors.",
+      "pdfPage": 14,
+      "printedPage": "11-12"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_1.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_1",
+      "unit_order": 5210,
+      "unit_type": "paragraph",
+      "source_text": "Nonhuman origin proteins (e.g., bacterial, plant, or animal-derived) are inherently foreign and generally stimulate strong antibody responses. Humanization and fully human sequences reduce immunogenicity but do not eliminate the risk due to non-germline idiotype CDR sequences.",
+      "pdfPage": 16,
+      "printedPage": "13-14"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_2.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_2",
+      "unit_order": 5220,
+      "unit_type": "paragraph",
+      "source_text": "Amino acid sequence modifications, novel junction sequences in fusion proteins, and chemical post-translational modifications (PTMs such as oxidation, deamidation, and isomerization) can create neo-epitopes that increase immunogenicity.",
+      "pdfPage": 17,
+      "printedPage": "14-15"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_3.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_3",
+      "unit_order": 5230,
+      "unit_type": "paragraph",
+      "source_text": "Protein aggregates (soluble oligomers and sub-visible particles 0.1 to 10 µm) are potent inducers of immune responses by presenting repetitive epitope arrays that cross-link B-cell receptors and activate complement. Measurement and characterization of sub-visible particles using orthogonal analytical methods (e.g., light obscuration, flow imaging, micro-flow imaging) are critical for risk control.",
+      "pdfPage": 18,
+      "printedPage": "15-17"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_4.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_4",
+      "unit_order": 5240,
+      "unit_type": "paragraph",
+      "source_text": "Glycosylation patterns can shield immunogenic protein epitopes. However, non-human glycan structures (such as N-glycolylneuraminic acid Neu5Gc or galactose-alpha-1,3-galactose) are immunogenic. PEGylation can reduce immunogenicity by steric hindrance, though antibodies against the PEG moiety itself can be generated.",
+      "pdfPage": 20,
+      "printedPage": "17-18"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_5.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_5",
+      "unit_order": 5250,
+      "unit_type": "paragraph",
+      "source_text": "Host cell impurities (host cell proteins HCP, host cell DNA, endotoxins, beta-glucans, and flagellin) possess innate adjuvant activity that stimulates toll-like receptors (TLRs) and promotes breaking of immune tolerance to therapeutic proteins.",
+      "pdfPage": 21,
+      "printedPage": "18"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_6.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_6",
+      "unit_order": 5260,
+      "unit_type": "paragraph",
+      "source_text": "The intrinsic immunomodulatory mechanism of action of the product influences immunogenicity. Immunosuppressive cytokines (e.g., IL-10, TGF-beta) or cytotoxic agents reduce ADA formation, whereas immunostimulatory proteins (e.g., GM-CSF, IL-2, interferons) augment antibody responses.",
+      "pdfPage": 21,
+      "printedPage": "18-19"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_7.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_7",
+      "unit_order": 5270,
+      "unit_type": "paragraph",
+      "source_text": "Formulation excipients (surfactants such as polysorbate 20/80, sugars, and amino acids) protect therapeutic proteins from interface-induced aggregation and chemical degradation during storage.",
+      "pdfPage": 22,
+      "printedPage": "19"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_8.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_8",
+      "unit_order": 5280,
+      "unit_type": "paragraph",
+      "source_text": "Container closure systems can contribute to immunogenicity via extractables/leachables (e.g., organic leachables from rubber stoppers causing Eprex PRCA epidemic, tungsten oxide from syringe manufacturing, and silicone oil droplets acting as particle nucleation sites). Compatibility and leachable qualification should be evaluated.",
+      "pdfPage": 22,
+      "printedPage": "19-21"
+    },
+    {
+      "source_unit_id": "fda_ada_2014.su.5_b_9.001",
+      "document_id": "fda_ada_2014",
+      "section_id": "fda_ada_2014.sec.5_b_9",
+      "unit_order": 5290,
+      "unit_type": "paragraph",
+      "source_text": "Product custody, transportation stress (mechanical agitation and vibration), and cold chain storage excursions (freeze-thaw cycles and temperature spikes) induce protein unfolding and aggregation, elevating immunogenicity risk.",
+      "pdfPage": 24,
+      "printedPage": "21"
+    }
+  ]
+}
