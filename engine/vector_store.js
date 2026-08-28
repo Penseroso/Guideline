@@ -1,6 +1,3 @@
-const Database = require("better-sqlite3");
-const sqliteVec = require("sqlite-vec");
-
 const { tokenize } = require("./text_utils");
 
 /**
@@ -13,6 +10,16 @@ const { tokenize } = require("./text_utils");
  *  - Vector mode (an `embed(text) -> number[]` function supplied):
  *    sqlite-vec, file-based, no server — per product_roadmap.md §2.5
  *    selection criteria (native Node binding, no separate process).
+ *    No caller in this codebase passes `embed` today (verified), so
+ *    this path is dead in practice — `better-sqlite3`/`sqlite-vec` are
+ *    `require`d lazily inside createVectorStore(), not at module load,
+ *    so the rest of the app (keyword mode, everything that actually
+ *    runs) never depends on `better-sqlite3` having a compiled native
+ *    binary available. Found necessary live: this machine has no C++
+ *    build toolchain, and `better-sqlite3` has no prebuilt-binary
+ *    fallback in the installed version — an unconditional top-level
+ *    require here would have broken every caller of this module, not
+ *    just the unused vector path.
  *
  * Both modes expose the same `index(records)` / `search(query, k)`
  * shape so callers (engine/query_router.js's Option B path) never
@@ -61,6 +68,8 @@ function createKeywordStore() {
 }
 
 function createVectorStore(embed) {
+  const Database = require("better-sqlite3");
+  const sqliteVec = require("sqlite-vec");
   const db = new Database(":memory:");
   sqliteVec.load(db);
   db.exec(`CREATE VIRTUAL TABLE records USING vec0(embedding float[%DIM%])`.replace(

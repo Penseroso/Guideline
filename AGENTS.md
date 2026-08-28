@@ -22,6 +22,7 @@ Lower-level materials must never overwrite or be represented as higher-level sou
 * `data/`: machine-readable structured outputs and schemas
 * `docs/`: project scope, schema definitions, extraction rules, the product roadmap, and the milestone log (`milestone_log.md`)
 * `validation/`: reproducible extraction and validation scripts
+* `web/`: the M5 local-first web UI (vanilla HTML/CSS/JS, no build step), served by `engine/server.js` (`npm run serve`)
 * `.agents/skills/`: reusable workflows only after the workflow has been validated
 
 ## Source integrity

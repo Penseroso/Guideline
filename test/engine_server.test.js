@@ -58,6 +58,25 @@ test("GET /api/documents lists all 6 documents with titles and record counts", a
   });
 });
 
+test("GET /api/stats aggregates the (temp, per-test) query log and reflects a real /api/ask call", async () => {
+  await withServer({}, async (server) => {
+    const askRes = await fetch(`${baseUrl(server)}/api/ask`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question: "minimum replicates required at each QC concentration level" })
+    });
+    assert.equal(askRes.status, 200);
+
+    const statsRes = await fetch(`${baseUrl(server)}/api/stats`);
+    assert.equal(statsRes.status, 200);
+    const stats = await statsRes.json();
+    assert.equal(stats.total, 1);
+    assert.equal(stats.answered, 1);
+    assert.equal(stats.by_path.A, 1);
+    assert.ok(stats.by_document.ich_m10 && stats.by_document.ich_m10.answered === 1);
+  });
+});
+
 test("POST /api/ask returns a full envelope for a known Option A hit, and logs the interaction", async () => {
   await withServer({}, async (server) => {
     const res = await fetch(`${baseUrl(server)}/api/ask`, {

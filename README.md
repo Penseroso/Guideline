@@ -6,6 +6,7 @@ A hallucination-resistant conversational assistant for regulatory guidelines, bu
 
 - **Data model**: `docs/schema.md`, model version `0.5.0`, enforced by `data/schemas/guideline_bundle.schema.json`. See `docs/milestone_log.md` for the current, up-to-date list of reviewed guidelines and sections — that count changes faster than this file is updated.
 - **Engine** (`engine/`): loads and indexes the pilot bundles; answers by structured lookup first (Option A, no LLM call) and falls back to retrieval-augmented generation with a mandatory citation-entailment check before showing any answer (Option B); a schema-constrained extraction agent and a separate, narrower verification agent automate drafting and checking new records; every answer surfaces the record's own attached `Condition`s as a verbatim caveat, never a judgment about whether they hold. Try it with `npm run chat` (Option A works with zero API key/cost).
+- **Web UI** (`web/`, M5): a local-first HTTP API (`engine/server.js`) and vanilla-JS UI over the same engine. `npm run serve` (binds `127.0.0.1` by default; see `.env.example` for `GUIDELINE_PORT`/`GUIDELINE_HOST`/`GUIDELINE_AUTH_TOKEN`).
 - **Validation**: `npm test` (unit tests, mocked LLM calls, no network), `npm run validate:pilots` (schema + cross-reference validation over all pilot bundles), `npm run eval` (gold question/citation regression set, Option A only, zero API cost).
 
 An M6 spike explored a separate "Applicability Engine" (given a structured program context, deterministically evaluate whether a specific rule applies) on top of a derived `Condition`→predicate layer. It was discontinued as a standalone module after a real-usage review found it added a large separate architecture on top of a narrow, 3-guideline island of coverage — see `docs/milestone_log.md` M6 and `history/applicability_engine/` for the full record. Two improvements it surfaced were cherry-picked into this engine directly (both described above): additional Korean regulatory-term synonyms, and the `Condition` caveat now shown on every answer.
@@ -15,7 +16,8 @@ An M6 spike explored a separate "Applicability Engine" (given a structured progr
 - `source_pdfs/`: immutable original guideline PDFs.
 - `docs/`: active project scope, conceptual data model, PDF assessments, the product roadmap, and the milestone log.
 - `data/`: the reviewed pilot bundles, the source JSON Schema (`data/pilots/`, `data/schemas/`), and the declarative document/section scope ontology (`data/ontology/`).
-- `engine/`: the chatbot/extraction/verification application layer.
+- `engine/`: the chatbot/extraction/verification application layer, plus `server.js` (HTTP API).
+- `web/`: the local-first web UI served by `engine/server.js` (vanilla HTML/CSS/JS, no build step).
 - `validation/`: reproducible validation scripts.
 - `test/`: unit tests (mocked LLM clients — no live API calls in CI) and schema validation tests.
 - `logs/`: `m2_queries.jsonl`, the M2 real-usage log (`npm run chat`) — every question, its answer, path (A/B), and review_status; the coverage-expansion backlog for M3 (`docs/product_roadmap.md` §3 M2).

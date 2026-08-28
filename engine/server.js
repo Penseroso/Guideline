@@ -20,8 +20,9 @@ const crypto = require("crypto");
 const { loadStore } = require("./data_store");
 const { setUpOptionB } = require("./cli");
 const { answerEnvelope } = require("./answer_envelope");
-const { logInteraction } = require("./query_log");
-const { recordFeedback, VALID_VERDICTS } = require("./feedback_log");
+const { logInteraction, readInteractions } = require("./query_log");
+const { recordFeedback, readFeedback, VALID_VERDICTS } = require("./feedback_log");
+const { aggregate } = require("./query_stats");
 
 const WEB_DIR = path.resolve(__dirname, "..", "web");
 const MAX_BODY_BYTES = 16 * 1024;
@@ -240,6 +241,11 @@ function startServer({
         record_count: records.filter((r) => r.document_id === d.document_id).length
       }));
       return sendJson(res, 200, { documents: docs });
+    }
+
+    if (pathName === "/api/stats" && req.method === "GET") {
+      const stats = aggregate(readInteractions(queryLogPath), readFeedback(feedbackLogPath));
+      return sendJson(res, 200, stats);
     }
 
     if (pathName === "/api/ask" && req.method === "POST") {
