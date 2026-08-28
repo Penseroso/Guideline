@@ -6,32 +6,31 @@
 <title>Regulatory Guideline Archive</title>
 <link rel="stylesheet" href="/app.css">
 </head>
-<body>
-<div class="app-shell">
-  <header class="app-header">
-    <div class="app-title" id="app-title">Regulatory Guideline Archive</div>
-    <div class="app-header-right">
-      <span><span class="health-dot" id="health-dot"></span><span id="health-label"></span></span>
-      <button class="optionb-toggle" id="optionb-toggle" type="button"></button>
-      <button class="lang-toggle" id="lang-toggle" type="button">KO / EN</button>
+<body class="idle">
+<header class="app-header">
+  <div class="app-wordmark" id="app-title">Regulatory Guideline Archive</div>
+  <div class="app-header-right">
+    <span><span class="health-dot" id="health-dot"></span><span id="health-label"></span></span>
+    <button class="optionb-toggle" id="optionb-toggle" type="button"></button>
+    <div class="scope-wrap">
+      <button class="scope-toggle" id="scope-toggle" type="button"></button>
+      <div class="scope-popover" id="scope-popover" hidden>
+        <ul class="doc-list" id="doc-list"></ul>
+      </div>
     </div>
-  </header>
+    <button class="lang-toggle" id="lang-toggle" type="button">KO / EN</button>
+  </div>
+</header>
 
-  <aside class="sidebar">
-    <div class="sidebar-title" id="sidebar-title">Archive scope</div>
-    <ul class="doc-list" id="doc-list"></ul>
-    <div class="sidebar-note" id="sidebar-note"></div>
-  </aside>
-
-  <main class="main-panel">
-    <form class="ask-form" id="ask-form">
-      <input class="ask-input" id="ask-input" type="text" autocomplete="off">
-      <button class="ask-button" id="ask-button" type="submit"></button>
-    </form>
-    <div class="loading-phase" id="loading-phase"></div>
-    <div class="result-panel" id="result-panel"></div>
-  </main>
-</div>
+<main class="main-panel">
+  <div class="idle-wordmark" id="idle-wordmark">Regulatory Guideline Archive</div>
+  <form class="ask-form" id="ask-form">
+    <input class="ask-input" id="ask-input" type="text" autocomplete="off">
+    <button class="ask-button" id="ask-button" type="submit"></button>
+  </form>
+  <div class="loading-phase" id="loading-phase"></div>
+  <div class="result-panel" id="result-panel"></div>
+</main>
 
 <script src="/render.js"></script>
 <script src="/i18n.js"></script>

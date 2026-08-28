@@ -7,7 +7,7 @@ const i18n = {
   openPdf: "PDF 열기",
   applicableConditions: "적용 조건",
   crossReferences: "관련 조항",
-  claimMissingCitation: "citation missing — claim withheld",
+  claimMissingCitation: "citation missing, claim withheld",
   normalizedKoLabel: "한국어 정규화 (참고)",
   pathALabel: "Path A",
   pathASub: "archive quoted directly",
@@ -73,12 +73,12 @@ test("a modality:none record renders an explicit NONE chip, never silently omitt
 test("a claim with no citation renders the error placeholder, and the claim content never appears", () => {
   const claim = { citation: null, record: { type: "knowledge_record", source_text: "SHOULD-NOT-APPEAR-ANYWHERE", modality: "must" } };
   const html = R.renderClaimCard(claim, i18n);
-  assert.match(html, /claim-card-error/);
+  assert.match(html, /claim-error/);
   assert.doesNotMatch(html, /SHOULD-NOT-APPEAR-ANYWHERE/);
 
   const claimNoSourceUnit = { citation: { document_id: "x" }, record: { type: "knowledge_record", source_text: "ALSO-SHOULD-NOT-APPEAR" } };
   const html2 = R.renderClaimCard(claimNoSourceUnit, i18n);
-  assert.match(html2, /claim-card-error/);
+  assert.match(html2, /claim-error/);
   assert.doesNotMatch(html2, /ALSO-SHOULD-NOT-APPEAR/);
 });
 
@@ -95,8 +95,8 @@ test("<script> content inside source_text is escaped, never executed as markup",
 test("refusal envelope renders the refusal card, distinctly from an error state — never claim content", () => {
   const envelope = { answered: false, mode: "refusal", path: "B", refusal: { kind: "scope_excluded", reason: null }, claims: [] };
   const html = R.renderEnvelope(envelope, i18n);
-  assert.match(html, /refusal-card/);
-  assert.doesNotMatch(html, /claim-card-error/, "a refusal is not the same thing as a missing-citation error");
+  assert.match(html, /class="refusal"/);
+  assert.doesNotMatch(html, /claim-error/, "a refusal is not the same thing as a missing-citation error");
   assert.match(html, /scope excluded/);
 });
 
@@ -109,18 +109,17 @@ test("value_status: needs_review renders its warning banner on the criterion car
     }
   };
   const html = R.renderClaimCard(claim, i18n);
-  assert.match(html, /value-status-badge/);
-  assert.match(html, /value-status-needs_review/);
+  assert.match(html, /value-status-note/);
   assert.match(html, /needs_review/);
 });
 
-test("value_status: known renders no warning badge at all", () => {
+test("value_status: known renders no warning note at all", () => {
   const claim = {
     citation: realCitation(),
     record: { type: "quantitative_criterion", parameter: "accuracy", comparator: "within", value: 15, unit: "%", value_status: "known" }
   };
   const html = R.renderClaimCard(claim, i18n);
-  assert.doesNotMatch(html, /value-status-badge/);
+  assert.doesNotMatch(html, /value-status-note/);
 });
 
 // The §2.5.1 guard: review_status is uniformly "reviewed" across the
@@ -149,9 +148,9 @@ test("the transparency footer states the §2.5.1 meaning of review_status, once,
 test("path A and path B verdict bars are structurally distinct classes, not just a color/label difference", () => {
   const envA = { answered: true, mode: "structured", path: "A", claims: [{ citation: realCitation(), record: { type: "knowledge_record", modality: "must", source_text: "t" } }] };
   const envB = { answered: true, mode: "rag", path: "B", claims: [{ citation: realCitation(), record: { type: "knowledge_record", modality: "must", source_text: "t" } }] };
-  assert.match(R.renderVerdictBar(envA, i18n), /verdict-bar verdict-a"/);
-  assert.match(R.renderVerdictBar(envB, i18n), /verdict-bar verdict-b"/);
-  assert.doesNotMatch(R.renderVerdictBar(envA, i18n), /verdict-bar verdict-b"/);
+  assert.match(R.renderVerdictBar(envA, i18n), /class="verdict verdict-a"/);
+  assert.match(R.renderVerdictBar(envB, i18n), /class="verdict verdict-b"/);
+  assert.doesNotMatch(R.renderVerdictBar(envA, i18n), /class="verdict verdict-b"/);
 });
 
 test("no numeric confidence score field is ever rendered anywhere", () => {
@@ -176,6 +175,26 @@ test("comparison mode groups claims into real per-document columns headed by the
   assert.match(html, /Bioanalytical Method Validation/);
   assert.match(html, /Immunogenicity Testing/);
   assert.doesNotMatch(html, />ich_m10</, "must never show the raw document id as a column header");
+});
+
+// design-taste-frontend audit finding: the previous i18n/render strings
+// contained several em-dashes. Zero tolerance per that skill's Section
+// 9.G, real strings only (not code comments), so exercise every mode.
+test("no em-dash (U+2014) or en-dash-as-separator (U+2013) appears anywhere in rendered output, across every mode", () => {
+  const claim = {
+    citation: realCitation(),
+    record: { type: "knowledge_record", modality: "must", original_modal_text: "shall", source_text: "text", normalized_ko: "텍스트" }
+  };
+  const hit = { answered: true, mode: "structured", path: "A", claims: [claim] };
+  const refusal = { answered: false, mode: "refusal", path: "B", refusal: { kind: "scope_excluded", reason: "some reason" }, claims: [] };
+  const comparison = { answered: true, mode: "comparison", path: "A", claims: [claim] };
+  const amendment = { answered: true, mode: "amendment", path: "A", claims: [claim] };
+
+  for (const env of [hit, refusal, comparison, amendment]) {
+    const html = R.renderEnvelope(env, i18n);
+    assert.doesNotMatch(html, /—/, `em-dash found in ${env.mode} rendering`);
+    assert.doesNotMatch(html, /–/, `en-dash found in ${env.mode} rendering`);
+  }
 });
 
 test("amendment mode shows a two-track parent/current layout plus resolved claims", () => {
