@@ -21,22 +21,54 @@ function setUpOptionB(records) {
   const providers = availableProviders();
   if (providers.length === 0) return {};
 
-  const client = createClient();
   const store = createStore(); // keyword mode until an embed function is wired up
   store.index(records);
-  return { client, store, provider: client.provider };
+  const requestedGenerator = process.env.OPTION_B_GENERATOR_PROVIDER || null;
+  const requestedVerifier = process.env.OPTION_B_VERIFIER_PROVIDER || null;
+  const generatorProvider = requestedGenerator && providers.includes(requestedGenerator) ? requestedGenerator : providers[0];
+  const verifierProvider = requestedVerifier && providers.includes(requestedVerifier)
+    ? requestedVerifier
+    : providers.find((name) => name !== generatorProvider) || null;
+
+  if (!verifierProvider || verifierProvider === generatorProvider) {
+    return {
+      client: null,
+      generatorClient: null,
+      verifierClient: null,
+      store,
+      provider: null,
+      verifierProvider: null,
+      configuredProviders: providers,
+      optionBMode: "extractive"
+    };
+  }
+
+  const generatorClient = createClient(generatorProvider);
+  const verifierClient = createClient(verifierProvider);
+  return {
+    client: generatorClient,
+    generatorClient,
+    verifierClient,
+    store,
+    provider: generatorProvider,
+    verifierProvider,
+    configuredProviders: providers,
+    optionBMode: "generative"
+  };
 }
 
 async function main() {
   const { records, index } = loadStore();
-  const { client, store, provider } = setUpOptionB(records);
+  const { client, generatorClient, verifierClient, store, provider, verifierProvider, optionBMode } = setUpOptionB(records);
 
   console.log(
     `Regulatory Guideline Archive — MVP CLI.\n` +
     `${index.documents.size} document(s), ${records.length} answerable record(s) loaded. ` +
-    (provider
-      ? `Option B fallback active (${provider}).`
-      : `Option A (structured query) only — no LLM provider configured, see .env.example.`) +
+    (optionBMode === "generative"
+      ? `Option B fallback active (${provider} generation + ${verifierProvider} verification).`
+      : optionBMode === "extractive"
+        ? "Option B extractive fallback active (no generated answer)."
+        : "Option A (structured query) only — no LLM provider configured, see .env.example.") +
     `\nType a question, or "exit" to quit.\n`
   );
 
@@ -58,7 +90,7 @@ async function main() {
         return;
       }
       if (question) {
-        const result = await answer(question, records, { client, store, index });
+        const result = await answer(question, records, { client, generatorClient, verifierClient, store, index, optionBMode });
         console.log(result.text);
         if (result.answered && result.review_status !== "reviewed") {
           console.log(`[review_status: ${result.review_status} — not fully reviewed]`);

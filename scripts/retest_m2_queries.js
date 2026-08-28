@@ -12,8 +12,9 @@ async function main() {
   // real CLI does — no key configured means Option A only, not a throw
   // (previously this called llm_client.createClient() directly, which
   // throws with no provider configured).
-  const { client, store: vectorStore, provider } = setUpOptionB(records);
-  console.log(provider ? `Option B fallback active (${provider}).` : "Option A only — no LLM provider configured.");
+  const optionB = setUpOptionB(records);
+  const { provider, optionBMode } = optionB;
+  console.log(optionBMode === "generative" ? `Option B fallback active (${provider}).` : optionBMode === "extractive" ? "Option B extractive fallback active." : "Option A only — no LLM provider configured.");
 
   // Load questions from log
   const logFile = path.resolve(__dirname, "..", "logs", "m2_queries.jsonl");
@@ -48,7 +49,7 @@ async function main() {
     const tc = testCases[i];
     process.stdout.write(`[${i + 1}/${testCases.length}] "${tc.question}" ... `);
     const start = Date.now();
-    const res = await answer(tc.question, records, { client, store: vectorStore, index });
+    const res = await answer(tc.question, records, { ...optionB, index });
     const elapsed = Date.now() - start;
 
     const status = res.answered ? "ANSWERED" : "REFUSED";

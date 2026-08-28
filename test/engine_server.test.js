@@ -203,7 +203,11 @@ test("Option B via injected mock deps: success and timeout both produce a well-f
   const { records } = candidateModule.loadStore();
   const candidate = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
 
-  const fastClient = { complete: async ({ schema }) => (schema ? { entailed: true, reason: "ok" } : { text: "At least 5 replicates are required at each QC concentration level." }) };
+  const fastClient = {
+    complete: async ({ schema }) => schema.properties.verdicts
+      ? { verdicts: [{ unit_index: 0, entailed: true, source_index: 0, reason: "ok" }] }
+      : { answered: true, units: [{ text: "At least 5 replicates are required at each QC concentration level." }] }
+  };
   const fastStore = { search: async () => [{ record: candidate, score: 1 }] };
 
   await withServer({ deps: { client: fastClient, store: fastStore } }, async (server) => {

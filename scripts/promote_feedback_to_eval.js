@@ -32,11 +32,12 @@ async function main() {
   }
 
   const { records, index } = loadStore();
-  const { client, store, provider } = setUpOptionB(records);
-  console.log(`Found ${feedback.length} untriaged feedback entries. Re-running each live${provider ? ` (Option B via ${provider})` : " (Option A only — no LLM provider configured)"}.\n`);
+  const optionB = setUpOptionB(records);
+  const { provider, optionBMode } = optionB;
+  console.log(`Found ${feedback.length} untriaged feedback entries. Re-running each live${optionBMode === "generative" ? ` (Option B via ${provider})` : optionBMode === "extractive" ? " (Option B extractive)" : " (Option A only — no LLM provider configured)"}.\n`);
 
   for (const entry of feedback) {
-    const envelope = await answerEnvelope(entry.question, records, { client, store, index });
+    const envelope = await answerEnvelope(entry.question, records, { ...optionB, index });
     console.log("=".repeat(70));
     console.log(`feedback_id: ${entry.feedback_id}`);
     console.log(`question:    ${JSON.stringify(entry.question)}`);

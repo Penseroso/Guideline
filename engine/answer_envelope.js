@@ -38,10 +38,12 @@ function reviewStatusFor(match) {
 }
 
 /**
- * answerEnvelope(question, records, { client, store, index }) -> envelope
+ * answerEnvelope(question, records, { generatorClient, verifierClient,
+ * store, index, signal, optionBMode }) -> envelope
  *
  * Always returns the same shape:
- *   { envelope_version, answered, mode, path, prose, refusal, claims, review_status, timing_ms }
+ *   { envelope_version, answered, mode, path, prose, refusal, claims,
+ *     answer_units, review_status, timing_ms }
  *
  * `refusal` is null when answered; otherwise
  *   { kind: "no_match"|"scope_excluded"|"no_candidates"|"model_declined"|"verification_failed"|"no_provider", reason: string|null }
@@ -52,7 +54,16 @@ function reviewStatusFor(match) {
  * Deliberately no `score`/confidence field anywhere (product_roadmap.md
  * §1.4 — path A/B is the only sanctioned confidence signal).
  */
-async function answerEnvelope(question, records, { client, store, index, responseLanguage = "ko" } = {}) {
+async function answerEnvelope(question, records, {
+  client,
+  generatorClient = client,
+  verifierClient = client,
+  store,
+  index,
+  responseLanguage = "ko",
+  signal,
+  optionBMode
+} = {}) {
   const start = Date.now();
   const match = structuredQuery(question, records, index);
 
@@ -71,14 +82,14 @@ async function answerEnvelope(question, records, { client, store, index, respons
     };
   }
 
-  if (!client || !store) {
+  if ((!generatorClient && optionBMode !== "extractive") || !store) {
     return {
       envelope_version: ENVELOPE_VERSION,
       answered: false,
       mode: "refusal",
       path: null,
       prose: NOT_FOUND,
-      refusal: { kind: !client && !store ? "no_provider" : explainRefusal(question, records), reason: null },
+      refusal: { kind: !generatorClient && !store ? "no_provider" : explainRefusal(question, records), reason: null },
       claims: [],
       answer_units: [],
       review_status: null,
@@ -86,7 +97,7 @@ async function answerEnvelope(question, records, { client, store, index, respons
     };
   }
 
-  const result = await answerOptionB(question, records, { client, store, responseLanguage });
+  const result = await answerOptionB(question, records, { generatorClient, verifierClient, store, responseLanguage, signal, optionBMode });
   if (!result.answered) {
     return {
       envelope_version: ENVELOPE_VERSION,
@@ -105,7 +116,7 @@ async function answerEnvelope(question, records, { client, store, index, respons
   return {
     envelope_version: ENVELOPE_VERSION,
     answered: true,
-    mode: "rag",
+    mode: result.mode || "rag",
     path: "B",
     prose: result.text,
     refusal: null,

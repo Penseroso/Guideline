@@ -155,6 +155,7 @@
 
   function renderVerdictBar(envelope, i18n) {
     if (envelope.path === "A") return `<div class="verdict verdict-a">${escapeHtml(i18n.pathALabel)} · ${escapeHtml(i18n.pathASub)}</div>`;
+    if (envelope.path === "B" && envelope.mode === "extractive") return `<div class="verdict verdict-b">${escapeHtml(i18n.pathExtractiveLabel)} · ${escapeHtml(i18n.pathExtractiveSub)}</div>`;
     if (envelope.path === "B") return `<div class="verdict verdict-b">${escapeHtml(i18n.pathBLabel)} · ${escapeHtml(i18n.pathBSub)}</div>`;
     return "";
   }

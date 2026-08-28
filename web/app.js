@@ -23,6 +23,8 @@
   const state = {
     lang: localStorage.getItem("guideline_lang") || "ko",
     optionBEnabled: true,
+    optionBMode: null,
+    loggingEnabled: true,
     documents: [],
     evidenceOpen: null,
     lastQuestion: null,
@@ -60,7 +62,8 @@
     el.idleWordmark.textContent = t.title;
     el.askInput.placeholder = t.askPlaceholder;
     el.askButton.textContent = t.askButton;
-    el.optionBToggle.textContent = state.optionBEnabled ? t.optionBToggleOn : t.optionBToggleOff;
+    const modeLabel = state.optionBMode === "extractive" ? t.optionBExtractive : state.optionBMode === "generative" ? t.optionBGenerative : "";
+    el.optionBToggle.textContent = state.optionBEnabled ? `${t.optionBToggleOn}${modeLabel ? ` · ${modeLabel}` : ""}` : t.optionBToggleOff;
     el.settingsToggle.textContent = t.settings;
     el.scopeToggle.textContent = state.documents.length ? `${t.archiveScopeTitle} (${state.documents.length})` : t.archiveScopeTitle;
     renderDocList();
@@ -79,7 +82,10 @@
       el.healthDot.className = "health-dot ok";
       el.healthLabel.textContent = `${i18n().healthOk} · ${body.documents} docs · ${body.records} records${body.option_b_available ? "" : " · Option B unavailable"}`;
       el.healthStatus.hidden = true;
+      state.optionBMode = body.option_b_mode || null;
+      state.loggingEnabled = body.logging_enabled !== false;
       if (!body.option_b_available) state.optionBEnabled = false;
+      applyChrome();
     } catch {
       el.healthDot.className = "health-dot error";
       el.healthLabel.textContent = i18n().healthError;
@@ -103,7 +109,7 @@
 
   function startLoadingPhases(optionB) {
     el.askButton.disabled = true;
-    if (!optionB) {
+    if (!optionB || state.optionBMode === "extractive") {
       el.loadingPhase.textContent = i18n()[LOADING_PHASES_OPTION_B[0]];
       return () => { el.loadingPhase.textContent = ""; el.askButton.disabled = false; };
     }
@@ -130,6 +136,7 @@
    * permanently occupying the page.
    */
   function renderFeedbackBar(question, envelope) {
+    if (!state.loggingEnabled) return null;
     const t = i18n();
     const verdicts = [
       ["wrong_citation", t.feedbackWrongCitation],
@@ -210,7 +217,8 @@
     if (!state.lastEnvelope) return;
     el.resultPanel.innerHTML = R.renderEnvelope(state.lastEnvelope, i18n(), state.lastQuestion);
     configureEvidencePanel();
-    el.resultPanel.appendChild(renderFeedbackBar(state.lastQuestion, state.lastEnvelope));
+    const feedback = renderFeedbackBar(state.lastQuestion, state.lastEnvelope);
+    if (feedback) el.resultPanel.appendChild(feedback);
   }
 
   async function ask(question, { forceOptionB } = {}) {

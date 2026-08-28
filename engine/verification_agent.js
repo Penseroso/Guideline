@@ -45,7 +45,7 @@ const SYSTEM_PROMPT =
   "under different circumstances — only reject if the claim itself is unsupported or " +
   "contradicted for its own stated circumstance.";
 
-async function verifyClaim({ claim, sourceText, client, model }) {
+async function verifyClaim({ claim, sourceText, client, model, signal }) {
   if (!claim || !sourceText) {
     return { entailed: false, reason: "missing claim or source_text to check against" };
   }
@@ -54,6 +54,7 @@ async function verifyClaim({ claim, sourceText, client, model }) {
     system: SYSTEM_PROMPT,
     messages: [{ role: "user", content: userText }],
     schema: entailmentSchema(),
+    signal,
     ...(model ? { model } : {})
   });
   return { entailed: Boolean(result.entailed), reason: result.reason };

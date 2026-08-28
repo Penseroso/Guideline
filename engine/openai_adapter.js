@@ -17,7 +17,7 @@ function create() {
   // matches GPT-5.5-level performance at half Sol's cost. Escalate to
   // gpt-5.6-sol only if a real dry-run measurement shows Terra's accuracy
   // falling short of the existing human-reviewed baseline — not before.
-  async function complete({ system, messages, schema, maxTokens = 1024, model = "gpt-5.6-terra" }) {
+  async function complete({ system, messages, schema, maxTokens = 1024, model = "gpt-5.6-terra", signal }) {
     const chatMessages = system ? [{ role: "system", content: system }, ...messages] : [...messages];
 
     if (schema) {
@@ -29,13 +29,13 @@ function create() {
           type: "json_schema",
           json_schema: { name: "emit_result", schema, strict: true }
         }
-      });
+      }, { signal });
       const content = response.choices[0].message.content;
       if (!content) throw new Error("openai_adapter: model returned no content for the requested schema.");
       return JSON.parse(content);
     }
 
-    const response = await client.chat.completions.create({ model, max_completion_tokens: maxTokens, messages: chatMessages });
+    const response = await client.chat.completions.create({ model, max_completion_tokens: maxTokens, messages: chatMessages }, { signal });
     return { text: response.choices[0].message.content || "" };
   }
 

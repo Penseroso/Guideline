@@ -9,7 +9,7 @@
  * blind-spot mitigation) is a config change, not a code change.
  *
  * Interface:
- *   complete({ system, messages, schema, maxTokens }) -> Promise<object|{text}>
+ *   complete({ system, messages, schema, maxTokens, signal }) -> Promise<object|{text}>
  *     - schema (optional): a JSON Schema object. When present, the
  *       adapter forces structured/tool-use output conforming to it
  *       and returns the parsed object directly.

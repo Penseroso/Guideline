@@ -50,9 +50,19 @@ function fakeStore(candidateRecords) {
   return { search: async () => candidateRecords.map((record) => ({ record, score: 1 })) };
 }
 
+function optionBClient(unitTexts, verdicts) {
+  return {
+    complete: async ({ schema }) => schema.properties.verdicts
+      ? { verdicts }
+      : { answered: unitTexts.length > 0, units: unitTexts.map((text) => ({ text })) }
+  };
+}
+
 test("answer() falls back to Option B only when a client and store are both supplied", async () => {
   const candidate = records.find((r) => r.type === "knowledge_record");
-  const client = { complete: async ({ schema }) => (schema ? { entailed: true, reason: "ok" } : { text: `Per the archive: ${candidate.source_text}` }) };
+  const client = optionBClient([`Per the archive: ${candidate.source_text}`], [
+    { unit_index: 0, entailed: true, source_index: 0, reason: "ok" }
+  ]);
   const store = fakeStore([candidate]);
 
   const withFallback = await answer("what is the meaning of life", records, { client, store });
@@ -77,14 +87,48 @@ test("answerOptionB refuses when the model itself says not found", async () => {
   assert.equal(result.answered, false);
 });
 
-test("answerOptionB refuses a generated answer that fails citation verification, instead of showing it", async () => {
-  const candidate = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
+test("answerOptionB extractive mode returns verbatim cited sources with zero model calls", async () => {
+  const candidates = records.filter((record) => record.citations && record.citations.length).slice(0, 5);
+  let modelCalls = 0;
+  const client = { complete: async () => { modelCalls++; throw new Error("extractive mode must not call a model"); } };
+  const result = await answerOptionB("irrelevant", records, {
+    generatorClient: client,
+    verifierClient: client,
+    store: fakeStore(candidates),
+    optionBMode: "extractive"
+  });
+  assert.equal(result.answered, true);
+  assert.equal(result.mode, "extractive");
+  assert.equal(modelCalls, 0);
+  assert.ok(result.answer_units.length <= 3);
+  for (const unit of result.answer_units) {
+    assert.ok(candidates.some((candidate) => candidate.source_text === unit.text));
+  }
+});
+
+test("answerOptionB caps a non-compliant generator at eight units and performs one verification batch", async () => {
+  const candidate = records.find((record) => record.type === "quantitative_criterion" && record.parameter === "replicates");
+  let calls = 0;
   const client = {
     complete: async ({ schema }) => {
-      if (schema) return { entailed: false, reason: "claim states a value not present in the source" };
-      return { text: "Exactly 10 replicates are always required, no exceptions." };
+      calls++;
+      if (schema.properties.verdicts) {
+        return { verdicts: Array.from({ length: 8 }, (_, unit_index) => ({ unit_index, entailed: true, source_index: 0, reason: "supported" })) };
+      }
+      return { answered: true, units: Array.from({ length: 100 }, (_, index) => ({ text: `unit ${index}` })) };
     }
   };
+  const result = await answerOptionB("irrelevant", records, { client, store: fakeStore([candidate]) });
+  assert.equal(result.answered, true);
+  assert.equal(result.answer_units.length, 8);
+  assert.equal(calls, 2);
+});
+
+test("answerOptionB refuses a generated answer that fails citation verification, instead of showing it", async () => {
+  const candidate = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
+  const client = optionBClient(["Exactly 10 replicates are always required, no exceptions."], [
+    { unit_index: 0, entailed: false, source_index: null, reason: "claim states a value not present in the source" }
+  ]);
   const result = await answerOptionB("replicate count", records, { client, store: fakeStore([candidate]) });
   assert.equal(result.answered, false);
   assert.match(result.text, /failed citation verification/);
@@ -92,12 +136,9 @@ test("answerOptionB refuses a generated answer that fails citation verification,
 
 test("answerOptionB returns the generated answer with sources once verification passes", async () => {
   const candidate = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
-  const client = {
-    complete: async ({ schema }) => {
-      if (schema) return { entailed: true, reason: "matches source_text" };
-      return { text: "At least 5 replicates are required at each QC concentration level." };
-    }
-  };
+  const client = optionBClient(["At least 5 replicates are required at each QC concentration level."], [
+    { unit_index: 0, entailed: true, source_index: 0, reason: "matches source_text" }
+  ]);
   const result = await answerOptionB("replicate count", records, { client, store: fakeStore([candidate]) });
   assert.equal(result.answered, true);
   assert.match(result.text, /Sources: M10 §3\.2\.5\.2/);
@@ -126,45 +167,36 @@ test("answer() surfaces refusal_reason: scope_excluded on the no-client-configur
   assert.equal(result.refusal_reason, "scope_excluded");
 });
 
-test("answerOptionB drops an ungrounded line and attaches each surviving line's own candidate citation, not every candidate", async () => {
+test("answerOptionB maps every grounded unit to its own candidate citation in one verification batch", async () => {
   const candidateA = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
   const candidateB = records.find((r) => r.type === "condition" && r.id !== candidateA.id);
   assert.ok(candidateA && candidateB && candidateA.id !== candidateB.id);
 
-  const client = {
-    complete: async ({ schema, messages }) => {
-      if (!schema) {
-        return { text: "Line one is true.\nLine two is true.\nLine three is fabricated and unsupported." };
-      }
-      // Verification call: entail "Line one" only against candidateA's
-      // source_text, "Line two" only against candidateB's, and never
-      // entail the fabricated third line against anything.
-      const claim = messages[0].content;
-      if (claim.includes("Line one") && claim.includes(candidateA.source_text)) return { entailed: true, reason: "matches A" };
-      if (claim.includes("Line two") && claim.includes(candidateB.source_text)) return { entailed: true, reason: "matches B" };
-      return { entailed: false, reason: "not supported by this excerpt" };
-    }
-  };
+  let calls = 0;
+  const client = optionBClient(["Line one is true.", "Line two is true."], [
+    { unit_index: 0, entailed: true, source_index: 0, reason: "matches A" },
+    { unit_index: 1, entailed: true, source_index: 1, reason: "matches B" }
+  ]);
+  const complete = client.complete;
+  client.complete = async (args) => { calls++; return complete(args); };
 
   const result = await answerOptionB("irrelevant", records, { client, store: fakeStore([candidateA, candidateB]) });
   assert.equal(result.answered, true);
   assert.match(result.text, /Line one is true\./);
   assert.match(result.text, /Line two is true\./);
-  assert.doesNotMatch(result.text, /fabricated/);
+  assert.equal(calls, 2, "one generation call plus one batch-verification call");
   assert.equal(result.claims.length, 2);
   const citedUnits = result.claims.map((c) => c.source_unit_id);
   assert.ok(citedUnits.includes(candidateA.citations[0].source_unit_id));
   assert.ok(citedUnits.includes(candidateB.citations[0].source_unit_id));
 });
 
-test("answerOptionB refuses when no line of the generated answer can be independently grounded", async () => {
+test("answerOptionB refuses the whole answer when any generated unit is unsupported", async () => {
   const candidate = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
-  const client = {
-    complete: async ({ schema }) => {
-      if (schema) return { entailed: false, reason: "not supported" };
-      return { text: "This entire answer is fabricated." };
-    }
-  };
+  const client = optionBClient(["A grounded line.", "This answer is fabricated."], [
+    { unit_index: 0, entailed: true, source_index: 0, reason: "supported" },
+    { unit_index: 1, entailed: false, source_index: null, reason: "not supported" }
+  ]);
   const result = await answerOptionB("irrelevant", records, { client, store: fakeStore([candidate]) });
   assert.equal(result.answered, false);
   assert.equal(result.refusal_reason, "verification_failed");
@@ -298,5 +330,3 @@ test("formatCrossReferences returns empty string when array is empty or null", (
   assert.equal(formatCrossReferences([]), "");
   assert.equal(formatCrossReferences(null), "");
 });
-
-

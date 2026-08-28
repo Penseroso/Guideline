@@ -82,7 +82,9 @@ function fakeStore(candidateRecords) {
 test("Option B success and refusal both produce a fully-shaped envelope", async () => {
   const candidate = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
   const successClient = {
-    complete: async ({ schema }) => (schema ? { entailed: true, reason: "matches" } : { text: "At least 5 replicates are required at each QC concentration level." })
+    complete: async ({ schema }) => schema.properties.verdicts
+      ? { verdicts: [{ unit_index: 0, entailed: true, source_index: 0, reason: "matches" }] }
+      : { answered: true, units: [{ text: "At least 5 replicates are required at each QC concentration level." }] }
   };
   const success = await answerEnvelope("replicate count", records, { client: successClient, store: fakeStore([candidate]), index });
   assert.equal(success.answered, true);
@@ -92,7 +94,9 @@ test("Option B success and refusal both produce a fully-shaped envelope", async 
   for (const claim of success.claims) assert.ok(claim.source_unit_id);
 
   const failClient = {
-    complete: async ({ schema }) => (schema ? { entailed: false, reason: "not supported" } : { text: "This is fabricated." })
+    complete: async ({ schema }) => schema.properties.verdicts
+      ? { verdicts: [{ unit_index: 0, entailed: false, source_index: null, reason: "not supported" }] }
+      : { answered: true, units: [{ text: "This is fabricated." }] }
   };
   const refused = await answerEnvelope("replicate count", records, { client: failClient, store: fakeStore([candidate]), index });
   assert.equal(refused.answered, false);

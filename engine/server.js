@@ -41,9 +41,9 @@ const STATIC_ASSETS = {
 };
 const CONTENT_TYPES = { ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8" };
 
-function sendJson(res, status, body) {
+function sendJson(res, status, body, headers = {}) {
   const payload = JSON.stringify(body);
-  res.writeHead(status, { "Content-Type": "application/json; charset=utf-8", "Content-Length": Buffer.byteLength(payload) });
+  res.writeHead(status, { "Content-Type": "application/json; charset=utf-8", "Content-Length": Buffer.byteLength(payload), ...headers });
   res.end(payload);
 }
 
@@ -82,49 +82,109 @@ async function readJsonBody(req) {
 }
 
 /**
- * A small counting semaphore for Option B calls — protects API spend
- * (this is not a security control), not the CLI's FIFO promise queue
- * (engine/cli.js:51), which exists to keep readline output in order and
- * would make concurrent web requests feel serialized/broken.
+ * Deadline-aware Option B scheduler. A timed-out response does not release
+ * its slot until the underlying task settles, so providers that ignore an
+ * AbortSignal cannot exceed the real concurrency limit.
  */
-function createSemaphore(limit) {
+function createOptionBScheduler(limit, queueCap = OPTION_B_QUEUE_CAP) {
   let active = 0;
   const queue = [];
-  return async function withSlot(fn) {
-    if (active >= limit) {
-      if (queue.length >= OPTION_B_QUEUE_CAP) {
-        throw Object.assign(new Error("busy"), { statusCode: 429 });
+  function drain() {
+    while (active < limit && queue.length) {
+      const item = queue.shift();
+      if (item.signal && item.signal.aborted) {
+        item.reject(item.signal.reason || Object.assign(new Error("aborted"), { statusCode: 504 }));
+        continue;
       }
-      await new Promise((resolve) => queue.push(resolve));
+      if (item.signal && item.onAbort) item.signal.removeEventListener("abort", item.onAbort);
+      active++;
+      Promise.resolve()
+        .then(item.fn)
+        .then(item.resolve, item.reject)
+        .finally(() => {
+          active--;
+          drain();
+        });
     }
-    active++;
-    try {
-      return await fn();
-    } finally {
-      active--;
-      const next = queue.shift();
-      if (next) next();
+  }
+  return {
+    run(fn, { signal } = {}) {
+      if (queue.length >= queueCap && active >= limit) {
+        return Promise.reject(Object.assign(new Error("busy"), { statusCode: 429 }));
+      }
+      return new Promise((resolve, reject) => {
+        const item = { fn, resolve, reject, signal, onAbort: null };
+        if (signal) {
+          item.onAbort = () => {
+            const index = queue.indexOf(item);
+            if (index !== -1) queue.splice(index, 1);
+            reject(signal.reason || Object.assign(new Error("aborted"), { statusCode: 504 }));
+          };
+          signal.addEventListener("abort", item.onAbort, { once: true });
+        }
+        queue.push(item);
+        drain();
+      });
     }
   };
 }
 
-function withTimeout(promise, ms, label) {
+function withAbortDeadline(promise, controller, ms, label) {
   let timer;
-  const timeout = new Promise((_, reject) => {
-    timer = setTimeout(() => reject(Object.assign(new Error(`${label} timed out after ${ms}ms`), { statusCode: 504 })), ms);
+  const aborted = new Promise((_, reject) => {
+    const rejectForAbort = () => reject(controller.signal.reason || Object.assign(new Error(`${label} aborted`), { statusCode: 504 }));
+    if (controller.signal.aborted) return rejectForAbort();
+    controller.signal.addEventListener("abort", rejectForAbort, { once: true });
+    timer = setTimeout(() => {
+      controller.abort(Object.assign(new Error(`${label} timed out after ${ms}ms`), { statusCode: 504 }));
+    }, ms);
   });
-  return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
+  return Promise.race([promise, aborted]).finally(() => clearTimeout(timer));
+}
+
+function tokensEqual(provided, expected) {
+  const providedBuffer = Buffer.from(provided);
+  const expectedBuffer = Buffer.from(expected);
+  return providedBuffer.length === expectedBuffer.length && crypto.timingSafeEqual(providedBuffer, expectedBuffer);
 }
 
 function isAuthorized(req, authToken) {
   if (!authToken) return true;
   const header = req.headers["authorization"] || "";
-  const match = /^Bearer (.+)$/.exec(header);
-  if (!match) return false;
-  const provided = Buffer.from(match[1]);
-  const expected = Buffer.from(authToken);
-  if (provided.length !== expected.length) return false;
-  return crypto.timingSafeEqual(provided, expected);
+  const bearer = /^Bearer (.+)$/.exec(header);
+  if (bearer) return tokensEqual(bearer[1], authToken);
+  const basic = /^Basic (.+)$/.exec(header);
+  if (!basic) return false;
+  let decoded;
+  try {
+    decoded = Buffer.from(basic[1], "base64").toString("utf8");
+  } catch {
+    return false;
+  }
+  const separator = decoded.indexOf(":");
+  return separator !== -1 && decoded.slice(0, separator) === "guideline" && tokensEqual(decoded.slice(separator + 1), authToken);
+}
+
+function isSameOrigin(req) {
+  const origin = req.headers.origin;
+  if (!origin) return true;
+  try {
+    return new URL(origin).host === req.headers.host;
+  } catch {
+    return false;
+  }
+}
+
+function requestHostname(req) {
+  try {
+    return new URL(`http://${req.headers.host || ""}`).hostname.toLowerCase();
+  } catch {
+    return "";
+  }
+}
+
+function isJsonRequest(req) {
+  return /^application\/json(?:\s*;|$)/i.test(req.headers["content-type"] || "");
 }
 
 function serveStatic(req, res, urlPath) {
@@ -168,9 +228,10 @@ function registerUnhandledRejectionLogger() {
 
 /**
  * startServer({ port, host, authToken, optionBTimeoutMs, deps }) -> http.Server
- * `deps` (optional): { client, store } to inject instead of the real
+ * `deps` (optional): { generatorClient, verifierClient, store,
+ * optionBMode } to inject instead of the real
  * setUpOptionB() — used by tests to avoid a live LLM call, and by callers
- * that already have {records, index, client, store} from elsewhere.
+ * provider setup. A legacy `client` aliases both clients in tests only.
  */
 function startServer({
   port = Number(process.env.GUIDELINE_PORT) || 8787,
@@ -181,8 +242,12 @@ function startServer({
   // Overridable so tests never write into the real logs/ files — logs/
   // m2_queries.jsonl in particular is a real historical record analyzed
   // in docs/test_record.md, not scratch space.
-  queryLogPath,
-  feedbackLogPath
+  queryLogPath = process.env.GUIDELINE_QUERY_LOG_PATH || undefined,
+  feedbackLogPath = process.env.GUIDELINE_FEEDBACK_LOG_PATH || undefined,
+  loggingEnabled = process.env.GUIDELINE_LOG_ENABLED !== "false",
+  allowedHosts = process.env.GUIDELINE_ALLOWED_HOSTS
+    ? process.env.GUIDELINE_ALLOWED_HOSTS.split(",").map((value) => value.trim().toLowerCase()).filter(Boolean)
+    : host === "127.0.0.1" || host === "localhost" ? ["127.0.0.1", "localhost", "[::1]"] : []
 } = {}) {
   // The actual security control for M5: refuse to become a public surface
   // by accident. One `if`, and it's the permanent guardrail — the day
@@ -199,8 +264,17 @@ function startServer({
 
   const { records, index } = loadStore();
   const optionB = deps || setUpOptionB(records);
-  const { client, store, provider } = optionB;
-  const optionBSemaphore = createSemaphore(OPTION_B_CONCURRENCY);
+  const {
+    client,
+    generatorClient = client,
+    verifierClient = client,
+    store,
+    provider,
+    verifierProvider = null,
+    optionBMode = client && store ? "generative" : null
+  } = optionB;
+  const optionBAvailable = Boolean(store && (optionBMode === "extractive" || generatorClient && verifierClient));
+  const optionBScheduler = createOptionBScheduler(OPTION_B_CONCURRENCY);
   const startedAt = Date.now();
 
   const server = http.createServer((req, res) => {
@@ -209,6 +283,7 @@ function startServer({
       // refusal envelope — that would fabricate a negative regulatory
       // fact. Distinct status, distinct body shape, always.
       const status = err.statusCode || 500;
+      if (res.destroyed || res.writableEnded) return;
       sendError(res, status, status === 429 ? "busy" : status === 504 ? "upstream_timeout" : status === 400 ? "invalid_request" : "internal");
     });
   });
@@ -217,8 +292,12 @@ function startServer({
     const urlObj = new URL(req.url, `http://${req.headers.host || "localhost"}`);
     const pathName = urlObj.pathname;
 
-    if (pathName.startsWith("/api/")) {
-      if (!isAuthorized(req, authToken)) return sendError(res, 401, "unauthorized");
+    if (allowedHosts.length && !allowedHosts.includes(requestHostname(req))) {
+      return sendError(res, 403, "invalid_host");
+    }
+
+    if (authToken && !isAuthorized(req, authToken)) {
+      return sendJson(res, 401, { error: "unauthorized" }, { "WWW-Authenticate": 'Basic realm="Guideline Archive", charset="UTF-8"' });
     }
 
     if (pathName === "/api/health") {
@@ -228,7 +307,12 @@ function startServer({
         documents: index.documents.size,
         records: records.length,
         provider: provider || null,
-        option_b_available: Boolean(client && store),
+        generator_provider: provider || null,
+        verifier_provider: verifierProvider || null,
+        verification_independent: Boolean(provider && verifierProvider && provider !== verifierProvider),
+        option_b_available: optionBAvailable,
+        option_b_mode: optionBMode,
+        logging_enabled: loggingEnabled,
         auth: authToken ? "enabled" : "disabled"
       });
     }
@@ -249,52 +333,71 @@ function startServer({
     }
 
     if (pathName === "/api/ask" && req.method === "POST") {
+      if (!isJsonRequest(req)) return sendError(res, 415, "unsupported_media_type");
+      if (!isSameOrigin(req)) return sendError(res, 403, "cross_origin_forbidden");
       let body;
       try {
         body = await readJsonBody(req);
       } catch (e) {
         return sendError(res, e.statusCode || 400, "invalid_request");
       }
-      if (typeof body.question !== "string" || !body.question.trim()) {
+      if (!body || typeof body !== "object" || Array.isArray(body) || typeof body.question !== "string" || !body.question.trim()) {
         return sendError(res, 400, "invalid_request");
       }
       const allowOptionB = body.allow_option_b !== false;
       const responseLanguage = body.response_language === "en" ? "en" : "ko";
-      const effectiveDeps = allowOptionB ? { client, store, index, responseLanguage } : { index, responseLanguage };
+      const effectiveDeps = allowOptionB
+        ? { client, generatorClient, verifierClient, store, index, responseLanguage, optionBMode }
+        : { index, responseLanguage };
 
       let envelope;
-      if (allowOptionB && client && store) {
-        envelope = await optionBSemaphore(() =>
-          withTimeout(answerEnvelope(body.question, records, effectiveDeps), optionBTimeoutMs, "Option B")
+      if (allowOptionB && optionBAvailable) {
+        const controller = new AbortController();
+        const abortForDisconnect = () => {
+          if (!res.writableEnded && !controller.signal.aborted) {
+            controller.abort(Object.assign(new Error("client disconnected"), { statusCode: 504 }));
+          }
+        };
+        req.once("aborted", abortForDisconnect);
+        res.once("close", abortForDisconnect);
+        const scheduled = optionBScheduler.run(
+          () => answerEnvelope(body.question, records, { ...effectiveDeps, signal: controller.signal }),
+          { signal: controller.signal }
         );
+        envelope = await withAbortDeadline(scheduled, controller, optionBTimeoutMs, "Option B");
       } else {
         envelope = await answerEnvelope(body.question, records, effectiveDeps);
       }
 
       const interactionId = `int_${Date.now()}_${crypto.randomBytes(4).toString("hex")}`;
-      logInteraction(body.question, {
-        path: envelope.path,
-        answered: envelope.answered,
-        review_status: envelope.review_status,
-        text: envelope.prose,
-        interaction_id: interactionId,
-        mode: envelope.mode,
-        timing_ms: envelope.timing_ms,
-        claims: envelope.claims,
-        source: "web"
-      }, queryLogPath);
+      if (loggingEnabled) {
+        logInteraction(body.question, {
+          path: envelope.path,
+          answered: envelope.answered,
+          review_status: envelope.review_status,
+          text: envelope.prose,
+          interaction_id: interactionId,
+          mode: envelope.mode,
+          timing_ms: envelope.timing_ms,
+          claims: envelope.claims,
+          source: "web"
+        }, queryLogPath);
+      }
 
       return sendJson(res, 200, { ...envelope, interaction_id: interactionId });
     }
 
     if (pathName === "/api/feedback" && req.method === "POST") {
+      if (!loggingEnabled) return sendError(res, 503, "logging_disabled");
+      if (!isJsonRequest(req)) return sendError(res, 415, "unsupported_media_type");
+      if (!isSameOrigin(req)) return sendError(res, 403, "cross_origin_forbidden");
       let body;
       try {
         body = await readJsonBody(req);
       } catch (e) {
         return sendError(res, e.statusCode || 400, "invalid_request");
       }
-      if (!VALID_VERDICTS.includes(body.verdict) || typeof body.question !== "string" || !body.question) {
+      if (!body || typeof body !== "object" || Array.isArray(body) || !VALID_VERDICTS.includes(body.verdict) || typeof body.question !== "string" || !body.question) {
         return sendError(res, 400, "invalid_request");
       }
       const record = recordFeedback(body, feedbackLogPath);
@@ -326,7 +429,7 @@ function main() {
   const server = startServer({ port, host, authToken });
   server.on("listening", () => {
     console.log(`Regulatory Guideline Archive server listening on http://${host}:${port}`);
-    console.log(authToken ? "Auth: enabled (bearer token required on /api/*)" : "Auth: disabled (no GUIDELINE_AUTH_TOKEN set)");
+    console.log(authToken ? "Auth: enabled (Bearer or Basic guideline:<token> required for all routes)" : "Auth: disabled (no GUIDELINE_AUTH_TOKEN set)");
   });
 }
 

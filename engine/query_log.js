@@ -20,7 +20,8 @@ const path = require("path");
  */
 const DEFAULT_LOG_PATH = path.resolve(__dirname, "..", "logs", "m2_queries.jsonl");
 
-function logInteraction(question, result, logPath = DEFAULT_LOG_PATH) {
+function logInteraction(question, result, logPath = process.env.GUIDELINE_QUERY_LOG_PATH || DEFAULT_LOG_PATH) {
+  if (process.env.GUIDELINE_LOG_ENABLED === "false") return null;
   const entry = {
     timestamp: new Date().toISOString(),
     question,
@@ -36,9 +37,10 @@ function logInteraction(question, result, logPath = DEFAULT_LOG_PATH) {
   };
   fs.mkdirSync(path.dirname(logPath), { recursive: true });
   fs.appendFileSync(logPath, JSON.stringify(entry) + "\n", "utf8");
+  return entry;
 }
 
-function readInteractions(logPath = DEFAULT_LOG_PATH) {
+function readInteractions(logPath = process.env.GUIDELINE_QUERY_LOG_PATH || DEFAULT_LOG_PATH) {
   if (!fs.existsSync(logPath)) return [];
   return fs.readFileSync(logPath, "utf8")
     .trim()

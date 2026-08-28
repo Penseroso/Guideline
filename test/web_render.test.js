@@ -13,6 +13,8 @@ const i18n = {
   pathASub: "archive quoted directly",
   pathBLabel: "Path B",
   pathBSub: "generated, entailment-verified",
+  pathExtractiveLabel: "Source excerpts",
+  pathExtractiveSub: "verbatim, no generation",
   refusalTitle: "근거를 찾지 못했습니다",
   refusalBody: "이것은 archive-coverage 문제입니다",
   refusalNoMatch: "no match",
@@ -151,6 +153,14 @@ test("path A and path B verdict bars are structurally distinct classes, not just
   assert.match(R.renderVerdictBar(envA, i18n), /class="verdict verdict-a"/);
   assert.match(R.renderVerdictBar(envB, i18n), /class="verdict verdict-b"/);
   assert.doesNotMatch(R.renderVerdictBar(envA, i18n), /class="verdict verdict-b"/);
+});
+
+test("extractive Path B is labeled as verbatim source text, never generated prose", () => {
+  const envelope = { answered: true, mode: "extractive", path: "B", claims: [] };
+  const html = R.renderVerdictBar(envelope, i18n);
+  assert.match(html, /Source excerpts/);
+  assert.match(html, /verbatim, no generation/);
+  assert.doesNotMatch(html, /generated, entailment-verified/);
 });
 
 test("Path A answer text follows the active locale without issuing a new query", () => {

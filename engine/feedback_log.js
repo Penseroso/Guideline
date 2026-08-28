@@ -42,7 +42,7 @@ const VALID_VERDICTS = [
 ];
 const VALID_VERDICT_SET = new Set(VALID_VERDICTS);
 
-function recordFeedback(entry, logPath = DEFAULT_FEEDBACK_PATH) {
+function recordFeedback(entry, logPath = process.env.GUIDELINE_FEEDBACK_LOG_PATH || DEFAULT_FEEDBACK_PATH) {
   if (!entry || typeof entry.question !== "string" || !entry.question) {
     throw new Error("feedback_log: entry.question is required");
   }
@@ -68,7 +68,7 @@ function recordFeedback(entry, logPath = DEFAULT_FEEDBACK_PATH) {
   return record;
 }
 
-function readFeedback(logPath = DEFAULT_FEEDBACK_PATH) {
+function readFeedback(logPath = process.env.GUIDELINE_FEEDBACK_LOG_PATH || DEFAULT_FEEDBACK_PATH) {
   if (!fs.existsSync(logPath)) return [];
   return fs.readFileSync(logPath, "utf8")
     .trim()
