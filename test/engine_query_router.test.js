@@ -103,6 +103,74 @@ test("answerOptionB returns the generated answer with sources once verification 
   assert.match(result.text, /Sources: M10 §3\.2\.5\.2/);
 });
 
+// --- Option B Scope Guard parity + per-unit grounding
+// (docs/test_record.md Entry 007: Option B previously only checked
+// explicit_exclusions and cited every retrieved candidate unconditionally,
+// so a scope-excluded query silently substituted the wrong document, and a
+// generated answer's Sources line never reflected which candidate actually
+// backed which sentence.) ---
+
+test("answerOptionB refuses a scope-excluded query instead of substituting a wrongly-scoped candidate, and never calls the model", async () => {
+  const excluded = records.find((r) => r.id === "ich_s6_r1.kr.part1.3_3.001");
+  assert.ok(excluded, "fixture record must exist in the real archive");
+  assert.ok(excluded.explicit_exclusions.includes("small_molecule"));
+  const client = { complete: async () => { throw new Error("must not be called once every candidate is scope-rejected"); } };
+  const result = await answerOptionB("저분자 화합물의 독성 시험에서 종 선택 기준은?", records, { client, store: fakeStore([excluded]) });
+  assert.equal(result.answered, false);
+  assert.equal(result.refusal_reason, "scope_excluded");
+});
+
+test("answer() surfaces refusal_reason: scope_excluded on the no-client-configured path too", async () => {
+  const result = await answer("저분자 화합물의 독성 시험에서 종 선택 기준은?", records);
+  assert.equal(result.answered, false);
+  assert.equal(result.refusal_reason, "scope_excluded");
+});
+
+test("answerOptionB drops an ungrounded line and attaches each surviving line's own candidate citation, not every candidate", async () => {
+  const candidateA = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
+  const candidateB = records.find((r) => r.type === "condition" && r.id !== candidateA.id);
+  assert.ok(candidateA && candidateB && candidateA.id !== candidateB.id);
+
+  const client = {
+    complete: async ({ schema, messages }) => {
+      if (!schema) {
+        return { text: "Line one is true.\nLine two is true.\nLine three is fabricated and unsupported." };
+      }
+      // Verification call: entail "Line one" only against candidateA's
+      // source_text, "Line two" only against candidateB's, and never
+      // entail the fabricated third line against anything.
+      const claim = messages[0].content;
+      if (claim.includes("Line one") && claim.includes(candidateA.source_text)) return { entailed: true, reason: "matches A" };
+      if (claim.includes("Line two") && claim.includes(candidateB.source_text)) return { entailed: true, reason: "matches B" };
+      return { entailed: false, reason: "not supported by this excerpt" };
+    }
+  };
+
+  const result = await answerOptionB("irrelevant", records, { client, store: fakeStore([candidateA, candidateB]) });
+  assert.equal(result.answered, true);
+  assert.match(result.text, /Line one is true\./);
+  assert.match(result.text, /Line two is true\./);
+  assert.doesNotMatch(result.text, /fabricated/);
+  assert.equal(result.claims.length, 2);
+  const citedUnits = result.claims.map((c) => c.source_unit_id);
+  assert.ok(citedUnits.includes(candidateA.citations[0].source_unit_id));
+  assert.ok(citedUnits.includes(candidateB.citations[0].source_unit_id));
+});
+
+test("answerOptionB refuses when no line of the generated answer can be independently grounded", async () => {
+  const candidate = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
+  const client = {
+    complete: async ({ schema }) => {
+      if (schema) return { entailed: false, reason: "not supported" };
+      return { text: "This entire answer is fabricated." };
+    }
+  };
+  const result = await answerOptionB("irrelevant", records, { client, store: fakeStore([candidate]) });
+  assert.equal(result.answered, false);
+  assert.equal(result.refusal_reason, "verification_failed");
+  assert.match(result.text, /failed citation verification/);
+});
+
 // --- Korean tokenization & Structured Routing Fixes ---
 
 test("tokenize maps Korean regulatory synonyms and strips Korean particles", () => {

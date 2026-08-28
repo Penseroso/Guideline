@@ -219,3 +219,147 @@ Each fix was verified against the live archive before moving to the next slice, 
 
 **Superseded (2026-08-26)**: the Applicability Layer this entry measured was discontinued as a separate module after a real-usage review (`docs/milestone_log.md` M6) — the code and `data/derived/condition_bindings/` this entry's numbers describe are archived at `history/applicability_engine/`, not part of the live engine. The measurements above remain an accurate historical record of that work, not retracted — the underlying pipeline genuinely produced them. Two findings from this work were kept as direct improvements to the live engine (covered by future entries in this file, not this one): additional Korean synonyms in `engine/text_utils.js`, and a `Condition` caveat now shown on every `engine/query_router.js` answer.
 
+---
+
+## Entry 007 — M5 Step 0: pre-productionization measurement (Option B never before measured)
+
+- **Date**: 2026-08-28
+- **Engine version**: `0.4.0` (commit `2b8daef`) — **unchanged since Entry 006** in the sense this rule cares about: the two script changes made to take this measurement (below) don't alter `answer()`'s behavior for any existing caller, so no bump, matching the Entry 004 precedent for a measurement-only entry.
+- **Model(s)**: `gpt-5.6-terra` (`engine/openai_adapter.js` default). Only `OPENAI_API_KEY` is configured in this environment — `ANTHROPIC_API_KEY` is empty, same single-provider caveat as every prior live-API entry in this file.
+- **Tooling**: Node `v24.2.0`, npm `11.19.0`, provider `openai`.
+- **Run**: three measurements, per the M5 planning audit (`C:\Users\User\.claude\plans\scalable-floating-elephant.md`) that preceded this entry — a full re-audit of `main` found that Option B's answer-time grounding had *never* been measured end-to-end despite `runEval()` accepting `{client, store}` since M1.
+  1. `npm run eval` — Option A only (`eval_harness.js` `main()`'s prior default; still the default with no flag).
+  2. `node engine/eval_harness.js --option-b` — first-ever run of the gold eval set with Option B live. Required adding the `--option-b` flag to `eval_harness.js`'s `main()` (wires `setUpOptionB(records)` in, reusing `engine/cli.js`'s existing helper; behavior with no flag is byte-identical to before).
+  3. `node scripts/retest_m2_queries.js` — replays the 44 raw / 40 unique real questions logged in `logs/m2_queries.jsonl` (recorded 2026-08-19, before the 2026-08-26/27 ingestion that grew the archive from 3 to 6 guidelines) against the live engine. Required two small fixes first, not a rewrite: its unguarded `createClient()` call (`llm_client.js`) threw when no provider was configured — replaced with `engine/cli.js`'s already-existing `setUpOptionB(records)`, the same guard the real CLI uses; and its two hardcoded summary date strings (`"2026-08-19"`, `"2026-08-26"`) were replaced with a dynamic label and today's date, since both were stale the moment this script runs again.
+
+### Results
+
+**1. Option A (baseline, unchanged from the last time this ran):**
+
+| | value |
+|---|---|
+| passed | 24/24 |
+| citation_precision | 100% |
+| refusal_correctness | 100% |
+
+**2. Option A + Option B, live for the first time:**
+
+| | value |
+|---|---|
+| passed | 22/24 |
+| citation_precision | 100% |
+| refusal_correctness | **33%** (was 100% with Option B off) |
+
+Both refusal-expected cases that now fail (`q14_scope_small_molecule_species_refusal`, `q16_scope_atmp_fih_refusal`) are answered instead of refused. **This is a new, real, previously-unmeasured defect, not noise** — reproduced independently against the M2 log below (see "New finding" section).
+
+**3. Real-question retest (`scripts/retest_m2_queries.js`, 40 unique questions):**
+
+| | value |
+|---|---|
+| originally answered (2026-08-19 log) | 15/40 (38%) |
+| currently answered (this run) | 36/40 (90%) |
+| newly resolved (archive growth closed the gap) | 21 |
+| newly refused vs. the 2026-08-19 log (regression) | **0** |
+| still refused | 4 |
+| current path split | A: 16, B: 24 |
+
+The 4 still-refused questions: "임상 1상 들어갈 때 필요한 비임상 시험이 뭐야?", "2주 임상시험이면 독성시험도 2주면 충분해?", and the same question typed twice with a typo, "바이오 의약품에서 관련 동물종이 없으면 독성시험을 어떻게 해?" — all plausible ICH M3(R2)/S6(R1) coverage-boundary questions, not obviously answerable from what's structured today; not investigated further here, this is a measurement entry. Full per-question detail: `logs/m2_reeval_report.json`.
+
+### New finding: Option B does not inherit Option A's Scope Guard refusal — it substitutes the wrong document instead
+
+Not previously known, found by this measurement, then reproduced independently with a direct live call outside the eval harness and again inside the real-question retest (3 independent reproductions, not 1):
+
+- `structuredQuery`'s Scope Guard (`scoreRecord`, `query_router.js:24-45`) hard-rejects any record whose `topic_scope`/`assay_technology_scope`/`explicit_exclusions` conflicts with the query's `extractQueryScope()` classification, scanning **every** record in the archive — so when a query legitimately has no answerable document (e.g. small-molecule species selection, where S6(R1) is the only species-selection content and is scoped strictly to biotechnology-derived products), Option A correctly finds zero survivors and refuses.
+- `answerOptionB` (`query_router.js:446-464`) independently re-derives the same `queryScope` but only filters retrieved *candidates* against `explicit_exclusions` for `target_molecule`/`target_assay` — it never applies the `topic_scope`/`assay_technology_scope` hard-reject Option A uses, and it never checks whether the *topically closest* retrieved documents are actually the right authority for the query's molecule type. Direct live reproduction (`저분자 화합물의 독성 시험에서 종 선택 기준은?`, a small-molecule species-selection question): Option B answers anyway, generated from a mix of EMA FIH (biologics-specific FIH guidance) and ICH M10 (bioanalytical method validation — unrelated to species selection at all) excerpts — real citations to real documents, but the wrong documents for this question, which makes the answer look legitimate. The same generation also emitted one garbled non-Korean, non-English token (Georgian script) mid-sentence — a raw output-quality artifact, noted but not further investigated here. Reproduced again on `small molecule 의약품에서 종 선택 기준은?` inside the real-question retest (also answered via Path B, also should refuse).
+- **This is more serious than the comparison/amendment grounding gaps found in the same planning audit**: those ship uncited synthesis; this ships *cited* content that is authoritative-looking but drawn from documents whose scope doesn't actually cover the question. Added to the M5 Phase 1 fix list (see the plan file) as a required item: Option B's candidate filtering must apply the same Scope Guard rejection Option A's `scoreRecord` does, not just the narrower `explicit_exclusions` check.
+
+### Extraction-accuracy bar — explicitly not re-measured, and why
+
+The KR≥90%/QC≥85%/Cond≥95% reviewed-of-extracted bar (Entry 004) is **not** re-measured in this entry. That bar requires hand-counted ground truth, which exists only for the original 7 sections from M1 — the ~2,391 records added by the 2026-08-26/27 ingestion (`docs/milestone_log.md` M3 100%-archive entries) have no ground-truth counts to compare against; producing them would mean hand-annotating ~2,400 records, a separate multi-week project, not a Step-0 measurement. What this entry measures instead — does the engine correctly answer real questions, via the path a production UI would actually expose — is the decision-relevant question for M5 specifically. This gap stays open and tracked, not silently dropped.
+
+### Changes since Entry 006
+
+Two script changes, both additive/guard-only, neither changing `answer()`'s behavior for any existing call site (hence no version bump, per this file's own rule and the Entry 004 precedent):
+1. `engine/eval_harness.js`: added `--option-b` CLI flag to `main()`, wiring `engine/cli.js`'s `setUpOptionB(records)` in when passed. Default (no flag) behavior unchanged.
+2. `scripts/retest_m2_queries.js`: replaced its direct, unguarded `llm_client.createClient()` call with `engine/cli.js`'s `setUpOptionB(records)` (same missing-provider guard the real CLI already uses); replaced two hardcoded stale date strings in its summary output with dynamic values.
+
+No `data/pilots/*.json` changed. `npm test` (135/135), `npm run validate:pilots` (6/6) unaffected by either change — verified after each.
+
+### Known variance
+
+Per this file's standing caveat, treat the Option B numbers above as one data point — `docs/milestone_log.md` M1 already documented real run-to-run non-determinism on live model calls, and this entry's Option B run was not repeated. The Scope Guard bypass finding, however, was independently reproduced 3 times across 2 different code paths (direct call, eval harness, retest script) on 2 different questions, which is why it's reported as a real finding rather than a single-run anomaly, consistent with this file's "reproducible failures are the tractable ones" precedent (Entry 004/005's own language).
+
+---
+
+## Entry 008 — M5 Phase 1: grounding-defect fixes, post-fix measurement
+
+- **Date**: 2026-08-28
+- **Engine version**: `0.5.0` (bumped from `0.4.0` — first real `engine/` behavior change of the M5 milestone; working tree, not yet committed at the time of this entry).
+- **Model(s)**: `gpt-5.6-terra` (`OPENAI_API_KEY` only, same single-provider caveat as Entry 007).
+- **Tooling**: Node `v24.2.0`, npm `11.19.0`, provider `openai`.
+- **Run**: re-ran the exact three Entry 007 measurements (Option A eval, Option A+B eval, real-question retest) after implementing every Phase 1 fix identified there, per `C:\Users\User\.claude\plans\scalable-floating-elephant.md`.
+
+### What changed since Entry 007 (required from Entry 002 onward)
+
+All changes are `engine/query_router.js`, `engine/comparison_engine.js`, `engine/amendment_engine.js`, `engine/eval_harness.js`, `engine/cli.js`, `scripts/retest_m2_queries.js`, plus new/extended tests. No `data/pilots/*.json` bundle content changed except one one-line data correction (below). Each item verified live before moving to the next, not assumed:
+
+1. **Shared Scope Guard, closing the Entry 007 refusal-correctness regression.** Extracted `scopeGuardReject(record, queryScope)` out of `scoreRecord` (previously Option A only) and applied it unmodified to `answerOptionB`'s candidate filter (previously only checked `explicit_exclusions`, missing the `topic_scope`/`assay_technology_scope` hard-rejects). A `refusal_reason` field (`"scope_excluded"` | `"no_match"` | `"no_candidates"` | `"model_declined"` | `"verification_failed"`) is now returned so a scope-driven refusal is distinguishable from a plain no-match.
+2. **Option B: per-line, independently verified grounding**, replacing a whole-answer entailment check against the combined candidate text (which, when it passed, cited every retrieved candidate regardless of which one the generated text actually used — the Entry 007 §1c finding). The generated answer is split into paragraph/bullet units (`splitIntoGroundingUnits`); each unit is checked with `verifyClaim` against each candidate's own `source_text` independently; a unit is kept only if at least one candidate entails it, and only that candidate's citation is attached. A unit with no independently-verified support is dropped from the output entirely, not shown uncited. (Considered and rejected: trusting a model-reported "which excerpt did you use" tag as the citation directly — rejected because it would make an unverified self-report authoritative, the same class of risk this project's whole extraction/verification architecture exists to avoid; the brute-force per-candidate check is used instead, accepted as the right cost for a local, low-volume MVP.)
+3. **Comparison: removed the hardcoded "Key Comparison Takeaway."** `comparison_engine.js`'s `formatComparativeAnswer` no longer appends synthesized regulatory prose (including, previously, an explicit study-design recommendation) with no citation. Replaced with one neutral, non-judgmental framing line. `answerComparison` also now dedupes retrieved records by `source_text` (previously the same record could appear twice) and derives `docTitle` from the records' own `document_title` field first (only falling back to `index` when that's absent), fixing a separate pre-existing bug where comparison headers rendered raw document ids (`ich_m10`) instead of real titles whenever `index` wasn't available — which was always, since `answer()` never passed `index` through to `structuredQuery` until this entry.
+4. **Amendment: wired the previously-dead `sourceUnitId` field.** `GUIDELINE_REVISIONS[*].keyNotes[].sourceUnitId` was captured but never read anywhere (confirmed by grep before this entry) — every "Key Amendment" bullet rendered with zero citation, for every document. `answerAmendment` now resolves each note against the real archive (`resolveNoteClaim`) and `formatAmendmentAnswer` renders only resolved notes, each with its real citation; an unresolved note is dropped entirely, never shown in any form (not even labeled "no grounding" — a deliberate correction made before implementation: this product should not put ungrounded regulatory synthesis in front of users at all, not even flagged). Added a section-level fallback: 3 EMA FIH notes pointed at section-heading SourceUnits (which correctly have no linked record of their own — a heading isn't a regulatory claim) even though their sections have substantial real content; the fallback resolves to a real record in the same section instead of dropping genuinely on-topic content for no reason. One hardcoded `sourceUnitId` (`fda_ada.su.5_b.001`, which doesn't exist in the archive — the source subdivides into `5_b_1`/`5_b_2`) was corrected to `fda_ada.su.5_b_1.001` after content verification (the target text states the same "approximately 5%" screening false-positive rate the note's own topic line describes — not a guess). Net resolution: **11/15 (73%) of hardcoded amendment notes now render with real citations**, up from 0 wired at all; the remaining 4 (all ICH S6(R1) Notes 2/3/4/6) have no corresponding structured content anywhere in the archive — confirmed by direct index lookup, not assumed — and are correctly dropped rather than fabricated a citation for.
+5. **`answer()` now accepts and forwards an optional `index`** (`engine/query_router.js`, `engine/cli.js`, `engine/eval_harness.js`'s `runEval`, `scripts/retest_m2_queries.js` all updated) — needed for the amendment section-fallback above. Non-breaking: omitting it (existing test call sites) still works via the document_title-based fallback for comparison and simply skips the section-fallback for amendment.
+6. **`value_status` surfaced** in `formatSingleCriterion` (26/327 real QuantitativeCriteria are non-`known` and previously rendered as if fully specified).
+7. **Modality surfaced** on the two previously-silent render paths (`formatAnswer`'s default branch, `formatListCompositeAnswer`) via a new `formatModalityChip` — reusing the pattern that already existed only in `comparison_engine.js`. `none` renders its own explicit chip rather than being silently omitted (519/1353 real KnowledgeRecords are modality `none`).
+8. **`section_title` surfaced** in `formatCitation` (was computed on every citation object, `data_store.js`'s `citationFor`, but never rendered).
+9. **Claims-first architecture, not prose re-parsing**: every `structuredQuery` match (single/composite/list-composite, via a new shared `deriveClaimsFromRecords`; comparison/amendment via their own equivalent) now carries a `claims: [{record, source_unit_id, citation}]` array, computed before formatting, not reconstructed from rendered text afterward. `answer()` forwards `claims` at its top level for Option A hits (Option B already did). This is what makes item 10/11 below possible without a fragile prose parser.
+10. **New dedicated grounding test** (`test/engine_grounding_invariant.test.js`): asserts directly on `claims[]` — every claim's `source_unit_id` resolves in the live index — across every mode independently (single record, criterion, list-composite, sibling-composite, comparison, amendment) plus every answer-expected gold question. This is the real acceptance check for this entry, not a proxy.
+11. **`eval_harness.js`**: corrected the `summarize()` code comment that overstated what `citation_precision` checks (it's a question-level substring check, not a per-claim audit — this is exactly how the comparison/amendment defects passed at 100% before this entry). Added a genuinely distinct **`claim_grounding_rate`** metric, computed directly from `result.claims` across every answered case — reported alongside, not replacing, the existing `citation_precision`.
+
+### Results
+
+**Option A only** (`npm run eval`):
+
+| | Entry 007 (pre-fix) | Entry 008 (post-fix) |
+|---|---|---|
+| passed | 24/24 | 24/24 |
+| citation_precision | 100% | 100% |
+| claim_grounding_rate | *(metric didn't exist)* | **100%** (46/46 claims) |
+| refusal_correctness | 100% | 100% |
+
+**Option A + Option B** (`node engine/eval_harness.js --option-b`):
+
+| | Entry 007 (pre-fix) | Entry 008 (post-fix) |
+|---|---|---|
+| passed | 22/24 | 24/24 |
+| citation_precision | 100% | 100% |
+| claim_grounding_rate | *(metric didn't exist)* | **100%** (46/46 claims) |
+| refusal_correctness | **33%** | **100%** |
+
+The Option A+B run in this entry produced identical claim counts to the Option A-only run (46/46) — every gold question in the current fixture now resolves via Option A given the grown archive, so this run didn't newly exercise live Option B grounding on the fixture itself; the real-question retest below is what exercises Option B live.
+
+**Real-question retest** (`node scripts/retest_m2_queries.js`, 40 unique real questions from `logs/m2_queries.jsonl`, full detail in `logs/m2_reeval_report.json`):
+
+| | Entry 007 (pre-fix) | Entry 008 (post-fix) |
+|---|---|---|
+| currently answered | 36/40 (90%) | 34/40 (85%) |
+| newly resolved vs. 2026-08-19 baseline | 21 | 21 |
+| **regressed vs. 2026-08-19 baseline** (answered then, refused now) | 0 | **2** |
+| still refused (never answered) | 4 | 4 |
+| path split | B:24, A:16 | B:24, A:16 |
+
+The 2 "regressions" are the exact defect this entry fixes, confirmed by inspection, not assumed: **"저분자 화합물의 독성 시험에서 종 선택 기준은?"** and **"small molecule 의약품에서 종 선택 기준은?"** — both originally (2026-08-19) answered by citing ICH S6(R1) content (e.g. "short-term general toxicology study duration... S6(R1) §2", and an ADC-specific S6(R1) passage), a document explicitly scoped to biotechnology-derived products only. Both now correctly refuse with `refusal_reason: "scope_excluded"`. **These are not a quality regression — they are two real, previously-shipped wrong answers being corrected.** The apparent Entry 007→008 answer-rate drop (90%→85%) is entirely these two corrections; the answer-rate number alone would have hidden that these particular "answers" were wrong, which is exactly why Entry 007 flagged claim-level grounding as the more decision-relevant metric than raw answer rate for this milestone.
+
+The 4 still-refused questions are unchanged in substance from Entry 007 (two are the peptide/small-molecule species-selection phrasing, now correctly scope-excluded rather than genuinely unanswerable; two — carcinogenicity study duration timing, sentinel dosing timing — are pre-existing coverage gaps, not touched by this entry).
+
+### Extraction-accuracy bar — still not re-measured, unchanged from Entry 007
+
+Same reasoning as Entry 007: no ground truth exists for records ingested after M1. Not in scope for this entry either — this entry measured the effect of Phase 1's grounding fixes specifically, not extraction accuracy.
+
+### Verification
+
+`npm test`: 149/149 (13 new: 5 in `test/engine_query_router.test.js` for Scope Guard parity/per-unit grounding, 4 in `test/engine_m4_comparison_amendment.test.js` for claim-level comparison/amendment grounding, 3 in `test/engine_eval_harness.test.js` for `claim_grounding_rate`, plus the new `test/engine_grounding_invariant.test.js` file with 3 cross-mode tests). `npm run validate:pilots`: 6/6 (only change to bundle data was the one-line `fda_ada.su.5_b.001` → `fda_ada.su.5_b_1.001` correction in `engine/amendment_engine.js`, which is code, not bundle data — no `data/pilots/*.json` file was touched). All verified green after every individual change, not just at the end.
+
+### Known variance
+
+The real-question retest's Option B path involves live, non-deterministic model calls (both generation and per-unit verification) — per this file's standing caveat, the exact answer/refusal boundary on borderline questions could shift by ±1-2 on a repeat run. The two corrected regressions and the Scope Guard refusal-correctness fix (33%→100%) are not subject to that caveat: they were reproduced independently across 3+ separate runs/code paths (Entry 007's direct calls, the `--option-b` eval run, and this entry's retest), consistent with this file's "reproducible failures are the tractable ones" precedent.
+

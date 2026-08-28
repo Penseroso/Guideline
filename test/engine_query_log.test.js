@@ -4,7 +4,7 @@ const fs = require("node:fs");
 const os = require("node:os");
 const path = require("node:path");
 
-const { logInteraction } = require("../engine/query_log");
+const { logInteraction, readInteractions } = require("../engine/query_log");
 
 function tempLogPath() {
   return path.join(os.tmpdir(), `m2_queries_test_${Date.now()}_${Math.random().toString(36).slice(2)}.jsonl`);
@@ -51,5 +51,57 @@ test("logInteraction creates the log directory if it doesn't exist yet", () => {
     assert.ok(fs.existsSync(logPath));
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+// M5 Phase 5: additive fields (interaction_id/mode/latency_ms/
+// cited_source_unit_ids/source) — must not require a caller to supply
+// them, and must default sensibly (source: "cli") so existing cli.js call
+// sites (which never set `source`) keep logging as before.
+test("logInteraction records the new additive fields when present, and defaults source to 'cli'", () => {
+  const logPath = tempLogPath();
+  try {
+    logInteraction("q", {
+      path: "A",
+      answered: true,
+      review_status: "reviewed",
+      text: "answer",
+      interaction_id: "int_1",
+      mode: "structured",
+      timing_ms: 42,
+      claims: [{ source_unit_id: "su_1" }, { source_unit_id: null }, { source_unit_id: "su_2" }]
+    }, logPath);
+    const entry = JSON.parse(fs.readFileSync(logPath, "utf8").trim());
+    assert.equal(entry.interaction_id, "int_1");
+    assert.equal(entry.mode, "structured");
+    assert.equal(entry.latency_ms, 42);
+    assert.deepEqual(entry.cited_source_unit_ids, ["su_1", "su_2"]);
+    assert.equal(entry.source, "cli");
+  } finally {
+    fs.rmSync(logPath, { force: true });
+  }
+});
+
+test("readInteractions returns [] for a log file that doesn't exist yet, and parses real lines otherwise", () => {
+  const logPath = tempLogPath();
+  assert.deepEqual(readInteractions(logPath), []);
+  try {
+    logInteraction("q1", { path: "A", answered: true, review_status: "reviewed", text: "a1" }, logPath);
+    logInteraction("q2", { path: "B", answered: false, review_status: null, text: "Not found." }, logPath);
+    const entries = readInteractions(logPath);
+    assert.equal(entries.length, 2);
+    assert.equal(entries[0].question, "q1");
+    assert.equal(entries[1].question, "q2");
+  } finally {
+    fs.rmSync(logPath, { force: true });
+  }
+});
+
+test("readInteractions parses the real, existing logs/m2_queries.jsonl (historical entries predate the new fields)", () => {
+  const entries = readInteractions();
+  assert.ok(entries.length >= 40, "the real M2 log must still have its historical entries");
+  for (const e of entries) {
+    assert.ok(typeof e.question === "string");
+    assert.ok(typeof e.answered === "boolean");
   }
 });

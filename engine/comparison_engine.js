@@ -113,19 +113,35 @@ function answerComparison(question, records, index) {
   const docResults = [];
 
   for (const docId of targetDocIds) {
-    const docMeta = (index && index.documents && index.documents.get(docId)) || { document_id: docId, title: docId };
     const scored = records
       .filter((r) => r.document_id === docId)
       .map((r) => ({ record: r, score: scoreRecordForTopic(r, topicTokens, docId) }))
       .filter((x) => x.score > 0)
       .sort((a, b) => b.score - a.score);
 
-    const topRecords = scored.slice(0, 5).map((x) => x.record);
-    docResults.push({
-      docId,
-      docTitle: docMeta.title,
-      records: topRecords
-    });
+    // Dedupe by source_text — distinct records (e.g. a KnowledgeRecord and
+    // a Condition drawn from the same sentence) can otherwise render as
+    // visually identical repeated lines.
+    const seenText = new Set();
+    const topRecords = [];
+    for (const { record } of scored) {
+      if (topRecords.length >= 5) break;
+      if (seenText.has(record.source_text)) continue;
+      seenText.add(record.source_text);
+      topRecords.push(record);
+    }
+
+    // Document title comes from the records themselves (already carries
+    // document_title, deriveRecordScope in data_store.js), not from
+    // `index` — answer() never passes index through to structuredQuery,
+    // so relying on it here silently degraded to the raw docId
+    // ("ich_m10" instead of the real title) on every real comparison
+    // answer (verified live before this fix).
+    const docTitle = topRecords[0]?.document_title
+      || (index && index.documents && index.documents.get(docId) && index.documents.get(docId).title)
+      || docId;
+
+    docResults.push({ docId, docTitle, records: topRecords });
   }
 
   const validResults = docResults.filter((d) => d.records.length > 0);
@@ -133,11 +149,20 @@ function answerComparison(question, records, index) {
     return null;
   }
 
+  const claims = validResults.flatMap((d) =>
+    d.records.map((r) => ({
+      record: r,
+      source_unit_id: r.citations && r.citations[0] ? r.citations[0].source_unit_id : null,
+      citation: r.citations ? r.citations[0] : null
+    }))
+  );
+
   return {
     isComparison: true,
     question,
     topicTokens,
-    docResults: validResults
+    docResults: validResults,
+    claims
   };
 }
 
@@ -181,14 +206,14 @@ function formatComparativeAnswer(compMatch) {
     lines.push("");
   }
 
-  lines.push("🔍 3. 규제 요건 비교 요약 (Key Comparison Takeaway):");
-  if (docResults.some((d) => d.docId === "fda_ada") && docResults.some((d) => d.docId === "ich_m10")) {
-    lines.push("  • [FDA vs ICH]: FDA ADA는 면역원성 다단계(Screening -> Confirmatory -> Titer -> NAb) 및 통계적 Cut-point 산정에 중점을 두며, ICH M10은 생체시료 분석법 전반(LBA 및 크로마토그래피)의 정확도(Accuracy), 정밀도(Precision), 선택성 등 정량적 유효성 검증 기준을 규정합니다.");
-  } else if (docResults.some((d) => d.docId === "ema_fih") && docResults.some((d) => d.docId === "ich_s6_r1")) {
-    lines.push("  • [EMA vs ICH]: ICH S6(R1)은 바이오의약품의 약리학적 관련 동물종(Relevant Species) 선정 및 비임상 안전성 평가 원칙을 제공하며, EMA FIH는 이를 바탕으로 사람에서의 첫 투여 시작용량(NOAEL vs MABEL), 증량 비율, Sentinel dosing 및 임상 중단 기준을 규정합니다.");
-  } else {
-    lines.push("  • 각 규제 기관의 가이던스는 동일한 개발 단계에 대해 상호 보완적인 세부 요건을 규정하며, 글로벌 임상 및 품목허가 제출 시 두 기준의 엄격한 요건을 모두 충족하도록 프로토콜을 수립해야 합니다.");
-  }
+  // Deliberately no synthesized "Key Comparison Takeaway" here — the
+  // previous version appended hand-written regulatory prose (including a
+  // study-design recommendation) with no source_unit_id behind it, on
+  // every comparison answer regardless of what was actually retrieved.
+  // That violated TPP §1.1/§1.3(4)/§1.4 (docs/test_record.md Entry 007 /
+  // M5 plan §1a). This renders only what's grounded in `docResults`
+  // above; the line below is structural framing, not a regulatory claim.
+  lines.push("🔍 두 문서의 요건을 나란히 제시합니다 — 어느 쪽이 적용되는지는 이 답변이 판단하지 않습니다.");
 
   return lines.join("\n");
 }

@@ -15,6 +15,81 @@ const MIN_MATCHED_TOKENS = 2;
 const TYPE_PRIORITY = { quantitative_criterion: 0, condition: 1, knowledge_record: 2 };
 
 /**
+ * Uniform grounding-claim list, attached to every structuredQuery match
+ * (single/composite/list-composite; comparison/amendment build their own
+ * via comparison_engine.js/amendment_engine.js). This is what the
+ * claims-level grounding test (M5 plan Phase 1 item 9) actually checks —
+ * every claim traces to a resolvable source_unit_id, independent of how
+ * any formatter renders it into prose.
+ */
+function deriveClaimsFromRecords(recs) {
+  return (recs || []).filter(Boolean).map((r) => ({
+    record: r,
+    source_unit_id: r.citations && r.citations[0] ? r.citations[0].source_unit_id : null,
+    citation: r.citations ? r.citations[0] : null
+  }));
+}
+
+/**
+ * Scope Guard: true if `record` must be rejected for `queryScope`. Shared
+ * between Option A's scoreRecord (below) and Option B's candidate filter
+ * (answerOptionB) so the two paths cannot silently diverge again — found
+ * live, docs/test_record.md Entry 007: Option B previously re-derived the
+ * same queryScope but only checked explicit_exclusions, so a genuinely
+ * scope-excluded query (e.g. small-molecule species selection, where
+ * S6(R1) is the only species-selection content and is biotechnology-only)
+ * fell through to generating an answer from topically-adjacent-but-wrong
+ * documents instead of refusing the way Option A correctly does.
+ */
+function scopeGuardReject(record, queryScope) {
+  if (queryScope.target_molecule && record.explicit_exclusions && record.explicit_exclusions.includes(queryScope.target_molecule)) {
+    return true;
+  }
+  if (queryScope.target_assay && record.explicit_exclusions && record.explicit_exclusions.includes(queryScope.target_assay)) {
+    return true;
+  }
+  if (queryScope.target_assay && record.assay_technology_scope && record.assay_technology_scope !== "none" && record.assay_technology_scope !== queryScope.target_assay) {
+    return true;
+  }
+  if (queryScope.target_topic === "species_selection" && record.topic_scope !== "species_selection") {
+    return true;
+  }
+  if (queryScope.target_topic === "starting_dose") {
+    // If asking about starting dose, hard-reject study duration or repeated dose toxicity
+    if (record.topic_scope !== "starting_dose") {
+      return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * True if `queryScope` carries any classification that scopeGuardReject
+ * actually acts on. Used to explain a refusal: if every record in the
+ * archive is scope-rejected for a real classified scope, the refusal is
+ * "this topic/molecule is genuinely outside the archive's scope," not
+ * "nothing matched" — those are different facts for a reviewer.
+ */
+function hasScopeConstraint(queryScope) {
+  return Boolean(queryScope.target_molecule || queryScope.target_assay || queryScope.target_topic);
+}
+
+/**
+ * Distinguishes a scope-driven refusal ("this document/topic explicitly
+ * doesn't cover this molecule/assay") from a plain no-match refusal
+ * ("nothing in the archive talks about this at all") — both currently
+ * collapse into the same generic NOT_FOUND string with no way to tell
+ * them apart (docs/test_record.md Entry 007 / M5 plan §3).
+ */
+function explainRefusal(question, records) {
+  const qTokens = new Set(tokenize(question));
+  const queryScope = extractQueryScope(question, qTokens);
+  if (!hasScopeConstraint(queryScope)) return "no_match";
+  const anySurvivesScope = records.some((r) => !scopeGuardReject(r, queryScope));
+  return anySurvivesScope ? "no_match" : "scope_excluded";
+}
+
+/**
  * Scores a record against query tokens using field-weighted matching and Scope Guard.
  * Structural fields (parameter, section, condition) receive higher weights
  * than unconstrained source text. Exception mentions (e.g. 'except LLOQ')
@@ -22,26 +97,8 @@ const TYPE_PRIORITY = { quantitative_criterion: 0, condition: 1, knowledge_recor
  * Scope Guard rejects records that conflict with the query's molecule, assay, or topic.
  */
 function scoreRecord(record, qTokens, queryScope = {}) {
-  // 1. Scope Guard: Hard exclusion and mismatch checks
-  if (queryScope.target_molecule && record.explicit_exclusions && record.explicit_exclusions.includes(queryScope.target_molecule)) {
+  if (scopeGuardReject(record, queryScope)) {
     return { score: 0, matchedCount: 0 };
-  }
-  if (queryScope.target_assay && record.explicit_exclusions && record.explicit_exclusions.includes(queryScope.target_assay)) {
-    return { score: 0, matchedCount: 0 };
-  }
-  if (queryScope.target_assay && record.assay_technology_scope && record.assay_technology_scope !== "none" && record.assay_technology_scope !== queryScope.target_assay) {
-    return { score: 0, matchedCount: 0 };
-  }
-  if (queryScope.target_topic === "species_selection") {
-    if (record.topic_scope !== "species_selection") {
-      return { score: 0, matchedCount: 0 };
-    }
-  }
-  if (queryScope.target_topic === "starting_dose") {
-    // If asking about starting dose, hard-reject study duration or repeated dose toxicity
-    if (record.topic_scope !== "starting_dose") {
-      return { score: 0, matchedCount: 0 };
-    }
   }
 
   // 2. Base field scoring
@@ -212,7 +269,8 @@ function tryListCompositeQuery(scored, qTokens, question) {
     isComposite: true,
     isListComposite: true,
     bundleTitle: topGroup.title,
-    compositeRecords: topGroup.items.slice(0, 10)
+    compositeRecords: topGroup.items.slice(0, 10),
+    claims: deriveClaimsFromRecords(topGroup.items.slice(0, 10))
   };
 }
 
@@ -273,7 +331,8 @@ function structuredQuery(question, records, index = null) {
     return {
       record: topTied[0].record,
       score: topTied[0].score,
-      isComposite: false
+      isComposite: false,
+      claims: deriveClaimsFromRecords([topTied[0].record])
     };
   }
 
@@ -287,7 +346,8 @@ function structuredQuery(question, records, index = null) {
         record: first,
         score: maxScore,
         isComposite: true,
-        compositeRecords: topTied.map((t) => t.record)
+        compositeRecords: topTied.map((t) => t.record),
+        claims: deriveClaimsFromRecords(topTied.map((t) => t.record))
       };
     }
   }
@@ -299,7 +359,8 @@ function structuredQuery(question, records, index = null) {
     return {
       record: topTied[0].record,
       score: maxScore,
-      isComposite: false
+      isComposite: false,
+      claims: deriveClaimsFromRecords([topTied[0].record])
     };
   }
 
@@ -313,20 +374,48 @@ function formatCitation(citation) {
   const page = citation.printed_page_label
     ? `p.${citation.printed_page_label}`
     : `pdf page ${citation.pdf_page_index_zero_based}`;
-  return `${citation.guideline_code || citation.document_id} §${citation.section_number || "?"}, ${page} [${citation.source_unit_id}]`;
+  const section = citation.section_title ? `§${citation.section_number || "?"} (${citation.section_title})` : `§${citation.section_number || "?"}`;
+  return `${citation.guideline_code || citation.document_id} ${section}, ${page} [${citation.source_unit_id}]`;
 }
+
+// value_status ("known"/"unknown"/"not_applicable"/"needs_review") was
+// computed on every QuantitativeCriterion but never rendered — 26/327 real
+// records in the archive carry a non-"known" value here and rendered as
+// if fully specified (TPP §1.3(3) requires surfacing it, not hiding it —
+// docs/test_record.md Entry 007 / M5 plan §3).
+const VALUE_STATUS_LABEL = {
+  unknown: "(value not confirmed in source — unknown) ",
+  not_applicable: "(not applicable as a numeric criterion) ",
+  needs_review: "(flagged needs_review — not yet verified) "
+};
 
 function formatSingleCriterion(record) {
   const value = record.value_fraction
     ? `${record.value_fraction.numerator}/${record.value_fraction.denominator}`
     : record.value;
+  const statusQualifier = VALUE_STATUS_LABEL[record.value_status] || "";
   const qualifier = record.is_illustrative_example
     ? "(illustrative example, not a specified requirement) "
     : record.is_default_with_exception
       ? "(default value — exceptions may apply) "
       : "";
-  return `${qualifier}${record.parameter}: ${record.comparator} ${value}${record.unit ? " " + record.unit : ""}` +
+  return `${statusQualifier}${qualifier}${record.parameter}: ${record.comparator} ${value}${record.unit ? " " + record.unit : ""}` +
     (record.denominator_or_reference ? ` (${record.denominator_or_reference})` : "");
+}
+
+// Modality (must/should/may/other/none) was invisible on the two most
+// common KnowledgeRecord answer paths (plain single-record and
+// list-composite) — only the comparison-engine formatter showed it. TPP
+// §1.4 requires precisely surfacing modality, never blurring "may" into
+// "must." `none` renders its own explicit chip rather than being silently
+// omitted (519/1353 real KnowledgeRecords in the archive are modality
+// "none" — docs/test_record.md Entry 007 / M5 plan §3).
+function formatModalityChip(record) {
+  if (record.type !== "knowledge_record") return "";
+  const modal = record.modality || "none";
+  const original = record.original_modal_text;
+  const suffix = original && original.toLowerCase() !== modal.toLowerCase() ? ` — "${original}"` : "";
+  return `[${modal.toUpperCase()}${suffix}] `;
 }
 
 function formatApplicableConditions(conditions) {
@@ -365,7 +454,7 @@ function formatListCompositeAnswer(match) {
     if (r.type === "quantitative_criterion") {
       items.push(`  • ${formatSingleCriterion(r)} (출처: ${cite})`);
     } else if (r.type === "knowledge_record") {
-      items.push(`  • [${r.record_type || '요건'}] "${r.source_text}" — ${cite}`);
+      items.push(`  • ${formatModalityChip(r)}[${r.record_type || '요건'}] "${r.source_text}" — ${cite}`);
     } else if (r.type === "condition") {
       items.push(`  • [단서조항 (${r.condition_type})] "${r.source_text}" — ${cite}`);
     }
@@ -428,7 +517,7 @@ function formatAnswer(match) {
     return `Condition (${record.condition_type}): "${record.source_text}" — ${cite}${xrefBlock}`;
   }
 
-  return `"${record.source_text}" — ${cite}${formatApplicableConditions(record.applicable_conditions)}${xrefBlock}`;
+  return `${formatModalityChip(record)}"${record.source_text}" — ${cite}${formatApplicableConditions(record.applicable_conditions)}${xrefBlock}`;
 }
 
 const NOT_FOUND = "Not found in the current archive.";
@@ -443,30 +532,39 @@ const OPTION_B_TOP_K = 5;
  * before ever returning it — an answer that fails verification is
  * refused, never shown "maybe right."
  */
+/**
+ * Best-effort grounding-unit split: paragraph/bullet lines, not full NLP
+ * sentence segmentation. A deliberate MVP scope choice (M5 plan, Phase 1
+ * item 4) — the model's own output is already line/bullet-structured
+ * (verified live), and this is what makes per-unit citation attachment
+ * possible without a fragile clause-level tokenizer. Coarser than
+ * sentence-level, but strictly finer than "cite everything retrieved"
+ * (the defect being fixed), and each unit still gets independently
+ * entailment-checked below, not just an unaccountable citation dump.
+ */
+function splitIntoGroundingUnits(text) {
+  return text
+    .split(/\n+/)
+    .map((line) => line.replace(/^[\s]*[-•*]\s*/, "").trim())
+    .filter(Boolean);
+}
+
 async function answerOptionB(question, records, { client, store }) {
   const qTokens = new Set(tokenize(question));
   const queryScope = extractQueryScope(question, qTokens);
 
   let rawCandidates = await store.search(question, OPTION_B_TOP_K * 2);
 
-  // Apply Scope Guard to Option B candidates to prevent cross-domain contamination
-  let candidates = rawCandidates;
-  if (queryScope.target_molecule || queryScope.target_assay) {
-    candidates = rawCandidates.filter(({ record }) => {
-      if (queryScope.target_molecule && record.explicit_exclusions && record.explicit_exclusions.includes(queryScope.target_molecule)) {
-        return false;
-      }
-      if (queryScope.target_assay && record.explicit_exclusions && record.explicit_exclusions.includes(queryScope.target_assay)) {
-        return false;
-      }
-      return true;
-    });
-  }
-
+  // Scope Guard: same rejection Option A's scoreRecord applies (shared
+  // scopeGuardReject), not just an explicit_exclusions check — see that
+  // function's comment / docs/test_record.md Entry 007 for why this
+  // matters: without it, a genuinely scope-excluded query silently
+  // substituted the wrong document instead of refusing.
+  let candidates = rawCandidates.filter(({ record }) => !scopeGuardReject(record, queryScope));
   candidates = candidates.slice(0, OPTION_B_TOP_K);
 
   if (candidates.length === 0) {
-    return { answered: false, text: NOT_FOUND, record: null, path: "B" };
+    return { answered: false, text: NOT_FOUND, record: null, path: "B", refusal_reason: hasScopeConstraint(queryScope) ? "scope_excluded" : "no_candidates" };
   }
 
   const context = candidates
@@ -486,30 +584,73 @@ async function answerOptionB(question, records, { client, store }) {
 
   const generatedText = (generation.text || "").trim();
   if (!generatedText || generatedText === NOT_FOUND) {
-    return { answered: false, text: NOT_FOUND, record: null, path: "B" };
+    return { answered: false, text: NOT_FOUND, record: null, path: "B", refusal_reason: "model_declined" };
   }
 
-  const combinedSource = candidates.map((c) => c.record.source_text).join("\n");
-  const verification = await verifyClaim({ claim: generatedText, sourceText: combinedSource, client });
-  if (!verification.entailed) {
+  // Per-unit, independently verified grounding (M5 plan, Phase 1 item 4 —
+  // replaces a prior whole-answer check against the combined candidate
+  // text, which passed/failed the entire answer as one block and, when it
+  // passed, cited every retrieved candidate regardless of which one the
+  // generated text actually drew from — docs/milestone_log.md M1 "Sources
+  // list includes every retrieved candidate," reproduced live in
+  // docs/test_record.md Entry 007). Each unit is checked against each
+  // candidate's OWN source_text independently; a unit is kept only if at
+  // least one candidate entails it, and only that candidate's citation is
+  // attached — never the whole candidate pool. A unit with no
+  // independently-verified support is dropped from the answer entirely,
+  // not shown uncited.
+  const units = splitIntoGroundingUnits(generatedText);
+  const groundedLines = [];
+  const claims = [];
+  let lastRejectionReason = null;
+
+  for (const unit of units) {
+    let matched = null;
+    for (const candidate of candidates) {
+      const verification = await verifyClaim({ claim: unit, sourceText: candidate.record.source_text, client });
+      if (verification.entailed) {
+        matched = candidate;
+        break;
+      }
+      lastRejectionReason = verification.reason;
+    }
+    if (matched) {
+      groundedLines.push(unit);
+      const citation = matched.record.citations[0];
+      claims.push({ record: matched.record, source_unit_id: citation ? citation.source_unit_id : null, citation });
+    }
+  }
+
+  if (groundedLines.length === 0) {
     return {
       answered: false,
-      text: `${NOT_FOUND} (a generated answer failed citation verification: ${verification.reason})`,
+      text: `${NOT_FOUND} (a generated answer failed citation verification: no sentence could be independently grounded to a retrieved source${lastRejectionReason ? ` — ${lastRejectionReason}` : ""})`,
       record: null,
-      path: "B"
+      path: "B",
+      refusal_reason: "verification_failed"
     };
   }
 
-  const allCandidateXrefs = candidates.flatMap((c) => c.record.cross_references || []);
-  const xrefBlock = formatCrossReferences(allCandidateXrefs);
-  const citations = candidates.map((c) => formatCitation(c.record.citations[0])).join("; ");
+  // Dedupe claims by source_unit_id, preserving first-seen order, for the
+  // Sources line and cross-reference block.
+  const seenUnits = new Set();
+  const dedupedClaims = claims.filter((c) => {
+    if (!c.source_unit_id || seenUnits.has(c.source_unit_id)) return false;
+    seenUnits.add(c.source_unit_id);
+    return true;
+  });
+
+  const xrefBlock = formatCrossReferences(dedupedClaims.flatMap((c) => c.record.cross_references || []));
+  const citations = dedupedClaims.map((c) => formatCitation(c.citation)).join("; ");
+  const groundedRecords = dedupedClaims.map((c) => c.record);
   return {
     answered: true,
-    text: `${generatedText}\nSources: ${citations}${xrefBlock}`,
+    text: `${groundedLines.join("\n")}\nSources: ${citations}${xrefBlock}`,
     record: null,
-    candidates: candidates.map((c) => c.record),
+    candidates: groundedRecords,
+    claims: dedupedClaims,
     path: "B",
-    review_status: candidates.some((c) => c.record.review_status !== "reviewed") ? "needs_review" : "reviewed"
+    review_status: groundedRecords.some((r) => r.review_status !== "reviewed") ? "needs_review" : "reviewed"
   };
 }
 
@@ -520,8 +661,8 @@ async function answerOptionB(question, records, { client, store }) {
  * are supplied — omit both to run Option A only, with zero LLM cost
  * (product_roadmap.md §2.4.1).
  */
-async function answer(question, records, { client, store } = {}) {
-  const match = structuredQuery(question, records);
+async function answer(question, records, { client, store, index } = {}) {
+  const match = structuredQuery(question, records, index);
   if (match) {
     return {
       answered: true,
@@ -529,23 +670,24 @@ async function answer(question, records, { client, store } = {}) {
       record: match.record || (match.docResults ? match.docResults[0].records[0] : null),
       score: match.score || 5.0,
       path: "A",
-      review_status: (match.record && match.record.review_status) || "reviewed"
+      review_status: (match.record && match.record.review_status) || "reviewed",
+      claims: match.claims || []
     };
   }
   if (!client || !store) {
-    return { answered: false, text: NOT_FOUND, record: null, score: 0, path: null };
+    return { answered: false, text: NOT_FOUND, record: null, score: 0, path: null, refusal_reason: explainRefusal(question, records) };
   }
   return answerOptionB(question, records, { client, store });
 }
 
 async function main() {
-  const { records } = loadStore();
+  const { records, index } = loadStore();
   const question = process.argv.slice(2).join(" ");
   if (!question) {
     console.error("Usage: node engine/query_router.js <question>");
     process.exit(2);
   }
-  const result = await answer(question, records);
+  const result = await answer(question, records, { index });
   console.log(result.text);
   if (result.answered && result.review_status !== "reviewed") {
     console.log(`[review_status: ${result.review_status} — not fully reviewed]`);
@@ -566,5 +708,6 @@ module.exports = {
   formatAnswer,
   answer,
   answerOptionB,
+  explainRefusal,
   NOT_FOUND
 };

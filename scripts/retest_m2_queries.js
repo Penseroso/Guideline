@@ -1,18 +1,19 @@
 const fs = require("fs");
 const path = require("path");
-const { createClient } = require("../engine/llm_client");
 const { loadStore } = require("../engine/data_store");
-const { createStore } = require("../engine/vector_store");
+const { setUpOptionB } = require("../engine/cli");
 const { answer } = require("../engine/query_router");
 
 async function main() {
   console.log("=== Re-evaluating M2 Real User Queries against Live Engine ===");
 
-  const client = createClient();
-  const { records } = loadStore();
-
-  const vectorStore = createStore();
-  vectorStore.index(records);
+  const { records, index } = loadStore();
+  // setUpOptionB (engine/cli.js) guards missing-provider the same way the
+  // real CLI does — no key configured means Option A only, not a throw
+  // (previously this called llm_client.createClient() directly, which
+  // throws with no provider configured).
+  const { client, store: vectorStore, provider } = setUpOptionB(records);
+  console.log(provider ? `Option B fallback active (${provider}).` : "Option A only — no LLM provider configured.");
 
   // Load questions from log
   const logFile = path.resolve(__dirname, "..", "logs", "m2_queries.jsonl");
@@ -47,7 +48,7 @@ async function main() {
     const tc = testCases[i];
     process.stdout.write(`[${i + 1}/${testCases.length}] "${tc.question}" ... `);
     const start = Date.now();
-    const res = await answer(tc.question, records, { client, store: vectorStore });
+    const res = await answer(tc.question, records, { client, store: vectorStore, index });
     const elapsed = Date.now() - start;
 
     const status = res.answered ? "ANSWERED" : "REFUSED";
@@ -73,8 +74,8 @@ async function main() {
   console.log("M2 RE-EVALUATION SUMMARY");
   console.log("==================================================");
   console.log(`Total Unique Questions: ${testCases.length}`);
-  console.log(`Originally Answered (2026-08-19): ${testCases.filter((t) => t.originalAnswered).length} / ${testCases.length} (${Math.round((testCases.filter((t) => t.originalAnswered).length / testCases.length) * 100)}%)`);
-  console.log(`Currently Answered (2026-08-26): ${stillAnsweredCount + newlyAnsweredCount} / ${testCases.length} (${Math.round(((stillAnsweredCount + newlyAnsweredCount) / testCases.length) * 100)}%)`);
+  console.log(`Originally Answered (as logged in logs/m2_queries.jsonl): ${testCases.filter((t) => t.originalAnswered).length} / ${testCases.length} (${Math.round((testCases.filter((t) => t.originalAnswered).length / testCases.length) * 100)}%)`);
+  console.log(`Currently Answered (${new Date().toISOString().slice(0, 10)}): ${stillAnsweredCount + newlyAnsweredCount} / ${testCases.length} (${Math.round(((stillAnsweredCount + newlyAnsweredCount) / testCases.length) * 100)}%)`);
   console.log(`  - Retained Answered: ${stillAnsweredCount}`);
   console.log(`  - Newly Answered (Gaps Closed by EMA/FDA Ingestion): ${newlyAnsweredCount}`);
   console.log(`  - Still Refused (Remaining Knowledge Gaps): ${stillRefusedCount}`);

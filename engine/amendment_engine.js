@@ -86,7 +86,12 @@ const GUIDELINE_REVISIONS = {
         note: "Tiered Approach",
         section: "§V.B (p. 16-19)",
         topic: "선별(Screening 5% FPR) -> 확증(Confirmatory 1% FPR) -> 역가(Titer) -> 중화항체(NAb) 4단계 다계층 시험법 표준화",
-        sourceUnitId: "fda_ada.su.5_b.001"
+        // Was "fda_ada.su.5_b.001", which doesn't resolve — the archive
+        // subdivides §V.B into 5_b_1/5_b_2 SourceUnits, not one 5_b unit.
+        // Verified by content, not guessed: 5_b_1.001 is the screening-tier
+        // passage that states the same "approximately 5%" false-positive
+        // rate this topic line describes (docs/test_record.md Entry 007/008).
+        sourceUnitId: "fda_ada.su.5_b_1.001"
       },
       {
         note: "Drug Tolerance",
@@ -176,6 +181,45 @@ function identifyAmendmentDoc(question) {
   return "ich_s6_r1";
 }
 
+/**
+ * Resolves a hardcoded GUIDELINE_REVISIONS keyNote's sourceUnitId against
+ * the real archive — finds the answerable record whose own source_unit_ids
+ * includes the target, then uses that record's own already-resolved
+ * citation for it.
+ *
+ * Falls back to the first real record in the *same section* (via `index`)
+ * when the target source unit itself has no linked record — found live:
+ * three EMA FIH sourceUnitIds pointed at section-heading SourceUnits
+ * ("8.2.6. Precautions to apply between treating subjects within a
+ * cohort") that correctly have no KnowledgeRecord/QuantitativeCriterion/
+ * Condition of their own (a heading isn't a regulatory claim), even
+ * though the section itself has substantial real content (this is the
+ * Sentinel Dosing / Stopping Rules content documented in
+ * docs/milestone_log.md M3). Pointing at the heading and finding nothing
+ * would drop real, on-topic content for no reason; the fallback recovers
+ * it. If no `index` is supplied, or the section itself has no records
+ * either, this correctly resolves to nothing (dropped, not shown
+ * ungrounded — round-2 correction #3).
+ */
+function resolveNoteClaim(sourceUnitId, records, index) {
+  if (!sourceUnitId) return null;
+  const record = records.find((r) => r.source_unit_ids && r.source_unit_ids.includes(sourceUnitId));
+  if (record) {
+    const citation = (record.citations || []).find((c) => c.source_unit_id === sourceUnitId) || record.citations?.[0] || null;
+    if (citation) return { record, citation, source_unit_id: sourceUnitId };
+  }
+  if (index) {
+    const targetUnit = index.sourceUnits && index.sourceUnits.get(sourceUnitId);
+    if (targetUnit && targetUnit.section_id) {
+      const sectionRecord = records.find((r) => r.section_id === targetUnit.section_id);
+      if (sectionRecord && sectionRecord.citations && sectionRecord.citations[0]) {
+        return { record: sectionRecord, citation: sectionRecord.citations[0], source_unit_id: sectionRecord.citations[0].source_unit_id };
+      }
+    }
+  }
+  return null;
+}
+
 function answerAmendment(question, records, index) {
   const docId = identifyAmendmentDoc(question);
   const revInfo = GUIDELINE_REVISIONS[docId];
@@ -183,19 +227,28 @@ function answerAmendment(question, records, index) {
     return null;
   }
 
-  // Retrieve relevant records
-  const relevantRecords = records.filter((r) => {
-    if (r.document_id !== docId) return false;
-    const sId = r.section_id || "";
-    return sId.includes("notes") || sId.includes("addendum") || sId.includes("8_2") || sId.includes("5_b");
-  }).slice(0, 6);
+  // Each hardcoded keyNote's sourceUnitId is resolved against the real
+  // archive — previously it was captured but never read at all, so every
+  // "Key Amendment" bullet rendered with zero citation regardless of
+  // whether its target existed (docs/test_record.md Entry 007 / M5 plan
+  // §1b). A note that doesn't resolve is dropped here, not shown to the
+  // user in any form, per the M5 plan's explicit correction: ungrounded
+  // regulatory-content synthesis does not belong on the answer surface,
+  // labeled or not.
+  const claims = [];
+  for (const item of revInfo.keyNotes) {
+    const resolved = resolveNoteClaim(item.sourceUnitId, records, index);
+    if (resolved) {
+      claims.push({ note: item.note, section: item.section, topic: item.topic, ...resolved });
+    }
+  }
 
   return {
     isAmendment: true,
     question,
     docId,
     revInfo,
-    relevantRecords
+    claims
   };
 }
 
@@ -208,7 +261,7 @@ function formatRecordCitation(citation) {
 }
 
 function formatAmendmentAnswer(amendMatch) {
-  const { revInfo, question, relevantRecords } = amendMatch;
+  const { revInfo, question, claims } = amendMatch;
   const lines = [];
 
   lines.push("📜 [가이던스 개정 이력 및 유효 규제 상태]");
@@ -218,16 +271,16 @@ function formatAmendmentAnswer(amendMatch) {
   lines.push(`• 원본 가이던스 (Parent/Original): ${revInfo.parentVersion}`);
   lines.push(`• 현재 유효 가이던스 (Effective Status): ${revInfo.currentVersion}\n`);
 
-  lines.push("📋 주요 개정 요건 및 핵심 변경 이력 (Key Amendments & Rationale):");
-  for (const item of revInfo.keyNotes) {
-    lines.push(`  • [${item.note}] (${item.section}): ${item.topic}`);
-  }
-
-  if (relevantRecords && relevantRecords.length > 0) {
+  if (claims.length > 0) {
+    lines.push("📋 주요 개정 요건 및 핵심 변경 이력 (Key Amendments & Rationale):");
+    for (const c of claims) {
+      const cite = formatRecordCitation(c.citation);
+      lines.push(`  • [${c.note}] (${c.section}): ${c.topic} (출처: ${cite})`);
+    }
     lines.push("\n📎 연계 정형 조항 근거 (Structured Source Records):");
-    for (const r of relevantRecords.slice(0, 3)) {
-      const cite = formatRecordCitation(r.citations ? r.citations[0] : null);
-      const text = r.normalized_ko || r.action || r.source_text || "";
+    for (const c of claims.slice(0, 3)) {
+      const cite = formatRecordCitation(c.citation);
+      const text = c.record.normalized_ko || c.record.action || c.record.source_text || "";
       const preview = text.length > 160 ? text.slice(0, 157) + "..." : text;
       lines.push(`  - [${cite}]: ${preview}`);
     }

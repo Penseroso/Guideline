@@ -58,7 +58,7 @@ async function main() {
         return;
       }
       if (question) {
-        const result = await answer(question, records, { client, store });
+        const result = await answer(question, records, { client, store, index });
         console.log(result.text);
         if (result.answered && result.review_status !== "reviewed") {
           console.log(`[review_status: ${result.review_status} — not fully reviewed]`);
