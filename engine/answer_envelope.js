@@ -17,8 +17,9 @@
  */
 
 const { structuredQuery, formatAnswer, answerOptionB, explainRefusal, NOT_FOUND } = require("./query_router");
+const { presentClaims } = require("./answer_presenter");
 
-const ENVELOPE_VERSION = "1.0.0";
+const ENVELOPE_VERSION = "1.1.0";
 
 function modeForMatch(match) {
   if (match.isComparison) return "comparison";
@@ -51,7 +52,7 @@ function reviewStatusFor(match) {
  * Deliberately no `score`/confidence field anywhere (product_roadmap.md
  * §1.4 — path A/B is the only sanctioned confidence signal).
  */
-async function answerEnvelope(question, records, { client, store, index } = {}) {
+async function answerEnvelope(question, records, { client, store, index, responseLanguage = "ko" } = {}) {
   const start = Date.now();
   const match = structuredQuery(question, records, index);
 
@@ -64,6 +65,7 @@ async function answerEnvelope(question, records, { client, store, index } = {}) 
       prose: formatAnswer(match),
       refusal: null,
       claims: match.claims || [],
+      answer_units: presentClaims(match.claims || [], responseLanguage),
       review_status: reviewStatusFor(match),
       timing_ms: Date.now() - start
     };
@@ -78,12 +80,13 @@ async function answerEnvelope(question, records, { client, store, index } = {}) 
       prose: NOT_FOUND,
       refusal: { kind: !client && !store ? "no_provider" : explainRefusal(question, records), reason: null },
       claims: [],
+      answer_units: [],
       review_status: null,
       timing_ms: Date.now() - start
     };
   }
 
-  const result = await answerOptionB(question, records, { client, store });
+  const result = await answerOptionB(question, records, { client, store, responseLanguage });
   if (!result.answered) {
     return {
       envelope_version: ENVELOPE_VERSION,
@@ -93,6 +96,7 @@ async function answerEnvelope(question, records, { client, store, index } = {}) 
       prose: result.text,
       refusal: { kind: result.refusal_reason || "no_match", reason: result.text === NOT_FOUND ? null : result.text },
       claims: [],
+      answer_units: [],
       review_status: null,
       timing_ms: Date.now() - start
     };
@@ -106,6 +110,7 @@ async function answerEnvelope(question, records, { client, store, index } = {}) 
     prose: result.text,
     refusal: null,
     claims: result.claims || [],
+    answer_units: result.answer_units || [],
     review_status: result.review_status,
     timing_ms: Date.now() - start
   };

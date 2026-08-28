@@ -153,6 +153,34 @@ test("path A and path B verdict bars are structurally distinct classes, not just
   assert.doesNotMatch(R.renderVerdictBar(envA, i18n), /class="verdict verdict-b"/);
 });
 
+test("Path A answer text follows the active locale without issuing a new query", () => {
+  const envelope = {
+    answered: true,
+    mode: "structured",
+    path: "A",
+    answer_units: [{ text: "STALE-API-TEXT", record_id: "kr.1", source_unit_id: "ich_m10.su.3_2_5_2.005" }],
+    claims: [{
+      source_unit_id: "ich_m10.su.3_2_5_2.005",
+      citation: realCitation(),
+      record: {
+        id: "kr.1",
+        type: "knowledge_record",
+        modality: "should",
+        source_text: "ENGLISH-SOURCE-TEXT",
+        normalized_ko: "KOREAN-PRESENTATION",
+        normalization_status: "reviewed"
+      }
+    }]
+  };
+
+  const koHtml = R.renderEnvelope(envelope, { ...i18n, locale: "ko" });
+  const enHtml = R.renderEnvelope(envelope, { ...i18n, locale: "en" });
+  assert.match(koHtml, /KOREAN-PRESENTATION/);
+  assert.doesNotMatch(koHtml, /STALE-API-TEXT/);
+  assert.match(enHtml, /ENGLISH-SOURCE-TEXT/);
+  assert.doesNotMatch(enHtml, /KOREAN-PRESENTATION/);
+});
+
 test("no numeric confidence score field is ever rendered anywhere", () => {
   const envelope = {
     answered: true, mode: "structured", path: "A",

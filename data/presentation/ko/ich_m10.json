@@ -1,0 +1,2443 @@
+{
+  "overlay_version": "0.1.0",
+  "language": "ko",
+  "document_id": "ich_m10",
+  "entries": [
+    {
+      "record_id": "ich_m10.cond.1_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "9c8e0c923a469ef6b3dcadbc1c1d95fe5f2715498a703308ae98d939dcac00a9",
+      "normalized_ko": "적절한 과학적 근거가 제시되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.1_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "5af3e7d46a6ca2b7308182df40c8344ca1ef84e2e32c0e8c3a0f5a349da59331",
+      "normalized_ko": "유효한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.1_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "5d0b2c98543fe00477af7fd6495d264ebd266eb0014c58dbf738acfc705d0fcd",
+      "normalized_ko": "규제 승인 हेतु 제출되지 않거나 안전성, 유효성 또는 표시와 관련한 규제 결정에 고려되지 않는 연구의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.1_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "6b8b0a7d3264992df94c009d1ada623f0cf2766cc6ae8004435680c83b2edc90",
+      "normalized_ko": "우수실험실관리기준(GLP) 또는 우수임상시험관리기준(GCP)의 적용을 받는 연구의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.1_3.003",
+      "record_type": "condition",
+      "source_text_sha256": "9cd1d3fac0fe0e7f386dec6a7b979a36444cdfb55d32b828310da0a6ecbdb36d",
+      "normalized_ko": "규제 결정을 뒷받침할 것으로 예상되는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.1_3.004",
+      "record_type": "condition",
+      "source_text_sha256": "6ff734e6fd7c99a658c47e54ad77b8f1c857eaaa7c816154a57ae8e9e6509658",
+      "normalized_ko": "규제 제출자료에서, GLP 원칙에 따라 수행된 비임상 독성동태학(TK) 연구, 임상시험의 대리로 수행된 비임상 약동학(PK) 연구 및 비교 생체이용률/생물학적동등성(BA/BE) 연구를 포함한 임상시험의 모든 단계에서 얻어진",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.1_3.005",
+      "record_type": "condition",
+      "source_text_sha256": "30caebbcc50193e7581485231d665b4269178cda5dea0c72de22322e1f4e1dab",
+      "normalized_ko": "규제 제출을 뒷받침하기 위한",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.1_3.006",
+      "record_type": "condition",
+      "source_text_sha256": "f11aa14273b10cbe660d41629f2ad8252f4d12a864c6049021206254f7004603",
+      "normalized_ko": "필요에 따라",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.1_3.007",
+      "record_type": "condition",
+      "source_text_sha256": "9cd1d3fac0fe0e7f386dec6a7b979a36444cdfb55d32b828310da0a6ecbdb36d",
+      "normalized_ko": "규제 결정을 뒷받침할 것으로 예상되는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.1_3.008",
+      "record_type": "condition",
+      "source_text_sha256": "6ff734e6fd7c99a658c47e54ad77b8f1c857eaaa7c816154a57ae8e9e6509658",
+      "normalized_ko": "규제 제출자료에서, GLP 원칙에 따라 수행된 비임상 독성동태학(TK) 연구, 임상시험의 대리로 수행된 비임상 약동학(PK) 연구 및 비교 생체이용률/생물학적동등성(BA/BE) 연구를 포함한 임상시험의 모든 단계에서 얻어진",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.1_3.009",
+      "record_type": "condition",
+      "source_text_sha256": "30caebbcc50193e7581485231d665b4269178cda5dea0c72de22322e1f4e1dab",
+      "normalized_ko": "규제 제출을 뒷받침하기 위한",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "071fb0bd8f63e1ea113e3eb7bcc2edf3eaeb14fb98cba8fcf4261f5448959af9",
+      "normalized_ko": "생체분석법 개발 전 또는 개발 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "f867665c4426f49e92111dd934bc7448595b9d9557afad7564a563cdf5856b15",
+      "normalized_ko": "실행 가능한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "078555438db8fcd3d74c16e772f2a57b9e8dc919e5a9653ae9aafbbc142adf29",
+      "normalized_ko": "비임상 또는 임상시험 검체 분석 중 분석을 중단해야 하는 방법상의 문제가 발생한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "071fb0bd8f63e1ea113e3eb7bcc2edf3eaeb14fb98cba8fcf4261f5448959af9",
+      "normalized_ko": "생체분석법 개발 전 또는 개발 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_1.005",
+      "record_type": "condition",
+      "source_text_sha256": "39dcf52b863c1338fc988e91ea74f5beaac2ab8fde3ef6b41d010009c199bac9",
+      "normalized_ko": "의도된 목적을 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_2_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "5fe45fcccd5951427b91d729e181695bd1f409b7269b83ccc297bfa444dd3830",
+      "normalized_ko": "임상 및 해당되는 비임상 시험에서 분석물질을 정량하기 위한 생체분석법을 확립하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_2_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "ec46b30a1b29865f3d80ac933b7555ab75f629bc58ee87772eb3074c19cace97",
+      "normalized_ko": "문헌에 보고된 분석법을 도입하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_2_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "4809b8b061deb11440c3cf8bcabe1ed1dde87ee3dd409566de77222ee97d3b52",
+      "normalized_ko": "상업용 키트를 의약품 개발에서 생체분석 용도로 재활용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_2_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "ec46b30a1b29865f3d80ac933b7555ab75f629bc58ee87772eb3074c19cace97",
+      "normalized_ko": "문헌에 보고된 분석법을 도입하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_2_1.005",
+      "record_type": "condition",
+      "source_text_sha256": "4809b8b061deb11440c3cf8bcabe1ed1dde87ee3dd409566de77222ee97d3b52",
+      "normalized_ko": "상업용 키트를 의약품 개발에서 생체분석 용도로 재활용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_2_1.006",
+      "record_type": "condition",
+      "source_text_sha256": "3d86d16b303e64c73420cc2c6cf9ba306fa59bf06ef88aba2dd9bc7ebb899045",
+      "normalized_ko": "크로마토그래피 방법의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_2_1.007",
+      "record_type": "condition",
+      "source_text_sha256": "7356fccd2010c409ecace1363dfec4f42f4c68c50a30355d289e472ee74e7a2c",
+      "normalized_ko": "LBA의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_2_1.008",
+      "record_type": "condition",
+      "source_text_sha256": "d6562cc25f7b14112cd661b008786702c64bbe048cbeb2227d58b4dd0e06c363",
+      "normalized_ko": "규제 제출을 뒷받침하도록 의도된 주 매트릭스의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_2_1.009",
+      "record_type": "condition",
+      "source_text_sha256": "30caebbcc50193e7581485231d665b4269178cda5dea0c72de22322e1f4e1dab",
+      "normalized_ko": "규제 제출을 뒷받침하도록 의도된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.2_2_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "917d24d6d8fdb790dfdd9a5e1550a92831562fe4e17121f214ff307fc81bcb6b",
+      "normalized_ko": "여러 생체분석 방법 및/또는 여러 생체분석 실험실이 관여하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "e729da87bcf4a5c8f2e2052216dbfc6fd1012a2c0515ac80349598be189ab7d2",
+      "normalized_ko": "다만, 원액의 정확한 조제 및 안정성이 검증되었어야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "2639bb55e9dc4c4522f51bbe603969ca6047fcda65cc4379f0120a4a3e300e5f",
+      "normalized_ko": "또는 희귀 매트릭스의 경우 그보다 적은 수",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "e277bb1601208b122431afa17bfef22318246aebc8dc041837ff03070068098e",
+      "normalized_ko": "비극성 매트릭스의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "fde60c0b318a10da2250806002b19957eb9d08f21368b75dc5e1bd86ed2e4bf1",
+      "normalized_ko": "희귀 매트릭스의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "e5d9e120ddf2f4018b10a43c53fae52c70476a5b369874594ca37ef34c959895",
+      "normalized_ko": "비극성 매트릭스(예: 지질성, 지질혈증성)의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "32d3af367068f7ca1d83e73c0f2126f288f97e3afefdd37811bb44aeabb19ca1",
+      "normalized_ko": "방법이 분석물질을 관련 물질과 구별할 수 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "3eb6710cb05da3024148a52ceb53d9cde35c5130123f795fe50755e2e17237ae",
+      "normalized_ko": "잠재적 간섭 물질을 첨가한 공시료에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "aae6d7b89ce79d85006a7035350acadcca84ee9bd3e15c69d2240e1d15396531",
+      "normalized_ko": "연구 검체에서 예상되는 최고 농도에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_2.004",
+      "record_type": "condition",
+      "source_text_sha256": "3eb6710cb05da3024148a52ceb53d9cde35c5130123f795fe50755e2e17237ae",
+      "normalized_ko": "잠재적 간섭 물질을 첨가한 공시료에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "06786994b9eb9ff92521e1d1c55fb35829f25416d04630f8cf20d52a1d657743",
+      "normalized_ko": "질량 분석(MS) 검출을 사용할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "d67658fb76d43e2d94cd93ef717914f2c1251b1666adbb21c863746844213af2",
+      "normalized_ko": "낮은 QC 및 높은 QC 농도에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_3.003",
+      "record_type": "condition",
+      "source_text_sha256": "5eb5fa1f7a9fa82f52fe142d5de1ce0882004ba2ccad072c12691d0893c316a1",
+      "normalized_ko": "각 농도 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_4.001",
+      "record_type": "condition",
+      "source_text_sha256": "13e8b71897400f44485d00b89913d2413e9164bf355abe8d1640ceb2d4d00030",
+      "normalized_ko": "LLOQ에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_4.002",
+      "record_type": "condition",
+      "source_text_sha256": "2c14685dd8618b51ce1345ec459b15a9e0c7e1efe75f9b47a0c80a3cb8c214fc",
+      "normalized_ko": "그 밖의 모든 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_4.003",
+      "record_type": "condition",
+      "source_text_sha256": "7c2ac6c301d3f223dd735f3cda7adebb0a3e540c551802d79207ab23e45d8d97",
+      "normalized_ko": "반복 시료를 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_4.004",
+      "record_type": "condition",
+      "source_text_sha256": "4d66e19be8e62c9f046a6e5ad63b9ac30878268a831910ae74a24577fbbc476e",
+      "normalized_ko": "농도 수준당",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_4.005",
+      "record_type": "condition",
+      "source_text_sha256": "7c2ac6c301d3f223dd735f3cda7adebb0a3e540c551802d79207ab23e45d8d97",
+      "normalized_ko": "반복 시료를 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_5_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "8df3a62d58a2adc2bc79773b759cc698a1420122980360de1e3defc1c54326e0",
+      "normalized_ko": "방법 밸리데이션 동안",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_5_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "f75760e8713da82e7abbba76faf8f7fca83fc088af521fd3178f2050a0849131",
+      "normalized_ko": "정확성 및 정밀성 실행의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_5_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "f03ec23de970777e35eda954f34aaa3516a1ab34c73f5d702c7a722bab7e01be",
+      "normalized_ko": "검량선 범위 내에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_5_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "65c08c27081592d7cda568d6f2773aa7feeab8ed26d87d114bfbd08ea28e8091",
+      "normalized_ko": "정확성 및 정밀성 이외의 밸리데이션 실행의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_5_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "1e4549a54d039db2d7a6c25777b01e7158909a876eea1197eaf603498d59a555",
+      "normalized_ko": "런 내 정확도 및 정밀도",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_5_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "e7d89f85a95d4ec9a6dbd25764bc14291eed2d3e9260672f6b6694c00e5cb171",
+      "normalized_ko": "런 간 정확도 및 정밀도",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_5_2.004",
+      "record_type": "condition",
+      "source_text_sha256": "bceb453db2016059cbacf74ba5469be62d770c0fe4ccb0f9f6b38c33044bacd6",
+      "normalized_ko": "오류가 명백하고 문서화된 경우를 제외하고",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_5_2.005",
+      "record_type": "condition",
+      "source_text_sha256": "da0a90fbb09002bef473769458826b3535c6db2fa05d39bc2d48484e9fb2fa06",
+      "normalized_ko": "모든 런에서 런 내 정확도 또는 정밀도 기준이 충족되지 않는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_5_2.006",
+      "record_type": "condition",
+      "source_text_sha256": "b88b0eb3478d8b3a355cc03d3481e4a86a16c98ca89efb416f6fd3daf8a63636",
+      "normalized_ko": "다른 런에서 새로 스파이크한 검량 표준품을 사용하지 않는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_5_2.007",
+      "record_type": "condition",
+      "source_text_sha256": "b8327f0496cc68a4773b22779cb2592863772367bdd267e46ec76cf0b8548f4b",
+      "normalized_ko": "LLOQ에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_5_2.008",
+      "record_type": "condition",
+      "source_text_sha256": "65c08c27081592d7cda568d6f2773aa7feeab8ed26d87d114bfbd08ea28e8091",
+      "normalized_ko": "정확도 및 정밀도 검증 런이 아닌 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_6.001",
+      "record_type": "condition",
+      "source_text_sha256": "b284ece40224c5fe8a751d259d4f937d21e3adecbf1586ff53290639778479d7",
+      "normalized_ko": "분석법 개발 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_6.002",
+      "record_type": "condition",
+      "source_text_sha256": "073ae4d5a471c51083bd8f2abef5a0bc8793c5215ae78abe973fdeb0d6db73e2",
+      "normalized_ko": "최고 농도 보정 표준물질 다음의 공시료에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_6.003",
+      "record_type": "condition",
+      "source_text_sha256": "d87545ab7b25b40d816ba5e47a05a6f6c8287af7bdb5215c503765d466c09d39",
+      "normalized_ko": "밸리데이션 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_6.004",
+      "record_type": "condition",
+      "source_text_sha256": "bce08d63dbfdb9b126433d6e16ea7c34629ecebadc5297d1ce9f7a74d10baa1a",
+      "normalized_ko": "이월이 불가피한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_6.005",
+      "record_type": "condition",
+      "source_text_sha256": "fb989bdbf46546dd83e4b582054a1541eeba34d54154f6c2a5b213f0a0f59af8",
+      "normalized_ko": "시험 검체 분석 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_6.006",
+      "record_type": "condition",
+      "source_text_sha256": "d87545ab7b25b40d816ba5e47a05a6f6c8287af7bdb5215c503765d466c09d39",
+      "normalized_ko": "밸리데이션 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_7.001",
+      "record_type": "condition",
+      "source_text_sha256": "b6c4b4a8cb45120e9a93607481111168348c3356f801227a0287b52de99f8d7e",
+      "normalized_ko": "희석 배수당",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_7.002",
+      "record_type": "condition",
+      "source_text_sha256": "982043f9e014021a6ffe2e2bcbc4b2b101b7d9219913b05d254a35d50255f856",
+      "normalized_ko": "1회 분석에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_7.003",
+      "record_type": "condition",
+      "source_text_sha256": "4ce68639704d7dc26355c3799c706326643dae66d2ed0ea0e3f5dc34873b8148",
+      "normalized_ko": "ULOQ 초과 시",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_8.001",
+      "record_type": "condition",
+      "source_text_sha256": "5eb5fa1f7a9fa82f52fe142d5de1ce0882004ba2ccad072c12691d0893c316a1",
+      "normalized_ko": "각 농도 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_8.002",
+      "record_type": "condition",
+      "source_text_sha256": "bac799875966cbed934306b453e21c6955af234f120c546b6d17e95c1e8305a2",
+      "normalized_ko": "각 QC 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_8.003",
+      "record_type": "condition",
+      "source_text_sha256": "71bc3676b516fad3ed217e82d1dd1b965466453a930a338a692b7cc063691cdd",
+      "normalized_ko": "사이클 간",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_8.004",
+      "record_type": "condition",
+      "source_text_sha256": "30e8ae46b5154a574287071a759e3559e6923ed74e507cc1bbb781aafd367a37",
+      "normalized_ko": "취급 조건을 포괄하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_8.005",
+      "record_type": "condition",
+      "source_text_sha256": "064931075edc2656e705f331dfde7a54e10b351e8942715e9ac3785cd65c2c0c",
+      "normalized_ko": "시험 검체 보관 기간 동안 냉동고에 보관된",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_8.006",
+      "record_type": "condition",
+      "source_text_sha256": "26ad3826f25a7e5594f468c69f1dd3d1d7b6ecaf062f5ba1027cd0d26faa5c25",
+      "normalized_ko": "채취 직후, 보관 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_2_9.001",
+      "record_type": "condition",
+      "source_text_sha256": "83d45c3b514f0beb9bb7b502440041ac10acbf8537a72e8982b5cf8b39295dd6",
+      "normalized_ko": "보관 후",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "fa14515076e04979a10cfc7ba58df2e3f7b7b292bc13fc938f1c280f24f827b6",
+      "normalized_ko": "둘 중 더 큰 값인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "13e8b71897400f44485d00b89913d2413e9164bf355abe8d1640ceb2d4d00030",
+      "normalized_ko": "LLOQ에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "2c14685dd8618b51ce1345ec459b15a9e0c7e1efe75f9b47a0c80a3cb8c214fc",
+      "normalized_ko": "그 외 모든 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "3ebb4dc7f15644b1acdde50c488a546773181dec7298ddc0a75889dbb06218d8",
+      "normalized_ko": "QC의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_2.004",
+      "record_type": "condition",
+      "source_text_sha256": "5eb5fa1f7a9fa82f52fe142d5de1ce0882004ba2ccad072c12691d0893c316a1",
+      "normalized_ko": "각 농도 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_2.005",
+      "record_type": "condition",
+      "source_text_sha256": "94039e2f21c9435a00dfc7d626d583012e402286a3a4a533f5e92ff5b2d6ce68",
+      "normalized_ko": "분석 런이 실패한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_2.006",
+      "record_type": "condition",
+      "source_text_sha256": "13e8b71897400f44485d00b89913d2413e9164bf355abe8d1640ceb2d4d00030",
+      "normalized_ko": "LLOQ에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_2.007",
+      "record_type": "condition",
+      "source_text_sha256": "2c14685dd8618b51ce1345ec459b15a9e0c7e1efe75f9b47a0c80a3cb8c214fc",
+      "normalized_ko": "그 외 모든 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_2.008",
+      "record_type": "condition",
+      "source_text_sha256": "3ebb4dc7f15644b1acdde50c488a546773181dec7298ddc0a75889dbb06218d8",
+      "normalized_ko": "QC의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_2.009",
+      "record_type": "condition",
+      "source_text_sha256": "5eb5fa1f7a9fa82f52fe142d5de1ce0882004ba2ccad072c12691d0893c316a1",
+      "normalized_ko": "각 농도 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_2.010",
+      "record_type": "condition",
+      "source_text_sha256": "5c731f7694f7605dde991455297f2b00fec3358c4d5042968d9a91c9da6d803d",
+      "normalized_ko": "검량 표준품의 최소 75%에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_2.011",
+      "record_type": "condition",
+      "source_text_sha256": "bdbd936a7891d9a429dfdac634906cc1ecb70c85c95209b7da1a8d12d33cbc75",
+      "normalized_ko": "각각의 공칭 농도를 기준으로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "6d6d019a1fbbc9832514cea9899030969acdda1890fb1fd03ed78cfb6afe7524",
+      "normalized_ko": "예상치 못한 시험 시료의 군집화가 관찰되거나 다수의 시험 시료가 ULOQ를 초과하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_4.001",
+      "record_type": "condition",
+      "source_text_sha256": "f3dfbda093c3a7f12e326efbbbd1742e5aa910e7ed3b07cd7ddfa5230c707fd9",
+      "normalized_ko": "비교 BA/BE 연구에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_5.001",
+      "record_type": "condition",
+      "source_text_sha256": "afb06b134e444879a59bf521ee4aaf563a9de8d74533b77fb3ce661f5352c491",
+      "normalized_ko": "장비 고장의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_5.002",
+      "record_type": "condition",
+      "source_text_sha256": "6fb2d9efd09b017b49ad1c008f6263adfbe4038e83aeb6b20af4eb8f8729356d",
+      "normalized_ko": "재주입 재현성이 밸리데이션 중 입증된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_5.003",
+      "record_type": "condition",
+      "source_text_sha256": "6b189fe5d3d420cb35fc6311cae1db2eee28a3f97062c15b87217c67eefe03f9",
+      "normalized_ko": "분석적 원인 없이 단지 실패했다는 이유만으로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.3_3_5.004",
+      "record_type": "condition",
+      "source_text_sha256": "6b189fe5d3d420cb35fc6311cae1db2eee28a3f97062c15b87217c67eefe03f9",
+      "normalized_ko": "분석적 원인 없이 단지 실패했다는 이유만으로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_1_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "76182501842d58c47a8e29958add545b4ad0d800905b6579a88d6eee2b8c8d53",
+      "normalized_ko": "가능한 경우마다",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_1_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "e29f70f447e155fca92e382a5b641ea9e026cf6a9ba364a8f90849b0ee914dc9",
+      "normalized_ko": "생물분석에 사용되는 기준물질 배치가 변경되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_1_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "d96431a9a203fc09c49e07f0aabd52f5392fb8fbd05b5292b432c585cfe19fe5",
+      "normalized_ko": "사용 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_1_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "e29f70f447e155fca92e382a5b641ea9e026cf6a9ba364a8f90849b0ee914dc9",
+      "normalized_ko": "생물분석에 사용되는 기준물질 배치가 변경되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_1_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "40abc1c0edbe5c25a3938c3cf8e3d501209f37bcd74a3cbf6c9bc0d99a57f7ec",
+      "normalized_ko": "상호작용 시",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "b5da5efc86196c7ac0b20625d0dea0c9ed144927ec689beb77580c6cafe35b77",
+      "normalized_ko": "시험 검체에서 예상되는 최고 농도에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "401279675575a327eef6d6815cf511040797f9976205a91c4fa9930fc405acae",
+      "normalized_ko": "분석물질의 부재 및 존재 시(낮은 QC 농도 및 높은 QC 농도에서)",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "df7d6052b33630f96a069185df9b0b27daa4718f2173a56afe38db39551abea2",
+      "normalized_ko": "낮은 QC 수준 및 높은 QC 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "b5da5efc86196c7ac0b20625d0dea0c9ed144927ec689beb77580c6cafe35b77",
+      "normalized_ko": "시험 검체에서 예상되는 최고 농도에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_1.005",
+      "record_type": "condition",
+      "source_text_sha256": "202fe423526a61d4f818095e9d76c82108d94d0d62fad62e24929b997a0f706e",
+      "normalized_ko": "분석물질의 부재 및 존재 시",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_1.006",
+      "record_type": "condition",
+      "source_text_sha256": "df7d6052b33630f96a069185df9b0b27daa4718f2173a56afe38db39551abea2",
+      "normalized_ko": "낮은 QC 수준 및 높은 QC 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "c0a8ac43b020a787f2688579371a6a9fd347a2934bcedd7fa6e05f5d6f7ec6f6",
+      "normalized_ko": "또는 희귀 매트릭스의 경우 더 적게",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "a4958e1dfc7c753b3d0594c84076bbf1efaa5fc927d7b4abc810d0e69c7fbfb6",
+      "normalized_ko": "희귀 매트릭스의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "5ccca4e0230d91d476e1171959c8638a04dbb5d53a7abb0371cebeb41c87eefd",
+      "normalized_ko": "LLOQ 및 ULOQ에서는 제외",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "7c2ac6c301d3f223dd735f3cda7adebb0a3e540c551802d79207ab23e45d8d97",
+      "normalized_ko": "반복 측정을 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_3.003",
+      "record_type": "condition",
+      "source_text_sha256": "7c2ac6c301d3f223dd735f3cda7adebb0a3e540c551802d79207ab23e45d8d97",
+      "normalized_ko": "반복 측정을 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_3.004",
+      "record_type": "condition",
+      "source_text_sha256": "f12f1b863394afa1540fc9a1687e46bb71f36e15e5e9ca21ec53d74f42489fde",
+      "normalized_ko": "적절한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_3.005",
+      "record_type": "condition",
+      "source_text_sha256": "b462f176c740106b84f312084527a581e1aded32135bf32d248b64c233f67796",
+      "normalized_ko": "LLOQ 및 ULOQ에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_4_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "8df3a62d58a2adc2bc79773b759cc698a1420122980360de1e3defc1c54326e0",
+      "normalized_ko": "방법 밸리데이션 동안",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_4_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "f75760e8713da82e7abbba76faf8f7fca83fc088af521fd3178f2050a0849131",
+      "normalized_ko": "정확성 및 정밀성 런에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_4_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "f03ec23de970777e35eda954f34aaa3516a1ab34c73f5d702c7a722bab7e01be",
+      "normalized_ko": "검량선 범위 내에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_4_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "a1cbc10810e923f0698e898f832b614854410291fc9a28d71ddcc3928b5d9784",
+      "normalized_ko": "LLOQ 및 ULOQ는 제외한다",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_4_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "5ccca4e0230d91d476e1171959c8638a04dbb5d53a7abb0371cebeb41c87eefd",
+      "normalized_ko": "LLOQ 및 ULOQ에서는 제외하고",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_4_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "b462f176c740106b84f312084527a581e1aded32135bf32d248b64c233f67796",
+      "normalized_ko": "LLOQ 및 ULOQ에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_4_2.004",
+      "record_type": "condition",
+      "source_text_sha256": "65c08c27081592d7cda568d6f2773aa7feeab8ed26d87d114bfbd08ea28e8091",
+      "normalized_ko": "정확도 및 정밀도 검증 런이 아닌 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_4_2.005",
+      "record_type": "condition",
+      "source_text_sha256": "f343dcf68f9251f86f64c364fcc167e42600dfb17ddfc2facdbe92623e50e6f6",
+      "normalized_ko": "또는 QC 수준당 5 반복으로 2일에 걸쳐 3 런",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_4_2.006",
+      "record_type": "condition",
+      "source_text_sha256": "fecab4c204ede6867a5e3afa299917649114091447f72e16329f0b2d40d0874c",
+      "normalized_ko": "LLOQ 및 ULOQ에서 40%",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_5.001",
+      "record_type": "condition",
+      "source_text_sha256": "e45a9397de799cb653ca9404c31cbce3c88576119c5ec2b1f79837c1a1425fca",
+      "normalized_ko": "분석 플랫폼이 캐리오버가 발생하기 쉬운 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_6.001",
+      "record_type": "condition",
+      "source_text_sha256": "11f117ea33ab4c07aca2db12e9fd574d02bd7a2ef9bc59be0ff0fc53afe0a20d",
+      "normalized_ko": "검량 범위 내까지",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_6.002",
+      "record_type": "condition",
+      "source_text_sha256": "6e766c5df7fde28567186ddc6f17c90495140b0abb9daf2d24168ce0076efcb4",
+      "normalized_ko": "각 희석 계수에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_6.003",
+      "record_type": "condition",
+      "source_text_sha256": "8deeebcb01580f5b37f8e18f2ac9a6d5bf43eb31df6db0f6a0aec36e91d5ef50",
+      "normalized_ko": "각 희석에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_6.004",
+      "record_type": "condition",
+      "source_text_sha256": "482e2c9ac528e100df3ba33903736680acdbc6dd37792a9d21642d82314cf318",
+      "normalized_ko": "희석 보정 후",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_6.005",
+      "record_type": "condition",
+      "source_text_sha256": "e77e442fd9d01d8a63e104b0963f564e08ea706a1e8f6d10dcb942878b530cda",
+      "normalized_ko": "검량 범위 내에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_6.006",
+      "record_type": "condition",
+      "source_text_sha256": "0516bae109b90552f5a8ae35994da4a5fd02ca9566eebb760246c1c99f38df91",
+      "normalized_ko": "ULOQ 초과",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_6.007",
+      "record_type": "condition",
+      "source_text_sha256": "d808467453dfe92e558d8f26df96ac1cdcf287e4aadedec1933338dab29c3423",
+      "normalized_ko": "후크 효과에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_7.001",
+      "record_type": "condition",
+      "source_text_sha256": "5eb5fa1f7a9fa82f52fe142d5de1ce0882004ba2ccad072c12691d0893c316a1",
+      "normalized_ko": "각 농도 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_7.002",
+      "record_type": "condition",
+      "source_text_sha256": "bac799875966cbed934306b453e21c6955af234f120c546b6d17e95c1e8305a2",
+      "normalized_ko": "각 QC 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_7.003",
+      "record_type": "condition",
+      "source_text_sha256": "71bc3676b516fad3ed217e82d1dd1b965466453a930a338a692b7cc063691cdd",
+      "normalized_ko": "사이클 간",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_7.004",
+      "record_type": "condition",
+      "source_text_sha256": "caf40e0cf850a61900b4a6d349525d235d68543ec1be1744d51040465576b310",
+      "normalized_ko": "화학 의약품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_7.005",
+      "record_type": "condition",
+      "source_text_sha256": "13718ca9f4aeaf74991d073967712968e4c6ac45d54684b25de82aab6adf57a3",
+      "normalized_ko": "바이오의약품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_7.006",
+      "record_type": "condition",
+      "source_text_sha256": "5eb5fa1f7a9fa82f52fe142d5de1ce0882004ba2ccad072c12691d0893c316a1",
+      "normalized_ko": "각 농도 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_7.007",
+      "record_type": "condition",
+      "source_text_sha256": "bac799875966cbed934306b453e21c6955af234f120c546b6d17e95c1e8305a2",
+      "normalized_ko": "각 QC 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_7.008",
+      "record_type": "condition",
+      "source_text_sha256": "71bc3676b516fad3ed217e82d1dd1b965466453a930a338a692b7cc063691cdd",
+      "normalized_ko": "사이클 간",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_7.009",
+      "record_type": "condition",
+      "source_text_sha256": "caf40e0cf850a61900b4a6d349525d235d68543ec1be1744d51040465576b310",
+      "normalized_ko": "화학 의약품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_2_7.010",
+      "record_type": "condition",
+      "source_text_sha256": "13718ca9f4aeaf74991d073967712968e4c6ac45d54684b25de82aab6adf57a3",
+      "normalized_ko": "바이오의약품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_3_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "641e79003be60e01892ad129aa326d34b74b07fa76e75d1c7e7744404d35e5d6",
+      "normalized_ko": "마이크로타이터 플레이트를 사용하고 각 플레이트에 자체 검량 표준물질 및 QC가 포함된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_3_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "7c91d591bf1c95d6b47addaa739c279426e92c31d9a3ea2282399dc69d261266",
+      "normalized_ko": "시료 용량이 제한된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_3_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "eaeb3eae7ba5613fd4384eb00dbb96eebbdfe45e1b79eb7357049ac3d78a32a5",
+      "normalized_ko": "둘 중 더 높은 값",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_3_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "641e79003be60e01892ad129aa326d34b74b07fa76e75d1c7e7744404d35e5d6",
+      "normalized_ko": "마이크로타이터 플레이트를 사용하고 각 플레이트에 자체 검량 표준물질 및 QC가 포함된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_3_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "b462f176c740106b84f312084527a581e1aded32135bf32d248b64c233f67796",
+      "normalized_ko": "LLOQ 및 ULOQ에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_3_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "5eb5fa1f7a9fa82f52fe142d5de1ce0882004ba2ccad072c12691d0893c316a1",
+      "normalized_ko": "각 농도 수준에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_3_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "94039e2f21c9435a00dfc7d626d583012e402286a3a4a533f5e92ff5b2d6ce68",
+      "normalized_ko": "분석 런이 실패하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_3_2.004",
+      "record_type": "condition",
+      "source_text_sha256": "3ebb4dc7f15644b1acdde50c488a546773181dec7298ddc0a75889dbb06218d8",
+      "normalized_ko": "QC의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_3_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "82f421bed8a46cbaf2c60da9b9d9c5ce993751ea02df172363b396f92a07465f",
+      "normalized_ko": "예기치 않은 시험 검체의 군집이 관찰되거나 많은 수의 검체가 ULOQ를 초과하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_3_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "e7bb03b8d356f64f0c8b0b2181985f4060221d6abf909634af075572599c98fe",
+      "normalized_ko": "검증된 희석 방법에 따라",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.4_3_4.001",
+      "record_type": "condition",
+      "source_text_sha256": "f3dfbda093c3a7f12e326efbbbd1742e5aa910e7ed3b07cd7ddfa5230c707fd9",
+      "normalized_ko": "비교 BA/BE 연구에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.5.001",
+      "record_type": "condition",
+      "source_text_sha256": "1e5298c23ffbed253aaa2f0596999ad11a3c7214f2b7256d1f269d4af07598a7",
+      "normalized_ko": "비임상 연구의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.5.002",
+      "record_type": "condition",
+      "source_text_sha256": "19c4e28c7f2f828284b6f833942083e21c62f91284b08d648a9cca55a1514c1a",
+      "normalized_ko": "중추적 초기 환자 시험의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.5.003",
+      "record_type": "condition",
+      "source_text_sha256": "211ecab559ee17e8ffc997f9ad768e3c139208dd4b3d44e06a85ad4522e5f2f4",
+      "normalized_ko": "총 연구 검체 수가 ≤ 1000인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.5.004",
+      "record_type": "condition",
+      "source_text_sha256": "e994ac55969165a7326b90c3a5ea91bd1035d7642deec3428bcd2aeb317117e7",
+      "normalized_ko": "총 검체 수가 > 1000인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.5.005",
+      "record_type": "condition",
+      "source_text_sha256": "d3efe3e75ba5ed968e7ac2b6ce3fbdafc939580066f326a82c14ad08382dad11",
+      "normalized_ko": "크로마토그래피 방법의 경우(4-6-20 규칙)",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.5.006",
+      "record_type": "condition",
+      "source_text_sha256": "fea839cecf7f38dc0f9b3b20948011ab1eca6f3a805f87592babf76d3ff2666f",
+      "normalized_ko": "LBA의 경우(4-6-30 규칙)",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.5.007",
+      "record_type": "condition",
+      "source_text_sha256": "aa1ece088ef8769ac4d0c9823cf221740860ea07a80f15b5659cad522a546896",
+      "normalized_ko": "비임상 연구",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.5.008",
+      "record_type": "condition",
+      "source_text_sha256": "db3bd2b7ca01bcdb98ef2b54913271f1672bb1cb41678040a12be6ea1ac01f2d",
+      "normalized_ko": "모든 중추적 비교 BA/BE 연구",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.5.009",
+      "record_type": "condition",
+      "source_text_sha256": "4b646c04f48283cf0cc3c089b14cdd08d77a02f06145a532a1da6e8fe725abd5",
+      "normalized_ko": "대상자에서의 최초 임상시험",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.5.010",
+      "record_type": "condition",
+      "source_text_sha256": "7e345d0ae04167aa8e486cb3afba3f2722cfc31297ac87e0e72faace041264b3",
+      "normalized_ko": "중추적 초기 환자 시험",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.5.011",
+      "record_type": "condition",
+      "source_text_sha256": "8d29ebe9504352a1de899ea52826309e535bc41c7c96f9e5d52d1fcfb82ff2bc",
+      "normalized_ko": "간 및/또는 신장 기능 장애 환자에서의 시험",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.5.012",
+      "record_type": "condition",
+      "source_text_sha256": "05b72297d94b65cb9264534b9b64f9d10c96ea4acf57d7944261c33d86cb327a",
+      "normalized_ko": "크로마토그래피 방법의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.5.013",
+      "record_type": "condition",
+      "source_text_sha256": "ed88fc76fdeb67ef9bca7d7843877831e9cfd2b99e0d9665da3937239c7b9738",
+      "normalized_ko": "LBA의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "9d5477862b7934f0d0af74cbdf3a07bd916941df73242483cdddb0b92a07835d",
+      "normalized_ko": "한 시설에서 안정성이 확립된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "3d86d16b303e64c73420cc2c6cf9ba306fa59bf06ef88aba2dd9bc7ebb899045",
+      "normalized_ko": "크로마토그래피 방법의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "cbb4aa4de3eaf539374e3e814ef33e3c986fc76062cca9d728a01fd27e0d5b80",
+      "normalized_ko": "이 범주에 해당하는 전형적인 생체분석 방법의 수정 또는 변경에는 다음이 포함되며, 이에 국한되지 않는다",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "7356fccd2010c409ecace1363dfec4f42f4c68c50a30355d289e472ee74e7a2c",
+      "normalized_ko": "LBA의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_1.005",
+      "record_type": "condition",
+      "source_text_sha256": "cbb4aa4de3eaf539374e3e814ef33e3c986fc76062cca9d728a01fd27e0d5b80",
+      "normalized_ko": "이 범주에 해당하는 전형적인 생체분석 방법의 수정 또는 변경에는 다음이 포함되며, 이에 국한되지 않는다",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_1.006",
+      "record_type": "condition",
+      "source_text_sha256": "232b92b94e8cffeafaedbfa0757e1ad78ff00dbc137009a07d9044a216f72b73",
+      "normalized_ko": "이 기준이 충족되지 않는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "917d24d6d8fdb790dfdd9a5e1550a92831562fe4e17121f214ff307fc81bcb6b",
+      "normalized_ko": "여러 생체분석 방법 및/또는 여러 생체분석 실험실이 관여하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "853f4b5fd8425e7293976a9350ae3d16816854b6acf626a204153bf789a6495b",
+      "normalized_ko": "한 연구 내에서 서로 다른 완전 검증된 방법으로부터 데이터를 얻는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "8864121d414a3ed822e929884d5abd41b385195bf296b67c46734ef442d0cbdf",
+      "normalized_ko": "동일한 생체분석 방법을 사용하는 서로 다른 실험실로부터 한 연구 내에서 데이터를 얻는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_2.004",
+      "record_type": "condition",
+      "source_text_sha256": "f4e3fb3dae80f2dfa84261ce6b504189050429467b27a79c1e1b1d1e5e43f7c1",
+      "normalized_ko": "서로 다른 완전 검증된 방법으로부터 데이터를 얻고, 이러한 데이터를 연구 간에 통합하지 않는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_2.005",
+      "record_type": "condition",
+      "source_text_sha256": "74b312656d7e73adabc1c2195caa0df6c3deb16e60fcadeb0797a9c09506d4c4",
+      "normalized_ko": "가능한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_2.006",
+      "record_type": "condition",
+      "source_text_sha256": "56be16c7739b38c8573fcbf6aba15e4c96f81aa6e6cb9e2b9dfec51b1e2bf23e",
+      "normalized_ko": "이용 가능한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_2.007",
+      "record_type": "condition",
+      "source_text_sha256": "8d600fa9c03e63690da81b48320ea7800bfa53de83467d35c2e7116814f283ab",
+      "normalized_ko": "각 방법으로 분석된 검체에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_2.008",
+      "record_type": "condition",
+      "source_text_sha256": "509aacd6601fd31e1505c954644a8d72e5e21654cfd8056a8d3d0a931676fa3c",
+      "normalized_ko": "두 방법 모두로 또는 두 실험실 모두에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.6_2.009",
+      "record_type": "condition",
+      "source_text_sha256": "387a19a06ccd0abf928032f5aed14c7ca82b8af4c5ba51e6161da9e064a9bcbb",
+      "normalized_ko": "하나의 비교 BA/BE 연구 수행 시",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "9a5bd703658cef214b17ab9a6b362fb41c63a3148c75f5aecef88dc8d187afc4",
+      "normalized_ko": "내인성 화합물이 투여될 약물과 동일한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "2759e82d2fec0327aacba20132c9dc2b1903f4c033c6dcd4354621d54561537b",
+      "normalized_ko": "모든 접근법에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "8be1ea9e8cfe403ca0a0c06736c8567203f292436808645b69592eb25295e831",
+      "normalized_ko": "대체 매트릭스 접근법",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "fee25678c45f2dfa2600f808fbe856a9682369fa80f855a759286c3f84b25d17",
+      "normalized_ko": "시험 검체 내 실제 분석대상물질이 보정표준물질과 동일하게 거동하지 않을 수 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "a267af03c69a3889fe699a13bfe4e10f1c9f4c1dd116a9577b2b7a4ea36511b9",
+      "normalized_ko": "희석 보정 농도 전반에 걸쳐",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "3d86d16b303e64c73420cc2c6cf9ba306fa59bf06ef88aba2dd9bc7ebb899045",
+      "normalized_ko": "크로마토그래피 방법의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "387cad149bc123e9c2cfb927b65e8d252476a0798947b261d3d88a558c8f49c0",
+      "normalized_ko": "농도 범위 전반에 걸쳐",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_3.003",
+      "record_type": "condition",
+      "source_text_sha256": "64b814b2fbe5547bb8df4cbfba54e3ec2d7775a5e1ac1cf2f65acfb56a7bf3f7",
+      "normalized_ko": "저농도, 중간 농도 및 고농도에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_3.004",
+      "record_type": "condition",
+      "source_text_sha256": "3d86d16b303e64c73420cc2c6cf9ba306fa59bf06ef88aba2dd9bc7ebb899045",
+      "normalized_ko": "크로마토그래피 방법의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_4.001",
+      "record_type": "condition",
+      "source_text_sha256": "ef20c3a01ec29b4ac12493c24884787a7768e9e8fc939d05b959de7935f79904",
+      "normalized_ko": "LBA에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_4.002",
+      "record_type": "condition",
+      "source_text_sha256": "b284ece40224c5fe8a751d259d4f937d21e3adecbf1586ff53290639778479d7",
+      "normalized_ko": "방법 개발 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_4.003",
+      "record_type": "condition",
+      "source_text_sha256": "116c475140516cb84fc5177e451a350576a104af0cef1437d303c0dab0933619",
+      "normalized_ko": "밸리데이션 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_4.004",
+      "record_type": "condition",
+      "source_text_sha256": "1ebfc426a626268e62c99298ce53830c6e7d21913dff534cf7818f0b14ea3100",
+      "normalized_ko": "MRD를 고려한 후",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_4.005",
+      "record_type": "condition",
+      "source_text_sha256": "ef20c3a01ec29b4ac12493c24884787a7768e9e8fc939d05b959de7935f79904",
+      "normalized_ko": "LBA에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_5.001",
+      "record_type": "condition",
+      "source_text_sha256": "05e60a2621a8289fd030fbbe953911f891be34e44ffd844e44364706bca77ba4",
+      "normalized_ko": "상업용 또는 진단용 키트(RUO 키트 포함)를 규제 연구에서 화학적 또는 생물학적 약물 농도 측정용으로 전용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_5.002",
+      "record_type": "condition",
+      "source_text_sha256": "659cac041ad38b345fa9c1fff881f74fe5442b70e90a235f677fea6e98401653",
+      "normalized_ko": "소수의 표준물질(예: 1-2 points)을 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_5.003",
+      "record_type": "condition",
+      "source_text_sha256": "644efe7f48f1cded89ba2a9cb4c1dccf69b70253ce6a49fd1a7a4fee8aa64d41",
+      "normalized_ko": "여러 lot을 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_5.004",
+      "record_type": "condition",
+      "source_text_sha256": "28d525dacf2aeea1e5239a7e1e2ea09e1116b80b176fbad42773aa317896a48a",
+      "normalized_ko": "소수의 표준물질을 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_6.001",
+      "record_type": "condition",
+      "source_text_sha256": "8ae91b8451bfbd94308373ca3bbb0b6c528a8cc4a77a4fe2c14dd47c133d61af",
+      "normalized_ko": "의약품 개발에서 신규 또는 대체 분석 플랫폼이 기존 플랫폼을 대체하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_6.002",
+      "record_type": "condition",
+      "source_text_sha256": "da25d14a56f0468bcc06d3a8f30aca5d9865c4d27d1cf222ac60ca67a219c152",
+      "normalized_ko": "건조 매트릭스 방법(DMM/DBS)의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_6.003",
+      "record_type": "condition",
+      "source_text_sha256": "70f9ee5c898a04ad101d9c972acd47b3de2ea8d90a4ffdb9a811fcde56793dd8",
+      "normalized_ko": "전혈 스포팅의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_6.004",
+      "record_type": "condition",
+      "source_text_sha256": "0dd5fc7b8d7c1d02e3bb5d735f5a5c9ff269a24ed2cabeeb80dc13b2d416cfbc",
+      "normalized_ko": "둘 다 동일한 연구에서 사용되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_6.005",
+      "record_type": "condition",
+      "source_text_sha256": "8ae91b8451bfbd94308373ca3bbb0b6c528a8cc4a77a4fe2c14dd47c133d61af",
+      "normalized_ko": "의약품 개발에서 신규 또는 대체 분석 플랫폼이 기존 플랫폼을 대체하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_6.006",
+      "record_type": "condition",
+      "source_text_sha256": "70f9ee5c898a04ad101d9c972acd47b3de2ea8d90a4ffdb9a811fcde56793dd8",
+      "normalized_ko": "전혈 스포팅의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_6.007",
+      "record_type": "condition",
+      "source_text_sha256": "517ac680bd9b78fa526f1cfbd3a4175293554b33ab0a66085afcf7a00621fa9f",
+      "normalized_ko": "서브펀칭",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_6.008",
+      "record_type": "condition",
+      "source_text_sha256": "1d36b16b3031b689c42f68195af25926523633cf85be97c8aa707727f48e3d1c",
+      "normalized_ko": "ISR의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_6.009",
+      "record_type": "condition",
+      "source_text_sha256": "0dd5fc7b8d7c1d02e3bb5d735f5a5c9ff269a24ed2cabeeb80dc13b2d416cfbc",
+      "normalized_ko": "둘 다 동일한 연구에서 사용되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_6.010",
+      "record_type": "condition",
+      "source_text_sha256": "da25d14a56f0468bcc06d3a8f30aca5d9865c4d27d1cf222ac60ca67a219c152",
+      "normalized_ko": "건조 매트릭스 방법(DMM/DBS)의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.7_6.011",
+      "record_type": "condition",
+      "source_text_sha256": "0be54f3f8818e3104bb0b4da0b12961e9f4fdf63a771c300a47a5594af879cbc",
+      "normalized_ko": "중복 스포팅 또는 다중 펀치",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.8_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "6c6323cd114a9c31a2f2270c4ee4047d579a174967cc0589293c2a8f65764662",
+      "normalized_ko": "비교 BA/BE 연구의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.cond.8_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "18b56a9a30b79f444ee60c0079a4e3c7eaee0b04c532b3cd2eec0d6dace083c1",
+      "normalized_ko": "제출 및 실사를 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.2_2_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "92514224685ba0a863ec341ed03e2e49be14a90e9955e136363c241cfec7b4b0",
+      "normalized_ko": "런 내 정확도 및 정밀도 평가는 최소 1회로 할 수 있다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "571f80d1b69039a014451dc754a787ea6c1bef3b2e7eefbe54e4dbfeb84ebe47",
+      "normalized_ko": "선택성 평가에 사용되는 공시료는 최소 6개의 개별 출처/로트(또는 희귀 매트릭스의 경우 그보다 적은 수)에서 얻어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_1.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "517be39c417718d9f41cdaad3d4b9d66b4c7c77fe4a6f2d4c5a49506027681e3",
+      "normalized_ko": "공시료 반응은 LLOQ에서 분석물질 반응의 20%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_1.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "0d835fa183dcb341f092d8410929f5cca4c6c8512ea53fccb2515718f1b5e191",
+      "normalized_ko": "공시료 반응은 IS 반응의 5%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "517be39c417718d9f41cdaad3d4b9d66b4c7c77fe4a6f2d4c5a49506027681e3",
+      "normalized_ko": "잠재적 간섭 물질을 첨가한 공시료에서의 반응은 LLOQ에서의 분석물질 반응의 20%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_2.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "0d835fa183dcb341f092d8410929f5cca4c6c8512ea53fccb2515718f1b5e191",
+      "normalized_ko": "잠재적 간섭 물질을 첨가한 공시료에서의 반응은 IS에 대한 반응의 5%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_3.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "369b4b2b3204c244fae40e88f01af884517fd5bfbb64531bc599064deb42f17d",
+      "normalized_ko": "개별 공여자 유래 공매트릭스의 개별 로트는 최소 6개이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_3.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "26fa8d79eeb5d8039d93be753c3135fc829877d1beff73b5c46be08a05b95777",
+      "normalized_ko": "각 농도 수준에서 IS-정규화 MF의 전체 정밀도(%CV)는 15%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_3.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "369b4b2b3204c244fae40e88f01af884517fd5bfbb64531bc599064deb42f17d",
+      "normalized_ko": "개별 공여자 유래 공매트릭스의 개별 로트는 최소 6개이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_3.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "26fa8d79eeb5d8039d93be753c3135fc829877d1beff73b5c46be08a05b95777",
+      "normalized_ko": "6개의 개별 로트로부터 계산된 IS-정규화 MF의 전체 정밀도(%CV)는 각 농도 수준에서 15%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_4.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "0b6eca172e1cde2b1ec047a5864d508282117bd7592083ca5f2c84b0664929e5",
+      "normalized_ko": "검량 표준품의 농도 수준은 최소 6개여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_4.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "79290c57195b3cb142d16814dc98bc5c872c53516b59192aa789a19e415dc4cb",
+      "normalized_ko": "LLOQ에서 역산 농도의 정확도는 명목 농도의 ±20% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_4.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6ce2736f0d1100769bee9ca7a640faafba335037babbf2e0181315180abbd08a",
+      "normalized_ko": "그 밖의 모든 수준에서 역산 농도의 정확도는 명목 농도의 ±15% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_4.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "9ea9192bc0d8c821d0eabe11edbfad4949b790c5434f4418c1a78960c6ccec83",
+      "normalized_ko": "기준을 충족하는 검량 표준품은 최소 75%여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_4.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "ec4671c374eaba5e5db4feeb45b0027181c36fc08a8dc379f99e9883a78dde37",
+      "normalized_ko": "기준을 충족하는 검량 표준품 수준은 최소 6개여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_4.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d55d63017397883c1846d7f8675853569790e94b355d6848a54480bb2a7539d6",
+      "normalized_ko": "농도 수준당 시험한 검량 표준품의 최소 50%는 기준을 충족해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_4.007",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "79290c57195b3cb142d16814dc98bc5c872c53516b59192aa789a19e415dc4cb",
+      "normalized_ko": "LLOQ에서 각 검량 표준품의 역산 농도 정확도는 명목 농도의 ±20% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_4.008",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6ce2736f0d1100769bee9ca7a640faafba335037babbf2e0181315180abbd08a",
+      "normalized_ko": "그 밖의 모든 수준에서 각 검량 표준품의 역산 농도 정확도는 명목 농도의 ±15% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b75ec679096b2178657a2bb6b67eeffcd53976b3a2a2d2974815727c9bada9c4",
+      "normalized_ko": "QC 농도 수준은 검량선 범위 내에서 최소 4개여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_1.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2784aa6441c5aa7c0f95705a2bd7a1caf9bd3bc0844ac2f2770a26692343d369",
+      "normalized_ko": "저 QC 농도는 LLOQ의 3배를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_1.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "175cb11c58d7c7e4b51fc2bafd98a5d2e86e76bc8ef6368e2d7d458417e07715",
+      "normalized_ko": "중간 QC 농도는 검량선 범위의 약 30 - 50% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_1.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "35422818234828dc2057dee929c5f5ce7b81159d84901612a057600eb7b458a1",
+      "normalized_ko": "고 QC 농도는 ULOQ의 최소 75%여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_1.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "3ee69d7bc51676d86c99f67d653c20c4e2b32adf1ba18b9847563d46a68863ae",
+      "normalized_ko": "저, 중간 및 고 QC는 각각 2회 분석해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_1.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "982d1b2acdabd4d5144f42e5e68380a76a4e84e2b068c29491f857f018ed658a",
+      "normalized_ko": "QC 농도 수준은 LLOQ여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_1.007",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2784aa6441c5aa7c0f95705a2bd7a1caf9bd3bc0844ac2f2770a26692343d369",
+      "normalized_ko": "저 QC 농도는 LLOQ의 3배 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "7330c0df0fa69313b4a9e84fb79caeec2d8499be15c7b0c1869f97df79398bdf",
+      "normalized_ko": "각 분석 런의 각 QC 농도 수준에서 최소 5개의 반복측정값이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_2.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "cdd3a85abc92a733e0704f814b93eb4546a3e6f58f19848f283c3b7d60a536bd",
+      "normalized_ko": "각 QC 농도 수준에서 최소 3회의 분석 런이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_2.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "5fd9e61f2d876c642de8b218b427e61647fb7a90e7886af274fdeab0afadeacf",
+      "normalized_ko": "런 간 정확도 및 정밀도 평가는 최소 2일에 걸쳐 수행되어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_2.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "e9494acc20deb80d7f0a319b01154ae4934afd656ef2dce14c562fc1ceb7e9c6",
+      "normalized_ko": "한 런 내 시간 경과에 따른 추세 평가는 향후 연구 검체 분석 런과 동등한 규모의 런 최소 1회에 걸쳐 수행되어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_2.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2b408c99b2b42c89b72d85b1d9c7285cccdcd7fb1031dc30d36e9e60cfccc221",
+      "normalized_ko": "이러한 평가를 위한 검량선에는 최소 1회의 런에서 새로 스파이크한 검량 표준품을 사용해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_2.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "47fa30eed2919bdb9f2a2d24b25bf7757ef6d8b612b1171234ac28c52184b0ac",
+      "normalized_ko": "LLOQ를 제외한 각 농도 수준에서 정확도는 명목 농도의 ±15% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_2.007",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "7467af85a3a92801f347cc0c3e17bf88c5f8e8df669ed53fef9263bc7514e8bf",
+      "normalized_ko": "LLOQ에서는 예외적으로 정확도가 ±20% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_2.008",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "39c2494cfd44378909180689e3d971be6a54355b9031dd8c68f97f67a1dbec31",
+      "normalized_ko": "LLOQ를 제외한 각 수준에서 결정된 농도의 정밀도(%CV)는 15%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_2.009",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "a1580f509708cfdcffd822fcccaf16e6ddc2bbb9ddf9d99ade1fc66834b5f0b7",
+      "normalized_ko": "LLOQ에서는 예외적으로 정밀도(%CV)가 20%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_2.010",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "4b2ce407bb2306f8beef4ec712ec4ed216ddbe47c4e8f7be6f95d0197e965b90",
+      "normalized_ko": "정확도 및 정밀도 검증 런이 아닌 경우, 전체 QC 중 최소 2/3는 명목값 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_2.011",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "475aecafd3b2143c17debbe02d3f86e25f22677d574a66bc2030266bf9a228fc",
+      "normalized_ko": "정확도 및 정밀도 검증 런이 아닌 경우, 각 농도 수준에서 QC의 최소 50%는 명목값 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_5_2.012",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "e6086bc4d489e9966fdf2b0978f2e4f5572cd1b2b0d86d0a1fbb04abcf87be30",
+      "normalized_ko": "정확도 및 정밀도 검증 런이 아닌 경우, QC 값은 명목값의 ±15% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_6.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6e33c157900bd3eb59346819abc8b83e0850dcb315d0b031964cb67256ae9c80",
+      "normalized_ko": "최고 농도 보정 표준물질 다음의 공시료에서 이월은 LLOQ에서 분석물질 반응의 20%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_6.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "ecbec5800b9822fee69630f57b23d763d12bbb12cce31f4d8143480f5fe83599",
+      "normalized_ko": "최고 농도 보정 표준물질 다음의 공시료에서 이월은 IS 반응의 5%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_7.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "974c5634b8a73486a03f8b689f9241ec04d3aeda1bd19deada62e9e90d05dea8",
+      "normalized_ko": "희석 배수당 최소 5개의 반복 측정값이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_7.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "47fa30eed2919bdb9f2a2d24b25bf7757ef6d8b612b1171234ac28c52184b0ac",
+      "normalized_ko": "평균 정확도는 명목 농도의 ±15% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_7.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "39c2494cfd44378909180689e3d971be6a54355b9031dd8c68f97f67a1dbec31",
+      "normalized_ko": "정밀도(%CV)는 15%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_8.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "35fdb61a04137a8646bea6b9f65624a42277fec78e8c3d74e69d95471ea29078",
+      "normalized_ko": "각 농도 수준에서 최소 3개의 분취액을 분석해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_8.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "3273b90a5480cf700b52c124fce3dd97a3d0645953ad235c3a51f29039f0522c",
+      "normalized_ko": "각 QC 수준에서 평균 농도는 공칭 농도의 ±15% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_8.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "36865d0828c7e2c51849a18f448b99e157bf85f71e3fc97ea5cc66b7a01267eb",
+      "normalized_ko": "매트릭스 내 동결-해동 안정성은 최소 3 사이클이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_8.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "62ad8b063edb97e4dde83bcb24f5267def7811d691ad877c8e4d56d060bbc3f2",
+      "normalized_ko": "사이클 간 최소 12 hours 동안 동결 상태로 유지해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_9.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "16657c6ede512304814d9ab3c7941219a5df2827cad2ab2283291550704b6131",
+      "normalized_ko": "저, 중, 고 QC 각각에 대해 최소 5회 반복한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_9.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "8aa07b9c440226d7c54aced98accd075b8fb2cc0db4fb3ea1cd5be14c504e32b",
+      "normalized_ko": "재주입 QC의 정확도는 명목 농도의 ±15% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_9.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "c63d42c6d1b590292de1f528b5d9b64a151321fd3eb9a967880c71349b7a5231",
+      "normalized_ko": "재주입 QC의 정밀도(%CV)는 %CV ≤ 15%이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_2_9.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "8aa07b9c440226d7c54aced98accd075b8fb2cc0db4fb3ea1cd5be14c504e32b",
+      "normalized_ko": "재주입 QC의 정확도는 명목 농도의 ±15% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_3_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "7054141f6f4122431151bb78f364cc592ca44242538df53fa01dd2abf85408dd",
+      "normalized_ko": "검량 표준물질 농도 수준은 최소 6개여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_3_1.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "91aebd13fc6379f6ac7bcc15180a2bf22d53db2159a8c6cd1af33a6c906aac67",
+      "normalized_ko": "QC 농도 수준은 최소 3개(저, 중, 고)여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_3_1.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b05c4ff650ac11eb7f9120276983f0df35745b8d0670d605423cd9892108b07e",
+      "normalized_ko": "각 QC 농도 수준의 QC 반복수는 2회여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_3_1.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "256b798bf131641256966d27262f4a02a8100d54b85ed1f3d57e5fb98f7907bd",
+      "normalized_ko": "QC는 총 시험 검체 수의 최소 5%여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_3_1.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "ef3d92cabf59225c051a7d8a37023a086cbf560b60b171ebca53031a913d3074",
+      "normalized_ko": "각 QC 농도 수준의 QC 반복수는 2회 또는 총 시험 검체 수의 최소 5% 중 더 큰 값 이상이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_3_1.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "56f832a03d0994eb4d29fb64f3a52a50596bf4c8d539c5e332a113c20269dd30",
+      "normalized_ko": "QC는 총 시험 검체 수의 최소 5% 또는 그보다 더 큰 값이어야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m10.qc.3_3_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "54445d9eefda2356ef8bf06811f6e1b3dca3d6f56d4e2cb890800592c5cca059",
+      "normalized_ko": "LLOQ에서 검량선 정확도는 ±20% 이내이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_3_2.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6ce2736f0d1100769bee9ca7a640faafba335037babbf2e0181315180abbd08a",
+      "normalized_ko": "그 외 모든 수준에서 검량선 정확도는 ±15% 이내이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_3_2.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "5c731f7694f7605dde991455297f2b00fec3358c4d5042968d9a91c9da6d803d",
+      "normalized_ko": "검량선 정확도 기준을 충족하는 검량 표준품은 검량 표준품의 최소 75%여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_3_2.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b514dc3a64414774499e8548032017c51565868f7d652c13e9bba1691efea18d",
+      "normalized_ko": "검량 수준은 최소 6개여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_3_2.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "e2944b7482a09c2e695e193a6a506f86af2e08d8fc802a36f9b955f432b3e6b3",
+      "normalized_ko": "총 QC의 최소 67% (2/3)는 공칭 농도의 ±15% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_3_2.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d427198f5fba7d41fde2e25fc3fbc488c3c24b293aff5eae104b6a415490ab47",
+      "normalized_ko": "각 농도 수준의 QC 중 최소 50%는 공칭 농도의 ±15% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.3_3_3.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "982cfd260c526d46abd53d56bbfd4c9583493b6d3a8dcd7d563bc3fa62ffef58",
+      "normalized_ko": "최소 2개의 QC 수준은 시험 시료에서 측정된 농도 범위 내에 있어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2e11a6a0af165655de6c7a8a5fb2b5e0149b5ce618960c52129f14f1ef11a6ea",
+      "normalized_ko": "명목 농도의 ±20% 이내여야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "1c3e9af0ad9aaf53742d20c1e595bbcd2e71eec643a623beaf68a13dcebfda4d",
+      "normalized_ko": "최소 10개의 개별 출처(또는 희귀 매트릭스의 경우 더 적게).",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_2.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "c46c4ae1e765c815e4c468fde0c0a42d746183f436ddd15ea28f99afc66769de",
+      "normalized_ko": "평가된 개별 출처의 최소 80%가 기준을 충족해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_2.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "e421790cb4c39b9a1372bf55793a83bf05fba64ed68881c99f73c7bb3b95d89a",
+      "normalized_ko": "무첨가 공시료 반응은 LLOQ 미만이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_2.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "25cb66c0b12065e4c2ddbe922e8b0d5e60078e0f06aa26e36f0fec0938bf19c2",
+      "normalized_ko": "첨가된 LLOQ 시료의 정확도는 명목 농도의 ±25% 이내여야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_2.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "25cb66c0b12065e4c2ddbe922e8b0d5e60078e0f06aa26e36f0fec0938bf19c2",
+      "normalized_ko": "고농도 QC 시료의 정확도는 명목 농도의 ±20% 이내여야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_3.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "0b6eca172e1cde2b1ec047a5864d508282117bd7592083ca5f2c84b0664929e5",
+      "normalized_ko": "검량 표준물질의 농도 수준은 최소 6개여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_3.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d961254c2ec1f1781a6ace789f40d7e64d314f172490070c4c1be8e9786592e9",
+      "normalized_ko": "검량 표준물질의 역산 농도는 명목 농도의 ±20% 이내여야 하며, LLOQ 및 ULOQ에서는 제외한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_3.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "897ec191f16f8ccda13107af42c95da4331c541b1edba991a256291300d14425",
+      "normalized_ko": "LLOQ 및 ULOQ에서 역산 농도는 명목 농도의 ±25% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_3.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "9ea9192bc0d8c821d0eabe11edbfad4949b790c5434f4418c1a78960c6ccec83",
+      "normalized_ko": "검량 표준물질의 최소 75%는 기준을 충족해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_3.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d55d63017397883c1846d7f8675853569790e94b355d6848a54480bb2a7539d6",
+      "normalized_ko": "각 농도 수준별로 시험한 검량 표준물질의 최소 50%는 기준을 충족해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d73d7a517e9d07926b814f6e7c62c73adf31a635c6f407b43a5b7d865c7f133f",
+      "normalized_ko": "QC 농도 수준은 검량선 범위 내에서 최소 5개 수준이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_1.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2784aa6441c5aa7c0f95705a2bd7a1caf9bd3bc0844ac2f2770a26692343d369",
+      "normalized_ko": "저농도 QC 농도는 LLOQ의 3배 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_1.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "35422818234828dc2057dee929c5f5ce7b81159d84901612a057600eb7b458a1",
+      "normalized_ko": "고농도 QC 농도는 ULOQ의 최소 75%여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "912b4409019fed5948a63cc1131caef33c90959fab490a11406e8bf5a5b93f38",
+      "normalized_ko": "5개 QC 농도 수준 각각에서 최소 3 반복이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "501c7655dddd6f84e8af6c7cca292f8a9ab0f7c6f3562d57d14634abec153412",
+      "normalized_ko": "QC 농도 수준은 5개여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "31c4d99abc73251b0f8d93ddffbef1a1d8193a11f4772023e23ea2b0b21bfdab",
+      "normalized_ko": "분석 런은 최소 6회여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "5fd9e61f2d876c642de8b218b427e61647fb7a90e7886af274fdeab0afadeacf",
+      "normalized_ko": "최소 2일에 걸쳐야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "9c68055ad31dd07df1aec8628355db7a55f123f98455eedf2e918ddd9ae58888",
+      "normalized_ko": "대체 평가 설계에서 분석 런은 2일에 걸쳐 3회여야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "9c68055ad31dd07df1aec8628355db7a55f123f98455eedf2e918ddd9ae58888",
+      "normalized_ko": "대체 평가 설계에서 기간은 2일이어야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.007",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "621fc945c48215eb36e5ad10d1625a4860c41827add7717f0eaa332e13348bfa",
+      "normalized_ko": "대체 평가 설계에서 QC 수준당 반복은 5회여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.008",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "bc063a4084f2d3ff38c653ac02d759535c346d32940307204e7fbae0716288d5",
+      "normalized_ko": "각 QC 수준에서 명목값 대비 전체 런 내 및 런 간 정확도는 ±20% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.009",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d3065f73c7b6aaa22a61a25bc7892518214e32f59068f9183f00ad2540137c45",
+      "normalized_ko": "LLOQ 및 ULOQ에서 명목값 대비 전체 런 내 및 런 간 정확도는 ±25% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.010",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "f302b7ddd4cb39bc06b55f5cc7d94bec48c0b59caef485437913562aa383e27b",
+      "normalized_ko": "정밀도(%CV)는 20%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.011",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "f1ac23ced6f3bde5e614e0fc1bb5a510e0a75a723513580663f7fdd0f87592a7",
+      "normalized_ko": "LLOQ 및 ULOQ에서 정밀도(%CV)는 25%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.012",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d87bf68210f64e208329fa4aaf739f956fde21625b0605fe967573a51a7111fa",
+      "normalized_ko": "총 오차(정확도 및 정밀도 절대오차의 합)는 30%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.013",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "fecab4c204ede6867a5e3afa299917649114091447f72e16329f0b2d40d0874c",
+      "normalized_ko": "LLOQ 및 ULOQ에서 총 오차(정확도 및 정밀도 절대오차의 합)는 40%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.014",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6005e37408f645def04fa4fae3665aed85678bf8c2286fd07f6cd1ae2cddeb53",
+      "normalized_ko": "±20% 이내인 총 QC의 비율은 최소 2/3이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.015",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b08d1c3b1be06bb1626e231136d0f0955c3119aac1e27f1d051f35a8297de175",
+      "normalized_ko": "각 QC 수준에서 QC의 50% 이상이 ±20% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.016",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "31a0ef657c3a07d935ef2c8acff543bf6e611b649a0f35503040d1e421b3b429",
+      "normalized_ko": "각 QC 수준에서 전반적인 런 내 및 런 간 정확도는 LLOQ 및 ULOQ를 제외하고 명목값의 ±20% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.017",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d3065f73c7b6aaa22a61a25bc7892518214e32f59068f9183f00ad2540137c45",
+      "normalized_ko": "LLOQ 및 ULOQ에서 전반적인 런 내 및 런 간 정확도는 명목값의 ±25% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_4_2.018",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6005e37408f645def04fa4fae3665aed85678bf8c2286fd07f6cd1ae2cddeb53",
+      "normalized_ko": "총 QC의 2/3 이상이 ±20% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_5.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "7335d594853adcd0a0b55a02f101a82ef616606e8e810c35ff1791b798049db7",
+      "normalized_ko": "블랭크 시료의 반응은 LLOQ 미만이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_6.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "ef94c6388049c8793a20d3498c4aa351d9b8e6c7ca648b92142f6425ef867b6e",
+      "normalized_ko": "분석물질 농도는 ULOQ를 초과한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_6.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "51dbd9ef1383039e2f5df851375a73d3017c701f64aecbfab7be19eaebfb21bb",
+      "normalized_ko": "서로 다른 희석 계수는 최소 3개여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_6.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "92dcdcebbbceead6ce496d18f3473a0ed9de45b3f4f60f6fb6bd5a2755c7e723",
+      "normalized_ko": "각 희석 계수에 대해 독립적으로 제조한 희석 계열은 최소 3개여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_6.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2e11a6a0af165655de6c7a8a5fb2b5e0149b5ce618960c52129f14f1ef11a6ea",
+      "normalized_ko": "계산된 평균 농도는 명목 농도의 ±20% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_6.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "1df8b98eedf7b252ce76ccd9a40e65c0b32e541c2734a643af0886fa192751b1",
+      "normalized_ko": "정밀도는 20%를 초과하지 않아야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_6.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "8d3238dce7cff119a8860d0f84cd876ac91c62f9d381871a1fb8c4a7dcbac305",
+      "normalized_ko": "각 희석 계수에 대해 독립적으로 제조한 희석 계열은 최소 3개여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_7.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "35fdb61a04137a8646bea6b9f65624a42277fec78e8c3d74e69d95471ea29078",
+      "normalized_ko": "각 농도 수준에서 최소 3개의 분취액을 분석해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_7.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "4b4bb2206ce6483df1da2f305b3afa11e5c56287def2e8bf44081ddfb6d2ffe1",
+      "normalized_ko": "각 QC 수준에서 평균 농도는 명목 농도의 ±20% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_7.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "0300de3c6c75dee19a0550d53d337a466692e91ecff0204759b30448f4a74455",
+      "normalized_ko": "매트릭스 내 동결-해동 안정성은 최소 3 사이클이어야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m10.qc.4_2_7.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "62ad8b063edb97e4dde83bcb24f5267def7811d691ad877c8e4d56d060bbc3f2",
+      "normalized_ko": "사이클 간 최소 12 hours 동안 동결 상태로 유지해야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m10.qc.4_3_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "31797bfcdc6fecacf66afc99fd76dc1b1557bd75aff17c20d7555efb1c61d58f",
+      "normalized_ko": "검량 표준물질은 최소 6개 농도 수준이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_3_1.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "bba11ba1e49c2162ae842348b5aa01d7eff878f06d633df3967a041f3696fcb4",
+      "normalized_ko": "QC는 최소 3개 수준이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_3_1.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "78d2c0b8f4745b84510009ac71ac8b78acad580e9ee7c46329e92f24ca18e528",
+      "normalized_ko": "QC 세트는 분석 런당 최소 2세트(또는 시험 시료 수의 최소 5% 중 더 높은 값)로 적용해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_3_1.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "94ee7c002873d901f23a6609d379748534ae79176d275f21ace9ff2e2d072d11",
+      "normalized_ko": "QC 세트는 시험 시료 수의 최소 5% 이상이어야 하며, 둘 중 더 높은 값을 적용한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_3_1.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "c3267cc8471da8d17984193d2b936090e8c0943e83453f34d51fa25e1700b47f",
+      "normalized_ko": "QC 세트는 2세트로 적용해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_3_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "bd29f96b5db2745e4759cb0d097dfd0394585da69fadef32f2861793cdda32dc",
+      "normalized_ko": "교정 표준물질의 교정곡선 정확도 편차는 ±20% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_3_2.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "5c731f7694f7605dde991455297f2b00fec3358c4d5042968d9a91c9da6d803d",
+      "normalized_ko": "교정 표준물질의 최소 75%는 교정곡선 정확도 기준을 충족해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_3_2.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "8df6b1b9d3ca233d780e21266656a310e206b0e500c4144dfc16c074366866fc",
+      "normalized_ko": "교정 표준물질은 최소 6 수준이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_3_2.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "3a092b4558397e300d81cde8c6d459535de814fa2f47e3b70f12825d3795bf5c",
+      "normalized_ko": "LLOQ 및 ULOQ에서 교정 표준물질의 교정곡선 정확도 편차는 ±25% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_3_2.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "e2944b7482a09c2e695e193a6a506f86af2e08d8fc802a36f9b955f432b3e6b3",
+      "normalized_ko": "전체 QC의 최소 67% (2/3)는 명목 농도의 ±20% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_3_2.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d427198f5fba7d41fde2e25fc3fbc488c3c24b293aff5eae104b6a415490ab47",
+      "normalized_ko": "각 농도 수준의 QC 중 최소 50%는 명목 농도의 ±20% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.4_3_3.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "982cfd260c526d46abd53d56bbfd4c9583493b6d3a8dcd7d563bc3fa62ffef58",
+      "normalized_ko": "최소 2개의 QC 수준이 시험 검체에서 측정된 농도 범위 내에 있어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.5.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "014e7dc8e24d616d8ab8511b5aa163c0466ad0f6f3c71f1364dc00a6fed8d26b",
+      "normalized_ko": "각 종별 ISR 빈도는 최소 1회이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.5.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d66e00da6c2f33302fa51e694f11dc6bfc09d5c26d1672ed781b120062a43026",
+      "normalized_ko": "각 환자 집단별 ISR 빈도는 1회이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.5.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "244218770666a375e2a8fc6287d600953f8f31074b3dbf6a3bdee59ed21fdadc",
+      "normalized_ko": "총 연구 검체 수는 ≤ 1000이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.5.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "f70401e6aad84050e951ca31e003e095b8e3ee233412a6edcd0222e740c1c016",
+      "normalized_ko": "재분석되는 검체 수는 총 연구 검체 수의 10%이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.5.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "85ccd48fd3cea9fb05c5220c2ba1acd3325580fdf399c64a4ffaa6785dd8a04a",
+      "normalized_ko": "총 검체 수는 1000을 제외하고 > 1000이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.5.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "c0cc0ad1980b60758d9b8c70c4faa153d9e68e0521dc1708247c39e55af094e1",
+      "normalized_ko": "처음 1000개 검체 중 평가되는 검체 수는 10%(100)이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.5.007",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "f441f59993b54dd16d46b099435f704f7e530ccb10db216709809041204150ca",
+      "normalized_ko": "처음 1000개 검체 중 평가되는 검체 수는 100개이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.5.008",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "ffa8edf027e7f491e0561d77ff487b05d95ecdb1381e885cc717ee7a040b4264",
+      "normalized_ko": "1000을 초과하는 검체의 5%",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.5.009",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "bd29f96b5db2745e4759cb0d097dfd0394585da69fadef32f2861793cdda32dc",
+      "normalized_ko": "평균에 대한 반복값과 최초값 간 백분율 차이는 ±20% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.5.010",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "94918ee737083afbe763121016911cd9d78aa17358b5c02b4bcade46858b3ad9",
+      "normalized_ko": "반복 측정의 최소 2/3은 ±20% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.5.011",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2d290f8dab45fcecb7fd302d4503d932bfd84f0cd56e43585b5d60f294004b77",
+      "normalized_ko": "평균에 대한 반복값과 최초값 간 백분율 차이는 ±30% 이내여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.5.012",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "014e7dc8e24d616d8ab8511b5aa163c0466ad0f6f3c71f1364dc00a6fed8d26b",
+      "normalized_ko": "종별로 최소 1회",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.5.013",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d66e00da6c2f33302fa51e694f11dc6bfc09d5c26d1672ed781b120062a43026",
+      "normalized_ko": "환자 집단별로 최소 1회",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.5.014",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "989ac78e3ff7d3ee2f19e66c2c5870ae15a139db2c090f11e26bcacd93a15fe7",
+      "normalized_ko": "추가로 1000을 초과하는 검체의 5%를 평가해야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m10.qc.5.015",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "014e7dc8e24d616d8ab8511b5aa163c0466ad0f6f3c71f1364dc00a6fed8d26b",
+      "normalized_ko": "종별로 최소 1회",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.6_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "1ef0ad522f25d1b90a057097c650eaef714447024f1dbe38da1fc8e9253337d8",
+      "normalized_ko": "동일한 QC 세트(저, 중, 고)의 측정은 최소 3회 반복하여 수행한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.6_2.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "1f048cd8ad74c77f5e82504cd67b4bac2639790f9059eb489a160348e6e91968",
+      "normalized_ko": "이용 가능한 경우, 연구 검체 농도 범위에 걸치는 연구 검체는 n≥30개이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.7_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "303c2b293c80359f9569ae0ad86fc46388fb2c3aefdb0f5c03d37734f5be04cf",
+      "normalized_ko": "4가지 접근법이 인정된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.7_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2f386cf794b6024216066d825bcc2d0e67117f4873f692437defffd5ef819d49",
+      "normalized_ko": "최소 3개의 개별 시험 검체를 연속 희석해야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m10.qc.7_2.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "9231fd5fd1d911e992058d9939ed621154147a6cf4a41fda9b75a412049bcb01",
+      "normalized_ko": "희석 보정 농도 전반에 걸친 정밀도(%CV)는 30%를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.7_5.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "3f7225172ca3a3fda83163de775102cad3e3dea351f12cd3dc1afebe3c581815",
+      "normalized_ko": "소수의 표준물질을 사용하는 보정곡선에서 1-2 points(예시).",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.7_5.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6caf51d075b9ec298190da6d8a27a308da63b455e5d0e7e6d9b418d61f1fd780",
+      "normalized_ko": "소수의 표준물질을 사용하는 보정곡선에서 표준물질 수는 예를 들어 1 points 이상이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m10.qc.7_5.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6caf51d075b9ec298190da6d8a27a308da63b455e5d0e7e6d9b418d61f1fd780",
+      "normalized_ko": "소수의 표준물질을 사용하는 보정곡선에서 표준물질 수는 예를 들어 2 points 이하이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m10.qc.8_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "74c4dc5ec298c2d98ff5f02553700b54fe93b26b241002bc0f8ba731010e027e",
+      "normalized_ko": "시험 전 최근 3년 이내.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.8_1.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "c9b39831391754a426ceec8559325a52b8a5d7cdc686dd187954aa9447e3f88d",
+      "normalized_ko": "시험 후 1년.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m10.qc.8_1.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "74c4dc5ec298c2d98ff5f02553700b54fe93b26b241002bc0f8ba731010e027e",
+      "normalized_ko": "규제기관 현장실사 및 결과의 기간은 최근 3년을 초과하지 않아야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m10.qc.8_1.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "c9b39831391754a426ceec8559325a52b8a5d7cdc686dd187954aa9447e3f88d",
+      "normalized_ko": "규제기관 현장실사 및 결과의 시험 후 기간은 1년이다.",
+      "normalization_status": "needs_review"
+    }
+  ]
+}

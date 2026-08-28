@@ -4,32 +4,40 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Regulatory Guideline Archive</title>
+<meta name="description" content="Grounded answers from a traceable regulatory guideline archive.">
 <link rel="stylesheet" href="/app.css">
 </head>
 <body class="idle">
+<a class="skip-link" href="#main-content">본문으로 건너뛰기</a>
 <header class="app-header">
   <div class="app-wordmark" id="app-title">Regulatory Guideline Archive</div>
   <div class="app-header-right">
-    <span><span class="health-dot" id="health-dot"></span><span id="health-label"></span></span>
-    <button class="optionb-toggle" id="optionb-toggle" type="button"></button>
+    <span class="health-status" id="health-status" hidden><span class="health-dot" id="health-dot"></span><span id="health-label"></span></span>
     <div class="scope-wrap">
-      <button class="scope-toggle" id="scope-toggle" type="button"></button>
-      <div class="scope-popover" id="scope-popover" hidden>
+      <button class="scope-toggle" id="scope-toggle" type="button" aria-expanded="false" aria-controls="scope-popover"></button>
+      <div class="scope-popover" id="scope-popover" role="dialog" hidden>
         <ul class="doc-list" id="doc-list"></ul>
+      </div>
+    </div>
+    <div class="settings-wrap">
+      <button class="settings-toggle" id="settings-toggle" type="button" aria-expanded="false" aria-controls="settings-popover"></button>
+      <div class="settings-popover" id="settings-popover" role="dialog" hidden>
+        <button class="optionb-toggle" id="optionb-toggle" type="button"></button>
       </div>
     </div>
     <button class="lang-toggle" id="lang-toggle" type="button">KO / EN</button>
   </div>
 </header>
 
-<main class="main-panel">
+<main class="main-panel" id="main-content">
   <div class="idle-wordmark" id="idle-wordmark">Regulatory Guideline Archive</div>
   <form class="ask-form" id="ask-form">
-    <input class="ask-input" id="ask-input" type="text" autocomplete="off">
+    <label class="visually-hidden" id="ask-label" for="ask-input">질문</label>
+    <input class="ask-input" id="ask-input" type="text" autocomplete="off" aria-labelledby="ask-label">
     <button class="ask-button" id="ask-button" type="submit"></button>
   </form>
-  <div class="loading-phase" id="loading-phase"></div>
-  <div class="result-panel" id="result-panel"></div>
+  <div class="loading-phase" id="loading-phase" role="status" aria-live="polite"></div>
+  <div class="result-panel" id="result-panel" aria-live="polite"></div>
 </main>
 
 <script src="/render.js"></script>

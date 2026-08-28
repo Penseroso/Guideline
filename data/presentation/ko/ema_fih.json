@@ -1,0 +1,1841 @@
+{
+  "overlay_version": "0.1.0",
+  "language": "ko",
+  "document_id": "ema_fih",
+  "entries": [
+    {
+      "record_id": "ema_fih.cond.2.001",
+      "record_type": "condition",
+      "source_text_sha256": "18403a8c9526dfa23d13741fd1a21fa7f6e703f953b1f69c63a7ce18a2897e58",
+      "normalized_ko": "내약성, 안전성, PK 및 PD에 관한 인간에서의 초기 지식을 생성하는 시험을 포함하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.2.002",
+      "record_type": "condition",
+      "source_text_sha256": "523013f322f69581e345ab5d9af3b9aa291cf9197d2bfcf50a5fc42013a861ed",
+      "normalized_ko": "Regulation 1394/2007의 Article 2(1)에 정의되고 Directive 2001/83/EC의 Article 3에 따라 시험되거나 사용되는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.2.003",
+      "record_type": "condition",
+      "source_text_sha256": "82b2d5b0c29605cb3232bbbe22e7f40419c5777c303a84ad24a5d3b6fe2dda9e",
+      "normalized_ko": "ATMP에 대한 초기 임상시험을 설계할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.2.004",
+      "record_type": "condition",
+      "source_text_sha256": "82b2d5b0c29605cb3232bbbe22e7f40419c5777c303a84ad24a5d3b6fe2dda9e",
+      "normalized_ko": "ATMP에 대한 초기 임상시험을 설계할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.4.001",
+      "record_type": "condition",
+      "source_text_sha256": "72513b8c29ce1e4c955ded14d2243fd39194bbfa8d3d57334807e2464fbe9c39",
+      "normalized_ko": "각 임상시험에 대해 사전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.4.002",
+      "record_type": "condition",
+      "source_text_sha256": "ddb0ee19e23f681b4fdae1ed4935e057e62bfde4fbc1cd6b7cfe60c1bb4d6bbb",
+      "normalized_ko": "불확실성의 정도에 따라",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.4.003",
+      "record_type": "condition",
+      "source_text_sha256": "785f08a5df9199dc696a83a76f472da4fd0fab467112a2593367255ef1ad5f4c",
+      "normalized_ko": "모든 FIH/초기 CT에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.4.004",
+      "record_type": "condition",
+      "source_text_sha256": "f13d019dd6427c903cb45ee7fddfcd564cf3d93b8ff93e460239da8d479dbb60",
+      "normalized_ko": "모든 위험 평가에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.4.005",
+      "record_type": "condition",
+      "source_text_sha256": "72513b8c29ce1e4c955ded14d2243fd39194bbfa8d3d57334807e2464fbe9c39",
+      "normalized_ko": "각 임상시험에 대해 사전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.4.006",
+      "record_type": "condition",
+      "source_text_sha256": "f4b769c769ec2fbdf3c2d62d7b26e42be4519b41cbbaefe750776d119c39fbae",
+      "normalized_ko": "FIH/초기 CT의 설계 및 수행 내에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.4.007",
+      "record_type": "condition",
+      "source_text_sha256": "785f08a5df9199dc696a83a76f472da4fd0fab467112a2593367255ef1ad5f4c",
+      "normalized_ko": "모든 FIH/초기 CT에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.4.008",
+      "record_type": "condition",
+      "source_text_sha256": "0bfb48a919a97cd84464d750be66e59c53f50f78cd6c7bb84265a4bc6d252a13",
+      "normalized_ko": "FIH/초기 CT 동안",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.4.009",
+      "record_type": "condition",
+      "source_text_sha256": "7fa146971e959fd4221c294b28c9fdc077443a0e0e8ebae3d5bc927d4ce428b3",
+      "normalized_ko": "CTA를 뒷받침하는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.4.010",
+      "record_type": "condition",
+      "source_text_sha256": "ddb0ee19e23f681b4fdae1ed4935e057e62bfde4fbc1cd6b7cfe60c1bb4d6bbb",
+      "normalized_ko": "불확실성의 정도에 따라",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.4.011",
+      "record_type": "condition",
+      "source_text_sha256": "ec457217783801b98a73527fa664b2b300d3a0766ae4036534a729cb99e9d39b",
+      "normalized_ko": "스폰서의 임상시험 신청서(CTA)에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.5_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "25f673c4915cce11300be7589ad96086842e1e0bd0d24f47bb8969b0e6fb4b55",
+      "normalized_ko": "안전한 시작 용량을 결정하기 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.5_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "25f673c4915cce11300be7589ad96086842e1e0bd0d24f47bb8969b0e6fb4b55",
+      "normalized_ko": "안전한 시작 용량을 결정하기 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.5_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "cdbffd119654d67e3bfcacbbb534131faf19a61351f579a5d2aaaa4b64b5e63f",
+      "normalized_ko": "개발 과정에서 임상시험용 물질의 조성 및 공정 변경이 발생할 수 있으므로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.5_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "1ba7f9341b0b0bfb7b3f1bc7e782369895263a952bcdc1a2540cf4cbe9e16469",
+      "normalized_ko": "개발의 이 초기 단계에서도",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.5_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "cdbffd119654d67e3bfcacbbb534131faf19a61351f579a5d2aaaa4b64b5e63f",
+      "normalized_ko": "개발 과정에서 임상시험용 물질의 조성 및 공정 변경이 발생할 수 있으므로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.5_2.004",
+      "record_type": "condition",
+      "source_text_sha256": "290a6cfc333c7da26c1049976a7cfa133c021a91c4a83d6ce083dbb28bcffcdf",
+      "normalized_ko": "이는 노출에 영향을 미칠 수 있으며",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.5_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "e60dae486366e33aa1adb2f9c8f87db7ab601c57d50477db41ef545726d67611",
+      "normalized_ko": "의약품을 매우 소량의 용량으로 조제하기 위해 희석해야 하거나, 매우 낮은 농도로 제공되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.5.001",
+      "record_type": "condition",
+      "source_text_sha256": "be8a8202ed582166540872bbc5ea1e008dbb6358f62a245054e2938c4f6dc11e",
+      "normalized_ko": "사람에게 투여할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.5.002",
+      "record_type": "condition",
+      "source_text_sha256": "51eb8654f209f860232b100425357d98a2ab05b0da0d8fca47293ebcd2a3c48a",
+      "normalized_ko": "모든 IMP에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.5.003",
+      "record_type": "condition",
+      "source_text_sha256": "463013c297742e6d7428d63a041c3df7dd30358c05067c03075b921376c94d71",
+      "normalized_ko": "복합 또는 생물학적 제품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.5.004",
+      "record_type": "condition",
+      "source_text_sha256": "be8a8202ed582166540872bbc5ea1e008dbb6358f62a245054e2938c4f6dc11e",
+      "normalized_ko": "사람에게 투여할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "20d470de47e735f4260c8951ebcc1506c4873b923a1dc66ffba7e82c666c42e0",
+      "normalized_ko": "인간 표적이 동물에서 발현되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "d5d2325ea11ab17a0e996ac5e4e11444220b778031895247ca9301772843ecfc",
+      "normalized_ko": "특히 특정 잠재적 위험을 평가하기 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "8cc0c2d8c9f60492c516ad0b2b95850d15ef4fd6d3fa8e3dae5a16f26620350b",
+      "normalized_ko": "이러한 맥락에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "ed7b760af679d6506589c36e76658bd149cc96bea86fa3e9cd8797825f86a1c0",
+      "normalized_ko": "생명공학 유래 제품의 비임상 시험을 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_1.005",
+      "record_type": "condition",
+      "source_text_sha256": "20d470de47e735f4260c8951ebcc1506c4873b923a1dc66ffba7e82c666c42e0",
+      "normalized_ko": "인간 표적이 동물에서 발현되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "23fb7ab763e5ad45a8ad7f3d2b98e82ce4bf39ab9a39162871b41f020dd584f5",
+      "normalized_ko": "임상 경험이 제한적이거나 표적의 활성화가 강력한 면역조절 반응을 유발하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "9034e21afbdaa7fd824ad6af1fd3e845a2422303bcb1c8a978cde9ea27e8c367",
+      "normalized_ko": "임상 경험이 제한적인 신규 표적의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "311960894171aaaf9eab1a7349b6b12728dcd55f612853ab25988d2f0e9dc0b6",
+      "normalized_ko": "표적의 활성화가 강력한 면역조절 반응을 유발하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "0b2f0ecfde78a178c01f025e5536cf2c85940238cfaf05a04367a65a2fbd2e97",
+      "normalized_ko": "동물 모델의 약력학적 관련성이 제한적이거나 사람에서의 효력이 실질적으로 더 높을 것으로 예상되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "3e78e5b000aefcf7eb5cb86f939e6f87632c34e0edd3ad399ca2e100caa506a8",
+      "normalized_ko": "사람에서의 효력이 실질적으로 더 높을 것으로 예상되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_3.003",
+      "record_type": "condition",
+      "source_text_sha256": "21f52af22d9646ae590cd19ee606edd6f01b8f2dafb992a9495bdf02defebdb0",
+      "normalized_ko": "동물 모델의 약력학적 관련성이 제한적인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_3.004",
+      "record_type": "condition",
+      "source_text_sha256": "3e78e5b000aefcf7eb5cb86f939e6f87632c34e0edd3ad399ca2e100caa506a8",
+      "normalized_ko": "사람에서의 효력이 실질적으로 더 높을 것으로 예상되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_4.001",
+      "record_type": "condition",
+      "source_text_sha256": "e51f0d1d310cddff2e0e3cca455ad888382592c86aa49760995eb2d165643695",
+      "normalized_ko": "수행된 비임상 안전성 시험에 사용된 모든 종에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_4.002",
+      "record_type": "condition",
+      "source_text_sha256": "15590ae920a189917528058e0e5b09dd98705947aeec12088019d3c59b23e6ea",
+      "normalized_ko": "FIH/초기 CT 시작 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_4.003",
+      "record_type": "condition",
+      "source_text_sha256": "873d023a6f40e46e022c700bfb0479f98f8840362d0ffe5643738ee8d8904a41",
+      "normalized_ko": "관련 동물 모델에서 약력학적으로 활성인 용량에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_4.004",
+      "record_type": "condition",
+      "source_text_sha256": "657387c31f30d58952f9b9e1c8992567cd5b7b650c49d08ff511e19fe4eb95b6",
+      "normalized_ko": "PD 효과가 잠재적 안전성 우려에 기여하는 것으로 의심되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_4.005",
+      "record_type": "condition",
+      "source_text_sha256": "e51f0d1d310cddff2e0e3cca455ad888382592c86aa49760995eb2d165643695",
+      "normalized_ko": "수행된 비임상 안전성 시험에 사용된 모든 종에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_4.006",
+      "record_type": "condition",
+      "source_text_sha256": "d989ceeac2152941edc0bfb72ec0d41bca9235cf688ca5570850d1007c880081",
+      "normalized_ko": "관련 동물 모델에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_4.007",
+      "record_type": "condition",
+      "source_text_sha256": "657387c31f30d58952f9b9e1c8992567cd5b7b650c49d08ff511e19fe4eb95b6",
+      "normalized_ko": "PD 효과가 잠재적 안전성 우려에 기여하는 것으로 의심되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_4.008",
+      "record_type": "condition",
+      "source_text_sha256": "657387c31f30d58952f9b9e1c8992567cd5b7b650c49d08ff511e19fe4eb95b6",
+      "normalized_ko": "PD 효과가 잠재적 안전성 우려에 기여하는 것으로 의심되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_5.001",
+      "record_type": "condition",
+      "source_text_sha256": "ca6993265d96d31ffe7b052b9207289add5d32a6c9e446fd2a1045dd16fadb65",
+      "normalized_ko": "사람에게 최초 투여하기 전",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_5.002",
+      "record_type": "condition",
+      "source_text_sha256": "fed04ede207eec1a57120fb4d706bf1815c965f7b282fc73e7dbb2723de53396",
+      "normalized_ko": "사례별로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_5.003",
+      "record_type": "condition",
+      "source_text_sha256": "7b949196072463c2944a0fcfbcff56ad71734c49a616fa5c41005a0275138fd0",
+      "normalized_ko": "우려의 원인이 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_5.004",
+      "record_type": "condition",
+      "source_text_sha256": "7b949196072463c2944a0fcfbcff56ad71734c49a616fa5c41005a0275138fd0",
+      "normalized_ko": "우려의 원인이 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_6.001",
+      "record_type": "condition",
+      "source_text_sha256": "3090b0268d075a14d46b0098aa36bed2cc5a465a8cb6835cc6d8e57f4ae95a33",
+      "normalized_ko": "사람에서 안전한 시작 용량을 설정할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_6.002",
+      "record_type": "condition",
+      "source_text_sha256": "5e3b11cf28d44b2146377476a4ad4a0baa5addf5249038845763ecda85c405a6",
+      "normalized_ko": "비임상 시험에서 확인된 표적 장기",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_6.003",
+      "record_type": "condition",
+      "source_text_sha256": "3090b0268d075a14d46b0098aa36bed2cc5a465a8cb6835cc6d8e57f4ae95a33",
+      "normalized_ko": "사람에서 안전한 시작 용량을 설정할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_6.004",
+      "record_type": "condition",
+      "source_text_sha256": "7e5ad2efdefdc8b7a646aca9b9c2b472565aaa455805d3914a1c3cc512109139",
+      "normalized_ko": "이러한 독성이 관찰되는 경우",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ema_fih.cond.6_6.005",
+      "record_type": "condition",
+      "source_text_sha256": "e57b31dd2d7bc1472da9b1286f392a059bd6ea72f375afe7bc1754d346381dba",
+      "normalized_ko": "임상 환경에서 용량을 설정하고 위험 완화 전략을 적용할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_6.006",
+      "record_type": "condition",
+      "source_text_sha256": "499625c12da477f5550bbbeac1410b1c200711c59b4b3651b0450036b5bee555",
+      "normalized_ko": "사람에서 조사할 용량 증량 범위를 정의하기 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6_6.007",
+      "record_type": "condition",
+      "source_text_sha256": "e3069b53769c84e9a1c1dd0052e7459f08cfabcd85f0e938f9843dc5b5d1775e",
+      "normalized_ko": "중대한 독성",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6.001",
+      "record_type": "condition",
+      "source_text_sha256": "d8fa85080a14ac40f81fc49cc16a572a1c84e81fb444238b1bee9815ffa8b19b",
+      "normalized_ko": "CT 신청을 뒷받침하기 위한",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6.002",
+      "record_type": "condition",
+      "source_text_sha256": "3dafdb1a96e9dbc2f99f056e17cdefd1bb7fb4746600918b51e33ac15d6ba47c",
+      "normalized_ko": "CT의 설계에 영향을 미치는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6.003",
+      "record_type": "condition",
+      "source_text_sha256": "d8fa85080a14ac40f81fc49cc16a572a1c84e81fb444238b1bee9815ffa8b19b",
+      "normalized_ko": "CT 신청을 뒷받침하기 위한",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.6.004",
+      "record_type": "condition",
+      "source_text_sha256": "3dafdb1a96e9dbc2f99f056e17cdefd1bb7fb4746600918b51e33ac15d6ba47c",
+      "normalized_ko": "CT의 설계에 영향을 미치는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "8fe486359e7b5b09ebf348ad9096903df773218674df29d922b3999bd803972d",
+      "normalized_ko": "CT 동안",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "52ea8e1c501c2b13d21273507c292adbd546585d54e66cda54b19997db096e97",
+      "normalized_ko": "새롭게 축적되는 임상 데이터에 근거하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "2bcb63c8b1e8a274c29059ba62452420ce063334900ec40b9cdb7b6560b9f8b9",
+      "normalized_ko": "용량 증량이 사전 정의된 최대 노출량에 도달하고 이용 가능한 데이터의 통합 분석을 통해 추가적인 신중한 증량이 타당하다는 Sponsor의 결론에 이르는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "1c57344dc6896bb977b3de2f8778dc1721c17af00603937b3d5a81b04dee457a",
+      "normalized_ko": "ICH M3(R2)에 명시된 바와 같이 IMP가 마이크로도즈 시험 패러다임에 따라 사람에게 투여된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_1.005",
+      "record_type": "condition",
+      "source_text_sha256": "271825b81129b2f6021ee063548b6f2c5f11c8f0bf31f795b3954f7c6ea5ccf2",
+      "normalized_ko": "이전에 투여된 코호트/개체로부터 시험 중 새롭게 나타나는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_1.006",
+      "record_type": "condition",
+      "source_text_sha256": "1c57344dc6896bb977b3de2f8778dc1721c17af00603937b3d5a81b04dee457a",
+      "normalized_ko": "ICH M3(R2)에 명시된 바와 같이 IMP가 마이크로도즈 시험 패러다임에 따라 사람에게 투여된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_1.007",
+      "record_type": "condition",
+      "source_text_sha256": "271825b81129b2f6021ee063548b6f2c5f11c8f0bf31f795b3954f7c6ea5ccf2",
+      "normalized_ko": "이전에 투여된 코호트/개체로부터 시험 중 새롭게 나타나는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "e59d5d89c0ad295142b28e9d96c330fe11b39479f95c9d5197b27c978ce28955",
+      "normalized_ko": "일반적으로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "f867665c4426f49e92111dd934bc7448595b9d9557afad7564a563cdf5856b15",
+      "normalized_ko": "실행 가능한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "53aada17fa353c47efc94a023ae319e81d145d1e07928316779df9f1f92e397c",
+      "normalized_ko": "이러한 접근법을 사용할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_2.004",
+      "record_type": "condition",
+      "source_text_sha256": "48a9788b433fbe1f492d08b5555df8afb0cd1a205523571e1463996ef729c7fb",
+      "normalized_ko": "가능한 경우마다",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_2.005",
+      "record_type": "condition",
+      "source_text_sha256": "75419be07022a0f8d9d104926f0ed923e14461dc46333d37d81a12fe0719c7d2",
+      "normalized_ko": "더 높은 용량에 대한 견고한 과학적 근거를 제시할 수 있는 경우를 제외하고",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_2.006",
+      "record_type": "condition",
+      "source_text_sha256": "43cd4a420be6ad9ab46486cc98e02338c359a4f7ca683afbe84a2644c5ed244c",
+      "normalized_ko": "비임상 연구에서 관찰된 소견의 인간 관련성에 관한 불확실성 수준(4.1절부터 4.4절 참조) 및 의도된 표적에 대한 지식(6.1절 및 6.2절 참조)에 따라",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_2.007",
+      "record_type": "condition",
+      "source_text_sha256": "7af27d68705ce309a178b278804854e39d64682884e9982d810caa90dc07c9dc",
+      "normalized_ko": "적절한 동물 연구로부터 도출된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_2.008",
+      "record_type": "condition",
+      "source_text_sha256": "3eaee073c58093d0c145f19c6e1a58a567c8547e3b82329558b0fe4c2411fd47",
+      "normalized_ko": "사용된 동물 종 중 가장 관련성이 높은 종에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_2.009",
+      "record_type": "condition",
+      "source_text_sha256": "f461a97e36cf437cd60d88cda95499f17ff231c3345c48bd920ae08ce317c963",
+      "normalized_ko": "이는 반드시 가장 민감한 종은 아닐 수 있다",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_2.010",
+      "record_type": "condition",
+      "source_text_sha256": "48a9788b433fbe1f492d08b5555df8afb0cd1a205523571e1463996ef729c7fb",
+      "normalized_ko": "가능한 경우마다",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_2.011",
+      "record_type": "condition",
+      "source_text_sha256": "f461a97e36cf437cd60d88cda95499f17ff231c3345c48bd920ae08ce317c963",
+      "normalized_ko": "이는 반드시 가장 민감한 종은 아닐 수 있다",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "f4358667f02eec78fffb9acc34e95174d6de13002cee8071421150913d4f5d54",
+      "normalized_ko": "건강한 자원자에서의 이전 데이터가 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "31ca9b4de81339df47e3f72b96761c7314a2cb7a4a8044fe3f9b48ff2e479f34",
+      "normalized_ko": "일부 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_3.003",
+      "record_type": "condition",
+      "source_text_sha256": "37f00325834b177d25a752002efd87cd63b576876a02a58e7e9c78b9fca9cf93",
+      "normalized_ko": "모든 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_3.004",
+      "record_type": "condition",
+      "source_text_sha256": "6b3d504d81fdef7cc662e34f8fe1fe876f4995677fdff206447759e1c9d52d70",
+      "normalized_ko": "건강한 자원자와 환자 간 IMP의 표적 분포, 약동학 또는 안전성 프로파일에서 잠재적 차이가 예상될 수 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_3.005",
+      "record_type": "condition",
+      "source_text_sha256": "13dd00cdaeb53ec1c9b4f8912e4a13ef2642fc424a30ce1fd47ae65f76be1bfd",
+      "normalized_ko": "특정 상황에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_3.006",
+      "record_type": "condition",
+      "source_text_sha256": "e9dd36d149cf33b16a9eb6f7ffa8d23226e9653aaaa2bef8a476c24519bad4af",
+      "normalized_ko": "종양학 환자 대상 시험(ICH S9 참조) 또는 기타 중증 또는 생명 제한 질환의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_3.007",
+      "record_type": "condition",
+      "source_text_sha256": "7153dcfad02796cc5b98037c8c976e4e84cd5195a3b8ffc48192fbad04f8c698",
+      "normalized_ko": "진행성 암 또는 생명 제한 질환 환자를 대상으로 한 CT에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_3.008",
+      "record_type": "condition",
+      "source_text_sha256": "02a608557f922410af0ad9e909f5722eccc2167597694affc4c42364f9b3dc3a",
+      "normalized_ko": "적절히 정당화되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_3.009",
+      "record_type": "condition",
+      "source_text_sha256": "37f00325834b177d25a752002efd87cd63b576876a02a58e7e9c78b9fca9cf93",
+      "normalized_ko": "모든 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_3.010",
+      "record_type": "condition",
+      "source_text_sha256": "13dd00cdaeb53ec1c9b4f8912e4a13ef2642fc424a30ce1fd47ae65f76be1bfd",
+      "normalized_ko": "특정 상황에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_3.011",
+      "record_type": "condition",
+      "source_text_sha256": "5d4497c248787d4415aa7f796e134695deec351b2a095832985d60d29505ac0a",
+      "normalized_ko": "적절히 정당화되는 경우 진행성 암 또는 생명 제한 질환 환자에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_3.012",
+      "record_type": "condition",
+      "source_text_sha256": "31ca9b4de81339df47e3f72b96761c7314a2cb7a4a8044fe3f9b48ff2e479f34",
+      "normalized_ko": "일부 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_3.013",
+      "record_type": "condition",
+      "source_text_sha256": "c9b2acfdd5e26dfe17c8fb988922e7c77dcc13f03b9a9099305ce0b16fe3828c",
+      "normalized_ko": "적절한 용량 증량과 함께",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_3.014",
+      "record_type": "condition",
+      "source_text_sha256": "72b3079da2c47ba4874b9a972a1f68a9846d5a0aa2d2fd0d253d19492257ac0e",
+      "normalized_ko": "첫 번째 환자 코호트에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.001",
+      "record_type": "condition",
+      "source_text_sha256": "92531e09a7f78eaf6893990492aad7646dd1d61484904b45f2b70cc197bfa391",
+      "normalized_ko": "CT 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.002",
+      "record_type": "condition",
+      "source_text_sha256": "98e8fc10424033498696166854e7faa96a2d734dfac33022b4a3b78376333d59",
+      "normalized_ko": "있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.003",
+      "record_type": "condition",
+      "source_text_sha256": "017ddff0e3c21349823dd3f1219310dd3588ec6501060841abef51bc5e5f3d84",
+      "normalized_ko": "관련성이 있고 실행 가능한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.004",
+      "record_type": "condition",
+      "source_text_sha256": "1931ceb3216ba4b242cbe2899c2cfca599f934a19fe3bba3488a5675f369e0e8",
+      "normalized_ko": "이전 코호트에서 새롭게 축적된 임상 데이터를 검토한 후",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.005",
+      "record_type": "condition",
+      "source_text_sha256": "4e7692b39c782ffbcef70a69e0b24841be039b91a9d7981cc23137eace9caa94",
+      "normalized_ko": "노출의 비례 이상 증가를 잠재적으로 초래하는 비선형 PK의 증거가 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.006",
+      "record_type": "condition",
+      "source_text_sha256": "1ca39d5f6851468ea5979b41b98af75abbbdd0fac285b5ce2a8177b3270e5aba",
+      "normalized_ko": "특히 SAD/MAD의 후반부에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.007",
+      "record_type": "condition",
+      "source_text_sha256": "f27247a3ba4cc206bb6121b9d949fde3cea16c501139c6916b676f2760f0362d",
+      "normalized_ko": "새롭게 축적된 임상 데이터가 비임상 데이터 또는 모델링 및 시뮬레이션 데이터와 상당한 차이를 보이는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.008",
+      "record_type": "condition",
+      "source_text_sha256": "2e4b297162893a2d5fdec6f18a46709e60615e7b5f0e437c97829942c1a70acb",
+      "normalized_ko": "이용 가능한 데이터가 노출의 정체를 나타내는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.009",
+      "record_type": "condition",
+      "source_text_sha256": "8faf7717ebe1f3921b31598d12f0b50c467d7024722713114e9c5207f462da85",
+      "normalized_ko": "단, 그러한 변경이 프로토콜에 사전 정의된 의사결정 기준에 의해 포괄되는 경우는 제외한다",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.010",
+      "record_type": "condition",
+      "source_text_sha256": "38873553dbd461b12049bbf8f6c090e0b18e2999e6c75a0663b09902a9075d61",
+      "normalized_ko": "시작 용량과 최대 노출을 정의하는 것에 더하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.011",
+      "record_type": "condition",
+      "source_text_sha256": "bf2d8e3063e5763b9faa33332b664acbc791be46bd0f8fe3133b6b64f1897699",
+      "normalized_ko": "비임상 시험에서 정의된",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.012",
+      "record_type": "condition",
+      "source_text_sha256": "4e7692b39c782ffbcef70a69e0b24841be039b91a9d7981cc23137eace9caa94",
+      "normalized_ko": "노출의 비례 이상 증가를 잠재적으로 초래하는 비선형 PK의 증거가 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.013",
+      "record_type": "condition",
+      "source_text_sha256": "f27247a3ba4cc206bb6121b9d949fde3cea16c501139c6916b676f2760f0362d",
+      "normalized_ko": "새롭게 축적된 임상 데이터가 비임상 데이터 또는 모델링 및 시뮬레이션 데이터와 상당한 차이를 보이는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.014",
+      "record_type": "condition",
+      "source_text_sha256": "2e4b297162893a2d5fdec6f18a46709e60615e7b5f0e437c97829942c1a70acb",
+      "normalized_ko": "이용 가능한 데이터가 노출의 정체를 나타내는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_4.015",
+      "record_type": "condition",
+      "source_text_sha256": "a03c6f8e2884bdc69fc7a5d23ad9c8c531d0892d8335c778bd192af5a38f3a29",
+      "normalized_ko": "잠재적인 중대하거나 비가역적인 영향이 발생하기 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.001",
+      "record_type": "condition",
+      "source_text_sha256": "947a07c77abf9210f82932806e10ff210f626e9b4d3edb4acc96b3751512d755",
+      "normalized_ko": "중대한 변경의 승인 없이",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.002",
+      "record_type": "condition",
+      "source_text_sha256": "6c397a984f533f86e90c6107974afc2d72b4f7297dbbb789ce5e973d8a4742d1",
+      "normalized_ko": "적절한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.003",
+      "record_type": "condition",
+      "source_text_sha256": "cdb2490a541726cc1609eb59f9ff1d5a5fe88ade84a4ef65bd3176c8abe37ffb",
+      "normalized_ko": "표적의 완전한 억제 또는 활성화가 달성되고 용량을 증가시켜도 추가적인 치료 효과가 기대되지 않는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.004",
+      "record_type": "condition",
+      "source_text_sha256": "49c29630a943ef25c6c3bbcb555d30ceb0ebfa9748b8f403cdd667c8fd20324c",
+      "normalized_ko": "노출을 적절히 측정할 수 없는 연구에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.005",
+      "record_type": "condition",
+      "source_text_sha256": "e59d5d89c0ad295142b28e9d96c330fe11b39479f95c9d5197b27c978ce28955",
+      "normalized_ko": "일반적으로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.006",
+      "record_type": "condition",
+      "source_text_sha256": "c9520a0bd48e61d2e1d6b8f58019b89ea816d4813f457d7c46108bdd54446df5",
+      "normalized_ko": "과학적으로 정당화되고 안전성 관점에서 수용 가능한 것으로 간주되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.007",
+      "record_type": "condition",
+      "source_text_sha256": "165f5ea3a1edd06173cbfd1cf3f23f2ed158100fda8376f73a650c713dbe21c8",
+      "normalized_ko": "섹션 4에 기술된 불확실성을 고려하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.008",
+      "record_type": "condition",
+      "source_text_sha256": "856961586a8364ee864870d29c20acddafb99e369acb26f92a402525389b6606",
+      "normalized_ko": "환자가 포함된 시험 또는 시험 부분의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.009",
+      "record_type": "condition",
+      "source_text_sha256": "219889750639d9c8375b3a59f80e7fb0cefcbb0a36c5cd77bc1eb93b03a014dd",
+      "normalized_ko": "(해당되는 경우)",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.010",
+      "record_type": "condition",
+      "source_text_sha256": "9e19ef82e4a71c5e3791dfce4d2d3439adc6f61e7661815260bb7d773b08b69b",
+      "normalized_ko": "결정된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.011",
+      "record_type": "condition",
+      "source_text_sha256": "a2cffa33a02c7011726a01cf3c9fd6441ec1ab7eccbafe4fcb6da611b2d930da",
+      "normalized_ko": "용량 범위를 정의할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.012",
+      "record_type": "condition",
+      "source_text_sha256": "856961586a8364ee864870d29c20acddafb99e369acb26f92a402525389b6606",
+      "normalized_ko": "환자가 포함된 시험 또는 시험 부분의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.013",
+      "record_type": "condition",
+      "source_text_sha256": "edc755ff4b8796f7f7190705831c287ef29ae9e83916d9a8a748b4492651c864",
+      "normalized_ko": "건강한 자원자를 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.014",
+      "record_type": "condition",
+      "source_text_sha256": "462fddba2deaba05f3f66e23dc46810f837f303ef4d518ff9e0323e1ca1292dc",
+      "normalized_ko": "각 연구 부분에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.015",
+      "record_type": "condition",
+      "source_text_sha256": "c9520a0bd48e61d2e1d6b8f58019b89ea816d4813f457d7c46108bdd54446df5",
+      "normalized_ko": "과학적으로 정당화되고 안전성 관점에서 수용 가능한 것으로 간주되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_5.016",
+      "record_type": "condition",
+      "source_text_sha256": "a2cffa33a02c7011726a01cf3c9fd6441ec1ab7eccbafe4fcb6da611b2d930da",
+      "normalized_ko": "용량 범위를 정의할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_6.001",
+      "record_type": "condition",
+      "source_text_sha256": "9c95454a0c63e457daf6c658ec33e7bfbbdd4240444e7f4ac37190d0507dfda3",
+      "normalized_ko": "모든 다회 투여 코호트 및 시험 부분에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_6.002",
+      "record_type": "condition",
+      "source_text_sha256": "3cfb6c2f1fd5f075dfe8a90a893cad3b52739adb84ae0e94004c89e0bf5c3d72",
+      "normalized_ko": "각 코호트에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_6.003",
+      "record_type": "condition",
+      "source_text_sha256": "1b98747821dc169c3694365f1974b6d770b1c7595868405947c49a59e5aad83f",
+      "normalized_ko": "다회 투여 후 새로 축적된 임상 데이터가 시험의 SAD 부분에서 관찰된 이상반응에 대한 내약성을 시사하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_6.004",
+      "record_type": "condition",
+      "source_text_sha256": "777e5c849a1d59f7bd7b4c17431b2ff8ffa91cdfaf50481d2f0ab258deef81b1",
+      "normalized_ko": "이 옵션이 사전에 명시된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_6.005",
+      "record_type": "condition",
+      "source_text_sha256": "d31bff72547a05a54a257113f5e693cd1c6a8d66218eb1807eb1e81cf9cc0ff9",
+      "normalized_ko": "그러나 다회 투여 후 새로 축적된 임상 데이터가 시험의 SAD 부분에서 관찰된 이상반응에 대한 내약성을 시사하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_6.006",
+      "record_type": "condition",
+      "source_text_sha256": "6d08507a802d3e687cc737f70cdc466ded7c9f3d79adf4388b003f5c100bd0d9",
+      "normalized_ko": "이 옵션이 사전에 명시되어 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_6.007",
+      "record_type": "condition",
+      "source_text_sha256": "8abe758050487f757f9a895d8998afa7499e760966dc192f66c3589c0cd9bdaf",
+      "normalized_ko": "예상 농도 범위 내에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_6.008",
+      "record_type": "condition",
+      "source_text_sha256": "3cfb6c2f1fd5f075dfe8a90a893cad3b52739adb84ae0e94004c89e0bf5c3d72",
+      "normalized_ko": "각 코호트에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_6.009",
+      "record_type": "condition",
+      "source_text_sha256": "b85d40205f412f09764327bbe6845f886aac32cf79854410c3233a8c2bc76e8e",
+      "normalized_ko": "선행 SAD 부분/시험 동안",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_6.010",
+      "record_type": "condition",
+      "source_text_sha256": "abbeca2f4bb7e96022281d6af944871d9870b4082135ae2e4573f1b0c651f67e",
+      "normalized_ko": "설정된 최대 노출량 미만인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_7.001",
+      "record_type": "condition",
+      "source_text_sha256": "edea2f4610e09ecb1d4590af2d7d3fd78885e2cec53b96ea02a27621564752e5",
+      "normalized_ko": "정맥 투여의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.7_7.002",
+      "record_type": "condition",
+      "source_text_sha256": "7728379d6d7f735de98011de01258338429316a25444c6a6fe651a5f61d5a690",
+      "normalized_ko": "사람에서의 용량 투여를 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "0b392ffbabb1b3641263dfef7a31221982c1a27072554a09d4d688a6ffd36ab4",
+      "normalized_ko": "동일한 피험자가 여러 코호트에 참여하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "1553179458f4ad1df4946e71b06cba70234fd1f9fd74b1f3c8f86fc0571c48a2",
+      "normalized_ko": "적절하고 실행 가능한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "046ffa340da551ae6765f19e276eab2a50a3aaff91ad7e5f5c829c0ef03f9d68",
+      "normalized_ko": "각각이 제공할 데이터와 통합 평가에 사용할 수 있는 시간을 고려하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "1553179458f4ad1df4946e71b06cba70234fd1f9fd74b1f3c8f86fc0571c48a2",
+      "normalized_ko": "적절하고 실행 가능한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "987d4bdf6550b25599831f205b39ce20e5e8cff687fce7bfad4488f2e28d001a",
+      "normalized_ko": "활성 IMP를 투여 중인 대상자 수와 위약 치료를 받고 있는 대상자 수를 포함하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_10.001",
+      "record_type": "condition",
+      "source_text_sha256": "b2efc6fca2d28707a3e390317b41c17527b95031d780cbf5594ff73592abb05e",
+      "normalized_ko": "해당되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_10.002",
+      "record_type": "condition",
+      "source_text_sha256": "67b4c5e59be267a20518ce3b28e73f8980581c7d69d417123be62bcc580c462e",
+      "normalized_ko": "모든 이중눈가림 연구 설계에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_10.003",
+      "record_type": "condition",
+      "source_text_sha256": "f707c3f3315d5f62adb98d5b635d90c3caa163905061370b2f151395487c3171",
+      "normalized_ko": "응급 상황의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_10.004",
+      "record_type": "condition",
+      "source_text_sha256": "5a48c07fef13413185ad728ed9501a87f039e211c8156239d5bab4b99ec8696a",
+      "normalized_ko": "적절한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_10.005",
+      "record_type": "condition",
+      "source_text_sha256": "9f945f50e5165bc2fb616b4acd83e2ff727cccc29f1611e29861a269ca24facd",
+      "normalized_ko": "존재하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_10.006",
+      "record_type": "condition",
+      "source_text_sha256": "99f3e03eb84f22f72439b6e65e8c43d4c0a7cd53dc53a838c5830f521774ec47",
+      "normalized_ko": "연구기관 외부에서 적절하다고 판단되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_10.007",
+      "record_type": "condition",
+      "source_text_sha256": "44ef4834e9d8b9c1b174e9e8c7ee2249cc0adf83bea47eaadff3f41eb1ff0c6d",
+      "normalized_ko": "다기관 시험의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_10.008",
+      "record_type": "condition",
+      "source_text_sha256": "1552e2aaa6e9f44a0172f32db35b0f3d02b88ee22810208691a92fc083a0f5e3",
+      "normalized_ko": "시험 시작 전",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_10.009",
+      "record_type": "condition",
+      "source_text_sha256": "76c6d60bf4b12ac91aa4713800cc26f83a8689dd3dd00d6040b7d1465fd94da0",
+      "normalized_ko": "새로운 안전성 문제가 발생한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_10.010",
+      "record_type": "condition",
+      "source_text_sha256": "0f42927cdc449b432d909f703562ce8ca0afc8de37edb4a0cd3e7cfa7cdd7928",
+      "normalized_ko": "건강한 자원자에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_10.011",
+      "record_type": "condition",
+      "source_text_sha256": "76c6d60bf4b12ac91aa4713800cc26f83a8689dd3dd00d6040b7d1465fd94da0",
+      "normalized_ko": "새로운 안전성 문제가 발생한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "b5bc716d447542aae4653be6c269b29a3f42be213c5dc5823860b40c94206c6a",
+      "normalized_ko": "다음 부분으로 진행하기로 결정하기 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "b3ab1baedfea78932d442facef906e3fdd80ec60da06a35ad63f5de61a3d99a4",
+      "normalized_ko": "이용 가능한 정보 전체와 관련 불확실성에 근거하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "77d65b31bf3a0373a8eb341db0dbee7800f3883e215a9ae66632fd6af1c78b7d",
+      "normalized_ko": "모든 연구 부분에서 확정 용량을 사전에 정의할 수 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_2.004",
+      "record_type": "condition",
+      "source_text_sha256": "7aeaf733852c13d820cd3d4f7f5b1d5dd0a2227c97c129bd514bf68744acc3b3",
+      "normalized_ko": "이러한 사전 정의된 기준의 범위를 벗어나",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_2.005",
+      "record_type": "condition",
+      "source_text_sha256": "74d0a6ef08d3515d342b8e3f448ab52b72ae19c822436b08e19cd58b2b513368",
+      "normalized_ko": "서로 다른 부분의 수행 시간 순서와 관련하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_2.006",
+      "record_type": "condition",
+      "source_text_sha256": "10f6644e0c9b5711820be74bf28cb4713c7ae1cc51f5e23e511ababbcf5b9223",
+      "normalized_ko": "MAD 부분을 시작하기 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_2.007",
+      "record_type": "condition",
+      "source_text_sha256": "6ff53e8d1e369288680b18c87c477f9433d92ff41cb68b62bfb97da05f28747f",
+      "normalized_ko": "선택된 용량과 예상 노출이 모든 관련 데이터가 검토되었고 용량 증량 중단 기준이 충족되지 않은, 완료된 선행 SAD 코호트에서 도달한 용량 및 노출과 같거나 그보다 낮은 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_2.008",
+      "record_type": "condition",
+      "source_text_sha256": "5ff25d7de94973add2bf37d89b92b5a69e2ab29593d491090c65f33bae91f196",
+      "normalized_ko": "이러한 부분을 시작하기 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_2.009",
+      "record_type": "condition",
+      "source_text_sha256": "a375498c6ca5bc456f5c4ba8e9e7a215263401c22e968cd5606a219992c90849",
+      "normalized_ko": "이로부터의 일탈",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_2.010",
+      "record_type": "condition",
+      "source_text_sha256": "77d65b31bf3a0373a8eb341db0dbee7800f3883e215a9ae66632fd6af1c78b7d",
+      "normalized_ko": "모든 연구 부분에서 확정 용량을 사전에 정의할 수 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_2.011",
+      "record_type": "condition",
+      "source_text_sha256": "7a83e1bedde6257edac63e25be6ae04a13248ccf78400ef57193919ca4ad60ae",
+      "normalized_ko": "다음 부분으로 진행하기로 결정하기 전 제한된 기간 내에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "9882eb29af149655aac22a8e0817cd017b4e5441d582115028b4ceef56083a59",
+      "normalized_ko": "건강한 참여자가 포함된 시험의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "050308fe26f8110f8839b923807b972eed1f25ebf2b0c57919c83af77b8e0194",
+      "normalized_ko": "정당화되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_3.003",
+      "record_type": "condition",
+      "source_text_sha256": "050308fe26f8110f8839b923807b972eed1f25ebf2b0c57919c83af77b8e0194",
+      "normalized_ko": "정당화되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_4.001",
+      "record_type": "condition",
+      "source_text_sha256": "32fbbe6a826b2a5e93e39ab0eceab6e314e0887ef05c3042ce743eafb40f2ff3",
+      "normalized_ko": "프로토콜에 사전 지정된 한도 내에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_4.002",
+      "record_type": "condition",
+      "source_text_sha256": "27a830e971f346f0c0e85c1d23364e7350987d2d8b88a7f8c6b2adcb7ee4d638",
+      "normalized_ko": "중대한 변경을 통해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_4.003",
+      "record_type": "condition",
+      "source_text_sha256": "f6a1fed9017ea623a348b63a071096bd220f9f316eeebb8cac9d5741b29d1e33",
+      "normalized_ko": "파라미터가 정상 범위 내 또는 기저치로 돌아올 때까지",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_4.004",
+      "record_type": "condition",
+      "source_text_sha256": "cc52913fdb0a79d82c18af13bd72fb133484a308b3051e0b9f5dfd0f2f40ea33",
+      "normalized_ko": "해당 모집단에 적절한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_4.005",
+      "record_type": "condition",
+      "source_text_sha256": "85528c4eb0047369362e2c56d06b0b29e07b04e26cc71deb7261c344b8c8ed67",
+      "normalized_ko": "기전이 효소 억제 또는 활성화를 수반하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_4.006",
+      "record_type": "condition",
+      "source_text_sha256": "3823406e73afd8e80447ea197a8d3932e83c21483cf1ef650c388020642c0c0b",
+      "normalized_ko": "효소 활성이 기저치 또는 기저치의 허용 가능한 백분율로 회복될 때까지",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_4.007",
+      "record_type": "condition",
+      "source_text_sha256": "ff1cd296c66acb86bb1b3ca9a152d9ac690c52f9eba51e59732ff58bf03ac473",
+      "normalized_ko": "표적 억제 지속 기간 또는 IMP의 PK 프로파일과 관계없이 장기간의 PD 효과가 관찰되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_4.008",
+      "record_type": "condition",
+      "source_text_sha256": "542a0b068eb94d3c8d75cebad61b926d675142c5d482146fa9128a30ede5010c",
+      "normalized_ko": "알려진 약리학적 및 비임상 안전성 프로파일에 부합하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_4.009",
+      "record_type": "condition",
+      "source_text_sha256": "f669e715dacdc4a31bac6545a3143799569b69b230b87c02545c58280204c0b5",
+      "normalized_ko": "프로토콜에 사전 지정된 한도 내에서 또는 중대한 변경을 통해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_4.010",
+      "record_type": "condition",
+      "source_text_sha256": "4eedaffd5c771a12998b5d20a29c5cc165f1b459a6e47e43bc27f0256653fd14",
+      "normalized_ko": "발현 지연 가능성이 있는 이상반응에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_4.011",
+      "record_type": "condition",
+      "source_text_sha256": "542a0b068eb94d3c8d75cebad61b926d675142c5d482146fa9128a30ede5010c",
+      "normalized_ko": "알려진 약리학적 및 비임상 안전성 프로파일에 부합하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_4.012",
+      "record_type": "condition",
+      "source_text_sha256": "5d14b057fae17c6b92c4dee7a470888368f619ecff7215f4f544240664c68d7f",
+      "normalized_ko": "불확실성의 정도에 대비하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_4.013",
+      "record_type": "condition",
+      "source_text_sha256": "cc52913fdb0a79d82c18af13bd72fb133484a308b3051e0b9f5dfd0f2f40ea33",
+      "normalized_ko": "해당 모집단에 적절한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_5.001",
+      "record_type": "condition",
+      "source_text_sha256": "008bf11f6e0927baed1b4284985f3975d83868e8934a143ecf18f3cea3bf11df",
+      "normalized_ko": "용량 증량 중단 규칙 중 어느 하나라도 충족된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_5.002",
+      "record_type": "condition",
+      "source_text_sha256": "e0a16463f4a779c7cc71c8a8c992075b4dc4f1ed220d961f2fae3a31feb2535f",
+      "normalized_ko": "프로토콜에서 코호트 반복이 허용되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_5.003",
+      "record_type": "condition",
+      "source_text_sha256": "25340f54d66084d06c27cb381543bfdf125149c74be0d80d485c8933f32ed2c1",
+      "normalized_ko": "적절히 정의된 휴약 기간 후",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_5.004",
+      "record_type": "condition",
+      "source_text_sha256": "2280b20c043f24ee8694bf215fdc120580262fa810a08a9639efaf9ccc166f33",
+      "normalized_ko": "피험자가 어떠한 중단 기준도 충족하지 않은 경우에 한하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_5.005",
+      "record_type": "condition",
+      "source_text_sha256": "008bf11f6e0927baed1b4284985f3975d83868e8934a143ecf18f3cea3bf11df",
+      "normalized_ko": "용량 증량 중단 규칙 중 어느 하나라도 충족된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_5.006",
+      "record_type": "condition",
+      "source_text_sha256": "e0a16463f4a779c7cc71c8a8c992075b4dc4f1ed220d961f2fae3a31feb2535f",
+      "normalized_ko": "프로토콜에서 코호트 반복이 허용되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_5.007",
+      "record_type": "condition",
+      "source_text_sha256": "bf7c40a9c116cc6fb930775c57a9ba97965f295578f8ff9df2cf5c079f765740",
+      "normalized_ko": "선택적 추가 코호트를 포함하려는 모든 계획",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_6.001",
+      "record_type": "condition",
+      "source_text_sha256": "0f58c1b25c8baa9c8c95e586ff3d19ee52c92092da67daafc5566490683a28dc",
+      "normalized_ko": "시험 설계에 위약 사용이 포함되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_6.002",
+      "record_type": "condition",
+      "source_text_sha256": "e777e7b73d1391d5f833566a9a27bea9de9aa45626ef50b576cec9b1b63cf1a4",
+      "normalized_ko": "이 전략을 사용하지 않으려는 모든 제안에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_6.003",
+      "record_type": "condition",
+      "source_text_sha256": "ab1c22579d8535a106c0cd1315d110b5ebf4193b5d9e4fbe309cb1d801c3e483",
+      "normalized_ko": "모든 단회 및 다회 투여 코호트에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_6.004",
+      "record_type": "condition",
+      "source_text_sha256": "4049a95035c4734283eb94b58d3c426e196869f6937b3c360aa7603974486236",
+      "normalized_ko": "시험 설계의 후반 단계에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_6.005",
+      "record_type": "condition",
+      "source_text_sha256": "c2e1dc25ef2a142f33a58bbca03e14ff93b4b1016df30614f1999488f6efaffe",
+      "normalized_ko": "용량-반응 곡선의 가파른 부분에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_6.006",
+      "record_type": "condition",
+      "source_text_sha256": "efd3aa1bbeead99003c8583884eb7ecd6f8b3fe9294cf6a1a53eabef17aa2292",
+      "normalized_ko": "목표 포화 수준 또는 프로토콜에 정의된 최대 임상 노출 수준에 접근할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_6.007",
+      "record_type": "condition",
+      "source_text_sha256": "8e5da163968c8fd9ef01eb1d3524d7df970a4efab7b37dd54f24044e6047c046",
+      "normalized_ko": "비선형 PK의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_6.008",
+      "record_type": "condition",
+      "source_text_sha256": "4829ff2496ec5bd15ef104972f5561128f265f7aa21ca8df8dca60f02307ffc3",
+      "normalized_ko": "중단 기준을 충족하지 않는 새롭게 나타나는 임상 징후 또는 이상반응을 고려하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_6.009",
+      "record_type": "condition",
+      "source_text_sha256": "db40186bfb6a5257a0f5a99aa54ed108b2584a6d75e5469f6113f17158c4d2b9",
+      "normalized_ko": "관찰 기간 종료 시",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_6.010",
+      "record_type": "condition",
+      "source_text_sha256": "9e819b3129b2eaa9fdfa3ccfbe895400bf66511eb36af251efac12573a34fc3f",
+      "normalized_ko": "코호트 내 추가 피험자에게 투여하기 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_6.011",
+      "record_type": "condition",
+      "source_text_sha256": "766858f71822929ce37fc07f588ed43af33299cf63524201cb2ccbf8ac113098",
+      "normalized_ko": "어느 하나의 규칙이 충족되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_6.012",
+      "record_type": "condition",
+      "source_text_sha256": "6354656f0e63cec42aa27d9c6fcd894306b603a55e06b9d85c2596344fb67d58",
+      "normalized_ko": "모든 코호트에서",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_6.013",
+      "record_type": "condition",
+      "source_text_sha256": "4049a95035c4734283eb94b58d3c426e196869f6937b3c360aa7603974486236",
+      "normalized_ko": "시험 설계의 후반 단계에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_6.014",
+      "record_type": "condition",
+      "source_text_sha256": "766858f71822929ce37fc07f588ed43af33299cf63524201cb2ccbf8ac113098",
+      "normalized_ko": "어느 하나의 규칙이 충족되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_7.001",
+      "record_type": "condition",
+      "source_text_sha256": "2df810647f89ed289796a4ab9eafb809ab3225932900d2f2cadbcf366e744ebe",
+      "normalized_ko": "직전 코호트의 참여자들이 투여를 받았고, 해당 참여자로부터 적절한 PK, PD 및 임상 안전성 데이터가 프로토콜에 따라 검토된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_7.002",
+      "record_type": "condition",
+      "source_text_sha256": "62e932bd29b57a459267641b5cd8afe91d158ed00a123cc1d37d960da412d6c6",
+      "normalized_ko": "일부 경우에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_7.003",
+      "record_type": "condition",
+      "source_text_sha256": "676c1ffa817e7c1994337678632d74c2d53b342d6b7564ac7800f0a6097434ef",
+      "normalized_ko": "필요한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_7.004",
+      "record_type": "condition",
+      "source_text_sha256": "9d6947ee38a692537550cfda9f3066166624a18b4f0debda1adfd9ab3a7547d6",
+      "normalized_ko": "PK, PK/PD 모델의 가치가 제한적인 특정 상황에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_7.005",
+      "record_type": "condition",
+      "source_text_sha256": "0f149b7aaba3c6d4cb2be7af88ce8f3aea6c0e16ed1f7664d801d3e174d25638",
+      "normalized_ko": "예기치 않은 반응",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_7.006",
+      "record_type": "condition",
+      "source_text_sha256": "e6b3fd05ca386accad47e6e40ed84f9132aebb0505484ba5811243874efe8c88",
+      "normalized_ko": "새로운 데이터가 발생하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_7.007",
+      "record_type": "condition",
+      "source_text_sha256": "e8adff5305588aa9e49a97665e8b1ff64f780ac22ca654ac25b759dd35f0a4a3",
+      "normalized_ko": "SAD 부분 또는 기타 부분에 뒤따르거나(또는 중첩되는) 모든 후속 부분에 앞서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_7.008",
+      "record_type": "condition",
+      "source_text_sha256": "4eb958e3e5b6eab201442139dcc79ca7146285aff6a0df616d848e1a64be2fa4",
+      "normalized_ko": "용량 증량 결정 시점 이후",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_7.009",
+      "record_type": "condition",
+      "source_text_sha256": "e6b3fd05ca386accad47e6e40ed84f9132aebb0505484ba5811243874efe8c88",
+      "normalized_ko": "새로운 데이터가 발생하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_7.010",
+      "record_type": "condition",
+      "source_text_sha256": "e24ea16dc1c896774b00a2b0e795b3efb1789a6a309bd1b4c510f906d9267084",
+      "normalized_ko": "해당 참여자로부터 적절한 PK, PD 및 임상 안전성 데이터가 프로토콜에 따라 검토된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_7.011",
+      "record_type": "condition",
+      "source_text_sha256": "4eb958e3e5b6eab201442139dcc79ca7146285aff6a0df616d848e1a64be2fa4",
+      "normalized_ko": "용량 증량 결정 시점 이후",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_7.012",
+      "record_type": "condition",
+      "source_text_sha256": "e6b3fd05ca386accad47e6e40ed84f9132aebb0505484ba5811243874efe8c88",
+      "normalized_ko": "새로운 데이터가 발생하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_7.013",
+      "record_type": "condition",
+      "source_text_sha256": "a12a955b2877bdef83a875353ed97edd77cfe17627a7f41e85f49e9982b4fa92",
+      "normalized_ko": "모든 용량 증량에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_8.001",
+      "record_type": "condition",
+      "source_text_sha256": "3f7cae31621e0062b5a96ec3647bd1e56449f42eee91d0af779646351e7131e6",
+      "normalized_ko": "코호트 내 모든 대상자가 ‘평가 가능’의 정의를 충족하지 않을 수 있다고 판단되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_8.002",
+      "record_type": "condition",
+      "source_text_sha256": "c04395a22a1aa05827e684ad9d52f23a9eca06b0e6f09905164909c95decf884",
+      "normalized_ko": "IMP/위약이 최소 1회 투여된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_8.003",
+      "record_type": "condition",
+      "source_text_sha256": "981bff7126b5cc452ca2c4ef2408ce9b7606965bcff751a91de9c2d4088a8a5f",
+      "normalized_ko": "다음 용량 코호트로 진행하기 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_8.004",
+      "record_type": "condition",
+      "source_text_sha256": "31259b01351655fcb7adb2be1a6d1279e76ee0349f71be4c318f680adc766b96",
+      "normalized_ko": "프로토콜에 사전 정의된 기준에 따라",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_8.005",
+      "record_type": "condition",
+      "source_text_sha256": "a4e688871e10cea39f2a5aaf0bab7abf6d21c7550c63356f59fd4700bcaa1152",
+      "normalized_ko": "결정 시점까지",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_8.006",
+      "record_type": "condition",
+      "source_text_sha256": "3392f73bff10966d267dd59ffbb0f41dd2e07b08cb84f72925cbf8470d4dc62c",
+      "normalized_ko": "프로토콜에 상세히 기술된 바와 같이 적어도 결정 시점까지",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_8.007",
+      "record_type": "condition",
+      "source_text_sha256": "7e099f8c8ee5f475640e3ca73119a1d3b859b8a0ed9247304ac09ad4eb2265cd",
+      "normalized_ko": "이 사전 정의된 정보에도 불구하고",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_9.001",
+      "record_type": "condition",
+      "source_text_sha256": "cd02b723812784db8d0a1fee0dd386bc030c29ad6b9845ee0c3bb7ecc7deb85d",
+      "normalized_ko": "중단이 최종 투여 종료인지 또는 일시적 중단인지 여부",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_9.002",
+      "record_type": "condition",
+      "source_text_sha256": "eb83d5c6d7127dbb3bae6121a036fec21fe952e51ab051c483d622a52ca7b98b",
+      "normalized_ko": "검토 결과가 해당 중단 기준에 대해 사전 정의된 조건에 완전히 부합하는 결론에 이르는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_9.003",
+      "record_type": "condition",
+      "source_text_sha256": "933997ea9f87b32a3cf5b2b68a3c41ac2a5a1b2217ab3487695da4a7c93b74ea",
+      "normalized_ko": "해당하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_9.004",
+      "record_type": "condition",
+      "source_text_sha256": "7fac50df904c769b0f3103376ea2a2bc0ad90325fe131f69648092e0dabda831",
+      "normalized_ko": "시험 중 어느 때에든",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_9.005",
+      "record_type": "condition",
+      "source_text_sha256": "c50b68436c30ef87ea8c85d9fae0c207eea611b6e0d968f12853724d59fc3c4b",
+      "normalized_ko": "건강한 자원자 시험의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_9.006",
+      "record_type": "condition",
+      "source_text_sha256": "027cdb6e657500c569b3c40e481a83d23e8b43ed15d65cc2603abcdc12955df0",
+      "normalized_ko": "코호트 내 피험자에게 다회 투여 중 시차를 두고 투여하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_9.007",
+      "record_type": "condition",
+      "source_text_sha256": "bbb8d3704e11ebd2f66de889d1db6a5e7bad90565b6008ddfccd1f6ce046ed4e",
+      "normalized_ko": "중단 규칙이 충족되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_9.008",
+      "record_type": "condition",
+      "source_text_sha256": "d9e4fedade8d496b91f40fcd9f683a7569b57852d1f1c8cf73b19bd0665492f4",
+      "normalized_ko": "이 기준과 관련하여 새로 축적되는 데이터를 검토할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_9.009",
+      "record_type": "condition",
+      "source_text_sha256": "1050b6c5853200d207fc9b4c7c7474a0637bacc06eebabaa15f3d17e4bddc66f",
+      "normalized_ko": "제출된 모든 중대한 변경",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_9.010",
+      "record_type": "condition",
+      "source_text_sha256": "c50b68436c30ef87ea8c85d9fae0c207eea611b6e0d968f12853724d59fc3c4b",
+      "normalized_ko": "건강한 자원자 시험의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_9.011",
+      "record_type": "condition",
+      "source_text_sha256": "2b23ed4477906fad4f10875fa9dcfa3920864b568890dcdce1f92da053897672",
+      "normalized_ko": "동일한 기관계 분류 내인지 여부와 무관하게",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_9.012",
+      "record_type": "condition",
+      "source_text_sha256": "cd02b723812784db8d0a1fee0dd386bc030c29ad6b9845ee0c3bb7ecc7deb85d",
+      "normalized_ko": "중단이 최종 투여 종료인지 또는 일시적 중단인지 여부",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_9.013",
+      "record_type": "condition",
+      "source_text_sha256": "51281d1dd410f6c34ccc2aae0a9ab846772eccfbe042a31d50b0825afb97d430",
+      "normalized_ko": "다회 투여 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_2_9.014",
+      "record_type": "condition",
+      "source_text_sha256": "86d45a07ad962d48fefe5851bf8028b58195dd1c5c63971e1bc7fe34e0989770",
+      "normalized_ko": "동일한 코호트 내에서, 동일한 기관계 분류 내인지 여부와 무관하게",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "e77d8cac113cb493e3799ea128705098bd1d2edadfe9358d22ee598e6c6315ed",
+      "normalized_ko": "응급 상황에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "e9ee357c3ba2330bda32668b061edef95a456e8908fd6c70d90ded1d6b194b90",
+      "normalized_ko": "대상자의 즉각적인 관리를 위해 받은 치료에 대한 지식이 필요한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_3.003",
+      "record_type": "condition",
+      "source_text_sha256": "7c98fa9026a127a6af205056fdbcd3130ab2dd724575e2d35193e43bd5abf512",
+      "normalized_ko": "프로토콜에 따라 명시된 시점에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_3.004",
+      "record_type": "condition",
+      "source_text_sha256": "87398d5aa5663bd816b89a664bc7090c6b22807ef45aac1267cce0ca95e5082c",
+      "normalized_ko": "프로토콜에 따라 명시된 시점에 시험 진행을 허용하기 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_3.005",
+      "record_type": "condition",
+      "source_text_sha256": "af752d05cd964d75e08208eab287ecb1d88b6cafe697926a72336d3949f74007",
+      "normalized_ko": "연구로부터 (최소한) 외부에 있는 자",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_3.006",
+      "record_type": "condition",
+      "source_text_sha256": "7c98fa9026a127a6af205056fdbcd3130ab2dd724575e2d35193e43bd5abf512",
+      "normalized_ko": "프로토콜에 따라 명시된 시점에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_4.001",
+      "record_type": "condition",
+      "source_text_sha256": "c4ef6e68aa8c771484e093e1f9cc8600a6e88860dc286d54aa46e6ad940aaa6d",
+      "normalized_ko": "프로토콜에서 요구하는 바에 따라",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_4.002",
+      "record_type": "condition",
+      "source_text_sha256": "6d7c61feba551ebabd15d6dc663ef142daf074943fd2ce4f9c557e8a2209d817",
+      "normalized_ko": "여러 시험기관이 참여해야 하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_4.003",
+      "record_type": "condition",
+      "source_text_sha256": "05e217a3053b361971f59701f804e2fa89c336a709cac30024be7b48b7ed5a17",
+      "normalized_ko": "등록을 위해 여러 시험기관이 흔히 필요한 환자 연구 등에서 여러 시험기관이 참여해야 하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.cond.8_4.004",
+      "record_type": "condition",
+      "source_text_sha256": "dc3214239bc8c53f89b8623b59cd8b9a75a348a71073da689ac0b65a2fe07bac",
+      "normalized_ko": "투여 중 및 투여 후",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.qc.7_5.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "83ea6d15cf86d8e733a79ce5ca1fdd1b78fb78b1381793419d67a2e8c27fdc36",
+      "normalized_ko": "건강한 자원자의 최대 노출은 추정된 인체 약력학적 용량 범위 내에 있어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.qc.7_6.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "abbeca2f4bb7e96022281d6af944871d9870b4082135ae2e4573f1b0c651f67e",
+      "normalized_ko": "MAD 부분에서의 노출량은 설정된 최대 노출량을 초과해서는 안 된다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ema_fih.qc.7_6.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "204729bae7c268e731848e1f49d9107f5b213f66ba0d0690b2f18318896eef5d",
+      "normalized_ko": "투여 빈도는 1일 1회 투여이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ema_fih.qc.7_6.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6f2374ffecac5309b8ff8c13220da1f4974b9ebcb6c1954f3b199b8337814159",
+      "normalized_ko": "투여 빈도는 1일 2회 투여이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ema_fih.qc.7_6.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "204729bae7c268e731848e1f49d9107f5b213f66ba0d0690b2f18318896eef5d",
+      "normalized_ko": "초기 요법의 투여 빈도는 1일 1회 투여이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ema_fih.qc.7_6.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6f2374ffecac5309b8ff8c13220da1f4974b9ebcb6c1954f3b199b8337814159",
+      "normalized_ko": "후속 요법의 투여 빈도는 1일 2회 투여이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ema_fih.qc.7_6.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "204729bae7c268e731848e1f49d9107f5b213f66ba0d0690b2f18318896eef5d",
+      "normalized_ko": "투여 빈도는 하루 1회 투여이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ema_fih.qc.7_6.007",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6f2374ffecac5309b8ff8c13220da1f4974b9ebcb6c1954f3b199b8337814159",
+      "normalized_ko": "투여 빈도는 하루 2회 투여이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ema_fih.qc.8_2_6.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "fd96097d710bd6a1757c0111f5d31aed743b1136697655301d4a24e27d5c94e6",
+      "normalized_ko": "어느 코호트에서든 첫 투여 시 활성 IMP를 투여받는 피험자 수는 1명이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.qc.8_2_6.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "e944c0058bd4e4e18b2b19b8a9e675b4ed4c008b5eeb5b4b25c3eb04868d47f4",
+      "normalized_ko": "어느 코호트에서든 첫 투여 시 센티넬 피험자가 투여받는 활성 IMP 용량 수는 1회이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.qc.8_2_7.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "cd54a9aa164ff309bde254a5a375723ff0b3f34dab119e262fef60df826fffab",
+      "normalized_ko": "각 피험자에 대해 최소 요구 데이터로 48h의 안전성 데이터를 설정한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ema_fih.qc.8_2_7.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b7781e1e8fce263e1282aaddf1921f9be70b95400539dd5bc9edd6b79c841d9b",
+      "normalized_ko": "유의한 사건은 투여 후 7 days post dose에 발생한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ema_fih.qc.8_2_7.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b7781e1e8fce263e1282aaddf1921f9be70b95400539dd5bc9edd6b79c841d9b",
+      "normalized_ko": "유의한 사건은 투여 후 7 days에 발생한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ema_fih.qc.8_2_8.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "573493436fdfb489b501892c326f8d926b7d4234de258ceeecbdaa2c7d3520d7",
+      "normalized_ko": "어떠한 사유로든 중단한 대상자에서 IMP/위약이 최소 1회 투여되어야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ema_fih.qc.8_2_8.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "65531c097ff5fde410d4112f2db3748f944bdff049f153db2bafeb3332eecfc3",
+      "normalized_ko": "검토에 필요한 평가 가능 대상자 수는 최소 수이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.qc.8_2_9.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "4dc829fcd5ffddfabc5fcd7ea723649e0bbfce59d5f3a50cf3c7a48681c383c9",
+      "normalized_ko": "IMP 투여와 적어도 관련 가능성이 있다고 판단되는 중대한 이상사례인 ‘중대한’ 이상반응이 1명의 피험자에서 발생한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.qc.8_2_9.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "7eabb127de5114639e419e33b54950fbb1f5d1f6f8d2050b5402b5a18972ef2c",
+      "normalized_ko": "IMP 투여와 적어도 관련 가능성이 있다고 판단되는 중증 비중대한 이상사례인 ‘중증’ 비중대한 이상반응이, 동일한 기관계 분류 내인지 여부와 무관하게 동일한 코호트의 2명 이상의 피험자에서 발생한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ema_fih.qc.8_2_9.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "14d329179dce64780cbb6084e6ea31932128ef71fb53f32b14a3e6a1f1c5469b",
+      "normalized_ko": "동일한 피험자에서 중등도 비중대한 이상반응이 동시에 2건 이상 발생한다.",
+      "normalization_status": "reviewed"
+    }
+  ]
+}

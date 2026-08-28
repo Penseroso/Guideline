@@ -259,7 +259,8 @@ function startServer({
         return sendError(res, 400, "invalid_request");
       }
       const allowOptionB = body.allow_option_b !== false;
-      const effectiveDeps = allowOptionB ? { client, store, index } : { index };
+      const responseLanguage = body.response_language === "en" ? "en" : "ko";
+      const effectiveDeps = allowOptionB ? { client, store, index, responseLanguage } : { index, responseLanguage };
 
       let envelope;
       if (allowOptionB && client && store) {

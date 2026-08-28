@@ -1,0 +1,602 @@
+{
+  "overlay_version": "0.1.0",
+  "language": "ko",
+  "document_id": "ich_s6_r1",
+  "entries": [
+    {
+      "record_id": "ich_s6_r1.cond.1_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "e434370636d0a40bec8cd31ccf53c20b51b9c9736bd444bf4346c1623b5e4c0c",
+      "normalized_ko": "저분자 의약품, 항생제, 세포 치료제, 유전자 치료제 또는 치료용 백신에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.1_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "86b22426197492bebae8120375c86ef975fb6740800d80a0a07a589718e6377d",
+      "normalized_ko": "다만 일부 원칙은 관련될 수 있다",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.2.001",
+      "record_type": "condition",
+      "source_text_sha256": "c41a3ad951c90b77985962a0d08086ad2c17349322b668498b6e60bd27c6eaef",
+      "normalized_ko": "개발 중 제조 공정 변경이 발생하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.3_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "685eb2a1a3b687844f89260ae943ea1d71d0e965bfdae233341daf8b4b03c83c",
+      "normalized_ko": "관련 종에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.3_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "685eb2a1a3b687844f89260ae943ea1d71d0e965bfdae233341daf8b4b03c83c",
+      "normalized_ko": "관련 종에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.3_4.001",
+      "record_type": "condition",
+      "source_text_sha256": "f9526ec7497275d8f1038d97055b9b8ad7bb82f7c552cb7323cb7046c0a5242e",
+      "normalized_ko": "과학적으로 정당화되지 않는 한",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.3_4.002",
+      "record_type": "condition",
+      "source_text_sha256": "d5c646b54194ccb10cfd458795fa175f99478bc6a1387758ab9147fb3905f14b",
+      "normalized_ko": "독성이 낮은 제품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.3_6.001",
+      "record_type": "condition",
+      "source_text_sha256": "43e958522efe54d76ea6a9df1f94420b6c033fd6ca2fae82ff762d532b80d06e",
+      "normalized_ko": "반복 투여 독성 시험에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.3_6.002",
+      "record_type": "condition",
+      "source_text_sha256": "05d1e80b4b662fdff47983db5bdffceb1c20b717dac8ad835ab9d01bf3e78c11",
+      "normalized_ko": "면역 반응이 많은 비율의 동물에서 노출을 중화하지 않는 한",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.4_4.001",
+      "record_type": "condition",
+      "source_text_sha256": "1d0926e42073b51179a4840fadf3d754dd8df7c849e7f75aff042425f6c1d2b7",
+      "normalized_ko": "단기 치료(최대 1-3개월)의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.4_4.002",
+      "record_type": "condition",
+      "source_text_sha256": "6e5b68426bf0f97201e19446bc9d91e2477436593217679e4df3aaeb90b14cde",
+      "normalized_ko": "만성 바이오의약품 적응증의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.4_7.001",
+      "record_type": "condition",
+      "source_text_sha256": "558b91613739ea6715bdfa2b58377d094a7a7edc30734a5d4bda949994f632cb",
+      "normalized_ko": "임상 집단에 가임기 여성이 포함되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part1.3_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "8fd68ab92df4022edc55d51e99cae9e7408a06972fca961a72eeb78b5c23d415",
+      "normalized_ko": "단클론 항체의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part1.3_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "63acee79ac4f3128aafdf45eff17d657e5d2feeda0a5359bb97b4967970ca641",
+      "normalized_ko": "단클론 항체 시험을 위한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part1.3_3.003",
+      "record_type": "condition",
+      "source_text_sha256": "4f80b3e23b404646fec5830148043b06c54f329874ca890b380b0a128a373ff1",
+      "normalized_ko": "인간에 대한 비의도적 조직 교차반응성이 유사함이 입증된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part1.3_3.004",
+      "record_type": "condition",
+      "source_text_sha256": "58b7713d7e55ed93f1df0bc768097083815f027a2f43f8af45728c83761db297",
+      "normalized_ko": "정당화된 특정 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part1.3_3.005",
+      "record_type": "condition",
+      "source_text_sha256": "1cc5b4d9d14f602f05f64646b0a85f075053215773efae84db70c2137dabc974",
+      "normalized_ko": "관련 종을 하나만 식별할 수 있거나 생물의약품의 생물학적 활성이 충분히 이해된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part1.3_3.006",
+      "record_type": "condition",
+      "source_text_sha256": "3e2eb1258370ffeac099227157580db18eb5a97b7e78cc199d32cdfba696e45f",
+      "normalized_ko": "두 종에서의 독성 프로파일이 단기간에 유사한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part1.3_3.007",
+      "record_type": "condition",
+      "source_text_sha256": "f0868a75e0b4b797d015a7e09baba1e7de315ff41740416b7948a4105cbd0008",
+      "normalized_ko": "관련 종이 존재하지 않는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part1.3_3.008",
+      "record_type": "condition",
+      "source_text_sha256": "d7b6871c6606787e79471990798c2db111588958b936dfad88834bdffa1f5a28",
+      "normalized_ko": "형질전환 동물 모델 또는 상동 단백질을 사용할 수 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part1.3_3.009",
+      "record_type": "condition",
+      "source_text_sha256": "891bd6e35930af619713163fd5c23a459ce34f444b36401868feb3a828ca3c2e",
+      "normalized_ko": "특정 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part1.3_3.010",
+      "record_type": "condition",
+      "source_text_sha256": "b2c04c3a269e845bb6a55723442612773276b9b0b951e95495718f7bb28c48e8",
+      "normalized_ko": "제품과 인간화 수용체의 상호작용이 인간에서 예상되는 것과 유사한 생리학적 결과를 초래하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "01bbb6512e1d1edfbc4e71f32fef279c585c179902ce08bae5099d618c5b7107",
+      "normalized_ko": "생명공학 유래 의약품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_2_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "eb2e0af910be6816d95409646fb4484fe09952061e41364332c565cd235074b6",
+      "normalized_ko": "위해성 확인을 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_2_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "2434356ad2eb2d89b0009bf38e066d19ae27244e38dd1965fd993fb4c28b2607",
+      "normalized_ko": "과학적 근거를 바탕으로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_2_3.003",
+      "record_type": "condition",
+      "source_text_sha256": "eb2e0af910be6816d95409646fb4484fe09952061e41364332c565cd235074b6",
+      "normalized_ko": "위해성 확인을 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_2_3.004",
+      "record_type": "condition",
+      "source_text_sha256": "ed0e16e9fde92d60ee6ac6522d1b7c3999aa8aaecc7ad3b3d22762a99e8efa3c",
+      "normalized_ko": "최대 약리학적 용량에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_3_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "5b96c4ac773755908290fe885aebe0c80845aa5fd3ac2024dbd7382603a3f3a6",
+      "normalized_ko": "더 낮은 용량(예: 최대 실현 가능 용량 또는 1000 mg/kg)이 정당화되지 않는 한",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_3_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "9a056d93692efd3148a3c776bfad50bff12950c8e2e94f8ff1225c8902ded2d4",
+      "normalized_ko": "이러한 수준에서 독성이 관찰되지 않는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_3_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "49dc69ec899e6f0e351662f401852a5587464c2b0af264f5e3c2a91a92fd2735",
+      "normalized_ko": "만성 사용 생물의약품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_3_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "1805319b07e52dc6f1c0c5d9fe9d236afbae27f18a743cb8955016fe9a5eb704",
+      "normalized_ko": "고용량이 PK-PD 원칙에 따라 선택되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_3_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "0ab7f55652c4b72e59d6acab060be71db2f9b850e25ccdbe58bfaf979ba92189",
+      "normalized_ko": "더 긴 기간의 시험",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_3_2.004",
+      "record_type": "condition",
+      "source_text_sha256": "49dc69ec899e6f0e351662f401852a5587464c2b0af264f5e3c2a91a92fd2735",
+      "normalized_ko": "만성 사용 생물의약품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_3_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "a51d9ad240141ff1452efc6d0b803a78f37d2befb3e23a60384cfcbce94f364a",
+      "normalized_ko": "면역원성을 평가하기 위한 경우에만",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_4.001",
+      "record_type": "condition",
+      "source_text_sha256": "d51e2de3843fdb9c1837a987df40aa453a8b612df1ff984fd74ed1d69c9365ff",
+      "normalized_ko": "변화된 PD 활성의 증거",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_4.002",
+      "record_type": "condition",
+      "source_text_sha256": "77997040cdcdf0c2e9d3a0a30b877c68efd9976f5ddab209f492bbfc513cb98a",
+      "normalized_ko": "PD 마커가 없는 경우 예기치 않은 노출 변화",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_4.003",
+      "record_type": "condition",
+      "source_text_sha256": "03a0476e82bd7afb197ef95f2ca49529ca4878e6e6446ddbdb5cd0eb6e0d36dd",
+      "normalized_ko": "면역 매개 반응(면역복합체 질환, 혈관염, 아나필락시스)의 증거",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_4.004",
+      "record_type": "condition",
+      "source_text_sha256": "1072032cd8389be7fc00d52506f4ea04a1034782ef85f850d892eb0c5c60a2ad",
+      "normalized_ko": "ADA가 검출되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_4.005",
+      "record_type": "condition",
+      "source_text_sha256": "407df318f51c1715c3e80d24309acdfd901333ee42fb1d5e39b9c06a22d03d79",
+      "normalized_ko": "지속적인 in vivo 활성을 입증할 PD 마커가 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_4.006",
+      "record_type": "condition",
+      "source_text_sha256": "8bedf2ae0d41b88ac0b1520d8977cc3339b4d06c957cfeee9e4f6516dd9cd496",
+      "normalized_ko": "ADA가 검출되고 지속적인 in vivo 활성을 입증할 PD 마커가 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_4.007",
+      "record_type": "condition",
+      "source_text_sha256": "d51e2de3843fdb9c1837a987df40aa453a8b612df1ff984fd74ed1d69c9365ff",
+      "normalized_ko": "변화된 PD 활성의 증거",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_4.008",
+      "record_type": "condition",
+      "source_text_sha256": "77997040cdcdf0c2e9d3a0a30b877c68efd9976f5ddab209f492bbfc513cb98a",
+      "normalized_ko": "PD 마커가 없는 경우 예기치 않은 노출 변화",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_4.009",
+      "record_type": "condition",
+      "source_text_sha256": "03a0476e82bd7afb197ef95f2ca49529ca4878e6e6446ddbdb5cd0eb6e0d36dd",
+      "normalized_ko": "면역 매개 반응(면역복합체 질환, 혈관염, 아나필락시스)의 증거",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_5.001",
+      "record_type": "condition",
+      "source_text_sha256": "c4aede8b2df040592301f521b57d08d405f7195a1371480373542081c30bb5ef",
+      "normalized_ko": "비인간 영장류(NHP)가 유일한 관련 종인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_5.002",
+      "record_type": "condition",
+      "source_text_sha256": "c4aede8b2df040592301f521b57d08d405f7195a1371480373542081c30bb5ef",
+      "normalized_ko": "비인간 영장류(NHP)가 유일한 관련 종인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2_6.001",
+      "record_type": "condition",
+      "source_text_sha256": "465d9e9d09b509512b7781256f5f3d9aa3c82533da4495eefd31b6de0a45fcab",
+      "normalized_ko": "명확한 생물학적 근거가 있고 관련 설치류 모델이 존재하는 경우를 제외하고",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.2_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "4bab267f27d54f5bd829ab4559f79a7f1954d0d2acec54269036177014422388",
+      "normalized_ko": "종 관련성을 결정할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.2_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "7579c2a8b70f1b04bf9c49afb08fc798831609337546965746ab87d1475a8aa9",
+      "normalized_ko": "표적이 일반적인 건강한 전임상 종에서 매우 낮은 수준으로 발현되는 경우(예: 염증성 사이토카인 또는 종양 항원)",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.2_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "bf541fa91abfd2a8dc422c801e4823aebd3cad22e0d1b77e758ef0645cfbbaa3",
+      "normalized_ko": "상기 기술된 접근법을 약리학적으로 관련된 종을 입증하는 데 사용할 수 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.2_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "0ad4dd5ec28f03262001a0f55b3aaa1ef34001fe5173edce4b2f293746e48be2",
+      "normalized_ko": "해당 바이오의약품이 어느 종에서도 오르톨로그 표적과 상호작용하지 않아 관련 종을 확인할 수 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.2_1.005",
+      "record_type": "condition",
+      "source_text_sha256": "a95cc310fec20fd81439f6d0376923b05be6f8b1909c538ec569b270c5de7422",
+      "normalized_ko": "외래 표적(즉, 세균성, 바이러스성 표적 등)을 표적으로 하는 단클론항체 및 기타 관련 항체 제품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.2_1.006",
+      "record_type": "condition",
+      "source_text_sha256": "ce2e6fb88597f81cc14b8cc1a44458fa12a14f20166e954b1963c9be54cc8f32",
+      "normalized_ko": "개념 증명을 평가하기 위해 질병 동물모델을 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.2_1.007",
+      "record_type": "condition",
+      "source_text_sha256": "7469ac8fdd88aa81af34379f94924f43adff90628fa54537eb7934d6e2f5dffb",
+      "normalized_ko": "이것이 실행 가능하지 않은 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.2_1.008",
+      "record_type": "condition",
+      "source_text_sha256": "dddb5017f721e17efce97551ec6fa800cc168ec52f50e528f7b16b6f6ec694a3",
+      "normalized_ko": "신규 독소/독성물질을 포함하는 항체-약물/독소 접합체(ADC)의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.2_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "01d0c3599362eaf39b4eeb917bb6a0637bcf9332d49f5a311e87f0f96b0e6735",
+      "normalized_ko": "임상 후보물질에 대해 약리학적으로 관련된 종이 두 종(설치류 1종 및 비설치류 1종)인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.2_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "7a562ba10ad665003445e22f035cad6c54f42c5df91da99a511d15a99ab94081",
+      "normalized_ko": "이들 시험의 독성학적 소견이 유사하거나 해당 소견이 제품의 작용 기전으로부터 이해되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.2_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "1a833616e549ea6cbfbbcd4271c9a7f93bee8581e7c2c8da1af9353d95c8c781",
+      "normalized_ko": "비설치류 사용에 대한 과학적 근거가 있는 경우를 제외하고",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.2_2.004",
+      "record_type": "condition",
+      "source_text_sha256": "3be141e2ea572d4f94fde9f5652f4102294d92485f9fb35f0093de092b04ae00",
+      "normalized_ko": "임상 후보물질이 단 하나의 종에서만 약리학적 활성을 나타내는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.notes.001",
+      "record_type": "condition",
+      "source_text_sha256": "205b0e081c62be73e7870eefe86d4961cbd624eca15170f13d4772185649ce0f",
+      "normalized_ko": "일부 경우 임상 후보물질은 적절한 IHC 시약이 아니며 TCR 연구가 기술적으로 실행 가능하지 않을 수 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.notes.002",
+      "record_type": "condition",
+      "source_text_sha256": "2163ed9a4fc250759a01c4a3d3d48ff501e0b712b226b0237aae5818a6dd8162",
+      "normalized_ko": "인체 조직에서 예상치 못한 결합이 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.notes.003",
+      "record_type": "condition",
+      "source_text_sha256": "e53015a56e938f0e0e2821d4e864abda551471e2faba0fd11a8486598c671750",
+      "normalized_ko": "이중특이 항체 제품은 인체 조직 패널을 사용한 TCR 연구에서 평가될 것이므로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.notes.004",
+      "record_type": "condition",
+      "source_text_sha256": "9aa882e63f578770abc1c1d43f64c161b0c8b0b5be228220f35a347b5c8624f7",
+      "normalized_ko": "인체 조직 패널에서 임상 후보물질로 TCR 연구가 수행된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.notes.005",
+      "record_type": "condition",
+      "source_text_sha256": "bcff592d3b8db82b4577870955358eeb8eab4e2eada327ba73e183dac4a31ef2",
+      "normalized_ko": "ADC의 안전성을 평가하기 위해 2종이 사용된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.notes.006",
+      "record_type": "condition",
+      "source_text_sha256": "557ed72def6880d3f6b1c711087e2d0bbfad189007ceccaeb365d38a6ce804d6",
+      "normalized_ko": "독소가 설치류에서 활성이 없는 경우를 제외하고",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.notes.007",
+      "record_type": "condition",
+      "source_text_sha256": "2a3f65a24c448954bf9cd852e4793fef964ea2ff6e3b809ecf68167e61311d1c",
+      "normalized_ko": "약리학적으로 관련된 종이 1종만 उपलब्ध한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.cond.part2.notes.008",
+      "record_type": "condition",
+      "source_text_sha256": "038934ff457601771d95a47e6e19e673da0ce16c9beb83451c3bd88fd21db92d",
+      "normalized_ko": "신규하지 않고 이용 가능한 과학적 정보가 충분히 축적된 독소 또는 독성물질의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.4_4.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "c200818df368ea09c9acc5cca72b5bf7b49aee8a047a5bebdacf27ef91c45d02",
+      "normalized_ko": "시험 기간은 의도된 임상 기간과 같거나 그보다 길어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.4_4.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6899ed0c66ada1c41c4c15c2ca211e4c6b29d45e990b80db9121c0ea67ca74e6",
+      "normalized_ko": "단기 치료 기간은 최대 1-3개월이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.4_4.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "8664688a309555238b30a4af6c33b1757672d18252731f0963ec656f2185c7e2",
+      "normalized_ko": "만성 바이오의약품 적응증의 경우 일반적으로 6개월의 기간이면 충분하다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.4_4.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6899ed0c66ada1c41c4c15c2ca211e4c6b29d45e990b80db9121c0ea67ca74e6",
+      "normalized_ko": "단기 치료 기간은 1-3개월 이내이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part1.3_3.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d3f5502a41afcd1a5278779f34ea2a0e2aa6ddda2acb38463cea3f8105c8c131",
+      "normalized_ko": "단일 종에서의 제한적 독성 평가를 위해, 기간이 ≤ 14 days인 반복 투여 독성시험.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part2_2_3.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "e56800ebfe5a0f1fa35adbbea15dee80294a311f53fb17ff68d2e73ebdeca0e5",
+      "normalized_ko": "위해성 확인을 위한 안전성 평가 시험에서 투여군 수는 1개이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part2_2_3.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "ef5aad5e9de4ef877db30a2b55646045d2a36523cebf92328a130a06466fce00",
+      "normalized_ko": "위해성 확인을 위한 안전성 평가 시험에서 대조군 수는 1개이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part2_2_3.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "ed0e16e9fde92d60ee6ac6522d1b7c3999aa8aaecc7ad3b3d22762a99e8efa3c",
+      "normalized_ko": "투여 용량은 최대 약리학적 용량과 같다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part2_3_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "deeda98454f3062cf5c47531123a269dcbecfcc41074b7cc48897138f03e8919",
+      "normalized_ko": "최대 임상 노출 대비 약 10-fold의 노출 배수이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part2_3_1.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "4608516b78816d02c6d1c7702fc3ff8c35d48a0d702bd6f1639a56b041e032d0",
+      "normalized_ko": "낮은 용량의 예로는 최대 실현 가능 용량 또는 1000 mg/kg가 있다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part2_3_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "549db32dba534a716b7a5f951a5dc7c58c3e5a4f2ef3553fb4f2cb0754d882df",
+      "normalized_ko": "설치류 또는 비설치류에서 6 months 기간의 반복투여 독성시험은 충분한 것으로 간주된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part2_3_2.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6c310a19c4356faba5b944d65c0b17431b813c6e0349a337d0b103aa9fc20bd5",
+      "normalized_ko": "예를 들어 12 months와 같은 더 긴 시험 기간.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part2_3_3.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "7cd39d7aadfb6ca0d9a9e2f253a65ed32273046bb7f26e4309a621e5bde1b6d8",
+      "normalized_ko": "비투여 기간을 포함하는 시험이 적어도 1건",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part2_3_3.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "0712614704cf9d8da7d2520063e8fef8683d3aaa7387bfcb9d94dbd7da0a0dc9",
+      "normalized_ko": "비투여 기간을 포함하는 용량 수준이 적어도 1개",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part2_5.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "1e9af85e20fe473348a6c1a73a52ef823ea56b749be7b9b2ca5a52ad753e89de",
+      "normalized_ko": "투여는 임신 20일부터 분만까지 연장할 수 있다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part2_5.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b6bd40b584341fb2b5580ea115191c395297dc8c42e9516265a9d7d9a99f3df4",
+      "normalized_ko": "영아 평가는 최대 6개월까지 수행할 수 있다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part2_6.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "c3b0816f3a4f4910982ed2477bd2cce7d5285875adfad6f8452c194526dfd506",
+      "normalized_ko": "설치류 발암성 생물검정의 기간은 2년이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part2.2_2.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "8f3d36d8e061735cda731679fd14352be6bc3f7c4a505633bf16944da2b4d0b7",
+      "normalized_ko": "단기 일반 독성 시험 기간은 최대 1개월이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.qc.part2.notes.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "aead045d8078214021456f293ebf0400afe05ea9d68a0b67bfcd5998f9de283a",
+      "normalized_ko": "비접합 독소를 사용한 추가 단기 연구 또는 단기 연구 내 시험군에는 최소 1종이 포함되어야 한다.",
+      "normalization_status": "reviewed"
+    }
+  ]
+}

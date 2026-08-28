@@ -1,13 +1,10 @@
 /**
  * web/i18n.js
- * M5 Phase 4 (design-taste-frontend audit pass): chrome-language strings
- * only (labels/headers/explainers). NOT for content language:
- * source_text is always shown verbatim in its original language
- * regardless of this toggle; normalized_ko is shown underneath only when
- * the underlying record has it (KnowledgeRecord only, ~54% coverage;
- * QuantitativeCriterion/Condition have no normalized_ko field in the
- * schema at all). Two independent axes, never conflated, see
- * web/render.js and the M5 plan §4.5.
+ * M5 answer-page presentation strings. Path A answer text follows the
+ * active locale: reviewed normalized_ko is used for Korean, while the
+ * original source text is used for English. QuantitativeCriterion and
+ * Condition Korean text comes from the lower-authority presentation
+ * overlay; it never replaces the source record.
  *
  * No em-dash anywhere in these strings (design-taste-frontend audit
  * finding: the previous version had several). Sentences are short on
@@ -23,6 +20,7 @@
   "use strict";
 
   const ko = {
+    locale: "ko",
     title: "규제 가이드라인 아카이브",
     askPlaceholder: "질문을 입력하세요",
     askButton: "질의",
@@ -32,13 +30,37 @@
     archiveScopeTitle: "아카이브 범위",
     archiveScopeNote: "이 범위 내에서만 답변합니다.",
     idleScopeNoteTemplate: "{count}개 문서로 구성된 아카이브입니다. 이 범위 내에서만 답변합니다.",
-    optionBToggleOn: "Option B 켜짐",
-    optionBToggleOff: "Option B 꺼짐",
+    optionBToggleOn: "확장 검색 사용",
+    optionBToggleOff: "확장 검색 사용 안 함",
+    settings: "설정",
     healthOk: "정상",
     healthError: "연결 오류",
     openPdf: "원문 PDF",
     applicableConditions: "적용 조건",
     crossReferences: "관련 조항",
+    questionLabel: "질문",
+    answerTitle: "답변",
+    evidenceTitle: "근거",
+    technicalDetail: "기술 상세",
+    normalizationNeedsReview: "검증된 한국어 정규화가 없어 원문 용어를 유지했습니다.",
+    modalityMust: "의무 (must)",
+    modalityShould: "권고 (should)",
+    modalityMay: "허용 (may)",
+    modalityOther: "원문 표현",
+    modalityNone: "명시적 조동사 없음",
+    conditionApplicability: "적용 대상",
+    conditionScope: "적용 범위",
+    conditionPrecondition: "전제 조건",
+    conditionException: "예외",
+    comparatorWithin: "이내",
+    comparatorNotExceed: "초과하지 않음",
+    comparatorAtLeast: "이상",
+    comparatorEquals: "정확히",
+    valueUnknown: "수치가 원문에서 확정되지 않음",
+    valueNotApplicable: "수치 기준이 아님",
+    valueNeedsReview: "수치 검토 필요",
+    illustrativeValue: "예시 값이며 명시된 요구 기준이 아닙니다.",
+    defaultWithException: "기본값이며 예외가 적용될 수 있습니다.",
     claimMissingCitation: "인용 근거를 확인할 수 없어 표시하지 않습니다.",
     normalizedKoLabel: "한국어 정규화 (참고)",
     pathALabel: "근거 직접 인용",
@@ -68,6 +90,7 @@
   };
 
   const en = {
+    locale: "en",
     title: "Regulatory Guideline Archive",
     askPlaceholder: "Ask a question",
     askButton: "Ask",
@@ -77,13 +100,37 @@
     archiveScopeTitle: "Archive scope",
     archiveScopeNote: "Answers only within this scope.",
     idleScopeNoteTemplate: "An archive of {count} documents. Answers only within this scope.",
-    optionBToggleOn: "Option B on",
-    optionBToggleOff: "Option B off",
+    optionBToggleOn: "Extended search on",
+    optionBToggleOff: "Extended search off",
+    settings: "Settings",
     healthOk: "OK",
     healthError: "Connection error",
     openPdf: "Source PDF",
     applicableConditions: "Applicable conditions",
     crossReferences: "Related provisions",
+    questionLabel: "Question",
+    answerTitle: "Answer",
+    evidenceTitle: "Evidence",
+    technicalDetail: "Technical detail",
+    normalizationNeedsReview: "No verified Korean normalization is available; source terminology is preserved.",
+    modalityMust: "Requirement (must)",
+    modalityShould: "Recommendation (should)",
+    modalityMay: "Permitted (may)",
+    modalityOther: "Source wording",
+    modalityNone: "No explicit modal",
+    conditionApplicability: "Applies to",
+    conditionScope: "Scope",
+    conditionPrecondition: "Precondition",
+    conditionException: "Exception",
+    comparatorWithin: "within",
+    comparatorNotExceed: "not more than",
+    comparatorAtLeast: "at least",
+    comparatorEquals: "exactly",
+    valueUnknown: "Numeric value is not confirmed in the source",
+    valueNotApplicable: "Not a numeric criterion",
+    valueNeedsReview: "Numeric value needs review",
+    illustrativeValue: "Illustrative example, not a specified requirement.",
+    defaultWithException: "Default value; exceptions may apply.",
     claimMissingCitation: "Citation could not be confirmed, so this item is withheld.",
     normalizedKoLabel: "Korean normalized text (reference)",
     pathALabel: "Quoted directly from archive",

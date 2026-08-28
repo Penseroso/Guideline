@@ -64,6 +64,21 @@ function scopeGuardReject(record, queryScope) {
 }
 
 /**
+ * Narrow answer-relevance guard. Scope matching alone is not enough for
+ * starting-dose questions: a sentinel-dosing record about how many
+ * subjects receive the first dose shares many tokens but answers a
+ * different question. Keep this shared between Option A and B.
+ */
+function relevanceGuardReject(record, queryScope) {
+  if (queryScope.target_topic !== "starting_dose" || !queryScope.require_starting_dose_focus) return false;
+  const focusText = [record.parameter, record.subject, record.object, record.source_text]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+  return !/\b(?:starting|initial) dose\b/.test(focusText);
+}
+
+/**
  * True if `queryScope` carries any classification that scopeGuardReject
  * actually acts on. Used to explain a refusal: if every record in the
  * archive is scope-rejected for a real classified scope, the refusal is
@@ -84,6 +99,7 @@ function hasScopeConstraint(queryScope) {
 function explainRefusal(question, records) {
   const qTokens = new Set(tokenize(question));
   const queryScope = extractQueryScope(question, qTokens);
+  queryScope.require_starting_dose_focus = /\b(?:starting|initial) dose\b|시작\s*용량|초기\s*용량/i.test(question);
   if (!hasScopeConstraint(queryScope)) return "no_match";
   const anySurvivesScope = records.some((r) => !scopeGuardReject(r, queryScope));
   return anySurvivesScope ? "no_match" : "scope_excluded";
@@ -97,7 +113,7 @@ function explainRefusal(question, records) {
  * Scope Guard rejects records that conflict with the query's molecule, assay, or topic.
  */
 function scoreRecord(record, qTokens, queryScope = {}) {
-  if (scopeGuardReject(record, queryScope)) {
+  if (scopeGuardReject(record, queryScope) || relevanceGuardReject(record, queryScope)) {
     return { score: 0, matchedCount: 0 };
   }
 
@@ -300,6 +316,7 @@ function structuredQuery(question, records, index = null) {
   if (qTokens.size === 0) return null;
 
   const queryScope = extractQueryScope(question, qTokens);
+  queryScope.require_starting_dose_focus = /\b(?:starting|initial) dose\b|시작\s*용량|초기\s*용량/i.test(question);
 
   const scored = [];
   for (const record of records) {
@@ -549,9 +566,10 @@ function splitIntoGroundingUnits(text) {
     .filter(Boolean);
 }
 
-async function answerOptionB(question, records, { client, store }) {
+async function answerOptionB(question, records, { client, store, responseLanguage } = {}) {
   const qTokens = new Set(tokenize(question));
   const queryScope = extractQueryScope(question, qTokens);
+  queryScope.require_starting_dose_focus = /\b(?:starting|initial) dose\b|시작\s*용량|초기\s*용량/i.test(question);
 
   let rawCandidates = await store.search(question, OPTION_B_TOP_K * 2);
 
@@ -560,7 +578,9 @@ async function answerOptionB(question, records, { client, store }) {
   // function's comment / docs/test_record.md Entry 007 for why this
   // matters: without it, a genuinely scope-excluded query silently
   // substituted the wrong document instead of refusing.
-  let candidates = rawCandidates.filter(({ record }) => !scopeGuardReject(record, queryScope));
+  let candidates = rawCandidates.filter(({ record }) =>
+    !scopeGuardReject(record, queryScope) && !relevanceGuardReject(record, queryScope)
+  );
   candidates = candidates.slice(0, OPTION_B_TOP_K);
 
   if (candidates.length === 0) {
@@ -575,7 +595,9 @@ async function answerOptionB(question, records, { client, store }) {
     "Answer the question using ONLY the numbered excerpts below. Quote or closely paraphrase — " +
     "never add information not present in them. Strictly preserve modal strength: do NOT upgrade discretionary or optional phrasing " +
     "('may', 'can', 'optional') into recommendations ('should') or requirements ('must', 'have to'), and do not upgrade recommendations ('should') " +
-    `into requirements ('must'). If the excerpts don't answer the question, reply with exactly "${NOT_FOUND}" and nothing else.`;
+    `into requirements ('must'). If the excerpts don't answer the question, reply with exactly "${NOT_FOUND}" and nothing else. ` +
+    (responseLanguage === "ko" ? "Answer in Korean. " : responseLanguage === "en" ? "Answer in English. " : "") +
+    "Keep each independently supported factual statement on its own line.";
 
   const generation = await client.complete({
     system,
@@ -602,6 +624,7 @@ async function answerOptionB(question, records, { client, store }) {
   const units = splitIntoGroundingUnits(generatedText);
   const groundedLines = [];
   const claims = [];
+  const answerUnits = [];
   let lastRejectionReason = null;
 
   for (const unit of units) {
@@ -618,6 +641,12 @@ async function answerOptionB(question, records, { client, store }) {
       groundedLines.push(unit);
       const citation = matched.record.citations[0];
       claims.push({ record: matched.record, source_unit_id: citation ? citation.source_unit_id : null, citation });
+      answerUnits.push({
+        text: unit,
+        record_id: matched.record.id,
+        source_unit_id: citation ? citation.source_unit_id : null,
+        document_id: matched.record.document_id || null
+      });
     }
   }
 
@@ -649,6 +678,7 @@ async function answerOptionB(question, records, { client, store }) {
     record: null,
     candidates: groundedRecords,
     claims: dedupedClaims,
+    answer_units: answerUnits,
     path: "B",
     review_status: groundedRecords.some((r) => r.review_status !== "reviewed") ? "needs_review" : "reviewed"
   };

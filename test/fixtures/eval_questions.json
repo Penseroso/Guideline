@@ -32,9 +32,8 @@
     {
       "id": "q6_fih_starting_dose",
       "question": "what is the recommended starting dose for first-in-human phase 1 trials",
-      "expect_answered": true,
-      "expect_citation_contains": "EMA",
-      "expect_text_contains": "dose"
+      "expect_answered": false,
+      "note": "Option A must abstain rather than answer a starting-dose question with the sentinel-dosing subject-count record. A grounded Option B answer remains allowed when configured."
     },
     {
       "id": "q7_refusal",

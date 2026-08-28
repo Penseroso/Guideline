@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.local/regulatory-guideline-archive/ko_presentation_overlay.schema.json",
+  "title": "Korean Presentation Overlay",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["overlay_version", "language", "document_id", "entries"],
+  "properties": {
+    "overlay_version": { "const": "0.1.0" },
+    "language": { "const": "ko" },
+    "document_id": { "type": "string", "minLength": 1 },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/entry" }
+    }
+  },
+  "definitions": {
+    "entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id",
+        "record_type",
+        "source_text_sha256",
+        "normalized_ko",
+        "normalization_status"
+      ],
+      "properties": {
+        "record_id": { "type": "string", "minLength": 1 },
+        "record_type": {
+          "type": "string",
+          "enum": ["quantitative_criterion", "condition"]
+        },
+        "source_text_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "normalized_ko": { "type": ["string", "null"], "minLength": 1 },
+        "normalization_status": {
+          "type": "string",
+          "enum": ["reviewed", "needs_review"]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "normalization_status": { "const": "reviewed" } },
+            "required": ["normalization_status"]
+          },
+          "then": {
+            "properties": { "normalized_ko": { "type": "string", "minLength": 1 } }
+          }
+        }
+      ]
+    }
+  }
+}

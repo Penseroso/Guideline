@@ -1,0 +1,189 @@
+{
+  "overlay_version": "0.1.0",
+  "language": "ko",
+  "document_id": "fda_ada_2014",
+  "entries": [
+    {
+      "record_id": "fda_ada_2014.cond.1.001",
+      "record_type": "condition",
+      "source_text_sha256": "8b8cce72f98f561022b0d729f8c56bf5d9dc844f68346d80e1615ac4aeecefe6",
+      "normalized_ko": "사람용 치료 단백질 제품의 개발에 관여하는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.1.002",
+      "record_type": "condition",
+      "source_text_sha256": "aa449b24c5fb31526c6bc3a7a33f8b7224ea84bfbfbad8125ea7b138012b1816",
+      "normalized_ko": "그 안전성 및 유효성에 영향을 미치는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.1.003",
+      "record_type": "condition",
+      "source_text_sha256": "47427ffdaa0fe91f8f4b1d13a5ed2860d499fcb69fecadf30daad87e6d78bcfc",
+      "normalized_ko": "사람용",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.4.001",
+      "record_type": "condition",
+      "source_text_sha256": "c48f644295afcf529d85d5d1a41dc96592f7722fffa061c37dea92445839a7d1",
+      "normalized_ko": "제품 투여 전",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.4.002",
+      "record_type": "condition",
+      "source_text_sha256": "9d873c2f4540c5300356801f49f1f54f02d2a8695f455ab4446aa9868c135ffd",
+      "normalized_ko": "이상반응이 의심되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.4.003",
+      "record_type": "condition",
+      "source_text_sha256": "23ce7b40b41b2685af7af72be91b3f782f67478ee70648454f81abf9f62ad974",
+      "normalized_ko": "고위험 제품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.4.004",
+      "record_type": "condition",
+      "source_text_sha256": "66e73312fce1434081c17d3a741be5dae7bc4192a12c2c78991851e7856d7821",
+      "normalized_ko": "저위험 제품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.4.005",
+      "record_type": "condition",
+      "source_text_sha256": "d6798141b3c85f499c5f6fe145033d350644e3fdec38f930535fd8e42d61c34d",
+      "normalized_ko": "시험 종료 시",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.4.006",
+      "record_type": "condition",
+      "source_text_sha256": "f6a1d20f69f02e7fcfb02eff8ce36e85e70af9b7fdf93643173c3985edb61d9e",
+      "normalized_ko": "투여 전(최저 농도)",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.4.007",
+      "record_type": "condition",
+      "source_text_sha256": "5b0338fa88b0b67c0dfb57decc9337c43878fa7343883da516787a15563b566b",
+      "normalized_ko": "고위험 제품의 경우(예: 비중복 내인성 대응체)",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.4.008",
+      "record_type": "condition",
+      "source_text_sha256": "d6798141b3c85f499c5f6fe145033d350644e3fdec38f930535fd8e42d61c34d",
+      "normalized_ko": "시험 종료 시",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.5_a_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "0b90fbf3afbdfe937b0f99c9eba01799396197c0b93130743014457aba1689af",
+      "normalized_ko": "투여 전",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.5_a_5.001",
+      "record_type": "condition",
+      "source_text_sha256": "f94ff422e1110451fda74db9d1309bd0e42e6a57ea1444d9d3628d7273635a20",
+      "normalized_ko": "내인성 단백질을 생성하지 않는 유전적 유전자 결실 돌연변이 또는 널 돌연변이를 가진 경우(CRM 음성, 예: 중증 혈우병 A 또는 폼페병)",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.5_a_5.002",
+      "record_type": "condition",
+      "source_text_sha256": "c7f5436b766953bc8a1e5c0ce9623f697a204ef2a407d4fe26468329b4820630",
+      "normalized_ko": "내인성 단백질을 생성하지 않는 유전적 유전자 결실 돌연변이 또는 널 돌연변이를 가진 환자(CRM 음성",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.6.001",
+      "record_type": "condition",
+      "source_text_sha256": "296271ea93fa374a7c043c4c540f058606b858d112321557d6dd1769813836be",
+      "normalized_ko": "제품 개발 전반에 걸쳐",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.app_a_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "bad8e8d0202cde47359abdbe86a3b4aeb7e85f3063e906a0568dba1c0b867728",
+      "normalized_ko": "가능성이 높은 알레르겐에 노출된 후",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.app_a_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "50b77f53f4bbd13ae1667b20a7b3923b2d5840ee5f8b6d46d6638929e9128803",
+      "normalized_ko": "표적 결합 또는 Fc 수용체 활성화 시",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.app_a_6.001",
+      "record_type": "condition",
+      "source_text_sha256": "9496e571353d70ca8fa10f4bf1781ee193bf19fac96076fd218fe83b0874dac9",
+      "normalized_ko": "비교 면역원성 연구에서(예: 바이오시밀러 개발)",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.cond.app_a_6.002",
+      "record_type": "condition",
+      "source_text_sha256": "0e2901b3a4579b523c8af28921ed99b8ecaa7715920e1c02c709a6fe8b81ab7d",
+      "normalized_ko": "비교 면역원성 연구에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.qc.5_b_3.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "52cc37649d598dbd11dc9f5a5c17d2fdca64e2db2dae4f4cd3bd5eaf35cbc722",
+      "normalized_ko": "육안으로 보이지 않는 입자 크기는 0.1 to 10 µm 범위 내이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.qc.5_b_3.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "fba4869c20a15ea57ee50635e69decab83cd4c3b477a374cd03fd522bdd60471",
+      "normalized_ko": "육안으로 보이지 않는 입자 크기는 0.1 µm 이상이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada_2014.qc.5_b_3.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "fba4869c20a15ea57ee50635e69decab83cd4c3b477a374cd03fd522bdd60471",
+      "normalized_ko": "육안으로 보이지 않는 입자 크기는 10 µm를 초과하지 않는다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada_2014.qc.app_a_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "17cda90b5e704f21eb61971d88cbe58d6f81bf923c5857f9153f13dce43b3d54",
+      "normalized_ko": "아나필락시스 진단을 위한 Sampson 2006 임상 기준이 3개이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.qc.app_a_1.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "8e082402848f1ada794cd0703c5a068baa70b3e2b1b825a4607cae88605c0762",
+      "normalized_ko": "피부/점막, 호흡기, 혈압 저하, 위장관 경련/구토 중 증상이 2개 이상이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada_2014.qc.app_a_1.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "abbd05e0d30baa5c906c5099af8995a79d6ad1d0cca3d56c0b04489fe88a84f2",
+      "normalized_ko": "수축기 BP 감소가 30% 이상이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada_2014.qc.app_a_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "f6c5fd489e1802bbd8af254597627f9bc94d23e04225c1f29f0f68d672ca8e69",
+      "normalized_ko": "CRS 징후는 주입 후 수분에서 수시간 이내에 나타난다.",
+      "normalization_status": "reviewed"
+    }
+  ]
+}

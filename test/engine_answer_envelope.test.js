@@ -47,6 +47,8 @@ test("envelope shape is always fully populated, whichever mode/path is taken", a
   assert.equal(typeof hit.prose, "string");
   assert.equal(hit.refusal, null);
   assert.ok(Array.isArray(hit.claims) && hit.claims.length > 0);
+  assert.ok(Array.isArray(hit.answer_units) && hit.answer_units.length > 0);
+  assert.equal(hit.answer_units[0].source_unit_id, hit.claims[0].source_unit_id);
   assert.ok(["reviewed", "needs_review"].includes(hit.review_status));
   assert.equal(typeof hit.timing_ms, "number");
 
@@ -56,6 +58,7 @@ test("envelope shape is always fully populated, whichever mode/path is taken", a
   assert.equal(refusalNoProvider.path, null);
   assert.equal(refusalNoProvider.refusal.kind, "no_provider");
   assert.deepEqual(refusalNoProvider.claims, []);
+  assert.deepEqual(refusalNoProvider.answer_units, []);
 });
 
 test("mode discriminates comparison, amendment, and list distinctly — the information answer()'s own top-level result never exposed", async () => {

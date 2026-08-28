@@ -8,6 +8,8 @@
     "test": "node --test \"test/**/*.test.js\"",
     "validate": "node validation/validate_structured_data.js",
     "validate:pilots": "node validation/validate_pilots.js",
+    "validate:ko": "node validation/validate_ko_presentation.js",
+    "normalize:ko": "node scripts/build_ko_presentation.js",
     "chat": "node engine/cli.js",
     "serve": "node engine/server.js",
     "eval": "node engine/eval_harness.js"

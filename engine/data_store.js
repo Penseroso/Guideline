@@ -5,6 +5,7 @@ const { discoverJsonFiles } = require("../validation/validate_pilots");
 
 const ROOT = path.resolve(__dirname, "..");
 const PILOTS_DIR = path.join(ROOT, "data", "pilots");
+const KO_PRESENTATION_DIR = path.join(ROOT, "data", "presentation", "ko");
 const SCOPE_PROFILES_PATH = path.join(ROOT, "data", "ontology", "document_scope_profiles.json");
 
 let scopeProfilesCache = null;
@@ -21,6 +22,16 @@ function loadBundles(pilotsDir = PILOTS_DIR) {
     file,
     bundle: JSON.parse(fs.readFileSync(file, "utf8"))
   }));
+}
+
+function loadKoPresentation(directory = KO_PRESENTATION_DIR) {
+  const entries = new Map();
+  if (!fs.existsSync(directory)) return entries;
+  for (const file of discoverJsonFiles(directory)) {
+    const overlay = JSON.parse(fs.readFileSync(file, "utf8"));
+    for (const entry of overlay.entries || []) entries.set(entry.record_id, entry);
+  }
+  return entries;
 }
 
 function buildIndex(bundles) {
@@ -216,11 +227,20 @@ function deriveRecordScope(record, ancestorSections, document) {
  * itself says applies, it never concludes suitability or applicability
  * for the reader's own situation).
  */
-function resolveConditionSummaries(index, conditionIds) {
+function resolveConditionSummaries(index, conditionIds, koPresentation = new Map()) {
   return conditionIds
     .map((id) => index.conditions.get(id))
     .filter(Boolean)
-    .map((c) => ({ condition_type: c.condition_type, condition_text: c.condition_text }));
+    .map((c) => {
+      const ko = koPresentation.get(c.condition_id);
+      return {
+        condition_id: c.condition_id,
+        condition_type: c.condition_type,
+        condition_text: c.condition_text,
+        normalized_ko: ko && ko.normalization_status === "reviewed" ? ko.normalized_ko : null,
+        normalization_status: ko ? ko.normalization_status : "needs_review"
+      };
+    });
 }
 
 /**
@@ -229,7 +249,7 @@ function resolveConditionSummaries(index, conditionIds) {
  * record carries its own resolved citations, verbatim source text, and
  * hierarchical 5-dimensional Scope metadata.
  */
-function answerableRecords(index) {
+function answerableRecords(index, koPresentation = new Map()) {
   const records = [];
 
   for (const kr of index.knowledgeRecords.values()) {
@@ -250,9 +270,10 @@ function answerableRecords(index) {
       action: kr.action,
       object: kr.object,
       condition_ids: conditionIds,
-      applicable_conditions: resolveConditionSummaries(index, conditionIds),
+      applicable_conditions: resolveConditionSummaries(index, conditionIds, koPresentation),
       original_modal_text: kr.original_modal_text,
       normalized_ko: kr.normalized_ko || null,
+      normalization_status: kr.normalized_ko ? "reviewed" : "needs_review",
       review_status: kr.review_status,
       source_unit_ids: kr.source_unit_ids,
       source_text: sourceTextFor(index, kr.source_unit_ids),
@@ -273,6 +294,7 @@ function answerableRecords(index) {
     const ancestorSections = sectionId ? getAncestorSections(index, sectionId) : [];
     const document = documentId ? index.documents.get(documentId) : null;
     const scope = deriveRecordScope(qc, ancestorSections, document);
+    const ko = koPresentation.get(qc.criterion_id);
 
     records.push({
       type: "quantitative_criterion",
@@ -285,11 +307,13 @@ function answerableRecords(index) {
       unit: qc.unit,
       denominator_or_reference: qc.denominator_or_reference,
       condition_ids: qc.condition_ids || [],
-      applicable_conditions: resolveConditionSummaries(index, qc.condition_ids || []),
+      applicable_conditions: resolveConditionSummaries(index, qc.condition_ids || [], koPresentation),
       joint_with_ids: qc.joint_with_ids || [],
       is_default_with_exception: qc.is_default_with_exception || false,
       is_illustrative_example: qc.is_illustrative_example || false,
       value_status: qc.value_status,
+      normalized_ko: ko && ko.normalization_status === "reviewed" ? ko.normalized_ko : null,
+      normalization_status: ko ? ko.normalization_status : "needs_review",
       review_status: qc.review_status,
       source_unit_ids: [qc.source_unit_id],
       source_text: qc.source_text,
@@ -310,12 +334,15 @@ function answerableRecords(index) {
     const ancestorSections = sectionId ? getAncestorSections(index, sectionId) : [];
     const document = documentId ? index.documents.get(documentId) : null;
     const scope = deriveRecordScope(c, ancestorSections, document);
+    const ko = koPresentation.get(c.condition_id);
 
     records.push({
       type: "condition",
       id: c.condition_id,
       condition_type: c.condition_type,
       applies_to_ids: c.applies_to_ids || [],
+      normalized_ko: ko && ko.normalization_status === "reviewed" ? ko.normalized_ko : null,
+      normalization_status: ko ? ko.normalization_status : "needs_review",
       review_status: c.review_status,
       source_unit_ids: [c.source_unit_id],
       source_text: c.condition_text,
@@ -332,10 +359,11 @@ function answerableRecords(index) {
   return records;
 }
 
-function loadStore(pilotsDir = PILOTS_DIR) {
+function loadStore(pilotsDir = PILOTS_DIR, koPresentationDir = KO_PRESENTATION_DIR) {
   const bundles = loadBundles(pilotsDir);
   const index = buildIndex(bundles);
-  return { index, records: answerableRecords(index) };
+  const koPresentation = loadKoPresentation(koPresentationDir);
+  return { index, records: answerableRecords(index, koPresentation), koPresentation };
 }
 
 function main() {
@@ -350,6 +378,7 @@ if (require.main === module) {
 
 module.exports = {
   loadBundles,
+  loadKoPresentation,
   buildIndex,
   buildConditionsByTarget,
   citationFor,

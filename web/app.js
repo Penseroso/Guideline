@@ -23,7 +23,10 @@
   const state = {
     lang: localStorage.getItem("guideline_lang") || "ko",
     optionBEnabled: true,
-    documents: []
+    documents: [],
+    evidenceOpen: null,
+    lastQuestion: null,
+    lastEnvelope: null
   };
 
   function i18n() {
@@ -35,6 +38,9 @@
     optionBToggle: document.getElementById("optionb-toggle"),
     scopeToggle: document.getElementById("scope-toggle"),
     scopePopover: document.getElementById("scope-popover"),
+    settingsToggle: document.getElementById("settings-toggle"),
+    settingsPopover: document.getElementById("settings-popover"),
+    healthStatus: document.getElementById("health-status"),
     healthDot: document.getElementById("health-dot"),
     healthLabel: document.getElementById("health-label"),
     docList: document.getElementById("doc-list"),
@@ -55,6 +61,7 @@
     el.askInput.placeholder = t.askPlaceholder;
     el.askButton.textContent = t.askButton;
     el.optionBToggle.textContent = state.optionBEnabled ? t.optionBToggleOn : t.optionBToggleOff;
+    el.settingsToggle.textContent = t.settings;
     el.scopeToggle.textContent = state.documents.length ? `${t.archiveScopeTitle} (${state.documents.length})` : t.archiveScopeTitle;
     renderDocList();
   }
@@ -71,10 +78,12 @@
       const body = await res.json();
       el.healthDot.className = "health-dot ok";
       el.healthLabel.textContent = `${i18n().healthOk} · ${body.documents} docs · ${body.records} records${body.option_b_available ? "" : " · Option B unavailable"}`;
+      el.healthStatus.hidden = true;
       if (!body.option_b_available) state.optionBEnabled = false;
     } catch {
       el.healthDot.className = "health-dot error";
       el.healthLabel.textContent = i18n().healthError;
+      el.healthStatus.hidden = false;
     }
   }
 
@@ -189,6 +198,21 @@
     return wrap;
   }
 
+  function configureEvidencePanel() {
+    const panel = el.resultPanel.querySelector("#evidence-panel");
+    if (!panel) return;
+    if (state.evidenceOpen === null) state.evidenceOpen = window.matchMedia("(min-width: 1100px)").matches;
+    panel.open = state.evidenceOpen;
+    panel.addEventListener("toggle", () => { state.evidenceOpen = panel.open; });
+  }
+
+  function renderCurrentResult() {
+    if (!state.lastEnvelope) return;
+    el.resultPanel.innerHTML = R.renderEnvelope(state.lastEnvelope, i18n(), state.lastQuestion);
+    configureEvidencePanel();
+    el.resultPanel.appendChild(renderFeedbackBar(state.lastQuestion, state.lastEnvelope));
+  }
+
   async function ask(question, { forceOptionB } = {}) {
     const optionB = forceOptionB || state.optionBEnabled;
     const stopLoading = startLoadingPhases(optionB);
@@ -196,21 +220,22 @@
       const res = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question, allow_option_b: optionB })
+        body: JSON.stringify({ question, allow_option_b: optionB, response_language: state.lang })
       });
       const envelope = await res.json();
       document.body.classList.remove("idle");
       document.body.classList.add("has-results");
       if (!res.ok) {
-        el.resultPanel.innerHTML = `<div class="claim-error">${R.escapeHtml(envelope.error || "internal error")}</div>`;
+        el.resultPanel.innerHTML = `<div class="claim-error" role="alert">${R.escapeHtml(envelope.error || "internal error")}</div>`;
         return;
       }
-      el.resultPanel.innerHTML = R.renderEnvelope(envelope, i18n());
-      el.resultPanel.appendChild(renderFeedbackBar(question, envelope));
+      state.lastQuestion = question;
+      state.lastEnvelope = envelope;
+      renderCurrentResult();
     } catch (err) {
       document.body.classList.remove("idle");
       document.body.classList.add("has-results");
-      el.resultPanel.innerHTML = `<div class="claim-error">${R.escapeHtml(String(err && err.message || err))}</div>`;
+      el.resultPanel.innerHTML = `<div class="claim-error" role="alert">${R.escapeHtml(String(err && err.message || err))}</div>`;
     } finally {
       stopLoading();
     }
@@ -220,6 +245,7 @@
     state.lang = state.lang === "ko" ? "en" : "ko";
     localStorage.setItem("guideline_lang", state.lang);
     applyChrome();
+    renderCurrentResult();
   });
 
   el.optionBToggle.addEventListener("click", () => {
@@ -230,10 +256,33 @@
   el.scopeToggle.addEventListener("click", (e) => {
     e.stopPropagation();
     el.scopePopover.hidden = !el.scopePopover.hidden;
+    el.scopeToggle.setAttribute("aria-expanded", String(!el.scopePopover.hidden));
+  });
+  el.settingsToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    el.settingsPopover.hidden = !el.settingsPopover.hidden;
+    el.settingsToggle.setAttribute("aria-expanded", String(!el.settingsPopover.hidden));
   });
   document.addEventListener("click", (e) => {
     if (!el.scopePopover.hidden && !el.scopePopover.contains(e.target) && e.target !== el.scopeToggle) {
       el.scopePopover.hidden = true;
+      el.scopeToggle.setAttribute("aria-expanded", "false");
+    }
+    if (!el.settingsPopover.hidden && !el.settingsPopover.contains(e.target) && e.target !== el.settingsToggle) {
+      el.settingsPopover.hidden = true;
+      el.settingsToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (!el.scopePopover.hidden) {
+      el.scopePopover.hidden = true;
+      el.scopeToggle.setAttribute("aria-expanded", "false");
+      el.scopeToggle.focus();
+    } else if (!el.settingsPopover.hidden) {
+      el.settingsPopover.hidden = true;
+      el.settingsToggle.setAttribute("aria-expanded", "false");
+      el.settingsToggle.focus();
     }
   });
 

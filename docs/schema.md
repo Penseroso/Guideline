@@ -20,7 +20,7 @@ An earlier derived-layer design (AmendmentMapping, EffectiveRecord, a family/edi
 - Use `SourceUnit` as the base archival unit, not `Requirement`.
 - Represent a requirement only as `KnowledgeRecord.record_type=requirement` when supported by source text.
 - Keep source text, Korean normalization, quantitative criteria, conditions, exceptions, footnotes, and cross-references structurally separate.
-- Store Korean normalization only on `KnowledgeRecord`.
+- Store core-bundle Korean normalization on `KnowledgeRecord`. Korean presentation text for `QuantitativeCriterion` and `Condition` is kept in the lower-authority presentation overlay described below, never written back into source bundles.
 - Use `review_status` for record review state and `value_status` for uncertain typed values.
 - Store typed values as actual typed values or `null`; do not place status strings such as `unknown` or `needs_review` in typed fields.
 - Preserve exact source fractions as structured fractions rather than approximate decimals when the source provides an exact fraction.
@@ -48,6 +48,19 @@ Allowed values:
 - `unknown`
 - `not_applicable`
 - `needs_review`
+
+## Korean presentation overlay
+
+`data/presentation/ko/*.json` is a lower-authority, UI-facing layer for Korean normalization of `QuantitativeCriterion` and `Condition`. It does not modify or supersede the source bundle, typed values, conditions, or source text. The contract is validated by `data/schemas/ko_presentation_overlay.schema.json` and `npm run validate:ko`.
+
+Each document has one overlay file with `overlay_version=0.1.0`, `language=ko`, its `document_id`, and ID-keyed entries. Every quantitative criterion and condition in the six pilot bundles must have exactly one entry. An entry contains:
+
+- `record_id` and `record_type`
+- `source_text_sha256`, computed from `QuantitativeCriterion.source_text` or `Condition.condition_text`, so source changes make stale normalization fail validation
+- `normalized_ko`, which may be `null` when a verified normalization is unavailable
+- `normalization_status`: `reviewed` only after generation, deterministic numeric preservation checks, and a separate semantic-equivalence verification call; otherwise `needs_review`
+
+The retrieval layer joins only `reviewed` overlay text into an answerable record's `normalized_ko`. A `needs_review` value is never used as the primary answer; the UI falls back to source text and surfaces the missing verified normalization. Existing `KnowledgeRecord.normalized_ko` remains in the core bundle and is not duplicated in this overlay.
 
 Typed fields such as numbers, dates, page indexes, percentages, and object indexes must contain a valid typed value or `null`. If the value is absent or uncertain, use `null` plus the appropriate `value_status`.
 

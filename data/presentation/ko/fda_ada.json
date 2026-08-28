@@ -1,0 +1,1925 @@
+{
+  "overlay_version": "0.1.0",
+  "language": "ko",
+  "document_id": "fda_ada",
+  "entries": [
+    {
+      "record_id": "fda_ada.cond.APPENDIX.001",
+      "record_type": "condition",
+      "source_text_sha256": "436a88475b53d865432a2ebf158a82f88d4f245704ec3720e18f7fd4f96e31ef",
+      "normalized_ko": "확인된 ADA",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.I.001",
+      "record_type": "condition",
+      "source_text_sha256": "fed04ede207eec1a57120fb4d706bf1815c965f7b282fc73e7dbb2723de53396",
+      "normalized_ko": "사례별로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.I.002",
+      "record_type": "condition",
+      "source_text_sha256": "fed04ede207eec1a57120fb4d706bf1815c965f7b282fc73e7dbb2723de53396",
+      "normalized_ko": "사례별로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.I.003",
+      "record_type": "condition",
+      "source_text_sha256": "e59d5d89c0ad295142b28e9d96c330fe11b39479f95c9d5197b27c978ce28955",
+      "normalized_ko": "일반적으로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_A.001",
+      "record_type": "condition",
+      "source_text_sha256": "e92faa4f661a9ab24685caa09e3a521e2e49f590a6a4fb7eabf57bdd37172c81",
+      "normalized_ko": "최초 임상시험계획(IND) 신청서에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_A.002",
+      "record_type": "condition",
+      "source_text_sha256": "2276a2edf22c1dbb01ba76c33923d2c3d57bf18f4c772a61ee03542f9de120aa",
+      "normalized_ko": "일부 경우에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_A.003",
+      "record_type": "condition",
+      "source_text_sha256": "2f7d96216e3e2a7aa3adeb94e92fadadae013603f56b40dacb60c368c223d6db",
+      "normalized_ko": "중추적 임상시험에서 도출된",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_A.004",
+      "record_type": "condition",
+      "source_text_sha256": "a63815acd7cf28a9cad8f63a6ee371d32d025d80a6d4ca5b04f370c2c5367fac",
+      "normalized_ko": "면역원성이 높은 임상적 위험을 초래하고 피험자 반응에 관한 실시간 데이터가 필요한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_A.005",
+      "record_type": "condition",
+      "source_text_sha256": "b67929f92e379ed13c55e1643a2552c8131edbc0a70db2b3dc260704051147c2",
+      "normalized_ko": "다른 상황에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_A.006",
+      "record_type": "condition",
+      "source_text_sha256": "5f9c3e38996f3cabb446dd7af9b87b74dd84f4aece23d0c2c4765ea87953c6ff",
+      "normalized_ko": "허가 신청 시점에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_A.007",
+      "record_type": "condition",
+      "source_text_sha256": "8a18fe5d6ceb0d624efb09c8d0de362a8c6d1e0bc5942952d0f08a6b921f243b",
+      "normalized_ko": "1상 및 2상 시험 동안",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_A.008",
+      "record_type": "condition",
+      "source_text_sha256": "4f2b9342e63106a9f02a9d65fa51fd66d7f6cf92b004cae9ec857b1f8f2ff98b",
+      "normalized_ko": "비중복 기능을 가진 내인성 대응물이 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_A.009",
+      "record_type": "condition",
+      "source_text_sha256": "da31ed647e15599ff3a041db054790a063abb970a39783f6c081b9d31402f32c",
+      "normalized_ko": "적절한 분석법을 이용할 수 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_A.010",
+      "record_type": "condition",
+      "source_text_sha256": "bc289ce515f17a58e91adc98f1a9398c9dff49df07f426c09a15d85134dbf833",
+      "normalized_ko": "임상시험을 개시하기 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_A.011",
+      "record_type": "condition",
+      "source_text_sha256": "d8bb2bed8109354121d3e58735f1839a63d374d7d14930d4e13ee20f2dbabacc",
+      "normalized_ko": "실시간으로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_A.012",
+      "record_type": "condition",
+      "source_text_sha256": "5f9c3e38996f3cabb446dd7af9b87b74dd84f4aece23d0c2c4765ea87953c6ff",
+      "normalized_ko": "허가 신청 시점에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_B.001",
+      "record_type": "condition",
+      "source_text_sha256": "db656d975d395f937e089174542be378b489874bf814bb5f65a5074f8f70848e",
+      "normalized_ko": "서열 또는 구조적 상동성을 공유하는 제품의 경우에도",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_B.002",
+      "record_type": "condition",
+      "source_text_sha256": "2c62bbdb993f9362deee916dcc42600b667e2356b9ca5365b81be653815ee7cc",
+      "normalized_ko": "완전히 검증된 분석법이 사용되더라도",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_B.003",
+      "record_type": "condition",
+      "source_text_sha256": "0cc75384753e645221901989c04729ee218dadf076b43a96f466d6077baf2bfd",
+      "normalized_ko": "상동성을 가진 서로 다른 치료용 단백질 제품 간 또는 서로 다른 출처의 유사한 치료용 단백질 간 면역원성의 직접 비교가 필요한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_B.004",
+      "record_type": "condition",
+      "source_text_sha256": "db656d975d395f937e089174542be378b489874bf814bb5f65a5074f8f70848e",
+      "normalized_ko": "서열 또는 구조적 상동성을 공유하는 제품의 경우에도",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III_B.005",
+      "record_type": "condition",
+      "source_text_sha256": "8844bc74498b164c06714aded69c6794305db3c5081792ae2b9ab0034a933f85",
+      "normalized_ko": "동일 적응증에 대해 구조적 상동성을 가진 치료용 단백질 제품 간",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III.001",
+      "record_type": "condition",
+      "source_text_sha256": "7e11518b8e99516737a25c0dae16dfec286c7af102d04aa838b91074e56ca38e",
+      "normalized_ko": "약동학, 약력학, 안전성 및 유효성에 영향을 미치는 치료용 단백질 제품",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III.002",
+      "record_type": "condition",
+      "source_text_sha256": "dd7771d92ee1da108a1b8fc172d0d0193ad30f1e69d39778c6499164d7d1045d",
+      "normalized_ko": "바람직하지 않은 생물학적 또는 생리학적 결과를 매개할 수 있는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.III.003",
+      "record_type": "condition",
+      "source_text_sha256": "4d777a7cd6ac50407897ad73c254ddd07baa208a5f1acde3fd0711fc5aaa8802",
+      "normalized_ko": "약동학, 약력학, 안전성 및 유효성에 영향을 미치는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_A_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "07c698a08a92b61697f80197432e417f4a63a94df928631b884bcaf87995b11d",
+      "normalized_ko": "대부분의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_A_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "d642c3ecc23e17f4b7970a070f62a221ee159186b0f8d13262fc210cfb9e4381",
+      "normalized_ko": "일부 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_A_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "0c8c419702a8a0b9fa908ecca104188aaae3e650b42f8cff6cb8a8fbb03db1c4",
+      "normalized_ko": "치료용 단백질 제품이 높은 상동성을 가진 단백질 계열에 속하고 다른 계열 구성원이 ADA의 영향을 받는지 아는 것이 중요한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_A_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "4f27b834a69472a78e70085296abb26f0d5f4957a1c52747788a735c7cf0ea5f",
+      "normalized_ko": "항체를 포함하는 검체가 양성으로 확인된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_A_1.005",
+      "record_type": "condition",
+      "source_text_sha256": "f24f0bac94e024b6cc32eb53327b0e833484d670ecf54196b2ada17230eb600a",
+      "normalized_ko": "대부분의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_A_1.006",
+      "record_type": "condition",
+      "source_text_sha256": "b0f0a6582cadc4c343506543f9722b26d3d93e0d80423c9a729c1d50452d0ade",
+      "normalized_ko": "스크리닝 분석에서 양성으로 검사된 검체",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_A_1.007",
+      "record_type": "condition",
+      "source_text_sha256": "c460d43e0125231aba4dea0ffddd1a1d62ed3f71f30b23a025e11bec95682537",
+      "normalized_ko": "확인 분석에서 양성으로 확인된 검체",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_A_1.008",
+      "record_type": "condition",
+      "source_text_sha256": "51fdbe9492438e4b314952d95a0bb6667c965320348b5035701224a07975e920",
+      "normalized_ko": "다중 도메인 제품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_A_1.009",
+      "record_type": "condition",
+      "source_text_sha256": "0c8c419702a8a0b9fa908ecca104188aaae3e650b42f8cff6cb8a8fbb03db1c4",
+      "normalized_ko": "치료용 단백질 제품이 높은 상동성을 가진 단백질 계열에 속하고 다른 계열 구성원이 ADA의 영향을 받는지 아는 것이 중요한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_A_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "2039bc925cec5d767f514f19536a5c1db936c592ab94db2d6e26a87f8d14e3a9",
+      "normalized_ko": "임상적으로 관련이 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_A_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "0c19c0f056baf21b31c4a8233bbb0e8298be2fd5c0b78b8352cde18391a577cf",
+      "normalized_ko": "뚜렷이 구별되는 기능적 도메인을 가진 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_A_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "ae66f731ec1d2886890a40763e92eb0084c6978a772d6b3b9e181a4dbea21117",
+      "normalized_ko": "다중 도메인 제품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_A_3.003",
+      "record_type": "condition",
+      "source_text_sha256": "e39f27d4ea4fe53f46dc3ebe890ad510ade88d825f26efbcaa46f8289582d6aa",
+      "normalized_ko": "다중 도메인 치료용 단백질 제품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_A_3.004",
+      "record_type": "condition",
+      "source_text_sha256": "e39f27d4ea4fe53f46dc3ebe890ad510ade88d825f26efbcaa46f8289582d6aa",
+      "normalized_ko": "다중 도메인 치료용 단백질 제품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_B.001",
+      "record_type": "condition",
+      "source_text_sha256": "34dc5f3a4ad5e47c26fb403b4bf84193b9160aa925238b917b2394e22b802cb8",
+      "normalized_ko": "컷포인트를 설정할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_B.002",
+      "record_type": "condition",
+      "source_text_sha256": "5df766ac4f1fec4a0f32350289a8e3e517ae290f1216cf236091a8e82b9a0fa1",
+      "normalized_ko": "서로 다른 표적 집단 및 질병 상태의 검체에는 분석법의 배경 신호를 변동시킬 수 있는 성분이 포함될 수 있으므로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_B.003",
+      "record_type": "condition",
+      "source_text_sha256": "8a9cfdce62e9e0d4d69e4bd1c884e98fd24b00cced065a0556dfa800a19ed46f",
+      "normalized_ko": "실행 가능한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_B.004",
+      "record_type": "condition",
+      "source_text_sha256": "57db692ca9bd14bb22a31e75d20568f92788ca22ef0c32ec618461170e1707bc",
+      "normalized_ko": "컷포인트를 확립할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_B.005",
+      "record_type": "condition",
+      "source_text_sha256": "c3818f8afe0221388c5ccd6c7ebac0d2172c838ea729b59b590d9d5e17debd5c",
+      "normalized_ko": "일부 질병 상태에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_B.006",
+      "record_type": "condition",
+      "source_text_sha256": "fe5a9ee7d20c760dd095080bd816854abdf17fc9ec6ce765a80bb04de882d471",
+      "normalized_ko": "예를 들어, 약물과의 경쟁을 통해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_B.007",
+      "record_type": "condition",
+      "source_text_sha256": "0234bb54b362ef99d05db38e36a9a69d7e57b1ae5ddc3874aa989350b6a0e0b1",
+      "normalized_ko": "연구 대상자에게 기존 항체가 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_B.008",
+      "record_type": "condition",
+      "source_text_sha256": "5df766ac4f1fec4a0f32350289a8e3e517ae290f1216cf236091a8e82b9a0fa1",
+      "normalized_ko": "서로 다른 표적 집단 및 질병 상태의 검체에는 분석법의 배경 신호를 변동시킬 수 있는 성분이 포함될 수 있으므로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_C_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "26bc1580cc9ea95eb420b110e99f5fe8deb591b64b0f8f822aa5532c5d87b046",
+      "normalized_ko": "스크리닝 및 확인 시험의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_C_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "6b20effcf1b989eea50c9d34b711621038a91f01551b05608b498bab9fd73861",
+      "normalized_ko": "고위험 치료용 단백질",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_C_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "27703ebc08ddaa27e40e6025213cf9c6e97ffa13f25985720d09376a12958d59",
+      "normalized_ko": "생물학적 매트릭스의 명시된 최소 필요 희석배수(MRD)가 존재하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_C_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "32c70970e7135c409eb0443837a800b50324caccafefe715aa347c88351ce7bb",
+      "normalized_ko": "개발 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_C_1.005",
+      "record_type": "condition",
+      "source_text_sha256": "592faa771f227f1a58ed136011842fc40618f8bd168d83ceaee15ab03e5a247d",
+      "normalized_ko": "치료 경험이 없는 피험자로부터 얻은 개별 또는 풀링 매트릭스를 사용하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_C_1.006",
+      "record_type": "condition",
+      "source_text_sha256": "57b187b6f7b0d42512ed4e995f9b4267b734626b3b2f65d644e0d3768d62374d",
+      "normalized_ko": "면역원성의 임상적 위험",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_C_1.007",
+      "record_type": "condition",
+      "source_text_sha256": "02ba5278f83beefc2691682973d119f7e257f7c9af40a84113b7c40bc4e647e1",
+      "normalized_ko": "필요한 민감도 수준은 면역원성의 임상적 위험에 따라 달라진다",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_C_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "e99c6a02baac74a216e8afb2463d147996ba3771211edf4d937f250f1f3c2346",
+      "normalized_ko": "예상되는 수준의 간섭 치료용 단백질 제품이 존재하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_C_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "27415d9efdbfb4a16f5747afa0e4359c5a6bf3eb1976978293ad636d7c963dee",
+      "normalized_ko": "치료용 단백질 제품이 없거나 서로 다른 양으로 존재하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_C_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "8b3297bf31eefd5e6639d080cc9206666a695be67af28529849009f222042d74",
+      "normalized_ko": "시험법을 개발할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_C_2.004",
+      "record_type": "condition",
+      "source_text_sha256": "5de686421cb2748836802a13bc7697f8f296b18155b55d1f7eb7df53a891590a",
+      "normalized_ko": "항체가 산 불안정성이거나 약물 표적이 가용성인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_C_2.005",
+      "record_type": "condition",
+      "source_text_sha256": "8b3297bf31eefd5e6639d080cc9206666a695be67af28529849009f222042d74",
+      "normalized_ko": "시험법을 개발할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_C_2.006",
+      "record_type": "condition",
+      "source_text_sha256": "e99c6a02baac74a216e8afb2463d147996ba3771211edf4d937f250f1f3c2346",
+      "normalized_ko": "예상되는 수준의 간섭 치료용 단백질 제품이 존재하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_D.001",
+      "record_type": "condition",
+      "source_text_sha256": "46f96e781da0121b84355b574156bd1ad8ac68fe748ff822ceb09ec37ac4d90d",
+      "normalized_ko": "분석법이 연구 중인 치료용 단백질 제품에 대한 ADA에 특이적이고 선택적인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_D.002",
+      "record_type": "condition",
+      "source_text_sha256": "d9ca2699f0e3f13f49c29a1e4f3096d9435ae8ba28c8284594d5cfd376342a6f",
+      "normalized_ko": "관련 치료용 단백질 제품 또는 그 구성요소가 존재하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_E_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "3df9637ff5c1ee15d00d763d627ef9a7da097cb73b87333eec66ecce263338a8",
+      "normalized_ko": "이 매트릭스가 분석 결과에 미칠 수 있는 간섭을 평가하는 밸리데이션 시험을 수행하기 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_E_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "2096cc4eef48ed351282457b3c0503cf4b5b5a017f01b495d4a01844a10dcfd0",
+      "normalized_ko": "분석법 개발 중에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_E_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "e9034fd1feba066770e82e1be6457c3da170976c7367a0b4bc09f440c0084885",
+      "normalized_ko": "희석액과 매트릭스에서의 분석법 성능을 비교할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_E_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "3d5768ee54613d388e89d75aabfc527a1cf6a5645739a343e076f14d03dbe0d8",
+      "normalized_ko": "분석 민감도 및 역가 계산을 위한",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_E_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "6c554ce512e67a8559f4be817f998d0f58b1f748ffc31b63b12e79b115e86d51",
+      "normalized_ko": "최종적으로 스폰서가 선택하는 MRD는 분석 설계 및 대상자 집단에 따라 달라진다",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_E_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "c63ae2819c8148cc399c4bdb306040985b923cdd451dc491825f970fdeae5880",
+      "normalized_ko": "치료 경험이 없는 대상자로부터",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_F.001",
+      "record_type": "condition",
+      "source_text_sha256": "16fdc99b058a60ec0ca812636553f17a1cf2eb140f243726b7d26c8c4077d22a",
+      "normalized_ko": "유동 컷포인트가 필요한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_F.002",
+      "record_type": "condition",
+      "source_text_sha256": "16fdc99b058a60ec0ca812636553f17a1cf2eb140f243726b7d26c8c4077d22a",
+      "normalized_ko": "유동 컷포인트가 필요한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_G.001",
+      "record_type": "condition",
+      "source_text_sha256": "ad0b73dbd1bb307f21b36b676f4806dc066f7a01b815a063454781da99bf6a0d",
+      "normalized_ko": "시험 중 하나의 분석법을 2개 이상의 독립 실험실에서 수행할 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_H.001",
+      "record_type": "condition",
+      "source_text_sha256": "c17eb0d25c33393c732bada49b02866ba32971319cfe4f77ebbc42760fcfafae",
+      "normalized_ko": "정상 사용 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_H.002",
+      "record_type": "condition",
+      "source_text_sha256": "8c4824326a408f37f0ebc6b7bc5b4acb0d7e303d80358a7ce251f7d929e1d12d",
+      "normalized_ko": "일상적인 검사실 실무에서 관련된 실제 상황하에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_H.003",
+      "record_type": "condition",
+      "source_text_sha256": "449b250464390309cae01657088cfce70cd49abc17c673d335af6c752801c3f2",
+      "normalized_ko": "개발 단계 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_H.004",
+      "record_type": "condition",
+      "source_text_sha256": "4b36be7788c174e7c7ebcd9027dfefcd4418010bb80b10072092c6274c4b676d",
+      "normalized_ko": "대상 검체의 안정성을 확립하는 것은 일반적으로 실현 가능하지 않으므로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_H.005",
+      "record_type": "condition",
+      "source_text_sha256": "86a06863428310ca6cddbddc69709a9188a641e6f903a2f78c843eadb51abef9",
+      "normalized_ko": "해당되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_H.006",
+      "record_type": "condition",
+      "source_text_sha256": "b073467f861f34ec59e149987aaea5a6d3c3139337346ba65b6029f823983c52",
+      "normalized_ko": "검사 시점에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_I.001",
+      "record_type": "condition",
+      "source_text_sha256": "438da952a76772e371cdd109702847df9a2820c1e11f15aee051313c90547ec0",
+      "normalized_ko": "항원(예: PEG)에 반복 모티프가 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_I.002",
+      "record_type": "condition",
+      "source_text_sha256": "438da952a76772e371cdd109702847df9a2820c1e11f15aee051313c90547ec0",
+      "normalized_ko": "항원(예: PEG)에 반복 모티프가 있는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_I.003",
+      "record_type": "condition",
+      "source_text_sha256": "f0c028f643c6666788521834fc2b4c89d5211662d7d592efd1985896b5fc61fc",
+      "normalized_ko": "플라스틱에 결합하거나 다른 물질(예: 형광색소, 효소 또는 비오틴 리포터)에 접합하기 때문에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_I.004",
+      "record_type": "condition",
+      "source_text_sha256": "f0c028f643c6666788521834fc2b4c89d5211662d7d592efd1985896b5fc61fc",
+      "normalized_ko": "플라스틱에 결합하거나 다른 물질(예: 형광색소, 효소 또는 비오틴 리포터)에 접합하기 때문에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "114b9a83cef277b386e5b76de73f5fc7012a08b7651208e8874aaf4316a86a06",
+      "normalized_ko": "시험법 성능의 일상적 평가 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "ed4ee52cb3b547b2214c39b896c2223ae0b0c3242b0e29a346c5d15b4dab69ab",
+      "normalized_ko": "시스템 적합성 대조군의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "de791fda77128eafb9427a6b36bdf5dc4c0a7122e03dc566582c4c8eaa7b1fcf",
+      "normalized_ko": "시험법 민감성을 보장하고 훅 효과를 검출하도록 조정된 농도에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "74f5d32d674d29d210a378e4ae4ced05a8c3bd01f75e18fc2fdc043fa4bbbfdb",
+      "normalized_ko": "치료용 mAb의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_1.005",
+      "record_type": "condition",
+      "source_text_sha256": "e46bc7ec91ecf899eb025820dafc4e0c51ab7afcfd806f7dcb94df993b516cf1",
+      "normalized_ko": "양성 대조 항체의 공급원이 확인된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_1.006",
+      "record_type": "condition",
+      "source_text_sha256": "03aadfaa99f280a2b382c429f49b04f01f2b1d44bf1628288b0171ab66c09045",
+      "normalized_ko": "시험법의 일상적 수행 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_1.007",
+      "record_type": "condition",
+      "source_text_sha256": "b78b22b5aa9c5125323b26579f2d04777c41e0873bf67dd44dd0dcc95e8d348e",
+      "normalized_ko": "시험법 개발 및 밸리데이션의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_1.008",
+      "record_type": "condition",
+      "source_text_sha256": "948308342c19f0939008f08f292d0313dc44e144f7d2dd5e2ebbe08d1ad5c6ea",
+      "normalized_ko": "시험법 밸리데이션 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_1.009",
+      "record_type": "condition",
+      "source_text_sha256": "9ccb58b602553281096b38beef67e094541f106de9c625cd98d9c86ac93f373e",
+      "normalized_ko": "시험법의 일상적 수행 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_1.010",
+      "record_type": "condition",
+      "source_text_sha256": "b962808042fa736b41329c541a49d2e5c22cf8b594b1c1499611871c2ee369c1",
+      "normalized_ko": "ADA 검출을 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_1.011",
+      "record_type": "condition",
+      "source_text_sha256": "95355930a2727add3e380d4200d48113d850c7c5d7ec2aad78d5950cc05f0387",
+      "normalized_ko": "동물을 면역하여 생성된",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_1.012",
+      "record_type": "condition",
+      "source_text_sha256": "74f5d32d674d29d210a378e4ae4ced05a8c3bd01f75e18fc2fdc043fa4bbbfdb",
+      "normalized_ko": "치료용 mAb의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "a09e9ae5ef927194e9128094d9bfcff108fa83f4b639999df6b8b2c724055d3e",
+      "normalized_ko": "가능한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "822c4ba3985e484e5b41ee2a433d84a66c4ccbcaa50b6c6e28de3cf3a7d238f5",
+      "normalized_ko": "개발 중 표적 모집단 대조 검체를 이용할 수 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "503825fbe09ec21fc65d43a00a41e585123775e189010b58717db9fcc2fc5ef5",
+      "normalized_ko": "적절한 표적 모집단의 치료 경험이 없는 대상자로부터의 검체를 이용할 수 있게 되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_2.004",
+      "record_type": "condition",
+      "source_text_sha256": "a50a53d927b26ade0b0f5d25a93be4660313336716eecff5da1debdfccabe93a",
+      "normalized_ko": "검증 연구 및 대상자 검체 시험을 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_2.005",
+      "record_type": "condition",
+      "source_text_sha256": "0a7cf0899dff9aa496e48ddc7413365d216021b98003363969aa809f5ab3f71e",
+      "normalized_ko": "컷포인트 설정에 사용된 개별 혈청 검체에서 도출된 평균값보다 훨씬 낮은 값을 산출하는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_2.006",
+      "record_type": "condition",
+      "source_text_sha256": "822c4ba3985e484e5b41ee2a433d84a66c4ccbcaa50b6c6e28de3cf3a7d238f5",
+      "normalized_ko": "개발 중 표적 모집단 대조 검체를 이용할 수 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_J_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "5107f89c01adab6af50760adf0cce7f8de901ac12432e43949f309fabf5fa35c",
+      "normalized_ko": "검체에 존재할 수 있는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_K.001",
+      "record_type": "condition",
+      "source_text_sha256": "4be30f38ca1470f9e1344a4e63a662f2291f754aa5d01ca38828130becb7b4c8",
+      "normalized_ko": "ADA 양성으로 확인된 대상자의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_K.002",
+      "record_type": "condition",
+      "source_text_sha256": "653d229d493c5b2cb7699fe91c858190c7ba3884e3dbd42ddb8075ececb43cfd",
+      "normalized_ko": "역가를 보고할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_K.003",
+      "record_type": "condition",
+      "source_text_sha256": "5ceead3c0fecbcdb93a38687b8700081e26450cef9e8860ad216ce32ce8335f0",
+      "normalized_ko": "중화 분석 결과를 보고할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_K.004",
+      "record_type": "condition",
+      "source_text_sha256": "1bf928ce8aad1764ac6b7589bf5675b22fb33a9bdd1686972520c46dd55ecbd9",
+      "normalized_ko": "사용된 분석 방법으로 희석하지 않은 매트릭스의 부피당 질량을 독립적으로 결정할 수 있는 경우를 제외하고",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_K.005",
+      "record_type": "condition",
+      "source_text_sha256": "b86bb4365cb1bdfbe0d50074fa8c9547aa32c37e22431c0e4d90b230b536da68",
+      "normalized_ko": "(1) 결과가 정량적 수단으로 결정되거나, 또는 (2) 검증된 항체의 보편적으로 인정되고 접근 가능한 공급원이 대조군으로 उपलब्ध하며 대조 항체와 대상자 검체의 희석 곡선 간 평행성이 입증된 경우를 제외하고",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_K.006",
+      "record_type": "condition",
+      "source_text_sha256": "5ceead3c0fecbcdb93a38687b8700081e26450cef9e8860ad216ce32ce8335f0",
+      "normalized_ko": "중화 분석 결과를 보고할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_K.007",
+      "record_type": "condition",
+      "source_text_sha256": "e6c7797944f1edfcc730f54926b7fa6babf128bc253aebcff7158752a6d08778",
+      "normalized_ko": "또는 (2) 검증된 항체의 보편적으로 인정되고 접근 가능한 공급원이 대조군으로 이용 가능하고 대조 항체와 대상자 검체의 희석 곡선 간 평행성이 입증된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_L_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "8f8d44c3ee30d07a0b7cad902165e6d394c9782f1e815837de58b3b6d5591b85",
+      "normalized_ko": "기존 항체가 존재하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_L_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "77b0da7d1d490388954d6d8b94ae6e6ccaefbd2d1c624955e519f7ab1f5cfcf9",
+      "normalized_ko": "기존 항체가 존재하고 치료용 단백질 제품에 노출된 후 항체 역가가 증가하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_L_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "c3bfabe267b284cc87d322a9da0e7b97482ef07bf380a659ca8b9931ff40f102",
+      "normalized_ko": "역가를 결정하기 위해 2배 연속 희석을 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_L_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "8f8d44c3ee30d07a0b7cad902165e6d394c9782f1e815837de58b3b6d5591b85",
+      "normalized_ko": "기존 항체가 존재하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_L_1.005",
+      "record_type": "condition",
+      "source_text_sha256": "77b0da7d1d490388954d6d8b94ae6e6ccaefbd2d1c624955e519f7ab1f5cfcf9",
+      "normalized_ko": "기존 항체가 존재하고 치료용 단백질 제품에 노출된 후 항체 역가가 증가하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_L_1.006",
+      "record_type": "condition",
+      "source_text_sha256": "c3bfabe267b284cc87d322a9da0e7b97482ef07bf380a659ca8b9931ff40f102",
+      "normalized_ko": "역가를 결정하기 위해 2배 연속 희석을 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_L_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "2533e86fb781a38aa6591aa0ff22297edbaf16d7b8f9a016d3d26ea719706198",
+      "normalized_ko": "매트릭스에 RF가 존재하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_L_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "7c59779b0c2299db7105bf067537706f4147af69561fdda697c97964c29b2beb",
+      "normalized_ko": "개발 중 RF가 위양성 결과를 생성하는 임상 환경에서 Fc-융합 단백질에 대한 면역반응을 평가할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_L_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "2533e86fb781a38aa6591aa0ff22297edbaf16d7b8f9a016d3d26ea719706198",
+      "normalized_ko": "매트릭스에 RF가 존재하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_L_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "c126cd399b0a55035db07bda4e013b3a31ec6e96e3f9f9bd63eda3060f7fff68",
+      "normalized_ko": "Fc 영역이 공학적으로 조작되었거나 다른 분자에 결합된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_L_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "ad59d580d35f0348ab5d62932cb6c0b6cf1763c3f98e6f8d3d55e1a36dcda94e",
+      "normalized_ko": "이러한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.IV_L_4.001",
+      "record_type": "condition",
+      "source_text_sha256": "fbaa19285c9095086b2ae4be4521e8493e983940398b8633371c69425baf1fd4",
+      "normalized_ko": "ADCs를 면역원성 분석용으로 표지해야 하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_A.001",
+      "record_type": "condition",
+      "source_text_sha256": "6b75665c4932558021294051cc67b0c940a1d26dd2ea03ba224099afd72d5f76",
+      "normalized_ko": "대상 집단의 치료 경험이 없는 검체를 확보할 수 있게 되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_A.002",
+      "record_type": "condition",
+      "source_text_sha256": "d27a165226c2ad43c882ce8573cedee5e90b840edc95ad2e83d126993b6efece",
+      "normalized_ko": "면역원성의 실제 발생률을 결정할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_A.003",
+      "record_type": "condition",
+      "source_text_sha256": "525a223cace3a0eb182454b9b929334cb40589d77c1dc11feb4229a761b30a69",
+      "normalized_ko": "분석법 개발 초기",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_A.004",
+      "record_type": "condition",
+      "source_text_sha256": "6b75665c4932558021294051cc67b0c940a1d26dd2ea03ba224099afd72d5f76",
+      "normalized_ko": "대상 집단의 치료 경험이 없는 검체를 확보할 수 있게 되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_A.005",
+      "record_type": "condition",
+      "source_text_sha256": "d27a165226c2ad43c882ce8573cedee5e90b840edc95ad2e83d126993b6efece",
+      "normalized_ko": "면역원성의 실제 발생률을 결정할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_A.006",
+      "record_type": "condition",
+      "source_text_sha256": "4cab51cb95340bd5db5b36debf05a7656241629260bca7698e5b296c2a54ced4",
+      "normalized_ko": "초기 스크리닝 분석법의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_B_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "b9c5240b69cc9e1385ed76c33d6fb377f922ce7f4d119fabdf9a57e84a0d9773",
+      "normalized_ko": "단, 분석법의 위양성률이 서로 다른 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_B_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "612de84e70e95c248a686c5feb8ae3675ac9df14432b4b004b581b760efc692f",
+      "normalized_ko": "그러한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_B_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "e5bdd1206797aa9fd6d6c75831251ba189704d4498b5ac9fbd4d9a6d71df785c",
+      "normalized_ko": "결합 경쟁 분석법을 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_B_1.004",
+      "record_type": "condition",
+      "source_text_sha256": "dff3506311d324d8c884233f3d9e29e928c607c66eeeb428b65917aead05836c",
+      "normalized_ko": "스크리닝 분석법은 혈청 검체에서 제품에 결합하는 항체의 존재를 약 5%의 규정된 위양성률로 광범위하게 검출하도록 설계되어 있기 때문에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_B_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "a0fe67c513c033991d5daf64a49c3081b2cecb8c76619f2e52cc460a0c17a74f",
+      "normalized_ko": "경쟁적 억제 형식을 선택하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_B_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "8344374632598dea82f49566a3f39633e74e4318cbeb7ad84ea162576ed26a14",
+      "normalized_ko": "치료 미경험 집단에서 기존 항체가 존재하는 검체를 다루는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_B_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "ddf867a94846871623b0e25c6133f505f34f7e19239155cc6b784c11fb09f9ab",
+      "normalized_ko": "드문 경우로서 베이스라인 음성 검체를 이용할 수 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_B_2.004",
+      "record_type": "condition",
+      "source_text_sha256": "8344374632598dea82f49566a3f39633e74e4318cbeb7ad84ea162576ed26a14",
+      "normalized_ko": "치료 미경험 집단에서 기존 항체가 존재하는 검체를 다루는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_B_2.005",
+      "record_type": "condition",
+      "source_text_sha256": "8344374632598dea82f49566a3f39633e74e4318cbeb7ad84ea162576ed26a14",
+      "normalized_ko": "치료 미경험 집단에서 기존 항체가 존재하는 검체를 다루는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_B_2.006",
+      "record_type": "condition",
+      "source_text_sha256": "816aafb5f7e93ddce4e7159b8764f6e3a3bf855314957459c158793d7e426d56",
+      "normalized_ko": "스크리닝에서 양성을 보이는 검체",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_C.001",
+      "record_type": "condition",
+      "source_text_sha256": "c708db9a3b21b559b0f2aa5cd4e7da48c32dec4dfad2bea1d51856333cb28adc",
+      "normalized_ko": "기존 ADA를 가진 대상자에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_C.002",
+      "record_type": "condition",
+      "source_text_sha256": "c3bfabe267b284cc87d322a9da0e7b97482ef07bf380a659ca8b9931ff40f102",
+      "normalized_ko": "역가를 결정하기 위해 2배 희석을 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_C.003",
+      "record_type": "condition",
+      "source_text_sha256": "85a1a532ae8f3c944479ec1c22986620ee2bd80a626c95ea69c3ee70d0f1862a",
+      "normalized_ko": "희석 곡선을 분석 컷포인트까지 외삽하여 역가를 설정하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_C.004",
+      "record_type": "condition",
+      "source_text_sha256": "c3bfabe267b284cc87d322a9da0e7b97482ef07bf380a659ca8b9931ff40f102",
+      "normalized_ko": "역가를 결정하기 위해 2배 희석을 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_D.001",
+      "record_type": "condition",
+      "source_text_sha256": "416361bed1841f82220344aa136742dd586062b1db8ae82de918fa279acf8f2e",
+      "normalized_ko": "세포 기반 바이오분석이 실행 가능하지 않은 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_D.002",
+      "record_type": "condition",
+      "source_text_sha256": "0a514f31582445fd2a2bf9bbca190caff1c48382b6ca3b36657a489ad42d54a9",
+      "normalized_ko": "치료용 단백질 제품이 가용성 리간드에 결합하는 것만으로 기능하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_D.003",
+      "record_type": "condition",
+      "source_text_sha256": "9fc7d467e2fe1298e0124c8afbfae45578ffa45893253174c6e7c7bed2e987fe",
+      "normalized_ko": "중화 분석은 스크리닝 및 확인 단계 후에 사용되므로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_D.004",
+      "record_type": "condition",
+      "source_text_sha256": "108fe355796d7638ea64910db57b0713011aba0deaaba66c89a0b917631f498d",
+      "normalized_ko": "세포 기반 분석에 충분한 민감도가 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_D.005",
+      "record_type": "condition",
+      "source_text_sha256": "811f8af8e55fac765ce7f5ac94c1e42977fb53b7c30d403ffd768ff26b3211e0",
+      "normalized_ko": "세포 기반 분석이 극복할 수 없는 매트릭스 간섭을 받는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_D.006",
+      "record_type": "condition",
+      "source_text_sha256": "9fc7d467e2fe1298e0124c8afbfae45578ffa45893253174c6e7c7bed2e987fe",
+      "normalized_ko": "중화 분석은 스크리닝 및 확인 단계 후에 사용되므로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_D.007",
+      "record_type": "condition",
+      "source_text_sha256": "416361bed1841f82220344aa136742dd586062b1db8ae82de918fa279acf8f2e",
+      "normalized_ko": "세포 기반 바이오분석이 실행 가능하지 않은 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.V_D.008",
+      "record_type": "condition",
+      "source_text_sha256": "e2a83ddbd0d84bbb3455dee5b462989a3180509d30da83d1b603ffa65450d9e7",
+      "normalized_ko": "중화 분석의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_A.001",
+      "record_type": "condition",
+      "source_text_sha256": "751be01638825b34117d8acf88bb620dde245875588b5c79fc33f48ce1ebecd4",
+      "normalized_ko": "컷포인트 결정을 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_A.002",
+      "record_type": "condition",
+      "source_text_sha256": "751be01638825b34117d8acf88bb620dde245875588b5c79fc33f48ce1ebecd4",
+      "normalized_ko": "컷포인트 결정 시",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_A.003",
+      "record_type": "condition",
+      "source_text_sha256": "751be01638825b34117d8acf88bb620dde245875588b5c79fc33f48ce1ebecd4",
+      "normalized_ko": "컷포인트 결정에 적용되는 경우",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_B.001",
+      "record_type": "condition",
+      "source_text_sha256": "fa2604720ed7ebf998c9af5e73b9adcd7cf1c5c5ca445935c78a8053fcd4a4df",
+      "normalized_ko": "피험자 집단에서 유래한",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_B.002",
+      "record_type": "condition",
+      "source_text_sha256": "69f440bdd665cbf01ed93e3c9a53ff95ce94bd9eb3a73b8c7eace3c161edbc4b",
+      "normalized_ko": "정규분포를 따르는 데이터의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_B.003",
+      "record_type": "condition",
+      "source_text_sha256": "2bca9b498d6f0d24de8c6c8fe8306c86be01db966a36a67b002ecdf70efaf84c",
+      "normalized_ko": "고위험 제품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_B.004",
+      "record_type": "condition",
+      "source_text_sha256": "667588213e9c7da52bfe3f4344c671872defa6266c79fa261786ed704b66d92b",
+      "normalized_ko": "평균은 분석, 플레이트 또는 분석자 간에 달라지지만 평균 주변의 분산은 일정한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_B.005",
+      "record_type": "condition",
+      "source_text_sha256": "74fbdede480b040cd823297ff0be66ecd6c65bfd88fecb7e04e91e2b4212bae3",
+      "normalized_ko": "평균이 일정한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_B.006",
+      "record_type": "condition",
+      "source_text_sha256": "a17c3a13a947e85321bb77c2d8c49e2053d37f480c0583c4926c056a118aef67",
+      "normalized_ko": "평균과 분산이 모두 달라지는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_B.007",
+      "record_type": "condition",
+      "source_text_sha256": "b7ba2df198882227d9ce45a9d48c643875e90de3eca4cab47a91acddf87f84c8",
+      "normalized_ko": "5% 위양성률의 높은 보증을 가능하게 하는 한 가지 접근법",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_C.001",
+      "record_type": "condition",
+      "source_text_sha256": "7875c7b89673101facd98160a5dac0762b244e2023b7673e092e4ff317858688",
+      "normalized_ko": "더 큰 연구의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_C.002",
+      "record_type": "condition",
+      "source_text_sha256": "99748910efb9f9dc6462f0f96b39832e18b2580f716949eab5d41405a366b2a0",
+      "normalized_ko": "이 분석법이 대상체 검체 내 항체에 의한 항원 결합 경쟁에 기반하고 측정값이 반응 소실인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_C.003",
+      "record_type": "condition",
+      "source_text_sha256": "a0dbe242b0eb732e6efba0e6f8be1b1b25030dbdb93b091f367e4ecb795fe1d7",
+      "normalized_ko": "경쟁 항원이 추가될 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_C.004",
+      "record_type": "condition",
+      "source_text_sha256": "992556d24016de1c5275890f8726fca94beb642db86826e926facf2a68db3aca",
+      "normalized_ko": "이 분석법 형식의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_C.005",
+      "record_type": "condition",
+      "source_text_sha256": "99748910efb9f9dc6462f0f96b39832e18b2580f716949eab5d41405a366b2a0",
+      "normalized_ko": "이 분석법이 대상체 검체 내 항체에 의한 항원 결합 경쟁에 기반하고 측정값이 반응 소실인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_C.006",
+      "record_type": "condition",
+      "source_text_sha256": "7875c7b89673101facd98160a5dac0762b244e2023b7673e092e4ff317858688",
+      "normalized_ko": "더 큰 연구의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_C.007",
+      "record_type": "condition",
+      "source_text_sha256": "992556d24016de1c5275890f8726fca94beb642db86826e926facf2a68db3aca",
+      "normalized_ko": "이 분석법 형식의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_C.008",
+      "record_type": "condition",
+      "source_text_sha256": "61a39ff0cf27f78d9f31d6f45823e5f71c801f6b22e7915d34163e8d02d92704",
+      "normalized_ko": "확증 컷포인트를 결정할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_D.001",
+      "record_type": "condition",
+      "source_text_sha256": "781f9ab7b586509309798753586100a822a3842deaec103610d40ce825fef161",
+      "normalized_ko": "혈청의 차단 효과로 인해 분석 희석액 또는 매트릭스의 신호가 스크리닝 분석 컷포인트보다 높은 결과를 유발하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_D.002",
+      "record_type": "condition",
+      "source_text_sha256": "7bb9b2d3668a77f0eaae40685357cbe3b32481cb74628b48d49927fd9f025e6d",
+      "normalized_ko": "MRD보다 높은 희석배수의 시료가 일관되게 음성 결과를 생성하지 않는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_D.003",
+      "record_type": "condition",
+      "source_text_sha256": "972fc488066f6783015db7bec1f78fcaef46417d63be22365ed3692d9cb5407a",
+      "normalized_ko": "일반적으로, 스크리닝 컷포인트가 양성 대조군 희석 곡선의 하부 평탄부에 위치하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_D.004",
+      "record_type": "condition",
+      "source_text_sha256": "f961c5c34671b614aeb8a6f00d5163c10308fe09695798ec1d780e4ff0ca49b4",
+      "normalized_ko": "적정 분석을 스크리닝에 사용하지 않는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_D.005",
+      "record_type": "condition",
+      "source_text_sha256": "324a364a20b4ac1225a00303d9bd1846ff22e1c1c6d8de6bf98ba5b40012e97a",
+      "normalized_ko": "적정 분석을 스크리닝에 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_D.006",
+      "record_type": "condition",
+      "source_text_sha256": "b96b4869917bb5d389fc3ddc9aefd165da30570ef0dddbe470e4b0a7ec27ff35",
+      "normalized_ko": "대상자 집단에서 기존 ADA의 발생률이 높은 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_D.007",
+      "record_type": "condition",
+      "source_text_sha256": "9567159ad8b25ee07199c1b609976d045b5de5a75de18162f723c85fa4620720",
+      "normalized_ko": "스크리닝 컷포인트가 양성 대조군 희석 곡선의 하부 평탄부에 위치하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_D.008",
+      "record_type": "condition",
+      "source_text_sha256": "b96b4869917bb5d389fc3ddc9aefd165da30570ef0dddbe470e4b0a7ec27ff35",
+      "normalized_ko": "대상자 집단에서 기존 ADA의 발생률이 높은 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_D.009",
+      "record_type": "condition",
+      "source_text_sha256": "6ef7e69431368a50ea896a2b0f233ca76c97c62d82c7d65d99870d28cc7f1beb",
+      "normalized_ko": "적정 분석 특이적 컷포인트를 사용하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_D.010",
+      "record_type": "condition",
+      "source_text_sha256": "0b4a74df90171413bd8ca63bf52ae6bff79e5eaf8779b344ad2028fe8e1460bd",
+      "normalized_ko": "일반적으로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_E.001",
+      "record_type": "condition",
+      "source_text_sha256": "f0eab0e9fdba103c24fe6056fd3811829ee840b2d2da1cb2e559723fa555e847",
+      "normalized_ko": "시험 정밀도가 낮은 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_E.002",
+      "record_type": "condition",
+      "source_text_sha256": "124d2b3311225169e3452badf28adf8cb7a7c2d46be39568e385356556230822",
+      "normalized_ko": "적절한 통계적 방법을 사용하여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_E.003",
+      "record_type": "condition",
+      "source_text_sha256": "8841b12c7a22cb3830b5f6d6567afc439d2c1853a676638e6af2c5cfc13687bf",
+      "normalized_ko": "세포 기반 중화 생물검정의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VI_E.004",
+      "record_type": "condition",
+      "source_text_sha256": "8841b12c7a22cb3830b5f6d6567afc439d2c1853a676638e6af2c5cfc13687bf",
+      "normalized_ko": "세포 기반 중화 생물검정의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_A.001",
+      "record_type": "condition",
+      "source_text_sha256": "82f9568e7e0a0880811ed8a00e18f59719e5e74046f7784f8dc77fbeb481156b",
+      "normalized_ko": "치료용 단백질 제품을 단회 투여받는 개인의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_A.002",
+      "record_type": "condition",
+      "source_text_sha256": "1816e9d459e8c547a1693c1ac423389989bd26e72304985cd7420664986547d9",
+      "normalized_ko": "시험 기간 동안 치료용 단백질 제품을 여러 차례 투여받는 피험자의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_A.003",
+      "record_type": "condition",
+      "source_text_sha256": "fcfb54c3ffb59b892e5474971ce60359ef4c8cc77c90b1a9b13bde73e6975c6d",
+      "normalized_ko": "반감기가 긴 제품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_A.004",
+      "record_type": "condition",
+      "source_text_sha256": "08e53669b3e10c7ad0923cbbe1e8970c8435503651c947981dd951bb0d7ae7f1",
+      "normalized_ko": "ADA로 인한 심각한 결과의 위험이 높은 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_A.005",
+      "record_type": "condition",
+      "source_text_sha256": "7ac6a076e7fd8bc660d36568386292a16af28b946805a97b964322b0fca327a4",
+      "normalized_ko": "시험의 치료 단계 동안 치료용 단백질 제품이 없는 검체를 확보할 수 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_A.006",
+      "record_type": "condition",
+      "source_text_sha256": "f2d89ab63663c5cf3c2697c8e9ca459ccf970c86211bbab9a31857bd61101950",
+      "normalized_ko": "해당 치료용 단백질 제품 자체가 면역억제제인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_A.007",
+      "record_type": "condition",
+      "source_text_sha256": "08e53669b3e10c7ad0923cbbe1e8970c8435503651c947981dd951bb0d7ae7f1",
+      "normalized_ko": "ADA로 인한 심각한 결과의 위험이 높은 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_A.008",
+      "record_type": "condition",
+      "source_text_sha256": "f2d89ab63663c5cf3c2697c8e9ca459ccf970c86211bbab9a31857bd61101950",
+      "normalized_ko": "해당 치료용 단백질 제품 자체가 면역억제제인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_A.009",
+      "record_type": "condition",
+      "source_text_sha256": "a8034406fa612a0223a5357539ff8fb3742cd48b04d75423fc33f1f7fda3d56c",
+      "normalized_ko": "이러한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_A.010",
+      "record_type": "condition",
+      "source_text_sha256": "4ed3e4201f44523e2f138c29d435089f2ea6c85f807435bb39ef0e362f03c698",
+      "normalized_ko": "가능한 범위 내에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_A.011",
+      "record_type": "condition",
+      "source_text_sha256": "30598a943ea1cebf1fb3733531ac2ee91ef24d9a76863b2046d94b5e4f6be436",
+      "normalized_ko": "투여 빈도에 따라 시점이 달라지는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_B.001",
+      "record_type": "condition",
+      "source_text_sha256": "78d090869766d9bcbad6a2b98c063a6132e749806e7288fdf6173ce95cb7b5e0",
+      "normalized_ko": "저양성 QC 검체의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_B.002",
+      "record_type": "condition",
+      "source_text_sha256": "629498c201f26989a39b1ac24b94eb938589d5ff290b1f116ab00a664b23ab64",
+      "normalized_ko": "통계 분석 시",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_B.003",
+      "record_type": "condition",
+      "source_text_sha256": "ba1970bd37e8c58604a26a67aa0b92b5676b52d8eb664565463b8eaa69f251dd",
+      "normalized_ko": "시험법이 프로존 효과의 영향을 받는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_B.004",
+      "record_type": "condition",
+      "source_text_sha256": "37a65c182c02654e5e16eedaa0ecb01ec56582d724b183e7cc9e9d519910ebfa",
+      "normalized_ko": "이때 피험자 검체를 검사한다",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_B.005",
+      "record_type": "condition",
+      "source_text_sha256": "ba1970bd37e8c58604a26a67aa0b92b5676b52d8eb664565463b8eaa69f251dd",
+      "normalized_ko": "시험법이 프로존 효과의 영향을 받는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_C.001",
+      "record_type": "condition",
+      "source_text_sha256": "b970fb91f9a4ac77ed46e9a0e940507ad2790667028f9a1a60f7d32db3c1911d",
+      "normalized_ko": "분석법 검증 중 cut-point를 결정하는 데 사용된 검체가 연구 내에서 검체를 채취하고 처리할 방식을 대표하는 방식으로 채취 및 처리되지 않은 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_C.002",
+      "record_type": "condition",
+      "source_text_sha256": "51291728c025167ef03d72f185cf8182b39dcaa902932abe55b439f554858c0c",
+      "normalized_ko": "충분한 수의 검체를 이용할 수 없는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VII_C.003",
+      "record_type": "condition",
+      "source_text_sha256": "b970fb91f9a4ac77ed46e9a0e940507ad2790667028f9a1a60f7d32db3c1911d",
+      "normalized_ko": "분석법 검증 중 cut-point를 결정하는 데 사용된 검체가 연구 내에서 검체를 채취하고 처리할 방식을 대표하는 방식으로 채취 및 처리되지 않은 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VIII.001",
+      "record_type": "condition",
+      "source_text_sha256": "00fa6b75b6309f7c340c4f02eaefaf763d039dc2ad6d293478cecafa0709b5ad",
+      "normalized_ko": "개별 제품의 임상 프로그램이 IND 단계에서 BLA 및 승인 후 단계로 진행됨에 따라",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VIII.002",
+      "record_type": "condition",
+      "source_text_sha256": "318f599a1712832ae8faea8789721d22d1fe5f5ae9916d69a8163e3863170a4a",
+      "normalized_ko": "이용 가능해짐에 따라",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VIII.003",
+      "record_type": "condition",
+      "source_text_sha256": "74e5d67e674fd835ddbb1170677e76151efbd13359c9b7451deb9a759275602e",
+      "normalized_ko": "BLA 제출 자료의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VIII.004",
+      "record_type": "condition",
+      "source_text_sha256": "13392550e81b3d881cb5fa15baa77c189e70203c721c35b1c4e01537ca117f6c",
+      "normalized_ko": "치료용 단백질 제품 개발 초기",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.cond.VIII.005",
+      "record_type": "condition",
+      "source_text_sha256": "685f73a2eaa1413e48b8f78d2e8875a4a6b9633deaa6f7ae03c743919d13b7cd",
+      "normalized_ko": "이용 가능해짐에 따라 개발 단계에 적합한 정보와 함께",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_C_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "3b9b9d76750456aa0f380d6cd01b6dbe99002a59926dc0561315704b50bed962",
+      "normalized_ko": "스크리닝 및 확인 시험에서는 적어도 100 ng/mL의 시험법 민감도가 권장된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_C_1.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "867936d3bb17abce37feab12711916eab9063a39fab14bcb58293f6a7154b4ba",
+      "normalized_ko": "예를 들어, 민감도는 10 to 50 ng/mL.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_C_1.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "da23c73ff25fe9921310226f3acb0b2a6d9398febdc5ef4718787001c896e635",
+      "normalized_ko": "희석 계열은 2배를 초과해서는 안 된다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_C_1.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "da23c73ff25fe9921310226f3acb0b2a6d9398febdc5ef4718787001c896e635",
+      "normalized_ko": "희석 계열은 3배를 초과해서는 안 된다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_C_1.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b2c75a49a1420f571e504a5f161da78da5d355bf34e9c59033a4a91f27a6cce4",
+      "normalized_ko": "최소 5개의 희석액을 시험해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_C_1.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "867936d3bb17abce37feab12711916eab9063a39fab14bcb58293f6a7154b4ba",
+      "normalized_ko": "예를 들어, 고위험 치료용 단백질의 경우 시험법 민감도는 적어도 10 ng/mL이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_C_1.007",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "867936d3bb17abce37feab12711916eab9063a39fab14bcb58293f6a7154b4ba",
+      "normalized_ko": "예를 들어, 고위험 치료용 단백질의 경우 시험법 민감도는 50 ng/mL를 초과하지 않는다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_C_1.008",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "da23c73ff25fe9921310226f3acb0b2a6d9398febdc5ef4718787001c896e635",
+      "normalized_ko": "희석 계열은 2배 또는 3배를 초과해서는 안 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_E_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "009714313e12c4ea174319bc29222e477774d648d972ffca0ffdddc6f194b0b6",
+      "normalized_ko": "분석에서 시료의 최종 희석도는 일반적으로 1:5에서 1:100(즉, 1/5에서 1/100) 범위이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_E_2.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "9871c701d9b189bfa5146cd05e974b05295aedd90fb6d7d93a0aaaee8dd7475e",
+      "normalized_ko": "MRD 계산에 사용되는 적절한 수의 개별 혈청 시료는 최소 10개가 자주 권고된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_E_2.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "8e603521c711f35ba38585ae383e732679de941354d5a1a337378b337ff72376",
+      "normalized_ko": "MRD는 1:100을 초과하지 않아야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_E_2.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "8bd347f4ac13045baee3cd0dc07125c0301b20687ff6241827cec0306b97d834",
+      "normalized_ko": "분석에서 시료의 최종 희석도는 일반적으로 1:5에서 1:100 범위이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_E_2.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "8bd347f4ac13045baee3cd0dc07125c0301b20687ff6241827cec0306b97d834",
+      "normalized_ko": "분석에서 시료의 최종 희석도는 일반적으로 1:5에서 1:100 범위이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_E_2.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "e2153646df2e9a89a4df641463c221d8655a82c7ba9e5b2f4c672ecec68b338b",
+      "normalized_ko": "FDA는 MRD가 1:100을 초과하지 않을 것을 권고한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_G.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "09d145da2df741df6bcbb9ac7a9e46751ae318dd374b08d3159dfe23cc887f77",
+      "normalized_ko": "시험 중 분석법을 수행하는 독립 실험실 수는 2개 이상이어야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_L_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "bb454970fa80f3fe28cc76955ce04241c5b1c4c75af7aeb93f68590ef920e86a",
+      "normalized_ko": "치료 전 역가보다 2 dilution steps 더 높음(예시).",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.IV_L_1.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "4277b95d7346d1f21d4ee2ba8954df42c163104b49d0c7e4d278dbc19912bfb5",
+      "normalized_ko": "역가는 치료 전 역가보다 최소 2 dilution steps 더 높아야 함(예시).",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.V_A.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "1f1cd7a465e95b23bca5a6ffa7000c8c6484eeb27404f1debcd788be6d8ede6c",
+      "normalized_ko": "분석법 개발 초기 컷포인트 추정을 위해 약 5개 이상의 개별 검체를 사용할 수 있다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.V_A.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "1f1cd7a465e95b23bca5a6ffa7000c8c6484eeb27404f1debcd788be6d8ede6c",
+      "normalized_ko": "분석법 개발 초기 컷포인트 추정을 위해 약 10개 이하의 개별 검체를 사용할 수 있다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.V_A.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "4ff3a96e32764d9cd0ced2cd766d2083996535d4ddf3442b1018e25679f5501b",
+      "normalized_ko": "초기 스크리닝 분석법의 경우 약 5%의 낮지만 정의된 위양성률이 바람직하다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.V_B_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "0bafd5249b9e45740a360b6361fe300f1e26401d9b9b3eb3d34ea9f577a2c67f",
+      "normalized_ko": "스크리닝 분석법의 규정된 위양성률은 혈청 검체에서 약 5%이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.V_B_1.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "3a6d08de1b5dd5d2244a5cd756d0a5ad1f19b273c2a8666a1750413e275334ce",
+      "normalized_ko": "스크리닝 분석법의 위양성률은 규정된 위양성률의 약 5% 범위 내이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.V_B_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "902ade13e1fc85111a0d328dc8cf1d08fad828f65dfdbdffad234a2c12d637d6",
+      "normalized_ko": "컷포인트 설정에 사용되는 치료용 단백질 제품의 양은 분석에서 경쟁적 억제제로 사용될 치료용 단백질 제품의 양과 동일해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.V_C.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "bb454970fa80f3fe28cc76955ce04241c5b1c4c75af7aeb93f68590ef920e86a",
+      "normalized_ko": "치료 전 역가보다 2 희석 단계 더 높음.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.V_C.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "bb454970fa80f3fe28cc76955ce04241c5b1c4c75af7aeb93f68590ef920e86a",
+      "normalized_ko": "치료 전 역가보다 최소 2 희석 단계 더 높음.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.V_D.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "90e80f7f785c487ede3a06f6c5a3b03bb6f2f28dd6a159c9b96d709fba782196",
+      "normalized_ko": "선택된 농도는 농도-반응 곡선의 선형 부분 내에 있어야 한다(예: EC50 to EC80).",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.V_D.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "ca2f05c0e7f82a82f43b2f3cfea8d10528ad1c55d8bdf1079d23bca4fbe8b436",
+      "normalized_ko": "중화 컷포인트 계산을 위한 위양성률로는 일반적으로 1%가 권장된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.V_D.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "90e80f7f785c487ede3a06f6c5a3b03bb6f2f28dd6a159c9b96d709fba782196",
+      "normalized_ko": "선택된 농도는 농도-반응 곡선에서 EC50 to EC80 범위 내에 있어야 한다(예).",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.V_D.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "98e80355d92df7709ad669a0c0c6717fe62ca3f1908f1cac657f80d64515c8ca",
+      "normalized_ko": "선택된 농도-반응 수준은 EC50 이상이어야 한다(예시).",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.V_D.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "98e80355d92df7709ad669a0c0c6717fe62ca3f1908f1cac657f80d64515c8ca",
+      "normalized_ko": "선택된 농도-반응 수준은 EC80을 초과해서는 안 된다(예시).",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_A.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "21a5845c2d357af4b960b70d7a7e9d8ab892e2cf46225df500f209c218bf2255",
+      "normalized_ko": "치료 경험이 없는 개별 피험자 검체가 최소 50개여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_A.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "202dfa59af5b809ff2fe9b16109bf2c7f8385b237311d71cb05e84f1fe4f7ebd",
+      "normalized_ko": "서로 다른 날짜에 걸쳐 최소 3일이어야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_A.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "baa6375b6fdd4ba3a74abaeb77b716f85be2ed4b24ef1c4c830509c94d5054fc",
+      "normalized_ko": "최소 2명의 분석자가 수행해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_A.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "f655d7462a671ef750642b75e7b16aa7a7853f4132d54903c44df9271ec4812d",
+      "normalized_ko": "독립적인 분석 실행을 최소 6회 생성해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_B.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "8ce48ba025b73f4b56dc08e9ca0beffd85236dbd1f0593e1b05c6e7c5023e630",
+      "normalized_ko": "스크리닝 분석의 민감도는 최소 100 ng/mL이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_B.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "a8555a5f83ac9222a516324c5b1f3688933fd8264b9761a1223822f98935f7b6",
+      "normalized_ko": "피험자 집단에서 유래한 치료 미경험 검체는 일반적으로 약 50개이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_B.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "5fc9a899e757e2d509983f38350d76cdb97ed358454aca239781b3200f62c996",
+      "normalized_ko": "각 검체는 최소 2명의 분석자가 시험해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_B.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "e4b4d758a97e7e8e1d64493699ddb5fce7f581145e6273b2a2fa907b7d905ea6",
+      "normalized_ko": "각 검체는 최소 3일의 서로 다른 날짜에 시험해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_B.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b9d34ad1b4f0fcf8768dd080d7286e9b9f2e1208c30675cd3cf835797c88f621",
+      "normalized_ko": "각 검체에 대해 개별 측정은 총 최소 6회여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_B.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "f3c3b069b1e45b9904ef155f7a5ccc8539b3e73db3c72bb52ce006d631b82107",
+      "normalized_ko": "음성 대조군 집단의 95번째 백분위수에 대한 단측 하한 신뢰구간은 90%이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_B.007",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "3790423c70b9cac62fdca49f80888158f2c34076fbe6b0affe10e82e036d38e7",
+      "normalized_ko": "음성 대조군 집단의 백분위수는 95번째 백분위수이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_B.008",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "fc13637b2f2b211d9a621aea38d60d80e2742d898a59b07ea5871d354bc76b06",
+      "normalized_ko": "위양성률은 최소 5%이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_B.009",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "570e964d47f366f83ef9505d05570b9dec1f83ff930a1c0842750e8e03a73369",
+      "normalized_ko": "95번째 백분위수 추정을 위해 평균에 더하는 표준편차는 1.645이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_B.010",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "740a452199ee5d23a4cba8ef56160216cf42f56e339fe8369fd8c8e9ff445651",
+      "normalized_ko": "위양성률은 5%이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_C.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "9857bad454deb52b1e328c528663d8d5554f72188b0b574df9edfa243faef300",
+      "normalized_ko": "99번째 백분위수에 대한 단측 하한 신뢰구간은 80%~90% 범위 내이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_C.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "0e149e8abac737f9207aa394ff54d4ac0fcca3c976ba8ab86d76ce6a364976b4",
+      "normalized_ko": "단측 하한 신뢰구간의 백분위수는 99번째 백분위수이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_C.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "1ff730534e401a3921192f5141e694deb78bd112b51a369f66fbdc444b7b69b5",
+      "normalized_ko": "확증 컷포인트 계산을 위한 위양성률은 1%이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_C.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "fe59a829ef482fc54035c093b840122246274122954f17921b0d06f9ccde0bc0",
+      "normalized_ko": "위양성률은 예를 들어 0.1%이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_C.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "a3a900221e3ebf30c2ac43258da40b75b07c78c5082e4c6e3958d493f201304c",
+      "normalized_ko": "99번째 백분위수에 대한 단측 하한 신뢰구간 수준은 80% 이상이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_C.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "a3a900221e3ebf30c2ac43258da40b75b07c78c5082e4c6e3958d493f201304c",
+      "normalized_ko": "99번째 백분위수에 대한 단측 하한 신뢰구간 수준은 90% 이하이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_C.007",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "de3104d73d5a12f57011abf53c4a92cbd61681865b21de46ca0bf46a92baf0d4",
+      "normalized_ko": "단측 하한 신뢰구간에 대한 백분위수는 99%이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_D.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2c249a0eafe6296dfaa92f3d07e5edf519f5252abc9e35596add45204295ef0b",
+      "normalized_ko": "위양성률 0.1%를 사용한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_D.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "a4bc0ebbf7daa070b69fb8ecf9711de559b6a1c9b81e076e4094edd1aabab0b0",
+      "normalized_ko": "위양성률 5%를 사용한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_E.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "cfcf3e722e39d5f90dc5f6b0858e234ad7c3fc18b7f1dd93f4c7817f3c647999",
+      "normalized_ko": "컷포인트를 결정하기 위해 시험하는 검체는 최소 30개여야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_E.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d70d7b3df319507087d3191ce0b4a780b066e5319334d282e76d269288b9d384",
+      "normalized_ko": "컷포인트를 결정하기 위해 시험한 검체는 최소 3개의 서로 다른 날에 걸쳐 시험해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_E.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "5fc9a899e757e2d509983f38350d76cdb97ed358454aca239781b3200f62c996",
+      "normalized_ko": "컷포인트를 결정하기 위해 시험한 검체는 최소 2명의 분석자가 시험해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VI_E.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d70d7b3df319507087d3191ce0b4a780b066e5319334d282e76d269288b9d384",
+      "normalized_ko": "시험한 검체는 최소 3개의 서로 다른 날에 걸쳐 시험해야 한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_A.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "aa8e3afcaf14a418d05270751659e201af8bd008d34ae309e36186617f89310a",
+      "normalized_ko": "초기 IgM 반응 검체는 첫 노출 후 7 to 14 days 이내에 채취한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_A.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2d69eb68ae1ae0f7fa98ccb10cd06eb626dc8f1f6ab35a962f4aaffe55b2310b",
+      "normalized_ko": "IgG 반응 확인을 위한 검체는 첫 노출 후 3 to 6 weeks 이내에 채취한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_A.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "1513712238d85deb3805b94e58e2cb5464e0c0d3829225e96b0b10f905d78608",
+      "normalized_ko": "검체는 마지막 노출 후 약 30 days에 채취한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_A.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "76569cfc38ba17d2990ef2782450059fb38e370bdefb804c0476548ae70cd942",
+      "normalized_ko": "검체는 마지막 노출 후 약 5 half-lives에 채취한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_A.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "e719daa23e10c760dbd0ed498d60a925695badcd5186fe9587a2ae55235c0b99",
+      "normalized_ko": "검체 채취 전 적절한 세척 기간은 일반적으로 5 half-lives이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_A.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b92f0a84c66786a75c8bc0549880e16ad0eaba33551e04740bb88862bb69b78a",
+      "normalized_ko": "초기 IgM 반응을 규명하는 데 도움이 될 수 있는 검체는 첫 노출 후 7 days 이상에 채취한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_A.007",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b92f0a84c66786a75c8bc0549880e16ad0eaba33551e04740bb88862bb69b78a",
+      "normalized_ko": "초기 IgM 반응을 규명하는 데 도움이 될 수 있는 검체는 첫 노출 후 14 days를 초과하지 않아야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_A.008",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "0e42ef6c2d41dc1381bc7e8b6242a4aad5e7ab3107fde830b2477537f3bd44a9",
+      "normalized_ko": "IgG 반응 확인에 일반적으로 최적인 검체는 첫 노출 후 3 weeks 이상에 채취한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_A.009",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "0e42ef6c2d41dc1381bc7e8b6242a4aad5e7ab3107fde830b2477537f3bd44a9",
+      "normalized_ko": "IgG 반응 확인에 일반적으로 최적인 검체는 첫 노출 후 6 weeks를 초과하지 않아야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_A.010",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "a1f6524f3d06ed8a4fbc25d6f043a067eea8407c2685b6a27705972d0538dcfb",
+      "normalized_ko": "IgA 반응이 정점에 도달할 수 있는 시점은 항원 노출 후 약 2주 이상이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_A.011",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "a1f6524f3d06ed8a4fbc25d6f043a067eea8407c2685b6a27705972d0538dcfb",
+      "normalized_ko": "IgA 반응이 정점에 도달할 수 있는 시점은 항원 노출 후 약 3주를 초과하지 않는다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_A.012",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "1513712238d85deb3805b94e58e2cb5464e0c0d3829225e96b0b10f905d78608",
+      "normalized_ko": "검체 채취는 마지막 노출 후 약 30일 이내에 이루어진다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_A.013",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "76569cfc38ba17d2990ef2782450059fb38e370bdefb804c0476548ae70cd942",
+      "normalized_ko": "검체 채취는 마지막 노출 후 약 5개의 반감기 이내에 이루어진다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_B.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b588adea75c8c7b84fd8ae4b3f0edb387d73b544fed78f84357c3fc8e46904aa",
+      "normalized_ko": "시험 실행의 1%에서 해당 시험 실행이 거부되게 된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "fda_ada.qc.VII_B.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "117e16acb2e04fc201714e2a4142fb11ac70b3e669ab87b620705f91c0cd8e2e",
+      "normalized_ko": "저양성 QC 검체 농도에 대한 통계 분석 시 시험 실행의 1%에서 해당 시험 실행이 거부되게 된다.",
+      "normalization_status": "reviewed"
+    }
+  ]
+}

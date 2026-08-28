@@ -1,0 +1,959 @@
+{
+  "overlay_version": "0.1.0",
+  "language": "ko",
+  "document_id": "ich_m3_r2",
+  "entries": [
+    {
+      "record_id": "ich_m3_r2.cond.1_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "f58cc503512aa88b87b2fd3abfd29f2220cffe4fd2e648d0fbc6915d069b83ed",
+      "normalized_ko": "3R(감소/개선/대체) 원칙에 따라",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.1_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "6c397a984f533f86e90c6107974afc2d72b4f7297dbbb789ce5e973d8a4742d1",
+      "normalized_ko": "적절한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.1_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "6c397a984f533f86e90c6107974afc2d72b4f7297dbbb789ce5e973d8a4742d1",
+      "normalized_ko": "적절한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.1_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "0cb6a1ec67309ff827edb433fefd02cdf9cebc0c21bdb0a076bec6a7a29c09a6",
+      "normalized_ko": "의약품 개발 중",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.1_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "e22849ff1c077806e56847942a35248593f515009ee721e000c5d1bd442daed4",
+      "normalized_ko": "생명공학 유래 제품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.1_3.003",
+      "record_type": "condition",
+      "source_text_sha256": "ae444504fff01e7a43b43d9bf9c1719d070460d0481bed910cfd54ccf6e19cbc",
+      "normalized_ko": "ICH S6에서 다루지 않는 사항에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.1_3.004",
+      "record_type": "condition",
+      "source_text_sha256": "f88397cc3d04e251563fae81d9cd667100920a60c8283e04c01cdff2a5940794",
+      "normalized_ko": "현재 유효한 치료법이 없는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.1_3.005",
+      "record_type": "condition",
+      "source_text_sha256": "6ad326b81a6c67b0eb55d2f8bf235831b96d1349799ec2948692b0a127dcff7b",
+      "normalized_ko": "현재 유효한 치료법이 없는 생명을 위협하거나 중대한 질환(예: 진행성 암, 내성 HIV 감염) 적응증에 대해 개발 중인",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.1_3.006",
+      "record_type": "condition",
+      "source_text_sha256": "7b16fcbb34e02ab25b9b22543fcdbbe1d2660265ccc2c8119b22452d85e6efbe",
+      "normalized_ko": "통상 의약품 개발 중에 접하는",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.1_3.007",
+      "record_type": "condition",
+      "source_text_sha256": "eca8579b53a42c96cbd25b4a52b8e7fe3603b7f268b420d8d1eeee36ccae90e1",
+      "normalized_ko": "현재 유효한 치료법이 없는 생명을 위협하거나 중대한 질환(예: 진행성 암, 내성 HIV 감염) 적응증에 대해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.1_3.008",
+      "record_type": "condition",
+      "source_text_sha256": "e304f8e93bb4f2c31cc7d9f6e9ab49dd8809661bc3dfd2b7a7f71e82fd6c3600",
+      "normalized_ko": "항암 의약품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.1_5.001",
+      "record_type": "condition",
+      "source_text_sha256": "256e7e554121a659f3a04add599f5b2bd0bf4d024be9575d85598999735f3f1a",
+      "normalized_ko": "일반 독성시험에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.1_5.002",
+      "record_type": "condition",
+      "source_text_sha256": "9cb776b992adca522aa33f9316ccad166f155762daf2d71d93d0eef02d60d350",
+      "normalized_ko": "1000 mg/kg/day가 10배 노출 마진을 산출하지 않고 임상 용량이 1 g/day를 초과하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.1_5.003",
+      "record_type": "condition",
+      "source_text_sha256": "7c5c19ae65137b49e9321470847996d40b1bdbfa7c9912bb1f23e719c09493a3",
+      "normalized_ko": "독성 가능성이 낮은 의약품에 대한 설치류 및 비설치류 일반 독성시험에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.10.001",
+      "record_type": "condition",
+      "source_text_sha256": "36cdaa5ff0141c1642b69944ff65b0f94313ada9d17e404165992ea1a58f097a",
+      "normalized_ko": "예상되는 임상적 사용이 최소 6개월 동안 지속적이거나, 만성 또는 재발성 질환에서 빈번하게 간헐적인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.10.002",
+      "record_type": "condition",
+      "source_text_sha256": "3a1a8410780f3c7e0da97f962dec79f35fa6f5e5f89f7b0c90a7e8d93720d6d6",
+      "normalized_ko": "임상 안전성 우려로 인해 제III상 또는 제II상 전에 더 이른 실시가 정당화되는 경우는 제외하고",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.10.003",
+      "record_type": "condition",
+      "source_text_sha256": "115e17cc3b210a658b952aa58757f4fd9ff370f987910b3d8603915dd66a00d5",
+      "normalized_ko": "또는 만성 또는 재발성 질환에서 빈번하게 간헐적인 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.11_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "17fc5ae5593972d9ef0a383b752a356fbe19387399ba04b9a14fb18955de0b0b",
+      "normalized_ko": "수컷 생식능 시험을 실시하기 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.11_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "c93f9ffed83666c4bd4ebad18db8a9e1cbc72782420250639e6211937ff0df36",
+      "normalized_ko": "대규모 또는 장기간 임상시험을 시작하기 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.11_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "c93f9ffed83666c4bd4ebad18db8a9e1cbc72782420250639e6211937ff0df36",
+      "normalized_ko": "대규모 또는 장기간 임상시험을 시작하기 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.11_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "7cf185a69aadc7c60041c4d3b6f18892b256aced45822fec2d51d43335969671",
+      "normalized_ko": "여성 생식기관 평가를 포함하는 관련 반복투여 독성시험이 수행된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.11_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "15b1b47b19001bdb2244587d1f035be5fae68894ceaf199632a542ae59853de4",
+      "normalized_ko": "다른 의학적 원인 없이",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.11_2.003",
+      "record_type": "condition",
+      "source_text_sha256": "15b1b47b19001bdb2244587d1f035be5fae68894ceaf199632a542ae59853de4",
+      "normalized_ko": "다른 의학적 원인 없이",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.11_3.001",
+      "record_type": "condition",
+      "source_text_sha256": "3edbb62e08cfd8d1258abb19fbfe9f74bbf4b55fca3b27ec2eff6a270e9b059b",
+      "normalized_ko": "임신 예방 조치가 사용되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.11_3.002",
+      "record_type": "condition",
+      "source_text_sha256": "0b8f0b920ee5be59cb4e59f74a4b200f677a9eabce8a6ff6dc3cb47db7726db6",
+      "normalized_ko": "확정적인 생식독성 시험 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.11_3.003",
+      "record_type": "condition",
+      "source_text_sha256": "f1cd0e4e1a947780294af1905553ff365997356e59ff771739d9ba2d02553a43",
+      "normalized_ko": "WOCBP를 제III상 또는 광범위한 임상시험에 포함하기 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.11_3.004",
+      "record_type": "condition",
+      "source_text_sha256": "990ccc6ee4757b5cb45eba9fe95d274d23d63e5d3eb2a726605e8b9cd3d09677",
+      "normalized_ko": "두 종에서의 예비 배태자 발생독성 시험",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.11_3.005",
+      "record_type": "condition",
+      "source_text_sha256": "0b8f0b920ee5be59cb4e59f74a4b200f677a9eabce8a6ff6dc3cb47db7726db6",
+      "normalized_ko": "확정적인 생식독성 시험 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.11_3.006",
+      "record_type": "condition",
+      "source_text_sha256": "1f4af4b4ff4163a94f91173ff0eb4bdeae805c5e19f8362b1ca5dd7ad103fed6",
+      "normalized_ko": "제III상 또는 광범위한 임상시험에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.11_4.001",
+      "record_type": "condition",
+      "source_text_sha256": "5a6515da7b7045580366dc44018c106ca4eda3431e58a86122fd9bbc4583860c",
+      "normalized_ko": "임신 여성을 임상시험에 포함하기 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.12.001",
+      "record_type": "condition",
+      "source_text_sha256": "0691f2e7788dc643196417500a9f8e704e8854fbe91fba531c5a51a9c7883e24",
+      "normalized_ko": "소아 집단을 임상시험에 포함시키고자 하는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.12.002",
+      "record_type": "condition",
+      "source_text_sha256": "a1c111ab7f1f2972b6e9156940e114f01f86ae93d393c25b2daf88cff498a0f9",
+      "normalized_ko": "이전 동물 데이터 및 사람 안전성 데이터가 불충분하다고 판단되는 경우에만",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.12.003",
+      "record_type": "condition",
+      "source_text_sha256": "47438d533d1141072f885c3e8a464eb1de795aa5f753809d2a9449b25d37f710",
+      "normalized_ko": "유년기 동물시험이 타당한 경우",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.13.001",
+      "record_type": "condition",
+      "source_text_sha256": "50e3d032157d3fe10df33802433a53feadb4171ed8620b1ac099d84cbf01a47b",
+      "normalized_ko": "면역독성 가능성을 시사하는 징후가 관찰되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.15.001",
+      "record_type": "condition",
+      "source_text_sha256": "77d1cb9bb9f524a931fd7aeae62d80d14dd6f2957a6f0f01d2cd5f0d228bd38f",
+      "normalized_ko": "중추신경계(CNS) 효과를 유발하는 의약품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.16.001",
+      "record_type": "condition",
+      "source_text_sha256": "80d490d28286df5eb0c210f14b58e2e6c7da6795db3c348340ed65e2554f178d",
+      "normalized_ko": "인체 약물 대사체의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.16.002",
+      "record_type": "condition",
+      "source_text_sha256": "67335fd397e59c21e8d9e5ede0bd5675677aedda6f45f2da9166b89001462890",
+      "normalized_ko": "대사체가 인체에서 총 약물 관련 노출의 > 10%로 생성되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.16.003",
+      "record_type": "condition",
+      "source_text_sha256": "821471b214488559c0e438344b47e79ec0ee9abcc1163474e3e752486374accc",
+      "normalized_ko": "독성 동물종에서 유의하게 더 낮은 노출에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.16.004",
+      "record_type": "condition",
+      "source_text_sha256": "3e548604f596648e1bccf0d159abe3f99813cebb425d3bff724e5c3ccd99b870",
+      "normalized_ko": "대사체가 인체에서 총 약물 관련 노출의 > 10%로 생성되고 독성 동물종에서 유의하게 더 낮은 노출에서 생성되는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.16.005",
+      "record_type": "condition",
+      "source_text_sha256": "80d490d28286df5eb0c210f14b58e2e6c7da6795db3c348340ed65e2554f178d",
+      "normalized_ko": "인체 약물 대사체의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.17.001",
+      "record_type": "condition",
+      "source_text_sha256": "d1e0ac697fd72e88818c25ac3d99c990e218522389feb71440172aa25b135f58",
+      "normalized_ko": "두 개별 구성요소 모두가 잘 특성화되어 있고 약동학적 또는 독성학적 상호작용이 예상되지 않는 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.17.002",
+      "record_type": "condition",
+      "source_text_sha256": "b7c8b779f50efe47d5af0185697e1ef7326742a9d2226031d02b64fc58acfdbf",
+      "normalized_ko": "병용 의약품 개발의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.17.003",
+      "record_type": "condition",
+      "source_text_sha256": "b7c8b779f50efe47d5af0185697e1ef7326742a9d2226031d02b64fc58acfdbf",
+      "normalized_ko": "병용 의약품 개발의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.2.001",
+      "record_type": "condition",
+      "source_text_sha256": "44f6fa79c830c3a72dc92940b29eb8308fea4e722e778ac2d3bc46f5fd40415c",
+      "normalized_ko": "사람 대상 노출 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.2.002",
+      "record_type": "condition",
+      "source_text_sha256": "48a53f76b1496d10c4cd12f9abbbee2801f7954057bc595b9261138fb954b1fe",
+      "normalized_ko": "필요한 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.2.003",
+      "record_type": "condition",
+      "source_text_sha256": "4fef0e47925ae94ecf53c0b5d3ac477d5caf7643265d6e3bee35615bf1cdde3d",
+      "normalized_ko": "ICH S7A 및 S7B에 따라",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.3.001",
+      "record_type": "condition",
+      "source_text_sha256": "2af290bd666219b0742c4a87ed27fef6a6e039829713a1c77b241d4eb3eeebf2",
+      "normalized_ko": "임상시험을 시작하기 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.3.002",
+      "record_type": "condition",
+      "source_text_sha256": "2d29e4d41bd6a7ac4b9eb9b21a39d7d1343363ec592e6e76defbfc93697bd566",
+      "normalized_ko": "임상 개발 중에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.3.003",
+      "record_type": "condition",
+      "source_text_sha256": "137394caf3743da4125bf9082e2a67a83f992d580024fecf9486291a748d4d5b",
+      "normalized_ko": "반복투여 독성시험(ICH S3A)에 사용되는 종에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.4.001",
+      "record_type": "condition",
+      "source_text_sha256": "76df23636fe0fc455a6e32c570c262f3c6c3773950a76eae37916f2cb867f79f",
+      "normalized_ko": "적절하게 수행된 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.4.002",
+      "record_type": "condition",
+      "source_text_sha256": "d381016c42fe7fc1f237dad5fe0fbd2da60b33b868ca66a9dd3754ea0b6b2197",
+      "normalized_ko": "사람에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.5_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "57aacf4d7df32846de8ac825b6f21c58b05fb2d6bf20e30232751761529de2e4",
+      "normalized_ko": "단회 투여 임상시험의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.5_1.002",
+      "record_type": "condition",
+      "source_text_sha256": "df4c8f71c8ea8c0ae776cc19b0fb355422b3ed6bf66f40ad339d014f41c9b68c",
+      "normalized_ko": "최대 2주 임상시험의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.5_1.003",
+      "record_type": "condition",
+      "source_text_sha256": "97712e87c42ef6126c254918c73f7c9b2fbfbf9e1eba388f0e009a9c6e71794f",
+      "normalized_ko": "최대 1개월 임상시험의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.5_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "b2e1fa4dcfd325c6d2a1d05126984ca84baf5825c29617ffb205e57b31ba826f",
+      "normalized_ko": "3개월을 초과하는 임상 투여",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.5_2.002",
+      "record_type": "condition",
+      "source_text_sha256": "ed56c839f45ff81d5f75cd40786615a0f56565748ebd39d2297182e6666b7d2d",
+      "normalized_ko": "만성 사용의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.5_2.005",
+      "record_type": "condition",
+      "source_text_sha256": "7a9be9ed593a010a2a9b9b5fee579b2df5e5dc2309430c98b44169fd948112ce",
+      "normalized_ko": "시판허가(MA)를 뒷받침하기 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.5_2.006",
+      "record_type": "condition",
+      "source_text_sha256": "ddddc40d8876e5cb973a34a886a4471e11ff369d0a89b8660ce04f9346f27227",
+      "normalized_ko": "3개월을 초과하는 임상 투여 또는 만성 사용이 의도된 의약품의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.6.001",
+      "record_type": "condition",
+      "source_text_sha256": "628eba3698e08b0fe65312e6413ec1d2dfd6efe1157a8b53e6030564958645fe",
+      "normalized_ko": "인간에서 권장 시작 용량을 결정할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.6.002",
+      "record_type": "condition",
+      "source_text_sha256": "e59d5d89c0ad295142b28e9d96c330fe11b39479f95c9d5197b27c978ce28955",
+      "normalized_ko": "일반적으로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.6.003",
+      "record_type": "condition",
+      "source_text_sha256": "85d935b7de1deda5dfe790b0478230082ef24c56849969dfb561ac75709b0454",
+      "normalized_ko": "생물학적 활성을 가진 의약품이 강력한 작용제 효과 또는 높은 종 특이성을 가질 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.6.004",
+      "record_type": "condition",
+      "source_text_sha256": "628eba3698e08b0fe65312e6413ec1d2dfd6efe1157a8b53e6030564958645fe",
+      "normalized_ko": "인간에서 권장 시작 용량을 결정할 때",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.7_1.001",
+      "record_type": "condition",
+      "source_text_sha256": "644c025d73f2b2b4ab6491bf9fe4f93cd33585ae63e5abcefde7a2fc8eba87ed",
+      "normalized_ko": "단회 투여 또는 분할 투여로",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.7_2.001",
+      "record_type": "condition",
+      "source_text_sha256": "27e3405588ad2fdec471c8dc2584dc679ddf4fab3c76abf8a7fd969cb21e57f1",
+      "normalized_ko": "치료 용량 미만 또는 예상 치료 범위 내에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.7.001",
+      "record_type": "condition",
+      "source_text_sha256": "e072da5419911a294451c46506e29d6b96aaf754cab8fad098e7a8d482b5387a",
+      "normalized_ko": "표준 완전 반복투여 독성시험 전에 특정 접근법(접근법 1~5) 하에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.7.002",
+      "record_type": "condition",
+      "source_text_sha256": "d1231a0c5ea28f52a9baf29d6d03ebce34ddd59f2def15548dbd6a9012bcb825",
+      "normalized_ko": "특정 접근법(접근법 1~5) 하에서",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.7.003",
+      "record_type": "condition",
+      "source_text_sha256": "d3e1958b954628227b51671db59c7f5a3bb9d246ec372aef047f786bf1aa1bc0",
+      "normalized_ko": "표준 완전 반복투여 독성시험 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.8.001",
+      "record_type": "condition",
+      "source_text_sha256": "c708cfef54b44876af19d8d20795d204198fd48cc32b806a4d90d5fce6a5291e",
+      "normalized_ko": "비치료적 경로에 의한 제한적인 사람 대상 투여를 뒷받침하기 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.8.002",
+      "record_type": "condition",
+      "source_text_sha256": "c708cfef54b44876af19d8d20795d204198fd48cc32b806a4d90d5fce6a5291e",
+      "normalized_ko": "비치료적 경로에 의한 제한적인 사람 대상 투여를 뒷받침하기 위해",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.cond.9.001",
+      "record_type": "condition",
+      "source_text_sha256": "56478e64c05f07fa7ab1ac2b02705bed10d5a224b964bc256d0f6fbcf156dd5d",
+      "normalized_ko": "최초 인체 대상 임상시험 전에",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.1_5.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "086dc02899f6d555c7545229d818e5e75f969237077aa8ae2306bfefff2d9064",
+      "normalized_ko": "1000 mg/kg/day의 용량은 일반적으로 일반 독성시험의 최대 한계용량으로 간주된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.1_5.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "a43b9ccbec24cf4b3a541892cb6751b788d1a8325fd76121edfdba3b0fb42cf7",
+      "normalized_ko": "임상 용량은 1 g/day를 초과한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.1_5.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "444732e57a88aae96bd1337fb29b9576b3ececf66a5f49ed0c110f431b4aad05",
+      "normalized_ko": "10배 노출 마진을 산출하지 않는다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.1_5.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "faad7e5313f1462cbcb118f87b7f30d3a9d9e0116a44536a6d624d848e5d791a",
+      "normalized_ko": "2000 mg/kg/day까지 시험한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.1_5.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "9288cf4223542cf42ba5df6d3c0b614cc9bac8709ddefea424b08fbc343d706c",
+      "normalized_ko": "임상 노출에 대한 노출 마진(모약물 또는 활성 대사체의 군 평균 AUC)은 50배이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.1_5.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "904bd2a2551cea573fe6deb4ebe8ed877dfb6f7928a776e1be4bdb54d48b4890",
+      "normalized_ko": "일반 독성시험의 최대 한계용량은 1000 mg/kg/day이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.1_5.007",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "8676db4f80c91107f3f2276c65d2e6887917c43e7d14b260a4bc640ce35cda1a",
+      "normalized_ko": "임상 노출(군 평균 AUC)에 대한 저독성 의약품의 노출 마진 한계는 50배이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.10.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6b3cef89d2ca04ed7f24ad31f4613515acf6e8f616274e851cd45a4175cc4884",
+      "normalized_ko": "예상되는 임상적 사용에서 지속적 사용 기간은 최소 6개월이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.11_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6856fe5bfc60644cd737ecf41d28fdda5dfcb5a38244bf8277b30f91649f5413",
+      "normalized_ko": "무월경 기간이 12개월이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.11_3.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "990ccc6ee4757b5cb45eba9fe95d274d23d63e5d3eb2a726605e8b9cd3d09677",
+      "normalized_ko": "예비 배태자 발생독성 시험은 두 종에서 실시한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.11_3.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "ba40a575c4c1a6ead50aa905f376a648a6fe292e288d4b2e5765135e04f390ab",
+      "normalized_ko": "시험약 투여를 받는 WOCBP는 150명을 초과하지 않는다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.11_3.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "010092d7a5e854c1643813f7a0927f20835a144103d199f1676c4982a8036fb1",
+      "normalized_ko": "시험약 투여 기간은 시험약 투여를 받는 WOCBP에서 3개월을 초과하지 않는다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.11_4.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "219430b77339ca2c4e57e2b42a62f5d2e88514f89a985f2f3180c85fccb7e59d",
+      "normalized_ko": "암컷 생식독성 시험은 2종에서 수행한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.12.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "e00a79cdf07a31a68f6fcbbd7e1ba602d18246e0f5d08ee85bf3589b6930e75b",
+      "normalized_ko": "관련 종 1종, 바람직하게는 설치류가 일반적으로 충분한 것으로 간주된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.12.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "da09beff4f3cae65f51666614b78fed7db4f3f8c17b5f6a1445abae7e804b767",
+      "normalized_ko": "유년기 동물시험이 타당한 경우, 관련 종 1종이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.14.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2e38f624fe88cf0637dac5be4335c822284fabbc41d9f41f86d63e7dbc777900",
+      "normalized_ko": "UV/Vis 광 흡수는 290 nm 이상이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.14.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2e38f624fe88cf0637dac5be4335c822284fabbc41d9f41f86d63e7dbc777900",
+      "normalized_ko": "UV/Vis 광 흡수는 700 nm 이하이다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.14.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "fcac10a9645e5f04a7a78f5deb3530c9f57b369d834e7c6bbb56dff67492f1f7",
+      "normalized_ko": "몰 흡광계수는 1000 M-1 cm-1 초과이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.14.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "6ecb039fb33828b7edc90af882c0057fbe78c1b84348eedb94ae379a557179e8",
+      "normalized_ko": "Phase III 이전",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.14.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2e38f624fe88cf0637dac5be4335c822284fabbc41d9f41f86d63e7dbc777900",
+      "normalized_ko": "UV/Vis 광 흡수는 290~700 nm 범위 내이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.16.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "4d9bcad13d0141d5a3ffdbf0dad0ceec8ea61c1923fb6a2aa6c2e58d40442b6a",
+      "normalized_ko": "인체에서 총 약물 관련 노출의 > 10%",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.17.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "0f0d2f58712a6547ed6857ce992a5a5382522b1805a4412a4c47e11191d790c0",
+      "normalized_ko": "병용 독성시험의 최대 기간은 임상시험 기간을 기준으로 90일을 초과하지 않는다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.17.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "a5b5a57344ae1b969e43c24920167b77ba37bf1c19dfcc0026aa9d27a1c3fb82",
+      "normalized_ko": "시판허가를 뒷받침하는 병용 독성시험 기간은 90일이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.17.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d49aa80bf770406ab8a4a8c94cf174db8eddb8d52146dcf32c6b3b3ac1339ddd",
+      "normalized_ko": "시판허가를 뒷받침하는 병용 독성시험에 필요한 관련 종 수는 1종이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.19.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "4078c46d3b3615db223856cb427dc6be17f9f5fa1dae416300ee2e2974491d46",
+      "normalized_ko": "군 평균 AUC에 근거한 50배 노출 마진.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.19.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "966176e63c76fddefa7fb0f9813e84e130c2ab5a256d91fe4ce6e3e7314cb4c0",
+      "normalized_ko": "예비 배아-태자 시험에서 군당 최소 6마리의 모체.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "60d7e9c22b8918cf1924133b4fdd83b3a62d810c46eabd0145e9714b66676941",
+      "normalized_ko": "설치류에서 반복투여 독성시험의 최소 기간은 2주이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_1.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d3e36fcfa4dcbbad9611904ffd960441c5e431f30b48f61700b2f3fc2d00ace3",
+      "normalized_ko": "설치류에서 반복투여 독성시험 기간은 2주이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_1.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "9476eb493736de7e79889d5c9be3df79ba09fb2e5c7c14104802756c215bda9f",
+      "normalized_ko": "설치류에서 독성시험 기간은 1개월이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_1.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "5a3a929454d1c6dfaffc3546b09d9c6a103a71b3654f31de2d70769a2ab05226",
+      "normalized_ko": "설치류에서 독성시험 기간은 3개월이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_1.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "13414bb8e92ca17e04a54750d362f28f5b0849466ec9e0819c59fc7e7f9776fa",
+      "normalized_ko": "설치류에서 독성시험 기간은 6개월이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_1.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "45cc0e0ce50753d7ce07213f59513b76048033bc28b83aae70c26302502f3cb4",
+      "normalized_ko": "비설치류에서 9개월이 권장된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_1.007",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "df4c8f71c8ea8c0ae776cc19b0fb355422b3ed6bf66f40ad339d014f41c9b68c",
+      "normalized_ko": "임상시험 기간은 2주를 초과하지 않는다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_1.008",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "97712e87c42ef6126c254918c73f7c9b2fbfbf9e1eba388f0e009a9c6e71794f",
+      "normalized_ko": "임상시험 기간은 1개월을 초과하지 않는다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_1.009",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "fd2e71b3ecf8bec562669c9aafcef596f012d11e4330888b534758e060e30725",
+      "normalized_ko": "임상시험 기간은 3개월을 초과하지 않는다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_1.010",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "ea80a86feea3ca697c690ede3b046c42bddb2450a94821df225a43d7d3f3f4cb",
+      "normalized_ko": "임상시험 기간은 6개월을 초과하지 않는다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_1.011",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "86d1455ab14c19097054e7cbbe555ea2f20447df62372176e989fd89a403a851",
+      "normalized_ko": "임상시험 기간은 6개월을 초과한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b32ea4e3076aad2af7b6e129468514f3d4afc74b876b75ff042172ffcb43007a",
+      "normalized_ko": "설치류에서 반복투여 독성시험 기간은 6개월이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_2.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2e8c66a612468991276f41bf95686fbd4d96ff3b634db80e5e6408f3a6cc7dff",
+      "normalized_ko": "비설치류에서 반복투여 독성시험 기간은 9개월이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_2.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "3ec9b7cb43e0505fdcf1fe998135dbf5026fbbfd99920ef67e26eb3e15c2eee5",
+      "normalized_ko": "임상 적응증 기간은 2주 이하이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_2.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "4f04e0ae39635187017dc7799187a2ffaf3200a67f6986eefdcd98fbc9766868",
+      "normalized_ko": "설치류 독성시험 기간은 1개월이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_2.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b2e1fa4dcfd325c6d2a1d05126984ca84baf5825c29617ffb205e57b31ba826f",
+      "normalized_ko": "임상 투여 기간은 3개월을 초과한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_2.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "de29795733487089529f6fb423d06d1f743aedd1c45a41efff6ba353294f032c",
+      "normalized_ko": "또는 만성 사용의 경우이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_2.007",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "9de5724f1def83a665913388de340e0860d061cce81e5c57e6baf0977734729f",
+      "normalized_ko": "임상 적응증 기간은 1개월 이하이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.5_2.008",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "e7c6d2d13e06f43a6226b4b299dc987de804ceb5c2b39523af7b9cf982a49a53",
+      "normalized_ko": "독성시험 기간은 3개월이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_1.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "e11e9bac63585a07f2792e2ef4778021b5c4f8c2002c50cf55a9fcee94ef0f7c",
+      "normalized_ko": "총 용량은 100 µg 이하이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_1.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "cfad4ac143524487ca6998337f03d349b1ae91c470a29e8c5d39a31c3094abda",
+      "normalized_ko": "총 용량은 NOAEL의 1/100 이하이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_1.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "2a2704500e7df1435bd3a24dba85537a086f0deccda7e37fdbed2caefd2c6f47",
+      "normalized_ko": "뒷받침 독성시험의 포유류 종 수는 1종이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_1.004",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d3412578ce2cd2feb18c0b8f948e49d65e7dc7210f0fa1d464ea25367041c904",
+      "normalized_ko": "관찰 기간은 14일이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_1.005",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "8c3a867ba49ce9cabcd63376d75d100c95b0aa3c3f8919754d3306121b8975db",
+      "normalized_ko": "투여 횟수는 5회 이하이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_1.006",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "57cd81c4eab17e825f8098ffa07a06d5589d31b200c5982e75128f011c4cbb13",
+      "normalized_ko": "투여당 용량은 100 µg 이하이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_1.007",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "4581485b6f75bcf47ccb62d2a03565ca9b68c6b4e63ae6a5464bec42a464fc9f",
+      "normalized_ko": "총 누적 용량은 500 µg 이하이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_1.008",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "46e45fced2a05c268dbc9ca82cde096aaf66563ce2a1fa3de787cefca5f4fda8",
+      "normalized_ko": "각 용량은 NOAEL의 1/100 이하이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_1.009",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "a1a460228c2c2b0da49897bda808bdb1c46f519024e13f29477d66e835e4e09b",
+      "normalized_ko": "독성시험 기간은 7일 또는 14일이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_1.010",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "a1a460228c2c2b0da49897bda808bdb1c46f519024e13f29477d66e835e4e09b",
+      "normalized_ko": "독성시험 기간은 7일 또는 14일이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_1.011",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "0c8e07f52c52c073c62a52552b60a72f992467359108759e68f4884903f86db4",
+      "normalized_ko": "뒷받침 독성시험의 포유류 종 수는 1종이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_1.013",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "071f77ce7cb8f5c6bf9ac35fedca13f2de56d4f068a55c0b773258dbad4f977d",
+      "normalized_ko": "총 용량은 약리활성 용량의 1/100 이하이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_1.014",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "d982b002d518603797aa4916ab55982315704515da31a3084f9dba878e196023",
+      "normalized_ko": "14일 관찰을 포함한다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_1.016",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "a1a460228c2c2b0da49897bda808bdb1c46f519024e13f29477d66e835e4e09b",
+      "normalized_ko": "7일 또는 14일 독성시험이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_2.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "25b5bcda192e208b53658caca0ef3310bab2f0c2cc86d636e0e227f7b59df7d0",
+      "normalized_ko": "설치류에서 반복투여 독성시험 기간은 2주이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_2.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "22ff6836dcb091b4ea4766fa7a29710e5cda758597b4bbe899dc073ca293b1db",
+      "normalized_ko": "설치류에서 2주 반복투여 독성시험이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_3.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "35339ebf25b342accf65b35f1073755d0390967a0b04d42d73a3d4c55430b037",
+      "normalized_ko": "접근법 4의 다회 투여 임상시험 기간은 14일을 초과하지 않는다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_3.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "e6aa35594aaa6bdc2891e2eb6ee372d50d047151e37a8fea1916ca85542d9f8b",
+      "normalized_ko": "접근법 4의 반복투여 독성시험 기간은 2주이다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.7_3.003",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "b147f321b74166d20bf99414baee78f60a57427ce6639b9e92d2321c12738c21",
+      "normalized_ko": "접근법 4의 반복투여 독성시험에는 설치류 1종과 비설치류 1종을 모두 포함한 2종의 동물종이 포함된다.",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.8.001",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "0d866d2ce5743be16e6aca69058144921bd57110f6d72c0f83f4b166fdf33b9c",
+      "normalized_ko": "국소 내약성 시험은 1회 투여 시험이어야 한다.",
+      "normalization_status": "needs_review"
+    },
+    {
+      "record_id": "ich_m3_r2.qc.8.002",
+      "record_type": "quantitative_criterion",
+      "source_text_sha256": "acb90442b8b493d41e305cd967ad9920c3f5bb750ba9a8b9ed1eb7a61f2541ca",
+      "normalized_ko": "국소 내약성 시험은 1개 종에서 실시되어야 한다.",
+      "normalization_status": "needs_review"
+    }
+  ]
+}
