@@ -1,7 +1,7 @@
 /**
  * scripts/promote_feedback_to_eval.js
- * M5 Phase 5 (docs/test_record.md Entry 008 / M5 plan §5): reads
- * untriaged entries from logs/feedback.jsonl, re-runs each question live
+ * M5 Phase 5 (history/verification/engine_test_record_through_2026-08-28.md Entry 008 / M5 plan §5): reads
+ * untriaged entries from the configured runtime feedback log, re-runs each question live
  * against the current engine, and PRINTS a candidate fixture block for
  * human review. Deliberately does NOT write to
  * test/fixtures/eval_questions.json itself — that file's own header
@@ -27,7 +27,7 @@ const { readFeedback } = require("../engine/feedback_log");
 async function main() {
   const feedback = readFeedback().filter((f) => f.triage === null || f.triage === undefined);
   if (feedback.length === 0) {
-    console.log("No untriaged feedback in logs/feedback.jsonl. Nothing to promote.");
+    console.log("No untriaged feedback in the configured runtime log. Nothing to promote.");
     return;
   }
 
@@ -65,7 +65,7 @@ async function main() {
   console.log(
     "\nNothing was written automatically. To promote a candidate:\n" +
     "  1. Copy the JSON block into test/fixtures/eval_questions.json by hand, after verifying it against the live answer above.\n" +
-    "  2. Mark the source feedback entry's `triage` field in logs/feedback.jsonl " +
+    "  2. Mark the source feedback entry's `triage` field in the configured runtime log " +
     '(e.g. {"status":"promoted","eval_question_id":"<id>"}) so it is not re-suggested next run.\n'
   );
 }

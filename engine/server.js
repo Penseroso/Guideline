@@ -1,6 +1,6 @@
 /**
  * engine/server.js
- * M5 Phase 3 (docs/test_record.md Entry 008 / .claude/plans/scalable-
+ * M5 Phase 3 (history/verification/engine_test_record_through_2026-08-28.md Entry 008 / .claude/plans/scalable-
  * floating-elephant.md): local-first HTTP layer over the engine.
  * node:http, zero new dependencies — the repo has zero devDependencies
  * and product_roadmap.md §2.4.1 explicitly prizes "zero running server
@@ -240,8 +240,8 @@ function startServer({
   optionBTimeoutMs = Number(process.env.OPTION_B_TIMEOUT_MS) || DEFAULT_OPTION_B_TIMEOUT_MS,
   deps,
   // Overridable so tests never write into the real logs/ files — logs/
-  // m2_queries.jsonl in particular is a real historical record analyzed
-  // in docs/test_record.md, not scratch space.
+  // Tests inject temporary paths so runtime interaction logs are never
+  // polluted by automated requests.
   queryLogPath = process.env.GUIDELINE_QUERY_LOG_PATH || undefined,
   feedbackLogPath = process.env.GUIDELINE_FEEDBACK_LOG_PATH || undefined,
   loggingEnabled = process.env.GUIDELINE_LOG_ENABLED !== "false",

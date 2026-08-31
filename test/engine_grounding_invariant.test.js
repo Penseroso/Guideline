@@ -8,13 +8,13 @@ const fixture = require("./fixtures/eval_questions.json");
 const { records, index } = loadStore();
 
 /**
- * M5 plan Phase 1 item 9 (docs/test_record.md Entry 007/008): the actual
+ * M5 plan Phase 1 item 9 (history/verification/engine_test_record_through_2026-08-28.md Entry 007/008): the actual
  * acceptance bar for the grounding fixes is not "does this string contain
  * a citation" (checkOne in engine/eval_harness.js only ever checked a
  * single expected substring against the whole answer text, which is how
  * the comparison/amendment defects shipped invisibly under a reported
  * 100% citation_precision — see engine_m4_comparison_amendment.test.js
- * and docs/test_record.md Entry 007 for the concrete reproduction). The
+ * and history/verification/engine_test_record_through_2026-08-28.md Entry 007 for the concrete reproduction). The
  * real invariant is structural: every claim a match object carries has a
  * source_unit_id that resolves to a real SourceUnit in the archive. This
  * is asserted directly on `claims[]`, never by re-parsing rendered prose,

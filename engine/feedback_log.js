@@ -3,7 +3,7 @@ const path = require("path");
 const crypto = require("crypto");
 
 /**
- * M5 Phase 5 (docs/test_record.md Entry 008 / M5 plan §5): a parallel,
+ * M5 Phase 5 (history/verification/engine_test_record_through_2026-08-28.md Entry 008 / M5 plan §5): a parallel,
  * derived log for user-flagged answers — never a new field on
  * data/pilots/*.json records, since the archive schema is closed
  * (precedent: verification rejection reasons live in a parallel report,
@@ -29,7 +29,7 @@ const crypto = require("crypto");
  * eval fixture, via scripts/promote_feedback_to_eval.js, and only after
  * human review.
  */
-const DEFAULT_FEEDBACK_PATH = path.resolve(__dirname, "..", "logs", "feedback.jsonl");
+const DEFAULT_FEEDBACK_PATH = path.resolve(__dirname, "..", "logs", "runtime", "feedback.jsonl");
 
 const VALID_VERDICTS = [
   "wrong_citation",

@@ -7,6 +7,10 @@ venv/
 env/
 node_modules/
 
+# Runtime interaction/feedback logs may contain sensitive text. Historical
+# snapshots belong under history/usage; live files are deployment-local.
+logs/runtime/
+
 *.tmp
 *.temp
 *.bak

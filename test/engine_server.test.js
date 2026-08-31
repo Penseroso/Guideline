@@ -16,8 +16,8 @@ function tempPath(name) {
 }
 
 // Every test server gets its own temp query/feedback log paths — the real
-// logs/m2_queries.jsonl is a historical record analyzed in
-// docs/test_record.md, not scratch space for test runs to append to.
+// Historical usage logs are frozen under history/usage, not scratch space
+// for test runs to append to.
 async function withServer(opts, fn) {
   const queryLogPath = tempPath("test_query_log");
   const feedbackLogPath = tempPath("test_feedback_log");

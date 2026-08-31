@@ -145,7 +145,7 @@ test("answerOptionB returns the generated answer with sources once verification 
 });
 
 // --- Option B Scope Guard parity + per-unit grounding
-// (docs/test_record.md Entry 007: Option B previously only checked
+// (history/verification/engine_test_record_through_2026-08-28.md Entry 007: Option B previously only checked
 // explicit_exclusions and cited every retrieved candidate unconditionally,
 // so a scope-excluded query silently substituted the wrong document, and a
 // generated answer's Sources line never reflected which candidate actually

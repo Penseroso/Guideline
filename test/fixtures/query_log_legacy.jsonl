@@ -1,0 +1,2 @@
+{"timestamp":"2026-08-19T05:15:56.041Z","question":"legacy answered question","path":"A","answered":true,"review_status":"reviewed","answer_text":"grounded answer"}
+{"timestamp":"2026-08-19T05:16:11.095Z","question":"legacy refused question","path":"B","answered":false,"review_status":null,"answer_text":"Not found in the current archive."}

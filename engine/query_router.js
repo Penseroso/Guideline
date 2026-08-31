@@ -33,7 +33,7 @@ function deriveClaimsFromRecords(recs) {
  * Scope Guard: true if `record` must be rejected for `queryScope`. Shared
  * between Option A's scoreRecord (below) and Option B's candidate filter
  * (answerOptionB) so the two paths cannot silently diverge again — found
- * live, docs/test_record.md Entry 007: Option B previously re-derived the
+ * live, history/verification/engine_test_record_through_2026-08-28.md Entry 007: Option B previously re-derived the
  * same queryScope but only checked explicit_exclusions, so a genuinely
  * scope-excluded query (e.g. small-molecule species selection, where
  * S6(R1) is the only species-selection content and is biotechnology-only)
@@ -93,7 +93,7 @@ function hasScopeConstraint(queryScope) {
  * doesn't cover this molecule/assay") from a plain no-match refusal
  * ("nothing in the archive talks about this at all") — both currently
  * collapse into the same generic NOT_FOUND string with no way to tell
- * them apart (docs/test_record.md Entry 007 / M5 plan §3).
+ * them apart (history/verification/engine_test_record_through_2026-08-28.md Entry 007 / M5 plan §3).
  */
 function explainRefusal(question, records) {
   const qTokens = new Set(tokenize(question));
@@ -398,7 +398,7 @@ function formatCitation(citation) {
 // computed on every QuantitativeCriterion but never rendered — 26/327 real
 // records in the archive carry a non-"known" value here and rendered as
 // if fully specified (TPP §1.3(3) requires surfacing it, not hiding it —
-// docs/test_record.md Entry 007 / M5 plan §3).
+// history/verification/engine_test_record_through_2026-08-28.md Entry 007 / M5 plan §3).
 const VALUE_STATUS_LABEL = {
   unknown: "(value not confirmed in source — unknown) ",
   not_applicable: "(not applicable as a numeric criterion) ",
@@ -425,7 +425,7 @@ function formatSingleCriterion(record) {
 // §1.4 requires precisely surfacing modality, never blurring "may" into
 // "must." `none` renders its own explicit chip rather than being silently
 // omitted (519/1353 real KnowledgeRecords in the archive are modality
-// "none" — docs/test_record.md Entry 007 / M5 plan §3).
+// "none" — history/verification/engine_test_record_through_2026-08-28.md Entry 007 / M5 plan §3).
 function formatModalityChip(record) {
   if (record.type !== "knowledge_record") return "";
   const modal = record.modality || "none";
@@ -644,7 +644,7 @@ async function answerOptionB(question, records, {
 
   // Scope Guard: same rejection Option A's scoreRecord applies (shared
   // scopeGuardReject), not just an explicit_exclusions check — see that
-  // function's comment / docs/test_record.md Entry 007 for why this
+  // function's comment / history/verification/engine_test_record_through_2026-08-28.md Entry 007 for why this
   // matters: without it, a genuinely scope-excluded query silently
   // substituted the wrong document instead of refusing.
   let candidates = rawCandidates.filter(({ record }) =>

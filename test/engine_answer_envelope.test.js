@@ -8,7 +8,7 @@ const fixture = require("./fixtures/eval_questions.json");
 
 const { records, index } = loadStore();
 
-// M5 Phase 2 (docs/test_record.md Entry 008 / M5 plan): the envelope
+// M5 Phase 2 (history/verification/engine_test_record_through_2026-08-28.md Entry 008 / M5 plan): the envelope
 // mirrors structuredQuery/answerOptionB directly rather than wrapping
 // answer()'s output, so it's a genuinely separate control flow. This is
 // the test that catches drift between the two — written before relying

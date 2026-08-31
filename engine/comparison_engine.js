@@ -210,7 +210,7 @@ function formatComparativeAnswer(compMatch) {
   // previous version appended hand-written regulatory prose (including a
   // study-design recommendation) with no source_unit_id behind it, on
   // every comparison answer regardless of what was actually retrieved.
-  // That violated TPP §1.1/§1.3(4)/§1.4 (docs/test_record.md Entry 007 /
+  // That violated TPP §1.1/§1.3(4)/§1.4 (history/verification/engine_test_record_through_2026-08-28.md Entry 007 /
   // M5 plan §1a). This renders only what's grounded in `docResults`
   // above; the line below is structural framing, not a regulatory claim.
   lines.push("🔍 두 문서의 요건을 나란히 제시합니다 — 어느 쪽이 적용되는지는 이 답변이 판단하지 않습니다.");

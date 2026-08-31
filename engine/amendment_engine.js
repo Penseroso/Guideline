@@ -90,7 +90,7 @@ const GUIDELINE_REVISIONS = {
         // subdivides §V.B into 5_b_1/5_b_2 SourceUnits, not one 5_b unit.
         // Verified by content, not guessed: 5_b_1.001 is the screening-tier
         // passage that states the same "approximately 5%" false-positive
-        // rate this topic line describes (docs/test_record.md Entry 007/008).
+        // rate this topic line describes (history/verification/engine_test_record_through_2026-08-28.md Entry 007/008).
         sourceUnitId: "fda_ada.su.5_b_1.001"
       },
       {
@@ -230,7 +230,7 @@ function answerAmendment(question, records, index) {
   // Each hardcoded keyNote's sourceUnitId is resolved against the real
   // archive — previously it was captured but never read at all, so every
   // "Key Amendment" bullet rendered with zero citation regardless of
-  // whether its target existed (docs/test_record.md Entry 007 / M5 plan
+  // whether its target existed (history/verification/engine_test_record_through_2026-08-28.md Entry 007 / M5 plan
   // §1b). A note that doesn't resolve is dropped here, not shown to the
   // user in any form, per the M5 plan's explicit correction: ungrounded
   // regulatory-content synthesis does not belong on the answer surface,

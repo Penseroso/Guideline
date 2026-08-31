@@ -1,9 +1,9 @@
 /**
  * engine/query_stats.js
- * M5 Phase 6 (docs/test_record.md Entry 008 / .claude/plans/scalable-
+ * M5 Phase 6 (history/verification/engine_test_record_through_2026-08-28.md Entry 008 / .claude/plans/scalable-
  * floating-elephant.md): a pure aggregation over the two logs that
- * already exist (logs/m2_queries.jsonl via engine/query_log.js's
- * readInteractions(), logs/feedback.jsonl via engine/feedback_log.js's
+ * already exist (the configured runtime query log via engine/query_log.js's
+ * readInteractions(), and the configured runtime feedback log via engine/feedback_log.js's
  * readFeedback()) — no new monitoring system, no metrics server, no
  * time-series DB (product_roadmap.md §2.4.1's minimalism, applied to
  * ops the same way it was applied to the HTTP layer in Phase 3).

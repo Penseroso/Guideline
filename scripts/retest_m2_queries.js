@@ -16,8 +16,12 @@ async function main() {
   const { provider, optionBMode } = optionB;
   console.log(optionBMode === "generative" ? `Option B fallback active (${provider}).` : optionBMode === "extractive" ? "Option B extractive fallback active." : "Option A only — no LLM provider configured.");
 
-  // Load questions from log
-  const logFile = path.resolve(__dirname, "..", "logs", "m2_queries.jsonl");
+  // Replays a caller-selected log. Live runtime logs are intentionally not
+  // tracked; pass an archived snapshot explicitly when reproducing M2.
+  const logFile = path.resolve(process.argv[2] || process.env.GUIDELINE_QUERY_LOG_PATH || path.resolve(__dirname, "..", "logs", "runtime", "queries.jsonl"));
+  if (!fs.existsSync(logFile)) {
+    throw new Error(`Query log not found: ${logFile}. Pass a JSONL path as the first argument.`);
+  }
   const lines = fs.readFileSync(logFile, "utf8").trim().split("\n");
   const rawEntries = lines.map((l) => JSON.parse(l));
 
@@ -75,7 +79,7 @@ async function main() {
   console.log("M2 RE-EVALUATION SUMMARY");
   console.log("==================================================");
   console.log(`Total Unique Questions: ${testCases.length}`);
-  console.log(`Originally Answered (as logged in logs/m2_queries.jsonl): ${testCases.filter((t) => t.originalAnswered).length} / ${testCases.length} (${Math.round((testCases.filter((t) => t.originalAnswered).length / testCases.length) * 100)}%)`);
+  console.log(`Originally Answered (as logged in ${logFile}): ${testCases.filter((t) => t.originalAnswered).length} / ${testCases.length} (${Math.round((testCases.filter((t) => t.originalAnswered).length / testCases.length) * 100)}%)`);
   console.log(`Currently Answered (${new Date().toISOString().slice(0, 10)}): ${stillAnsweredCount + newlyAnsweredCount} / ${testCases.length} (${Math.round(((stillAnsweredCount + newlyAnsweredCount) / testCases.length) * 100)}%)`);
   console.log(`  - Retained Answered: ${stillAnsweredCount}`);
   console.log(`  - Newly Answered (Gaps Closed by EMA/FDA Ingestion): ${newlyAnsweredCount}`);
@@ -94,7 +98,8 @@ async function main() {
     }
   }
 
-  const outPath = path.resolve(__dirname, "..", "logs", "m2_reeval_report.json");
+  const outPath = path.resolve(process.argv[3] || path.resolve(__dirname, "..", "logs", "runtime", "reeval_report.json"));
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, JSON.stringify(results, null, 2), "utf8");
   console.log(`\nFull report saved to: ${outPath}`);
 }

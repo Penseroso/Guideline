@@ -54,7 +54,7 @@ test("runEval against the real fixture and real pilot data currently passes end 
   assert.equal(summary.refusal_correctness, 1);
 });
 
-// M5 plan Phase 1 items 10/11 (docs/test_record.md Entry 007/008):
+// M5 plan Phase 1 items 10/11 (history/verification/engine_test_record_through_2026-08-28.md Entry 007/008):
 // claim_grounding_rate is a distinct, claim-level metric from
 // citation_precision (a question-level substring check) — this is the
 // metric that actually would have caught the comparison/amendment
@@ -88,7 +88,7 @@ test("summarize tolerates results with no `actual` field at all (synthetic/minim
   assert.equal(summary.claim_grounding_rate, null);
 });
 
-// M5 Phase 5 (docs/test_record.md Entry 008): eval_history.jsonl is the
+// M5 Phase 5 (history/verification/engine_test_record_through_2026-08-28.md Entry 008): eval_history.jsonl is the
 // drift-tracking record (product_roadmap.md §2.6 item 8) — a file, not a
 // new monitoring system. Appends, never overwrites.
 test("recordEvalHistory appends one line with engine_version, commit, and the three headline metrics", () => {

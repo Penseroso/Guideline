@@ -10,6 +10,11 @@ This directory holds frozen, superseded planning, process, and prototype artifac
 - `derived_contract/`: the entire "derived contract" layer explored during Phase 3 — design notes, prototypes (AmendmentMapping, EffectiveRecord), schemas, validator, and its test suite/fixtures. Paused since an early audit and never adopted by the product build; archived whole rather than kept half-alive.
 - `structural_probes/`: two M10 pilot bundles used only as schema stress tests (tables, reference-condition patterns), never given full content review. If those M10 sections are needed for real, extract them fresh against the live schema.
 - `applicability_engine/`: the entire M6 "Applicability Engine" spike — a derived `Condition`→predicate binding pipeline, deterministic evaluator, RegulatoryContext ontology, rule discovery, and their test suites. Explored, measured (0 new slot types needed across 3 guidelines), then discontinued as a separate module after a real-usage review found it too much maintenance surface for a narrow coverage island; two findings were cherry-picked live into `engine/text_utils.js` and `engine/query_router.js` instead (see that directory's own `README.md` for detail) — archived whole rather than kept half-alive, same as `derived_contract/`.
+- `audits/`: dated repository audits that informed earlier roadmap decisions.
+- `source_assessments/`: one-time source PDF and extraction-risk assessments.
+- `verification/`: detailed engine measurements superseded by `docs/verification_status.md`.
+- `milestones/`: completed milestone narratives superseded by the active index in `docs/milestone_log.md`.
+- `usage/`: frozen real-use logs and derived reports, never live runtime inputs.
 
 ## Current source of truth
 

@@ -60,7 +60,7 @@ function checkOne(expected, actual) {
 }
 
 /**
- * M5 Phase 5 (docs/test_record.md Entry 008, Decision Point 3): a
+ * M5 Phase 5 (history/verification/engine_test_record_through_2026-08-28.md Entry 008, Decision Point 3): a
  * `status: "known_gap"` fixture entry is a currently-failing case
  * promoted from real user feedback (scripts/promote_feedback_to_eval.js)
  * — by definition the engine cannot answer it correctly today. It's
@@ -90,7 +90,7 @@ function summarize(results) {
   // while containing other, completely uncited content elsewhere in the
   // same answer. This is exactly how the comparison/amendment grounding
   // defects shipped invisibly under a reported 100% here (verified live,
-  // docs/test_record.md Entry 007; see claim_grounding_rate below for the
+  // history/verification/engine_test_record_through_2026-08-28.md Entry 007; see claim_grounding_rate below for the
   // metric that actually checks what this comment used to claim it did).
   const citationPrecise = answerCases.filter(allPass).length;
 
@@ -124,7 +124,7 @@ async function main() {
   // which this harness has otherwise never run — main() previously always
   // called runEval() with no {client, store}, so Option A was the only
   // path ever measured despite runEval() accepting both since M1
-  // (docs/test_record.md Entry 007 Step 0).
+  // (history/verification/engine_test_record_through_2026-08-28.md Entry 007 Step 0).
   const useOptionB = process.argv.includes("--option-b");
   let client, store;
   if (useOptionB) {
@@ -165,7 +165,7 @@ function formatPct(x) {
 const EVAL_HISTORY_PATH = path.resolve(__dirname, "..", "logs", "eval_history.jsonl");
 
 /**
- * M5 Phase 5 (docs/test_record.md Entry 008 / M5 plan §5-6): the drift
+ * M5 Phase 5 (history/verification/engine_test_record_through_2026-08-28.md Entry 008 / M5 plan §5-6): the drift
  * record product_roadmap.md §2.6 item 8 calls for ("tracked error rate
  * over time") — as a file, not a new monitoring system. Appends one line
  * per `npm run eval` run; never overwrites, so the file itself is the

@@ -5,6 +5,7 @@ const os = require("node:os");
 const path = require("node:path");
 
 const { logInteraction, readInteractions } = require("../engine/query_log");
+const LEGACY_LOG_FIXTURE = path.resolve(__dirname, "fixtures", "query_log_legacy.jsonl");
 
 function tempLogPath() {
   return path.join(os.tmpdir(), `m2_queries_test_${Date.now()}_${Math.random().toString(36).slice(2)}.jsonl`);
@@ -97,9 +98,9 @@ test("readInteractions returns [] for a log file that doesn't exist yet, and par
   }
 });
 
-test("readInteractions parses the real, existing logs/m2_queries.jsonl (historical entries predate the new fields)", () => {
-  const entries = readInteractions();
-  assert.ok(entries.length >= 40, "the real M2 log must still have its historical entries");
+test("readInteractions parses legacy entries that predate the additive fields", () => {
+  const entries = readInteractions(LEGACY_LOG_FIXTURE);
+  assert.equal(entries.length, 2);
   for (const e of entries) {
     assert.ok(typeof e.question === "string");
     assert.ok(typeof e.answered === "boolean");

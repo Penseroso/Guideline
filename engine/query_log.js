@@ -9,16 +9,17 @@ const path = require("path");
  * answer text — a log of questions alone can't be triaged later without
  * re-running each one.
  *
- * M5 Phase 5 (docs/test_record.md Entry 008): extended additively —
+ * M5 Phase 5 (history/verification/engine_test_record_through_2026-08-28.md
+ * Entry 008): extended additively —
  * `interaction_id`/`mode`/`latency_ms`/`cited_source_unit_ids`/`source`
- * are new, optional fields alongside the original 6, so the 44 existing
- * historical lines (which lack them) stay readable by any reader that
+ * are new, optional fields alongside the original 6, so archived legacy
+ * lines (which lack them) stay readable by any reader that
  * treats missing fields as absent, not as an error. `readInteractions()`
  * is new too — the log previously had no reader at all in engine/, which
  * is exactly why the file existed for a week before anyone wrote a script
  * (scripts/retest_m2_queries.js) to actually replay it.
  */
-const DEFAULT_LOG_PATH = path.resolve(__dirname, "..", "logs", "m2_queries.jsonl");
+const DEFAULT_LOG_PATH = path.resolve(__dirname, "..", "logs", "runtime", "queries.jsonl");
 
 function logInteraction(question, result, logPath = process.env.GUIDELINE_QUERY_LOG_PATH || DEFAULT_LOG_PATH) {
   if (process.env.GUIDELINE_LOG_ENABLED === "false") return null;

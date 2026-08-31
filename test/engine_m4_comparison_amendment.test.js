@@ -32,7 +32,7 @@ test("structuredQuery routes comparison query to comparative answer format", () 
   assert.match(text, /ICH/);
 });
 
-// M5 Phase 1 item 2 (docs/test_record.md Entry 007 / M5 plan §1a): a
+// M5 Phase 1 item 2 (history/verification/engine_test_record_through_2026-08-28.md Entry 007 / M5 plan §1a): a
 // comparison answer used to append a hardcoded, uncited "Key Comparison
 // Takeaway" paragraph — including a study-design recommendation with no
 // source_unit_id behind it — regardless of what was actually retrieved.
@@ -99,7 +99,7 @@ test("structuredQuery routes amendment query to revision history format", () => 
   assert.match(text, /Note 1/);
 });
 
-// M5 Phase 1 item 3 (docs/test_record.md Entry 007 / M5 plan §1b):
+// M5 Phase 1 item 3 (history/verification/engine_test_record_through_2026-08-28.md Entry 007 / M5 plan §1b):
 // GUIDELINE_REVISIONS[*].keyNotes[].sourceUnitId was captured but never
 // read anywhere — every "Key Amendment" bullet rendered with zero
 // citation, for every document, unconditionally. These assert the real

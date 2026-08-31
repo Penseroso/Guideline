@@ -1,6 +1,6 @@
 /**
  * engine/answer_envelope.js
- * M5 Phase 2 (docs/test_record.md Entry 008 / .claude/plans/scalable-
+ * M5 Phase 2 (history/verification/engine_test_record_through_2026-08-28.md Entry 008 / .claude/plans/scalable-
  * floating-elephant.md): a thin, uniform HTTP-ready shape over answer()'s
  * five previously-inconsistent return shapes. Deliberately minimal per
  * the round-2 plan correction — no per-mode nested schema (no

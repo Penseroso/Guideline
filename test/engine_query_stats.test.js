@@ -1,8 +1,10 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
+const path = require("node:path");
 
 const { aggregate, documentIdFromSourceUnitId, clusterRefusals, percentile } = require("../engine/query_stats");
 const { readInteractions } = require("../engine/query_log");
+const LEGACY_LOG_FIXTURE = path.resolve(__dirname, "fixtures", "query_log_legacy.jsonl");
 
 test("documentIdFromSourceUnitId splits on the first dot only", () => {
   assert.equal(documentIdFromSourceUnitId("ich_m10.su.3_2_5_2.005"), "ich_m10");
@@ -80,11 +82,11 @@ test("aggregate: feedback_by_verdict and unresolved_feedback", () => {
   assert.equal(stats.unresolved_feedback, 2);
 });
 
-test("aggregate against the real logs/m2_queries.jsonl runs without throwing and produces sane totals", () => {
-  const interactions = readInteractions();
+test("aggregate against a legacy query-log fixture runs without throwing", () => {
+  const interactions = readInteractions(LEGACY_LOG_FIXTURE);
   const stats = aggregate(interactions, []);
   assert.equal(stats.total, interactions.length);
-  assert.ok(stats.total >= 40);
+  assert.equal(stats.total, 2);
   assert.equal(stats.answered + stats.refused, stats.total);
   assert.ok(stats.answer_rate >= 0 && stats.answer_rate <= 1);
 });
