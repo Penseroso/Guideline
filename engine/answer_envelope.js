@@ -24,6 +24,7 @@ const ENVELOPE_VERSION = "2.0.0";
 function modeForMatch(match) {
   if (match.isComparison) return "comparison";
   if (match.isAmendment) return "amendment";
+  if (match.isSectionOverview) return "section_overview";
   if (match.isListComposite) return "list";
   if (match.isComposite) return "criterion_composite";
   return "structured";

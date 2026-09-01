@@ -45,14 +45,14 @@ test("every answer-expected gold question that resolves via structured routing p
   assert.ok(checked >= 10, `expected to check at least 10 structured matches, only checked ${checked}`);
 });
 
-test("every mode independently: structured single record, criterion, list-composite, sibling-composite, comparison, amendment", () => {
+test("every mode independently: structured single record, criterion, section-overview/list-composite, sibling-composite, comparison, amendment", () => {
   const single = structuredQuery("minimum replicates required at each QC concentration level", records, index);
   assert.ok(single);
   assertAllClaimsGrounded(single.claims, "single-record criterion");
 
   const list = structuredQuery("LBA 밸리데이션 항목", records, index);
-  assert.ok(list && list.isListComposite);
-  assertAllClaimsGrounded(list.claims, "list-composite");
+  assert.ok(list && (list.isSectionOverview || list.isListComposite));
+  assertAllClaimsGrounded(list.claims, list.isSectionOverview ? "section-overview" : "list-composite");
 
   const siblingComposite = structuredQuery("accuracy 허용기준", records, index);
   assert.ok(siblingComposite && siblingComposite.isComposite);

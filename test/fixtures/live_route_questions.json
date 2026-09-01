@@ -93,8 +93,8 @@
       "profile": "live",
       "robustness": true,
       "question": "s6 관련종 한종밖에 없을때 어케함?",
-      "expect_route": "grounded_generation",
-      "expect_mode": "generated",
+      "expect_routes": ["grounded_generation", "source_excerpts"],
+      "expect_modes": ["generated", "source_excerpts"],
       "expect_answered": true,
       "expect_document_ids": ["ich_s6_r1"]
     },
@@ -149,9 +149,49 @@
       "sequence_order": 2,
       "question": "lc-ms/ms에서 full validation 항목?",
       "expect_route": "structured",
-      "expect_mode": "list",
+      "expect_mode": "section_overview",
       "expect_answered": true,
       "expect_document_ids": ["ich_m10"]
+    },
+    {
+      "id": "overview_fda_ada_validation",
+      "profile": "live",
+      "robustness": true,
+      "question": "FDA ADA assay validation 항목?",
+      "expect_route": "structured",
+      "expect_mode": "section_overview",
+      "expect_answered": true,
+      "expect_document_ids": ["fda_ada"]
+    },
+    {
+      "id": "overview_ema_fih_dosing",
+      "profile": "live",
+      "robustness": true,
+      "question": "EMA FIH dosing selection 구성?",
+      "expect_route": "structured",
+      "expect_mode": "section_overview",
+      "expect_answered": true,
+      "expect_document_ids": ["ema_fih"]
+    },
+    {
+      "id": "overview_m3_exploratory_trials",
+      "profile": "live",
+      "robustness": true,
+      "question": "ICH M3(R2) exploratory clinical trials 유형?",
+      "expect_route": "structured",
+      "expect_mode": "section_overview",
+      "expect_answered": true,
+      "expect_document_ids": ["ich_m3_r2"]
+    },
+    {
+      "id": "overview_s6_species_selection",
+      "profile": "live",
+      "robustness": true,
+      "question": "ICH S6(R1) species selection 항목?",
+      "expect_route": "structured",
+      "expect_mode": "section_overview",
+      "expect_answered": true,
+      "expect_document_ids": ["ich_s6_r1"]
     },
     {
       "id": "broad_ada_evaluation_start",

@@ -2,10 +2,44 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 
 const { loadStore } = require("../engine/data_store");
-const { structuredQuery, formatAnswer, formatApplicableConditions, formatCrossReferences, answer, answerFallback, NOT_FOUND, tokenize } = require("../engine/query_router");
+const { structuredQuery, trySectionOverviewQuery, formatAnswer, formatApplicableConditions, formatCrossReferences, answer, answerFallback, NOT_FOUND, tokenize } = require("../engine/query_router");
 const { createStore } = require("../engine/vector_store");
 
-const { records } = loadStore();
+const { records, index } = loadStore();
+
+test("a header-level M10 full-validation question returns every direct child section instead of one accuracy/precision subsection", () => {
+  const match = trySectionOverviewQuery("lc-ms/ms에서 full validation 항목?", records, index);
+  assert.ok(match && match.isSectionOverview);
+  assert.equal(match.overviewSection.section_id, "ich_m10.sec.3_2");
+  assert.equal(match.overviewGroups.length, 9);
+  assert.deepEqual(match.overviewGroups.map((group) => group.title), [
+    "Selectivity", "Specificity", "Matrix Effect", "Calibration Curve and Range",
+    "Accuracy and Precision", "Carry-over", "Dilution Integrity", "Stability",
+    "Reinjection Reproducibility"
+  ]);
+  assert.equal(new Set(match.claims.map((claim) => claim.overview_group.section_id)).size, 9);
+  assert.ok(match.claims.some((claim) => claim.record.type === "quantitative_criterion"));
+});
+
+test("section overview matching generalizes across the other archived guidelines", () => {
+  const cases = [
+    ["FDA ADA assay validation 항목?", "fda_ada.sec.6", 5, "Validation of Screening Assay"],
+    ["EMA FIH dosing selection 구성?", "ema_fih.sec.7", 7, "Starting dose for healthy volunteers"],
+    ["ICH M3(R2) exploratory clinical trials 유형?", "ich_m3_r2.sec.7", 3, "Microdose Trials"],
+    ["ICH S6(R1) species selection 항목?", "ich_s6_r1.sec.part2.2", 3, "General Principles"]
+  ];
+  for (const [question, sectionId, groupCount, expectedTitle] of cases) {
+    const match = trySectionOverviewQuery(question, records, index);
+    assert.ok(match && match.isSectionOverview, question);
+    assert.equal(match.overviewSection.section_id, sectionId, question);
+    assert.equal(match.overviewGroups.length, groupCount, question);
+    assert.ok(match.overviewGroups.some((group) => group.title === expectedTitle), question);
+  }
+});
+
+test("a generic one-concept list request does not guess a guideline section overview", () => {
+  assert.equal(trySectionOverviewQuery("full validation 항목?", records, index), null);
+});
 
 test("tokenize strips stopwords and punctuation", () => {
   const tokens = tokenize("What is the minimum number of replicates?");

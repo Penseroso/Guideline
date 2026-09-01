@@ -166,6 +166,23 @@
       ${renderCitationLine(claim.citation, i18n)}${renderApplicableConditions((claim.record || {}).applicable_conditions, i18n)}</article>`;
   }
 
+  function renderOverviewSummaryUnit(unit, claim, i18n) {
+    if (!claim || !claim.citation) return `<div class="overview-unit claim-error" role="alert">${escapeHtml(i18n.claimMissingCitation)}</div>`;
+    const url = pdfUrl(claim.citation);
+    return `<article class="overview-unit overview-summary-unit"><p>${escapeHtml(unit.text)}</p>
+      ${url ? `<a class="inline-citation" href="${url}" target="_blank" rel="noopener">${escapeHtml(compactCitation(claim.citation))}</a>` : `<span class="inline-citation">${escapeHtml(compactCitation(claim.citation))}</span>`}
+      ${renderApplicableConditions((claim.record || {}).applicable_conditions, i18n)}</article>`;
+  }
+
+  function renderOverviewCriterionUnit(unit, claim, i18n) {
+    if (!claim || !claim.citation) return `<div class="overview-criterion claim-error" role="alert">${escapeHtml(i18n.claimMissingCitation)}</div>`;
+    const record = claim.record || {};
+    const url = pdfUrl(claim.citation);
+    return `<article class="overview-criterion">${renderCriterionValue(record, i18n)}<p>${escapeHtml(unit.text)}</p>
+      ${url ? `<a class="inline-citation" href="${url}" target="_blank" rel="noopener">${escapeHtml(compactCitation(claim.citation))}</a>` : `<span class="inline-citation">${escapeHtml(compactCitation(claim.citation))}</span>`}
+      ${renderApplicableConditions(record.applicable_conditions, i18n)}</article>`;
+  }
+
   function renderVerdictBar(envelope, i18n) {
     if (envelope.route === "structured") return `<div class="verdict verdict-structured">${escapeHtml(i18n.structuredRouteLabel)} · ${escapeHtml(i18n.structuredRouteSub)}</div>`;
     if (envelope.route === "source_excerpts") return `<div class="verdict verdict-excerpts">${escapeHtml(i18n.sourceExcerptsRouteLabel)} · ${escapeHtml(i18n.sourceExcerptsRouteSub)}</div>`;
@@ -251,11 +268,51 @@
       ${renderVerdictBar(envelope, i18n)}${renderReviewStatusFooter(envelope, i18n)}</div>`;
   }
 
+  function renderSectionOverviewLayout(envelope, i18n) {
+    const grouped = new Map();
+    for (const unit of answerUnits(envelope, i18n)) {
+      const claim = claimForUnit(unit, envelope.claims);
+      const group = unit.overview_group || claim && claim.overview_group;
+      if (!claim || !group) continue;
+      if (!grouped.has(group.section_id)) grouped.set(group.section_id, { ...group, items: [] });
+      grouped.get(group.section_id).items.push({ unit, claim });
+    }
+    const groups = [...grouped.values()].sort((a, b) => a.order - b.order);
+    const firstClaim = envelope.claims && envelope.claims[0];
+    const parentPath = firstClaim && firstClaim.record && firstClaim.record.section_path || [];
+    const parentTitle = parentPath.length > 1 ? parentPath[parentPath.length - 2] : i18n.sectionOverviewTitle;
+    const guideline = firstClaim && firstClaim.citation && (firstClaim.citation.guideline_code || firstClaim.citation.document_id) || "";
+
+    const sections = groups.map((group, index) => {
+      const summaries = group.items.filter(({ claim }) => claim.record && claim.record.type !== "quantitative_criterion");
+      const criteria = group.items.filter(({ claim }) => claim.record && claim.record.type === "quantitative_criterion");
+      const primarySummaries = summaries.slice(0, 1);
+      const additionalSummaries = summaries.slice(1);
+      const primaryCriteria = criteria.slice(0, 4);
+      const additionalCriteria = criteria.slice(4);
+      const additionalSummaryBlock = additionalSummaries.length ? `<details class="overview-more"><summary>${escapeHtml(i18n.additionalSourceDetails)} <span>${additionalSummaries.length}</span></summary>
+        <div>${additionalSummaries.map(({ unit, claim }) => renderOverviewSummaryUnit(unit, claim, i18n)).join("")}</div></details>` : "";
+      const additionalCriteriaBlock = additionalCriteria.length ? `<details class="overview-more"><summary>${escapeHtml(i18n.additionalCriteria)} <span>${additionalCriteria.length}</span></summary>
+        <div class="overview-criteria-list">${additionalCriteria.map(({ unit, claim }) => renderOverviewCriterionUnit(unit, claim, i18n)).join("")}</div></details>` : "";
+      return `<section class="overview-section" aria-labelledby="overview-section-${index}"><header class="overview-section-header">
+        <span class="overview-section-number">${escapeHtml(group.section_number)}</span><div><h2 id="overview-section-${index}">${escapeHtml(group.title)}</h2>
+        <p>${escapeHtml(i18n.sectionEvidenceCount.replace("{summaries}", summaries.length).replace("{criteria}", criteria.length))}</p></div></header>
+        <div class="overview-summary-list">${primarySummaries.map(({ unit, claim }) => renderOverviewSummaryUnit(unit, claim, i18n)).join("")}</div>${additionalSummaryBlock}
+        ${criteria.length ? `<div class="overview-criteria-heading">${escapeHtml(i18n.criteriaTitle)}</div><div class="overview-criteria-list">${primaryCriteria.map(({ unit, claim }) => renderOverviewCriterionUnit(unit, claim, i18n)).join("")}</div>${additionalCriteriaBlock}` : ""}
+      </section>`;
+    }).join("");
+
+    return `<div class="section-overview-layout"><header class="section-overview-intro"><span class="section-label">${escapeHtml(i18n.sectionOverviewTitle)}</span>
+      <h2>${escapeHtml(guideline)} · ${escapeHtml(parentTitle)}</h2><p>${escapeHtml(i18n.sectionOverviewIntro.replace("{count}", groups.length))}</p></header>
+      <div class="overview-sections">${sections}</div>${renderVerdictBar(envelope, i18n)}${renderReviewStatusFooter(envelope, i18n)}</div>`;
+  }
+
   function renderEnvelope(envelope, i18n, question) {
     const questionBlock = question ? `<header class="question-context"><div class="question-meta"><span>${escapeHtml(i18n.questionLabel)}</span>${renderRouteIndicator(envelope, i18n)}</div><h1>${escapeHtml(question)}</h1></header>` : "";
     if (!envelope.answered) return `<article class="answer-page">${questionBlock}${renderRefusalCard(envelope, i18n)}</article>`;
     if (envelope.route === "grounded_generation") return `<article class="answer-page mode-generated">${questionBlock}${renderGeneratedLayout(envelope, i18n)}</article>`;
     if (envelope.route === "source_excerpts") return `<article class="answer-page mode-source-excerpts">${questionBlock}${renderSourceExcerptsLayout(envelope, i18n)}</article>`;
+    if (envelope.mode === "section_overview") return `<article class="answer-page mode-section-overview">${questionBlock}${renderSectionOverviewLayout(envelope, i18n)}</article>`;
     const body = envelope.mode === "comparison" ? renderComparison(envelope, i18n)
       : envelope.mode === "amendment" ? renderAmendment(envelope, i18n)
         : answerUnits(envelope, i18n).map((unit) => renderAnswerUnit(unit, envelope.claims, i18n)).join("");
@@ -265,5 +322,5 @@
   }
 
   return { escapeHtml, pdfUrl, renderCitationLine, renderModalityLabel, renderValueStatusNote, renderClaimCard, renderVerdictBar, renderRouteIndicator,
-    renderGeneratedUnit, renderSourceExcerptUnit, renderRefusalCard, renderComparison, renderAmendment, renderEnvelope };
+    renderGeneratedUnit, renderSourceExcerptUnit, renderSectionOverviewLayout, renderRefusalCard, renderComparison, renderAmendment, renderEnvelope };
 });

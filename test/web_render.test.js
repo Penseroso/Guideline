@@ -15,6 +15,12 @@ const i18n = {
   generatedRouteSub: "generated, entailment-verified",
   generatedAnswerTitle: "Generated answer",
   generatedEvidenceTitle: "Structured evidence used",
+  sectionOverviewTitle: "Structured section overview",
+  sectionOverviewIntro: "{count} child sections, organized into source descriptions and quantitative criteria.",
+  sectionEvidenceCount: "{summaries} source descriptions · {criteria} quantitative criteria",
+  criteriaTitle: "Quantitative criteria",
+  additionalSourceDetails: "Additional source descriptions",
+  additionalCriteria: "Additional criteria",
   sourceExcerptsRouteLabel: "Source excerpts",
   sourceExcerptsRouteSub: "verbatim, no generation",
   sourceExcerptIntro: "No generated answer. Source passages follow.",
@@ -205,6 +211,40 @@ test("source-excerpts route renders a distinct verbatim list without duplicating
   assert.match(html, /excerpts-layout/);
   assert.match(html, /excerpt-unit/);
   assert.doesNotMatch(html, /generated-answer-panel/);
+  assert.doesNotMatch(html, /evidence-panel/);
+});
+
+test("section overview mode renders child-section hierarchy with criteria and progressive disclosure", () => {
+  const claims = [];
+  for (let i = 0; i < 6; i++) {
+    const criterion = i > 0;
+    claims.push({
+      source_unit_id: `ich_m10.su.overview.${i}`,
+      citation: realCitation({ source_unit_id: `ich_m10.su.overview.${i}`, section_number: "3.2.1", section_title: "Selectivity" }),
+      overview_group: { section_id: "ich_m10.sec.3_2_1", section_number: "3.2.1", title: "Selectivity", order: 0 },
+      record: criterion
+        ? { id: `qc.${i}`, type: "quantitative_criterion", parameter: `criterion ${i}`, comparator: "within", value: i, unit: "%", value_status: "known", source_text: `criterion source ${i}`, section_path: ["CHROMATOGRAPHY", "Validation", "Selectivity"] }
+        : { id: "kr.0", type: "knowledge_record", modality: "should", source_text: "Selectivity summary", section_path: ["CHROMATOGRAPHY", "Validation", "Selectivity"] }
+    });
+  }
+  claims.push({
+    source_unit_id: "ich_m10.su.overview.6",
+    citation: realCitation({ source_unit_id: "ich_m10.su.overview.6", section_number: "3.2.2", section_title: "Specificity" }),
+    overview_group: { section_id: "ich_m10.sec.3_2_2", section_number: "3.2.2", title: "Specificity", order: 1 },
+    record: { id: "kr.6", type: "knowledge_record", modality: "should", source_text: "Specificity summary", section_path: ["CHROMATOGRAPHY", "Validation", "Specificity"] }
+  });
+  const envelope = {
+    answered: true, route: "structured", mode: "section_overview", claims,
+    answer_units: claims.map((claim) => ({ text: claim.record.source_text, record_id: claim.record.id, source_unit_id: claim.source_unit_id, overview_group: claim.overview_group }))
+  };
+  const html = R.renderEnvelope(envelope, i18n, "full validation items?");
+  assert.match(html, /section-overview-layout/);
+  assert.match(html, /Selectivity/);
+  assert.match(html, /Specificity/);
+  assert.match(html, /overview-criterion/);
+  assert.match(html, /Additional criteria/);
+  assert.match(html, /<code>section_overview<\/code>/);
+  assert.doesNotMatch(html, /class="answer-layout"/);
   assert.doesNotMatch(html, /evidence-panel/);
 });
 

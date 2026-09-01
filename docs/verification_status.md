@@ -5,14 +5,14 @@ This is the active verification summary. Detailed historical measurements are fr
 ## Current baseline
 
 - Engine version: `0.6.0`
-- Unit and integration tests: 231/231 passing as of 2026-09-01
+- Unit and integration tests: 236/236 passing as of 2026-09-02
 - Pilot validation: 6/6 bundles passing
 - Korean presentation validation: 1,131/1,131 entries passing
-- Gold evaluation: 24/24 passing as of 2026-09-01
+- Gold evaluation: 24/24 passing as of 2026-09-02
 - Citation precision: 100%
 - Claim grounding rate: 100%
 - Refusal correctness: 100%
-- Live semantic-route API test: 19/19 passing with an OpenAI same-provider cross-model generator/verifier pair as of 2026-09-01
+- Live semantic-route API test: 23/23 passing with an OpenAI same-provider cross-model generator/verifier pair as of 2026-09-02
 - Production dependency audit as of 2026-08-28: 0 known vulnerabilities
 
 ## Open verification work

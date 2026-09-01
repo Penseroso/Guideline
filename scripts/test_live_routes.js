@@ -97,8 +97,14 @@ async function runProfile(profile, questions, deps, index) {
       if (testCase.expect_route) {
         assert.equal(envelope.route, testCase.expect_route, `${testCase.id}: unexpected route (refusal=${JSON.stringify(envelope.refusal)})`);
       }
+      if (testCase.expect_routes) {
+        assert.ok(testCase.expect_routes.includes(envelope.route), `${testCase.id}: unexpected route ${envelope.route} (expected one of ${testCase.expect_routes.join(", ")})`);
+      }
       if (testCase.expect_mode) {
         assert.equal(envelope.mode, testCase.expect_mode, `${testCase.id}: unexpected mode`);
+      }
+      if (testCase.expect_modes) {
+        assert.ok(testCase.expect_modes.includes(envelope.mode), `${testCase.id}: unexpected mode ${envelope.mode} (expected one of ${testCase.expect_modes.join(", ")})`);
       }
       assert.equal(envelope.answered, testCase.expect_answered, `${testCase.id}: unexpected answered value`);
       if (testCase.expect_refusal_kind) {

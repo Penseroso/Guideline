@@ -54,7 +54,8 @@ function presentClaims(claims, language = "ko") {
     text: presentRecord(claim.record, language),
     record_id: claim.record ? claim.record.id : null,
     source_unit_id: claim.source_unit_id || null,
-    document_id: claim.record ? claim.record.document_id : null
+    document_id: claim.record ? claim.record.document_id : null,
+    overview_group: claim.overview_group || null
   })).filter((unit) => unit.text && unit.source_unit_id);
 }
 

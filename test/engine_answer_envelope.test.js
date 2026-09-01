@@ -70,7 +70,15 @@ test("mode discriminates comparison, amendment, and list distinctly — the info
   assert.equal(amendment.mode, "amendment");
 
   const list = await answerEnvelope("LBA 밸리데이션 항목", records, { index });
-  assert.equal(list.mode, "list");
+  assert.equal(list.mode, "section_overview");
+});
+
+test("a header-level question exposes section_overview as a distinct response contract", async () => {
+  const overview = await answerEnvelope("lc-ms/ms에서 full validation 항목?", records, { index });
+  assert.equal(overview.route, "structured");
+  assert.equal(overview.mode, "section_overview");
+  assert.equal(new Set(overview.answer_units.map((unit) => unit.overview_group && unit.overview_group.section_id)).size, 9);
+  assert.ok(overview.answer_units.every((unit) => unit.overview_group));
 });
 
 // --- Grounded fallback routes via envelope (mocked clients + store, no network) ---

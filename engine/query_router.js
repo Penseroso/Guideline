@@ -213,10 +213,142 @@ function areSiblings(a, b) {
 function isListQuery(question, qTokens) {
   const lowerQ = (question || "").toLowerCase();
   const listTerms = [
-    "항목", "리스트", "목록", "요건", "요구사항", "체크리스트", "사항", "원칙들", "기준들",
-    "list", "items", "requirements", "checklist", "principles", "components", "factors", "steps", "rules"
+    "항목", "리스트", "목록", "요건", "요구사항", "체크리스트", "사항", "원칙들", "기준들", "구성", "종류", "유형", "영역", "포함",
+    "list", "items", "requirements", "checklist", "principles", "components", "factors", "steps", "rules", "types", "areas", "overview", "include"
   ];
   return listTerms.some((k) => lowerQ.includes(k) || qTokens.has(k));
+}
+
+function compareSectionNumbers(a, b) {
+  return String(a.section_number || "").localeCompare(String(b.section_number || ""), undefined, { numeric: true, sensitivity: "base" });
+}
+
+function sectionAncestors(section, index) {
+  const ancestors = [];
+  let current = section && section.parent_section_id ? index.sections.get(section.parent_section_id) : null;
+  while (current) {
+    ancestors.unshift(current);
+    current = current.parent_section_id ? index.sections.get(current.parent_section_id) : null;
+  }
+  return ancestors;
+}
+
+function descendantSectionIds(sectionId, index) {
+  const ids = [];
+  const queue = [sectionId];
+  while (queue.length) {
+    const parentId = queue.shift();
+    for (const section of index.sections.values()) {
+      if (section.parent_section_id !== parentId) continue;
+      ids.push(section.section_id);
+      queue.push(section.section_id);
+    }
+  }
+  return ids;
+}
+
+/**
+ * Resolves a broad/header-level list question to a real parent Section and
+ * groups evidence by its direct child Sections. This is intentionally driven
+ * by the archive's Section.parent_section_id graph, not by guideline-specific
+ * lists. It therefore applies equally to M10 validation, FDA assay validation,
+ * EMA dosing selection, M3 exploratory trials, and future bundles.
+ */
+function trySectionOverviewQuery(question, records, index) {
+  if (!index || !index.sections || !index.documents) return null;
+  const qTokens = new Set(tokenize(question));
+  if (!isListQuery(question, qTokens)) return null;
+
+  const candidates = [];
+  for (const section of index.sections.values()) {
+    const children = [...index.sections.values()]
+      .filter((candidate) => candidate.parent_section_id === section.section_id)
+      .sort(compareSectionNumbers);
+    if (children.length < 2) continue;
+
+    const ancestors = sectionAncestors(section, index);
+    const titleTokens = new Set(tokenize(section.title));
+    const ancestorTokens = new Set(tokenize(ancestors.map((ancestor) => ancestor.title).join(" ")));
+    const numberTokens = new Set(tokenize(section.section_number));
+    const document = index.documents.get(section.document_id);
+    const documentTokens = new Set(tokenize([
+      section.document_id && section.document_id.replace(/_/g, " "),
+      document && document.guideline_code
+    ].filter(Boolean).join(" ")));
+
+    let score = 0;
+    const matchedSectionConcepts = new Set();
+    for (const token of qTokens) {
+      if (titleTokens.has(token)) {
+        score += 5;
+        matchedSectionConcepts.add(token);
+      } else if (ancestorTokens.has(token)) {
+        score += 3;
+        matchedSectionConcepts.add(token);
+      } else if (numberTokens.has(token)) {
+        score += 4;
+        matchedSectionConcepts.add(token);
+      }
+      if (documentTokens.has(token)) score += 1;
+    }
+    // A single generic word such as "validation" is not enough to choose a
+    // parent Section. Require two section/path concepts to avoid silently
+    // selecting one of several technology- or document-specific branches.
+    if (matchedSectionConcepts.size >= 2) candidates.push({ section, children, ancestors, score });
+  }
+  if (candidates.length === 0) return null;
+  candidates.sort((a, b) => b.score - a.score || b.ancestors.length - a.ancestors.length || compareSectionNumbers(a.section, b.section));
+  if (candidates[1] && candidates[1].score === candidates[0].score && candidates[1].section.document_id !== candidates[0].section.document_id) {
+    return null;
+  }
+
+  const target = candidates[0];
+  const groups = [];
+  const claims = [];
+  for (let groupOrder = 0; groupOrder < target.children.length; groupOrder++) {
+    const child = target.children[groupOrder];
+    const sectionIds = new Set([child.section_id, ...descendantSectionIds(child.section_id, index)]);
+    const sectionRecords = records.filter((record) => sectionIds.has(record.section_id));
+    const knowledgeRecords = [...new Map(
+      sectionRecords
+        .filter((record) => record.type === "knowledge_record")
+        .map((record) => [record.source_text, record])
+    ).values()];
+    const criteria = sectionRecords.filter((record) => record.type === "quantitative_criterion");
+    const fallbackConditions = knowledgeRecords.length || criteria.length
+      ? []
+      : [...new Map(sectionRecords.filter((record) => record.type === "condition").map((record) => [record.source_text, record])).values()];
+    const groupRecords = [...knowledgeRecords, ...criteria, ...fallbackConditions];
+    if (groupRecords.length === 0) continue;
+
+    const overviewGroup = {
+      section_id: child.section_id,
+      section_number: child.section_number,
+      title: child.title,
+      order: groupOrder,
+      summary_count: knowledgeRecords.length,
+      criterion_count: criteria.length
+    };
+    const groupClaims = deriveClaimsFromRecords(groupRecords).map((claim) => ({ ...claim, overview_group: overviewGroup }));
+    groups.push({ ...overviewGroup, claims: groupClaims });
+    claims.push(...groupClaims);
+  }
+  if (groups.length < 2 || claims.length === 0) return null;
+
+  return {
+    record: claims[0].record,
+    score: target.score,
+    isSectionOverview: true,
+    overviewSection: {
+      section_id: target.section.section_id,
+      section_number: target.section.section_number,
+      title: target.section.title,
+      document_id: target.section.document_id,
+      guideline_code: (index.documents.get(target.section.document_id) || {}).guideline_code || target.section.document_id
+    },
+    overviewGroups: groups,
+    claims
+  };
 }
 
 function tryListCompositeQuery(scored, qTokens, question) {
@@ -310,6 +442,9 @@ function structuredQuery(question, records, index = null) {
     const amendMatch = answerAmendment(question, records, index);
     if (amendMatch) return amendMatch;
   }
+
+  const sectionOverview = trySectionOverviewQuery(question, records, index);
+  if (sectionOverview) return sectionOverview;
 
   const qTokens = new Set(tokenize(question));
   if (qTokens.size === 0) return null;
@@ -506,6 +641,20 @@ function formatAnswer(match) {
   // M4: Amendment History Answering
   if (match.isAmendment) {
     return formatAmendmentAnswer(match);
+  }
+
+  if (match.isSectionOverview) {
+    const header = match.overviewSection;
+    const lines = [`[${header.guideline_code} §${header.section_number} ${header.title}] 하위 항목별 구조화 개요`];
+    for (const group of match.overviewGroups) {
+      lines.push(`\n§${group.section_number} ${group.title}`);
+      for (const claim of group.claims) {
+        const record = claim.record;
+        if (record.type === "quantitative_criterion") lines.push(`  • ${formatSingleCriterion(record)} — ${formatCitation(claim.citation)}`);
+        else lines.push(`  • ${formatModalityChip(record)}${record.source_text} — ${formatCitation(claim.citation)}`);
+      }
+    }
+    return lines.join("\n");
   }
 
   // Support both raw record or structured match object
@@ -915,6 +1064,7 @@ if (require.main === module) {
 module.exports = {
   tokenize,
   scoreRecord,
+  trySectionOverviewQuery,
   structuredQuery,
   formatCitation,
   formatApplicableConditions,
