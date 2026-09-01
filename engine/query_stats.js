@@ -70,14 +70,18 @@ function aggregate(interactions, feedback = []) {
   const total = interactions.length;
   const answered = interactions.filter((i) => i.answered).length;
 
-  const byPath = { A: 0, B: 0, null: 0 };
+  const byRoute = { structured: 0, grounded_generation: 0, source_excerpts: 0, refusal: 0 };
   const byMode = {};
   const byDocument = {};
   const latencies = [];
 
   for (const i of interactions) {
-    const pathKey = i.path === "A" || i.path === "B" ? i.path : "null";
-    byPath[pathKey] = (byPath[pathKey] || 0) + 1;
+    // Read historical A/B logs without rewriting them; all newly written
+    // interactions use semantic routes.
+    const route = i.route || (i.path === "A" ? "structured" : i.path === "B"
+      ? i.mode === "extractive" ? "source_excerpts" : "grounded_generation"
+      : "refusal");
+    byRoute[route] = (byRoute[route] || 0) + 1;
 
     if (i.mode) byMode[i.mode] = (byMode[i.mode] || 0) + 1;
 
@@ -109,7 +113,7 @@ function aggregate(interactions, feedback = []) {
     answered,
     refused: total - answered,
     answer_rate: total ? answered / total : null,
-    by_path: byPath,
+    by_route: byRoute,
     by_mode: byMode,
     by_document: byDocument,
     refusal_clusters: clusterRefusals(refusedQuestions),

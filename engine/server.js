@@ -9,7 +9,7 @@
  * deliberately avoided.
  *
  * Sibling entry point to engine/cli.js — same engine, same
- * setUpOptionB() helper, different front door.
+ * setUpAnswering() helper, different front door.
  */
 
 const http = require("http");
@@ -18,7 +18,7 @@ const path = require("path");
 const crypto = require("crypto");
 
 const { loadStore } = require("./data_store");
-const { setUpOptionB } = require("./cli");
+const { setUpAnswering } = require("./cli");
 const { answerEnvelope } = require("./answer_envelope");
 const { logInteraction, readInteractions } = require("./query_log");
 const { recordFeedback, readFeedback, VALID_VERDICTS } = require("./feedback_log");
@@ -26,9 +26,9 @@ const { aggregate } = require("./query_stats");
 
 const WEB_DIR = path.resolve(__dirname, "..", "web");
 const MAX_BODY_BYTES = 16 * 1024;
-const DEFAULT_OPTION_B_TIMEOUT_MS = 30000;
-const OPTION_B_CONCURRENCY = 2;
-const OPTION_B_QUEUE_CAP = 8;
+const DEFAULT_FALLBACK_TIMEOUT_MS = 30000;
+const GROUNDED_GENERATION_CONCURRENCY = 2;
+const GROUNDED_GENERATION_QUEUE_CAP = 8;
 
 // Explicit whitelist — never path.join user input into a filesystem path.
 const STATIC_ASSETS = {
@@ -82,11 +82,11 @@ async function readJsonBody(req) {
 }
 
 /**
- * Deadline-aware Option B scheduler. A timed-out response does not release
+ * Deadline-aware grounded-generation scheduler. A timed-out response does not release
  * its slot until the underlying task settles, so providers that ignore an
  * AbortSignal cannot exceed the real concurrency limit.
  */
-function createOptionBScheduler(limit, queueCap = OPTION_B_QUEUE_CAP) {
+function createGroundedGenerationScheduler(limit, queueCap = GROUNDED_GENERATION_QUEUE_CAP) {
   let active = 0;
   const queue = [];
   function drain() {
@@ -227,17 +227,17 @@ function registerUnhandledRejectionLogger() {
 }
 
 /**
- * startServer({ port, host, authToken, optionBTimeoutMs, deps }) -> http.Server
+ * startServer({ port, host, authToken, fallbackTimeoutMs, deps }) -> http.Server
  * `deps` (optional): { generatorClient, verifierClient, store,
- * optionBMode } to inject instead of the real
- * setUpOptionB() — used by tests to avoid a live LLM call, and by callers
+ * fallbackMode } to inject instead of the real
+ * setUpAnswering() — used by tests to avoid a live LLM call, and by callers
  * provider setup. A legacy `client` aliases both clients in tests only.
  */
 function startServer({
   port = Number(process.env.GUIDELINE_PORT) || 8787,
   host = process.env.GUIDELINE_HOST || "127.0.0.1",
   authToken = process.env.GUIDELINE_AUTH_TOKEN || "",
-  optionBTimeoutMs = Number(process.env.OPTION_B_TIMEOUT_MS) || DEFAULT_OPTION_B_TIMEOUT_MS,
+  fallbackTimeoutMs = Number(process.env.GUIDELINE_FALLBACK_TIMEOUT_MS) || DEFAULT_FALLBACK_TIMEOUT_MS,
   deps,
   // Overridable so tests never write into the real logs/ files — logs/
   // Tests inject temporary paths so runtime interaction logs are never
@@ -263,18 +263,21 @@ function startServer({
   }
 
   const { records, index } = loadStore();
-  const optionB = deps || setUpOptionB(records);
+  const answering = deps || setUpAnswering(records);
   const {
     client,
     generatorClient = client,
     verifierClient = client,
     store,
-    provider,
+    generatorProvider,
     verifierProvider = null,
-    optionBMode = client && store ? "generative" : null
-  } = optionB;
-  const optionBAvailable = Boolean(store && (optionBMode === "extractive" || generatorClient && verifierClient));
-  const optionBScheduler = createOptionBScheduler(OPTION_B_CONCURRENCY);
+    generatorModel = null,
+    verifierModel = null,
+    verificationMode = generatorClient && verifierClient ? "cross_model" : "none",
+    fallbackMode = generatorClient && verifierClient ? "grounded_generation" : store ? "source_excerpts" : null
+  } = answering;
+  const fallbackAvailable = Boolean(store);
+  const groundedGenerationScheduler = createGroundedGenerationScheduler(GROUNDED_GENERATION_CONCURRENCY);
   const startedAt = Date.now();
 
   const server = http.createServer((req, res) => {
@@ -306,12 +309,13 @@ function startServer({
         uptime_s: Math.round((Date.now() - startedAt) / 1000),
         documents: index.documents.size,
         records: records.length,
-        provider: provider || null,
-        generator_provider: provider || null,
+        generator_provider: generatorProvider || null,
         verifier_provider: verifierProvider || null,
-        verification_independent: Boolean(provider && verifierProvider && provider !== verifierProvider),
-        option_b_available: optionBAvailable,
-        option_b_mode: optionBMode,
+        generator_model: generatorModel,
+        verifier_model: verifierModel,
+        verification_mode: verificationMode,
+        fallback_available: fallbackAvailable,
+        fallback_mode: fallbackMode,
         logging_enabled: loggingEnabled,
         auth: authToken ? "enabled" : "disabled"
       });
@@ -344,14 +348,14 @@ function startServer({
       if (!body || typeof body !== "object" || Array.isArray(body) || typeof body.question !== "string" || !body.question.trim()) {
         return sendError(res, 400, "invalid_request");
       }
-      const allowOptionB = body.allow_option_b !== false;
+      const allowFallback = body.allow_fallback !== false;
       const responseLanguage = body.response_language === "en" ? "en" : "ko";
-      const effectiveDeps = allowOptionB
-        ? { client, generatorClient, verifierClient, store, index, responseLanguage, optionBMode }
+      const effectiveDeps = allowFallback
+        ? { client, generatorClient, verifierClient, store, index, responseLanguage, fallbackMode }
         : { index, responseLanguage };
 
       let envelope;
-      if (allowOptionB && optionBAvailable) {
+      if (allowFallback && fallbackAvailable && fallbackMode === "grounded_generation") {
         const controller = new AbortController();
         const abortForDisconnect = () => {
           if (!res.writableEnded && !controller.signal.aborted) {
@@ -360,11 +364,11 @@ function startServer({
         };
         req.once("aborted", abortForDisconnect);
         res.once("close", abortForDisconnect);
-        const scheduled = optionBScheduler.run(
+        const scheduled = groundedGenerationScheduler.run(
           () => answerEnvelope(body.question, records, { ...effectiveDeps, signal: controller.signal }),
           { signal: controller.signal }
         );
-        envelope = await withAbortDeadline(scheduled, controller, optionBTimeoutMs, "Option B");
+        envelope = await withAbortDeadline(scheduled, controller, fallbackTimeoutMs, "grounded generation");
       } else {
         envelope = await answerEnvelope(body.question, records, effectiveDeps);
       }
@@ -372,7 +376,7 @@ function startServer({
       const interactionId = `int_${Date.now()}_${crypto.randomBytes(4).toString("hex")}`;
       if (loggingEnabled) {
         logInteraction(body.question, {
-          path: envelope.path,
+          route: envelope.route,
           answered: envelope.answered,
           review_status: envelope.review_status,
           text: envelope.prose,

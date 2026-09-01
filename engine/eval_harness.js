@@ -10,12 +10,12 @@ const DEFAULT_FIXTURE = path.resolve(__dirname, "..", "test", "fixtures", "eval_
  * Sampling-based drift monitoring (product_roadmap.md §2.5.1, §2.6
  * item 8) — moved up to M1 because it's the only systemic-error
  * detector once no human reads every record. Runs each gold question
- * through the real router (Option A only unless a client/store is
+ * through the real router (structured route only unless a client/store is
  * passed in) and reports two headline metrics from TPP §1.5:
  * citation precision and refusal correctness — plus the underlying
  * per-question detail so a failure is traceable to which check broke.
  */
-async function runEval({ fixturePath = DEFAULT_FIXTURE, records, index, client, store } = {}) {
+async function runEval({ fixturePath = DEFAULT_FIXTURE, records, index, client, generatorClient = client, verifierClient = client, store, fallbackMode } = {}) {
   const fixture = JSON.parse(fs.readFileSync(fixturePath, "utf8"));
   let answerableRecords = records;
   let answerableIndex = index;
@@ -25,7 +25,7 @@ async function runEval({ fixturePath = DEFAULT_FIXTURE, records, index, client, 
 
   const results = [];
   for (const q of fixture.questions) {
-    const result = await answer(q.question, answerableRecords, { client, store, index: answerableIndex });
+    const result = await answer(q.question, answerableRecords, { generatorClient, verifierClient, store, fallbackMode, index: answerableIndex });
     results.push({ id: q.id, question: q.question, expected: q, actual: result, checks: checkOne(q, result) });
   }
   return { results, summary: summarize(results) };
@@ -120,26 +120,23 @@ function summarize(results) {
 }
 
 async function main() {
-  // --option-b: also exercise the Option B (grounded RAG) fallback path,
+  // --fallback: also exercise the grounded-generation/source-excerpt routes,
   // which this harness has otherwise never run — main() previously always
-  // called runEval() with no {client, store}, so Option A was the only
-  // path ever measured despite runEval() accepting both since M1
+  // called runEval() with no {client, store}, so structured answers were the
+  // only route measured despite runEval() accepting both since M1
   // (history/verification/engine_test_record_through_2026-08-28.md Entry 007 Step 0).
-  const useOptionB = process.argv.includes("--option-b");
-  let client, store;
-  if (useOptionB) {
+  const useFallback = process.argv.includes("--fallback");
+  let generatorClient, verifierClient, store, fallbackMode;
+  if (useFallback) {
     const { records } = loadStore();
-    const { setUpOptionB } = require("./cli");
-    ({ client, store } = setUpOptionB(records));
-    if (!client) {
-      console.error("--option-b requested but no LLM provider is configured (see .env.example).");
-      process.exit(2);
-    }
+    const { setUpAnswering } = require("./cli");
+    const setup = setUpAnswering(records);
+    ({ generatorClient, verifierClient, store, fallbackMode } = setup);
   }
 
-  const { summary, results } = await runEval({ client, store });
-  recordEvalHistory(summary, { optionB: useOptionB });
-  console.log(`Eval: ${summary.passed}/${summary.total} passed.${useOptionB ? " (Option B enabled)" : ""}`);
+  const { summary, results } = await runEval({ generatorClient, verifierClient, store, fallbackMode });
+  recordEvalHistory(summary, { fallbackEnabled: useFallback });
+  console.log(`Eval: ${summary.passed}/${summary.total} passed.${useFallback ? " (fallback routes enabled)" : ""}`);
   console.log(`Citation precision (answer-expected cases, question-level substring check): ${formatPct(summary.citation_precision)}`);
   console.log(`Claim grounding rate (claim-level, every citation resolves in the archive, ${summary.claims_checked} claims checked): ${formatPct(summary.claim_grounding_rate)}`);
   console.log(`Refusal correctness (refusal-expected cases): ${formatPct(summary.refusal_correctness)}`);
@@ -171,7 +168,7 @@ const EVAL_HISTORY_PATH = path.resolve(__dirname, "..", "logs", "eval_history.js
  * per `npm run eval` run; never overwrites, so the file itself is the
  * history.
  */
-function recordEvalHistory(summary, { optionB = false, historyPath = EVAL_HISTORY_PATH } = {}) {
+function recordEvalHistory(summary, { fallbackEnabled = false, historyPath = EVAL_HISTORY_PATH } = {}) {
   let engineVersion = null;
   try {
     engineVersion = require("../package.json").version;
@@ -188,7 +185,7 @@ function recordEvalHistory(summary, { optionB = false, historyPath = EVAL_HISTOR
     timestamp: new Date().toISOString(),
     engine_version: engineVersion,
     commit,
-    option_b: optionB,
+    fallback_enabled: fallbackEnabled,
     total: summary.total,
     passed: summary.passed,
     citation_precision: summary.citation_precision,

@@ -4,11 +4,11 @@ This is the active verification summary. Detailed historical measurements are fr
 
 ## Current baseline
 
-- Engine version: `0.5.0`
-- Unit and integration tests: 223/223 passing as of 2026-08-31
+- Engine version: `0.6.0`
+- Unit and integration tests: 224/224 passing as of 2026-09-01
 - Pilot validation: 6/6 bundles passing
 - Korean presentation validation: 1,131/1,131 entries passing
-- Gold evaluation: 24/24 passing as of 2026-08-28
+- Gold evaluation: 24/24 passing as of 2026-09-01
 - Citation precision: 100%
 - Claim grounding rate: 100%
 - Refusal correctness: 100%
@@ -16,7 +16,7 @@ This is the active verification summary. Detailed historical measurements are fr
 
 ## Open verification work
 
-- Run the hardened generative Option B path against two distinct live providers. Current security and behavior coverage uses mocked providers.
+- Run the grounded-generation route against a same-provider cross-model pair and two distinct live providers. Current security and behavior coverage uses mocked providers.
 - Build representative post-M1 ground truth before re-measuring extraction accuracy for KnowledgeRecord, QuantitativeCriterion, and Condition.
 
 Do not append per-run narratives here. Update this summary only when the current accepted baseline changes; preserve detailed run evidence under `history/verification/`.

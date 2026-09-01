@@ -26,7 +26,7 @@ function logInteraction(question, result, logPath = process.env.GUIDELINE_QUERY_
   const entry = {
     timestamp: new Date().toISOString(),
     question,
-    path: result.path ?? null,
+    route: result.route ?? null,
     answered: result.answered,
     review_status: result.review_status ?? null,
     answer_text: result.text,

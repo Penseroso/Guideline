@@ -9,17 +9,16 @@ const i18n = {
   crossReferences: "관련 조항",
   claimMissingCitation: "citation missing, claim withheld",
   normalizedKoLabel: "한국어 정규화 (참고)",
-  pathALabel: "Path A",
-  pathASub: "archive quoted directly",
-  pathBLabel: "Path B",
-  pathBSub: "generated, entailment-verified",
-  pathExtractiveLabel: "Source excerpts",
-  pathExtractiveSub: "verbatim, no generation",
+  structuredRouteLabel: "Structured evidence",
+  structuredRouteSub: "archive quoted directly",
+  generatedRouteLabel: "Grounded generation",
+  generatedRouteSub: "generated, entailment-verified",
+  sourceExcerptsRouteLabel: "Source excerpts",
+  sourceExcerptsRouteSub: "verbatim, no generation",
   refusalTitle: "근거를 찾지 못했습니다",
   refusalBody: "이것은 archive-coverage 문제입니다",
   refusalNoMatch: "no match",
   refusalScopeExcluded: "scope excluded",
-  refusalNoProvider: "no provider",
   refusalVerificationFailed: "verification failed",
   comparisonNote: "side by side, no judgment",
   parentVersion: "Parent",
@@ -95,7 +94,7 @@ test("<script> content inside source_text is escaped, never executed as markup",
 });
 
 test("refusal envelope renders the refusal card, distinctly from an error state — never claim content", () => {
-  const envelope = { answered: false, mode: "refusal", path: "B", refusal: { kind: "scope_excluded", reason: null }, claims: [] };
+  const envelope = { answered: false, mode: "refusal", route: "refusal", refusal: { kind: "scope_excluded", reason: null }, claims: [] };
   const html = R.renderEnvelope(envelope, i18n);
   assert.match(html, /class="refusal"/);
   assert.doesNotMatch(html, /claim-error/, "a refusal is not the same thing as a missing-citation error");
@@ -139,7 +138,7 @@ test("review_status:'reviewed' renders NO per-card badge anywhere in a claim car
 
 test("the transparency footer states the §2.5.1 meaning of review_status, once, at the envelope level", () => {
   const envelope = {
-    answered: true, mode: "structured", path: "A",
+    answered: true, mode: "structured", route: "structured",
     claims: [{ citation: realCitation(), record: { type: "knowledge_record", modality: "should", source_text: "t", review_status: "reviewed" } }]
   };
   const html = R.renderEnvelope(envelope, i18n);
@@ -147,27 +146,27 @@ test("the transparency footer states the §2.5.1 meaning of review_status, once,
   assert.match(html, /passed the pipeline, not human-read/);
 });
 
-test("path A and path B verdict bars are structurally distinct classes, not just a color/label difference", () => {
-  const envA = { answered: true, mode: "structured", path: "A", claims: [{ citation: realCitation(), record: { type: "knowledge_record", modality: "must", source_text: "t" } }] };
-  const envB = { answered: true, mode: "rag", path: "B", claims: [{ citation: realCitation(), record: { type: "knowledge_record", modality: "must", source_text: "t" } }] };
-  assert.match(R.renderVerdictBar(envA, i18n), /class="verdict verdict-a"/);
-  assert.match(R.renderVerdictBar(envB, i18n), /class="verdict verdict-b"/);
-  assert.doesNotMatch(R.renderVerdictBar(envA, i18n), /class="verdict verdict-b"/);
+test("structured and generated route verdict bars use distinct semantic classes", () => {
+  const structured = { answered: true, mode: "structured", route: "structured", claims: [{ citation: realCitation(), record: { type: "knowledge_record", modality: "must", source_text: "t" } }] };
+  const generated = { answered: true, mode: "generated", route: "grounded_generation", claims: [{ citation: realCitation(), record: { type: "knowledge_record", modality: "must", source_text: "t" } }] };
+  assert.match(R.renderVerdictBar(structured, i18n), /class="verdict verdict-structured"/);
+  assert.match(R.renderVerdictBar(generated, i18n), /class="verdict verdict-generated"/);
+  assert.doesNotMatch(R.renderVerdictBar(structured, i18n), /verdict-generated/);
 });
 
-test("extractive Path B is labeled as verbatim source text, never generated prose", () => {
-  const envelope = { answered: true, mode: "extractive", path: "B", claims: [] };
+test("source-excerpt route is labeled as verbatim source text, never generated prose", () => {
+  const envelope = { answered: true, mode: "source_excerpts", route: "source_excerpts", claims: [] };
   const html = R.renderVerdictBar(envelope, i18n);
   assert.match(html, /Source excerpts/);
   assert.match(html, /verbatim, no generation/);
   assert.doesNotMatch(html, /generated, entailment-verified/);
 });
 
-test("Path A answer text follows the active locale without issuing a new query", () => {
+test("structured answer text follows the active locale without issuing a new query", () => {
   const envelope = {
     answered: true,
     mode: "structured",
-    path: "A",
+    route: "structured",
     answer_units: [{ text: "STALE-API-TEXT", record_id: "kr.1", source_unit_id: "ich_m10.su.3_2_5_2.005" }],
     claims: [{
       source_unit_id: "ich_m10.su.3_2_5_2.005",
@@ -193,7 +192,7 @@ test("Path A answer text follows the active locale without issuing a new query",
 
 test("no numeric confidence score field is ever rendered anywhere", () => {
   const envelope = {
-    answered: true, mode: "structured", path: "A",
+    answered: true, mode: "structured", route: "structured",
     claims: [{ citation: realCitation(), record: { type: "knowledge_record", modality: "must", source_text: "t" } }]
   };
   const html = R.renderEnvelope(envelope, i18n);
@@ -203,7 +202,7 @@ test("no numeric confidence score field is ever rendered anywhere", () => {
 
 test("comparison mode groups claims into real per-document columns headed by the real title", () => {
   const envelope = {
-    answered: true, mode: "comparison", path: "A",
+    answered: true, mode: "comparison", route: "structured",
     claims: [
       { citation: realCitation(), record: { type: "knowledge_record", modality: "should", source_text: "m10 claim", document_id: "ich_m10", document_title: "Bioanalytical Method Validation and Study Sample Analysis" } },
       { citation: realCitation({ source_unit_id: "fda_ada.su.5_b.001", document_id: "fda_ada", guideline_code: "FDA-2019-ADA" }), record: { type: "knowledge_record", modality: "should", source_text: "fda claim", document_id: "fda_ada", document_title: "Immunogenicity Testing of Therapeutic Protein Products" } }
@@ -223,10 +222,10 @@ test("no em-dash (U+2014) or en-dash-as-separator (U+2013) appears anywhere in r
     citation: realCitation(),
     record: { type: "knowledge_record", modality: "must", original_modal_text: "shall", source_text: "text", normalized_ko: "텍스트" }
   };
-  const hit = { answered: true, mode: "structured", path: "A", claims: [claim] };
-  const refusal = { answered: false, mode: "refusal", path: "B", refusal: { kind: "scope_excluded", reason: "some reason" }, claims: [] };
-  const comparison = { answered: true, mode: "comparison", path: "A", claims: [claim] };
-  const amendment = { answered: true, mode: "amendment", path: "A", claims: [claim] };
+  const hit = { answered: true, mode: "structured", route: "structured", claims: [claim] };
+  const refusal = { answered: false, mode: "refusal", route: "refusal", refusal: { kind: "scope_excluded", reason: "some reason" }, claims: [] };
+  const comparison = { answered: true, mode: "comparison", route: "structured", claims: [claim] };
+  const amendment = { answered: true, mode: "amendment", route: "structured", claims: [claim] };
 
   for (const env of [hit, refusal, comparison, amendment]) {
     const html = R.renderEnvelope(env, i18n);
@@ -237,7 +236,7 @@ test("no em-dash (U+2014) or en-dash-as-separator (U+2013) appears anywhere in r
 
 test("amendment mode shows a two-track parent/current layout plus resolved claims", () => {
   const envelope = {
-    answered: true, mode: "amendment", path: "A",
+    answered: true, mode: "amendment", route: "structured",
     claims: [{ citation: realCitation({ source_unit_id: "ich_s6_r1.su.part1.notes.note1.001" }), record: { type: "knowledge_record", modality: "should", source_text: "note 1 text" } }]
   };
   const html = R.renderEnvelope(envelope, i18n);

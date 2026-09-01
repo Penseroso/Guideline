@@ -95,12 +95,12 @@ test("recordEvalHistory appends one line with engine_version, commit, and the th
   const historyPath = tempHistoryPath();
   try {
     const summary = { total: 24, passed: 24, citation_precision: 1, claim_grounding_rate: 1, refusal_correctness: 1 };
-    const entry = recordEvalHistory(summary, { optionB: false, historyPath });
+    const entry = recordEvalHistory(summary, { fallbackEnabled: false, historyPath });
     assert.ok(entry.timestamp);
     assert.equal(entry.total, 24);
     assert.equal(entry.citation_precision, 1);
     assert.equal(entry.claim_grounding_rate, 1);
-    assert.equal(entry.option_b, false);
+    assert.equal(entry.fallback_enabled, false);
 
     const lines = fs.readFileSync(historyPath, "utf8").trim().split("\n");
     assert.equal(lines.length, 1);
@@ -129,8 +129,8 @@ test("a status:'known_gap' entry is excluded from total/passed/citation_precisio
 test("recordEvalHistory appends across multiple calls rather than overwriting", () => {
   const historyPath = tempHistoryPath();
   try {
-    recordEvalHistory({ total: 24, passed: 22, citation_precision: 1, claim_grounding_rate: 1, refusal_correctness: 0.33 }, { optionB: true, historyPath });
-    recordEvalHistory({ total: 24, passed: 24, citation_precision: 1, claim_grounding_rate: 1, refusal_correctness: 1 }, { optionB: true, historyPath });
+    recordEvalHistory({ total: 24, passed: 22, citation_precision: 1, claim_grounding_rate: 1, refusal_correctness: 0.33 }, { fallbackEnabled: true, historyPath });
+    recordEvalHistory({ total: 24, passed: 24, citation_precision: 1, claim_grounding_rate: 1, refusal_correctness: 1 }, { fallbackEnabled: true, historyPath });
     const lines = fs.readFileSync(historyPath, "utf8").trim().split("\n");
     assert.equal(lines.length, 2);
     assert.equal(JSON.parse(lines[0]).refusal_correctness, 0.33);

@@ -11,15 +11,15 @@ function tempLogPath() {
   return path.join(os.tmpdir(), `m2_queries_test_${Date.now()}_${Math.random().toString(36).slice(2)}.jsonl`);
 }
 
-test("logInteraction appends one JSON line with the question, path, and full answer text", () => {
+test("logInteraction appends one JSON line with the question, route, and full answer text", () => {
   const logPath = tempLogPath();
   try {
-    logInteraction("minimum replicates required", { path: "A", answered: true, review_status: "reviewed", text: "replicates: at least 5" }, logPath);
+    logInteraction("minimum replicates required", { route: "structured", answered: true, review_status: "reviewed", text: "replicates: at least 5" }, logPath);
     const lines = fs.readFileSync(logPath, "utf8").trim().split("\n");
     assert.equal(lines.length, 1);
     const entry = JSON.parse(lines[0]);
     assert.equal(entry.question, "minimum replicates required");
-    assert.equal(entry.path, "A");
+    assert.equal(entry.route, "structured");
     assert.equal(entry.answered, true);
     assert.equal(entry.review_status, "reviewed");
     assert.equal(entry.answer_text, "replicates: at least 5");
@@ -32,8 +32,8 @@ test("logInteraction appends one JSON line with the question, path, and full ans
 test("logInteraction appends across multiple calls rather than overwriting", () => {
   const logPath = tempLogPath();
   try {
-    logInteraction("q1", { path: "A", answered: true, review_status: "reviewed", text: "a1" }, logPath);
-    logInteraction("q2", { path: null, answered: false, review_status: null, text: "Not found in the current archive." }, logPath);
+    logInteraction("q1", { route: "structured", answered: true, review_status: "reviewed", text: "a1" }, logPath);
+    logInteraction("q2", { route: "refusal", answered: false, review_status: null, text: "Not found in the current archive." }, logPath);
     const lines = fs.readFileSync(logPath, "utf8").trim().split("\n");
     assert.equal(lines.length, 2);
     assert.equal(JSON.parse(lines[0]).question, "q1");
@@ -48,7 +48,7 @@ test("logInteraction creates the log directory if it doesn't exist yet", () => {
   const dir = path.join(os.tmpdir(), `m2_log_dir_test_${Date.now()}`);
   const logPath = path.join(dir, "nested", "m2_queries.jsonl");
   try {
-    logInteraction("q", { path: "B", answered: true, review_status: "reviewed", text: "a" }, logPath);
+    logInteraction("q", { route: "source_excerpts", answered: true, review_status: "reviewed", text: "a" }, logPath);
     assert.ok(fs.existsSync(logPath));
   } finally {
     fs.rmSync(dir, { recursive: true, force: true });
@@ -63,7 +63,7 @@ test("logInteraction records the new additive fields when present, and defaults 
   const logPath = tempLogPath();
   try {
     logInteraction("q", {
-      path: "A",
+      route: "structured",
       answered: true,
       review_status: "reviewed",
       text: "answer",
@@ -87,8 +87,8 @@ test("readInteractions returns [] for a log file that doesn't exist yet, and par
   const logPath = tempLogPath();
   assert.deepEqual(readInteractions(logPath), []);
   try {
-    logInteraction("q1", { path: "A", answered: true, review_status: "reviewed", text: "a1" }, logPath);
-    logInteraction("q2", { path: "B", answered: false, review_status: null, text: "Not found." }, logPath);
+    logInteraction("q1", { route: "structured", answered: true, review_status: "reviewed", text: "a1" }, logPath);
+    logInteraction("q2", { route: "refusal", answered: false, review_status: null, text: "Not found." }, logPath);
     const entries = readInteractions(logPath);
     assert.equal(entries.length, 2);
     assert.equal(entries[0].question, "q1");

@@ -7,9 +7,12 @@
  * force output matching an arbitrary caller-supplied JSON Schema.
  */
 
-function create() {
+const DEFAULT_MODEL = "gpt-5.6-terra";
+
+function create({ model: configuredModel } = {}) {
   const OpenAI = require("openai");
   const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  const defaultModel = configuredModel || DEFAULT_MODEL;
 
   // Default is Terra, not the flagship Sol: extraction/verification here are
   // well-scoped, single-call, schema-constrained tasks, not the "hard
@@ -17,7 +20,7 @@ function create() {
   // matches GPT-5.5-level performance at half Sol's cost. Escalate to
   // gpt-5.6-sol only if a real dry-run measurement shows Terra's accuracy
   // falling short of the existing human-reviewed baseline — not before.
-  async function complete({ system, messages, schema, maxTokens = 1024, model = "gpt-5.6-terra", signal }) {
+  async function complete({ system, messages, schema, maxTokens = 1024, model = defaultModel, signal }) {
     const chatMessages = system ? [{ role: "system", content: system }, ...messages] : [...messages];
 
     if (schema) {
@@ -39,7 +42,7 @@ function create() {
     return { text: response.choices[0].message.content || "" };
   }
 
-  return { complete };
+  return { complete, model: defaultModel };
 }
 
-module.exports = { create };
+module.exports = { create, DEFAULT_MODEL };

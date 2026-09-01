@@ -22,8 +22,7 @@
 
   const state = {
     lang: localStorage.getItem("guideline_lang") || "ko",
-    optionBEnabled: true,
-    optionBMode: null,
+    fallbackMode: null,
     loggingEnabled: true,
     documents: [],
     evidenceOpen: null,
@@ -37,11 +36,8 @@
 
   const el = {
     langToggle: document.getElementById("lang-toggle"),
-    optionBToggle: document.getElementById("optionb-toggle"),
     scopeToggle: document.getElementById("scope-toggle"),
     scopePopover: document.getElementById("scope-popover"),
-    settingsToggle: document.getElementById("settings-toggle"),
-    settingsPopover: document.getElementById("settings-popover"),
     healthStatus: document.getElementById("health-status"),
     healthDot: document.getElementById("health-dot"),
     healthLabel: document.getElementById("health-label"),
@@ -62,9 +58,6 @@
     el.idleWordmark.textContent = t.title;
     el.askInput.placeholder = t.askPlaceholder;
     el.askButton.textContent = t.askButton;
-    const modeLabel = state.optionBMode === "extractive" ? t.optionBExtractive : state.optionBMode === "generative" ? t.optionBGenerative : "";
-    el.optionBToggle.textContent = state.optionBEnabled ? `${t.optionBToggleOn}${modeLabel ? ` · ${modeLabel}` : ""}` : t.optionBToggleOff;
-    el.settingsToggle.textContent = t.settings;
     el.scopeToggle.textContent = state.documents.length ? `${t.archiveScopeTitle} (${state.documents.length})` : t.archiveScopeTitle;
     renderDocList();
   }
@@ -80,11 +73,10 @@
       const res = await fetch("/api/health");
       const body = await res.json();
       el.healthDot.className = "health-dot ok";
-      el.healthLabel.textContent = `${i18n().healthOk} · ${body.documents} docs · ${body.records} records${body.option_b_available ? "" : " · Option B unavailable"}`;
+      el.healthLabel.textContent = `${i18n().healthOk} · ${body.documents} docs · ${body.records} records`;
       el.healthStatus.hidden = true;
-      state.optionBMode = body.option_b_mode || null;
+      state.fallbackMode = body.fallback_mode || null;
       state.loggingEnabled = body.logging_enabled !== false;
-      if (!body.option_b_available) state.optionBEnabled = false;
       applyChrome();
     } catch {
       el.healthDot.className = "health-dot error";
@@ -105,19 +97,19 @@
     }
   }
 
-  const LOADING_PHASES_OPTION_B = ["askButtonLoadingSearch", "askButtonLoadingGenerate", "askButtonLoadingVerify"];
+  const LOADING_PHASES = ["askButtonLoadingSearch", "askButtonLoadingGenerate", "askButtonLoadingVerify"];
 
-  function startLoadingPhases(optionB) {
+  function startLoadingPhases() {
     el.askButton.disabled = true;
-    if (!optionB || state.optionBMode === "extractive") {
-      el.loadingPhase.textContent = i18n()[LOADING_PHASES_OPTION_B[0]];
+    if (state.fallbackMode !== "grounded_generation") {
+      el.loadingPhase.textContent = i18n()[LOADING_PHASES[0]];
       return () => { el.loadingPhase.textContent = ""; el.askButton.disabled = false; };
     }
     let idx = 0;
-    el.loadingPhase.textContent = i18n()[LOADING_PHASES_OPTION_B[0]];
+    el.loadingPhase.textContent = i18n()[LOADING_PHASES[0]];
     const timer = setInterval(() => {
-      idx = Math.min(idx + 1, LOADING_PHASES_OPTION_B.length - 1);
-      el.loadingPhase.textContent = i18n()[LOADING_PHASES_OPTION_B[idx]];
+      idx = Math.min(idx + 1, LOADING_PHASES.length - 1);
+      el.loadingPhase.textContent = i18n()[LOADING_PHASES[idx]];
     }, 1800);
     return () => {
       clearInterval(timer);
@@ -181,7 +173,7 @@
                 question,
                 verdict,
                 note: noteInput.value || null,
-                path: envelope.path,
+                route: envelope.route,
                 mode: envelope.mode,
                 answered: envelope.answered,
                 cited_source_unit_ids: (envelope.claims || []).map((c) => c.source_unit_id).filter(Boolean),
@@ -221,14 +213,13 @@
     if (feedback) el.resultPanel.appendChild(feedback);
   }
 
-  async function ask(question, { forceOptionB } = {}) {
-    const optionB = forceOptionB || state.optionBEnabled;
-    const stopLoading = startLoadingPhases(optionB);
+  async function ask(question) {
+    const stopLoading = startLoadingPhases();
     try {
       const res = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question, allow_option_b: optionB, response_language: state.lang })
+        body: JSON.stringify({ question, allow_fallback: true, response_language: state.lang })
       });
       const envelope = await res.json();
       document.body.classList.remove("idle");
@@ -256,29 +247,15 @@
     renderCurrentResult();
   });
 
-  el.optionBToggle.addEventListener("click", () => {
-    state.optionBEnabled = !state.optionBEnabled;
-    el.optionBToggle.textContent = state.optionBEnabled ? i18n().optionBToggleOn : i18n().optionBToggleOff;
-  });
-
   el.scopeToggle.addEventListener("click", (e) => {
     e.stopPropagation();
     el.scopePopover.hidden = !el.scopePopover.hidden;
     el.scopeToggle.setAttribute("aria-expanded", String(!el.scopePopover.hidden));
   });
-  el.settingsToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    el.settingsPopover.hidden = !el.settingsPopover.hidden;
-    el.settingsToggle.setAttribute("aria-expanded", String(!el.settingsPopover.hidden));
-  });
   document.addEventListener("click", (e) => {
     if (!el.scopePopover.hidden && !el.scopePopover.contains(e.target) && e.target !== el.scopeToggle) {
       el.scopePopover.hidden = true;
       el.scopeToggle.setAttribute("aria-expanded", "false");
-    }
-    if (!el.settingsPopover.hidden && !el.settingsPopover.contains(e.target) && e.target !== el.settingsToggle) {
-      el.settingsPopover.hidden = true;
-      el.settingsToggle.setAttribute("aria-expanded", "false");
     }
   });
   document.addEventListener("keydown", (e) => {
@@ -287,10 +264,6 @@
       el.scopePopover.hidden = true;
       el.scopeToggle.setAttribute("aria-expanded", "false");
       el.scopeToggle.focus();
-    } else if (!el.settingsPopover.hidden) {
-      el.settingsPopover.hidden = true;
-      el.settingsToggle.setAttribute("aria-expanded", "false");
-      el.settingsToggle.focus();
     }
   });
 
@@ -299,15 +272,6 @@
     const q = el.askInput.value.trim();
     if (!q) return;
     ask(q);
-  });
-
-  // Ctrl+Enter forces Option B regardless of the toggle state.
-  el.askInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter" && (e.ctrlKey || e.metaKey)) {
-      e.preventDefault();
-      const q = el.askInput.value.trim();
-      if (q) ask(q, { forceOptionB: true });
-    }
   });
 
   applyChrome();

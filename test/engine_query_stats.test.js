@@ -31,26 +31,26 @@ test("clusterRefusals only keeps tokens that recur across more than one question
   assert.ok(clusters.every((c) => c.count > 1), "a token that appears in only one question is not a cluster");
 });
 
-test("aggregate: basic counts, path split, answer_rate", () => {
+test("aggregate: basic counts, semantic route split, answer_rate", () => {
   const interactions = [
-    { question: "q1", answered: true, path: "A" },
-    { question: "q2", answered: true, path: "B" },
-    { question: "q3", answered: false, path: "B" },
-    { question: "q4", answered: false, path: null }
+    { question: "q1", answered: true, route: "structured" },
+    { question: "q2", answered: true, route: "grounded_generation" },
+    { question: "q3", answered: true, route: "source_excerpts" },
+    { question: "q4", answered: false, route: "refusal" }
   ];
   const stats = aggregate(interactions);
   assert.equal(stats.total, 4);
-  assert.equal(stats.answered, 2);
-  assert.equal(stats.refused, 2);
-  assert.equal(stats.answer_rate, 0.5);
-  assert.deepEqual(stats.by_path, { A: 1, B: 2, null: 1 });
+  assert.equal(stats.answered, 3);
+  assert.equal(stats.refused, 1);
+  assert.equal(stats.answer_rate, 0.75);
+  assert.deepEqual(stats.by_route, { structured: 1, grounded_generation: 1, source_excerpts: 1, refusal: 1 });
 });
 
 test("aggregate: by_document counts citations and distinct-answered-interactions separately", () => {
   const interactions = [
-    { question: "q1", answered: true, path: "A", cited_source_unit_ids: ["ich_m10.su.1.001", "ich_m10.su.1.002"] },
-    { question: "q2", answered: true, path: "A", cited_source_unit_ids: ["ich_m10.su.2.001"] },
-    { question: "q3", answered: true, path: "A", cited_source_unit_ids: ["ema_fih.su.1.001"] }
+    { question: "q1", answered: true, route: "structured", cited_source_unit_ids: ["ich_m10.su.1.001", "ich_m10.su.1.002"] },
+    { question: "q2", answered: true, route: "structured", cited_source_unit_ids: ["ich_m10.su.2.001"] },
+    { question: "q3", answered: true, route: "structured", cited_source_unit_ids: ["ema_fih.su.1.001"] }
   ];
   const stats = aggregate(interactions);
   assert.equal(stats.by_document.ich_m10.cited, 3, "3 total citations to ich_m10 across the two interactions that cite it");
@@ -61,9 +61,9 @@ test("aggregate: by_document counts citations and distinct-answered-interactions
 
 test("aggregate: latency percentiles ignore interactions with no latency_ms (the 44 historical M2 entries predate that field)", () => {
   const interactions = [
-    { question: "q1", answered: true, path: "A", latency_ms: 10 },
-    { question: "q2", answered: true, path: "A", latency_ms: 50 },
-    { question: "q3", answered: true, path: "A" } // no latency_ms at all
+    { question: "q1", answered: true, route: "structured", latency_ms: 10 },
+    { question: "q2", answered: true, route: "structured", latency_ms: 50 },
+    { question: "q3", answered: true, route: "structured" } // no latency_ms at all
   ];
   const stats = aggregate(interactions);
   assert.equal(stats.latencies_measured, 2);

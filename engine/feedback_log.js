@@ -56,7 +56,7 @@ function recordFeedback(entry, logPath = process.env.GUIDELINE_FEEDBACK_LOG_PATH
     question: entry.question,
     verdict: entry.verdict,
     note: entry.note ?? null,
-    path: entry.path ?? null,
+    route: entry.route ?? null,
     mode: entry.mode ?? null,
     answered: entry.answered ?? null,
     cited_source_unit_ids: entry.cited_source_unit_ids || [],

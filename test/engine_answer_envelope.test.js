@@ -9,7 +9,7 @@ const fixture = require("./fixtures/eval_questions.json");
 const { records, index } = loadStore();
 
 // M5 Phase 2 (history/verification/engine_test_record_through_2026-08-28.md Entry 008 / M5 plan): the envelope
-// mirrors structuredQuery/answerOptionB directly rather than wrapping
+// mirrors structuredQuery/answerFallback directly rather than wrapping
 // answer()'s output, so it's a genuinely separate control flow. This is
 // the test that catches drift between the two — written before relying
 // on the envelope for anything else.
@@ -38,12 +38,12 @@ test("every envelope claim has a non-empty, resolvable source_unit_id (the citat
   assert.ok(claimsChecked > 0, "expected at least one claim across the fixture");
 });
 
-test("envelope shape is always fully populated, whichever mode/path is taken", async () => {
+test("envelope shape is always fully populated, whichever semantic route is taken", async () => {
   const hit = await answerEnvelope("minimum replicates required at each QC concentration level", records, { index });
   assert.equal(hit.envelope_version, ENVELOPE_VERSION);
   assert.equal(hit.answered, true);
   assert.equal(hit.mode, "structured");
-  assert.equal(hit.path, "A");
+  assert.equal(hit.route, "structured");
   assert.equal(typeof hit.prose, "string");
   assert.equal(hit.refusal, null);
   assert.ok(Array.isArray(hit.claims) && hit.claims.length > 0);
@@ -52,19 +52,19 @@ test("envelope shape is always fully populated, whichever mode/path is taken", a
   assert.ok(["reviewed", "needs_review"].includes(hit.review_status));
   assert.equal(typeof hit.timing_ms, "number");
 
-  const refusalNoProvider = await answerEnvelope("what is the meaning of life", records, { index });
-  assert.equal(refusalNoProvider.answered, false);
-  assert.equal(refusalNoProvider.mode, "refusal");
-  assert.equal(refusalNoProvider.path, null);
-  assert.equal(refusalNoProvider.refusal.kind, "no_provider");
-  assert.deepEqual(refusalNoProvider.claims, []);
-  assert.deepEqual(refusalNoProvider.answer_units, []);
+  const refusal = await answerEnvelope("what is the meaning of life", records, { index });
+  assert.equal(refusal.answered, false);
+  assert.equal(refusal.mode, "refusal");
+  assert.equal(refusal.route, "refusal");
+  assert.equal(refusal.refusal.kind, "no_match");
+  assert.deepEqual(refusal.claims, []);
+  assert.deepEqual(refusal.answer_units, []);
 });
 
 test("mode discriminates comparison, amendment, and list distinctly — the information answer()'s own top-level result never exposed", async () => {
   const comparison = await answerEnvelope("FDA ADA vs ICH M10 LBA 밸리데이션 차이점 비교", records, { index });
   assert.equal(comparison.mode, "comparison");
-  assert.equal(comparison.path, "A");
+  assert.equal(comparison.route, "structured");
 
   const amendment = await answerEnvelope("ICH S6 Addendum의 주요 개정 이력 및 Note 내용", records, { index });
   assert.equal(amendment.mode, "amendment");
@@ -73,13 +73,13 @@ test("mode discriminates comparison, amendment, and list distinctly — the info
   assert.equal(list.mode, "list");
 });
 
-// --- Option B via envelope (mocked client + store, no network) ---
+// --- Grounded fallback routes via envelope (mocked clients + store, no network) ---
 
 function fakeStore(candidateRecords) {
   return { search: async () => candidateRecords.map((record) => ({ record, score: 1 })) };
 }
 
-test("Option B success and refusal both produce a fully-shaped envelope", async () => {
+test("grounded-generation success and verification fallback both produce a fully-shaped envelope", async () => {
   const candidate = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
   const successClient = {
     complete: async ({ schema }) => schema.properties.verdicts
@@ -88,8 +88,8 @@ test("Option B success and refusal both produce a fully-shaped envelope", async 
   };
   const success = await answerEnvelope("replicate count", records, { client: successClient, store: fakeStore([candidate]), index });
   assert.equal(success.answered, true);
-  assert.equal(success.mode, "rag");
-  assert.equal(success.path, "B");
+  assert.equal(success.mode, "generated");
+  assert.equal(success.route, "grounded_generation");
   assert.ok(success.claims.length > 0);
   for (const claim of success.claims) assert.ok(claim.source_unit_id);
 
@@ -98,14 +98,14 @@ test("Option B success and refusal both produce a fully-shaped envelope", async 
       ? { verdicts: [{ unit_index: 0, entailed: false, source_index: null, reason: "not supported" }] }
       : { answered: true, units: [{ text: "This is fabricated." }] }
   };
-  const refused = await answerEnvelope("replicate count", records, { client: failClient, store: fakeStore([candidate]), index });
-  assert.equal(refused.answered, false);
-  assert.equal(refused.mode, "refusal");
-  assert.equal(refused.path, "B");
-  assert.equal(refused.refusal.kind, "verification_failed");
+  const excerpts = await answerEnvelope("replicate count", records, { client: failClient, store: fakeStore([candidate]), index });
+  assert.equal(excerpts.answered, true);
+  assert.equal(excerpts.mode, "source_excerpts");
+  assert.equal(excerpts.route, "source_excerpts");
+  assert.equal(excerpts.answer_units[0].text, candidate.source_text);
 });
 
-test("a scope-excluded Option B query produces refusal.kind = scope_excluded via the envelope", async () => {
+test("a scope-excluded fallback query produces refusal.kind = scope_excluded via the envelope", async () => {
   const excluded = records.find((r) => r.id === "ich_s6_r1.kr.part1.3_3.001");
   assert.ok(excluded);
   const client = { complete: async () => { throw new Error("must not be called"); } };

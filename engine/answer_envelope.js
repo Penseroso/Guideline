@@ -9,17 +9,17 @@
  * render generically, since Phase 1 made every answer-producing function
  * attach `claims` to its match object before formatting.
  *
- * Mirrors structuredQuery/answerOptionB's own control flow directly,
+ * Mirrors structuredQuery/answerFallback's own control flow directly,
  * rather than wrapping answer()'s already-lossy `text` output — mode
  * isn't recoverable from that string. `prose` is still exactly what
  * answer()/the CLI would show, so the API and CLI can never tell two
  * different stories about the same question.
  */
 
-const { structuredQuery, formatAnswer, answerOptionB, explainRefusal, NOT_FOUND } = require("./query_router");
+const { structuredQuery, formatAnswer, answerFallback, explainRefusal, NOT_FOUND } = require("./query_router");
 const { presentClaims } = require("./answer_presenter");
 
-const ENVELOPE_VERSION = "1.1.0";
+const ENVELOPE_VERSION = "2.0.0";
 
 function modeForMatch(match) {
   if (match.isComparison) return "comparison";
@@ -39,20 +39,20 @@ function reviewStatusFor(match) {
 
 /**
  * answerEnvelope(question, records, { generatorClient, verifierClient,
- * store, index, signal, optionBMode }) -> envelope
+ * store, index, signal, fallbackMode }) -> envelope
  *
  * Always returns the same shape:
- *   { envelope_version, answered, mode, path, prose, refusal, claims,
+ *   { envelope_version, answered, mode, route, prose, refusal, claims,
  *     answer_units, review_status, timing_ms }
  *
  * `refusal` is null when answered; otherwise
  *   { kind: "no_match"|"scope_excluded"|"no_candidates"|"model_declined"|"verification_failed"|"no_provider", reason: string|null }
  *
  * `claims` entries are always { record, source_unit_id, citation } — see
- * engine/query_router.js's deriveClaimsFromRecords / answerOptionB, and
+ * engine/query_router.js's deriveClaimsFromRecords / answerFallback, and
  * comparison_engine.js/amendment_engine.js's own claim construction.
  * Deliberately no `score`/confidence field anywhere (product_roadmap.md
- * §1.4 — path A/B is the only sanctioned confidence signal).
+ * §1.4 — the semantic route is the only sanctioned confidence signal).
  */
 async function answerEnvelope(question, records, {
   client,
@@ -62,7 +62,7 @@ async function answerEnvelope(question, records, {
   index,
   responseLanguage = "ko",
   signal,
-  optionBMode
+  fallbackMode
 } = {}) {
   const start = Date.now();
   const match = structuredQuery(question, records, index);
@@ -72,7 +72,7 @@ async function answerEnvelope(question, records, {
       envelope_version: ENVELOPE_VERSION,
       answered: true,
       mode: modeForMatch(match),
-      path: "A",
+      route: "structured",
       prose: formatAnswer(match),
       refusal: null,
       claims: match.claims || [],
@@ -82,14 +82,14 @@ async function answerEnvelope(question, records, {
     };
   }
 
-  if ((!generatorClient && optionBMode !== "extractive") || !store) {
+  if (!store) {
     return {
       envelope_version: ENVELOPE_VERSION,
       answered: false,
       mode: "refusal",
-      path: null,
+      route: "refusal",
       prose: NOT_FOUND,
-      refusal: { kind: !generatorClient && !store ? "no_provider" : explainRefusal(question, records), reason: null },
+      refusal: { kind: explainRefusal(question, records), reason: null },
       claims: [],
       answer_units: [],
       review_status: null,
@@ -97,13 +97,13 @@ async function answerEnvelope(question, records, {
     };
   }
 
-  const result = await answerOptionB(question, records, { generatorClient, verifierClient, store, responseLanguage, signal, optionBMode });
+  const result = await answerFallback(question, records, { generatorClient, verifierClient, store, responseLanguage, signal, fallbackMode });
   if (!result.answered) {
     return {
       envelope_version: ENVELOPE_VERSION,
       answered: false,
       mode: "refusal",
-      path: "B",
+      route: "refusal",
       prose: result.text,
       refusal: { kind: result.refusal_reason || "no_match", reason: result.text === NOT_FOUND ? null : result.text },
       claims: [],
@@ -116,8 +116,8 @@ async function answerEnvelope(question, records, {
   return {
     envelope_version: ENVELOPE_VERSION,
     answered: true,
-    mode: result.mode || "rag",
-    path: "B",
+    mode: result.mode || "generated",
+    route: result.route,
     prose: result.text,
     refusal: null,
     claims: result.claims || [],

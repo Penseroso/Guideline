@@ -2,7 +2,7 @@
  * Provider-agnostic LLM boundary (product_roadmap.md §2.5, "provider
  * chosen by env var, not hardcoded"). Extraction/verification/generation
  * code (engine/extraction_agent.js, engine/verification_agent.js,
- * engine/query_router.js Option B) must only ever call `complete()`
+ * engine/query_router.js grounded generation) must only ever call `complete()`
  * from here — never import an SDK directly — so swapping or running
  * both providers side by side (e.g. extraction on one, verification
  * on a different one, per product_roadmap.md §2.5.1's correlated-
@@ -15,7 +15,7 @@
  *       and returns the parsed object directly.
  *     - when schema is omitted, returns { text: "..." } (plain
  *       completion — used for the entailment yes/no check and for
- *       Option B's constrained generation).
+ *       grounded answer generation).
  */
 
 require("dotenv").config({ path: require("path").resolve(__dirname, "..", ".env"), quiet: true });
@@ -32,10 +32,11 @@ function availableProviders() {
 }
 
 /**
- * @param {"anthropic"|"openai"} [preferred] - required provider; if
- *   omitted, picks the first configured provider in PROVIDERS order.
+ * @param {"anthropic"|"openai"} [preferred] - required provider; if omitted,
+ *   picks the first configured provider in PROVIDERS order.
+ * @param {{model?: string}} [options] - optional per-role model selection.
  */
-function createClient(preferred) {
+function createClient(preferred, { model } = {}) {
   const candidates = preferred ? [preferred] : Object.keys(PROVIDERS);
 
   for (const name of candidates) {
@@ -43,7 +44,7 @@ function createClient(preferred) {
     if (!cfg) throw new Error(`llm_client: unknown provider "${name}". Known: ${Object.keys(PROVIDERS).join(", ")}`);
     if (process.env[cfg.envVar]) {
       const adapter = require(cfg.module);
-      return { provider: name, ...adapter.create() };
+      return { provider: name, ...adapter.create({ model }) };
     }
   }
 

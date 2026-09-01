@@ -31,18 +31,18 @@ function assertAllClaimsGrounded(claims, label) {
   }
 }
 
-test("every answer-expected gold question that resolves via Option A produces a fully grounded claims list", () => {
+test("every answer-expected gold question that resolves via structured routing produces a fully grounded claims list", () => {
   let checked = 0;
   for (const q of fixture.questions) {
     if (!q.expect_answered) continue;
     const match = structuredQuery(q.question, records, index);
-    if (!match) continue; // falls through to Option B in the real system; not this test's concern
+    if (!match) continue; // falls through to grounded retrieval in the real system; not this test's concern
     assertAllClaimsGrounded(match.claims, q.id);
     checked++;
   }
   // Sanity: this must actually have exercised a meaningful number of
-  // real Option A matches, not silently checked zero.
-  assert.ok(checked >= 10, `expected to check at least 10 Option A matches, only checked ${checked}`);
+  // real structured matches, not silently checked zero.
+  assert.ok(checked >= 10, `expected to check at least 10 structured matches, only checked ${checked}`);
 });
 
 test("every mode independently: structured single record, criterion, list-composite, sibling-composite, comparison, amendment", () => {

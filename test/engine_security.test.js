@@ -28,7 +28,7 @@ async function withServer(options, fn) {
 
 test("POST APIs reject browser-simple cross-origin bodies and non-object JSON", async () => {
   await withServer({}, async ({ base }) => {
-    const payload = JSON.stringify({ question: "minimum replicates required at each QC concentration level", allow_option_b: false });
+    const payload = JSON.stringify({ question: "minimum replicates required at each QC concentration level", allow_fallback: false });
     const textPlain = await fetch(`${base}/api/ask`, {
       method: "POST",
       headers: { "Content-Type": "text/plain", Origin: "https://attacker.example" },
@@ -88,7 +88,7 @@ test("logging opt-out writes no interaction file and disables feedback persisten
     const ask = await fetch(`${base}/api/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question: "minimum replicates required at each QC concentration level", allow_option_b: false })
+      body: JSON.stringify({ question: "minimum replicates required at each QC concentration level", allow_fallback: false })
     });
     assert.equal(ask.status, 200);
     assert.equal(fs.existsSync(queryLogPath), false);
@@ -106,7 +106,7 @@ test("logging opt-out writes no interaction file and disables feedback persisten
   });
 });
 
-test("Option B deadline aborts provider requests and never exceeds two active tasks", async () => {
+test("grounded-generation deadline aborts provider requests and never exceeds two active tasks", async () => {
   const { records } = loadStore();
   const candidate = records.find((record) => record.type === "quantitative_criterion" && record.parameter === "replicates");
   let active = 0;
@@ -134,13 +134,13 @@ test("Option B deadline aborts provider requests and never exceeds two active ta
   const store = { search: async () => [{ record: candidate, score: 1 }] };
 
   await withServer({
-    deps: { generatorClient, verifierClient, store, provider: "mock-a", verifierProvider: "mock-b", optionBMode: "generative" },
-    optionBTimeoutMs: 25
+    deps: { generatorClient, verifierClient, store, generatorProvider: "mock-a", verifierProvider: "mock-b", fallbackMode: "grounded_generation" },
+    fallbackTimeoutMs: 25
   }, async ({ base }) => {
     const request = () => fetch(`${base}/api/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question: "zzzz option b deadline probe", allow_option_b: true })
+      body: JSON.stringify({ question: "zzzz grounded generation deadline probe", allow_fallback: true })
     });
     const responses = await Promise.all([request(), request(), request(), request()]);
     assert.deepEqual(responses.map((response) => response.status), [504, 504, 504, 504]);
@@ -156,12 +156,14 @@ test("a provider that ignores AbortSignal does not cause early semaphore release
   let active = 0;
   let maxActive = 0;
   let generationCalls = 0;
+  let releaseTasks;
+  const taskGate = new Promise((resolve) => { releaseTasks = resolve; });
   const generatorClient = {
     complete: async () => {
       generationCalls++;
       active++;
       maxActive = Math.max(maxActive, active);
-      await new Promise((resolve) => setTimeout(resolve, 120));
+      await taskGate;
       active--;
       return { answered: true, units: [{ text: "late" }] };
     }
@@ -170,20 +172,24 @@ test("a provider that ignores AbortSignal does not cause early semaphore release
   const store = { search: async () => [{ record: candidate, score: 1 }] };
 
   await withServer({
-    deps: { generatorClient, verifierClient, store, provider: "mock-a", verifierProvider: "mock-b", optionBMode: "generative" },
-    optionBTimeoutMs: 20
+    deps: { generatorClient, verifierClient, store, generatorProvider: "mock-a", verifierProvider: "mock-b", fallbackMode: "grounded_generation" },
+    fallbackTimeoutMs: 20
   }, async ({ base }) => {
     const request = () => fetch(`${base}/api/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question: "zzzz ignored abort probe", allow_option_b: true })
+      body: JSON.stringify({ question: "zzzz ignored abort probe", allow_fallback: true })
     });
-    const first = await Promise.all([request(), request()]);
-    assert.deepEqual(first.map((response) => response.status), [504, 504]);
-    const third = await request();
-    assert.equal(third.status, 504);
-    assert.equal(maxActive, 2);
-    assert.equal(generationCalls, 2, "timed-out underlying tasks must retain their slots");
-    await new Promise((resolve) => setTimeout(resolve, 130));
+    try {
+      const first = await Promise.all([request(), request()]);
+      assert.deepEqual(first.map((response) => response.status), [504, 504]);
+      const third = await request();
+      assert.equal(third.status, 504);
+      assert.equal(maxActive, 2);
+      assert.equal(generationCalls, 2, "timed-out underlying tasks must retain their slots");
+    } finally {
+      releaseTasks();
+      await new Promise((resolve) => setImmediate(resolve));
+    }
   });
 });

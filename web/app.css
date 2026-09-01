@@ -75,7 +75,7 @@ a { color: var(--accent); }
 .app-header-right { display: flex; align-items: center; gap: 8px; }
 .health-status { margin-right: 8px; }
 .health-dot { width: 6px; height: 6px; margin-right: 6px; border-radius: 50%; display: inline-block; background: var(--error-text); }
-.lang-toggle, .optionb-toggle, .scope-toggle, .settings-toggle {
+.lang-toggle, .scope-toggle {
   border: 0;
   border-radius: 5px;
   padding: 6px 9px;
@@ -84,10 +84,10 @@ a { color: var(--accent); }
   cursor: pointer;
   transition: background .18s ease, color .18s ease, transform .18s ease;
 }
-.lang-toggle:hover, .optionb-toggle:hover, .scope-toggle:hover, .settings-toggle:hover { background: var(--accent-tint); color: var(--text); }
-.lang-toggle:active, .optionb-toggle:active, .scope-toggle:active, .settings-toggle:active { transform: translateY(1px); }
-.scope-wrap, .settings-wrap { position: relative; }
-.scope-popover, .settings-popover {
+.lang-toggle:hover, .scope-toggle:hover { background: var(--accent-tint); color: var(--text); }
+.lang-toggle:active, .scope-toggle:active { transform: translateY(1px); }
+.scope-wrap { position: relative; }
+.scope-popover {
   position: absolute;
   z-index: 20;
   top: calc(100% + 8px);
@@ -101,7 +101,6 @@ a { color: var(--accent); }
   border-radius: 8px;
   box-shadow: 0 14px 35px rgba(35, 47, 40, .14);
 }
-.settings-popover { width: max-content; padding: 8px; }
 .doc-list { list-style: none; margin: 0; padding: 0; }
 .doc-item { display: flex; justify-content: space-between; gap: 16px; padding: 8px 0; border-top: 1px solid var(--border); }
 .doc-item:first-child { border-top: 0; }

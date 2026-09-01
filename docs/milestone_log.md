@@ -8,7 +8,7 @@ Completed 2026-08-18. Established the source hierarchy, evidence-first schema di
 
 ## M1 — Chatbot MVP and extraction/verification pipeline
 
-Completed 2026-08-19. Delivered structured Option A, grounded Option B, schema-constrained extraction, independent verification, citation/refusal evaluation, and the versioned engine baseline.
+Completed 2026-08-19. Delivered structured evidence answers, grounded generation, schema-constrained extraction, independent verification, citation/refusal evaluation, and the versioned engine baseline.
 
 ## M2 — Real-use gap discovery
 
@@ -24,11 +24,11 @@ Completed 2026-08-27. Cross-guideline comparison and amendment views render only
 
 ## M5 — Local-first production MVP
 
-Core MVP completed 2026-08-28: HTTP API, minimal web UI, authentication, monitoring aggregation, feedback capture, answer-page readability, and engine security hardening. Generative Option B requires two distinct providers; one configured provider uses zero-generation extractive fallback.
+Core MVP completed 2026-08-28; semantic routing revised 2026-09-01. The HTTP/API contract now names the actual outcomes (`structured`, `grounded_generation`, `source_excerpts`, `refusal`) instead of A/B paths. Local source retrieval is always available without a key. A single OpenAI key uses distinct default generator/verifier models; failed generation or verification falls back to verbatim source excerpts.
 
 Open work:
 
-- Live integration verification with two distinct providers.
+- Live integration verification for both same-provider cross-model and two-provider configurations.
 - Post-M1 extraction-accuracy re-measurement after representative ground truth exists.
 - Deployment target, TLS termination, and retention policy remain intentionally undecided while the product stays local-first.
 

@@ -6,7 +6,7 @@
  *   - extraction-time: does a drafted KnowledgeRecord/QuantitativeCriterion/
  *     Condition actually follow from its cited source_text (dry-run/
  *     ongoing drift monitoring, §2.5.1).
- *   - answer-time: does a generated answer sentence (Option B) actually
+ *   - answer-time: does a grounded generated answer sentence actually
  *     follow from the source_text of the record it cites, before the
  *     answer is shown to the user (§2.6 item 4).
  * Never trusted to grade itself — prefer a different provider/model

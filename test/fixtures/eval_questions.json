@@ -33,7 +33,7 @@
       "id": "q6_fih_starting_dose",
       "question": "what is the recommended starting dose for first-in-human phase 1 trials",
       "expect_answered": false,
-      "note": "Option A must abstain rather than answer a starting-dose question with the sentinel-dosing subject-count record. A grounded Option B answer remains allowed when configured."
+      "note": "Structured routing must abstain rather than answer a starting-dose question with the sentinel-dosing subject-count record. A grounded generated answer remains allowed when configured."
     },
     {
       "id": "q7_refusal",
@@ -82,7 +82,7 @@
       "expect_answered": true,
       "expect_citation_contains": "M10 §2.2.1",
       "expect_text_contains": "Full Validation",
-      "note": "Full validation is 100% structured in ICH M10 §2.2.1 and returned via Option A list composite query."
+      "note": "Full validation is 100% structured in ICH M10 §2.2.1 and returned by the structured list-composite route."
     },
     {
       "id": "q14_scope_small_molecule_species_refusal",

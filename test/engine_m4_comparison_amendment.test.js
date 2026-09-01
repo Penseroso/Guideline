@@ -149,10 +149,10 @@ test("amendment resolution falls back to a real record in the same section when 
   }
 });
 
-test("answer() executes Option A for cross-guideline comparisons with 0 LLM calls", async () => {
+test("answer() uses the structured route for cross-guideline comparisons with 0 LLM calls", async () => {
   const res = await answer("EMA FIH와 ICH S6의 비임상 동물종 선정 기준 비교", records);
   assert.equal(res.answered, true);
-  assert.equal(res.path, "A");
+  assert.equal(res.route, "structured");
   assert.match(res.text, /규제 가이던스 상호 비교 분석/);
   assert.match(res.text, /EMA/);
   assert.match(res.text, /S6/);

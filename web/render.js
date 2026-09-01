@@ -125,10 +125,9 @@
   }
 
   function answerUnits(envelope, i18n) {
-    // Path B prose is generated in the requested response language. Path A can
-    // be re-presented locally so changing the UI language does not leave stale
-    // answer text on screen or trigger another query.
-    if (envelope.path === "B" && Array.isArray(envelope.answer_units) && envelope.answer_units.length) return envelope.answer_units;
+    // Generated answers and source excerpts must preserve the server-provided
+    // units. Structured answers can be re-presented locally on language change.
+    if (envelope.route !== "structured" && Array.isArray(envelope.answer_units) && envelope.answer_units.length) return envelope.answer_units;
     return (envelope.claims || []).map((claim) => ({
       text: claim.record && i18n && i18n.locale === "ko" && claim.record.normalized_ko && claim.record.normalization_status === "reviewed"
         ? claim.record.normalized_ko
@@ -154,13 +153,13 @@
   }
 
   function renderVerdictBar(envelope, i18n) {
-    if (envelope.path === "A") return `<div class="verdict verdict-a">${escapeHtml(i18n.pathALabel)} · ${escapeHtml(i18n.pathASub)}</div>`;
-    if (envelope.path === "B" && envelope.mode === "extractive") return `<div class="verdict verdict-b">${escapeHtml(i18n.pathExtractiveLabel)} · ${escapeHtml(i18n.pathExtractiveSub)}</div>`;
-    if (envelope.path === "B") return `<div class="verdict verdict-b">${escapeHtml(i18n.pathBLabel)} · ${escapeHtml(i18n.pathBSub)}</div>`;
+    if (envelope.route === "structured") return `<div class="verdict verdict-structured">${escapeHtml(i18n.structuredRouteLabel)} · ${escapeHtml(i18n.structuredRouteSub)}</div>`;
+    if (envelope.route === "source_excerpts") return `<div class="verdict verdict-excerpts">${escapeHtml(i18n.sourceExcerptsRouteLabel)} · ${escapeHtml(i18n.sourceExcerptsRouteSub)}</div>`;
+    if (envelope.route === "grounded_generation") return `<div class="verdict verdict-generated">${escapeHtml(i18n.generatedRouteLabel)} · ${escapeHtml(i18n.generatedRouteSub)}</div>`;
     return "";
   }
 
-  const REFUSAL_SUBTEXT = { no_match: (t) => t.refusalNoMatch, scope_excluded: (t) => t.refusalScopeExcluded, no_provider: (t) => t.refusalNoProvider,
+  const REFUSAL_SUBTEXT = { no_match: (t) => t.refusalNoMatch, scope_excluded: (t) => t.refusalScopeExcluded,
     no_candidates: (t) => t.refusalNoMatch, model_declined: (t) => t.refusalNoMatch, verification_failed: (t) => t.refusalVerificationFailed };
 
   function renderRefusalCard(envelope, i18n) {

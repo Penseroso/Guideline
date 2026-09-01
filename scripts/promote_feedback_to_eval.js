@@ -20,7 +20,7 @@ const fs = require("fs");
 const path = require("path");
 
 const { loadStore } = require("../engine/data_store");
-const { setUpOptionB } = require("../engine/cli");
+const { setUpAnswering } = require("../engine/cli");
 const { answerEnvelope } = require("../engine/answer_envelope");
 const { readFeedback } = require("../engine/feedback_log");
 
@@ -32,23 +32,26 @@ async function main() {
   }
 
   const { records, index } = loadStore();
-  const optionB = setUpOptionB(records);
-  const { provider, optionBMode } = optionB;
-  console.log(`Found ${feedback.length} untriaged feedback entries. Re-running each live${optionBMode === "generative" ? ` (Option B via ${provider})` : optionBMode === "extractive" ? " (Option B extractive)" : " (Option A only — no LLM provider configured)"}.\n`);
+  const setup = setUpAnswering(records);
+  const { generatorProvider, generatorModel, verifierProvider, verifierModel, fallbackMode } = setup;
+  const routeSummary = fallbackMode === "grounded_generation"
+    ? `grounded generation (${generatorProvider}/${generatorModel} + ${verifierProvider}/${verifierModel})`
+    : "structured evidence with source-excerpt fallback";
+  console.log(`Found ${feedback.length} untriaged feedback entries. Re-running each through ${routeSummary}.\n`);
 
   for (const entry of feedback) {
-    const envelope = await answerEnvelope(entry.question, records, { ...optionB, index });
+    const envelope = await answerEnvelope(entry.question, records, { ...setup, index });
     console.log("=".repeat(70));
     console.log(`feedback_id: ${entry.feedback_id}`);
     console.log(`question:    ${JSON.stringify(entry.question)}`);
     console.log(`verdict:     ${entry.verdict}${entry.note ? ` (${entry.note})` : ""}`);
-    console.log(`originally:  answered=${entry.answered}, path=${entry.path}, mode=${entry.mode}`);
-    console.log(`now:         answered=${envelope.answered}, path=${envelope.path}, mode=${envelope.mode}`);
+    console.log(`originally:  answered=${entry.answered}, route=${entry.route || entry.path}, mode=${entry.mode}`);
+    console.log(`now:         answered=${envelope.answered}, route=${envelope.route}, mode=${envelope.mode}`);
     console.log(`current answer: ${envelope.prose.split("\n")[0].slice(0, 140)}`);
 
     if (entry.verdict === "wrongly_refused") {
       if (envelope.answered) {
-        console.log(`\n→ This question is now ANSWERED (${envelope.mode}/${envelope.path}) — no longer a gap. Consider a normal fixture entry, not known_gap.`);
+        console.log(`\n→ This question is now ANSWERED (${envelope.route}/${envelope.mode}) — no longer a gap. Consider a normal fixture entry, not known_gap.`);
         printCandidate(entry, envelope, { asKnownGap: false });
       } else {
         console.log(`\n→ Still refuses. Candidate as a tracked known_gap (excluded from the pass/fail gate, still run and reported):`);

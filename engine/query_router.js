@@ -4,7 +4,7 @@ const { isComparisonQuery, answerComparison, formatComparativeAnswer } = require
 const { isAmendmentQuery, answerAmendment, formatAmendmentAnswer } = require("./amendment_engine");
 
 /**
- * Minimum score and token count required for Option A structured matching.
+ * Minimum score and token count required for structured matching.
  */
 const MIN_CONFIDENT_MATCH_SCORE = 3.0;
 const MIN_MATCHED_TOKENS = 2;
@@ -31,14 +31,14 @@ function deriveClaimsFromRecords(recs) {
 
 /**
  * Scope Guard: true if `record` must be rejected for `queryScope`. Shared
- * between Option A's scoreRecord (below) and Option B's candidate filter
- * (answerOptionB) so the two paths cannot silently diverge again — found
- * live, history/verification/engine_test_record_through_2026-08-28.md Entry 007: Option B previously re-derived the
+ * between structured scoreRecord (below) and fallback candidate filtering
+ * (`answerFallback`) so the routes cannot silently diverge again — found
+ * live, history/verification/engine_test_record_through_2026-08-28.md Entry 007: fallback retrieval previously re-derived the
  * same queryScope but only checked explicit_exclusions, so a genuinely
  * scope-excluded query (e.g. small-molecule species selection, where
  * S6(R1) is the only species-selection content and is biotechnology-only)
  * fell through to generating an answer from topically-adjacent-but-wrong
- * documents instead of refusing the way Option A correctly does.
+ * documents instead of refusing the way structured routing correctly does.
  */
 function scopeGuardReject(record, queryScope) {
   if (queryScope.target_molecule && record.explicit_exclusions && record.explicit_exclusions.includes(queryScope.target_molecule)) {
@@ -66,7 +66,7 @@ function scopeGuardReject(record, queryScope) {
  * Narrow answer-relevance guard. Scope matching alone is not enough for
  * starting-dose questions: a sentinel-dosing record about how many
  * subjects receive the first dose shares many tokens but answers a
- * different question. Keep this shared between Option A and B.
+ * different question. Keep this shared across structured and fallback routes.
  */
 function relevanceGuardReject(record, queryScope) {
   if (queryScope.target_topic !== "starting_dose" || !queryScope.require_starting_dose_focus) return false;
@@ -290,7 +290,7 @@ function tryListCompositeQuery(scored, qTokens, question) {
 }
 
 /**
- * Option A: structured match, no generation. Returns the best-scoring
+ * Structured match, no generation. Returns the best-scoring
  * answerable match (single or sibling composite), or null if nothing scores
  * above the confidence threshold or if top candidates are in conflict (abstention).
  */
@@ -381,7 +381,7 @@ function structuredQuery(question, records, index = null) {
   }
 
   // Case 4: Ambiguous / conflicting tie between different records
-  // -> ABSTAIN to prevent arbitrary lottery winner, safely delegate to Option B
+  // -> ABSTAIN to prevent an arbitrary winner, safely delegate to fallback retrieval
   return null;
 }
 
@@ -538,19 +538,19 @@ function formatAnswer(match) {
 
 const NOT_FOUND = "Not found in the current archive.";
 
-const OPTION_B_TOP_K = 5;
-const OPTION_B_EXTRACTIVE_K = 3;
-const OPTION_B_MAX_ANSWER_UNITS = 8;
+const FALLBACK_TOP_K = 5;
+const SOURCE_EXCERPT_LIMIT = 3;
+const GENERATED_ANSWER_UNIT_LIMIT = 8;
 
 /**
- * Option B: schema-anchored grounded RAG fallback (product_roadmap.md
- * §2.2 Option B, §2.5.1). Retrieves top-k candidates from the vector
+ * Grounded fallback routing. Retrieves top-k candidates from the vector
  * store, constrains generation to those excerpts only, then runs the
- * constrains generation to at most eight structured answer units, then
+ * generation to at most eight structured answer units, then
  * verifies every unit against the retrieved sources in one independent
- * batch. Any missing or unsupported unit makes the whole answer refuse.
+ * batch. A declined or failed generation falls back to verbatim source
+ * excerpts; only an empty retrieval result becomes a refusal.
  */
-function optionBGenerationSchema() {
+function groundedGenerationSchema() {
   return {
     type: "object",
     additionalProperties: false,
@@ -559,7 +559,7 @@ function optionBGenerationSchema() {
       answered: { type: "boolean" },
       units: {
         type: "array",
-        maxItems: OPTION_B_MAX_ANSWER_UNITS,
+        maxItems: GENERATED_ANSWER_UNIT_LIMIT,
         items: {
           type: "object",
           additionalProperties: false,
@@ -597,7 +597,7 @@ function batchVerificationSchema(unitCount, sourceCount) {
   };
 }
 
-function optionBResult(items, mode) {
+function groundedResult(items, route, mode) {
   const claims = [];
   const answerUnits = [];
   const seen = new Set();
@@ -621,28 +621,28 @@ function optionBResult(items, mode) {
     candidates: groundedRecords,
     claims,
     answer_units: answerUnits,
-    path: "B",
+    route,
     mode,
     review_status: groundedRecords.some((record) => record.review_status !== "reviewed") ? "needs_review" : "reviewed"
   };
 }
 
-async function answerOptionB(question, records, {
+async function answerFallback(question, records, {
   client,
   generatorClient = client,
   verifierClient = client,
   store,
   responseLanguage,
   signal,
-  optionBMode = "generative"
+  fallbackMode = "grounded_generation"
 } = {}) {
   const qTokens = new Set(tokenize(question));
   const queryScope = extractQueryScope(question, qTokens);
   queryScope.require_starting_dose_focus = /\b(?:starting|initial) dose\b|시작\s*용량|초기\s*용량/i.test(question);
 
-  let rawCandidates = await store.search(question, OPTION_B_TOP_K * 2);
+  let rawCandidates = await store.search(question, FALLBACK_TOP_K * 2);
 
-  // Scope Guard: same rejection Option A's scoreRecord applies (shared
+  // Scope Guard: same rejection as structured scoreRecord applies (shared
   // scopeGuardReject), not just an explicit_exclusions check — see that
   // function's comment / history/verification/engine_test_record_through_2026-08-28.md Entry 007 for why this
   // matters: without it, a genuinely scope-excluded query silently
@@ -650,21 +650,22 @@ async function answerOptionB(question, records, {
   let candidates = rawCandidates.filter(({ record }) =>
     !scopeGuardReject(record, queryScope) && !relevanceGuardReject(record, queryScope)
   );
-  candidates = candidates.slice(0, OPTION_B_TOP_K);
+  candidates = candidates.slice(0, FALLBACK_TOP_K);
 
   if (candidates.length === 0) {
-    return { answered: false, text: NOT_FOUND, record: null, path: "B", refusal_reason: hasScopeConstraint(queryScope) ? "scope_excluded" : "no_candidates" };
+    return { answered: false, text: NOT_FOUND, record: null, route: "refusal", refusal_reason: hasScopeConstraint(queryScope) ? "scope_excluded" : "no_candidates" };
   }
 
-  if (optionBMode === "extractive") {
-    return optionBResult(candidates.slice(0, OPTION_B_EXTRACTIVE_K).map((candidate) => ({
+  const sourceExcerptResult = (fallbackReason = null) => ({
+    ...groundedResult(candidates.slice(0, SOURCE_EXCERPT_LIMIT).map((candidate) => ({
       text: candidate.record.source_text,
       candidate
-    })), "extractive");
-  }
+    })), "source_excerpts", "source_excerpts"),
+    fallback_reason: fallbackReason
+  });
 
-  if (!generatorClient || !verifierClient) {
-    return { answered: false, text: NOT_FOUND, record: null, path: "B", refusal_reason: "no_provider" };
+  if (fallbackMode === "source_excerpts" || !generatorClient || !verifierClient) {
+    return sourceExcerptResult(!generatorClient || !verifierClient ? "generation_not_configured" : null);
   }
 
   const context = candidates
@@ -677,20 +678,20 @@ async function answerOptionB(question, records, {
     "('may', 'can', 'optional') into recommendations ('should') or requirements ('must', 'have to'), and do not upgrade recommendations ('should') " +
     "into requirements ('must'). If the excerpts do not answer the question, set answered=false and return no units. " +
     (responseLanguage === "ko" ? "Answer in Korean. " : responseLanguage === "en" ? "Answer in English. " : "") +
-    `Return at most ${OPTION_B_MAX_ANSWER_UNITS} independently supported factual units.`;
+    `Return at most ${GENERATED_ANSWER_UNIT_LIMIT} independently supported factual units.`;
 
   const generation = await generatorClient.complete({
     system,
     messages: [{ role: "user", content: `Excerpts:\n${context}\n\nQuestion: ${question}` }],
-    schema: optionBGenerationSchema(),
+    schema: groundedGenerationSchema(),
     signal
   });
 
   const units = generation && generation.answered === true && Array.isArray(generation.units)
-    ? generation.units.map((unit) => String(unit.text || "").trim()).filter(Boolean).slice(0, OPTION_B_MAX_ANSWER_UNITS)
+    ? generation.units.map((unit) => String(unit.text || "").trim()).filter(Boolean).slice(0, GENERATED_ANSWER_UNIT_LIMIT)
     : [];
   if (units.length === 0) {
-    return { answered: false, text: NOT_FOUND, record: null, path: "B", refusal_reason: "model_declined" };
+    return sourceExcerptResult("model_declined");
   }
 
   // One schema-constrained verification call covers every bounded answer
@@ -742,13 +743,7 @@ async function answerOptionB(question, records, {
   }
 
   if (verificationInvalid || groundedLines.length !== units.length) {
-    return {
-      answered: false,
-      text: `${NOT_FOUND} (a generated answer failed citation verification: no sentence could be independently grounded to a retrieved source${lastRejectionReason ? ` — ${lastRejectionReason}` : ""})`,
-      record: null,
-      path: "B",
-      refusal_reason: "verification_failed"
-    };
+    return sourceExcerptResult(lastRejectionReason ? `verification_failed: ${lastRejectionReason}` : "verification_failed");
   }
 
   // Dedupe claims by source_unit_id, preserving first-seen order, for the
@@ -770,18 +765,16 @@ async function answerOptionB(question, records, {
     candidates: groundedRecords,
     claims: dedupedClaims,
     answer_units: answerUnits,
-    path: "B",
-    mode: "rag",
+    route: "grounded_generation",
+    mode: "generated",
     review_status: groundedRecords.some((r) => r.review_status !== "reviewed") ? "needs_review" : "reviewed"
   };
 }
 
 /**
- * Answers a question: Option A (structured query, no LLM) first;
- * Option B (grounded RAG fallback) only when A finds nothing/abstains AND a
- * `client` (engine/llm_client.js) and `store` (engine/vector_store.js)
- * are supplied — omit both to run Option A only, with zero LLM cost
- * (product_roadmap.md §2.4.1).
+ * Answers in semantic route order: structured answer first, grounded
+ * generation when configured, verbatim source excerpts as the safe fallback,
+ * and finally an explicit refusal when no source candidate exists.
  */
 async function answer(question, records, {
   client,
@@ -791,7 +784,7 @@ async function answer(question, records, {
   index,
   responseLanguage,
   signal,
-  optionBMode
+  fallbackMode
 } = {}) {
   const match = structuredQuery(question, records, index);
   if (match) {
@@ -800,15 +793,15 @@ async function answer(question, records, {
       text: formatAnswer(match),
       record: match.record || (match.docResults ? match.docResults[0].records[0] : null),
       score: match.score || 5.0,
-      path: "A",
+      route: "structured",
       review_status: (match.record && match.record.review_status) || "reviewed",
       claims: match.claims || []
     };
   }
-  if ((!generatorClient && optionBMode !== "extractive") || !store) {
-    return { answered: false, text: NOT_FOUND, record: null, score: 0, path: null, refusal_reason: explainRefusal(question, records) };
+  if (!store) {
+    return { answered: false, text: NOT_FOUND, record: null, score: 0, route: "refusal", refusal_reason: explainRefusal(question, records) };
   }
-  return answerOptionB(question, records, { generatorClient, verifierClient, store, responseLanguage, signal, optionBMode });
+  return answerFallback(question, records, { generatorClient, verifierClient, store, responseLanguage, signal, fallbackMode });
 }
 
 async function main() {
@@ -838,7 +831,7 @@ module.exports = {
   formatCrossReferences,
   formatAnswer,
   answer,
-  answerOptionB,
+  answerFallback,
   explainRefusal,
   NOT_FOUND
 };

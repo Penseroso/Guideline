@@ -1,7 +1,7 @@
 const { tokenize } = require("./text_utils");
 
 /**
- * Retrieval interface for Option B (schema-anchored grounded RAG,
+ * Retrieval interface for grounded generation and source-excerpt fallback,
  * product_roadmap.md §2.2/§2.5). Two backends behind one interface:
  *
  *  - Keyword mode (default, no `embed` function supplied): a plain
@@ -22,7 +22,7 @@ const { tokenize } = require("./text_utils");
  *    just the unused vector path.
  *
  * Both modes expose the same `index(records)` / `search(query, k)`
- * shape so callers (engine/query_router.js's Option B path) never
+ * shape so callers (engine/query_router.js's fallback routes) never
  * need to know which backend is active.
  */
 function createStore({ embed } = {}) {

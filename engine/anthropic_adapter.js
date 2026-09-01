@@ -7,11 +7,14 @@
  * matching an arbitrary caller-supplied JSON Schema.
  */
 
-function create() {
+const DEFAULT_MODEL = "claude-sonnet-4-5";
+
+function create({ model: configuredModel } = {}) {
   const Anthropic = require("@anthropic-ai/sdk");
   const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+  const defaultModel = configuredModel || DEFAULT_MODEL;
 
-  async function complete({ system, messages, schema, maxTokens = 1024, model = "claude-sonnet-4-5", signal }) {
+  async function complete({ system, messages, schema, maxTokens = 1024, model = defaultModel, signal }) {
     if (schema) {
       const response = await client.messages.create({
         model,
@@ -31,7 +34,7 @@ function create() {
     return { text: textBlock ? textBlock.text : "" };
   }
 
-  return { complete };
+  return { complete, model: defaultModel };
 }
 
-module.exports = { create };
+module.exports = { create, DEFAULT_MODEL };

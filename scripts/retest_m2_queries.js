@@ -1,20 +1,20 @@
 const fs = require("fs");
 const path = require("path");
 const { loadStore } = require("../engine/data_store");
-const { setUpOptionB } = require("../engine/cli");
+const { setUpAnswering } = require("../engine/cli");
 const { answer } = require("../engine/query_router");
 
 async function main() {
   console.log("=== Re-evaluating M2 Real User Queries against Live Engine ===");
 
   const { records, index } = loadStore();
-  // setUpOptionB (engine/cli.js) guards missing-provider the same way the
-  // real CLI does — no key configured means Option A only, not a throw
-  // (previously this called llm_client.createClient() directly, which
-  // throws with no provider configured).
-  const optionB = setUpOptionB(records);
-  const { provider, optionBMode } = optionB;
-  console.log(optionBMode === "generative" ? `Option B fallback active (${provider}).` : optionBMode === "extractive" ? "Option B extractive fallback active." : "Option A only — no LLM provider configured.");
+  // Missing providers are valid: local structured and source-excerpt routes
+  // remain active without throwing.
+  const setup = setUpAnswering(records);
+  const { generatorProvider, generatorModel, verifierProvider, verifierModel, fallbackMode } = setup;
+  console.log(fallbackMode === "grounded_generation"
+    ? `Grounded generation active (${generatorProvider}/${generatorModel} + ${verifierProvider}/${verifierModel}).`
+    : "Structured evidence with source-excerpt fallback active.");
 
   // Replays a caller-selected log. Live runtime logs are intentionally not
   // tracked; pass an archived snapshot explicitly when reproducing M2.
@@ -53,11 +53,11 @@ async function main() {
     const tc = testCases[i];
     process.stdout.write(`[${i + 1}/${testCases.length}] "${tc.question}" ... `);
     const start = Date.now();
-    const res = await answer(tc.question, records, { ...optionB, index });
+    const res = await answer(tc.question, records, { ...setup, index });
     const elapsed = Date.now() - start;
 
     const status = res.answered ? "ANSWERED" : "REFUSED";
-    console.log(`${status} (Path ${res.path}, ${elapsed}ms)`);
+    console.log(`${status} (route ${res.route}, ${elapsed}ms)`);
 
     if (res.answered && !tc.originalAnswered) {
       newlyAnsweredCount++;
@@ -71,7 +71,7 @@ async function main() {
       index: i + 1,
       question: tc.question,
       original: { answered: tc.originalAnswered, path: tc.originalPath, text: tc.originalText },
-      current: { answered: res.answered, path: res.path, text: res.text, citations: res.record?.citations || [] }
+      current: { answered: res.answered, route: res.route, text: res.text, citations: res.record?.citations || [] }
     });
   }
 
@@ -90,7 +90,7 @@ async function main() {
     const icon = r.current.answered ? "✅" : "❌";
     const delta = r.current.answered && !r.original.answered ? " [NEWLY RESOLVED]" : "";
     console.log(`\n${icon} Q${r.index}: "${r.question}"${delta}`);
-    console.log(`   Path: ${r.current.path} | Answered: ${r.current.answered}`);
+    console.log(`   Route: ${r.current.route} | Answered: ${r.current.answered}`);
     if (r.current.answered) {
       console.log(`   Answer Preview: ${r.current.text.split("\n")[0].slice(0, 100)}...`);
     } else {

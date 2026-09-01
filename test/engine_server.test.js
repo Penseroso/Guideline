@@ -32,7 +32,7 @@ async function withServer(opts, fn) {
   }
 }
 
-test("GET /api/health returns 200 with archive stats and option_b_available: false when deps has no client/store", async () => {
+test("GET /api/health reports fallback availability semantically", async () => {
   await withServer({}, async (server) => {
     const res = await fetch(`${baseUrl(server)}/api/health`);
     assert.equal(res.status, 200);
@@ -40,7 +40,7 @@ test("GET /api/health returns 200 with archive stats and option_b_available: fal
     assert.equal(body.status, "ok");
     assert.equal(body.documents, 6);
     assert.ok(body.records > 0);
-    assert.equal(body.option_b_available, false);
+    assert.equal(body.fallback_available, false);
     assert.equal(body.auth, "disabled");
   });
 });
@@ -72,12 +72,12 @@ test("GET /api/stats aggregates the (temp, per-test) query log and reflects a re
     const stats = await statsRes.json();
     assert.equal(stats.total, 1);
     assert.equal(stats.answered, 1);
-    assert.equal(stats.by_path.A, 1);
+    assert.equal(stats.by_route.structured, 1);
     assert.ok(stats.by_document.ich_m10 && stats.by_document.ich_m10.answered === 1);
   });
 });
 
-test("POST /api/ask returns a full envelope for a known Option A hit, and logs the interaction", async () => {
+test("POST /api/ask returns a full envelope for a known structured hit, and logs the interaction", async () => {
   await withServer({}, async (server) => {
     const res = await fetch(`${baseUrl(server)}/api/ask`, {
       method: "POST",
@@ -88,7 +88,7 @@ test("POST /api/ask returns a full envelope for a known Option A hit, and logs t
     const body = await res.json();
     assert.equal(body.answered, true);
     assert.equal(body.mode, "structured");
-    assert.equal(body.path, "A");
+    assert.equal(body.route, "structured");
     assert.ok(body.claims.length > 0);
     assert.ok(body.interaction_id);
   });
@@ -184,21 +184,22 @@ test("GET / serves the static index page", async () => {
   });
 });
 
-test("503-equivalent: allow_option_b requested but no provider configured falls back to Option A only, never crashes", async () => {
+test("allow_fallback with no injected store refuses cleanly and never crashes", async () => {
   await withServer({}, async (server) => {
     const res = await fetch(`${baseUrl(server)}/api/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question: "completely unrelated nonsense question", allow_option_b: true })
+      body: JSON.stringify({ question: "completely unrelated nonsense question", allow_fallback: true })
     });
     assert.equal(res.status, 200);
     const body = await res.json();
     assert.equal(body.answered, false);
-    assert.equal(body.refusal.kind, "no_provider");
+    assert.equal(body.route, "refusal");
+    assert.equal(body.refusal.kind, "no_match");
   });
 });
 
-test("Option B via injected mock deps: success and timeout both produce a well-formed response, never a raw 500 refusal masquerading as a grounded answer", async () => {
+test("grounded generation via injected deps: success and timeout both produce well-formed responses", async () => {
   const candidateModule = require("../engine/data_store");
   const { records } = candidateModule.loadStore();
   const candidate = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
@@ -214,18 +215,18 @@ test("Option B via injected mock deps: success and timeout both produce a well-f
     const res = await fetch(`${baseUrl(server)}/api/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question: "some question Option A cannot structurally answer but B can", allow_option_b: true })
+      body: JSON.stringify({ question: "some question structured routing cannot answer but generation can", allow_fallback: true })
     });
     assert.equal(res.status, 200);
   });
 
   const slowClient = { complete: () => new Promise((resolve) => setTimeout(() => resolve({ text: "too slow" }), 500)) };
   const slowStore = { search: async () => [{ record: candidate, score: 1 }] };
-  await withServer({ deps: { client: slowClient, store: slowStore }, optionBTimeoutMs: 50 }, async (server) => {
+  await withServer({ deps: { client: slowClient, store: slowStore }, fallbackTimeoutMs: 50 }, async (server) => {
     const res = await fetch(`${baseUrl(server)}/api/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question: "anything", allow_option_b: true })
+      body: JSON.stringify({ question: "anything", allow_fallback: true })
     });
     assert.equal(res.status, 504);
     const body = await res.json();

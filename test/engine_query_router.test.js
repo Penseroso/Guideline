@@ -2,7 +2,7 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 
 const { loadStore } = require("../engine/data_store");
-const { structuredQuery, formatAnswer, formatApplicableConditions, formatCrossReferences, answer, answerOptionB, NOT_FOUND, tokenize } = require("../engine/query_router");
+const { structuredQuery, formatAnswer, formatApplicableConditions, formatCrossReferences, answer, answerFallback, NOT_FOUND, tokenize } = require("../engine/query_router");
 
 const { records } = loadStore();
 
@@ -28,7 +28,7 @@ test("answer() returns a formatted citation for a confident match", async () => 
   assert.match(result.text, /p\.14/);
 });
 
-test("an unrelated question returns the explicit refusal, not a guess, when no Option B provider is configured", async () => {
+test("an unrelated question returns the explicit refusal when no fallback store is supplied", async () => {
   const result = await answer("what is the meaning of life", records);
   assert.equal(result.answered, false);
   assert.equal(result.text, NOT_FOUND);
@@ -44,13 +44,13 @@ test("review_status is exposed on a match so the caller can surface it, per TPP 
   assert.ok(["reviewed", "needs_review", "unreviewed"].includes(result.review_status));
 });
 
-// --- Option B (mocked client + store; no network) ---
+// --- Grounded fallback routes (mocked client + store; no network) ---
 
 function fakeStore(candidateRecords) {
   return { search: async () => candidateRecords.map((record) => ({ record, score: 1 })) };
 }
 
-function optionBClient(unitTexts, verdicts) {
+function groundedClient(unitTexts, verdicts) {
   return {
     complete: async ({ schema }) => schema.properties.verdicts
       ? { verdicts }
@@ -58,47 +58,50 @@ function optionBClient(unitTexts, verdicts) {
   };
 }
 
-test("answer() falls back to Option B only when a client and store are both supplied", async () => {
+test("answer() uses grounded generation when clients and a store are supplied", async () => {
   const candidate = records.find((r) => r.type === "knowledge_record");
-  const client = optionBClient([`Per the archive: ${candidate.source_text}`], [
+  const client = groundedClient([`Per the archive: ${candidate.source_text}`], [
     { unit_index: 0, entailed: true, source_index: 0, reason: "ok" }
   ]);
   const store = fakeStore([candidate]);
 
   const withFallback = await answer("what is the meaning of life", records, { client, store });
-  assert.equal(withFallback.path, "B");
+  assert.equal(withFallback.route, "grounded_generation");
   assert.equal(withFallback.answered, true);
 
   const withoutFallback = await answer("what is the meaning of life", records);
   assert.equal(withoutFallback.answered, false);
 });
 
-test("answerOptionB refuses when the vector store returns no candidates", async () => {
+test("answerFallback refuses when the vector store returns no candidates", async () => {
   const client = { complete: async () => { throw new Error("must not be called with no candidates"); } };
-  const result = await answerOptionB("anything", records, { client, store: fakeStore([]) });
+  const result = await answerFallback("anything", records, { client, store: fakeStore([]) });
   assert.equal(result.answered, false);
   assert.equal(result.text, NOT_FOUND);
 });
 
-test("answerOptionB refuses when the model itself says not found", async () => {
+test("answerFallback shows source excerpts when the model declines", async () => {
   const candidate = records.find((r) => r.type === "condition");
   const client = { complete: async () => ({ text: NOT_FOUND }) };
-  const result = await answerOptionB("irrelevant", records, { client, store: fakeStore([candidate]) });
-  assert.equal(result.answered, false);
+  const result = await answerFallback("irrelevant", records, { client, store: fakeStore([candidate]) });
+  assert.equal(result.answered, true);
+  assert.equal(result.route, "source_excerpts");
+  assert.equal(result.fallback_reason, "model_declined");
 });
 
-test("answerOptionB extractive mode returns verbatim cited sources with zero model calls", async () => {
+test("source-excerpt mode returns verbatim cited sources with zero model calls", async () => {
   const candidates = records.filter((record) => record.citations && record.citations.length).slice(0, 5);
   let modelCalls = 0;
-  const client = { complete: async () => { modelCalls++; throw new Error("extractive mode must not call a model"); } };
-  const result = await answerOptionB("irrelevant", records, {
+  const client = { complete: async () => { modelCalls++; throw new Error("source-excerpt mode must not call a model"); } };
+  const result = await answerFallback("irrelevant", records, {
     generatorClient: client,
     verifierClient: client,
     store: fakeStore(candidates),
-    optionBMode: "extractive"
+    fallbackMode: "source_excerpts"
   });
   assert.equal(result.answered, true);
-  assert.equal(result.mode, "extractive");
+  assert.equal(result.mode, "source_excerpts");
+  assert.equal(result.route, "source_excerpts");
   assert.equal(modelCalls, 0);
   assert.ok(result.answer_units.length <= 3);
   for (const unit of result.answer_units) {
@@ -106,7 +109,7 @@ test("answerOptionB extractive mode returns verbatim cited sources with zero mod
   }
 });
 
-test("answerOptionB caps a non-compliant generator at eight units and performs one verification batch", async () => {
+test("grounded generation caps a non-compliant generator at eight units and performs one verification batch", async () => {
   const candidate = records.find((record) => record.type === "quantitative_criterion" && record.parameter === "replicates");
   let calls = 0;
   const client = {
@@ -118,45 +121,47 @@ test("answerOptionB caps a non-compliant generator at eight units and performs o
       return { answered: true, units: Array.from({ length: 100 }, (_, index) => ({ text: `unit ${index}` })) };
     }
   };
-  const result = await answerOptionB("irrelevant", records, { client, store: fakeStore([candidate]) });
+  const result = await answerFallback("irrelevant", records, { client, store: fakeStore([candidate]) });
   assert.equal(result.answered, true);
   assert.equal(result.answer_units.length, 8);
   assert.equal(calls, 2);
 });
 
-test("answerOptionB refuses a generated answer that fails citation verification, instead of showing it", async () => {
+test("failed generated-answer verification falls back to verbatim source excerpts", async () => {
   const candidate = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
-  const client = optionBClient(["Exactly 10 replicates are always required, no exceptions."], [
+  const client = groundedClient(["Exactly 10 replicates are always required, no exceptions."], [
     { unit_index: 0, entailed: false, source_index: null, reason: "claim states a value not present in the source" }
   ]);
-  const result = await answerOptionB("replicate count", records, { client, store: fakeStore([candidate]) });
-  assert.equal(result.answered, false);
-  assert.match(result.text, /failed citation verification/);
+  const result = await answerFallback("replicate count", records, { client, store: fakeStore([candidate]) });
+  assert.equal(result.answered, true);
+  assert.equal(result.route, "source_excerpts");
+  assert.equal(result.answer_units[0].text, candidate.source_text);
+  assert.match(result.fallback_reason, /verification_failed/);
 });
 
-test("answerOptionB returns the generated answer with sources once verification passes", async () => {
+test("grounded generation returns the generated answer with sources once verification passes", async () => {
   const candidate = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
-  const client = optionBClient(["At least 5 replicates are required at each QC concentration level."], [
+  const client = groundedClient(["At least 5 replicates are required at each QC concentration level."], [
     { unit_index: 0, entailed: true, source_index: 0, reason: "matches source_text" }
   ]);
-  const result = await answerOptionB("replicate count", records, { client, store: fakeStore([candidate]) });
+  const result = await answerFallback("replicate count", records, { client, store: fakeStore([candidate]) });
   assert.equal(result.answered, true);
   assert.match(result.text, /Sources: M10 §3\.2\.5\.2/);
 });
 
-// --- Option B Scope Guard parity + per-unit grounding
-// (history/verification/engine_test_record_through_2026-08-28.md Entry 007: Option B previously only checked
+// --- Fallback Scope Guard parity + per-unit grounding
+// (history/verification/engine_test_record_through_2026-08-28.md Entry 007: fallback retrieval previously only checked
 // explicit_exclusions and cited every retrieved candidate unconditionally,
 // so a scope-excluded query silently substituted the wrong document, and a
 // generated answer's Sources line never reflected which candidate actually
 // backed which sentence.) ---
 
-test("answerOptionB refuses a scope-excluded query instead of substituting a wrongly-scoped candidate, and never calls the model", async () => {
+test("answerFallback refuses a scope-excluded query instead of substituting a wrongly-scoped candidate, and never calls the model", async () => {
   const excluded = records.find((r) => r.id === "ich_s6_r1.kr.part1.3_3.001");
   assert.ok(excluded, "fixture record must exist in the real archive");
   assert.ok(excluded.explicit_exclusions.includes("small_molecule"));
   const client = { complete: async () => { throw new Error("must not be called once every candidate is scope-rejected"); } };
-  const result = await answerOptionB("저분자 화합물의 독성 시험에서 종 선택 기준은?", records, { client, store: fakeStore([excluded]) });
+  const result = await answerFallback("저분자 화합물의 독성 시험에서 종 선택 기준은?", records, { client, store: fakeStore([excluded]) });
   assert.equal(result.answered, false);
   assert.equal(result.refusal_reason, "scope_excluded");
 });
@@ -167,20 +172,20 @@ test("answer() surfaces refusal_reason: scope_excluded on the no-client-configur
   assert.equal(result.refusal_reason, "scope_excluded");
 });
 
-test("answerOptionB maps every grounded unit to its own candidate citation in one verification batch", async () => {
+test("answerFallback maps every grounded unit to its own candidate citation in one verification batch", async () => {
   const candidateA = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
   const candidateB = records.find((r) => r.type === "condition" && r.id !== candidateA.id);
   assert.ok(candidateA && candidateB && candidateA.id !== candidateB.id);
 
   let calls = 0;
-  const client = optionBClient(["Line one is true.", "Line two is true."], [
+  const client = groundedClient(["Line one is true.", "Line two is true."], [
     { unit_index: 0, entailed: true, source_index: 0, reason: "matches A" },
     { unit_index: 1, entailed: true, source_index: 1, reason: "matches B" }
   ]);
   const complete = client.complete;
   client.complete = async (args) => { calls++; return complete(args); };
 
-  const result = await answerOptionB("irrelevant", records, { client, store: fakeStore([candidateA, candidateB]) });
+  const result = await answerFallback("irrelevant", records, { client, store: fakeStore([candidateA, candidateB]) });
   assert.equal(result.answered, true);
   assert.match(result.text, /Line one is true\./);
   assert.match(result.text, /Line two is true\./);
@@ -191,16 +196,17 @@ test("answerOptionB maps every grounded unit to its own candidate citation in on
   assert.ok(citedUnits.includes(candidateB.citations[0].source_unit_id));
 });
 
-test("answerOptionB refuses the whole answer when any generated unit is unsupported", async () => {
+test("answerFallback withholds the whole generated answer when any unit is unsupported and shows source excerpts", async () => {
   const candidate = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
-  const client = optionBClient(["A grounded line.", "This answer is fabricated."], [
+  const client = groundedClient(["A grounded line.", "This answer is fabricated."], [
     { unit_index: 0, entailed: true, source_index: 0, reason: "supported" },
     { unit_index: 1, entailed: false, source_index: null, reason: "not supported" }
   ]);
-  const result = await answerOptionB("irrelevant", records, { client, store: fakeStore([candidate]) });
-  assert.equal(result.answered, false);
-  assert.equal(result.refusal_reason, "verification_failed");
-  assert.match(result.text, /failed citation verification/);
+  const result = await answerFallback("irrelevant", records, { client, store: fakeStore([candidate]) });
+  assert.equal(result.answered, true);
+  assert.equal(result.route, "source_excerpts");
+  assert.equal(result.answer_units[0].text, candidate.source_text);
+  assert.match(result.fallback_reason, /verification_failed/);
 });
 
 // --- Korean tokenization & Structured Routing Fixes ---
