@@ -207,7 +207,7 @@ test("grounded generation via injected deps: success and timeout both produce we
   const fastClient = {
     complete: async ({ schema }) => schema.properties.verdicts
       ? { verdicts: [{ unit_index: 0, entailed: true, source_index: 0, reason: "ok" }] }
-      : { answered: true, units: [{ text: "At least 5 replicates are required at each QC concentration level." }] }
+      : { answered: true, units: [{ text: "At least 5 replicates are required at each QC concentration level.", source_index: 0 }] }
   };
   const fastStore = { search: async () => [{ record: candidate, score: 1 }] };
 

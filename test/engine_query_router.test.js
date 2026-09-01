@@ -3,6 +3,7 @@ const assert = require("node:assert/strict");
 
 const { loadStore } = require("../engine/data_store");
 const { structuredQuery, formatAnswer, formatApplicableConditions, formatCrossReferences, answer, answerFallback, NOT_FOUND, tokenize } = require("../engine/query_router");
+const { createStore } = require("../engine/vector_store");
 
 const { records } = loadStore();
 
@@ -35,6 +36,15 @@ test("an unrelated question returns the explicit refusal when no fallback store 
   assert.equal(result.record, null);
 });
 
+test("keyword fallback refuses a one-token incidental match instead of listing unrelated excerpts", async () => {
+  const store = createStore();
+  store.index(records);
+  const result = await answerFallback("what is the meaning of life", records, { store, fallbackMode: "source_excerpts" });
+  assert.equal(result.answered, false);
+  assert.equal(result.route, "refusal");
+  assert.equal(result.refusal_reason, "no_candidates");
+});
+
 test("an empty question returns no match rather than throwing", () => {
   assert.equal(structuredQuery("", records), null);
 });
@@ -54,7 +64,10 @@ function groundedClient(unitTexts, verdicts) {
   return {
     complete: async ({ schema }) => schema.properties.verdicts
       ? { verdicts }
-      : { answered: unitTexts.length > 0, units: unitTexts.map((text) => ({ text })) }
+      : { answered: unitTexts.length > 0, units: unitTexts.map((text, unitIndex) => {
+        const verdict = verdicts.find((item) => item.unit_index === unitIndex);
+        return { text, source_index: verdict && Number.isInteger(verdict.source_index) ? verdict.source_index : 0 };
+      }) }
   };
 }
 
@@ -118,7 +131,7 @@ test("grounded generation caps a non-compliant generator at eight units and perf
       if (schema.properties.verdicts) {
         return { verdicts: Array.from({ length: 8 }, (_, unit_index) => ({ unit_index, entailed: true, source_index: 0, reason: "supported" })) };
       }
-      return { answered: true, units: Array.from({ length: 100 }, (_, index) => ({ text: `unit ${index}` })) };
+      return { answered: true, units: Array.from({ length: 100 }, (_, index) => ({ text: `unit ${index}`, source_index: 0 })) };
     }
   };
   const result = await answerFallback("irrelevant", records, { client, store: fakeStore([candidate]) });
@@ -147,6 +160,25 @@ test("grounded generation returns the generated answer with sources once verific
   const result = await answerFallback("replicate count", records, { client, store: fakeStore([candidate]) });
   assert.equal(result.answered, true);
   assert.match(result.text, /Sources: M10 §3\.2\.5\.2/);
+});
+
+test("grounded generation retries once after a verification failure and can recover without exposing excerpts", async () => {
+  const candidate = records.find((r) => r.type === "quantitative_criterion" && r.parameter === "replicates");
+  let calls = 0;
+  const client = {
+    complete: async ({ schema }) => {
+      calls++;
+      if (!schema.properties.verdicts) {
+        return { answered: true, units: [{ text: "각 QC 농도 수준에서 최소 5개 반복 시료가 필요합니다.", source_index: 0 }] };
+      }
+      return calls === 2
+        ? { verdicts: [{ unit_index: 0, entailed: false, source_index: null, reason: "first attempt too broad" }] }
+        : { verdicts: [{ unit_index: 0, entailed: true, source_index: 0, reason: "supported" }] };
+    }
+  };
+  const result = await answerFallback("replicate count", records, { client, store: fakeStore([candidate]), responseLanguage: "ko" });
+  assert.equal(result.route, "grounded_generation");
+  assert.equal(calls, 4);
 });
 
 // --- Fallback Scope Guard parity + per-unit grounding
@@ -216,6 +248,14 @@ test("tokenize maps Korean regulatory synonyms and strips Korean particles", () 
   assert.ok(tokens.includes("lloq"));
   assert.ok(tokens.includes("accuracy"));
   assert.ok(tokens.includes("acceptance") || tokens.includes("criteria"));
+});
+
+test("tokenize maps crude Korean evaluation-method phrasing to retrieval concepts", () => {
+  const tokens = tokenize("ada 평가방법");
+  assert.ok(tokens.includes("ada"));
+  assert.ok(tokens.includes("evaluation"));
+  assert.ok(tokens.includes("approach"));
+  assert.ok(tokens.includes("assay"));
 });
 
 test("tokenize maps the Korean synonyms cherry-picked from the M6 Applicability spike's ontology (docs/milestone_log.md M6 'Cherry-pick audit')", () => {

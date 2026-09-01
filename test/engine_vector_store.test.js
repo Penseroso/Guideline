@@ -30,6 +30,15 @@ test("keyword mode returns an empty array for a query with no shared tokens", as
   assert.deepEqual(results, []);
 });
 
+test("crude ADA evaluation-method phrasing retrieves FDA assay-method evidence, not arbitrary clinical-risk chunks", async () => {
+  const store = createStore();
+  store.index(records);
+  const results = await store.search("ada 평가방법", 5);
+  assert.ok(results.length > 0);
+  assert.equal(results[0].record.document_id, "fda_ada");
+  assert.match(results[0].record.source_text, /multi-tiered|screening assay/i);
+});
+
 test("vector mode wires an injected embed function through index() and search()", async () => {
   const dim = 4;
   const embed = async (text) => {

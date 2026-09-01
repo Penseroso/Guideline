@@ -76,6 +76,13 @@ const REGULATORY_SYNONYMS = {
   "몇개": ["replicates"],
   "개수": ["replicates"],
   "수량": ["replicates"],
+  // Crude user phrasing: broad "how is this evaluated?" questions should
+  // still retrieve method/approach records instead of matching only the
+  // named guideline token and returning arbitrary paragraphs.
+  "평가": ["evaluation", "assessment"],
+  "평가법": ["evaluation", "method", "approach"],
+  "평가방법": ["evaluation", "method", "approach", "assay", "testing"],
+  "방법": ["method", "approach"],
 
   // Assays & Technologies (ICH M10 & FDA ADA)
   "elisa": ["ligand", "binding", "assay", "lba"],
@@ -364,4 +371,3 @@ function extractQueryScope(question, qTokens) {
 }
 
 module.exports = { tokenize, extractQueryScope, STOPWORDS, REGULATORY_SYNONYMS, SINGLE_LETTER_KO_WHITELIST };
-

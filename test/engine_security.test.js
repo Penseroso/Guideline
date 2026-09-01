@@ -120,7 +120,7 @@ test("grounded-generation deadline aborts provider requests and never exceeds tw
       maxActive = Math.max(maxActive, active);
       const timer = setTimeout(() => {
         active--;
-        resolve({ answered: true, units: [{ text: "late" }] });
+        resolve({ answered: true, units: [{ text: "late", source_index: 0 }] });
       }, 200);
       signal.addEventListener("abort", () => {
         aborts++;
@@ -165,7 +165,7 @@ test("a provider that ignores AbortSignal does not cause early semaphore release
       maxActive = Math.max(maxActive, active);
       await taskGate;
       active--;
-      return { answered: true, units: [{ text: "late" }] };
+      return { answered: true, units: [{ text: "late", source_index: 0 }] };
     }
   };
   const verifierClient = { complete: async () => ({ verdicts: [] }) };

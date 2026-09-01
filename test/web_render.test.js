@@ -13,8 +13,13 @@ const i18n = {
   structuredRouteSub: "archive quoted directly",
   generatedRouteLabel: "Grounded generation",
   generatedRouteSub: "generated, entailment-verified",
+  generatedAnswerTitle: "Generated answer",
+  generatedEvidenceTitle: "Structured evidence used",
   sourceExcerptsRouteLabel: "Source excerpts",
   sourceExcerptsRouteSub: "verbatim, no generation",
+  sourceExcerptIntro: "No generated answer. Source passages follow.",
+  routeIndicatorLabel: "Route",
+  modeIndicatorLabel: "Mode",
   refusalTitle: "근거를 찾지 못했습니다",
   refusalBody: "이것은 archive-coverage 문제입니다",
   refusalNoMatch: "no match",
@@ -160,6 +165,47 @@ test("source-excerpt route is labeled as verbatim source text, never generated p
   assert.match(html, /Source excerpts/);
   assert.match(html, /verbatim, no generation/);
   assert.doesNotMatch(html, /generated, entailment-verified/);
+});
+
+test("question header visibly identifies the semantic route and distinct internal mode", () => {
+  const claim = { citation: realCitation(), record: { type: "knowledge_record", modality: "must", source_text: "t" } };
+  const comparison = { answered: true, route: "structured", mode: "comparison", claims: [claim] };
+  const generated = { answered: true, route: "grounded_generation", mode: "generated", claims: [claim] };
+  const refusal = { answered: false, route: "refusal", mode: "refusal", refusal: { kind: "no_match" }, claims: [] };
+
+  const comparisonHtml = R.renderEnvelope(comparison, i18n, "compare these");
+  assert.match(comparisonHtml, /route-indicator route-structured/);
+  assert.match(comparisonHtml, /<code>structured<\/code>/);
+  assert.match(comparisonHtml, /<code>comparison<\/code>/);
+
+  const generatedHtml = R.renderEnvelope(generated, i18n, "answer this");
+  assert.match(generatedHtml, /route-grounded_generation/);
+  assert.match(generatedHtml, /<code>grounded_generation<\/code>/);
+
+  const refusalHtml = R.renderEnvelope(refusal, i18n, "unknown question");
+  assert.match(refusalHtml, /route-refusal/);
+  assert.match(refusalHtml, /<code>refusal<\/code>/);
+});
+
+test("generated route uses one synthesis panel with structured evidence below, not repeated answer cards", () => {
+  const claim = { source_unit_id: realCitation().source_unit_id, citation: realCitation(), record: { id: "kr.1", type: "knowledge_record", modality: "should", source_text: "source text" } };
+  const envelope = { answered: true, route: "grounded_generation", mode: "generated", claims: [claim], answer_units: [{ text: "A complete generated answer.", record_id: "kr.1", source_unit_id: claim.source_unit_id }] };
+  const html = R.renderEnvelope(envelope, i18n, "question");
+  assert.match(html, /generated-answer-panel/);
+  assert.match(html, /generated-evidence/);
+  assert.match(html, /A complete generated answer/);
+  assert.match(html, /source text/);
+  assert.doesNotMatch(html, /class="answer-unit"/);
+});
+
+test("source-excerpts route renders a distinct verbatim list without duplicating an evidence panel", () => {
+  const claim = { source_unit_id: realCitation().source_unit_id, citation: realCitation(), record: { id: "kr.1", type: "knowledge_record", source_text: "verbatim source" } };
+  const envelope = { answered: true, route: "source_excerpts", mode: "source_excerpts", claims: [claim], answer_units: [{ text: "verbatim source", record_id: "kr.1", source_unit_id: claim.source_unit_id }] };
+  const html = R.renderEnvelope(envelope, i18n, "question");
+  assert.match(html, /excerpts-layout/);
+  assert.match(html, /excerpt-unit/);
+  assert.doesNotMatch(html, /generated-answer-panel/);
+  assert.doesNotMatch(html, /evidence-panel/);
 });
 
 test("structured answer text follows the active locale without issuing a new query", () => {

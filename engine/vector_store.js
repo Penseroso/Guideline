@@ -32,21 +32,43 @@ function createStore({ embed } = {}) {
 
 function createKeywordStore() {
   let indexed = [];
-  let tokenSets = [];
+  let fieldTokenSets = [];
 
   return {
     mode: "keyword",
     index(records) {
       indexed = records;
-      tokenSets = records.map((r) => new Set(tokenize(searchableTextOf(r))));
+      fieldTokenSets = records.map((record) => ({
+        semantic: new Set(tokenize([record.parameter, record.subject, record.action, record.object, record.condition_type, record.condition_text].filter(Boolean).join(" "))),
+        source: new Set(tokenize([record.normalized_ko, record.source_text].filter(Boolean).join(" "))),
+        section: new Set(tokenize([record.section_number, ...(record.section_path || [])].filter(Boolean).join(" "))),
+        document: new Set(tokenize([record.document_id && record.document_id.replace(/_/g, " "), record.guideline_code, record.document_title].filter(Boolean).join(" ")))
+      }));
     },
     async search(query, k = 5) {
       const qTokens = new Set(tokenize(query));
+      const processIntent = ["evaluation", "assessment", "method", "approach", "process", "procedure", "testing"].some((token) => qTokens.has(token));
+      const processCues = new Set(["approach", "process", "procedure", "comprises", "initially", "then", "followed", "step", "steps", "tiered", "sequence"]);
       const scored = indexed
         .map((record, i) => {
-          let shared = 0;
-          for (const t of qTokens) if (tokenSets[i].has(t)) shared += 1;
-          return { record, score: shared };
+          const fields = fieldTokenSets[i];
+          let score = 0;
+          let matchedTokenCount = 0;
+          for (const token of qTokens) {
+            let tokenScore = 0;
+            if (fields.semantic.has(token)) tokenScore = 3;
+            else if (fields.source.has(token)) tokenScore = 2;
+            else if (fields.section.has(token)) tokenScore = 1;
+            else if (fields.document.has(token)) tokenScore = 0.5;
+            if (tokenScore > 0) {
+              score += tokenScore;
+              matchedTokenCount++;
+            }
+          }
+          if (processIntent) {
+            for (const cue of processCues) if (fields.source.has(cue)) score += 0.75;
+          }
+          return { record, score, matched_token_count: matchedTokenCount };
         })
         .filter((s) => s.score > 0)
         .sort((a, b) => b.score - a.score);
@@ -109,6 +131,10 @@ function createVectorStore(embed) {
 
 function searchableTextOf(record) {
   return [
+    record.document_id,
+    record.guideline_code,
+    record.document_title,
+    ...(record.section_path || []),
     record.section_number,
     record.parameter,
     record.subject,

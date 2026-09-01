@@ -152,6 +152,20 @@
     </article>`;
   }
 
+  function renderGeneratedUnit(unit, claims, i18n) {
+    const claim = claimForUnit(unit, claims);
+    if (!claim || !claim.citation) return `<div class="generated-unit claim-error" role="alert">${escapeHtml(i18n.claimMissingCitation)}</div>`;
+    return `<p class="generated-unit"><span>${escapeHtml(unit.text)}</span>
+      <a class="generated-citation" href="#evidence-${escapeHtml(claim.source_unit_id)}">${escapeHtml(compactCitation(claim.citation))}</a></p>`;
+  }
+
+  function renderSourceExcerptUnit(unit, claims, i18n) {
+    const claim = claimForUnit(unit, claims);
+    if (!claim || !claim.citation) return `<div class="excerpt-unit claim-error" role="alert">${escapeHtml(i18n.claimMissingCitation)}</div>`;
+    return `<article class="excerpt-unit" id="evidence-${escapeHtml(claim.source_unit_id)}"><blockquote>${escapeHtml(unit.text)}</blockquote>
+      ${renderCitationLine(claim.citation, i18n)}${renderApplicableConditions((claim.record || {}).applicable_conditions, i18n)}</article>`;
+  }
+
   function renderVerdictBar(envelope, i18n) {
     if (envelope.route === "structured") return `<div class="verdict verdict-structured">${escapeHtml(i18n.structuredRouteLabel)} · ${escapeHtml(i18n.structuredRouteSub)}</div>`;
     if (envelope.route === "source_excerpts") return `<div class="verdict verdict-excerpts">${escapeHtml(i18n.sourceExcerptsRouteLabel)} · ${escapeHtml(i18n.sourceExcerptsRouteSub)}</div>`;
@@ -204,13 +218,44 @@
       <span class="evidence-count">${claims.length}</span></summary><div class="evidence-list">${claims.map((claim) => renderClaimCard(claim, i18n)).join("")}</div></details>`;
   }
 
+  function renderGeneratedEvidence(envelope, i18n) {
+    const claims = uniqueClaims(envelope.claims);
+    return `<section class="generated-evidence" aria-labelledby="generated-evidence-heading"><div class="section-label" id="generated-evidence-heading">${escapeHtml(i18n.generatedEvidenceTitle)}</div>
+      <div class="generated-evidence-list">${claims.map((claim) => renderClaimCard(claim, i18n)).join("")}</div></section>`;
+  }
+
   function renderReviewStatusFooter(envelope, i18n) {
     return envelope.answered ? `<div class="transparency-footer">${escapeHtml(i18n.reviewStatusMeaning)}</div>` : "";
   }
 
+  function renderRouteIndicator(envelope, i18n) {
+    const route = envelope.route || "unknown";
+    const mode = envelope.mode;
+    const modeIsDistinct = mode && ![route, "generated", "source_excerpts", "refusal", "structured"].includes(mode);
+    return `<span class="route-indicator route-${escapeHtml(route)}"><span>${escapeHtml(i18n.routeIndicatorLabel)}</span>
+      <code>${escapeHtml(route)}</code>${modeIsDistinct ? `<span class="route-mode"><span>${escapeHtml(i18n.modeIndicatorLabel)}</span> <code>${escapeHtml(mode)}</code></span>` : ""}</span>`;
+  }
+
+  function renderGeneratedLayout(envelope, i18n) {
+    const units = answerUnits(envelope, i18n);
+    return `<div class="generated-layout"><section class="generated-answer-panel" aria-labelledby="answer-heading">
+      <div class="generated-answer-heading"><span class="section-label" id="answer-heading">${escapeHtml(i18n.generatedAnswerTitle)}</span><span class="generated-mark" aria-hidden="true">G</span></div>
+      <div class="generated-answer-body">${units.map((unit) => renderGeneratedUnit(unit, envelope.claims, i18n)).join("")}</div>
+      ${renderVerdictBar(envelope, i18n)}${renderReviewStatusFooter(envelope, i18n)}</section>${renderGeneratedEvidence(envelope, i18n)}</div>`;
+  }
+
+  function renderSourceExcerptsLayout(envelope, i18n) {
+    const units = answerUnits(envelope, i18n);
+    return `<div class="excerpts-layout"><section class="excerpt-intro"><span class="section-label">${escapeHtml(i18n.sourceExcerptsRouteLabel)}</span>
+      <p>${escapeHtml(i18n.sourceExcerptIntro)}</p></section><div class="excerpt-list">${units.map((unit) => renderSourceExcerptUnit(unit, envelope.claims, i18n)).join("")}</div>
+      ${renderVerdictBar(envelope, i18n)}${renderReviewStatusFooter(envelope, i18n)}</div>`;
+  }
+
   function renderEnvelope(envelope, i18n, question) {
-    const questionBlock = question ? `<header class="question-context"><span>${escapeHtml(i18n.questionLabel)}</span><h1>${escapeHtml(question)}</h1></header>` : "";
+    const questionBlock = question ? `<header class="question-context"><div class="question-meta"><span>${escapeHtml(i18n.questionLabel)}</span>${renderRouteIndicator(envelope, i18n)}</div><h1>${escapeHtml(question)}</h1></header>` : "";
     if (!envelope.answered) return `<article class="answer-page">${questionBlock}${renderRefusalCard(envelope, i18n)}</article>`;
+    if (envelope.route === "grounded_generation") return `<article class="answer-page mode-generated">${questionBlock}${renderGeneratedLayout(envelope, i18n)}</article>`;
+    if (envelope.route === "source_excerpts") return `<article class="answer-page mode-source-excerpts">${questionBlock}${renderSourceExcerptsLayout(envelope, i18n)}</article>`;
     const body = envelope.mode === "comparison" ? renderComparison(envelope, i18n)
       : envelope.mode === "amendment" ? renderAmendment(envelope, i18n)
         : answerUnits(envelope, i18n).map((unit) => renderAnswerUnit(unit, envelope.claims, i18n)).join("");
@@ -219,6 +264,6 @@
       ${body}${renderVerdictBar(envelope, i18n)}${renderReviewStatusFooter(envelope, i18n)}</section>${renderEvidencePanel(envelope, i18n)}</div></article>`;
   }
 
-  return { escapeHtml, pdfUrl, renderCitationLine, renderModalityLabel, renderValueStatusNote, renderClaimCard, renderVerdictBar,
-    renderRefusalCard, renderComparison, renderAmendment, renderEnvelope };
+  return { escapeHtml, pdfUrl, renderCitationLine, renderModalityLabel, renderValueStatusNote, renderClaimCard, renderVerdictBar, renderRouteIndicator,
+    renderGeneratedUnit, renderSourceExcerptUnit, renderRefusalCard, renderComparison, renderAmendment, renderEnvelope };
 });

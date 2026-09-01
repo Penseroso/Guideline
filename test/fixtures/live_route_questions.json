@@ -1,0 +1,177 @@
+{
+  "_comment": "Realistic questions used by scripts/test_live_routes.js to exercise every public semantic answer route through POST /api/ask. The live profile uses configured generator and verifier APIs; the excerpts profile deliberately disables generation to verify the key-independent local fallback.",
+  "questions": [
+    {
+      "id": "structured_qc_replicates",
+      "profile": "live",
+      "question": "For ICH M10 bioanalytical method validation, how many replicates are required at each QC concentration level?",
+      "expect_route": "structured",
+      "expect_mode": "structured",
+      "expect_answered": true
+    },
+    {
+      "id": "structured_comparison",
+      "profile": "live",
+      "question": "FDA ADA와 ICH M10의 분석법 관련 기준을 비교해 주세요.",
+      "expect_route": "structured",
+      "expect_mode": "comparison",
+      "expect_answered": true
+    },
+    {
+      "id": "structured_amendment",
+      "profile": "live",
+      "question": "ICH S6(R1) Addendum의 개정 이력과 주요 Note 내용을 알려 주세요.",
+      "expect_route": "structured",
+      "expect_mode": "amendment",
+      "expect_answered": true
+    },
+    {
+      "id": "grounded_cross_lab_stability",
+      "profile": "live",
+      "question": "What evidence supports cross-laboratory stability testing?",
+      "expect_route": "source_excerpts",
+      "expect_mode": "source_excerpts",
+      "expect_answered": true
+    },
+    {
+      "id": "source_excerpts_isr_selection",
+      "profile": "excerpts",
+      "question": "What source passages discuss how incurred samples should be selected for ISR under ICH M10?",
+      "expect_route": "source_excerpts",
+      "expect_mode": "source_excerpts",
+      "expect_answered": true
+    },
+    {
+      "id": "refusal_unrelated",
+      "profile": "live",
+      "question": "What is the meaning of life?",
+      "expect_route": "refusal",
+      "expect_mode": "refusal",
+      "expect_answered": false,
+      "expect_refusal_kind": "no_candidates"
+    },
+    {
+      "id": "crude_m10_qc_replicates",
+      "profile": "live",
+      "robustness": true,
+      "question": "m10 qc 레벨당 반복 몇개?",
+      "expect_route": "structured",
+      "expect_answered": true,
+      "expect_document_ids": ["ich_m10"]
+    },
+    {
+      "id": "crude_m10_lloq_accuracy",
+      "profile": "live",
+      "robustness": true,
+      "question": "lloq accuracy +-20 맞음?",
+      "expect_route": "structured",
+      "expect_answered": true,
+      "expect_document_ids": ["ich_m10"]
+    },
+    {
+      "id": "crude_fda_ada_interference",
+      "profile": "live",
+      "robustness": true,
+      "question": "ada assay 약물 간섭 있으면 샘플 어케 봄?",
+      "expect_route": "grounded_generation",
+      "expect_mode": "generated",
+      "expect_answered": true,
+      "expect_document_ids": ["fda_ada"]
+    },
+    {
+      "id": "crude_fda_ada_evaluation",
+      "profile": "live",
+      "robustness": true,
+      "question": "ada 평가방법",
+      "expect_route": "grounded_generation",
+      "expect_mode": "generated",
+      "expect_answered": true,
+      "expect_document_ids": ["fda_ada"]
+    },
+    {
+      "id": "crude_s6_one_species",
+      "profile": "live",
+      "robustness": true,
+      "question": "s6 관련종 한종밖에 없을때 어케함?",
+      "expect_route": "grounded_generation",
+      "expect_mode": "generated",
+      "expect_answered": true,
+      "expect_document_ids": ["ich_s6_r1"]
+    },
+    {
+      "id": "crude_ema_fih_starting_dose",
+      "profile": "live",
+      "robustness": true,
+      "question": "fih 초회 dose 정할때 mabel noael 뭐부터 봄?",
+      "expect_answered": true,
+      "expect_document_ids": ["ema_fih"]
+    },
+    {
+      "id": "crude_m3_microdose",
+      "profile": "live",
+      "robustness": true,
+      "question": "m3 microdose approach1 100ug, noael 1/100 맞음?",
+      "expect_route": "structured",
+      "expect_answered": true,
+      "expect_document_ids": ["ich_m3_r2"]
+    },
+    {
+      "id": "crude_fda_2014_baseline",
+      "profile": "live",
+      "robustness": true,
+      "question": "면역원성 샘플 baseline 언제 뽑음?",
+      "expect_answered": true,
+      "expect_document_ids": ["fda_ada_2014"]
+    },
+    {
+      "id": "crude_m10_isr_selection",
+      "profile": "live",
+      "robustness": true,
+      "question": "m10 ISR 샘플 어케 고름?",
+      "expect_answered": true,
+      "expect_document_ids": ["ich_m10"]
+    },
+    {
+      "id": "broad_m10_validation",
+      "profile": "live",
+      "robustness": true,
+      "sequence": "m10_validation_funnel",
+      "sequence_order": 1,
+      "question": "m10 밸리데이션 뭐 봐야 함?",
+      "expect_answered": true,
+      "expect_document_ids": ["ich_m10"]
+    },
+    {
+      "id": "detail_lcms_full_validation",
+      "profile": "live",
+      "robustness": true,
+      "sequence": "m10_validation_funnel",
+      "sequence_order": 2,
+      "question": "lc-ms/ms에서 full validation 항목?",
+      "expect_route": "structured",
+      "expect_mode": "list",
+      "expect_answered": true,
+      "expect_document_ids": ["ich_m10"]
+    },
+    {
+      "id": "broad_ada_evaluation_start",
+      "profile": "live",
+      "robustness": true,
+      "sequence": "ada_evaluation_funnel",
+      "sequence_order": 1,
+      "question": "ada 평가는 보통 어떻게 시작해?",
+      "expect_answered": true,
+      "expect_document_ids": ["fda_ada"]
+    },
+    {
+      "id": "detail_ada_screen_positive_next",
+      "profile": "live",
+      "robustness": true,
+      "sequence": "ada_evaluation_funnel",
+      "sequence_order": 2,
+      "question": "ada screening 양성이면 다음 뭐함?",
+      "expect_answered": true,
+      "expect_document_ids": ["fda_ada"]
+    }
+  ]
+}

@@ -12,7 +12,8 @@
     "normalize:ko": "node scripts/build_ko_presentation.js",
     "chat": "node engine/cli.js",
     "serve": "node engine/server.js",
-    "eval": "node engine/eval_harness.js"
+    "eval": "node engine/eval_harness.js",
+    "test:routes:live": "node scripts/test_live_routes.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1",
