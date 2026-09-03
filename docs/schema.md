@@ -14,6 +14,8 @@ Model `0.5.0` is implemented as a machine-validatable JSON bundle contract with 
 
 An earlier derived-layer design (AmendmentMapping, EffectiveRecord, a family/edition registry) was explored but never adopted into the product build, so it is not described here as current.
 
+A new, separate proposal for a source-grounded answer-planning overlay is documented in `docs/derived_semantic_layer.md`. It does not calculate amendment/effective state and is not part of the active `0.5.0` model until its schemas, validators, and representative data are implemented.
+
 ## Core principles
 
 - Preserve source text before semantic interpretation.
