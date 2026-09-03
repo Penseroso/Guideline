@@ -2,7 +2,7 @@ const assert = require("node:assert/strict");
 const test = require("node:test");
 
 const { loadSemanticOverlayStore } = require("../engine/semantic_overlay_store");
-const { buildShadowPlan, comparePlans } = require("../engine/semantic_shadow");
+const { buildShadowPlan, comparePlans, buildReviewedSemanticCoverage } = require("../engine/semantic_shadow");
 
 const store = loadSemanticOverlayStore();
 
@@ -385,4 +385,61 @@ test("a stale overlay is reported distinctly from a document that never had one"
   assert.equal(plan.applicable, false);
   assert.equal(plan.reason, "overlay_stale");
   assert.deepEqual(plan.stale_document_ids, ["ich_m10"]);
+});
+
+// --- buildReviewedSemanticCoverage (Stage C's review_status gate) ---
+
+function storeWithManifestReviewStatus(manifestId, reviewStatus) {
+  const overlaysByDocumentId = new Map(store.overlaysByDocumentId);
+  for (const [documentId, overlay] of overlaysByDocumentId) {
+    const manifest = (overlay.coverage_manifests || []).find((m) => m.manifest_id === manifestId);
+    if (!manifest) continue;
+    const mutatedOverlay = {
+      ...overlay,
+      coverage_manifests: overlay.coverage_manifests.map((m) => m.manifest_id === manifestId ? { ...m, review_status: reviewStatus } : m)
+    };
+    overlaysByDocumentId.set(documentId, mutatedOverlay);
+    break;
+  }
+  return { ...store, overlaysByDocumentId };
+}
+
+test("buildReviewedSemanticCoverage filters out a manifest that is not (yet) reviewed", () => {
+  const needsReviewStore = storeWithManifestReviewStatus("ich_m10.sem.manifest.run_acceptance", "needs_review");
+  const envelope = {
+    answer_intent: "multi_criterion",
+    scope: { resolved_document_ids: ["ich_m10"], requested_document_ids: [] },
+    claims: [claim({ id: "ich_m10.qc.3_3_2.001", document_id: "ich_m10" })]
+  };
+  const coverage = buildReviewedSemanticCoverage("chromatography 분석 run 허용 기준이 뭐야?", envelope, { store: needsReviewStore });
+  assert.equal(coverage, null, "a manifest still needs_review must never be disclosed, even if it would otherwise apply");
+});
+
+test("buildReviewedSemanticCoverage includes a manifest once it's reviewed (against the real, currently-promoted store)", () => {
+  const envelope = {
+    answer_intent: "multi_criterion",
+    scope: { resolved_document_ids: ["ich_m10"], requested_document_ids: [] },
+    claims: [claim({ id: "ich_m10.qc.3_3_2.001", document_id: "ich_m10" })]
+  };
+  const coverage = buildReviewedSemanticCoverage("chromatography 분석 run 허용 기준이 뭐야?", envelope, { store });
+  assert.ok(coverage);
+  const manifest = coverage.manifests.find((m) => m.manifest_id === "ich_m10.sem.manifest.run_acceptance");
+  assert.ok(manifest);
+  assert.equal(manifest.review_status, "reviewed");
+});
+
+test("buildReviewedSemanticCoverage.comparison only keeps an axis with >=2 reviewed sides, and computes both_sides_evidenced from those alone", () => {
+  const envelope = {
+    answer_intent: null,
+    claims: [
+      claim({ id: "ich_m3_r2.kr.1_3.004", document_id: "ich_m3_r2" }),
+      claim({ id: "ich_s6_r1.kr.1_3.001", document_id: "ich_s6_r1" })
+    ]
+  };
+  const coverage = buildReviewedSemanticCoverage("M3(R2)와 S6(R1)의 적용 범위는 어떻게 달라?", envelope, { store });
+  assert.ok(coverage);
+  const axis = coverage.comparison.find((a) => a.axis_id === "scope.product_or_matrix");
+  assert.ok(axis);
+  assert.deepEqual(axis.bindings.map((b) => b.document_id).sort(), ["ich_m3_r2", "ich_s6_r1"]);
+  assert.ok(axis.bindings.every((b) => b.review_status === "reviewed"));
 });

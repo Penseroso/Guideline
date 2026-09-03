@@ -3,7 +3,7 @@ const assert = require("node:assert/strict");
 
 const { loadStore } = require("../engine/data_store");
 const { answer } = require("../engine/query_router");
-const { answerEnvelope, ENVELOPE_VERSION } = require("../engine/answer_envelope");
+const { answerEnvelope, ENVELOPE_VERSION, safeReviewedSemanticCoverage } = require("../engine/answer_envelope");
 const fixture = require("./fixtures/eval_questions.json");
 
 const { records, index } = loadStore();
@@ -161,6 +161,78 @@ test("grounded-generation success and verification fallback both produce a fully
   assert.equal(excerpts.mode, "source_excerpts");
   assert.equal(excerpts.route, "source_excerpts");
   assert.equal(excerpts.answer_units[0].text, candidate.source_text);
+});
+
+// --- Stage C (docs/derived_semantic_layer.md §10): semantic_coverage on the grounded_generation synthesis box ---
+
+function entailedClient(text) {
+  return {
+    complete: async ({ schema }) => schema.properties.verdicts
+      ? { verdicts: [{ unit_index: 0, entailed: true, source_index: 0, reason: "supported" }] }
+      : { answered: true, units: [{ text, source_index: 0 }] }
+  };
+}
+
+test("semantic_coverage is present on a grounded_generation envelope for a document with a reviewed manifest, and reflects real facet coverage", async () => {
+  const client = entailedClient("요약된 종합 답변입니다.");
+  const env = await answerEnvelope("EMA FIH 가이드라인은 첫 투여 전에 뭘 종합해서 보라는 거야?", records, {
+    client, store: fakeStore([]), index, generationPreference: "auto"
+  });
+  assert.equal(env.route, "grounded_generation");
+  assert.ok(env.semantic_coverage, "expected a semantic_coverage annotation");
+  const manifest = env.semantic_coverage.manifests.find((m) => m.manifest_id === "ema_fih.sem.manifest.document_overview");
+  assert.ok(manifest);
+  assert.equal(manifest.review_status, "reviewed");
+  // Stage C is disclosure-only: it must never rewrite what was actually
+  // generated or which claims/citations are shown.
+  assert.ok(env.prose.startsWith("요약된 종합 답변입니다."));
+});
+
+test("semantic_coverage is null (not undefined, not an empty object) when nothing in the derived layer applies to this narrow structured topic", async () => {
+  // M10's glossary section has no coverage_manifest scoped anywhere near
+  // it — a real "genuinely not applicable" case, distinct from the
+  // review_status filter (which test/engine_semantic_shadow.test.js
+  // covers directly against a fake store).
+  const client = { complete: async () => { throw new Error("must not be called"); } };
+  const env = await answerEnvelope("M10 glossary에 정의는 뭐가 있어?", records, { client, store: fakeStore([]), index });
+  assert.equal(env.route, "structured");
+  assert.equal(env.semantic_coverage, null);
+});
+
+test("semantic_coverage is now also attached on the structured route — Stage C's grounded_generation-only scope was the first increment, not the final one", async () => {
+  // No client at all (not even a throwing one): this question's mode
+  // (multi_criterion) IS eligible for generation per shouldGenerate(), so
+  // a throw-client would actually be invoked and throw. Omitting
+  // generatorClient/verifierClient entirely is the deterministic way to
+  // force the structured branch regardless of mode eligibility.
+  const env = await answerEnvelope("분석 run을 accept하려면 calibration standard랑 QC가 각각 어떻게 돼야 해?", records, { index });
+  assert.equal(env.route, "structured");
+  assert.ok(env.semantic_coverage, "expected semantic_coverage on the structured route now that ich_m10.sem.manifest.run_acceptance is reviewed");
+  const manifest = env.semantic_coverage.manifests.find((m) => m.manifest_id === "ich_m10.sem.manifest.run_acceptance");
+  assert.ok(manifest);
+  // Real Q06 shape: technique-agnostic wording leaves both branches ambiguous.
+  assert.equal(manifest.status, "ambiguous");
+});
+
+test("semantic_coverage.comparison discloses the shared axis on a comparison answer, gated to reviewed bindings", async () => {
+  // Same reasoning as above: comparison mode is generation-eligible, so no
+  // client at all (not a throw-client) to force the deterministic structured path.
+  const env = await answerEnvelope("M3(R2)와 S6(R1)의 적용 범위는 어떻게 달라?", records, { index });
+  assert.equal(env.mode, "comparison");
+  assert.ok(env.semantic_coverage, "expected a semantic_coverage annotation on the comparison answer");
+  assert.ok(env.semantic_coverage.comparison, "expected a comparison entry");
+  const axis = env.semantic_coverage.comparison.find((a) => a.axis_id === "scope.product_or_matrix");
+  assert.ok(axis);
+  assert.deepEqual(axis.bindings.map((b) => b.document_id).sort(), ["ich_m3_r2", "ich_s6_r1"]);
+});
+
+test("safeReviewedSemanticCoverage swallows an internal failure and returns null rather than throwing", () => {
+  // A claim whose `record` access itself throws forces buildShadowPlan's
+  // internal read path to fail — this must never propagate, since it sits
+  // strictly after the real answer was already built.
+  const poisonedClaim = { get record() { throw new Error("synthetic failure"); } };
+  const result = safeReviewedSemanticCoverage("아무 질문", { claims: [poisonedClaim], scope: null });
+  assert.equal(result, null);
 });
 
 test("a scope-excluded fallback query produces refusal.kind = scope_excluded via the envelope", async () => {

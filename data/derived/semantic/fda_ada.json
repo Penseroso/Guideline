@@ -247,7 +247,7 @@
           "display_order": 1
         }
       ],
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "manifest_id": "fda_ada.sem.manifest.screening_performance",
@@ -273,7 +273,7 @@
           "display_order": 1
         }
       ],
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     }
   ],
   "comparison_bindings": [],

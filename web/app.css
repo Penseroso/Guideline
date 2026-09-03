@@ -161,12 +161,25 @@ body.idle .result-panel { display: none; }
 .question-context h1 { margin: 0; font-size: clamp(1.25rem, 2vw, 1.65rem); line-height: 1.38; letter-spacing: -.025em; text-wrap: pretty; }
 .answer-scope { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
 .answer-scope-label { margin-bottom: 7px; color: var(--text-faint); font-size: .72rem; font-weight: 650; letter-spacing: .04em; }
-.answer-scope ul { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
-.answer-scope li { padding: 3px 8px; border-radius: 999px; background: var(--surface-soft); color: var(--text-dim); font-size: .72rem; }
-.answer-scope .scope-more { background: transparent; color: var(--text-faint); }
+.answer-scope-group { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 6px; }
+.answer-scope-group:first-of-type { margin-top: 0; }
+.answer-scope-guideline { color: var(--text-faint); font-size: .72rem; font-weight: 600; }
+.answer-scope-group ul { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.answer-scope-group li { padding: 3px 8px; border-radius: 999px; background: var(--surface-soft); color: var(--text-dim); font-size: .72rem; }
+.scope-more { margin-top: 6px; color: var(--text-faint); font-size: .72rem; }
 .coverage-complete { margin: 7px 0 0; color: var(--text-faint); font-size: .75rem; }
 .coverage-warning, .fallback-warning { display: grid; gap: 3px; margin-top: 11px; padding: 11px 13px; border-left: 3px solid var(--warn); background: color-mix(in srgb, var(--warn) 8%, var(--surface)); color: var(--text-dim); font-size: .8rem; line-height: 1.5; }
 .coverage-warning strong, .fallback-warning strong { color: var(--warn); }
+.semantic-coverage { display: grid; gap: 8px; margin-top: 11px; padding: 11px 13px; border-left: 3px solid var(--accent); background: var(--accent-tint); border-radius: 4px; }
+.semantic-coverage-label { color: var(--accent); font-size: .72rem; font-weight: 650; letter-spacing: .04em; }
+.semantic-coverage-manifest p { margin: 0; color: var(--text-dim); font-size: .8rem; line-height: 1.5; }
+.semantic-coverage-missing-label { display: block; margin-top: 6px; color: var(--text-faint); font-size: .72rem; font-weight: 650; letter-spacing: .02em; }
+.semantic-coverage-missing { display: flex; flex-wrap: wrap; gap: 6px; margin: 5px 0 0; padding: 0; list-style: none; }
+.semantic-coverage-missing li { padding: 3px 8px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); color: var(--text-dim); font-size: .72rem; }
+.semantic-coverage-axis-label { display: block; color: var(--text-faint); font-size: .72rem; font-weight: 650; letter-spacing: .02em; }
+.semantic-coverage-comparison ul { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 5px 0 0; padding: 0; list-style: none; }
+.semantic-coverage-comparison li { color: var(--text-dim); font-size: .8rem; }
+.semantic-coverage-comparison li strong { color: var(--accent); margin-right: 4px; }
 .answer-layout { display: grid; grid-template-columns: minmax(0, 720px) minmax(300px, 360px); gap: 48px; align-items: start; }
 .answer-primary { min-width: 0; }
 .answer-unit { padding: 0 0 30px; }

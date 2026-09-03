@@ -306,24 +306,113 @@
     return envelope && envelope.coverage_status || coverage && coverage.status || (coverage && coverage.partial === true ? "partial" : null);
   }
 
+  /**
+   * Grouped by guideline so the same guideline_code doesn't repeat on
+   * every pill (the common single-document case previously rendered two
+   * pills each starting with the full "EMA/CHMP/SWP/28367/07 Rev. 1..." —
+   * visually much wider than the compact per-facet pills in
+   * renderSemanticCoverage right below it). One heading per guideline,
+   * short §-only pills under it; a guideline with no section info at all
+   * (rare — a citation missing section_number/section_title) still shows
+   * as its own single pill rather than an empty group.
+   */
   function renderAnswerScope(envelope, i18n) {
     const seen = new Set();
-    const scopes = [];
+    const entries = [];
     for (const claim of envelope.claims || []) {
       const citation = claim.citation;
       if (!citation) continue;
       const key = `${citation.document_id || citation.guideline_code}|${citation.section_number || ""}`;
       if (seen.has(key)) continue;
       seen.add(key);
-      scopes.push(`${citation.guideline_code || citation.document_id || ""}${citation.section_number ? ` §${citation.section_number}` : ""}${citation.section_title ? ` ${citation.section_title}` : ""}`);
+      entries.push({
+        guideline: citation.guideline_code || citation.document_id || "",
+        section: `${citation.section_number ? `§${citation.section_number}` : ""}${citation.section_title ? ` ${citation.section_title}` : ""}`.trim()
+      });
     }
-    if (!scopes.length) return "";
-    const visible = scopes.slice(0, 4).map((scope) => `<li>${escapeHtml(scope)}</li>`).join("");
-    const more = scopes.length > 4 ? `<li class="scope-more">${escapeHtml(i18n.answerScopeMore.replace("{count}", scopes.length - 4))}</li>` : "";
+    if (!entries.length) return "";
+
+    const visible = entries.slice(0, 4);
+    const more = entries.length > 4
+      ? `<div class="scope-more">${escapeHtml(i18n.answerScopeMore.replace("{count}", entries.length - 4))}</div>`
+      : "";
+
+    const order = [];
+    const groups = new Map();
+    for (const entry of visible) {
+      if (!groups.has(entry.guideline)) { groups.set(entry.guideline, []); order.push(entry.guideline); }
+      if (entry.section) groups.get(entry.guideline).push(entry.section);
+    }
+    const groupsHtml = order.map((guideline) => {
+      const sections = groups.get(guideline);
+      if (sections.length === 0) {
+        return `<div class="answer-scope-group"><ul><li>${escapeHtml(guideline)}</li></ul></div>`;
+      }
+      return `<div class="answer-scope-group"><span class="answer-scope-guideline">${escapeHtml(guideline)}</span><ul>${sections.map((section) => `<li>${escapeHtml(section)}</li>`).join("")}</ul></div>`;
+    }).join("");
+
     const status = coverageStatus(envelope);
     const warning = ["partial", "representative", "section_representative", "retrieved_excerpts", "generated_from_retrieved_excerpts"].includes(status) ? `<div class="coverage-warning" role="status"><strong>${escapeHtml(i18n.coveragePartialTitle)}</strong><span>${escapeHtml(i18n.coveragePartialBody)}</span></div>`
       : status === "complete" ? `<p class="coverage-complete">${escapeHtml(i18n.coverageComplete)}</p>` : "";
-    return `<section class="answer-scope" aria-label="${escapeHtml(i18n.answerScopeTitle)}"><div class="answer-scope-label">${escapeHtml(i18n.answerScopeTitle)}</div><ul>${visible}${more}</ul>${warning}</section>`;
+    return `<section class="answer-scope" aria-label="${escapeHtml(i18n.answerScopeTitle)}"><div class="answer-scope-label">${escapeHtml(i18n.answerScopeTitle)}</div>${groupsHtml}${more}${warning}</section>`;
+  }
+
+  /**
+   * Stage C (docs/derived_semantic_layer.md §10): the first served-answer
+   * use of the derived semantic layer. `envelope.semantic_coverage` is only
+   * ever present when engine/answer_envelope.js found a `reviewed`,
+   * non-stale coverage_manifest for the grounded_generation synthesis this
+   * envelope carries (engine/semantic_shadow.js's same Stage B math, now
+   * gated to reviewed-only) — every other route/mode leaves it absent, and
+   * this renders nothing for those, same as before Stage C existed.
+   * Facet ids are shown by their own last segment (no curated Korean
+   * facet labels exist yet — data/derived/presentation/ko/ only carries
+   * whole-synopsis sentences, not per-facet short labels).
+   */
+  function facetShortLabel(facetId) {
+    return String(facetId || "").split(".").pop().replace(/_/g, " ");
+  }
+
+  function statusLabel(i18n, status) {
+    const key = `semanticCoverageStatus${status.charAt(0).toUpperCase()}${status.slice(1)}`;
+    return i18n[key] || status;
+  }
+
+  // No curated guideline-label lookup exists in this pure render module —
+  // reuse whatever the claims already carry (the same citations answer-scope
+  // itself renders from) so a comparison axis reads "M3(R2): partial" rather
+  // than the raw document_id.
+  function guidelineLabelForDocument(envelope, documentId) {
+    for (const claim of envelope.claims || []) {
+      if (claim.citation && claim.citation.document_id === documentId) return claim.citation.guideline_code || documentId;
+    }
+    return documentId;
+  }
+
+  function renderSemanticCoverage(envelope, i18n) {
+    const semanticCoverage = envelope && envelope.semantic_coverage;
+    const manifests = semanticCoverage && Array.isArray(semanticCoverage.manifests) ? semanticCoverage.manifests : [];
+    const comparisons = semanticCoverage && Array.isArray(semanticCoverage.comparison) ? semanticCoverage.comparison : [];
+    if (manifests.length === 0 && comparisons.length === 0) return "";
+
+    const manifestBlocks = manifests.map((manifest) => {
+      const facets = (manifest.groups || []).flatMap((group) => group.facets || []);
+      const missing = facets.filter((facet) => facet.status === "missing" || facet.status === "partial");
+      const missingList = missing.length
+        ? `<ul class="semantic-coverage-missing">${missing.map((facet) => `<li>${escapeHtml(facetShortLabel(facet.facet_id))}</li>`).join("")}</ul>`
+        : "";
+      return `<div class="semantic-coverage-manifest" data-status="${escapeHtml(manifest.status)}"><p>${escapeHtml(statusLabel(i18n, manifest.status))}</p>${missing.length ? `<span class="semantic-coverage-missing-label">${escapeHtml(i18n.semanticCoverageMissingLabel)}</span>${missingList}` : ""}</div>`;
+    }).join("");
+
+    const comparisonBlocks = comparisons.map((axis) => {
+      const sides = axis.bindings.map((binding) => {
+        const label = guidelineLabelForDocument(envelope, binding.document_id);
+        return `<li><strong>${escapeHtml(label)}</strong> ${escapeHtml(statusLabel(i18n, binding.coverage.status))}</li>`;
+      }).join("");
+      return `<div class="semantic-coverage-comparison" data-both-sides-evidenced="${axis.both_sides_evidenced}"><span class="semantic-coverage-axis-label">${escapeHtml(i18n.semanticCoverageComparisonLabel)}</span><ul>${sides}</ul></div>`;
+    }).join("");
+
+    return `<section class="semantic-coverage" aria-label="${escapeHtml(i18n.semanticCoverageTitle)}"><div class="semantic-coverage-label">${escapeHtml(i18n.semanticCoverageTitle)}</div>${manifestBlocks}${comparisonBlocks}</section>`;
   }
 
   function renderGeneratedLayout(envelope, i18n) {
@@ -399,7 +488,7 @@
   }
 
   function renderEnvelope(envelope, i18n, question) {
-    const questionBlock = question ? `<header class="question-context"><div class="question-meta"><span>${escapeHtml(i18n.questionLabel)}</span>${renderRouteIndicator(envelope, i18n)}</div><h1>${escapeHtml(question)}</h1>${renderAnswerScope(envelope, i18n)}</header>` : "";
+    const questionBlock = question ? `<header class="question-context"><div class="question-meta"><span>${escapeHtml(i18n.questionLabel)}</span>${renderRouteIndicator(envelope, i18n)}</div><h1>${escapeHtml(question)}</h1>${renderAnswerScope(envelope, i18n)}${renderSemanticCoverage(envelope, i18n)}</header>` : "";
     if (!envelope.answered) return `<article class="answer-page">${questionBlock}${renderRefusalCard(envelope, i18n)}</article>`;
     if (envelope.route === "grounded_generation") return `<article class="answer-page mode-generated">${questionBlock}${renderGeneratedLayout(envelope, i18n)}</article>`;
     if (envelope.route === "source_excerpts") return `<article class="answer-page mode-source-excerpts">${questionBlock}${renderSourceExcerptsLayout(envelope, i18n)}</article>`;
@@ -414,5 +503,5 @@
   }
 
   return { escapeHtml, pdfUrl, renderCitationLine, renderEvidenceSourceHeader, renderModalityLabel, renderValueStatusNote, renderClaimCard, claimForUnit, renderVerdictBar, renderRouteIndicator,
-    renderGeneratedUnit, renderSourceExcerptUnit, renderSectionOverviewLayout, renderRefusalCard, renderComparison, renderProcess, renderAmendment, renderEnvelope };
+    renderGeneratedUnit, renderSourceExcerptUnit, renderSectionOverviewLayout, renderRefusalCard, renderComparison, renderProcess, renderAmendment, renderSemanticCoverage, renderEnvelope };
 });

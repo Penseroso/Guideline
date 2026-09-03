@@ -324,6 +324,8 @@ coverage manifest는 “규제상 필수 항목”이 아니라 “이 범위의
 - API route의 자연어 종합 박스부터 적용하고, 아래 구조 근거는 기존 citation contract를 유지한다.
 - UI에 route, answer mode, coverage 상태 및 근거의 가이드라인/섹션 헤더를 표시한다.
 
+**구현(2026-09-03)**: 처음엔 가장 좁은 범위(manifest 1개, `grounded_generation` route만)로 파일럿을 돌려 검증한 뒤, 같은 날 나머지 4개 manifest와 2개 comparison_binding까지 전부 `reviewed`로 승격하고 `structured` route까지 확장했다 — §11 기계적 기준(validator 통과·stale 없음·shadow 재생에서 실제 발동)을 전부 통과한 상태였고, Stage B에서 각각 실제 감사 결함(Q06/Q15/Q20/Q49)을 재현한 것들이었다. 구현: `engine/semantic_shadow.js`의 `buildReviewedSemanticCoverage()`(Stage B의 `buildShadowPlan`을 그대로 재사용, manifest·comparison_binding 양쪽 다 `reviewed` 필터만 추가), `engine/answer_envelope.js`(`grounded_generation`과 `structured` 두 성공 분기에서 호출, 실패해도 응답에 영향 없음), `web/render.js`의 `renderSemanticCoverage`(manifest facet coverage + comparison 축 양쪽 disclosure, 기존 대략적 coverage-warning과 시각적으로 분리된 박스). 전체 기록과 검증(모의 클라이언트 + 실 브라우저·실 LLM, structured/grounded_generation/comparison 세 경로 전부): `history/verification/semantic_stage_c_pilot_2026-09-03.md`. `summary_specs`의 개괄문과 salience 노출 순서는 아직 어디에도 연결되지 않았다 — §10의 세 조건 중 "coverage 상태 disclosure"만 다룬다. `refusal`/`source_excerpts` route는 의도적으로 제외했다.
+
 ### 단계 D — 범위 확장
 
 - 질문 빈도나 특정 테스트 문항이 아니라 재사용 가능한 guideline section/topic 단위로 확장한다.

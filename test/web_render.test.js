@@ -49,6 +49,13 @@ const i18n = {
   coverageComplete: "coverage complete",
   coveragePartialTitle: "Partial coverage",
   coveragePartialBody: "Some question scope may be missing.",
+  semanticCoverageTitle: "Detailed coverage",
+  semanticCoverageStatusComplete: "All sub-items covered.",
+  semanticCoverageStatusPartial: "Some sub-items may be missing.",
+  semanticCoverageStatusAmbiguous: "Multiple items shown together.",
+  semanticCoverageStatusUnavailable: "No sub-items found.",
+  semanticCoverageMissingLabel: "Not confirmed",
+  semanticCoverageComparisonLabel: "Comparison-axis evidence",
   sectionOverviewIndex: "Child sections",
   sectionSynopsisTitle: "Key synopsis",
   originalEvidence: "Source evidence",
@@ -335,6 +342,114 @@ test("answer header shows evidence scope and warns when coverage is partial", ()
   assert.match(html, /M10 §3\.2\.5\.2/);
   assert.match(html, /coverage-warning/);
   assert.match(html, /Partial coverage/);
+});
+
+test("answer scope groups multiple sections from the same guideline under one heading, not a repeated pill each", () => {
+  const claims = [
+    { source_unit_id: "a", citation: realCitation({ section_number: "7.1", section_title: "General aspects" }), record: { id: "kr.1", type: "knowledge_record", source_text: "text" } },
+    { source_unit_id: "b", citation: realCitation({ section_number: "7.2", section_title: "Starting dose" }), record: { id: "kr.2", type: "knowledge_record", source_text: "text" } }
+  ];
+  const envelope = { answered: true, route: "structured", mode: "structured", claims };
+  const html = R.renderEnvelope(envelope, i18n, "question");
+  // The guideline code appears exactly once as a group heading (within the
+  // answer-scope section specifically) — not once per section pill. "M10"
+  // itself legitimately appears elsewhere on the page (evidence cards,
+  // PDF links), so this checks the heading element count, not raw text.
+  assert.equal((html.match(/class="answer-scope-guideline"/g) || []).length, 1);
+  assert.match(html, /<span class="answer-scope-guideline">M10<\/span>/);
+  assert.match(html, /<li>§7\.1 General aspects<\/li>/);
+  assert.match(html, /<li>§7\.2 Starting dose<\/li>/);
+});
+
+test("answer scope keeps distinct guidelines as separate groups (cross-document comparison shape)", () => {
+  const claims = [
+    { source_unit_id: "a", citation: realCitation({ guideline_code: "M10", document_id: "ich_m10", section_number: "1.3" }), record: { id: "kr.1", type: "knowledge_record", source_text: "text" } },
+    { source_unit_id: "b", citation: realCitation({ guideline_code: "S6(R1)", document_id: "ich_s6_r1", section_number: "1.3" }), record: { id: "kr.2", type: "knowledge_record", source_text: "text" } }
+  ];
+  const envelope = { answered: true, route: "structured", mode: "comparison", claims };
+  const html = R.renderEnvelope(envelope, i18n, "question");
+  assert.match(html, /<span class="answer-scope-guideline">M10<\/span>/);
+  assert.match(html, /<span class="answer-scope-guideline">S6\(R1\)<\/span>/);
+  const groupCount = (html.match(/class="answer-scope-group"/g) || []).length;
+  assert.equal(groupCount, 2);
+});
+
+test("semantic_coverage renders nothing when absent (Stage C touches only grounded_generation envelopes carrying it)", () => {
+  const claim = { source_unit_id: realCitation().source_unit_id, citation: realCitation(), record: { id: "kr.1", type: "knowledge_record", source_text: "text" } };
+  const envelope = { answered: true, route: "structured", mode: "structured", coverage: { status: "partial" }, claims: [claim] };
+  const html = R.renderEnvelope(envelope, i18n, "broad question");
+  assert.doesNotMatch(html, /semantic-coverage/);
+});
+
+test("semantic_coverage renders a distinct disclosure block, separate from the coarse coverage-warning, listing missing facets", () => {
+  const claim = { source_unit_id: realCitation().source_unit_id, citation: realCitation(), record: { id: "kr.1", type: "knowledge_record", source_text: "text" } };
+  const envelope = {
+    answered: true,
+    route: "grounded_generation",
+    mode: "generated",
+    claims: [claim],
+    answer_units: [{ text: "generated text", source_index: 0 }],
+    semantic_coverage: {
+      manifests: [
+        {
+          manifest_id: "ema_fih.sem.manifest.document_overview",
+          status: "partial",
+          groups: [
+            {
+              facets: [
+                { facet_id: "ema_fih.sem.facet.dose_selection", status: "covered" },
+                { facet_id: "ema_fih.sem.facet.quality", status: "missing" },
+                { facet_id: "ema_fih.sem.facet.non_clinical", status: "missing" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  };
+  const html = R.renderEnvelope(envelope, i18n, "broad question");
+  assert.match(html, /class="semantic-coverage"/);
+  assert.match(html, /Some sub-items may be missing\./);
+  assert.match(html, /<li>quality<\/li>/);
+  assert.match(html, /<li>non clinical<\/li>/);
+  // The covered facet must not appear in the missing list.
+  assert.doesNotMatch(html, /<li>dose selection<\/li>/);
+});
+
+test("renderSemanticCoverage in isolation: unknown status falls back to the raw status string rather than \"undefined\"", () => {
+  const html = R.renderSemanticCoverage(
+    { semantic_coverage: { manifests: [{ manifest_id: "m", status: "complete", groups: [{ facets: [{ facet_id: "a.b.c", status: "covered" }] }] }] } },
+    i18n
+  );
+  assert.match(html, /All sub-items covered\./);
+  assert.doesNotMatch(html, /undefined/);
+});
+
+test("renderSemanticCoverage renders a comparison axis block using each side's guideline label from its own claims", () => {
+  const envelope = {
+    claims: [
+      { citation: { document_id: "ich_m3_r2", guideline_code: "M3(R2)" } },
+      { citation: { document_id: "ich_s6_r1", guideline_code: "S6(R1)" } }
+    ],
+    semantic_coverage: {
+      manifests: [],
+      comparison: [
+        {
+          axis_id: "scope.product_or_matrix",
+          both_sides_evidenced: true,
+          bindings: [
+            { document_id: "ich_m3_r2", coverage: { status: "partial" } },
+            { document_id: "ich_s6_r1", coverage: { status: "partial" } }
+          ]
+        }
+      ]
+    }
+  };
+  const html = R.renderSemanticCoverage(envelope, i18n);
+  assert.match(html, /class="semantic-coverage-comparison"/);
+  assert.match(html, /Comparison-axis evidence/);
+  assert.match(html, /<strong>M3\(R2\)<\/strong> Some sub-items may be missing\./);
+  assert.match(html, /<strong>S6\(R1\)<\/strong> Some sub-items may be missing\./);
 });
 
 test("source excerpt fallback is explicitly warned and duplicate source evidence is rendered once", () => {

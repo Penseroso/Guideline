@@ -18,6 +18,7 @@
 
 const { structuredQuery, formatAnswer, answerFallback, explainRefusal, NOT_FOUND } = require("./query_router");
 const { presentClaims } = require("./answer_presenter");
+const { buildReviewedSemanticCoverage } = require("./semantic_shadow");
 
 const ENVELOPE_VERSION = "2.1.0";
 
@@ -57,6 +58,23 @@ function shouldGenerate(match, preference, generatorClient, verifierClient) {
     "list",
     "comparison"
   ].includes(modeForMatch(match));
+}
+
+/**
+ * Stage C's semantic_coverage annotation is best-effort disclosure, never
+ * load-bearing: a bug or unexpected shape in the derived-layer read path
+ * must never turn into a failed or degraded answer for a question that
+ * would otherwise have succeeded. Every caller of answerEnvelope gets this
+ * safety for free, rather than each one (server.js, cli.js, eval_harness.js)
+ * needing its own try/catch.
+ */
+function safeReviewedSemanticCoverage(question, envelope) {
+  try {
+    return buildReviewedSemanticCoverage(question, envelope);
+  } catch (error) {
+    console.error("[semantic-coverage] failed, omitting from envelope:", error.stack || error.message || error);
+    return null;
+  }
 }
 
 function generatedCoverageIsAdequate(match, generated) {
@@ -128,7 +146,7 @@ async function answerEnvelope(question, records, {
         fallbackMode: "grounded_generation"
       });
       if (generated.answered && generated.route === "grounded_generation" && generatedCoverageIsAdequate(match, generated)) {
-        return {
+        const envelope = {
           envelope_version: ENVELOPE_VERSION,
           answered: true,
           mode: "generated",
@@ -149,9 +167,16 @@ async function answerEnvelope(question, records, {
           review_status: generated.review_status,
           timing_ms: Date.now() - start
         };
+        // Stage C (docs/derived_semantic_layer.md §10), scoped narrowly to
+        // exactly the case the design calls out first: the grounded_generation
+        // synthesis box only. Disclosure-only — this never changes `prose`,
+        // `claims`, or the structured citation contract below it, and only
+        // ever reflects `reviewed`, non-stale manifests.
+        envelope.semantic_coverage = safeReviewedSemanticCoverage(question, envelope);
+        return envelope;
       }
     }
-    return {
+    const structuredEnvelope = {
       envelope_version: ENVELOPE_VERSION,
       answered: true,
       mode: deterministicMode,
@@ -168,6 +193,15 @@ async function answerEnvelope(question, records, {
       review_status: reviewStatusFor(match),
       timing_ms: Date.now() - start
     };
+    // Stage C, extended to the structured route: several promoted
+    // manifests are most often exercised here, not on grounded_generation
+    // (e.g. ich_m10's run_acceptance branch — the audit's Q06 case — comes
+    // back as route:"structured", mode:"multi_criterion"). Same
+    // disclosure-only contract as the grounded_generation branch above:
+    // never touches `prose`/`claims`/citations, best-effort, swallowed on
+    // failure.
+    structuredEnvelope.semantic_coverage = safeReviewedSemanticCoverage(question, structuredEnvelope);
+    return structuredEnvelope;
   }
 
   if (!store) {
@@ -230,4 +264,4 @@ async function answerEnvelope(question, records, {
   };
 }
 
-module.exports = { answerEnvelope, ENVELOPE_VERSION };
+module.exports = { answerEnvelope, ENVELOPE_VERSION, safeReviewedSemanticCoverage };

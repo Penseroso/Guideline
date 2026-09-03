@@ -481,4 +481,49 @@ function comparePlans(question, envelope, options) {
   };
 }
 
-module.exports = { buildShadowPlan, comparePlans, defaultStore };
+/**
+ * Stage C (docs/derived_semantic_layer.md §10): "reviewed이고 hash가
+ * 최신인 객체만 답변에 사용한다." Everything above (buildShadowPlan,
+ * comparePlans) stays Stage B — it deliberately reports every manifest
+ * regardless of review_status, because that's what a human reviewing the
+ * shadow log needs to see. This is the one function real answer
+ * construction is allowed to call: it reuses that exact same plan (same
+ * relevance filtering, same facet-coverage math — nothing duplicated) and
+ * then throws away every manifest that isn't `review_status: "reviewed"`.
+ * A manifest whose overlay went stale never reaches this point at all —
+ * engine/semantic_overlay_store.js already dropped it before
+ * buildShadowPlan ever saw it.
+ *
+ * Returns null (not an empty object) when there's nothing reviewed to
+ * show, so a caller can treat "no semantic_coverage field" and "field is
+ * present but empty" as the same thing — never render an empty box.
+ */
+function buildReviewedSemanticCoverage(question, envelope, options) {
+  const shadowPlan = buildShadowPlan(question, envelope, options);
+  if (!shadowPlan.applicable) return null;
+
+  const manifests = (shadowPlan.manifests || []).filter((manifest) => manifest.review_status === "reviewed");
+
+  // Same reviewed-only filter applied per binding, then an axis is only
+  // kept if at least two distinct documents still have a reviewed binding
+  // on it afterward — a comparison row needs two reviewed sides to mean
+  // anything, same as buildComparisonPlan's own >=2-documents rule above.
+  const comparison = (shadowPlan.comparison || [])
+    .map((axis) => ({
+      axis_id: axis.axis_id,
+      bindings: (axis.bindings || []).filter((binding) => binding.review_status === "reviewed")
+    }))
+    .filter((axis) => new Set(axis.bindings.map((binding) => binding.document_id)).size >= 2)
+    .map((axis) => ({
+      axis_id: axis.axis_id,
+      bindings: axis.bindings,
+      both_sides_evidenced: new Set(
+        axis.bindings.filter((binding) => binding.coverage.status !== "missing").map((binding) => binding.document_id)
+      ).size >= 2
+    }));
+
+  if (manifests.length === 0 && comparison.length === 0) return null;
+  return { manifests, comparison };
+}
+
+module.exports = { buildShadowPlan, comparePlans, buildReviewedSemanticCoverage, defaultStore };
