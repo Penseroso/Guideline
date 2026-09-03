@@ -21,14 +21,16 @@ function tempPath(name) {
 async function withServer(opts, fn) {
   const queryLogPath = tempPath("test_query_log");
   const feedbackLogPath = tempPath("test_feedback_log");
-  const server = startServer({ port: 0, host: "127.0.0.1", deps: {}, queryLogPath, feedbackLogPath, ...opts });
+  const semanticShadowLogPath = tempPath("test_semantic_shadow_log");
+  const server = startServer({ port: 0, host: "127.0.0.1", deps: {}, queryLogPath, feedbackLogPath, semanticShadowLogPath, ...opts });
   await new Promise((resolve) => server.once("listening", resolve));
   try {
-    await fn(server, { queryLogPath, feedbackLogPath });
+    await fn(server, { queryLogPath, feedbackLogPath, semanticShadowLogPath });
   } finally {
     await new Promise((resolve) => server.close(resolve));
     fs.rmSync(queryLogPath, { force: true });
     fs.rmSync(feedbackLogPath, { force: true });
+    fs.rmSync(semanticShadowLogPath, { force: true });
   }
 }
 

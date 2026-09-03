@@ -312,6 +312,8 @@ coverage manifest는 “규제상 필수 항목”이 아니라 “이 범위의
 - 기존 50문항 감사 세트에서 기존 plan과 새 plan의 facet coverage, 순서, 비교 축을 나란히 기록한다.
 - 새 레이어가 근거 recall을 줄이거나 범위를 과도하게 확장하면 해당 manifest를 `needs_review`로 되돌린다.
 
+구현: `engine/semantic_overlay_store.js`(적재·staleness 필터), `engine/semantic_shadow.js`(facet-level plan 계산, envelope 비변경), `engine/semantic_shadow_log.js` + `engine/server.js`(`/api/ask` 응답 완성 후 로그만 append, 실패해도 응답에 영향 없음), `scripts/run_semantic_shadow_audit.js`(기존 50문항 결과를 재실행 없이 재생). 1차 실행 결과와 분석: `history/verification/semantic_shadow_stage_b_2026-09-03.md` — Q06/Q26 실제 결함을 독립적으로 재현했고, facet coverage를 대표 근거 1개와의 정확 일치로만 판정하면 과소평가(Q14)가 생겨 section 단위 보조 신호(topical)를 추가했다. 이 결과에 따라 Stage C 승격 검토 우선순위를 제시했으나, 아직 어떤 manifest도 `reviewed`로 전이되지 않았다.
+
 ### 단계 C — 검토 완료 범위만 활성화
 
 - `reviewed`이고 hash가 최신인 객체만 답변에 사용한다.

@@ -14,7 +14,7 @@ Model `0.5.0` is implemented as a machine-validatable JSON bundle contract with 
 
 An earlier derived-layer design (AmendmentMapping, EffectiveRecord, a family/edition registry) was explored but never adopted into the product build, so it is not described here as current.
 
-A separate, additive proposal for a source-grounded answer-planning overlay is documented in `docs/derived_semantic_layer.md`. It does not calculate amendment/effective state and does not change this `0.5.0` model. Its Stage A contract (schemas, validator, and a small representative sample) is implemented — see "Derived semantic overlay" below — but it is not yet consumed by the answer engine (Stage B/C of `docs/derived_semantic_layer.md` §10).
+A separate, additive proposal for a source-grounded answer-planning overlay is documented in `docs/derived_semantic_layer.md`. It does not calculate amendment/effective state and does not change this `0.5.0` model. Its Stage A contract (schemas, validator, and a small representative sample) and Stage B shadow-mode wiring into the answer engine are implemented — see "Derived semantic overlay" below — but no answer response is built from it yet (Stage C of `docs/derived_semantic_layer.md` §10).
 
 ## Core principles
 
@@ -96,7 +96,13 @@ Files:
 
 Implementation note beyond the design document's literal text: an `evidence_refs.record_id` may resolve to a `KnowledgeRecord`, `QuantitativeCriterion`, or `Condition` (not only a `KnowledgeRecord`) — most `QuantitativeCriterion` records in the pilot archive have no linked `knowledge_record_id`, and quantitative evidence is exactly what multi-criterion/detail-level overlay objects need to cite.
 
-Four representative scopes are structured as Stage A samples, chosen to cover the failure categories the 50-question answer-suitability audit attributed to missing derived structure (`history/verification/answer_suitability_audit_2026-09-02.md` §6): a document overview (`data/derived/semantic/ema_fih.json`), an assay-technique conditional branch (`data/derived/semantic/ich_m10.json`), a multi-criterion topic breakdown (`data/derived/semantic/fda_ada.json`), and a cross-document applicability comparison (`data/derived/semantic/ich_m3_r2.json` and `ich_s6_r1.json`, bound through the shared `scope.product_or_matrix` axis). These are schema-and-validator fixtures, not a claim that the answer engine consumes them yet.
+Four representative scopes are structured as Stage A samples, chosen to cover the failure categories the 50-question answer-suitability audit attributed to missing derived structure (`history/verification/answer_suitability_audit_2026-09-02.md` §6): a document overview (`data/derived/semantic/ema_fih.json`), an assay-technique conditional branch (`data/derived/semantic/ich_m10.json`), a multi-criterion topic breakdown (`data/derived/semantic/fda_ada.json`), and a cross-document applicability comparison (`data/derived/semantic/ich_m3_r2.json` and `ich_s6_r1.json`, bound through the shared `scope.product_or_matrix` axis).
+
+### Stage B: shadow mode
+
+`engine/semantic_overlay_store.js` loads these overlays at server startup (dropping any document whose `source_bundle_sha256` no longer matches the live core bundle) and `engine/semantic_shadow.js` builds a facet-level plan from them for the document(s) an already-finished answer envelope resolved to. `engine/server.js`'s `/api/ask` handler calls this — wrapped in `try`/`catch` so a failure here can never affect the response — strictly after the real envelope is built, and appends the comparison to `logs/runtime/semantic_shadow.jsonl` (`engine/semantic_shadow_log.js`) — no route, mode, or served answer is affected. This is Stage B of `docs/derived_semantic_layer.md` §10 ("의미 오버레이로 answer plan을 만들되 사용자 응답에는 아직 적용하지 않는다").
+
+`scripts/run_semantic_shadow_audit.js` replays the already-captured 50-question answer-suitability audit envelopes through this comparison without re-running the LLM, and `history/verification/semantic_shadow_stage_b_2026-09-03.md` records the first pass: the shadow plan independently reproduced the Q06 (assay-technique branch ambiguity) and Q26 (document-overview collapsed to one section) findings from the human audit, and surfaced a facet-coverage measurement limitation (a single representative `member_record_ids` entry can under-count real coverage) that Stage C promotion should address.
 
 ## Bundle contract
 

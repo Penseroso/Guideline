@@ -23,6 +23,8 @@ const { answerEnvelope } = require("./answer_envelope");
 const { logInteraction, readInteractions } = require("./query_log");
 const { recordFeedback, readFeedback, VALID_VERDICTS } = require("./feedback_log");
 const { aggregate } = require("./query_stats");
+const { comparePlans } = require("./semantic_shadow");
+const { logShadowComparison } = require("./semantic_shadow_log");
 
 const WEB_DIR = path.resolve(__dirname, "..", "web");
 const MAX_BODY_BYTES = 16 * 1024;
@@ -244,6 +246,7 @@ function startServer({
   // polluted by automated requests.
   queryLogPath = process.env.GUIDELINE_QUERY_LOG_PATH || undefined,
   feedbackLogPath = process.env.GUIDELINE_FEEDBACK_LOG_PATH || undefined,
+  semanticShadowLogPath = process.env.GUIDELINE_SEMANTIC_SHADOW_LOG_PATH || undefined,
   loggingEnabled = process.env.GUIDELINE_LOG_ENABLED !== "false",
   allowedHosts = process.env.GUIDELINE_ALLOWED_HOSTS
     ? process.env.GUIDELINE_ALLOWED_HOSTS.split(",").map((value) => value.trim().toLowerCase()).filter(Boolean)
@@ -390,6 +393,19 @@ function startServer({
           claims: envelope.claims,
           source: "web"
         }, queryLogPath);
+
+        // Stage B shadow mode (docs/derived_semantic_layer.md §10): compute
+        // and log the derived-semantic-layer plan next to the plan that
+        // actually produced `envelope`, strictly after `envelope` is final.
+        // Never allowed to affect the response — errors here are swallowed,
+        // not surfaced, so a bug in a diagnostic-only code path can never
+        // turn into a user-facing failure or added latency risk.
+        try {
+          const comparison = comparePlans(body.question, envelope);
+          logShadowComparison({ interaction_id: interactionId, ...comparison }, semanticShadowLogPath);
+        } catch (shadowError) {
+          console.error("[semantic-shadow] comparison failed:", shadowError.stack || shadowError.message || shadowError);
+        }
       }
 
       return sendJson(res, 200, { ...envelope, interaction_id: interactionId });

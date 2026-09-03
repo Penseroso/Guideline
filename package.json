@@ -14,7 +14,8 @@
     "chat": "node engine/cli.js",
     "serve": "node engine/server.js",
     "eval": "node engine/eval_harness.js",
-    "test:routes:live": "node scripts/test_live_routes.js"
+    "test:routes:live": "node scripts/test_live_routes.js",
+    "shadow:semantic": "node scripts/run_semantic_shadow_audit.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1",
