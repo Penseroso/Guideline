@@ -488,7 +488,12 @@
   }
 
   function renderEnvelope(envelope, i18n, question) {
-    const questionBlock = question ? `<header class="question-context"><div class="question-meta"><span>${escapeHtml(i18n.questionLabel)}</span>${renderRouteIndicator(envelope, i18n)}</div><h1>${escapeHtml(question)}</h1>${renderAnswerScope(envelope, i18n)}${renderSemanticCoverage(envelope, i18n)}</header>` : "";
+    // The sticky ask-form input above already shows the question text
+    // persistently once results are in — repeating it as a visible <h1>
+    // here just duplicated it. Kept as a visually-hidden heading (not
+    // deleted outright) so the page still has a real top-level heading
+    // and document title for screen readers/the a11y tree.
+    const questionBlock = question ? `<header class="question-context"><div class="question-meta">${renderRouteIndicator(envelope, i18n)}</div><h1 class="visually-hidden">${escapeHtml(i18n.questionLabel)}: ${escapeHtml(question)}</h1>${renderAnswerScope(envelope, i18n)}${renderSemanticCoverage(envelope, i18n)}</header>` : "";
     if (!envelope.answered) return `<article class="answer-page">${questionBlock}${renderRefusalCard(envelope, i18n)}</article>`;
     if (envelope.route === "grounded_generation") return `<article class="answer-page mode-generated">${questionBlock}${renderGeneratedLayout(envelope, i18n)}</article>`;
     if (envelope.route === "source_excerpts") return `<article class="answer-page mode-source-excerpts">${questionBlock}${renderSourceExcerptsLayout(envelope, i18n)}</article>`;
