@@ -312,7 +312,11 @@ coverage manifest는 “규제상 필수 항목”이 아니라 “이 범위의
 - 기존 50문항 감사 세트에서 기존 plan과 새 plan의 facet coverage, 순서, 비교 축을 나란히 기록한다.
 - 새 레이어가 근거 recall을 줄이거나 범위를 과도하게 확장하면 해당 manifest를 `needs_review`로 되돌린다.
 
-구현: `engine/semantic_overlay_store.js`(적재·staleness 필터), `engine/semantic_shadow.js`(facet-level plan 계산, envelope 비변경), `engine/semantic_shadow_log.js` + `engine/server.js`(`/api/ask` 응답 완성 후 로그만 append, 실패해도 응답에 영향 없음), `scripts/run_semantic_shadow_audit.js`(기존 50문항 결과를 재실행 없이 재생). 1차 실행 결과와 분석: `history/verification/semantic_shadow_stage_b_2026-09-03.md` — Q06/Q26 실제 결함을 독립적으로 재현했고, facet coverage를 대표 근거 1개와의 정확 일치로만 판정하면 과소평가(Q14)가 생겨 section 단위 보조 신호(topical)를 추가했다. 이 결과에 따라 Stage C 승격 검토 우선순위를 제시했으나, 아직 어떤 manifest도 `reviewed`로 전이되지 않았다.
+구현: `engine/semantic_overlay_store.js`(적재·staleness 필터·section 색인), `engine/semantic_shadow.js`(facet-level plan 계산, envelope 비변경), `engine/semantic_shadow_log.js` + `engine/server.js`(`/api/ask` 응답 완성 후 로그만 append, 실패해도 응답에 영향 없음), `scripts/run_semantic_shadow_audit.js`(기존 50문항 결과를 재실행 없이 재생). 1차 실행 결과와 이후의 구조적 수정(대표 근거 1개 의존 제거, 남매 section 인식, comparison 근거 확인, 기존 순서 기록, stale 구분, chapter-scope facet의 분모 폭발 수정) 전체 기록: `history/verification/semantic_shadow_stage_b_2026-09-03.md`.
+
+`test/engine_semantic_shadow_regression.test.js`는 손으로 만든 envelope가 아니라 실제 엔진(`answerEnvelope`, LLM 미사용·결정적)에 감사 문항과 같은 실제 질문을 통과시켜 Q06/Q26/FDA ADA/Q49 각 대표 범위의 shadow plan이 안정적으로 나오는지 검증한다 — routing/retrieval 쪽 회귀는 기존 단위 테스트가 못 잡는 지점이라 별도로 추가했다.
+
+`scripts/check_semantic_overlay_promotion.js`(`npm run check:promotion`)는 §11 기준 중 기계적으로 확인 가능한 것(schema/validator 통과, staleness 없음, 최근 shadow 감사 재생에서 실제로 몇 번 발동했고 어떤 상태였는지)만 자동으로 점검해 manifest/comparison_binding별 워크시트를 출력한다. review_status는 쓰지 않는다 — 나머지 기준(50문항 적합 수 증가, UI 근거 추적)은 Stage C가 있어야 판단 가능한 사람 몫으로 명시적으로 분리해 둔다.
 
 ### 단계 C — 검토 완료 범위만 활성화
 
