@@ -182,8 +182,15 @@
   function renderGeneratedUnit(unit, claims, i18n) {
     const claim = claimForUnit(unit, claims);
     if (!claim || !claim.citation) return `<div class="generated-unit claim-error" role="alert">${escapeHtml(i18n.claimMissingCitation)}</div>`;
-    return `<p class="generated-unit"><span>${escapeHtml(unit.text)}</span>
-      <a class="generated-citation" href="#${escapeHtml(evidenceDomId(claim))}">${escapeHtml(compactCitation(claim.citation))}</a></p>`;
+    // The citation used to be an inline <a> flowing right after the
+    // paragraph text inside the same <p> — harmless when it happened to
+    // fit on the text's last line, but when it didn't fit and wrapped to
+    // its own line, inline-wrap positioning (plus the template's own
+    // whitespace before the tag) left it a few pixels off the paragraph's
+    // left edge instead of flush with it, reading as a stray indent. Now
+    // a proper block sibling below the text, same pattern renderCitationLine
+    // already uses for the structured route's citation line.
+    return `<div class="generated-unit"><p>${escapeHtml(unit.text)}</p><a class="generated-citation" href="#${escapeHtml(evidenceDomId(claim))}">${escapeHtml(compactCitation(claim.citation))}</a></div>`;
   }
 
   function renderSourceExcerptUnit(unit, claims, i18n) {
@@ -418,7 +425,7 @@
   function renderGeneratedLayout(envelope, i18n) {
     const units = answerUnits(envelope, i18n);
     return `<div class="generated-layout"><section class="generated-answer-panel" aria-labelledby="answer-heading">
-      <div class="generated-answer-heading"><span class="section-label" id="answer-heading">${escapeHtml(i18n.generatedAnswerTitle)}</span><span class="generated-mark" aria-hidden="true">G</span></div>
+      <div class="generated-answer-heading"><span class="section-label" id="answer-heading">${escapeHtml(i18n.generatedAnswerTitle)}</span></div>
       <div class="generated-answer-body">${units.map((unit) => renderGeneratedUnit(unit, envelope.claims, i18n)).join("")}</div>
       ${renderVerdictBar(envelope, i18n)}${renderReviewStatusFooter(envelope, i18n)}</section>${renderGeneratedEvidence(envelope, i18n)}</div>`;
   }
@@ -487,26 +494,57 @@
       <div class="overview-sections">${sections}</div>${renderVerdictBar(envelope, i18n)}${renderReviewStatusFooter(envelope, i18n)}</div>`;
   }
 
+  /**
+   * The "이 답변의 근거 범위" (answer-scope) + Stage C semantic-coverage
+   * blocks used to sit stacked in the header, above the answer itself —
+   * a tall block of metadata the reader had to scroll past before
+   * reaching any actual content. Moved into a side rail instead, next to
+   * the content rather than on top of it. Returns "" when there's
+   * nothing to show (answerScope/semanticCoverage are both already
+   * empty-safe), so a mode with no citations/coverage gets no empty
+   * <aside>.
+   */
+  function renderAnswerRail(envelope, i18n) {
+    const scope = renderAnswerScope(envelope, i18n);
+    const coverage = renderSemanticCoverage(envelope, i18n);
+    if (!scope && !coverage) return "";
+    return `<aside class="answer-rail">${scope}${coverage}</aside>`;
+  }
+
   function renderEnvelope(envelope, i18n, question) {
     // The sticky ask-form input above already shows the question text
     // persistently once results are in — repeating it as a visible <h1>
     // here just duplicated it. Kept as a visually-hidden heading (not
     // deleted outright) so the page still has a real top-level heading
     // and document title for screen readers/the a11y tree.
-    const questionBlock = question ? `<header class="question-context"><div class="question-meta">${renderRouteIndicator(envelope, i18n)}</div><h1 class="visually-hidden">${escapeHtml(i18n.questionLabel)}: ${escapeHtml(question)}</h1>${renderAnswerScope(envelope, i18n)}${renderSemanticCoverage(envelope, i18n)}</header>` : "";
+    const questionBlock = question ? `<header class="question-context"><div class="question-meta">${renderRouteIndicator(envelope, i18n)}</div><h1 class="visually-hidden">${escapeHtml(i18n.questionLabel)}: ${escapeHtml(question)}</h1></header>` : "";
     if (!envelope.answered) return `<article class="answer-page">${questionBlock}${renderRefusalCard(envelope, i18n)}</article>`;
-    if (envelope.route === "grounded_generation") return `<article class="answer-page mode-generated">${questionBlock}${renderGeneratedLayout(envelope, i18n)}</article>`;
-    if (envelope.route === "source_excerpts") return `<article class="answer-page mode-source-excerpts">${questionBlock}${renderSourceExcerptsLayout(envelope, i18n)}</article>`;
-    if (envelope.mode === "section_overview") return `<article class="answer-page mode-section-overview">${questionBlock}${renderSectionOverviewLayout(envelope, i18n)}</article>`;
+
+    const rail = renderAnswerRail(envelope, i18n);
+    const shellClass = rail ? " has-rail" : "";
+
+    if (envelope.route === "grounded_generation") {
+      return `<article class="answer-page mode-generated${shellClass}">${questionBlock}<div class="answer-shell">${renderGeneratedLayout(envelope, i18n)}${rail}</div></article>`;
+    }
+    if (envelope.route === "source_excerpts") {
+      return `<article class="answer-page mode-source-excerpts${shellClass}">${questionBlock}<div class="answer-shell">${renderSourceExcerptsLayout(envelope, i18n)}${rail}</div></article>`;
+    }
+    if (envelope.mode === "section_overview") {
+      return `<article class="answer-page mode-section-overview${shellClass}">${questionBlock}<div class="answer-shell">${renderSectionOverviewLayout(envelope, i18n)}${rail}</div></article>`;
+    }
     const body = envelope.mode === "comparison" ? renderComparison(envelope, i18n)
       : envelope.mode === "process" ? renderProcess(envelope, i18n)
       : envelope.mode === "amendment" ? renderAmendment(envelope, i18n)
         : answerUnits(envelope, i18n).map((unit) => renderAnswerUnit(unit, envelope.claims, i18n)).join("");
+    // This mode already had its own right-hand evidence column
+    // (renderEvidencePanel) — the rail joins it in the same column,
+    // stacked above, rather than adding a third column.
     return `<article class="answer-page mode-${escapeHtml(envelope.mode)}">${questionBlock}<div class="answer-layout">
       <section class="answer-primary" aria-labelledby="answer-heading"><div class="section-label" id="answer-heading">${escapeHtml(i18n.answerTitle)}</div>
-      ${body}${renderVerdictBar(envelope, i18n)}${renderReviewStatusFooter(envelope, i18n)}</section>${renderEvidencePanel(envelope, i18n)}</div></article>`;
+      ${body}${renderVerdictBar(envelope, i18n)}${renderReviewStatusFooter(envelope, i18n)}</section>
+      <div class="answer-side">${rail}${renderEvidencePanel(envelope, i18n)}</div></div></article>`;
   }
 
   return { escapeHtml, pdfUrl, renderCitationLine, renderEvidenceSourceHeader, renderModalityLabel, renderValueStatusNote, renderClaimCard, claimForUnit, renderVerdictBar, renderRouteIndicator,
-    renderGeneratedUnit, renderSourceExcerptUnit, renderSectionOverviewLayout, renderRefusalCard, renderComparison, renderProcess, renderAmendment, renderSemanticCoverage, renderEnvelope };
+    renderGeneratedUnit, renderSourceExcerptUnit, renderSectionOverviewLayout, renderRefusalCard, renderComparison, renderProcess, renderAmendment, renderSemanticCoverage, renderAnswerRail, renderEnvelope };
 });

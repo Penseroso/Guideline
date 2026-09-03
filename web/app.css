@@ -159,7 +159,7 @@ body.idle .result-panel { display: none; }
 .route-grounded_generation { border-color: var(--accent); background: var(--accent-tint); }
 .route-refusal { border-style: dashed; }
 .question-context h1 { margin: 0; font-size: clamp(1.25rem, 2vw, 1.65rem); line-height: 1.38; letter-spacing: -.025em; text-wrap: pretty; }
-.answer-scope { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
+.answer-scope { padding: 14px 16px; background: var(--surface-soft); border-radius: 10px; }
 .answer-scope-label { margin-bottom: 7px; color: var(--text-faint); font-size: .72rem; font-weight: 650; letter-spacing: .04em; }
 .answer-scope-group { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 6px; }
 .answer-scope-group:first-of-type { margin-top: 0; }
@@ -170,7 +170,7 @@ body.idle .result-panel { display: none; }
 .coverage-complete { margin: 7px 0 0; color: var(--text-faint); font-size: .75rem; }
 .coverage-warning, .fallback-warning { display: grid; gap: 3px; margin-top: 11px; padding: 11px 13px; border-left: 3px solid var(--warn); background: color-mix(in srgb, var(--warn) 8%, var(--surface)); color: var(--text-dim); font-size: .8rem; line-height: 1.5; }
 .coverage-warning strong, .fallback-warning strong { color: var(--warn); }
-.semantic-coverage { display: grid; gap: 8px; margin-top: 11px; padding: 11px 13px; border-left: 3px solid var(--accent); background: var(--accent-tint); border-radius: 4px; }
+.semantic-coverage { display: grid; gap: 8px; padding: 14px 16px; border-left: 3px solid var(--accent); background: var(--accent-tint); border-radius: 4px 10px 10px 4px; }
 .semantic-coverage-label { color: var(--accent); font-size: .72rem; font-weight: 650; letter-spacing: .04em; }
 .semantic-coverage-manifest p { margin: 0; color: var(--text-dim); font-size: .8rem; line-height: 1.5; }
 .semantic-coverage-missing-label { display: block; margin-top: 6px; color: var(--text-faint); font-size: .72rem; font-weight: 650; letter-spacing: .02em; }
@@ -182,6 +182,23 @@ body.idle .result-panel { display: none; }
 .semantic-coverage-comparison li strong { color: var(--accent); margin-right: 4px; }
 .answer-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 360px); gap: 48px; align-items: start; }
 .answer-primary { min-width: 0; }
+/* Wraps the right-hand column for the mode that already had one
+   (structured/comparison, via renderEvidencePanel): rail + evidence
+   panel stack here as one scrolling unit, so only this outer wrapper is
+   sticky — the two children below stay position:static to avoid nested
+   sticky elements fighting over the same top offset. */
+.answer-side { display: grid; gap: 20px; align-content: start; position: sticky; top: 84px; max-height: calc(100dvh - 108px); overflow: auto; }
+.answer-side .answer-rail, .answer-side .evidence-panel { position: static; max-height: none; overflow: visible; }
+
+/* Modes that render their own single-column layout (generated,
+   source_excerpts, section_overview) gain a matching right-hand rail
+   here rather than each defining their own second grid column — the
+   rail (answer-scope + Stage C semantic-coverage) used to sit stacked
+   above the content instead of beside it. Standalone here (no
+   .answer-side wrapper), so the rail manages its own sticky position. */
+.answer-shell { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 320px); gap: 40px; align-items: start; }
+.answer-page:not(.has-rail) .answer-shell { display: block; }
+.answer-rail { display: grid; gap: 20px; align-content: start; position: sticky; top: 84px; max-height: calc(100dvh - 108px); overflow: auto; }
 .answer-unit { padding: 0 0 30px; }
 .answer-unit + .answer-unit { padding-top: 28px; border-top: 1px solid var(--border); }
 .answer-unit-meta { min-height: 1.3rem; margin-bottom: 8px; }
@@ -207,13 +224,17 @@ body.idle .result-panel { display: none; }
 .generated-layout { display: grid; gap: 42px; max-width: 1100px; margin: 0 auto; }
 .generated-answer-panel { position: relative; overflow: hidden; padding: 30px 34px 34px; border-radius: 18px 18px 8px 18px; background: var(--surface-soft); box-shadow: 0 18px 46px rgba(54, 69, 58, .10); }
 .generated-answer-panel::before { position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--accent); content: ""; }
-.generated-answer-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 20px; }
+.generated-answer-heading { display: flex; align-items: center; gap: 18px; margin-bottom: 20px; }
 .generated-answer-heading .section-label { margin: 0; color: var(--accent); }
-.generated-mark { display: grid; width: 28px; height: 28px; place-items: center; border: 1px solid var(--border-strong); border-radius: 7px; color: var(--accent); font: 650 .78rem var(--mono); }
-.generated-answer-body { max-width: 68ch; }
-.generated-unit { margin: 0; color: var(--text); font-size: 1.08rem; line-height: 1.76; letter-spacing: -.01em; text-wrap: pretty; }
+/* No inner ch-cap: .generated-layout's own max-width (1100px) already
+   bounds the panel's absolute width, so a second, narrower cap here only
+   ever left unused space on the right inside the card — confirmed via
+   direct measurement (panel padded-content width 884px vs. text width
+   775.5px at a 68ch, then 88ch, cap, in both Korean and English). */
+.generated-unit { margin: 0; color: var(--text); font-size: 1.08rem; line-height: 1.76; letter-spacing: -.01em; }
+.generated-unit p { margin: 0; text-wrap: pretty; }
 .generated-unit + .generated-unit { margin-top: 15px; }
-.generated-citation { margin-left: 7px; color: var(--accent); font: 600 .72rem var(--mono); text-decoration: none; white-space: nowrap; }
+.generated-citation { display: block; margin-top: 6px; color: var(--accent); font: 600 .72rem var(--mono); text-decoration: none; }
 .generated-citation:hover { text-decoration: underline; }
 .generated-evidence > .section-label { margin-bottom: 14px; }
 .generated-evidence-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 34px; border-top: 1px solid var(--border-strong); }
@@ -270,7 +291,7 @@ body.idle .result-panel { display: none; }
 .overview-more > summary span { margin-left: 5px; color: var(--text-faint); font: .72rem var(--mono); }
 .overview-more[open] > summary { margin-bottom: 12px; }
 
-.evidence-panel { position: sticky; top: 84px; max-height: calc(100dvh - 108px); overflow: auto; background: var(--surface-soft); border-radius: 10px; }
+.evidence-panel { background: var(--surface-soft); border-radius: 10px; }
 .evidence-panel > summary { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; cursor: pointer; color: var(--text-dim); font-size: .84rem; font-weight: 650; list-style-position: inside; }
 .evidence-count { min-width: 24px; text-align: right; color: var(--text-faint); font: .76rem var(--mono); }
 .evidence-list { padding: 0 16px 14px; }
@@ -328,8 +349,8 @@ body.idle .result-panel { display: none; }
 
 @media (max-width: 1099px) {
   .main-panel { max-width: 808px; }
-  .answer-layout, .mode-comparison .answer-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; }
-  .evidence-panel { position: static; max-height: none; }
+  .answer-layout, .mode-comparison .answer-layout, .answer-shell { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .evidence-panel, .answer-side, .answer-rail { position: static; max-height: none; }
 }
 
 @media (max-width: 640px) {
