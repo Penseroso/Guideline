@@ -175,14 +175,23 @@ function checkReferencesAndRules(file, bundle, archiveIds, errors) {
     }
     const hasValue = criterion.value !== null && criterion.value !== undefined;
     const hasFraction = criterion.value_fraction !== null && criterion.value_fraction !== undefined;
-    if (criterion.value_status === "known" && hasValue === hasFraction) {
-      addError(errors, file, criterion.criterion_id, "value_status", "known requires exactly one of value or value_fraction");
+    const hasRange = criterion.value_range !== null && criterion.value_range !== undefined;
+    const hasText = criterion.value_text !== null && criterion.value_text !== undefined;
+    const knownValueCount = [hasValue, hasFraction, hasRange, hasText].filter(Boolean).length;
+    if (criterion.value_status === "known" && knownValueCount !== 1) {
+      addError(errors, file, criterion.criterion_id, "value_status", "known requires exactly one of value, value_fraction, value_range, or value_text");
     }
-    if (criterion.value_status !== "known" && (hasValue || hasFraction)) {
-      addError(errors, file, criterion.criterion_id, "value_status", "non-known status requires value and value_fraction to be null");
+    if (criterion.value_status !== "known" && knownValueCount !== 0) {
+      addError(errors, file, criterion.criterion_id, "value_status", "non-known status requires all value representations to be null");
     }
     if (hasFraction && criterion.value_fraction.denominator <= 0) {
       addError(errors, file, criterion.criterion_id, "value_fraction.denominator", "must be greater than zero");
+    }
+    if (hasRange && criterion.value_range.lower > criterion.value_range.upper) {
+      addError(errors, file, criterion.criterion_id, "value_range", "lower must not exceed upper");
+    }
+    if (hasText && criterion.value_text.trim().length === 0) {
+      addError(errors, file, criterion.criterion_id, "value_text", "must contain non-whitespace text");
     }
     if (criterion.is_default_with_exception && (criterion.condition_ids || []).length === 0) {
       addError(errors, file, criterion.criterion_id, "is_default_with_exception", "requires at least one condition_ids entry (the exception)");

@@ -5,10 +5,12 @@
  */
 
 const { tokenize, REGULATORY_SYNONYMS } = require("./text_utils");
+const { criterionValue } = require("./criterion_value");
 
 const COMPARISON_MARKERS = [
   "비교", "차이", "차이점", "대조", "다른점", "상이", "구분",
-  "vs", "versus", "compare", "comparison", "differ", "difference", "divergence"
+  "vs", "versus", "compare", "comparison", "differ", "difference", "divergence",
+  "비교", "차이", "달라", "대비"
 ];
 
 const DOC_KEYWORDS = {
@@ -84,7 +86,7 @@ function extractTopicTokens(question) {
   return qTokens.filter((t) => !comparisonStopwords.has(t));
 }
 
-function scoreRecordForTopic(record, topicTokens, targetDocId) {
+function scoreRecordForTopic(record, topicTokens, targetDocId, { scopeFocus = false } = {}) {
   if (record.document_id !== targetDocId) return 0;
   let score = 0;
   const searchable = (record.searchableText || record.action || record.parameter || record.source_text || "").toLowerCase();
@@ -99,7 +101,20 @@ function scoreRecordForTopic(record, topicTokens, targetDocId) {
     }
   }
 
-  if (record.type === "quantitative_criterion") score += 2;
+  if (record.type === "quantitative_criterion") score += scopeFocus ? -6 : 2;
+  if (scopeFocus) {
+    const sectionTitle = String((record.section_path || []).slice(-1)[0] || "").toLowerCase();
+    // Explicit scope questions should stay in the archive's scope sections.
+    // Incidental “not applicable” wording in a genotoxicity or duration
+    // paragraph is not evidence of the document's overall applicability.
+    const isScopeEvidence = /\bscope\b|applicab/.test(sectionTitle);
+    if (!isScopeEvidence) return 0;
+    if (isScopeEvidence) {
+      score += 10;
+    }
+    if (record.record_type === "scope_statement") score += 6;
+    if (record.type === "condition") score -= 5;
+  }
   return score;
 }
 
@@ -110,14 +125,15 @@ function answerComparison(question, records, index) {
   }
 
   const topicTokens = extractTopicTokens(question);
+  const scopeFocus = /\bscope\b|적용\s*범위|적용\s*대상|대상\s*범위/i.test(question);
   const docResults = [];
 
   for (const docId of targetDocIds) {
     const scored = records
-      .filter((r) => r.document_id === docId)
-      .map((r) => ({ record: r, score: scoreRecordForTopic(r, topicTokens, docId) }))
+      .filter((r) => r.document_id === docId && (!scopeFocus || r.type === "knowledge_record"))
+      .map((r) => ({ record: r, score: scoreRecordForTopic(r, topicTokens, docId, { scopeFocus }) }))
       .filter((x) => x.score > 0)
-      .sort((a, b) => b.score - a.score);
+      .sort((a, b) => b.score - a.score || (a.record.type === "knowledge_record" ? -1 : 1));
 
     // Dedupe by source_text — distinct records (e.g. a KnowledgeRecord and
     // a Condition drawn from the same sentence) can otherwise render as
@@ -125,7 +141,7 @@ function answerComparison(question, records, index) {
     const seenText = new Set();
     const topRecords = [];
     for (const { record } of scored) {
-      if (topRecords.length >= 5) break;
+      if (topRecords.length >= (scopeFocus ? 3 : 5)) break;
       if (seenText.has(record.source_text)) continue;
       seenText.add(record.source_text);
       topRecords.push(record);
@@ -194,7 +210,7 @@ function formatComparativeAnswer(compMatch) {
     for (const r of records) {
       const cite = formatRecordCitation(r.citations ? r.citations[0] : null);
       if (r.type === "quantitative_criterion") {
-        const valStr = r.value_fraction ? `${r.value_fraction.numerator}/${r.value_fraction.denominator}` : (r.value !== null ? r.value : "");
+        const valStr = criterionValue(r) ?? "";
         const bound = (r.comparator || "equals") + " " + valStr + (r.unit ? " " + r.unit : "");
         lines.push(`  • [수치 기준] ${r.parameter}: ${bound} (출처: ${cite})`);
       } else {

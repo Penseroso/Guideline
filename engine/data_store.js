@@ -304,6 +304,8 @@ function answerableRecords(index, koPresentation = new Map()) {
       comparator: qc.comparator,
       value: qc.value,
       value_fraction: qc.value_fraction,
+      value_range: qc.value_range || null,
+      value_text: qc.value_text || null,
       unit: qc.unit,
       denominator_or_reference: qc.denominator_or_reference,
       condition_ids: qc.condition_ids || [],

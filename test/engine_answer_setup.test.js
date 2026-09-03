@@ -33,7 +33,7 @@ test("no configured provider still enables local source-excerpt fallback", async
     assert.equal(setup.generatorClient, null);
     assert.equal(setup.verifierClient, null);
     assert.ok(setup.store);
-    const result = await answer("ICH M10에서 full validation은 언제 필요한가?", records, { ...setup, index });
+    const result = await answer("bioanalytical reliability samples", records, { ...setup, index });
     assert.equal(result.answered, true);
     assert.equal(result.route, "source_excerpts");
     assert.ok(result.answer_units.length > 0);

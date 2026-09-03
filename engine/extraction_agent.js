@@ -40,14 +40,23 @@ function nullableFractionSchema() {
   return { type: ["object", "null"], additionalProperties: false, required: fraction.required, properties: fraction.properties };
 }
 
+function nullableRangeSchema() {
+  const range = bundleSchema.definitions.rangeValue;
+  return { type: ["object", "null"], additionalProperties: false, required: range.required, properties: range.properties };
+}
+
 function draftQuantitativeCriterionSchema() {
   const src = bundleSchema.definitions.quantitativeCriterion;
   const schema = withTempId(src, {
     drop: ["criterion_id", "review_status"],
-    keep: ["source_unit_id", "parameter", "comparator", "value", "value_fraction", "unit", "value_status", "denominator_or_reference", "is_default_with_exception", "is_illustrative_example", "source_text"],
+    keep: ["source_unit_id", "parameter", "comparator", "value", "value_fraction", "value_range", "value_text", "unit", "value_status", "denominator_or_reference", "is_default_with_exception", "is_illustrative_example", "source_text"],
     replaceWithTempIdArray: { knowledge_record_id: "knowledge_record_temp_id", condition_ids: "condition_temp_ids", joint_with_ids: "joint_with_temp_ids" }
   });
   schema.properties.value_fraction = nullableFractionSchema();
+  schema.properties.value_range = nullableRangeSchema();
+  for (const field of ["value_range", "value_text"]) {
+    if (!schema.required.includes(field)) schema.required.push(field);
+  }
   // Use "equals" for an exact count/value stated as such (e.g. "two
   // relevant species," "a single species") — "at_least"/"not_exceed" assert
   // an open-ended bound ("N or more"/"N or fewer") that a source stating an
@@ -319,6 +328,8 @@ function finalizeDraft(draft, { section, allowedSourceUnitIds }) {
     comparator: qc.comparator,
     value: qc.value ?? null,
     value_fraction: qc.value_fraction ?? null,
+    value_range: qc.value_range ?? null,
+    value_text: qc.value_text ?? null,
     unit: qc.unit ?? null,
     value_status: qc.value_status,
     denominator_or_reference: qc.denominator_or_reference ?? null,

@@ -50,6 +50,7 @@ const REGULATORY_SYNONYMS = {
   "교차밸리데이션": ["cross", "validation"],
   "허용기준": ["acceptance", "criteria"],
   "허용범위": ["acceptance", "criteria"],
+  "accept": ["acceptance"],
   "기준": ["criteria"],
   "선택성": ["selectivity"],
   "특이성": ["specificity"],
@@ -129,6 +130,8 @@ const REGULATORY_SYNONYMS = {
   "치료증폭": ["treatment", "boosted"],
   "음성대조": ["negative", "control"],
   "양성대조": ["positive", "control"],
+  "양성": ["positive"],
+  "양성이면": ["positive"],
   "최저혈중농도": ["trough"],
   "검체": ["sample", "samples"],
   "채취": ["sampling", "drawn", "collection"],
@@ -225,13 +228,19 @@ const REGULATORY_SYNONYMS = {
   "국소자극성": ["local", "tolerance"],
 
   // FIH & Clinical Study Design (EMA FIH)
-  "fih": ["first", "human", "fih", "starting", "dose"],
-  "최초임상": ["first", "human", "fih", "starting", "dose"],
+  "fih": ["first", "human", "fih"],
+  "최초임상": ["first", "human", "fih"],
+  "임상적으로": ["clinical"],
+  "임상시험": ["clinical", "trial"],
+  "영향": ["impact", "effect", "effects"],
   "임상1상": ["first", "human", "fih", "phase", "1"],
   "1상": ["phase", "1"],
   "시작용량": ["starting", "dose"],
   "mabel": ["mabel", "starting", "dose"],
-  "noael": ["noael", "starting", "dose"],
+  // NOAEL appears in several contexts (for example M3 microdose limits), so
+  // it is not by itself evidence that the question is about an FIH starting
+  // dose. Starting-dose wording elsewhere in the query supplies that scope.
+  "noael": ["noael"],
   "hnstd": ["hnstd", "starting", "dose"],
   "mrsd": ["mrsd", "starting", "dose"],
   "pad": ["pharmacologically", "active", "dose", "pad"],
@@ -260,9 +269,36 @@ const REGULATORY_SYNONYMS = {
   "말기질환": ["life-limiting", "disease"]
 };
 
+Object.assign(REGULATORY_SYNONYMS, {
+  // English acronyms and ordinary mixed-language user wording need the same
+  // concept expansion as their Korean equivalents. These are retrieval
+  // concepts, not document identities.
+  "isr": ["isr", "incurred", "sample", "reanalysis"],
+  "aggregate": ["aggregate", "aggregates", "aggregation", "particles"],
+  "aggregates": ["aggregate", "aggregates", "aggregation", "particles"],
+  "피하주사": ["subcutaneous", "sc", "route", "administration"],
+  "정맥주사": ["intravenous", "iv", "route", "administration"],
+  "동물": ["animal", "animals"],
+  "생기면": ["formation", "formed"],
+  "해석": ["interpretation", "interpret"],
+  "결과": ["findings", "results"],
+  // `확인` is an ordinary verb in crude Korean questions. Treating every
+  // occurrence as the ADA-specific confirmatory tier caused unrelated topics
+  // such as protein aggregates to route to confirmatory-assay validation.
+  "확인": ["evaluation", "assessment"],
+  "가임기": ["women", "childbearing", "wocbp"],
+  "여성": ["women", "female"],
+  "단일종": ["one", "single", "species"],
+  "단일종만가능": ["one", "single", "species", "only_available"],
+  "이종": ["two", "species"]
+});
+
 function tokenize(text) {
   if (!text) return [];
   const normalizedText = String(text)
+    .replace(/한\s*종밖에\s*없으면/g, "단일종만가능")
+    .replace(/한\s*종/g, "단일종")
+    .replace(/두\s*종/g, "이종")
     .replace(/몇\s*개/g, "몇개")
     .replace(/lc[\s/-]*ms[\s/-]*ms/gi, "lc-ms/ms")
     .replace(/lc[\s/-]*ms/gi, "lc-ms")

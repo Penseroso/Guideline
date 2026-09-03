@@ -59,12 +59,20 @@
           ]
         },
         {
+          "value": "in_vivo_toxicology",
+          "match_rules": [
+            { "type": "token", "term": "toxicology" },
+            { "type": "substring", "term": "독성시험" }
+          ]
+        },
+        {
           "value": "ada_multi_tiered",
           "match_rules": [
-            { "type": "token", "term": "ada" },
-            { "type": "substring", "term": "ada" },
-            { "type": "substring", "term": "면역원성" },
-            { "type": "substring", "term": "중화항체" }
+            { "type": "token_all", "terms": ["ada", "assay"] },
+            { "type": "token", "term": "screening" },
+            { "type": "token", "term": "confirmatory" },
+            { "type": "token", "term": "titration" },
+            { "type": "token", "term": "neutralization" }
           ]
         }
       ]
@@ -98,7 +106,6 @@
             { "type": "token", "term": "starting" },
             { "type": "substring", "term": "시작용량" },
             { "type": "substring", "term": "mabel" },
-            { "type": "substring", "term": "noael" },
             { "type": "substring", "term": "sentinel" }
           ]
         },

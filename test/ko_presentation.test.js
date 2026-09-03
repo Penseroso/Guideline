@@ -35,9 +35,9 @@ test("a needs_review normalization is never used as the primary answer", () => {
   assert.equal(presentRecord(synthetic, "ko"), synthetic.source_text);
 });
 
-test("answer envelope 2.0 returns citation-linked answer_units in the requested language", async () => {
+test("answer envelope 2.1 returns citation-linked answer_units in the requested language", async () => {
   const envelope = await answerEnvelope("LLOQ 정확도 기준은 무엇인가요?", records, { index, responseLanguage: "ko" });
-  assert.equal(ENVELOPE_VERSION, "2.0.0");
+  assert.equal(ENVELOPE_VERSION, "2.1.0");
   assert.equal(envelope.answered, true);
   assert.ok(envelope.answer_units.length > 0);
   assert.match(envelope.answer_units[0].text, /±20%/);

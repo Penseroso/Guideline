@@ -28,6 +28,11 @@
   <form class="ask-form" id="ask-form">
     <label class="visually-hidden" id="ask-label" for="ask-input">질문</label>
     <input class="ask-input" id="ask-input" type="text" autocomplete="off" aria-labelledby="ask-label">
+    <label class="generation-toggle" id="generation-toggle-wrap">
+      <input id="generation-toggle" type="checkbox" role="switch" disabled>
+      <span class="generation-toggle-track" aria-hidden="true"><span></span></span>
+      <span class="generation-toggle-label" id="generation-toggle-label"></span>
+    </label>
     <button class="ask-button" id="ask-button" type="submit"></button>
   </form>
   <div class="loading-phase" id="loading-phase" role="status" aria-live="polite"></div>

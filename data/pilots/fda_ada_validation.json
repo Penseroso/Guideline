@@ -8776,11 +8776,17 @@
       "source_unit_id": "fda_ada.su.7_a.001",
       "knowledge_record_id": null,
       "parameter": "time after first exposure for early IgM response samples",
-      "comparator": "within",
+      "comparator": "between",
       "value": null,
       "value_fraction": null,
+      "value_range": {
+        "lower": 7,
+        "upper": 14,
+        "lower_inclusive": true,
+        "upper_inclusive": true
+      },
       "unit": "days",
-      "value_status": "needs_review",
+      "value_status": "known",
       "denominator_or_reference": "after the first exposure",
       "condition_ids": [
         "fda_ada.cond.VII_A.001"
@@ -8798,11 +8804,17 @@
       "source_unit_id": "fda_ada.su.7_a.001",
       "knowledge_record_id": null,
       "parameter": "time after first exposure for determining IgG responses",
-      "comparator": "within",
+      "comparator": "between",
       "value": null,
       "value_fraction": null,
+      "value_range": {
+        "lower": 3,
+        "upper": 6,
+        "lower_inclusive": true,
+        "upper_inclusive": true
+      },
       "unit": "weeks",
-      "value_status": "needs_review",
+      "value_status": "known",
       "denominator_or_reference": "after the first exposure",
       "condition_ids": [
         "fda_ada.cond.VII_A.001"
@@ -8820,18 +8832,16 @@
       "source_unit_id": "fda_ada.su.7_a.001",
       "knowledge_record_id": null,
       "parameter": "time after last exposure for sample collection",
-      "comparator": "equals",
+      "comparator": "approximately",
       "value": 30,
       "value_fraction": null,
       "unit": "days",
       "value_status": "known",
       "denominator_or_reference": "after the last exposure",
       "condition_ids": [
-        "fda_ada.cond.VII_A.001"
+        "fda_ada.cond.VII_A.002"
       ],
-      "joint_with_ids": [
-        "fda_ada.qc.VII_A.009"
-      ],
+      "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
       "source_text": "approximately 30 days after the last exposure",
@@ -8842,18 +8852,16 @@
       "source_unit_id": "fda_ada.su.7_a.001",
       "knowledge_record_id": null,
       "parameter": "time after last exposure for sample collection",
-      "comparator": "equals",
+      "comparator": "approximately",
       "value": 5,
       "value_fraction": null,
       "unit": "half-lives",
       "value_status": "known",
       "denominator_or_reference": "after last exposure",
       "condition_ids": [
-        "fda_ada.cond.VII_A.001"
+        "fda_ada.cond.VII_A.003"
       ],
-      "joint_with_ids": [
-        "fda_ada.qc.VII_A.008"
-      ],
+      "joint_with_ids": [],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
       "source_text": "approximately five half-lives after last exposure",
@@ -8939,7 +8947,7 @@
         "fda_ada.cond.VII_A.001"
       ],
       "joint_with_ids": [
-        "fda_ada.qc.VII_A.004"
+        "fda_ada.qc.VII_A.009"
       ],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -8961,7 +8969,7 @@
         "fda_ada.cond.VII_A.001"
       ],
       "joint_with_ids": [
-        "fda_ada.qc.VII_A.003"
+        "fda_ada.qc.VII_A.008"
       ],
       "is_default_with_exception": false,
       "is_illustrative_example": false,
@@ -9017,14 +9025,14 @@
       "source_unit_id": "fda_ada.su.7_a.001",
       "knowledge_record_id": null,
       "parameter": "Timing of sample collection after last exposure",
-      "comparator": "within",
+      "comparator": "approximately",
       "value": 30,
       "value_fraction": null,
       "unit": "days",
       "value_status": "known",
       "denominator_or_reference": "after the last exposure",
       "condition_ids": [
-        "fda_ada.cond.VII_A.001"
+        "fda_ada.cond.VII_A.002"
       ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
@@ -9037,14 +9045,14 @@
       "source_unit_id": "fda_ada.su.7_a.001",
       "knowledge_record_id": null,
       "parameter": "Timing of sample collection after last exposure",
-      "comparator": "within",
+      "comparator": "approximately",
       "value": 5,
       "value_fraction": null,
       "unit": "half-lives",
       "value_status": "known",
       "denominator_or_reference": "after last exposure",
       "condition_ids": [
-        "fda_ada.cond.VII_A.001"
+        "fda_ada.cond.VII_A.003"
       ],
       "joint_with_ids": [],
       "is_default_with_exception": false,
@@ -11075,16 +11083,12 @@
         "fda_ada.kr.VII_A.015",
         "fda_ada.qc.VII_A.001",
         "fda_ada.qc.VII_A.002",
-        "fda_ada.qc.VII_A.003",
-        "fda_ada.qc.VII_A.004",
         "fda_ada.qc.VII_A.006",
         "fda_ada.qc.VII_A.007",
         "fda_ada.qc.VII_A.008",
         "fda_ada.qc.VII_A.009",
         "fda_ada.qc.VII_A.010",
-        "fda_ada.qc.VII_A.011",
-        "fda_ada.qc.VII_A.012",
-        "fda_ada.qc.VII_A.013"
+        "fda_ada.qc.VII_A.011"
       ],
       "review_status": "reviewed"
     },
@@ -11095,7 +11099,9 @@
       "condition_type": "applicability",
       "applies_to_ids": [
         "fda_ada.kr.VII_A.005",
-        "fda_ada.kr.VII_A.006"
+        "fda_ada.kr.VII_A.006",
+        "fda_ada.qc.VII_A.003",
+        "fda_ada.qc.VII_A.012"
       ],
       "review_status": "reviewed"
     },
@@ -11105,7 +11111,9 @@
       "condition_text": "For products with long half-lives",
       "condition_type": "applicability",
       "applies_to_ids": [
-        "fda_ada.kr.VII_A.007"
+        "fda_ada.kr.VII_A.007",
+        "fda_ada.qc.VII_A.004",
+        "fda_ada.qc.VII_A.013"
       ],
       "review_status": "reviewed"
     },

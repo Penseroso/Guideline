@@ -33,11 +33,21 @@
       "section_order_status": "known"
     },
     {
+      "section_id": "fda_ada_2014.sec.3",
+      "document_id": "fda_ada_2014",
+      "section_number": "III",
+      "title": "CLINICAL CONSEQUENCES",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 30,
+      "section_order_status": "known"
+    },
+    {
       "section_id": "fda_ada_2014.sec.3_a",
       "document_id": "fda_ada_2014",
       "section_number": "III.A",
       "title": "Consequences for Efficacy",
-      "parent_section_id": null,
+      "parent_section_id": "fda_ada_2014.sec.3",
       "heading_source_unit_id": null,
       "section_order": 31,
       "section_order_status": "known"
@@ -47,7 +57,7 @@
       "document_id": "fda_ada_2014",
       "section_number": "III.B",
       "title": "Consequences for Safety",
-      "parent_section_id": null,
+      "parent_section_id": "fda_ada_2014.sec.3",
       "heading_source_unit_id": null,
       "section_order": 32,
       "section_order_status": "known"
@@ -63,11 +73,21 @@
       "section_order_status": "known"
     },
     {
+      "section_id": "fda_ada_2014.sec.5",
+      "document_id": "fda_ada_2014",
+      "section_number": "V",
+      "title": "PATIENT- AND PRODUCT-SPECIFIC FACTORS THAT AFFECT IMMUNOGENICITY",
+      "parent_section_id": null,
+      "heading_source_unit_id": null,
+      "section_order": 50,
+      "section_order_status": "known"
+    },
+    {
       "section_id": "fda_ada_2014.sec.5_a",
       "document_id": "fda_ada_2014",
       "section_number": "V.A",
       "title": "Patient-Specific Factors That Affect Immunogenicity",
-      "parent_section_id": null,
+      "parent_section_id": "fda_ada_2014.sec.5",
       "heading_source_unit_id": null,
       "section_order": 51,
       "section_order_status": "known"
@@ -77,7 +97,7 @@
       "document_id": "fda_ada_2014",
       "section_number": "V.B",
       "title": "Product-Specific Factors That Affect Immunogenicity",
-      "parent_section_id": null,
+      "parent_section_id": "fda_ada_2014.sec.5",
       "heading_source_unit_id": null,
       "section_order": 52,
       "section_order_status": "known"

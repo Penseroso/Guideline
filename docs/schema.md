@@ -223,9 +223,11 @@ Core fields:
 - `source_unit_id`: Source unit containing the criterion.
 - `knowledge_record_id`: Related semantic record ID, or `null` if not yet linked.
 - `parameter`: Parameter being constrained, for example accuracy or precision.
-- `comparator`: One of `within`, `not_exceed`, `at_least`, `equals`. Use `equals` for an exact count or value stated as such (e.g. "two relevant species," "a single species") — `at_least`/`not_exceed` assert an open-ended bound that a source stating an exact number does not.
+- `comparator`: One of `within`, `not_exceed`, `at_least`, `equals`, `between`, `below`, `above`, `approximately`. Use `equals` for an exact count or value; `between` for a bounded range; and `approximately` when the source explicitly qualifies a value as approximate. `below` and `above` preserve strict directional wording without turning it into an inclusive bound.
 - `value`: Numeric value, or `null` if unavailable or uncertain.
 - `value_fraction`: Exact fraction object, or `null`.
+- `value_range`: Numeric range object, or `null`/absent for legacy records.
+- `value_text`: Exact non-numeric quantity expression, or `null`/absent for legacy records. Use this only when reducing the expression to one scalar would change its meaning, such as `maximum feasible dose or 1000 mg/kg`.
 - `unit`: Unit, for example `%`, or `null`.
 - `value_status`: Status of the typed value.
 - `denominator_or_reference`: Reference basis, for example nominal concentration, total QCs, or concentration level.
@@ -243,10 +245,19 @@ Core fields:
 
 `denominator` must be an integer greater than zero.
 
+`value_range` fields:
+
+- `lower`
+- `upper`
+- `lower_inclusive`
+- `upper_inclusive`
+
+`lower` must not exceed `upper`. Inclusivity is stored explicitly rather than inferred from punctuation or comparator wording.
+
 For `QuantitativeCriterion`:
 
-- `value_status=known` requires exactly one of non-null `value` or non-null `value_fraction`.
-- `value_status=unknown`, `not_applicable`, or `needs_review` requires both `value` and `value_fraction` to be `null`.
+- `value_status=known` requires exactly one non-null representation among `value`, `value_fraction`, `value_range`, and `value_text`.
+- `value_status=unknown`, `not_applicable`, or `needs_review` requires all four value representations to be null or absent.
 - Exact source expressions such as `2/3` use `value=null`, `value_fraction={"numerator":2,"denominator":3}`, `unit="fraction"`, and preserve the exact source expression in `source_text`.
 - `denominator_or_reference` retains the reference basis, such as total QCs, when applicable.
 
@@ -404,6 +415,12 @@ The 5-dimensional Scope Ontology models applicability as a first-class property 
 5. **`explicit_exclusions` (Negative Scope)**: Hard-exclusion filters preventing cross-domain false positives (e.g. S6 excludes `small_molecule`, FDA ADA excludes `nonclinical` and `small_molecule`, EMA FIH excludes `atmp`).
 
 These fields are deterministically synthesized at load time from `Document` and `Section` ancestor trees (`engine/data_store.js`), and enforced via a multi-dimensional **Scope Guard** in `engine/query_router.js`.
+
+## Model 0.7.0: quantitative ranges, text values, and comparator precision
+
+Added 2026-09-02 after answer-suitability auditing exposed three recurrent losses in reviewed source expressions: bounded ranges such as `7 to 14 days` could only be left `needs_review` or split into duplicate lower/upper records; qualified values such as `approximately 30 days` were represented as exact equality; and mixed alternatives such as `maximum feasible dose or 1000 mg/kg` were reduced to the scalar `1000 mg/kg`.
+
+`value_range` and `value_text` are additive and optional so existing bundles remain schema-compatible. The validator preserves the one-value invariant: a known criterion has exactly one of scalar, fraction, range, or text. The new `between`, `below`, `above`, and `approximately` comparator values preserve source relationships that the original four-value enum could not express. This extends the value representations described in Model 0.3.0; it does not allow multiple representations in one record. `source_text` remains authoritative, and `value_text` must not be used to invent a normalized recommendation or combine unrelated clauses.
 
 
 ## Applicability Layer 0.1.0 (explored 2026-08-25/26, discontinued as a separate module — 2026-08-26)

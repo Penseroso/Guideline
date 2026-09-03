@@ -165,16 +165,16 @@ test("duplicate and non-increasing SourceUnit order fails", () => {
   assertInvalid(result, "duplicates ich_m10.su.3_2_5_2.001 in section ich_m10.sec.3_2_5_2");
 });
 
-test("value_status known with neither value type fails", () => {
+test("value_status known with no value representation fails", () => {
   const result = validatePilotCopies((first) => {
     first.quantitative_criteria[0].value = null;
     first.quantitative_criteria[0].value_fraction = null;
   });
 
-  assertInvalid(result, "known requires exactly one of value or value_fraction");
+  assertInvalid(result, "known requires exactly one of value, value_fraction, value_range, or value_text");
 });
 
-test("value_status known with both value types fails", () => {
+test("value_status known with multiple value representations fails", () => {
   const result = validatePilotCopies((first) => {
     first.quantitative_criteria[0].value_fraction = {
       numerator: 1,
@@ -182,7 +182,64 @@ test("value_status known with both value types fails", () => {
     };
   });
 
-  assertInvalid(result, "known requires exactly one of value or value_fraction");
+  assertInvalid(result, "known requires exactly one of value, value_fraction, value_range, or value_text");
+});
+
+test("value_status known with value_range passes", () => {
+  const result = validatePilotCopies((first) => {
+    first.quantitative_criteria[0].value = null;
+    first.quantitative_criteria[0].value_range = {
+      lower: 7,
+      upper: 14,
+      lower_inclusive: true,
+      upper_inclusive: true
+    };
+    first.quantitative_criteria[0].comparator = "between";
+  });
+
+  assertValid(result);
+});
+
+test("value_status known with value_text passes", () => {
+  const result = validatePilotCopies((first) => {
+    first.quantitative_criteria[0].value = null;
+    first.quantitative_criteria[0].value_text = "maximum feasible dose";
+  });
+
+  assertValid(result);
+});
+
+test("inverted value_range fails", () => {
+  const result = validatePilotCopies((first) => {
+    first.quantitative_criteria[0].value = null;
+    first.quantitative_criteria[0].value_range = {
+      lower: 14,
+      upper: 7,
+      lower_inclusive: true,
+      upper_inclusive: true
+    };
+  });
+
+  assertInvalid(result, "lower must not exceed upper");
+});
+
+test("non-known value_status with a value representation fails", () => {
+  const result = validatePilotCopies((first) => {
+    first.quantitative_criteria[0].value = null;
+    first.quantitative_criteria[0].value_text = "unverified expression";
+    first.quantitative_criteria[0].value_status = "needs_review";
+  });
+
+  assertInvalid(result, "non-known status requires all value representations to be null");
+});
+
+test("new scalar comparators are accepted", () => {
+  for (const comparator of ["below", "above", "approximately"]) {
+    const result = validatePilotCopies((first) => {
+      first.quantitative_criteria[0].comparator = comparator;
+    });
+    assertValid(result);
+  }
 });
 
 test("zero fraction denominator fails", () => {

@@ -81,6 +81,56 @@ test("a header-level question exposes section_overview as a distinct response co
   assert.ok(overview.answer_units.every((unit) => unit.overview_group));
 });
 
+test("auto preference synthesizes broad semantic modes but preserves exact section-overview rendering", async () => {
+  let calls = 0;
+  const client = {
+    complete: async ({ schema }) => {
+      calls++;
+      return schema.properties.verdicts
+        ? { verdicts: [{ unit_index: 0, entailed: true, source_index: 0, reason: "supported" }] }
+        : { answered: true, units: [{ text: "근거 범위 안에서 종합한 답변입니다.", source_index: 0 }] };
+    }
+  };
+
+  const process = await answerEnvelope("ADA multi-tiered testing은 단계별로 어떻게 이어져?", records, {
+    client,
+    store: fakeStore([]),
+    index,
+    generationPreference: "auto"
+  });
+  assert.equal(process.route, "grounded_generation");
+  assert.equal(process.mode, "generated");
+  assert.equal(process.semantic_mode, "process");
+  assert.equal(process.coverage.generation_scope_limited_to_structured_claims, true);
+  assert.equal(calls, 2);
+
+  const overview = await answerEnvelope("LC-MS/MS에서 full validation 항목이 뭐야?", records, {
+    client,
+    store: fakeStore([]),
+    index,
+    generationPreference: "auto"
+  });
+  assert.equal(overview.route, "structured");
+  assert.equal(overview.mode, "section_overview");
+  assert.equal(calls, 2, "section overview must not call the generator");
+});
+
+test("cross-guideline generation that omits one side falls back to the complete structured comparison", async () => {
+  const client = {
+    complete: async ({ schema }) => schema.properties.verdicts
+      ? { verdicts: [{ unit_index: 0, entailed: true, source_index: 0, reason: "supported" }] }
+      : { answered: true, units: [{ text: "한 문서의 범위만 설명합니다.", source_index: 0 }] }
+  };
+  const env = await answerEnvelope(
+    "M3(R2)와 S6(R1)의 적용 범위는 어떻게 달라?",
+    records,
+    { client, store: fakeStore([]), index, generationPreference: "auto" }
+  );
+  assert.equal(env.route, "structured");
+  assert.equal(env.mode, "comparison");
+  assert.deepEqual([...new Set(env.claims.map((claim) => claim.record.document_id))].sort(), ["ich_m3_r2", "ich_s6_r1"]);
+});
+
 // --- Grounded fallback routes via envelope (mocked clients + store, no network) ---
 
 function fakeStore(candidateRecords) {

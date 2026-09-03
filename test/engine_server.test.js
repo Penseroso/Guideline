@@ -199,6 +199,25 @@ test("allow_fallback with no injected store refuses cleanly and never crashes", 
   });
 });
 
+test("POST /api/ask validates the additive generation_preference contract", async () => {
+  await withServer({}, async (server) => {
+    const accepted = await fetch(`${baseUrl(server)}/api/ask`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question: "minimum replicates required", generation_preference: "prefer_generated" })
+    });
+    assert.equal(accepted.status, 200);
+
+    const rejected = await fetch(`${baseUrl(server)}/api/ask`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question: "minimum replicates required", generation_preference: "force_anything" })
+    });
+    assert.equal(rejected.status, 400);
+    assert.equal((await rejected.json()).error, "invalid_generation_preference");
+  });
+});
+
 test("grounded generation via injected deps: success and timeout both produce well-formed responses", async () => {
   const candidateModule = require("../engine/data_store");
   const { records } = candidateModule.loadStore();

@@ -300,7 +300,16 @@
         "parameter": { "type": "string", "minLength": 1 },
         "comparator": {
           "type": "string",
-          "enum": ["within", "not_exceed", "at_least", "equals"]
+          "enum": [
+            "within",
+            "not_exceed",
+            "at_least",
+            "equals",
+            "between",
+            "below",
+            "above",
+            "approximately"
+          ]
         },
         "value": { "type": ["number", "null"] },
         "value_fraction": {
@@ -309,6 +318,13 @@
             { "$ref": "#/definitions/fractionValue" }
           ]
         },
+        "value_range": {
+          "oneOf": [
+            { "type": "null" },
+            { "$ref": "#/definitions/rangeValue" }
+          ]
+        },
+        "value_text": { "$ref": "#/definitions/nullableString" },
         "unit": { "$ref": "#/definitions/nullableString" },
         "value_status": { "$ref": "#/definitions/valueStatus" },
         "denominator_or_reference": { "$ref": "#/definitions/nullableString" },
@@ -330,23 +346,47 @@
               {
                 "properties": {
                   "value": { "type": "number" },
-                  "value_fraction": { "type": "null" }
+                  "value_fraction": { "type": "null" },
+                  "value_range": { "type": "null" },
+                  "value_text": { "type": "null" }
                 },
                 "required": ["value", "value_fraction"]
               },
               {
                 "properties": {
                   "value": { "type": "null" },
-                  "value_fraction": { "$ref": "#/definitions/fractionValue" }
+                  "value_fraction": { "$ref": "#/definitions/fractionValue" },
+                  "value_range": { "type": "null" },
+                  "value_text": { "type": "null" }
                 },
                 "required": ["value", "value_fraction"]
+              },
+              {
+                "properties": {
+                  "value": { "type": "null" },
+                  "value_fraction": { "type": "null" },
+                  "value_range": { "$ref": "#/definitions/rangeValue" },
+                  "value_text": { "type": "null" }
+                },
+                "required": ["value", "value_fraction", "value_range"]
+              },
+              {
+                "properties": {
+                  "value": { "type": "null" },
+                  "value_fraction": { "type": "null" },
+                  "value_range": { "type": "null" },
+                  "value_text": { "type": "string", "minLength": 1 }
+                },
+                "required": ["value", "value_fraction", "value_text"]
               }
             ]
           },
           "else": {
             "properties": {
               "value": { "type": "null" },
-              "value_fraction": { "type": "null" }
+              "value_fraction": { "type": "null" },
+              "value_range": { "type": "null" },
+              "value_text": { "type": "null" }
             }
           }
         }
@@ -359,6 +399,17 @@
       "properties": {
         "numerator": { "type": "integer" },
         "denominator": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "rangeValue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lower", "upper", "lower_inclusive", "upper_inclusive"],
+      "properties": {
+        "lower": { "type": "number" },
+        "upper": { "type": "number" },
+        "lower_inclusive": { "type": "boolean" },
+        "upper_inclusive": { "type": "boolean" }
       }
     },
     "condition": {

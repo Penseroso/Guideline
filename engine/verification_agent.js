@@ -13,6 +13,8 @@
  * from whichever produced the claim (config, see engine/llm_client.js).
  */
 
+const { criterionValue } = require("./criterion_value");
+
 function entailmentSchema() {
   return {
     type: "object",
@@ -91,7 +93,11 @@ const COMPARATOR_PHRASE = {
   // "at least N" was found live to be correctly rejected for asserting "N
   // or more is fine" when the source states an exact number (e.g. "two
   // relevant species," "a single species").
-  equals: (value, unit) => `exactly ${value}${unit} (this is the specified exact value for this parameter, not a minimum or maximum — no more, no less)`
+  equals: (value, unit) => `exactly ${value}${unit} (this is the specified exact value for this parameter, not a minimum or maximum — no more, no less)`,
+  between: (value, unit) => `between ${value}${unit} (this is the specified bounded range for this parameter)`,
+  below: (value, unit) => `below ${value}${unit} (this is a strict upper relationship)`,
+  above: (value, unit) => `above ${value}${unit} (this is a strict lower relationship)`,
+  approximately: (value, unit) => `approximately ${value}${unit} (the source qualifies this value as approximate)`
 };
 
 // schema.md Model 0.4.0: two patterns COMPARATOR_PHRASE's "specified, not
@@ -103,13 +109,21 @@ const DEFAULT_WITH_EXCEPTION_PHRASE = {
   at_least: (value, unit) => `normally at least ${value}${unit} (this is the default/typical value for this parameter, not an absolute floor — a recognized exception may permit a different value)`,
   not_exceed: (value, unit) => `normally not exceeding ${value}${unit} (this is the default/typical value for this parameter, not an absolute ceiling — a recognized exception may permit a different value)`,
   within: (value, unit) => `normally within ${value}${unit} (this is the default/typical value for this parameter, not an absolute bound — a recognized exception may permit a different value)`,
-  equals: (value, unit) => `normally exactly ${value}${unit} (this is the default/typical exact value for this parameter, not an absolute one — a recognized exception may permit a different value)`
+  equals: (value, unit) => `normally exactly ${value}${unit} (this is the default/typical exact value for this parameter, not an absolute one — a recognized exception may permit a different value)`,
+  between: (value, unit) => `normally between ${value}${unit} (a recognized exception may permit a different range)`,
+  below: (value, unit) => `normally below ${value}${unit} (a recognized exception may permit a different bound)`,
+  above: (value, unit) => `normally above ${value}${unit} (a recognized exception may permit a different bound)`,
+  approximately: (value, unit) => `normally approximately ${value}${unit} (a recognized exception may permit a different value)`
 };
 const ILLUSTRATIVE_EXAMPLE_PHRASE = {
   at_least: (value, unit) => `at least ${value}${unit} (this is given as one illustrative example for this parameter, not a specified requirement)`,
   not_exceed: (value, unit) => `not exceeding ${value}${unit} (this is given as one illustrative example for this parameter, not a specified requirement)`,
   within: (value, unit) => `within ${value}${unit} (this is given as one illustrative example for this parameter, not a specified requirement)`,
-  equals: (value, unit) => `exactly ${value}${unit} (this is given as one illustrative example for this parameter, not a specified requirement)`
+  equals: (value, unit) => `exactly ${value}${unit} (this is given as one illustrative example for this parameter, not a specified requirement)`,
+  between: (value, unit) => `between ${value}${unit} (this is an illustrative range, not a specified requirement)`,
+  below: (value, unit) => `below ${value}${unit} (this is an illustrative bound, not a specified requirement)`,
+  above: (value, unit) => `above ${value}${unit} (this is an illustrative bound, not a specified requirement)`,
+  approximately: (value, unit) => `approximately ${value}${unit} (this is an illustrative value, not a specified requirement)`
 };
 
 /**
@@ -118,9 +132,7 @@ const ILLUSTRATIVE_EXAMPLE_PHRASE = {
  */
 function claimTextFor(record) {
   if (record.type === "quantitative_criterion") {
-    const value = record.value_fraction
-      ? `${record.value_fraction.numerator}/${record.value_fraction.denominator}`
-      : record.value;
+    const value = criterionValue(record);
     const unitSuffix = record.unit ? ` ${record.unit}` : "";
     const phraseMap = record.is_illustrative_example
       ? ILLUSTRATIVE_EXAMPLE_PHRASE

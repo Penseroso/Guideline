@@ -26,6 +26,8 @@
     loggingEnabled: true,
     documents: [],
     evidenceOpen: null,
+    generationPreference: localStorage.getItem("guideline_generation_preference") === "prefer_generated" ? "prefer_generated" : "auto",
+    generationAvailable: false,
     lastQuestion: null,
     lastEnvelope: null
   };
@@ -46,6 +48,9 @@
     idleWordmark: document.getElementById("idle-wordmark"),
     askForm: document.getElementById("ask-form"),
     askInput: document.getElementById("ask-input"),
+    generationToggle: document.getElementById("generation-toggle"),
+    generationToggleWrap: document.getElementById("generation-toggle-wrap"),
+    generationToggleLabel: document.getElementById("generation-toggle-label"),
     askButton: document.getElementById("ask-button"),
     loadingPhase: document.getElementById("loading-phase"),
     resultPanel: document.getElementById("result-panel")
@@ -58,6 +63,12 @@
     el.idleWordmark.textContent = t.title;
     el.askInput.placeholder = t.askPlaceholder;
     el.askButton.textContent = t.askButton;
+    el.generationToggleLabel.textContent = t.generationPreferenceLabel;
+    el.generationToggle.title = state.generationAvailable ? t.generationPreferenceHelp : t.generationPreferenceUnavailable;
+    el.generationToggle.setAttribute("aria-label", `${t.generationPreferenceLabel}. ${state.generationAvailable ? t.generationPreferenceHelp : t.generationPreferenceUnavailable}`);
+    el.generationToggle.checked = state.generationAvailable && state.generationPreference === "prefer_generated";
+    el.generationToggle.disabled = !state.generationAvailable;
+    el.generationToggleWrap.classList.toggle("is-disabled", !state.generationAvailable);
     el.scopeToggle.textContent = state.documents.length ? `${t.archiveScopeTitle} (${state.documents.length})` : t.archiveScopeTitle;
     renderDocList();
   }
@@ -76,9 +87,13 @@
       el.healthLabel.textContent = `${i18n().healthOk} · ${body.documents} docs · ${body.records} records`;
       el.healthStatus.hidden = true;
       state.fallbackMode = body.fallback_mode || null;
+      state.generationAvailable = state.fallbackMode === "grounded_generation";
+      if (!state.generationAvailable) state.generationPreference = "auto";
       state.loggingEnabled = body.logging_enabled !== false;
       applyChrome();
     } catch {
+      state.generationAvailable = false;
+      state.generationPreference = "auto";
       el.healthDot.className = "health-dot error";
       el.healthLabel.textContent = i18n().healthError;
       el.healthStatus.hidden = false;
@@ -219,7 +234,12 @@
       const res = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question, allow_fallback: true, response_language: state.lang })
+        body: JSON.stringify({
+          question,
+          allow_fallback: true,
+          response_language: state.lang,
+          generation_preference: state.generationAvailable ? state.generationPreference : "auto"
+        })
       });
       const envelope = await res.json();
       document.body.classList.remove("idle");
@@ -245,6 +265,12 @@
     localStorage.setItem("guideline_lang", state.lang);
     applyChrome();
     renderCurrentResult();
+  });
+
+  el.generationToggle.addEventListener("change", () => {
+    state.generationPreference = state.generationAvailable && el.generationToggle.checked ? "prefer_generated" : "auto";
+    localStorage.setItem("guideline_generation_preference", state.generationPreference);
+    applyChrome();
   });
 
   el.scopeToggle.addEventListener("click", (e) => {

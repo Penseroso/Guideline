@@ -2,6 +2,7 @@ const { loadStore } = require("./data_store");
 const { tokenize, extractQueryScope } = require("./text_utils");
 const { isComparisonQuery, answerComparison, formatComparativeAnswer } = require("./comparison_engine");
 const { isAmendmentQuery, answerAmendment, formatAmendmentAnswer } = require("./amendment_engine");
+const { criterionValue, criterionValueKey } = require("./criterion_value");
 
 /**
  * Minimum score and token count required for structured matching.
@@ -12,6 +13,118 @@ const MIN_MATCHED_TOKENS = 2;
 // When scores are close, prefer the more precise structured type over
 // the raw paragraph it was extracted from.
 const TYPE_PRIORITY = { quantitative_criterion: 0, condition: 1, knowledge_record: 2 };
+
+const GENERIC_DOCUMENT_TOKENS = new Set([
+  "ich", "fda", "ema", "guideline", "guidance", "clinical", "rev", "revision", "r1", "r2"
+]);
+
+function identityLexemes(value) {
+  return new Set(String(value || "").toLowerCase().match(/[a-z]+\d*|\d{2,4}/g) || []);
+}
+
+function documentIdentityTokens(record) {
+  // The official code is the stable public identity. Full titles contain
+  // topical words such as "validation" and "assay" which are relevance
+  // concepts, not proof that the user named that document.
+  // Keep the document_id aliases as well: EMA's official code is a dossier
+  // number and does not itself contain the user-facing "FIH" shorthand.
+  return identityLexemes([
+    record.guideline_code,
+    record.document_id && record.document_id.replace(/_/g, " ")
+  ].filter(Boolean).join(" "));
+}
+
+/**
+ * Resolve every explicitly named archive document. Identity is a gate, not a
+ * relevance bonus: once a user says M10, records from an ADA guideline can no
+ * longer win merely because both documents contain the word "validation".
+ * Tokens shared by every document (agency names and generic words) do not by
+ * themselves select a document; discriminating code/year/title tokens do.
+ */
+function resolveRequestedDocumentIds(question, records) {
+  // Identity matching intentionally bypasses semantic synonym expansion.
+  // Otherwise an ordinary topic such as "starting dose" expands to the
+  // ema_fih document_id's aliases and masquerades as an explicit document.
+  const qTokens = identityLexemes(question);
+  const identities = new Map();
+  for (const record of records || []) {
+    if (record.document_id && !identities.has(record.document_id)) {
+      identities.set(record.document_id, documentIdentityTokens(record));
+    }
+  }
+  const scored = [];
+  for (const [documentId, tokens] of identities) {
+    const matched = [...tokens].filter((token) => {
+      if (!qTokens.has(token) || GENERIC_DOCUMENT_TOKENS.has(token)) return false;
+      // FIH names a development context as often as it names the EMA
+      // guideline. Only the explicit "EMA FIH" combination is a document
+      // identity; bare FIH must leave S6/M3 evidence discoverable.
+      if (token === "fih" && !qTokens.has("ema")) return false;
+      return true;
+    });
+    if (matched.length === 0) continue;
+    // A year/version is a stronger identity signal than a family alias.
+    // Thus "FDA ADA 2014" selects the 2014 document, while bare "ADA"
+    // deliberately keeps both archived ADA documents as an ambiguous family.
+    const score = matched.reduce((sum, token) => sum + (/^\d{4}$/.test(token) ? 3 : 1), 0);
+    scored.push({ documentId, score });
+  }
+  if (scored.length === 0) return null;
+  const maxScore = Math.max(...scored.map(({ score }) => score));
+  return new Set(scored.filter(({ score }) => score === maxScore).map(({ documentId }) => documentId));
+}
+
+function applyDocumentGate(records, requestedDocumentIds) {
+  if (!requestedDocumentIds) return records;
+  return records.filter((record) => requestedDocumentIds.has(record.document_id));
+}
+
+function classifyAnswerIntent(question, qTokens = new Set(tokenize(question))) {
+  const lower = String(question || "").toLowerCase();
+  const has = (terms) => terms.some((term) => lower.includes(term) || qTokens.has(term));
+  const comparison = has([" vs ", "versus", "compare", "comparison", "비교", "차이", "다른", "달라", "대비"]);
+  const process = has(["흐름", "단계", "순서", "절차", "이어", "연결", "관계", "그다음", "다음", "언제", "시점", "맞춰", "process", "workflow", "sequence"]);
+  const documentOverview = has(["전체적으로", "전반적으로", "뭘 다루", "무엇을 다루", "다뤄", "목적과 범위", "큰 그림", "document overview"]);
+  const broad = documentOverview || process || comparison || isListQuery(question, qTokens) ||
+    /(?:왜|목적).*(?:어떻게|방법)|(?:어떻게|방법).*(?:판단|선정|결정)|(?:뭘|무엇을).*(?:확인|평가)|어떤\s*영향|각각|성능\s*기준|항목|구성|종류/i.test(lower);
+  const intentComparison = comparison || /비교|차이|달라|대비/i.test(lower);
+  const intentProcess = process || /흐름|단계|순서|절차|연결|관계|그다음|다음|언제|시점/i.test(lower);
+  const intentDocumentOverview = documentOverview || /전체적으로|전반적으로|전체|목적과\s*범위|큰\s*그림/i.test(lower);
+  const compound = /(?:\s및\s|\sand\s|랑|와\s|과\s|[,/])/i.test(lower) && qTokens.size >= 4;
+  const intentBroad = broad || intentDocumentOverview || intentProcess || intentComparison || compound ||
+    /항목|구성|종류|유형|원칙|종합|정리|준비|뭘|무엇/i.test(lower);
+  return {
+    kind: intentDocumentOverview ? "document_overview" : intentComparison ? "within_document_comparison" : intentProcess ? "process" : compound ? "multi_criterion" : intentBroad ? "topic_overview" : "detail",
+    breadth: intentBroad ? "broad" : "detail",
+    comparison: intentComparison,
+    process: intentProcess,
+    documentOverview: intentDocumentOverview,
+    compound
+  };
+}
+
+function isSuppressedBroadRecord(record, question) {
+  const asksException = /exception|except|excluding|예외|제외|특수/i.test(question || "");
+  const asksExample = /example|illustrative|예시|사례/i.test(question || "");
+  if (record.is_illustrative_example && !asksExample) return true;
+  if (record.type === "condition" && ["exception", "exclusion"].includes(record.condition_type) && !asksException) return true;
+  if (record.type === "quantitative_criterion" &&
+      (record.value_status === "needs_review" || record.value_status === "unknown" ||
+       criterionValue(record) == null)) return true;
+  return false;
+}
+
+function dedupeRecordsForAnswer(records) {
+  const seen = new Set();
+  return (records || []).filter((record) => {
+    const key = [record.type, record.source_text, record.parameter, record.comparator,
+      criterionValueKey(record),
+      record.denominator_or_reference].join("|");
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
 
 /**
  * Uniform grounding-claim list, attached to every structuredQuery match
@@ -168,7 +281,7 @@ function scoreRecord(record, qTokens, queryScope = {}) {
                                 denomLower.includes(`except at ${t}`) ||
                                 denomLower.includes(`excluding ${t}`);
 
-      if (isNegativeMention && !hasNegativeQueryToken) {
+      if (isNegativeMention && !hasNegativeQueryToken && !qTokens.has("일반")) {
         tokenScore = Math.max(tokenScore, 0.1);
       } else {
         tokenScore = Math.max(tokenScore, 2.5);
@@ -199,7 +312,85 @@ function scoreRecord(record, qTokens, queryScope = {}) {
     score += 1.5;
   }
 
-  return { score, matchedCount: matchedTokens.size };
+  // Low-authority display candidates remain retrievable for an explicitly
+  // narrow question, but must not beat a reviewed, specified criterion just
+  // because their source paragraph happens to repeat more query words.
+  if (record.is_illustrative_example) score -= 2.5;
+  if (record.type === "quantitative_criterion" &&
+      (record.value_status === "needs_review" || record.value_status === "unknown" ||
+       criterionValue(record) == null)) score -= 3.0;
+  if (record.type === "condition" && ["exception", "exclusion"].includes(record.condition_type) &&
+      !qTokens.has("exception") && !qTokens.has("except") && !qTokens.has("예외") && !qTokens.has("제외")) score -= 2.0;
+
+  // Cardinality and condition compatibility. A numeric value of 1 is not
+  // evidence for a query about "one species" when it means one month or one
+  // subject. Match the requested entity and suppress the opposite condition.
+  if (qTokens.has("species") && (qTokens.has("one") || qTokens.has("single"))) {
+    const focus = [record.parameter, record.source_text,
+      ...(record.applicable_conditions || []).map((condition) => condition.condition_text)]
+      .filter(Boolean).join(" ").toLowerCase();
+    const expressesOneSpecies = /(?:only\s+one|one\s+(?:relevant\s+)?species|single\s+(?:relevant\s+)?species)/.test(focus);
+    const expressesOnlyOneSpecies = /(?:only\s+one\s+(?:relevant\s+)?species|(?:active|activity)\s+in\s+only\s+one\s+species|only\s+one\s+(?:relevant\s+)?species\s+can\s+be\s+identified)/.test(focus);
+    const expressesTwoSpecies = /two\s+(?:pharmacologically\s+)?relevant\s+species/.test(focus);
+    if (expressesOneSpecies) score += 5.0;
+    if (expressesTwoSpecies && !expressesOneSpecies) score -= 5.0;
+    if (record.type === "quantitative_criterion" && !/species/.test(String(record.parameter || "").toLowerCase()) && !expressesOneSpecies) score -= 5.0;
+    if (qTokens.has("only_available")) {
+      if (expressesOnlyOneSpecies) score += 6.0;
+      else if (expressesTwoSpecies) score -= 6.0;
+    }
+  }
+
+  // Preserve compound domain concepts that are more specific than either
+  // token alone. This prevents generic dose-escalation/toxicology passages or
+  // unrelated species-count criteria from outranking the requested context.
+  const semanticFocus = [record.parameter, record.denominator_or_reference, record.subject, record.action, record.object,
+    record.source_text, ...(record.section_path || [])].filter(Boolean).join(" ").toLowerCase();
+  if (qTokens.has("cohort")) {
+    if (/\bcohorts?\b/.test(semanticFocus)) score += 5.0;
+    else score -= 2.0;
+  }
+  if (qTokens.has("homologous") && qTokens.has("protein")) {
+    if (/homologous\s+(?:protein|molecule|form)/.test(semanticFocus)) score += 6.0;
+    else score -= 5.0;
+  }
+  if (qTokens.has("recovery")) {
+    if (/\brecovery\b|reversib|non-dosing period/.test(semanticFocus)) score += 10.0;
+    else score -= 3.0;
+  }
+  if (qTokens.has("approach") && qTokens.has("1") && !qTokens.has("2")) {
+    if (/approach\s*1\b/.test(semanticFocus)) score += 4.0;
+    if (/approach\s*2\b/.test(semanticFocus)) score -= 8.0;
+  }
+  if (qTokens.has("approach") && qTokens.has("1") && qTokens.has("2")) {
+    if (/approach\s*[12]\b/.test(semanticFocus)) score += 7.0;
+    else score -= 3.0;
+  }
+  if (qTokens.has("accuracy") && qTokens.has("precision")) {
+    if (/accuracy|precision/.test(semanticFocus)) score += 7.0;
+    else score -= 4.0;
+  }
+  if (qTokens.has("run") && qTokens.has("calibration") && qTokens.has("qc") &&
+      (qTokens.has("acceptance") || qTokens.has("criteria"))) {
+    if (/acceptance criteria for an analytical run|analytical run/.test(semanticFocus)) score += 9.0;
+    else score -= 5.0;
+  }
+  if (qTokens.has("screening") && qTokens.has("positive")) {
+    if (/confirmatory|titration|neutraliz/.test(semanticFocus)) score += 6.0;
+    if (/screening assay/.test(semanticFocus) && !/confirmatory|titration|neutraliz/.test(semanticFocus)) score -= 2.0;
+  }
+  if (qTokens.has("clinical") && qTokens.has("trial") && qTokens.has("duration") &&
+      qTokens.has("repeated") && qTokens.has("toxicology")) {
+    if (/clinical trials? up to|duration of clinical trials?/.test(semanticFocus)) score += 9.0;
+    else score -= 3.0;
+  }
+  if (qTokens.has("ada") && qTokens.has("clinical") &&
+      (qTokens.has("impact") || qTokens.has("effect"))) {
+    if (/efficacy|safety|pharmacokinetic|pharmacodynamic|clinical consequence|adverse/.test(semanticFocus)) score += 8.0;
+    if (/factor.*affect immunogenicity|reduce ada formation|augment antibody response/.test(semanticFocus)) score -= 5.0;
+  }
+
+  return { score: Math.max(0, score), matchedCount: matchedTokens.size };
 }
 
 function areSiblings(a, b) {
@@ -257,10 +448,15 @@ function descendantSectionIds(sectionId, index) {
 function trySectionOverviewQuery(question, records, index) {
   if (!index || !index.sections || !index.documents) return null;
   const qTokens = new Set(tokenize(question));
+  const rawQuestion = String(question || "").toLowerCase();
   if (!isListQuery(question, qTokens)) return null;
+  const requestedDocumentIds = resolveRequestedDocumentIds(question, records);
+  const gatedRecords = applyDocumentGate(records, requestedDocumentIds);
+  const allowedDocumentIds = new Set(gatedRecords.map((record) => record.document_id));
 
   const candidates = [];
   for (const section of index.sections.values()) {
+    if (!allowedDocumentIds.has(section.document_id)) continue;
     const children = [...index.sections.values()]
       .filter((candidate) => candidate.parent_section_id === section.section_id)
       .sort(compareSectionNumbers);
@@ -291,10 +487,28 @@ function trySectionOverviewQuery(question, records, index) {
       }
       if (documentTokens.has(token)) score += 1;
     }
-    // A single generic word such as "validation" is not enough to choose a
-    // parent Section. Require two section/path concepts to avoid silently
-    // selecting one of several technology- or document-specific branches.
-    if (matchedSectionConcepts.size >= 2) candidates.push({ section, children, ancestors, score });
+    // Exact distinctive title terms should beat synonym expansions of a
+    // broad context acronym. Without this, FIH -> first/human/fih outweighed
+    // the literal "non-clinical" in a request for the non-clinical chapter.
+    const distinctiveTitleTerms = String(section.title || "").toLowerCase()
+      .match(/[a-z0-9]+(?:-[a-z0-9]+)*/g) || [];
+    for (const term of distinctiveTitleTerms) {
+      if (term.length >= 4 && term !== "clinical" && term !== "trial" && term !== "validation" && rawQuestion.includes(term)) {
+        score += 6;
+      }
+    }
+    // A single generic word such as "validation" is normally not enough to
+    // choose a parent Section. One exception is an explicitly scoped
+    // taxonomy question: when every direct child repeats the matched parent
+    // concept (Full/Partial/Cross Validation), the hierarchy itself proves
+    // that this parent is the requested classification, unlike a validation
+    // chapter whose children are performance characteristics.
+    const asksTaxonomy = /종류|유형|types?|categories|나뉘/i.test(rawQuestion);
+    const childTitleTokenSets = children.map((child) => new Set(tokenize(child.title)));
+    const repeatedParentConcept = [...matchedSectionConcepts]
+      .some((token) => childTitleTokenSets.every((tokens) => tokens.has(token)));
+    const taxonomyMatch = asksTaxonomy && requestedDocumentIds && requestedDocumentIds.size === 1 && repeatedParentConcept;
+    if (matchedSectionConcepts.size >= 2 || taxonomyMatch) candidates.push({ section, children, ancestors, score: score + (taxonomyMatch ? 8 : 0) });
   }
   if (candidates.length === 0) return null;
   candidates.sort((a, b) => b.score - a.score || b.ancestors.length - a.ancestors.length || compareSectionNumbers(a.section, b.section));
@@ -308,13 +522,16 @@ function trySectionOverviewQuery(question, records, index) {
   for (let groupOrder = 0; groupOrder < target.children.length; groupOrder++) {
     const child = target.children[groupOrder];
     const sectionIds = new Set([child.section_id, ...descendantSectionIds(child.section_id, index)]);
-    const sectionRecords = records.filter((record) => sectionIds.has(record.section_id));
-    const knowledgeRecords = [...new Map(
-      sectionRecords
-        .filter((record) => record.type === "knowledge_record")
-        .map((record) => [record.source_text, record])
-    ).values()];
-    const criteria = sectionRecords.filter((record) => record.type === "quantitative_criterion");
+    const sectionRecords = gatedRecords.filter((record) => sectionIds.has(record.section_id));
+    // Preserve the first (normally broadest) extraction from a source unit.
+    // Map construction used to overwrite it with the last atomic fragment,
+    // producing headings whose synopsis was merely “is expected”.
+    const knowledgeRecords = dedupeRecordsForAnswer(
+      sectionRecords.filter((record) => record.type === "knowledge_record")
+    );
+    const criteria = dedupeRecordsForAnswer(sectionRecords.filter((record) =>
+      record.type === "quantitative_criterion" && !isSuppressedBroadRecord(record, question)
+    ));
     const fallbackConditions = knowledgeRecords.length || criteria.length
       ? []
       : [...new Map(sectionRecords.filter((record) => record.type === "condition").map((record) => [record.source_text, record])).values()];
@@ -347,7 +564,19 @@ function trySectionOverviewQuery(question, records, index) {
       guideline_code: (index.documents.get(target.section.document_id) || {}).guideline_code || target.section.document_id
     },
     overviewGroups: groups,
-    claims
+    claims,
+    answerIntent: "section_overview",
+    scope: {
+      requested_document_ids: requestedDocumentIds ? [...requestedDocumentIds] : [],
+      resolved_document_ids: [target.section.document_id],
+      section_ids: [target.section.section_id]
+    },
+    coverage: {
+      status: "section_children",
+      covered_section_ids: groups.map((group) => group.section_id),
+      expected_section_count: target.children.length,
+      covered_section_count: groups.length
+    }
   };
 }
 
@@ -421,6 +650,164 @@ function tryListCompositeQuery(scored, qTokens, question) {
   };
 }
 
+function buildCoverageMatch(records, intent, requestedDocumentIds, title) {
+  const selected = dedupeRecordsForAnswer(records)
+    .filter((record) => !isSuppressedBroadRecord(record, ""))
+    .slice(0, 10);
+  if (selected.length < 2) return null;
+  const sectionIds = [...new Set(selected.map((record) => record.section_id).filter(Boolean))];
+  const documentIds = [...new Set(selected.map((record) => record.document_id).filter(Boolean))];
+  return {
+    record: selected[0],
+    isComposite: true,
+    isListComposite: true,
+    isCoverageComposite: true,
+    isDocumentOverview: intent.kind === "document_overview",
+    isProcess: intent.kind === "process",
+    isWithinDocumentComparison: intent.kind === "within_document_comparison",
+    isMultiCriterion: intent.kind === "multi_criterion",
+    answerIntent: intent.kind,
+    bundleTitle: title,
+    compositeRecords: selected,
+    claims: deriveClaimsFromRecords(selected),
+    scope: {
+      requested_document_ids: requestedDocumentIds ? [...requestedDocumentIds] : [],
+      resolved_document_ids: documentIds,
+      section_ids: sectionIds
+    },
+    coverage: {
+      status: "representative",
+      covered_section_ids: sectionIds,
+      covered_section_count: sectionIds.length,
+      claim_count: selected.length
+    }
+  };
+}
+
+function tryDocumentOverviewQuery(question, records, index, requestedDocumentIds, intent) {
+  if (!intent.documentOverview || !requestedDocumentIds || requestedDocumentIds.size !== 1 || !index || !index.sections) return null;
+  const documentId = [...requestedDocumentIds][0];
+  const candidates = records.filter((record) =>
+    record.document_id === documentId && record.type === "knowledge_record" && !isSuppressedBroadRecord(record, question)
+  );
+  const recordTypeRank = (record) => record.record_type === "scope_statement" ? 0
+    : record.record_type === "definition" ? 1 : 2;
+  const ranked = candidates.sort((a, b) => compareSectionNumbers(a, b) || recordTypeRank(a) - recordTypeRank(b));
+  const bySection = [];
+  const seenBranches = new Set();
+  for (const record of ranked) {
+    const section = index.sections.get(record.section_id);
+    const ancestors = section ? sectionAncestors(section, index) : [];
+    // The first ancestor is the top-level chapter because sectionAncestors()
+    // returns the hierarchy in root-to-leaf order. A document overview should
+    // sample each major chapter once, not prefer shallow late chapters over
+    // the purpose/scope chapter simply because they have no parent node.
+    const branch = ancestors.length ? ancestors[0].section_id : record.section_id;
+    if (seenBranches.has(branch)) continue;
+    seenBranches.add(branch);
+    bySection.push(record);
+    if (bySection.length >= 10) break;
+  }
+  return buildCoverageMatch(bySection, intent, requestedDocumentIds, `${documentId} document overview`);
+}
+
+function tryCoverageCompositeQuery(scored, question, intent, requestedDocumentIds) {
+  if (intent.breadth !== "broad" || scored.length === 0) return null;
+  let eligible = scored
+    .filter(({ record }) => !isSuppressedBroadRecord(record, question))
+    .sort((a, b) => b.score - a.score || TYPE_PRIORITY[a.record.type] - TYPE_PRIORITY[b.record.type]);
+  if (eligible.length === 0) return null;
+
+  // Prefer the document with the broadest set of strong, distinct sources.
+  // For an unscoped topic overview only, a second document may participate
+  // when its best evidence is independently strong; this supports broad
+  // questions whose answer genuinely spans complementary guidelines. An
+  // explicit document identity remains a hard gate.
+  {
+    const byDocument = new Map();
+    for (const item of eligible) {
+      if (!byDocument.has(item.record.document_id)) byDocument.set(item.record.document_id, []);
+      byDocument.get(item.record.document_id).push(item);
+    }
+    const rankedDocuments = [...byDocument].map(([documentId, items]) => {
+      const unique = [];
+      const seenUnits = new Set();
+      for (const item of items) {
+        const unit = item.record.source_unit_ids && item.record.source_unit_ids[0] || item.record.id;
+        // A source paragraph can legitimately yield a narrative record plus
+        // quantitative criteria/conditions. Deduplicate repeated extraction
+        // records within a type, without allowing a scalar or condition to
+        // erase the narrative record needed for a broad answer.
+        const unitType = item.record.type === "quantitative_criterion"
+          ? [item.record.type, unit, item.record.parameter, item.record.comparator, criterionValueKey(item.record)].join(":")
+          : `${item.record.type}:${unit}`;
+        if (seenUnits.has(unitType)) continue;
+        seenUnits.add(unitType);
+        unique.push(item);
+      }
+      return {
+        documentId,
+        items: unique,
+        aggregate: unique.slice(0, 8).reduce((sum, item) => sum + item.score, 0),
+        sections: new Set(unique.slice(0, 8).map((item) => item.record.section_id)).size,
+        bestScore: unique[0] ? unique[0].score : 0,
+        bestMatchedCount: unique[0] ? unique[0].matchedCount : 0
+      };
+    }).sort((a, b) => b.bestScore - a.bestScore || b.aggregate - a.aggregate || b.sections - a.sections);
+    const strongest = rankedDocuments[0];
+    const crossDocumentCandidates = !requestedDocumentIds && intent.kind === "topic_overview"
+      ? rankedDocuments.filter((document) =>
+        document.items.some((item) => item.score >= strongest.bestScore * 0.7 && item.matchedCount >= 3)
+      ).slice(0, 2)
+      : [strongest];
+    const selectedDocuments = crossDocumentCandidates.length > 0 ? crossDocumentCandidates : [strongest];
+    eligible = selectedDocuments.flatMap((document) => {
+      if (selectedDocuments.length === 1) return document.items;
+      const narrative = document.items.filter((item) => item.record.type === "knowledge_record").slice(0, 4);
+      const quantitative = document.items.filter((item) => item.record.type === "quantitative_criterion").slice(0, 1);
+      return [...narrative, ...quantitative];
+    })
+      .sort((a, b) => b.score - a.score || TYPE_PRIORITY[a.record.type] - TYPE_PRIORITY[b.record.type]);
+  }
+
+  // A highly scored scalar must not set the cutoff for a broad explanatory
+  // answer. Process/overview questions are built around narrative evidence;
+  // quantitative criteria supplement it only when the narrative set is too
+  // small. Multi-criterion questions intentionally keep the scalar-led cutoff.
+  const bestScore = eligible[0].score;
+  const bestNarrativeScore = eligible.find((item) => item.record.type === "knowledge_record")?.score;
+  const thresholdBasis = intent.kind === "multi_criterion" || !bestNarrativeScore
+    ? bestScore
+    : bestNarrativeScore;
+  eligible = eligible.filter((item) => item.score >= Math.max(MIN_CONFIDENT_MATCH_SCORE, thresholdBasis * 0.7));
+
+  // Broad answers need representative source paragraphs before isolated
+  // scalar criteria. Keep distinct evidence units/sections, then order a
+  // process by the archive's own section numbering.
+  const selected = [];
+  const seenUnits = new Set();
+  const add = ({ record }) => {
+    const unit = record.source_unit_ids && record.source_unit_ids[0] || record.id;
+    const unitKey = record.type === "quantitative_criterion"
+      ? [record.type, unit, record.parameter, record.comparator, criterionValueKey(record)].join(":")
+      : `${record.type}:${unit}`;
+    if (seenUnits.has(unitKey)) return;
+    seenUnits.add(unitKey);
+    selected.push(record);
+  };
+  for (const item of eligible.filter(({ record }) => record.type === "knowledge_record")) add(item);
+  if (selected.length < 2 || intent.kind === "multi_criterion") {
+    for (const item of eligible.filter(({ record }) => record.type === "quantitative_criterion")) add(item);
+  }
+  // Cap while candidates are still relevance-ranked. Sorting the full pool
+  // by section first discarded later but more relevant process steps merely
+  // because they had a larger section number.
+  selected.splice(10);
+  if (intent.process) selected.sort(compareSectionNumbers);
+  const title = `${selected[0] && (selected[0].guideline_code || selected[0].document_id) || "Guideline"} ${intent.kind.replace(/_/g, " ")}`;
+  return buildCoverageMatch(selected, intent, requestedDocumentIds, title);
+}
+
 /**
  * Structured match, no generation. Returns the best-scoring
  * answerable match (single or sibling composite), or null if nothing scores
@@ -431,31 +818,40 @@ function structuredQuery(question, records, index = null) {
     return null;
   }
 
-  // M4: Check for Cross-Guideline Comparison queries
-  if (isComparisonQuery(question)) {
-    const compMatch = answerComparison(question, records, index);
+  const requestedDocumentIds = resolveRequestedDocumentIds(question, records);
+  const gatedRecords = applyDocumentGate(records, requestedDocumentIds);
+  if (gatedRecords.length === 0) return null;
+
+  // M4: Check for Cross-Guideline Comparison queries. A comparison within
+  // one explicitly named document is handled by the coverage composite below.
+  if (isComparisonQuery(question) && requestedDocumentIds && requestedDocumentIds.size >= 2) {
+    const compMatch = answerComparison(question, gatedRecords, index);
     if (compMatch) return compMatch;
   }
 
   // M4: Check for Guideline Amendment & Revision queries
   if (isAmendmentQuery(question)) {
-    const amendMatch = answerAmendment(question, records, index);
+    const amendMatch = answerAmendment(question, gatedRecords, index);
     if (amendMatch) return amendMatch;
   }
 
-  const sectionOverview = trySectionOverviewQuery(question, records, index);
+  const sectionOverview = trySectionOverviewQuery(question, gatedRecords, index);
   if (sectionOverview) return sectionOverview;
 
   const qTokens = new Set(tokenize(question));
   if (qTokens.size === 0) return null;
+  const intent = classifyAnswerIntent(question, qTokens);
+  const documentOverview = tryDocumentOverviewQuery(question, gatedRecords, index, requestedDocumentIds, intent);
+  if (documentOverview) return documentOverview;
 
   const queryScope = extractQueryScope(question, qTokens);
   queryScope.require_starting_dose_focus = /\b(?:starting|initial) dose\b|시작\s*용량|초기\s*용량/i.test(question);
 
   const scored = [];
-  for (const record of records) {
+  for (const record of gatedRecords) {
     const { score, matchedCount } = scoreRecord(record, qTokens, queryScope);
-    if (score >= MIN_CONFIDENT_MATCH_SCORE && matchedCount >= MIN_MATCHED_TOKENS) {
+    const requiredMatchedTokens = intent.breadth === "broad" ? 1 : MIN_MATCHED_TOKENS;
+    if (score >= MIN_CONFIDENT_MATCH_SCORE && matchedCount >= requiredMatchedTokens) {
       scored.push({ record, score, matchedCount });
     }
   }
@@ -468,11 +864,32 @@ function structuredQuery(question, records, index = null) {
     return b.matchedCount - a.matchedCount;
   });
 
+  const coverageComposite = tryCoverageCompositeQuery(scored, question, intent, requestedDocumentIds);
+  if (coverageComposite) return coverageComposite;
+
   // Check if this is a multi-item list / requirements query
   const listCompositeMatch = tryListCompositeQuery(scored, qTokens, question);
   if (listCompositeMatch) {
+    const listRecords = listCompositeMatch.compositeRecords || [];
+    listCompositeMatch.answerIntent = intent.kind;
+    listCompositeMatch.scope = {
+      requested_document_ids: requestedDocumentIds ? [...requestedDocumentIds] : [],
+      resolved_document_ids: [...new Set(listRecords.map((record) => record.document_id).filter(Boolean))],
+      section_ids: [...new Set(listRecords.map((record) => record.section_id).filter(Boolean))]
+    };
+    listCompositeMatch.coverage = {
+      status: "section_representative",
+      covered_section_ids: listCompositeMatch.scope.section_ids,
+      claim_count: listRecords.length
+    };
     return listCompositeMatch;
   }
+
+  // A broad question that could not assemble at least two independently
+  // grounded facets is not a direct-fact answer. Let grounded generation
+  // retrieve more context or refuse instead of presenting one scalar as a
+  // complete overview.
+  if (intent.breadth === "broad") return null;
 
   const maxScore = scored[0].score;
   const topTied = scored.filter((s) => s.score === maxScore);
@@ -483,7 +900,14 @@ function structuredQuery(question, records, index = null) {
       record: topTied[0].record,
       score: topTied[0].score,
       isComposite: false,
-      claims: deriveClaimsFromRecords([topTied[0].record])
+      claims: deriveClaimsFromRecords([topTied[0].record]),
+      answerIntent: intent.kind,
+      scope: {
+        requested_document_ids: requestedDocumentIds ? [...requestedDocumentIds] : [],
+        resolved_document_ids: [topTied[0].record.document_id],
+        section_ids: [topTied[0].record.section_id]
+      },
+      coverage: { status: "single_claim", covered_section_ids: [topTied[0].record.section_id], claim_count: 1 }
     };
   }
 
@@ -498,7 +922,14 @@ function structuredQuery(question, records, index = null) {
         score: maxScore,
         isComposite: true,
         compositeRecords: topTied.map((t) => t.record),
-        claims: deriveClaimsFromRecords(topTied.map((t) => t.record))
+        claims: deriveClaimsFromRecords(topTied.map((t) => t.record)),
+        answerIntent: intent.kind,
+        scope: {
+          requested_document_ids: requestedDocumentIds ? [...requestedDocumentIds] : [],
+          resolved_document_ids: [first.document_id],
+          section_ids: [first.section_id]
+        },
+        coverage: { status: "sibling_rule_set", covered_section_ids: [first.section_id], claim_count: topTied.length }
       };
     }
   }
@@ -506,12 +937,20 @@ function structuredQuery(question, records, index = null) {
   // Case 3: All top-tied records refer to the exact same source_unit and same text
   const firstUnit = topTied[0].record.source_unit_ids ? topTied[0].record.source_unit_ids[0] : null;
   const sameUnit = firstUnit && topTied.every((t) => t.record.source_unit_ids && t.record.source_unit_ids[0] === firstUnit);
-  if (sameUnit && topTied[0].record.type === "knowledge_record") {
+  const sameUnitKnowledge = sameUnit && topTied.find((t) => t.record.type === "knowledge_record");
+  if (sameUnitKnowledge) {
     return {
-      record: topTied[0].record,
+      record: sameUnitKnowledge.record,
       score: maxScore,
       isComposite: false,
-      claims: deriveClaimsFromRecords([topTied[0].record])
+      claims: deriveClaimsFromRecords([sameUnitKnowledge.record]),
+      answerIntent: intent.kind,
+      scope: {
+        requested_document_ids: requestedDocumentIds ? [...requestedDocumentIds] : [],
+        resolved_document_ids: [sameUnitKnowledge.record.document_id],
+        section_ids: [sameUnitKnowledge.record.section_id]
+      },
+      coverage: { status: "single_source", covered_section_ids: [sameUnitKnowledge.record.section_id], claim_count: 1 }
     };
   }
 
@@ -541,9 +980,7 @@ const VALUE_STATUS_LABEL = {
 };
 
 function formatSingleCriterion(record) {
-  const value = record.value_fraction
-    ? `${record.value_fraction.numerator}/${record.value_fraction.denominator}`
-    : record.value;
+  const value = criterionValue(record);
   const statusQualifier = VALUE_STATUS_LABEL[record.value_status] || "";
   const qualifier = record.is_illustrative_example
     ? "(illustrative example, not a specified requirement) "
@@ -759,8 +1196,9 @@ function groundedResult(items, route, mode) {
     const sourceUnitId = citation ? citation.source_unit_id : null;
     if (!sourceUnitId) continue;
     answerUnits.push({ text, record_id: candidate.record.id, source_unit_id: sourceUnitId, document_id: candidate.record.document_id || null });
-    if (!seen.has(sourceUnitId)) {
-      seen.add(sourceUnitId);
+    const claimKey = candidate.record.id || sourceUnitId;
+    if (!seen.has(claimKey)) {
+      seen.add(claimKey);
       claims.push({ record: candidate.record, source_unit_id: sourceUnitId, citation });
     }
   }
@@ -809,33 +1247,11 @@ async function answerFallback(question, records, {
     );
   }
 
-  // When the user names a guideline code, constrain fallback retrieval to
-  // the best-matching document identity. The aliases come from each loaded
-  // record's document_id/guideline_code, so this generalizes to newly added
-  // guidelines without a hardcoded M10/S6/M3 switch. Ambiguous aliases such
-  // as "ADA" intentionally keep all equally matching documents.
-  const queryTokensForDocument = new Set(tokenize(question));
-  const documentMatches = new Map();
-  for (const record of records) {
-    if (!record.document_id || documentMatches.has(record.document_id)) continue;
-    const identityTokens = new Set(tokenize([
-      record.document_id.replace(/_/g, " "),
-      record.guideline_code
-    ].filter(Boolean).join(" ")));
-    identityTokens.delete("ich");
-    identityTokens.delete("fda");
-    identityTokens.delete("ema");
-    let matched = 0;
-    for (const token of identityTokens) if (queryTokensForDocument.has(token)) matched++;
-    documentMatches.set(record.document_id, matched);
-  }
-  const maxDocumentMatch = Math.max(0, ...documentMatches.values());
-  const requestedDocumentIds = maxDocumentMatch > 0
-    ? new Set([...documentMatches].filter(([, matched]) => matched === maxDocumentMatch).map(([documentId]) => documentId))
-    : null;
-  if (requestedDocumentIds && requestedDocumentIds.size < documentMatches.size) {
-    rawCandidates = rawCandidates.filter(({ record }) => requestedDocumentIds.has(record.document_id));
-  }
+  // The same document-identity gate used by structured matching is mandatory
+  // here. Fallback may return no candidates, but it may never silently widen
+  // an explicitly named guideline to another document.
+  const requestedDocumentIds = resolveRequestedDocumentIds(question, records);
+  if (requestedDocumentIds) rawCandidates = rawCandidates.filter(({ record }) => requestedDocumentIds.has(record.document_id));
 
   // Scope Guard: same rejection as structured scoreRecord applies (shared
   // scopeGuardReject), not just an explicit_exclusions check — see that
@@ -845,18 +1261,39 @@ async function answerFallback(question, records, {
   let candidates = rawCandidates.filter(({ record }) =>
     !scopeGuardReject(record, queryScope) && !relevanceGuardReject(record, queryScope)
   );
-  candidates = candidates.slice(0, FALLBACK_TOP_K);
+  const fallbackIntent = classifyAnswerIntent(question, qTokens);
+  if (fallbackIntent.breadth === "broad") {
+    const preferred = candidates.filter(({ record }) => !isSuppressedBroadRecord(record, question));
+    if (preferred.length > 0) candidates = preferred;
+  }
+  const candidateLimit = fallbackIntent.breadth === "broad" ? FALLBACK_TOP_K * 2 : FALLBACK_TOP_K;
+  candidates = candidates.slice(0, candidateLimit);
 
   if (candidates.length === 0) {
     return { answered: false, text: NOT_FOUND, record: null, route: "refusal", refusal_reason: hasScopeConstraint(queryScope) ? "scope_excluded" : "no_candidates" };
   }
+
+  const fallbackMetadata = {
+    answer_intent: fallbackIntent.kind,
+    scope: {
+      requested_document_ids: requestedDocumentIds ? [...requestedDocumentIds] : [],
+      resolved_document_ids: [...new Set(candidates.map(({ record }) => record.document_id).filter(Boolean))],
+      section_ids: [...new Set(candidates.map(({ record }) => record.section_id).filter(Boolean))]
+    },
+    coverage: {
+      status: "retrieved_excerpts",
+      covered_section_ids: [...new Set(candidates.map(({ record }) => record.section_id).filter(Boolean))],
+      claim_count: candidates.length
+    }
+  };
 
   const sourceExcerptResult = (fallbackReason = null) => ({
     ...groundedResult(candidates.slice(0, SOURCE_EXCERPT_LIMIT).map((candidate) => ({
       text: candidate.record.source_text,
       candidate
     })), "source_excerpts", "source_excerpts"),
-    fallback_reason: fallbackReason
+    fallback_reason: fallbackReason,
+    ...fallbackMetadata
   });
 
   if (fallbackMode === "source_excerpts" || !generatorClient || !verifierClient) {
@@ -873,6 +1310,8 @@ async function answerFallback(question, records, {
     "('may', 'can', 'optional') into recommendations ('should') or requirements ('must', 'have to'), and do not upgrade recommendations ('should') " +
     "into requirements ('must'). Give a direct, coherent answer to the user's actual question; when the question asks for a method or process, " +
     "organize the supported steps in their logical order. Do not return disconnected excerpts, a reading list, or background facts that do not answer the question. " +
+    "For a broad, compound, or comparative question, cover each distinct requested facet for which an excerpt is available; do not collapse the answer to one isolated number. " +
+    "For a comparison across multiple named guidelines, use at least one relevant excerpt from each named guideline and compare them on the same requested axis. " +
     "Each unit must be a complete sentence supported in full by exactly one excerpt, and source_index must identify that excerpt's zero-based [index]. " +
     "Never combine facts from different excerpts into one unit. If the excerpts do not answer the question, set answered=false and return no units. " +
     (responseLanguage === "ko"
@@ -985,17 +1424,20 @@ async function answerFallback(question, records, {
     return sourceExcerptResult(lastRejectionReason ? `verification_failed: ${lastRejectionReason}` : "verification_failed");
   }
 
-  // Dedupe claims by source_unit_id, preserving first-seen order, for the
-  // Sources line and cross-reference block.
-  const seenUnits = new Set();
+  // Preserve distinct records extracted from the same source paragraph.
+  // Generated units point to record_id, so source-unit-only deduplication
+  // silently discarded (for example) the NOAEL criterion beside total dose.
+  const seenRecords = new Set();
   const dedupedClaims = claims.filter((c) => {
-    if (!c.source_unit_id || seenUnits.has(c.source_unit_id)) return false;
-    seenUnits.add(c.source_unit_id);
+    const key = c.record && c.record.id || c.source_unit_id;
+    if (!key || seenRecords.has(key)) return false;
+    seenRecords.add(key);
     return true;
   });
 
   const xrefBlock = formatCrossReferences(dedupedClaims.flatMap((c) => c.record.cross_references || []));
-  const citations = dedupedClaims.map((c) => formatCitation(c.citation)).join("; ");
+  const citations = [...new Map(dedupedClaims.map((c) => [c.source_unit_id, c])).values()]
+    .map((c) => formatCitation(c.citation)).join("; ");
   const groundedRecords = dedupedClaims.map((c) => c.record);
   return {
     answered: true,
@@ -1006,7 +1448,13 @@ async function answerFallback(question, records, {
     answer_units: answerUnits,
     route: "grounded_generation",
     mode: "generated",
-    review_status: groundedRecords.some((r) => r.review_status !== "reviewed") ? "needs_review" : "reviewed"
+    review_status: groundedRecords.some((r) => r.review_status !== "reviewed") ? "needs_review" : "reviewed",
+    ...fallbackMetadata,
+    coverage: {
+      ...fallbackMetadata.coverage,
+      status: "generated_from_retrieved_excerpts",
+      claim_count: dedupedClaims.length
+    }
   };
 }
 
@@ -1064,6 +1512,9 @@ if (require.main === module) {
 module.exports = {
   tokenize,
   scoreRecord,
+  resolveRequestedDocumentIds,
+  classifyAnswerIntent,
+  tryCoverageCompositeQuery,
   trySectionOverviewQuery,
   structuredQuery,
   formatCitation,

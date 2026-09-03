@@ -350,9 +350,13 @@ function startServer({
       }
       const allowFallback = body.allow_fallback !== false;
       const responseLanguage = body.response_language === "en" ? "en" : "ko";
+      const generationPreference = body.generation_preference == null ? "auto" : body.generation_preference;
+      if (!["auto", "prefer_generated"].includes(generationPreference)) {
+        return sendError(res, 400, "invalid_generation_preference");
+      }
       const effectiveDeps = allowFallback
-        ? { client, generatorClient, verifierClient, store, index, responseLanguage, fallbackMode }
-        : { index, responseLanguage };
+        ? { client, generatorClient, verifierClient, store, index, responseLanguage, fallbackMode, generationPreference }
+        : { index, responseLanguage, generationPreference: "auto" };
 
       let envelope;
       if (allowFallback && fallbackAvailable && fallbackMode === "grounded_generation") {

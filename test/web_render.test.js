@@ -1,5 +1,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
+const fs = require("node:fs");
+const path = require("node:path");
 
 const R = require("../web/render.js");
 
@@ -24,8 +26,35 @@ const i18n = {
   sourceExcerptsRouteLabel: "Source excerpts",
   sourceExcerptsRouteSub: "verbatim, no generation",
   sourceExcerptIntro: "No generated answer. Source passages follow.",
+  sourceExcerptWarningTitle: "Safe fallback",
+  sourceExcerptWarningBody: "Not a complete answer.",
   routeIndicatorLabel: "Route",
   modeIndicatorLabel: "Mode",
+  routeStructuredUser: "Structured evidence",
+  routeGeneratedUser: "Grounded generation",
+  routeExcerptsUser: "Safe source fallback",
+  routeRefusalUser: "Answer withheld",
+  routeUnknownUser: "Answer type",
+  modeStructuredUser: "Single provision",
+  modeSectionOverviewUser: "Section overview",
+  modeComparisonUser: "Comparison",
+  modeProcessUser: "Process",
+  modeAmendmentUser: "Amendment relationship",
+  modeGeneratedUser: "Synthesis",
+  modeSourceExcerptsUser: "Source excerpts",
+  modeRefusalUser: "Scope check",
+  routeTechnicalSummary: "Technical details",
+  answerScopeTitle: "Evidence scope",
+  answerScopeMore: "and {count} more sections",
+  coverageComplete: "coverage complete",
+  coveragePartialTitle: "Partial coverage",
+  coveragePartialBody: "Some question scope may be missing.",
+  sectionOverviewIndex: "Child sections",
+  sectionSynopsisTitle: "Key synopsis",
+  originalEvidence: "Source evidence",
+  comparisonDimension: "Comparison dimension",
+  comparisonItem: "Item {count}",
+  processIntro: "Ordered from the evidence.",
   refusalTitle: "근거를 찾지 못했습니다",
   refusalBody: "이것은 archive-coverage 문제입니다",
   refusalNoMatch: "no match",
@@ -66,6 +95,39 @@ test("a MUST-modality claim renders the MUST chip", () => {
   const html = R.renderClaimCard(claim, i18n);
   assert.match(html, /modality-must/);
   assert.match(html, />MUST</);
+});
+
+test("evidence identifies guideline and section before showing source text", () => {
+  const claim = {
+    citation: realCitation(),
+    record: { type: "knowledge_record", modality: "should", source_text: "The source statement." }
+  };
+  const html = R.renderClaimCard(claim, i18n);
+  assert.match(html, /evidence-source-header/);
+  assert.match(html, /M10/);
+  assert.match(html, /§3\.2\.5\.2/);
+  assert.match(html, /Evaluation of Accuracy and Precision/);
+  assert.ok(html.indexOf("evidence-source-header") < html.indexOf("The source statement."));
+});
+
+test("generated units from one source keep distinct record-level evidence targets", () => {
+  const citation = realCitation();
+  const claims = [
+    { source_unit_id: citation.source_unit_id, citation, record: { id: "criterion.total", type: "quantitative_criterion", parameter: "total dose", comparator: "not_exceed", value: 100, unit: "µg", value_status: "known", source_text: "one compound source" } },
+    { source_unit_id: citation.source_unit_id, citation, record: { id: "criterion.noael", type: "quantitative_criterion", parameter: "NOAEL fraction", comparator: "not_exceed", value_fraction: { numerator: 1, denominator: 100 }, unit: null, value_status: "known", source_text: "one compound source" } }
+  ];
+  const envelope = {
+    answered: true, route: "grounded_generation", mode: "generated", semantic_mode: "multi_criterion",
+    answer_units: [
+      { text: "총 용량은 100 µg 이하이다.", record_id: "criterion.total", source_unit_id: citation.source_unit_id },
+      { text: "NOAEL의 1/100 이하이다.", record_id: "criterion.noael", source_unit_id: citation.source_unit_id }
+    ],
+    claims, review_status: "reviewed"
+  };
+  const html = R.renderEnvelope(envelope, i18n);
+  assert.match(html, /evidence-ich_m10\.su\.3_2_5_2\.005-criterion\.total/);
+  assert.match(html, /evidence-ich_m10\.su\.3_2_5_2\.005-criterion\.noael/);
+  assert.equal((html.match(/class="claim"/g) || []).length, 2);
 });
 
 test("a modality:none record renders an explicit NONE chip, never silently omitted", () => {
@@ -181,6 +243,9 @@ test("question header visibly identifies the semantic route and distinct interna
 
   const comparisonHtml = R.renderEnvelope(comparison, i18n, "compare these");
   assert.match(comparisonHtml, /route-indicator route-structured/);
+  assert.match(comparisonHtml, />Structured evidence</);
+  assert.match(comparisonHtml, />Comparison</);
+  assert.match(comparisonHtml, /<summary>Technical details<\/summary>/);
   assert.match(comparisonHtml, /<code>structured<\/code>/);
   assert.match(comparisonHtml, /<code>comparison<\/code>/);
 
@@ -210,6 +275,7 @@ test("source-excerpts route renders a distinct verbatim list without duplicating
   const html = R.renderEnvelope(envelope, i18n, "question");
   assert.match(html, /excerpts-layout/);
   assert.match(html, /excerpt-unit/);
+  assert.ok(html.indexOf("evidence-source-header") < html.indexOf("verbatim source"));
   assert.doesNotMatch(html, /generated-answer-panel/);
   assert.doesNotMatch(html, /evidence-panel/);
 });
@@ -242,10 +308,83 @@ test("section overview mode renders child-section hierarchy with criteria and pr
   assert.match(html, /Selectivity/);
   assert.match(html, /Specificity/);
   assert.match(html, /overview-criterion/);
+  assert.match(html, /overview-index/);
+  assert.match(html, /Key synopsis/);
+  assert.match(html, /Source evidence/);
   assert.match(html, /Additional criteria/);
   assert.match(html, /<code>section_overview<\/code>/);
   assert.doesNotMatch(html, /class="answer-layout"/);
   assert.doesNotMatch(html, /evidence-panel/);
+});
+
+test("claimForUnit prioritizes an exact record id before a shared source-unit fallback", () => {
+  const shared = "shared.source";
+  const claims = [
+    { source_unit_id: shared, citation: realCitation({ source_unit_id: shared }), record: { id: "wrong", type: "knowledge_record", source_text: "wrong record" } },
+    { source_unit_id: shared, citation: realCitation({ source_unit_id: shared }), record: { id: "exact", type: "knowledge_record", source_text: "exact record" } }
+  ];
+  assert.equal(R.claimForUnit({ record_id: "exact", source_unit_id: shared }, claims).record.id, "exact");
+  assert.equal(R.claimForUnit({ source_unit_id: shared }, claims).record.id, "wrong");
+});
+
+test("answer header shows evidence scope and warns when coverage is partial", () => {
+  const claim = { source_unit_id: realCitation().source_unit_id, citation: realCitation(), record: { id: "kr.1", type: "knowledge_record", source_text: "text" } };
+  const envelope = { answered: true, route: "structured", mode: "structured", coverage: { status: "partial" }, claims: [claim] };
+  const html = R.renderEnvelope(envelope, i18n, "broad question");
+  assert.match(html, /answer-scope/);
+  assert.match(html, /M10 §3\.2\.5\.2/);
+  assert.match(html, /coverage-warning/);
+  assert.match(html, /Partial coverage/);
+});
+
+test("source excerpt fallback is explicitly warned and duplicate source evidence is rendered once", () => {
+  const source = realCitation().source_unit_id;
+  const claims = [
+    { source_unit_id: source, citation: realCitation(), record: { id: "kr.1", type: "knowledge_record", source_text: "same source" } },
+    { source_unit_id: source, citation: realCitation(), record: { id: "kr.2", type: "knowledge_record", source_text: "same source" } }
+  ];
+  const envelope = { answered: true, route: "source_excerpts", mode: "source_excerpts", claims, answer_units: [
+    { text: "first excerpt", record_id: "kr.1", source_unit_id: source },
+    { text: "duplicate excerpt", record_id: "kr.2", source_unit_id: source }
+  ] };
+  const html = R.renderEnvelope(envelope, i18n, "question");
+  assert.match(html, /fallback-warning/);
+  assert.match(html, /Safe fallback/);
+  assert.equal((html.match(/class="excerpt-unit"/g) || []).length, 1);
+  assert.doesNotMatch(html, /duplicate excerpt/);
+});
+
+test("process mode renders evidence-backed units as numbered steps", () => {
+  const claim = { source_unit_id: realCitation().source_unit_id, citation: realCitation(), record: { id: "kr.1", type: "knowledge_record", source_text: "step one" } };
+  const envelope = { answered: true, route: "structured", mode: "process", claims: [claim] };
+  const html = R.renderEnvelope(envelope, i18n, "what happens next?");
+  assert.match(html, /process-list/);
+  assert.match(html, /<ol/);
+  assert.match(html, />Process</);
+});
+
+test("comparison mode aligns documents by an explicit shared dimension", () => {
+  const envelope = {
+    answered: true, route: "structured", mode: "comparison",
+    claims: [
+      { comparison_dimension: "Scope", citation: realCitation(), record: { id: "a", type: "knowledge_record", source_text: "A scope", document_id: "a", document_title: "Document A" } },
+      { comparison_dimension: "Scope", citation: realCitation({ source_unit_id: "b.su", document_id: "b", guideline_code: "B" }), record: { id: "b", type: "knowledge_record", source_text: "B scope", document_id: "b", document_title: "Document B" } }
+    ]
+  };
+  const html = R.renderEnvelope(envelope, i18n, "compare");
+  assert.match(html, /comparison-table/);
+  assert.match(html, /scope="row">Scope/);
+  assert.match(html, /Document A/);
+  assert.match(html, /Document B/);
+});
+
+test("ask UI sends the documented generation preference and keeps the switch disabled until health enables generation", () => {
+  const app = fs.readFileSync(path.join(__dirname, "..", "web", "app.js"), "utf8");
+  const index = fs.readFileSync(path.join(__dirname, "..", "web", "index.html"), "utf8");
+  assert.match(index, /id="generation-toggle"[^>]+role="switch"[^>]+disabled/);
+  assert.match(app, /generation_preference:\s*state\.generationAvailable \? state\.generationPreference : "auto"/);
+  assert.match(app, /state\.fallbackMode === "grounded_generation"/);
+  assert.match(app, /allow_fallback:\s*true/);
 });
 
 test("structured answer text follows the active locale without issuing a new query", () => {

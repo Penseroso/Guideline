@@ -1,21 +1,26 @@
+const { criterionValue } = require("./criterion_value");
+
 const KO_COMPARATOR = {
   within: "이내",
   not_exceed: "초과하지 않음",
   at_least: "이상",
-  equals: "정확히"
+  equals: "정확히",
+  between: "범위",
+  below: "미만",
+  above: "초과",
+  approximately: "약"
 };
 
 const EN_COMPARATOR = {
   within: "within",
   not_exceed: "not more than",
   at_least: "at least",
-  equals: "exactly"
+  equals: "exactly",
+  between: "between",
+  below: "below",
+  above: "above",
+  approximately: "approximately"
 };
-
-function criterionValue(record) {
-  if (record.value_fraction) return `${record.value_fraction.numerator}/${record.value_fraction.denominator}`;
-  return record.value;
-}
 
 function presentCriterion(record, language) {
   if (language === "ko" && record.normalized_ko && record.normalization_status === "reviewed") {

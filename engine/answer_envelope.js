@@ -19,11 +19,15 @@
 const { structuredQuery, formatAnswer, answerFallback, explainRefusal, NOT_FOUND } = require("./query_router");
 const { presentClaims } = require("./answer_presenter");
 
-const ENVELOPE_VERSION = "2.0.0";
+const ENVELOPE_VERSION = "2.1.0";
 
 function modeForMatch(match) {
   if (match.isComparison) return "comparison";
   if (match.isAmendment) return "amendment";
+  if (match.isDocumentOverview) return "document_overview";
+  if (match.isProcess) return "process";
+  if (match.isWithinDocumentComparison) return "within_document_comparison";
+  if (match.isMultiCriterion) return "multi_criterion";
   if (match.isSectionOverview) return "section_overview";
   if (match.isListComposite) return "list";
   if (match.isComposite) return "criterion_composite";
@@ -36,6 +40,42 @@ function reviewStatusFor(match) {
     return match.claims.some((c) => c.record && c.record.review_status !== "reviewed") ? "needs_review" : "reviewed";
   }
   return "reviewed";
+}
+
+function shouldGenerate(match, preference, generatorClient, verifierClient) {
+  if (!generatorClient || !verifierClient || !match.claims || match.claims.length === 0) return false;
+  if (preference === "prefer_generated") return true;
+  if (preference !== "auto") return false;
+  // Section overviews already have an exact hierarchy UI. Direct facts and
+  // compact rule sets remain deterministic. Synthesis-heavy modes get a
+  // coherent generated answer while keeping the same scoped evidence below.
+  return [
+    "document_overview",
+    "process",
+    "within_document_comparison",
+    "multi_criterion",
+    "list",
+    "comparison"
+  ].includes(modeForMatch(match));
+}
+
+function generatedCoverageIsAdequate(match, generated) {
+  const generatedUnits = new Set((generated.claims || []).map((claim) => claim.source_unit_id).filter(Boolean));
+  if (match.isDocumentOverview) {
+    const expectedSections = new Set((match.claims || [])
+      .map((claim) => claim.record && claim.record.section_id).filter(Boolean));
+    return generatedUnits.size >= Math.min(3, expectedSections.size);
+  }
+  if (match.isMultiCriterion) {
+    const expectedUnits = new Set((match.claims || []).map((claim) => claim.source_unit_id).filter(Boolean));
+    if (generatedUnits.size < Math.min(2, expectedUnits.size)) return false;
+  }
+  if (!match.isComparison) return true;
+  const expectedDocuments = new Set((match.claims || [])
+    .map((claim) => claim.record && claim.record.document_id).filter(Boolean));
+  const generatedDocuments = new Set((generated.claims || [])
+    .map((claim) => claim.record && claim.record.document_id).filter(Boolean));
+  return [...expectedDocuments].every((documentId) => generatedDocuments.has(documentId));
 }
 
 /**
@@ -63,21 +103,68 @@ async function answerEnvelope(question, records, {
   index,
   responseLanguage = "ko",
   signal,
-  fallbackMode
+  fallbackMode,
+  generationPreference = "auto"
 } = {}) {
   const start = Date.now();
   const match = structuredQuery(question, records, index);
 
   if (match) {
+    const deterministicMode = modeForMatch(match);
+    if (shouldGenerate(match, generationPreference, generatorClient, verifierClient)) {
+      const scopedRecords = [...new Map(match.claims
+        .filter((claim) => claim.record)
+        .map((claim) => [claim.record.id, claim.record])).values()];
+      const scopedStore = {
+        mode: "structured_claims",
+        search: async () => scopedRecords.map((record) => ({ record, score: 100, matched_token_count: 100 }))
+      };
+      const generated = await answerFallback(question, records, {
+        generatorClient,
+        verifierClient,
+        store: scopedStore,
+        responseLanguage,
+        signal,
+        fallbackMode: "grounded_generation"
+      });
+      if (generated.answered && generated.route === "grounded_generation" && generatedCoverageIsAdequate(match, generated)) {
+        return {
+          envelope_version: ENVELOPE_VERSION,
+          answered: true,
+          mode: "generated",
+          semantic_mode: deterministicMode,
+          route: "grounded_generation",
+          generation_preference: generationPreference,
+          prose: generated.text,
+          refusal: null,
+          claims: generated.claims || [],
+          answer_units: generated.answer_units || [],
+          scope: match.scope || generated.scope || null,
+          coverage: {
+            ...(match.coverage || {}),
+            generated_claim_count: (generated.claims || []).length,
+            generation_scope_limited_to_structured_claims: true
+          },
+          answer_intent: match.answerIntent || generated.answer_intent || null,
+          review_status: generated.review_status,
+          timing_ms: Date.now() - start
+        };
+      }
+    }
     return {
       envelope_version: ENVELOPE_VERSION,
       answered: true,
-      mode: modeForMatch(match),
+      mode: deterministicMode,
+      semantic_mode: deterministicMode,
       route: "structured",
+      generation_preference: generationPreference,
       prose: formatAnswer(match),
       refusal: null,
       claims: match.claims || [],
       answer_units: presentClaims(match.claims || [], responseLanguage),
+      scope: match.scope || null,
+      coverage: match.coverage || null,
+      answer_intent: match.answerIntent || null,
       review_status: reviewStatusFor(match),
       timing_ms: Date.now() - start
     };
@@ -88,11 +175,16 @@ async function answerEnvelope(question, records, {
       envelope_version: ENVELOPE_VERSION,
       answered: false,
       mode: "refusal",
+      semantic_mode: "refusal",
       route: "refusal",
+      generation_preference: generationPreference,
       prose: NOT_FOUND,
       refusal: { kind: explainRefusal(question, records), reason: null },
       claims: [],
       answer_units: [],
+      scope: null,
+      coverage: null,
+      answer_intent: null,
       review_status: null,
       timing_ms: Date.now() - start
     };
@@ -104,11 +196,16 @@ async function answerEnvelope(question, records, {
       envelope_version: ENVELOPE_VERSION,
       answered: false,
       mode: "refusal",
+      semantic_mode: "refusal",
       route: "refusal",
+      generation_preference: generationPreference,
       prose: result.text,
       refusal: { kind: result.refusal_reason || "no_match", reason: result.text === NOT_FOUND ? null : result.text },
       claims: [],
       answer_units: [],
+      scope: result.scope || null,
+      coverage: result.coverage || null,
+      answer_intent: result.answer_intent || null,
       review_status: null,
       timing_ms: Date.now() - start
     };
@@ -118,11 +215,16 @@ async function answerEnvelope(question, records, {
     envelope_version: ENVELOPE_VERSION,
     answered: true,
     mode: result.mode || "generated",
+    semantic_mode: result.mode || "generated",
     route: result.route,
+    generation_preference: generationPreference,
     prose: result.text,
     refusal: null,
     claims: result.claims || [],
     answer_units: result.answer_units || [],
+    scope: result.scope || null,
+    coverage: result.coverage || null,
+    answer_intent: result.answer_intent || null,
     review_status: result.review_status,
     timing_ms: Date.now() - start
   };

@@ -24,7 +24,7 @@ Completed 2026-08-27. Cross-guideline comparison and amendment views render only
 
 ## M5 — Local-first production MVP
 
-Core MVP completed 2026-08-28; semantic routing revised 2026-09-01. The HTTP/API contract now names the actual outcomes (`structured`, `grounded_generation`, `source_excerpts`, `refusal`) instead of A/B paths. Local source retrieval is always available without a key. A single OpenAI key uses distinct default generator/verifier models; failed generation or verification falls back to verbatim source excerpts.
+Core MVP completed 2026-08-28; semantic routing and route-specific presentation revised through 2026-09-03. The HTTP/API contract names the actual outcomes (`structured`, `grounded_generation`, `source_excerpts`, `refusal`) instead of A/B paths. Broad questions now use document/section/topic coverage, process and within-document comparison modes; generated answers are bounded by structured claims and checked for scope coverage. The UI exposes route/mode, supports an API override, presents generated synthesis above section-headed evidence, and renders section overviews, processes, comparisons, excerpts, and refusals distinctly. A 50-question Korean broad-to-detail audit reduced unsuitable answers from 27 to 5 without question-specific answer storage.
 
 Open work:
 

@@ -18,6 +18,7 @@
  */
 
 const { verifyClaim, claimTextFor } = require("./verification_agent");
+const { criterionValueKey } = require("./criterion_value");
 
 function sourceTextForUnits(sourceUnits, ids) {
   const byId = new Map(sourceUnits.map((su) => [su.source_unit_id, su]));
@@ -176,6 +177,8 @@ async function verifyQuantitativeCriterion(qc, { sourceUnits, allCriteria, knowl
       qc.fraction_numerator !== undefined && qc.fraction_numerator !== null && qc.fraction_denominator !== undefined && qc.fraction_denominator !== null
         ? { numerator: qc.fraction_numerator, denominator: qc.fraction_denominator }
         : qc.value_fraction,
+    value_range: qc.value_range,
+    value_text: qc.value_text,
     unit: qc.unit,
     denominator_or_reference: qc.denominator_or_reference,
     is_default_with_exception: qc.is_default_with_exception,
@@ -209,6 +212,8 @@ async function verifyQuantitativeCriterion(qc, { sourceUnits, allCriteria, knowl
               s.fraction_numerator !== undefined && s.fraction_numerator !== null && s.fraction_denominator !== undefined && s.fraction_denominator !== null
                 ? { numerator: s.fraction_numerator, denominator: s.fraction_denominator }
                 : s.value_fraction,
+            value_range: s.value_range,
+            value_text: s.value_text,
             unit: s.unit,
             is_default_with_exception: s.is_default_with_exception,
             is_illustrative_example: s.is_illustrative_example
@@ -341,7 +346,7 @@ function normalizeText(s) {
 }
 
 function qcFingerprint(qc) {
-  const val = qc.value_fraction ? `${qc.value_fraction.numerator}/${qc.value_fraction.denominator}` : qc.value;
+  const val = criterionValueKey(qc);
   return `${qc.source_unit_id}|${qc.comparator}|${val}|${qc.unit || ""}`;
 }
 
