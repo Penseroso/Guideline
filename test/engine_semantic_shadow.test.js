@@ -169,6 +169,45 @@ test("a manifest scoped far away from the resolved sections (no shared ancestor 
   assert.equal(manifest, undefined);
 });
 
+test("section coverage granularity switches to child-section breadth for a chapter-scoped facet, not raw record count", () => {
+  // ema_fih.sem.facet.dose_selection's scope (§7) has 7 real sub-sections
+  // (§7.1-§7.7) totalling ~197 individual records — flat record recall
+  // there would make the "section" signal permanently near-zero regardless
+  // of how good an answer is. §7.2 (Starting dose for healthy volunteers)
+  // is one specific real sub-section; citing something from it should
+  // register as "1 of 7 sub-topics touched", not "a handful out of 197".
+  const envelope = {
+    answer_intent: "topic_overview",
+    scope: { resolved_document_ids: ["ema_fih"], requested_document_ids: [], section_ids: ["ema_fih.sec.7_2"] },
+    claims: [claim({ id: "ema_fih.kr.7_2.001", document_id: "ema_fih" })]
+  };
+  const plan = buildShadowPlan("건강인 초회 투여용량은 어떻게 정해?", envelope, { store });
+  const manifest = plan.manifests.find((m) => m.manifest_id === "ema_fih.sem.manifest.document_overview");
+  assert.ok(manifest);
+  const dose = manifest.groups[0].facets.find((f) => f.facet_id === "ema_fih.sem.facet.dose_selection");
+  assert.equal(dose.section.granularity, "section");
+  assert.equal(dose.section.total, 7);
+  assert.equal(dose.section.covered, 1);
+
+  // A leaf-scoped facet (no sub-sections of its own) keeps the original
+  // fine-grained record recall — the fix only changes chapter-shaped scopes.
+  const quality = manifest.groups[0].facets.find((f) => f.facet_id === "ema_fih.sem.facet.quality");
+  assert.equal(quality.section.granularity, "section"); // §5 also has 3 real sub-sections
+  assert.equal(quality.section.total, 3);
+});
+
+test("a leaf-scoped facet (no sub-sections of its own) still reports record-granularity section coverage", () => {
+  const envelope = {
+    answer_intent: "multi_criterion",
+    scope: { resolved_document_ids: ["ich_m10"], requested_document_ids: [] },
+    claims: [claim({ id: "ich_m10.qc.3_3_2.001", document_id: "ich_m10" })]
+  };
+  const plan = buildShadowPlan("chromatography 분석 run 허용 기준이 뭐야?", envelope, { store });
+  const manifest = plan.manifests.find((m) => m.manifest_id === "ich_m10.sem.manifest.run_acceptance");
+  const chromatography = manifest.groups.find((g) => g.group_id === "chromatography_branch");
+  assert.equal(chromatography.facets[0].section.granularity, "record");
+});
+
 test("cross-document comparison: shared scope.product_or_matrix axis surfaces when both documents resolve", () => {
   const envelope = {
     answer_intent: null,

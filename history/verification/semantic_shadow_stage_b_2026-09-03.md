@@ -126,3 +126,25 @@ manifest가 이 질문에 "관련 있는지" 판정하는 `isManifestRelevant`�
 `scripts/run_semantic_shadow_audit.js`로 50문항을 다시 재생한 결과, applicable 21/50·상태 분포(ambiguous 2 / unavailable 4 / partial 14)는 1차 실행과 동일하게 유지됐다(회귀 없음). 다만 로그 자체의 정보량이 늘었다 — 예를 들어 Q06의 chromatography facet은 이제 `exact: {covered:4, total:6}` / `section: {covered:4, total:18}`으로, Q49의 comparison binding은 양쪽 `coverage.status`와 `both_sides_evidenced: true`로 각각 정량화되어 기록된다.
 
 테스트는 `test/engine_semantic_shadow.test.js`에 다섯 항목 각각에 대한 케이스를 추가해 15개로 늘렸다(기존 10개 + 남매 section 관련성 2개, section census fallback 1개, comparison coverage 주석 1개, claim_order/stale 2개, 관련 기존 케이스 보강).
+
+## 8. 추가 구조 문제 발견 및 수정: section census 분모 폭발
+
+§7 적용 직후 실제 수치를 다시 뽑아보니 새로 생긴 구조 문제가 하나 더 있었다. `ema_fih`의 4개 최상위 facet(quality/non_clinical/dose_selection/trial_planning)은 scope가 §5/§6/§7/§8 챕터 전체라서, 그 하위 전체 레코드를 센서스 분모로 쓰면:
+
+| facet | scope | 하위 전체 레코드 수 |
+|---|---|---:|
+| quality | §5 | 35 |
+| non_clinical | §6 | 73 |
+| dose_selection | §7 | **197** |
+| trial_planning | §8 | **294** |
+
+같은 chapter의 record 수가 수백 개라, 어떤 답변도 이 정도를 인용할 리 없어 `section.covered/total`이 사실상 영원히 0에 가깝게 나온다 — "많이 다뤘는지 조금 다뤘는지"를 구분 못 하는 죽은 신호가 된다. `ich_m10`(leaf section, census 18개)처럼 하위 section이 없는 facet에서는 잘 작동했지만, 같은 알고리즘을 §7처럼 실제 하위 주제(§7.1~§7.7 7개)가 많은 chapter-scope facet에 그대로 적용한 게 문제였다.
+
+**수정**: `measureSectionCoverage`가 facet의 scope section에 직계 하위 section이 있는지를 먼저 본다.
+
+- 하위 section이 없는 leaf facet(예: `ich_m10` 두 분기, `fda_ada` 5개 tier, `ich_m3_r2`/`ich_s6_r1`의 scope facet — 전부 확인 결과 leaf)는 기존과 동일하게 레코드 단위 재현율(`granularity: "record"`)을 쓴다.
+- 직계 하위 section이 있는 chapter facet(`ema_fih`의 4개 최상위 facet)은 "직계 하위 section 중 몇 개가 (자신의 하위 트리 어딘가에서) 인용됐는지"로 측정 단위를 바꾼다(`granularity: "section"`). 분모가 197 → 7, 294 → 4로 바뀐다.
+
+어떤 facet이 어느 방식을 쓸지는 코어 section 트리 구조에서 자동으로 결정되며, 특정 문서·facet을 하드코딩하지 않는다 — 앞으로 만들 어떤 facet에도 같은 규칙이 그대로 적용된다.
+
+재실행 결과 Q26의 `dose_selection`은 `{granularity:"section", covered:2, total:7}`, Q50은 `{covered:1, total:7}`로, 이제 "7개 하위 dosing 주제 중 몇 개를 다뤘는지"를 사람이 바로 읽을 수 있는 숫자로 보여준다. 50문항 재생의 전체 집계(applicable 21/50, 상태 분포)는 이번에도 변하지 않았다(회귀 없음) — 이 수정은 신호의 해석 가능성만 바꿨다. 테스트 2개를 추가해 17개가 됐다.

@@ -155,33 +155,65 @@ function descendantSectionIds(sectionId, childrenBySectionId) {
 }
 
 /**
- * Fix (2): the real coverage census for a facet — every core-archive
- * record (knowledge_record / quantitative_criterion / condition) filed
- * under the facet's own scope section or one of its descendant sections.
- * Returns null for a facet whose `scope` is the whole document (a pure
- * grouping facet spanning multiple branches, e.g. ich_m10's
- * run_acceptance parent or fda_ada's assay_validation parent — these
- * never carry evidence of their own, only their children do).
+ * Every core-archive record (knowledge_record / quantitative_criterion /
+ * condition) filed under `sectionId` or one of its descendant sections —
+ * the raw building block both branches of measureSectionCoverage use.
  */
-function expectedRecordIdsForFacet(facet, overlay, sectionIndex) {
-  if (!facet.scope || facet.scope === overlay.document_id) return null;
-  const sectionIds = [facet.scope, ...descendantSectionIds(facet.scope, sectionIndex.childrenBySectionId)];
+function sectionSubtreeRecordIds(sectionId, sectionIndex) {
   const ids = new Set();
-  for (const sectionId of sectionIds) {
-    for (const id of sectionIndex.recordIdsBySectionId.get(sectionId) || []) ids.add(id);
+  for (const id of [sectionId, ...descendantSectionIds(sectionId, sectionIndex.childrenBySectionId)]) {
+    for (const recordId of sectionIndex.recordIdsBySectionId.get(id) || []) ids.add(recordId);
   }
   return ids;
+}
+
+/**
+ * Fix (2), revised: a facet's real coverage census, at the granularity
+ * that actually matches its own scope. Two shapes:
+ *
+ * - **leaf scope** (e.g. ich_m10's chromatography branch, §3.3.2, no
+ *   sub-sections of its own): `granularity: "record"` — every record
+ *   filed there, same fine-grained recall as before.
+ * - **chapter scope** (e.g. ema_fih's dose_selection facet, §7, which has
+ *   7 real sub-sections §7.1–§7.7): `granularity: "section"` — how many
+ *   of the facet's own *named sub-topics* (direct child sections) had at
+ *   least one citation anywhere in their own subtree, not how many of the
+ *   hundreds of atomic records under the whole chapter were cited.
+ *
+ * The first shadow run measured every facet with flat record recall
+ * regardless of scope shape, which was fine for leaf facets but produced
+ * denominators like 197 and 294 for ema_fih's chapter-level facets
+ * (history/verification/semantic_shadow_stage_b_2026-09-03.md §8) — a
+ * bar no single answer could ever meaningfully approach, making the
+ * signal read as permanently near-zero regardless of answer quality.
+ * Switching denominator shape based on whether the scope section actually
+ * has children is a general rule, not a per-facet override: it applies
+ * automatically to any future facet authored either way.
+ */
+function measureSectionCoverage(facet, overlay, claimIds, sectionIndex) {
+  if (!facet.scope || facet.scope === overlay.document_id) return null;
+  const children = [...(sectionIndex.childrenBySectionId.get(facet.scope) || [])];
+  if (children.length === 0) {
+    const ids = sectionSubtreeRecordIds(facet.scope, sectionIndex);
+    return { granularity: "record", covered: [...ids].filter((id) => claimIds.has(id)).length, total: ids.size };
+  }
+  const touchedChildren = children.filter((childId) => {
+    const childRecordIds = sectionSubtreeRecordIds(childId, sectionIndex);
+    return [...childRecordIds].some((id) => claimIds.has(id));
+  });
+  return { granularity: "section", covered: touchedChildren.length, total: children.length };
 }
 
 /**
  * Two independently reported signals rather than one blended boolean:
  * `exact` is against the facet's hand-curated `member_record_ids` (the
  * strict "this precise declared fact was cited" signal); `section` is
- * against the full section census above (the "was this facet's topic
- * area touched at all, and how much of it" signal). `status` still
- * collapses to one label for summarizeManifestStatus's roll-up, but
- * prefers the exact signal and only falls back to a quantified section
- * reading — never a bare boolean — when no curated member was cited.
+ * against measureSectionCoverage above (the "was this facet's topic area
+ * touched at all, and how much of it" signal, at whatever granularity
+ * fits the facet's own scope). `status` still collapses to one label for
+ * summarizeManifestStatus's roll-up, but prefers the exact signal and
+ * only falls back to the section reading when no curated member was
+ * cited.
  */
 function facetCoverage(facet, overlay, claimIds, sectionIndex) {
   if (!facet) return { status: "unknown", exact: { covered: 0, total: 0 }, section: null };
@@ -189,13 +221,9 @@ function facetCoverage(facet, overlay, claimIds, sectionIndex) {
   const members = facet.member_record_ids || [];
   const exactCovered = members.filter((id) => claimIds.has(id)).length;
   const exact = { covered: exactCovered, total: members.length };
+  const section = measureSectionCoverage(facet, overlay, claimIds, sectionIndex);
 
-  const expected = expectedRecordIdsForFacet(facet, overlay, sectionIndex);
-  const section = expected === null
-    ? null
-    : { covered: [...expected].filter((id) => claimIds.has(id)).length, total: expected.size };
-
-  if (members.length === 0 && expected === null) return { status: "not_applicable", exact, section };
+  if (members.length === 0 && section === null) return { status: "not_applicable", exact, section };
   if (exact.total > 0 && exactCovered === exact.total) return { status: "covered", exact, section };
   if (exactCovered > 0) return { status: "partial", exact, section };
   if (section && section.covered > 0) return { status: "partial", exact, section };
