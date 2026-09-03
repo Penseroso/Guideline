@@ -44,7 +44,7 @@ test("committed sample semantic overlays and presentation entries validate clean
   const result = validateSemanticOverlays();
   assert.equal(result.ok, true, result.errors.join("\n"));
   assert.deepEqual(result.errors, []);
-  assert.equal(result.overlayCount, 5);
+  assert.equal(result.overlayCount, 6);
   assert.equal(result.presentationCount, 3);
 });
 

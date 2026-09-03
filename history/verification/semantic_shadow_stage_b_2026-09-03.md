@@ -148,3 +148,42 @@ manifest가 이 질문에 "관련 있는지" 판정하는 `isManifestRelevant`�
 어떤 facet이 어느 방식을 쓸지는 코어 section 트리 구조에서 자동으로 결정되며, 특정 문서·facet을 하드코딩하지 않는다 — 앞으로 만들 어떤 facet에도 같은 규칙이 그대로 적용된다.
 
 재실행 결과 Q26의 `dose_selection`은 `{granularity:"section", covered:2, total:7}`, Q50은 `{covered:1, total:7}`로, 이제 "7개 하위 dosing 주제 중 몇 개를 다뤘는지"를 사람이 바로 읽을 수 있는 숫자로 보여준다. 50문항 재생의 전체 집계(applicable 21/50, 상태 분포)는 이번에도 변하지 않았다(회귀 없음) — 이 수정은 신호의 해석 가능성만 바꿨다. 테스트 2개를 추가해 17개가 됐다.
+
+## 9. Stage A 확장: 원 감사에서 부적합 판정을 받은 나머지 문항 (Q15, Q20)
+
+지금까지 Stage A는 실패 유형별 대표 예시 4개(문서 개요/조건 분기/다중 기준/비교)만 다뤘다. 원 50문항 감사(`answer_suitability_audit_2026-09-02.md` §3)에서 "부적합"으로 판정된 5문항 중 Q06·Q26·Q49는 이미 대표 예시로 커버됐지만, **Q15**(FDA ADA screening assay 성능 기준)와 **Q20**(FDA 2014 임상 면역원성 위험요인)은 아직 어떤 오버레이도 없었다. 사용자 우선순위 결정에 따라 이 둘을 먼저 채웠다.
+
+### Q15 — `fda_ada.json`에 screening_performance manifest 추가
+
+원 감사 판정: "screening 성능 질문에 confirmatory/titration/neutralization 근거가 섞이고 필수 성능축 구조가 불완전하다." 근거 범위는 §VI.B(screening 자체의 수치)와 §IV(cut-point/sensitivity/drug tolerance/specificity/precision의 일반 원칙)에 걸쳐 있어, 5개 facet을 만들되 scope를 내용이 실제로 있는 곳에 맞췄다:
+
+- `cut_point`/`sensitivity`/`precision`: scope=§VI.B(해당 절 자체에 구체적 수치가 있음)
+- `drug_tolerance`/`specificity`: scope=§IV.C.2/§IV.D(§VI.B에는 이 두 항목의 수치가 없고 일반 원칙만 §IV에 있음)
+
+`fda_ada.sem.manifest.screening_performance`(`answer_intent: multi_criterion`)로 5개를 하나의 coverage_group에 묶었다. 실제 감사 원본 envelope(`logs/runtime/answer_suitability_50_raw_2026-09-03_final.json`의 Q15)로 재생한 결과:
+
+```
+cut_point: partial (1/7)   sensitivity: partial (1/2)   precision: partial (0/7)
+drug_tolerance: missing (0/2)   specificity: missing (0/2)
+```
+
+원 감사가 "필수 성능축 구조가 불완전하다"고 서술적으로 판정한 것을, drug_tolerance·specificity가 정확히 0으로 완전히 빠졌다는 정량 수치로 독립 재현했다.
+
+### Q20 — 첫 `fda_ada_2014.json` 오버레이
+
+이전까지 `fda_ada_2014`는 6개 문서 중 유일하게 오버레이가 전혀 없었다(shadow plan에서 `no_overlay_for_document`로만 뜨던 문서). §V.A(환자 요인, 하위 5개)와 §V.B(제품 요인, 하위 9개)가 원 감사 판정("환자/제품 대분류만 있고 실제 하위 위험요인 대신 임상 결과로 이동한다")과 정확히 같은 모양이라, facet 2개(`risk_factors.patient`, `risk_factors.product`)로 충분했다 — §V/§V.A/§V.B 자체는 직접 근거가 전혀 없는 순수 구조 헤더임을 확인했고(코어 아카이브에 direct source_unit 0개), 실제 사실은 전부 그 하위 5+9개 절에 있어서 §8에서 만든 chapter-scope 분해 로직이 그대로, facet을 더 쪼개지 않고도 정확히 들어맞았다.
+
+실제 감사 원본 envelope으로 재생한 결과, `fda_ada_2014.sem.manifest.risk_factors`는 `status: "unavailable"`, patient/product 둘 다 `{covered:0, total:5}` / `{covered:0, total:9}` — 실제 답변이 §V.A/§V.B의 하위 절을 단 하나도 건드리지 않았다는 뜻이다. "임상 결과로 이동한다"는 원 감사의 서술을, "위험요인 하위 절 인용 0건"이라는 수치로 독립 재현했다.
+
+### 이 확장 과정에서 발견하고 고친 구조 문제 2개
+
+1. **하위 section은 있지만 큐레이션된 근거가 0개인 facet은 영원히 `covered`에 도달할 수 없었다.** `fda_ada_2014`의 patient/product facet처럼 scope 자체가 순수 구조 헤더라 `member_record_ids`가 원천적으로 비어 있는 경우, 기존 `facetCoverage` 로직은 `exact.total > 0`을 `covered` 판정의 전제 조건으로 삼고 있어서 section 신호가 100% 완전해도 `partial`에서 못 벗어났다. `exact`에 curated member가 아예 없을 때는 `section`만으로 상태를 판정하도록(완전히 덮이면 `covered`까지 포함) 일반화했다.
+2. **facet-target manifest는 관련 section이 하나도 안 걸리면 조용히 사라졌다.** Q20의 실제 감사 envelope은 `fda_ada_2014.sec.6`(결론)과 `sec.3_b`(안전성 결과)로 resolve됐는데, 이는 §V.A/§V.B와 조상·자손·남매 어느 관계도 아니다. `target.type=document`인 manifest(ema_fih)만 예외 처리했던 기존 규칙으로는 `risk_factors`(target.type=facet)가 이 경우 필터링되어 사라졌을 것 — 하필 라우터가 완전히 엉뚱한 곳으로 갔다는, 가장 보여줘야 할 바로 그 케이스에서. `target.type=document` 대신 manifest 자신이 선언한 `answer_intent`가 `document_overview`/`topic_overview`인지로 예외 조건을 일반화했다: 개요형 manifest는 항상 노출하고, `multi_criterion`/`process`/`comparison`처럼 세부 정밀도를 다루는 manifest만 여전히 section 근접성으로 걸러진다.
+
+두 수정 모두 Q15/Q20 전용 예외가 아니라 `engine/semantic_shadow.js`의 일반 규칙이며, 앞으로 만들 어떤 문서·facet에도 그대로 적용된다.
+
+### 재실행 결과
+
+`npm run shadow:semantic` 재실행: applicable 21/50 → **28/50**(Q12/13/15/20-25 등 fda_ada/fda_ada_2014 관련 문항이 새로 걸림), `no_overlay_for_document` 사유가 완전히 사라졌다(6개 문서 전부 오버레이 보유). 테스트는 `test/engine_semantic_shadow.test.js`에 4개(covered-status 수정, topic_overview 예외 일반화, multi_criterion은 여전히 gated됨을 대조 확인, Q15 시나리오)를 추가해 21개로, `test/engine_semantic_shadow_regression.test.js`에 Q15/Q20 실제 엔진 케이스 2개를 추가해 6개로 늘었다. 전체 320개 테스트 통과.
+
+`scripts/check_semantic_overlay_promotion.js` 워크시트도 갱신됐다 — 이제 5개 manifest 전부 최신 감사 재생에서 실제로 발동한 이력이 있다(`fda_ada_2014.sem.manifest.risk_factors`: 12문항, `fda_ada.sem.manifest.screening_performance`: 12문항).

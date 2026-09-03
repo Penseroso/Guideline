@@ -52,6 +52,31 @@ test("regression: FDA ADA validation-tier question surfaces the assay_validation
   assert.ok(["complete", "partial"].includes(manifest.status), `unexpected manifest status: ${manifest.status}`);
 });
 
+test("regression: Q15-shape (ADA screening performance) question shows drug_tolerance/specificity missing while cut_point/sensitivity get real evidence", async () => {
+  const question = "ADA screening assay validation에서 확인할 성능 기준은?";
+  const envelope = await answerEnvelope(question, records, { index });
+  const comparison = comparePlans(question, envelope);
+  const manifest = comparison.semantic_plan.manifests.find((m) => m.manifest_id === "fda_ada.sem.manifest.screening_performance");
+  assert.ok(manifest, "expected the screening_performance manifest in the shadow plan");
+  const facets = Object.fromEntries(manifest.groups[0].facets.map((f) => [f.facet_id.split(".").pop(), f]));
+  assert.notEqual(facets.drug_tolerance.status, "covered", "drug tolerance is not part of §VI.B/§IV.C.1's own evidence — a real answer should not silently read as complete here");
+  assert.notEqual(facets.specificity.status, "covered");
+});
+
+test("regression: Q20-shape (FDA 2014 immunogenicity risk factors) question surfaces the risk_factors manifest and reports patient/product breadth separately", async () => {
+  // The exact Q20 wording ("치료용 단백질의 임상 면역원성 위험요인은 크게
+  // 뭐가 있어?") needs an LLM to resolve document identity and refuses
+  // offline — this phrasing names the document explicitly so the real,
+  // offline (no LLM) router can resolve it deterministically, while still
+  // exercising the same manifest end to end.
+  const question = "FDA 2014 임상 면역원성에서 환자 요인과 제품 요인은 어떻게 나뉘어?";
+  const envelope = await answerEnvelope(question, records, { index });
+  const comparison = comparePlans(question, envelope);
+  const manifest = comparison.semantic_plan.manifests.find((m) => m.manifest_id === "fda_ada_2014.sem.manifest.risk_factors");
+  assert.ok(manifest, "expected the risk_factors manifest in the shadow plan");
+  assert.notEqual(manifest.status, "unavailable");
+});
+
 test("regression: Q49-shape (M3 vs S6 applicability) question surfaces the shared comparison axis with real router output, even though comparison_engine.js returns null scope/coverage", async () => {
   const question = "일반 저분자 의약품과 바이오의약품의 비임상 지원에서 M3(R2)와 S6(R1)의 적용 범위는 어떻게 달라?";
   const envelope = await answerEnvelope(question, records, { index });

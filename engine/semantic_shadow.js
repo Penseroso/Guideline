@@ -211,9 +211,17 @@ function measureSectionCoverage(facet, overlay, claimIds, sectionIndex) {
  * against measureSectionCoverage above (the "was this facet's topic area
  * touched at all, and how much of it" signal, at whatever granularity
  * fits the facet's own scope). `status` still collapses to one label for
- * summarizeManifestStatus's roll-up, but prefers the exact signal and
- * only falls back to the section reading when no curated member was
- * cited.
+ * summarizeManifestStatus's roll-up, and prefers the exact signal — but
+ * only when the facet actually has curated members to check. A facet
+ * with real children and zero curated members (e.g. fda_ada_2014's
+ * patient/product risk-factor category facets, whose section headers
+ * carry no direct content of their own — every real fact lives one
+ * level down, in each named sub-factor) has nothing for `exact` to ever
+ * confirm, so relying on `exact.total > 0` to gate "covered" would trap
+ * it at "partial" forever regardless of how completely its sub-topics
+ * were actually covered. When there are no curated members at all,
+ * `status` is derived purely from `section` instead — including
+ * "covered" when every sub-topic was touched.
  */
 function facetCoverage(facet, overlay, claimIds, sectionIndex) {
   if (!facet) return { status: "unknown", exact: { covered: 0, total: 0 }, section: null };
@@ -224,9 +232,15 @@ function facetCoverage(facet, overlay, claimIds, sectionIndex) {
   const section = measureSectionCoverage(facet, overlay, claimIds, sectionIndex);
 
   if (members.length === 0 && section === null) return { status: "not_applicable", exact, section };
-  if (exact.total > 0 && exactCovered === exact.total) return { status: "covered", exact, section };
-  if (exactCovered > 0) return { status: "partial", exact, section };
-  if (section && section.covered > 0) return { status: "partial", exact, section };
+
+  if (exact.total > 0) {
+    if (exactCovered === exact.total) return { status: "covered", exact, section };
+    if (exactCovered > 0) return { status: "partial", exact, section };
+  }
+  if (section) {
+    if (section.total > 0 && section.covered === section.total) return { status: "covered", exact, section };
+    if (section.covered > 0) return { status: "partial", exact, section };
+  }
   return { status: "missing", exact, section };
 }
 
@@ -261,6 +275,15 @@ function manifestScopeSectionIds(overlay, manifest) {
   return sectionIds;
 }
 
+// A manifest declaring itself document_overview/topic_overview intent is,
+// by its own design, meant to answer "what does this whole area cover" —
+// exactly the shape of question where the router landing somewhere
+// unrelated *is* the finding, not a reason to hide the manifest. Detail-
+// oriented intents (multi_criterion, process, comparison, section_overview)
+// stay gated by section proximity below, since those are legitimately
+// about precision within one topic, not breadth.
+const ALWAYS_RELEVANT_ANSWER_INTENTS = new Set(["document_overview", "topic_overview"]);
+
 /**
  * A document having *some* overlay is necessary but not sufficient: most
  * documents here have exactly one narrow manifest (e.g. ich_m10's is
@@ -273,9 +296,20 @@ function manifestScopeSectionIds(overlay, manifest) {
  * router itself resolved only a narrow slice of sections, and that
  * narrowing is precisely the finding worth surfacing, not a reason to
  * suppress the manifest.
+ *
+ * The same reasoning turned out not to be specific to target.type=document:
+ * fda_ada_2014's risk_factors manifest targets a facet (target.type=facet),
+ * not the document, but is just as much an overview-shaped manifest — and
+ * its real Q20 case (history/verification/semantic_shadow_stage_b_2026-09-03.md
+ * §9) showed the router landing in completely unrelated sections (§III
+ * clinical consequences, §VI conclusion — no shared ancestor or sibling
+ * with §V.A/§V.B at all). Gating purely on target.type=document would have
+ * hidden that exact case, so the exemption is keyed on the manifest's own
+ * declared breadth (answer_intent) instead.
  */
 function isManifestRelevant(overlay, manifest, resolvedSectionIds, sectionsById) {
   if (manifest.target && manifest.target.type === "document") return true;
+  if (ALWAYS_RELEVANT_ANSWER_INTENTS.has(manifest.answer_intent)) return true;
   if (!resolvedSectionIds || resolvedSectionIds.length === 0) return true;
   const scopeSectionIds = manifestScopeSectionIds(overlay, manifest);
   if (scopeSectionIds.size === 0) return true;

@@ -1,0 +1,117 @@
+{
+  "semantic_overlay_version": "0.1.0",
+  "document_id": "fda_ada_2014",
+  "source_bundle_sha256": "4a52a08d7ec215985d31f2fa9a5f3f0276dfdbcef95a0f8427c1a310108c887b",
+  "derivation": {
+    "method": "agent_assisted",
+    "pipeline_version": "stage-a-expansion-2026-09-03"
+  },
+  "summary_specs": [
+    {
+      "summary_id": "fda_ada_2014.sem.summary.risk_factors",
+      "target": {
+        "type": "section",
+        "id": "fda_ada_2014.sec.5"
+      },
+      "summary_kind": "topic_overview",
+      "facet_ids": [
+        "fda_ada_2014.sem.facet.risk_factors.patient",
+        "fda_ada_2014.sem.facet.risk_factors.product"
+      ],
+      "sentence_roles": [
+        "scope",
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "fda_ada_2014.kr.5_a_1.001",
+          "source_unit_id": "fda_ada_2014.su.5_a_1.001",
+          "source_text_sha256": "4ec8125643a269c965b4e1d8a64640961d2d67b5065a01214224df3a60a8ee82"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_b_1.001",
+          "source_unit_id": "fda_ada_2014.su.5_b_1.001",
+          "source_text_sha256": "ca6374e476dc55ac213871d7aa2b60c1c746179be477818069560666d7467084"
+        }
+      ],
+      "review_status": "needs_review"
+    }
+  ],
+  "facets": [
+    {
+      "facet_id": "fda_ada_2014.sem.facet.risk_factors",
+      "concept_id": "fda_ada_2014.local.immunogenicity_risk_factor",
+      "scope": "fda_ada_2014.sec.5",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "semantic_role": "scope",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.risk_factors.patient",
+      "concept_id": "fda_ada_2014.local.immunogenicity_risk_factor",
+      "scope": "fda_ada_2014.sec.5_a",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors",
+      "member_record_ids": [],
+      "semantic_role": "risk_factor",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.risk_factors.product",
+      "concept_id": "fda_ada_2014.local.immunogenicity_risk_factor",
+      "scope": "fda_ada_2014.sec.5_b",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors",
+      "member_record_ids": [],
+      "semantic_role": "risk_factor",
+      "review_status": "reviewed"
+    }
+  ],
+  "relations": [],
+  "coverage_manifests": [
+    {
+      "manifest_id": "fda_ada_2014.sem.manifest.risk_factors",
+      "target": {
+        "type": "facet",
+        "id": "fda_ada_2014.sem.facet.risk_factors"
+      },
+      "answer_intent": "topic_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "patient_and_product_categories",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada_2014.sem.facet.risk_factors.patient",
+            "fda_ada_2014.sem.facet.risk_factors.product"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "needs_review"
+    }
+  ],
+  "comparison_bindings": [],
+  "salience_profiles": [
+    {
+      "profile_id": "fda_ada_2014.sem.profile.risk_factors",
+      "target_id": "fda_ada_2014.sem.facet.risk_factors",
+      "context": "topic_overview",
+      "items": [
+        {
+          "facet_id": "fda_ada_2014.sem.facet.risk_factors.patient",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "scope_boundary"
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.risk_factors.product",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "scope_boundary"
+        }
+      ]
+    }
+  ]
+}

@@ -99,6 +99,85 @@
       ],
       "semantic_role": "scope",
       "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.screening_performance",
+      "concept_id": "fda_ada.local.screening_performance_criteria",
+      "scope": "fda_ada.sec.6_b",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.screening_performance.cut_point",
+      "concept_id": "fda_ada.local.screening_performance_criteria",
+      "scope": "fda_ada.sec.6_b",
+      "parent_facet_id": "fda_ada.sem.facet.screening_performance",
+      "member_record_ids": [
+        "fda_ada.kr.VI_B.013",
+        "fda_ada.kr.VI_B.016",
+        "fda_ada.kr.VI_B.018",
+        "fda_ada.qc.VI_B.006",
+        "fda_ada.qc.VI_B.007",
+        "fda_ada.qc.VI_B.009",
+        "fda_ada.qc.VI_B.010"
+      ],
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.screening_performance.sensitivity",
+      "concept_id": "fda_ada.local.screening_performance_criteria",
+      "scope": "fda_ada.sec.6_b",
+      "parent_facet_id": "fda_ada.sem.facet.screening_performance",
+      "member_record_ids": [
+        "fda_ada.kr.VI_B.001",
+        "fda_ada.qc.VI_B.001"
+      ],
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.screening_performance.precision",
+      "concept_id": "fda_ada.local.screening_performance_criteria",
+      "scope": "fda_ada.sec.6_b",
+      "parent_facet_id": "fda_ada.sem.facet.screening_performance",
+      "member_record_ids": [
+        "fda_ada.kr.VI_B.003",
+        "fda_ada.kr.VI_B.005",
+        "fda_ada.kr.VI_B.011",
+        "fda_ada.qc.VI_B.002",
+        "fda_ada.qc.VI_B.003",
+        "fda_ada.qc.VI_B.004",
+        "fda_ada.qc.VI_B.005"
+      ],
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.screening_performance.drug_tolerance",
+      "concept_id": "fda_ada.local.screening_performance_criteria",
+      "scope": "fda_ada.sec.4_c_2",
+      "parent_facet_id": "fda_ada.sem.facet.screening_performance",
+      "member_record_ids": [
+        "fda_ada.kr.IV_C_2.001",
+        "fda_ada.kr.IV_C_2.002"
+      ],
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.screening_performance.specificity",
+      "concept_id": "fda_ada.local.screening_performance_criteria",
+      "scope": "fda_ada.sec.4_d",
+      "parent_facet_id": "fda_ada.sem.facet.screening_performance",
+      "member_record_ids": [
+        "fda_ada.kr.IV_D.001",
+        "fda_ada.kr.IV_D.002"
+      ],
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
     }
   ],
   "relations": [
@@ -118,6 +197,26 @@
           "record_id": "fda_ada.kr.VI_D.001",
           "source_unit_id": "fda_ada.su.6_d.001",
           "source_text_sha256": "de51b65228b4ab2f50fb162aa254907f10e45e97734c037a0b2835c1961ab16c"
+        }
+      ],
+      "review_status": "needs_review"
+    },
+    {
+      "relation_id": "fda_ada.sem.rel.precision_supports_cut_point",
+      "from_ref": {
+        "ref_type": "facet",
+        "ref_id": "fda_ada.sem.facet.screening_performance.precision"
+      },
+      "to_ref": {
+        "ref_type": "facet",
+        "ref_id": "fda_ada.sem.facet.screening_performance.cut_point"
+      },
+      "relation_type": "supports",
+      "evidence_refs": [
+        {
+          "record_id": "fda_ada.kr.IV_F.004",
+          "source_unit_id": "fda_ada.su.4_f.001",
+          "source_text_sha256": "1e0a27ca3be22c5f75bcb98009ae0c9e61545c566d4134ca6d9bd29018f8c6d4"
         }
       ],
       "review_status": "needs_review"
@@ -142,6 +241,32 @@
             "fda_ada.sem.facet.assay_validation.confirmatory",
             "fda_ada.sem.facet.assay_validation.titration",
             "fda_ada.sem.facet.assay_validation.neutralization"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "needs_review"
+    },
+    {
+      "manifest_id": "fda_ada.sem.manifest.screening_performance",
+      "target": {
+        "type": "facet",
+        "id": "fda_ada.sem.facet.screening_performance"
+      },
+      "answer_intent": "multi_criterion",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "all_performance_parameters",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada.sem.facet.screening_performance.cut_point",
+            "fda_ada.sem.facet.screening_performance.sensitivity",
+            "fda_ada.sem.facet.screening_performance.precision",
+            "fda_ada.sem.facet.screening_performance.drug_tolerance",
+            "fda_ada.sem.facet.screening_performance.specificity"
           ],
           "when": null,
           "on_ambiguity": "disclose_gap",
@@ -187,6 +312,43 @@
           "tier": "primary",
           "display_order": 5,
           "rationale_code": "definition"
+        }
+      ]
+    },
+    {
+      "profile_id": "fda_ada.sem.profile.screening_performance",
+      "target_id": "fda_ada.sem.facet.screening_performance",
+      "context": "detail",
+      "items": [
+        {
+          "facet_id": "fda_ada.sem.facet.screening_performance.cut_point",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "fda_ada.sem.facet.screening_performance.sensitivity",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "fda_ada.sem.facet.screening_performance.drug_tolerance",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "definition"
+        },
+        {
+          "facet_id": "fda_ada.sem.facet.screening_performance.specificity",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "definition"
+        },
+        {
+          "facet_id": "fda_ada.sem.facet.screening_performance.precision",
+          "tier": "primary",
+          "display_order": 5,
+          "rationale_code": "quantitative_criterion"
         }
       ]
     }

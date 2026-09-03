@@ -10,11 +10,11 @@ function claim(record) {
   return { record, source_unit_id: null, citation: null };
 }
 
-test("loadSemanticOverlayStore loads all five committed sample overlays fresh (none stale)", () => {
+test("loadSemanticOverlayStore loads all six committed sample overlays fresh (none stale)", () => {
   assert.equal(store.staleDocumentIds.size, 0, [...store.staleDocumentIds].join(", "));
   assert.deepEqual(
     [...store.overlaysByDocumentId.keys()].sort(),
-    ["ema_fih", "fda_ada", "ich_m10", "ich_m3_r2", "ich_s6_r1"]
+    ["ema_fih", "fda_ada", "fda_ada_2014", "ich_m10", "ich_m3_r2", "ich_s6_r1"]
   );
 });
 
@@ -25,15 +25,19 @@ test("no resolved document -> not applicable, distinct reason from no-overlay ca
 });
 
 test("resolved document with no overlay -> not applicable with a distinguishable reason", () => {
+  // resolveCandidateDocumentIds trusts claim.record.document_id as-is, so a
+  // document_id that simply has no overlay file exercises this path
+  // without needing a real archive document that happens to lack one —
+  // convenient now that all 6 pilot documents have Stage A coverage.
   const envelope = {
     answer_intent: "detail",
-    scope: { resolved_document_ids: ["fda_ada_2014"], requested_document_ids: [] },
-    claims: [claim({ id: "fda_ada_2014.kr.x.001", document_id: "fda_ada_2014" })]
+    scope: { resolved_document_ids: ["test.no_overlay_document"], requested_document_ids: [] },
+    claims: [claim({ id: "test.no_overlay_document.kr.x.001", document_id: "test.no_overlay_document" })]
   };
-  const plan = buildShadowPlan("2014 가이드라인 질문", envelope, { store });
+  const plan = buildShadowPlan("커버되지 않은 가상의 문서에 대한 질문", envelope, { store });
   assert.equal(plan.applicable, false);
   assert.equal(plan.reason, "no_overlay_for_document");
-  assert.deepEqual(plan.document_ids, ["fda_ada_2014"]);
+  assert.deepEqual(plan.document_ids, ["test.no_overlay_document"]);
 });
 
 test("ich_m10 conditional branch: chromatography wording resolves only the chromatography group as applicable", () => {
@@ -206,6 +210,89 @@ test("a leaf-scoped facet (no sub-sections of its own) still reports record-gran
   const manifest = plan.manifests.find((m) => m.manifest_id === "ich_m10.sem.manifest.run_acceptance");
   const chromatography = manifest.groups.find((g) => g.group_id === "chromatography_branch");
   assert.equal(chromatography.facets[0].section.granularity, "record");
+});
+
+test("a chapter-scoped facet with zero curated members can reach \"covered\" once every sub-topic is touched", () => {
+  // fda_ada_2014's patient-factor facet (§V.A) has no direct content of its
+  // own — §V.A is a pure structural header, so member_record_ids is
+  // necessarily empty and status must be derivable from section coverage
+  // alone, including "covered" when all 5 of §V.A's sub-factors are cited.
+  const envelope = {
+    answer_intent: "topic_overview",
+    scope: { resolved_document_ids: ["fda_ada_2014"], requested_document_ids: [] },
+    claims: [
+      "fda_ada_2014.kr.5_a_1.001", "fda_ada_2014.kr.5_a_2.001", "fda_ada_2014.kr.5_a_3.001",
+      "fda_ada_2014.kr.5_a_4.001", "fda_ada_2014.kr.5_a_5.001"
+    ].map((id) => claim({ id, document_id: "fda_ada_2014" }))
+  };
+  const plan = buildShadowPlan("치료용 단백질의 임상 면역원성 위험요인은 크게 뭐가 있어?", envelope, { store });
+  const manifest = plan.manifests.find((m) => m.manifest_id === "fda_ada_2014.sem.manifest.risk_factors");
+  assert.ok(manifest);
+  const patient = manifest.groups[0].facets.find((f) => f.facet_id === "fda_ada_2014.sem.facet.risk_factors.patient");
+  assert.deepEqual(patient.exact, { covered: 0, total: 0 });
+  assert.deepEqual(patient.section, { granularity: "section", covered: 5, total: 5 });
+  assert.equal(patient.status, "covered");
+  // Product (§V.B, 9 sub-factors) was never touched at all — reproduces
+  // the real Q20 finding: the answer only reaches the patient side.
+  const product = manifest.groups[0].facets.find((f) => f.facet_id === "fda_ada_2014.sem.facet.risk_factors.product");
+  assert.equal(product.status, "missing");
+  assert.equal(manifest.status, "partial");
+});
+
+test("a topic_overview manifest stays relevant even when resolved sections share no ancestor or sibling with its facets", () => {
+  // Reproduces the real captured Q20 envelope shape: the router resolved
+  // fda_ada_2014's CONCLUSION (§VI) and Consequences-for-Safety (§III.B)
+  // sections — nowhere near §V.A/§V.B — yet the risk_factors manifest
+  // (answer_intent=topic_overview) must still surface, because that
+  // complete miss is exactly the finding worth disclosing.
+  const envelope = {
+    answer_intent: "detail",
+    scope: {
+      resolved_document_ids: ["fda_ada_2014"],
+      requested_document_ids: [],
+      section_ids: ["fda_ada_2014.sec.6", "fda_ada_2014.sec.3_b"]
+    },
+    claims: [claim({ id: "fda_ada_2014.kr.6.001", document_id: "fda_ada_2014" })]
+  };
+  const plan = buildShadowPlan("치료용 단백질의 임상 면역원성 위험요인은 크게 뭐가 있어?", envelope, { store });
+  const manifest = plan.manifests.find((m) => m.manifest_id === "fda_ada_2014.sem.manifest.risk_factors");
+  assert.ok(manifest, "expected the topic_overview manifest to surface despite unrelated resolved sections");
+  assert.equal(manifest.status, "unavailable");
+});
+
+test("a multi_criterion manifest (not overview-shaped) stays gated by section proximity, unlike topic_overview ones", () => {
+  const envelope = {
+    answer_intent: "detail",
+    scope: {
+      resolved_document_ids: ["ich_m10"],
+      requested_document_ids: [],
+      section_ids: ["ich_m10.sec.9"]
+    },
+    claims: []
+  };
+  const plan = buildShadowPlan("glossary에 정의는 뭐가 있어?", envelope, { store });
+  const manifest = plan.manifests.find((m) => m.manifest_id === "ich_m10.sem.manifest.run_acceptance");
+  assert.equal(manifest, undefined, "multi_criterion manifests should still be filtered by section relevance");
+});
+
+test("fda_ada screening_performance manifest: drug_tolerance and specificity read missing when only screening-tier evidence was cited (real Q15 shape)", () => {
+  const envelope = {
+    answer_intent: "topic_overview",
+    scope: { resolved_document_ids: ["fda_ada"], requested_document_ids: [], section_ids: ["fda_ada.sec.6_b"] },
+    claims: [
+      claim({ id: "fda_ada.kr.VI_B.013", document_id: "fda_ada" }),
+      claim({ id: "fda_ada.kr.VI_B.001", document_id: "fda_ada" })
+    ]
+  };
+  const plan = buildShadowPlan("ADA screening assay validation에서 확인할 성능 기준은?", envelope, { store });
+  const manifest = plan.manifests.find((m) => m.manifest_id === "fda_ada.sem.manifest.screening_performance");
+  assert.ok(manifest);
+  const facets = Object.fromEntries(manifest.groups[0].facets.map((f) => [f.facet_id.split(".").pop(), f]));
+  assert.equal(facets.cut_point.status, "partial");
+  assert.equal(facets.sensitivity.status, "partial");
+  assert.equal(facets.drug_tolerance.status, "missing");
+  assert.equal(facets.specificity.status, "missing");
+  assert.equal(manifest.status, "partial");
 });
 
 test("cross-document comparison: shared scope.product_or_matrix axis surfaces when both documents resolve", () => {
