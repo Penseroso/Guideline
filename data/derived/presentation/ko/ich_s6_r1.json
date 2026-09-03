@@ -1,0 +1,45 @@
+{
+  "presentation_overlay_version": "0.1.0",
+  "language": "ko",
+  "document_id": "ich_s6_r1",
+  "entries": [
+    {
+      "semantic_id": "ich_s6_r1.sem.summary.scope",
+      "language": "ko",
+      "review_status": "needs_review",
+      "units": [
+        {
+          "unit_id": "ich_s6_r1.sem.summary.scope.u1",
+          "text": "이 가이드라인은 재조합 DNA 기술, 세포 배양 및 단클론항체로 생산된 단백질·펩타이드 등 생명공학 유래 의약품에 적용된다.",
+          "sentence_role": "scope",
+          "evidence_refs": [
+            {
+              "record_id": "ich_s6_r1.kr.1_3.001",
+              "source_unit_id": "ich_s6_r1.su.part1.1_3.001",
+              "source_text_sha256": "b081a51a9245ee5f45b7f81623baa2eb031f972ffcb533ebdbcf65bb9d771198"
+            }
+          ],
+          "source_support": "direct"
+        },
+        {
+          "unit_id": "ich_s6_r1.sem.summary.scope.u2",
+          "text": "저분자 의약품, 항생제, 세포치료제, 유전자치료제, 치료용 백신에는 적용되지 않으나, 일부 원칙은 그런 제품에도 관련될 수 있다.",
+          "sentence_role": "exception",
+          "evidence_refs": [
+            {
+              "record_id": "ich_s6_r1.kr.1_3.002",
+              "source_unit_id": "ich_s6_r1.su.part1.1_3.001",
+              "source_text_sha256": "b081a51a9245ee5f45b7f81623baa2eb031f972ffcb533ebdbcf65bb9d771198"
+            },
+            {
+              "record_id": "ich_s6_r1.kr.1_3.003",
+              "source_unit_id": "ich_s6_r1.su.part1.1_3.001",
+              "source_text_sha256": "b081a51a9245ee5f45b7f81623baa2eb031f972ffcb533ebdbcf65bb9d771198"
+            }
+          ],
+          "source_support": "synthesized"
+        }
+      ]
+    }
+  ]
+}

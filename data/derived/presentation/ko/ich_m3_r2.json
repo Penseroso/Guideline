@@ -1,0 +1,45 @@
+{
+  "presentation_overlay_version": "0.1.0",
+  "language": "ko",
+  "document_id": "ich_m3_r2",
+  "entries": [
+    {
+      "semantic_id": "ich_m3_r2.sem.summary.scope",
+      "language": "ko",
+      "review_status": "needs_review",
+      "units": [
+        {
+          "unit_id": "ich_m3_r2.sem.summary.scope.u1",
+          "text": "이 가이드라인은 저분자 등 일반 의약품의 임상시험 개발 과정에서 통상적으로 마주치는 상황에 적용되는 일반 원칙을 다룬다.",
+          "sentence_role": "scope",
+          "evidence_refs": [
+            {
+              "record_id": "ich_m3_r2.kr.1_3.004",
+              "source_unit_id": "ich_m3_r2.su.1_3.001",
+              "source_text_sha256": "537b4a230e34a44c930cd2e01275f82884f56b824a8434710b84a229d1ad210f"
+            }
+          ],
+          "source_support": "synthesized"
+        },
+        {
+          "unit_id": "ich_m3_r2.sem.summary.scope.u2",
+          "text": "생명공학 유래(바이오)의약품에 대해서는 ICH S6 가이드라인을 참조하도록 안내하며, 필요한 경우 이 M3(R2) 가이드라인의 일반 원칙도 함께 참고할 수 있다.",
+          "sentence_role": "boundary",
+          "evidence_refs": [
+            {
+              "record_id": "ich_m3_r2.kr.1_3.004",
+              "source_unit_id": "ich_m3_r2.su.1_3.001",
+              "source_text_sha256": "537b4a230e34a44c930cd2e01275f82884f56b824a8434710b84a229d1ad210f"
+            },
+            {
+              "record_id": "ich_m3_r2.kr.1_3.006",
+              "source_unit_id": "ich_m3_r2.su.1_3.001",
+              "source_text_sha256": "537b4a230e34a44c930cd2e01275f82884f56b824a8434710b84a229d1ad210f"
+            }
+          ],
+          "source_support": "synthesized"
+        }
+      ]
+    }
+  ]
+}

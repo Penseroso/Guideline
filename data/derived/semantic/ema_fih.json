@@ -1,0 +1,171 @@
+{
+  "semantic_overlay_version": "0.1.0",
+  "document_id": "ema_fih",
+  "source_bundle_sha256": "231d84dc2ab77b8c2c383808e857d1140471f5b216a968c17880eca84f0547fe",
+  "derivation": {
+    "method": "agent_assisted",
+    "pipeline_version": "stage-a-2026-09-03"
+  },
+  "summary_specs": [
+    {
+      "summary_id": "ema_fih.sem.summary.document_overview",
+      "target": {
+        "type": "document",
+        "id": "ema_fih"
+      },
+      "summary_kind": "scope",
+      "facet_ids": [
+        "ema_fih.sem.facet.scope",
+        "ema_fih.sem.facet.quality",
+        "ema_fih.sem.facet.non_clinical",
+        "ema_fih.sem.facet.dose_selection",
+        "ema_fih.sem.facet.trial_planning"
+      ],
+      "sentence_roles": [
+        "scope",
+        "main_points",
+        "boundary"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ema_fih.kr.2.002",
+          "source_unit_id": "ema_fih.su.2.001",
+          "source_text_sha256": "bbc406c2a51844ff21b8f90771de4ac92e4ea310fc7177aa72dc0f13cd5283b4"
+        },
+        {
+          "record_id": "ema_fih.kr.2.003",
+          "source_unit_id": "ema_fih.su.2.001",
+          "source_text_sha256": "bbc406c2a51844ff21b8f90771de4ac92e4ea310fc7177aa72dc0f13cd5283b4"
+        }
+      ],
+      "review_status": "needs_review"
+    }
+  ],
+  "facets": [
+    {
+      "facet_id": "ema_fih.sem.facet.scope",
+      "concept_id": "guideline_applicability_scope",
+      "scope": "ema_fih.sec.2",
+      "parent_facet_id": null,
+      "member_record_ids": [
+        "ema_fih.kr.2.002",
+        "ema_fih.kr.2.003"
+      ],
+      "semantic_role": "scope",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.quality",
+      "concept_id": "ema_fih.local.quality_aspect",
+      "scope": "ema_fih.sec.5",
+      "parent_facet_id": null,
+      "member_record_ids": [
+        "ema_fih.kr.5.001"
+      ],
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.non_clinical",
+      "concept_id": "ema_fih.local.non_clinical_aspect",
+      "scope": "ema_fih.sec.6",
+      "parent_facet_id": null,
+      "member_record_ids": [
+        "ema_fih.kr.6.001"
+      ],
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.dose_selection",
+      "concept_id": "ema_fih.local.dose_selection_aspect",
+      "scope": "ema_fih.sec.7",
+      "parent_facet_id": null,
+      "member_record_ids": [
+        "ema_fih.kr.7_1.001"
+      ],
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.trial_planning",
+      "concept_id": "ema_fih.local.trial_planning_aspect",
+      "scope": "ema_fih.sec.8",
+      "parent_facet_id": null,
+      "member_record_ids": [
+        "ema_fih.kr.8_1.001"
+      ],
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    }
+  ],
+  "relations": [],
+  "coverage_manifests": [
+    {
+      "manifest_id": "ema_fih.sem.manifest.document_overview",
+      "target": {
+        "type": "document",
+        "id": "ema_fih"
+      },
+      "answer_intent": "document_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "all_top_areas",
+          "selection": "all",
+          "facet_ids": [
+            "ema_fih.sem.facet.scope",
+            "ema_fih.sem.facet.quality",
+            "ema_fih.sem.facet.non_clinical",
+            "ema_fih.sem.facet.dose_selection",
+            "ema_fih.sem.facet.trial_planning"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "needs_review"
+    }
+  ],
+  "comparison_bindings": [],
+  "salience_profiles": [
+    {
+      "profile_id": "ema_fih.sem.profile.document_overview",
+      "target_id": "ema_fih",
+      "context": "document_overview",
+      "items": [
+        {
+          "facet_id": "ema_fih.sem.facet.scope",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "scope_boundary"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.quality",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.non_clinical",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.dose_selection",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.trial_planning",
+          "tier": "primary",
+          "display_order": 5,
+          "rationale_code": "governing_text"
+        }
+      ]
+    }
+  ]
+}

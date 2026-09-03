@@ -14,7 +14,7 @@ Model `0.5.0` is implemented as a machine-validatable JSON bundle contract with 
 
 An earlier derived-layer design (AmendmentMapping, EffectiveRecord, a family/edition registry) was explored but never adopted into the product build, so it is not described here as current.
 
-A new, separate proposal for a source-grounded answer-planning overlay is documented in `docs/derived_semantic_layer.md`. It does not calculate amendment/effective state and is not part of the active `0.5.0` model until its schemas, validators, and representative data are implemented.
+A separate, additive proposal for a source-grounded answer-planning overlay is documented in `docs/derived_semantic_layer.md`. It does not calculate amendment/effective state and does not change this `0.5.0` model. Its Stage A contract (schemas, validator, and a small representative sample) is implemented — see "Derived semantic overlay" below — but it is not yet consumed by the answer engine (Stage B/C of `docs/derived_semantic_layer.md` §10).
 
 ## Core principles
 
@@ -79,6 +79,24 @@ For typed values governed by `value_status`:
 - `known` requires a non-null typed value.
 - `unknown`, `not_applicable`, and `needs_review` require the typed value to be `null`.
 - `QuantitativeCriterion` has special exact-fraction rules described below.
+
+## Derived semantic overlay
+
+Full design and rationale: `docs/derived_semantic_layer.md`. This section registers what is actually implemented (its Stage A) as a data layer, per that document's §12 checklist.
+
+The derived semantic overlay is an additive, disposable/regenerable answer-planning projection over the core bundle. It never carries source text, regulatory determinations, or higher authority than the objects in `## Objects` above; every object either resolves back to a core `KnowledgeRecord`/`QuantitativeCriterion`/`Condition`/`SourceUnit`, or is a purely structural grouping (a facet or a comparison axis) over such objects. It is not part of the `0.5.0` bundle contract and does not loosen any rule in this document.
+
+Files:
+
+- `data/schemas/derived_semantic_overlay.schema.json` — structural contract for one document's `summary_specs`, `facets`, `relations`, `coverage_manifests`, `comparison_bindings`, `salience_profiles`.
+- `data/schemas/derived_semantic_presentation.schema.json` — structural contract for that document's Korean presentation sentences (`data/derived/presentation/ko/<document_id>.json`), kept separate from `normalized_ko` per the Korean presentation overlay rule above (design and rationale: `docs/derived_semantic_layer.md` §5).
+- `data/ontology/semantic_concepts.json` — reusable topic concepts and comparison axes shared across documents; a facet's `concept_id` may instead be document-local (unregistered here) when the concept is not reused elsewhere.
+- `data/derived/semantic/<document_id>.json` — one overlay per document.
+- `validation/validate_semantic_overlay.js` (`npm run validate:semantic`) — JSON Schema plus reference resolution, per-document evidence hash freshness (`source_text_sha256` against the live core `SourceUnit.source_text` / `QuantitativeCriterion.source_text` / `Condition.condition_text`), whole-bundle staleness (`source_bundle_sha256`), facet-parent and procedural-relation cycle detection, coverage-manifest and comparison-binding reference checks, and salience `display_order` uniqueness per profile/tier.
+
+Implementation note beyond the design document's literal text: an `evidence_refs.record_id` may resolve to a `KnowledgeRecord`, `QuantitativeCriterion`, or `Condition` (not only a `KnowledgeRecord`) — most `QuantitativeCriterion` records in the pilot archive have no linked `knowledge_record_id`, and quantitative evidence is exactly what multi-criterion/detail-level overlay objects need to cite.
+
+Four representative scopes are structured as Stage A samples, chosen to cover the failure categories the 50-question answer-suitability audit attributed to missing derived structure (`history/verification/answer_suitability_audit_2026-09-02.md` §6): a document overview (`data/derived/semantic/ema_fih.json`), an assay-technique conditional branch (`data/derived/semantic/ich_m10.json`), a multi-criterion topic breakdown (`data/derived/semantic/fda_ada.json`), and a cross-document applicability comparison (`data/derived/semantic/ich_m3_r2.json` and `ich_s6_r1.json`, bound through the shared `scope.product_or_matrix` axis). These are schema-and-validator fixtures, not a claim that the answer engine consumes them yet.
 
 ## Bundle contract
 

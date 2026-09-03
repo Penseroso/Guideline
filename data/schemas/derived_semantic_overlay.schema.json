@@ -1,0 +1,390 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.local/regulatory-guideline-archive/derived_semantic_overlay.schema.json",
+  "title": "Derived Semantic Overlay",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "semantic_overlay_version",
+    "document_id",
+    "source_bundle_sha256",
+    "derivation",
+    "summary_specs",
+    "facets",
+    "relations",
+    "coverage_manifests",
+    "comparison_bindings",
+    "salience_profiles"
+  ],
+  "properties": {
+    "semantic_overlay_version": { "const": "0.1.0" },
+    "document_id": { "$ref": "#/definitions/id" },
+    "source_bundle_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "derivation": { "$ref": "#/definitions/derivation" },
+    "summary_specs": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/summarySpec" }
+    },
+    "facets": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/facet" }
+    },
+    "relations": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/relation" }
+    },
+    "coverage_manifests": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/coverageManifest" }
+    },
+    "comparison_bindings": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/comparisonBinding" }
+    },
+    "salience_profiles": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/salienceProfile" }
+    }
+  },
+  "definitions": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "nullableId": {
+      "type": ["string", "null"],
+      "minLength": 1
+    },
+    "idArray": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/id" }
+    },
+    "reviewStatus": {
+      "type": "string",
+      "enum": ["unreviewed", "needs_review", "reviewed"]
+    },
+    "derivation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "pipeline_version"],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": ["manual", "agent_assisted"]
+        },
+        "pipeline_version": { "type": "string", "minLength": 1 }
+      }
+    },
+    "evidenceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["record_id", "source_unit_id", "source_text_sha256"],
+      "properties": {
+        "record_id": { "$ref": "#/definitions/id" },
+        "source_unit_id": { "$ref": "#/definitions/id" },
+        "source_text_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/evidenceRef" }
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "id"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["document", "section", "facet"]
+        },
+        "id": { "$ref": "#/definitions/id" }
+      }
+    },
+    "ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ref_type", "ref_id"],
+      "properties": {
+        "ref_type": {
+          "type": "string",
+          "enum": ["facet", "knowledge_record", "quantitative_criterion", "condition"]
+        },
+        "ref_id": { "$ref": "#/definitions/id" }
+      }
+    },
+    "sentenceRole": {
+      "type": "string",
+      "enum": ["definition", "scope", "main_points", "boundary", "exception"]
+    },
+    "summarySpec": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "summary_id",
+        "target",
+        "summary_kind",
+        "facet_ids",
+        "sentence_roles",
+        "evidence_refs",
+        "review_status"
+      ],
+      "properties": {
+        "summary_id": { "$ref": "#/definitions/id" },
+        "target": { "$ref": "#/definitions/target" },
+        "summary_kind": {
+          "type": "string",
+          "enum": ["scope", "section_overview", "topic_overview", "process_overview"]
+        },
+        "facet_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/id" }
+        },
+        "sentence_roles": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/sentenceRole" }
+        },
+        "evidence_refs": { "$ref": "#/definitions/evidenceRefs" },
+        "review_status": { "$ref": "#/definitions/reviewStatus" }
+      }
+    },
+    "facet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "facet_id",
+        "concept_id",
+        "scope",
+        "parent_facet_id",
+        "member_record_ids",
+        "semantic_role",
+        "review_status"
+      ],
+      "properties": {
+        "facet_id": { "$ref": "#/definitions/id" },
+        "concept_id": { "$ref": "#/definitions/id" },
+        "scope": { "$ref": "#/definitions/id" },
+        "parent_facet_id": { "$ref": "#/definitions/nullableId" },
+        "member_record_ids": { "$ref": "#/definitions/idArray" },
+        "semantic_role": {
+          "type": "string",
+          "enum": [
+            "definition",
+            "purpose",
+            "scope",
+            "criterion",
+            "condition",
+            "exception",
+            "procedure_step",
+            "risk_factor",
+            "evidence",
+            "boundary"
+          ]
+        },
+        "review_status": { "$ref": "#/definitions/reviewStatus" }
+      }
+    },
+    "relation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "relation_id",
+        "from_ref",
+        "to_ref",
+        "relation_type",
+        "evidence_refs",
+        "review_status"
+      ],
+      "properties": {
+        "relation_id": { "$ref": "#/definitions/id" },
+        "from_ref": { "$ref": "#/definitions/ref" },
+        "to_ref": { "$ref": "#/definitions/ref" },
+        "relation_type": {
+          "type": "string",
+          "enum": [
+            "precedes",
+            "follows",
+            "triggers",
+            "conditioned_by",
+            "qualifies",
+            "exception_to",
+            "part_of",
+            "supports",
+            "contrasts_with",
+            "alternative_to",
+            "corresponds_to"
+          ]
+        },
+        "evidence_refs": { "$ref": "#/definitions/evidenceRefs" },
+        "review_status": { "$ref": "#/definitions/reviewStatus" }
+      }
+    },
+    "whenCondition": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["slot_id", "value"],
+          "properties": {
+            "slot_id": { "type": "string", "minLength": 1 },
+            "value": { "type": "string", "minLength": 1 }
+          }
+        }
+      ]
+    },
+    "coverageGroup": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "group_id",
+        "selection",
+        "facet_ids",
+        "when",
+        "on_ambiguity",
+        "display_order"
+      ],
+      "properties": {
+        "group_id": { "$ref": "#/definitions/id" },
+        "selection": {
+          "type": "string",
+          "enum": ["all", "one_of", "one_or_more"]
+        },
+        "facet_ids": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/id" }
+        },
+        "when": { "$ref": "#/definitions/whenCondition" },
+        "on_ambiguity": {
+          "type": "string",
+          "enum": ["present_branches", "ask_context", "disclose_gap"]
+        },
+        "display_order": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "coverageManifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "manifest_id",
+        "target",
+        "answer_intent",
+        "scope_selectors",
+        "coverage_groups",
+        "review_status"
+      ],
+      "properties": {
+        "manifest_id": { "$ref": "#/definitions/id" },
+        "target": { "$ref": "#/definitions/target" },
+        "answer_intent": {
+          "type": "string",
+          "enum": [
+            "document_overview",
+            "section_overview",
+            "topic_overview",
+            "multi_criterion",
+            "process",
+            "comparison"
+          ]
+        },
+        "scope_selectors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["slot_id", "value"],
+            "properties": {
+              "slot_id": { "type": "string", "minLength": 1 },
+              "value": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "coverage_groups": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/coverageGroup" }
+        },
+        "review_status": { "$ref": "#/definitions/reviewStatus" }
+      }
+    },
+    "comparisonBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "binding_id",
+        "axis_id",
+        "facet_id",
+        "evidence_refs",
+        "display_label_key",
+        "review_status"
+      ],
+      "properties": {
+        "binding_id": { "$ref": "#/definitions/id" },
+        "axis_id": { "$ref": "#/definitions/id" },
+        "facet_id": { "$ref": "#/definitions/id" },
+        "evidence_refs": { "$ref": "#/definitions/evidenceRefs" },
+        "display_label_key": { "type": "string", "minLength": 1 },
+        "review_status": { "$ref": "#/definitions/reviewStatus" }
+      }
+    },
+    "salienceItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["facet_id", "tier", "display_order", "rationale_code"],
+      "properties": {
+        "facet_id": { "$ref": "#/definitions/id" },
+        "tier": {
+          "type": "string",
+          "enum": ["primary", "supporting", "detail"]
+        },
+        "display_order": { "type": "integer", "minimum": 1 },
+        "rationale_code": {
+          "type": "string",
+          "enum": [
+            "scope_boundary",
+            "definition",
+            "governing_text",
+            "exception",
+            "quantitative_criterion",
+            "example"
+          ]
+        }
+      }
+    },
+    "salienceProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profile_id", "target_id", "context", "items"],
+      "properties": {
+        "profile_id": { "$ref": "#/definitions/id" },
+        "target_id": { "$ref": "#/definitions/id" },
+        "context": {
+          "type": "string",
+          "enum": [
+            "document_overview",
+            "section_overview",
+            "topic_overview",
+            "process",
+            "comparison",
+            "detail"
+          ]
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/salienceItem" }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "semantic_overlay_version": "0.1.0",
+  "document_id": "ich_m10",
+  "source_bundle_sha256": "8c20318bc30e75de6277036dc731c5789630bbcc0a730c9031f8e676b88e1ced",
+  "derivation": {
+    "method": "agent_assisted",
+    "pipeline_version": "stage-a-2026-09-03"
+  },
+  "summary_specs": [],
+  "facets": [
+    {
+      "facet_id": "ich_m10.sem.facet.run_acceptance",
+      "concept_id": "run_acceptance_criteria",
+      "scope": "ich_m10",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.run_acceptance.chromatography",
+      "concept_id": "run_acceptance_criteria",
+      "scope": "ich_m10.sec.3_3_2",
+      "parent_facet_id": "ich_m10.sem.facet.run_acceptance",
+      "member_record_ids": [
+        "ich_m10.qc.3_3_2.001",
+        "ich_m10.qc.3_3_2.002",
+        "ich_m10.qc.3_3_2.003",
+        "ich_m10.qc.3_3_2.004",
+        "ich_m10.qc.3_3_2.005",
+        "ich_m10.qc.3_3_2.006"
+      ],
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.run_acceptance.lba",
+      "concept_id": "run_acceptance_criteria",
+      "scope": "ich_m10.sec.4_3_2",
+      "parent_facet_id": "ich_m10.sem.facet.run_acceptance",
+      "member_record_ids": [
+        "ich_m10.qc.4_3_2.001",
+        "ich_m10.qc.4_3_2.002",
+        "ich_m10.qc.4_3_2.003",
+        "ich_m10.qc.4_3_2.004",
+        "ich_m10.qc.4_3_2.005",
+        "ich_m10.qc.4_3_2.006"
+      ],
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "ich_m10.sem.rel.run_acceptance.chromatography_alternative_to_lba",
+      "from_ref": {
+        "ref_type": "facet",
+        "ref_id": "ich_m10.sem.facet.run_acceptance.chromatography"
+      },
+      "to_ref": {
+        "ref_type": "facet",
+        "ref_id": "ich_m10.sem.facet.run_acceptance.lba"
+      },
+      "relation_type": "alternative_to",
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.qc.3_3_2.001",
+          "source_unit_id": "ich_m10.su.3_3_2.001",
+          "source_text_sha256": "54445d9eefda2356ef8bf06811f6e1b3dca3d6f56d4e2cb890800592c5cca059"
+        },
+        {
+          "record_id": "ich_m10.qc.4_3_2.001",
+          "source_unit_id": "ich_m10.su.4_3_2.001",
+          "source_text_sha256": "bd29f96b5db2745e4759cb0d097dfd0394585da69fadef32f2861793cdda32dc"
+        }
+      ],
+      "review_status": "needs_review"
+    }
+  ],
+  "coverage_manifests": [
+    {
+      "manifest_id": "ich_m10.sem.manifest.run_acceptance",
+      "target": {
+        "type": "facet",
+        "id": "ich_m10.sem.facet.run_acceptance"
+      },
+      "answer_intent": "multi_criterion",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "chromatography_branch",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.run_acceptance.chromatography"
+          ],
+          "when": {
+            "slot_id": "target_assay",
+            "value": "chromatography"
+          },
+          "on_ambiguity": "present_branches",
+          "display_order": 1
+        },
+        {
+          "group_id": "lba_branch",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.run_acceptance.lba"
+          ],
+          "when": {
+            "slot_id": "target_assay",
+            "value": "ligand_binding_assay"
+          },
+          "on_ambiguity": "present_branches",
+          "display_order": 2
+        }
+      ],
+      "review_status": "needs_review"
+    }
+  ],
+  "comparison_bindings": [],
+  "salience_profiles": [
+    {
+      "profile_id": "ich_m10.sem.profile.run_acceptance",
+      "target_id": "ich_m10.sem.facet.run_acceptance",
+      "context": "detail",
+      "items": [
+        {
+          "facet_id": "ich_m10.sem.facet.run_acceptance.chromatography",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.run_acceptance.lba",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "quantitative_criterion"
+        }
+      ]
+    }
+  ]
+}

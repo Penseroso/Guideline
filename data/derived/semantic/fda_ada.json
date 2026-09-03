@@ -1,0 +1,194 @@
+{
+  "semantic_overlay_version": "0.1.0",
+  "document_id": "fda_ada",
+  "source_bundle_sha256": "9c71990cc6dd695a02cecef8b5da58041417393f7e5453b4d47bc4a747fd3ba3",
+  "derivation": {
+    "method": "agent_assisted",
+    "pipeline_version": "stage-a-2026-09-03"
+  },
+  "summary_specs": [
+    {
+      "summary_id": "fda_ada.sem.summary.assay_validation",
+      "target": {
+        "type": "section",
+        "id": "fda_ada.sec.6"
+      },
+      "summary_kind": "topic_overview",
+      "facet_ids": [
+        "fda_ada.sem.facet.assay_validation.general",
+        "fda_ada.sem.facet.assay_validation.screening",
+        "fda_ada.sem.facet.assay_validation.confirmatory",
+        "fda_ada.sem.facet.assay_validation.titration",
+        "fda_ada.sem.facet.assay_validation.neutralization"
+      ],
+      "sentence_roles": [
+        "scope",
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "fda_ada.kr.VI_A.001",
+          "source_unit_id": "fda_ada.su.6_a.002",
+          "source_text_sha256": "f41aa10866de68e8da1d124e87f1e25ead68c3d6194b6406f09691e9d6375dd1"
+        }
+      ],
+      "review_status": "needs_review"
+    }
+  ],
+  "facets": [
+    {
+      "facet_id": "fda_ada.sem.facet.assay_validation",
+      "concept_id": "assay_validation_tier",
+      "scope": "fda_ada.sec.6",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "semantic_role": "scope",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.assay_validation.general",
+      "concept_id": "assay_validation_tier",
+      "scope": "fda_ada.sec.6_a",
+      "parent_facet_id": "fda_ada.sem.facet.assay_validation",
+      "member_record_ids": [
+        "fda_ada.kr.VI_A.001"
+      ],
+      "semantic_role": "scope",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.assay_validation.screening",
+      "concept_id": "assay_validation_tier",
+      "scope": "fda_ada.sec.6_b",
+      "parent_facet_id": "fda_ada.sem.facet.assay_validation",
+      "member_record_ids": [
+        "fda_ada.kr.VI_B.001"
+      ],
+      "semantic_role": "scope",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.assay_validation.confirmatory",
+      "concept_id": "assay_validation_tier",
+      "scope": "fda_ada.sec.6_c",
+      "parent_facet_id": "fda_ada.sem.facet.assay_validation",
+      "member_record_ids": [
+        "fda_ada.kr.VI_C.001"
+      ],
+      "semantic_role": "scope",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.assay_validation.titration",
+      "concept_id": "assay_validation_tier",
+      "scope": "fda_ada.sec.6_d",
+      "parent_facet_id": "fda_ada.sem.facet.assay_validation",
+      "member_record_ids": [
+        "fda_ada.kr.VI_D.001"
+      ],
+      "semantic_role": "scope",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.assay_validation.neutralization",
+      "concept_id": "assay_validation_tier",
+      "scope": "fda_ada.sec.6_e",
+      "parent_facet_id": "fda_ada.sem.facet.assay_validation",
+      "member_record_ids": [
+        "fda_ada.kr.VI_E.001"
+      ],
+      "semantic_role": "scope",
+      "review_status": "reviewed"
+    }
+  ],
+  "relations": [
+    {
+      "relation_id": "fda_ada.sem.rel.general_supports_titration",
+      "from_ref": {
+        "ref_type": "facet",
+        "ref_id": "fda_ada.sem.facet.assay_validation.general"
+      },
+      "to_ref": {
+        "ref_type": "facet",
+        "ref_id": "fda_ada.sem.facet.assay_validation.titration"
+      },
+      "relation_type": "supports",
+      "evidence_refs": [
+        {
+          "record_id": "fda_ada.kr.VI_D.001",
+          "source_unit_id": "fda_ada.su.6_d.001",
+          "source_text_sha256": "de51b65228b4ab2f50fb162aa254907f10e45e97734c037a0b2835c1961ab16c"
+        }
+      ],
+      "review_status": "needs_review"
+    }
+  ],
+  "coverage_manifests": [
+    {
+      "manifest_id": "fda_ada.sem.manifest.assay_validation",
+      "target": {
+        "type": "facet",
+        "id": "fda_ada.sem.facet.assay_validation"
+      },
+      "answer_intent": "topic_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "all_validation_categories",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada.sem.facet.assay_validation.general",
+            "fda_ada.sem.facet.assay_validation.screening",
+            "fda_ada.sem.facet.assay_validation.confirmatory",
+            "fda_ada.sem.facet.assay_validation.titration",
+            "fda_ada.sem.facet.assay_validation.neutralization"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "needs_review"
+    }
+  ],
+  "comparison_bindings": [],
+  "salience_profiles": [
+    {
+      "profile_id": "fda_ada.sem.profile.assay_validation",
+      "target_id": "fda_ada.sem.facet.assay_validation",
+      "context": "topic_overview",
+      "items": [
+        {
+          "facet_id": "fda_ada.sem.facet.assay_validation.general",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "definition"
+        },
+        {
+          "facet_id": "fda_ada.sem.facet.assay_validation.screening",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "definition"
+        },
+        {
+          "facet_id": "fda_ada.sem.facet.assay_validation.confirmatory",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "definition"
+        },
+        {
+          "facet_id": "fda_ada.sem.facet.assay_validation.titration",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "definition"
+        },
+        {
+          "facet_id": "fda_ada.sem.facet.assay_validation.neutralization",
+          "tier": "primary",
+          "display_order": 5,
+          "rationale_code": "definition"
+        }
+      ]
+    }
+  ]
+}

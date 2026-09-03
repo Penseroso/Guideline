@@ -1,0 +1,86 @@
+{
+  "semantic_overlay_version": "0.1.0",
+  "document_id": "ich_m3_r2",
+  "source_bundle_sha256": "fc0828cd408604fa1846cf77c4e93cd1cc66c3ad49d6beebbd541ababe0852b7",
+  "derivation": {
+    "method": "agent_assisted",
+    "pipeline_version": "stage-a-2026-09-03"
+  },
+  "summary_specs": [
+    {
+      "summary_id": "ich_m3_r2.sem.summary.scope",
+      "target": {
+        "type": "section",
+        "id": "ich_m3_r2.sec.1_3"
+      },
+      "summary_kind": "scope",
+      "facet_ids": [
+        "ich_m3_r2.sem.facet.scope"
+      ],
+      "sentence_roles": [
+        "scope",
+        "boundary"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m3_r2.kr.1_3.004",
+          "source_unit_id": "ich_m3_r2.su.1_3.001",
+          "source_text_sha256": "537b4a230e34a44c930cd2e01275f82884f56b824a8434710b84a229d1ad210f"
+        }
+      ],
+      "review_status": "needs_review"
+    }
+  ],
+  "facets": [
+    {
+      "facet_id": "ich_m3_r2.sem.facet.scope",
+      "concept_id": "guideline_applicability_scope",
+      "scope": "ich_m3_r2.sec.1_3",
+      "parent_facet_id": null,
+      "member_record_ids": [
+        "ich_m3_r2.kr.1_3.004",
+        "ich_m3_r2.kr.1_3.006"
+      ],
+      "semantic_role": "scope",
+      "review_status": "reviewed"
+    }
+  ],
+  "relations": [],
+  "coverage_manifests": [],
+  "comparison_bindings": [
+    {
+      "binding_id": "ich_m3_r2.sem.binding.scope_product_or_matrix",
+      "axis_id": "scope.product_or_matrix",
+      "facet_id": "ich_m3_r2.sem.facet.scope",
+      "evidence_refs": [
+        {
+          "record_id": "ich_m3_r2.kr.1_3.004",
+          "source_unit_id": "ich_m3_r2.su.1_3.001",
+          "source_text_sha256": "537b4a230e34a44c930cd2e01275f82884f56b824a8434710b84a229d1ad210f"
+        },
+        {
+          "record_id": "ich_m3_r2.kr.1_3.006",
+          "source_unit_id": "ich_m3_r2.su.1_3.001",
+          "source_text_sha256": "537b4a230e34a44c930cd2e01275f82884f56b824a8434710b84a229d1ad210f"
+        }
+      ],
+      "display_label_key": "semantic.comparison.ich_m3_r2.scope_product_or_matrix",
+      "review_status": "reviewed"
+    }
+  ],
+  "salience_profiles": [
+    {
+      "profile_id": "ich_m3_r2.sem.profile.scope",
+      "target_id": "ich_m3_r2.sem.facet.scope",
+      "context": "comparison",
+      "items": [
+        {
+          "facet_id": "ich_m3_r2.sem.facet.scope",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "scope_boundary"
+        }
+      ]
+    }
+  ]
+}

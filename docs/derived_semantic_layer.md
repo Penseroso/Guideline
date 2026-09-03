@@ -51,11 +51,13 @@
 ```text
 data/
   derived/semantic/<document_id>.json
-  presentation/ko/semantic/<document_id>.json
+  derived/presentation/ko/<document_id>.json
   ontology/semantic_concepts.json
   schemas/derived_semantic_overlay.schema.json
   schemas/derived_semantic_presentation.schema.json
 ```
+
+한국어 presentation 오버레이는 `data/presentation/ko/semantic/`이 아니라 `data/derived/presentation/ko/`에 둔다. `data/presentation/ko/`는 기존 `ko_presentation_overlay` 검증기(`validation/validate_ko_presentation.js`)가 하위 디렉터리까지 재귀적으로 스캔하며 `normalized_ko` 계약을 강제하므로, 그 아래에 다른 계약의 파일을 두면 기존 검증기가 오탐한다. 파생 의미 레이어의 두 산출물(구조 오버레이·presentation 오버레이)을 모두 `data/derived/` 아래에 두어 원문 계층과 분리를 명확히 한다.
 
 `data/ontology/semantic_concepts.json`에는 문서 사이에서 재사용하는 topic concept와 comparison axis만 둔다. 문서별 membership과 근거는 각 문서 오버레이에 둔다. 기존 guideline bundle이나 `normalized_ko`에는 이 정보를 역기입하지 않는다.
 

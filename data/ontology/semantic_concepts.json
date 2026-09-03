@@ -1,0 +1,30 @@
+{
+  "_comment": "Reusable topic concepts and comparison axes for the derived semantic layer (docs/derived_semantic_layer.md). Document-specific facet groupings are kept document-local (a concept_id string that is not registered here) rather than added to this file. Only concepts and axes actually reused across more than one document's semantic overlay in data/derived/semantic/ belong here.",
+
+  "concepts": [
+    {
+      "concept_id": "guideline_applicability_scope",
+      "label_ko": "가이드라인 적용 범위",
+      "description": "A document's own statement of which product types, modalities, or situations it applies to (and does not apply to). Used by the scope facet of any document overlay that needs to participate in a cross-document scope comparison."
+    },
+    {
+      "concept_id": "run_acceptance_criteria",
+      "label_ko": "분석 run 허용 기준",
+      "description": "The set of calibration-standard and QC acceptance criteria that determine whether a single analytical run may be accepted, regardless of assay technique."
+    },
+    {
+      "concept_id": "assay_validation_tier",
+      "label_ko": "분석법 밸리데이션 단계",
+      "description": "One of the named validation categories (general/screening/confirmatory/titration/neutralization, etc.) that together compose a full assay validation topic."
+    }
+  ],
+
+  "comparison_axes": [
+    {
+      "axis_id": "scope.product_or_matrix",
+      "label_ko": "적용 대상 제품/매트릭스",
+      "description": "Aligns documents by which product modality or matrix each one is written to cover, so their applicability statements can be compared row-by-row instead of merged into one paraphrase.",
+      "applicable_concept_ids": ["guideline_applicability_scope"]
+    }
+  ]
+}
