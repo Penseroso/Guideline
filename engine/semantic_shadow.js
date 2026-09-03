@@ -16,6 +16,18 @@
  * annotated with whether it matches the router's own label, keeps that
  * exact kind of mismatch visible in the shadow log instead of hiding it
  * behind intent-string equality.
+ *
+ * Revised after the first shadow run (history/verification/
+ * semantic_shadow_stage_b_2026-09-03.md §6) surfaced five structural gaps
+ * — not per-question quirks, but general weaknesses in the plan-building
+ * algorithm itself: (1) section relevance ignored sibling sections, (2)
+ * facet coverage depended entirely on a single hand-curated sample record
+ * per facet, (3) comparison bindings were reported with no check that
+ * either side actually had cited evidence, (4) the existing engine's own
+ * presentation order was never captured so there was nothing to diff the
+ * new layer's proposed order against, and (5) a stale overlay was
+ * indistinguishable in the log from one that was never authored. All five
+ * are fixed below; see each function's comment for the specific mechanism.
  */
 const { extractQueryScope } = require("./text_utils");
 const { loadSemanticOverlayStore } = require("./semantic_overlay_store");
@@ -65,12 +77,18 @@ function claimIdSet(envelope) {
   return ids;
 }
 
-function claimSectionIdSet(envelope) {
-  const ids = new Set();
-  for (const claim of envelope.claims || []) {
-    if (claim && claim.record && claim.record.section_id) ids.add(claim.record.section_id);
-  }
-  return ids;
+/**
+ * Fix (4): the existing engine's actual presentation order, captured the
+ * same way the UI would read it — `envelope.claims` is already the order
+ * claims are rendered in (engine/answer_presenter.js consumes it as-is).
+ * Recorded so a reader can directly diff this against
+ * `semantic_plan.salience[].order` instead of only ever seeing the new
+ * layer's proposed order in isolation.
+ */
+function claimOrder(envelope) {
+  return (envelope.claims || [])
+    .map((claim) => claim && claim.record && claim.record.id)
+    .filter(Boolean);
 }
 
 /**
@@ -87,29 +105,101 @@ function evaluateWhen(when, queryScope) {
   return actual === when.value ? "applicable" : "not_applicable";
 }
 
+function sectionAncestors(sectionId, sectionsById) {
+  const ancestors = [];
+  let current = sectionsById.get(sectionId);
+  while (current && current.parent_section_id) {
+    ancestors.push(current.parent_section_id);
+    current = sectionsById.get(current.parent_section_id);
+  }
+  return ancestors;
+}
+
 /**
- * Two signals, not one. `member_record_ids` is a single representative
- * sample per facet in the Stage A data (docs/derived_semantic_layer.md's
- * own design keeps facets narrow and evidenced, not exhaustive), so exact
- * record-id overlap alone under-counts real coverage whenever the router
- * cited different-but-equally-valid evidence from the same section — which
- * is common (e.g. fda_ada's five validation-tier facets each carry one
- * sample record, but a real generated answer usually cites other records
- * from that same section instead). `exact` is the strict signal (this
- * precise declared fact appears); `topical` is the weaker one (some claim
- * at least touched the facet's own section). Status prefers `exact` and
- * only falls back to `topical` when no member was cited at all, so a
- * facet is never reported "covered" on topical grounds alone.
+ * Fix (1): used only to decide whether a manifest is worth *showing* at
+ * all for this query (isManifestRelevant below) — a coarse gate, not the
+ * facet coverage census. Ancestor/descendant alone missed the common case
+ * of immediate siblings under the same parent (e.g. ich_m10's §3.3.1
+ * Analytical Run and §3.3.2 Acceptance Criteria are siblings under §3.3,
+ * genuinely close enough that touching one is a signal the other's
+ * manifest is worth surfacing). Deliberately stops at *immediate*
+ * siblings rather than "any shared ancestor at any depth", which would
+ * degrade to "same document" and defeat the point of filtering at all.
  */
-function facetCoverage(facet, claimIds, claimSectionIds, sectionsById) {
-  if (!facet) return { status: "unknown", covered: 0, total: 0, topical_only: false };
+function sectionsAreRelated(a, b, sectionsById) {
+  if (a === b) return true;
+  const ancestorsOfA = sectionAncestors(a, sectionsById);
+  if (ancestorsOfA.includes(b)) return true;
+  const ancestorsOfB = sectionAncestors(b, sectionsById);
+  if (ancestorsOfB.includes(a)) return true;
+  const parentA = ancestorsOfA[0] ?? null;
+  const parentB = ancestorsOfB[0] ?? null;
+  return parentA !== null && parentA === parentB;
+}
+
+/**
+ * Strict subtree only (facet.scope plus every descendant section) — never
+ * siblings. A sibling section is a different sub-topic; folding its
+ * records into this facet's coverage denominator would make "covered"
+ * mean something looser than what the facet actually declares.
+ */
+function descendantSectionIds(sectionId, childrenBySectionId) {
+  const result = [];
+  const queue = [...(childrenBySectionId.get(sectionId) || [])];
+  while (queue.length > 0) {
+    const current = queue.shift();
+    result.push(current);
+    for (const child of childrenBySectionId.get(current) || []) queue.push(child);
+  }
+  return result;
+}
+
+/**
+ * Fix (2): the real coverage census for a facet — every core-archive
+ * record (knowledge_record / quantitative_criterion / condition) filed
+ * under the facet's own scope section or one of its descendant sections.
+ * Returns null for a facet whose `scope` is the whole document (a pure
+ * grouping facet spanning multiple branches, e.g. ich_m10's
+ * run_acceptance parent or fda_ada's assay_validation parent — these
+ * never carry evidence of their own, only their children do).
+ */
+function expectedRecordIdsForFacet(facet, overlay, sectionIndex) {
+  if (!facet.scope || facet.scope === overlay.document_id) return null;
+  const sectionIds = [facet.scope, ...descendantSectionIds(facet.scope, sectionIndex.childrenBySectionId)];
+  const ids = new Set();
+  for (const sectionId of sectionIds) {
+    for (const id of sectionIndex.recordIdsBySectionId.get(sectionId) || []) ids.add(id);
+  }
+  return ids;
+}
+
+/**
+ * Two independently reported signals rather than one blended boolean:
+ * `exact` is against the facet's hand-curated `member_record_ids` (the
+ * strict "this precise declared fact was cited" signal); `section` is
+ * against the full section census above (the "was this facet's topic
+ * area touched at all, and how much of it" signal). `status` still
+ * collapses to one label for summarizeManifestStatus's roll-up, but
+ * prefers the exact signal and only falls back to a quantified section
+ * reading — never a bare boolean — when no curated member was cited.
+ */
+function facetCoverage(facet, overlay, claimIds, sectionIndex) {
+  if (!facet) return { status: "unknown", exact: { covered: 0, total: 0 }, section: null };
+
   const members = facet.member_record_ids || [];
-  if (members.length === 0) return { status: "not_applicable", covered: 0, total: 0, topical_only: false };
-  const covered = members.filter((id) => claimIds.has(id)).length;
-  if (covered === members.length) return { status: "covered", covered, total: members.length, topical_only: false };
-  if (covered > 0) return { status: "partial", covered, total: members.length, topical_only: false };
-  const topical = Boolean(facet.scope) && [...claimSectionIds].some((sectionId) => sectionsAreRelated(facet.scope, sectionId, sectionsById));
-  return { status: topical ? "partial" : "missing", covered, total: members.length, topical_only: topical };
+  const exactCovered = members.filter((id) => claimIds.has(id)).length;
+  const exact = { covered: exactCovered, total: members.length };
+
+  const expected = expectedRecordIdsForFacet(facet, overlay, sectionIndex);
+  const section = expected === null
+    ? null
+    : { covered: [...expected].filter((id) => claimIds.has(id)).length, total: expected.size };
+
+  if (members.length === 0 && expected === null) return { status: "not_applicable", exact, section };
+  if (exact.total > 0 && exactCovered === exact.total) return { status: "covered", exact, section };
+  if (exactCovered > 0) return { status: "partial", exact, section };
+  if (section && section.covered > 0) return { status: "partial", exact, section };
+  return { status: "missing", exact, section };
 }
 
 /**
@@ -125,22 +215,6 @@ function summarizeManifestStatus(groups) {
   if (facetStatuses.every((status) => status === "covered")) return "complete";
   if (facetStatuses.some((status) => status === "covered" || status === "partial")) return "partial";
   return "unavailable";
-}
-
-function sectionAncestors(sectionId, sectionsById) {
-  const ancestors = [];
-  let current = sectionsById.get(sectionId);
-  while (current && current.parent_section_id) {
-    ancestors.push(current.parent_section_id);
-    current = sectionsById.get(current.parent_section_id);
-  }
-  return ancestors;
-}
-
-function sectionsAreRelated(a, b, sectionsById) {
-  if (a === b) return true;
-  if (sectionAncestors(a, sectionsById).includes(b)) return true;
-  return sectionAncestors(b, sectionsById).includes(a);
 }
 
 function manifestScopeSectionIds(overlay, manifest) {
@@ -185,7 +259,7 @@ function isManifestRelevant(overlay, manifest, resolvedSectionIds, sectionsById)
   return false;
 }
 
-function buildManifestPlan(overlay, manifest, envelopeAnswerIntent, queryScope, claimIds, claimSectionIds, sectionsById) {
+function buildManifestPlan(overlay, manifest, envelopeAnswerIntent, queryScope, claimIds, sectionIndex) {
   const facetsById = new Map((overlay.facets || []).map((facet) => [facet.facet_id, facet]));
   const sortedGroups = [...(manifest.coverage_groups || [])].sort((a, b) => a.display_order - b.display_order);
   const groups = sortedGroups.map((group) => {
@@ -194,7 +268,7 @@ function buildManifestPlan(overlay, manifest, envelopeAnswerIntent, queryScope, 
       ? []
       : group.facet_ids.map((facetId) => ({
           facet_id: facetId,
-          ...facetCoverage(facetsById.get(facetId), claimIds, claimSectionIds, sectionsById)
+          ...facetCoverage(facetsById.get(facetId), overlay, claimIds, sectionIndex)
         }));
     return { group_id: group.group_id, applicability, selection: group.selection, on_ambiguity: group.on_ambiguity, facets };
   });
@@ -220,31 +294,40 @@ function buildSaliencePlans(overlay) {
 }
 
 /**
- * Only reports axes where >=2 of the *resolved* documents actually bind to
- * the same axis_id — matching data/ontology/semantic_concepts.json's
- * comparison_axes is necessary (validation/validate_semantic_overlay.js
- * already enforces that at authoring time) but not sufficient for this
- * query: a shared axis definition that only one side's document uses here
- * isn't a usable comparison row for this answer.
+ * Fix (3): a shared axis definition is necessary but not sufficient to
+ * call a comparison "usable" for this specific answer — each binding is
+ * now annotated with the same facetCoverage() used for manifests, so a
+ * side that was never actually cited (`status: "missing"`) is visible
+ * instead of implied-covered by the axis merely existing. `both_sides_evidenced`
+ * summarizes that per axis: true only when at least two distinct
+ * documents on the axis have non-"missing" coverage.
  */
-function buildComparisonPlan(overlaysByDocumentId, documentIds) {
+function buildComparisonPlan(overlaysByDocumentId, documentIds, claimIds, sectionIndex) {
   if (documentIds.length < 2) return null;
   const axisUsage = new Map();
   for (const documentId of documentIds) {
     const overlay = overlaysByDocumentId.get(documentId);
-    for (const binding of (overlay && overlay.comparison_bindings) || []) {
+    if (!overlay) continue;
+    const facetsById = new Map((overlay.facets || []).map((facet) => [facet.facet_id, facet]));
+    for (const binding of overlay.comparison_bindings || []) {
       if (!axisUsage.has(binding.axis_id)) axisUsage.set(binding.axis_id, []);
       axisUsage.get(binding.axis_id).push({
         document_id: documentId,
         facet_id: binding.facet_id,
         binding_id: binding.binding_id,
-        review_status: binding.review_status
+        review_status: binding.review_status,
+        coverage: facetCoverage(facetsById.get(binding.facet_id), overlay, claimIds, sectionIndex)
       });
     }
   }
   const shared = [...axisUsage.entries()]
     .filter(([, bindings]) => new Set(bindings.map((entry) => entry.document_id)).size >= 2)
-    .map(([axisId, bindings]) => ({ axis_id: axisId, bindings }));
+    .map(([axisId, bindings]) => {
+      const evidencedDocuments = new Set(
+        bindings.filter((entry) => entry.coverage.status !== "missing").map((entry) => entry.document_id)
+      );
+      return { axis_id: axisId, bindings, both_sides_evidenced: evidencedDocuments.size >= 2 };
+    });
   return shared.length > 0 ? shared : null;
 }
 
@@ -252,18 +335,20 @@ function buildShadowPlan(question, envelope, { store } = {}) {
   const semanticStore = store || defaultStore();
   const documentIds = resolveCandidateDocumentIds(envelope);
   const availableDocumentIds = documentIds.filter((id) => semanticStore.overlaysByDocumentId.has(id));
+  // Fix (5): surfaced in every return path (not just the early-return
+  // below) so a query resolving several documents, some stale and some
+  // fine, never has the stale ones silently vanish from the log.
+  const staleDocumentIds = documentIds.filter((id) => semanticStore.staleDocumentIds.has(id));
 
   if (availableDocumentIds.length === 0) {
-    return {
-      applicable: false,
-      reason: documentIds.length === 0 ? "no_resolved_document" : "no_overlay_for_document",
-      document_ids: documentIds
-    };
+    let reason = "no_overlay_for_document";
+    if (documentIds.length === 0) reason = "no_resolved_document";
+    else if (staleDocumentIds.length > 0) reason = "overlay_stale";
+    return { applicable: false, reason, document_ids: documentIds, stale_document_ids: staleDocumentIds };
   }
 
   const queryScope = extractQueryScope(question);
   const claimIds = claimIdSet(envelope);
-  const claimSectionIds = claimSectionIdSet(envelope);
 
   const resolvedSectionIds = (envelope.scope && envelope.scope.section_ids) || [];
   const manifests = [];
@@ -275,7 +360,7 @@ function buildShadowPlan(question, envelope, { store } = {}) {
       if (!isManifestRelevant(overlay, manifest, resolvedSectionIds, semanticStore.archive.sectionsById)) continue;
       manifests.push({
         document_id: documentId,
-        ...buildManifestPlan(overlay, manifest, envelope.answer_intent, queryScope, claimIds, claimSectionIds, semanticStore.archive.sectionsById)
+        ...buildManifestPlan(overlay, manifest, envelope.answer_intent, queryScope, claimIds, semanticStore.sectionIndex)
       });
       for (const group of manifest.coverage_groups || []) {
         for (const facetId of group.facet_ids || []) relevantFacetIds.add(facetId);
@@ -293,7 +378,7 @@ function buildShadowPlan(question, envelope, { store } = {}) {
     }
   }
 
-  const comparison = buildComparisonPlan(semanticStore.overlaysByDocumentId, availableDocumentIds);
+  const comparison = buildComparisonPlan(semanticStore.overlaysByDocumentId, availableDocumentIds, claimIds, semanticStore.sectionIndex);
   const applicable = manifests.length > 0 || comparison !== null;
 
   return {
@@ -301,13 +386,15 @@ function buildShadowPlan(question, envelope, { store } = {}) {
     // Only set when !applicable, so a truthy `reason` is always exactly
     // the signal "no plan was built" — never present alongside real
     // manifests/comparison output. Distinct from "no_resolved_document"
-    // and "no_overlay_for_document" above: this document has an overlay,
-    // it just has no coverage_manifest and (if only one document
-    // resolved, or none shares a comparison axis) no comparison binding
-    // either — e.g. ich_m3_r2's overlay is comparison-only and produces
-    // nothing outside a multi-document comparison query.
+    // and "no_overlay_for_document"/"overlay_stale" above: this document
+    // has a working overlay, it just has no coverage_manifest and (if
+    // only one document resolved, or none shares a comparison axis) no
+    // comparison binding either — e.g. ich_m3_r2's overlay is
+    // comparison-only and produces nothing outside a multi-document
+    // comparison query.
     ...(applicable ? {} : { reason: "no_applicable_manifest_or_axis" }),
     document_ids: availableDocumentIds,
+    stale_document_ids: staleDocumentIds,
     query_scope: queryScope,
     manifests,
     salience,
@@ -325,7 +412,8 @@ function comparePlans(question, envelope, options) {
       answer_intent: envelope.answer_intent ?? null,
       scope: envelope.scope ?? null,
       coverage: envelope.coverage ?? null,
-      claim_count: (envelope.claims || []).length
+      claim_count: (envelope.claims || []).length,
+      claim_order: claimOrder(envelope)
     },
     semantic_plan: shadowPlan
   };

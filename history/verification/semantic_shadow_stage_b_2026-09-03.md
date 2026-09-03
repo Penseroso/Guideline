@@ -84,8 +84,45 @@ Stage A/B는 순수하게 읽기 전용·부가적이므로 이번 실행으로 
 - `ich_m3_r2`/`ich_s6_r1`의 `scope.product_or_matrix` comparison binding: envelope.scope가 비어도 안정적으로 동작함을 확인했다 — 승격 검토 후보.
 - `fda_ada.sem.manifest.assay_validation`: exact 신호만으로는 오탐(false negative)을 만들 뻔했다는 것이 이번 실행에서 드러난 유일한 유보 사항이다. Stage C로 승격하기 전에 각 facet의 `member_record_ids`를 대표 1개에서 해당 section의 실제 근거 집합으로 넓히는 편이 안전하다.
 
-## 6. 알려진 한계 (다음 이터레이션 후보)
+## 6. 알려진 한계 (1차 실행 시점)
 
 - `isManifestRelevant`의 section 관련성 판정은 정확히 같은 section이거나 조상/자손 section일 때만 "관련"으로 본다 — 남매(sibling) section 관계는 잡지 못한다.
 - `facetCoverage`의 topical 신호는 "같은 section에서 뭔가 인용됐다"까지만 확인하고 "그 section의 어떤 하위 주제가 인용됐는지"는 구분하지 않는다 — facet당 대표 근거가 여러 개로 늘어나면 다시 exact 신호 위주로 좁힐 수 있다.
 - 아직 실행 엔진이 이 plan을 답변 조립에 사용하지 않는다(Stage C 이전). 이 문서는 shadow 로그를 사람이 읽고 판단하기 위한 요약이다.
+
+이 다섯 항목(§7에서 다섯 번째까지 나열) 모두 특정 문항의 결과를 손으로 맞추는 patch가 아니라 `engine/semantic_shadow.js`/`engine/semantic_overlay_store.js`의 알고리즘 자체를 고치는 구조적 수정으로 처리했다 — 아래 §7.
+
+## 7. 구조적 개선 (같은 날 반영, 재실행 완료)
+
+1차 실행에서 나온 다섯 가지 한계를 전부 알고리즘 수준에서 고쳤다. 특정 질문을 통과시키기 위한 예외 처리가 아니라, 앞으로 만들 모든 facet/manifest/comparison_binding에 똑같이 적용되는 일반 규칙으로 구현했다.
+
+### 7.1 `facetCoverage` — 대표 근거 1개 의존 제거 (구조 문제 #2, 가장 근본적)
+
+기존에는 facet의 `member_record_ids`(대표 근거 1개)와 정확히 일치하는지만 봤다. 이제 `engine/semantic_overlay_store.js`가 서버 기동 시 코어 아카이브 전체를 section별로 색인(`sectionIndex.recordIdsBySectionId`, `childrenBySectionId`)해 두고, `engine/semantic_shadow.js`의 `expectedRecordIdsForFacet`가 facet의 `scope`와 그 하위 section 전체에 속한 실제 레코드 집합("section census")을 계산한다. `facetCoverage`는 이제 두 신호를 각각 보고한다:
+
+- `exact`: 사람이 고른 대표 근거와의 정확 일치(정밀 신호)
+- `section`: facet scope 전체 section census 대비 실제 인용 수(재현율 신호)
+
+`status`는 `exact`를 우선하고, `exact`가 0일 때만 `section.covered > 0`으로 `partial`로 완화한다 — 이전의 boolean `topical_only` 플래그를 정량적인 `{covered, total}`로 교체했다. facet.scope가 문서 전체인 순수 그룹핑 facet(예: `ich_m10.sem.facet.run_acceptance` 부모)은 여전히 `not_applicable`로 남는다(자기 자신의 근거가 없는 추상화이므로).
+
+### 7.2 `sectionsAreRelated` — 남매(sibling) section 인식 (구조 문제 #1)
+
+manifest가 이 질문에 "관련 있는지" 판정하는 `isManifestRelevant`에서만 쓰는 함수에 같은 부모를 공유하는 남매 section 판정을 추가했다(조상/자손 판정에 no-hit일 때만 부모 비교). 임의 깊이의 공통 조상까지 허용하면 "같은 문서"로 퇴화하므로 의도적으로 직계 남매까지만 허용한다. `facetCoverage`의 section census(§7.1)는 이 완화된 관련성 판정을 쓰지 않는다 — 남매 section의 레코드를 커버리지 분모에 섞으면 그 facet이 실제로 다루는 내용보다 헐거운 기준이 되기 때문에, census는 여전히 엄격하게 scope의 직계 하위 트리만 본다.
+
+### 7.3 `buildComparisonPlan` — 근거 확인 없이 "비교 가능"으로 뜨는 문제 (구조 문제 #3)
+
+공통 axis가 있다는 사실만으로 비교가 "이용 가능"하다고 표시하던 것을 고쳤다. 이제 axis에 걸린 각 문서의 binding에 `facetCoverage`를 그대로 적용해 `coverage` 필드를 붙이고, 축 단위로 `both_sides_evidenced`(최소 두 문서가 `missing`이 아닌 상태로 실제 근거를 인용했는지)를 계산한다. 근거가 없는 쪽도 숨기지 않고 `coverage.status: "missing"`으로 그대로 보여준다 — §9 "보수적 실패" 원칙과 일치.
+
+### 7.4 `existing_plan.claim_order` — 기존 순서 미기록 (구조 문제 #4)
+
+`comparePlans`가 이제 `envelope.claims`의 실제 렌더링 순서를 `existing_plan.claim_order`(record id 배열)로 함께 기록한다. `semantic_plan.salience[].order`(새 레이어가 제안하는 순서)와 나란히 놓고 비교할 수 있게 됐다 — Stage B 설계 문서의 "순서... 나란히 기록한다" 요구를 완전히 충족한다(1차 실행 때는 새 레이어 쪽 순서만 기록했었다).
+
+### 7.5 stale 여부가 로그에서 사라지는 문제 (구조 문제 #5)
+
+`buildShadowPlan`이 이제 후보 문서 중 stale 판정된 것을 `stale_document_ids`로 모든 반환 경로에 포함하고, 오버레이가 하나도 없을 때의 `reason`을 `"no_resolved_document"` / `"overlay_stale"` / `"no_overlay_for_document"` 세 가지로 구분한다. "애초에 안 만들었다"와 "만들었는데 코어 데이터가 바뀌어 깨졌다"가 이제 로그에서 구분된다.
+
+### 재실행 결과
+
+`scripts/run_semantic_shadow_audit.js`로 50문항을 다시 재생한 결과, applicable 21/50·상태 분포(ambiguous 2 / unavailable 4 / partial 14)는 1차 실행과 동일하게 유지됐다(회귀 없음). 다만 로그 자체의 정보량이 늘었다 — 예를 들어 Q06의 chromatography facet은 이제 `exact: {covered:4, total:6}` / `section: {covered:4, total:18}`으로, Q49의 comparison binding은 양쪽 `coverage.status`와 `both_sides_evidenced: true`로 각각 정량화되어 기록된다.
+
+테스트는 `test/engine_semantic_shadow.test.js`에 다섯 항목 각각에 대한 케이스를 추가해 15개로 늘렸다(기존 10개 + 남매 section 관련성 2개, section census fallback 1개, comparison coverage 주석 1개, claim_order/stale 2개, 관련 기존 케이스 보강).
