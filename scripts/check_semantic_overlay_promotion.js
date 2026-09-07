@@ -6,7 +6,7 @@
  * mixes objectively-checkable facts (schema/validator pass, no stale
  * objects) with outcome judgments that fundamentally cannot be verified
  * before Stage C exists to produce the outcome (whether the 50-question
- * audit's 적합 count actually goes up), so promotion stays a human
+ * audit's 부적합 count goes down without regression), so promotion stays a human
  * decision. What this script automates is: checking everything that CAN
  * be checked mechanically today, and separating that cleanly from what
  * still needs a human to look at the Stage C wiring plus a fresh audit
@@ -25,7 +25,7 @@ const RUNTIME_DIR = path.join(ROOT, "logs", "runtime");
 // rather than duplicated per manifest — they depend on Stage C existing
 // (an actual served answer to judge) or on a human audit pass.
 const PENDING_HUMAN_CRITERIA = [
-  "50문항 감사에서 전체 적합 응답 수가 증가하고 기존 적합 응답이 회귀하지 않는다 (Stage C 구현 후 재감사 필요)",
+  "50문항 감사에서 부적합 응답 수가 감소하고 기존 적합 응답이 회귀하지 않는다 (Stage C 구현 후 재감사 필요)",
   "각 생성 문장과 UI 근거 카드가 document, section, record/source unit으로 추적된다 (Stage C UI 필요)"
 ];
 

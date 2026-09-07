@@ -114,17 +114,12 @@ test("grounded-generation deadline aborts provider requests and never exceeds tw
   let generationCalls = 0;
   let aborts = 0;
   const generatorClient = {
-    complete: ({ signal }) => new Promise((resolve, reject) => {
+    complete: ({ signal }) => new Promise((_resolve, reject) => {
       generationCalls++;
       active++;
       maxActive = Math.max(maxActive, active);
-      const timer = setTimeout(() => {
-        active--;
-        resolve({ answered: true, units: [{ text: "late", source_index: 0 }] });
-      }, 200);
       signal.addEventListener("abort", () => {
         aborts++;
-        clearTimeout(timer);
         active--;
         reject(signal.reason);
       }, { once: true });
@@ -132,20 +127,36 @@ test("grounded-generation deadline aborts provider requests and never exceeds tw
   };
   const verifierClient = { complete: async () => ({ verdicts: [] }) };
   const store = { search: async () => [{ record: candidate, score: 1 }] };
+  const deadlines = [];
+  let resolveAllDeadlinesRegistered;
+  const allDeadlinesRegistered = new Promise((resolve) => { resolveAllDeadlinesRegistered = resolve; });
+  const deadlineTimers = {
+    setTimeout: (expire) => {
+      deadlines.push(expire);
+      if (deadlines.length === 4) resolveAllDeadlinesRegistered();
+      return expire;
+    },
+    clearTimeout: () => {}
+  };
 
   await withServer({
     deps: { generatorClient, verifierClient, store, generatorProvider: "mock-a", verifierProvider: "mock-b", fallbackMode: "grounded_generation" },
-    fallbackTimeoutMs: 25
+    fallbackTimeoutMs: 25,
+    deadlineTimers
   }, async ({ base }) => {
     const request = () => fetch(`${base}/api/ask`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ question: "zzzz grounded generation deadline probe", allow_fallback: true })
     });
-    const responses = await Promise.all([request(), request(), request(), request()]);
+    const pendingResponses = Promise.all([request(), request(), request(), request()]);
+    await allDeadlinesRegistered;
+    const observedBeforeDeadline = { generationCalls, maxActive };
+    deadlines.forEach((expire) => expire());
+    const responses = await pendingResponses;
     assert.deepEqual(responses.map((response) => response.status), [504, 504, 504, 504]);
-    assert.equal(maxActive, 2);
-    assert.ok(generationCalls >= 2 && generationCalls <= 4);
+    assert.deepEqual(observedBeforeDeadline, { generationCalls: 2, maxActive: 2 });
+    assert.equal(generationCalls, 2, "queued requests must not start after their deadlines abort them");
     assert.equal(aborts, generationCalls, "every provider request that started must receive the deadline abort");
   });
 });

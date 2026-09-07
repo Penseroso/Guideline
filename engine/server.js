@@ -131,17 +131,19 @@ function createGroundedGenerationScheduler(limit, queueCap = GROUNDED_GENERATION
   };
 }
 
-function withAbortDeadline(promise, controller, ms, label) {
+function withAbortDeadline(promise, controller, ms, label, timers = {}) {
+  const setDeadline = timers.setTimeout || setTimeout;
+  const clearDeadline = timers.clearTimeout || clearTimeout;
   let timer;
   const aborted = new Promise((_, reject) => {
     const rejectForAbort = () => reject(controller.signal.reason || Object.assign(new Error(`${label} aborted`), { statusCode: 504 }));
     if (controller.signal.aborted) return rejectForAbort();
     controller.signal.addEventListener("abort", rejectForAbort, { once: true });
-    timer = setTimeout(() => {
+    timer = setDeadline(() => {
       controller.abort(Object.assign(new Error(`${label} timed out after ${ms}ms`), { statusCode: 504 }));
     }, ms);
   });
-  return Promise.race([promise, aborted]).finally(() => clearTimeout(timer));
+  return Promise.race([promise, aborted]).finally(() => clearDeadline(timer));
 }
 
 function tokensEqual(provided, expected) {
@@ -229,7 +231,7 @@ function registerUnhandledRejectionLogger() {
 }
 
 /**
- * startServer({ port, host, authToken, fallbackTimeoutMs, deps }) -> http.Server
+ * startServer({ port, host, authToken, fallbackTimeoutMs, deadlineTimers, deps }) -> http.Server
  * `deps` (optional): { generatorClient, verifierClient, store,
  * fallbackMode } to inject instead of the real
  * setUpAnswering() — used by tests to avoid a live LLM call, and by callers
@@ -240,6 +242,7 @@ function startServer({
   host = process.env.GUIDELINE_HOST || "127.0.0.1",
   authToken = process.env.GUIDELINE_AUTH_TOKEN || "",
   fallbackTimeoutMs = Number(process.env.GUIDELINE_FALLBACK_TIMEOUT_MS) || DEFAULT_FALLBACK_TIMEOUT_MS,
+  deadlineTimers,
   deps,
   // Overridable so tests never write into the real logs/ files — logs/
   // Tests inject temporary paths so runtime interaction logs are never
@@ -375,7 +378,7 @@ function startServer({
           () => answerEnvelope(body.question, records, { ...effectiveDeps, signal: controller.signal }),
           { signal: controller.signal }
         );
-        envelope = await withAbortDeadline(scheduled, controller, fallbackTimeoutMs, "grounded generation");
+        envelope = await withAbortDeadline(scheduled, controller, fallbackTimeoutMs, "grounded generation", deadlineTimers);
       } else {
         envelope = await answerEnvelope(body.question, records, effectiveDeps);
       }
