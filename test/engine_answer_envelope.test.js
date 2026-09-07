@@ -82,13 +82,18 @@ test("a header-level question exposes section_overview as a distinct response co
 });
 
 test("auto preference synthesizes broad semantic modes but preserves exact section-overview rendering", async () => {
+  // This question's structuredQuery match carries exactly 3 candidate
+  // claims, at generatedCoverageIsAdequate's SMALL_CANDIDATE_SET_CEILING —
+  // narrating fewer than all 3 (as a single-unit stub previously did) now
+  // correctly fails that completeness gate and falls back to structured,
+  // so the stub must cover every candidate like a real generation would.
   let calls = 0;
   const client = {
     complete: async ({ schema }) => {
       calls++;
       return schema.properties.verdicts
-        ? { verdicts: [{ unit_index: 0, entailed: true, source_index: 0, reason: "supported" }] }
-        : { answered: true, units: [{ text: "근거 범위 안에서 종합한 답변입니다.", source_index: 0 }] };
+        ? { verdicts: [0, 1, 2].map((i) => ({ unit_index: i, entailed: true, source_index: i, reason: "supported" })) }
+        : { answered: true, units: [0, 1, 2].map((i) => ({ text: `근거 범위 안에서 종합한 답변입니다. (${i})`, source_index: i })) };
     }
   };
 

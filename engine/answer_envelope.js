@@ -77,6 +77,17 @@ function safeReviewedSemanticCoverage(question, envelope) {
   }
 }
 
+// A candidate set this small has little room for the model to legitimately
+// treat one as redundant — found via the Stage C re-audit's Q45 regression:
+// the router retrieved exactly 3 candidates (including the source's own
+// stated quantitative-risk-assessment limitation), the model silently
+// narrated only 2, and nothing caught it since none of the three shape
+// checks below (document_overview/multi_criterion/comparison) applied to
+// this plain narrow-topic question. A large candidate set can genuinely
+// have overlapping/redundant excerpts worth consolidating, so this floor
+// only applies below a small fixed ceiling, not to every question.
+const SMALL_CANDIDATE_SET_CEILING = 3;
+
 function generatedCoverageIsAdequate(match, generated) {
   const generatedUnits = new Set((generated.claims || []).map((claim) => claim.source_unit_id).filter(Boolean));
   if (match.isDocumentOverview) {
@@ -88,12 +99,18 @@ function generatedCoverageIsAdequate(match, generated) {
     const expectedUnits = new Set((match.claims || []).map((claim) => claim.source_unit_id).filter(Boolean));
     if (generatedUnits.size < Math.min(2, expectedUnits.size)) return false;
   }
-  if (!match.isComparison) return true;
-  const expectedDocuments = new Set((match.claims || [])
-    .map((claim) => claim.record && claim.record.document_id).filter(Boolean));
-  const generatedDocuments = new Set((generated.claims || [])
-    .map((claim) => claim.record && claim.record.document_id).filter(Boolean));
-  return [...expectedDocuments].every((documentId) => generatedDocuments.has(documentId));
+  if (match.isComparison) {
+    const expectedDocuments = new Set((match.claims || [])
+      .map((claim) => claim.record && claim.record.document_id).filter(Boolean));
+    const generatedDocuments = new Set((generated.claims || [])
+      .map((claim) => claim.record && claim.record.document_id).filter(Boolean));
+    return [...expectedDocuments].every((documentId) => generatedDocuments.has(documentId));
+  }
+  const expectedUnits = new Set((match.claims || []).map((claim) => claim.source_unit_id).filter(Boolean));
+  if (expectedUnits.size > 0 && expectedUnits.size <= SMALL_CANDIDATE_SET_CEILING) {
+    return generatedUnits.size >= expectedUnits.size;
+  }
+  return true;
 }
 
 /**
