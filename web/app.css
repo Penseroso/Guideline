@@ -180,6 +180,7 @@ body.idle .result-panel { display: none; }
 .semantic-coverage-comparison ul { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 5px 0 0; padding: 0; list-style: none; }
 .semantic-coverage-comparison li { color: var(--text-dim); font-size: .8rem; }
 .semantic-coverage-comparison li strong { color: var(--accent); margin-right: 4px; }
+.semantic-coverage-fraction { color: var(--text-faint); font-size: .74rem; }
 .answer-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 360px); gap: 48px; align-items: start; }
 .answer-primary { min-width: 0; }
 /* Wraps the right-hand column for the mode that already had one

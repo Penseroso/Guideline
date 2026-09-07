@@ -56,6 +56,7 @@ const i18n = {
   semanticCoverageStatusUnavailable: "No sub-items found.",
   semanticCoverageMissingLabel: "Not confirmed",
   semanticCoverageComparisonLabel: "Comparison-axis evidence",
+  semanticCoverageFraction: "{covered}/{total} confirmed",
   sectionOverviewIndex: "Child sections",
   sectionSynopsisTitle: "Key synopsis",
   originalEvidence: "Source evidence",
@@ -450,6 +451,55 @@ test("renderSemanticCoverage renders a comparison axis block using each side's g
   assert.match(html, /Comparison-axis evidence/);
   assert.match(html, /<strong>M3\(R2\)<\/strong> Some sub-items may be missing\./);
   assert.match(html, /<strong>S6\(R1\)<\/strong> Some sub-items may be missing\./);
+});
+
+test("renderSemanticCoverage's comparison axis surfaces each side's own coverage fraction, not just a shared status word", () => {
+  // Two sides can both read "partial" while one has near-zero actual
+  // coverage and the other doesn't (found in the Q49 Stage C re-audit:
+  // M3(R2) exact 0/2 vs S6(R1) exact 1/3, both bucketed "partial") — the
+  // fraction is what lets a reader tell the two "partial"s apart.
+  const envelope = {
+    claims: [
+      { citation: { document_id: "ich_m3_r2", guideline_code: "M3(R2)" } },
+      { citation: { document_id: "ich_s6_r1", guideline_code: "S6(R1)" } }
+    ],
+    semantic_coverage: {
+      manifests: [],
+      comparison: [
+        {
+          axis_id: "scope.product_or_matrix",
+          both_sides_evidenced: true,
+          bindings: [
+            { document_id: "ich_m3_r2", coverage: { status: "partial", exact: { covered: 0, total: 2 }, section: { covered: 1, total: 17 } } },
+            { document_id: "ich_s6_r1", coverage: { status: "partial", exact: { covered: 1, total: 3 }, section: { covered: 1, total: 5 } } }
+          ]
+        }
+      ]
+    }
+  };
+  const html = R.renderSemanticCoverage(envelope, i18n);
+  assert.match(html, /<strong>M3\(R2\)<\/strong> Some sub-items may be missing\. <span class="semantic-coverage-fraction">\(0\/2 confirmed\)<\/span>/);
+  assert.match(html, /<strong>S6\(R1\)<\/strong> Some sub-items may be missing\. <span class="semantic-coverage-fraction">\(1\/3 confirmed\)<\/span>/);
+});
+
+test("renderSemanticCoverage's coverage fraction falls back to the section census when a facet has no curated exact members", () => {
+  const envelope = {
+    claims: [{ citation: { document_id: "ich_m3_r2", guideline_code: "M3(R2)" } }],
+    semantic_coverage: {
+      manifests: [],
+      comparison: [
+        {
+          axis_id: "axis.x",
+          both_sides_evidenced: false,
+          bindings: [
+            { document_id: "ich_m3_r2", coverage: { status: "partial", exact: { covered: 0, total: 0 }, section: { covered: 2, total: 6 } } }
+          ]
+        }
+      ]
+    }
+  };
+  const html = R.renderSemanticCoverage(envelope, i18n);
+  assert.match(html, /\(2\/6 confirmed\)/);
 });
 
 test("source excerpt fallback is explicitly warned and duplicate source evidence is rendered once", () => {

@@ -385,6 +385,25 @@
     return i18n[key] || status;
   }
 
+  /**
+   * A comparison axis collapses each side to one status word ("partial"),
+   * unlike a manifest's per-facet missing list — so two sides can both
+   * read "partial" while one has near-zero actual coverage and the other
+   * doesn't (e.g. exact 1/3 vs 0/2, section 1/5 vs 1/17), a real asymmetry
+   * the status word alone can't show. Surfaces whichever ratio is
+   * meaningful (curated `exact` members first, falling back to the
+   * broader `section` census when a facet has no curated members at all)
+   * so a reader can judge severity themselves instead of trusting one
+   * shared label. Returns "" when neither denominator is populated.
+   */
+  function coverageFractionLabel(i18n, coverage) {
+    const source = coverage && coverage.exact && coverage.exact.total > 0 ? coverage.exact
+      : coverage && coverage.section && coverage.section.total > 0 ? coverage.section
+        : null;
+    if (!source) return "";
+    return i18n.semanticCoverageFraction.replace("{covered}", source.covered).replace("{total}", source.total);
+  }
+
   // No curated guideline-label lookup exists in this pure render module —
   // reuse whatever the claims already carry (the same citations answer-scope
   // itself renders from) so a comparison axis reads "M3(R2): partial" rather
@@ -414,7 +433,9 @@
     const comparisonBlocks = comparisons.map((axis) => {
       const sides = axis.bindings.map((binding) => {
         const label = guidelineLabelForDocument(envelope, binding.document_id);
-        return `<li><strong>${escapeHtml(label)}</strong> ${escapeHtml(statusLabel(i18n, binding.coverage.status))}</li>`;
+        const fraction = coverageFractionLabel(i18n, binding.coverage);
+        const fractionHtml = fraction ? ` <span class="semantic-coverage-fraction">(${escapeHtml(fraction)})</span>` : "";
+        return `<li><strong>${escapeHtml(label)}</strong> ${escapeHtml(statusLabel(i18n, binding.coverage.status))}${fractionHtml}</li>`;
       }).join("");
       return `<div class="semantic-coverage-comparison" data-both-sides-evidenced="${axis.both_sides_evidenced}"><span class="semantic-coverage-axis-label">${escapeHtml(i18n.semanticCoverageComparisonLabel)}</span><ul>${sides}</ul></div>`;
     }).join("");

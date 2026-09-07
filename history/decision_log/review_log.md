@@ -247,3 +247,16 @@ Use this document to record human review results after review is performed. Do n
 - Validation command: `npm.cmd test` (67/67 pass); `npm.cmd run validate:pilots` (Validated 5 pilot bundle(s)); `npm.cmd run validate:derived` (Validated 4 amendment mapping(s) and 4 EffectiveRecord(s)); `git diff --check` (clean); protected-file diff checks for `structured_data/`, `structured_data/schemas/guideline_bundle.schema.json`, `scripts/`, `test/`, `package.json`, `package-lock.json`, and `Guideline Files/` (no unintended changes).
 - Follow-up owner: Phase 4 owner
 - Status: Resolved
+
+### REV-012: Section-retrieval bug found during Stage C re-audit (fda_ada / fda_ada_2014 risk-factor questions), out of Stage C scope
+
+- Date: 2026-09-03
+- Reviewer: Repository review (Stage C §11 promotion re-audit)
+- Scope reviewed: `history/verification/answer_suitability_audit_2026-09-03_stagec.md` §3's Q20 finding, isolated from the rest of that audit's Stage C disclosure judgments.
+- Source document: FDA 2014 clinical immunogenicity guidance (`fda_ada_2014`), FDA 2019 ADA assay guidance (`fda_ada`).
+- Files reviewed: `logs/runtime/answer_suitability_50_raw_2026-09-03_stagec.json` (Q20 and Q21 envelopes), `engine/query_router.js` (section/document resolution).
+- Findings: Q20 ("치료용 단백질의 임상 면역원성 위험요인은 크게 뭐가 있어?" — what are the broad clinical immunogenicity risk factors) resolves to `fda_ada.sec.4_l_1`, `fda_ada_2014.sec.6`, `fda_ada.sec.3_b`, `fda_ada_2014.sec.3_b`, `fda_ada.sec.3` — none of which are the actual patient/product risk-factor sections (`fda_ada_2014.sec.5_a_*`, `.sec.5_b_*`). Q21, asking a closely related risk-factor comparison question in the same run, correctly resolves to exactly those `5_a_*`/`5_b_*` sections. The router's document/section resolution step is pulling from conclusion and safety-outcome sections instead of the actual risk-factor sections for this phrasing. Because no candidate claim ever lands in the right section, Stage C's `semantic_coverage` disclosure has no section overlap to compute against and never fires for Q20 — this is a pre-existing retrieval/routing defect in `engine/query_router.js`, not something Stage C's disclosure-only design (`engine/semantic_shadow.js`, `engine/answer_envelope.js`) could ever surface or cause, since disclosure only runs after retrieval and generation are already complete.
+- Required corrections: None applied by this review. The fix belongs to `engine/query_router.js`'s section-resolution/keyword-matching logic for broad risk-factor phrasings, not to the derived semantic layer — deliberately left out of Stage C's scope so as not to bundle an unrelated engine change into the Stage C promotion decision.
+- Unresolved items: `engine/query_router.js` section resolution for Q20-shaped questions ("위험요인은 크게 뭐가 있어" style broad risk-factor questions against `fda_ada_2014`) still returns the wrong sections. Needs its own root-cause investigation and fix, independent of the derived semantic layer work.
+- Follow-up owner: Query-router maintainer (next engine-quality pass)
+- Status: Open

@@ -62,6 +62,8 @@ route/mode 분포:
 - 원문(S6(R1) §2.3, Q43 감사에서 확인됨)은 "homologous protein 연구는 hazard detection에는 쓰일 수 있으나 정량적 위험평가에는 일반적으로 유용하지 않다"는 한계를 명시하는데, Q45의 현재 답변에는 이 정량적 위험평가 한계 문장이 전혀 없다 — 대안 존재만 말하고 그 한계는 빠졌다. 원 감사가 적합 판정의 근거로 명시한 요소가 이번 실행에서 누락됐다.
 - Stage C disclosure(`semantic_coverage`)는 S6(R1)에 대한 승격된 manifest가 없어 이 문항에는 애초에 붙지 않는다 — 즉 이 회귀는 Stage C의 직접적 부작용이 아니라 생성 라우팅의 실행 변동(같은 질문, 같은 route, 다른 실행에서 더 짧은 답변)으로 보인다. 원인이 Stage C 코드 변경인지 순수 LLM 샘플링 변동인지는 이번 재감사만으로 단정할 수 없다 — 근본 원인 확인이 필요하다.
 
+**후속 확인 결과 (2026-09-03, 원인 확정)**: `logs/runtime/answer_suitability_50_raw_2026-09-03_stagec.json`의 Q45 envelope를 직접 확인한 결과, `coverage.claim_count`는 3(라우터가 찾은 후보 근거 수)인데 `coverage.generated_claim_count`/`claims.length`는 2다 — 즉 라우터는 정량적 위험평가 한계 레코드(`ich_s6_r1.kr.part2_2_3.002`, 섹션 `ich_s6_r1.sec.part2.2_3`)가 포함된 올바른 섹션을 정확히 찾아 후보로 넘겼지만(`scope.section_ids`에 해당 섹션 포함), grounded_generation의 LLM 생성 단계가 그 후보 3개 중 2개만 골라 서술에 반영했다. 또한 `engine/answer_envelope.js`에서 `envelope.semantic_coverage = safeReviewedSemanticCoverage(...)` 호출은 `generated.claims`/`generated.text`가 이미 확정된 **이후**에 실행되며 그 값을 읽기만 할 뿐 되돌려 쓰지 않는다 — Stage C 코드는 구조적으로 claim 선택이나 prose 생성에 관여할 수 없다. 두 사실을 종합하면 이 회귀는 Stage C 코드 변경과 무관하며, LLM가 동일한 후보 근거 집합에서 서술에 포함할 근거를 고르는 생성 단계 자체의 실행별 변동이다 — §11 기준 3의 "회귀"가 Stage C 탓은 아니라고 결론 내린다. 다만 이 생성-측 근거 선택 변동 자체는 Stage C와 별개로 존재해 온 위험이며, 근본적 완화책(예: 후보 근거를 모두 인용하도록 강제하거나 최소 인용 수를 강제)은 이번 범위 밖의 별도 과제로 남는다.
+
 ## 5. 참고 관찰 (판정 변경 없음, 재확인 권장)
 
 - **Q23** (부분, 불변): 답변이 문장 1개·근거 1건으로 극히 짧아졌다. 핵심 주장(SC가 IV보다 면역원성 높음)은 정확하고 출처가 있어 최소 계약은 만족하지만, dose/frequency 축은 완전히 사라졌다 — 직전 감사의 "축이 부족하다"보다 더 얇아진 상태. 판정 유지에는 문제 없으나 내용 빈약화 추세는 주시할 필요.
@@ -132,3 +134,13 @@ Stage C의 disclosure 메커니즘은 설계 의도대로 작동한다 — 검�
 4. Q45에서 기존 적합 문항이 부분 적합으로 회귀했다 — §11 기준 3("적합 수 증가, 기존 적합 회귀 없음")은 엄밀하게 미충족이다.
 
 **권고**: Stage C를 "현재 구현 범위(coverage disclosure)"로 §11 승인하기 전에, (a) Q45 회귀의 원인이 Stage C 코드 변경인지 순수 LLM 변동인지 확인하고, (b) Q20의 검색 단계 결함(잘못된 섹션에서 근거 회수)은 Stage C 밖의 별도 엔진 버그로 이슈화하고, (c) Q49의 disclosure 문구가 "부분"이라는 일반 등급 대신 구체적으로 무엇이 비어있는지("M3 scope 절 정규화가 불완전합니다" 등) 보여주도록 개선을 검토할 것을 권고한다. 이 셋을 해결하지 않고 그대로 §11에 "승인 완료"로 기록하는 것은 근거가 약하다.
+
+## 8. 후속 조치 (2026-09-03, 이어서 수행)
+
+세 권고 항목을 모두 처리했다.
+
+- **(a) Q45 원인 확정** — §4 후속 확인 결과 참조. 라우터는 정량적 위험평가 한계 레코드가 있는 올바른 섹션을 정확히 후보로 찾았으나(`coverage.claim_count: 3`), grounded_generation의 LLM 생성 단계가 그 중 2개만 서술에 반영했다(`generated_claim_count: 2`). `engine/answer_envelope.js`에서 Stage C의 `semantic_coverage` 할당은 `generated.claims`/`generated.text`가 이미 확정된 뒤 읽기 전용으로 실행되므로, 구조적으로 이 회귀에 관여할 수 없다. **결론: Q45 회귀는 Stage C 코드와 무관한, 생성 단계의 실행별 변동이다.**
+- **(b) Q20 이슈화 완료** — `history/decision_log/review_log.md`의 REV-012로 기록. `engine/query_router.js`의 위험요인 질문 섹션 해석 결함이며 Status: Open, Follow-up owner: Query-router maintainer. Stage C 코드는 수정하지 않았다.
+- **(c) Q49 disclosure 개선 완료** — 비교 축 disclosure가 이제 상태 단어 옆에 실제 커버리지 분수(`exact` 우선, 없으면 `section`)를 함께 표시한다(`web/render.js`의 `coverageFractionLabel`, `web/app.css`의 `.semantic-coverage-fraction`). 특정 문항용 패치가 아니라 모든 comparison axis 렌더링에 적용되는 구조적 변경이다. Q49의 실제 저장된 envelope로 직접 렌더링해 확인: "S6(R1) 일부 세부 항목이 빠졌을 수 있습니다. **(1/3 확인)**" vs "ICH M3(R2) 일부 세부 항목이 빠졌을 수 있습니다. **(0/2 확인)**" — 이전에는 양쪽 다 동일한 "일부 빠짐" 문구뿐이었던 것이, 이제 0/2와 1/3의 비대칭이 명시적으로 드러난다. 단위 테스트 2건 추가(`test/web_render.test.js`), 전체 336개 테스트 통과. 이번 라운드에서는 저장된 실 데이터로 렌더 함수를 직접 검증했고, 브라우저 재확인은 하지 않았다.
+
+**§11 기준 3 최종 판정에 대한 남은 쟁점**: (a)(b)(c)를 모두 처리해도 적합 수는 여전히 16→15(Q45 회귀 1건)이고, 5개 원 부적합 중 3개가 부분 적합으로 개선됐을 뿐 **적합으로 승격된 문항은 0개**다. 이는 우연이 아니라 구조적이다 — Stage C는 설계상 disclosure-only이며(§10 각주: "coverage 상태 disclosure"만 다룸), 콘텐츠 결함 자체(QC 분모 누락, drug tolerance 누락, dose-selection 축소 등)를 고치지 않는다. disclosure만으로는 부적합을 적합으로 만들 수 없고, 최선의 경우도 "부적합 감소, 적합 유지"까지다. 즉 §11 기준 3을 문자 그대로("적합 수가 증가") 읽으면 Stage C가 아무리 잘 작동해도 구조적으로 충족 불가능한 기준이다. 이 재해석(문자 그대로의 증가 대신 "부적합 감소 + 기존 적합 무회귀"로 완화)을 받아들일지는 엔지니어링 판단이 아니라 프로젝트 승인 기준에 대한 결정이므로, §11에 "승인 완료"를 기록하기 전에 확인이 필요하다.
