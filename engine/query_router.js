@@ -92,7 +92,18 @@ function classifyAnswerIntent(question, qTokens = new Set(tokenize(question))) {
   const intentDocumentOverview = documentOverview || /전체적으로|전반적으로|전체|목적과\s*범위|큰\s*그림/i.test(lower);
   const compound = /(?:\s및\s|\sand\s|랑|와\s|과\s|[,/])/i.test(lower) && qTokens.size >= 4;
   const intentBroad = broad || intentDocumentOverview || intentProcess || intentComparison || compound ||
-    /항목|구성|종류|유형|원칙|종합|정리|준비|뭘|무엇/i.test(lower);
+    // "크게"("broadly") was missing — a Q20-shaped question ("위험요인은
+    // 크게 뭐가 있어?") fell through this whole function as "detail"
+    // breadth despite asking broadly for "what are the risk factors",
+    // which starved it of tryCoverageCompositeQuery (gated on breadth ===
+    // "broad") and left structuredQuery's plain tie-break to abstain on
+    // the resulting multi-section score tie (Case 4) — silently deferring
+    // to the unscoped vector-store fallback instead of the
+    // correctly-scoped candidates scoreRecord had already found. (Adding
+    // bare "뭐가" too was tried and reverted — it's colloquial "what is/are"
+    // with no breadth signal of its own, and false-triggered narrow detail
+    // lookups like "정의는 뭐가 있어?".)
+    /항목|구성|종류|유형|원칙|종합|정리|준비|뭘|무엇|크게/i.test(lower);
   return {
     kind: intentDocumentOverview ? "document_overview" : intentComparison ? "within_document_comparison" : intentProcess ? "process" : compound ? "multi_criterion" : intentBroad ? "topic_overview" : "detail",
     breadth: intentBroad ? "broad" : "detail",

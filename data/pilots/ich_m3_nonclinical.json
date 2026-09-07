@@ -1215,7 +1215,7 @@
       "subject": "This guideline",
       "action": "applies to",
       "object": "the situations usually encountered during the development of pharmaceuticals",
-      "normalized_ko": "적용된다.",
+      "normalized_ko": "본 지침은 의약품 개발 과정에서 통상적으로 마주치는 상황에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -1257,7 +1257,7 @@
       "subject": "For biotechnology-derived products",
       "action": "refer to",
       "object": "ICH Guideline S6",
-      "normalized_ko": "참조할 것.",
+      "normalized_ko": "생명공학 유래 제품은 ICH 가이드라인 S6를 참조한다.",
       "review_status": "reviewed"
     },
     {

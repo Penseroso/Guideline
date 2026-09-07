@@ -64,16 +64,36 @@ test("regression: Q15-shape (ADA screening performance) question shows drug_tole
 });
 
 test("regression: Q20-shape (FDA 2014 immunogenicity risk factors) question surfaces the risk_factors manifest and reports patient/product breadth separately", async () => {
-  // The exact Q20 wording ("치료용 단백질의 임상 면역원성 위험요인은 크게
-  // 뭐가 있어?") needs an LLM to resolve document identity and refuses
-  // offline — this phrasing names the document explicitly so the real,
-  // offline (no LLM) router can resolve it deterministically, while still
-  // exercising the same manifest end to end.
+  // This phrasing names the document explicitly so the real, offline (no
+  // LLM) router can resolve it deterministically, while still exercising
+  // the same manifest end to end.
   const question = "FDA 2014 임상 면역원성에서 환자 요인과 제품 요인은 어떻게 나뉘어?";
   const envelope = await answerEnvelope(question, records, { index });
   const comparison = comparePlans(question, envelope);
   const manifest = comparison.semantic_plan.manifests.find((m) => m.manifest_id === "fda_ada_2014.sem.manifest.risk_factors");
   assert.ok(manifest, "expected the risk_factors manifest in the shadow plan");
+  assert.notEqual(manifest.status, "unavailable");
+});
+
+test("regression: the exact Q20 wording resolves to the real risk-factor sections offline, not a document-identity or breadth-classification miss", async () => {
+  // REV-012 (history/decision_log/review_log.md): this exact wording used
+  // to fall through structuredQuery entirely (classifyAnswerIntent missed
+  // "크게" as a breadth signal, so a genuine multi-section score tie hit
+  // Case 4's "ambiguous, abstain" and silently deferred to the unscoped
+  // vector-store fallback, which pulled conclusion/safety-outcome sections
+  // instead) — semantic_coverage never even got a chance to fire. Now that
+  // engine/query_router.js's classifyAnswerIntent recognizes "크게", this
+  // resolves to the correct sections without needing an LLM at all.
+  const question = "치료용 단백질의 임상 면역원성 위험요인은 크게 뭐가 있어?";
+  const envelope = await answerEnvelope(question, records, { index });
+  assert.equal(envelope.answered, true);
+  assert.notEqual(envelope.route, "refusal");
+  const sectionIds = envelope.scope && envelope.scope.section_ids || [];
+  assert.ok(sectionIds.includes("fda_ada_2014.sec.5_a_5"), "expected a patient-factor risk section, not the wrong (conclusion/outcome) sections");
+  assert.ok(sectionIds.includes("fda_ada_2014.sec.5_b_6"), "expected a product-factor risk section alongside the patient-factor one");
+  const manifest = (envelope.semantic_coverage && envelope.semantic_coverage.manifests || [])
+    .find((m) => m.manifest_id === "fda_ada_2014.sem.manifest.risk_factors");
+  assert.ok(manifest, "Stage C disclosure should now fire for this question, unlike before the fix");
   assert.notEqual(manifest.status, "unavailable");
 });
 
