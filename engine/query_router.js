@@ -84,7 +84,14 @@ function classifyAnswerIntent(question, qTokens = new Set(tokenize(question))) {
   const has = (terms) => terms.some((term) => lower.includes(term) || qTokens.has(term));
   const comparison = has([" vs ", "versus", "compare", "comparison", "비교", "차이", "다른", "달라", "대비"]);
   const process = has(["흐름", "단계", "순서", "절차", "이어", "연결", "관계", "그다음", "다음", "언제", "시점", "맞춰", "process", "workflow", "sequence"]);
-  const documentOverview = has(["전체적으로", "전반적으로", "뭘 다루", "무엇을 다루", "다뤄", "목적과 범위", "큰 그림", "document overview"]);
+  // "종합해서" ("put together and look at") was missing — a Q26-shaped
+  // question ("가이드라인은 첫 투여 전에 뭘 종합해서 보라는 거야?") asks
+  // for exactly a whole-document synthesis but never classified as
+  // documentOverview, so it never reached tryDocumentOverviewQuery (whose
+  // one-representative-record-per-major-chapter sampling is exactly what
+  // this shape needs) and instead resolved through the plain scored path,
+  // which narrowed to whichever single section scored highest.
+  const documentOverview = has(["전체적으로", "전반적으로", "뭘 다루", "무엇을 다루", "다뤄", "목적과 범위", "큰 그림", "종합해서", "document overview"]);
   const broad = documentOverview || process || comparison || isListQuery(question, qTokens) ||
     /(?:왜|목적).*(?:어떻게|방법)|(?:어떻게|방법).*(?:판단|선정|결정)|(?:뭘|무엇을).*(?:확인|평가)|어떤\s*영향|각각|성능\s*기준|항목|구성|종류/i.test(lower);
   const intentComparison = comparison || /비교|차이|달라|대비/i.test(lower);

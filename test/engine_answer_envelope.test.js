@@ -170,16 +170,22 @@ test("grounded-generation success and verification fallback both produce a fully
 
 // --- Stage C (docs/derived_semantic_layer.md §10): semantic_coverage on the grounded_generation synthesis box ---
 
-function entailedClient(text) {
+function entailedClient(text, unitCount = 1) {
+  const indexes = Array.from({ length: unitCount }, (_, i) => i);
   return {
     complete: async ({ schema }) => schema.properties.verdicts
-      ? { verdicts: [{ unit_index: 0, entailed: true, source_index: 0, reason: "supported" }] }
-      : { answered: true, units: [{ text, source_index: 0 }] }
+      ? { verdicts: indexes.map((i) => ({ unit_index: i, entailed: true, source_index: i, reason: "supported" })) }
+      : { answered: true, units: indexes.map((i) => ({ text: `${text} (${i})`, source_index: i })) }
   };
 }
 
 test("semantic_coverage is present on a grounded_generation envelope for a document with a reviewed manifest, and reflects real facet coverage", async () => {
-  const client = entailedClient("요약된 종합 답변입니다.");
+  // Now that this question correctly classifies as documentOverview (see
+  // engine/query_router.js's classifyAnswerIntent "종합해서" fix),
+  // generatedCoverageIsAdequate requires >= min(3, expectedSections.size)
+  // distinct generated units — a single-unit stub no longer models a
+  // realistic generation for this shape.
+  const client = entailedClient("요약된 종합 답변입니다.", 3);
   const env = await answerEnvelope("EMA FIH 가이드라인은 첫 투여 전에 뭘 종합해서 보라는 거야?", records, {
     client, store: fakeStore([]), index, generationPreference: "auto"
   });
