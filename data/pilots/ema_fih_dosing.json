@@ -2353,7 +2353,7 @@
       "subject": "Special attention",
       "action": "be given to",
       "object": "the estimation of the exposure anticipated to be reached at the initial dose to be used in humans and to subsequent dose escalations to a predefined maximum expected exposure",
-      "normalized_ko": "인체에 사용할 초기 용량에서 도달할 것으로 예상되는 노출 및 이후의 용량 증량 시 사전 정의된 최대 예상 노출의 추정치에 주의를 기울여야 한다.",
+      "normalized_ko": "사람에게 사용될 초기 용량에서 도달할 것으로 예상되는 노출량의 추정 및 사전에 정의된 최대 예상 노출량까지의 이후 용량 증량에 특별한 주의를 기울여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2367,7 +2367,7 @@
       "subject": "The expected exposure in humans at a dose to be given",
       "action": "is considered more relevant than",
       "object": "the relative dose levels between animals and humans",
-      "normalized_ko": "동물과 사람 간의 상대적 용량 수준보다 더 관련성이 높은 것으로 간주된다.",
+      "normalized_ko": "투여 예정 용량에서의 예상 인체 노출은 동물과 인간 간의 상대적 용량 수준보다 더 관련성이 높은 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -2381,7 +2381,7 @@
       "subject": "Careful dosing selection of an IMP",
       "action": "is",
       "object": "a vital element to safeguard the subjects participating in FIH and early CTs",
-      "normalized_ko": "FIH 및 초기 CT에 참여하는 시험대상자를 보호하기 위한 필수 요소이다.",
+      "normalized_ko": "IMP의 신중한 용량 선택은 FIH 및 초기 CT에 참여하는 피험자를 보호하기 위한 필수 요소이다.",
       "review_status": "reviewed"
     },
     {
@@ -2395,7 +2395,7 @@
       "subject": "All available non-clinical information",
       "action": "be taken into consideration for",
       "object": "the calculation of the starting dose, dose escalation steps and maximum exposure",
-      "normalized_ko": "시작 용량, 용량 증량 단계 및 최대 노출의 계산을 위해 고려되어야 한다.",
+      "normalized_ko": "이용 가능한 모든 비임상 정보는 시작 용량, 용량 증량 단계 및 최대 노출의 산정에 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2409,7 +2409,7 @@
       "subject": "clinical data emerging during the trial from previous dosed cohorts/individuals",
       "action": "be taken into account",
       "object": null,
-      "normalized_ko": "고려할 필요가 있다.",
+      "normalized_ko": "이전에 투여받은 코호트/개인으로부터 시험 중 발생하는 임상 데이터도 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2423,7 +2423,7 @@
       "subject": "Experience, both non-clinical and clinical, with molecules having a similar mode of action",
       "action": "be useful",
       "object": null,
-      "normalized_ko": "유용할 수 있다.",
+      "normalized_ko": "유사한 작용기전을 가진 분자에 대한 비임상 및 임상 경험은 유용할 수도 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2437,7 +2437,7 @@
       "subject": "Experience, both non-clinical and clinical, with molecules having a similar mode of action",
       "action": "be",
       "object": "useful",
-      "normalized_ko": "유용할 수 있다.",
+      "normalized_ko": "유사한 작용기전을 가진 분자에 대한 비임상 및 임상 경험은 유용할 수도 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2451,7 +2451,7 @@
       "subject": "The starting dose and a maximum exposure, as well as dose escalation steps",
       "action": "be justified and outlined in",
       "object": "the protocol",
-      "normalized_ko": "프로토콜에서 정당화되고 개요가 제시되어야 한다.",
+      "normalized_ko": "시작 용량 및 최대 노출량과 용량 증량 단계는 임상시험계획서에서 정당화되고 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2465,7 +2465,7 @@
       "subject": "Decision-making criteria for adapting the planned dose escalation steps",
       "action": "be described in detail",
       "object": null,
-      "normalized_ko": "상세히 기술되어야 한다.",
+      "normalized_ko": "계획된 용량 증량 단계를 조정하기 위한 의사결정 기준은 상세히 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2479,7 +2479,7 @@
       "subject": "Deviations from the pre-specified dose escalation and decision-making criteria",
       "action": "warrant the submission of",
       "object": "(a) substantial amendment(s)",
-      "normalized_ko": "실질적 변경의 제출을 정당화한다.",
+      "normalized_ko": "사전에 명시된 용량 증량 및 의사결정 기준에서 벗어나는 것은 중대한 변경 제출의 사유가 된다.",
       "review_status": "reviewed"
     },
     {
@@ -2493,7 +2493,7 @@
       "subject": "Substantial amendments",
       "action": "be needed",
       "object": null,
-      "normalized_ko": "필요하다.",
+      "normalized_ko": "중대한 변경도 필요하게 된다.",
       "review_status": "reviewed"
     },
     {
@@ -2507,7 +2507,7 @@
       "subject": "The methods used and calculations on how doses and estimated exposure levels were determined, including methods for modelling",
       "action": "be included in",
       "object": "the protocol",
-      "normalized_ko": "프로토콜에 포함되어야 한다.",
+      "normalized_ko": "모델링 방법을 포함하여 용량 및 추정 노출 수준의 결정에 사용된 방법과 계산은 프로토콜에 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2521,7 +2521,7 @@
       "subject": "The methods used and calculations on how doses and estimated exposure levels were determined, including methods for modelling",
       "action": "be summarised in",
       "object": "the IB",
-      "normalized_ko": "IB에 요약될 수 있다.",
+      "normalized_ko": "모델링 방법을 포함하여 용량 및 추정 노출 수준의 결정에 사용된 방법과 계산은 IB에 요약될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2535,7 +2535,7 @@
       "subject": "starting and maximum doses (exposures) for Exploratory Clinical Trials",
       "action": "reference is made to",
       "object": "the ICH M3(R2) guideline",
-      "normalized_ko": "ICH M3(R2) 가이드라인을 참조한다.",
+      "normalized_ko": "탐색적 임상시험의 시작 및 최대 용량(노출)에 대해서는 ICH M3(R2) 가이드라인을 참조한다.",
       "review_status": "reviewed"
     },
     {
@@ -2549,7 +2549,7 @@
       "subject": "any subsequent study using a non-microdose",
       "action": "be considered within the scope of",
       "object": "the present FIH/early CT guideline",
-      "normalized_ko": "현행 FIH/초기 CT 가이드라인의 범위 내에서 고려되어야 한다.",
+      "normalized_ko": "비미세용량을 사용하는 모든 후속 시험은 본 FIH/초기 CT 가이드라인의 범위 내에 있는 것으로 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2563,7 +2563,7 @@
       "subject": "clinical data",
       "action": "be taken into account",
       "object": "for the calculation of the starting dose, dose escalation steps and maximum exposure",
-      "normalized_ko": "시작 용량, 용량 증량 단계 및 최대 노출의 계산을 위해 고려해야 한다.",
+      "normalized_ko": "임상 데이터는 시작 용량, 용량 증량 단계 및 최대 노출의 산정에 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2577,7 +2577,7 @@
       "subject": "Substantial amendments",
       "action": "be needed",
       "object": null,
-      "normalized_ko": "필수이다.",
+      "normalized_ko": "중대한 변경도 필요하게 된다.",
       "review_status": "reviewed"
     },
     {
@@ -2591,7 +2591,7 @@
       "subject": "starting and maximum doses (exposures) for Exploratory Clinical Trials",
       "action": "reference is made to",
       "object": "the ICH M3(R2) guideline",
-      "normalized_ko": "ICH M3(R2) 가이드라인을 참조한다.",
+      "normalized_ko": "탐색적 임상시험의 시작 및 최대 용량(노출)에 대해서는 ICH M3(R2) 가이드라인을 참조한다.",
       "review_status": "reviewed"
     },
     {
@@ -2605,7 +2605,7 @@
       "subject": "any subsequent study using a non-microdose",
       "action": "be considered within the scope of",
       "object": "the present FIH/early CT guideline",
-      "normalized_ko": "현행 FIH/초기 CT 가이드라인의 범위 내에서 고려해야 한다.",
+      "normalized_ko": "비미세용량을 사용하는 모든 후속 시험은 본 FIH/초기 CT 가이드라인의 범위 내에 있는 것으로 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2633,7 +2633,7 @@
       "subject": "Experience, both non-clinical and clinical, with molecules having a similar mode of action",
       "action": "can be",
       "object": "useful",
-      "normalized_ko": "유사한 작용 기전을 가진 분자에 대한 비임상 및 임상 경험은 유용할 수 있다.",
+      "normalized_ko": "유사한 작용기전을 가진 분자에 대한 비임상 및 임상 경험은 유용할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2661,7 +2661,7 @@
       "subject": "Starting dose",
       "action": "for",
       "object": "healthy volunteers",
-      "normalized_ko": "건강한 자원자를 대상으로",
+      "normalized_ko": "시작 용량은 건강한 자원자를 위한 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2675,7 +2675,7 @@
       "subject": "Section 7.2",
       "action": "addresses",
       "object": "Starting dose for healthy volunteers",
-      "normalized_ko": "건강한 자원자에서의 시작 용량을 다룬다.",
+      "normalized_ko": "제7.2절은 건강한 자원자를 위한 시작 용량을 다룬다.",
       "review_status": "reviewed"
     },
     {
@@ -2689,7 +2689,7 @@
       "subject": "the no observed adverse effect level (NOAEL)",
       "action": "be determined",
       "object": "in the non-clinical safety studies performed",
-      "normalized_ko": "수행된 비임상 안전성 시험에서 결정되어야 한다.",
+      "normalized_ko": "무독성 관찰 용량(NOAEL)은 수행된 비임상 안전성 시험에서 결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2703,7 +2703,7 @@
       "subject": "The exposures achieved at the NOAEL in the most relevant animal species used",
       "action": "be used",
       "object": "for estimation of an equivalent exposure for humans",
-      "normalized_ko": "인체에서의 동등한 노출을 추정하기 위해 사용되어야 한다.",
+      "normalized_ko": "사용된 가장 관련성 높은 동물종에서 NOAEL 시 달성된 노출은 사람에서의 동등한 노출 추정에 사용되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2717,7 +2717,7 @@
       "subject": "Estimation",
       "action": "be based on",
       "object": "state-of-the-art modelling (e.g. PK/PD and PBPK) and/or using allometric factors",
-      "normalized_ko": "최신 모델링(예: PK/PD 및 PBPK) 및/또는 이종척도 계수의 사용에 기반해야 한다.",
+      "normalized_ko": "추정은 최신 모델링(예: PK/PD 및 PBPK) 및/또는 이종척도 계수를 사용하여 이루어져야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2731,7 +2731,7 @@
       "subject": "The NOAEL",
       "action": "is",
       "object": "a generally accepted benchmark for safety when derived from appropriate animal studies",
-      "normalized_ko": "적절한 동물시험으로부터 도출된 경우 안전성에 대해 일반적으로 인정되는 기준점이다.",
+      "normalized_ko": "NOAEL은 적절한 동물시험에서 도출된 경우 일반적으로 인정되는 안전성 기준점이다.",
       "review_status": "reviewed"
     },
     {
@@ -2745,7 +2745,7 @@
       "subject": "The NOAEL",
       "action": "can serve as",
       "object": "the starting point for determining a reasonably safe starting dose",
-      "normalized_ko": "합리적으로 안전한 시작 용량을 결정하기 위한 출발점 역할을 할 수 있다.",
+      "normalized_ko": "NOAEL은 합리적으로 안전한 시작 용량을 결정하기 위한 출발점으로 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2759,7 +2759,7 @@
       "subject": "The NOAEL",
       "action": "serve as",
       "object": "the starting point for determining a reasonably safe starting dose",
-      "normalized_ko": "합리적으로 안전한 시작 용량을 결정하기 위한 출발점 역할을 할 수 있다.",
+      "normalized_ko": "NOAEL은 합리적으로 안전한 시작 용량을 결정하기 위한 출발점으로 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2773,7 +2773,7 @@
       "subject": "the most relevant animal species used",
       "action": "not necessarily be",
       "object": "the most sensitive species",
-      "normalized_ko": "반드시 가장 민감한 종일 필요는 없을 수 있다.",
+      "normalized_ko": "사용된 가장 관련성 높은 동물종은 반드시 가장 민감한 종일 필요는 없다.",
       "review_status": "reviewed"
     },
     {
@@ -2787,7 +2787,7 @@
       "subject": "Exposure showing PD effects in the non-clinical pharmacology studies",
       "action": "be determined",
       "object": "including ex vivo and in vitro studies in human tissues",
-      "normalized_ko": "인체 조직에서의 ex vivo 및 in vitro 연구를 포함하여 결정되어야 한다.",
+      "normalized_ko": "비임상 약리학 시험에서 PD 효과를 나타내는 노출은 사람 조직에서의 ex vivo 및 in vitro 시험을 포함하여 결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2801,7 +2801,7 @@
       "subject": "these data",
       "action": "be used",
       "object": "to determine the minimal anticipated biological effect level (MABEL) in humans and an estimation of the pharmacologically active dose (PAD) and/or anticipated therapeutic dose range (ATD) in humans",
-      "normalized_ko": "인체에서의 최소 예상 생물학적 효과 수준(MABEL) 및 약리학적 활성 용량(PAD)과/또는 예상 치료 용량 범위(ATD)의 추정을 결정하기 위해 사용되어야 한다.",
+      "normalized_ko": "이러한 데이터는 사람에서의 최소 예상 생물학적 효과 수준(MABEL) 및 약리학적 활성 용량(PAD) 및/또는 예상 치료 용량 범위(ATD)의 추정치를 결정하는 데 사용되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2815,7 +2815,7 @@
       "subject": "the calculation of the MABEL, PAD and/or ATD",
       "action": "consider",
       "object": "target binding and receptor occupancy studies in vitro in target cells from human and the relevant animal species and exposures at pharmacological doses in the relevant animal species",
-      "normalized_ko": "인체 및 관련 동물 종 유래 표적 세포에서의 in vitro 표적 결합 및 수용체 점유 연구와 관련 동물 종에서의 약리학적 용량 시 노출을 고려해야 한다.",
+      "normalized_ko": "MABEL, PAD 및/또는 ATD의 계산은 사람 및 관련 동물종 유래 표적 세포에서의 in vitro 표적 결합 및 수용체 점유 시험과 관련 동물종에서의 약리학적 용량 시 노출을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2829,7 +2829,7 @@
       "subject": "all relevant data",
       "action": "be integrated in",
       "object": "a suitable modelling approach for the determination of the MABEL, PAD and/or ATD",
-      "normalized_ko": "MABEL, PAD 및/또는 ATD 결정을 위한 적절한 모델링 접근법에 통합되어야 한다.",
+      "normalized_ko": "모든 관련 데이터는 MABEL, PAD 및/또는 ATD 결정을 위한 적절한 모델링 접근법에 통합되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2843,7 +2843,7 @@
       "subject": "potential differences in sensitivity for the mode of action of the IMP between humans and animals",
       "action": "be taken into consideration",
       "object": null,
-      "normalized_ko": "고려되어야 한다.",
+      "normalized_ko": "IMP의 작용기전에 대한 사람과 동물 간 민감성의 잠재적 차이는 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2857,7 +2857,7 @@
       "subject": "The starting dose for healthy volunteers",
       "action": "be",
       "object": "a dose expected to result in an exposure lower than the PAD",
-      "normalized_ko": "PAD보다 낮은 노출을 초래할 것으로 예상되는 용량이어야 한다.",
+      "normalized_ko": "건강한 자원자를 위한 시작 용량은 PAD보다 낮은 노출을 초래할 것으로 예상되는 용량이어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2871,7 +2871,7 @@
       "subject": "the starting dose",
       "action": "be related to",
       "object": "the MABEL, PAD or NOAEL",
-      "normalized_ko": "MABEL, PAD 또는 NOAEL과 관련되어야 한다.",
+      "normalized_ko": "시작 용량은 MABEL, PAD 또는 NOAEL과 연계되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2885,7 +2885,7 @@
       "subject": "A scientific rationale for the starting dose",
       "action": "be included",
       "object": "in the protocol",
-      "normalized_ko": "프로토콜에 포함되어야 한다.",
+      "normalized_ko": "시작 용량에 대한 과학적 근거는 임상시험계획서에 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2899,7 +2899,7 @@
       "subject": "A scientific rationale for the starting dose",
       "action": "be included",
       "object": "in the IB (in addition to the protocol)",
-      "normalized_ko": "프로토콜에 추가하여 IB에 포함될 수 있다.",
+      "normalized_ko": "시작 용량에 대한 과학적 근거는 임상시험계획서에 추가하여 IB에 포함될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2913,7 +2913,7 @@
       "subject": "safety factors",
       "action": "are applied",
       "object": "in the calculation of the starting dose in humans",
-      "normalized_ko": "인체 시작 용량 계산에 적용된다.",
+      "normalized_ko": "안전계수는 사람에서의 시작 용량 계산에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -2927,7 +2927,7 @@
       "subject": "Safety factors",
       "action": "take into account",
       "object": "potential risks related to the novelty of the active substance",
-      "normalized_ko": "유효성분의 신규성과 관련된 잠재적 위험을 고려해야 한다.",
+      "normalized_ko": "안전계수는 활성물질의 신규성과 관련된 잠재적 위험을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2941,7 +2941,7 @@
       "subject": "findings in the non-clinical studies and how well potential target organ effects can be monitored in the CT",
       "action": "be addressed",
       "object": null,
-      "normalized_ko": "다루어져야 한다.",
+      "normalized_ko": "비임상시험 결과와 임상시험에서 잠재적 표적 장기 영향이 얼마나 잘 모니터링될 수 있는지는 다루어져야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2955,7 +2955,7 @@
       "subject": "The reasoning behind the safety factors used",
       "action": "be detailed",
       "object": "in the IB and protocol",
-      "normalized_ko": "IB 및 프로토콜에 상세히 기술되어야 한다.",
+      "normalized_ko": "사용된 안전계수의 근거는 IB 및 임상시험계획서에 상세히 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2969,7 +2969,7 @@
       "subject": "findings in the non-clinical studies and how well potential target organ effects can be monitored in the CT",
       "action": "influence",
       "object": "the safety factors used",
-      "normalized_ko": "사용되는 안전계수에 영향을 미칠 수 있다.",
+      "normalized_ko": "비임상 연구 결과 및 CT에서 잠재적 표적 장기 영향의 모니터링 가능 정도는 사용된 안전계수에 영향을 미칠 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2983,7 +2983,7 @@
       "subject": "the no observed adverse effect level (NOAEL)",
       "action": "be determined",
       "object": "in the non-clinical safety studies performed",
-      "normalized_ko": "수행된 비임상 안전성 시험에서 결정되어야 한다.",
+      "normalized_ko": "무독성량(NOAEL)은 수행된 비임상 안전성 연구에서 결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2997,7 +2997,7 @@
       "subject": "The exposures achieved at the NOAEL",
       "action": "be used",
       "object": "for estimation of an equivalent exposure for humans",
-      "normalized_ko": "인체에서의 동등한 노출 추정에 사용되어야 한다.",
+      "normalized_ko": "NOAEL에서 달성된 노출은 사람에서의 동등한 노출 추정에 사용되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3011,7 +3011,7 @@
       "subject": "Estimation",
       "action": "be based on",
       "object": "state-of-the-art modelling and/or using allometric factors",
-      "normalized_ko": "최신 모델링 및/또는 알로메트릭 계수의 사용에 기반해야 한다.",
+      "normalized_ko": "추정은 최신 모델링 및/또는 이종척도 계수 사용에 근거해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3025,7 +3025,7 @@
       "subject": "state-of-the-art modelling",
       "action": "includes",
       "object": "PK/PD and PBPK",
-      "normalized_ko": "PK/PD 및 PBPK를 포함한다.",
+      "normalized_ko": "최신 모델링에는 PK/PD 및 PBPK가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3039,7 +3039,7 @@
       "subject": "Exposure showing PD effects in the non-clinical pharmacology studies",
       "action": "be determined",
       "object": "including ex vivo and in vitro studies in human tissues",
-      "normalized_ko": "인체 조직에서의 ex vivo 및 in vitro 연구를 포함하여 결정되어야 한다.",
+      "normalized_ko": "비임상 약리학 연구에서 PD 효과를 나타내는 노출은 사람 조직에서의 ex vivo 및 in vitro 연구를 포함하여 결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3053,7 +3053,7 @@
       "subject": "these data",
       "action": "be used to determine",
       "object": "the minimal anticipated biological effect level (MABEL) in humans and an estimation of the pharmacologically active dose (PAD) and/or anticipated therapeutic dose range (ATD) in humans",
-      "normalized_ko": "인체에서의 최소 예상 생물학적 효과 수준(MABEL) 및 인체에서의 약리학적 활성 용량(PAD) 및/또는 예상 치료 용량 범위(ATD)를 결정하는 데 사용되어야 한다.",
+      "normalized_ko": "이들 데이터는 사람에서의 최소 예상 생물학적 효과 수준(MABEL)과 약리학적 활성 용량(PAD) 및/또는 예상 치료 용량 범위(ATD)의 추정치를 결정하는 데 사용되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3067,7 +3067,7 @@
       "subject": "the calculation of the MABEL, PAD and/or ATD",
       "action": "consider",
       "object": "target binding and receptor occupancy studies in vitro in target cells from human and the relevant animal species and exposures at pharmacological doses in the relevant animal species",
-      "normalized_ko": "인체 및 관련 동물종 유래 표적 세포에서의 in vitro 표적 결합 및 수용체 점유 연구와 관련 동물종에서 약리학적 용량 시의 노출을 고려해야 한다.",
+      "normalized_ko": "MABEL, PAD 및/또는 ATD의 계산은 사람 및 관련 동물종 유래 표적 세포에서의 in vitro 표적 결합 및 수용체 점유 연구와 관련 동물종에서의 약리학적 용량에서의 노출을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3081,7 +3081,7 @@
       "subject": "all relevant data",
       "action": "be integrated in",
       "object": "a suitable modelling approach for the determination of the MABEL, PAD and/or ATD",
-      "normalized_ko": "MABEL, PAD 및/또는 ATD 결정을 위한 적절한 모델링 접근법에 통합되어야 한다.",
+      "normalized_ko": "모든 관련 데이터는 MABEL, PAD 및/또는 ATD 결정을 위한 적절한 모델링 접근법에 통합되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3095,7 +3095,7 @@
       "subject": "The starting dose for healthy volunteers",
       "action": "be",
       "object": "a dose expected to result in an exposure lower than the PAD",
-      "normalized_ko": "PAD보다 낮은 노출을 초래할 것으로 예상되는 용량이어야 한다.",
+      "normalized_ko": "건강한 자원자를 위한 시작 용량은 PAD보다 낮은 노출을 초래할 것으로 예상되는 용량이어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3109,7 +3109,7 @@
       "subject": "the starting dose",
       "action": "be related to",
       "object": "the MABEL, PAD or NOAEL",
-      "normalized_ko": "MABEL, PAD 또는 NOAEL과 관련되어야 한다.",
+      "normalized_ko": "시작 용량은 MABEL, PAD 또는 NOAEL과 연계되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3123,7 +3123,7 @@
       "subject": "A scientific rationale for the starting dose",
       "action": "be included in",
       "object": "the protocol",
-      "normalized_ko": "프로토콜에 포함되어야 한다.",
+      "normalized_ko": "시작 용량에 대한 과학적 근거는 임상시험계획서에 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3137,7 +3137,7 @@
       "subject": "Safety factors",
       "action": "take into account potential risks related to",
       "object": "the novelty of the active substance",
-      "normalized_ko": "활성 물질의 신규성과 관련된 잠재적 위험을 고려해야 한다.",
+      "normalized_ko": "안전계수는 활성물질의 신규성과 관련된 잠재적 위험을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3151,7 +3151,7 @@
       "subject": "findings in the non-clinical studies and how well potential target organ effects can be monitored in the CT",
       "action": "be addressed",
       "object": null,
-      "normalized_ko": "다루어져야 한다.",
+      "normalized_ko": "비임상시험 결과와 임상시험에서 잠재적 표적 장기 영향이 얼마나 잘 모니터링될 수 있는지는 다루어져야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3165,7 +3165,7 @@
       "subject": "The reasoning behind the safety factors used",
       "action": "be detailed in",
       "object": "the IB and protocol",
-      "normalized_ko": "IB 및 프로토콜에 상세히 기술되어야 한다.",
+      "normalized_ko": "사용된 안전계수의 근거는 IB 및 임상시험계획서에 상세히 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3179,7 +3179,7 @@
       "subject": "findings in the non-clinical studies and how well potential target organ effects can be monitored in the CT",
       "action": "influence",
       "object": "the safety factors used",
-      "normalized_ko": "사용되는 안전계수에 영향을 미칠 수 있다.",
+      "normalized_ko": "비임상 연구 결과 및 CT에서 잠재적 표적 장기 영향의 모니터링 가능 정도는 사용된 안전계수에 영향을 미칠 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3193,7 +3193,7 @@
       "subject": "Similar considerations as outlined in section 7.2",
       "action": "apply for",
       "object": "the identification of a safe starting dose in patients",
-      "normalized_ko": "환자에서 안전한 시작 용량의 식별에 적용된다.",
+      "normalized_ko": "제7.2절에 기술된 것과 유사한 고려사항은 환자에서 안전한 시작 용량을 확인하는 데 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -3207,7 +3207,7 @@
       "subject": "The goal of selecting the starting dose for FIH/early CTs in patients",
       "action": "is to identify",
       "object": "a dose that is expected to have a minimal pharmacological effect and is safe to use",
-      "normalized_ko": "최소한의 약리학적 효과가 예상되고 사용하기에 안전한 용량을 식별하는 것이다.",
+      "normalized_ko": "환자에서 FIH/초기 임상시험의 시작 용량을 선정하는 목표는 최소한의 약리학적 효과가 예상되고 사용하기에 안전한 용량을 확인하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -3221,7 +3221,7 @@
       "subject": "The starting dose",
       "action": "take into account",
       "object": "the nature of disease under investigation and its severity in the patient population included in the CT",
-      "normalized_ko": "임상시험에 포함된 환자 집단에서 조사 중인 질환의 특성과 중증도를 고려해야 한다.",
+      "normalized_ko": "시작 용량은 조사 중인 질환의 특성과 임상시험에 포함된 환자 집단에서의 그 중증도를 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3235,7 +3235,7 @@
       "subject": "a rationale",
       "action": "be provided",
       "object": null,
-      "normalized_ko": "제공되어야 한다.",
+      "normalized_ko": "근거가 제시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3249,7 +3249,7 @@
       "subject": "the subjects included in the CT",
       "action": "be informed",
       "object": null,
-      "normalized_ko": "통보받아야 한다.",
+      "normalized_ko": "CT에 포함된 대상자는 정보를 제공받아야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3263,7 +3263,7 @@
       "subject": "a starting dose that is substantially lower than the human expected pharmacological dose",
       "action": "not be appropriate",
       "object": "in some instances (when substantially lower than expected pharmacological dose)",
-      "normalized_ko": "일부 경우(예상되는 약리학적 용량보다 상당히 낮은 경우)에는 적절하지 않을 수 있다.",
+      "normalized_ko": "사람에서 예상되는 약리학적 용량보다 상당히 낮은 시작 용량은 일부 경우 적절하지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3277,7 +3277,7 @@
       "subject": "consideration",
       "action": "be given to",
       "object": "reverting to a SAD design (with dose escalation as appropriate) in the first patient cohort",
-      "normalized_ko": "첫 번째 환자 코호트에서 적절한 용량 증량을 포함한 SAD 설계로 되돌리는 것을 고려해야 한다.",
+      "normalized_ko": "고려는 첫 번째 환자 코호트에서 SAD 설계(적절한 경우 용량 증량 포함)로 되돌리는 데 주어져야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3291,7 +3291,7 @@
       "subject": "Other approaches",
       "action": "be considered",
       "object": null,
-      "normalized_ko": "고려할 수 있다.",
+      "normalized_ko": "다른 접근법도 고려될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3305,7 +3305,7 @@
       "subject": "the highest dose or exposure tested in the non-clinical studies",
       "action": "not limit",
       "object": "the dose-escalation or highest dose investigated in a CT in patients with advanced cancer if appropriately justified",
-      "normalized_ko": "적절한 근거가 제시되는 경우, 진행성 암 환자를 대상으로 한 임상시험에서의 용량 증량 또는 조사된 최고 용량을 제한하지 않을 수 있다.",
+      "normalized_ko": "비임상 시험에서 시험된 최고 용량 또는 노출량은 적절한 근거가 제시되는 경우 진행성 암 환자에서의 임상시험 용량 증량 또는 조사되는 최고 용량을 제한하지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3319,7 +3319,7 @@
       "subject": "Special populations, such as paediatrics",
       "action": "deserve",
       "object": "additional specific considerations",
-      "normalized_ko": "추가적인 구체적 고려가 필요하다.",
+      "normalized_ko": "소아와 같은 특수 집단은 추가적인 구체적 고려를 받을 만하다.",
       "review_status": "reviewed"
     },
     {
@@ -3333,7 +3333,7 @@
       "subject": "Similar considerations",
       "action": "apply",
       "object": "for the identification of a safe starting dose in patients",
-      "normalized_ko": "환자에서 안전한 시작 용량을 식별하는 데 적용된다.",
+      "normalized_ko": "유사한 고려사항은 환자에서 안전한 시작 용량을 확인하는 데 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -3347,7 +3347,7 @@
       "subject": "a starting dose that is substantially lower than the human expected pharmacological dose",
       "action": "be appropriate",
       "object": null,
-      "normalized_ko": "적절하다.",
+      "normalized_ko": "사람에서 예상되는 약리학적 용량보다 상당히 낮은 시작 용량은 적절하지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3361,7 +3361,7 @@
       "subject": "the highest dose or exposure tested in the non-clinical studies",
       "action": "not limit",
       "object": "the dose-escalation or highest dose investigated in a CT in patients with advanced cancer if appropriately justified",
-      "normalized_ko": "적절한 근거가 제시되는 경우, 진행성 암 환자를 대상으로 한 임상시험에서의 용량 증량 또는 조사된 최고 용량을 제한하지 않는다.",
+      "normalized_ko": "비임상 시험에서 시험된 최고 용량 또는 노출량은 적절한 근거가 제시되는 경우 진행성 암 환자에서의 임상시험 용량 증량 또는 조사되는 최고 용량을 제한하지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3375,7 +3375,7 @@
       "subject": "specific situations",
       "action": "include",
       "object": "studies in oncology patients (see ICH S9) or other severe or life-limiting diseases",
-      "normalized_ko": "종양 환자 대상 연구(ICH S9 참조) 또는 기타 중증 또는 생명 제한적 질환 대상 연구를 포함한다.",
+      "normalized_ko": "특정 상황에는 종양 환자를 대상으로 한 시험(ICH S9 참조) 또는 기타 중증 또는 생명 제한성 질환이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3389,7 +3389,7 @@
       "subject": "the highest dose or exposure tested in the non-clinical studies",
       "action": "not limit",
       "object": "the dose-escalation or highest dose investigated in a CT in patients with advanced cancer if appropriately justified",
-      "normalized_ko": "적절한 근거가 제시되는 경우, 진행성 암 환자를 대상으로 한 임상시험에서의 용량 증량 또는 조사된 최고 용량을 제한하지 않을 수 있다.",
+      "normalized_ko": "비임상시험에서 시험된 최고 용량 또는 노출은 적절히 정당화되는 경우 진행성 암 환자 대상 CT에서의 용량 증량 또는 조사되는 최고 용량을 제한하지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3403,7 +3403,7 @@
       "subject": "Special populations",
       "action": "deserve",
       "object": "additional specific considerations",
-      "normalized_ko": "추가적인 구체적 고려가 필요하다.",
+      "normalized_ko": "특수 집단은 추가적인 특정 고려사항이 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -3417,7 +3417,7 @@
       "subject": "Special populations",
       "action": "includes",
       "object": "paediatrics (see ICH E11)",
-      "normalized_ko": "소아(ICH E11 참조)를 포함한다.",
+      "normalized_ko": "특수 집단에는 소아 집단(ICH E11 참조)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3431,7 +3431,7 @@
       "subject": "criteria for dose increases",
       "action": "be outlined",
       "object": "in the protocol",
-      "normalized_ko": "프로토콜에 기술되어야 한다.",
+      "normalized_ko": "용량 증량 기준은 프로토콜에 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3445,7 +3445,7 @@
       "subject": "The maximum fold increase in dose/exposure from one cohort to the next, as well as a maximum number of cohorts to be evaluated",
       "action": "be stated",
       "object": null,
-      "normalized_ko": "명시되어야 한다.",
+      "normalized_ko": "한 코호트에서 다음 코호트로의 용량/노출 최대 배수 증가와 평가할 최대 코호트 수는 명시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3459,7 +3459,7 @@
       "subject": "The choice of the dose levels",
       "action": "include",
       "object": "an estimate of exposure levels to be achieved",
-      "normalized_ko": "달성될 노출 수준의 추정치를 포함해야 한다.",
+      "normalized_ko": "용량 수준의 선택에는 달성될 노출 수준의 추정치를 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3473,7 +3473,7 @@
       "subject": "The calculated PAD/ATD",
       "action": "be taken into account",
       "object": null,
-      "normalized_ko": "고려되어야 한다.",
+      "normalized_ko": "산출된 PAD/ATD는 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3487,7 +3487,7 @@
       "subject": "The dose increment between two dose levels",
       "action": "be guided by",
       "object": "the dose/exposure-toxicity or the dose/exposure-effect relationship defined in the non-clinical studies",
-      "normalized_ko": "비임상 연구에서 규명된 용량/노출-독성 또는 용량/노출-효과 관계를 지침으로 삼아야 한다.",
+      "normalized_ko": "두 용량 수준 간 용량 증량폭은 비임상시험에서 규명된 용량/노출-독성 또는 용량/노출-효과 관계에 따라 결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3501,7 +3501,7 @@
       "subject": "The dose increment between two dose levels",
       "action": "be guided by",
       "object": "the dose/exposure-toxicity or the dose/exposure-effect relationship defined in the non-clinical studies",
-      "normalized_ko": "두 용량 수준 간의 용량 증량 폭은 비임상 시험에서 정의된 용량/노출-독성 또는 용량/노출-효능 관계에 의해 결정되어야 한다.",
+      "normalized_ko": "두 용량 수준 간 용량 증량폭은 비임상시험에서 규명된 용량/노출-독성 또는 용량/노출-효과 관계에 따라 결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3515,7 +3515,7 @@
       "subject": "The dose increment between two dose levels",
       "action": "be adapted",
       "object": "following review of emerging clinical data from previous cohorts",
-      "normalized_ko": "용량 증량 폭은 이전 코호트로부터 도출된 임상 데이터를 검토한 후 상황에 맞게 조정되어야 한다.",
+      "normalized_ko": "두 용량 수준 간 용량 증분은 이전 코호트에서 새롭게 발생한 임상 자료를 검토한 후 조정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3529,7 +3529,7 @@
       "subject": "smaller dose increments",
       "action": "be considered",
       "object": "in later parts of SAD/MAD when non-linear PK indicates supra-proportional exposure",
-      "normalized_ko": "비선형 PK가 용량 비례 이상 노출을 나타내는 경우 SAD/MAD의 후반부에서 고려해야 한다.",
+      "normalized_ko": "비선형 PK가 비례 이상 노출을 나타내는 경우 SAD/MAD의 후반부에서는 더 작은 용량 증분이 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3543,7 +3543,7 @@
       "subject": "Another factor for consideration",
       "action": "is",
       "object": "the reliability with which potential adverse effects can be monitored in humans before potential serious/irreversible effects develop",
-      "normalized_ko": "잠재적 중대하거나 비가역적인 영향이 발생하기 전에 인간에서 잠재적 이상반응을 모니터링할 수 있는 신뢰성이다.",
+      "normalized_ko": "고려해야 할 또 다른 요인은 잠재적인 중대하거나 비가역적인 영향이 발생하기 전에 사람에서 잠재적 이상반응을 모니터링할 수 있는 신뢰성이다.",
       "review_status": "reviewed"
     },
     {
@@ -3557,7 +3557,7 @@
       "subject": "adjustment of the planned dose levels",
       "action": "be warranted",
       "object": null,
-      "normalized_ko": "필요할 수 있다.",
+      "normalized_ko": "계획된 용량 수준의 조정이 필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3571,7 +3571,7 @@
       "subject": "Changes in dose levels",
       "action": "require",
       "object": "a substantial amendment",
-      "normalized_ko": "대폭적인 개정이 필요할 수 있다.",
+      "normalized_ko": "용량 수준의 변경에는 중대한 변경이 필요할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3585,7 +3585,7 @@
       "subject": "Section 7.4",
       "action": "addresses",
       "object": "Dose escalation",
-      "normalized_ko": "용량 증량을 다룬다.",
+      "normalized_ko": "제7.4절은 용량 증량을 다룬다.",
       "review_status": "reviewed"
     },
     {
@@ -3599,7 +3599,7 @@
       "subject": "An expected maximum exposure level",
       "action": "not be exceeded in the study",
       "object": null,
-      "normalized_ko": "시험에서 초과해서는 안 된다.",
+      "normalized_ko": "예상 최대 노출 수준은 시험에서 초과해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -3613,7 +3613,7 @@
       "subject": "An expected maximum exposure level",
       "action": "be pre-defined in the protocol",
       "object": "for each study part",
-      "normalized_ko": "각 시험 부분에 대해 프로토콜에서 사전에 정의해야 한다.",
+      "normalized_ko": "예상 최대 노출 수준은 각 시험 부분별로 프로토콜에 사전 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3627,7 +3627,7 @@
       "subject": "The maximum exposure",
       "action": "be justified",
       "object": "based on all available non-clinical and clinical data, including PD, PK, findings in toxicity studies and exposure at the expected therapeutic dose range",
-      "normalized_ko": "PD, PK, 독성시험 결과 및 예상 치료 용량 범위에서의 노출을 포함한 이용 가능한 모든 비임상 및 임상 데이터에 근거하여 정당화해야 한다.",
+      "normalized_ko": "최대 노출은 PD, PK, 독성시험 소견 및 예상 치료 용량 범위에서의 노출을 포함한 이용 가능한 모든 비임상 및 임상 자료에 근거하여 정당화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3641,7 +3641,7 @@
       "subject": "Target saturation",
       "action": "be taken into account",
       "object": null,
-      "normalized_ko": "고려해야 한다.",
+      "normalized_ko": "표적 포화는 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3655,7 +3655,7 @@
       "subject": "the maximum exposure",
       "action": "consider",
       "object": "when complete inhibition or activation of the target is achieved and no further therapeutic effect is to be expected by increasing the dose",
-      "normalized_ko": "표적의 완전한 억제 또는 활성화가 달성되고 용량을 증가시켜도 추가적인 치료 효과가 예상되지 않는 경우 고려해야 한다.",
+      "normalized_ko": "최대 노출은 표적의 완전한 억제 또는 활성화가 달성되고 용량 증가로 추가적인 치료 효과가 기대되지 않는 시점을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3669,7 +3669,7 @@
       "subject": "The use of a maximum dose",
       "action": "be warranted",
       "object": null,
-      "normalized_ko": "필요할 수 있다.",
+      "normalized_ko": "최대 용량의 사용은 일부 경우 정당화될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3683,7 +3683,7 @@
       "subject": "the maximum exposure of healthy volunteers",
       "action": "be within",
       "object": "the estimated human pharmacodynamic dose range",
-      "normalized_ko": "추정된 인간 약력학적 용량 범위 내에 있어야 한다.",
+      "normalized_ko": "건강한 자원자의 최대 노출은 추정된 인체 약력학적 용량 범위 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3697,7 +3697,7 @@
       "subject": "exposure levels exceeding the pharmacodynamic dose range",
       "action": "be carefully explored",
       "object": null,
-      "normalized_ko": "신중하게 탐색할 수 있다.",
+      "normalized_ko": "약력학적 용량 범위를 초과하는 노출 수준은 신중하게 탐색될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3711,7 +3711,7 @@
       "subject": "the maximum tolerated dose (MTD)",
       "action": "be clearly defined",
       "object": null,
-      "normalized_ko": "명확하게 정의해야 한다.",
+      "normalized_ko": "최대 내약 용량(MTD)은 명확히 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3725,7 +3725,7 @@
       "subject": "the maximum tolerated dose (MTD)",
       "action": "not be exceeded",
       "object": null,
-      "normalized_ko": "초과해서는 안 된다.",
+      "normalized_ko": "최대 내약 용량(MTD)은 초과되어서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -3739,7 +3739,7 @@
       "subject": "The potential therapeutic/clinically relevant dose (exposure) and the expected benefit/risk balance",
       "action": "always be considered",
       "object": "when defining the dose range",
-      "normalized_ko": "용량 범위를 정의할 때 항상 고려해야 한다.",
+      "normalized_ko": "잠재적 치료적/임상적으로 관련된 용량(노출) 및 예상되는 유익성/위해성 균형은 용량 범위를 정의할 때 항상 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3753,7 +3753,7 @@
       "subject": "A trial design using a MTD approach",
       "action": "be inappropriate",
       "object": "for healthy volunteers",
-      "normalized_ko": "건강한 자원자에게는 부적절하다.",
+      "normalized_ko": "MTD 접근법을 사용하는 시험 설계는 건강한 자원자에게 부적절한 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -3767,7 +3767,7 @@
       "subject": "available data",
       "action": "includes",
       "object": "PD",
-      "normalized_ko": "이용 가능한 데이터에는 PD가 포함된다.",
+      "normalized_ko": "가용 데이터에는 PD가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3795,7 +3795,7 @@
       "subject": "The selection of an appropriate dosing interval and duration of dosing",
       "action": "take into account",
       "object": "the specific PK and PD characteristics of the IMP, the available non-clinical safety data, and all data from subjects in previous single dose cohorts",
-      "normalized_ko": "적절한 투여 간격 및 투여 기간을 선정할 때 IMP의 특정 PK 및 PD 특성, 이용 가능한 비임상 안전성 자료 및 이전 단회 투여 코호트 대상자 자료를 고려해야 한다.",
+      "normalized_ko": "적절한 투여 간격 및 투여 기간의 선정은 IMP의 특정 PK 및 PD 특성, 확보된 비임상 안전성 데이터 및 이전 단회 투여 코호트의 대상자로부터 얻은 모든 데이터를 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3809,7 +3809,7 @@
       "subject": "Particular attention",
       "action": "be paid to",
       "object": "linear versus non-linear PK in the expected concentration range, the PK half-life versus duration of action, and the potential for accumulation",
-      "normalized_ko": "예상 농도 범위에서의 선형 대 비선형 PK, PK 반감기 대 작용 지속시간 및 축적 가능성에 특히 주의를 기울여야 한다.",
+      "normalized_ko": "예상 농도 범위에서의 선형 PK와 비선형 PK의 대비, PK 반감기와 작용 지속시간의 대비 및 축적 가능성에 특별한 주의를 기울여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3837,7 +3837,7 @@
       "subject": "The expected exposure after multiple dosing (Cmax and AUC0-tau)",
       "action": "have been covered during",
       "object": "preceding SAD parts/trials",
-      "normalized_ko": "다회 투여 후 예상 노출량(Cmax 및 AUC0-tau)은 선행 SAD 파트/시험에서 다루어졌어야 한다.",
+      "normalized_ko": "반복 투여 후 예상 노출(Cmax 및 AUC0-tau)은 선행 SAD 부분/시험에서 포괄되었어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3851,7 +3851,7 @@
       "subject": "higher exposures in a MAD part",
       "action": "be considered in a MAD part",
       "object": "if emerging clinical data suggests tolerance to adverse effects seen in SAD, provided pre-specified and below max exposure",
-      "normalized_ko": "MAD 파트에서 더 높은 노출량을 고려할 수 있다.",
+      "normalized_ko": "SAD에서 관찰된 이상반응에 대한 내약성을 새로운 임상 데이터가 시사하고, 이 선택지가 사전에 명시되어 있으며 설정된 최대 노출량 미만인 경우, MAD 부분에서 더 높은 노출량을 고려할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3865,7 +3865,7 @@
       "subject": "Multiple dosing parts",
       "action": "explore",
       "object": "different dosing regimens and schedules",
-      "normalized_ko": "다회 투여 파트는 서로 다른 투여 요법 및 일정을 탐색할 수도 있다.",
+      "normalized_ko": "반복 투여 부분은 서로 다른 투여 요법 및 일정을 탐색할 수도 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3879,7 +3879,7 @@
       "subject": "dosing regimens and schedules",
       "action": "includes",
       "object": "a move from once daily dosing to twice daily dosing",
-      "normalized_ko": "투여 요법 및 일정의 예에는 1일 1회 투여에서 1일 2회 투여로의 전환이 포함된다.",
+      "normalized_ko": "투여 요법 및 일정에는 1일 1회 투여에서 1일 2회 투여로의 변경이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3907,7 +3907,7 @@
       "subject": "The choice of route of administration for dosing in humans",
       "action": "be based on",
       "object": "the non-clinical data, the characteristics of the IMP, and the intended therapeutic use",
-      "normalized_ko": "비임상 데이터, IMP의 특성 및 의도된 치료적 사용에 근거해야 한다.",
+      "normalized_ko": "인체 투여를 위한 투여 경로의 선택은 비임상 데이터, IMP의 특성 및 의도된 치료적 사용에 근거해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3921,7 +3921,7 @@
       "subject": "a slow infusion",
       "action": "be more appropriate than",
       "object": "a bolus injection",
-      "normalized_ko": "일시주사보다 더 적절할 수 있다.",
+      "normalized_ko": "느린 주입은 일시 주사보다 더 적절할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3935,7 +3935,7 @@
       "subject": "This",
       "action": "would allow for",
       "object": "a timely discontinuation of the infusion to mitigate an adverse outcome",
-      "normalized_ko": "이상 결과를 완화하기 위해 주입을 적시에 중단할 수 있게 할 것이다.",
+      "normalized_ko": "이는 이상 결과를 완화하기 위한 적시의 주입 중단을 가능하게 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3949,7 +3949,7 @@
       "subject": "Trials",
       "action": "be designed to optimise",
       "object": "the knowledge to be gained from the study",
-      "normalized_ko": "시험으로부터 획득할 지식을 최적화하도록 설계해야 한다.",
+      "normalized_ko": "시험은 연구로부터 얻을 지식을 최적화하도록 설계되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3963,7 +3963,7 @@
       "subject": "Trials",
       "action": "not expose",
       "object": "excessive numbers of subjects",
-      "normalized_ko": "과도한 수의 대상자가 노출되어서는 안 된다.",
+      "normalized_ko": "시험은 과도한 수의 피험자를 노출해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -3977,7 +3977,7 @@
       "subject": "Trials",
       "action": "ensure",
       "object": "the safety of participants",
-      "normalized_ko": "참여자의 안전을 보장해야 한다.",
+      "normalized_ko": "시험은 참여자의 안전을 보장해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3991,7 +3991,7 @@
       "subject": "The overall study design",
       "action": "justify",
       "object": "the inclusion of each study part",
-      "normalized_ko": "각 연구 파트의 포함을 정당화해야 한다.",
+      "normalized_ko": "전체 연구 설계는 각 연구 부분의 포함을 정당화해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4005,7 +4005,7 @@
       "subject": "Risk mitigation activities",
       "action": "be proportionate to",
       "object": "the degree of uncertainty and the potential risks identified",
-      "normalized_ko": "확인된 불확실성의 정도 및 잠재적 위험에 비례해야 한다.",
+      "normalized_ko": "위험 완화 활동은 불확실성의 정도 및 확인된 잠재적 위험에 비례해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4019,7 +4019,7 @@
       "subject": "study design aspects",
       "action": "includes",
       "object": "choice of study population",
-      "normalized_ko": "연구 대상 집단의 선택을 포함한다.",
+      "normalized_ko": "연구 설계 측면에는 연구 대상 집단의 선택이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4033,7 +4033,7 @@
       "subject": "a PD measure",
       "action": "be included",
       "object": "to facilitate the link with the non-clinical experience and support dose escalation decisions",
-      "normalized_ko": "비임상 경험과의 연계를 용이하게 하고 용량 증량 결정을 지원하기 위해 포함되어야 한다.",
+      "normalized_ko": "비임상 경험과의 연계를 용이하게 하고 용량 증량 결정에 도움이 되도록 PD 측정치를 포함하는 것이 권장된다.",
       "review_status": "reviewed"
     },
     {
@@ -4047,7 +4047,7 @@
       "subject": "a PD measure",
       "action": "facilitate",
       "object": "the link with the non-clinical experience",
-      "normalized_ko": "비임상 경험과의 연계를 용이하게 한다.",
+      "normalized_ko": "PD 측정치는 비임상 경험과의 연계를 촉진한다.",
       "review_status": "reviewed"
     },
     {
@@ -4061,7 +4061,7 @@
       "subject": "a PD measure",
       "action": "support",
       "object": "dose escalation decisions",
-      "normalized_ko": "용량 증량 결정을 지원한다.",
+      "normalized_ko": "PD 측정치는 용량 증량 결정을 지원한다.",
       "review_status": "reviewed"
     },
     {
@@ -4075,7 +4075,7 @@
       "subject": "The clinical trial protocol",
       "action": "is",
       "object": "a core document of a trial",
-      "normalized_ko": "임상시험의 핵심 문서이다.",
+      "normalized_ko": "임상시험계획서는 시험의 핵심 문서이다.",
       "review_status": "reviewed"
     },
     {
@@ -4089,7 +4089,7 @@
       "subject": "The clinical trial protocol",
       "action": "is drafted",
       "object": "as one of the first steps in any research project",
-      "normalized_ko": "모든 연구 프로젝트에서 최초 단계 중 하나로 작성된다.",
+      "normalized_ko": "임상시험계획서는 모든 연구 프로젝트의 최초 단계 중 하나로 작성된다.",
       "review_status": "reviewed"
     },
     {
@@ -4103,7 +4103,7 @@
       "subject": "The protocol",
       "action": "describe",
       "object": "what is being done in the trial and the rationale behind key decisions",
-      "normalized_ko": "임상시험에서 수행되는 내용과 주요 결정의 근거를 기술해야 한다.",
+      "normalized_ko": "계획서는 시험에서 수행되는 사항과 주요 결정의 근거를 정확히 기술해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4117,7 +4117,7 @@
       "subject": "Graphical representation of the overall scheme of the proposed trial in real-time",
       "action": "be encouraged",
       "object": "showing intervals to allow rolling review, timing of all reviews and decision points and highlighting any overlap between study cohorts and parts",
-      "normalized_ko": "순차적 검토가 가능하도록 하는 간격, 모든 검토 및 의사결정 시점, 그리고 연구 코호트 및 파트 간의 모든 중복을 강조하여 제시하는 것이 권장되어야 한다.",
+      "normalized_ko": "순차적 검토가 가능하도록 하는 간격, 모든 검토 및 의사결정 시점, 그리고 시험 코호트 및 부분 간 모든 중복을 강조하여 보여주는 제안된 시험의 전체 계획에 대한 실시간 그래픽 표현을 권장한다.",
       "review_status": "reviewed"
     },
     {
@@ -4131,7 +4131,7 @@
       "subject": "Details on the size of the cohorts",
       "action": "be included",
       "object": "including how many subjects are on active IMP and how many are on placebo treatment",
-      "normalized_ko": "활성 IMP를 투여받는 대상자 수와 위약 치료를 받는 대상자 수를 포함하여 포함되어야 한다.",
+      "normalized_ko": "코호트 규모에 관한 세부사항(활성 IMP 투여 피험자 수 및 위약 치료 피험자 수 포함)은 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4145,7 +4145,7 @@
       "subject": "Graphical representation of the overall scheme of the proposed trial",
       "action": "be provided",
       "object": "in real-time showing intervals to allow rolling review, timing of all reviews and decision points and highlighting any overlap between study cohorts and parts",
-      "normalized_ko": "순차적 검토가 가능하도록 하는 간격, 모든 검토 및 의사결정 시점, 그리고 연구 코호트 및 파트 간의 모든 중복을 강조하여 실시간으로 제공되어야 한다.",
+      "normalized_ko": "순차적 검토가 가능하도록 하는 간격, 모든 검토 및 의사결정 시점, 그리고 시험 코호트 및 부분 간 모든 중복을 강조하여 보여주는 제안된 시험의 전체 계획에 대한 그래픽 표현을 실시간으로 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4159,7 +4159,7 @@
       "subject": "information generated in previous parts",
       "action": "be analysed",
       "object": "into an assessment in a limited timeframe",
-      "normalized_ko": "제한된 기간 내에 평가에 분석되어야 한다.",
+      "normalized_ko": "이전 부분에서 생성된 정보는 제한된 기간 내에 평가에 반영하여 분석할 필요가 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4173,7 +4173,7 @@
       "subject": "information generated in previous parts",
       "action": "be integrated",
       "object": "into an assessment in a limited timeframe",
-      "normalized_ko": "제한된 기간 내에 평가에 통합되어야 한다.",
+      "normalized_ko": "이전 부분에서 생성된 정보는 제한된 기간 내에 평가에 통합할 필요가 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4187,7 +4187,7 @@
       "subject": "All parts",
       "action": "be predefined",
       "object": "within an integrated protocol",
-      "normalized_ko": "통합 프로토콜 내에서 사전에 정의되어야 한다.",
+      "normalized_ko": "모든 부분은 통합 계획서 내에 사전에 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4201,7 +4201,7 @@
       "subject": "(dose selection) criteria",
       "action": "be established",
       "object": "in the protocol",
-      "normalized_ko": "프로토콜에 확립되어야 한다.",
+      "normalized_ko": "(용량 선택) 기준은 계획서에 수립되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4215,7 +4215,7 @@
       "subject": "Dose selection criteria",
       "action": "integrate",
       "object": "data from previous study parts",
-      "normalized_ko": "이전 연구 파트의 데이터를 통합해야 한다.",
+      "normalized_ko": "용량 선택 기준은 이전 연구 부분의 데이터를 통합해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4229,7 +4229,7 @@
       "subject": "Feasibility to review and adapt the planned study design based on emerging clinical data",
       "action": "be considered",
       "object": "in the integrated protocol",
-      "normalized_ko": "통합 프로토콜에서 고려되어야 한다.",
+      "normalized_ko": "새롭게 발생하는 임상 데이터에 기반하여 계획된 시험 설계를 검토하고 조정할 수 있는 가능성은 통합 프로토콜에서 또한 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4243,7 +4243,7 @@
       "subject": "Any changes outside predefined criteria",
       "action": "be implemented",
       "object": "via a substantial amendment",
-      "normalized_ko": "실질적 변경을 통해 이행되어야 한다.",
+      "normalized_ko": "사전 정의된 기준을 벗어나는 모든 변경은 중대한 변경을 통해 반드시 시행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4257,7 +4257,7 @@
       "subject": "the time sequence for the conduct of different parts",
       "action": "has",
       "object": "the following recommendations",
-      "normalized_ko": "다음 권고사항이 있다.",
+      "normalized_ko": "서로 다른 부분의 수행 시간 순서에는 다음 권고사항이 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4271,7 +4271,7 @@
       "subject": "the following recommendations",
       "action": "apply",
       "object": "Regarding the time sequence for the conduct of different parts",
-      "normalized_ko": "서로 다른 부분의 수행 시간 순서와 관련하여 적용된다.",
+      "normalized_ko": "다음 권고사항은 서로 다른 부분의 수행 시간 순서에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -4285,7 +4285,7 @@
       "subject": "Overlap of SAD and MAD parts",
       "action": "be acceptable",
       "object": null,
-      "normalized_ko": "허용될 수 있다.",
+      "normalized_ko": "SAD 부분과 MAD 부분의 중첩은 허용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4299,7 +4299,7 @@
       "subject": "Other single dose parts (e.g. food interaction)",
       "action": "be conducted in parallel to",
       "object": "the SAD part provided dose and exposure are equal to or lower than preceding concluded SAD cohort without stopping criteria",
-      "normalized_ko": "선행하여 종료된 SAD 코호트에 중단 기준이 없고 용량 및 노출이 동일하거나 그보다 낮은 경우, SAD 부분과 병행하여 수행될 수 있다.",
+      "normalized_ko": "기타 단회 투여 부분(예: 음식 상호작용)은 선택된 용량 및 예상 노출이 용량 증량 중단 기준이 충족되지 않은 종료된 선행 SAD 코호트에서 도달한 수준과 같거나 더 낮은 경우 SAD 부분과 병행하여 수행될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4313,7 +4313,7 @@
       "subject": "any overlap",
       "action": "be scientifically justified",
       "object": null,
-      "normalized_ko": "과학적으로 정당화되어야 한다.",
+      "normalized_ko": "모든 중첩은 과학적으로 정당화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4327,7 +4327,7 @@
       "subject": "any overlap",
       "action": "be supported by",
       "object": "decision points",
-      "normalized_ko": "의사결정 시점에 의해 뒷받침되어야 한다.",
+      "normalized_ko": "모든 중첩은 의사결정 시점에 의해 뒷받침되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4341,7 +4341,7 @@
       "subject": "Other study parts that involve multiple dosing (e.g. drug-drug interaction)",
       "action": "not overlap with",
       "object": "earlier SAD or MAD cohorts unless justified in the protocol",
-      "normalized_ko": "프로토콜에서 정당화되지 않는 한, 이전 SAD 또는 MAD 코호트와 중복되지 않아야 한다.",
+      "normalized_ko": "다회 투여를 포함하는 다른 연구 파트(예: 약물-약물 상호작용)는 프로토콜에서 정당화되지 않는 한 일반적으로 이전 SAD 또는 MAD 코호트와 중복되어서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -4355,7 +4355,7 @@
       "subject": "All relevant SAD and MAD data",
       "action": "be reviewed",
       "object": "before starting other multiple dosing parts",
-      "normalized_ko": "다른 다회 투여 부분을 시작하기 전에 검토되어야 한다.",
+      "normalized_ko": "관련된 모든 SAD 및 MAD 데이터는 기타 다회 투여 부분을 시작하기 전에 검토되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4369,7 +4369,7 @@
       "subject": "the information generated in previous parts",
       "action": "be analysed and integrated into an assessment",
       "object": "in a limited timeframe prior to making a decision on proceeding to the next part",
-      "normalized_ko": "다음 부분으로 진행할지 결정하기 전에 제한된 기간 내에 분석되고 평가에 통합된다.",
+      "normalized_ko": "이전 부분에서 생성된 정보는 다음 부분으로의 진행 여부를 결정하기 전에 제한된 기간 내에 분석되고 평가에 통합될 필요가 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4383,7 +4383,7 @@
       "subject": "Any changes outside predefined criteria",
       "action": "be implemented",
       "object": "via a substantial amendment",
-      "normalized_ko": "실질적 변경을 통해 이행되어야 한다.",
+      "normalized_ko": "사전 정의된 기준을 벗어나는 모든 변경은 중대한 변경을 통해 반드시 시행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4397,7 +4397,7 @@
       "subject": "other single dose parts",
       "action": "includes",
       "object": "food interaction",
-      "normalized_ko": "음식물 상호작용을 포함한다.",
+      "normalized_ko": "기타 단회 투여 부분에는 음식 상호작용이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4411,7 +4411,7 @@
       "subject": "clinical factors",
       "action": "includes",
       "object": "whether the toxicities foreseen/risks associated can support the inclusion of healthy volunteers",
-      "normalized_ko": "예상되는 독성/관련 위험이 건강한 자원자의 포함을 뒷받침할 수 있는지 여부를 포함한다.",
+      "normalized_ko": "임상적 요인에는 예상되는 독성 또는 관련 위험이 건강한 지원자의 포함을 뒷받침할 수 있는지 여부가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4425,7 +4425,7 @@
       "subject": "The key inclusion and exclusion criteria",
       "action": "consider",
       "object": "an adequate set of vital signs (including ECG), laboratory values and clinical assessments",
-      "normalized_ko": "적절한 일련의 활력징후(ECG 포함), 검사실 수치 및 임상 평가를 고려해야 한다.",
+      "normalized_ko": "주요 선정 및 제외 기준은 적절한 활력징후(ECG 포함), 검사실 수치 및 임상 평가 세트를 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4439,7 +4439,7 @@
       "subject": "an adequate set of vital signs (including ECG), laboratory values and clinical assessments",
       "action": "be within",
       "object": "normal ranges",
-      "normalized_ko": "정상 범위 내에 있어야 한다.",
+      "normalized_ko": "적절한 활력징후(ECG 포함), 검사실 수치 및 임상 평가 세트는 정상 범위 내에 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4453,7 +4453,7 @@
       "subject": "Deviations outside these ranges",
       "action": "be possible",
       "object": null,
-      "normalized_ko": "가능할 수 있다.",
+      "normalized_ko": "이러한 범위를 벗어나는 일탈은 가능할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4467,7 +4467,7 @@
       "subject": "The subject safety assessments that will be routinely conducted, their timing and any additional monitoring actions or interventions",
       "action": "be pre-specified",
       "object": "in line with the known pharmacological and non-clinical safety profile",
-      "normalized_ko": "알려진 약리학적 및 비임상 안전성 프로파일에 부합하도록 사전에 명시되어야 한다.",
+      "normalized_ko": "일상적으로 수행될 피험자 안전성 평가, 그 시점 및 추가 모니터링 조치 또는 중재는 알려진 약리학적 및 비임상 안전성 프로파일에 부합하도록 사전에 명시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4481,7 +4481,7 @@
       "subject": "The subject safety assessments that will be routinely conducted, their timing and any additional monitoring actions or interventions",
       "action": "be balanced against",
       "object": "the degree of uncertainty",
-      "normalized_ko": "불확실성의 정도와 균형을 이루어야 한다.",
+      "normalized_ko": "일상적으로 수행될 피험자 안전성 평가, 그 시점 및 추가 모니터링 조치 또는 중재는 불확실성의 정도와 균형을 이루어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4495,7 +4495,7 @@
       "subject": "routine general monitoring",
       "action": "be conducted",
       "object": "to detect potential unexpected adverse effects that are not related to known properties of the IMP",
-      "normalized_ko": "시험용 의약품의 알려진 특성과 관련되지 않은 잠재적인 예상치 못한 이상반응을 탐지하기 위해 수행되어야 한다.",
+      "normalized_ko": "일상적 일반 모니터링은 IMP의 알려진 특성과 관련되지 않은 잠재적 예기치 않은 이상반응을 탐지하기 위해 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4509,7 +4509,7 @@
       "subject": "routine general monitoring",
       "action": "includes",
       "object": "vital signs",
-      "normalized_ko": "활력징후를 포함한다.",
+      "normalized_ko": "일상적 일반 모니터링에는 활력징후가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4523,7 +4523,7 @@
       "subject": "Repeated assessments, integrating available knowledge with rapid processing of emerging information",
       "action": "are crucial for",
       "object": "the recognition of developing toxicity at an early stage",
-      "normalized_ko": "초기 단계에서 진행 중인 독성을 인지하는 데 중요하다.",
+      "normalized_ko": "이용 가능한 지식의 통합 및 새로 발생하는 정보의 신속한 처리를 포함하는 반복 평가는 진행 중인 독성을 조기에 인지하는 데 매우 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -4537,7 +4537,7 @@
       "subject": "The exact nature of the assessments and their timing",
       "action": "be provided in",
       "object": "the study protocol",
-      "normalized_ko": "시험계획서에 제공되어야 한다.",
+      "normalized_ko": "평가의 정확한 성격 및 그 시점은 시험계획서에 제공되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4551,7 +4551,7 @@
       "subject": "Any proposal to routinely omit an assessment",
       "action": "be scientifically based",
       "object": null,
-      "normalized_ko": "과학적 근거에 기반해야 한다.",
+      "normalized_ko": "평가를 일상적으로 생략하려는 모든 제안은 과학적 근거에 기반해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4565,7 +4565,7 @@
       "subject": "The length of follow-up of subjects",
       "action": "be specified within",
       "object": "the protocol",
-      "normalized_ko": "시험계획서 내에 명시되어야 한다.",
+      "normalized_ko": "피험자의 추적관찰 기간은 시험계획서 내에 명시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4579,7 +4579,7 @@
       "subject": "The sponsor",
       "action": "describe how",
       "object": "safety monitoring should be extended",
-      "normalized_ko": "안전성 모니터링을 어떻게 연장해야 하는지를 기술해야 한다.",
+      "normalized_ko": "의뢰자는 안전성 모니터링을 어떻게 연장해야 하는지 기술해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4593,7 +4593,7 @@
       "subject": "safety monitoring",
       "action": "be extended",
       "object": null,
-      "normalized_ko": "연장되어야 한다.",
+      "normalized_ko": "안전성 모니터링은 연장되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4607,7 +4607,7 @@
       "subject": "Extended monitoring",
       "action": "be considered",
       "object": null,
-      "normalized_ko": "고려되어야 한다.",
+      "normalized_ko": "연장 모니터링은 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4621,7 +4621,7 @@
       "subject": "monitoring",
       "action": "continue",
       "object": null,
-      "normalized_ko": "계속되어야 한다.",
+      "normalized_ko": "모니터링은 계속되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4635,7 +4635,7 @@
       "subject": "Emerging clinical data",
       "action": "be used to support",
       "object": "altering the frequency or timing of assessments",
-      "normalized_ko": "평가의 빈도 또는 시기를 변경하는 것을 뒷받침하는 데 사용될 수 있다.",
+      "normalized_ko": "새로 발생하는 임상 데이터는 평가의 빈도 또는 시점 변경을 뒷받침하는 데 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4649,7 +4649,7 @@
       "subject": "Repeated assessments, integrating available knowledge with rapid processing of emerging information",
       "action": "be crucial for",
       "object": "the recognition of developing toxicity at an early stage",
-      "normalized_ko": "초기 단계에서 진행 중인 독성을 인지하는 데 중요하다.",
+      "normalized_ko": "이용 가능한 지식의 통합 및 새로 발생하는 정보의 신속한 처리를 포함하는 반복 평가는 진행 중인 독성을 조기에 인지하는 데 매우 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -4663,7 +4663,7 @@
       "subject": "Section 8.2.5",
       "action": "covers",
       "object": "General considerations for all cohorts",
-      "normalized_ko": "모든 코호트에 대한 일반적 고려사항을 다룬다.",
+      "normalized_ko": "제8.2.5절은 모든 코호트에 대한 일반적 고려사항을 다룬다.",
       "review_status": "reviewed"
     },
     {
@@ -4677,7 +4677,7 @@
       "subject": "General considerations",
       "action": "apply to",
       "object": "all cohorts",
-      "normalized_ko": "모든 코호트에 적용된다.",
+      "normalized_ko": "일반적 고려사항은 모든 코호트에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -4691,7 +4691,7 @@
       "subject": "The number of subjects per cohort",
       "action": "depends on",
       "object": "the variability of both PK and PD parameters and the trial objectives",
-      "normalized_ko": "PK 및 PD 파라미터 모두의 변동성과 시험 목적에 따라 달라진다.",
+      "normalized_ko": "코호트당 피험자 수는 PK 및 PD 파라미터 모두의 변동성과 시험 목적에 따라 달라진다.",
       "review_status": "reviewed"
     },
     {
@@ -4705,7 +4705,7 @@
       "subject": "Flexibility",
       "action": "be allowed for",
       "object": "the number of cohorts to be investigated",
-      "normalized_ko": "조사할 코호트 수에 대해 허용될 수 있다.",
+      "normalized_ko": "유연성은 조사할 코호트 수에 대해 허용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4719,7 +4719,7 @@
       "subject": "Inclusion of the same subjects across multiple cohorts",
       "action": "be possible",
       "object": null,
-      "normalized_ko": "가능할 수 있다.",
+      "normalized_ko": "여러 코호트에 동일한 피험자를 포함하는 것은 가능할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4733,7 +4733,7 @@
       "subject": "any plan to include optional additional cohorts",
       "action": "be clearly pre-defined",
       "object": "in the protocol with the underlying rationale provided",
-      "normalized_ko": "근거가 제시된 상태로 시험계획서에 명확히 사전 정의되어야 한다.",
+      "normalized_ko": "선택적 추가 코호트를 포함하려는 모든 계획은 근거가 제공된 시험계획서에 명확히 사전 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4747,7 +4747,7 @@
       "subject": "the underlying rationale",
       "action": "be provided",
       "object": null,
-      "normalized_ko": "제공되어야 한다.",
+      "normalized_ko": "근거는 제공되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4761,7 +4761,7 @@
       "subject": "Inclusion of the same subjects across multiple cohorts",
       "action": "be scientifically justified",
       "object": "in the protocol",
-      "normalized_ko": "시험계획서에서 과학적으로 정당화되어야 한다.",
+      "normalized_ko": "여러 코호트에 동일한 피험자를 포함하는 것은 시험계획서에서 과학적으로 정당화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4775,7 +4775,7 @@
       "subject": "repeating a dose level",
       "action": "not be acceptable",
       "object": "where any dose escalation stopping rule has been met",
-      "normalized_ko": "용량 증량 중단 규칙이 충족된 경우에는 허용될 수 없다.",
+      "normalized_ko": "용량 증량 중단 규칙 중 어느 하나라도 충족된 경우 용량 수준을 반복하는 것은 허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4789,7 +4789,7 @@
       "subject": "Re-enrolment into higher dose cohorts",
       "action": "only be possible",
       "object": null,
-      "normalized_ko": "오직 가능하다.",
+      "normalized_ko": "고용량 코호트로의 재등록은 제한적으로만 가능하다.",
       "review_status": "reviewed"
     },
     {
@@ -4803,7 +4803,7 @@
       "subject": "Inclusion of the same subjects across multiple cohorts",
       "action": "be possible",
       "object": null,
-      "normalized_ko": "가능할 수 있다.",
+      "normalized_ko": "동일 대상자를 여러 코호트에 포함하는 것이 가능하다.",
       "review_status": "reviewed"
     },
     {
@@ -4817,7 +4817,7 @@
       "subject": "Inclusion of the same subjects across multiple cohorts",
       "action": "includes",
       "object": "as part of an alternate cohort dosing scheme",
-      "normalized_ko": "대체 코호트 투여 방식의 일부로 포함된다.",
+      "normalized_ko": "여러 코호트에 동일 대상자를 포함하는 것의 예에는 대체 코호트 투여 방식의 일부인 경우가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4831,7 +4831,7 @@
       "subject": "any plan to include optional additional cohorts",
       "action": "be clearly pre-defined",
       "object": null,
-      "normalized_ko": "명확하게 사전에 정의되어야 한다.",
+      "normalized_ko": "선택적 추가 코호트를 포함하기 위한 모든 계획은 명확하게 사전 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4845,7 +4845,7 @@
       "subject": "the underlying rationale",
       "action": "be provided",
       "object": null,
-      "normalized_ko": "제공되어야 한다.",
+      "normalized_ko": "근거가 제시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4859,7 +4859,7 @@
       "subject": "Re-enrolment into higher dose cohorts",
       "action": "only be possible",
       "object": null,
-      "normalized_ko": "오직 가능할 수 있다.",
+      "normalized_ko": "고용량 코호트로의 재등록은 제한적으로만 가능하다.",
       "review_status": "reviewed"
     },
     {
@@ -4873,7 +4873,7 @@
       "subject": "administration of the first dose in any cohort",
       "action": "be designed so that",
       "object": "a single subject receives a single dose of the active IMP",
-      "normalized_ko": "단일 피험자가 활성 IMP의 단회 용량을 투여받도록 설계하는 것이 권장된다.",
+      "normalized_ko": "모든 코호트에서 첫 번째 용량 투여는 한 명의 대상자가 활성 IMP를 단회 투여받도록 설계하는 것이 적절한 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -4887,7 +4887,7 @@
       "subject": "study design",
       "action": "allow for",
       "object": "one subject on active and one on placebo to be dosed simultaneously prior to dosing the remaining subjects in the cohort",
-      "normalized_ko": "코호트 내 나머지 피험자에게 투여하기 전에 활성군 피험자 1명과 위약군 피험자 1명에게 동시에 투여할 수 있도록 하는 것이 권장된다.",
+      "normalized_ko": "시험 설계는 코호트 내 나머지 대상자에게 투여하기 전에 활성군 1명과 위약군 1명이 동시에 투여받도록 허용하는 것이 적절하다.",
       "review_status": "reviewed"
     },
     {
@@ -4901,7 +4901,7 @@
       "subject": "this approach",
       "action": "be used",
       "object": "for all single and multiple dosing cohorts",
-      "normalized_ko": "모든 단회 및 반복 투여 코호트에 사용하는 것이 권장된다.",
+      "normalized_ko": "이 접근법은 모든 단회 및 반복 투여 코호트에 사용될 것으로 기대된다.",
       "review_status": "reviewed"
     },
     {
@@ -4915,7 +4915,7 @@
       "subject": "one subject on active and one on placebo",
       "action": "be dosed simultaneously",
       "object": "prior to dosing the remaining subjects in the cohort",
-      "normalized_ko": "활성군 1명과 위약군 1명은 코호트의 나머지 피험자 투여 전에 동시에 투여하는 것이 적절하다.",
+      "normalized_ko": "활성군 1명과 위약군 1명은 코호트 내 나머지 대상자에게 투여하기 전에 동시에 투여받는 것이 적절하다.",
       "review_status": "reviewed"
     },
     {
@@ -4929,7 +4929,7 @@
       "subject": "This approach",
       "action": "be expected for",
       "object": "all single and multiple dosing cohorts",
-      "normalized_ko": "이 접근법은 모든 단회 및 반복 투여 코호트에서 예상된다.",
+      "normalized_ko": "이 접근법은 모든 단회 및 반복 투여 코호트에 적용될 것으로 기대된다.",
       "review_status": "reviewed"
     },
     {
@@ -4943,7 +4943,7 @@
       "subject": "a single subject receiving a single dose of the active IMP",
       "action": "is often known as",
       "object": "sentinel dosing",
-      "normalized_ko": "흔히 센티널 투여(sentinel dosing)로 알려져 있다.",
+      "normalized_ko": "한 명의 대상자가 활성 IMP를 단회 투여받는 것은 흔히 센티널 투여로 알려져 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4957,7 +4957,7 @@
       "subject": "flexibility in this approach",
       "action": "be allowed",
       "object": null,
-      "normalized_ko": "허용될 수 있다.",
+      "normalized_ko": "이 접근법의 유연성은 허용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4971,7 +4971,7 @@
       "subject": "this sentinel approach",
       "action": "continue or start to be appropriate",
       "object": "at later stages of study design",
-      "normalized_ko": "연구 설계의 후반 단계에서 계속 적용하거나 새로 적용하는 것이 적절할 수 있다.",
+      "normalized_ko": "이 센티널 접근법은 시험 설계의 후기 단계에서 계속 적절하거나 새롭게 적절해질 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4985,7 +4985,7 @@
       "subject": "flexibility in this approach",
       "action": "be on",
       "object": "a risk-proportionate basis",
-      "normalized_ko": "위험 비례 원칙에 근거해야 한다.",
+      "normalized_ko": "이 접근법의 유연성은 위험 비례 원칙에 기반해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4999,7 +4999,7 @@
       "subject": "proposals not to use this strategy",
       "action": "have",
       "object": "a clear scientific rationale",
-      "normalized_ko": "명확한 과학적 근거를 가져야 한다.",
+      "normalized_ko": "이 전략을 사용하지 않으려는 제안에는 명확한 과학적 근거가 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5013,7 +5013,7 @@
       "subject": "administration of the first dose in any cohort",
       "action": "be designed so that",
       "object": "a single subject receives a single dose of active IMP (sentinel dosing)",
-      "normalized_ko": "단일 피험자가 활성 IMP의 단회 용량을 투여받도록 설계되어야 한다(센티널 투여).",
+      "normalized_ko": "모든 코호트에서 첫 번째 용량 투여는 한 명의 대상자가 활성 IMP를 단회 투여받도록 설계하는 것이 적절한 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -5027,7 +5027,7 @@
       "subject": "placebo-controlled study design",
       "action": "allow for",
       "object": "one subject on active and one on placebo to be dosed simultaneously prior to remaining subjects",
-      "normalized_ko": "나머지 피험자에게 투여하기 전에 활성군 피험자 1명과 위약군 피험자 1명에게 동시에 투여할 수 있도록 해야 한다.",
+      "normalized_ko": "위약 대조 시험 설계는 나머지 대상자에게 투여하기 전에 활성군 1명과 위약군 1명이 동시에 투여받도록 허용하는 것이 적절하다.",
       "review_status": "reviewed"
     },
     {
@@ -5041,7 +5041,7 @@
       "subject": "the observation period between sentinel subjects and remaining subjects",
       "action": "be adequate to",
       "object": "observe for any reactions and adverse events based on PK/PD and uncertainty",
-      "normalized_ko": "PK/PD 및 불확실성을 바탕으로 모든 반응 및 이상반응을 관찰하기에 충분해야 한다.",
+      "normalized_ko": "센티널 대상자와 나머지 대상자 간의 관찰 기간은 PK/PD 및 불확실성을 바탕으로 모든 반응 및 이상반응을 관찰하기에 적절해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5055,7 +5055,7 @@
       "subject": "dose stopping rules",
       "action": "be in place",
       "object": null,
-      "normalized_ko": "마련되어 있어야 한다.",
+      "normalized_ko": "용량 투여 중단 규칙이 마련되어 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5069,7 +5069,7 @@
       "subject": "period of time between the administration of treatment to these first subjects in a cohort and the remaining subjects in the cohort",
       "action": "be adequate",
       "object": "to observe for any reactions and adverse events",
-      "normalized_ko": "코호트의 첫 피험자와 나머지 피험자에 대한 치료 투여 사이에는 반응 및 이상반응을 관찰하기에 충분한 시간이 있어야 한다.",
+      "normalized_ko": "코호트 내 최초 피험자들에게 치료를 투여한 시점과 코호트 내 나머지 피험자들에게 투여하는 시점 사이에는 모든 반응 및 이상사례를 관찰하기에 충분한 기간이 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5083,7 +5083,7 @@
       "subject": "review of all available data for the sentinel subjects",
       "action": "occur",
       "object": "before dosing further subjects in the cohort, with dose stopping rules in place",
-      "normalized_ko": "센티널 피험자에 대한 모든 가용 데이터의 검토는 명확히 정의되어야 한다.",
+      "normalized_ko": "센티널 피험자에 대해 이용 가능한 모든 데이터의 검토는 추가 코호트 피험자에게 투여하기 전에 용량 중단 규칙을 마련한 상태에서 이루어져야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5097,7 +5097,7 @@
       "subject": "duration of the interval of observation",
       "action": "will depend on",
       "object": "the PK and PD characteristics and the level of uncertainty associated with the product",
-      "normalized_ko": "제품과 관련된 PK 및 PD 특성과 불확실성 수준에 따라 달라질 것이다.",
+      "normalized_ko": "관찰 기간의 길이는 PK 및 PD 특성과 제품 관련 불확실성 수준에 따라 달라진다.",
       "review_status": "reviewed"
     },
     {
@@ -5111,7 +5111,7 @@
       "subject": "dose stopping rules",
       "action": "prevent further dosing",
       "object": null,
-      "normalized_ko": "추가 투여를 방지한다.",
+      "normalized_ko": "용량 중단 규칙은 추가 투여를 방지한다.",
       "review_status": "reviewed"
     },
     {
@@ -5125,7 +5125,7 @@
       "subject": "later-stage study design circumstances",
       "action": "includes",
       "object": "on the steep part of the dose response curve",
-      "normalized_ko": "후기 연구 설계 상황의 예에는 용량-반응 곡선의 가파른 부분이 포함된다.",
+      "normalized_ko": "후기 단계의 시험 설계 상황에는 용량-반응 곡선의 가파른 부분이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -5139,7 +5139,7 @@
       "subject": "This approach",
       "action": "be expected",
       "object": null,
-      "normalized_ko": "예상된다.",
+      "normalized_ko": "이 접근법은 모든 단회 및 다회 투여 코호트에서 기대된다.",
       "review_status": "reviewed"
     },
     {
@@ -5153,7 +5153,7 @@
       "subject": "Administration to the next cohort",
       "action": "not occur before",
       "object": "participants in the immediately preceding cohort have been treated and PK, PD and clinical safety data as appropriate from those participants are reviewed in accordance with the protocol",
-      "normalized_ko": "직전 코호트의 참여자에게 투여가 이루어지고, 해당 참여자로부터 얻은 PK, PD 및 적절한 임상 안전성 자료가 시험계획서에 따라 검토되기 전에는 발생해서는 안 된다.",
+      "normalized_ko": "다음 코호트에 대한 투여는 직전 코호트의 참여자들이 치료를 받고, 해당 참여자들의 적절한 PK, PD 및 임상 안전성 데이터가 프로토콜에 따라 검토되기 전에는 이루어져서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -5167,7 +5167,7 @@
       "subject": "Review of all previous cohorts’ data in a cumulative manner",
       "action": "be taken into account",
       "object": null,
-      "normalized_ko": "고려되어야 한다.",
+      "normalized_ko": "모든 이전 코호트 데이터의 누적 방식 검토를 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5181,7 +5181,7 @@
       "subject": "Late emerging safety issues",
       "action": "be considered",
       "object": null,
-      "normalized_ko": "고려할 수 있다.",
+      "normalized_ko": "늦게 나타나는 안전성 문제는 고려될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5195,7 +5195,7 @@
       "subject": "safety data",
       "action": "not be delayed",
       "object": null,
-      "normalized_ko": "지연되어서는 안 된다.",
+      "normalized_ko": "안전성 데이터는 지연되어서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -5209,7 +5209,7 @@
       "subject": "dose escalation schemes",
       "action": "be more cautious",
       "object": null,
-      "normalized_ko": "더 신중해야 한다.",
+      "normalized_ko": "용량 증량 계획은 더욱 신중해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5223,7 +5223,7 @@
       "subject": "a lack of PD information or a reduced PK data set",
       "action": "be acceptable",
       "object": null,
-      "normalized_ko": "수용 가능할 수 있다.",
+      "normalized_ko": "PD 정보의 부재 또는 축소된 PK 데이터 세트는 일부 경우 허용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5237,7 +5237,7 @@
       "subject": "Unanticipated responses",
       "action": "require",
       "object": "a revised dose escalation",
-      "normalized_ko": "수정된 용량 증량이 필요할 수 있다.",
+      "normalized_ko": "예기치 않은 반응은 수정된 용량 증량을 필요로 할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5251,7 +5251,7 @@
       "subject": "Flexibility to allow for a defined longer review time",
       "action": "be accepted",
       "object": null,
-      "normalized_ko": "수용될 수 있다.",
+      "normalized_ko": "정의된 더 긴 검토 시간을 허용하는 유연성은 수용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5265,7 +5265,7 @@
       "subject": "The planned dose(s)",
       "action": "be adapted accordingly",
       "object": "following review of PK, PD, and safety data from the preceding cohort",
-      "normalized_ko": "직전 코호트의 PK, PD 및 안전성 자료를 검토한 후 그에 따라 조정되어야 한다.",
+      "normalized_ko": "계획된 용량은 선행 코호트의 PK, PD 및 안전성 데이터를 검토한 후 그에 따라 조정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5279,7 +5279,7 @@
       "subject": "the review",
       "action": "consider whether adaptation of the protocol in other areas is required",
       "object": "to ensure continuing safety of trial participants",
-      "normalized_ko": "시험 참여자의 지속적인 안전성을 보장하기 위해 다른 영역에서 시험계획서의 조정이 필요한지 고려해야 한다.",
+      "normalized_ko": "검토는 임상시험 참여자의 지속적인 안전성을 보장하기 위해 다른 영역에서 프로토콜 개정이 필요한지 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5293,7 +5293,7 @@
       "subject": "Timing between cohorts",
       "action": "be stated",
       "object": "in the protocol",
-      "normalized_ko": "시험계획서에 명시되어야 한다.",
+      "normalized_ko": "코호트 간 시간 간격은 프로토콜에 명시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5307,7 +5307,7 @@
       "subject": "shortening of the review time for any dose escalation",
       "action": "require",
       "object": "a substantial amendment",
-      "normalized_ko": "중대한 변경이 필요해야 한다.",
+      "normalized_ko": "모든 용량 증량에 대한 검토 시간 단축은 항상 중대한 개정을 필요로 해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5321,7 +5321,7 @@
       "subject": "sufficient information",
       "action": "be available",
       "object": "from completed preceding parts or/and cohorts to ensure safety of selected dose/exposure prior decision to start the part",
-      "normalized_ko": "해당 파트 시작을 결정하기 전에 선택된 용량/노출의 안전성을 보장하기 위해, 완료된 선행 파트 또는/및 코호트의 자료가 이용 가능해야 한다.",
+      "normalized_ko": "파트 시작 결정 전에 선택된 용량/노출의 안전성을 보장하기 위해 완료된 선행 파트 또는/및 코호트의 충분한 정보가 확보되어 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5335,7 +5335,7 @@
       "subject": "areas of protocol adaptation",
       "action": "includes",
       "object": "safety monitoring parameters and timings",
-      "normalized_ko": "안전성 모니터링 매개변수 및 시점을 포함한다.",
+      "normalized_ko": "프로토콜 개정 영역에는 안전성 모니터링 변수 및 시점이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -5349,7 +5349,7 @@
       "subject": "Late emerging safety issues",
       "action": "be considered",
       "object": null,
-      "normalized_ko": "고려할 수 있다.",
+      "normalized_ko": "늦게 나타나는 안전성 문제는 이후 고려될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5363,7 +5363,7 @@
       "subject": "shortening of the review time for any dose escalation",
       "action": "require",
       "object": "a substantial amendment",
-      "normalized_ko": "중대한 변경이 필수이다.",
+      "normalized_ko": "모든 용량 증량에 대한 검토기간 단축은 항상 중대한 변경을 요구해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5377,7 +5377,7 @@
       "subject": "a lack of PD information",
       "action": "be acceptable",
       "object": null,
-      "normalized_ko": "수용 가능하다.",
+      "normalized_ko": "PD 정보의 부족은 일부 경우 허용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5391,7 +5391,7 @@
       "subject": "Flexibility to allow for a defined longer review time",
       "action": "be accepted",
       "object": null,
-      "normalized_ko": "수용된다.",
+      "normalized_ko": "정의된 더 긴 검토기간을 허용하는 유연성은 수용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5405,7 +5405,7 @@
       "subject": "Unanticipated responses",
       "action": "require",
       "object": "a revised dose escalation",
-      "normalized_ko": "수정된 용량 증량이 필요할 수 있다.",
+      "normalized_ko": "예기치 않은 반응은 수정된 용량 증량을 요구할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5419,7 +5419,7 @@
       "subject": "The data supporting dose escalation or beginning of a new study part",
       "action": "are",
       "object": "key",
-      "normalized_ko": "핵심적이다.",
+      "normalized_ko": "용량 증량 또는 새로운 시험 부분의 시작을 뒷받침하는 데이터는 핵심적이다.",
       "review_status": "reviewed"
     },
     {
@@ -5433,7 +5433,7 @@
       "subject": "The data supporting dose escalation or beginning of a new study part",
       "action": "be described in",
       "object": "the protocol",
-      "normalized_ko": "프로토콜에 기술되어야 한다.",
+      "normalized_ko": "용량 증량 또는 새로운 시험 부분의 시작을 뒷받침하는 데이터는 임상시험계획서에 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5447,7 +5447,7 @@
       "subject": "The timing and data specified in the protocol for the decision",
       "action": "reflect",
       "object": "the uncertainty associated with the IMP",
-      "normalized_ko": "IMP와 관련된 불확실성을 반영해야 한다.",
+      "normalized_ko": "결정을 위해 임상시험계획서에 명시된 시점 및 데이터는 IMP와 관련된 불확실성을 반영해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5461,7 +5461,7 @@
       "subject": "consideration",
       "action": "be given to",
       "object": "a review of all data generated until the time of the decision",
-      "normalized_ko": "의사결정 시점까지 생성된 모든 데이터를 검토해야 한다.",
+      "normalized_ko": "의사결정 시점까지 생성된 모든 데이터의 검토를 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5475,7 +5475,7 @@
       "subject": "‘Evaluable’ subjects",
       "action": "be defined",
       "object": null,
-      "normalized_ko": "정의되어야 한다.",
+      "normalized_ko": "‘평가 가능한’ 대상자는 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5489,7 +5489,7 @@
       "subject": "the protocol",
       "action": "clearly define",
       "object": "the minimum number of evaluable subjects required for review",
-      "normalized_ko": "검토에 필요한 평가 가능한 피험자의 최소 수를 명확히 정의해야 한다.",
+      "normalized_ko": "임상시험계획서는 검토에 필요한 평가 가능한 대상자의 최소 수를 명확히 정의해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5503,7 +5503,7 @@
       "subject": "This number",
       "action": "be adequate for",
       "object": "data review and reliable decision-making",
-      "normalized_ko": "데이터 검토 및 신뢰할 수 있는 의사결정에 충분해야 한다.",
+      "normalized_ko": "이 수는 데이터 검토 및 신뢰할 수 있는 의사결정에 적절해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5517,7 +5517,7 @@
       "subject": "Data collection as planned in the protocol in a given dosing cohort",
       "action": "be complete",
       "object": "to proceed to the next dose cohort",
-      "normalized_ko": "다음 용량 코호트로 진행하기 위해 완료되어야 한다.",
+      "normalized_ko": "특정 용량 코호트에서 임상시험계획서에 따라 계획된 데이터 수집은 다음 용량 코호트로 진행하기 위해 완료되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5531,7 +5531,7 @@
       "subject": "The following",
       "action": "are regarded as",
       "object": "minimum criteria for data review",
-      "normalized_ko": "데이터 검토를 위한 최소 기준으로 간주된다.",
+      "normalized_ko": "다음 사항은 데이터 검토를 위한 최소 기준으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -5545,7 +5545,7 @@
       "subject": "‘Evaluable’ subjects",
       "action": "are",
       "object": "subjects who have completed all planned study visits at least until the time of the decision as detailed in the protocol",
-      "normalized_ko": "프로토콜에 상세히 기술된 바와 같이, 적어도 의사결정 시점까지 계획된 모든 시험 방문을 완료한 피험자이다.",
+      "normalized_ko": "‘평가 가능한’ 대상자는 임상시험계획서에 상세히 기술된 결정 시점까지 적어도 모든 계획된 시험 방문을 완료한 대상자이다.",
       "review_status": "reviewed"
     },
     {
@@ -5559,7 +5559,7 @@
       "subject": "The protocol",
       "action": "define",
       "object": "unambiguous stopping rules which result in an immediate stop to dosing",
-      "normalized_ko": "투여를 즉시 중단하게 하는 명확한 중단 규칙을 정의해야 한다.",
+      "normalized_ko": "임상시험계획서는 투여를 즉시 중단하게 하는 모호하지 않은 중단 규칙을 정의해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5573,7 +5573,7 @@
       "subject": "the final end of dosing or a temporary halt",
       "action": "be specified in",
       "object": "the rule",
-      "normalized_ko": "규칙에 명시되어야 한다.",
+      "normalized_ko": "최종 투여 종료인지 또는 일시적 중단인지는 규칙에 명시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5587,7 +5587,7 @@
       "subject": "Any submitted substantial amendment after a stop",
       "action": "include",
       "object": "a rationale for proposed dosing, continuation of trial, and safety monitoring adjustments",
-      "normalized_ko": "제안된 투여, 시험 지속 및 안전성 모니터링 조정에 대한 근거를 포함해야 한다.",
+      "normalized_ko": "중단 후 제출되는 모든 중대한 변경은 제안된 투여, 시험 지속 및 안전성 모니터링 조정에 대한 근거를 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5601,7 +5601,7 @@
       "subject": "the stopping rule",
       "action": "specify",
       "object": "if the stop is a final end of dosing or a temporary halt",
-      "normalized_ko": "중단이 투여의 최종 종료인지 또는 일시적 중지인지를 명시해야 한다.",
+      "normalized_ko": "중단 규칙은 중단이 최종 투여 종료인지 또는 일시적 중단인지를 명시해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5615,7 +5615,7 @@
       "subject": "Restart of dosing",
       "action": "be possible without a substantial amendment",
       "object": "if review concludes fully within predefined conditions for the relevant stopping criterion",
-      "normalized_ko": "검토 결과가 해당 중단 기준에 대해 사전 정의된 조건 내에 완전히 부합하는 경우, 중대한 변경 없이 가능할 수 있다.",
+      "normalized_ko": "검토 결과가 관련 중단 기준에 대해 사전 정의된 조건 내에 완전히 해당하는 경우, 투여 재개는 중대한 변경 없이 가능할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5629,7 +5629,7 @@
       "subject": "Stopping rules",
       "action": "be defined for",
       "object": "final termination, individual subjects, within cohort (staggered/MAD), and dose escalation",
-      "normalized_ko": "최종 종료, 개별 피험자, 코호트 내(순차적/MAD) 및 용량 증량에 대해 정의되어야 한다.",
+      "normalized_ko": "중단 규칙은 최종 종료, 개별 대상자, 코호트 내(순차 투여/MAD) 및 용량 증량을 위해 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5643,7 +5643,7 @@
       "subject": "Integrated protocols",
       "action": "clearly outline",
       "object": "decision points and criteria",
-      "normalized_ko": "의사결정 시점 및 기준을 명확히 제시해야 한다.",
+      "normalized_ko": "통합 프로토콜은 의사결정 시점 및 기준을 명확히 기술해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5657,7 +5657,7 @@
       "subject": "Separate rules",
       "action": "be in place for",
       "object": "each of the bullet points above",
-      "normalized_ko": "상기 각 항목에 대해 마련되어 있을 수 있다.",
+      "normalized_ko": "별도의 규칙은 상기 각 항목에 대해 마련될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5671,7 +5671,7 @@
       "subject": "the same criteria",
       "action": "be used for",
       "object": "several areas of the protocol",
-      "normalized_ko": "프로토콜의 여러 영역에 사용될 수 있다.",
+      "normalized_ko": "동일한 기준을 프로토콜의 여러 영역에 사용하는 것이 적절할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5685,7 +5685,7 @@
       "subject": "Separate rules",
       "action": "be in place for",
       "object": "each of the bullet points above",
-      "normalized_ko": "상기 각 항목에 대해 마련되어 있을 수 있다.",
+      "normalized_ko": "별도의 규칙은 상기 각 항목에 대해 마련될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5699,7 +5699,7 @@
       "subject": "Stopping rules for dose escalation",
       "action": "be the same as",
       "object": "those for within a cohort or those for individual subjects",
-      "normalized_ko": "코호트 내 또는 개별 피험자에 대한 것과 동일할 수 있다.",
+      "normalized_ko": "용량 증량을 위한 중단 규칙은 코호트 내 중단 규칙 또는 개별 대상자 중단 규칙과 동일하다.",
       "review_status": "reviewed"
     },
     {
@@ -5713,7 +5713,7 @@
       "subject": "Stopping rules",
       "action": "include",
       "object": "a ‘serious’ adverse reaction (i.e. a serious adverse event considered at least possibly related to the IMP administration) in one subject",
-      "normalized_ko": "한 대상자에서 발생한 ‘중대한’ 약물이상반응(즉, IMP 투여와 적어도 관련 가능성이 있는 것으로 간주되는 중대한 이상사례)을 포함해야 한다.",
+      "normalized_ko": "중단 규칙에는 한 명의 대상자에서 발생한 ‘중대한’ 이상반응(즉, IMP 투여와 적어도 관련 가능성이 있다고 판단된 중대한 이상사례)이 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5727,7 +5727,7 @@
       "subject": "Consideration",
       "action": "be given to",
       "object": "stopping criteria based on a rolling review of the data that takes account of ‘moderate’ non-serious adverse reactions in blinded or unblinded fashion and their relation to PD effects, the number of subjects in which they occur, concurrency of more than one within the same subject and potential safety signals identified for other IMPs in the same class",
-      "normalized_ko": "눈가림 또는 비눈가림 방식으로 ‘중등도’ 비중대 이상반응과 그 PD 효과와의 관계, 해당 반응이 발생한 대상자 수, 동일 대상자 내에서 하나 이상의 반응이 동시 발생하는지 여부 및 동일 계열의 다른 IMP에서 확인된 잠재적 안전성 신호를 고려하는 데이터의 지속적 검토에 근거한 투여 중단 기준을 고려해야 한다.",
+      "normalized_ko": "눈가림 또는 비눈가림 상태에서 ‘중등도’ 비중대 이상반응, 해당 반응과 PD 효과의 관계, 해당 반응이 발생한 대상자 수, 동일 대상자에서 둘 이상의 반응이 동시에 발생하는지 여부 및 동일 계열의 다른 IMP에서 확인된 잠재적 안전성 신호를 고려하는 데이터의 지속적 검토에 근거한 투여 중단 기준을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5741,7 +5741,7 @@
       "subject": "Changes from baseline measurements",
       "action": "be considered",
       "object": null,
-      "normalized_ko": "고려되어야 한다.",
+      "normalized_ko": "기준선 측정치로부터의 변화는 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5755,7 +5755,7 @@
       "subject": "A dose stopping criterion comprising a maximum clinical exposure (Cmax or AUC)",
       "action": "be included",
       "object": "taking into account individual maximum exposure rather than mean exposure",
-      "normalized_ko": "평균 노출량이 아니라 개별 최대 노출량을 고려하는 것이 포함되어야 한다.",
+      "normalized_ko": "평균 노출보다 개별 최대 노출을 고려하는 최대 임상 노출(Cmax 또는 AUC)을 포함하는 용량 중단 기준이 일반적으로 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5769,7 +5769,7 @@
       "subject": "the maximum exposure observed in individual subjects within a cohort rather than the mean exposure",
       "action": "be taken into account",
       "object": null,
-      "normalized_ko": "고려되어야 한다.",
+      "normalized_ko": "코호트 내 개별 대상자에서 관찰된 최대 노출량은 평균 노출량이 아니라 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5783,7 +5783,7 @@
       "subject": "Stopping rules",
       "action": "not be limited to",
       "object": "a ‘serious’ adverse reaction (i.e. a serious adverse event considered at least possibly related to the IMP administration) in one subject; ‘severe’ non-serious adverse reactions (i.e. severe non-serious adverse events considered as, at least, possibly related to the IMP administration) in two subjects in the same cohort",
-      "normalized_ko": "투여 중단 기준은 한 대상자에서 발생한 ‘중대한’ 약물이상반응(즉, IMP 투여와 적어도 관련 가능성이 있는 것으로 간주되는 중대한 이상사례) 및 동일 코호트의 두 대상자에서 발생한 ‘중증’ 비중대 약물이상반응(즉, IMP 투여와 적어도 관련 가능성이 있는 것으로 간주되는 중증 비중대 이상사례)에만 국한되어서는 안 된다.",
+      "normalized_ko": "중단 규칙은 한 명의 대상자에서 발생한 ‘중대한’ 이상반응(즉, IMP 투여와 적어도 관련 가능성이 있다고 판단된 중대한 이상사례) 및 동일 코호트의 두 명 대상자에서 발생한 ‘중증’ 비중대 이상반응(즉, IMP 투여와 적어도 관련 가능성이 있다고 판단된 중증 비중대 이상사례)에만 국한되어서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -5797,7 +5797,7 @@
       "subject": "stopping rules for dose escalation",
       "action": "be the same as",
       "object": "those for within a cohort or those for individual subjects",
-      "normalized_ko": "코호트 내 기준 또는 개별 대상자에 대한 기준과 동일할 수 있다.",
+      "normalized_ko": "용량 증량을 위한 중단 규칙은 코호트 내 중단 규칙 또는 개별 대상자 중단 규칙과 동일할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5811,7 +5811,7 @@
       "subject": "healthy-volunteer trial stopping rules",
       "action": "includes",
       "object": "a ‘serious’ adverse reaction (i.e. a serious adverse event considered at least possibly related to the IMP administration) in one subject",
-      "normalized_ko": "한 대상자에서 발생한 ‘중대한’ 약물이상반응(즉, IMP 투여와 적어도 관련 가능성이 있는 것으로 간주되는 중대한 이상사례)을 포함한다.",
+      "normalized_ko": "건강한 자원자 시험의 중단 규칙에는 한 명의 대상자에서 발생한 ‘중대한’ 이상반응(즉, IMP 투여와 적어도 관련 가능성이 있다고 판단된 중대한 이상사례)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -5825,7 +5825,7 @@
       "subject": "unambiguous stopping rules",
       "action": "result in",
       "object": "an immediate stop to dosing",
-      "normalized_ko": "즉각적인 투여 중단을 초래한다.",
+      "normalized_ko": "명확한 중단 규칙은 투여의 즉각적인 중단을 초래한다.",
       "review_status": "reviewed"
     },
     {
@@ -5839,7 +5839,7 @@
       "subject": "Restart",
       "action": "be possible without",
       "object": "a substantial amendment",
-      "normalized_ko": "중대한 변경 없이 가능할 수 있다.",
+      "normalized_ko": "재개는 중대한 변경 없이 가능할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5853,7 +5853,7 @@
       "subject": "Stopping rules for dose escalation",
       "action": "be the same as",
       "object": "those for within a cohort",
-      "normalized_ko": "코호트 내 기준과 동일하다.",
+      "normalized_ko": "용량 증량을 위한 중단 규칙은 코호트 내 중단 규칙과 동일할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5867,7 +5867,7 @@
       "subject": "a serious adverse reaction in healthy volunteer trials",
       "action": "require",
       "object": "stopping dosing when occurring in one subject (considered at least possibly related to IMP)",
-      "normalized_ko": "한 대상자에서 발생하는 경우 투여 중단을 요구한다(IMP와 적어도 관련 가능성이 있는 것으로 간주됨).",
+      "normalized_ko": "건강한 자원자 시험에서 중대한 이상반응은 한 명의 대상자에서 발생하는 경우 투여 중단을 요구한다(IMP와 적어도 관련 가능성이 있다고 판단된 경우).",
       "review_status": "reviewed"
     },
     {
@@ -5881,7 +5881,7 @@
       "subject": "The trial design",
       "action": "provide",
       "object": "a specific plan for monitoring for adverse events or adverse reactions",
-      "normalized_ko": "시험 설계는 이상사례 또는 이상반응 모니터링을 위한 구체적 계획을 제공해야 한다.",
+      "normalized_ko": "시험 설계는 이상사례 또는 이상반응 모니터링을 위한 구체적인 계획을 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5895,7 +5895,7 @@
       "subject": "The mode of action of the investigational medicinal product, findings in the non-clinical toxicity studies and any anticipated responses",
       "action": "be used to identify",
       "object": "likely adverse reactions",
-      "normalized_ko": "시험약의 작용기전, 비임상 독성시험 결과 및 예상 반응은 발생 가능성이 있는 이상반응을 식별하는 데 사용해야 한다.",
+      "normalized_ko": "시험용 의약품의 작용기전, 비임상 독성시험 결과 및 예상되는 모든 반응은 발생 가능성이 높은 이상반응을 식별하는 데 사용되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5909,7 +5909,7 @@
       "subject": "All clinical staff",
       "action": "be trained to respond to",
       "object": "those or any other adverse events or reactions",
-      "normalized_ko": "모든 임상 직원은 해당 또는 기타 이상사례나 이상반응에 대응하도록 교육받아야 한다.",
+      "normalized_ko": "모든 임상시험 직원은 그러한 또는 그 밖의 모든 이상사례나 이상반응에 대응하도록 교육받아야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5923,7 +5923,7 @@
       "subject": "Rapid access to the treatment allocation codes",
       "action": "be constantly available",
       "object": null,
-      "normalized_ko": "치료 배정 코드를 신속히 확인할 수 있어야 한다.",
+      "normalized_ko": "치료 배정 코드에 대한 신속한 접근은 지속적으로 확보되어 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5937,7 +5937,7 @@
       "subject": "the double-blind study protocol",
       "action": "contain",
       "object": "clear instructions for unblinding in the case of an emergency",
-      "normalized_ko": "프로토콜에는 눈가림 해제에 관한 명확한 지침이 포함되어야 한다.",
+      "normalized_ko": "이중눈가림 시험 프로토콜은 응급 상황에서 눈가림 해제를 위한 명확한 지침을 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5951,7 +5951,7 @@
       "subject": "any double-blind study design",
       "action": "have",
       "object": "clear instructions in the protocol for unblinding",
-      "normalized_ko": "프로토콜에는 눈가림 해제를 위한 명확한 지침이 있어야 한다.",
+      "normalized_ko": "모든 이중눈가림 시험 설계에는 프로토콜 내 눈가림 해제를 위한 명확한 지침이 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5965,7 +5965,7 @@
       "subject": "the double-blind study protocol",
       "action": "contain",
       "object": "clear instructions for unblinding in the case of an emergency",
-      "normalized_ko": "프로토콜에는 응급 상황에서의 눈가림 해제를 위한 명확한 지침이 반드시 포함되어야 한다.",
+      "normalized_ko": "이중눈가림 시험 프로토콜은 응급 상황에서 눈가림 해제를 위한 명확한 지침을 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5979,7 +5979,7 @@
       "subject": "Treatment strategies for potential risks/adverse reactions",
       "action": "be described in",
       "object": "the protocol",
-      "normalized_ko": "잠재적 위험/이상반응에 대한 치료 전략은 프로토콜에 기술해야 한다.",
+      "normalized_ko": "잠재적 위험/이상반응에 대한 치료 전략은 시험계획서에 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5993,7 +5993,7 @@
       "subject": "Treatment strategies for potential risks/adverse reactions",
       "action": "include",
       "object": "the availability of specific antidotes",
-      "normalized_ko": "잠재적 위험/이상반응에 대한 치료 전략에는 특정 해독제의 이용 가능성을 포함해야 한다.",
+      "normalized_ko": "잠재적 위험/이상반응에 대한 치료 전략에는 특정 해독제의 확보 가능성이 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6007,7 +6007,7 @@
       "subject": "the Sponsor",
       "action": "inform",
       "object": "investigators and participants at any site as soon as possible and prior to next dosing in case of emerging safety issues",
-      "normalized_ko": "스폰서는 가능한 한 신속히, 그리고 계획된 다음 투여 전에 연구자와 시험대상자에게 알려야 한다.",
+      "normalized_ko": "새롭게 발생하는 안전성 문제가 있는 경우, 스폰서는 모든 시험기관의 시험자 및 대상자에게 가능한 한 신속히 그리고 다음 투여 전에 이를 알려야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6021,7 +6021,7 @@
       "subject": "Any SUSAR in a healthy volunteer",
       "action": "be reported to",
       "object": "the Member States concerned without undue delay",
-      "normalized_ko": "모든 SUSAR는 부당한 지체 없이 관련 회원국에 보고되어야 한다.",
+      "normalized_ko": "건강한 자원자에서 발생한 모든 SUSAR는 부당한 지체 없이 해당 회원국에 보고되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6035,7 +6035,7 @@
       "subject": "the protocol",
       "action": "include",
       "object": "a plan for prompt communication of serious adverse events and suspected unexpected serious adverse reactions (SUSARs) or serious safety-related protocol deviations between the sponsor, all study sites and investigators and trial subjects",
-      "normalized_ko": "프로토콜에는 중대한 이상사례, SUSAR 또는 중대한 안전 관련 프로토콜 일탈의 신속한 의사소통 계획을 포함하는 것이 매우 중요하다.",
+      "normalized_ko": "프로토콜에는 스폰서, 모든 시험기관 및 시험자, 그리고 임상시험 대상자 간의 중대한 이상사례 및 의심되는 예기치 않은 중대한 이상반응(SUSAR) 또는 중대한 안전성 관련 프로토콜 일탈의 신속한 의사소통 계획을 포함하는 것이 매우 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -6049,7 +6049,7 @@
       "subject": "the processes",
       "action": "be clearly defined for communication of",
       "object": "safety data between the sponsor and all study sites and investigators and trial subjects",
-      "normalized_ko": "스폰서, 모든 시험기관 및 연구자, 시험대상자 간 안전성 데이터 의사소통 절차를 명확히 정의하는 것이 특히 중요하다.",
+      "normalized_ko": "스폰서와 모든 연구기관, 연구자 및 시험대상자 간 안전성 데이터의 의사소통을 위한 절차를 명확히 정의하는 것은 특히 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -6063,7 +6063,7 @@
       "subject": "the protocol",
       "action": "include",
       "object": "a plan for prompt communication of serious adverse events and suspected unexpected serious adverse reactions (SUSARs) or serious safety-related protocol deviations between the sponsor, all study sites and investigators and trial subjects",
-      "normalized_ko": "스폰서, 모든 시험기관 및 연구자, 그리고 임상시험 대상자 간 중대한 이상사례 및 의심되는 예상하지 못한 중대한 약물이상반응(SUSAR) 또는 안전성과 관련된 중대한 프로토콜 위반의 신속한 의사소통 계획을 포함한다.",
+      "normalized_ko": "프로토콜에는 스폰서, 모든 시험기관 및 시험자, 그리고 임상시험 대상자 간의 중대한 이상사례 및 의심되는 예기치 않은 중대한 이상반응(SUSAR) 또는 중대한 안전성 관련 프로토콜 일탈의 신속한 의사소통 계획이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -6077,7 +6077,7 @@
       "subject": "multicentre trials",
       "action": "define processes for communication of",
       "object": "safety data between the sponsor and all study sites and investigators and trial subjects",
-      "normalized_ko": "스폰서와 모든 시험기관 및 연구자, 그리고 임상시험 대상자 간 안전성 데이터의 의사소통 절차를 정의한다.",
+      "normalized_ko": "다기관 임상시험은 스폰서와 모든 시험기관 및 시험자, 그리고 임상시험 대상자 간 안전성 데이터 의사소통 절차를 정의한다.",
       "review_status": "reviewed"
     },
     {
@@ -6091,7 +6091,7 @@
       "subject": "the protocol",
       "action": "include",
       "object": "a plan for prompt communication of serious adverse events and suspected unexpected serious adverse reactions (SUSARs) or serious safety-related protocol deviations between the sponsor, all study sites and investigators and trial subjects",
-      "normalized_ko": "스폰서, 모든 시험기관 및 연구자, 그리고 임상시험 대상자 간 중대한 이상사례 및 의심되는 예상하지 못한 중대한 약물이상반응(SUSAR) 또는 안전성과 관련된 중대한 프로토콜 위반의 신속한 의사소통 계획을 포함해야 한다.",
+      "normalized_ko": "프로토콜에는 스폰서, 모든 시험기관 및 시험자, 그리고 임상시험 대상자 간의 중대한 이상사례 및 의심되는 예기치 않은 중대한 이상반응(SUSAR) 또는 중대한 안전성 관련 프로토콜 일탈의 신속한 의사소통 계획을 포함하는 것이 매우 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -6105,7 +6105,7 @@
       "subject": "the processes",
       "action": "be clearly defined for communication of",
       "object": "safety data between the sponsor and all study sites and investigators and trial subjects",
-      "normalized_ko": "스폰서와 모든 시험기관 및 연구자, 그리고 임상시험 대상자 간 안전성 데이터의 의사소통 절차가 명확히 정의되어야 한다.",
+      "normalized_ko": "스폰서와 모든 연구기관, 연구자 및 시험대상자 간 안전성 데이터의 의사소통을 위한 절차를 명확히 정의하는 것은 특히 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -6119,7 +6119,7 @@
       "subject": "emerging safety issues",
       "action": "includes",
       "object": "severe or serious adverse reactions",
-      "normalized_ko": "중증 또는 중대한 약물이상반응을 포함한다.",
+      "normalized_ko": "새롭게 발생하는 안전성 문제에는 중증 또는 중대한 이상반응이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -6133,7 +6133,7 @@
       "subject": "Section 8.3",
       "action": "addresses",
       "object": "Documentation of sponsor and investigators responsibilities",
-      "normalized_ko": "스폰서 및 연구자의 책임에 대한 문서화를 다룬다.",
+      "normalized_ko": "제8.3절은 스폰서 및 시험자의 책임 문서화를 다룬다.",
       "review_status": "reviewed"
     },
     {
@@ -6147,7 +6147,7 @@
       "subject": "The responsibilities of the sponsor and investigator(s) (as well as any other experts or study staff) in decision making",
       "action": "be clearly defined in",
       "object": "the protocol",
-      "normalized_ko": "시험계획서에 명확히 정의되어야 한다.",
+      "normalized_ko": "의사결정에서 스폰서 및 시험자(그 밖의 전문가 또는 시험 직원 포함)의 책임은 프로토콜에 명확히 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6161,7 +6161,7 @@
       "subject": "Responsibility with regard to breaking the treatment code",
       "action": "be documented",
       "object": null,
-      "normalized_ko": "문서화되어야 한다.",
+      "normalized_ko": "치료 코드 해제에 관한 책임은 문서화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6175,7 +6175,7 @@
       "subject": "Consideration",
       "action": "be given to",
       "object": "the inclusion of independent experts who are (at least) external to the study",
-      "normalized_ko": "연구 외부에 있는 독립 전문가를 포함하는 것을 고려해야 한다.",
+      "normalized_ko": "최소한 연구 외부에 있는 독립 전문가의 포함을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6189,7 +6189,7 @@
       "subject": "unblinding in an emergency",
       "action": "be done at",
       "object": "the investigators discretion without involvement of the monitor or sponsor",
-      "normalized_ko": "모니터 또는 의뢰자의 관여 없이 연구자의 재량으로 수행된다.",
+      "normalized_ko": "응급 상황에서의 눈가림 해제는 모니터 또는 의뢰자의 관여 없이 연구자의 재량으로 수행할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6203,7 +6203,7 @@
       "subject": "Other details",
       "action": "include",
       "object": "the exact remit of the group",
-      "normalized_ko": "그룹의 정확한 권한 범위를 포함한다.",
+      "normalized_ko": "포함할 기타 세부사항에는 해당 그룹의 정확한 권한 범위가 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6217,7 +6217,7 @@
       "subject": "Written statements and conclusions by any decision-making or safety review group",
       "action": "be in place before allowing",
       "object": "trial progression",
-      "normalized_ko": "시험 진행을 허용하기 전에 마련되어 있어야 한다.",
+      "normalized_ko": "모든 의사결정 그룹 또는 안전성 검토위원회의 서면 진술 및 결론은 임상시험 진행을 허용하기 전에 마련되어 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6231,7 +6231,7 @@
       "subject": "Written statements and conclusions by any decision-making or safety review group",
       "action": "include",
       "object": "documentation of appropriate quality control checks on the data reviewed",
-      "normalized_ko": "검토된 데이터에 대한 적절한 품질관리 점검의 문서를 포함해야 한다.",
+      "normalized_ko": "모든 의사결정 그룹 또는 안전성 검토위원회의 서면 진술 및 결론에는 검토된 데이터에 대한 적절한 품질관리 점검의 문서화를 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6245,7 +6245,7 @@
       "subject": "This",
       "action": "includes",
       "object": "documentation of appropriate quality control checks on the data reviewed",
-      "normalized_ko": "검토된 데이터에 대한 적절한 품질관리 점검의 문서를 포함한다.",
+      "normalized_ko": "여기에는 검토된 데이터에 대한 적절한 품질관리 점검의 문서화가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -6259,7 +6259,7 @@
       "subject": "unblinding in an emergency",
       "action": "be done at the investigator's discretion",
       "object": "without involvement of the monitor or sponsor when needed for immediate management of a subject",
-      "normalized_ko": "대상자의 즉각적인 관리에 필요한 경우, 모니터 또는 의뢰자의 관여 없이 연구자의 재량으로 수행된다.",
+      "normalized_ko": "피험자의 즉각적인 처치에 필요할 때 응급 상황에서의 눈가림 해제는 모니터 또는 의뢰자의 관여 없이 연구자의 재량으로 수행된다.",
       "review_status": "reviewed"
     },
     {
@@ -6273,7 +6273,7 @@
       "subject": "unblinding in an emergency",
       "action": "be done at the investigator's discretion",
       "object": "without involvement of the monitor or sponsor when needed for immediate management of a subject",
-      "normalized_ko": "대상자의 즉각적인 관리에 필요한 경우, 모니터 또는 의뢰자의 관여 없이 연구자의 재량으로 수행할 수 있다.",
+      "normalized_ko": "피험자의 즉각적인 처치에 필요할 때 응급 상황에서의 눈가림 해제는 모니터 또는 의뢰자의 관여 없이 연구자의 재량으로 수행할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6287,7 +6287,7 @@
       "subject": "unblinding in an emergency",
       "action": "not involve the monitor or sponsor",
       "object": null,
-      "normalized_ko": "모니터 또는 의뢰자를 관여시키지 않을 수 있다.",
+      "normalized_ko": "응급 상황에서의 눈가림 해제는 모니터 또는 의뢰자를 관여시키지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6301,7 +6301,7 @@
       "subject": "FIH/early CTs",
       "action": "take place in",
       "object": "appropriate clinical facilities",
-      "normalized_ko": "적절한 임상 시설에서 이루어져야 한다.",
+      "normalized_ko": "FIH/초기 CT는 적절한 임상 시설에서 실시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6315,7 +6315,7 @@
       "subject": "FIH/early CTs",
       "action": "be conducted by",
       "object": "trained investigators and medical staff with appropriate levels of training and experience of early phase trials",
-      "normalized_ko": "초기 단계 시험에 관한 적절한 수준의 교육 및 경험을 갖춘 훈련된 시험책임자 및 의료진이 수행해야 한다.",
+      "normalized_ko": "FIH/초기 CT는 초기 단계 임상시험에 관한 적절한 수준의 교육 및 경험을 갖춘 훈련된 연구자와 의료진에 의해 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6329,7 +6329,7 @@
       "subject": "The training",
       "action": "include",
       "object": "relevant medical expertise and GCP training",
-      "normalized_ko": "관련 의학 전문지식 및 GCP 교육을 포함해야 한다.",
+      "normalized_ko": "교육에는 관련 의학 전문지식 및 GCP 교육이 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6343,7 +6343,7 @@
       "subject": "trained investigators and medical staff",
       "action": "understand",
       "object": "specific characteristics of the IMP and of its target and mode of action",
-      "normalized_ko": "IMP 및 그 표적과 작용기전의 특정 특성을 이해해야 한다.",
+      "normalized_ko": "훈련된 연구자와 의료진은 IMP 및 그 표적과 작용기전의 구체적 특성을 이해해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6357,7 +6357,7 @@
       "subject": "FIH/early CTs",
       "action": "have",
       "object": "the possibility of close supervision of study subjects during and after dosing",
-      "normalized_ko": "투여 중 및 투여 후 시험대상자를 면밀히 감독할 수 있는 가능성을 갖추어야 한다.",
+      "normalized_ko": "FIH/초기 CT는 투여 중 및 투여 후 피험자를 면밀히 감독할 수 있는 가능성을 갖추어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6371,7 +6371,7 @@
       "subject": "Procedures",
       "action": "be established between",
       "object": "the clinical research unit and its nearby intensive care unit regarding the responsibilities and undertakings of each in the transfer and care of patients",
-      "normalized_ko": "임상연구 유닛과 인근 중환자실 간에는 환자 이송 및 진료 시 각각의 책임과 의무에 관한 협약이 수립되어야 한다.",
+      "normalized_ko": "환자 이송 및 치료에서 각자의 책임과 의무에 관한 절차는 임상연구 유닛과 인근 집중치료실 간에 수립되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6385,7 +6385,7 @@
       "subject": "FIH/early CTs",
       "action": "provide the possibility of",
       "object": "close supervision of study subjects",
-      "normalized_ko": "시험대상자에 대한 면밀한 감독의 가능성을 제공해야 한다.",
+      "normalized_ko": "FIH/초기 CT는 피험자를 면밀히 감독할 수 있는 가능성을 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6399,7 +6399,7 @@
       "subject": "controlled conditions",
       "action": "includes",
       "object": "inpatient care",
-      "normalized_ko": "입원 치료를 포함한다.",
+      "normalized_ko": "통제된 조건에는 입원 치료가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -6413,7 +6413,7 @@
       "subject": "This",
       "action": "is",
       "object": "the first revision of the Guideline on strategies to identify and mitigate risks for first-in-human clinical trials with investigational medicinal products",
-      "normalized_ko": "이는 임상시험용 의약품을 사용한 최초 인체 대상 임상시험의 위험을 식별하고 완화하기 위한 전략에 관한 가이드라인의 첫 번째 개정본이다.",
+      "normalized_ko": "이는 임상시험용 의약품의 최초 인체투여 임상시험 위험을 식별하고 완화하기 위한 전략 가이드라인의 첫 번째 개정판이다.",
       "review_status": "reviewed"
     },
     {
@@ -6427,7 +6427,7 @@
       "subject": "The revision",
       "action": "is intended to further assist",
       "object": "stakeholders in the transition from non-clinical to early clinical development and in identifying factors influencing risk for new investigational medicinal products (IMPs)",
-      "normalized_ko": "이는 비임상 개발에서 초기 임상 개발로의 전환 및 새로운 임상시험용 의약품(IMP)의 위험에 영향을 미치는 요인 식별에 있어 이해관계자를 추가로 지원하기 위한 것이다.",
+      "normalized_ko": "이 개정판은 비임상 개발에서 초기 임상 개발로의 전환과 새로운 임상시험용 의약품(IMP)의 위험에 영향을 미치는 요인 식별에서 이해관계자를 추가로 지원하기 위한 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -6441,7 +6441,7 @@
       "subject": "The document",
       "action": "includes considerations on",
       "object": "quality aspects, non-clinical and clinical testing strategies, and trial design and conduct",
-      "normalized_ko": "이는 품질 측면, 비임상 및 임상 시험 전략, 그리고 임상시험 설계 및 수행에 관한 고려사항을 포함한다.",
+      "normalized_ko": "이 문서에는 품질 측면, 비임상 및 임상 시험 전략, 그리고 임상시험 설계 및 수행에 관한 고려사항이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -6455,7 +6455,7 @@
       "subject": "It",
       "action": "extends",
       "object": "the existing EU guidance to address first-in-human (FIH) and early phase clinical trials (CTs) with integrated protocols",
-      "normalized_ko": "이는 통합 프로토콜을 사용하는 최초 인체 대상(FIH) 및 초기 단계 임상시험(CT)을 다루도록 기존 EU 지침을 확장한다.",
+      "normalized_ko": "이는 통합 프로토콜을 사용하는 최초 인체투여(FIH) 및 초기 단계 임상시험(CT)을 다루기 위해 기존 EU 가이드라인을 확장한다.",
       "review_status": "reviewed"
     },
     {
@@ -6469,7 +6469,7 @@
       "subject": "The document",
       "action": "includes considerations on",
       "object": "quality aspects, non-clinical and clinical testing strategies, and trial design and conduct",
-      "normalized_ko": "이는 품질 측면, 비임상 및 임상 시험 전략, 그리고 임상시험 설계 및 수행에 관한 고려사항을 포함한다.",
+      "normalized_ko": "이 문서는 품질 측면, 비임상 및 임상 시험 전략, 그리고 시험 설계 및 수행에 관한 고려사항을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -6483,7 +6483,7 @@
       "subject": "The revision",
       "action": "is intended to further assist",
       "object": "stakeholders in the transition from non-clinical to early clinical development",
-      "normalized_ko": "이는 비임상 개발에서 초기 임상 개발로의 전환에 있어 이해관계자를 추가로 지원하기 위한 것이다.",
+      "normalized_ko": "이 개정본은 비임상 개발에서 초기 임상 개발로의 전환 과정에서 이해관계자를 추가로 지원하기 위한 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -6497,7 +6497,7 @@
       "subject": "This guideline",
       "action": "covers",
       "object": "FIH/early CTs",
-      "normalized_ko": "이는 최초 인체 대상(FIH)/초기 임상시험(CT)을 포괄한다.",
+      "normalized_ko": "이 가이드라인은 FIH/초기 CT를 포괄한다.",
       "review_status": "reviewed"
     },
     {
@@ -6511,7 +6511,7 @@
       "subject": "The guideline",
       "action": "applies to",
       "object": "all new chemical and biological IMPs",
-      "normalized_ko": "이는 모든 새로운 화학적 및 생물학적 임상시험용 의약품(IMP)에 적용된다.",
+      "normalized_ko": "이 가이드라인은 모든 신규 화학적 및 생물학적 IMP에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -6525,7 +6525,7 @@
       "subject": "advanced therapy medicinal products (ATMPs)",
       "action": "are not within the scope of",
       "object": "this guideline",
-      "normalized_ko": "이는 본 가이드라인의 범위에 포함되지 않는다.",
+      "normalized_ko": "첨단 치료 의약품(ATMP)은 이 가이드라인의 적용 범위에 포함되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -6539,7 +6539,7 @@
       "subject": "These trials",
       "action": "may include",
       "object": "collection of data",
-      "normalized_ko": "이는 데이터 수집을 포함할 수 있다.",
+      "normalized_ko": "이러한 시험에는 자료 수집이 포함될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6553,7 +6553,7 @@
       "subject": "Data collection",
       "action": "includes",
       "object": "food or drug interactions",
-      "normalized_ko": "여기에는 음식 또는 약물 상호작용이 포함된다.",
+      "normalized_ko": "자료 수집에는 식품 또는 약물 상호작용이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -6567,7 +6567,7 @@
       "subject": "These trials",
       "action": "are often undertaken in",
       "object": "healthy volunteers",
-      "normalized_ko": "이는 건강한 자원자를 대상으로 흔히 수행된다.",
+      "normalized_ko": "이러한 시험은 흔히 건강한 자원자를 대상으로 수행된다.",
       "review_status": "reviewed"
     },
     {
@@ -6581,7 +6581,7 @@
       "subject": "These trials",
       "action": "can also include",
       "object": "patients",
-      "normalized_ko": "이는 환자도 포함할 수 있다.",
+      "normalized_ko": "이러한 시험에는 환자도 포함될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6595,7 +6595,7 @@
       "subject": "the general principles outlined in this document",
       "action": "could be considered",
       "object": "when designing early clinical trials for ATMPs",
-      "normalized_ko": "첨단바이오의약품(ATMP)의 초기 임상시험을 설계할 때 이를 고려할 수 있다.",
+      "normalized_ko": "이 문서에 기술된 일반 원칙은 ATMP 초기 임상시험을 설계할 때 고려될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6609,7 +6609,7 @@
       "subject": "These trials",
       "action": "are often undertaken in",
       "object": "healthy volunteers",
-      "normalized_ko": "이는 건강한 자원자를 대상으로 흔히 수행된다.",
+      "normalized_ko": "이러한 시험은 흔히 건강한 자원자를 대상으로 수행된다.",
       "review_status": "reviewed"
     },
     {
@@ -6623,7 +6623,7 @@
       "subject": "the general principles outlined in this document",
       "action": "may be considered",
       "object": "when designing early clinical trials for ATMPs",
-      "normalized_ko": "첨단바이오의약품(ATMP)의 초기 임상시험을 설계할 때 이를 고려할 수 있다.",
+      "normalized_ko": "이 문서에 기술된 일반 원칙은 ATMP 초기 임상시험을 설계할 때 고려될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6637,7 +6637,7 @@
       "subject": "This guideline",
       "action": "should be read in conjunction with",
       "object": "relevant European and International guidelines and regulations",
-      "normalized_ko": "이는 관련 유럽 및 국제 가이드라인과 규정을 함께 검토해야 한다.",
+      "normalized_ko": "이 가이드라인은 관련 유럽 및 국제 가이드라인과 규정을 함께 참조하여 읽어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6651,7 +6651,7 @@
       "subject": "Relevant guidelines and regulations",
       "action": "includes",
       "object": "Directive 2001/20/EC",
-      "normalized_ko": "여기에는 지침 2001/20/EC가 포함된다.",
+      "normalized_ko": "관련 가이드라인 및 규정에는 지침 2001/20/EC가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -6665,7 +6665,7 @@
       "subject": "Uncertainty",
       "action": "may arise from",
       "object": "particular knowledge, or lack thereof, regarding the mode of action of the IMP, the presence or absence of biomarkers, the nature of the target, the relevance of available animal models and/or findings in non-clinical safety studies",
-      "normalized_ko": "이는 임상시험용 의약품(IMP)의 작용기전에 관한 특정 지식 또는 그 부재, 바이오마커의 존재 또는 부재, 표적의 특성, 이용 가능한 동물 모델의 관련성 및/또는 비임상 안전성 시험에서의 결과로부터 발생할 수 있다.",
+      "normalized_ko": "불확실성은 IMP의 작용기전, 바이오마커의 존재 또는 부재, 표적의 특성, 이용 가능한 동물모델의 관련성 및/또는 비임상 안전성 시험 결과에 관한 특정 지식 또는 그 부재에서 발생할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6679,7 +6679,7 @@
       "subject": "The process of designing a set of studies in a development programme",
       "action": "is governed by",
       "object": "the attempt to reduce this uncertainty step-by-step by gathering relevant knowledge",
-      "normalized_ko": "이는 관련 지식을 수집하여 이러한 불확실성을 단계적으로 줄이려는 시도에 의해 좌우된다.",
+      "normalized_ko": "개발 프로그램에서 일련의 연구를 설계하는 과정은 관련 지식을 수집하여 이러한 불확실성을 단계적으로 줄이려는 노력에 의해 좌우된다.",
       "review_status": "reviewed"
     },
     {
@@ -6693,7 +6693,7 @@
       "subject": "Sponsors and investigators",
       "action": "should identify",
       "object": "the potential risks that might arise",
-      "normalized_ko": "발생할 수 있는 잠재적 위험을 식별해야 한다.",
+      "normalized_ko": "스폰서와 시험자는 발생할 수 있는 잠재적 위험을 식별해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6707,7 +6707,7 @@
       "subject": "Risk mitigation strategies",
       "action": "includes",
       "object": "ensuring adequate quality of the IMP (section 5)",
-      "normalized_ko": "임상시험용의약품(IMP)의 적절한 품질 보장(제5절)을 포함한다.",
+      "normalized_ko": "위험 완화 전략에는 IMP의 적절한 품질 확보(섹션 5)가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -6721,7 +6721,7 @@
       "subject": "The sponsor",
       "action": "define",
       "object": "the degree of uncertainty of the IMP",
-      "normalized_ko": "임상시험용의약품(IMP)의 불확실성 정도를 정의한다.",
+      "normalized_ko": "스폰서는 IMP의 불확실성 정도를 정의할 책임이 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6735,7 +6735,7 @@
       "subject": "The sponsor",
       "action": "provide",
       "object": "a description of how the risk(s) associated to this will be handled within the design and conduct of the FIH/early CTs",
-      "normalized_ko": "FIH/초기 임상시험의 설계 및 수행 내에서 이와 관련된 위험을 어떻게 관리할 것인지에 대한 설명을 제공한다.",
+      "normalized_ko": "스폰서는 이와 관련된 위험이 FIH/초기 CT의 설계 및 수행 과정에서 어떻게 관리될지를 기술한 설명을 제공할 책임이 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6749,7 +6749,7 @@
       "subject": "Specific strategies to address identified and potential risks",
       "action": "should be appropriately detailed",
       "object": "in the sponsor Clinical Trial Application (CTA)",
-      "normalized_ko": "의뢰자의 임상시험 승인신청서(CTA)에 적절히 상세하게 기술되어야 한다.",
+      "normalized_ko": "식별된 및 잠재적 위험에 대응하기 위한 구체적 전략은 의뢰자의 임상시험계획승인신청서(CTA)에 적절히 상세히 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6763,7 +6763,7 @@
       "subject": "Risks during FIH/early CTs",
       "action": "do not only come from",
       "object": "the IMP",
-      "normalized_ko": "임상시험용의약품(IMP)에서만 비롯되는 것은 아니다.",
+      "normalized_ko": "FIH/초기 CT 중 위험은 IMP에서만 비롯되는 것은 아니다.",
       "review_status": "reviewed"
     },
     {
@@ -6777,7 +6777,7 @@
       "subject": "The quality of documents supporting the CTA",
       "action": "is to provide",
       "object": "appropriate information to allow for a meaningful assessment of the adequacy of the risk minimisation efforts",
-      "normalized_ko": "위험 최소화 노력의 적절성에 대한 의미 있는 평가가 가능하도록 적절한 정보를 제공하는 것이다.",
+      "normalized_ko": "CTA를 뒷받침하는 문서의 품질은 위험 최소화 노력의 적절성을 유의미하게 평가할 수 있도록 적절한 정보를 제공하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -6791,7 +6791,7 @@
       "subject": "Sources of risks during FIH/early CTs",
       "action": "includes",
       "object": "challenge agents, or invasive study procedures",
-      "normalized_ko": "유발제 또는 침습적 연구 절차를 포함한다.",
+      "normalized_ko": "FIH/초기 CT 중 위험의 원인에는 유발제 또는 침습적 시험 절차가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -6805,7 +6805,7 @@
       "subject": "The early clinical development of human medicinal products",
       "action": "has",
       "object": "an intrinsic element of uncertainty",
-      "normalized_ko": "내재적 불확실성 요소를 가진다.",
+      "normalized_ko": "인체용 의약품의 초기 임상 개발에는 본질적인 불확실성 요소가 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6819,7 +6819,7 @@
       "subject": "The sponsor",
       "action": "must define",
       "object": "the degree of uncertainty of the IMP",
-      "normalized_ko": "임상시험용의약품(IMP)의 불확실성 정도를 반드시 정의해야 한다.",
+      "normalized_ko": "의뢰자는 IMP의 불확실성 정도를 정의해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6833,7 +6833,7 @@
       "subject": "Ensuring adequate formulation of the drug candidate",
       "action": "is an important condition to reduce",
       "object": "uncertainty",
-      "normalized_ko": "불확실성을 줄이기 위한 중요한 조건이다.",
+      "normalized_ko": "의약품 후보물질의 적절한 제형을 확보하는 것은 불확실성을 줄이기 위한 중요한 조건이다.",
       "review_status": "reviewed"
     },
     {
@@ -6847,7 +6847,7 @@
       "subject": "The requirements regarding physico-chemical characterisation",
       "action": "are the same for",
       "object": "all IMPs",
-      "normalized_ko": "모든 임상시험용의약품(IMP)에 대해 동일하다.",
+      "normalized_ko": "물리화학적 특성분석 관련 요건은 모든 IMP에 대해 동일하다.",
       "review_status": "reviewed"
     },
     {
@@ -6861,7 +6861,7 @@
       "subject": "Ensuring adequate formulation of the drug candidate",
       "action": "is",
       "object": "an important condition to reduce uncertainty",
-      "normalized_ko": "불확실성을 줄이기 위한 중요한 조건이다.",
+      "normalized_ko": "의약품 후보물질의 적절한 제형을 확보하는 것은 불확실성을 줄이기 위한 중요한 조건이다.",
       "review_status": "reviewed"
     },
     {
@@ -6875,7 +6875,7 @@
       "subject": "Specific areas to be addressed",
       "action": "include",
       "object": "determination of strength and potency",
-      "normalized_ko": "함량 및 역가의 결정을 포함한다.",
+      "normalized_ko": "다루어야 할 특정 영역에는 역가 및 효능의 결정이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -6889,7 +6889,7 @@
       "subject": "more extensive characterisation",
       "action": "may be required for",
       "object": "complex or biological products",
-      "normalized_ko": "복잡한 제품 또는 생물학적 제품에 필요할 수 있다.",
+      "normalized_ko": "복합 또는 생물학적 제품에는 보다 광범위한 특성규명이 요구될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -6903,7 +6903,7 @@
       "subject": "Specific areas to be addressed",
       "action": "includes",
       "object": "determination of strength and potency",
-      "normalized_ko": "함량 및 역가의 결정을 포함한다.",
+      "normalized_ko": "다루어야 할 특정 영역에는 역가 및 효능의 결정이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -6917,7 +6917,7 @@
       "subject": "The requirements regarding physico-chemical characterisation",
       "action": "are the same for",
       "object": "all IMPs",
-      "normalized_ko": "모든 임상시험용의약품(IMP)에 대해 동일하다.",
+      "normalized_ko": "물리화학적 특성분석 관련 요건은 모든 IMP에 대해 동일하다.",
       "review_status": "reviewed"
     },
     {
@@ -6931,7 +6931,7 @@
       "subject": "The requirements regarding physico-chemical characterisation",
       "action": "are the same",
       "object": null,
-      "normalized_ko": "동일해야 한다.",
+      "normalized_ko": "물리화학적 특성분석 관련 요건은 동일해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6945,7 +6945,7 @@
       "subject": "The methods used for determination of the strength and/or the potency of the product",
       "action": "be relevant for",
       "object": "the intended mechanism of action",
-      "normalized_ko": "의도된 작용기전과 관련되어야 한다.",
+      "normalized_ko": "제품의 역가 및/또는 효능 결정에 사용되는 방법은 의도된 작용기전에 적합해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6959,7 +6959,7 @@
       "subject": "The methods used for determination of the strength and/or the potency of the product",
       "action": "be",
       "object": "reliable",
-      "normalized_ko": "신뢰할 수 있어야 한다.",
+      "normalized_ko": "제품의 역가 및/또는 효능 결정에 사용되는 방법은 신뢰할 수 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6973,7 +6973,7 @@
       "subject": "the methods used for determination of the strength and/or the potency of the product",
       "action": "need to be",
       "object": "reliable",
-      "normalized_ko": "신뢰할 수 있어야 한다.",
+      "normalized_ko": "제품의 역가 및/또는 효능 결정에 사용되는 방법은 신뢰할 수 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -6987,7 +6987,7 @@
       "subject": null,
       "action": "reduce uncertainty by having",
       "object": "a representative defined reference material early in the development programme to appropriately measure biological activity",
-      "normalized_ko": "개발 프로그램 초기 단계에서 생물학적 활성을 적절히 측정할 수 있는 대표적이고 규정된 표준물질을 확보함으로써 불확실성을 줄여야 한다.",
+      "normalized_ko": "생물학적 활성을 적절히 측정하기 위해 개발 프로그램 초기부터 대표성이 있고 규정된 표준물질을 확보하여 불확실성을 줄이는 것이 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -7001,7 +7001,7 @@
       "subject": "a representative defined reference material",
       "action": "appropriately measure",
       "object": "biological activity",
-      "normalized_ko": "생물학적 활성을 적절히 측정한다.",
+      "normalized_ko": "대표성이 있고 규정된 표준물질은 생물학적 활성을 적절히 측정한다.",
       "review_status": "reviewed"
     },
     {
@@ -7015,7 +7015,7 @@
       "subject": "The development programme",
       "action": "reduce uncertainty by having",
       "object": "a representative defined reference material early in the development programme to appropriately measure biological activity",
-      "normalized_ko": "개발 프로그램 초기 단계에서 생물학적 활성을 적절히 측정할 수 있는 대표적이고 규정된 표준물질을 확보함으로써 불확실성을 줄인다.",
+      "normalized_ko": "개발 프로그램은 생물학적 활성을 적절히 측정하기 위한 대표적이고 정의된 표준물질을 개발 프로그램 초기부터 확보하여 불확실성을 줄이는 것이 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -7029,7 +7029,7 @@
       "subject": "the material used in pivotal non-clinical studies",
       "action": "should be representative of",
       "object": "the material to be used for FIH/early CT administration",
-      "normalized_ko": "FIH/초기 CT 투여에 사용될 물질을 대표해야 한다.",
+      "normalized_ko": "중추적 비임상 시험에 사용되는 물질은 FIH/초기 CT 투여에 사용될 물질을 대표해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7043,7 +7043,7 @@
       "subject": null,
       "action": "have",
       "object": "an adequate level of quality characterisation",
-      "normalized_ko": "적절한 수준의 품질 특성분석을 갖추어야 한다.",
+      "normalized_ko": "적절한 수준의 품질 특성 규명을 갖추는 것은 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -7057,7 +7057,7 @@
       "subject": "investigational material composition and process changes",
       "action": "may occur",
       "object": "during development",
-      "normalized_ko": "개발 중에 발생할 수 있다.",
+      "normalized_ko": "시험물질의 조성 및 공정 변경은 개발 중 발생할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7071,7 +7071,7 @@
       "subject": "an adequate level of quality characterisation",
       "action": "is important",
       "object": "even at this early point of development",
-      "normalized_ko": "개발의 이 초기 시점에서도 중요하다.",
+      "normalized_ko": "적절한 수준의 품질 특성화는 개발 초기 단계에서도 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -7085,7 +7085,7 @@
       "subject": "an adequate level of quality characterisation",
       "action": "is important",
       "object": "even at this early point of development",
-      "normalized_ko": "개발의 이 초기 시점에서도 중요하다.",
+      "normalized_ko": "적절한 수준의 품질 특성화는 개발 초기 단계에서도 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -7099,7 +7099,7 @@
       "subject": "Applicants",
       "action": "should demonstrate",
       "object": "that the intended formulation is suitable to provide the intended dose",
-      "normalized_ko": "의도된 제형이 의도된 용량을 제공하기에 적합함을 입증해야 한다.",
+      "normalized_ko": "신청자는 의도된 제형이 의도된 용량을 제공하는 데 적합함을 입증해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7127,7 +7127,7 @@
       "subject": "the product",
       "action": "could be adsorbed",
       "object": "to the wall of the container or infusion system",
-      "normalized_ko": "용기 또는 주입 시스템의 벽에 흡착될 수 있다.",
+      "normalized_ko": "제품은 용기 또는 주입 시스템의 벽에 흡착될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7141,7 +7141,7 @@
       "subject": "Accuracy",
       "action": "may be reduced",
       "object": null,
-      "normalized_ko": "감소될 수 있다.",
+      "normalized_ko": "정확도가 저하될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7155,7 +7155,7 @@
       "subject": "Product compatibility concern",
       "action": "includes",
       "object": "adsorption losses",
-      "normalized_ko": "흡착 손실을 포함한다.",
+      "normalized_ko": "제품 적합성 우려에는 흡착 손실이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -7169,7 +7169,7 @@
       "subject": "The development and evaluation of a new IMP",
       "action": "is",
       "object": "a stepwise process involving animal and human efficacy and safety information",
-      "normalized_ko": "동물 및 인간에서의 유효성 및 안전성 정보를 포함하는 단계적 과정이다.",
+      "normalized_ko": "신규 IMP의 개발 및 평가는 동물 및 사람에서의 유효성 및 안전성 정보를 포함하는 단계적 과정이다.",
       "review_status": "reviewed"
     },
     {
@@ -7183,7 +7183,7 @@
       "subject": "The non-clinical data in PD, PK and toxicology and their translation to human",
       "action": "are",
       "object": "important basis for planning and conduct of a FIH/early CT",
-      "normalized_ko": "FIH/초기 CT의 계획 및 수행을 위한 중요한 근거이다.",
+      "normalized_ko": "PD, PK 및 독성에 관한 비임상 데이터와 이의 사람으로의 외삽은 FIH/초기 CT의 계획 및 수행을 위한 중요한 근거이다.",
       "review_status": "reviewed"
     },
     {
@@ -7197,7 +7197,7 @@
       "subject": "A tabulated summary containing an overview of all relevant non-clinical data",
       "action": "is considered",
       "object": "helpful in the assessment process",
-      "normalized_ko": "평가 과정에서 유용한 것으로 간주된다.",
+      "normalized_ko": "모든 관련 비임상 데이터의 개요를 포함하는 표 형식 요약은 평가 과정에서 유용한 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -7211,7 +7211,7 @@
       "subject": "The recommendations in the Guidance on non-clinical safety studies for the conduct of human clinical trials and marketing authorization for pharmaceuticals (ICH M3(R2))",
       "action": "should be followed",
       "object": null,
-      "normalized_ko": "따라야 한다.",
+      "normalized_ko": "인체 임상시험 수행 및 의약품 시판허가를 위한 비임상 안전성시험 지침(ICH M3(R2))의 권고사항은 따라야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7225,7 +7225,7 @@
       "subject": "The non-clinical pharmacology and toxicology programme",
       "action": "should be performed in",
       "object": "relevant animal species and/or other relevant experimental models",
-      "normalized_ko": "관련 동물 종 및/또는 기타 관련 실험 모델에서 수행해야 한다.",
+      "normalized_ko": "비임상 약리학 및 독성학 프로그램은 관련 동물종 및/또는 기타 관련 실험 모델에서 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7239,7 +7239,7 @@
       "subject": "Animal models",
       "action": "should be chosen based on",
       "object": "similarities to humans with respect to target distribution, target binding and structural homology, cellular consequences of target binding, cellular regulatory mechanisms, metabolic pathways, or compensatory responses to an initial physiological perturbation",
-      "normalized_ko": "표적 분포, 표적 결합 및 구조적 상동성, 표적 결합의 세포 수준 결과, 세포 조절 기전, 대사 경로 또는 초기 생리학적 교란에 대한 보상 반응과 관련된 인간과의 유사성을 바탕으로 선택해야 한다.",
+      "normalized_ko": "동물모델은 표적 분포, 표적 결합 및 구조적 상동성, 표적 결합의 세포 결과, 세포 조절 기전, 대사 경로 또는 초기 생리학적 교란에 대한 보상 반응 측면에서 사람과의 유사성을 기준으로 선택되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7253,7 +7253,7 @@
       "subject": "the use of in vitro human cell systems or human-derived material",
       "action": "could provide",
       "object": "relevant information about these translational differences",
-      "normalized_ko": "이러한 번역상 차이에 관한 관련 정보를 제공할 수 있다.",
+      "normalized_ko": "시험관 내 사람 세포 시스템 또는 사람 유래 물질의 사용은 이러한 전이 차이에 관한 관련 정보를 제공할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7267,7 +7267,7 @@
       "subject": "High human-specificity of a medicinal product",
       "action": "makes",
       "object": "the non-clinical evaluation of the risk to humans more difficult in terms of degree of uncertainty",
-      "normalized_ko": "불확실성의 정도 측면에서 인간에 대한 위험의 비임상 평가를 더욱 어렵게 한다.",
+      "normalized_ko": "의약품의 높은 사람 특이성은 불확실성 정도 측면에서 사람에 대한 위험의 비임상 평가를 더 어렵게 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7281,7 +7281,7 @@
       "subject": "Special consideration",
       "action": "should be given to",
       "object": "the selection of relevant animal models for non-clinical testing of biotechnology-derived products",
-      "normalized_ko": "생명공학 유래 제품의 비임상 시험을 위한 관련 동물 모델의 선정에 고려가 이루어져야 한다.",
+      "normalized_ko": "바이오기술 유래 제품의 비임상 시험을 위한 관련 동물모델 선정에는 특별한 고려가 이루어져야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7295,7 +7295,7 @@
       "subject": "Homologous proteins",
       "action": "could be considered as",
       "object": "alternatives",
-      "normalized_ko": "대안으로 고려될 수 있다.",
+      "normalized_ko": "상동 단백질은 대안으로 고려될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7309,7 +7309,7 @@
       "subject": "specific potential risks",
       "action": "includes",
       "object": "for identification of safety hazards",
-      "normalized_ko": "안전성 위험요인의 식별을 포함한다.",
+      "normalized_ko": "특정 잠재적 위험에는 안전성 위해요인의 식별이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -7323,7 +7323,7 @@
       "subject": "The use of in vitro human cell systems or human-derived material",
       "action": "may provide",
       "object": "relevant information about these translational differences",
-      "normalized_ko": "이러한 번역상 차이에 관한 관련 정보를 제공할 수 있다.",
+      "normalized_ko": "시험관 내 인체 세포 시스템 또는 인체 유래 물질의 사용은 이러한 전환상의 차이에 관한 관련 정보를 제공할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7337,7 +7337,7 @@
       "subject": "Homologous proteins and transgenic models",
       "action": "may be considered as",
       "object": "alternatives",
-      "normalized_ko": "대안으로 고려될 수 있다.",
+      "normalized_ko": "상동 단백질 및 형질전환 모델은 대안으로 고려될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7351,7 +7351,7 @@
       "subject": "The nature of the target and its downstream pathways",
       "action": "be carefully evaluated",
       "object": null,
-      "normalized_ko": "신중하게 평가해야 한다.",
+      "normalized_ko": "표적 및 그 하위 경로의 특성은 신중하게 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7365,7 +7365,7 @@
       "subject": "Novel targets",
       "action": "receive particular caution",
       "object": null,
-      "normalized_ko": "특별한 주의를 기울여야 한다.",
+      "normalized_ko": "신규 표적에는 특별한 주의가 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -7379,7 +7379,7 @@
       "subject": "Potential risks",
       "action": "can arise from",
       "object": "the biological role of the target, its distribution in humans, lack of redundancy or presence of feedback loops in the targeted biological system, cross-reactivity with unintended targets, and potential for sustained receptor activation or exaggerated downstream cascading effects",
-      "normalized_ko": "표적의 생물학적 역할, 인간에서의 분포, 표적 생물학적 시스템에서 중복성의 부재 또는 피드백 루프의 존재, 비의도적 표적과의 교차반응성, 그리고 지속적인 수용체 활성화 또는 과도한 하위 연쇄 효과의 가능성으로부터 발생할 수 있다.",
+      "normalized_ko": "잠재적 위험은 표적의 생물학적 역할, 인체 내 분포, 표적 생물학적 시스템에서 중복성의 부재 또는 피드백 루프의 존재, 비의도적 표적과의 교차반응성 및 지속적인 수용체 활성화 또는 과도한 하위 연쇄 효과의 가능성으로부터 발생할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7393,7 +7393,7 @@
       "subject": "Examples of target distribution in humans",
       "action": "includes",
       "object": "presence in multiple tissues or vital organs",
-      "normalized_ko": "다수의 조직 또는 생명 유지에 필수적인 장기에 존재하는 것을 포함한다.",
+      "normalized_ko": "인체 내 표적 분포의 예에는 여러 조직 또는 생명유지 장기에 존재하는 것이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -7407,7 +7407,7 @@
       "subject": "Potential risks",
       "action": "can arise from",
       "object": "the biological role of the target",
-      "normalized_ko": "표적의 생물학적 역할로부터 발생할 수 있다.",
+      "normalized_ko": "잠재적 위험은 표적의 생물학적 역할로부터 발생할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7421,7 +7421,7 @@
       "subject": "The target",
       "action": "requires particular caution",
       "object": null,
-      "normalized_ko": "특별한 주의가 필요하다.",
+      "normalized_ko": "표적에는 특별한 주의가 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -7435,7 +7435,7 @@
       "subject": "Primary pharmacodynamics in vitro and in vivo",
       "action": "should provide sufficient information on",
       "object": "the mode of action",
-      "normalized_ko": "작용 기전에 관한 충분한 정보를 제공해야 한다.",
+      "normalized_ko": "in vitro 및 in vivo 일차 약력학은 작용기전에 관한 충분한 정보를 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7449,7 +7449,7 @@
       "subject": "Specificity and selectivity across target families and secondary pharmacodynamics (off-target effects)",
       "action": "be documented",
       "object": null,
-      "normalized_ko": "문서화해야 한다.",
+      "normalized_ko": "표적 계열 전반의 특이성 및 선택성과 이차 약력학(오프타깃 효과)은 문서화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7463,7 +7463,7 @@
       "subject": "In vitro studies with human cells or tissues",
       "action": "be conducted",
       "object": null,
-      "normalized_ko": "수행해야 한다.",
+      "normalized_ko": "인체 세포 또는 조직을 이용한 in vitro 연구는 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7477,7 +7477,7 @@
       "subject": "The steepness of the dose-response relationship",
       "action": "is of",
       "object": "critical importance",
-      "normalized_ko": "매우 중요하다.",
+      "normalized_ko": "용량-반응 관계의 가파름은 매우 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -7491,7 +7491,7 @@
       "subject": "Steep curves",
       "action": "indicate that",
       "object": "small increments in dose can lead to disproportionately large biological or toxicological effects",
-      "normalized_ko": "소량의 용량 증가가 불균형적으로 큰 생물학적 또는 독성학적 효과를 초래할 수 있음을 나타낸다.",
+      "normalized_ko": "가파른 곡선은 소폭의 용량 증가가 불균형적으로 큰 생물학적 또는 독성학적 효과를 초래할 수 있음을 나타낸다.",
       "review_status": "reviewed"
     },
     {
@@ -7505,7 +7505,7 @@
       "subject": "The steepness of the dose-response relationship",
       "action": "is",
       "object": "of critical importance",
-      "normalized_ko": "매우 중요하다.",
+      "normalized_ko": "용량-반응 관계의 가파름은 매우 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -7519,7 +7519,7 @@
       "subject": "PK and toxicokinetic (TK) data",
       "action": "should be available",
       "object": "as per ICH S3, S6(R1), M3(R2) and related Q&A documents",
-      "normalized_ko": "ICH S3, S6(R1), M3(R2) 및 관련 질의응답 문서에 따라 이용 가능해야 한다.",
+      "normalized_ko": "PK 및 독성동태학(TK) 데이터는 ICH S3, S6(R1), M3(R2) 및 관련 Q&A 문서에 따라 확보되어 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7533,7 +7533,7 @@
       "subject": "These data",
       "action": "adequately support",
       "object": "the interpretation of data from in vivo PD models and safety/toxicological studies",
-      "normalized_ko": "생체 내 PD 모델 및 안전성/독성시험에서 얻은 데이터의 해석을 적절히 뒷받침해야 한다.",
+      "normalized_ko": "이들 데이터는 in vivo PD 모델 및 안전성/독성학 연구의 데이터 해석을 적절히 뒷받침해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7547,7 +7547,7 @@
       "subject": "Sponsors",
       "action": "supply",
       "object": "a brief summary of the analytical assays used to characterise the non-clinical PK and TK, including their accuracy, precision and limits of quantification",
-      "normalized_ko": "정확성, 정밀성 및 정량한계를 포함하여 비임상 PK 및 TK를 특성화하는 데 사용된 분석법에 대한 간략한 요약을 제공해야 한다.",
+      "normalized_ko": "의뢰자는 정확성, 정밀성 및 정량한계를 포함하여 비임상 PK 및 TK의 특성평가에 사용된 분석법에 대한 간략한 요약을 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7561,7 +7561,7 @@
       "subject": "Systemic exposures at pharmacodynamically active doses in the relevant animal models",
       "action": "be determined",
       "object": null,
-      "normalized_ko": "결정되어야 한다.",
+      "normalized_ko": "관련 동물 모델에서 약력학적으로 활성인 용량에서의 전신 노출은 결정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7575,7 +7575,7 @@
       "subject": "Systemic exposures at pharmacodynamically active doses in the relevant animal models",
       "action": "be considered",
       "object": null,
-      "normalized_ko": "고려되어야 한다.",
+      "normalized_ko": "관련 동물 모델에서 약력학적으로 활성인 용량에서의 전신 노출은 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7589,7 +7589,7 @@
       "subject": "Possible polymorphisms",
       "action": "be taken into account",
       "object": null,
-      "normalized_ko": "감안되어야 한다.",
+      "normalized_ko": "가능한 다형성은 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7603,7 +7603,7 @@
       "subject": "Standard core battery data",
       "action": "should be available",
       "object": "Standard core battery data",
-      "normalized_ko": "표준 핵심 배터리 데이터는 이용 가능해야 한다.",
+      "normalized_ko": "표준 핵심 배터리 데이터는 확보되어 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7617,7 +7617,7 @@
       "subject": "The core battery",
       "action": "includes",
       "object": "cardiovascular, respiratory, and central nervous system (CNS) evaluations",
-      "normalized_ko": "심혈관계, 호흡기계 및 중추신경계(CNS) 평가를 포함한다.",
+      "normalized_ko": "핵심 배터리에는 심혈관계, 호흡기계 및 중추신경계(CNS) 평가가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -7631,7 +7631,7 @@
       "subject": "Other organ systems",
       "action": "includes",
       "object": "renal",
-      "normalized_ko": "신장을 포함한다.",
+      "normalized_ko": "기타 장기계에는 신장이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -7645,7 +7645,7 @@
       "subject": "The toxicology programme",
       "action": "should be designed taking into account",
       "object": "the characteristics of the IMP and the relevant ICH guidelines S6(R1), S9 and M3(R2)",
-      "normalized_ko": "IMP의 특성 및 관련 ICH 가이드라인 S6(R1), S9 및 M3(R2)를 고려하여 설계되어야 한다.",
+      "normalized_ko": "독성 프로그램은 IMP의 특성과 관련 ICH 가이드라인 S6(R1), S9 및 M3(R2)를 고려하여 설계되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7659,7 +7659,7 @@
       "subject": "These types of effects",
       "action": "should not be ignored",
       "object": null,
-      "normalized_ko": "무시되어서는 안 된다.",
+      "normalized_ko": "이러한 유형의 효과는 무시되어서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -7673,7 +7673,7 @@
       "subject": "Serious toxicity",
       "action": "should lead to a more cautious approach when setting",
       "object": "doses",
-      "normalized_ko": "용량 설정 시 보다 신중한 접근으로 이어져야 한다.",
+      "normalized_ko": "중대한 독성은 용량 설정 시 더욱 신중한 접근으로 이어져야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -7687,7 +7687,7 @@
       "subject": "Toxicity",
       "action": "can be the result of",
       "object": "exaggerated pharmacological actions",
-      "normalized_ko": "과도한 약리작용의 결과일 수 있다.",
+      "normalized_ko": "독성은 과도한 약리작용의 결과일 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -7701,7 +7701,7 @@
       "subject": "ATD",
       "action": "means",
       "object": "Anticipated therapeutic dose",
-      "normalized_ko": "예상 치료 용량을 의미한다.",
+      "normalized_ko": "ATD는 예상 치료 용량을 의미한다.",
       "review_status": "reviewed"
     }
   ],

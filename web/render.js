@@ -169,7 +169,7 @@
     const claim = claimForUnit(unit, claims);
     if (!claim || !claim.citation) return `<div class="answer-unit claim-error" role="alert">${escapeHtml(i18n.claimMissingCitation)}</div>`;
     const record = claim.record || {};
-    const warning = i18n.locale === "ko" && record.normalization_status === "needs_review" && record.type !== "knowledge_record"
+    const warning = i18n.locale === "ko" && record.normalization_status === "needs_review"
       ? `<div class="normalization-warning">${escapeHtml(i18n.normalizationNeedsReview)}</div>` : "";
     return `<article class="answer-unit"><div class="answer-unit-meta">${renderModalityLabel(record, i18n)}${renderValueStatusNote(record, i18n)}</div>
       <p class="answer-unit-text">${escapeHtml(unit.text)}</p>${warning}

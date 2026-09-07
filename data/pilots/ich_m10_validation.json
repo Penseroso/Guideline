@@ -2391,7 +2391,7 @@
       "subject": "Accuracy and precision",
       "action": "be determined",
       "object": "by analysing the QCs within each run (within-run) and in different runs (between-run)",
-      "normalized_ko": "각 런 내 QC 분석(런 내) 및 서로 다른 런에서의 QC 분석(런 간)을 통해 결정되어야 한다.",
+      "normalized_ko": "정확도와 정밀도는 각 분석 런 내(within-run) 및 서로 다른 분석 런 간(between-run)의 QC를 분석하여 결정해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2405,7 +2405,7 @@
       "subject": "Accuracy and precision",
       "action": "be evaluated",
       "object": "using the same runs and data",
-      "normalized_ko": "동일한 런 및 데이터를 사용하여 평가되어야 한다.",
+      "normalized_ko": "정확성 및 정밀도는 동일한 분석 런 및 데이터를 사용하여 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2419,7 +2419,7 @@
       "subject": "Within-run accuracy and precision",
       "action": "be evaluated",
       "object": "by analysing at least 5 replicates at each QC concentration level in each analytical run",
-      "normalized_ko": "각 분석 런에서 각 QC 농도 수준의 최소 5개 반복을 분석하여 평가되어야 한다.",
+      "normalized_ko": "분석 내 정확성 및 정밀도는 각 분석 런의 각 QC 농도 수준에서 최소 5개 반복 시료를 분석하여 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2433,7 +2433,7 @@
       "subject": "Between-run accuracy and precision",
       "action": "be evaluated",
       "object": "by analysing each QC concentration level in at least 3 analytical runs over at least two days",
-      "normalized_ko": "최소 2일에 걸쳐 최소 3개의 분석 런에서 각 QC 농도 수준을 분석하여 평가되어야 한다.",
+      "normalized_ko": "분석 간 정확성 및 정밀도는 최소 2일에 걸쳐 최소 3회의 분석 런에서 각 QC 농도 수준을 분석하여 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2447,7 +2447,7 @@
       "subject": "Accuracy and precision of the QCs",
       "action": "be demonstrated",
       "object": "over at least one of the runs in a size equivalent to a prospective analytical run of study samples",
-      "normalized_ko": "시험 검체의 향후 분석 런과 동등한 규모로, 최소 하나의 런에서 입증되어야 한다.",
+      "normalized_ko": "QC의 정확성 및 정밀도는 향후 시험 검체 분석 런과 동등한 규모로 최소 한 번의 분석 런에 걸쳐 입증하는 것이 권고된다.",
       "review_status": "reviewed"
     },
     {
@@ -2461,7 +2461,7 @@
       "subject": "Reported method validation data and the determination of accuracy and precision",
       "action": "include",
       "object": "all results obtained, including individual QCs outside of the acceptance criteria",
-      "normalized_ko": "허용 기준을 벗어난 개별 QC를 포함하여 획득된 모든 결과를 포함해야 한다.",
+      "normalized_ko": "보고되는 분석법 밸리데이션 데이터 및 정확성·정밀도 결정에는 허용 기준을 벗어난 개별 QC를 포함한 모든 획득 결과가 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2475,7 +2475,7 @@
       "subject": "Within-run accuracy and precision data",
       "action": "be reported",
       "object": "for each run",
-      "normalized_ko": "각 런에 대해 보고되어야 한다.",
+      "normalized_ko": "분석 내 정확성 및 정밀도 데이터는 각 분석 런별로 보고해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2489,7 +2489,7 @@
       "subject": "An overall estimate of within-run accuracy and precision for each QC level",
       "action": "be calculated",
       "object": null,
-      "normalized_ko": "계산되어야 한다.",
+      "normalized_ko": "각 QC 수준에 대한 분석 내 정확성 및 정밀도의 전체 추정치는 계산해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2503,7 +2503,7 @@
       "subject": "Between-run (intermediate) precision and accuracy",
       "action": "be calculated",
       "object": "by combining the data from all runs",
-      "normalized_ko": "모든 런의 데이터를 결합하여 계산되어야 한다.",
+      "normalized_ko": "분석 간(중간) 정밀도 및 정확성은 모든 분석 런의 데이터를 결합하여 계산해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2517,7 +2517,7 @@
       "subject": "The calibration curves for these assessments",
       "action": "be prepared",
       "object": "using freshly spiked calibration standards in at least one run",
-      "normalized_ko": "최소 하나의 런에서 새로 첨가하여 제조한 검량 표준품을 사용하여 준비되어야 한다.",
+      "normalized_ko": "이러한 평가를 위한 검량선은 최소 한 번의 분석 런에서 새로 첨가한 검량 표준품을 사용하여 작성해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2531,7 +2531,7 @@
       "subject": "Stability of the frozen calibration standards",
       "action": "be demonstrated",
       "object": null,
-      "normalized_ko": "입증되어야 한다.",
+      "normalized_ko": "동결 검량 표준품의 안정성은 입증해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2545,7 +2545,7 @@
       "subject": "The accuracy at each concentration level",
       "action": "be within",
       "object": "±15% of the nominal concentration, except at the LLOQ, where it should be within ±20%",
-      "normalized_ko": "명목 농도의 ±15% 이내여야 하며, LLOQ에서는 ±20% 이내여야 한다.",
+      "normalized_ko": "각 농도 수준에서의 정확성은 명목 농도의 ±15% 이내여야 하며, LLOQ에서는 ±20% 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2559,7 +2559,7 @@
       "subject": "The precision (%CV) of the concentrations determined at each level",
       "action": "not exceed",
       "object": "15%, except at the LLOQ, where it should not exceed 20%",
-      "normalized_ko": "15%를 초과해서는 안 되며, LLOQ에서는 20%를 초과해서는 안 된다.",
+      "normalized_ko": "각 수준에서 결정된 농도의 정밀도(%CV)는 15%를 초과해서는 안 되며, LLOQ에서는 20%를 초과해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -2573,7 +2573,7 @@
       "subject": "At least 2/3 of the total QCs and at least 50% at each concentration level",
       "action": "be within",
       "object": "±15% of the nominal values",
-      "normalized_ko": "명목값의 ±15% 이내여야 한다.",
+      "normalized_ko": "전체 QC의 최소 2/3 및 각 농도 수준에서 최소 50%는 명목값의 ±15% 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2587,7 +2587,7 @@
       "subject": "This guideline",
       "action": "is intended to provide recommendations",
       "object": "for the validation of bioanalytical methods for chemical and biological drug quantification and their application in the analysis of study samples",
-      "normalized_ko": "화학 및 생물학적 의약품 정량을 위한 생체분석법의 밸리데이션 및 시험 검체 분석에의 적용에 관한 권고를 제공하기 위한 것이다.",
+      "normalized_ko": "이 가이드라인은 화학적 및 생물학적 의약품 정량을 위한 생체분석법의 밸리데이션과 시험 검체 분석에서의 해당 분석법 적용에 관한 권고를 제공하기 위한 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2601,7 +2601,7 @@
       "subject": "Adherence to the principles presented in this guideline",
       "action": "will ensure",
       "object": "the quality and consistency of the bioanalytical data in support of the development and market approval of both chemical and biological drugs",
-      "normalized_ko": "화학 및 생물학적 의약품의 개발 및 시판 허가를 뒷받침하는 생체분석 데이터의 품질과 일관성을 보장할 것이다.",
+      "normalized_ko": "이 가이드라인에 제시된 원칙을 준수하면 화학적 및 생물학적 의약품의 개발 및 시판 허가를 뒷받침하는 생체분석 데이터의 품질과 일관성이 보장될 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2615,7 +2615,7 @@
       "subject": "The objective of the validation of a bioanalytical method",
       "action": "is to demonstrate",
       "object": "that it is suitable for its intended purpose",
-      "normalized_ko": "의도된 목적에 적합함을 입증하는 것이다.",
+      "normalized_ko": "생체분석법 밸리데이션의 목적은 해당 분석법이 의도된 목적에 적합함을 입증하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2629,7 +2629,7 @@
       "subject": "Changes from the recommendations in this guideline",
       "action": "may be acceptable",
       "object": null,
-      "normalized_ko": "허용될 수 있다.",
+      "normalized_ko": "이 가이드라인의 권고사항에서 벗어난 변경은 허용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2643,7 +2643,7 @@
       "subject": "Concentration measurements of chemical and biological drug(s) and their metabolite(s) in biological matrices",
       "action": "are",
       "object": "an important aspect of drug development",
-      "normalized_ko": "의약품 개발의 중요한 측면이다.",
+      "normalized_ko": "생물학적 매트릭스 내 화학적 및 생물학적 의약품과 그 대사체의 농도 측정은 의약품 개발의 중요한 측면이다.",
       "review_status": "reviewed"
     },
     {
@@ -2657,7 +2657,7 @@
       "subject": "The results of studies employing such methods",
       "action": "contribute to",
       "object": "regulatory decisions regarding the safety and efficacy of drug products",
-      "normalized_ko": "의약품의 안전성 및 유효성에 관한 규제 결정에 기여한다.",
+      "normalized_ko": "이러한 분석법을 사용하는 연구 결과는 의약품의 안전성 및 유효성에 관한 규제 결정에 기여한다.",
       "review_status": "reviewed"
     },
     {
@@ -2671,7 +2671,7 @@
       "subject": "This guideline",
       "action": "intends to facilitate",
       "object": "development of drugs in accordance with the principles of 3Rs (Reduce, Refine, Replace) for animal studies",
-      "normalized_ko": "동물시험의 3R 원칙(감소, 개선, 대체)에 따른 의약품 개발을 촉진하고자 한다.",
+      "normalized_ko": "이 가이드라인은 동물시험의 3Rs(감소, 개선, 대체) 원칙에 따른 의약품 개발을 촉진하기 위한 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2685,7 +2685,7 @@
       "subject": "the bioanalytical methods used",
       "action": "be well characterised",
       "object": null,
-      "normalized_ko": "충분히 특성화되는 것이 권장된다.",
+      "normalized_ko": "사용되는 생체분석법은 충분히 특성화되는 것이 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -2699,7 +2699,7 @@
       "subject": "the bioanalytical methods used",
       "action": "be appropriately validated",
       "object": null,
-      "normalized_ko": "적절히 밸리데이션되는 것이 권장된다.",
+      "normalized_ko": "사용되는 생체분석법은 적절히 밸리데이션되는 것이 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -2713,7 +2713,7 @@
       "subject": "the bioanalytical methods used",
       "action": "be documented",
       "object": null,
-      "normalized_ko": "문서화되는 것이 권장된다.",
+      "normalized_ko": "사용되는 생체분석법은 문서화되는 것이 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -2727,7 +2727,7 @@
       "subject": "This guideline",
       "action": "intends to facilitate",
       "object": "development of drugs in accordance with the principles of 3Rs (Reduce, Refine, Replace) for animal studies",
-      "normalized_ko": "동물시험의 3R 원칙(감소, 개선, 대체)에 따른 의약품 개발을 촉진하고자 한다.",
+      "normalized_ko": "이 가이드라인은 동물시험의 3Rs(감소, 개선, 대체) 원칙에 따른 의약품 개발을 촉진하기 위한 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2741,7 +2741,7 @@
       "subject": "the bioanalytical methods used",
       "action": "be well characterised",
       "object": null,
-      "normalized_ko": "충분히 특성화되어야 한다.",
+      "normalized_ko": "사용되는 생체분석법은 충분히 특성화되는 것이 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -2755,7 +2755,7 @@
       "subject": "the bioanalytical methods used",
       "action": "be appropriately validated",
       "object": null,
-      "normalized_ko": "적절히 밸리데이션되어야 한다.",
+      "normalized_ko": "사용되는 생체분석법은 적절히 밸리데이션되는 것이 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -2769,7 +2769,7 @@
       "subject": "the bioanalytical methods used",
       "action": "be documented",
       "object": null,
-      "normalized_ko": "문서화되어야 한다.",
+      "normalized_ko": "사용되는 생체분석법은 문서화되는 것이 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -2783,7 +2783,7 @@
       "subject": "This guideline",
       "action": "describes",
       "object": "the validation of bioanalytical methods and study sample analysis",
-      "normalized_ko": "생물분석법의 밸리데이션 및 시험 시료 분석을 기술한다.",
+      "normalized_ko": "이 가이드라인은 생체분석법의 밸리데이션 및 시험 검체 분석을 기술한다.",
       "review_status": "reviewed"
     },
     {
@@ -2797,7 +2797,7 @@
       "subject": "This guideline",
       "action": "is applicable to",
       "object": "the bioanalytical methods used to measure concentrations of chemical and biological drug(s) and their metabolite(s) in biological samples",
-      "normalized_ko": "생물학적 시료에서 화학적 및 생물학적 의약품과 그 대사체의 농도를 측정하는 데 사용되는 생물분석법에 적용된다.",
+      "normalized_ko": "이 가이드라인은 생물학적 검체 내 화학적 및 생물학적 의약품과 그 대사체의 농도 측정에 사용되는 생체분석법에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -2811,7 +2811,7 @@
       "subject": "The biological samples",
       "action": "are obtained in",
       "object": "nonclinical toxicokinetic (TK) studies conducted according to the principles of GLP, nonclinical pharmacokinetic (PK) studies conducted as surrogates for clinical studies, and all phases of clinical trials, including comparative bioavailability/bioequivalence (BA/BE) studies, in regulatory submissions",
-      "normalized_ko": "규제 제출에서 GLP 원칙에 따라 수행되는 비임상 독성동태학(TK) 연구, 임상시험의 대리로 수행되는 비임상 약동학(PK) 연구 및 비교 생체이용률/생물학적동등성(BA/BE) 연구를 포함한 모든 단계의 임상시험에서 얻어진다.",
+      "normalized_ko": "생물학적 검체는 GLP 원칙에 따라 수행된 비임상 독성동태(TK) 시험, 임상시험의 대리로 수행된 비임상 약동학(PK) 시험 및 규제 제출에서의 비교 생체이용률/생물학적 동등성(BA/BE) 시험을 포함한 모든 단계의 임상시험에서 얻어진다.",
       "review_status": "reviewed"
     },
     {
@@ -2825,7 +2825,7 @@
       "subject": "This guideline",
       "action": "describes",
       "object": "the validation of bioanalytical methods and study sample analysis",
-      "normalized_ko": "생물분석법의 밸리데이션 및 시험 시료 분석을 기술한다.",
+      "normalized_ko": "이 가이드라인은 생체분석법의 밸리데이션 및 시험 검체 분석을 기술한다.",
       "review_status": "reviewed"
     },
     {
@@ -2839,7 +2839,7 @@
       "subject": "Full method validation",
       "action": "is expected for",
       "object": "the primary matrix intended to support regulatory submissions",
-      "normalized_ko": "규제 제출을 지원하기 위해 의도된 주 매트릭스에 대해 기대된다.",
+      "normalized_ko": "규제 제출을 뒷받침하기 위한 주 매트릭스에 대해서는 완전한 방법 밸리데이션이 예상된다.",
       "review_status": "reviewed"
     },
     {
@@ -2853,7 +2853,7 @@
       "subject": "Additional matrices",
       "action": "should be validated",
       "object": "as necessary",
-      "normalized_ko": "필요에 따라 밸리데이션해야 한다.",
+      "normalized_ko": "추가 매트릭스는 필요한 경우 밸리데이션해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2867,7 +2867,7 @@
       "subject": "Applicants",
       "action": "may decide on",
       "object": "the level of qualification that supports their own internal decision making",
-      "normalized_ko": "자체 내부 의사결정을 지원하는 적격성평가 수준을 결정할 수 있다.",
+      "normalized_ko": "신청자는 자체 내부 의사결정을 뒷받침하는 적격성 평가 수준을 결정할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2881,7 +2881,7 @@
       "subject": "The information in this guideline",
       "action": "applies to",
       "object": "the quantitative analysis by ligand binding assays (LBAs) and chromatographic methods such as liquid chromatography (LC) or gas chromatography (GC)",
-      "normalized_ko": "리간드 결합 분석법(LBA) 및 액체 크로마토그래피(LC) 또는 기체 크로마토그래피(GC)와 같은 크로마토그래피 방법에 의한 정량 분석에 적용된다.",
+      "normalized_ko": "이 가이드라인의 정보는 리간드 결합 분석법(LBA) 및 액체 크로마토그래피(LC) 또는 기체 크로마토그래피(GC)와 같은 크로마토그래피법에 의한 정량 분석에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -2895,7 +2895,7 @@
       "subject": "The bioanalysis of biomarkers and bioanalytical methods used for the assessment of immunogenicity",
       "action": "are not within the scope of",
       "object": "this guideline",
-      "normalized_ko": "이 지침의 범위에 포함되지 않는다.",
+      "normalized_ko": "바이오마커의 생체분석 및 면역원성 평가에 사용되는 생체분석법은 이 가이드라인의 범위에 포함되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -2909,7 +2909,7 @@
       "subject": "Liquid chromatography (LC) or gas chromatography (GC)",
       "action": "are typically used in combination with",
       "object": "mass spectrometry (MS) detection",
-      "normalized_ko": "일반적으로 질량분석(MS) 검출과 함께 사용된다.",
+      "normalized_ko": "액체 크로마토그래피(LC) 또는 기체 크로마토그래피(GC)는 일반적으로 질량분석(MS) 검출과 함께 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -2923,7 +2923,7 @@
       "subject": "The bioanalysis of study samples",
       "action": "should also conform to",
       "object": "their requirements",
-      "normalized_ko": "그 요구사항도 준수해야 한다.",
+      "normalized_ko": "시험 검체의 생체분석은 해당 요건도 준수해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2937,7 +2937,7 @@
       "subject": "studies not submitted for regulatory approval or not considered for regulatory decisions",
       "action": "includes",
       "object": "exploratory investigations",
-      "normalized_ko": "규제 승인 제출 또는 안전성·유효성·표시사항 관련 규제 의사결정 대상으로 고려되지 않는 연구의 예에는 탐색적 조사가 포함된다.",
+      "normalized_ko": "규제 승인을 위해 제출되지 않거나 규제 의사결정에 고려되지 않는 시험에는 탐색적 조사가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2951,7 +2951,7 @@
       "subject": "Chromatographic methods",
       "action": "includes",
       "object": "liquid chromatography (LC)",
-      "normalized_ko": "액체 크로마토그래피(LC)를 포함한다.",
+      "normalized_ko": "크로마토그래피 방법에는 액체 크로마토그래피(LC)가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2965,7 +2965,7 @@
       "subject": "The purpose of bioanalytical method development",
       "action": "is to define",
       "object": "the design, operating conditions, limitations and suitability of the method for its intended purpose",
-      "normalized_ko": "의도된 목적에 대한 방법의 설계, 운용 조건, 한계 및 적합성을 정의하는 것이다.",
+      "normalized_ko": "생체분석법 개발의 목적은 의도된 목적에 대한 분석법의 설계, 운전 조건, 한계 및 적합성을 정의하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2979,7 +2979,7 @@
       "subject": "The purpose of bioanalytical method development",
       "action": "is to ensure",
       "object": "that the method is ready for validation",
-      "normalized_ko": "방법이 밸리데이션 준비가 되도록 보장하는 것이다.",
+      "normalized_ko": "생체분석법 개발의 목적은 분석법이 밸리데이션 준비가 되었음을 보장하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2993,7 +2993,7 @@
       "subject": "Bioanalytical method development",
       "action": "does not require",
       "object": "extensive record keeping or notation",
-      "normalized_ko": "광범위한 기록 보관 또는 표기는 요구하지 않는다.",
+      "normalized_ko": "생체분석법 개발에는 광범위한 기록 보관 또는 문서화가 요구되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3007,7 +3007,7 @@
       "subject": "The applicant",
       "action": "should understand",
       "object": "the analyte of interest",
-      "normalized_ko": "관심 분석대상물질을 이해해야 한다.",
+      "normalized_ko": "신청자는 관심 분석물을 이해하도록 권장된다.",
       "review_status": "reviewed"
     },
     {
@@ -3021,7 +3021,7 @@
       "subject": "Analyte characteristics",
       "action": "includes",
       "object": "the physicochemical properties of the drug",
-      "normalized_ko": "의약품의 물리화학적 특성을 포함한다.",
+      "normalized_ko": "분석물 특성에는 약물의 물리화학적 특성이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3035,7 +3035,7 @@
       "subject": "Method development",
       "action": "can include",
       "object": "the characterisation of reference standards, critical reagents, calibration curve, quality control samples (QCs), selectivity and specificity, sensitivity, accuracy, precision, recovery, stability of the analyte, minimum required dilution (MRD)",
-      "normalized_ko": "표준물질, 중요 시약, 검량선, 품질관리 시료(QC), 선택성 및 특이성, 감도, 정확성, 정밀성, 회수율, 분석대상물질의 안정성 및 최소 요구 희석(MRD)의 특성규명을 포함할 수 있다.",
+      "normalized_ko": "분석법 개발에는 표준물질, 핵심 시약, 보정 곡선, 품질관리 시료(QCs), 선택성 및 특이성, 감도, 정확도, 정밀도, 회수율, 분석물 안정성 및 최소 요구 희석(MRD)의 특성화가 포함될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3049,7 +3049,7 @@
       "subject": "The purpose of bioanalytical method development",
       "action": "is to define",
       "object": "the design, operating conditions, limitations and suitability of the method for its intended purpose",
-      "normalized_ko": "의도된 목적에 대한 방법의 설계, 운용 조건, 한계 및 적합성을 정의하는 것이다.",
+      "normalized_ko": "생체분석법 개발의 목적은 의도된 목적에 대한 분석법의 설계, 운전 조건, 한계 및 적합성을 정의하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -3063,7 +3063,7 @@
       "subject": "The purpose of bioanalytical method development",
       "action": "is to ensure",
       "object": "that the method is ready for validation",
-      "normalized_ko": "방법이 밸리데이션 준비가 되도록 보장하는 것이다.",
+      "normalized_ko": "생체분석법 개발의 목적은 분석법이 밸리데이션 준비가 되었음을 보장하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -3077,7 +3077,7 @@
       "subject": "Bioanalytical method validation",
       "action": "is essential to ensure",
       "object": "the acceptability of assay performance and the reliability of analytical results",
-      "normalized_ko": "분석 성능의 수용 가능성 및 분석 결과의 신뢰성을 보장하는 데 필수적이다.",
+      "normalized_ko": "생체분석법 밸리데이션은 분석 성능의 수용 가능성 및 분석 결과의 신뢰성을 보장하는 데 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -3091,7 +3091,7 @@
       "subject": "A full validation of a bioanalytical method",
       "action": "should be performed",
       "object": null,
-      "normalized_ko": "수행해야 한다.",
+      "normalized_ko": "생체분석법의 완전 밸리데이션은 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3105,7 +3105,7 @@
       "subject": "Full method validation",
       "action": "is expected for",
       "object": "the primary matrix intended to support regulatory submissions",
-      "normalized_ko": "규제 제출을 지원하기 위해 의도된 주 매트릭스에 대해 기대된다.",
+      "normalized_ko": "완전 분석법 밸리데이션은 규제 제출을 지원하기 위한 주 매트릭스에 대해 기대된다.",
       "review_status": "reviewed"
     },
     {
@@ -3119,7 +3119,7 @@
       "subject": "Full method validation",
       "action": "is expected",
       "object": null,
-      "normalized_ko": "기대된다.",
+      "normalized_ko": "완전 분석법 밸리데이션이 기대된다.",
       "review_status": "reviewed"
     },
     {
@@ -3133,7 +3133,7 @@
       "subject": "Partial validations",
       "action": "evaluate",
       "object": "modifications to already fully validated bioanalytical methods",
-      "normalized_ko": "이미 완전히 밸리데이션된 생체분석 방법의 변경사항을 평가한다.",
+      "normalized_ko": "부분 밸리데이션은 이미 완전 밸리데이션된 생체분석법의 변경사항을 평가한다.",
       "review_status": "reviewed"
     },
     {
@@ -3147,7 +3147,7 @@
       "subject": "Partial validation",
       "action": "can range from",
       "object": "as little as one within-run accuracy and precision determination, to a nearly full validation",
-      "normalized_ko": "최소 1회의 런 내 정확성 및 정밀성 결정부터 거의 완전한 밸리데이션까지 범위가 될 수 있다.",
+      "normalized_ko": "부분 밸리데이션은 1회의 런 내 정확도 및 정밀도 측정부터 거의 완전한 밸리데이션까지 범위가 될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3161,7 +3161,7 @@
       "subject": "Partial validations",
       "action": "evaluate",
       "object": "modifications to already fully validated bioanalytical methods",
-      "normalized_ko": "이미 완전히 밸리데이션된 생체분석 방법의 변경사항을 평가한다.",
+      "normalized_ko": "부분 밸리데이션은 이미 완전 밸리데이션된 생체분석법의 변경사항을 평가한다.",
       "review_status": "reviewed"
     },
     {
@@ -3175,7 +3175,7 @@
       "subject": "Partial validation",
       "action": "can range from",
       "object": "as little as one within-run accuracy and precision determination, to a nearly full validation",
-      "normalized_ko": "최소 1회의 런 내 정확성 및 정밀성 결정부터 거의 완전한 밸리데이션까지 범위가 될 수 있다.",
+      "normalized_ko": "부분 밸리데이션은 1회의 런 내 정확도 및 정밀도 측정부터 거의 완전한 밸리데이션까지 범위가 될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3189,7 +3189,7 @@
       "subject": "Cross validation",
       "action": "is required to demonstrate",
       "object": "how the reported data are related",
-      "normalized_ko": "보고된 데이터가 어떻게 관련되는지를 입증해야 한다.",
+      "normalized_ko": "교차 밸리데이션은 보고된 데이터가 어떻게 관련되는지를 입증하기 위해 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -3203,7 +3203,7 @@
       "subject": "Cross validation",
       "action": "is required to demonstrate",
       "object": "how the reported data are related",
-      "normalized_ko": "보고된 데이터가 어떻게 관련되는지를 입증해야 한다.",
+      "normalized_ko": "교차 밸리데이션은 보고된 데이터가 어떻게 관련되는지를 입증하기 위해 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -3217,7 +3217,7 @@
       "subject": "Cross validation",
       "action": "is not generally required",
       "object": null,
-      "normalized_ko": "일반적으로 요구되지 않는다.",
+      "normalized_ko": "교차 밸리데이션은 일반적으로 요구되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3231,7 +3231,7 @@
       "subject": "Cross validation",
       "action": "should be performed in advance of",
       "object": "study samples being analysed",
-      "normalized_ko": "시험 시료를 분석하기 전에 수행해야 한다.",
+      "normalized_ko": "교차 검증은 시험 검체 분석 전에 수행해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3245,7 +3245,7 @@
       "subject": "Cross validation",
       "action": "should be assessed by measuring",
       "object": "the same set of QCs (low, medium and high) at least in triplicate and study samples",
-      "normalized_ko": "동일한 QC 세트(저농도, 중간농도 및 고농도)를 적어도 3회씩 및 시험 검체를 측정하여 평가해야 한다.",
+      "normalized_ko": "교차 검증은 동일한 QC 세트(저, 중, 고)를 최소 3회 반복 측정하고 시험 검체를 측정하여 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3259,7 +3259,7 @@
       "subject": "The use of multiple bioanalytical methods for the measurement of the same analyte in the conduct of one comparative BA/BE study",
       "action": "should not be used",
       "object": null,
-      "normalized_ko": "사용해서는 안 된다.",
+      "normalized_ko": "하나의 비교 BA/BE 시험 수행 시 동일 분석물질의 측정을 위해 여러 생체분석법을 사용해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -3273,7 +3273,7 @@
       "subject": "The use of multiple bioanalytical methods for the measurement of the same analyte",
       "action": "is strongly discouraged",
       "object": null,
-      "normalized_ko": "강력히 권고되지 않는다.",
+      "normalized_ko": "동일 분석물질의 측정을 위해 여러 생체분석법을 사용하는 것은 강력히 권고되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3287,7 +3287,7 @@
       "subject": "Bias",
       "action": "may be assessed by",
       "object": "Bland-Altman plots",
-      "normalized_ko": "Bland-Altman 플롯으로 평가할 수 있다.",
+      "normalized_ko": "편향은 Bland-Altman 도표로 평가할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3301,7 +3301,7 @@
       "subject": "Other methods appropriate for assessing agreement between two methods",
       "action": "may be used",
       "object": null,
-      "normalized_ko": "사용할 수 있다.",
+      "normalized_ko": "두 방법 간 일치도 평가에 적합한 다른 방법을 사용할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3315,7 +3315,7 @@
       "subject": "Cross validation",
       "action": "is not generally required",
       "object": null,
-      "normalized_ko": "일반적으로 요구되지 않는다.",
+      "normalized_ko": "교차 검증은 일반적으로 요구되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3329,7 +3329,7 @@
       "subject": "Bias",
       "action": "can be assessed by",
       "object": "Bland-Altman plots or Deming regression",
-      "normalized_ko": "Bland-Altman 플롯 또는 Deming 회귀분석으로 평가할 수 있다.",
+      "normalized_ko": "편향은 Bland-Altman 도표 또는 Deming 회귀로 평가할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3343,7 +3343,7 @@
       "subject": "The concentration vs. time curves for study samples",
       "action": "could be plotted",
       "object": "to assess bias",
-      "normalized_ko": "편향을 평가하기 위해 도표로 나타낼 수 있다.",
+      "normalized_ko": "시험 시료의 농도 대 시간 곡선은 편향을 평가하기 위해 도시될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3357,7 +3357,7 @@
       "subject": "Partial validations",
       "action": "evaluate",
       "object": "modifications to already fully validated bioanalytical methods",
-      "normalized_ko": "이미 완전히 밸리데이션된 생체분석법에 대한 변경을 평가한다.",
+      "normalized_ko": "부분 밸리데이션은 이미 완전 밸리데이션된 생체분석법의 변경사항을 평가한다.",
       "review_status": "reviewed"
     },
     {
@@ -3371,7 +3371,7 @@
       "subject": "Partial validation",
       "action": "range",
       "object": "from as little as one within-run accuracy and precision determination, to a nearly full validation",
-      "normalized_ko": "범위는 1회의 런 내 정확성 및 정밀성 결정만을 수행하는 것부터 거의 완전한 밸리데이션까지일 수 있다.",
+      "normalized_ko": "부분 밸리데이션은 최소 1회의 런 내 정확도 및 정밀도 결정부터 거의 완전한 밸리데이션까지 범위가 다양할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3385,7 +3385,7 @@
       "subject": "Stability established at one facility",
       "action": "does not necessarily need to be repeated",
       "object": "at another facility",
-      "normalized_ko": "다른 시설에서 반드시 반복할 필요는 없다.",
+      "normalized_ko": "한 시설에서 확립된 안정성은 다른 시설에서 반드시 반복할 필요는 없다.",
       "review_status": "reviewed"
     },
     {
@@ -3399,7 +3399,7 @@
       "subject": "Typical bioanalytical method modifications or changes for chromatographic methods",
       "action": "include",
       "object": "the following situations, but are not limited to them",
-      "normalized_ko": "다음 상황을 포함하되, 이에 국한되지 않는다.",
+      "normalized_ko": "크로마토그래피법의 일반적인 생체분석법 수정 또는 변경에는 다음 상황이 포함되나, 이에 한정되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3413,7 +3413,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "Analytical site change using same method (i.e., bioanalytical method transfers between laboratories)",
-      "normalized_ko": "동일한 방법을 사용하는 분석 시설 변경(즉, 실험실 간 생체분석법 이전)을 포함한다.",
+      "normalized_ko": "크로마토그래피법 수정 또는 변경에는 동일한 방법을 사용하는 분석 장소 변경(즉, 실험실 간 생체분석법 이전)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3427,7 +3427,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "A change in analytical method (e.g., change in detection systems, platform)",
-      "normalized_ko": "분석법의 변경(예: 검출 시스템, 플랫폼의 변경)을 포함한다.",
+      "normalized_ko": "크로마토그래피법 수정 또는 변경에는 분석 방법의 변경(예: 검출 시스템, 플랫폼의 변경)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3441,7 +3441,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "A change in sample processing procedures",
-      "normalized_ko": "검체 처리 절차의 변경을 포함한다.",
+      "normalized_ko": "크로마토그래피법 수정 또는 변경에는 시료 처리 절차의 변경이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3455,7 +3455,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "A change in sample volume (e.g., the smaller volume of paediatric samples)",
-      "normalized_ko": "검체 용량의 변경(예: 소아 검체의 더 적은 용량)을 포함한다.",
+      "normalized_ko": "크로마토그래피법 수정 또는 변경에는 시료 용량의 변경(예: 소아 시료의 더 적은 용량)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3469,7 +3469,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "Changes to the calibration concentration range",
-      "normalized_ko": "검량 농도 범위의 변경을 포함한다.",
+      "normalized_ko": "크로마토그래피법 수정 또는 변경에는 보정 농도 범위의 변경이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3483,7 +3483,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "A change in anticoagulant (but not changes in the counter-ion) in biological fluids (e.g., heparin to ethylenediaminetetraacetic acid (EDTA))",
-      "normalized_ko": "생물학적 체액에서 항응고제의 변경(대이온의 변경은 제외)(예: 헤파린에서 에틸렌디아민테트라아세트산(EDTA)으로의 변경)을 포함한다.",
+      "normalized_ko": "크로마토그래피법 수정 또는 변경에는 생물학적 체액에서 항응고제의 변경(대이온의 변경은 제외)(예: 헤파린에서 에틸렌디아민테트라아세트산(EDTA)으로의 변경)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3497,7 +3497,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "Change from one matrix within a species to another or changes to the species within the matrix",
-      "normalized_ko": "동일 종 내 한 매트릭스에서 다른 매트릭스로의 변경 또는 매트릭스 내 종의 변경을 포함한다.",
+      "normalized_ko": "크로마토그래피법 수정 또는 변경에는 한 종 내에서 한 매트릭스에서 다른 매트릭스로의 변경 또는 매트릭스 내 종의 변경이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3511,7 +3511,7 @@
       "subject": "Chromatographic method modification or change",
       "action": "includes",
       "object": "A change in storage conditions",
-      "normalized_ko": "보관 조건의 변경을 포함한다.",
+      "normalized_ko": "크로마토그래피 방법의 수정 또는 변경에는 보관 조건의 변경이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3525,7 +3525,7 @@
       "subject": "Typical bioanalytical method modifications or changes for LBAs",
       "action": "include",
       "object": "the following situations, but are not limited to them",
-      "normalized_ko": "다음과 같은 상황을 포함하나, 이에 한정되지 않는다.",
+      "normalized_ko": "LBA의 일반적인 생체분석법 수정 또는 변경에는 다음 상황이 포함되나, 이에 한정되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3539,7 +3539,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "Changes in LBA critical reagents (e.g., lot-to-lot changes)",
-      "normalized_ko": "LBA 핵심 시약의 변경(예: 로트 간 변경)",
+      "normalized_ko": "LBA 수정 또는 변경에는 LBA 중요 시약의 변경(예: 로트 간 변경)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3553,7 +3553,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "Changes in MRD",
-      "normalized_ko": "MRD의 변경",
+      "normalized_ko": "LBA 수정 또는 변경에는 MRD의 변경이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3567,7 +3567,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "A change in storage conditions",
-      "normalized_ko": "보관 조건의 변경",
+      "normalized_ko": "LBA 수정 또는 변경에는 보관 조건의 변경이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3581,7 +3581,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "Changes to the calibration concentration range",
-      "normalized_ko": "보정 농도 범위의 변경",
+      "normalized_ko": "LBA 수정 또는 변경에는 검량 농도 범위의 변경이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3595,7 +3595,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "A change in analytical method (e.g., change in detection systems, platform)",
-      "normalized_ko": "분석 방법의 변경(예: 검출 시스템, 플랫폼의 변경)",
+      "normalized_ko": "LBA 수정 또는 변경에는 분석법의 변경(예: 검출 시스템 또는 플랫폼의 변경)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3609,7 +3609,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "Analytical site change using same method (i.e., bioanalytical method transfers between laboratories)",
-      "normalized_ko": "동일한 방법을 사용하는 분석 장소의 변경(즉, 실험실 간 생체분석법 이전)",
+      "normalized_ko": "LBA 수정 또는 변경에는 동일한 방법을 사용하는 분석 장소의 변경(즉, 시험실 간 생체분석법 이전)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3623,7 +3623,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "A change in sample preparation",
-      "normalized_ko": "검체 전처리의 변경",
+      "normalized_ko": "LBA 수정 또는 변경에는 검체 전처리의 변경이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3637,7 +3637,7 @@
       "subject": "LBA modification or change",
       "action": "includes",
       "object": "A change in anticoagulant (but not changes in the counter-ion) in biological fluids (e.g., heparin to ethylenediaminetetraacetic acid (EDTA))",
-      "normalized_ko": "생물학적 유체에서 항응고제의 변경(대이온의 변경은 제외)(예: 헤파린에서 에틸렌디아민테트라아세트산[EDTA]으로의 변경)",
+      "normalized_ko": "LBA 수정 또는 변경에는 생물학적 체액에서 항응고제의 변경(대이온의 변경은 제외, 예: 헤파린에서 에틸렌디아민테트라아세트산(EDTA)으로의 변경)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3651,7 +3651,7 @@
       "subject": "The parameters of the partial validations",
       "action": "meet",
       "object": "the full validation criteria",
-      "normalized_ko": "완전 밸리데이션 기준을 충족해야 한다.",
+      "normalized_ko": "부분 밸리데이션의 파라미터는 완전 밸리데이션 기준을 충족해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3665,7 +3665,7 @@
       "subject": "Additional investigation and validation",
       "action": "is warranted",
       "object": null,
-      "normalized_ko": "완전 밸리데이션이 필요하다.",
+      "normalized_ko": "추가 조사 및 밸리데이션이 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -3679,7 +3679,7 @@
       "subject": "A blank biological matrix",
       "action": "is spiked with",
       "object": "the analyte(s) of interest using solutions of reference standard(s) to prepare calibration standards and QCs",
-      "normalized_ko": "보정표준물질 및 QC를 제조하기 위해 참조표준품 용액을 사용하여 관심 분석물질을 첨가한다.",
+      "normalized_ko": "공백 생물학적 매트릭스에는 검량 표준물질 및 QC를 준비하기 위해 기준표준물질 용액을 사용하여 관심 분석물질을 첨가한다.",
       "review_status": "reviewed"
     },
     {
@@ -3693,7 +3693,7 @@
       "subject": "A blank biological matrix",
       "action": "is used to prepare",
       "object": "calibration standards and QCs",
-      "normalized_ko": "보정표준물질 및 QC를 제조하는 데 사용된다.",
+      "normalized_ko": "공백 생물학적 매트릭스는 검량 표준물질 및 QC를 준비하는 데 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -3707,7 +3707,7 @@
       "subject": "Calibration standards and QCs",
       "action": "should be prepared from",
       "object": "separate stock solutions",
-      "normalized_ko": "보정표준물질 및 QC는 별도의 원액으로부터 제조해야 한다.",
+      "normalized_ko": "검량 표준물질 및 QC는 별도의 원액으로부터 준비해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3721,7 +3721,7 @@
       "subject": "The accurate preparation and stability of the stock solution",
       "action": "should have been verified",
       "object": null,
-      "normalized_ko": "정확성과 정밀도는 검증되어 있어야 한다.",
+      "normalized_ko": "원액의 정확한 조제 및 안정성은 검증되어 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3735,7 +3735,7 @@
       "subject": "Calibration standards and QCs",
       "action": "may be prepared from",
       "object": "the same stock solution",
-      "normalized_ko": "동일한 원액으로부터 제조할 수 있다.",
+      "normalized_ko": "검량 표준물질 및 QC는 동일한 원액으로부터 준비할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3749,7 +3749,7 @@
       "subject": "A certificate of analysis (CoA) or an equivalent alternative",
       "action": "is required",
       "object": "to ensure quality and to provide information on the purity, storage conditions, retest/expiration date and batch number of the reference standard",
-      "normalized_ko": "품질을 보장하고 참조표준품의 순도, 보관 조건, 재시험일/사용기한 및 배치 번호에 관한 정보를 제공하기 위해 필수이다.",
+      "normalized_ko": "분석성적서(CoA) 또는 이에 상응하는 대체 문서는 품질을 보장하고 기준표준물질의 순도, 보관 조건, 재시험/유효기간 및 배치 번호에 관한 정보를 제공하기 위해 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -3763,7 +3763,7 @@
       "subject": "Selectivity",
       "action": "is",
       "object": "the ability of an analytical method to differentiate and measure the analyte in the presence of interfering substances in the biological matrix",
-      "normalized_ko": "선택성은 분석법이 생물학적 매트릭스 내 간섭 물질 존재하에서 분석대상물질을 구별하고 측정하는 능력이다.",
+      "normalized_ko": "선택성은 생물학적 매트릭스 내 간섭 물질이 존재하는 경우 분석물질을 구별하고 측정하는 분석법의 능력이다.",
       "review_status": "reviewed"
     },
     {
@@ -3777,7 +3777,7 @@
       "subject": "Blank samples",
       "action": "are",
       "object": "matrix samples without addition of analyte or IS",
-      "normalized_ko": "공시료는 분석대상물질 또는 IS를 첨가하지 않은 매트릭스 시료이다.",
+      "normalized_ko": "공백 검체는 분석물질 또는 IS를 첨가하지 않은 매트릭스 검체이다.",
       "review_status": "reviewed"
     },
     {
@@ -3791,7 +3791,7 @@
       "subject": "Selectivity",
       "action": "is evaluated using",
       "object": "blank samples",
-      "normalized_ko": "선택성은 공시료를 사용하여 평가한다.",
+      "normalized_ko": "선택성은 공시료를 사용하여 평가된다.",
       "review_status": "reviewed"
     },
     {
@@ -3805,7 +3805,7 @@
       "subject": "Selectivity",
       "action": "should be evaluated by analysing",
       "object": "blank samples from individual sources, zero samples (blank with IS) and LLOQ samples",
-      "normalized_ko": "선택성은 개별 출처의 공시료, 제로 시료(IS가 포함된 공시료) 및 LLOQ 시료를 분석하여 평가해야 한다.",
+      "normalized_ko": "선택성은 개별 출처의 공시료, 제로 시료(IS 첨가 공시료) 및 LLOQ 시료를 분석하여 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3819,7 +3819,7 @@
       "subject": "Responses in blank samples",
       "action": "should not exceed",
       "object": "20% of the analyte response at the LLOQ",
-      "normalized_ko": "공시료의 반응은 LLOQ에서의 분석대상물질 반응의 20%를 초과해서는 안 된다.",
+      "normalized_ko": "공시료의 반응은 LLOQ에서 분석대상물질 반응의 20%를 초과해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -3833,7 +3833,7 @@
       "subject": "Non-polar matrices",
       "action": "includes",
       "object": "lipid",
-      "normalized_ko": "비극성 매트릭스에는 lipid가 포함된다.",
+      "normalized_ko": "비극성 매트릭스에는 지질이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3847,7 +3847,7 @@
       "subject": "Specificity",
       "action": "is",
       "object": "the ability of an analytical method to detect and differentiate the analyte from other substances",
-      "normalized_ko": "분석법이 분석물질을 다른 물질로부터 검출하고 구별할 수 있는 능력이다.",
+      "normalized_ko": "특이성은 분석법이 분석대상물질을 다른 물질로부터 검출하고 구별하는 능력이다.",
       "review_status": "reviewed"
     },
     {
@@ -3861,7 +3861,7 @@
       "subject": "Specificity",
       "action": "is the ability to detect and differentiate",
       "object": "the analyte from other substances",
-      "normalized_ko": "분석물질을 다른 물질로부터 검출하고 구별할 수 있는 능력이다.",
+      "normalized_ko": "특이성은 분석대상물질을 다른 물질로부터 검출하고 구별하는 능력이다.",
       "review_status": "reviewed"
     },
     {
@@ -3875,7 +3875,7 @@
       "subject": "Related substances",
       "action": "includes",
       "object": "substances with similar physicochemical properties",
-      "normalized_ko": "유사한 물리화학적 특성을 가진 물질을 포함한다.",
+      "normalized_ko": "관련 물질에는 유사한 물리화학적 특성을 가진 물질이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -3889,7 +3889,7 @@
       "subject": "The lack of specificity",
       "action": "should be justified",
       "object": null,
-      "normalized_ko": "정당화되어야 한다.",
+      "normalized_ko": "특이성 결여는 정당화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3903,7 +3903,7 @@
       "subject": "A matrix effect",
       "action": "is defined as",
       "object": "an alteration of the analyte response due to interfering and often unidentified component(s) in the sample matrix",
-      "normalized_ko": "시료 매트릭스 내 간섭성이고 흔히 미확인된 성분으로 인해 발생하는 분석물질 반응의 변화로 정의된다.",
+      "normalized_ko": "매트릭스 효과는 시료 매트릭스 내 간섭성 및 흔히 확인되지 않은 성분으로 인한 분석대상물질 반응의 변화로 정의된다.",
       "review_status": "reviewed"
     },
     {
@@ -3917,7 +3917,7 @@
       "subject": "The matrix effect",
       "action": "should be evaluated",
       "object": null,
-      "normalized_ko": "평가되어야 한다.",
+      "normalized_ko": "매트릭스 효과는 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3926,12 +3926,12 @@
         "ich_m10.su.3_2_3.001"
       ],
       "record_type": "description",
-      "modality": "none",
-      "original_modal_text": null,
+      "modality": "should",
+      "original_modal_text": "should",
       "subject": "The IS-normalized MF",
       "action": "should be calculated by dividing",
       "object": "the MF of the analyte by the MF of the IS",
-      "normalized_ko": "IS-정규화 MF는 분석물질의 MF를 IS의 MF로 나누어 계산한다.",
+      "normalized_ko": "IS-정규화 MF는 분석물질의 MF를 IS의 MF로 나누어 계산해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3945,7 +3945,7 @@
       "subject": "The calibration curve",
       "action": "demonstrates",
       "object": "the relationship between nominal analyte concentration and detector response",
-      "normalized_ko": "명목 분석물질 농도와 검출기 반응 간의 관계를 나타낸다.",
+      "normalized_ko": "검량선은 명목 분석대상물질 농도와 검출기 반응 간의 관계를 나타낸다.",
       "review_status": "reviewed"
     },
     {
@@ -3959,7 +3959,7 @@
       "subject": "A calibration curve",
       "action": "should be generated with",
       "object": "a blank sample, a zero sample (blank with IS), and at least 6 concentration levels of calibration standards, including LLOQ and ULOQ",
-      "normalized_ko": "공시료, 제로 시료(IS가 첨가된 공시료), 및 LLOQ와 ULOQ를 포함하는 최소 6개 농도 수준의 검량 표준물질을 사용하여 작성되어야 한다.",
+      "normalized_ko": "검량선은 공시료, 제로 시료(IS 첨가 공시료), 그리고 LLOQ 및 ULOQ를 포함하는 최소 6개 농도 수준의 검량 표준물질로 작성되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3973,7 +3973,7 @@
       "subject": "The calibration curve",
       "action": "demonstrates",
       "object": "the relationship between nominal analyte concentration and detector response",
-      "normalized_ko": "명목 분석물질 농도와 검출기 반응 간의 관계를 나타낸다.",
+      "normalized_ko": "검량선은 명목 분석대상물질 농도와 검출기 반응 간의 관계를 나타낸다.",
       "review_status": "reviewed"
     },
     {
@@ -3987,7 +3987,7 @@
       "subject": "the QCs for accuracy and precision runs",
       "action": "should be prepared",
       "object": "at a minimum of 4 concentration levels",
-      "normalized_ko": "최소 4개 농도 수준으로 준비되어야 한다.",
+      "normalized_ko": "정확성 및 정밀성 시험용 QC는 최소 4개 농도 수준에서 조제되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4001,7 +4001,7 @@
       "subject": "low, medium and high QCs",
       "action": "may be analysed",
       "object": "in duplicate",
-      "normalized_ko": "2회 반복 분석할 수 있다.",
+      "normalized_ko": "저, 중, 고 QC는 중복 분석될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4015,7 +4015,7 @@
       "subject": "Carry-over",
       "action": "should be assessed",
       "object": null,
-      "normalized_ko": "평가되어야 한다.",
+      "normalized_ko": "이월은 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4029,7 +4029,7 @@
       "subject": "Dilution integrity",
       "action": "should be demonstrated by spiking",
       "object": "the matrix with an analyte concentration above the ULOQ",
-      "normalized_ko": "ULOQ를 초과하는 분석물질 농도를 매트릭스에 첨가하여 입증되어야 한다.",
+      "normalized_ko": "희석 무결성은 매트릭스에 ULOQ를 초과하는 분석물질 농도를 첨가하여 입증해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4043,7 +4043,7 @@
       "subject": "the precision (%CV)",
       "action": "should not exceed",
       "object": "15%",
-      "normalized_ko": "15%를 초과해서는 안 된다.",
+      "normalized_ko": "정밀도(%CV)는 15%를 초과해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -4057,7 +4057,7 @@
       "subject": "Stability evaluations",
       "action": "should cover",
       "object": "the conditions experienced by study samples, including sample collection, handling, storage, and processing",
-      "normalized_ko": "시료 채취, 취급, 보관 및 처리를 포함하여 시험 시료가 경험하는 조건을 포함해야 한다.",
+      "normalized_ko": "안정성 평가는 시료 채취, 취급, 보관 및 처리를 포함하여 시험 시료가 경험하는 조건을 포괄해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4071,7 +4071,7 @@
       "subject": "Stability of the analyte in matrix",
       "action": "is evaluated using",
       "object": "low and high concentration QCs",
-      "normalized_ko": "저농도 및 고농도 QC를 사용하여 평가된다.",
+      "normalized_ko": "매트릭스 내 분석물의 안정성은 저농도 및 고농도 QC를 사용하여 평가한다.",
       "review_status": "reviewed"
     },
     {
@@ -4085,7 +4085,7 @@
       "subject": "Stability testing",
       "action": "includes",
       "object": "Freeze-Thaw Stability in matrix (minimum of 3 cycles, kept frozen at least 12 hours between cycles)",
-      "normalized_ko": "매트릭스 내 동결-해동 안정성(최소 3회 주기, 각 주기 사이에 최소 12시간 동안 냉동 상태 유지)을 포함한다.",
+      "normalized_ko": "안정성 시험에는 매트릭스 내 동결-해동 안정성(최소 3주기, 각 주기 사이에 최소 12시간 동안 동결 유지)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4099,7 +4099,7 @@
       "subject": "Freeze-Thaw Stability in matrix",
       "action": "include at least",
       "object": "3 cycles",
-      "normalized_ko": "최소 3회 주기를 포함한다.",
+      "normalized_ko": "매트릭스 내 동결-해동 안정성에는 최소 3주기가 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4113,7 +4113,7 @@
       "subject": "Samples",
       "action": "be kept frozen",
       "object": "at least 12 hours",
-      "normalized_ko": "최소 12시간 동안 냉동 상태로 유지한다.",
+      "normalized_ko": "검체는 최소 12시간 동안 동결 상태로 유지되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4127,7 +4127,7 @@
       "subject": "Reinjection reproducibility",
       "action": "is assessed by reinjecting",
       "object": "a run that is comprised of calibration standards and a minimum of 5 replicates of the low, middle and high QCs",
-      "normalized_ko": "검량 표준물질 및 저농도, 중간농도 및 고농도 QC 각각의 최소 5회 반복으로 구성된 런을 재주입하여 평가된다.",
+      "normalized_ko": "재주입 재현성은 검량 표준물질 및 저농도, 중간농도, 고농도 QC 각각의 최소 5개 반복 검체로 구성된 런을 재주입하여 평가한다.",
       "review_status": "reviewed"
     },
     {
@@ -4141,7 +4141,7 @@
       "subject": "The precision and accuracy of the reinjected QCs",
       "action": "establish",
       "object": "the viability of the processed samples",
-      "normalized_ko": "처리된 시료의 유효성을 확립한다.",
+      "normalized_ko": "재주입된 QC의 정밀도와 정확도는 처리된 검체의 유효성을 확립한다.",
       "review_status": "reviewed"
     },
     {
@@ -4155,7 +4155,7 @@
       "subject": "An analytical run",
       "action": "consists of",
       "object": "a blank sample",
-      "normalized_ko": "공시료로 구성된다.",
+      "normalized_ko": "분석 런은 공검체로 구성된다.",
       "review_status": "reviewed"
     },
     {
@@ -4169,7 +4169,7 @@
       "subject": "The calibration curve accuracy",
       "action": "should be within",
       "object": "±20% at LLOQ",
-      "normalized_ko": "LLOQ에서 ±20% 이내여야 한다.",
+      "normalized_ko": "검량선 정확도는 LLOQ에서 ±20% 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4183,7 +4183,7 @@
       "subject": "At least 2 QC levels",
       "action": "should fall within",
       "object": "the range of concentrations measured in study samples",
-      "normalized_ko": "연구 검체에서 측정된 농도 범위 내에 있어야 한다.",
+      "normalized_ko": "최소 2개 QC 수준은 시험 검체에서 측정된 농도 범위 내에 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4197,7 +4197,7 @@
       "subject": "samples",
       "action": "should be diluted according to",
       "object": "the validated dilution method",
-      "normalized_ko": "검증된 희석 방법에 따라 희석해야 한다.",
+      "normalized_ko": "검체는 검증된 희석 방법에 따라 희석해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4211,7 +4211,7 @@
       "subject": "Possible reasons for reanalysis of study samples, number of replicates and decision criteria",
       "action": "be predefined",
       "object": "in protocol, study plan or SOP",
-      "normalized_ko": "프로토콜, 시험계획서 또는 SOP에 사전에 정의되어야 한다.",
+      "normalized_ko": "시험 검체 재분석의 가능한 사유, 반복 횟수 및 의사결정 기준은 프로토콜, 시험계획서 또는 SOP에 사전 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4225,7 +4225,7 @@
       "subject": "reanalysis for PK reasons",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": "허용되지 않아야 한다.",
+      "normalized_ko": "PK 사유에 따른 재분석은 허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4239,7 +4239,7 @@
       "subject": "The number and percentage of reanalysed samples",
       "action": "be reported",
       "object": "in the Bioanalytical Report",
-      "normalized_ko": "생체분석 보고서에 보고되어야 한다.",
+      "normalized_ko": "재분석된 검체의 수와 비율은 생체분석 보고서에 보고되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4253,7 +4253,7 @@
       "subject": "The number and percentage of reanalysed samples",
       "action": "be discussed",
       "object": "in the Bioanalytical Report",
-      "normalized_ko": "생체분석 보고서에서 논의되어야 한다.",
+      "normalized_ko": "재분석된 검체의 수와 비율은 생체분석 보고서에서 논의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4267,7 +4267,7 @@
       "subject": "reanalysis for PK reasons",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": "허용되지 않는다.",
+      "normalized_ko": "PK 사유에 따른 재분석은 허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4281,7 +4281,7 @@
       "subject": "Reanalysis",
       "action": "is not acceptable",
       "object": "for PK reasons",
-      "normalized_ko": "PK상의 이유로 허용되어서는 안 된다.",
+      "normalized_ko": "PK 사유에 따른 재분석은 허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4295,7 +4295,7 @@
       "subject": "Reinjection of processed samples",
       "action": "can be made",
       "object": null,
-      "normalized_ko": "수행할 수 있다.",
+      "normalized_ko": "처리된 검체의 재주입을 실시할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4309,7 +4309,7 @@
       "subject": "Reinjection of a full run or individual calibration standards or QCs",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": "허용되어서는 안 된다.",
+      "normalized_ko": "전체 런 또는 개별 검량 표준물질이나 QC의 재주입은 허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4323,7 +4323,7 @@
       "subject": "Reinjection of a full run or individual calibration standards or QCs",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": "허용되지 않는다.",
+      "normalized_ko": "전체 런 또는 개별 검량 표준물질이나 QC의 재주입은 허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4337,7 +4337,7 @@
       "subject": "Reinjection of a full run or individual calibration standards or QCs",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": "허용되지 않는다.",
+      "normalized_ko": "전체 런 또는 개별 검량 표준물질이나 QC의 재주입은 허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4351,7 +4351,7 @@
       "subject": "Chromatogram integration and reintegration",
       "action": "be described in",
       "object": "a study plan, protocol or SOP",
-      "normalized_ko": "시험계획서, 프로토콜 또는 SOP에 기술되어야 한다.",
+      "normalized_ko": "크로마토그램 적분 및 재적분은 시험 계획서, 프로토콜 또는 SOP에 기술되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4365,7 +4365,7 @@
       "subject": "The reference standard",
       "action": "should be well characterised",
       "object": null,
-      "normalized_ko": "충분히 특성규명되어야 한다.",
+      "normalized_ko": "참조표준품은 충분히 특성화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4379,7 +4379,7 @@
       "subject": "The manufacturing batch of the reference standard used for the preparation of calibration standards and QCs",
       "action": "should be derived from",
       "object": "the same batch of drug substance as that used for dosing in the nonclinical and clinical studies",
-      "normalized_ko": "비임상 및 임상시험에서 투여에 사용된 원료의약품과 동일한 배치에서 유래해야 한다.",
+      "normalized_ko": "검량표준품 및 QC 제조에 사용되는 참조표준품의 제조 배치는 비임상 및 임상시험에서 투여에 사용된 원료의약품의 동일 배치에서 유래해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4393,7 +4393,7 @@
       "subject": "Bioanalytical evaluation",
       "action": "should be carried out",
       "object": "with QCs from the original material and the new material",
-      "normalized_ko": "원래 물질 및 신규 물질의 QC를 사용하여 수행되어야 한다.",
+      "normalized_ko": "생체분석 평가는 기존 물질 및 신규 물질의 QC를 사용하여 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4407,7 +4407,7 @@
       "subject": "The performance characteristics of the method",
       "action": "be within",
       "object": "the acceptance criteria",
-      "normalized_ko": "허용 기준 이내여야 한다.",
+      "normalized_ko": "시험방법의 성능 특성은 허용 기준 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4421,7 +4421,7 @@
       "subject": "Documentation",
       "action": "includes",
       "object": "CoA and origin",
-      "normalized_ko": "분석성적서(CoA) 및 출처를 포함한다.",
+      "normalized_ko": "문서화에는 CoA 및 유래가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4435,7 +4435,7 @@
       "subject": "Critical reagents",
       "action": "have direct impact on",
       "object": "the results of the assay",
-      "normalized_ko": "시험 결과에 직접적인 영향을 미친다.",
+      "normalized_ko": "핵심 시약은 분석 결과에 직접적인 영향을 미친다.",
       "review_status": "reviewed"
     },
     {
@@ -4449,7 +4449,7 @@
       "subject": "Critical reagents",
       "action": "bind",
       "object": "the analyte",
-      "normalized_ko": "분석대상물질에 결합한다.",
+      "normalized_ko": "핵심 시약은 분석대상물을 결합한다.",
       "review_status": "reviewed"
     },
     {
@@ -4463,7 +4463,7 @@
       "subject": "Critical reagents",
       "action": "lead to",
       "object": "an instrument signal corresponding to the analyte concentration",
-      "normalized_ko": "분석물질 농도에 상응하는 기기 신호로 이어진다.",
+      "normalized_ko": "핵심 시약은 분석대상물 농도에 상응하는 기기 신호를 생성한다.",
       "review_status": "reviewed"
     },
     {
@@ -4477,7 +4477,7 @@
       "subject": "The quality of critical reagents",
       "action": "should be assured",
       "object": null,
-      "normalized_ko": "보장되어야 한다.",
+      "normalized_ko": "핵심 시약의 품질은 보증되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4491,7 +4491,7 @@
       "subject": "Binding reagents",
       "action": "includes",
       "object": "binding proteins",
-      "normalized_ko": "결합 단백질을 포함한다.",
+      "normalized_ko": "결합 시약에는 결합 단백질이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4505,7 +4505,7 @@
       "subject": "Critical reagents",
       "action": "include",
       "object": "binding reagents",
-      "normalized_ko": "결합 시약을 포함한다.",
+      "normalized_ko": "핵심 시약에는 결합 시약이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4519,7 +4519,7 @@
       "subject": "Critical reagents",
       "action": "bind",
       "object": "the analyte",
-      "normalized_ko": "분석물질에 결합한다.",
+      "normalized_ko": "핵심 시약은 분석대상물을 결합한다.",
       "review_status": "reviewed"
     },
     {
@@ -4533,7 +4533,7 @@
       "subject": "Specificity",
       "action": "is",
       "object": "the ability of a bioanalytical method to detect and differentiate the analyte from other related substances",
-      "normalized_ko": "생체분석법이 분석물질을 기타 관련 물질로부터 검출하고 구별하는 능력이다.",
+      "normalized_ko": "특이성은 생체분석법이 분석대상물을 기타 관련 물질로부터 검출하고 구별하는 능력이다.",
       "review_status": "reviewed"
     },
     {
@@ -4547,7 +4547,7 @@
       "subject": "related substances",
       "action": "includes",
       "object": "structurally similar compounds",
-      "normalized_ko": "구조적으로 유사한 화합물을 포함한다.",
+      "normalized_ko": "관련 물질에는 구조적으로 유사한 화합물이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4561,7 +4561,7 @@
       "subject": "Specificity",
       "action": "should be evaluated by spiking",
       "object": "blank matrix samples with potential interfering substances",
-      "normalized_ko": "잠재적 간섭물질을 공시료 매트릭스 검체에 첨가하여 평가해야 한다.",
+      "normalized_ko": "특이성은 공백 매트릭스 시료에 잠재적 간섭 물질을 첨가하여 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4575,7 +4575,7 @@
       "subject": "Selectivity",
       "action": "is the ability to differentiate and measure",
       "object": "the analyte in the presence of interfering substances in the biological matrix",
-      "normalized_ko": "생물학적 매트릭스 내 간섭물질의 존재하에서 분석물질을 구별하고 측정하는 능력이다.",
+      "normalized_ko": "선택성은 생물학적 매트릭스 내 간섭 물질 존재하에서 분석대상물을 구별하고 측정하는 능력이다.",
       "review_status": "reviewed"
     },
     {
@@ -4589,7 +4589,7 @@
       "subject": "Selectivity",
       "action": "is",
       "object": "the ability of an analytical method to differentiate and measure the analyte in the presence of interfering substances in the biological matrix",
-      "normalized_ko": "분석법이 생물학적 매트릭스 내 간섭물질의 존재하에서 분석물질을 구별하고 측정하는 능력이다.",
+      "normalized_ko": "선택성은 분석법이 생물학적 매트릭스 내 간섭 물질 존재하에서 분석대상물을 구별하고 측정하는 능력이다.",
       "review_status": "reviewed"
     },
     {
@@ -4603,7 +4603,7 @@
       "subject": "Selectivity",
       "action": "should be evaluated using",
       "object": "blank matrix samples from at least 10 individual sources",
-      "normalized_ko": "최소 10개의 개별 출처에서 얻은 공시료 매트릭스 검체를 사용하여 평가해야 한다.",
+      "normalized_ko": "선택성은 최소 10개의 개별 출처에서 유래한 공백 매트릭스 시료를 사용하여 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4617,7 +4617,7 @@
       "subject": "A calibration curve",
       "action": "should be generated with",
       "object": "a blank sample, an anchor sample, and concentration levels of calibration standards, including LLOQ and ULOQ",
-      "normalized_ko": "공시료, 앵커 검체 및 LLOQ와 ULOQ를 포함하는 검량 표준물질의 농도 수준으로 작성해야 한다.",
+      "normalized_ko": "검량선은 공백 시료, 앵커 시료 및 LLOQ와 ULOQ를 포함하는 검량표준품의 농도 수준으로 작성되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4631,7 +4631,7 @@
       "subject": "Non-linear regression models",
       "action": "are typically used for",
       "object": "LBAs",
-      "normalized_ko": "LBA에 일반적으로 사용된다.",
+      "normalized_ko": "비선형 회귀 모형은 LBA에 일반적으로 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -4645,7 +4645,7 @@
       "subject": "Non-linear regression models",
       "action": "are typically used for",
       "object": "LBAs",
-      "normalized_ko": "LBA에 일반적으로 사용된다.",
+      "normalized_ko": "비선형 회귀 모형은 LBA에 일반적으로 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -4659,7 +4659,7 @@
       "subject": "Non-linear regression models",
       "action": "includes",
       "object": "4-parameter or 5-parameter logistic models",
-      "normalized_ko": "4-파라미터 또는 5-파라미터 로지스틱 모델을 포함한다.",
+      "normalized_ko": "비선형 회귀 모형에는 4-모수 또는 5-모수 로지스틱 모형이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4673,7 +4673,7 @@
       "subject": "QCs for accuracy and precision runs",
       "action": "should be prepared",
       "object": "at a minimum of 5 concentration levels",
-      "normalized_ko": "최소 5개 농도 수준으로 준비해야 한다.",
+      "normalized_ko": "정확성 및 정밀성 시험을 위한 QC는 최소 5개 농도 수준으로 조제해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4687,7 +4687,7 @@
       "subject": "Within-run and between-run accuracy and precision",
       "action": "should be evaluated by analysing",
       "object": "at least 3 replicates at each of the 5 QC concentration levels in at least 6 analytical runs over at least two days",
-      "normalized_ko": "최소 2일에 걸쳐 수행한 최소 6회의 분석 런에서 5개 QC 농도 수준 각각에 대해 최소 3개 반복 검체를 분석하여 평가해야 한다.",
+      "normalized_ko": "시험 내 및 시험 간 정확성과 정밀성은 최소 2일에 걸쳐 최소 6회의 분석 실행에서 5개 QC 농도 수준 각각에 대해 최소 3개 반복검체를 분석하여 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4701,7 +4701,7 @@
       "subject": "Precision (%CV)",
       "action": "should not exceed",
       "object": "20%",
-      "normalized_ko": "20%를 초과해서는 안 된다.",
+      "normalized_ko": "정밀성(%CV)은 20%를 초과해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -4715,7 +4715,7 @@
       "subject": "Total error",
       "action": "is",
       "object": "sum of absolute error in accuracy and precision",
-      "normalized_ko": "정확도 및 정밀도의 절대오차 합계이다.",
+      "normalized_ko": "총 오차는 정확성과 정밀성의 절대 오차의 합이다.",
       "review_status": "reviewed"
     },
     {
@@ -4729,7 +4729,7 @@
       "subject": "The potential of carry-over",
       "action": "should be investigated",
       "object": "by placing blank samples after the calibration standard at the ULOQ",
-      "normalized_ko": "ULOQ에서의 검량 표준물질 후에 공시료를 배치하여 조사해야 한다.",
+      "normalized_ko": "이월의 가능성은 ULOQ의 보정표준물질 다음에 공시료를 배치하여 조사해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4743,7 +4743,7 @@
       "subject": "Dilution linearity",
       "action": "should be assessed to confirm",
       "object": "that measured concentrations are not affected by dilution",
-      "normalized_ko": "측정 농도가 희석의 영향을 받지 않는지를 확인하기 위해 평가해야 한다.",
+      "normalized_ko": "희석 직선성은 측정 농도가 희석의 영향을 받지 않음을 확인하기 위해 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4757,7 +4757,7 @@
       "subject": "Dilution linearity",
       "action": "should be demonstrated by spiking",
       "object": "matrix with an analyte concentration above ULOQ",
-      "normalized_ko": "ULOQ를 초과하는 분석물질 농도가 되도록 매트릭스에 분석물질을 첨가하여 입증해야 한다.",
+      "normalized_ko": "희석 선형성은 매트릭스에 ULOQ를 초과하는 분석물질 농도를 첨가하여 입증해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4771,7 +4771,7 @@
       "subject": "The sample",
       "action": "should be analysed undiluted",
       "object": "for hook effect",
-      "normalized_ko": "후크 효과에 대해 희석하지 않고 분석해야 한다.",
+      "normalized_ko": "해당 검체는 훅 효과를 위해 희석하지 않고 분석해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4785,7 +4785,7 @@
       "subject": "Precision",
       "action": "should not exceed",
       "object": "20%",
-      "normalized_ko": "20%를 초과해서는 안 된다.",
+      "normalized_ko": "정밀성은 20%를 초과해서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -4799,7 +4799,7 @@
       "subject": "The calculated mean concentration for each dilution",
       "action": "should be within ±20% of",
       "object": "nominal concentration after correction for dilution",
-      "normalized_ko": "희석 보정 후 명목 농도의 ±20% 이내여야 한다.",
+      "normalized_ko": "각 희석액의 계산된 평균 농도는 희석 보정 후 명목 농도의 ±20% 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4813,7 +4813,7 @@
       "subject": "Hook effect",
       "action": "is",
       "object": "signal suppression caused by high analyte concentration",
-      "normalized_ko": "고농도 분석물질 농도로 인해 발생하는 신호 억제이다.",
+      "normalized_ko": "훅 효과는 높은 분석물질 농도로 인해 발생하는 신호 억제이다.",
       "review_status": "reviewed"
     },
     {
@@ -4827,7 +4827,7 @@
       "subject": "measured concentrations",
       "action": "are not affected by dilution",
       "object": null,
-      "normalized_ko": "희석의 영향을 받지 않는다.",
+      "normalized_ko": "측정 농도는 희석의 영향을 받지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4841,7 +4841,7 @@
       "subject": "sample concentrations",
       "action": "are not impacted by hook effect",
       "object": null,
-      "normalized_ko": "후크 효과의 영향을 받지 않는다.",
+      "normalized_ko": "검체 농도는 훅 효과의 영향을 받지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -4855,7 +4855,7 @@
       "subject": "Hook effect",
       "action": "is",
       "object": "signal suppression caused by high analyte concentration",
-      "normalized_ko": "고농도 분석물질 농도로 인해 발생하는 신호 억제이다.",
+      "normalized_ko": "훅 효과는 높은 분석물질 농도로 인해 발생하는 신호 억제이다.",
       "review_status": "reviewed"
     },
     {
@@ -4869,7 +4869,7 @@
       "subject": "Stability of the analyte in matrix",
       "action": "should be evaluated using",
       "object": "low and high concentration QCs",
-      "normalized_ko": "저농도 및 고농도 QC를 사용하여 평가해야 한다.",
+      "normalized_ko": "매트릭스 내 분석물질의 안정성은 저농도 및 고농도 QC를 사용하여 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -4883,7 +4883,7 @@
       "subject": "Stability testing",
       "action": "includes",
       "object": "Freeze-thaw stability in matrix",
-      "normalized_ko": "매트릭스 내 동결-해동 안정성을 포함한다.",
+      "normalized_ko": "안정성 시험에는 매트릭스 내 동결-해동 안정성이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4897,7 +4897,7 @@
       "subject": "stability at -20°C",
       "action": "may be extrapolated to",
       "object": "-70/-80°C",
-      "normalized_ko": "-70/-80°C로 외삽할 수 있다.",
+      "normalized_ko": "-20°C에서의 안정성은 -70/-80°C로 외삽할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4911,7 +4911,7 @@
       "subject": "Bracketing between -70/-80°C and -20°C",
       "action": "can be applied",
       "object": null,
-      "normalized_ko": "적용할 수 있다.",
+      "normalized_ko": "-70/-80°C와 -20°C 간 브래키팅을 적용할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4925,7 +4925,7 @@
       "subject": "stability at -20°C",
       "action": "can be extrapolated to",
       "object": "-70/-80°C",
-      "normalized_ko": "-70/-80°C로 외삽할 수 있다.",
+      "normalized_ko": "-20°C에서의 안정성은 -70/-80°C로 외삽할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -4939,7 +4939,7 @@
       "subject": "Stability testing",
       "action": "includes",
       "object": "Freeze-thaw stability in matrix (minimum of 3 cycles, kept frozen at least 12 hours between cycles)",
-      "normalized_ko": "매트릭스 내 동결-해동 안정성(최소 3회 사이클, 사이클 간 최소 12시간 동안 동결 상태 유지)을 포함한다.",
+      "normalized_ko": "안정성 시험에는 매트릭스 내 동결-해동 안정성(최소 3회 주기, 주기 사이 최소 12시간 동안 냉동 보관)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4953,7 +4953,7 @@
       "subject": "An analytical run",
       "action": "consists of",
       "object": "a blank sample, calibration standards, QCs, and study samples",
-      "normalized_ko": "공시료, 검량 표준물질, QC 및 시험 검체로 구성된다.",
+      "normalized_ko": "분석 런은 공시험 시료, 보정 표준물질, QC 및 시험 시료로 구성된다.",
       "review_status": "reviewed"
     },
     {
@@ -4967,7 +4967,7 @@
       "subject": "QC levels",
       "action": "include",
       "object": "low, medium, high",
-      "normalized_ko": "저농도, 중간농도 및 고농도를 포함한다.",
+      "normalized_ko": "QC 수준에는 저농도, 중농도 및 고농도가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -4981,7 +4981,7 @@
       "subject": "An analytical run",
       "action": "consists of",
       "object": "a blank sample, calibration standards, QCs and the study samples to be analysed",
-      "normalized_ko": "공시료, 검량 표준물질, QC 및 분석할 시험 검체로 구성된다.",
+      "normalized_ko": "분석 런은 공시험 시료, 보정 표준물질, QC 및 분석할 시험 시료로 구성된다.",
       "review_status": "reviewed"
     },
     {
@@ -4995,7 +4995,7 @@
       "subject": "Study samples",
       "action": "should always be bracketed by",
       "object": "QCs",
-      "normalized_ko": "항상 QC로 전후가 둘러싸여야 한다.",
+      "normalized_ko": "시험 시료는 항상 QC로 전후 배치되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5009,7 +5009,7 @@
       "subject": "each plate",
       "action": "should be assessed on its own",
       "object": null,
-      "normalized_ko": "그 자체로 평가해야 한다.",
+      "normalized_ko": "각 플레이트는 개별적으로 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5023,7 +5023,7 @@
       "subject": "Sets of calibration standards",
       "action": "may be placed",
       "object": "on the first and last plate",
-      "normalized_ko": "첫 번째 및 마지막 플레이트에 배치할 수 있다.",
+      "normalized_ko": "보정 표준물질 세트는 첫 번째 및 마지막 플레이트에 배치할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -5037,7 +5037,7 @@
       "subject": "The calibration curve accuracy",
       "action": "should be within",
       "object": "±20%",
-      "normalized_ko": "±20% 이내여야 한다.",
+      "normalized_ko": "보정 곡선 정확도는 ±20% 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5051,7 +5051,7 @@
       "subject": "The analytical run",
       "action": "be rejected",
       "object": null,
-      "normalized_ko": "거부되어야 한다.",
+      "normalized_ko": "분석 런은 거부되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5065,7 +5065,7 @@
       "subject": "Study samples",
       "action": "be reanalysed",
       "object": null,
-      "normalized_ko": "재분석되어야 한다.",
+      "normalized_ko": "시험 시료는 재분석되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5079,7 +5079,7 @@
       "subject": "Calibration standards",
       "action": "should have at least 75% within the calibration curve accuracy criterion",
       "object": null,
-      "normalized_ko": "검량선 정확도 기준 이내인 것이 최소 75%여야 한다.",
+      "normalized_ko": "보정 표준물질의 최소 75%는 보정 곡선 정확도 기준 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5093,7 +5093,7 @@
       "subject": "Total QCs",
       "action": "should have at least 67% (2/3) within ±20% of their nominal concentration",
       "object": null,
-      "normalized_ko": "명목 농도의 ±20% 이내인 것이 최소 67%(2/3)여야 한다.",
+      "normalized_ko": "전체 QC의 최소 67%(2/3)는 명목 농도의 ±20% 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5107,7 +5107,7 @@
       "subject": "QCs at each concentration level",
       "action": "should have at least 50% within ±20% of their nominal concentration",
       "object": null,
-      "normalized_ko": "명목 농도의 ±20% 이내인 것이 최소 50%여야 한다.",
+      "normalized_ko": "각 농도 수준의 QC 중 최소 50%는 명목 농도의 ±20% 이내여야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5121,7 +5121,7 @@
       "subject": "The QC acceptance criteria",
       "action": "are referred to as",
       "object": "4-6-20 rule for LBA",
-      "normalized_ko": "LBA의 4-6-20 규칙으로 지칭된다.",
+      "normalized_ko": "QC 허용 기준은 LBA의 4-6-20 규칙으로 지칭된다.",
       "review_status": "reviewed"
     },
     {
@@ -5135,7 +5135,7 @@
       "subject": "The QC acceptance criterion",
       "action": "is",
       "object": "the 4-6-20 rule for LBA",
-      "normalized_ko": "LBA의 4-6-20 규칙이다.",
+      "normalized_ko": "QC 허용 기준은 LBA의 4-6-20 규칙이다.",
       "review_status": "reviewed"
     },
     {
@@ -5149,7 +5149,7 @@
       "subject": "At least 2 QC levels",
       "action": "should fall within",
       "object": "the range of concentrations measured in study samples",
-      "normalized_ko": "시험 검체에서 측정된 농도 범위 내에 있어야 한다.",
+      "normalized_ko": "최소 2개의 QC 수준은 시험 시료에서 측정된 농도 범위 내에 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5163,7 +5163,7 @@
       "subject": "samples",
       "action": "should be diluted according to",
       "object": "the validated dilution method",
-      "normalized_ko": "밸리데이션된 희석 방법에 따라 희석되어야 한다.",
+      "normalized_ko": "시료는 밸리데이션된 희석 방법에 따라 희석되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5177,7 +5177,7 @@
       "subject": "Possible reasons for reanalysis of study samples, number of replicates and decision criteria",
       "action": "should be predefined",
       "object": "in protocol, study plan or SOP",
-      "normalized_ko": "프로토콜, 시험 계획서 또는 SOP에 사전에 정의되어야 한다.",
+      "normalized_ko": "시험 시료 재분석의 가능한 사유, 반복 수 및 의사결정 기준은 프로토콜, 시험 계획서 또는 SOP에 사전 정의되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5191,7 +5191,7 @@
       "subject": "Reanalysis for PK reasons",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": "허용되지 않아야 한다.",
+      "normalized_ko": "PK 사유에 따른 재분석은 허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -5205,7 +5205,7 @@
       "subject": "Reanalysis for PK reasons",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": "허용되지 않는다.",
+      "normalized_ko": "PK 사유로 인한 재분석은 허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -5219,7 +5219,7 @@
       "subject": "Reanalysis for PK reasons",
       "action": "is not acceptable",
       "object": null,
-      "normalized_ko": "허용되어서는 안 된다.",
+      "normalized_ko": "PK 사유로 인한 재분석은 허용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -5233,7 +5233,7 @@
       "subject": "ISR",
       "action": "is intended to verify",
       "object": "the reliability of reported sample analyte concentrations",
-      "normalized_ko": "보고된 검체 분석물질 농도의 신뢰성을 확인하기 위한 것이다.",
+      "normalized_ko": "ISR은 보고된 검체 분석물질 농도의 신뢰성을 검증하기 위한 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -5247,7 +5247,7 @@
       "subject": "ISR",
       "action": "is conducted by repeating analysis of",
       "object": "a subset of study samples in separate runs on different days using the same bioanalytical method",
-      "normalized_ko": "동일한 생체분석 방법을 사용하여 서로 다른 날에 별도의 런에서 시험 검체의 일부를 반복 분석하여 수행된다.",
+      "normalized_ko": "ISR은 동일한 생체분석법을 사용하여 서로 다른 날에 별도 분석 런에서 시험 검체의 일부를 반복 분석하여 수행한다.",
       "review_status": "reviewed"
     },
     {
@@ -5261,7 +5261,7 @@
       "subject": "ISR",
       "action": "uses",
       "object": "the same bioanalytical method",
-      "normalized_ko": "동일한 생체분석 방법을 사용한다.",
+      "normalized_ko": "ISR은 동일한 생체분석법을 사용한다.",
       "review_status": "reviewed"
     },
     {
@@ -5275,7 +5275,7 @@
       "subject": "ISR",
       "action": "should be performed",
       "object": "nonclinical studies",
-      "normalized_ko": "비임상시험에서 수행되어야 한다.",
+      "normalized_ko": "ISR은 비임상시험에서 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5289,7 +5289,7 @@
       "subject": "Endogenous compounds",
       "action": "are",
       "object": "analytes that are naturally present in biological matrix",
-      "normalized_ko": "생물학적 매트릭스에 자연적으로 존재하는 분석물질이다.",
+      "normalized_ko": "내인성 화합물은 생물학적 매트릭스에 자연적으로 존재하는 분석물질이다.",
       "review_status": "reviewed"
     },
     {
@@ -5303,7 +5303,7 @@
       "subject": "Bioanalytical method validation",
       "action": "should consider",
       "object": "endogenous background levels",
-      "normalized_ko": "내인성 배경 수준을 고려해야 한다.",
+      "normalized_ko": "생체분석법 밸리데이션은 내인성 배경 수준을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5317,7 +5317,7 @@
       "subject": "Four approaches",
       "action": "are recognized",
       "object": null,
-      "normalized_ko": "인정된다.",
+      "normalized_ko": "4가지 접근법이 인정된다.",
       "review_status": "reviewed"
     },
     {
@@ -5331,7 +5331,7 @@
       "subject": "Surrogate Matrix Approach",
       "action": "uses",
       "object": "a matrix that resembles biological matrix but lacks the endogenous analyte (e.g., dialysed or stripped matrix, buffer)",
-      "normalized_ko": "생물학적 매트릭스와 유사하지만 내인성 분석물질을 포함하지 않는 매트릭스(예: 투석 또는 제거 처리 매트릭스, 완충액)를 사용한다.",
+      "normalized_ko": "대체 매트릭스 접근법은 생물학적 매트릭스와 유사하지만 내인성 분석물질을 포함하지 않는 매트릭스(예: 투석 또는 제거 처리된 매트릭스, 완충액)를 사용한다.",
       "review_status": "reviewed"
     },
     {
@@ -5345,7 +5345,7 @@
       "subject": "Background Subtraction Approach",
       "action": "subtracts",
       "object": "the endogenous background response from spiked authentic matrix",
-      "normalized_ko": "스파이크 처리된 실제 매트릭스에서 내인성 배경 반응을 차감한다.",
+      "normalized_ko": "배경 차감 접근법은 첨가된 실제 매트릭스에서 내인성 배경 반응을 차감한다.",
       "review_status": "reviewed"
     },
     {
@@ -5359,7 +5359,7 @@
       "subject": "Standard Addition Approach",
       "action": "adds",
       "object": "known quantities of standard to authentic sample aliquots",
-      "normalized_ko": "알려진 양의 표준물질을 실제 시료 분취량에 첨가한다.",
+      "normalized_ko": "표준첨가법은 실제 검체 분취량에 알려진 양의 표준물질을 첨가한다.",
       "review_status": "reviewed"
     },
     {
@@ -5373,7 +5373,7 @@
       "subject": "Recognized approaches",
       "action": "includes",
       "object": "Surrogate Matrix Approach: using a matrix that resembles biological matrix but lacks the endogenous analyte (e.g., dialysed or stripped matrix, buffer)",
-      "normalized_ko": "대체 매트릭스 접근법: 생물학적 매트릭스와 유사하지만 내인성 분석물질을 포함하지 않는 매트릭스(예: 투석 또는 제거 처리 매트릭스, 완충액)를 사용하는 것을 포함한다.",
+      "normalized_ko": "인정된 접근법에는 생물학적 매트릭스와 유사하지만 내인성 분석물질을 포함하지 않는 매트릭스(예: 투석 또는 제거 처리된 매트릭스, 완충액)를 사용하는 대체 매트릭스 접근법이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -5387,7 +5387,7 @@
       "subject": "Parallelism",
       "action": "is defined as",
       "object": "parallel dose-response relationships between calibration standards and serial dilutions of study samples",
-      "normalized_ko": "교정 표준물질과 시험 시료의 연속 희석액 간의 평행 용량-반응 관계로 정의된다.",
+      "normalized_ko": "평행성은 검량표준물질과 시험 검체의 연속 희석액 간 용량-반응 관계가 평행한 것으로 정의된다.",
       "review_status": "reviewed"
     },
     {
@@ -5401,7 +5401,7 @@
       "subject": "Parallelism",
       "action": "should be evaluated",
       "object": null,
-      "normalized_ko": "평가해야 한다.",
+      "normalized_ko": "평행성은 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5415,7 +5415,7 @@
       "subject": "Assays",
       "action": "includes",
       "object": "LBA for endogenous macromolecules or biomarker assays",
-      "normalized_ko": "내인성 거대분자 또는 바이오마커 분석을 위한 LBA를 포함한다.",
+      "normalized_ko": "분석법에는 내인성 거대분자 또는 바이오마커 분석을 위한 LBA가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -5429,7 +5429,7 @@
       "subject": "Parallelism",
       "action": "is investigated by serially diluting",
       "object": "at least 3 individual study samples with high endogenous analyte concentrations (or spiked authentic samples) using surrogate or blank matrix",
-      "normalized_ko": "대체 또는 공시 매트릭스를 사용하여 내인성 분석물질 농도가 높은 개별 시험 시료 최소 3개(또는 스파이크 처리된 실제 시료)를 연속 희석하여 조사한다.",
+      "normalized_ko": "평행성은 대체 매트릭스 또는 블랭크 매트릭스를 사용하여 내인성 분석물질 농도가 높은 개별 시험 검체(또는 첨가된 실제 검체)를 최소 3개 연속 희석하여 조사한다.",
       "review_status": "reviewed"
     },
     {
@@ -5443,7 +5443,7 @@
       "subject": "recovery",
       "action": "is",
       "object": "the detector response obtained from an amount of the analyte added to and extracted from the biological matrix, compared to the detector response obtained for the true concentration of the pure authentic standard",
-      "normalized_ko": "생물학적 매트릭스에 첨가되고 여기서 추출된 분석물질의 양으로부터 얻은 검출기 반응을 순수한 실제 표준물질의 실제 농도에서 얻은 검출기 반응과 비교한 것이다.",
+      "normalized_ko": "회수율은 생물학적 매트릭스에 첨가하고 추출한 분석물질 양에서 얻은 검출기 반응을 순수 실제 표준물질의 실제 농도에서 얻은 검출기 반응과 비교한 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -5457,7 +5457,7 @@
       "subject": "Recovery",
       "action": "should be consistent",
       "object": null,
-      "normalized_ko": "일관성이 있어야 한다.",
+      "normalized_ko": "회수율은 일관되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5471,7 +5471,7 @@
       "subject": "Minimum Required Dilution (MRD)",
       "action": "is",
       "object": "a sample dilution factor",
-      "normalized_ko": "시료 희석 계수이다.",
+      "normalized_ko": "최소 필요 희석(MRD)은 검체 희석 계수이다.",
       "review_status": "reviewed"
     },
     {
@@ -5485,7 +5485,7 @@
       "subject": "MRD",
       "action": "is applied to",
       "object": "all study samples and QCs",
-      "normalized_ko": "모든 시험 시료와 QC에 적용된다.",
+      "normalized_ko": "MRD는 모든 시험 검체 및 QC에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -5499,7 +5499,7 @@
       "subject": "The MRD",
       "action": "should be defined",
       "object": "during method development",
-      "normalized_ko": "방법 개발 중에 정의해야 한다.",
+      "normalized_ko": "MRD는 방법 개발 중에 설정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5513,7 +5513,7 @@
       "subject": "the kit assay",
       "action": "should be fully validated in-house",
       "object": "to meet this guideline standards",
-      "normalized_ko": "이 가이드라인의 기준을 충족하도록 사내에서 완전하게 밸리데이션해야 한다.",
+      "normalized_ko": "키트 분석법은 본 가이드라인의 기준을 충족하기 위해 기관 내에서 완전하게 밸리데이션되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5527,7 +5527,7 @@
       "subject": "Calibration curves with sparse standards",
       "action": "must be re-established",
       "object": "across full range",
-      "normalized_ko": "전 범위에 걸쳐 재확립해야 한다.",
+      "normalized_ko": "성긴 표준물질을 사용하는 검량선은 전체 범위에 걸쳐 재설정되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5541,7 +5541,7 @@
       "subject": "Calibration standards and QCs",
       "action": "must be prepared in",
       "object": "the study sample matrix",
-      "normalized_ko": "시험 시료 매트릭스에서 준비해야 한다.",
+      "normalized_ko": "검량 표준물질 및 QC는 시험 검체 매트릭스에서 조제되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5555,7 +5555,7 @@
       "subject": "data generated from the previous platform",
       "action": "should be cross-validated to",
       "object": "the new platform",
-      "normalized_ko": "새 플랫폼에 대해 교차 밸리데이션해야 한다.",
+      "normalized_ko": "이전 플랫폼에서 생성된 데이터는 새로운 플랫폼에 대해 교차 밸리데이션되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5569,7 +5569,7 @@
       "subject": "additional validation parameters",
       "action": "must be evaluated",
       "object": null,
-      "normalized_ko": "평가해야 한다.",
+      "normalized_ko": "추가 밸리데이션 파라미터는 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5583,7 +5583,7 @@
       "subject": "Cross-validation between DMM and conventional liquid plasma methods",
       "action": "is required",
       "object": null,
-      "normalized_ko": "필수이다.",
+      "normalized_ko": "DMM과 기존 액체 혈장 방법 간 교차 밸리데이션이 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -5597,7 +5597,7 @@
       "subject": "Summary information",
       "action": "should be included in",
       "object": "Section 2.6.4/2.7.1 of the eCTD",
-      "normalized_ko": "eCTD 제2.6.4/2.7.1절에 포함되어야 한다.",
+      "normalized_ko": "요약 정보는 eCTD의 2.6.4/2.7.1 절에 포함되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5611,7 +5611,7 @@
       "subject": "Summary information",
       "action": "includes",
       "object": "Summary of methods used for each study (method ID, title, assay type, Bioanalytical Report code, Validation Report code)",
-      "normalized_ko": "각 연구에 사용된 방법의 요약(방법 ID, 제목, 분석 유형, 생물분석 보고서 코드, 밸리데이션 보고서 코드)을 포함한다.",
+      "normalized_ko": "요약 정보에는 각 시험에 사용된 방법의 요약(방법 ID, 제목, 분석 유형, 생체분석 보고서 코드, 밸리데이션 보고서 코드)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -5625,7 +5625,7 @@
       "subject": "Validation and Bioanalytical Reports",
       "action": "provide",
       "object": "complete and contemporaneous documentation supporting method performance and study sample analysis",
-      "normalized_ko": "방법 성능 및 연구 검체 분석을 뒷받침하는 완전하고 동시대에 작성된 문서를 제공해야 한다.",
+      "normalized_ko": "밸리데이션 보고서 및 생체분석 보고서는 방법 성능 및 시험 검체 분석을 뒷받침하는 완전하고 동시대적인 문서를 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -5639,7 +5639,7 @@
       "subject": "Table 1",
       "action": "defines",
       "object": "recommended documentation",
-      "normalized_ko": "권장 문서를 정의한다.",
+      "normalized_ko": "표 1은 권고되는 문서를 정의한다.",
       "review_status": "reviewed"
     },
     {
@@ -5653,7 +5653,7 @@
       "subject": "Table 2",
       "action": "provides",
       "object": "template summary tables for method validation (Table 2.1), sample analysis (Table 2.2), and ISR (Table 2.3)",
-      "normalized_ko": "방법 밸리데이션(표 2.1), 검체 분석(표 2.2) 및 ISR(표 2.3)을 위한 템플릿 요약 표를 제공한다.",
+      "normalized_ko": "표 2는 방법 밸리데이션(표 2.1), 검체 분석(표 2.2) 및 ISR(표 2.3)을 위한 요약표 양식을 제공한다.",
       "review_status": "reviewed"
     },
     {
@@ -5667,7 +5667,7 @@
       "subject": "recommended documentation",
       "action": "includes",
       "object": "SOPs",
-      "normalized_ko": "SOP를 포함한다.",
+      "normalized_ko": "권고되는 문서에는 SOP가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -5681,7 +5681,7 @@
       "subject": "Glossary",
       "action": "defines",
       "object": "key regulatory bioanalytical terms",
-      "normalized_ko": "주요 규제 생물분석 용어를 정의한다.",
+      "normalized_ko": "용어집은 주요 규제 생체분석 용어를 정의한다.",
       "review_status": "reviewed"
     },
     {
@@ -5695,7 +5695,7 @@
       "subject": "Glossary term",
       "action": "includes",
       "object": "Accuracy",
-      "normalized_ko": "정확도를 포함한다.",
+      "normalized_ko": "용어집 용어에는 정확성이 포함된다.",
       "review_status": "reviewed"
     }
   ],

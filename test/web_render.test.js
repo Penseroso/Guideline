@@ -580,6 +580,30 @@ test("structured answer text follows the active locale without issuing a new que
   assert.doesNotMatch(enHtml, /KOREAN-PRESENTATION/);
 });
 
+test("Korean structured answers disclose an unreviewed KnowledgeRecord fallback", () => {
+  const envelope = {
+    answered: true,
+    mode: "structured",
+    route: "structured",
+    claims: [{
+      source_unit_id: "ich_m10.su.3_2_5_2.005",
+      citation: realCitation(),
+      record: {
+        id: "kr.1",
+        type: "knowledge_record",
+        source_text: "SOURCE-FALLBACK",
+        normalized_ko: null,
+        normalization_status: "needs_review"
+      }
+    }]
+  };
+
+  const html = R.renderEnvelope(envelope, { ...i18n, locale: "ko" });
+  assert.match(html, /SOURCE-FALLBACK/);
+  assert.match(html, /normalization-warning/);
+  assert.match(html, new RegExp(i18n.normalizationNeedsReview));
+});
+
 test("no numeric confidence score field is ever rendered anywhere", () => {
   const envelope = {
     answered: true, mode: "structured", route: "structured",

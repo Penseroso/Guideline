@@ -130,7 +130,7 @@ function writeOverlays(targets, entriesByDocument) {
   const documents = [...new Set(targets.map((target) => target.document_id))].sort();
   for (const documentId of documents) {
     const entries = [...(entriesByDocument.get(documentId) || new Map()).values()].sort((a, b) => a.record_id.localeCompare(b.record_id));
-    const overlay = { overlay_version: "0.1.0", language: "ko", document_id: documentId, entries };
+    const overlay = { overlay_version: "0.2.0", language: "ko", document_id: documentId, entries };
     fs.writeFileSync(path.join(OVERLAY_DIR, `${documentId}.json`), `${JSON.stringify(overlay, null, 2)}\n`, "utf8");
   }
 }

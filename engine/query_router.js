@@ -668,10 +668,10 @@ function tryListCompositeQuery(scored, qTokens, question) {
   };
 }
 
-function buildCoverageMatch(records, intent, requestedDocumentIds, title) {
+function buildCoverageMatch(records, intent, requestedDocumentIds, title, maxRecords = 10) {
   const selected = dedupeRecordsForAnswer(records)
     .filter((record) => !isSuppressedBroadRecord(record, ""))
-    .slice(0, 10);
+    .slice(0, maxRecords);
   if (selected.length < 2) return null;
   const sectionIds = [...new Set(selected.map((record) => record.section_id).filter(Boolean))];
   const documentIds = [...new Set(selected.map((record) => record.document_id).filter(Boolean))];
@@ -700,6 +700,56 @@ function buildCoverageMatch(records, intent, requestedDocumentIds, title) {
       claim_count: selected.length
     }
   };
+}
+
+/**
+ * An analytical-run acceptance question names two independent rule families:
+ * calibration standards and QCs. Generic relevance ranking used to fill the
+ * ten-record window with calibration/setup records before the two joint QC
+ * acceptance criteria (total-QC proportion and per-level proportion) could
+ * enter it. Build this bounded rule set from archive semantics instead: only
+ * quantitative records in an actual "Acceptance Criteria for an Analytical
+ * Run" section, and only sections that contain both requested rule families.
+ *
+ * The selection is branch-aware but not branch-guessing. Scope Guard has
+ * already removed an incompatible assay technology when the question names
+ * one; otherwise chromatography and LBA are both retained and disclosed.
+ */
+function tryAnalyticalRunAcceptanceQuery(scored, qTokens, intent, requestedDocumentIds) {
+  const asksForBothRuleFamilies = qTokens.has("run") && qTokens.has("calibration") && qTokens.has("qc") &&
+    (qTokens.has("acceptance") || qTokens.has("criteria") || qTokens.has("criterion"));
+  if (!asksForBothRuleFamilies) return null;
+
+  const candidates = scored.map(({ record }) => record).filter((record) => {
+    if (record.type !== "quantitative_criterion") return false;
+    const sectionPath = (record.section_path || []).join(" ");
+    if (!/acceptance criteria for an analytical run/i.test(sectionPath)) return false;
+    const focus = [record.parameter, record.denominator_or_reference, record.source_text].filter(Boolean).join(" ");
+    return /calibration/i.test(focus) || /\bqcs?\b/i.test(focus);
+  });
+
+  const bySection = new Map();
+  for (const record of candidates) {
+    if (!bySection.has(record.section_id)) bySection.set(record.section_id, []);
+    bySection.get(record.section_id).push(record);
+  }
+  const completeSections = [...bySection.values()].filter((sectionRecords) => {
+    const text = sectionRecords.map((record) =>
+      [record.parameter, record.denominator_or_reference, record.source_text].filter(Boolean).join(" ")
+    ).join(" ");
+    return /calibration/i.test(text) && /\bqcs?\b/i.test(text);
+  });
+  if (completeSections.length === 0) return null;
+
+  const selected = completeSections.flatMap((sectionRecords) => sectionRecords
+    .sort((a, b) => String(a.id).localeCompare(String(b.id), undefined, { numeric: true }))
+  ).sort((a, b) => compareSectionNumbers(a, b) || String(a.id).localeCompare(String(b.id), undefined, { numeric: true }));
+  const guideline = selected[0] && (selected[0].guideline_code || selected[0].document_id) || "Guideline";
+  const match = buildCoverageMatch(selected, intent, requestedDocumentIds, `${guideline} analytical-run acceptance criteria`, selected.length);
+  if (!match) return null;
+  match.coverage.status = "complete_rule_set";
+  match.coverage.expected_claim_count = selected.length;
+  return match;
 }
 
 function tryDocumentOverviewQuery(question, records, index, requestedDocumentIds, intent) {
@@ -881,6 +931,9 @@ function structuredQuery(question, records, index = null) {
     if (typeDelta !== 0) return typeDelta;
     return b.matchedCount - a.matchedCount;
   });
+
+  const analyticalRunAcceptance = tryAnalyticalRunAcceptanceQuery(scored, qTokens, intent, requestedDocumentIds);
+  if (analyticalRunAcceptance) return analyticalRunAcceptance;
 
   const coverageComposite = tryCoverageCompositeQuery(scored, question, intent, requestedDocumentIds);
   if (coverageComposite) return coverageComposite;

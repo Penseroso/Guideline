@@ -1,5 +1,5 @@
 {
-  "overlay_version": "0.1.0",
+  "overlay_version": "0.2.0",
   "language": "ko",
   "document_id": "ich_s6_r1",
   "entries": [
@@ -463,6 +463,909 @@
       "record_type": "condition",
       "source_text_sha256": "038934ff457601771d95a47e6e19e673da0ce16c9beb83451c3bd88fd21db92d",
       "normalized_ko": "신규하지 않고 이용 가능한 과학적 정보가 충분히 축적된 독소 또는 독성물질의 경우",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.1_1.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c0640835c89ae61dc42d1ff0153c7c67f0da4a57421ed29992ada0206e6cf06d",
+      "normalized_ko_sha256": "bd4adc9ce534648b362c573512cddfd92b0f3d836a6db751984503c7ffee1db0",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.1_1.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c0640835c89ae61dc42d1ff0153c7c67f0da4a57421ed29992ada0206e6cf06d",
+      "normalized_ko_sha256": "6bb130e6f860cbb57e1c48110c2cac695669889c4d251cbf8bfd43b54c99dd87",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.1_1.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c0640835c89ae61dc42d1ff0153c7c67f0da4a57421ed29992ada0206e6cf06d",
+      "normalized_ko_sha256": "cd10965ba031a805bf1a489b8a70944a12a5943ea0ce986dd9714c9c941aeccc",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.1_1.004",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c0640835c89ae61dc42d1ff0153c7c67f0da4a57421ed29992ada0206e6cf06d",
+      "normalized_ko_sha256": "cd10965ba031a805bf1a489b8a70944a12a5943ea0ce986dd9714c9c941aeccc",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.1_1.005",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c0640835c89ae61dc42d1ff0153c7c67f0da4a57421ed29992ada0206e6cf06d",
+      "normalized_ko_sha256": "bd4adc9ce534648b362c573512cddfd92b0f3d836a6db751984503c7ffee1db0",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.1_3.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "b081a51a9245ee5f45b7f81623baa2eb031f972ffcb533ebdbcf65bb9d771198",
+      "normalized_ko_sha256": "cdff2b54a4860aabba393223fc28df655ceb29200b494bca5dec22270ca84644",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.1_3.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "b081a51a9245ee5f45b7f81623baa2eb031f972ffcb533ebdbcf65bb9d771198",
+      "normalized_ko_sha256": "94d9f3033d3ff5d214975630937fc9c8665154340bb727812bd6782e44599e28",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.1_3.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "b081a51a9245ee5f45b7f81623baa2eb031f972ffcb533ebdbcf65bb9d771198",
+      "normalized_ko_sha256": "645e93055d4a26bb07da6b9cfa436b5576820f367975cd221b44a48c0f6bb657",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.2.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6b2ca8dc2440e165710303790d2c52f439c0f4c5209c3712162d5cfa3ea15117",
+      "normalized_ko_sha256": "92022ff5e1be8e4b2aaafa4f5fd91aea99cf5192507b16323f988dfedfbd2977",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.2.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6b2ca8dc2440e165710303790d2c52f439c0f4c5209c3712162d5cfa3ea15117",
+      "normalized_ko_sha256": "5c16103aa7d9c90fb057ec037c24daf73ea1aa1822dd86ce1b588b37ba7b47aa",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.2.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6b2ca8dc2440e165710303790d2c52f439c0f4c5209c3712162d5cfa3ea15117",
+      "normalized_ko_sha256": "fc558ae779b3ce621a5a889077aba50b2d49f15c60603c652b5a06e43857fcf5",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.3_1.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "e5fa16cdd65fb2be86539fff322f036ef754868dd35eb96c10b4eb5222fa6371",
+      "normalized_ko_sha256": "198ffb21938a42d59e7687b1cf0a819b8ecf1d6cea1bb9d1b594671ffb2d8adb",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.3_1.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "e5fa16cdd65fb2be86539fff322f036ef754868dd35eb96c10b4eb5222fa6371",
+      "normalized_ko_sha256": "ca7b9460d319be5bcdd782fb4910bd34dd43d634a1842a870ab372ed49988844",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.3_4.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c3d4832244b28551badf0b7613af6b66df928032504643ea18c80e120b27956e",
+      "normalized_ko_sha256": "e83eb90edd7070d4cef649372bca9084e7a7599bdbdb72fdd4280307a36e5709",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.3_4.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c3d4832244b28551badf0b7613af6b66df928032504643ea18c80e120b27956e",
+      "normalized_ko_sha256": "61000f6363e504688358b689c4e53ab04b2888f3edba41f2c58cc77dc2a5b1f2",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.3_4.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c3d4832244b28551badf0b7613af6b66df928032504643ea18c80e120b27956e",
+      "normalized_ko_sha256": "02d75cd014a6e85b82357c881141a156fd6afb1054fd530fd42992db4863d038",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.3_4.004",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c3d4832244b28551badf0b7613af6b66df928032504643ea18c80e120b27956e",
+      "normalized_ko_sha256": "99883149eb3fa3848cbe47215fe9148318f361bf6599a725b12544df29b926b0",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.3_6.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "39d409af54a0902120a357e5c26822d06aa3c395a1cf2a70e9e95a3e8f84330f",
+      "normalized_ko_sha256": "bc3affc2d3521e4587205919fbfec507bba432571ead05675cd1ce6af5603111",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.3_6.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "39d409af54a0902120a357e5c26822d06aa3c395a1cf2a70e9e95a3e8f84330f",
+      "normalized_ko_sha256": "1ba0fb9c3eaf3f9771dd40fe31a821b29e387fa2fee53731a2edaf73dcd51d5f",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.3_6.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "39d409af54a0902120a357e5c26822d06aa3c395a1cf2a70e9e95a3e8f84330f",
+      "normalized_ko_sha256": "54485f53f49390d3c31ec026fb257ccf7924a96a18a2727e972c2ecddb9352ce",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_1.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6a880e52d68d8033276129f682f2597c161c695ee498ea6ecbaa62c8e0ae23df",
+      "normalized_ko_sha256": "bdc63a3430fb51f06024bb43c099bb9d8c10309a6d036a26b8601f17c88b1e9f",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_1.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6a880e52d68d8033276129f682f2597c161c695ee498ea6ecbaa62c8e0ae23df",
+      "normalized_ko_sha256": "3f7fe7adcfdcec80bc90e31970e03f754c8032247bd896123259b3266a102c0f",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_1.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6a880e52d68d8033276129f682f2597c161c695ee498ea6ecbaa62c8e0ae23df",
+      "normalized_ko_sha256": "ee9ba5b64aae9ff2b2cc8cdc8b995fd3dbe39e2339f372647c7ad41de9a6e3a8",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_1.004",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6a880e52d68d8033276129f682f2597c161c695ee498ea6ecbaa62c8e0ae23df",
+      "normalized_ko_sha256": "7916705f1337d6591035e779ba231229a867548793529b0f6419ff7ce4d6c0f0",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_1.005",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6a880e52d68d8033276129f682f2597c161c695ee498ea6ecbaa62c8e0ae23df",
+      "normalized_ko_sha256": "7916705f1337d6591035e779ba231229a867548793529b0f6419ff7ce4d6c0f0",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_1.006",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6a880e52d68d8033276129f682f2597c161c695ee498ea6ecbaa62c8e0ae23df",
+      "normalized_ko_sha256": "7916705f1337d6591035e779ba231229a867548793529b0f6419ff7ce4d6c0f0",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_4.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6e19a93406ea2e6dc45b04261649db1b1746283bfd0b818f6b60ee361e6163be",
+      "normalized_ko_sha256": "3d5f50c437e8046fe745b78a1174d4cb59d0aeea8411d4a8525209e9fbbe1b13",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_4.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6e19a93406ea2e6dc45b04261649db1b1746283bfd0b818f6b60ee361e6163be",
+      "normalized_ko_sha256": "7abfb2398f58fb5419fa5b808b1028d11c445c213b849f29d4c3fa4bd427bded",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_4.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6e19a93406ea2e6dc45b04261649db1b1746283bfd0b818f6b60ee361e6163be",
+      "normalized_ko_sha256": "642e9e2748478147a0d4a49851714cdccb216ad59dff7f1fb7ea717e72d5e6e7",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_4.004",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6e19a93406ea2e6dc45b04261649db1b1746283bfd0b818f6b60ee361e6163be",
+      "normalized_ko_sha256": "af2a7cabcbfafb68e65f8a9857cf00370e85ddac5d086bee758703add2fb4662",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_4.005",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6e19a93406ea2e6dc45b04261649db1b1746283bfd0b818f6b60ee361e6163be",
+      "normalized_ko_sha256": "642e9e2748478147a0d4a49851714cdccb216ad59dff7f1fb7ea717e72d5e6e7",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_7.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "ae16fdcdc1353920d51f21ed6f19d8790fb03655029dbdace0fe33be26035e09",
+      "normalized_ko_sha256": "c3d1e38f5a6f73e986f8eef6f20f2d6fd48816f02c99dbbc796c5a7bda245d3b",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_7.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "ae16fdcdc1353920d51f21ed6f19d8790fb03655029dbdace0fe33be26035e09",
+      "normalized_ko_sha256": "760960341922979650286fe5b34d7a182f113cff4b081819a2c1e8aefeb60f0d",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_7.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "ae16fdcdc1353920d51f21ed6f19d8790fb03655029dbdace0fe33be26035e09",
+      "normalized_ko_sha256": "f687bf5e98fdf1f9e70ff28be70155445756982f8eb4389aebd6fc3948f7b751",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.4_7.004",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "ae16fdcdc1353920d51f21ed6f19d8790fb03655029dbdace0fe33be26035e09",
+      "normalized_ko_sha256": "bb5fa5223e47c37c92e7f959b2fbadb01301daf20230483ccd1598baa5e09c7a",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "f1766adc3c2b3783af1440815adf46d7de2b60da717f5762abdbe53c180b7489",
+      "normalized_ko_sha256": "af73da97acaf9dc09095118cc36aeab583ddd477b4122a0d42c641f76713c2b6",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "f1766adc3c2b3783af1440815adf46d7de2b60da717f5762abdbe53c180b7489",
+      "normalized_ko_sha256": "cdfa1e4a65826d4f390d23b481e615c31ed48a4cfc67959d248fa112c1c58638",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "f1766adc3c2b3783af1440815adf46d7de2b60da717f5762abdbe53c180b7489",
+      "normalized_ko_sha256": "884af74da84bc4652b6664b5e678b1ce499e00e2acefaca9f93dd635c39a7a1e",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.004",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "028bc98c29e9ecf181f038b0d913217a2ec6216bdbaa442e1d1d989fc8129ba5",
+      "normalized_ko_sha256": "ebd846bdd2cb101556a68a4605a3d71ecdd30225831d3827625820de6515f310",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.005",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "028bc98c29e9ecf181f038b0d913217a2ec6216bdbaa442e1d1d989fc8129ba5",
+      "normalized_ko_sha256": "ccb4fec7df724faf60d591df79bde8d2015c0a231bea025f85005a400e5d5fe1",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.006",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "2c836e0f2faf37fd6057857f0fb86fd7f5c5f43429c39291c35fb4a4d9b8a525",
+      "normalized_ko_sha256": "2fc30f12c235c27db9cf26d8dfaf02ecf28bee6da2705b74717278bcd3bb4bbb",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.007",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "2c836e0f2faf37fd6057857f0fb86fd7f5c5f43429c39291c35fb4a4d9b8a525",
+      "normalized_ko_sha256": "072073fc8c0fe9291b702d81c5a1c5ef4b130f2713c3a212c0b81ad604c7d606",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.008",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "2c836e0f2faf37fd6057857f0fb86fd7f5c5f43429c39291c35fb4a4d9b8a525",
+      "normalized_ko_sha256": "365f20640fa4bd2cb142207ad0e298927afb0fce191cd40881c72ec6815ed427",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.009",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "0612de1137373d43b3ea16954502a94f64594eae7a59c64b5decac6a36241e4e",
+      "normalized_ko_sha256": "bc2eb55c61d6e8635c1c1f3658e8d4507696c760c95ca640ee4d00f916167993",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.010",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "0612de1137373d43b3ea16954502a94f64594eae7a59c64b5decac6a36241e4e",
+      "normalized_ko_sha256": "5cd95e53f3386411103c92cb9b680d2fbd57338313a0ab450608d9ac873c88c1",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.011",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "0612de1137373d43b3ea16954502a94f64594eae7a59c64b5decac6a36241e4e",
+      "normalized_ko_sha256": "9452d1119845a876fbf8f61b2e57911a295e120fd823420757ec014affa0ea5d",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.012",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "198ddcdfa51d7cbef9e0f4e2eb49500d1341f597358f2e01fb8515ffa9854369",
+      "normalized_ko_sha256": "1420e5a54b7f9458e2faa8157ec1913933f54ce8288833c9002f7e64a50ad97e",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.013",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "198ddcdfa51d7cbef9e0f4e2eb49500d1341f597358f2e01fb8515ffa9854369",
+      "normalized_ko_sha256": "1f95b5a1a50cb3cabe5b067adc2fc418f4845f0262762f3fc54f93a6ca4bf7d3",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.014",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "198ddcdfa51d7cbef9e0f4e2eb49500d1341f597358f2e01fb8515ffa9854369",
+      "normalized_ko_sha256": "d0c5f70d4866bc0cfffb34730676cc705c3a29a7fc5c83688fe3386ed3e59439",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.015",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "f1766adc3c2b3783af1440815adf46d7de2b60da717f5762abdbe53c180b7489",
+      "normalized_ko_sha256": "0ffee4f5680e1720a1d358cc4997d3f9204644417964b943ba6883beb018758b",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.016",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "f1766adc3c2b3783af1440815adf46d7de2b60da717f5762abdbe53c180b7489",
+      "normalized_ko_sha256": "0f1d782b711bc520598ff3f66409e70c1b8c51424d4da948591d620493f81a0b",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.017",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "028bc98c29e9ecf181f038b0d913217a2ec6216bdbaa442e1d1d989fc8129ba5",
+      "normalized_ko_sha256": "881940f76923f6c34a26ecd90d7718180f348f450c23d6442338e4e31e00ac1e",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.018",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "0612de1137373d43b3ea16954502a94f64594eae7a59c64b5decac6a36241e4e",
+      "normalized_ko_sha256": "6c10c3f67d7fbd1ecb0dd488ea8079ff6275522fc59e7c7368d7b0a2a8a54d8e",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.019",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "0612de1137373d43b3ea16954502a94f64594eae7a59c64b5decac6a36241e4e",
+      "normalized_ko_sha256": "a4929fe6a46b5adfa30390bc9060f0268209bfd607aa02f41a0d6e8c2f2b4d77",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.020",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "0612de1137373d43b3ea16954502a94f64594eae7a59c64b5decac6a36241e4e",
+      "normalized_ko_sha256": "e4491653c90e8c3dabd961b99162c7887ead837db942226dc7785a1a430b0663",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.3_3.021",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "198ddcdfa51d7cbef9e0f4e2eb49500d1341f597358f2e01fb8515ffa9854369",
+      "normalized_ko_sha256": "174f1cf7589481fa5b3fcc65f39c69964eaeda5e967a1ee50bf93cc2d30f7e2f",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.notes.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "78916df56b075dd63c63bbdb6bf560dd24ee4af29c6024d3a5cab3dbd9d6e2b3",
+      "normalized_ko_sha256": "df3cbe2083b616b07b4d44180f43ff72e978797485091356e0065366610920d9",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.notes.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "78916df56b075dd63c63bbdb6bf560dd24ee4af29c6024d3a5cab3dbd9d6e2b3",
+      "normalized_ko_sha256": "351e90e95e35440d58d071a0ea092e4153b8ee2100b9d5a8a13569c947524737",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part1.notes.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "78916df56b075dd63c63bbdb6bf560dd24ee4af29c6024d3a5cab3dbd9d6e2b3",
+      "normalized_ko_sha256": "b540e884d2120e0c297ea61ab1b85fc3ad2db38854d96837dcc35bc6c243dc9c",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_1.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "43d0da1d5cdf616cfc7b5389b7de92d2b77d479c21d1909505f3ba9b5d91b1bc",
+      "normalized_ko_sha256": "7eefe22325b822bd131af3b8f8fea920d4b59a298612b8ea4a3dee34e384cdc2",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_1.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "43d0da1d5cdf616cfc7b5389b7de92d2b77d479c21d1909505f3ba9b5d91b1bc",
+      "normalized_ko_sha256": "70ce45c011950f4e4f79f114e90b42d76ded3fcda613b08a30cc8190c997e185",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_2_3.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "0a96655c069926f50ede9e2ee7c71d21dc7fc74090d8537fd92a7f9a5c3c722f",
+      "normalized_ko_sha256": "ae3fe52a1c27eda280321edffea35c4263c0b181e4781bd24af90206c7b33a24",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_2_3.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "0a96655c069926f50ede9e2ee7c71d21dc7fc74090d8537fd92a7f9a5c3c722f",
+      "normalized_ko_sha256": "2226ca72119cf360b9fd581de0e71626bebdf952ef1a964633e40f98ccac2c4e",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_2_3.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "0a96655c069926f50ede9e2ee7c71d21dc7fc74090d8537fd92a7f9a5c3c722f",
+      "normalized_ko_sha256": "91ced35d2498f102b6dc857ba025816026e04ac5a09bf9f8495929d89fa6b090",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_3_1.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "b6e63babbb87fa713a5871e598fdeb4bd2ee6138f1b6c3aaed30fd649893ad82",
+      "normalized_ko_sha256": "977707b7d968946dcc70fb00d305689a88f757e0c1cb86c7f2a3083d775eecdc",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_3_1.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "b6e63babbb87fa713a5871e598fdeb4bd2ee6138f1b6c3aaed30fd649893ad82",
+      "normalized_ko_sha256": "19a672a95a930f0f389db538ed9e9da20138f4e76abb8bc798d73744790793b1",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_3_1.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "b6e63babbb87fa713a5871e598fdeb4bd2ee6138f1b6c3aaed30fd649893ad82",
+      "normalized_ko_sha256": "19a672a95a930f0f389db538ed9e9da20138f4e76abb8bc798d73744790793b1",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_3_2.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "d2c8b2e1fb0e2cb1bc1b007cca81d940d8f684326ccb3ca37984047dbb452ec4",
+      "normalized_ko_sha256": "71bc0ecaa17ee7995d9b541e585b564bc150fdf9d3f59fb26e443e6330d60039",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_3_2.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "d2c8b2e1fb0e2cb1bc1b007cca81d940d8f684326ccb3ca37984047dbb452ec4",
+      "normalized_ko_sha256": "a52f88385e9d9d5bfdccf7f3457e57669fc3bf70a00e2fb4e8bc04d6bb79062f",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_3_2.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "d2c8b2e1fb0e2cb1bc1b007cca81d940d8f684326ccb3ca37984047dbb452ec4",
+      "normalized_ko_sha256": "71bc0ecaa17ee7995d9b541e585b564bc150fdf9d3f59fb26e443e6330d60039",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_3_3.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "5197ae64e434ce16857434c90a7ff5a483ed9fe054ef6a7719443704af994e3e",
+      "normalized_ko_sha256": "a3175da16c9e65899d2afb9a870ec8e14de39c159a8d93bcf5cb5693e86adf6f",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_3_3.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "5197ae64e434ce16857434c90a7ff5a483ed9fe054ef6a7719443704af994e3e",
+      "normalized_ko_sha256": "476333b7af61d3f8e4aa9310687b58aee2ff43e66c04e00d82bdcd57f89ec4bb",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_3_3.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "5197ae64e434ce16857434c90a7ff5a483ed9fe054ef6a7719443704af994e3e",
+      "normalized_ko_sha256": "d583485d98dcba30df9568b5360111161931dad3546cb7e074b1da525f3b54a1",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_3_3.004",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "5197ae64e434ce16857434c90a7ff5a483ed9fe054ef6a7719443704af994e3e",
+      "normalized_ko_sha256": "d583485d98dcba30df9568b5360111161931dad3546cb7e074b1da525f3b54a1",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_3_3.005",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "5197ae64e434ce16857434c90a7ff5a483ed9fe054ef6a7719443704af994e3e",
+      "normalized_ko_sha256": "94f26a40917a0d582ef246bd674c7181268dcd354a9a66c92fb8fe802590a4a0",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_3_3.006",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "5197ae64e434ce16857434c90a7ff5a483ed9fe054ef6a7719443704af994e3e",
+      "normalized_ko_sha256": "94f26a40917a0d582ef246bd674c7181268dcd354a9a66c92fb8fe802590a4a0",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_3_3.007",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "5197ae64e434ce16857434c90a7ff5a483ed9fe054ef6a7719443704af994e3e",
+      "normalized_ko_sha256": "fd6d959b43d3d06e21c1481d5402cc10be570ccc5c6feb073bdc67c097635321",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_4.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "238ba4f0191e72453532247c6b8a35130ba6ca5b5d060ce099e6d26ed352ed60",
+      "normalized_ko_sha256": "67d147a48ce2245d972e2bc3ef8bb282ff8aba12943e8cd7c820d2d422f322ba",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_4.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "238ba4f0191e72453532247c6b8a35130ba6ca5b5d060ce099e6d26ed352ed60",
+      "normalized_ko_sha256": "05a63961b4c075c37b9df6473f0434b03bf0b9ac2722f87101cb19a34ad2645a",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_5.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "cf89195678e65d29cf0f70099af09aaa8f421ecf026791ee561352803d6e8aa1",
+      "normalized_ko_sha256": "d86be6628e2fcc09617740d4b60b5250be5cb17103519a1be532dd21e8cf1436",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_5.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "cf89195678e65d29cf0f70099af09aaa8f421ecf026791ee561352803d6e8aa1",
+      "normalized_ko_sha256": "d5498f28046d4b1f3633a2864b473c77babdc011be0e0744d872b3007f632d9f",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_5.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "cf89195678e65d29cf0f70099af09aaa8f421ecf026791ee561352803d6e8aa1",
+      "normalized_ko_sha256": "0a603bb2a2e16e8bfd0e946a2b36a1ad079ee8adfafb88b3be00a163eb4859b8",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_5.004",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "cf89195678e65d29cf0f70099af09aaa8f421ecf026791ee561352803d6e8aa1",
+      "normalized_ko_sha256": "12379bc462f806ec08a7521df5a617a8945d90d45cc5d43cefe08fa5adf853fb",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_5.005",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "cf89195678e65d29cf0f70099af09aaa8f421ecf026791ee561352803d6e8aa1",
+      "normalized_ko_sha256": "8e83b9b9e1918e92451274783da2e61b55c82381cec08126a2b55a787b90ab5d",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_5.006",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "cf89195678e65d29cf0f70099af09aaa8f421ecf026791ee561352803d6e8aa1",
+      "normalized_ko_sha256": "d5498f28046d4b1f3633a2864b473c77babdc011be0e0744d872b3007f632d9f",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_5.007",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "cf89195678e65d29cf0f70099af09aaa8f421ecf026791ee561352803d6e8aa1",
+      "normalized_ko_sha256": "0a603bb2a2e16e8bfd0e946a2b36a1ad079ee8adfafb88b3be00a163eb4859b8",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_6.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "914d317fdbe8b5124c51ef0ea4da5243faedebdd48931d03486e0bb93d41c60a",
+      "normalized_ko_sha256": "e4321d886e7fa3845081c829f75155fd88628864bca2cd40a903db983f0532fc",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2_6.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "914d317fdbe8b5124c51ef0ea4da5243faedebdd48931d03486e0bb93d41c60a",
+      "normalized_ko_sha256": "95f5c7c8f1942db94648e35b9eec5e9f97103cf2bba9ca0ce23e75d191a47486",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c8fa08ab84e17ae3f104554e9784c1bf6855bb011d2ca4af022e66f1f5e290e9",
+      "normalized_ko_sha256": "c5e38904d30df5a755a04943eb5b67fabd0f2ac27a5c8ac9f7fcb18a1a8b3090",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c8fa08ab84e17ae3f104554e9784c1bf6855bb011d2ca4af022e66f1f5e290e9",
+      "normalized_ko_sha256": "c3375ce49f844a8033b4c1b2c67884cbbe34dc2d729d1c5610ddfddca1853d48",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "f37ee4aa9821d6d25c9eb63143da2f73326267ee0db244d23a09a8bc8b2f5446",
+      "normalized_ko_sha256": "f4827d28f8e198832fb5447ec7d122a3db4ae7c2737ea1056f0a81b541a3f7e5",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.004",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "f37ee4aa9821d6d25c9eb63143da2f73326267ee0db244d23a09a8bc8b2f5446",
+      "normalized_ko_sha256": "8f8eec242c20424cf5abaa53b055b32f5c22c76ad054f749c3b53462e5b196ce",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.005",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6e5b906ac076dcea39ec677f22c08f578bee0afed8b5a8bdb5c16e15fe93a319",
+      "normalized_ko_sha256": "6241ebde6499d04d00d17ca4fd8e721879e33b302ab1c10b01e8863b268f3ca2",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.006",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6e5b906ac076dcea39ec677f22c08f578bee0afed8b5a8bdb5c16e15fe93a319",
+      "normalized_ko_sha256": "999df0fe45bf8fed85402f6e99ba65a06aeac3e5725387693ac72b8139886def",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.007",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "61cb5e5678f4bcd248ddd0a3c114e7164147eeacae179bcf2105963edf1f2c10",
+      "normalized_ko_sha256": "0294b9c855f7c610a0590752dca345386200fd4d0335c9155343b2749a8ded82",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.008",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "61cb5e5678f4bcd248ddd0a3c114e7164147eeacae179bcf2105963edf1f2c10",
+      "normalized_ko_sha256": "12c88d87f7ab40218f092931c9d28eb58ec63d22c2425561e88a3d8f8a085681",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.009",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "779507109ecded48ca9c529b298be11432ad0dd016c28a8484bfd85419b8611d",
+      "normalized_ko_sha256": "f09a78e13c87ec954828fab01d2d6f22c34364f8679e741132d3563a2a9b3213",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.010",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "7651cf5e3ef70e6ae0fdece6fb7525ac64ba006523b7c2f8a222bfff523fd79b",
+      "normalized_ko_sha256": "55bf39c176e929452b327a5a6f2bcedd33f0ac225a8ec56cf92f70ae2a589725",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.011",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "7651cf5e3ef70e6ae0fdece6fb7525ac64ba006523b7c2f8a222bfff523fd79b",
+      "normalized_ko_sha256": "3a7f47f7b915a2339ac0e3c215549b7388b60161cfe0ffd7ca7ed24bc00eb32a",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.012",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "7651cf5e3ef70e6ae0fdece6fb7525ac64ba006523b7c2f8a222bfff523fd79b",
+      "normalized_ko_sha256": "42e1e046c1304dc7e51b284c239ba41f6e6f27d54316695dc4b4238ebf6526ac",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.013",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "7651cf5e3ef70e6ae0fdece6fb7525ac64ba006523b7c2f8a222bfff523fd79b",
+      "normalized_ko_sha256": "9f2f3f62b386a681885400897acac62fbd33072827fbc176ae9e530f534a2bac",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.014",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "d1dcd8b57960068f2f78abbda75d6634f393567497cf773d1b730095291f2770",
+      "normalized_ko_sha256": "f6c89cb7001dfce3321c9ee6c7c7adf35e7a74317cf63079e55af6adde2f40f4",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.015",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c8fa08ab84e17ae3f104554e9784c1bf6855bb011d2ca4af022e66f1f5e290e9",
+      "normalized_ko_sha256": "3da56b49e1b7eef2ac4fcc9df230309233ada9ba434a9769724abaa1b190ea9e",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_1.016",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "f37ee4aa9821d6d25c9eb63143da2f73326267ee0db244d23a09a8bc8b2f5446",
+      "normalized_ko_sha256": "9dbc43255ba9259074e70bbf60b27c2487bfdf635da0e6b0cc848792c2c82c03",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_2.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "cf52a34f1cd81b4624cc5ddd533786e6d0301a7322c627cdbf568f577ed8e919",
+      "normalized_ko_sha256": "1362a503b6740c6fa9aa23dbe5454345885b1d523c11bb8ed65e2f9e907a8a1c",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_2.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "cf52a34f1cd81b4624cc5ddd533786e6d0301a7322c627cdbf568f577ed8e919",
+      "normalized_ko_sha256": "04310e2a0f3e704b5203c6ac8eb2eb484548772ec3c7db2843cc49f4a56d241d",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_2.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "cf52a34f1cd81b4624cc5ddd533786e6d0301a7322c627cdbf568f577ed8e919",
+      "normalized_ko_sha256": "ed5d0b357c4f82dab5eed37e2cf34e08fac395d96c8ade78ae1700f58cfe4d0d",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_2.004",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "cf52a34f1cd81b4624cc5ddd533786e6d0301a7322c627cdbf568f577ed8e919",
+      "normalized_ko_sha256": "18a2d294af34c1f10e010b47bc315a6943aee8defbe5172130c5e41b3d078559",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_2.005",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "bbe2f4e467bdb25dddd7833df7668f1092799589d8bc6a1e96f7b34db577e659",
+      "normalized_ko_sha256": "91bcb41f162b749bd79f2af996d89efd087cd5004b9863609e56b612a23baf48",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.2_2.006",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "bbe2f4e467bdb25dddd7833df7668f1092799589d8bc6a1e96f7b34db577e659",
+      "normalized_ko_sha256": "9b35388bc9bd3b1ed7d2b2070fe2f59def240bdfe5c3ff0280fbffad27ac799f",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.001",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "f9074bb37ea36a3b4fe27f22b33077f74999c5123438fbe0e89e43f4e7509e7a",
+      "normalized_ko_sha256": "71a03d55a8ed9595e6ff70f8909d7baf5dbb531b393667a5b5fd3c75df1bee08",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.002",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "789c97c31c02db0a32fd6ef5e374dea658389042da6775259788f6785f2fe7c0",
+      "normalized_ko_sha256": "cc1f6a95251ea9c50ee1bf415dcda12d4b32be4c80fca99a5fa538d53dc39dac",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.003",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c9d5fcf72c53abe7e1cae0195ceaf622991e98467561475692f6d1065cbaec64",
+      "normalized_ko_sha256": "a8689db72217eb0a7b0db407adbe1ca6af408648cda6497cfef6448ca7cd5a78",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.004",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c9d5fcf72c53abe7e1cae0195ceaf622991e98467561475692f6d1065cbaec64",
+      "normalized_ko_sha256": "b321d609c9c3efb86901e288fdea41031950c704b07d9b1880497277f3a249e6",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.005",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c4c0a4736a136cb83a28281f01badbd773cfd9ac4155d6f8187c86c2f833f1f8",
+      "normalized_ko_sha256": "d1a830976c8fe0536ce794b086e734d0ecc541a9f7718b8e5cd766bb22edb010",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.006",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "1be63b424aab9538679edaccb9146659583e2a4be282c67e402267ac431793fa",
+      "normalized_ko_sha256": "d598a7392a2ddd5778fa85571b11e2866dd7763b0ddfe0caa75a9fadf99d1712",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.007",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "1bb819037f65bb5c2c19c179462508208ed5d769e41b31e9b9be57304ddba7c0",
+      "normalized_ko_sha256": "2032bc2a10a6c54ea091ae2e0dc81d2cba0f313c003ae4b2dde859e01ccf1ab9",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.008",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "9a12e61b4d1f5414575d27bd91d639b9694198ba9b8a660e8a163ab3815ca1fe",
+      "normalized_ko_sha256": "aae73d3d86deb2f09c2903f597da83bf705571a08a67166bcc3956ff23048eff",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.009",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6a96bcedb170d967c5cde1adb65168d8131623b74369ab91544b6280df6c1e7f",
+      "normalized_ko_sha256": "f261bfed2b2da973324e4ee2860f2190d4e930232eb8ca5129ff182b4f61c3c0",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.010",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6a96bcedb170d967c5cde1adb65168d8131623b74369ab91544b6280df6c1e7f",
+      "normalized_ko_sha256": "f37fae1a38f370b5da539b64d5845b5820ab9c19d3f88f392b348979ab2a3535",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.011",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6a96bcedb170d967c5cde1adb65168d8131623b74369ab91544b6280df6c1e7f",
+      "normalized_ko_sha256": "0cf7fb6a159f374fa84cc047ef861ec348d0a18b0248ebaaa89afacdbbcab4ae",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.012",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6a96bcedb170d967c5cde1adb65168d8131623b74369ab91544b6280df6c1e7f",
+      "normalized_ko_sha256": "3940ed7ef7a0bfbf0abab6012eabc8d4074cc750cbe4b925764f97dcc4301f6e",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.013",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6a96bcedb170d967c5cde1adb65168d8131623b74369ab91544b6280df6c1e7f",
+      "normalized_ko_sha256": "06e6313e5164b0eb0e5dd9ef755f1a707d14dffa644a546dad632555108786e5",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.014",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c4c0a4736a136cb83a28281f01badbd773cfd9ac4155d6f8187c86c2f833f1f8",
+      "normalized_ko_sha256": "c7ce9af9604c4083ae1fd4e14b419a4c32d4fd968b0399f8d0b70a35f1246c6d",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.015",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "6a96bcedb170d967c5cde1adb65168d8131623b74369ab91544b6280df6c1e7f",
+      "normalized_ko_sha256": "466e00762facbb0643160a5c33de7e41360f75c7c4c4ce66d3f88b6df55dce1e",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.016",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "f9074bb37ea36a3b4fe27f22b33077f74999c5123438fbe0e89e43f4e7509e7a",
+      "normalized_ko_sha256": "85e6a584e449c18b7f981d47953d1ec1120bff219be536f0de5ab6aa183c4625",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.017",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c9d5fcf72c53abe7e1cae0195ceaf622991e98467561475692f6d1065cbaec64",
+      "normalized_ko_sha256": "059de4f71b80246b8673999c743294277495414d1880bd52895ca6704c95cef4",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.018",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "c9d5fcf72c53abe7e1cae0195ceaf622991e98467561475692f6d1065cbaec64",
+      "normalized_ko_sha256": "e7c035768447a12d0f338f211daddecae0fca0e656731cced52145a5913168df",
+      "normalization_status": "reviewed"
+    },
+    {
+      "record_id": "ich_s6_r1.kr.part2.notes.019",
+      "record_type": "knowledge_record",
+      "source_text_sha256": "9a12e61b4d1f5414575d27bd91d639b9694198ba9b8a660e8a163ab3815ca1fe",
+      "normalized_ko_sha256": "0030ad163c97850e890c812071acd721f42e3ca500bb0db80c04d8cc69e7453b",
       "normalization_status": "reviewed"
     },
     {

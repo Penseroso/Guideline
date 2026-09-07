@@ -7,6 +7,7 @@ const {
   resolveRequestedDocumentIds,
   structuredQuery
 } = require("../engine/query_router");
+const { answerEnvelope } = require("../engine/answer_envelope");
 
 const { records, index } = loadStore();
 
@@ -151,6 +152,35 @@ test("accuracy and precision contrast retains ordinary and LLOQ criteria for bot
     "ich_m10.qc.3_2_5_2.008",
     "ich_m10.qc.3_2_5_2.009"
   ]) assert.ok(ids.has(id), id);
+});
+
+test("Q06 analytical-run acceptance keeps complete calibration and QC criteria for both assay branches", async () => {
+  const envelope = await answerEnvelope("분석 run을 accept하려면 calibration standard랑 QC가 각각 어떻게 돼야 해?", records, { index });
+  assert.equal(envelope.route, "structured");
+  assert.equal(envelope.mode, "multi_criterion");
+  assert.equal(envelope.coverage.status, "complete_rule_set");
+  const ids = new Set(envelope.claims.map((claim) => claim.record.id));
+  for (const prefix of ["ich_m10.qc.3_3_2", "ich_m10.qc.4_3_2"]) {
+    for (const suffix of ["001", "002", "003", "004", "005", "006"]) {
+      assert.ok(ids.has(`${prefix}.${suffix}`), `${prefix}.${suffix}`);
+    }
+  }
+  assert.equal(ids.size, 12);
+  const manifest = envelope.semantic_coverage.manifests.find((item) => item.manifest_id === "ich_m10.sem.manifest.run_acceptance");
+  assert.ok(manifest);
+  assert.equal(manifest.status, "ambiguous");
+  assert.deepEqual(manifest.groups.map((group) => group.facets[0].status), ["covered", "covered"]);
+});
+
+test("Q06 analytical-run acceptance honors an explicit chromatography scope", () => {
+  const match = structuredQuery("LC-MS/MS 분석 run acceptance에서 calibration standard와 QC 기준은?", records, index);
+  assert.ok(match && match.isMultiCriterion);
+  const ids = new Set(match.claims.map((claim) => claim.record.id));
+  for (const suffix of ["001", "002", "003", "004", "005", "006"]) {
+    assert.ok(ids.has(`ich_m10.qc.3_3_2.${suffix}`));
+  }
+  assert.equal(ids.size, 6);
+  assert.deepEqual([...claimDocuments(match)], ["ich_m10"]);
 });
 
 test("clinical-trial duration wording selects the M3 duration matrix", () => {

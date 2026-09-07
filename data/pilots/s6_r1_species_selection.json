@@ -1465,7 +1465,7 @@
       "subject": "Safety evaluation programs",
       "action": "include",
       "object": "the use of relevant species",
-      "normalized_ko": "관련 종의 사용을 포함해야 한다.",
+      "normalized_ko": "안전성 평가 프로그램은 관련 종의 사용을 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1479,7 +1479,7 @@
       "subject": "A relevant species",
       "action": "is",
       "object": "one in which the test material is pharmacologically active due to the expression of the receptor or an epitope",
-      "normalized_ko": "수용체 또는 에피토프의 발현으로 인해 시험 물질이 약리활성을 나타내는 경우이다.",
+      "normalized_ko": "관련 종은 수용체 또는 에피토프의 발현으로 인해 시험물질이 약리학적 활성을 나타내는 종이다.",
       "review_status": "reviewed"
     },
     {
@@ -1493,7 +1493,7 @@
       "subject": "A variety of techniques",
       "action": "can be used",
       "object": "to identify a relevant species",
-      "normalized_ko": "관련 종을 식별하는 데 사용될 수 있다.",
+      "normalized_ko": "다양한 기법은 관련 종을 식별하는 데 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1507,7 +1507,7 @@
       "subject": "The biological activity together with species and/or tissue specificity of many biotechnology-derived pharmaceuticals",
       "action": "often preclude",
       "object": "standard toxicity testing designs in commonly used species (e.g., rats and dogs)",
-      "normalized_ko": "일반적으로 사용되는 종(예: 랫드 및 개)에서의 표준 독성시험 설계를 흔히 불가능하게 한다.",
+      "normalized_ko": "많은 생명공학 유래 의약품의 생물학적 활성과 종 및/또는 조직 특이성은 흔히 일반적으로 사용되는 종(예: 랫드 및 개)에서의 표준 독성시험 설계를 배제한다.",
       "review_status": "reviewed"
     },
     {
@@ -1521,7 +1521,7 @@
       "subject": "Knowledge of receptor/epitope distribution",
       "action": "can provide",
       "object": "greater understanding of potential in vivo toxicity",
-      "normalized_ko": "잠재적인 생체 내 독성에 대한 더 큰 이해를 제공할 수 있다.",
+      "normalized_ko": "수용체/에피토프 분포에 관한 지식은 잠재적 생체 내 독성에 대한 더 큰 이해를 제공할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1535,7 +1535,7 @@
       "subject": "Relevant animal species for testing of monoclonal antibodies",
       "action": "are",
       "object": "those that express the desired epitope and demonstrate a similar tissue cross-reactivity profile as for human tissues",
-      "normalized_ko": "원하는 에피토프를 발현하고 인체 조직에서의 양상과 유사한 조직 교차반응성 프로파일을 나타내는 것들이다.",
+      "normalized_ko": "단클론항체 시험을 위한 관련 동물종은 목적 에피토프를 발현하고 인체 조직과 유사한 조직 교차반응성 프로파일을 나타내는 종이다.",
       "review_status": "reviewed"
     },
     {
@@ -1549,7 +1549,7 @@
       "subject": "This",
       "action": "optimise",
       "object": "the ability to evaluate toxicity arising from the binding to the epitope and any unintentional tissue cross-reactivity",
-      "normalized_ko": "에피토프 결합 및 비의도적 조직 교차반응성으로 인해 발생하는 독성을 평가하는 능력을 최적화한다.",
+      "normalized_ko": "이는 에피토프 결합 및 의도하지 않은 조직 교차반응성으로 인해 발생하는 독성을 평가하는 능력을 최적화할 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -1563,7 +1563,7 @@
       "subject": "An animal species which does not express the desired epitope",
       "action": "may still be of some relevance",
       "object": "for assessing toxicity if comparable unintentional tissue cross-reactivity to humans is demonstrated",
-      "normalized_ko": "인체와 유사한 비의도적 조직 교차반응성이 입증되는 경우, 독성 평가에 여전히 어느 정도 관련성이 있을 수 있다.",
+      "normalized_ko": "목적 에피토프를 발현하지 않는 동물종은 인체와 유사한 의도하지 않은 조직 교차반응성이 입증되는 경우에도 독성 평가에 어느 정도 관련성이 있을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1577,7 +1577,7 @@
       "subject": "Safety evaluation programs",
       "action": "include",
       "object": "two relevant species",
-      "normalized_ko": "두 관련 종을 포함해야 한다.",
+      "normalized_ko": "안전성 평가 프로그램은 통상적으로 2개의 관련 종을 포함해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1591,7 +1591,7 @@
       "subject": "One relevant species",
       "action": "may suffice",
       "object": "in certain justified cases",
-      "normalized_ko": "특정 정당화된 경우에는 충분할 수 있다.",
+      "normalized_ko": "특정 정당화된 경우에는 1개의 관련 종으로 충분할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1605,7 +1605,7 @@
       "subject": "Use of only one species for subsequent long term toxicity studies",
       "action": "may be possible to justify",
       "object": null,
-      "normalized_ko": "정당화하는 것이 가능할 수 있다.",
+      "normalized_ko": "후속 장기 독성시험에서 1개 종만 사용하는 것은 정당화될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1619,7 +1619,7 @@
       "subject": "Toxicity studies in non-relevant species",
       "action": "may be misleading and are discouraged",
       "object": null,
-      "normalized_ko": "오도할 수 있으므로 권장되지 않는다.",
+      "normalized_ko": "비관련 종에서의 독성시험은 오해를 초래할 수 있으며 권장되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -1633,7 +1633,7 @@
       "subject": "The use of relevant transgenic animals expressing the human receptor or the use of homologous proteins",
       "action": "be considered",
       "object": null,
-      "normalized_ko": "고려되어야 한다.",
+      "normalized_ko": "인간 수용체를 발현하는 관련 형질전환 동물의 사용 또는 상동 단백질의 사용을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1647,7 +1647,7 @@
       "subject": "Assessment of some aspects of potential toxicity in a limited toxicity evaluation in a single species",
       "action": "may still be prudent",
       "object": null,
-      "normalized_ko": "여전히 신중한 조치일 수 있다.",
+      "normalized_ko": "단일 종에서 제한적 독성 평가를 통해 잠재적 독성의 일부 측면을 평가하는 것은 여전히 신중할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1661,7 +1661,7 @@
       "subject": "The information gained from use of a transgenic animal model expressing the human receptor",
       "action": "is optimised",
       "object": null,
-      "normalized_ko": "최적화된다.",
+      "normalized_ko": "인간 수용체를 발현하는 형질전환 동물모델의 사용으로 얻는 정보는 최적화된다.",
       "review_status": "reviewed"
     },
     {
@@ -1675,7 +1675,7 @@
       "subject": "Useful information",
       "action": "may also be gained",
       "object": "from the use of homologous proteins",
-      "normalized_ko": "상동 단백질의 사용으로부터도 얻을 수 있다.",
+      "normalized_ko": "유용한 정보는 상동 단백질의 사용으로부터도 얻어질 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1689,7 +1689,7 @@
       "subject": "The production process, range of impurities/contaminants, pharmacokinetics, and exact pharmacological mechanism(s)",
       "action": "may differ",
       "object": "between the homologous form and the product intended for clinical use",
-      "normalized_ko": "상동 형태와 임상 사용을 목적으로 하는 제품 간에 다를 수 있다.",
+      "normalized_ko": "제조 공정, 불순물/오염물질의 범위, 약동학 및 정확한 약리학적 기전은 상동 형태와 임상 사용 예정 제품 간에 다를 수 있음을 유의해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1703,7 +1703,7 @@
       "subject": "These animal models",
       "action": "include",
       "object": "induced and spontaneous models of disease, gene knockout(s), and transgenic animals",
-      "normalized_ko": "유도성 및 자연발생 질환 모델, 유전자 녹아웃 및 형질전환 동물을 포함한다.",
+      "normalized_ko": "이들 동물모델에는 유도성 및 자발성 질환모델, 유전자 녹아웃 및 형질전환 동물이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -1717,7 +1717,7 @@
       "subject": "Animal models similar to the human disease",
       "action": "may provide further insight",
       "object": null,
-      "normalized_ko": "추가적인 통찰을 제공할 수 있다.",
+      "normalized_ko": "인체 질환과 유사한 동물모델은 추가적인 통찰을 제공할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1731,7 +1731,7 @@
       "subject": "Studies performed in animal models of disease",
       "action": "may be used",
       "object": "as an acceptable alternative to toxicity studies in normal animals",
-      "normalized_ko": "정상 동물에서의 독성시험에 대한 허용 가능한 대안으로 사용될 수 있다.",
+      "normalized_ko": "질환 동물모델에서 수행된 시험은 정상 동물에서의 독성시험에 대한 허용 가능한 대안으로 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1745,7 +1745,7 @@
       "subject": "The scientific justification for the use of these animal models of disease to support safety",
       "action": "be provided",
       "object": null,
-      "normalized_ko": "제공되어야 한다.",
+      "normalized_ko": "안전성 뒷받침을 위한 이러한 질환 동물모델 사용의 과학적 근거가 제시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1759,7 +1759,7 @@
       "subject": "Animal models of disease",
       "action": "may be useful",
       "object": "in defining toxicity endpoints, selection of clinical indications, and determination of appropriate formulations, route of administration, and treatment regimen",
-      "normalized_ko": "독성 평가변수 정의, 임상 적응증 선정, 적절한 제형, 투여 경로 및 치료 요법 결정에 유용할 수 있다.",
+      "normalized_ko": "질환 동물모델은 독성 평가변수의 정의, 임상 적응증의 선택 및 적절한 제형, 투여 경로 및 치료 요법의 결정에 유용할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1773,7 +1773,7 @@
       "subject": "The collection of concurrent control and baseline data",
       "action": "is critical",
       "object": "to optimise study design",
-      "normalized_ko": "연구 설계를 최적화하는 데 결정적이다.",
+      "normalized_ko": "동시 발생 대조군 및 기저치 자료의 수집은 시험 설계를 최적화하는 데 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -1787,7 +1787,7 @@
       "subject": "These models of disease",
       "action": "often have",
       "object": "a paucity of historical data for use as a reference when evaluating study results",
-      "normalized_ko": "연구 결과 평가 시 참고자료로 사용할 과거 데이터가 부족한 경우가 많다.",
+      "normalized_ko": "이러한 질환모델은 시험 결과 평가 시 참고자료로 사용할 과거 자료가 부족한 경우가 많다.",
       "review_status": "reviewed"
     },
     {
@@ -1801,7 +1801,7 @@
       "subject": "A number of factors",
       "action": "be taken into account",
       "object": "when determining species relevancy",
-      "normalized_ko": "종의 관련성을 결정할 때 고려되어야 한다.",
+      "normalized_ko": "종 관련성을 결정할 때 여러 요인을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1815,7 +1815,7 @@
       "subject": "Comparisons of target sequence homology between species",
       "action": "can be",
       "object": "an appropriate starting point",
-      "normalized_ko": "적절한 출발점이 될 수 있다.",
+      "normalized_ko": "종 간 표적 서열 상동성 비교는 적절한 출발점이 될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1829,7 +1829,7 @@
       "subject": "In vitro assays to make qualitative and quantitative cross-species comparisons of relative target binding affinities and receptor/ligand occupancy and kinetics",
       "action": "follow",
       "object": "comparisons of target sequence homology between species",
-      "normalized_ko": "종 간 표적 서열 상동성 비교를 따른다.",
+      "normalized_ko": "상대적 표적 결합 친화도와 수용체/리간드 점유율 및 동역학에 대한 정성적·정량적 종 간 비교를 위한 시험관 내 시험은 종 간 표적 서열 상동성 비교를 따른다.",
       "review_status": "reviewed"
     },
     {
@@ -1843,7 +1843,7 @@
       "subject": "Assessments of functional activity",
       "action": "are recommended",
       "object": null,
-      "normalized_ko": "권장된다.",
+      "normalized_ko": "기능적 활성 평가는 또한 권고된다.",
       "review_status": "reviewed"
     },
     {
@@ -1857,7 +1857,7 @@
       "subject": "Functional activity",
       "action": "can be demonstrated",
       "object": "in species-specific cell-based systems and/or in vivo pharmacology or toxicology studies",
-      "normalized_ko": "종 특이적 세포 기반 시스템 및/또는 생체 내 약리학 또는 독성학 연구에서 입증될 수 있다.",
+      "normalized_ko": "기능적 활성은 종 특이적 세포 기반 시스템 및/또는 생체 내 약리학 또는 독성학 시험에서 입증될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1871,7 +1871,7 @@
       "subject": "Modulation of a known biologic response or of a pharmacodynamic (PD) marker",
       "action": "can provide",
       "object": "evidence for functional activity to support species relevance",
-      "normalized_ko": "종 관련성을 뒷받침하는 기능적 활성에 대한 근거를 제공할 수 있다.",
+      "normalized_ko": "알려진 생물학적 반응 또는 약력학(PD) 표지자의 조절은 종 관련성을 뒷받침하는 기능적 활성의 증거를 제공할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1885,7 +1885,7 @@
       "subject": "Consideration of species differences in target binding and functional activity in the context of the intended dosing regime",
       "action": "provide confidence",
       "object": "that a model is capable of demonstrating potentially adverse consequences of target modulation",
-      "normalized_ko": "모델이 표적 조절로 인해 발생할 수 있는 유해한 결과를 입증할 수 있다는 확신을 제공해야 한다.",
+      "normalized_ko": "의도된 투여 요법의 맥락에서 표적 결합 및 기능적 활성의 종 간 차이를 고려하면 모델이 표적 조절의 잠재적 유해 결과를 입증할 수 있다는 확신을 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1899,7 +1899,7 @@
       "subject": "Binding affinity and activity in cell-based systems",
       "action": "can be sufficient",
       "object": "to guide species selection",
-      "normalized_ko": "종 선택을 안내하는 데 충분할 수 있다.",
+      "normalized_ko": "세포 기반 시스템에서의 결합 친화도 및 활성은 종 선택을 안내하는 데 충분할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1913,7 +1913,7 @@
       "subject": "Assessment of tissue cross reactivity in animal tissues",
       "action": "is",
       "object": "of limited value for species selection",
-      "normalized_ko": "종 선택에 있어 가치가 제한적이다.",
+      "normalized_ko": "동물 조직에서 조직 교차반응성 평가는 종 선택에 제한적인 가치가 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1927,7 +1927,7 @@
       "subject": "Tissue cross-reactivity (TCR) studies",
       "action": "can be used",
       "object": "to guide selection of toxicology species by comparison of tissue binding profiles in human and those animal tissues where target binding is expected",
-      "normalized_ko": "인체와 표적 결합이 예상되는 동물 조직 간의 조직 결합 프로파일 비교를 통해 독성시험 종 선택을 안내하는 데 사용될 수 있다.",
+      "normalized_ko": "조직 교차반응성(TCR) 시험은 사람과 표적 결합이 예상되는 동물 조직의 조직 결합 프로파일을 비교하여 독성시험 종의 선택을 안내하는 데 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1941,7 +1941,7 @@
       "subject": "Use of homologous molecules or transgenic models",
       "action": "can be considered",
       "object": null,
-      "normalized_ko": "고려될 수 있다.",
+      "normalized_ko": "상동 분자 또는 형질전환 모델의 사용을 고려할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1955,7 +1955,7 @@
       "subject": "A short-term safety study in one species",
       "action": "can be considered",
       "object": null,
-      "normalized_ko": "고려될 수 있다.",
+      "normalized_ko": "한 종에서의 단기 안전성 시험을 고려할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1969,7 +1969,7 @@
       "subject": "Additional toxicity studies, including reproductive toxicity studies",
       "action": "are not appropriate",
       "object": null,
-      "normalized_ko": "적절하지 않다.",
+      "normalized_ko": "생식독성 시험을 포함한 추가 독성시험은 적절하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -1983,7 +1983,7 @@
       "subject": "A safety assessment",
       "action": "can be included",
       "object": "to provide information on potential target-associated safety aspects",
-      "normalized_ko": "잠재적인 표적 관련 안전성 측면에 대한 정보를 제공하기 위해 포함될 수 있다.",
+      "normalized_ko": "안전성 평가는 잠재적인 표적 관련 안전성 측면에 관한 정보를 제공하기 위해 포함될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1997,7 +1997,7 @@
       "subject": "Appropriate risk mitigation strategies",
       "action": "be adopted",
       "object": "for clinical trials",
-      "normalized_ko": "임상시험을 위해 채택되어야 한다.",
+      "normalized_ko": "적절한 위험 완화 전략은 임상시험을 위해 채택되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2011,7 +2011,7 @@
       "subject": "Species selection for an antibody-drug/toxin conjugate (ADC) incorporating a novel toxin/toxicant",
       "action": "follow",
       "object": "the same general principles as an unconjugated antibody",
-      "normalized_ko": "비접합 항체와 동일한 일반 원칙을 따라야 한다.",
+      "normalized_ko": "신규 독소/독성물질을 포함하는 항체-약물/독소 접합체(ADC)의 종 선택은 비접합 항체와 동일한 일반 원칙을 따라야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2025,7 +2025,7 @@
       "subject": "Both pharmacologically relevant species",
       "action": "be used",
       "object": "for short-term general toxicology studies",
-      "normalized_ko": "단기 일반독성시험에 사용해야 한다.",
+      "normalized_ko": "약리학적으로 관련된 두 종 모두는 단기 일반독성시험에 사용되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2039,7 +2039,7 @@
       "subject": "Longer-term general toxicity studies in one species",
       "action": "are usually considered sufficient",
       "object": null,
-      "normalized_ko": "통상 충분한 것으로 간주된다.",
+      "normalized_ko": "한 종에서의 장기 일반독성시험은 통상 충분한 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -2053,7 +2053,7 @@
       "subject": "The rodent species",
       "action": "be considered",
       "object": null,
-      "normalized_ko": "고려해야 한다.",
+      "normalized_ko": "설치류 종을 고려해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2067,7 +2067,7 @@
       "subject": "Studies in two non-rodent species",
       "action": "are not appropriate",
       "object": null,
-      "normalized_ko": "적절하지 않다.",
+      "normalized_ko": "두 비설치류 종에서의 시험은 적절하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -2081,7 +2081,7 @@
       "subject": "The use of one species for all general toxicity studies",
       "action": "is justified",
       "object": "when the clinical candidate is pharmacologically active in only one species",
-      "normalized_ko": "임상 후보물질이 한 종에서만 약리활성을 나타내는 경우 정당화된다.",
+      "normalized_ko": "임상 후보물질이 한 종에서만 약리학적 활성을 나타내는 경우, 모든 일반독성시험에 한 종을 사용하는 것은 정당화된다.",
       "review_status": "reviewed"
     },
     {
@@ -2095,7 +2095,7 @@
       "subject": "Studies in a second species with a homologous product",
       "action": "are not considered to add further value and are not recommended",
       "object": null,
-      "normalized_ko": "추가적인 가치를 제공하는 것으로 간주되지 않으며 권장되지 않는다.",
+      "normalized_ko": "상동 제품을 사용한 두 번째 종에서의 시험은 추가 가치를 제공하는 것으로 간주되지 않으며 권고되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -2109,7 +2109,7 @@
       "subject": "Tissue cross-reactivity (TCR) studies",
       "action": "are",
       "object": "in vitro tissue-binding assays employing immunohistochemical techniques",
-      "normalized_ko": "면역조직화학 기법을 이용한 in vitro 조직 결합 분석이다.",
+      "normalized_ko": "조직 교차반응성(TCR) 시험은 면역조직화학(IHC) 기법을 사용하는 시험관 내 조직 결합 분석시험이다.",
       "review_status": "reviewed"
     },
     {
@@ -2123,7 +2123,7 @@
       "subject": "Other technologies",
       "action": "can be employed",
       "object": "in place of IHC techniques to demonstrate target/binding site distribution",
-      "normalized_ko": "표적/결합 부위 분포를 입증하기 위해 IHC 기법 대신 사용될 수 있다.",
+      "normalized_ko": "다른 기술은 표적/결합 부위 분포를 입증하기 위해 IHC 기법을 대신하여 활용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2137,7 +2137,7 @@
       "subject": "A TCR study with a panel of human tissues",
       "action": "is a recommended component",
       "object": "of the safety assessment package supporting initial clinical dosing of these products",
-      "normalized_ko": "이들 제품의 초기 임상 투여를 뒷받침하는 안전성 평가 패키지의 권장 구성요소이다.",
+      "normalized_ko": "인체 조직 패널을 이용한 TCR 시험은 이러한 제품의 초기 임상 투여를 뒷받침하는 안전성 평가 패키지의 권고되는 구성요소이다.",
       "review_status": "reviewed"
     },
     {
@@ -2151,7 +2151,7 @@
       "subject": "TCR studies",
       "action": "can provide",
       "object": "useful information to supplement knowledge of target distribution and information on potential unexpected binding",
-      "normalized_ko": "표적 분포에 관한 지식 및 예기치 않은 결합 가능성에 대한 정보를 보완하는 유용한 정보를 제공할 수 있다.",
+      "normalized_ko": "TCR 시험은 표적 분포에 관한 지식을 보완하는 유용한 정보와 잠재적인 예기치 않은 결합에 관한 정보를 제공할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2165,7 +2165,7 @@
       "subject": "Findings",
       "action": "be evaluated and interpreted",
       "object": "in the context of the overall pharmacology and safety assessment data package",
-      "normalized_ko": "전반적인 약리학 및 안전성 평가 데이터 패키지의 맥락에서 평가하고 해석해야 한다.",
+      "normalized_ko": "결과는 전체 약리학 및 안전성 평가 데이터 패키지의 맥락에서 평가하고 해석해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2179,7 +2179,7 @@
       "subject": "Tissue binding per se",
       "action": "does not indicate",
       "object": "biological activity in vivo",
-      "normalized_ko": "생체 내 생물학적 활성을 나타내지 않는다.",
+      "normalized_ko": "조직 결합 자체는 생체 내 생물학적 활성을 나타내지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -2193,7 +2193,7 @@
       "subject": "Binding to areas not typically accessible to the antibody in vivo (i.e., cytoplasm)",
       "action": "is generally not relevant",
       "object": null,
-      "normalized_ko": "일반적으로 관련성이 없다.",
+      "normalized_ko": "항체가 생체 내에서 일반적으로 접근할 수 없는 영역(즉, 세포질)에 대한 결합은 일반적으로 관련성이 없다.",
       "review_status": "reviewed"
     },
     {
@@ -2207,7 +2207,7 @@
       "subject": "TCR using a full panel of animal tissues",
       "action": "is not recommended",
       "object": null,
-      "normalized_ko": "권장되지 않는다.",
+      "normalized_ko": "전체 동물 조직 패널을 이용한 TCR은 권고되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -2221,7 +2221,7 @@
       "subject": "An evaluation of selected animal tissues",
       "action": "can provide",
       "object": "supplemental information regarding potential correlations or lack thereof with preclinical toxicity",
-      "normalized_ko": "전임상 독성과의 잠재적 상관관계 또는 상관관계 부재에 관한 보충 정보를 제공할 수 있다.",
+      "normalized_ko": "선택된 동물 조직의 평가는 전임상 독성과의 잠재적 상관관계 또는 상관관계 부재에 관한 보충 정보를 제공할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2235,7 +2235,7 @@
       "subject": "Study of the individual binding components",
       "action": "is not needed",
       "object": null,
-      "normalized_ko": "필요하지 않다.",
+      "normalized_ko": "개별 결합 구성요소의 시험은 필요하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -2249,7 +2249,7 @@
       "subject": "Evaluating the tissue binding of homologous products",
       "action": "does not provide additional value and is not recommended",
       "object": null,
-      "normalized_ko": "추가적인 가치를 제공하지 않으며 권장되지 않는다.",
+      "normalized_ko": "상동 제품의 조직 결합 평가는 추가 가치를 제공하지 않으며 권고되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -2263,7 +2263,7 @@
       "subject": "TCR studies",
       "action": "are not recommended",
       "object": "for assessing comparability of the test article as a result of process changes over the course of a development program",
-      "normalized_ko": "개발 프로그램 과정에서의 공정 변경으로 인한 시험물질의 비교가능성을 평가하기 위해 권장되지 않는다.",
+      "normalized_ko": "TCR 시험은 개발 프로그램 과정에서의 공정 변경으로 인한 시험물질의 동등성을 평가하기 위해 권고되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -2277,7 +2277,7 @@
       "subject": "TCR studies",
       "action": "cannot detect",
       "object": "subtle changes in critical quality attributes",
-      "normalized_ko": "중요 품질 특성의 미세한 변화를 검출할 수 없다.",
+      "normalized_ko": "TCR 시험은 중요 품질 특성의 미세한 변화를 검출할 수 없다.",
       "review_status": "reviewed"
     },
     {
@@ -2291,7 +2291,7 @@
       "subject": "An additional short-term study or arm in a short-term study",
       "action": "be conducted",
       "object": "in at least one species with the unconjugated toxin",
-      "normalized_ko": "비접합 독소를 사용하여 적어도 한 종에서 실시해야 한다.",
+      "normalized_ko": "비접합 독소를 사용하여 적어도 한 종에서 추가 단기시험 또는 단기시험의 시험군을 수행해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2305,7 +2305,7 @@
       "subject": "A rodent",
       "action": "is preferred",
       "object": null,
-      "normalized_ko": "더 선호된다.",
+      "normalized_ko": "설치류가 선호된다.",
       "review_status": "reviewed"
     },
     {
@@ -2319,7 +2319,7 @@
       "subject": "The ADC",
       "action": "be tested",
       "object": "in the only pharmacologically relevant species available",
-      "normalized_ko": "이용 가능한 유일한 약리학적 관련 종에서 시험해야 한다.",
+      "normalized_ko": "ADC는 확보된 유일한 약리학적 관련 종에서 시험해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2333,7 +2333,7 @@
       "subject": "A novel toxicant",
       "action": "calls for",
       "object": "an approach to species selection similar to that used for a new chemical entity on a case-by case approach",
-      "normalized_ko": "사례별 접근 방식으로 신규 화학물질에 사용되는 것과 유사한 종 선택 접근법이 필요하다.",
+      "normalized_ko": "신규 독성물질은 사례별로 신규 화학물질에 사용되는 접근법과 유사한 종 선택 접근법을 필요로 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2347,7 +2347,7 @@
       "subject": "Separate evaluation of the unconjugated toxin",
       "action": "is not warranted",
       "object": null,
-      "normalized_ko": "정당화되지 않는다.",
+      "normalized_ko": "비결합 독소의 별도 평가는 정당화되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -2361,7 +2361,7 @@
       "subject": "Data",
       "action": "be provided",
       "object": "to compare the metabolic stability of the ADC in animals with human",
-      "normalized_ko": "동물에서의 ADC 대사 안정성을 사람과 비교하기 위해 제공해야 한다.",
+      "normalized_ko": "동물과 사람에서 ADC의 대사 안정성을 비교하기 위한 자료가 제공되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2375,7 +2375,7 @@
       "subject": "Biotechnology-derived pharmaceuticals (biopharmaceuticals)",
       "action": "require",
       "object": "a flexible, science-based approach to preclinical safety evaluation",
-      "normalized_ko": "전임상 안전성 평가에는 유연하고 과학 기반의 접근법이 요구된다.",
+      "normalized_ko": "생명공학 유래 의약품(바이오의약품)은 전임상 안전성 평가에 유연하고 과학에 기반한 접근법을 필요로 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2389,7 +2389,7 @@
       "subject": "The primary goals of preclinical safety evaluation",
       "action": "include",
       "object": "identify an initial safe starting dose and dose escalation scheme in humans",
-      "normalized_ko": "인체에서의 초기 안전 시작 용량 및 용량 증량 계획을 확인하는 것을 포함한다.",
+      "normalized_ko": "전임상 안전성 평가의 주요 목표에는 사람에서의 초기 안전한 시작 용량 및 용량 증량 계획을 식별하는 것이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2403,7 +2403,7 @@
       "subject": "The primary goals of preclinical safety evaluation",
       "action": "are to identify",
       "object": "an initial safe starting dose and dose escalation scheme in humans",
-      "normalized_ko": "인체에서의 초기 안전 시작 용량 및 용량 증량 계획을 확인하는 것을 목적으로 한다.",
+      "normalized_ko": "전임상 안전성 평가의 주요 목표는 사람에서의 초기 안전한 시작 용량 및 용량 증량 계획을 식별하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2417,7 +2417,7 @@
       "subject": "The primary goals of preclinical safety evaluation",
       "action": "are to identify",
       "object": "an initial safe starting dose and dose escalation scheme in humans",
-      "normalized_ko": "인체에서의 초기 안전 시작 용량 및 용량 증량 계획을 확인하는 것을 목적으로 한다.",
+      "normalized_ko": "전임상 안전성 평가의 주요 목표는 사람에서의 초기 안전한 시작 용량 및 용량 증량 계획을 식별하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2431,7 +2431,7 @@
       "subject": "Biotechnology-derived pharmaceuticals (biopharmaceuticals)",
       "action": "require",
       "object": "a flexible, science-based approach to preclinical safety evaluation",
-      "normalized_ko": "전임상 안전성 평가에는 유연하고 과학 기반의 접근법이 요구된다.",
+      "normalized_ko": "생명공학 유래 의약품(바이오의약품)은 전임상 안전성 평가에 유연하고 과학에 기반한 접근법을 필요로 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2445,7 +2445,7 @@
       "subject": "This guideline",
       "action": "applies to",
       "object": "biotechnology-derived pharmaceuticals including proteins and peptides produced by recombinant DNA technology, cell cultures, and monoclonal antibodies",
-      "normalized_ko": "본 지침은 재조합 DNA 기술, 세포 배양 및 단클론항체로 생산된 단백질 및 펩타이드를 포함하는 생명공학 유래 의약품에 적용된다.",
+      "normalized_ko": "이 가이드라인은 재조합 DNA 기술, 세포 배양 및 단클론항체로 생산된 단백질과 펩타이드를 포함하는 생명공학 유래 의약품에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -2459,7 +2459,7 @@
       "subject": "This guideline",
       "action": "does not apply to",
       "object": "small molecule pharmaceuticals, antibiotics, cellular therapies, gene therapies, or therapeutic vaccines",
-      "normalized_ko": "본 지침은 저분자 의약품, 항생제, 세포치료제, 유전자치료제 또는 치료용 백신에는 적용되지 않는다.",
+      "normalized_ko": "이 가이드라인은 저분자 의약품, 항생제, 세포치료제, 유전자치료제 또는 치료용 백신에는 적용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -2473,7 +2473,7 @@
       "subject": "some principles",
       "action": "may be relevant",
       "object": "to small molecule pharmaceuticals, antibiotics, cellular therapies, gene therapies, or therapeutic vaccines",
-      "normalized_ko": "저분자 의약품, 항생제, 세포치료제, 유전자치료제 또는 치료용 백신에도 관련될 수 있다.",
+      "normalized_ko": "일부 원칙은 저분자 의약품, 항생제, 세포치료제, 유전자치료제 또는 치료용 백신과 관련될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2487,7 +2487,7 @@
       "subject": "The test material used in preclinical safety studies",
       "action": "be well-characterised",
       "object": "with respect to identity, purity, potency, and stability",
-      "normalized_ko": "시험 물질은 동일성, 순도, 역가 및 안정성 측면에서 충분히 특성화되어야 한다.",
+      "normalized_ko": "전임상 안전성 시험에 사용되는 시험물질은 동일성, 순도, 역가 및 안정성 측면에서 충분히 특성화되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2501,7 +2501,7 @@
       "subject": "The test material",
       "action": "be representative of",
       "object": "the material intended for clinical use",
-      "normalized_ko": "시험 물질은 임상 사용 예정 물질을 대표해야 한다.",
+      "normalized_ko": "시험물질은 임상 사용을 목적으로 하는 물질을 대표해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2515,7 +2515,7 @@
       "subject": "comparability",
       "action": "be demonstrated using",
       "object": "analytical bridging and/or nonclinical bridging studies",
-      "normalized_ko": "분석적 브리징 및/또는 비임상 브리징 연구를 사용하여 입증되어야 한다.",
+      "normalized_ko": "비교가능성은 분석적 브리징 및/또는 비임상 브리징 시험을 사용하여 입증되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2529,7 +2529,7 @@
       "subject": "Preclinical safety testing",
       "action": "should be guided by",
       "object": "the biological properties of the product",
-      "normalized_ko": "제품의 생물학적 특성에 따라 결정되어야 한다.",
+      "normalized_ko": "전임상 안전성 시험은 제품의 생물학적 특성에 따라 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2543,7 +2543,7 @@
       "subject": "In vitro assays",
       "action": "includes",
       "object": "receptor binding affinities",
-      "normalized_ko": "수용체 결합 친화도를 포함한다.",
+      "normalized_ko": "시험관 내 시험에는 수용체 결합 친화도가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2557,7 +2557,7 @@
       "subject": "Both genders",
       "action": "should generally be used",
       "object": "in safety studies",
-      "normalized_ko": "안전성 시험에서 일반적으로 사용되어야 한다.",
+      "normalized_ko": "안전성 시험에는 일반적으로 암수 모두가 사용되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2571,7 +2571,7 @@
       "subject": "Route and frequency of administration",
       "action": "reflect",
       "object": "clinical use as closely as possible",
-      "normalized_ko": "임상 사용을 가능한 한 가깝게 반영해야 한다.",
+      "normalized_ko": "투여 경로 및 빈도는 가능한 한 임상 사용을 반영해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2585,7 +2585,7 @@
       "subject": "Dose levels",
       "action": "provide",
       "object": "information on dose-response, including a toxic dose and a NOAEL",
-      "normalized_ko": "독성 용량 및 무독성량(NOAEL)을 포함한 용량-반응 정보를 제공해야 한다.",
+      "normalized_ko": "용량 수준은 독성 용량 및 NOAEL을 포함한 용량-반응 정보를 제공해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2599,7 +2599,7 @@
       "subject": "Projected multiples of human exposure",
       "action": "justify",
       "object": "high dose selection",
-      "normalized_ko": "고용량 선택을 정당화해야 한다.",
+      "normalized_ko": "예측된 인체 노출 배수는 고용량 선택을 정당화해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2613,7 +2613,7 @@
       "subject": "Antibody formation in animals against human biopharmaceuticals",
       "action": "is common",
       "object": null,
-      "normalized_ko": "동물에서 항체가 발생하는 것은 흔하다.",
+      "normalized_ko": "인체 바이오의약품에 대한 동물에서의 항체 형성은 흔하다.",
       "review_status": "reviewed"
     },
     {
@@ -2627,7 +2627,7 @@
       "subject": "Animal immunogenicity",
       "action": "is not predictive of",
       "object": "human immunogenicity",
-      "normalized_ko": "동물에서의 항체 발생은 사람에서의 면역원성을 예측하지 못한다.",
+      "normalized_ko": "동물 면역원성은 인체 면역원성을 예측하지 못한다.",
       "review_status": "reviewed"
     },
     {
@@ -2641,7 +2641,7 @@
       "subject": "Antibody formation in animals against human biopharmaceuticals",
       "action": "should be measured",
       "object": "to aid in interpretation of PK, PD, and toxicological findings",
-      "normalized_ko": "약동학(PK), 약력학(PD) 및 독성학적 결과의 해석을 돕기 위해 항체를 측정해야 한다.",
+      "normalized_ko": "인체 바이오의약품에 대한 동물에서의 항체 형성은 PK, PD 및 독성학적 결과의 해석을 돕기 위해 측정해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2655,7 +2655,7 @@
       "subject": "Safety pharmacology studies",
       "action": "should investigate",
       "object": "potential undesirable functional effects on major vital organ systems",
-      "normalized_ko": "주요 생명유지 장기계에 대한 잠재적인 바람직하지 않은 기능적 영향을 조사해야 한다.",
+      "normalized_ko": "안전성 약리시험은 주요 생명유지 장기계에 대한 잠재적인 바람직하지 않은 기능적 영향을 조사해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2669,7 +2669,7 @@
       "subject": "major vital organ systems",
       "action": "includes",
       "object": "cardiovascular",
-      "normalized_ko": "심혈관계를 포함한다.",
+      "normalized_ko": "주요 생명유지 장기계에는 심혈관계가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2683,7 +2683,7 @@
       "subject": "Safety pharmacology endpoints",
       "action": "can often be integrated into",
       "object": "toxicity studies",
-      "normalized_ko": "독성시험에 종종 통합할 수 있다.",
+      "normalized_ko": "안전성 약리 평가변수는 흔히 독성시험에 통합될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2697,7 +2697,7 @@
       "subject": "Exposure assessment (PK/TK)",
       "action": "is essential to interpret",
       "object": "toxicity data",
-      "normalized_ko": "독성 데이터를 해석하는 데 필수적이다.",
+      "normalized_ko": "노출 평가(PK/TK)는 독성 데이터를 해석하는 데 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -2711,7 +2711,7 @@
       "subject": "Exposure assessment (PK/TK)",
       "action": "is essential to interpret",
       "object": "toxicity data",
-      "normalized_ko": "독성 데이터를 해석하는 데 필수적이다.",
+      "normalized_ko": "노출 평가(PK/TK)는 독성 데이터를 해석하는 데 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -2725,7 +2725,7 @@
       "subject": "Exposure assessment (PK/TK)",
       "action": "is essential to interpret",
       "object": "toxicity data",
-      "normalized_ko": "독성 데이터를 해석하는 데 필수적이다.",
+      "normalized_ko": "노출 평가(PK/TK)는 독성 데이터를 해석하는 데 필수적이다.",
       "review_status": "reviewed"
     },
     {
@@ -2739,7 +2739,7 @@
       "subject": "Single dose toxicity studies",
       "action": "can evaluate",
       "object": "acute toxicity",
-      "normalized_ko": "급성 독성을 평가할 수 있다.",
+      "normalized_ko": "단회 투여 독성시험은 급성 독성을 평가할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2753,7 +2753,7 @@
       "subject": "Study duration",
       "action": "should equal or exceed",
       "object": "intended clinical duration",
-      "normalized_ko": "의도된 임상 투여 기간과 같거나 이를 초과해야 한다.",
+      "normalized_ko": "시험 기간은 의도된 임상 기간과 같거나 이를 초과해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2767,7 +2767,7 @@
       "subject": "6 months duration",
       "action": "is generally sufficient for",
       "object": "chronic biopharmaceutical indications",
-      "normalized_ko": "만성 바이오의약품 적응증에 일반적으로 충분하다.",
+      "normalized_ko": "6개월의 기간은 만성 바이오의약품 적응증에 일반적으로 충분하다.",
       "review_status": "reviewed"
     },
     {
@@ -2781,7 +2781,7 @@
       "subject": "Single dose toxicity studies",
       "action": "can evaluate",
       "object": "acute toxicity and dose escalation",
-      "normalized_ko": "급성 독성 및 용량 증량을 평가할 수 있다.",
+      "normalized_ko": "단회 투여 독성시험은 급성 독성 및 용량 증량을 평가할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2795,7 +2795,7 @@
       "subject": "6 months duration",
       "action": "is generally sufficient for",
       "object": "chronic biopharmaceutical indications",
-      "normalized_ko": "만성 바이오의약품 적응증에 일반적으로 충분하다.",
+      "normalized_ko": "6개월의 기간은 만성 바이오의약품 적응증에 일반적으로 충분하다.",
       "review_status": "reviewed"
     },
     {
@@ -2809,7 +2809,7 @@
       "subject": "Standard genotoxicity test batteries",
       "action": "are not applicable to",
       "object": "intact biopharmaceuticals",
-      "normalized_ko": "온전한 바이오의약품에는 적용되지 않는다.",
+      "normalized_ko": "표준 유전독성 시험 배터리는 온전한 바이오의약품에 적용되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -2823,7 +2823,7 @@
       "subject": "Standard genotoxicity test batteries",
       "action": "includes",
       "object": "Ames test",
-      "normalized_ko": "Ames 시험을 포함한다.",
+      "normalized_ko": "표준 유전독성 시험 배터리에는 Ames 시험이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2837,7 +2837,7 @@
       "subject": "Reproductive toxicity studies",
       "action": "should be conducted in",
       "object": "relevant species",
-      "normalized_ko": "관련 종에서 수행해야 한다.",
+      "normalized_ko": "생식독성시험은 관련 종에서 수행해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2851,7 +2851,7 @@
       "subject": "Standard rodent 2-year bioassays for carcinogenicity",
       "action": "are generally not appropriate for",
       "object": "biopharmaceuticals",
-      "normalized_ko": "바이오의약품에는 일반적으로 적절하지 않다.",
+      "normalized_ko": "발암성에 대한 표준 설치류 2년 생물검정은 바이오의약품에 일반적으로 적절하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -2865,7 +2865,7 @@
       "subject": "The purpose of this Addendum",
       "action": "is to complement",
       "object": "the parent ICH S6 guideline",
-      "normalized_ko": "모(母) ICH S6 가이드라인을 보완하는 것이다.",
+      "normalized_ko": "본 부록의 목적은 상위 ICH S6 가이드라인을 보완하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2879,7 +2879,7 @@
       "subject": "The purpose of this Addendum",
       "action": "is to provide",
       "object": "further guidance on species selection, study design (dose selection, duration, recovery), immunogenicity, reproductive and developmental toxicity, and carcinogenicity for biotechnology-derived pharmaceuticals",
-      "normalized_ko": "생명공학 유래 의약품의 종 선택, 시험 설계(용량 선택, 기간, 회복), 면역원성, 생식 및 발생 독성 및 발암성에 관한 추가 지침을 제공하는 것이다.",
+      "normalized_ko": "본 부록의 목적은 바이오의약품의 종 선택, 시험 설계(용량 선택, 기간, 회복), 면역원성, 생식 및 발생 독성, 발암성에 관한 추가 지침을 제공하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -2893,7 +2893,7 @@
       "subject": "Studies with homologous proteins",
       "action": "can be used for",
       "object": "hazard detection",
-      "normalized_ko": "위해요소 탐지에 사용할 수 있다.",
+      "normalized_ko": "상동 단백질을 이용한 시험은 위해성 검출에 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2907,7 +2907,7 @@
       "subject": "Studies with homologous proteins",
       "action": "are generally not useful for",
       "object": "quantitative risk assessment",
-      "normalized_ko": "정량적 위험 평가에는 일반적으로 유용하지 않다.",
+      "normalized_ko": "상동 단백질을 이용한 시험은 일반적으로 정량적 위험 평가에 유용하지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -2921,7 +2921,7 @@
       "subject": "Safety evaluation studies",
       "action": "may be conducted",
       "object": "for hazard identification, using a control group and one treatment group",
-      "normalized_ko": "대조군 1개와 처리군 1개를 사용하여 위해요소 확인을 위해 수행할 수 있다.",
+      "normalized_ko": "안전성 평가 시험은 대조군과 하나의 처리군을 사용하여 위해성 확인을 위해 수행될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2935,7 +2935,7 @@
       "subject": "A rationale",
       "action": "should be provided for",
       "object": "dose selection taking into account PK-PD principles",
-      "normalized_ko": "PK-PD 원칙을 고려한 용량 선정을 위해 제공되어야 한다.",
+      "normalized_ko": "PK-PD 원칙을 고려한 용량 선택의 근거가 제시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2949,7 +2949,7 @@
       "subject": "Testing higher doses",
       "action": "is unlikely to provide",
       "object": "additional useful information",
-      "normalized_ko": "추가적인 유용한 정보를 제공할 가능성은 낮다.",
+      "normalized_ko": "더 높은 용량의 시험은 추가적인 유용한 정보를 제공할 가능성이 낮다.",
       "review_status": "reviewed"
     },
     {
@@ -2963,7 +2963,7 @@
       "subject": "Testing higher doses",
       "action": "is unlikely to provide",
       "object": "additional useful information",
-      "normalized_ko": "추가적인 유용한 정보를 제공할 가능성은 낮다.",
+      "normalized_ko": "더 높은 용량의 시험은 추가적인 유용한 정보를 제공할 가능성이 낮다.",
       "review_status": "reviewed"
     },
     {
@@ -2977,7 +2977,7 @@
       "subject": "repeated dose toxicity studies of 6 months duration in rodents or non-rodents",
       "action": "are considered sufficient",
       "object": null,
-      "normalized_ko": "충분한 것으로 간주된다.",
+      "normalized_ko": "설치류 또는 비설치류에서 6개월간 수행하는 반복투여 독성시험은 충분한 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -2991,7 +2991,7 @@
       "subject": "Studies of longer duration",
       "action": "have not generally provided",
       "object": "useful information that changed the clinical course of development",
-      "normalized_ko": "임상 개발 경과를 변경한 유용한 정보를 일반적으로 제공하지 않았다.",
+      "normalized_ko": "더 긴 기간의 시험은 일반적으로 임상 개발 경로를 변경한 유용한 정보를 제공하지 않았다.",
       "review_status": "reviewed"
     },
     {
@@ -3005,7 +3005,7 @@
       "subject": "Repeated dose toxicity studies of 6 months duration in rodents or non-rodents",
       "action": "are considered sufficient",
       "object": null,
-      "normalized_ko": "반복투여 독성시험은 충분한 것으로 간주된다.",
+      "normalized_ko": "설치류 또는 비설치류에서 6개월간 수행하는 반복투여 독성시험은 충분한 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -3019,7 +3019,7 @@
       "subject": "Recovery from pharmacological and toxicological effects",
       "action": "should be examined by including",
       "object": "a non-dosing period",
-      "normalized_ko": "투여하지 않는 기간을 포함하여 검토되어야 한다.",
+      "normalized_ko": "약리학적 및 독성학적 영향으로부터의 회복은 비투여 기간을 포함하여 검토되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3033,7 +3033,7 @@
       "subject": "The purpose of the non-dosing period",
       "action": "is to examine",
       "object": "reversibility of effects",
-      "normalized_ko": "효과의 가역성을 검토하는 것이다.",
+      "normalized_ko": "비투여 기간의 목적은 영향의 가역성을 검토하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -3047,7 +3047,7 @@
       "subject": "Complete recovery demonstration",
       "action": "is not essential",
       "object": null,
-      "normalized_ko": "필수적이지 않다.",
+      "normalized_ko": "완전한 회복의 입증은 필수적이지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -3061,7 +3061,7 @@
       "subject": "Complete recovery demonstration",
       "action": "is not essential",
       "object": null,
-      "normalized_ko": "필수적이지 않다.",
+      "normalized_ko": "완전한 회복의 입증은 필수적이지 않다.",
       "review_status": "reviewed"
     },
     {
@@ -3075,7 +3075,7 @@
       "subject": "Adding a recovery period solely to assess immunogenicity",
       "action": "is not required",
       "object": null,
-      "normalized_ko": "요구되지 않는다.",
+      "normalized_ko": "면역원성 평가만을 위한 회복 기간의 추가는 요구되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3089,7 +3089,7 @@
       "subject": "Adding a recovery period solely to assess immunogenicity",
       "action": "is not required",
       "object": null,
-      "normalized_ko": "요구되지 않는다.",
+      "normalized_ko": "면역원성 평가만을 위한 회복 기간의 추가는 요구되지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -3103,7 +3103,7 @@
       "subject": "Adding a recovery period",
       "action": "must not be required",
       "object": null,
-      "normalized_ko": "요구되어서는 안 된다.",
+      "normalized_ko": "회복 기간의 추가는 반드시 요구되어서는 안 된다.",
       "review_status": "reviewed"
     },
     {
@@ -3117,7 +3117,7 @@
       "subject": "Anti-drug antibody (ADA) measurement in nonclinical studies",
       "action": "should be evaluated",
       "object": null,
-      "normalized_ko": "비임상 연구에서 항약물항체(ADA) 측정은 특정 면역원성 관련 증거가 있을 때 평가해야 한다.",
+      "normalized_ko": "비임상시험에서 항약물항체(ADA) 측정은 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3131,7 +3131,7 @@
       "subject": "Characterisation of neutralizing potential",
       "action": "is warranted",
       "object": null,
-      "normalized_ko": "ADA가 검출되고 지속적인 in vivo 활성을 입증할 PD 표지자가 없는 경우 중화 가능성을 특성화하는 것이 타당하다.",
+      "normalized_ko": "중화 가능성의 특성화는 타당하다.",
       "review_status": "reviewed"
     },
     {
@@ -3145,7 +3145,7 @@
       "subject": "Reproductive toxicity studies",
       "action": "should be conducted in",
       "object": "relevant species",
-      "normalized_ko": "생물학적으로 관련된 종에서 실시되어야 한다.",
+      "normalized_ko": "생식독성 시험은 관련 종에서 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3159,7 +3159,7 @@
       "subject": "an enhanced pre- and post-natal development (ePPND) study design",
       "action": "can be used to evaluate",
       "object": "embryo-fetal development, fetal loss, and post-natal development in a single comprehensive study",
-      "normalized_ko": "단일 포괄적 시험에서 배아-태아 발달, 태아 손실 및 출생 후 발달을 평가하는 데 사용할 수 있다.",
+      "normalized_ko": "강화된 출생 전후 발달(ePPND) 시험 설계는 단일 포괄적 시험에서 배아-태자 발달, 태자 소실 및 출생 후 발달을 평가하는 데 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3173,7 +3173,7 @@
       "subject": "Dosing",
       "action": "can extend from",
       "object": "gestation day 20 to parturition",
-      "normalized_ko": "임신 20일부터 분만까지 연장할 수 있다.",
+      "normalized_ko": "투여는 임신 20일부터 분만까지 연장될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3187,7 +3187,7 @@
       "subject": "infant evaluation",
       "action": "can be conducted up to",
       "object": "6 months",
-      "normalized_ko": "최대 6개월까지 실시할 수 있다.",
+      "normalized_ko": "영아 평가는 최대 6개월까지 수행될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3201,7 +3201,7 @@
       "subject": "an enhanced pre- and post-natal development (ePPND) study design",
       "action": "replacing",
       "object": "separate EFD and PPND studies",
-      "normalized_ko": "별도의 EFD 및 PPND 시험을 대체한다.",
+      "normalized_ko": "강화된 출생 전후 발달(ePPND) 시험 설계는 별도의 EFD 및 PPND 시험을 대체한다.",
       "review_status": "reviewed"
     },
     {
@@ -3215,7 +3215,7 @@
       "subject": "an enhanced pre- and post-natal development (ePPND) study design",
       "action": "can be used to evaluate",
       "object": "embryo-fetal development, fetal loss, and post-natal development in a single comprehensive study",
-      "normalized_ko": "단일 포괄적 시험에서 배아-태아 발달, 태아 손실 및 출생 후 발달을 평가하는 데 사용할 수 있다.",
+      "normalized_ko": "강화된 출생 전후 발달(ePPND) 시험 설계는 단일 포괄적 시험에서 배아-태자 발달, 태자 소실 및 출생 후 발달을 평가하는 데 사용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3229,7 +3229,7 @@
       "subject": "Dosing",
       "action": "can extend from",
       "object": "gestation day 20 to parturition",
-      "normalized_ko": "임신 20일부터 분만까지 연장할 수 있다.",
+      "normalized_ko": "투여는 임신 20일부터 분만까지 연장될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -3243,7 +3243,7 @@
       "subject": "The need for carcinogenicity testing",
       "action": "should be evaluated using",
       "object": "a weight-of-evidence approach based on target biology, intended patient population, treatment duration, and potential for proliferative or immunosuppressive effects",
-      "normalized_ko": "표적 생물학, 의도된 환자 집단, 치료 기간 및 증식성 또는 면역억제 효과의 가능성에 기반한 증거 가중 접근법을 사용하여 평가되어야 한다.",
+      "normalized_ko": "발암성 시험의 필요성은 표적 생물학, 의도된 환자 집단, 치료 기간 및 증식성 또는 면역억제 효과의 가능성에 근거한 증거 가중 접근법을 사용하여 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -3257,7 +3257,7 @@
       "subject": "Rodent 2-year carcinogenicity bioassays",
       "action": "are generally not required for",
       "object": "biopharmaceuticals",
-      "normalized_ko": "생물의약품에 대해서는 일반적으로 요구되지 않는다.",
+      "normalized_ko": "설치류 2년 발암성 생물검정은 바이오의약품에 대해 일반적으로 요구되지 않는다.",
       "review_status": "reviewed"
     }
   ],

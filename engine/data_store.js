@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 
 const { discoverJsonFiles } = require("../validation/validate_pilots");
 
@@ -32,6 +33,19 @@ function loadKoPresentation(directory = KO_PRESENTATION_DIR) {
     for (const entry of overlay.entries || []) entries.set(entry.record_id, entry);
   }
   return entries;
+}
+
+function textHash(text) {
+  return crypto.createHash("sha256").update(String(text || ""), "utf8").digest("hex");
+}
+
+function trustedKoPresentation(entry, sourceText, coreNormalizedKo = null) {
+  if (!entry || entry.normalization_status !== "reviewed" || entry.source_text_sha256 !== textHash(sourceText)) return null;
+  if (entry.record_type === "knowledge_record") {
+    if (!coreNormalizedKo || entry.normalized_ko_sha256 !== textHash(coreNormalizedKo)) return null;
+    return coreNormalizedKo;
+  }
+  return entry.normalized_ko || null;
 }
 
 function buildIndex(bundles) {
@@ -233,12 +247,13 @@ function resolveConditionSummaries(index, conditionIds, koPresentation = new Map
     .filter(Boolean)
     .map((c) => {
       const ko = koPresentation.get(c.condition_id);
+      const trustedKo = trustedKoPresentation(ko, c.condition_text);
       return {
         condition_id: c.condition_id,
         condition_type: c.condition_type,
         condition_text: c.condition_text,
-        normalized_ko: ko && ko.normalization_status === "reviewed" ? ko.normalized_ko : null,
-        normalization_status: ko ? ko.normalization_status : "needs_review"
+        normalized_ko: trustedKo,
+        normalization_status: trustedKo ? "reviewed" : "needs_review"
       };
     });
 }
@@ -260,6 +275,9 @@ function answerableRecords(index, koPresentation = new Map()) {
     const document = documentId ? index.documents.get(documentId) : null;
     const scope = deriveRecordScope(kr, ancestorSections, document);
     const conditionIds = index.conditionsByTarget.get(kr.knowledge_record_id) || [];
+    const sourceText = sourceTextFor(index, kr.source_unit_ids);
+    const ko = koPresentation.get(kr.knowledge_record_id);
+    const trustedKo = trustedKoPresentation(ko, sourceText, kr.normalized_ko);
 
     records.push({
       type: "knowledge_record",
@@ -272,11 +290,11 @@ function answerableRecords(index, koPresentation = new Map()) {
       condition_ids: conditionIds,
       applicable_conditions: resolveConditionSummaries(index, conditionIds, koPresentation),
       original_modal_text: kr.original_modal_text,
-      normalized_ko: kr.normalized_ko || null,
-      normalization_status: kr.normalized_ko ? "reviewed" : "needs_review",
+      normalized_ko: trustedKo,
+      normalization_status: trustedKo ? "reviewed" : "needs_review",
       review_status: kr.review_status,
       source_unit_ids: kr.source_unit_ids,
-      source_text: sourceTextFor(index, kr.source_unit_ids),
+      source_text: sourceText,
       citations,
       cross_references: resolveCrossReferences(index, kr.source_unit_ids),
       document_id: documentId,
@@ -295,6 +313,7 @@ function answerableRecords(index, koPresentation = new Map()) {
     const document = documentId ? index.documents.get(documentId) : null;
     const scope = deriveRecordScope(qc, ancestorSections, document);
     const ko = koPresentation.get(qc.criterion_id);
+    const trustedKo = trustedKoPresentation(ko, qc.source_text);
 
     records.push({
       type: "quantitative_criterion",
@@ -314,8 +333,8 @@ function answerableRecords(index, koPresentation = new Map()) {
       is_default_with_exception: qc.is_default_with_exception || false,
       is_illustrative_example: qc.is_illustrative_example || false,
       value_status: qc.value_status,
-      normalized_ko: ko && ko.normalization_status === "reviewed" ? ko.normalized_ko : null,
-      normalization_status: ko ? ko.normalization_status : "needs_review",
+      normalized_ko: trustedKo,
+      normalization_status: trustedKo ? "reviewed" : "needs_review",
       review_status: qc.review_status,
       source_unit_ids: [qc.source_unit_id],
       source_text: qc.source_text,
@@ -337,14 +356,15 @@ function answerableRecords(index, koPresentation = new Map()) {
     const document = documentId ? index.documents.get(documentId) : null;
     const scope = deriveRecordScope(c, ancestorSections, document);
     const ko = koPresentation.get(c.condition_id);
+    const trustedKo = trustedKoPresentation(ko, c.condition_text);
 
     records.push({
       type: "condition",
       id: c.condition_id,
       condition_type: c.condition_type,
       applies_to_ids: c.applies_to_ids || [],
-      normalized_ko: ko && ko.normalization_status === "reviewed" ? ko.normalized_ko : null,
-      normalization_status: ko ? ko.normalization_status : "needs_review",
+      normalized_ko: trustedKo,
+      normalization_status: trustedKo ? "reviewed" : "needs_review",
       review_status: c.review_status,
       source_unit_ids: [c.source_unit_id],
       source_text: c.condition_text,
@@ -387,6 +407,7 @@ module.exports = {
   sourceTextFor,
   getAncestorSections,
   deriveRecordScope,
+  trustedKoPresentation,
   answerableRecords,
   loadStore
 };

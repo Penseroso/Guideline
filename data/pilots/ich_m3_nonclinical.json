@@ -1061,7 +1061,7 @@
       "subject": "This document",
       "action": "is to recommend",
       "object": "international standards for the nonclinical safety studies recommended to support human clinical trials of a given scope and duration as well as marketing authorization for pharmaceuticals",
-      "normalized_ko": "권고하는 것이다",
+      "normalized_ko": "이 문서는 특정 범위와 기간의 사람 대상 임상시험 및 의약품의 시판허가를 뒷받침하기 위해 권고되는 비임상 안전성 시험에 관한 국제 표준을 권고하기 위한 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -1075,7 +1075,7 @@
       "subject": "This document",
       "action": "is to promote",
       "object": "harmonisation of the nonclinical safety studies recommended to support human clinical trials of a given scope and duration as well as marketing authorization for pharmaceuticals",
-      "normalized_ko": "촉진하는 것이다",
+      "normalized_ko": "이 문서는 특정 범위와 기간의 사람 대상 임상시험 및 의약품의 시판허가를 뒷받침하기 위해 권고되는 비임상 안전성 시험의 조화를 촉진하기 위한 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -1089,7 +1089,7 @@
       "subject": "The nonclinical safety studies",
       "action": "are recommended to support",
       "object": "human clinical trials of a given scope and duration as well as marketing authorization for pharmaceuticals",
-      "normalized_ko": "지원하기 위해 권고된다",
+      "normalized_ko": "비임상 안전성 시험은 특정 범위와 기간의 사람 대상 임상시험 및 의약품의 시판허가를 뒷받침하기 위해 권고된다.",
       "review_status": "reviewed"
     },
     {
@@ -1103,7 +1103,7 @@
       "subject": "Harmonisation of the guidance for nonclinical safety studies",
       "action": "will help to define",
       "object": "the current recommendations",
-      "normalized_ko": "정의하는 데 도움이 될 것이다",
+      "normalized_ko": "비임상 안전성 시험 지침의 조화는 현행 권고사항을 정의하는 데 도움이 될 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -1117,7 +1117,7 @@
       "subject": "The purpose of this document",
       "action": "is to recommend",
       "object": "international standards for the nonclinical safety studies recommended to support human clinical trials of a given scope and duration as well as marketing authorization for pharmaceuticals",
-      "normalized_ko": "권고하는 것이다",
+      "normalized_ko": "이 문서의 목적은 특정 범위와 기간의 사람 대상 임상시험 및 의약품의 시판허가를 뒷받침하기 위해 권고되는 비임상 안전성 시험에 관한 국제 표준을 권고하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -1131,7 +1131,7 @@
       "subject": "The purpose of this document",
       "action": "is to promote harmonisation of",
       "object": "the nonclinical safety studies recommended to support human clinical trials of a given scope and duration as well as marketing authorization for pharmaceuticals",
-      "normalized_ko": "조화를 촉진하는 것이다",
+      "normalized_ko": "이 문서의 목적은 특정 범위 및 기간의 사람 대상 임상시험 지원 및 의약품 시판허가를 위해 권고되는 비임상 안전성 시험의 조화를 촉진하는 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -1145,7 +1145,7 @@
       "subject": "This guidance",
       "action": "should facilitate",
       "object": "the timely conduct of clinical trials",
-      "normalized_ko": "해야 한다",
+      "normalized_ko": "이 지침은 임상시험의 적시 수행을 촉진해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1159,7 +1159,7 @@
       "subject": "The development of a pharmaceutical",
       "action": "is",
       "object": "a stepwise process involving an evaluation of both animal and human safety information",
-      "normalized_ko": "이다",
+      "normalized_ko": "의약품 개발은 동물 및 사람의 안전성 정보 모두에 대한 평가를 포함하는 단계적 과정이다.",
       "review_status": "reviewed"
     },
     {
@@ -1173,7 +1173,7 @@
       "subject": "This information",
       "action": "is used to estimate",
       "object": "an initial safe starting dose and dose range for the human trials",
-      "normalized_ko": "추정하는 데 사용된다",
+      "normalized_ko": "이 정보는 사람 대상 시험의 초기 안전 시작 용량 및 용량 범위를 추정하는 데 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -1187,7 +1187,7 @@
       "subject": "The goals of the nonclinical safety evaluation",
       "action": "generally include",
       "object": "a characterisation of toxic effects with respect to target organs, dose dependence, relationship to exposure, and potential reversibility",
-      "normalized_ko": "일반적으로 포함한다",
+      "normalized_ko": "비임상 안전성 평가의 목표에는 일반적으로 표적 장기, 용량 의존성, 노출과의 관계 및 잠재적 가역성과 관련된 독성 영향의 특성화가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -1201,7 +1201,7 @@
       "subject": "The goals of the nonclinical safety evaluation",
       "action": "generally include",
       "object": "a characterisation of toxic effects with respect to target organs, dose dependence, and relationship to exposure",
-      "normalized_ko": "일반적으로 포함한다.",
+      "normalized_ko": "비임상 안전성 평가의 목표에는 일반적으로 표적 장기, 용량 의존성 및 노출과의 관계에 관한 독성 영향의 특성화가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -1215,7 +1215,7 @@
       "subject": "This guideline",
       "action": "applies to",
       "object": "the situations usually encountered during the development of pharmaceuticals",
-      "normalized_ko": "본 지침은 의약품 개발 과정에서 통상적으로 마주치는 상황에 적용된다.",
+      "normalized_ko": "본 가이드라인은 의약품 개발 중 일반적으로 접하게 되는 상황에 적용된다.",
       "review_status": "reviewed"
     },
     {
@@ -1229,7 +1229,7 @@
       "subject": "Nonclinical safety studies for anticancer pharmaceuticals",
       "action": "are specifically outlined in",
       "object": "ICH S9",
-      "normalized_ko": "~에 구체적으로 명시되어 있다.",
+      "normalized_ko": "항암 의약품의 비임상 안전성 시험은 ICH S9에 구체적으로 기술되어 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1243,7 +1243,7 @@
       "subject": "This guideline",
       "action": "should be viewed as providing",
       "object": "general guidance for drug development",
-      "normalized_ko": "하여야 한다.",
+      "normalized_ko": "본 가이드라인은 의약품 개발을 위한 일반 지침을 제공하는 것으로 간주되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1257,7 +1257,7 @@
       "subject": "For biotechnology-derived products",
       "action": "refer to",
       "object": "ICH Guideline S6",
-      "normalized_ko": "생명공학 유래 제품은 ICH 가이드라인 S6를 참조한다.",
+      "normalized_ko": "생명공학 유래 제품의 경우 ICH 가이드라인 S6을 참조한다.",
       "review_status": "reviewed"
     },
     {
@@ -1271,7 +1271,7 @@
       "subject": "Pharmaceuticals under development for indications in life-threatening or serious diseases without current effective therapy",
       "action": "warrant",
       "object": "a case-by-case approach",
-      "normalized_ko": "보증하다",
+      "normalized_ko": "현재 효과적인 치료법이 없는 생명을 위협하거나 중대한 질환의 적응증을 위해 개발 중인 의약품에는 사례별 접근이 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -1285,7 +1285,7 @@
       "subject": "Biotechnology-derived products",
       "action": "may refer to",
       "object": "this M3(R2) guideline",
-      "normalized_ko": "할 수 있다.",
+      "normalized_ko": "생명공학 유래 제품은 이 M3(R2) 가이드라인을 참조할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1299,7 +1299,7 @@
       "subject": "Pharmaceuticals under development for indications in life-threatening or serious diseases",
       "action": "warrant",
       "object": "a case-by-case approach",
-      "normalized_ko": "보증하다",
+      "normalized_ko": "생명을 위협하거나 중대한 질환의 적응증을 위해 개발 중인 의약품에는 사례별 접근이 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -1313,7 +1313,7 @@
       "subject": "life-threatening or serious diseases",
       "action": "includes",
       "object": "advanced cancer",
-      "normalized_ko": "포함한다.",
+      "normalized_ko": "생명을 위협하거나 중대한 질환에는 진행성 암이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -1327,7 +1327,7 @@
       "subject": "Nonclinical safety studies for anticancer pharmaceuticals",
       "action": "are specifically outlined in",
       "object": "ICH S9",
-      "normalized_ko": "…에 구체적으로 명시되어 있다.",
+      "normalized_ko": "항암 의약품의 비임상 안전성 시험은 ICH S9에 구체적으로 제시되어 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1341,7 +1341,7 @@
       "subject": "The nonclinical safety studies",
       "action": "should be conducted in compliance with",
       "object": "Good Laboratory Practice (GLP)",
-      "normalized_ko": "비임상 안전성 시험은 의약품 우수실험실관리기준(GLP)을 준수하여 수행해야 한다.",
+      "normalized_ko": "비임상 안전성 시험은 Good Laboratory Practice (GLP)를 준수하여 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1355,7 +1355,7 @@
       "subject": "The nonclinical safety studies",
       "action": "should be designed and performed with",
       "object": "high scientific standard and conduct",
-      "normalized_ko": "비임상 안전성 시험은 높은 과학적 수준과 적절한 수행 기준에 따라 설계 및 실시해야 한다.",
+      "normalized_ko": "비임상 안전성 시험은 높은 과학적 기준과 수행 수준으로 설계되고 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1369,7 +1369,7 @@
       "subject": "the high dose",
       "action": "should be selected based on",
       "object": "one of the following endpoints: (1) Maximum Tolerated Dose (MTD), (2) Saturating exposure, (3) Maximum Feasible Dose (MFD), (4) Limit dose of 1000 mg/kg/day, or (5) 50-fold exposure margin relative to clinical exposure",
-      "normalized_ko": "일반독성시험에서 고용량은 다음 종점 중 하나에 근거하여 선택해야 한다: (1) 최대내약용량(MTD), (2) 포화 노출, (3) 최대실현가능용량(MFD), (4) 1,000 mg/kg/일의 한계용량 또는 (5) 임상 노출 대비 50배의 노출 여유.",
+      "normalized_ko": "고용량은 다음 종점 중 하나를 기준으로 선택되어야 한다: (1) 최대내약용량(Maximum Tolerated Dose, MTD), (2) 포화 노출, (3) 최대실현가능용량(Maximum Feasible Dose, MFD), (4) 1000 mg/kg/day의 한계 용량 또는 (5) 임상 노출 대비 50배 노출 여유.",
       "review_status": "reviewed"
     },
     {
@@ -1383,7 +1383,7 @@
       "subject": "Testing",
       "action": "should be considered up to",
       "object": "2000 mg/kg/day or the MFD",
-      "normalized_ko": "그러나 1,000 mg/kg/일에서 10배의 노출 여유가 확보되지 않고 임상 용량이 1 g/일을 초과하는 경우, 최대 2,000 mg/kg/일 또는 최대실현가능용량(MFD)까지의 시험을 고려해야 한다.",
+      "normalized_ko": "시험은 2000 mg/kg/day 또는 MFD까지 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1397,7 +1397,7 @@
       "subject": "A dose of 1000 mg/kg/day",
       "action": "is generally considered",
       "object": "the maximum limit dose for general toxicity studies",
-      "normalized_ko": "1,000 mg/kg/일의 용량은 일반독성시험에서 일반적으로 최대 한계용량으로 간주된다.",
+      "normalized_ko": "1000 mg/kg/day 용량은 일반 독성 시험의 최대 한계 용량으로 일반적으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -1411,7 +1411,7 @@
       "subject": "Doses providing a 50-fold margin of exposure",
       "action": "are generally considered",
       "object": "an acceptable endpoint for high dose selection",
-      "normalized_ko": "임상 노출 대비 50배의 노출 여유(모약물 또는 활성 대사체의 군 평균 AUC)를 제공하는 용량은 독성 가능성이 낮은 의약품의 설치류 및 비설치류 일반독성시험에서 고용량 선택을 위한 허용 가능한 종점으로 일반적으로 간주된다.",
+      "normalized_ko": "노출 마진 50배를 제공하는 용량은 고용량 선택을 위한 허용 가능한 종점으로 일반적으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -1425,7 +1425,7 @@
       "subject": "A dose of 1000 mg/kg/day",
       "action": "is generally considered",
       "object": "the maximum limit dose",
-      "normalized_ko": "1,000 mg/kg/일의 용량은 일반독성시험에서 일반적으로 최대 한계용량으로 간주된다.",
+      "normalized_ko": "1000 mg/kg/day 용량은 일반적으로 최대 한계 용량으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -1439,7 +1439,7 @@
       "subject": "Doses providing a 50-fold margin of exposure",
       "action": "are generally considered",
       "object": "an acceptable endpoint for high dose selection",
-      "normalized_ko": "임상 노출 대비 50배의 노출 여유(모약물 또는 활성 대사체의 군 평균 AUC)를 제공하는 용량은 독성 가능성이 낮은 의약품의 설치류 및 비설치류 일반독성시험에서 고용량 선택을 위한 허용 가능한 종점으로 일반적으로 간주된다.",
+      "normalized_ko": "노출 마진 50배를 제공하는 용량은 고용량 선택을 위한 허용 가능한 종점으로 일반적으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -1453,7 +1453,7 @@
       "subject": "The core battery of safety pharmacology studies",
       "action": "includes",
       "object": "the assessment of vital organ functions on cardiovascular, central nervous (CNS) and respiratory systems",
-      "normalized_ko": "안전성약리시험의 핵심 시험군에는 심혈관계, 중추신경계(CNS) 및 호흡기계의 주요 장기 기능에 대한 평가가 포함된다.",
+      "normalized_ko": "안전성 약리시험의 핵심 시험군에는 심혈관계, 중추신경계(CNS) 및 호흡기계의 생명 유지 장기 기능 평가가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -1467,7 +1467,7 @@
       "subject": "The core battery of safety pharmacology studies",
       "action": "should be conducted",
       "object": "in accordance with ICH S7A and S7B",
-      "normalized_ko": "안전성약리시험의 핵심 시험군은 ICH S7A 및 S7B에 따라 일반적으로 사람에게 노출되기 전에 수행해야 한다.",
+      "normalized_ko": "안전성 약리시험의 핵심 시험군은 ICH S7A 및 S7B에 따라 일반적으로 실시되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1481,7 +1481,7 @@
       "subject": "Supplemental and follow-up safety pharmacology studies",
       "action": "can be conducted",
       "object": "during later clinical development",
-      "normalized_ko": "보완적 및 후속 안전성 약리시험(예: 신장, 위장관)은 필요한 경우 후기 임상개발 단계에서 실시할 수 있다.",
+      "normalized_ko": "보완 및 추적 안전성 약리시험은 후기 임상 개발 중에 실시할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1495,7 +1495,7 @@
       "subject": "Supplemental and follow-up safety pharmacology studies",
       "action": "includes",
       "object": "renal",
-      "normalized_ko": "안전성 약리시험의 핵심 시험군에는 심혈관계, 중추신경계(CNS) 및 호흡기계의 생명유지 장기 기능 평가가 포함된다.",
+      "normalized_ko": "보완 및 후속 안전성 약리시험에는 신장이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -1509,7 +1509,7 @@
       "subject": "In vitro metabolic and plasma protein binding data for animals and humans and systemic exposure data in species used for repeated-dose toxicity studies (ICH S3A)",
       "action": "be evaluated",
       "object": null,
-      "normalized_ko": "동물 및 사람에 대한 시험관 내 대사 및 혈장 단백결합 자료와 반복투여 독성시험(ICH S3A)에 사용된 동물종의 전신 노출 자료는 임상시험 개시 전에 평가되어야 한다.",
+      "normalized_ko": "동물 및 사람에 대한 in vitro 대사 및 혈장 단백질 결합 데이터와 반복투여 독성시험에 사용되는 종의 전신 노출 데이터(ICH S3A)는 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1523,7 +1523,7 @@
       "subject": "Further information on absorption, distribution, metabolism and excretion (ADME) in animals",
       "action": "be generated",
       "object": null,
-      "normalized_ko": "동물에서의 흡수, 분포, 대사 및 배설(ADME)에 관한 추가 정보는 임상개발 중에 생성되어야 한다.",
+      "normalized_ko": "동물에서의 흡수, 분포, 대사 및 배설(ADME)에 관한 추가 정보는 생성되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1537,7 +1537,7 @@
       "subject": "Data on acute toxicity",
       "action": "can be obtained from",
       "object": "appropriately conducted dose escalation or range-finding studies",
-      "normalized_ko": "급성 독성 자료는 적절하게 수행된 용량 증량시험 또는 용량범위 탐색시험으로부터 얻을 수 있다.",
+      "normalized_ko": "급성 독성 데이터는 적절하게 수행된 용량 증량 또는 범위 탐색 시험으로부터 얻을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1551,7 +1551,7 @@
       "subject": "Data on acute toxicity",
       "action": "support",
       "object": "single dose clinical trials",
-      "normalized_ko": "급성 독성 자료는 사람에서의 단회투여 임상시험을 뒷받침할 수 있다.",
+      "normalized_ko": "급성 독성 데이터는 사람에서의 단회 투여 임상시험을 뒷받침할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1565,7 +1565,7 @@
       "subject": "Non-lethal acute toxicity studies",
       "action": "should be conducted rather than",
       "object": "classic LD50 testing",
-      "normalized_ko": "고전적 LD50 시험보다는 비치사적 급성 독성시험을 실시해야 한다.",
+      "normalized_ko": "비치사성 급성 독성 시험은 전통적인 LD50 시험 대신 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1579,7 +1579,7 @@
       "subject": "Acute toxicity data",
       "action": "should be available to support",
       "object": "Phase III",
-      "normalized_ko": "급성 독성 자료는 제III상을 뒷받침할 수 있도록 उपलब्ध해야 한다.",
+      "normalized_ko": "급성 독성 데이터는 제III상을 뒷받침할 수 있도록 확보되어 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1593,7 +1593,7 @@
       "subject": "Acute toxicity data",
       "action": "are useful to predict",
       "object": "the consequences of human overdose situations",
-      "normalized_ko": "급성 독성 자료는 사람에서의 과량투여 상황의 결과를 예측하는 데에도 유용하다.",
+      "normalized_ko": "급성 독성 데이터는 사람 과량투여 상황의 결과를 예측하는 데 유용하다.",
       "review_status": "reviewed"
     },
     {
@@ -1607,7 +1607,7 @@
       "subject": "Data on acute toxicity",
       "action": "can be obtained from",
       "object": "appropriately conducted dose escalation or range-finding studies",
-      "normalized_ko": "급성 독성 자료는 사람에서의 단회투여 임상시험을 뒷받침할 수 있다.",
+      "normalized_ko": "급성 독성 데이터는 적절히 수행된 용량 증량 또는 용량 범위 탐색 시험에서 얻을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1621,7 +1621,7 @@
       "subject": "The recommended duration of repeated-dose toxicity studies to support clinical trials",
       "action": "depends on",
       "object": "the intended duration of the clinical trial",
-      "normalized_ko": "…에 따라 달라진다.",
+      "normalized_ko": "임상시험을 뒷받침하기 위한 반복투여 독성 시험의 권장 기간은 임상시험의 예정 기간에 따라 달라진다.",
       "review_status": "reviewed"
     },
     {
@@ -1635,7 +1635,7 @@
       "subject": "Repeated-dose toxicity study duration",
       "action": "should be at least",
       "object": "2 weeks in rodents and 2 weeks in non-rodents",
-      "normalized_ko": "최소",
+      "normalized_ko": "반복투여 독성 시험 기간은 설치류에서 최소 2주, 비설치류에서 최소 2주이어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1649,7 +1649,7 @@
       "subject": "repeated-dose toxicity duration",
       "action": "be",
       "object": "2 weeks in rodents and non-rodents",
-      "normalized_ko": "이어야 한다.",
+      "normalized_ko": "반복투여 독성 기간은 설치류 및 비설치류에서 2주이어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1663,7 +1663,7 @@
       "subject": "Repeated-dose toxicity studies",
       "action": "have a minimum duration of",
       "object": "2 weeks in rodents",
-      "normalized_ko": "최소",
+      "normalized_ko": "반복투여 독성 시험은 설치류에서 최소 기간이 2주이어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1677,7 +1677,7 @@
       "subject": "Repeated-dose toxicity studies in rodents",
       "action": "should have a duration of",
       "object": "6 months",
-      "normalized_ko": "권고된다.",
+      "normalized_ko": "설치류에서의 반복투여 독성 시험 기간은 6개월이어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1691,7 +1691,7 @@
       "subject": "Repeated-dose toxicity studies of 6 months duration in rodents and 9 months duration in non-rodents",
       "action": "are recommended",
       "object": "for pharmaceuticals intended for clinical administration longer than 3 months or for chronic use",
-      "normalized_ko": "권고된다.",
+      "normalized_ko": "설치류에서 6개월 및 비설치류에서 9개월간의 반복투여 독성시험은 3개월을 초과하는 임상 투여 또는 만성 사용이 의도된 의약품에 권고된다.",
       "review_status": "reviewed"
     },
     {
@@ -1705,7 +1705,7 @@
       "subject": "The estimation of the first dose in humans",
       "action": "is",
       "object": "an important element to safeguard subjects participating in first-in-human studies",
-      "normalized_ko": "이다.",
+      "normalized_ko": "사람 대상 최초 투여 용량의 추정은 최초 인체투여 시험에 참여하는 시험대상자를 보호하기 위한 중요한 요소이다.",
       "review_status": "reviewed"
     },
     {
@@ -1719,7 +1719,7 @@
       "subject": "the No Observed Adverse Effect Level (NOAEL) determined in the most relevant animal species, combined with appropriate safety factors",
       "action": "is used",
       "object": "to estimate the initial clinical dose",
-      "normalized_ko": "사용된다.",
+      "normalized_ko": "적절한 안전계수와 결합한, 가장 관련성 높은 동물종에서 결정된 무관찰유해영향수준(NOAEL)은 초기 임상 용량을 추정하는 데 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -1733,7 +1733,7 @@
       "subject": "All of the relevant nonclinical data, including the pharmacological dose response, the pharmacological/toxicological profile, and pharmacokinetics",
       "action": "should be considered",
       "object": null,
-      "normalized_ko": "~하는 것이 바람직하다.",
+      "normalized_ko": "약리학적 용량-반응, 약리학적/독성학적 프로파일 및 약동학을 포함한 모든 관련 비임상 자료는 고려되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1747,7 +1747,7 @@
       "subject": "the No Observed Adverse Effect Level (NOAEL) determined in the most relevant animal species, combined with appropriate safety factors",
       "action": "is used to estimate",
       "object": "the initial clinical dose",
-      "normalized_ko": "사용된다.",
+      "normalized_ko": "적절한 안전계수와 결합한, 가장 관련성 높은 동물종에서 결정된 무관찰유해영향수준(NOAEL)은 초기 임상 용량을 추정하는 데 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -1761,7 +1761,7 @@
       "subject": "Exploratory clinical trials",
       "action": "can be conducted",
       "object": "early in human drug development",
-      "normalized_ko": "탐색적 임상시험은 표준적인 완전 반복투여 독성시험 전에 특정 접근법(접근법 1부터 5)에 따라 사람 대상 의약품 개발 초기 단계에서 실시할 수 있다.",
+      "normalized_ko": "탐색적 임상시험은 사람 대상 의약품 개발 초기 단계에서 수행될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1775,7 +1775,7 @@
       "subject": "These approaches",
       "action": "involve",
       "object": "limited human exposure",
-      "normalized_ko": "이러한 접근법은 제한적인 사람 노출을 수반한다.",
+      "normalized_ko": "이러한 접근법은 제한된 인체 노출을 수반한다.",
       "review_status": "reviewed"
     },
     {
@@ -1803,7 +1803,7 @@
       "subject": "These approaches",
       "action": "are used to investigate",
       "object": "PK, PD, receptor occupancy, or target selection",
-      "normalized_ko": "이러한 접근법은 약동학(PK), 약력학(PD), 수용체 점유율 또는 표적 선정에 대해 조사하는 데 사용된다.",
+      "normalized_ko": "이러한 접근법은 PK, PD, 수용체 점유율 또는 표적 선택을 조사하는 데 사용된다.",
       "review_status": "reviewed"
     },
     {
@@ -1817,7 +1817,7 @@
       "subject": "Approach 1 (Microdose Approach 1)",
       "action": "involves administering",
       "object": "a total dose",
-      "normalized_ko": "접근법 1(마이크로도즈 접근법 1)은 총 투여량이 100 µg 이하이고(단회 투여 또는 분할 투여), 무독성관찰용량(NO AEL)의 1/100 이하이며 약리학적 활성 용량의 1/100 이하인 용량을 투여하는 것을 포함한다.",
+      "normalized_ko": "접근법 1(미세용량 접근법 1)은 총 용량의 투여를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -1831,7 +1831,7 @@
       "subject": "Approach 1",
       "action": "is supported by",
       "object": "an extended single-dose toxicity study in one mammalian species (usually rodent) with 14-day observation",
-      "normalized_ko": "접근법 1은 한 종의 포유류(일반적으로 설치류)에서 14일 관찰을 포함하는 연장 단회투여 독성시험으로 뒷받침된다.",
+      "normalized_ko": "접근법 1은 14일 관찰을 포함하는 한 종류의 포유류(통상 설치류)에서의 연장된 단회투여 독성시험에 의해 뒷받침된다.",
       "review_status": "reviewed"
     },
     {
@@ -1845,7 +1845,7 @@
       "subject": "Approach 2 (Microdose Approach 2)",
       "action": "involves",
       "object": "up to 5 administrations",
-      "normalized_ko": "접근법 2(마이크로도즈 접근법 2)는 회당 100 µg 이하의 용량을 최대 5회 투여하는 것을 포함하며, 총 누적 투여량은 500 µg 이하이고 각 용량은 무독성관찰용량(NO AEL)의 1/100을 초과하지 않는다.",
+      "normalized_ko": "접근법 2(마이크로도즈 접근법 2)는 최대 5회의 투여를 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -1859,7 +1859,7 @@
       "subject": "Approach 2",
       "action": "is supported by",
       "object": "a 7-day or 14-day toxicity study in a single mammalian species",
-      "normalized_ko": "접근법 2는 한 종의 포유류에서 실시한 7일 또는 14일 독성시험으로 뒷받침된다.",
+      "normalized_ko": "접근법 2는 한 종류의 포유류에서 수행하는 7일 또는 14일 독성시험에 의해 뒷받침된다.",
       "review_status": "reviewed"
     },
     {
@@ -1901,7 +1901,7 @@
       "subject": "Approach 3",
       "action": "involves",
       "object": "single-dose trials at sub-therapeutic doses or into the anticipated therapeutic range",
-      "normalized_ko": "포함한다.",
+      "normalized_ko": "접근법 3은 치료 용량 미만 또는 예상 치료 범위까지의 단회투여 시험을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -1915,7 +1915,7 @@
       "subject": "Approach 3",
       "action": "is supported by",
       "object": "a 2-week repeated-dose toxicity study in a rodent and a 2-week repeated-dose toxicity study in a non-rodent",
-      "normalized_ko": "~에 의해 뒷받침된다",
+      "normalized_ko": "접근법 3은 설치류에서의 2주 반복투여 독성시험 및 비설치류에서의 2주 반복투여 독성시험에 의해 뒷받침된다.",
       "review_status": "reviewed"
     },
     {
@@ -1929,7 +1929,7 @@
       "subject": "The clinical starting dose",
       "action": "should be based on",
       "object": "safety factors from animal NOAELs",
-      "normalized_ko": "해야 한다.",
+      "normalized_ko": "임상 시작 용량은 동물 NOAEL로부터의 안전계수에 기반해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1943,7 +1943,7 @@
       "subject": "Approach 3",
       "action": "involves",
       "object": "single-dose trials at sub-therapeutic doses or into the anticipated therapeutic range",
-      "normalized_ko": "수반한다.",
+      "normalized_ko": "접근법 3은 치료 용량 미만 또는 예상 치료 범위까지의 단회투여 시험을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -1957,7 +1957,7 @@
       "subject": "Approach 4",
       "action": "involves",
       "object": "multiple dose clinical trials of up to 14 days duration into the therapeutic range",
-      "normalized_ko": "수반한다",
+      "normalized_ko": "접근법 4는 치료 범위까지 최대 14일 기간의 다회투여 임상시험을 포함한다.",
       "review_status": "reviewed"
     },
     {
@@ -1971,7 +1971,7 @@
       "subject": "Approach 4",
       "action": "is supported by",
       "object": "2-week repeated-dose toxicity studies in both a rodent and a non-rodent species",
-      "normalized_ko": "…에 의해 뒷받침된다.",
+      "normalized_ko": "접근법 4는 설치류 및 비설치류 종 모두에서 수행한 2주 반복투여 독성시험에 의해 뒷받침된다.",
       "review_status": "reviewed"
     },
     {
@@ -1985,7 +1985,7 @@
       "subject": "The non-rodent confirmatory study",
       "action": "shows that",
       "object": "the rodent NOAEL is non-toxic in the non-rodent",
-      "normalized_ko": "…임을 보여준다.",
+      "normalized_ko": "비설치류 확인시험은 설치류 NOAEL이 비설치류에서 독성이 없음을 보여준다.",
       "review_status": "reviewed"
     },
     {
@@ -1999,7 +1999,7 @@
       "subject": "Local tolerance",
       "action": "should be evaluated",
       "object": "by the intended therapeutic route as part of the general toxicity studies",
-      "normalized_ko": "바람직한",
+      "normalized_ko": "국소 내약성은 일반 독성시험의 일부로 의도된 치료 경로를 통해 평가하는 것이 바람직하다.",
       "review_status": "reviewed"
     },
     {
@@ -2013,7 +2013,7 @@
       "subject": "A single dose local tolerance study in a single species",
       "action": "is considered appropriate",
       "object": null,
-      "normalized_ko": "적절한 것으로 간주된다.",
+      "normalized_ko": "단일 종에서의 단회 국소 내약성시험은 적절한 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -2027,7 +2027,7 @@
       "subject": "A single dose local tolerance study in a single species",
       "action": "is considered appropriate",
       "object": null,
-      "normalized_ko": "적절한 것으로 간주된다.",
+      "normalized_ko": "단일 종에서의 단회 국소 내약성시험은 적절한 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -2041,7 +2041,7 @@
       "subject": "Non-therapeutic route administration",
       "action": "includes",
       "object": "a single i.v. dose to determine absolute bioavailability of an oral drug",
-      "normalized_ko": "포함한다.",
+      "normalized_ko": "비치료 경로 투여에는 경구 약물의 절대 생체이용률을 결정하기 위한 단회 i.v. 투여가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2055,7 +2055,7 @@
       "subject": "An assay for gene mutation (Ames test) and an in vitro mammalian cell assay or an in vivo test for chromosomal damage",
       "action": "be completed",
       "object": null,
-      "normalized_ko": "하여야 한다.",
+      "normalized_ko": "유전자 돌연변이 시험(Ames 시험) 및 in vitro 포유류 세포 시험 또는 염색체 손상에 대한 in vivo 시험은 완료되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2069,7 +2069,7 @@
       "subject": "Carcinogenicity studies",
       "action": "are recommended for",
       "object": "pharmaceuticals",
-      "normalized_ko": "권장된다.",
+      "normalized_ko": "발암성 시험은 의약품에 권고된다.",
       "review_status": "reviewed"
     },
     {
@@ -2083,7 +2083,7 @@
       "subject": "Carcinogenicity studies",
       "action": "should be completed",
       "object": null,
-      "normalized_ko": "하여야 한다.",
+      "normalized_ko": "발암성 시험은 완료되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2097,7 +2097,7 @@
       "subject": "Men",
       "action": "may be included in",
       "object": "Phase I and II trials",
-      "normalized_ko": "될 수 있다.",
+      "normalized_ko": "남성은 제I상 및 제II상 시험에 포함될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2111,7 +2111,7 @@
       "subject": "An evaluation of the male reproductive organs",
       "action": "is performed in",
       "object": "the repeated-dose toxicity studies",
-      "normalized_ko": "에서 수행된다",
+      "normalized_ko": "남성 생식기관 평가는 반복투여 독성시험에서 수행된다.",
       "review_status": "reviewed"
     },
     {
@@ -2125,7 +2125,7 @@
       "subject": "A male fertility study (ICH S5)",
       "action": "should be completed before",
       "object": "the initiation of large scale or long duration clinical trials",
-      "normalized_ko": "하는 것이 바람직하다.",
+      "normalized_ko": "남성 생식능 시험(ICH S5)은 대규모 또는 장기간 임상시험 개시 전에 완료되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2139,7 +2139,7 @@
       "subject": "Large scale or long duration clinical trials",
       "action": "includes",
       "object": "Phase III trials",
-      "normalized_ko": "포함한다.",
+      "normalized_ko": "대규모 또는 장기간 임상시험에는 제III상 시험이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2153,7 +2153,7 @@
       "subject": "Men",
       "action": "can be included in",
       "object": "Phase I and II trials",
-      "normalized_ko": "할 수 있다.",
+      "normalized_ko": "남성은 제I상 및 제II상 시험에 포함될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2167,7 +2167,7 @@
       "subject": "Women not of childbearing potential",
       "action": "are",
       "object": "permanently sterilised, postmenopausal",
-      "normalized_ko": "입니다.",
+      "normalized_ko": "가임기 여성이 아닌 여성은 영구적으로 불임화되었거나 폐경 후인 여성이다.",
       "review_status": "reviewed"
     },
     {
@@ -2181,7 +2181,7 @@
       "subject": "Postmenopausal",
       "action": "is defined as",
       "object": "12 months with no menses without an alternative medical cause",
-      "normalized_ko": "폐경은 다른 의학적 원인 없이 12개월간 월경이 없는 상태로 정의된다.",
+      "normalized_ko": "폐경 후는 다른 의학적 원인 없이 12개월 동안 월경이 없는 것으로 정의된다.",
       "review_status": "reviewed"
     },
     {
@@ -2195,7 +2195,7 @@
       "subject": "Women not of childbearing potential",
       "action": "include",
       "object": "permanently sterilised, postmenopausal",
-      "normalized_ko": "여성 생식기관에 대한 평가를 포함하는 관련 반복투여 독성시험",
+      "normalized_ko": "가임기 여성이 아닌 여성에는 영구적으로 불임화된 여성 및 폐경 후 여성이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2209,7 +2209,7 @@
       "subject": "Women not of childbearing potential",
       "action": "be included without",
       "object": "reproduction toxicity studies",
-      "normalized_ko": "가임 가능성이 없는 여성(즉, 영구 불임수술을 받았거나 폐경한 여성)은 관련 반복투여 독성시험(여성 생식기관에 대한 평가를 포함함)이 수행된 경우 생식독성시험 없이 임상시험에 포함될 수 있다.",
+      "normalized_ko": "가임기 여성이 아닌 여성은 생식독성시험 없이 포함될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2223,7 +2223,7 @@
       "subject": "The relevant repeated-dose toxicity studies",
       "action": "include",
       "object": "an evaluation of the female reproductive organs",
-      "normalized_ko": "여성 생식기관에 대한 평가를 포함한다.",
+      "normalized_ko": "관련 반복투여 독성시험에는 여성 생식기관 평가가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2237,7 +2237,7 @@
       "subject": "Women of childbearing potential (WOCBP)",
       "action": "can be included in",
       "object": "early clinical trials",
-      "normalized_ko": "가임기 여성(WOCBP)은 임신 예방 조치가 사용되는 경우 초기 임상시험에 포함될 수 있다.",
+      "normalized_ko": "가임기 여성(WOCBP)은 초기 임상시험에 포함될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2251,7 +2251,7 @@
       "subject": "Preliminary embryofetal developmental toxicity studies in two species",
       "action": "can support the inclusion of",
       "object": "up to 150 WOCBP receiving investigational treatment for up to 3 months",
-      "normalized_ko": "2종에서의 예비 배아·태아 발생독성시험은 최종 생식독성시험 전에 시험약을 최대 3개월간 투여받는 가임기 여성(WOCBP) 최대 150명의 포함을 뒷받침할 수 있다.",
+      "normalized_ko": "두 종에서 수행한 예비 배아-태아 발달 독성시험은 시험약을 최대 3개월 투여받는 최대 150명의 WOCBP 포함을 뒷받침할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2265,7 +2265,7 @@
       "subject": "Precautions",
       "action": "includes",
       "object": "pregnancy testing",
-      "normalized_ko": "예방 조치에는 임신검사 및 매우 효과적인 피임 방법의 사용이 포함된다.",
+      "normalized_ko": "예방조치에는 임신 검사가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2279,7 +2279,7 @@
       "subject": "Definitive embryo-fetal development studies in two species",
       "action": "must be completed",
       "object": null,
-      "normalized_ko": "가임기 여성(WOCBP)을 제III상 또는 대규모 임상시험에 포함하기 전에 2종에서의 최종 배아·태아 발생시험을 완료해야 한다.",
+      "normalized_ko": "두 종에서 수행한 확정적 배아-태아 발달시험은 완료되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2293,7 +2293,7 @@
       "subject": "Precautions",
       "action": "include",
       "object": "pregnancy testing and use of highly effective contraceptive methods",
-      "normalized_ko": "가임기 여성(WOCBP)을 제III상 또는 대규모 임상시험에 포함하는 것",
+      "normalized_ko": "예방조치에는 임신 검사 및 매우 효과적인 피임법의 사용이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2307,7 +2307,7 @@
       "subject": "Female reproduction toxicity studies (fertility, embryo-fetal development, and pre- and post-natal development)",
       "action": "be completed",
       "object": null,
-      "normalized_ko": "임신부를 임상시험에 포함하기 전에, 2종에서의 암컷 생식독성시험(수태능, 배아·태아 발생 및 출생 전·후 발생) 및 표준 유전독성시험 배터리를 완료하고, 이전의 인체 노출로부터의 안전성 자료를 확보해야 한다.",
+      "normalized_ko": "여성 생식독성시험(수태능, 배아-태아 발달 및 출생 전·후 발달)은 완료되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2321,7 +2321,7 @@
       "subject": "Safety data from previous human exposure",
       "action": "be available",
       "object": null,
-      "normalized_ko": "해야 한다.",
+      "normalized_ko": "이전의 인체 노출로부터 얻은 안전성 데이터는 확보되어 있어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2335,7 +2335,7 @@
       "subject": "Safety data from previous adult animal and human exposure",
       "action": "should be evaluated",
       "object": null,
-      "normalized_ko": "하여야 한다.",
+      "normalized_ko": "이전 성체 동물 및 인체 노출로부터의 안전성 데이터는 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2349,7 +2349,7 @@
       "subject": "One relevant species",
       "action": "is generally considered adequate",
       "object": null,
-      "normalized_ko": "일반적으로 적절한 것으로 간주된다.",
+      "normalized_ko": "하나의 관련 종은 일반적으로 충분한 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -2363,7 +2363,7 @@
       "subject": "One relevant species",
       "action": "is generally considered adequate",
       "object": null,
-      "normalized_ko": "일반적으로 적절한 것으로 간주된다.",
+      "normalized_ko": "하나의 관련 종은 일반적으로 충분한 것으로 간주된다.",
       "review_status": "reviewed"
     },
     {
@@ -2377,7 +2377,7 @@
       "subject": "All new pharmaceuticals",
       "action": "be evaluated for",
       "object": "the potential to produce immunotoxicity using standard repeated-dose toxicity studies (hematology, lymphoid organ weights, and histology)",
-      "normalized_ko": "하는 것이 바람직하다.",
+      "normalized_ko": "모든 신규 의약품은 표준 반복투여 독성시험(혈액학, 림프계 장기 중량 및 조직학)을 사용하여 면역독성을 유발할 가능성에 대해 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2391,7 +2391,7 @@
       "subject": "additional immunotoxicity studies (in accordance with ICH S8)",
       "action": "be conducted",
       "object": "before Phase III or earlier",
-      "normalized_ko": "하여야 한다.",
+      "normalized_ko": "추가 면역독성 시험(ICH S8에 따름)은 제III상 이전 또는 그보다 이른 시기에 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2405,7 +2405,7 @@
       "subject": "An initial assessment of phototoxicity potential",
       "action": "should be performed",
       "object": "based on photochemical properties",
-      "normalized_ko": "하여야 한다.",
+      "normalized_ko": "광독성 가능성에 대한 초기 평가는 광화학적 특성을 바탕으로 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2419,7 +2419,7 @@
       "subject": "nonclinical abuse liability studies",
       "action": "should support",
       "object": "Phase III clinical trials",
-      "normalized_ko": "해야 한다.",
+      "normalized_ko": "비임상 남용 가능성 시험은 제III상 임상시험을 뒷받침해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2433,7 +2433,7 @@
       "subject": "The evaluation",
       "action": "includes",
       "object": "receptor binding profiles",
-      "normalized_ko": "포함한다.",
+      "normalized_ko": "평가에는 수용체 결합 프로파일이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2447,7 +2447,7 @@
       "subject": "Nonclinical qualification of impurities and degradants",
       "action": "should be conducted in accordance with",
       "object": "ICH Q3A and Q3B",
-      "normalized_ko": "하여야 한다.",
+      "normalized_ko": "불순물 및 분해산물의 비임상 적격성 평가는 ICH Q3A 및 Q3B에 따라 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2461,7 +2461,7 @@
       "subject": "Nonclinical safety qualification (MIST)",
       "action": "is warranted",
       "object": "for human drug metabolites",
-      "normalized_ko": "타당하다",
+      "normalized_ko": "인체 약물 대사체에 대해서는 비임상 안전성 적격성 평가(MIST)가 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -2475,7 +2475,7 @@
       "subject": "nonclinical safety qualification (MIST)",
       "action": "is warranted",
       "object": null,
-      "normalized_ko": "타당하다",
+      "normalized_ko": "비임상 안전성 적격성 평가(MIST)가 필요하다.",
       "review_status": "reviewed"
     },
     {
@@ -2489,7 +2489,7 @@
       "subject": "Combination toxicity studies",
       "action": "should be of duration equivalent to the clinical trial",
       "object": "up to a maximum duration of 90 days",
-      "normalized_ko": "권고된다",
+      "normalized_ko": "병용 독성 시험은 최대 90일의 기간까지 임상시험과 동등한 기간으로 수행되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2503,7 +2503,7 @@
       "subject": "Combination toxicity studies",
       "action": "should have duration equivalent to the clinical trial, up to a maximum duration of 90 days",
       "object": null,
-      "normalized_ko": "권고된다",
+      "normalized_ko": "병용 독성 시험은 최대 90일까지 임상시험과 동등한 기간이어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2517,7 +2517,7 @@
       "subject": "A 90-day combination toxicity study in a single relevant species",
       "action": "supports",
       "object": "marketing authorization",
-      "normalized_ko": "뒷받침한다",
+      "normalized_ko": "단일 관련 종에서의 90일 병용 독성 시험은 시판 허가를 뒷받침한다.",
       "review_status": "reviewed"
     },
     {
@@ -2531,7 +2531,7 @@
       "subject": "Nonclinical combination studies",
       "action": "might not be warranted",
       "object": null,
-      "normalized_ko": "필요하지 않을 수 있다",
+      "normalized_ko": "비임상 병용 연구는 정당화되지 않을 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2545,7 +2545,7 @@
       "subject": "Continuing efforts among ICH regions",
       "action": "are underway to further harmonize",
       "object": "nonclinical safety requirements",
-      "normalized_ko": "추가적인 조화를 위한 지속적인 노력이 진행 중이다",
+      "normalized_ko": "ICH 지역들 사이에서 비임상 안전성 요건을 더욱 조화시키기 위한 지속적인 노력이 진행 중이다.",
       "review_status": "reviewed"
     },
     {
@@ -2559,7 +2559,7 @@
       "subject": "Continuing efforts among ICH regions",
       "action": "are underway while maintaining",
       "object": "high safety standards for human clinical trials",
-      "normalized_ko": "인체 임상시험을 위한 높은 안전성 기준을 유지하면서 지속적인 노력이 진행 중이다",
+      "normalized_ko": "ICH 지역 간 지속적인 노력은 인체 임상시험에 대한 높은 안전 기준을 유지하면서 진행 중이다.",
       "review_status": "reviewed"
     },
     {
@@ -2573,7 +2573,7 @@
       "subject": "Note 1",
       "action": "defines",
       "object": "the 50-fold exposure margin based on group mean AUC",
-      "normalized_ko": "정의한다",
+      "normalized_ko": "주석 1은 집단 평균 AUC에 기반한 50배 노출 여유를 정의한다.",
       "review_status": "reviewed"
     },
     {
@@ -2587,7 +2587,7 @@
       "subject": "Note 5",
       "action": "details",
       "object": "pregnancy risk baseline rates",
-      "normalized_ko": "상세히 기술한다",
+      "normalized_ko": "주석 5는 임신 위험의 기준 발생률을 상세히 설명한다.",
       "review_status": "reviewed"
     }
   ],

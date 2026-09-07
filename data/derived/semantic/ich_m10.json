@@ -1,7 +1,7 @@
 {
   "semantic_overlay_version": "0.1.0",
   "document_id": "ich_m10",
-  "source_bundle_sha256": "8c20318bc30e75de6277036dc731c5789630bbcc0a730c9031f8e676b88e1ced",
+  "source_bundle_sha256": "98a508e958ee646f19cd2edc5441e75027ac3cd00f71d6122c321f9933cfbb12",
   "derivation": {
     "method": "agent_assisted",
     "pipeline_version": "stage-a-2026-09-03"

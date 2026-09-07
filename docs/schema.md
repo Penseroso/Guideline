@@ -53,16 +53,22 @@ Allowed values:
 
 ## Korean presentation overlay
 
-`data/presentation/ko/*.json` is a lower-authority, UI-facing layer for Korean normalization of `QuantitativeCriterion` and `Condition`. It does not modify or supersede the source bundle, typed values, conditions, or source text. The contract is validated by `data/schemas/ko_presentation_overlay.schema.json` and `npm run validate:ko`.
+`data/presentation/ko/*.json` is a lower-authority, UI-facing layer for Korean normalization review. It stores Korean presentation text for `QuantitativeCriterion` and `Condition`, and review attestations for the core bundle's `KnowledgeRecord.normalized_ko`. It does not modify or supersede the source bundle, typed values, conditions, or source text. The contract is validated by `data/schemas/ko_presentation_overlay.schema.json` and `npm run validate:ko`.
 
-Each document has one overlay file with `overlay_version=0.1.0`, `language=ko`, its `document_id`, and ID-keyed entries. Every quantitative criterion and condition in the six pilot bundles must have exactly one entry. An entry contains:
+Each document has one overlay file with `overlay_version=0.2.0`, `language=ko`, its `document_id`, and ID-keyed entries. Every answerable `KnowledgeRecord`, `QuantitativeCriterion`, and `Condition` in the six pilot bundles must have exactly one entry. All entries contain `record_id`, `record_type`, `source_text_sha256`, and `normalization_status`.
 
-- `record_id` and `record_type`
-- `source_text_sha256`, computed from `QuantitativeCriterion.source_text` or `Condition.condition_text`, so source changes make stale normalization fail validation
+For `QuantitativeCriterion` and `Condition`, an entry also contains:
+
 - `normalized_ko`, which may be `null` when a verified normalization is unavailable
 - `normalization_status`: `reviewed` only after generation, deterministic numeric preservation checks, and a separate semantic-equivalence verification call; otherwise `needs_review`
 
-The retrieval layer joins only `reviewed` overlay text into an answerable record's `normalized_ko`. A `needs_review` value is never used as the primary answer; the UI falls back to source text and surfaces the missing verified normalization. Existing `KnowledgeRecord.normalized_ko` remains in the core bundle and is not duplicated in this overlay.
+For `KnowledgeRecord`, the Korean text remains only in the core bundle. Its overlay entry is a non-duplicating review attestation containing `normalized_ko_sha256`. `reviewed` is trusted only while both `source_text_sha256` and `normalized_ko_sha256` match the live core record; a missing or stale attestation fails closed to `needs_review`.
+
+The retrieval layer joins only fresh `reviewed` overlay text, or a fresh reviewed KnowledgeRecord attestation, into an answerable record's `normalized_ko`. A `needs_review` or stale value is never used as the primary answer; the UI falls back to source text and surfaces the missing verified normalization. Existing `KnowledgeRecord.normalized_ko` remains in the core bundle and is not duplicated in this overlay. String presence alone never implies review.
+
+`npm run audit:ko` performs the corpus-level KnowledgeRecord quality gate after schema validation: every record must have a fresh reviewed attestation and Korean text, atomic numeric tokens must be preserved, unrelated writing systems are rejected, and short bare-predicate translations are rejected while complete short propositions remain informational only.
+
+KnowledgeRecord regeneration is explicitly document-scoped: `npm run normalize:ko:knowledge -- --document <document_id>`. Optional `--section`, `--limit`, `--batch-size`, and `--force` flags support a representative sample or a controlled rerun. Generation and semantic verification use distinct configured OpenAI models; rejected candidates remain `needs_review` and cannot be presented as reviewed Korean text.
 
 Typed fields such as numbers, dates, page indexes, percentages, and object indexes must contain a valid typed value or `null`. If the value is absent or uncertain, use `null` plus the appropriate `value_status`.
 

@@ -1,7 +1,7 @@
 {
   "semantic_overlay_version": "0.1.0",
   "document_id": "fda_ada_2014",
-  "source_bundle_sha256": "4a52a08d7ec215985d31f2fa9a5f3f0276dfdbcef95a0f8427c1a310108c887b",
+  "source_bundle_sha256": "f803425fd1cc86896fef536ba7c3c3d079f93c4c9761a48f0f6f4b1c3a5b9cea",
   "derivation": {
     "method": "agent_assisted",
     "pipeline_version": "stage-a-expansion-2026-09-03"

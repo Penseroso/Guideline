@@ -909,7 +909,7 @@
       "subject": "This guidance",
       "action": "is intended to assist",
       "object": "manufacturers and clinical investigators involved in the development of therapeutic protein products for human use",
-      "normalized_ko": "본 가이드라인은 사람용 치료용 단백질 제품의 개발에 관여하는 제조업자 및 임상시험자를 지원하기 위한 것이다.",
+      "normalized_ko": "본 지침은 사람용 치료용 단백질 제품 개발에 관여하는 제조업체 및 임상시험 연구자를 지원하기 위한 것이다.",
       "review_status": "reviewed"
     },
     {
@@ -923,7 +923,7 @@
       "subject": "This guidance",
       "action": "does not address",
       "object": "assay development",
-      "normalized_ko": "본 가이드라인은 시험법 개발을 다루지 않는다.",
+      "normalized_ko": "본 지침은 분석법 개발을 다루지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -937,7 +937,7 @@
       "subject": "Manufacturers and clinical investigators",
       "action": "should adopt",
       "object": "a risk-based approach to evaluating and mitigating immune responses to or adverse immunologically related responses associated with therapeutic protein products that affect their safety and efficacy",
-      "normalized_ko": "제조업자 및 임상시험자는 치료용 단백질 제품의 안전성 및 유효성에 영향을 미치는 해당 제품에 대한 면역반응 또는 면역학적으로 관련된 이상반응을 평가하고 완화하기 위해 위험 기반 접근법을 채택해야 한다.",
+      "normalized_ko": "제조업체 및 임상시험 연구자는 치료용 단백질 제품의 안전성 및 유효성에 영향을 미치는 면역반응 또는 면역학적으로 관련된 이상반응을 평가하고 완화하기 위한 위험 기반 접근법을 채택해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -951,7 +951,7 @@
       "subject": "Assay development",
       "action": "is covered in",
       "object": "a separate guidance",
-      "normalized_ko": "시험법 개발은 별도의 가이드라인에서 다룬다.",
+      "normalized_ko": "분석법 개발은 별도의 지침에서 다룬다.",
       "review_status": "reviewed"
     },
     {
@@ -965,7 +965,7 @@
       "subject": "Immune responses to therapeutic protein products",
       "action": "may pose",
       "object": "problems for both patient safety and product efficacy",
-      "normalized_ko": "치료용 단백질 제품에 대한 면역반응은 환자 안전성과 제품 유효성 모두에 문제를 야기할 수 있다.",
+      "normalized_ko": "치료용 단백질 제품에 대한 면역반응은 환자 안전성과 제품 유효성 모두에 문제를 초래할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -979,7 +979,7 @@
       "subject": "Unwanted immune responses",
       "action": "includes",
       "object": "neutralizing antibodies to therapeutic erythropoietin cause pure red cell aplasia",
-      "normalized_ko": "원치 않는 면역반응의 예로는 치료용 에리트로포이에틴에 대한 중화항체로 인한 순수 적혈구 무형성증이 있다.",
+      "normalized_ko": "원치 않는 면역반응에는 치료용 에리트로포이에틴에 대한 중화항체가 순수적혈구무형성증을 유발하는 경우가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -993,7 +993,7 @@
       "subject": "Neutralizing antibodies to therapeutic erythropoietin",
       "action": "cause",
       "object": "pure red cell aplasia",
-      "normalized_ko": "치료용 에리트로포이에틴에 대한 중화항체는 순수 적혈구 무형성증을 유발한다.",
+      "normalized_ko": "치료용 에리트로포이에틴에 대한 중화항체는 순수적혈구무형성증을 유발한다.",
       "review_status": "reviewed"
     },
     {
@@ -1035,7 +1035,7 @@
       "subject": "Development of antibodies",
       "action": "can limit",
       "object": "product efficacy in patients treated with therapeutic protein products",
-      "normalized_ko": "항체의 생성은 치료용 단백질 제품으로 치료받는 환자에서 제품 유효성을 제한할 수 있다.",
+      "normalized_ko": "항체의 발생은 치료용 단백질 제품을 투여받은 환자에서 제품 유효성을 제한할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1049,7 +1049,7 @@
       "subject": "Both neutralizing and non-neutralizing antibodies",
       "action": "may alter",
       "object": "pharmacokinetics by accelerating clearance",
-      "normalized_ko": "중화항체 및 비중화항체 모두는 제거를 촉진함으로써 약동학을 변화시킬 수 있다.",
+      "normalized_ko": "중화항체와 비중화항체 모두는 청소율을 가속화하여 약동학을 변경할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1077,7 +1077,7 @@
       "subject": "Development of antibodies",
       "action": "can limit",
       "object": "product efficacy in patients treated with therapeutic protein products",
-      "normalized_ko": "항체의 발생은 치료용 단백질 제품으로 치료받는 환자에서 제품의 유효성을 제한할 수 있다.",
+      "normalized_ko": "항체의 발생은 치료용 단백질 제품을 투여받은 환자에서 제품 유효성을 제한할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1091,7 +1091,7 @@
       "subject": "Development of antibodies",
       "action": "can limit",
       "object": "product efficacy in patients treated with therapeutic protein products",
-      "normalized_ko": "항체의 발생은 치료용 단백질 제품으로 치료받는 환자에서 제품의 유효성을 제한할 수 있다.",
+      "normalized_ko": "항체의 발생은 치료용 단백질 제품을 투여받은 환자에서 제품 유효성을 제한할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1105,7 +1105,7 @@
       "subject": "Major safety concerns associated with immunogenicity",
       "action": "includes",
       "object": "Anaphylaxis, diagnosed by clinical diagnostic criteria regardless of presumed mechanism",
-      "normalized_ko": "면역원성과 관련된 주요 안전성 우려에는 추정되는 기전과 관계없이 임상 진단 기준에 따라 진단되는 아나필락시스가 포함된다.",
+      "normalized_ko": "면역원성과 관련된 주요 안전성 우려사항에는 추정 기전과 무관하게 임상 진단 기준으로 진단되는 아나필락시스가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -1119,7 +1119,7 @@
       "subject": "Descriptive terminology",
       "action": "should note",
       "object": "timing and symptoms",
-      "normalized_ko": "기술적 용어에는 발생 시점 및 증상을 명시하는 것이 권고된다.",
+      "normalized_ko": "기술적 용어는 시점 및 증상을 명시해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1133,7 +1133,7 @@
       "subject": "Descriptive terminology noting timing and symptoms",
       "action": "is recommended",
       "object": "for infusion reactions",
-      "normalized_ko": "발생 시점 및 증상을 명시하는 기술적 용어는 주입 반응에 대해 권고된다.",
+      "normalized_ko": "시점 및 증상을 명시하는 기술적 용어는 주입 반응에 사용하도록 권고된다.",
       "review_status": "reviewed"
     },
     {
@@ -1147,7 +1147,7 @@
       "subject": "Cross-reactive neutralization of endogenous protein counterparts",
       "action": "may cause",
       "object": "severe deficiency syndromes",
-      "normalized_ko": "내인성 상응 단백질에 대한 교차반응성 중화는 중증 결핍 증후군을 유발할 수 있다.",
+      "normalized_ko": "내인성 단백질 상응체의 교차반응성 중화는 중증 결핍 증후군을 유발할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1161,7 +1161,7 @@
       "subject": "Pre-treatment baseline samples",
       "action": "should be drawn",
       "object": "prior to product administration",
-      "normalized_ko": "치료 전 기저치 검체는 제품 투여 전에 채취해야 한다.",
+      "normalized_ko": "치료 전 기준선 검체는 제품 투여 전에 채취해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -1175,7 +1175,7 @@
       "subject": "high-risk products",
       "action": "includes",
       "object": "nonredundant endogenous counterparts",
-      "normalized_ko": "고위험 제품에는 기능적으로 중복되지 않는 내인성 상응 단백질이 포함된다.",
+      "normalized_ko": "고위험 제품에는 비중복 내인성 상응체가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -1189,7 +1189,7 @@
       "subject": "archived sample testing",
       "action": "is acceptable",
       "object": null,
-      "normalized_ko": "보관 검체 시험은 허용될 수 있다.",
+      "normalized_ko": "보관 검체 검사는 허용된다.",
       "review_status": "reviewed"
     },
     {
@@ -1231,7 +1231,7 @@
       "subject": "Archived sample testing",
       "action": "may be acceptable",
       "object": null,
-      "normalized_ko": "보관 검체 시험은 허용될 수 있다.",
+      "normalized_ko": "보관 검체 검사는 허용될 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1245,7 +1245,7 @@
       "subject": "Archived sample testing",
       "action": "is acceptable",
       "object": null,
-      "normalized_ko": "보관 검체 시험은 허용된다.",
+      "normalized_ko": "보관 검체 검사는 허용된다.",
       "review_status": "reviewed"
     },
     {
@@ -1301,7 +1301,7 @@
       "subject": "immunocompetent healthy volunteers",
       "action": "may mount",
       "object": "robust immune responses",
-      "normalized_ko": "면역능이 정상인 건강한 자원자는 강한 면역반응을 나타낼 수 있다.",
+      "normalized_ko": "면역능이 정상인 건강한 자원자는 강한 면역반응을 일으킬 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1315,7 +1315,7 @@
       "subject": "Prior exposure to therapeutic proteins or cross-reactive environmental antigens",
       "action": "can lead to",
       "object": "pre-existing antibodies at baseline",
-      "normalized_ko": "치료용 단백질 또는 교차반응성 환경 항원에 대한 사전 노출은 기저시점에서 기존 항체의 존재로 이어질 수 있다.",
+      "normalized_ko": "치료용 단백질 또는 교차반응성 환경 항원에 대한 이전 노출은 기저 시점의 기존 항체를 유발할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1329,7 +1329,7 @@
       "subject": "Cross-reactive environmental antigens",
       "action": "includes",
       "object": "galactose-alpha-1,3-galactose alpha-gal IgE antibodies from tick bites causing cetuximab hypersensitivity",
-      "normalized_ko": "교차반응성 환경 항원에는 진드기 물림으로 인해 생성되어 세툭시맙 과민반응을 유발하는 갈락토스-알파-1,3-갈락토스(알파-gal) IgE 항체가 포함된다.",
+      "normalized_ko": "교차반응성 환경 항원에는 진드기 물림으로 인한 세툭시맙 과민반응을 유발하는 갈락토스-알파-1,3-갈락토스 알파-gal IgE 항체가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -1357,7 +1357,7 @@
       "subject": "Subcutaneous (SC) and intramuscular (IM) administrations",
       "action": "are generally more immunogenic than",
       "object": "intravenous (IV) administration due to dendritic cell recruitment in the skin/muscle",
-      "normalized_ko": "피하(SC) 및 근육내(IM) 투여는 피부/근육 내 수지상세포 모집으로 인해 일반적으로 정맥내(IV) 투여보다 면역원성이 더 높다.",
+      "normalized_ko": "피하(SC) 및 근육내(IM) 투여는 피부/근육에서의 수지상세포 모집으로 인해 일반적으로 정맥내(IV) 투여보다 면역원성이 더 높다.",
       "review_status": "reviewed"
     },
     {
@@ -1385,7 +1385,7 @@
       "subject": "Dendritic cell recruitment in the skin/muscle",
       "action": "is the basis for",
       "object": "the greater immunogenicity of SC and IM administrations than IV administration",
-      "normalized_ko": "피부/근육 내 수지상세포 모집은 피하 및 근육내 투여가 정맥내 투여보다 더 높은 면역원성을 나타내는 근거이다.",
+      "normalized_ko": "피부/근육에서의 수지상세포 모집은 SC 및 IM 투여가 IV 투여보다 면역원성이 더 높은 근거가 된다.",
       "review_status": "reviewed"
     },
     {
@@ -1413,7 +1413,7 @@
       "subject": "Genetic polymorphisms in human leukocyte antigen (HLA) alleles",
       "action": "are associated with",
       "object": "increased risk of antibody generation to specific therapeutic proteins",
-      "normalized_ko": "인간 백혈구 항원(HLA) 대립유전자의 유전적 다형성은 특정 치료용 단백질에 대한 항체 생성 위험 증가와 관련이 있다.",
+      "normalized_ko": "인간 백혈구 항원(HLA) 대립유전자의 유전적 다형성은 특정 치료용 단백질에 대한 항체 생성 위험 증가와 연관되어 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1427,7 +1427,7 @@
       "subject": "HLA allele-antibody association",
       "action": "includes",
       "object": "HLA-DRB1*0701 and interferon-beta antibodies",
-      "normalized_ko": "HLA 대립유전자-항체 연관성에는 HLA-DRB1*0701과 인터페론 베타 항체의 연관성이 포함된다.",
+      "normalized_ko": "HLA 대립유전자-항체 연관성에는 HLA-DRB1*0701 및 인터페론-베타 항체가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -1441,7 +1441,7 @@
       "subject": "Patients",
       "action": "perceive",
       "object": "therapeutic replacement proteins as completely foreign",
-      "normalized_ko": "환자는 치료적 대체 단백질을 완전히 외래성인 것으로 인식한다.",
+      "normalized_ko": "환자는 치료용 대체 단백질을 완전히 이물질로 인식한다.",
       "review_status": "reviewed"
     },
     {
@@ -1455,7 +1455,7 @@
       "subject": "Patients",
       "action": "have",
       "object": "high rates of neutralizing antibodies and inhibitors",
-      "normalized_ko": "환자에서는 중화항체 및 억제제의 발생률이 높다.",
+      "normalized_ko": "환자는 중화항체 및 억제제의 발생률이 높다.",
       "review_status": "reviewed"
     },
     {
@@ -1483,7 +1483,7 @@
       "subject": "Nonhuman origin proteins",
       "action": "are",
       "object": "inherently foreign",
-      "normalized_ko": "비인간 유래 단백질은 본질적으로 외래성이다.",
+      "normalized_ko": "비인간 유래 단백질은 본질적으로 이물질이다.",
       "review_status": "reviewed"
     },
     {
@@ -1525,7 +1525,7 @@
       "subject": "Humanization and fully human sequences",
       "action": "do not eliminate",
       "object": "the risk due to non-germline idiotype CDR sequences",
-      "normalized_ko": "인간화 및 완전 인간 서열은 비생식세포계열 이디오타입 CDR 서열로 인한 위험을 제거하지는 않는다.",
+      "normalized_ko": "인간화 및 완전 인간 서열은 생식계열이 아닌 이디오타입 CDR 서열로 인한 위험을 제거하지 않는다.",
       "review_status": "reviewed"
     },
     {
@@ -1539,7 +1539,7 @@
       "subject": "Nonhuman origin proteins",
       "action": "are",
       "object": "inherently foreign",
-      "normalized_ko": "비인간 유래 단백질은 본질적으로 외래성이다.",
+      "normalized_ko": "비인간 유래 단백질은 본질적으로 이물질이다.",
       "review_status": "reviewed"
     },
     {
@@ -1581,7 +1581,7 @@
       "subject": "Amino acid sequence modifications, novel junction sequences in fusion proteins, and chemical post-translational modifications",
       "action": "can create",
       "object": "neo-epitopes that increase immunogenicity",
-      "normalized_ko": "아미노산 서열 변형, 융합 단백질의 신규 접합부 서열 및 화학적 번역 후 변형은 면역원성을 증가시키는 신규 에피토프를 생성할 수 있다.",
+      "normalized_ko": "아미노산 서열 변형, 융합 단백질의 신규 접합 서열 및 화학적 번역 후 변형은 면역원성을 증가시키는 신규 에피토프를 생성할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1609,7 +1609,7 @@
       "subject": "neo-epitopes",
       "action": "increase",
       "object": "immunogenicity",
-      "normalized_ko": "신생 에피토프는 면역원성을 증가시킨다.",
+      "normalized_ko": "신규 에피토프는 면역원성을 증가시킨다.",
       "review_status": "reviewed"
     },
     {
@@ -1623,7 +1623,7 @@
       "subject": "Amino acid sequence modifications, novel junction sequences in fusion proteins, and chemical post-translational modifications",
       "action": "can create",
       "object": "neo-epitopes",
-      "normalized_ko": "아미노산 서열 변형, 융합단백질의 신규 접합부 서열 및 화학적 번역 후 변형은 신생 에피토프를 생성할 수 있다.",
+      "normalized_ko": "아미노산 서열 변형, 융합 단백질의 신규 접합 서열 및 화학적 번역 후 변형은 신규 에피토프를 생성할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1637,7 +1637,7 @@
       "subject": "Protein aggregates",
       "action": "are",
       "object": "potent inducers of immune responses",
-      "normalized_ko": "단백질 응집체는 면역반응의 강력한 유도인자이다.",
+      "normalized_ko": "단백질 응집체는 면역 반응의 강력한 유도인자이다.",
       "review_status": "reviewed"
     },
     {
@@ -1651,7 +1651,7 @@
       "subject": "Protein aggregates",
       "action": "induce immune responses by",
       "object": "presenting repetitive epitope arrays that cross-link B-cell receptors and activate complement",
-      "normalized_ko": "단백질 응집체는 B세포 수용체를 교차결합시키고 보체를 활성화하는 반복적 에피토프 배열을 제시함으로써 면역반응을 유도한다.",
+      "normalized_ko": "단백질 응집체는 B세포 수용체를 교차결합시키고 보체를 활성화하는 반복적 에피토프 배열을 제시함으로써 면역 반응을 유도한다.",
       "review_status": "reviewed"
     },
     {
@@ -1707,7 +1707,7 @@
       "subject": "Protein aggregates",
       "action": "are potent inducers of",
       "object": "immune responses",
-      "normalized_ko": "단백질 응집체는 면역반응의 강력한 유도인자이다.",
+      "normalized_ko": "단백질 응집체는 면역 반응의 강력한 유도인자이다.",
       "review_status": "reviewed"
     },
     {
@@ -1721,7 +1721,7 @@
       "subject": "Measurement and characterization of sub-visible particles using orthogonal analytical methods",
       "action": "are critical for",
       "object": "risk control",
-      "normalized_ko": "서로 다른 원리에 기반한 분석법을 사용하여 육안으로 관찰되지 않는 입자를 측정하고 특성화하는 것은 위험 관리에 필수적이다.",
+      "normalized_ko": "직교 분석법을 사용한 비가시성 입자의 측정 및 특성분석은 위험 관리에 매우 중요하다.",
       "review_status": "reviewed"
     },
     {
@@ -1735,7 +1735,7 @@
       "subject": "Protein aggregates",
       "action": "include",
       "object": "soluble oligomers and sub-visible particles",
-      "normalized_ko": "단백질 응집체에는 가용성 올리고머 및 육안으로 관찰되지 않는 입자가 포함된다.",
+      "normalized_ko": "단백질 응집체에는 가용성 올리고머 및 비가시성 입자가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -1749,7 +1749,7 @@
       "subject": "Measurement of sub-visible particles using orthogonal analytical methods",
       "action": "are critical for",
       "object": "risk control",
-      "normalized_ko": "직교 분석법을 이용한 준가시 입자의 측정은 위해 관리에 매우 중요하다.",
+      "normalized_ko": "직교 분석법을 이용한 서브가시 입자 측정은 위험 관리에 핵심적이다.",
       "review_status": "reviewed"
     },
     {
@@ -1763,7 +1763,7 @@
       "subject": "Orthogonal analytical methods",
       "action": "includes",
       "object": "light obscuration",
-      "normalized_ko": "직교 분석법에는 광차폐법이 포함된다.",
+      "normalized_ko": "직교 분석법에는 광 차폐법이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -1777,7 +1777,7 @@
       "subject": "Measurement and characterization of sub-visible particles using orthogonal analytical methods",
       "action": "are critical for",
       "object": "risk control",
-      "normalized_ko": "직교 분석법을 이용한 준가시 입자의 측정 및 특성규명은 위해 관리에 매우 중요하다.",
+      "normalized_ko": "직교 분석법을 이용한 서브가시 입자의 측정 및 특성화는 위험 관리에 핵심적이다.",
       "review_status": "reviewed"
     },
     {
@@ -1819,7 +1819,7 @@
       "subject": "Non-human glycan structures",
       "action": "includes",
       "object": "N-glycolylneuraminic acid Neu5Gc",
-      "normalized_ko": "비인간 유래 글리칸 구조에는 N-글리콜릴뉴라민산(Neu5Gc)이 포함된다.",
+      "normalized_ko": "비인간 유래 글리칸 구조에는 N-글리콜릴뉴라민산 Neu5Gc가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -1833,7 +1833,7 @@
       "subject": "Host cell impurities",
       "action": "possess",
       "object": "innate adjuvant activity",
-      "normalized_ko": "숙주세포 유래 불순물은 선천성 면역보조 활성를 가진다.",
+      "normalized_ko": "숙주 세포 불순물은 선천성 보조제 활성을 가진다.",
       "review_status": "reviewed"
     },
     {
@@ -1847,7 +1847,7 @@
       "subject": "Innate adjuvant activity",
       "action": "stimulates",
       "object": "toll-like receptors (TLRs)",
-      "normalized_ko": "선천성 면역보조 활성은 톨유사수용체(TLR)를 자극한다.",
+      "normalized_ko": "선천성 보조제 활성은 톨유사수용체(TLRs)를 자극한다.",
       "review_status": "reviewed"
     },
     {
@@ -1861,7 +1861,7 @@
       "subject": "Innate adjuvant activity",
       "action": "promotes",
       "object": "breaking of immune tolerance to therapeutic proteins",
-      "normalized_ko": "선천성 면역보조 활성은 치료용 단백질에 대한 면역관용의 붕괴를 촉진한다.",
+      "normalized_ko": "선천성 보조제 활성은 치료용 단백질에 대한 면역 관용의 붕괴를 촉진한다.",
       "review_status": "reviewed"
     },
     {
@@ -1931,7 +1931,7 @@
       "subject": "Formulation excipients",
       "action": "protect",
       "object": "therapeutic proteins from interface-induced aggregation and chemical degradation during storage",
-      "normalized_ko": "제형 첨가제는 보관 중 계면 유발 응집 및 화학적 분해로부터 치료용 단백질을 보호한다.",
+      "normalized_ko": "제형 첨가제는 보관 중 치료용 단백질을 계면 유발 응집 및 화학적 분해로부터 보호한다.",
       "review_status": "reviewed"
     },
     {
@@ -1945,7 +1945,7 @@
       "subject": "Formulation excipients",
       "action": "include",
       "object": "surfactants such as polysorbate 20/80, sugars, and amino acids",
-      "normalized_ko": "제형 첨가제에는 폴리소르베이트 20/80과 같은 계면활성제, 당류 및 아미노산이 포함된다.",
+      "normalized_ko": "제형 첨가제에는 폴리소르베이트 20/80과 같은 계면활성제, 당 및 아미노산이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -1973,7 +1973,7 @@
       "subject": "Container closure systems",
       "action": "can contribute to immunogenicity via",
       "object": "extractables/leachables",
-      "normalized_ko": "용기 밀봉 시스템은 추출물질/용출물질을 통해 면역원성에 기여할 수 있다.",
+      "normalized_ko": "용기 밀봉 시스템은 추출물/용출물을 통해 면역원성에 기여할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -1987,7 +1987,7 @@
       "subject": "Extractables/leachables",
       "action": "includes",
       "object": "organic leachables from rubber stoppers causing Eprex PRCA epidemic",
-      "normalized_ko": "추출물질/용출물질에는 Eprex 순수적혈구무형성증(PRCA) 유행을 유발한 고무 마개 유래 유기 용출물질이 포함된다.",
+      "normalized_ko": "추출물/용출물에는 Eprex PRCA 유행을 유발하는 고무 마개 유래 유기 용출물이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2001,7 +2001,7 @@
       "subject": "Compatibility and leachable qualification",
       "action": "should be evaluated",
       "object": null,
-      "normalized_ko": "적합성 및 용출물질 적격성은 평가되어야 한다.",
+      "normalized_ko": "적합성 및 용출물 적격성은 평가되어야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2015,7 +2015,7 @@
       "subject": "Container closure systems",
       "action": "can contribute to",
       "object": "immunogenicity via extractables/leachables",
-      "normalized_ko": "용기 밀봉 시스템은 추출물질/용출물질을 통해 면역원성에 기여할 수 있다.",
+      "normalized_ko": "용기 밀봉 시스템은 추출물/용출물을 통해 면역원성에 기여할 수 있다.",
       "review_status": "reviewed"
     },
     {
@@ -2029,7 +2029,7 @@
       "subject": "Product custody, transportation stress (mechanical agitation and vibration), and cold chain storage excursions (freeze-thaw cycles and temperature spikes)",
       "action": "induce",
       "object": "protein unfolding and aggregation",
-      "normalized_ko": "제품의 보관·취급, 운송 중 스트레스(기계적 교반 및 진동), 그리고 콜드체인 보관 중 일탈(동결-해동 주기 및 온도 급상승)은 단백질 변성 및 응집을 유발한다.",
+      "normalized_ko": "제품 보관, 운송 스트레스(기계적 교반 및 진동) 및 콜드체인 보관 일탈(동결-해동 주기 및 온도 급상승)은 단백질 변성과 응집을 유발한다.",
       "review_status": "reviewed"
     },
     {
@@ -2043,7 +2043,7 @@
       "subject": "Product custody, transportation stress (mechanical agitation and vibration), and cold chain storage excursions (freeze-thaw cycles and temperature spikes)",
       "action": "elevate",
       "object": "immunogenicity risk",
-      "normalized_ko": "제품의 보관·취급, 운송 중 스트레스(기계적 교반 및 진동), 그리고 콜드체인 보관 중 일탈(동결-해동 주기 및 온도 급상승)은 면역원성 위험을 증가시킨다.",
+      "normalized_ko": "제품 보관, 운송 스트레스(기계적 교반 및 진동) 및 콜드체인 보관 일탈(동결-해동 주기 및 온도 급상승)은 면역원성 위험을 증가시킨다.",
       "review_status": "reviewed"
     },
     {
@@ -2071,7 +2071,7 @@
       "subject": "Risk evaluation",
       "action": "integrate",
       "object": "patient-specific factors",
-      "normalized_ko": "위험 평가는 환자별 요인을 반드시 통합해야 한다.",
+      "normalized_ko": "위험 평가는 환자별 요인을 통합해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2085,7 +2085,7 @@
       "subject": "Anaphylaxis diagnosis",
       "action": "is based on",
       "object": "three Sampson 2006 clinical criteria",
-      "normalized_ko": "아나필락시스의 진단은 Sampson 2006의 세 가지 임상 기준에 근거한다.",
+      "normalized_ko": "아나필락시스 진단은 Sampson 2006의 세 가지 임상 기준에 기초한다.",
       "review_status": "reviewed"
     },
     {
@@ -2099,7 +2099,7 @@
       "subject": "Clinical criterion",
       "action": "includes",
       "object": "Acute onset of skin/mucosal symptoms with respiratory compromise or reduced blood pressure",
-      "normalized_ko": "임상 기준에는 호흡기 손상 또는 혈압 저하를 동반한 피부/점막 증상의 급성 발현이 포함된다.",
+      "normalized_ko": "임상 기준에는 호흡 기능 저하 또는 혈압 저하를 동반한 피부/점막 증상의 급성 발현이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2113,7 +2113,7 @@
       "subject": "Sampson 2006 clinical criteria",
       "action": "includes",
       "object": "Acute onset of skin/mucosal symptoms with respiratory compromise or reduced blood pressure",
-      "normalized_ko": "Sampson 2006 임상 기준에는 호흡기 손상 또는 혈압 저하를 동반한 피부/점막 증상의 급성 발현이 포함된다.",
+      "normalized_ko": "Sampson 2006 임상 기준에는 호흡 기능 저하 또는 혈압 저하를 동반한 피부/점막 증상의 급성 발현이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2141,7 +2141,7 @@
       "subject": "Cytokine Release Syndrome (CRS)",
       "action": "is caused by",
       "object": "massive release of cytokines (IL-6, IFN-gamma, TNF-alpha)",
-      "normalized_ko": "사이토카인 방출 증후군(CRS)은 사이토카인(IL-6, IFN-γ, TNF-α)의 대량 방출로 인해 발생한다.",
+      "normalized_ko": "사이토카인 방출 증후군(CRS)은 사이토카인(IL-6, IFN-gamma, TNF-alpha)의 대량 방출로 인해 발생한다.",
       "review_status": "reviewed"
     },
     {
@@ -2155,7 +2155,7 @@
       "subject": "Signs of CRS",
       "action": "include",
       "object": "fever, chills, hypotension, hypoxia, and multi-organ failure",
-      "normalized_ko": "CRS의 징후에는 발열, 오한, 저혈압, 저산소증 및 다장기부전이 포함된다.",
+      "normalized_ko": "CRS의 징후에는 발열, 오한, 저혈압, 저산소증 및 다장기 부전이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2169,7 +2169,7 @@
       "subject": "Signs of CRS",
       "action": "occur",
       "object": "within minutes to hours of infusion",
-      "normalized_ko": "사이토카인 방출 증후군(CRS)의 징후는 주입 후 수분에서 수시간 이내에 발생한다.",
+      "normalized_ko": "CRS의 징후는 주입 후 수분에서 수시간 이내에 발생한다.",
       "review_status": "reviewed"
     },
     {
@@ -2183,7 +2183,7 @@
       "subject": "Cytokines",
       "action": "include",
       "object": "IL-6, IFN-gamma, TNF-alpha",
-      "normalized_ko": "사이토카인에는 IL-6, IFN-감마 및 TNF-알파가 포함된다.",
+      "normalized_ko": "사이토카인에는 IL-6, IFN-gamma 및 TNF-alpha가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2197,7 +2197,7 @@
       "subject": "Non-acute immune responses",
       "action": "includes",
       "object": "immune complex disease (type III hypersensitivity causing glomerulonephritis, vasculitis, and arthritis)",
-      "normalized_ko": "비급성 면역반응에는 사구체신염, 혈관염 및 관절염을 유발하는 III형 과민반응인 면역복합체 질환이 포함된다.",
+      "normalized_ko": "비급성 면역 반응에는 사구체신염, 혈관염 및 관절염을 유발하는 면역복합체 질환(III형 과민반응)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2211,7 +2211,7 @@
       "subject": "Non-acute immune responses",
       "action": "include",
       "object": "immune complex disease and cross-reactive neutralization of unique endogenous proteins",
-      "normalized_ko": "비급성 면역반응에는 면역복합체 질환 및 고유한 내인성 단백질에 대한 교차반응성 중화가 포함된다.",
+      "normalized_ko": "비급성 면역 반응에는 면역복합체 질환 및 고유 내인성 단백질의 교차반응성 중화가 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2225,7 +2225,7 @@
       "subject": "Non-acute immune responses",
       "action": "includes",
       "object": "immune complex disease (type III hypersensitivity causing glomerulonephritis, vasculitis, and arthritis)",
-      "normalized_ko": "비급성 면역반응에는 사구체신염, 혈관염 및 관절염을 유발하는 III형 과민반응인 면역복합체 질환이 포함된다.",
+      "normalized_ko": "비급성 면역 반응에는 사구체신염, 혈관염 및 관절염을 유발하는 면역복합체 질환(III형 과민반응)이 포함된다.",
       "review_status": "reviewed"
     },
     {
@@ -2239,7 +2239,7 @@
       "subject": "Antibody responses",
       "action": "be characterized as",
       "object": "transient or persistent",
-      "normalized_ko": "항체 반응은 일과성 또는 지속성으로 특성화되어야 한다.",
+      "normalized_ko": "항체 반응은 일시적 또는 지속성으로 특성화해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2253,7 +2253,7 @@
       "subject": "Antibody titer",
       "action": "be evaluated relative to",
       "object": "clinical pharmacokinetics, pharmacodynamics, efficacy, and adverse events",
-      "normalized_ko": "항체 역가는 임상 약동학, 약력학, 유효성 및 이상사례와 관련하여 평가되어야 한다.",
+      "normalized_ko": "항체 역가는 임상 약동학, 약력학, 유효성 및 이상반응과 관련하여 평가해야 한다.",
       "review_status": "reviewed"
     },
     {
@@ -2267,7 +2267,7 @@
       "subject": "transient",
       "action": "means",
       "object": "resolving spontaneously during continued treatment",
-      "normalized_ko": "일과성이란 치료를 지속하는 동안 자발적으로 소실되는 것을 의미한다.",
+      "normalized_ko": "일시적이란 지속적인 치료 중 자발적으로 소실되는 것을 의미한다.",
       "review_status": "reviewed"
     },
     {
@@ -2309,7 +2309,7 @@
       "subject": "head-to-head clinical comparisons",
       "action": "must use",
       "object": "the same single antibody assay format capable of detecting antibodies against both the proposed product and the reference product with equivalent sensitivity and specificity",
-      "normalized_ko": "대조 임상 비교시험에서는 제안된 제품과 대조 제품 모두에 대한 항체를 동등한 민감도와 특이도로 검출할 수 있는 동일한 단일 항체 분석법 형식을 사용해야 한다.",
+      "normalized_ko": "직접 비교 임상시험은 제안 제품과 참조 제품 모두에 대한 항체를 동등한 민감도와 특이도로 검출할 수 있는 동일한 단일 항체 분석법 형식을 사용해야 한다.",
       "review_status": "reviewed"
     }
   ],

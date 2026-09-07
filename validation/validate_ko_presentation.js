@@ -18,6 +18,17 @@ function collectTargets(pilotsDir = PILOTS_DIR) {
   const targets = new Map();
   for (const file of discoverJsonFiles(pilotsDir)) {
     const bundle = JSON.parse(fs.readFileSync(file, "utf8"));
+    const sourceUnits = new Map((bundle.source_units || []).map((record) => [record.source_unit_id, record]));
+    for (const record of bundle.knowledge_records || []) {
+      const units = (record.source_unit_ids || []).map((id) => sourceUnits.get(id)).filter(Boolean)
+        .sort((a, b) => (a.unit_order ?? 0) - (b.unit_order ?? 0));
+      targets.set(record.knowledge_record_id, {
+        document_id: units[0] ? units[0].document_id : record.knowledge_record_id.split(".")[0],
+        record_type: "knowledge_record",
+        source_text: units.map((unit) => unit.source_text).join("\n"),
+        normalized_ko: record.normalized_ko || null
+      });
+    }
     for (const record of bundle.quantitative_criteria || []) {
       targets.set(record.criterion_id, {
         document_id: record.criterion_id.split(".")[0],
@@ -71,6 +82,15 @@ function validateKoPresentation({ pilotsDir = PILOTS_DIR, overlayDir = OVERLAY_D
       }
       if (entry.source_text_sha256 !== sourceHash(target.source_text)) {
         errors.push(`${file} ${entry.record_id}: source_text_sha256 is stale or incorrect`);
+      }
+      if (target.record_type === "knowledge_record") {
+        const expectedKoHash = target.normalized_ko ? sourceHash(target.normalized_ko) : null;
+        if (entry.normalized_ko_sha256 !== expectedKoHash) {
+          errors.push(`${file} ${entry.record_id}: normalized_ko_sha256 is stale or incorrect`);
+        }
+        if (entry.normalization_status === "reviewed" && !target.normalized_ko) {
+          errors.push(`${file} ${entry.record_id}: reviewed attestation requires core normalized_ko`);
+        }
       }
     }
   }

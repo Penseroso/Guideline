@@ -6,7 +6,7 @@
   "additionalProperties": false,
   "required": ["overlay_version", "language", "document_id", "entries"],
   "properties": {
-    "overlay_version": { "const": "0.1.0" },
+    "overlay_version": { "const": "0.2.0" },
     "language": { "const": "ko" },
     "document_id": { "type": "string", "minLength": 1 },
     "entries": {
@@ -16,6 +16,12 @@
   },
   "definitions": {
     "entry": {
+      "oneOf": [
+        { "$ref": "#/definitions/presentationEntry" },
+        { "$ref": "#/definitions/knowledgeRecordAttestation" }
+      ]
+    },
+    "presentationEntry": {
       "type": "object",
       "additionalProperties": false,
       "required": [
@@ -49,6 +55,44 @@
           },
           "then": {
             "properties": { "normalized_ko": { "type": "string", "minLength": 1 } }
+          }
+        }
+      ]
+    },
+    "knowledgeRecordAttestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id",
+        "record_type",
+        "source_text_sha256",
+        "normalized_ko_sha256",
+        "normalization_status"
+      ],
+      "properties": {
+        "record_id": { "type": "string", "minLength": 1 },
+        "record_type": { "const": "knowledge_record" },
+        "source_text_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "normalized_ko_sha256": {
+          "type": ["string", "null"],
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "normalization_status": {
+          "type": "string",
+          "enum": ["reviewed", "needs_review"]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "normalization_status": { "const": "reviewed" } },
+            "required": ["normalization_status"]
+          },
+          "then": {
+            "properties": { "normalized_ko_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" } }
           }
         }
       ]
