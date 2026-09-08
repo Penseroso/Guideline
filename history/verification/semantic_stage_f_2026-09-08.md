@@ -1,0 +1,45 @@
+# Semantic overlay Stage F verification — 2026-09-08
+
+## Scope and ordering
+
+Stage E0-E3 (`395aaf6`~`d978c49`) wired `summary_specs`/`data/derived/presentation/ko/`/`salience_profiles` into served coverage disclosure using only the pre-existing pilot scope (5 summary_specs, 3 presentation files, 7 salience_profiles), all now promoted to `reviewed`. Stage D's 47 newly generated manifests (42 substantive parent sections + 5 leaf process/conditional topics) had none of these three objects at all. The user asked to start Stage F to close that gap.
+
+**Scope decision (recorded before implementation)**: `summary_specs.summary_kind` has no enum value for `multi_criterion`/`comparison` answer shapes, so the 4 manifests with those intents (`ich_m10.sem.manifest.run_acceptance`, `fda_ada.sem.manifest.screening_performance`, `ich_m3_r2.sem.manifest.high_dose_selection`, `ich_s6_r1.sem.manifest.species_number_conditions`) are excluded from summary_spec generation — a list-of-criteria answer isn't the "overview paragraph" shape summary_specs solve for. Of the remaining 51 manifests, 5 already had functional summary coverage from Stage E (3 exact target match, 2 via facet-containment onto `section_1_introduction` manifests) — leaving 46 candidates, of which 45 needed a genuinely new object (the 46th was already covered by containment once the actual overlap was computed).
+
+**Korean presentation text was explicitly excluded from this stage**, per the user's decision after reviewing a sample: several parent sections (e.g. `ich_m3_r2.sec.5`, `ich_m3_r2.sec.11`) have zero directly-filed content of their own — all real content lives in numbered sub-sections — so a "direct quote of an already-reviewed sentence" strategy would leave most new summaries with `text: null` regardless, and synthesizing new Korean prose across ~46 manifests without a dedicated review step carries real accuracy risk for regulatory content. This is deferred to separate manual work. All 45 new summary_specs therefore carry `text: null` at runtime — the same fallback `docs/derived_semantic_layer.md`'s Stage E2 section already established for `fda_ada`/`fda_ada_2014`.
+
+No engine, rendering, schema, or envelope change was required: `engine/semantic_shadow.js`'s `selectServedSummary()`/`selectServedSalience()` (exact target match, then facet-containment fallback) already generically matches any overlay data — Stage F is purely new authoring plus its own build/audit/promote scripts.
+
+## Change
+
+- `scripts/build_semantic_stage_f.js` (new): for every `coverage_manifest` whose `answer_intent` maps to a `summary_kind` (`document_overview`→`scope`, `section_overview`→`section_overview`, `topic_overview`→`topic_overview`, `process`→`process_overview`) and isn't already covered by an existing summary_spec, generates one reusing the manifest's own `facet_ids`, `sentence_roles: ["main_points"]`, and a real `evidence_refs` entry resolved from the core archive:
+  - `declared_members` facets use `member_record_ids[0]` (sorted for determinism).
+  - `section_census` facets search the facet's scope section and all descendant sections for the lexicographically-first real record (KnowledgeRecord/QuantitativeCriterion/Condition) — a generalization of `scripts/build_semantic_stage_d.js`'s `firstKnowledgeEvidence` that isn't limited to KnowledgeRecord and walks descendants.
+  - If no facet among the manifest's own group yields evidence, falls back to searching the manifest's own target section directly — needed for `ich_s6_r1.sem.manifest.section_5_reproductive_and_developmental_toxicity`, whose four child sub-sections (§5.1-§5.4) each have zero curated `source_units`, while §5 itself has one directly-filed record.
+  - For manifests with 5+ facets, also generates a `salience_profile` deriving each item's `tier`/`rationale_code` deterministically from that facet's own already-reviewed `semantic_role` (`definition`/`scope`/`boundary`/`criterion`/`purpose` → `primary`; `exception`/`condition`/`procedure_step`/`risk_factor` → `supporting`; `evidence` → `detail`) — reusing an existing classification, not a new judgment call.
+  - Both generators skip a manifest already covered (exact target match or facet-containment) by an existing summary_spec/salience_profile, mirroring `engine/semantic_shadow.js`'s own matching logic, so reruns are idempotent and Stage E's 5/7 pre-existing objects are never duplicated.
+- `scripts/run_semantic_stage_f_audit.js` (new, offline, no LLM call): dynamically identifies every summary_spec/salience_profile Stage F added (anything not in the known 5/7 pre-existing IDs), generates a natural question per manifest (reusing `run_semantic_stage_d_audit.js`'s document/section-title template pattern), and confirms the served selector (against an all-reviewed future store) attaches it to the intended manifest.
+- `scripts/promote_semantic_stage_f.js` (new): same gate as Stage E1-E3 (schema validation, clean offline audit, complete live 50-question audit on the current `ENVELOPE_VERSION`, established-16-suitable-case regression guard via `scripts/stage_e_promotion_shared.js`, explicit review attestation) before flipping any Stage F object's `review_status` to `reviewed`.
+- `test/semantic_stage_f_coverage.test.js` (new): asserts every non-`multi_criterion`/`comparison` manifest has a covering summary_spec, every manifest with 5+ facets has a covering salience_profile, every summary_spec/salience_profile across all 6 overlays is `reviewed`, and the total counts match (50 summary_specs, 26 salience_profiles).
+- `package.json`: added `build:semantic:stage-f`, `audit:semantic:stage-f`, `promote:semantic:stage-f`.
+
+## Verification
+
+- `node scripts/build_semantic_stage_f.js` — added 45 summary_specs, 19 salience_profiles across all 6 documents.
+- `node validation/validate_semantic_overlay.js` — 6 overlays + 3 presentation files pass.
+- `npm.cmd test` — 388/388 passed (384 prior + 4 new).
+- `node validation/validate_pilots.js` — 6/6 pilot bundles passed.
+- `node engine/eval_harness.js` — 24/24 passed, citation precision/claim grounding/refusal correctness all 100% (unchanged).
+- `node scripts/run_semantic_stage_f_audit.js` — 45/45 summary_specs and 19/19 salience_profiles attached to their intended manifest.
+- Coverage check: 51/51 manifests eligible for a summary_spec (i.e. not `multi_criterion`/`comparison`) are covered; final totals are 50 summary_specs (5 pre-existing + 45 Stage F) and 26 salience_profiles (7 pre-existing + 19 Stage F) across all 6 documents.
+
+## Promotion
+
+Since Stage F makes no engine-behavior change (only new `needs_review` overlay data, which `buildReviewedSemanticCoverage` never serves), the same live 50-question audit produced for Stage E0-E3's promotion (`logs/runtime/answer_suitability_50_raw_2026-09-08_stage_e.json`, contract `2.5.0`, including the reviewed Q25 exception recorded as REV-015 in `history/decision_log/review_log.md`) was reused rather than re-run:
+
+`GUIDELINE_STAGE_F_LIVE_AUDIT_INPUT=logs/runtime/answer_suitability_50_raw_2026-09-08_stage_e.json GUIDELINE_STAGE_F_BASELINE_AUDIT=logs/runtime/answer_suitability_50_raw_2026-09-08_stage_e_baseline.json GUIDELINE_STAGE_F_AUDIT_REVIEW_ATTESTED=true npm run promote:semantic:stage-f` promoted all 45 summary_specs and all 19 salience_profiles to `reviewed`. `npm test` (388/388), `validate:semantic`, `validate:pilots`, and `eval_harness` (24/24) all passed afterward with no regression.
+
+## Deferred work
+
+- **Korean presentation text** for the 45 new summary_specs (Stage F2, manual/agent-assisted authoring with a dedicated accuracy review step — not attempted here per the user's explicit decision).
+- Any further semantic refinement of the mechanically-derived `salience_profiles` (the tier mapping is honest and evidence-grounded but coarse for Stage D's auto-generated parent-section facets, whose `semantic_role` is limited to `{scope, criterion, procedure_step, purpose}` by `build_semantic_stage_d.js`'s title-keyword heuristic — most land in `primary` tier with few `supporting`/`detail` items. Leaf-topic manifests authored with a richer role set in Stage D show more meaningful tiering, e.g. `ich_m10.sem.profile.isr_process`).

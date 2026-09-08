@@ -39,6 +39,141 @@
         }
       ],
       "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ema_fih.sem.summary.section_5_quality_aspects",
+      "target": {
+        "type": "section",
+        "id": "ema_fih.sec.5"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ema_fih.sem.facet.section_5_1_determination_of_strength_and_potency",
+        "ema_fih.sem.facet.section_5_2_qualification_of_the_material_used",
+        "ema_fih.sem.facet.section_5_3_reliability_of_very_small_doses"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ema_fih.cond.5_1.001",
+          "source_unit_id": "ema_fih.su.5_1.001",
+          "source_text_sha256": "25f673c4915cce11300be7589ad96086842e1e0bd0d24f47bb8969b0e6fb4b55"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ema_fih.sem.summary.section_6_non_clinical_aspects",
+      "target": {
+        "type": "section",
+        "id": "ema_fih.sec.6"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ema_fih.sem.facet.section_6_1_relevance_of_the_animal_model",
+        "ema_fih.sem.facet.section_6_2_nature_of_the_target",
+        "ema_fih.sem.facet.section_6_3_pharmacodynamics",
+        "ema_fih.sem.facet.section_6_4_pharmaco_and_toxicokinetics",
+        "ema_fih.sem.facet.section_6_5_safety_pharmacology",
+        "ema_fih.sem.facet.section_6_6_toxicology"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ema_fih.cond.6_1.001",
+          "source_unit_id": "ema_fih.su.6_1.002",
+          "source_text_sha256": "20d470de47e735f4260c8951ebcc1506c4873b923a1dc66ffba7e82c666c42e0"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ema_fih.sem.summary.section_7_dosing_selection_for_fih_and_early_clinical_trials",
+      "target": {
+        "type": "section",
+        "id": "ema_fih.sec.7"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ema_fih.sem.facet.section_7_1_general_aspects",
+        "ema_fih.sem.facet.section_7_2_starting_dose_for_healthy_volunteers",
+        "ema_fih.sem.facet.section_7_3_starting_dose_for_patients",
+        "ema_fih.sem.facet.section_7_4_dose_escalation",
+        "ema_fih.sem.facet.section_7_5_maximum_exposure_and_dose",
+        "ema_fih.sem.facet.section_7_6_moving_from_single_to_multiple_dosing",
+        "ema_fih.sem.facet.section_7_7_route_of_administration"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ema_fih.cond.7_1.001",
+          "source_unit_id": "ema_fih.su.7_1.004",
+          "source_text_sha256": "8fe486359e7b5b09ebf348ad9096903df773218674df29d922b3999bd803972d"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ema_fih.sem.summary.section_8_2_protocol",
+      "target": {
+        "type": "section",
+        "id": "ema_fih.sec.8_2"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ema_fih.sem.facet.section_8_2_1_overall_design",
+        "ema_fih.sem.facet.section_8_2_2_integrated_protocols",
+        "ema_fih.sem.facet.section_8_2_3_choice_of_subjects",
+        "ema_fih.sem.facet.section_8_2_4_subject_assessments_and_interventions",
+        "ema_fih.sem.facet.section_8_2_5_general_considerations_for_all_cohorts",
+        "ema_fih.sem.facet.section_8_2_6_precautions_to_apply_between_treating_subjects_within_a_cohort",
+        "ema_fih.sem.facet.section_8_2_7_precautions_to_apply_between_cohorts_and_study_parts",
+        "ema_fih.sem.facet.section_8_2_8_data_review_for_decision",
+        "ema_fih.sem.facet.section_8_2_9_stopping_rules",
+        "ema_fih.sem.facet.section_8_2_10_monitoring_and_communication_of_adverse_events_reactions"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ema_fih.cond.8_2_1.001",
+          "source_unit_id": "ema_fih.su.8_2_1.002",
+          "source_text_sha256": "987d4bdf6550b25599831f205b39ce20e5e8cff687fce7bfad4488f2e28d001a"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ema_fih.sem.summary.section_8_planning_and_conduct_of_fih_and_early_clinical_trials",
+      "target": {
+        "type": "section",
+        "id": "ema_fih.sec.8"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ema_fih.sem.facet.section_8_1_general_aspects",
+        "ema_fih.sem.facet.section_8_2_protocol",
+        "ema_fih.sem.facet.section_8_3_documentation_of_sponsor_and_investigators_responsibilities",
+        "ema_fih.sem.facet.section_8_4_investigator_site_facilities_and_personnel"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ema_fih.cond.8_1.001",
+          "source_unit_id": "ema_fih.su.8_1.003",
+          "source_text_sha256": "0b392ffbabb1b3641263dfef7a31221982c1a27072554a09d4d688a6ffd36ab4"
+        }
+      ],
+      "review_status": "reviewed"
     }
   ],
   "facets": [
@@ -618,6 +753,168 @@
           "facet_id": "ema_fih.sem.facet.trial_planning",
           "tier": "primary",
           "display_order": 5,
+          "rationale_code": "governing_text"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "profile_id": "ema_fih.sem.profile.section_6_non_clinical_aspects",
+      "target_id": "ema_fih.sec.6",
+      "context": "section_overview",
+      "items": [
+        {
+          "facet_id": "ema_fih.sem.facet.section_6_1_relevance_of_the_animal_model",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_6_2_nature_of_the_target",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_6_3_pharmacodynamics",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_6_4_pharmaco_and_toxicokinetics",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_6_5_safety_pharmacology",
+          "tier": "primary",
+          "display_order": 5,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_6_6_toxicology",
+          "tier": "primary",
+          "display_order": 6,
+          "rationale_code": "governing_text"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "profile_id": "ema_fih.sem.profile.section_7_dosing_selection_for_fih_and_early_clinical_trials",
+      "target_id": "ema_fih.sec.7",
+      "context": "section_overview",
+      "items": [
+        {
+          "facet_id": "ema_fih.sem.facet.section_7_1_general_aspects",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_7_2_starting_dose_for_healthy_volunteers",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_7_3_starting_dose_for_patients",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_7_4_dose_escalation",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_7_5_maximum_exposure_and_dose",
+          "tier": "primary",
+          "display_order": 5,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_7_6_moving_from_single_to_multiple_dosing",
+          "tier": "primary",
+          "display_order": 6,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_7_7_route_of_administration",
+          "tier": "primary",
+          "display_order": 7,
+          "rationale_code": "governing_text"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "profile_id": "ema_fih.sem.profile.section_8_2_protocol",
+      "target_id": "ema_fih.sec.8_2",
+      "context": "section_overview",
+      "items": [
+        {
+          "facet_id": "ema_fih.sem.facet.section_8_2_1_overall_design",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_8_2_2_integrated_protocols",
+          "tier": "supporting",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_8_2_3_choice_of_subjects",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_8_2_4_subject_assessments_and_interventions",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_8_2_5_general_considerations_for_all_cohorts",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_8_2_6_precautions_to_apply_between_treating_subjects_within_a_cohort",
+          "tier": "primary",
+          "display_order": 5,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_8_2_7_precautions_to_apply_between_cohorts_and_study_parts",
+          "tier": "supporting",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_8_2_8_data_review_for_decision",
+          "tier": "primary",
+          "display_order": 6,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_8_2_9_stopping_rules",
+          "tier": "primary",
+          "display_order": 7,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ema_fih.sem.facet.section_8_2_10_monitoring_and_communication_of_adverse_events_reactions",
+          "tier": "primary",
+          "display_order": 8,
           "rationale_code": "governing_text"
         }
       ],

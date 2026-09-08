@@ -35,6 +35,169 @@
         }
       ],
       "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_s6_r1.sem.summary.section_2_species_selection",
+      "target": {
+        "type": "section",
+        "id": "ich_s6_r1.sec.part2.2"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_s6_r1.sem.facet.section_2_1_general_principles",
+        "ich_s6_r1.sem.facet.section_2_2_one_or_two_species",
+        "ich_s6_r1.sem.facet.section_2_3_use_of_homologous_proteins"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_s6_r1.cond.part2.2_1.001",
+          "source_unit_id": "ich_s6_r1.su.part2.2_1.002",
+          "source_text_sha256": "4bab267f27d54f5bd829ab4559f79a7f1954d0d2acec54269036177014422388"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_s6_r1.sem.summary.section_3_study_design",
+      "target": {
+        "type": "section",
+        "id": "ich_s6_r1.sec.part2.3"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_s6_r1.sem.facet.section_3_1_dose_selection_and_application_of_pk_pd_principles",
+        "ich_s6_r1.sem.facet.section_3_2_duration_of_studies",
+        "ich_s6_r1.sem.facet.section_3_3_recovery",
+        "ich_s6_r1.sem.facet.section_3_4_exploratory_clinical_trials"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_s6_r1.cond.part2_3_1.001",
+          "source_unit_id": "ich_s6_r1.su.part2.3_1.001",
+          "source_text_sha256": "5b96c4ac773755908290fe885aebe0c80845aa5fd3ac2024dbd7382603a3f3a6"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_s6_r1.sem.summary.section_4_specific_considerations",
+      "target": {
+        "type": "section",
+        "id": "ich_s6_r1.sec.part1.4"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_s6_r1.sem.facet.section_4_1_safety_pharmacology",
+        "ich_s6_r1.sem.facet.section_4_2_exposure_assessment",
+        "ich_s6_r1.sem.facet.section_4_3_single_dose_toxicity_studies",
+        "ich_s6_r1.sem.facet.section_4_4_repeated_dose_toxicity_studies",
+        "ich_s6_r1.sem.facet.section_4_5_immunotoxicity_studies",
+        "ich_s6_r1.sem.facet.section_4_6_reproductive_performance_and_developmental_toxicity_studies",
+        "ich_s6_r1.sem.facet.section_4_7_genotoxicity_studies",
+        "ich_s6_r1.sem.facet.section_4_8_carcinogenicity_studies",
+        "ich_s6_r1.sem.facet.section_4_9_local_tolerance_studies"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_s6_r1.kr.4_1.001",
+          "source_unit_id": "ich_s6_r1.su.part1.4_1.001",
+          "source_text_sha256": "6a880e52d68d8033276129f682f2597c161c695ee498ea6ecbaa62c8e0ae23df"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_s6_r1.sem.summary.section_5_reproductive_and_developmental_toxicity",
+      "target": {
+        "type": "section",
+        "id": "ich_s6_r1.sec.part2.5"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_s6_r1.sem.facet.section_5_1_general_comments",
+        "ich_s6_r1.sem.facet.section_5_2_fertility",
+        "ich_s6_r1.sem.facet.section_5_3_embryo_fetal_development_efd",
+        "ich_s6_r1.sem.facet.section_5_4_pre_and_post_natal_development_ppnd"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_s6_r1.cond.part2_5.001",
+          "source_unit_id": "ich_s6_r1.su.part2.5.001",
+          "source_text_sha256": "c4aede8b2df040592301f521b57d08d405f7195a1371480373542081c30bb5ef"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_s6_r1.sem.summary.section_part_i_preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "target": {
+        "type": "section",
+        "id": "ich_s6_r1.sec.part1"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_s6_r1.sem.facet.section_1_introduction",
+        "ich_s6_r1.sem.facet.section_2_specification_of_the_test_material",
+        "ich_s6_r1.sem.facet.section_3_1_general_principles",
+        "ich_s6_r1.sem.facet.section_3_2_biological_activity_pharmacodynamics",
+        "ich_s6_r1.sem.facet.section_3_3_animal_species_model_selection",
+        "ich_s6_r1.sem.facet.section_3_4_number_gender_of_animals",
+        "ich_s6_r1.sem.facet.section_3_5_administration_dose_selection",
+        "ich_s6_r1.sem.facet.section_3_6_immunogenicity",
+        "ich_s6_r1.sem.facet.section_4_specific_considerations",
+        "ich_s6_r1.sem.facet.section_part1_notes"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_s6_r1.cond.1_3.001",
+          "source_unit_id": "ich_s6_r1.su.part1.1_3.001",
+          "source_text_sha256": "e434370636d0a40bec8cd31ccf53c20b51b9c9736bd444bf4346c1623b5e4c0c"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_s6_r1.sem.summary.section_part_ii_addendum_to_s6",
+      "target": {
+        "type": "section",
+        "id": "ich_s6_r1.sec.part2"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_s6_r1.sem.facet.section_2_species_selection",
+        "ich_s6_r1.sem.facet.section_part2_notes",
+        "ich_s6_r1.sem.facet.section_1_introduction_addendum",
+        "ich_s6_r1.sem.facet.section_3_study_design",
+        "ich_s6_r1.sem.facet.section_4_immunogenicity_addendum",
+        "ich_s6_r1.sem.facet.section_5_reproductive_and_developmental_toxicity",
+        "ich_s6_r1.sem.facet.section_6_carcinogenicity_addendum"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_s6_r1.cond.part2.2_1.001",
+          "source_unit_id": "ich_s6_r1.su.part2.2_1.002",
+          "source_text_sha256": "4bab267f27d54f5bd829ab4559f79a7f1954d0d2acec54269036177014422388"
+        }
+      ],
+      "review_status": "reviewed"
     }
   ],
   "facets": [
@@ -836,6 +999,186 @@
           "tier": "primary",
           "display_order": 1,
           "rationale_code": "scope_boundary"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "profile_id": "ich_s6_r1.sem.profile.section_4_specific_considerations",
+      "target_id": "ich_s6_r1.sec.part1.4",
+      "context": "section_overview",
+      "items": [
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_4_1_safety_pharmacology",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_4_2_exposure_assessment",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_4_3_single_dose_toxicity_studies",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_4_4_repeated_dose_toxicity_studies",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_4_5_immunotoxicity_studies",
+          "tier": "primary",
+          "display_order": 5,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_4_6_reproductive_performance_and_developmental_toxicity_studies",
+          "tier": "primary",
+          "display_order": 6,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_4_7_genotoxicity_studies",
+          "tier": "primary",
+          "display_order": 7,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_4_8_carcinogenicity_studies",
+          "tier": "primary",
+          "display_order": 8,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_4_9_local_tolerance_studies",
+          "tier": "primary",
+          "display_order": 9,
+          "rationale_code": "governing_text"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "profile_id": "ich_s6_r1.sem.profile.section_part_i_preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "target_id": "ich_s6_r1.sec.part1",
+      "context": "section_overview",
+      "items": [
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_1_introduction",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_2_specification_of_the_test_material",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_3_1_general_principles",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_3_2_biological_activity_pharmacodynamics",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_3_3_animal_species_model_selection",
+          "tier": "primary",
+          "display_order": 5,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_3_4_number_gender_of_animals",
+          "tier": "primary",
+          "display_order": 6,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_3_5_administration_dose_selection",
+          "tier": "primary",
+          "display_order": 7,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_3_6_immunogenicity",
+          "tier": "primary",
+          "display_order": 8,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_4_specific_considerations",
+          "tier": "primary",
+          "display_order": 9,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_part1_notes",
+          "tier": "primary",
+          "display_order": 10,
+          "rationale_code": "governing_text"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "profile_id": "ich_s6_r1.sem.profile.section_part_ii_addendum_to_s6",
+      "target_id": "ich_s6_r1.sec.part2",
+      "context": "section_overview",
+      "items": [
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_2_species_selection",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_part2_notes",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_1_introduction_addendum",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_3_study_design",
+          "tier": "supporting",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_4_immunogenicity_addendum",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_5_reproductive_and_developmental_toxicity",
+          "tier": "primary",
+          "display_order": 5,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_s6_r1.sem.facet.section_6_carcinogenicity_addendum",
+          "tier": "primary",
+          "display_order": 6,
+          "rationale_code": "governing_text"
         }
       ],
       "review_status": "reviewed"

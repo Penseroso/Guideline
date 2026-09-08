@@ -8,6 +8,44 @@
   },
   "summary_specs": [
     {
+      "summary_id": "ich_m3_r2.sem.summary.document_overview",
+      "target": {
+        "type": "document",
+        "id": "ich_m3_r2"
+      },
+      "summary_kind": "scope",
+      "facet_ids": [
+        "ich_m3_r2.sem.facet.section_1_introduction",
+        "ich_m3_r2.sem.facet.section_2_pharmacology_studies",
+        "ich_m3_r2.sem.facet.section_3_toxicokinetic_and_pharmacokinetic_studies",
+        "ich_m3_r2.sem.facet.section_4_acute_toxicity_studies",
+        "ich_m3_r2.sem.facet.section_5_repeated_dose_toxicity_studies",
+        "ich_m3_r2.sem.facet.section_6_estimation_of_the_first_dose_in_human",
+        "ich_m3_r2.sem.facet.section_7_exploratory_clinical_trials",
+        "ich_m3_r2.sem.facet.section_8_local_tolerance_studies",
+        "ich_m3_r2.sem.facet.section_9_genotoxicity_studies",
+        "ich_m3_r2.sem.facet.section_10_carcinogenicity_studies",
+        "ich_m3_r2.sem.facet.section_11_reproduction_toxicity_studies",
+        "ich_m3_r2.sem.facet.section_12_clinical_trials_in_pediatric_populations",
+        "ich_m3_r2.sem.facet.section_13_immunotoxicity",
+        "ich_m3_r2.sem.facet.section_14_photosafety_testing",
+        "ich_m3_r2.sem.facet.section_15_nonclinical_abuse_liability",
+        "ich_m3_r2.sem.facet.section_16_other_toxicity_studies",
+        "ich_m3_r2.sem.facet.section_17_combination_drug_toxicity_testing"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m3_r2.cond.1_1.001",
+          "source_unit_id": "ich_m3_r2.su.1_1.001",
+          "source_text_sha256": "f58cc503512aa88b87b2fd3abfd29f2220cffe4fd2e648d0fbc6915d069b83ed"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
       "summary_id": "ich_m3_r2.sem.summary.scope",
       "target": {
         "type": "section",
@@ -26,6 +64,78 @@
           "record_id": "ich_m3_r2.kr.1_3.004",
           "source_unit_id": "ich_m3_r2.su.1_3.001",
           "source_text_sha256": "537b4a230e34a44c930cd2e01275f82884f56b824a8434710b84a229d1ad210f"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m3_r2.sem.summary.section_11_reproduction_toxicity_studies",
+      "target": {
+        "type": "section",
+        "id": "ich_m3_r2.sec.11"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m3_r2.sem.facet.section_11_1_men",
+        "ich_m3_r2.sem.facet.section_11_2_women_not_of_childbearing_potential",
+        "ich_m3_r2.sem.facet.section_11_3_women_of_childbearing_potential",
+        "ich_m3_r2.sem.facet.section_11_4_pregnant_women"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m3_r2.cond.11_1.001",
+          "source_unit_id": "ich_m3_r2.su.11_1.001",
+          "source_text_sha256": "17fc5ae5593972d9ef0a383b752a356fbe19387399ba04b9a14fb18955de0b0b"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m3_r2.sem.summary.section_5_repeated_dose_toxicity_studies",
+      "target": {
+        "type": "section",
+        "id": "ich_m3_r2.sec.5"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m3_r2.sem.facet.section_5_1_clinical_development_trials",
+        "ich_m3_r2.sem.facet.section_5_2_marketing_authorization"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m3_r2.cond.5_1.001",
+          "source_unit_id": "ich_m3_r2.su.5_1.001",
+          "source_text_sha256": "57aacf4d7df32846de8ac825b6f21c58b05fb2d6bf20e30232751761529de2e4"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m3_r2.sem.summary.section_7_exploratory_clinical_trials",
+      "target": {
+        "type": "section",
+        "id": "ich_m3_r2.sec.7"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m3_r2.sem.facet.section_7_1_microdose_trials",
+        "ich_m3_r2.sem.facet.section_7_2_single_dose_trials_at_sub_therapeutic_doses_or_into_the_anticipated_ther",
+        "ich_m3_r2.sem.facet.section_7_3_multiple_dose_trials"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m3_r2.cond.7_1.001",
+          "source_unit_id": "ich_m3_r2.su.7_1.001",
+          "source_text_sha256": "644c025d73f2b2b4ab6491bf9fe4f93cd33585ae63e5abcefde7a2fc8eba87ed"
         }
       ],
       "review_status": "reviewed"
@@ -630,6 +740,116 @@
     }
   ],
   "salience_profiles": [
+    {
+      "profile_id": "ich_m3_r2.sem.profile.document_overview",
+      "target_id": "ich_m3_r2",
+      "context": "document_overview",
+      "items": [
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_1_introduction",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_2_pharmacology_studies",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_3_toxicokinetic_and_pharmacokinetic_studies",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_4_acute_toxicity_studies",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_5_repeated_dose_toxicity_studies",
+          "tier": "primary",
+          "display_order": 5,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_6_estimation_of_the_first_dose_in_human",
+          "tier": "primary",
+          "display_order": 6,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_7_exploratory_clinical_trials",
+          "tier": "primary",
+          "display_order": 7,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_8_local_tolerance_studies",
+          "tier": "primary",
+          "display_order": 8,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_9_genotoxicity_studies",
+          "tier": "primary",
+          "display_order": 9,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_10_carcinogenicity_studies",
+          "tier": "primary",
+          "display_order": 10,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_11_reproduction_toxicity_studies",
+          "tier": "primary",
+          "display_order": 11,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_12_clinical_trials_in_pediatric_populations",
+          "tier": "primary",
+          "display_order": 12,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_13_immunotoxicity",
+          "tier": "primary",
+          "display_order": 13,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_14_photosafety_testing",
+          "tier": "primary",
+          "display_order": 14,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_15_nonclinical_abuse_liability",
+          "tier": "primary",
+          "display_order": 15,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_16_other_toxicity_studies",
+          "tier": "primary",
+          "display_order": 16,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_m3_r2.sem.facet.section_17_combination_drug_toxicity_testing",
+          "tier": "primary",
+          "display_order": 17,
+          "rationale_code": "quantitative_criterion"
+        }
+      ],
+      "review_status": "reviewed"
+    },
     {
       "profile_id": "ich_m3_r2.sem.profile.scope",
       "target_id": "ich_m3_r2.sem.facet.scope",

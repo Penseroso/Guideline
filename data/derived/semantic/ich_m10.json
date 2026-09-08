@@ -6,7 +6,434 @@
     "method": "agent_assisted",
     "pipeline_version": "stage-d-2026-09-08"
   },
-  "summary_specs": [],
+  "summary_specs": [
+    {
+      "summary_id": "ich_m10.sem.summary.document_overview",
+      "target": {
+        "type": "document",
+        "id": "ich_m10"
+      },
+      "summary_kind": "scope",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_1_introduction",
+        "ich_m10.sem.facet.section_2_general_principles",
+        "ich_m10.sem.facet.section_3_chromatography",
+        "ich_m10.sem.facet.section_4_ligand_binding_assays",
+        "ich_m10.sem.facet.section_5_incurred_sample_reanalysis_isr",
+        "ich_m10.sem.facet.section_6_partial_and_cross_validation",
+        "ich_m10.sem.facet.section_7_additional_considerations",
+        "ich_m10.sem.facet.section_8_documentation"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.1_1.001",
+          "source_unit_id": "ich_m10.su.1_1.001",
+          "source_text_sha256": "9c8e0c923a469ef6b3dcadbc1c1d95fe5f2715498a703308ae98d939dcac00a9"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.isr_process",
+      "target": {
+        "type": "facet",
+        "id": "ich_m10.sem.facet.isr_process"
+      },
+      "summary_kind": "process_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.isr_process.purpose",
+        "ich_m10.sem.facet.isr_process.applicability",
+        "ich_m10.sem.facet.isr_process.sample_selection",
+        "ich_m10.sem.facet.isr_process.chromatography_acceptance",
+        "ich_m10.sem.facet.isr_process.lba_acceptance"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.kr.5.001",
+          "source_unit_id": "ich_m10.su.5.001",
+          "source_text_sha256": "e78de2972e97edede370fc88c18ae101b9e8a20994df16b3febcd2409e65f391"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_1_introduction",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.1"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_1_1_objective",
+        "ich_m10.sem.facet.section_1_2_background",
+        "ich_m10.sem.facet.scope"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.1_1.001",
+          "source_unit_id": "ich_m10.su.1_1.001",
+          "source_text_sha256": "9c8e0c923a469ef6b3dcadbc1c1d95fe5f2715498a703308ae98d939dcac00a9"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_2_2_method_validation",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.2_2"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_2_2_1_full_validation",
+        "ich_m10.sem.facet.section_2_2_2_partial_validation",
+        "ich_m10.sem.facet.section_2_2_3_cross_validation"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.2_2_1.001",
+          "source_unit_id": "ich_m10.su.2_2_1.001",
+          "source_text_sha256": "5fe45fcccd5951427b91d729e181695bd1f409b7269b83ccc297bfa444dd3830"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_2_general_principles",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.2"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_2_1_method_development",
+        "ich_m10.sem.facet.section_2_2_method_validation"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.2_1.001",
+          "source_unit_id": "ich_m10.su.2_1.001",
+          "source_text_sha256": "071fb0bd8f63e1ea113e3eb7bcc2edf3eaeb14fb98cba8fcf4261f5448959af9"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_3_2_5_accuracy_and_precision",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.3_2_5"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_3_2_5_2_evaluation_of_accuracy_and_precision",
+        "ich_m10.sem.facet.section_3_2_5_1_preparation_of_quality_control_samples"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.3_2_5_2.001",
+          "source_unit_id": "ich_m10.su.3_2_5_2.003",
+          "source_text_sha256": "1e4549a54d039db2d7a6c25777b01e7158909a876eea1197eaf603498d59a555"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_3_2_validation",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.3_2"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_3_2_5_accuracy_and_precision",
+        "ich_m10.sem.facet.section_3_2_1_selectivity",
+        "ich_m10.sem.facet.section_3_2_2_specificity",
+        "ich_m10.sem.facet.section_3_2_3_matrix_effect",
+        "ich_m10.sem.facet.section_3_2_4_calibration_curve_and_range",
+        "ich_m10.sem.facet.section_3_2_6_carry_over",
+        "ich_m10.sem.facet.section_3_2_7_dilution_integrity",
+        "ich_m10.sem.facet.section_3_2_8_stability",
+        "ich_m10.sem.facet.section_3_2_9_reinjection_reproducibility"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.3_2_5_1.001",
+          "source_unit_id": "ich_m10.su.3_2_5_1.001",
+          "source_text_sha256": "8df3a62d58a2adc2bc79773b759cc698a1420122980360de1e3defc1c54326e0"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_3_3_study_sample_analysis",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.3_3"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_3_3_1_analytical_run",
+        "ich_m10.sem.facet.section_3_3_2_acceptance_criteria_for_an_analytical_run",
+        "ich_m10.sem.facet.section_3_3_3_calibration_range",
+        "ich_m10.sem.facet.section_3_3_4_reanalysis_of_study_samples",
+        "ich_m10.sem.facet.section_3_3_5_reinjection_of_study_samples",
+        "ich_m10.sem.facet.section_3_3_6_integration_of_chromatograms"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.3_3_1.001",
+          "source_unit_id": "ich_m10.su.3_3_1.001",
+          "source_text_sha256": "fa14515076e04979a10cfc7ba58df2e3f7b7b292bc13fc938f1c280f24f827b6"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_3_chromatography",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.3"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_3_1_reference_standards",
+        "ich_m10.sem.facet.section_3_2_validation",
+        "ich_m10.sem.facet.section_3_3_study_sample_analysis"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.3_1.001",
+          "source_unit_id": "ich_m10.su.3_1.001",
+          "source_text_sha256": "e729da87bcf4a5c8f2e2052216dbfc6fd1012a2c0515ac80349598be189ab7d2"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_4_1_key_reagents",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.4_1"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_4_1_1_reference_standard",
+        "ich_m10.sem.facet.section_4_1_2_critical_reagents"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.4_1_1.001",
+          "source_unit_id": "ich_m10.su.4_1_1.001",
+          "source_text_sha256": "76182501842d58c47a8e29958add545b4ad0d800905b6579a88d6eee2b8c8d53"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_4_2_4_accuracy_and_precision",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.4_2_4"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_4_2_4_1_preparation_of_quality_control_samples",
+        "ich_m10.sem.facet.section_4_2_4_2_evaluation_of_accuracy_and_precision"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.4_2_4_1.001",
+          "source_unit_id": "ich_m10.su.4_2_4_1.001",
+          "source_text_sha256": "8df3a62d58a2adc2bc79773b759cc698a1420122980360de1e3defc1c54326e0"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_4_2_validation",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.4_2"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_4_2_1_specificity",
+        "ich_m10.sem.facet.section_4_2_2_selectivity",
+        "ich_m10.sem.facet.section_4_2_3_calibration_curve_and_range",
+        "ich_m10.sem.facet.section_4_2_4_accuracy_and_precision",
+        "ich_m10.sem.facet.section_4_2_5_carry_over",
+        "ich_m10.sem.facet.section_4_2_6_dilution_linearity_and_hook_effect",
+        "ich_m10.sem.facet.section_4_2_7_stability"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.4_2_1.001",
+          "source_unit_id": "ich_m10.su.4_2_1.001",
+          "source_text_sha256": "b5da5efc86196c7ac0b20625d0dea0c9ed144927ec689beb77580c6cafe35b77"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_4_3_study_sample_analysis",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.4_3"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_4_3_1_analytical_run",
+        "ich_m10.sem.facet.section_4_3_2_acceptance_criteria_for_an_analytical_run",
+        "ich_m10.sem.facet.section_4_3_3_calibration_range",
+        "ich_m10.sem.facet.section_4_3_4_reanalysis_of_study_samples"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.4_3_1.001",
+          "source_unit_id": "ich_m10.su.4_3_1.001",
+          "source_text_sha256": "641e79003be60e01892ad129aa326d34b74b07fa76e75d1c7e7744404d35e5d6"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_4_ligand_binding_assays",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.4"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_4_1_key_reagents",
+        "ich_m10.sem.facet.section_4_2_validation",
+        "ich_m10.sem.facet.section_4_3_study_sample_analysis"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.4_1_1.001",
+          "source_unit_id": "ich_m10.su.4_1_1.001",
+          "source_text_sha256": "76182501842d58c47a8e29958add545b4ad0d800905b6579a88d6eee2b8c8d53"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_6_partial_and_cross_validation",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.6"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_6_1_partial_validation",
+        "ich_m10.sem.facet.section_6_2_cross_validation"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.6_1.001",
+          "source_unit_id": "ich_m10.su.6_1.002",
+          "source_text_sha256": "9d5477862b7934f0d0af74cbdf3a07bd916941df73242483cdddb0b92a07835d"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_7_additional_considerations",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.7"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_7_1_endogenous_compounds",
+        "ich_m10.sem.facet.section_7_2_parallelism",
+        "ich_m10.sem.facet.section_7_3_recovery",
+        "ich_m10.sem.facet.section_7_4_minimum_required_dilution",
+        "ich_m10.sem.facet.section_7_5_commercial_and_diagnostic_kits",
+        "ich_m10.sem.facet.section_7_6_new_or_alternative_technologies"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.7_1.001",
+          "source_unit_id": "ich_m10.su.7_1.001",
+          "source_text_sha256": "9a5bd703658cef214b17ab9a6b362fb41c63a3148c75f5aecef88dc8d187afc4"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "summary_id": "ich_m10.sem.summary.section_8_documentation",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.8"
+      },
+      "summary_kind": "section_overview",
+      "facet_ids": [
+        "ich_m10.sem.facet.section_8_1_summary_information",
+        "ich_m10.sem.facet.section_8_2_documentation_for_validation_and_bioanalytical_reports"
+      ],
+      "sentence_roles": [
+        "main_points"
+      ],
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.cond.8_1.001",
+          "source_unit_id": "ich_m10.su.8_1.001",
+          "source_text_sha256": "6c6323cd114a9c31a2f2270c4ee4047d579a174967cc0589293c2a8f65764662"
+        }
+      ],
+      "review_status": "reviewed"
+    }
+  ],
   "facets": [
     {
       "facet_id": "ich_m10.sem.facet.isr_process",
@@ -1350,6 +1777,100 @@
   ],
   "salience_profiles": [
     {
+      "profile_id": "ich_m10.sem.profile.document_overview",
+      "target_id": "ich_m10",
+      "context": "document_overview",
+      "items": [
+        {
+          "facet_id": "ich_m10.sem.facet.section_1_introduction",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_2_general_principles",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_chromatography",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_4_ligand_binding_assays",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_5_incurred_sample_reanalysis_isr",
+          "tier": "primary",
+          "display_order": 5,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_6_partial_and_cross_validation",
+          "tier": "primary",
+          "display_order": 6,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_7_additional_considerations",
+          "tier": "primary",
+          "display_order": 7,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_8_documentation",
+          "tier": "primary",
+          "display_order": 8,
+          "rationale_code": "governing_text"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "profile_id": "ich_m10.sem.profile.isr_process",
+      "target_id": "ich_m10.sem.facet.isr_process",
+      "context": "process",
+      "items": [
+        {
+          "facet_id": "ich_m10.sem.facet.isr_process.purpose",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.isr_process.applicability",
+          "tier": "supporting",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.isr_process.sample_selection",
+          "tier": "supporting",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.isr_process.chromatography_acceptance",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "quantitative_criterion"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.isr_process.lba_acceptance",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "quantitative_criterion"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
       "profile_id": "ich_m10.sem.profile.run_acceptance",
       "target_id": "ich_m10.sem.facet.run_acceptance",
       "context": "detail",
@@ -1365,6 +1886,206 @@
           "tier": "primary",
           "display_order": 2,
           "rationale_code": "quantitative_criterion"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "profile_id": "ich_m10.sem.profile.section_3_2_validation",
+      "target_id": "ich_m10.sec.3_2",
+      "context": "section_overview",
+      "items": [
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_2_5_accuracy_and_precision",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_2_1_selectivity",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_2_2_specificity",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_2_3_matrix_effect",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_2_4_calibration_curve_and_range",
+          "tier": "primary",
+          "display_order": 5,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_2_6_carry_over",
+          "tier": "primary",
+          "display_order": 6,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_2_7_dilution_integrity",
+          "tier": "primary",
+          "display_order": 7,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_2_8_stability",
+          "tier": "primary",
+          "display_order": 8,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_2_9_reinjection_reproducibility",
+          "tier": "primary",
+          "display_order": 9,
+          "rationale_code": "governing_text"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "profile_id": "ich_m10.sem.profile.section_3_3_study_sample_analysis",
+      "target_id": "ich_m10.sec.3_3",
+      "context": "section_overview",
+      "items": [
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_3_1_analytical_run",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_3_2_acceptance_criteria_for_an_analytical_run",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_3_3_calibration_range",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_3_4_reanalysis_of_study_samples",
+          "tier": "supporting",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_3_5_reinjection_of_study_samples",
+          "tier": "supporting",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_3_3_6_integration_of_chromatograms",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "governing_text"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "profile_id": "ich_m10.sem.profile.section_4_2_validation",
+      "target_id": "ich_m10.sec.4_2",
+      "context": "section_overview",
+      "items": [
+        {
+          "facet_id": "ich_m10.sem.facet.section_4_2_1_specificity",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_4_2_2_selectivity",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_4_2_3_calibration_curve_and_range",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_4_2_4_accuracy_and_precision",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_4_2_5_carry_over",
+          "tier": "primary",
+          "display_order": 5,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_4_2_6_dilution_linearity_and_hook_effect",
+          "tier": "primary",
+          "display_order": 6,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_4_2_7_stability",
+          "tier": "primary",
+          "display_order": 7,
+          "rationale_code": "governing_text"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "profile_id": "ich_m10.sem.profile.section_7_additional_considerations",
+      "target_id": "ich_m10.sec.7",
+      "context": "section_overview",
+      "items": [
+        {
+          "facet_id": "ich_m10.sem.facet.section_7_1_endogenous_compounds",
+          "tier": "primary",
+          "display_order": 1,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_7_2_parallelism",
+          "tier": "primary",
+          "display_order": 2,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_7_3_recovery",
+          "tier": "primary",
+          "display_order": 3,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_7_4_minimum_required_dilution",
+          "tier": "primary",
+          "display_order": 4,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_7_5_commercial_and_diagnostic_kits",
+          "tier": "primary",
+          "display_order": 5,
+          "rationale_code": "governing_text"
+        },
+        {
+          "facet_id": "ich_m10.sem.facet.section_7_6_new_or_alternative_technologies",
+          "tier": "primary",
+          "display_order": 6,
+          "rationale_code": "governing_text"
         }
       ],
       "review_status": "reviewed"

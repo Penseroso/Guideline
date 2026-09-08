@@ -1,6 +1,6 @@
 # 파생 의미 레이어 설계
 
-상태: Implemented through Stage D; Stage E0/E1/E2/E3 완료 및 최종 reviewed 승격 완료(2026-09-08)
+상태: Implemented through Stage D; Stage E0/E1/E2/E3 완료 및 최종 reviewed 승격 완료(2026-09-08); Stage F(신규 47개 manifest 구조 확장, 문장 저작 제외) 완료 및 승격 완료(2026-09-08)
 적용 대상: 검색·라우팅·답변 조립 계층  
 활성 의미 오버레이 계약: `0.3.0`
 활성 public answer contract: `2.5.0`
@@ -366,6 +366,22 @@ Stage D가 남긴 세 개 — `summary_specs`, 한국어 presentation 문장, `s
 `scripts/run_semantic_stage_e3_audit.js`(`npm run audit:semantic:stage-e3`)가 기존 7개 salience_profile 전부(6개 문서에 걸쳐) 의도한 manifest에 실제로 매칭됨을 오프라인 확인(7/7). `scripts/promote_semantic_stage_e3.js`도 동일한 게이트로 라이브 50문항 감사를 통과해 7개 salience_profiles를 `reviewed`로 승격 완료했다. 상세: `history/verification/semantic_stage_e3_2026-09-08.md`.
 
 이로써 Stage E(요약문 구조 → 개괄 문장 → salience 노출)는 배선·오프라인 검증뿐 아니라 라이브 50문항 감사를 통한 최종 `reviewed` 승격까지 전부 완료됐다(summary_specs 5개, presentation entry 3개, salience_profiles 7개). 47개 신규 manifest로의 확장은 별도 Stage F 과제다.
+
+### 단계 F — 신규 47개 manifest에 summary_specs/salience_profiles 확장(2026-09-08)
+
+Stage D가 만든 55개 manifest 중 Stage E는 기존 pilot 소표본(5/7개)만 다뤘다. Stage F는 나머지에 `summary_specs`/`salience_profiles`를 기계적으로(새 한국어 문장 창작 없이) 확장한다.
+
+**범위 결정**: `summary_specs.summary_kind` enum(`scope`/`section_overview`/`topic_overview`/`process_overview`)에 대응이 없는 `multi_criterion`/`comparison` 답변 유형 4개(run_acceptance, screening_performance, high_dose_selection, species_number_conditions)는 summary_spec 대상에서 제외했다 — 목록형 답변에는 "개괄 문단"이라는 답변 형태 자체가 맞지 않는다. 나머지 51개 중 기존 5개가 커버하는 5개를 뺀 **46개 후보 중 45개**에 새 summary_spec을 만들었다(1개는 실제로 이미 포함 매칭으로 커버되고 있어 제외). facet 5개 이상인 manifest에는 salience_profile도 함께 만들었다(19개 신규). **한국어 개괄 문장(presentation) 저작은 이번 범위에서 완전히 제외** — 조사 결과 다수 상위 섹션(예: ich_m3_r2 §5, §11)이 상위 문단 자체에는 직접 근거 문장이 없고 하위 번호 섹션에만 내용이 있어, 이미 검토된 문장 직접 인용만으로는 상당수가 `text: null`로 남는다. 새 한국어 문장을 합성 저작하는 것은 정확성 위험이 커서 사용자가 별도 매뉴얼 단계로 미루기로 결정했다 — 그래서 이번에 만든 45개 summary_spec은 모두 구조만 있고 `text: null`이며, 이는 Stage E2가 이미 정립한 정상 fallback과 동일하다.
+
+**엔진/렌더링/스키마 변경 없음**: `engine/semantic_shadow.js`의 `selectServedSummary()`/`selectServedSalience()` 매칭 로직(정확한 target 일치 → facet 포함 매칭)이 이미 범용적이라, 새 데이터만 추가하면 자동으로 연결된다. overlay 계약(`0.3.0`)과 answer contract(`2.5.0`) 모두 그대로다.
+
+**`scripts/build_semantic_stage_f.js`**: `answer_intent → summary_kind` 매핑으로 summary_spec을 생성하고(`facet_ids`는 manifest 자신의 기존 coverage_groups facet을 그대로 사용, 새로 만들지 않음), `evidence_refs`는 대표 facet에서 실제 코어 record를 찾아 채운다(`declared_members`면 `member_record_ids[0]`, `section_census`면 해당 섹션·자손 섹션에서 사전식으로 가장 앞선 실제 record — 자손까지 뒤져도 없으면 manifest 자신의 target 섹션 자체의 직접 근거로 최종 폴백; ich_s6_r1 §5의 네 자식 섹션이 전부 비어 있고 §5 자체에 근거가 있는 실제 사례가 있었다). salience_profile의 `tier`/`rationale_code`는 각 facet에 이미 있는 검증된 `semantic_role`(definition/purpose/scope/criterion/condition/exception/procedure_step/risk_factor/evidence/boundary)로부터 결정론적으로 도출한다(새 판단이 아니라 기존 분류 재사용) — facet 5개 미만인 manifest는 tier 구분 실익이 없어 건너뛴다. 이미 어떤 summary_spec/salience_profile이 커버하는 manifest는(정확한 target 일치 또는 facet 포함 매칭) 건너뛰어 중복을 만들지 않는다.
+
+**`scripts/run_semantic_stage_f_audit.js`**: Stage F가 새로 만든 45개 summary_spec과 19개 salience_profile 전부, "everything reviewed" 가정 하에 서빙 선택기가 의도한 manifest에 실제로 매칭되는지 오프라인 확인(45/45, 19/19).
+
+**`scripts/promote_semantic_stage_f.js`**: Stage E와 동일한 게이트(schema 검증 + 오프라인 감사 클린 + 현재 `ENVELOPE_VERSION`(2.5.0) 기준 라이브 50문항 감사 + established 16개 무회귀 + 검토 attestation). Stage F는 엔진 코드를 전혀 바꾸지 않으므로 Stage E0~E3 승격에 썼던 것과 동일한 라이브 감사 결과(및 Q25 조정 baseline)를 재사용해 그대로 승격했다. 45개 summary_spec + 19개 salience_profile 전부 `reviewed`로 승격 완료.
+
+상세: `history/verification/semantic_stage_f_2026-09-08.md`.
 
 ## 11. 활성화 승인 기준
 
