@@ -23,7 +23,7 @@ const { answerEnvelope } = require("./answer_envelope");
 const { logInteraction, readInteractions } = require("./query_log");
 const { recordFeedback, readFeedback, VALID_VERDICTS } = require("./feedback_log");
 const { aggregate } = require("./query_stats");
-const { comparePlans } = require("./semantic_shadow");
+const { comparePlans } = require("./semantic_routing");
 const { logShadowComparison } = require("./semantic_shadow_log");
 
 const WEB_DIR = path.resolve(__dirname, "..", "web");
@@ -397,12 +397,12 @@ function startServer({
           source: "web"
         }, queryLogPath);
 
-        // Stage B shadow mode (docs/derived_semantic_layer.md §10): compute
-        // and log the derived-semantic-layer plan next to the plan that
-        // actually produced `envelope`, strictly after `envelope` is final.
-        // Never allowed to affect the response — errors here are swallowed,
-        // not surfaced, so a bug in a diagnostic-only code path can never
-        // turn into a user-facing failure or added latency risk.
+        // Diagnostic-only shadow comparison (docs/derived_semantic_layer.md
+        // §10): compute and log the derived-semantic-layer plan next to the
+        // plan that actually produced `envelope`, strictly after `envelope`
+        // is final. Never allowed to affect the response — errors here are
+        // swallowed, not surfaced, so a bug in this diagnostic-only code
+        // path can never turn into a user-facing failure or added latency.
         try {
           const comparison = comparePlans(body.question, envelope);
           logShadowComparison({ interaction_id: interactionId, ...comparison }, semanticShadowLogPath);

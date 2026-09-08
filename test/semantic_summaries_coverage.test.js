@@ -3,7 +3,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 const test = require("node:test");
 
-const { summaryAlreadyCovers, salienceAlreadyCovers, SALIENCE_MIN_FACETS } = require("../scripts/build_semantic_stage_f");
+const { summaryAlreadyCovers, salienceAlreadyCovers, SALIENCE_MIN_FACETS } = require("../scripts/build_semantic_summaries");
 
 const ROOT = path.resolve(__dirname, "..");
 const OVERLAY_DIR = path.join(ROOT, "data", "derived", "semantic");

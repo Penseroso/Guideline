@@ -5,7 +5,7 @@ const { auditSemanticPresentation } = require("../scripts/audit_semantic_present
 const { loadStore } = require("../engine/data_store");
 const { answerEnvelope } = require("../engine/answer_envelope");
 const { loadSemanticOverlayStore } = require("../engine/semantic_overlay_store");
-const { buildReviewedSemanticCoverage } = require("../engine/semantic_shadow");
+const { buildReviewedSemanticCoverage } = require("../engine/semantic_routing");
 
 test("every applicable summary_spec has a fresh reviewed Korean presentation entry", () => {
   const result = auditSemanticPresentation();

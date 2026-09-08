@@ -1,11 +1,11 @@
 /**
- * Promote (sign off on) the semantic-presentation layer (Stage G:
- * data/derived/presentation/ko/*.json's summary entries) after a fresh
+ * Promote (sign off on) the semantic-presentation layer
+ * (data/derived/presentation/ko/*.json's summary entries) after a fresh
  * post-activation live 50-question audit and the route-keyed
  * established-16-suitable-case regression policy
- * (scripts/stage_e_promotion_shared.js's evaluateEstablishedCase).
+ * (scripts/semantic_promotion_lifecycle.js's evaluateEstablishedCase).
  *
- * Unlike Stage D/E/F, presentation entries are already `reviewed` at
+ * Unlike summary_specs/salience_profiles, presentation entries are already `reviewed` at
  * authoring time (scripts/author_semantic_presentation.js sets
  * review_status directly from its own verification step) — there is no
  * separate needs_review -> reviewed flip to make here. `prepare()` still
@@ -31,7 +31,7 @@ const {
   prepareTargetState,
   rollbackPreparedState,
   verifyAndFinalizePromotion
-} = require("./stage_e_promotion_shared");
+} = require("./semantic_promotion_lifecycle");
 
 const LABEL = "presentation";
 const ROOT = path.resolve(__dirname, "..");

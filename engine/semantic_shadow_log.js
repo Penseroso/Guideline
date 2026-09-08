@@ -2,10 +2,11 @@
  * engine/semantic_shadow_log.js
  * Appends one JSON line per /api/ask request comparing the existing
  * router's plan against the derived-semantic-layer plan
- * (engine/semantic_shadow.js), per docs/derived_semantic_layer.md §10
- * Stage B. Same append-only JSONL shape as engine/query_log.js, kept as a
- * separate file/log so a stage-B-only reader never has to filter out
- * ordinary interaction log lines (or vice versa).
+ * (engine/semantic_routing.js's diagnostic-only comparePlans, never
+ * served — docs/derived_semantic_layer.md §10). Same append-only JSONL
+ * shape as engine/query_log.js, kept as a separate file/log so a reader
+ * of this diagnostic-only comparison never has to filter out ordinary
+ * interaction log lines (or vice versa).
  */
 const fs = require("fs");
 const path = require("path");

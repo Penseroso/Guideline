@@ -1,26 +1,28 @@
 /**
- * Shared promotion-lifecycle primitives for the Stage E1/E2/E3/F and
- * semantic-presentation promotion scripts.
+ * Shared promotion-lifecycle primitives for every script that flips
+ * semantic-overlay objects from `needs_review` to `reviewed`:
+ * promote_semantic_summaries.js (summary_specs/salience_profiles) and
+ * promote_semantic_presentation.js (Korean presentation entries).
  *
  * Two separate concerns live here:
  *
  * 1. Target-state prepare/verify/finalize/rollback (added to close a real
- *    process gap: every promote_semantic_stage_*.js script used to flip
+ *    process gap: every promote_semantic_*.js script used to flip
  *    `needs_review` -> `reviewed` and require a matching live audit in the
  *    SAME invocation — but a live audit can only be captured against a
  *    state that already exists on disk, and there is no way to fabricate
- *    that state without having flipped it first. Stage F's original
- *    promotion (see history/verification/semantic_stage_f_2026-09-08.md)
- *    hit exactly this: it reused a pre-activation audit, which was later
- *    found to prove nothing about the post-activation `semantic_coverage`
- *    it was meant to gate, and had to be re-verified by hand after the
- *    fact. `prepareTargetState`/`verifyAndFinalizePromotion` split this
- *    into two independently-callable steps with a persisted receipt in
- *    between, so a real live audit can be generated *after* prepare and
- *    *before* verify, in a separate process invocation — while every
- *    per-stage script keeps its existing single-command default behavior
- *    (prepare immediately followed by verify) for full backward
- *    compatibility.
+ *    that state without having flipped it first. The original promotion of
+ *    the summary/salience layer (see history/verification/
+ *    semantic_stage_f_2026-09-08.md) hit exactly this: it reused a
+ *    pre-activation audit, which was later found to prove nothing about the
+ *    post-activation `semantic_coverage` it was meant to gate, and had to
+ *    be re-verified by hand after the fact. `prepareTargetState`/
+ *    `verifyAndFinalizePromotion` split this into two independently-callable
+ *    steps with a persisted receipt in between, so a real live audit can be
+ *    generated *after* prepare and *before* verify, in a separate process
+ *    invocation — while every promotion script keeps its existing
+ *    single-command default behavior (prepare immediately followed by
+ *    verify) for full backward compatibility.
  *
  * 2. `assertLiveAuditRegression`'s established-16-suitable-case regression
  *    guard, generalized to the observation recorded across three

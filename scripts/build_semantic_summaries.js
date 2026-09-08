@@ -1,10 +1,15 @@
 /**
- * Stage F (docs/derived_semantic_layer.md §10 단계 F): mechanical
- * summary_specs + salience_profiles authoring for the 47 manifests Stage D
- * generated but Stage E's narrow pilot scope never covered.
+ * Mechanical summary_specs + salience_profiles authoring: generates both
+ * for every coverage_manifest (built by build_semantic_manifests.js) whose
+ * answer_intent maps to a summary_kind and that doesn't already have one —
+ * generic over whatever manifests exist in data/derived/semantic/, not
+ * tied to a specific document or one-time batch.
  *
  * Deliberately does NOT author any Korean presentation text — see the plan
- * decision recorded in history/verification/semantic_stage_f_2026-09-08.md:
+ * decision recorded in history/verification/semantic_stage_f_2026-09-08.md
+ * (historical rationale from when this was first run against the 47
+ * manifests build_semantic_manifests.js had generated but no summary yet
+ * covered):
  * a sample of parent sections (e.g. ich_m3_r2 §5, §11) have no directly-filed
  * content of their own, only in numbered sub-sections, so "quote an already-
  * reviewed sentence" would leave most new summaries with no text anyway, and
@@ -12,7 +17,7 @@
  * carries real accuracy risk. That is separate future manual work.
  *
  * Everything generated here is real, evidence-grounded structure:
- * - facet_ids are the manifest's own existing (Stage D reviewed) coverage
+ * - facet_ids are the manifest's own existing (already reviewed) coverage
  *   facets, never invented.
  * - evidence_refs resolve to a real core record (KnowledgeRecord /
  *   QuantitativeCriterion / Condition) with a correct source_text_sha256.
@@ -100,7 +105,7 @@ function evidenceRef(bundle, wantedId) {
  * Any real record (KnowledgeRecord/QuantitativeCriterion/Condition) filed
  * under `sectionId` or one of its descendant sections, picked
  * deterministically (lexicographically first id) so reruns are stable.
- * Unlike scripts/build_semantic_stage_d.js's firstKnowledgeEvidence, this
+ * Unlike scripts/build_semantic_manifests.js's firstKnowledgeEvidence, this
  * walks descendants and isn't limited to KnowledgeRecord — needed because
  * several parent sections (e.g. ich_m3_r2 §5, §11) have no content directly
  * on the parent itself, only in numbered sub-sections.
@@ -142,10 +147,10 @@ function manifestFacetIds(manifest) {
 }
 
 /**
- * Mirrors engine/semantic_shadow.js's selectServedSummary/selectServedSalience
- * matching so Stage F never authors a duplicate object for a manifest an
- * existing (Stage A/E) summary_spec or salience_profile already reaches,
- * whether by exact target match or facet containment.
+ * Mirrors engine/semantic_routing.js's selectServedSummary/selectServedSalience
+ * matching so this never authors a duplicate object for a manifest an
+ * existing summary_spec or salience_profile already reaches, whether by
+ * exact target match or facet containment.
  */
 function summaryAlreadyCovers(overlay, manifest) {
   const facetIdSet = new Set(manifestFacetIds(manifest));
@@ -186,7 +191,7 @@ function buildSummarySpec(overlay, bundle, sectionsById, manifest) {
       continue;
     }
   }
-  // A parent section can carry its own directly-filed content (Stage D's
+  // A parent section can carry its own directly-filed content (build_semantic_manifests.js's
   // "one census bucket" rule) that no child facet represents — e.g.
   // ich_s6_r1 §5's own paragraph, when every §5.x child sub-section turns
   // out to have zero curated units of its own. Fall back to the manifest's
@@ -267,7 +272,7 @@ function main() {
     console.log(`${overlay.document_id}: summary_specs=${overlay.summary_specs.length}, salience_profiles=${overlay.salience_profiles.length}`);
   }
 
-  console.log(`Stage F: added ${summariesAdded} summary_spec(s), ${salienceAdded} salience_profile(s).`);
+  console.log(`Added ${summariesAdded} summary_spec(s), ${salienceAdded} salience_profile(s).`);
 }
 
 if (require.main === module) main();

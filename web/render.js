@@ -365,13 +365,10 @@
   }
 
   /**
-   * Stage C (docs/derived_semantic_layer.md §10): the first served-answer
-   * use of the derived semantic layer. `envelope.semantic_coverage` is only
-   * ever present when engine/answer_envelope.js found a `reviewed`,
-   * non-stale coverage_manifest for the grounded_generation synthesis this
-   * envelope carries (engine/semantic_shadow.js's same Stage B math, now
-   * gated to reviewed-only) — every other route/mode leaves it absent, and
-   * this renders nothing for those, same as before Stage C existed.
+   * `envelope.semantic_coverage` (docs/derived_semantic_layer.md §10) is
+   * only ever present when engine/answer_envelope.js found a `reviewed`,
+   * non-stale coverage_manifest for this envelope's route/mode — every
+   * other route/mode leaves it absent, and this renders nothing for those.
    * Facet ids are shown by their own last segment (no curated Korean
    * facet labels exist yet — data/derived/presentation/ko/ only carries
    * whole-synopsis sentences, not per-facet short labels).
@@ -391,10 +388,9 @@
    * read "partial" while one has near-zero actual coverage and the other
    * doesn't (e.g. exact 1/3 vs 0/2, section 1/5 vs 1/17), a real asymmetry
    * the status word alone can't show. Surfaces whichever ratio is
-   * meaningful (the facet's explicit Stage D `effective` denominator,
-   * with the pre-Stage-D exact/section shape retained as a compatibility
-   * fallback)
-   * so a reader can judge severity themselves instead of trusting one
+   * meaningful (the facet's explicit `effective` denominator, with the
+   * older exact/section shape retained as a compatibility fallback) so a
+   * reader can judge severity themselves instead of trusting one
    * shared label. Returns "" when neither denominator is populated.
    */
   function coverageFractionLabel(i18n, coverage) {
@@ -418,8 +414,8 @@
   }
 
   /**
-   * Stage E1 (docs/derived_semantic_layer.md §10 단계 E1): a manifest with a
-   * matched, reviewed summary_spec orders its facet disclosure by the
+   * A manifest with a matched, reviewed summary_spec (docs/derived_semantic_layer.md
+   * §10) orders its facet disclosure by the
    * summary's own facet_ids (its intended reading order) instead of raw
    * coverage_group declaration order. A facet the summary doesn't mention
    * keeps its relative position at the end, stable, rather than being
@@ -440,8 +436,8 @@
   }
 
   /**
-   * Stage E3 (docs/derived_semantic_layer.md §10 단계 E3): a `detail`-tier
-   * facet is collapsed behind a disclosure widget rather than dropped —
+   * A `detail`-tier facet (docs/derived_semantic_layer.md §10) is collapsed
+   * behind a disclosure widget rather than dropped —
    * salience narrows what's shown by default, never what disclosure can
    * show. A facet the profile doesn't mention at all stays visible (same
    * "narrowing exposure never narrows disclosure" rule orderFacetsBySummary
@@ -521,8 +517,8 @@
   }
 
   /**
-   * Stage E2 (docs/derived_semantic_layer.md §10 단계 E2): §7's "한 개의
-   * 개괄 박스" — curated Korean sentences from the reviewed semantic
+   * §7's "한 개의 개괄 박스" (docs/derived_semantic_layer.md §10) — curated
+   * Korean sentences from the reviewed semantic
    * presentation overlay, distinct from `synopsisText()`'s per-group raw
    * record excerpt below (§9: normalized_ko/presentation are never each
    * other's substitute, so they stay visually separate, never merged into
@@ -582,8 +578,8 @@
   }
 
   /**
-   * The "이 답변의 근거 범위" (answer-scope) + Stage C semantic-coverage
-   * blocks used to sit stacked in the header, above the answer itself —
+   * The "이 답변의 근거 범위" (answer-scope) + semantic-coverage blocks
+   * used to sit stacked in the header, above the answer itself —
    * a tall block of metadata the reader had to scroll past before
    * reaching any actual content. Moved into a side rail instead, next to
    * the content rather than on top of it. Returns "" when there's

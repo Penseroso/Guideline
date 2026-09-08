@@ -1,5 +1,7 @@
 /**
- * Offline Stage D audit over every final unique manifest.
+ * Offline routing audit over every manifest in the semantic overlay's
+ * facet/coverage_manifest inventory (built by build_semantic_manifests.js),
+ * feeding verify_semantic_manifests.js's routing check.
  *
  * Questions are generated after authoring from document/section titles and
  * are validation probes only. They never feed facet or manifest creation.
@@ -10,7 +12,7 @@ const path = require("node:path");
 const { answerEnvelope } = require("../engine/answer_envelope");
 const { loadStore } = require("../engine/data_store");
 const { loadSemanticOverlayStore } = require("../engine/semantic_overlay_store");
-const { comparePlans, buildReviewedSemanticCoverage } = require("../engine/semantic_shadow");
+const { comparePlans, buildReviewedSemanticCoverage } = require("../engine/semantic_routing");
 
 const ROOT = path.resolve(__dirname, "..");
 const OUTPUT_PATH = process.env.GUIDELINE_STAGE_D_AUDIT_OUTPUT
@@ -89,7 +91,7 @@ async function main() {
   fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(results, null, 2)}\n`, "utf8");
   const shadowMisses = results.filter((item) => !item.shadow_exercised);
   const servedMisses = results.filter((item) => !item.selected_as_best_match);
-  console.log(`Stage D manifest audit: ${results.length} unique manifests`);
+  console.log(`Manifest routing audit: ${results.length} unique manifests`);
   console.log(`Shadow exercised: ${results.length - shadowMisses.length}/${results.length}`);
   console.log(`Future served selector: ${results.length - servedMisses.length}/${results.length}`);
   console.log(`Output: ${path.relative(ROOT, OUTPUT_PATH)}`);

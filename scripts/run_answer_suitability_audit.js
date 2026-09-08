@@ -6,7 +6,7 @@ require("dotenv").config({ path: path.resolve(__dirname, "..", ".env"), quiet: t
 const { loadStore } = require("../engine/data_store");
 const { setUpAnswering } = require("../engine/cli");
 const { startServer } = require("../engine/server");
-const { computeSemanticStateFingerprint } = require("./stage_e_promotion_shared");
+const { computeSemanticStateFingerprint } = require("./semantic_promotion_lifecycle");
 
 const DESIGN_PATH = path.resolve(__dirname, "..", "docs", "answer_suitability_evaluation.md");
 const OUTPUT_PATH = process.env.GUIDELINE_AUDIT_OUTPUT
@@ -62,7 +62,7 @@ async function main() {
   const completed = new Set(results.map((result) => result.id));
   // Stamped on every new entry so a promotion script can refuse to reuse an
   // audit captured against a different data/derived/ state (see
-  // scripts/stage_e_promotion_shared.js's assertLiveAuditRegression) — a
+  // scripts/semantic_promotion_lifecycle.js's assertLiveAuditRegression) — a
   // resumed/mixed run would otherwise silently combine entries from two
   // different overlay states.
   const semanticStateFingerprint = computeSemanticStateFingerprint();

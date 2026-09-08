@@ -1,11 +1,11 @@
 /**
  * scripts/check_semantic_overlay_promotion.js
  * Read-only readiness worksheet for docs/derived_semantic_layer.md §11's
- * "활성화 승인 기준" (Stage C activation criteria), evaluated per manifest
- * and per comparison binding. Never writes review_status anywhere. Stage D
- * recognizes engineering completion independently from final reviewed
- * promotion: when a live 50-question audit cannot run, implementation may
- * be complete while promotion remains pending.
+ * activation criteria, evaluated per manifest and per comparison binding.
+ * Never writes review_status anywhere. Recognizes engineering completion
+ * independently from final reviewed promotion: when a live 50-question
+ * audit cannot run, implementation may be complete while promotion remains
+ * pending.
  */
 const fs = require("fs");
 const path = require("path");
@@ -105,7 +105,7 @@ function main() {
   if (audits.length > 0) {
     console.log(`Audit inputs: ${audits.map((audit) => `${path.relative(ROOT, audit.file)} (${audit.data.length})`).join(", ")}`);
   } else {
-    console.log("Audit inputs: none — set GUIDELINE_PROMOTION_AUDIT_INPUTS or run the Stage D/shadow audits first.");
+    console.log("Audit inputs: none — set GUIDELINE_PROMOTION_AUDIT_INPUTS or run the manifest/shadow audits first.");
   }
   const liveAudit = process.env.GUIDELINE_PROMOTION_LIVE_AUDIT_INPUT
     ? path.resolve(process.env.GUIDELINE_PROMOTION_LIVE_AUDIT_INPUT)

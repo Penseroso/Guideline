@@ -7,7 +7,7 @@ const {
   PARENT_SECTIONS,
   DOCUMENT_AREAS,
   LEAF_TOPICS
-} = require("../scripts/build_semantic_stage_d");
+} = require("../scripts/build_semantic_manifests");
 
 const ROOT = path.resolve(__dirname, "..");
 const OVERLAY_DIR = path.join(ROOT, "data", "derived", "semantic");

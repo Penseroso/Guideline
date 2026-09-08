@@ -2,7 +2,7 @@ const assert = require("node:assert/strict");
 const test = require("node:test");
 
 const { loadSemanticOverlayStore } = require("../engine/semantic_overlay_store");
-const { buildShadowPlan, comparePlans, buildReviewedSemanticCoverage } = require("../engine/semantic_shadow");
+const { buildShadowPlan, comparePlans, buildReviewedSemanticCoverage } = require("../engine/semantic_routing");
 
 const store = loadSemanticOverlayStore();
 

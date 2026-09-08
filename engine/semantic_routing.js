@@ -1,5 +1,5 @@
 /**
- * engine/semantic_shadow.js
+ * engine/semantic_routing.js
  * Two exported entry points, two different runtime roles — kept in one
  * file because they share most of their manifest/facet/salience selection
  * logic (selectServedManifests, selectServedSummary, selectServedSalience,
@@ -10,34 +10,34 @@
  *   and attaches its result as `envelope.semantic_coverage` — the
  *   coverage-disclosure box a real client sees. A failure here can never
  *   affect the answer itself (wrapped, swallowed on error).
- * - `buildShadowPlan`/`comparePlans` remain genuinely diagnostic-only —
- *   Stage B (docs/derived_semantic_layer.md §10)'s "의미 오버레이로 answer
- *   plan을 만들되 사용자 응답에는 아직 적용하지 않는다": a second,
- *   semantic-overlay-derived plan built next to the answer the router
- *   already produced, for logging/comparison only (engine/server.js's
- *   /api/ask handler runs this strictly after the real envelope is
- *   already built; engine/semantic_shadow_log.js is the only consumer).
+ * - `buildShadowPlan`/`comparePlans` remain genuinely diagnostic-only: a
+ *   second, semantic-overlay-derived plan built next to the answer the
+ *   router already produced, for logging/comparison only — it is never
+ *   applied to a user response (engine/server.js's /api/ask handler runs
+ *   this strictly after the real envelope is already built;
+ *   engine/semantic_shadow_log.js is the only consumer).
  *
  * Deliberately does not gate a document's coverage_manifests by matching
- * the router's own `answer_intent` label: the audit that motivated Stage A
- * (history/verification/answer_suitability_audit_2026-09-02.md, Q26) found
- * the router itself sometimes under-classifies a document-wide question as
- * `topic_overview`. Reporting every manifest for a resolved document, each
- * annotated with whether it matches the router's own label, keeps that
- * exact kind of mismatch visible in the shadow log instead of hiding it
- * behind intent-string equality.
+ * the router's own `answer_intent` label: real audits (e.g.
+ * docs/answer_suitability_evaluation.md Q26) have found the router itself
+ * sometimes under-classifies a document-wide question as `topic_overview`.
+ * Reporting every manifest for a resolved document, each annotated with
+ * whether it matches the router's own label, keeps that exact kind of
+ * mismatch visible in the shadow log instead of hiding it behind
+ * intent-string equality.
  *
- * Revised after the first shadow run (history/verification/
- * semantic_shadow_stage_b_2026-09-03.md §6) surfaced five structural gaps
- * — not per-question quirks, but general weaknesses in the plan-building
- * algorithm itself: (1) section relevance ignored sibling sections, (2)
- * facet coverage depended entirely on a single hand-curated sample record
- * per facet, (3) comparison bindings were reported with no check that
- * either side actually had cited evidence, (4) the existing engine's own
- * presentation order was never captured so there was nothing to diff the
- * new layer's proposed order against, and (5) a stale overlay was
- * indistinguishable in the log from one that was never authored. All five
- * are fixed below; see each function's comment for the specific mechanism.
+ * The plan-building algorithm guards against five structural failure
+ * modes, not just per-question quirks (full investigation:
+ * history/verification/semantic_shadow_stage_b_2026-09-03.md §6): (1)
+ * section relevance must include sibling sections, not just the resolved
+ * section itself; (2) facet coverage must be measured against a real
+ * per-section record census, not a single hand-curated sample record per
+ * facet; (3) a comparison binding must check that both sides actually have
+ * cited evidence before being reported; (4) the router's own existing
+ * presentation order must be captured so it can be diffed against this
+ * layer's proposed order; (5) a stale overlay must be a distinct,
+ * identifiable state from one that was never authored. See each function's
+ * comment below for the specific mechanism.
  */
 const { extractQueryScope, tokenize } = require("./text_utils");
 const { loadSemanticOverlayStore } = require("./semantic_overlay_store");
@@ -416,9 +416,10 @@ function manifestDistance(overlay, manifest, resolvedSectionIds, sectionsById) {
 }
 
 /**
- * Stage D separates diagnostic breadth from served precision. Shadow mode
- * deliberately keeps broad candidates so router misses remain visible;
- * served disclosure selects only the best reviewed intent/scope match.
+ * Diagnostic breadth and served precision are deliberately different:
+ * `buildShadowPlan` keeps broad candidates so router misses remain visible,
+ * while served disclosure (this function) selects only the best reviewed
+ * intent/scope match.
  */
 function selectServedManifests(question, shadowPlan, envelope, semanticStore) {
   const resolvedSectionIds = resolvedSectionIdsForEnvelope(envelope, semanticStore.sectionIndex);
@@ -506,8 +507,8 @@ function manifestFacetIds(manifest) {
 }
 
 /**
- * Stage E1 (docs/derived_semantic_layer.md §10 단계 E1): matches a
- * summary_spec to the manifest it should introduce. An exact target match
+ * Matches a summary_spec (docs/derived_semantic_layer.md §10) to the
+ * manifest it should introduce. An exact target match
  * (same type+id) is the strongest signal; a summary whose facet_ids are all
  * inside a manifest's own coverage-group facets is treated as narrower-scope
  * but still applicable evidence (this is how ich_m3_r2's/ich_s6_r1's "scope"
@@ -569,11 +570,12 @@ function buildManifestPlan(overlay, manifest, envelopeAnswerIntent, queryScope, 
 function buildSaliencePlans(overlay) {
   return (overlay.salience_profiles || []).map((profile) => ({
     profile_id: profile.profile_id,
-    // Stage E3 fix: this was missing before, so buildShadowPlan's own
+    // Must be included so buildShadowPlan's own
     // `profilePlan.target_id === documentId` document-level branch (below)
-    // compared undefined to a string and was always false — a whole-document
-    // salience profile could never surface as document-level, only ever via
-    // the touchesRelevantFacet fallback.
+    // can compare it to a real string — omitting it makes that comparison
+    // always false, so a whole-document salience profile could never
+    // surface as document-level, only ever via the touchesRelevantFacet
+    // fallback.
     target_id: profile.target_id,
     context: profile.context,
     review_status: profile.review_status,
@@ -584,8 +586,8 @@ function buildSaliencePlans(overlay) {
 }
 
 /**
- * Stage E3 (docs/derived_semantic_layer.md §10 단계 E3): matches a
- * salience_profile to the manifest it should order, using the same
+ * Matches a salience_profile (docs/derived_semantic_layer.md §10) to the
+ * manifest it should order, using the same
  * exact-target-then-facet-containment pattern selectServedSummary already
  * uses — `target_id` here is a bare id (document/section/facet), directly
  * comparable to `manifest.target.id` regardless of target type.
@@ -742,15 +744,15 @@ function comparePlans(question, envelope, options) {
 }
 
 /**
- * Stage C (docs/derived_semantic_layer.md §10): "reviewed이고 hash가
- * 최신인 객체만 답변에 사용한다." Everything above (buildShadowPlan,
- * comparePlans) stays Stage B — it deliberately reports every manifest
- * regardless of review_status, because that's what a human reviewing the
- * shadow log needs to see. This is the one function real answer
- * construction is allowed to call: it reuses that exact same plan (same
- * relevance filtering, same facet-coverage math — nothing duplicated) and
- * then throws away every manifest that isn't `review_status: "reviewed"`.
- * A manifest whose overlay went stale never reaches this point at all —
+ * This is the one function real answer construction is allowed to call
+ * (docs/derived_semantic_layer.md §10: "reviewed이고 hash가 최신인 객체만
+ * 답변에 사용한다"). `buildShadowPlan`/`comparePlans` above stay
+ * diagnostic-only — they deliberately report every manifest regardless of
+ * review_status, because that's what a human reviewing the shadow log needs
+ * to see. This function reuses that exact same plan (same relevance
+ * filtering, same facet-coverage math — nothing duplicated) and then throws
+ * away every manifest that isn't `review_status: "reviewed"`. A manifest
+ * whose overlay went stale never reaches this point at all —
  * engine/semantic_overlay_store.js already dropped it before
  * buildShadowPlan ever saw it.
  *
@@ -759,10 +761,10 @@ function comparePlans(question, envelope, options) {
  * present but empty" as the same thing — never render an empty box.
  */
 /**
- * Stage E2 (docs/derived_semantic_layer.md §10 단계 E2): orders a
- * presentation entry's units by the summary_spec's own `sentence_roles`
- * (its intended reading order), not the entry's storage order. A unit whose
- * role isn't in `sentence_roles` keeps its relative position at the end.
+ * Orders a presentation entry's units by the summary_spec's own
+ * `sentence_roles` (its intended reading order), not the entry's storage
+ * order. A unit whose role isn't in `sentence_roles` keeps its relative
+ * position at the end.
  */
 function orderedPresentationText(sentenceRoles, units) {
   const rank = new Map((sentenceRoles || []).map((role, index) => [role, index]));
@@ -777,7 +779,7 @@ function orderedPresentationText(sentenceRoles, units) {
 }
 
 /**
- * Stage E2: a reviewed summary_spec only gets rendered Korean text when the
+ * A reviewed summary_spec only gets rendered Korean text when the
  * matching presentation entry (same `semantic_id`) is itself `reviewed` —
  * the two review_status fields are independent, so a structurally-approved
  * summary can still show no prose if nobody has reviewed the sentences yet.
@@ -793,13 +795,13 @@ function presentationTextFor(summaryPlan, documentId, semanticStore) {
 }
 
 /**
- * Stage E1 (docs/derived_semantic_layer.md §10 단계 E1): the summary a
- * manifest plan carries diagnostically may point at a summary_spec that
- * isn't reviewed yet — same shadow-shows-everything, serve-only-reviewed
- * split as manifests/comparison bindings above. `text` is Stage E2's
- * addition: it stays null unless the matching presentation entry is itself
- * reviewed and fresh, independent of the summary_spec's own review_status.
- * This value is only ever attached to `semantic_coverage`, computed after
+ * The summary a manifest plan carries diagnostically (docs/derived_semantic_layer.md
+ * §10) may point at a summary_spec that isn't reviewed yet — same
+ * shadow-shows-everything, serve-only-reviewed split as manifests/
+ * comparison bindings above. `text` stays null unless the matching
+ * presentation entry is itself reviewed and fresh, independent of the
+ * summary_spec's own review_status. This value is only ever attached to
+ * `semantic_coverage`, computed after
  * grounded_generation's LLM call already produced `prose`/`claims` above in
  * answerEnvelope — it can never be fed into generation as input.
  */
@@ -815,7 +817,7 @@ function servedSummary(summaryPlan, documentId, semanticStore) {
 }
 
 /**
- * Stage E3: a reviewed salience_profile groups its facets into
+ * A reviewed salience_profile groups its facets into
  * `{ primary, supporting, detail }` id lists (display_order within each
  * tier), for web/render.js to decide what's shown by default versus
  * collapsed. A facet the profile doesn't mention at all is simply absent

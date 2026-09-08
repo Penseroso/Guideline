@@ -1,21 +1,21 @@
 /**
  * scripts/run_semantic_shadow_audit.js
- * Stage B (docs/derived_semantic_layer.md §10): "기존 50문항 감사 세트에서
- * 기존 plan과 새 plan의 facet coverage, 순서, 비교 축을 나란히 기록한다."
+ * Diagnostic-only shadow-plan replay (docs/derived_semantic_layer.md §10):
+ * "기존 50문항 감사 세트에서 기존 plan과 새 plan의 facet coverage, 순서,
+ * 비교 축을 나란히 기록한다."
  *
  * Replays the already-captured, final 50-question answer-suitability audit
  * envelopes (logs/runtime/answer_suitability_50_raw_2026-09-03_final.json —
  * see history/verification/answer_suitability_audit_2026-09-02.md) through
- * engine/semantic_shadow.js's comparePlans(). No server, no LLM calls: the
+ * engine/semantic_routing.js's comparePlans(). No server, no LLM calls: the
  * envelopes were already produced and manually judged once; this only adds
- * the derived-semantic-layer plan alongside them for comparison, exactly as
- * shadow mode intends (§10 Stage B: build the plan, do not apply it to a
- * user response).
+ * the derived-semantic-layer plan alongside them for comparison — it never
+ * applies that plan to a user response.
  */
 const fs = require("fs");
 const path = require("path");
 
-const { comparePlans } = require("../engine/semantic_shadow");
+const { comparePlans } = require("../engine/semantic_routing");
 
 const INPUT_PATH = process.env.GUIDELINE_SHADOW_AUDIT_INPUT
   ? path.resolve(process.env.GUIDELINE_SHADOW_AUDIT_INPUT)

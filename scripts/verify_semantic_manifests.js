@@ -1,14 +1,16 @@
 /**
- * Deterministic Stage D verification. Authoring is section-driven in
- * build_semantic_stage_d.js; this script independently checks the emitted
- * topology, record membership, inventory, and post-authoring routing audit.
+ * Deterministic verification of the semantic overlay's manifest/facet/
+ * comparison-binding inventory. Authoring is section-driven in
+ * build_semantic_manifests.js; this script independently checks the
+ * emitted topology, record membership, inventory, and the routing audit
+ * from audit_semantic_manifest_routing.js.
  */
 const fs = require("node:fs");
 const path = require("node:path");
 
 const { loadSemanticOverlayStore } = require("../engine/semantic_overlay_store");
 const { validateSemanticOverlays } = require("../validation/validate_semantic_overlay");
-const { PARENT_SECTIONS, DOCUMENT_AREAS, LEAF_TOPICS } = require("./build_semantic_stage_d");
+const { PARENT_SECTIONS, DOCUMENT_AREAS, LEAF_TOPICS } = require("./build_semantic_manifests");
 
 const ROOT = path.resolve(__dirname, "..");
 const DEFAULT_AUDIT = path.join(ROOT, "logs", "runtime", "semantic_stage_d_audit.json");

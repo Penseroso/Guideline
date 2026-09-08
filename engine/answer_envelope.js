@@ -18,7 +18,7 @@
 
 const { structuredQuery, formatAnswer, answerFallback, explainRefusal, NOT_FOUND } = require("./query_router");
 const { presentClaims } = require("./answer_presenter");
-const { buildReviewedSemanticCoverage } = require("./semantic_shadow");
+const { buildReviewedSemanticCoverage } = require("./semantic_routing");
 
 const ENVELOPE_VERSION = "2.5.0";
 
@@ -61,12 +61,12 @@ function shouldGenerate(match, preference, generatorClient, verifierClient) {
 }
 
 /**
- * Stage C's semantic_coverage annotation is best-effort disclosure, never
- * load-bearing: a bug or unexpected shape in the derived-layer read path
- * must never turn into a failed or degraded answer for a question that
- * would otherwise have succeeded. Every caller of answerEnvelope gets this
- * safety for free, rather than each one (server.js, cli.js, eval_harness.js)
- * needing its own try/catch.
+ * envelope.semantic_coverage is best-effort disclosure, never load-bearing:
+ * a bug or unexpected shape in the derived-layer read path must never turn
+ * into a failed or degraded answer for a question that would otherwise have
+ * succeeded. Every caller of answerEnvelope gets this safety for free,
+ * rather than each one (server.js, cli.js, eval_harness.js) needing its own
+ * try/catch.
  */
 function safeReviewedSemanticCoverage(question, envelope) {
   try {
@@ -78,14 +78,14 @@ function safeReviewedSemanticCoverage(question, envelope) {
 }
 
 // A candidate set this small has little room for the model to legitimately
-// treat one as redundant — found via the Stage C re-audit's Q45 regression:
-// the router retrieved exactly 3 candidates (including the source's own
-// stated quantitative-risk-assessment limitation), the model silently
-// narrated only 2, and nothing caught it since none of the three shape
-// checks below (document_overview/multi_criterion/comparison) applied to
-// this plain narrow-topic question. A large candidate set can genuinely
-// have overlapping/redundant excerpts worth consolidating, so this floor
-// only applies below a small fixed ceiling, not to every question.
+// treat one as redundant. A real regression case: the router retrieved
+// exactly 3 candidates (including the source's own stated quantitative-
+// risk-assessment limitation), the model silently narrated only 2, and
+// nothing caught it since none of the three shape checks below
+// (document_overview/multi_criterion/comparison) applied to this plain
+// narrow-topic question. A large candidate set can genuinely have
+// overlapping/redundant excerpts worth consolidating, so this floor only
+// applies below a small fixed ceiling, not to every question.
 const SMALL_CANDIDATE_SET_CEILING = 3;
 
 function generatedCoverageIsAdequate(match, generated) {
@@ -184,11 +184,10 @@ async function answerEnvelope(question, records, {
           review_status: generated.review_status,
           timing_ms: Date.now() - start
         };
-        // Stage C (docs/derived_semantic_layer.md §10), scoped narrowly to
-        // exactly the case the design calls out first: the grounded_generation
-        // synthesis box only. Disclosure-only — this never changes `prose`,
-        // `claims`, or the structured citation contract below it, and only
-        // ever reflects `reviewed`, non-stale manifests.
+        // Disclosure-only for the grounded_generation synthesis box — this
+        // never changes `prose`, `claims`, or the structured citation
+        // contract below it, and only ever reflects `reviewed`, non-stale
+        // manifests (see docs/derived_semantic_layer.md §10).
         envelope.semantic_coverage = safeReviewedSemanticCoverage(question, envelope);
         return envelope;
       }
@@ -210,13 +209,12 @@ async function answerEnvelope(question, records, {
       review_status: reviewStatusFor(match),
       timing_ms: Date.now() - start
     };
-    // Stage C, extended to the structured route: several promoted
-    // manifests are most often exercised here, not on grounded_generation
-    // (e.g. ich_m10's run_acceptance branch — the audit's Q06 case — comes
-    // back as route:"structured", mode:"multi_criterion"). Same
-    // disclosure-only contract as the grounded_generation branch above:
-    // never touches `prose`/`claims`/citations, best-effort, swallowed on
-    // failure.
+    // Also computed for the structured route: several reviewed manifests
+    // are most often exercised here, not on grounded_generation (e.g.
+    // ich_m10's run_acceptance branch comes back as route:"structured",
+    // mode:"multi_criterion"). Same disclosure-only contract as the
+    // grounded_generation branch above: never touches `prose`/`claims`/
+    // citations, best-effort, swallowed on failure.
     structuredEnvelope.semantic_coverage = safeReviewedSemanticCoverage(question, structuredEnvelope);
     return structuredEnvelope;
   }

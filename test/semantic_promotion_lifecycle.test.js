@@ -15,7 +15,7 @@ const {
   finalizePreparedState,
   verifyAndFinalizePromotion,
   readPendingReceipt
-} = require("../scripts/stage_e_promotion_shared");
+} = require("../scripts/semantic_promotion_lifecycle");
 
 // Real Q25 claim sets recorded across three independent live audits
 // (history/decision_log/review_log.md REV-015) — used verbatim as the

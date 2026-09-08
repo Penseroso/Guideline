@@ -1,15 +1,17 @@
 /**
- * Offline Stage F audit: for every summary_spec/salience_profile Stage F
- * added (identified dynamically as "not one of the pre-existing Stage A/E
- * pilot objects", since Stage F's count depends on how many manifests were
- * eligible, unlike Stage E1/E2/E3's small fixed CASES lists), does the
- * served selector actually attach it to its intended manifest once
- * everything is treated as reviewed?
+ * Offline routing audit, feeding promote_semantic_summaries.js's
+ * precondition gate: for every summary_spec/salience_profile added since
+ * the original small hand-authored set (PRE_EXISTING_SUMMARY_IDS/
+ * PRE_EXISTING_SALIENCE_IDS below — identified dynamically as "not one of
+ * these", so this covers whatever build_semantic_summaries.js has added
+ * since, not just one historical batch), does the served selector actually
+ * attach it to its intended manifest once everything is treated as
+ * reviewed?
  *
- * Question generation reuses scripts/run_semantic_stage_d_audit.js's
- * pattern (document/section-title templates, no LLM call) since Stage F's
- * new objects sit on the same manifests Stage D already generated questions
- * for the shape of.
+ * Question generation reuses scripts/audit_semantic_manifest_routing.js's
+ * pattern (document/section-title templates, no LLM call) since these
+ * objects sit on the same manifests that script already generated
+ * questions for the shape of.
  */
 const fs = require("node:fs");
 const path = require("node:path");
@@ -17,16 +19,16 @@ const path = require("node:path");
 const { answerEnvelope } = require("../engine/answer_envelope");
 const { loadStore } = require("../engine/data_store");
 const { loadSemanticOverlayStore } = require("../engine/semantic_overlay_store");
-const { buildReviewedSemanticCoverage } = require("../engine/semantic_shadow");
+const { buildReviewedSemanticCoverage } = require("../engine/semantic_routing");
 
 const ROOT = path.resolve(__dirname, "..");
 const OUTPUT_PATH = process.env.GUIDELINE_STAGE_F_AUDIT_OUTPUT
   ? path.resolve(process.env.GUIDELINE_STAGE_F_AUDIT_OUTPUT)
   : path.join(ROOT, "logs", "runtime", "semantic_stage_f_audit.json");
 
-// The exact 5 pre-existing pilot summary_specs / 7 pre-existing pilot
-// salience_profiles (Stage A/E) — everything else in the committed overlays
-// is Stage F's own new authoring.
+// The original 5 hand-authored summary_specs / 7 hand-authored
+// salience_profiles — everything else in the committed overlays was added
+// mechanically by build_semantic_summaries.js.
 const PRE_EXISTING_SUMMARY_IDS = new Set([
   "ema_fih.sem.summary.document_overview",
   "fda_ada.sem.summary.assay_validation",
@@ -122,7 +124,7 @@ async function main() {
   const salienceMisses = results.filter((item) => item.salience_profile_id && !item.salience_attached);
   const summaryTotal = results.filter((item) => item.summary_id).length;
   const salienceTotal = results.filter((item) => item.salience_profile_id).length;
-  console.log(`Stage F audit: ${results.length} manifest(s) with new Stage F objects`);
+  console.log(`Summary/salience routing audit: ${results.length} manifest(s) with newly-added objects`);
   console.log(`summary_specs attached: ${summaryTotal - summaryMisses.length}/${summaryTotal}`);
   console.log(`salience_profiles attached: ${salienceTotal - salienceMisses.length}/${salienceTotal}`);
   console.log(`Output: ${path.relative(ROOT, OUTPUT_PATH)}`);

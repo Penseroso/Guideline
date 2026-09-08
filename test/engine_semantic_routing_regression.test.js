@@ -3,24 +3,25 @@ const test = require("node:test");
 
 const { loadStore } = require("../engine/data_store");
 const { answerEnvelope } = require("../engine/answer_envelope");
-const { comparePlans } = require("../engine/semantic_shadow");
+const { comparePlans } = require("../engine/semantic_routing");
 
 /**
- * Every other engine_semantic_shadow test builds a synthetic envelope by
+ * Every other engine_semantic_routing test builds a synthetic envelope by
  * hand, so none of them would notice a real regression in the actual
  * routing/retrieval pipeline (engine/query_router.js) — only in
- * engine/semantic_shadow.js's own plan-building logic. This file closes
+ * engine/semantic_routing.js's own plan-building logic. This file closes
  * that gap: it drives real questions through the real, offline (no LLM
  * client — deterministic, no network) engine/answer_envelope.js, then
- * checks the Stage B shadow plan those real envelopes produce. If a
- * change to routing/retrieval or to the committed Stage A overlay data
- * shifts what the shadow layer reports for these four representative
- * questions — one per Stage A scope — this is what will catch it.
+ * checks the diagnostic shadow plan (comparePlans) those real envelopes
+ * produce. If a change to routing/retrieval or to the committed overlay
+ * data shifts what the shadow layer reports for these four representative
+ * questions — one per original overlay scope — this is what will catch it.
  *
- * Real audit wording (docs/answer_suitability_evaluation.md Q06/Q26/Q49)
- * where practical, so these track the exact cases Stage B's first two
- * runs (history/verification/semantic_shadow_stage_b_2026-09-03.md) were
- * built to catch.
+ * Uses real audit wording (docs/answer_suitability_evaluation.md
+ * Q06/Q26/Q49) where practical, so these track the exact real-question
+ * cases this shadow-plan logic was originally built to catch (see
+ * history/verification/semantic_shadow_stage_b_2026-09-03.md for that
+ * original investigation).
  */
 const { records, index } = loadStore();
 

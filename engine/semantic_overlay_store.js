@@ -1,14 +1,16 @@
 /**
  * engine/semantic_overlay_store.js
- * Stage B (docs/derived_semantic_layer.md §10, "shadow mode") loader for
- * the derived semantic layer built in validation/validate_semantic_overlay.js.
- * Read-only: nothing here writes to the core archive or changes what an
- * answer looks like. engine/semantic_shadow.js consumes this to build a
- * side-by-side plan that is logged, never served.
+ * Read-only loader for the derived semantic layer (validated by
+ * validation/validate_semantic_overlay.js): the facet/manifest/
+ * summary_spec/salience_profile inventory plus the Korean presentation
+ * overlay. Never writes to the core archive. engine/semantic_routing.js
+ * consumes this store for both of its own two roles — the served
+ * `envelope.semantic_coverage` disclosure and the diagnostic-only
+ * shadow-comparison log.
  *
  * Freshness reuses the same canonical-hash check the validator runs in CI
  * (`npm run validate:semantic`) rather than duplicating it, so a document
- * overlay whose source_bundle_sha256 no longer matches the live pilot
+ * overlay whose source_bundle_sha256 no longer matches the live guideline
  * bundle is silently dropped here exactly as docs/derived_semantic_layer.md
  * §6 requires ("오버레이가 없거나 stale이면 현재 코어 검색으로 안전하게
  * fallback한다") — the caller never has to know the difference between
@@ -37,18 +39,17 @@ function sourceUnitIdForRecordEntry(entry) {
 
 /**
  * A per-section census of the core archive, built once at load time so
- * engine/semantic_shadow.js can measure a facet's real coverage against
+ * engine/semantic_routing.js can measure a facet's real coverage against
  * "every record the core archive actually has in this facet's own scope
  * (and its sub-sections)" instead of only the facet's hand-curated
  * `member_record_ids` sample. Curated samples stay useful as a precise
  * "this exact declared fact" signal, but using them as the sole coverage
  * denominator under-counts real coverage whenever an answer legitimately
  * cited different-but-equally-valid evidence from the same section
- * (found in Stage B's first shadow run, history/verification/
- * semantic_shadow_stage_b_2026-09-03.md §4 Q14).
+ * (history/verification/semantic_shadow_stage_b_2026-09-03.md §4 Q14).
  *
  * `childrenBySectionId` intentionally only walks direct
- * `parent_section_id` edges — engine/semantic_shadow.js's own facet
+ * `parent_section_id` edges — engine/semantic_routing.js's own facet
  * coverage census wants the strict subtree under a facet's declared
  * scope, not sibling sections (a sibling is a different sub-topic, not
  * part of this facet's own content). Sibling relevance is a distinct
@@ -78,8 +79,7 @@ function buildSectionIndex(archive) {
 }
 
 /**
- * Stage E2 (docs/derived_semantic_layer.md §10 단계 E2): the presentation
- * overlay's own validator (validate_semantic_overlay.js's
+ * The presentation overlay's own validator (validate_semantic_overlay.js's
  * validatePresentationFile) checks evidence freshness only at authoring
  * time; nothing re-checked it at load time the way the structural overlay's
  * own source_bundle_sha256 already is above. A presentation entry whose
