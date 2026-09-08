@@ -1,5 +1,5 @@
 {
-  "semantic_overlay_version": "0.2.0",
+  "semantic_overlay_version": "0.3.0",
   "document_id": "fda_ada",
   "source_bundle_sha256": "296b786814657f064268a2e4511675a08c5e2424d9827a1f1049acf5330d71e2",
   "derivation": {
@@ -999,7 +999,8 @@
           "display_order": 5,
           "rationale_code": "definition"
         }
-      ]
+      ],
+      "review_status": "needs_review"
     },
     {
       "profile_id": "fda_ada.sem.profile.screening_performance",
@@ -1036,7 +1037,8 @@
           "display_order": 5,
           "rationale_code": "quantitative_criterion"
         }
-      ]
+      ],
+      "review_status": "needs_review"
     }
   ]
 }

@@ -1,8 +1,8 @@
 # 파생 의미 레이어 설계
 
-상태: Implemented through Stage D
+상태: Implemented through Stage D; Stage E0 완료, Stage E1 진행 중
 적용 대상: 검색·라우팅·답변 조립 계층  
-활성 의미 오버레이 계약: `0.2.0`
+활성 의미 오버레이 계약: `0.3.0`
 활성 public answer contract: `2.2.0`
 
 ## 1. 목적
@@ -209,6 +209,8 @@ coverage manifest는 “규제상 필수 항목”이 아니라 “이 범위의
 
 `tier`는 `primary`, `supporting`, `detail`만 허용한다. `rationale_code`는 `scope_boundary`, `definition`, `governing_text`, `exception`, `quantitative_criterion`, `example` 등 검증 가능한 사유를 사용한다. 숫자 중요도나 모델 confidence는 저장하지 않는다.
 
+`review_status`(Stage E0, `0.3.0`부터): 다른 다섯 객체와 같은 `unreviewed`/`needs_review`/`reviewed` 삼단계. 이전에는 salience_profile에 이 필드가 없어 "reviewed만 서빙" 규칙을 적용할 방법이 없었다.
+
 ## 5. 한국어 의미 presentation 오버레이
 
 이 레이어는 `summary_specs`와 facet에 대응하는 사용자용 한국어 문장을 보관한다. 기존 `normalized_ko`를 대체하지 않는다. `normalized_ko`가 원문 단위의 의미 보존 번역이라면, 이 레이어의 문장은 여러 근거를 종합한 표시용 설명이다.
@@ -344,6 +346,18 @@ coverage manifest는 “규제상 필수 항목”이 아니라 “이 범위의
 live 50문항 감사도 OpenAI same-provider cross-model 구성으로 50/50 완료했다. 기존 적합 16문항의 route/mode/claim ID가 모두 그대로였고, 전체 판정은 16 적합/34 부분 적합/0 부적합을 유지했다. 이 감사와 명시적 review attestation을 요구하는 `scripts/promote_semantic_stage_d.js`를 통해 최종 55개 manifest 및 참조 객체를 `reviewed`로 승격했다. 감사 실행 자체가 불가능한 환경에서는 `verify:semantic:stage-d`의 engineering completion은 완료될 수 있으나 final reviewed promotion은 계속 pending이다.
 
 이번 Stage D는 coverage disclosure 확장만 다룬다. 기존 `summary_specs`, presentation 문장, salience profile의 runtime 소비는 의도적으로 연결하지 않았으며 별도 후속 범위다.
+
+### 단계 E — 세 미결 객체의 순차 활성화
+
+Stage D가 남긴 세 개 — `summary_specs`, 한국어 presentation 문장, `salience_profiles` — 를 하나씩 별도 하위 단계로 활성화한다. 저작 범위는 기존 pilot 소표본(관련 manifest 5~7개)으로 한정하고, Stage D가 만든 47개 신규 manifest 전체로의 확장은 별도 **Stage F**로 미룬다.
+
+**Stage E0(2026-09-08, 구현 완료) — salience_profiles 게이팅 선결 조건.** `salienceProfile`은 다른 다섯 객체와 달리 `review_status`가 스키마에 없어 "reviewed만 서빙" 규칙을 그대로 쓸 수 없었다. `data/schemas/derived_semantic_overlay.schema.json`에 `salienceProfile.review_status`를 필수 필드로 추가하고 `semantic_overlay_version`을 `0.2.0` → `0.3.0`으로 올렸다. `scripts/migrate_semantic_overlay_v0_3.js`가 기존 6개 오버레이의 salience_profiles 전체(7개)에 `review_status: needs_review`를 부여했다 — 지금까지 검토를 거친 적이 없으므로 정직한 초기값이다. 이 단계는 스키마·데이터만 바꾸고 engine/UI/envelope는 건드리지 않는다(공개 answer contract는 여전히 `2.2.0`). 검증: `npm test`(362/362), `node validation/validate_semantic_overlay.js`(6개 오버레이 + 3개 presentation 통과).
+
+**Stage E1(예정) — `summary_specs` 구조 활성화.** 아직 문장 텍스트 없이, `facet_ids` 순서/`sentence_roles`만 서빙되는 manifest에 연결해 coverage disclosure의 facet 노출 순서에 반영한다(Stage B가 salience에 썼던 "shadow에는 다 보이고 reviewed 서빙 함수는 필터링" 패턴 재사용). `envelope_version` `2.2.0` → `2.3.0`.
+
+**Stage E2(예정) — 한국어 semantic presentation 문장 렌더링.** E1의 구조에 `data/derived/presentation/ko/`의 reviewed·비-stale 문장을 채워 §7의 "한 개의 개괄 박스"로 노출한다. `envelope.prose`/`claims`에는 합류시키지 않는다(§9 금지 항목 — synthesized 문장이 생성 근거로 세탁되는 것을 방지). `envelope_version` `2.3.0` → `2.4.0`.
+
+**Stage E3(예정) — `salience_profiles` 노출 순서 적용.** `buildSaliencePlans`가 `target_id`를 반환하지 않아 문서 단위 분기가 죽어 있던 기존 버그를 고치고, tier(`primary`/`supporting`/`detail`)에 따라 coverage disclosure의 노출/접힘을 구분한다. `envelope_version` `2.4.0` → `2.5.0`.
 
 ## 11. 활성화 승인 기준
 

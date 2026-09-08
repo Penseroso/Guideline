@@ -1,5 +1,5 @@
 {
-  "semantic_overlay_version": "0.2.0",
+  "semantic_overlay_version": "0.3.0",
   "document_id": "ich_s6_r1",
   "source_bundle_sha256": "a8c4d38f71ffb94c45ae4b701879c28516e6919f86b593faf0dad05573ccbc0b",
   "derivation": {
@@ -837,7 +837,8 @@
           "display_order": 1,
           "rationale_code": "scope_boundary"
         }
-      ]
+      ],
+      "review_status": "needs_review"
     }
   ]
 }

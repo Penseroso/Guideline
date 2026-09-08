@@ -135,6 +135,13 @@ test("duplicate display_order within the same salience tier fails", () => {
   assertInvalid(result, "duplicate display_order");
 });
 
+test("salience profile missing review_status fails schema validation", () => {
+  const result = withMutatedOverlay("ich_m10.json", (overlay) => {
+    delete overlay.salience_profiles[0].review_status;
+  });
+  assertInvalid(result, "review_status");
+});
+
 test("comparison binding referencing an unknown axis fails", () => {
   const result = withMutatedOverlay("ich_m3_r2.json", (overlay) => {
     overlay.comparison_bindings[0].axis_id = "scope.does_not_exist";

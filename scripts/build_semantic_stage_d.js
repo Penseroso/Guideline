@@ -335,7 +335,7 @@ function main() {
     if (documentId === "ich_s6_r1") {
       overlay.facets = overlay.facets.filter((facet) => facet.facet_id !== "ich_s6_r1.sem.facet.section_notes_notes");
     }
-    overlay.semantic_overlay_version = "0.2.0";
+    overlay.semantic_overlay_version = "0.3.0";
     overlay.derivation = { method: "agent_assisted", pipeline_version: "stage-d-2026-09-08" };
     for (const sectionId of PARENT_SECTIONS[documentId]) buildParentManifest(overlay, bundle, sectionId);
     buildDocumentOverview(overlay, bundle);

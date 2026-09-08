@@ -1,5 +1,5 @@
 {
-  "semantic_overlay_version": "0.2.0",
+  "semantic_overlay_version": "0.3.0",
   "document_id": "ich_m10",
   "source_bundle_sha256": "98a508e958ee646f19cd2edc5441e75027ac3cd00f71d6122c321f9933cfbb12",
   "derivation": {
@@ -1366,7 +1366,8 @@
           "display_order": 2,
           "rationale_code": "quantitative_criterion"
         }
-      ]
+      ],
+      "review_status": "needs_review"
     }
   ]
 }

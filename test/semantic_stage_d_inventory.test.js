@@ -76,7 +76,7 @@ test("Stage D keeps authoring separate from summary, presentation, and salience 
   for (const overlay of overlays()) {
     assert.ok(Array.isArray(overlay.summary_specs), overlay.document_id);
     assert.ok(Array.isArray(overlay.salience_profiles), overlay.document_id);
-    assert.equal(overlay.semantic_overlay_version, "0.2.0");
+    assert.equal(overlay.semantic_overlay_version, "0.3.0");
     assert.equal(overlay.derivation.pipeline_version, "stage-d-2026-09-08");
   }
 });

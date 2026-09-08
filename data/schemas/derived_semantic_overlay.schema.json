@@ -17,7 +17,7 @@
     "salience_profiles"
   ],
   "properties": {
-    "semantic_overlay_version": { "const": "0.2.0" },
+    "semantic_overlay_version": { "const": "0.3.0" },
     "document_id": { "$ref": "#/definitions/id" },
     "source_bundle_sha256": {
       "type": "string",
@@ -369,7 +369,7 @@
     "salienceProfile": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["profile_id", "target_id", "context", "items"],
+      "required": ["profile_id", "target_id", "context", "items", "review_status"],
       "properties": {
         "profile_id": { "$ref": "#/definitions/id" },
         "target_id": { "$ref": "#/definitions/id" },
@@ -388,7 +388,8 @@
           "type": "array",
           "minItems": 1,
           "items": { "$ref": "#/definitions/salienceItem" }
-        }
+        },
+        "review_status": { "$ref": "#/definitions/reviewStatus" }
       }
     }
   }
