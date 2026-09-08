@@ -439,6 +439,23 @@
       .map((entry) => entry.facet);
   }
 
+  /**
+   * Stage E3 (docs/derived_semantic_layer.md §10 단계 E3): a `detail`-tier
+   * facet is collapsed behind a disclosure widget rather than dropped —
+   * salience narrows what's shown by default, never what disclosure can
+   * show. A facet the profile doesn't mention at all stays visible (same
+   * "narrowing exposure never narrows disclosure" rule orderFacetsBySummary
+   * already follows for summary_specs).
+   */
+  function partitionBySalience(facets, salience) {
+    if (!salience) return { visible: facets, hidden: [] };
+    const detailIds = new Set(salience.detail || []);
+    const visible = [];
+    const hidden = [];
+    for (const facet of facets) (detailIds.has(facet.facet_id) ? hidden : visible).push(facet);
+    return { visible, hidden };
+  }
+
   function renderSemanticCoverage(envelope, i18n) {
     const semanticCoverage = envelope && envelope.semantic_coverage;
     const manifests = semanticCoverage && Array.isArray(semanticCoverage.manifests) ? semanticCoverage.manifests : [];
@@ -448,10 +465,15 @@
     const manifestBlocks = manifests.map((manifest) => {
       const facets = orderFacetsBySummary((manifest.groups || []).flatMap((group) => group.facets || []), manifest.summary);
       const missing = facets.filter((facet) => facet.status === "missing" || facet.status === "partial");
-      const missingList = missing.length
-        ? `<ul class="semantic-coverage-missing">${missing.map((facet) => `<li>${escapeHtml(facetShortLabel(facet.facet_id))}</li>`).join("")}</ul>`
+      const { visible, hidden } = partitionBySalience(missing, manifest.salience);
+      const missingList = visible.length
+        ? `<ul class="semantic-coverage-missing">${visible.map((facet) => `<li>${escapeHtml(facetShortLabel(facet.facet_id))}</li>`).join("")}</ul>`
         : "";
-      return `<div class="semantic-coverage-manifest" data-status="${escapeHtml(manifest.status)}"><p>${escapeHtml(statusLabel(i18n, manifest.status))}</p>${missing.length ? `<span class="semantic-coverage-missing-label">${escapeHtml(i18n.semanticCoverageMissingLabel)}</span>${missingList}` : ""}</div>`;
+      const hiddenBlock = hidden.length
+        ? `<details class="semantic-coverage-detail"><summary>${escapeHtml(i18n.semanticCoverageDetailLabel)} <span>${hidden.length}</span></summary>
+          <ul class="semantic-coverage-missing">${hidden.map((facet) => `<li>${escapeHtml(facetShortLabel(facet.facet_id))}</li>`).join("")}</ul></details>`
+        : "";
+      return `<div class="semantic-coverage-manifest" data-status="${escapeHtml(manifest.status)}"><p>${escapeHtml(statusLabel(i18n, manifest.status))}</p>${missing.length ? `<span class="semantic-coverage-missing-label">${escapeHtml(i18n.semanticCoverageMissingLabel)}</span>${missingList}${hiddenBlock}` : ""}</div>`;
     }).join("");
 
     const comparisonBlocks = comparisons.map((axis) => {

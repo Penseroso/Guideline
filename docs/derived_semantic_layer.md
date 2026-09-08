@@ -1,9 +1,9 @@
 # 파생 의미 레이어 설계
 
-상태: Implemented through Stage D; Stage E0/E1/E2 engineering completion 완료(최종 reviewed 승격은 라이브 감사 대기), Stage E3 예정
+상태: Implemented through Stage D; Stage E0/E1/E2/E3 engineering completion 완료(최종 reviewed 승격은 라이브 감사 대기)
 적용 대상: 검색·라우팅·답변 조립 계층  
 활성 의미 오버레이 계약: `0.3.0`
-활성 public answer contract: `2.4.0`
+활성 public answer contract: `2.5.0`
 
 ## 1. 목적
 
@@ -361,7 +361,11 @@ Stage D가 남긴 세 개 — `summary_specs`, 한국어 presentation 문장, `s
 
 `scripts/run_semantic_stage_e2_audit.js`(`npm run audit:semantic:stage-e2`)가 기존 presentation 3개 파일(ema_fih, ich_m3_r2, ich_s6_r1) 전부 올바른 sentence_roles 순서로 렌더링됨을 오프라인 확인(3/3). fda_ada/fda_ada_2014는 summary_spec은 있지만 presentation 파일 자체가 없어 이번 감사 대상이 아니며, `text: null`로 정상 fallback한다(Stage F 저작 대상). `scripts/promote_semantic_stage_e2.js`도 E1과 동일하게 라이브 50문항 감사(계약 `2.4.0`)를 요구하며, 이 환경에서는 API 키가 없어 engineering completion까지만 완료되고 3개 presentation entry는 계속 `needs_review`로 남는다. 상세: `history/verification/semantic_stage_e2_2026-09-08.md`.
 
-**Stage E3(예정) — `salience_profiles` 노출 순서 적용.** `buildSaliencePlans`가 `target_id`를 반환하지 않아 문서 단위 분기가 죽어 있던 기존 버그를 고치고, tier(`primary`/`supporting`/`detail`)에 따라 coverage disclosure의 노출/접힘을 구분한다. `envelope_version` `2.4.0` → `2.5.0`.
+**Stage E3(2026-09-08, engineering completion) — `salience_profiles` 노출 순서 적용.** `buildSaliencePlans`가 `target_id`를 반환하지 않아 Stage B 이후 문서 단위 분기가 죽은 코드였던 기존 버그를 고치고(§10 최상단 진단 참고), `selectServedSalience()`가 summary_spec과 동일한 "정확한 target 일치 우선, 없으면 facet 포함 매칭" 방식으로 salience_profile을 manifest에 연결한다. `servedSalience()`는 `reviewed`인 프로필만 `{ primary, supporting, detail }` facet ID 배열로 그룹핑하고(각 tier 내부는 `display_order` 순), `web/render.js`의 `renderSemanticCoverage`가 `detail` tier facet만 `<details>` 접이식 영역으로 옮기고 `primary`/`supporting`은 그대로 노출한다 — salience는 노출 순서를 좁힐 뿐 disclosure 자체를 좁히지 않는다는 원칙에 따라, salience가 아예 없거나 특정 facet을 언급하지 않으면 그 facet은 기본 노출된다. `envelope_version` `2.4.0` → `2.5.0`.
+
+`scripts/run_semantic_stage_e3_audit.js`(`npm run audit:semantic:stage-e3`)가 기존 7개 salience_profile 전부(6개 문서에 걸쳐) 의도한 manifest에 실제로 매칭됨을 오프라인 확인(7/7). `scripts/promote_semantic_stage_e3.js`도 동일한 라이브 50문항 감사(계약 `2.5.0`) 게이트를 요구하며, 이 환경에서는 API 키가 없어 engineering completion까지만 완료되고 7개 salience_profiles는 계속 `needs_review`로 남는다. 상세: `history/verification/semantic_stage_e3_2026-09-08.md`.
+
+이로써 Stage E(요약문 구조 → 개괄 문장 → salience 노출)의 배선·오프라인 검증은 전부 완료됐다. 세 단계 모두 라이브 50문항 감사만 미실행 상태로 남아 최종 `reviewed` 승격이 pending이며, 47개 신규 manifest로의 확장은 별도 Stage F 과제다.
 
 ## 11. 활성화 승인 기준
 

@@ -427,7 +427,8 @@ function fullyReviewedStore() {
       summary_specs: overlay.summary_specs.map((summary) => ({ ...summary, review_status: "reviewed" })),
       facets: overlay.facets.map((facet) => ({ ...facet, review_status: "reviewed" })),
       coverage_manifests: overlay.coverage_manifests.map((manifest) => ({ ...manifest, review_status: "reviewed" })),
-      comparison_bindings: overlay.comparison_bindings.map((binding) => ({ ...binding, review_status: "reviewed" }))
+      comparison_bindings: overlay.comparison_bindings.map((binding) => ({ ...binding, review_status: "reviewed" })),
+      salience_profiles: overlay.salience_profiles.map((profile) => ({ ...profile, review_status: "reviewed" }))
     }]))
   };
 }
@@ -685,4 +686,61 @@ test("a document with a reviewed summary_spec but no presentation file at all se
   const manifest = coverage.manifests.find((m) => m.manifest_id === "fda_ada_2014.sem.manifest.risk_factors");
   assert.ok(manifest.summary, "the summary_spec itself should still be served");
   assert.equal(manifest.summary.text, null);
+});
+
+// --- salience_profiles exposure ordering (Stage E3) ---
+
+function run_acceptanceEnvelope() {
+  return {
+    answer_intent: "multi_criterion",
+    scope: { resolved_document_ids: ["ich_m10"], requested_document_ids: [] },
+    claims: [
+      "ich_m10.qc.3_3_2.001", "ich_m10.qc.3_3_2.002", "ich_m10.qc.3_3_2.003",
+      "ich_m10.qc.3_3_2.004", "ich_m10.qc.3_3_2.005", "ich_m10.qc.3_3_2.006"
+    ].map((id) => claim({ id, document_id: "ich_m10" }))
+  };
+}
+
+test("buildShadowPlan attaches the matched salience_profile to a manifest by exact target_id match, regardless of review_status", () => {
+  const plan = buildShadowPlan("LC-MS/MS chromatography 분석 run 허용 기준이 뭐야?", run_acceptanceEnvelope(), { store });
+  const manifest = plan.manifests.find((m) => m.manifest_id === "ich_m10.sem.manifest.run_acceptance");
+  assert.ok(manifest.salience, "expected the exact-target salience_profile to be matched");
+  assert.equal(manifest.salience.profile_id, "ich_m10.sem.profile.run_acceptance");
+  assert.equal(manifest.salience.review_status, "needs_review");
+});
+
+test("buildReviewedSemanticCoverage omits salience that is not (yet) reviewed, even when its manifest is reviewed", () => {
+  const coverage = buildReviewedSemanticCoverage("LC-MS/MS chromatography 분석 run 허용 기준이 뭐야?", run_acceptanceEnvelope(), { store });
+  const manifest = coverage.manifests.find((m) => m.manifest_id === "ich_m10.sem.manifest.run_acceptance");
+  assert.equal(manifest.review_status, "reviewed");
+  assert.equal(manifest.salience, null, "the real committed salience_profile is still needs_review and must not be served");
+});
+
+test("buildReviewedSemanticCoverage groups a reviewed salience_profile's facets into primary/supporting/detail tiers, in display_order", () => {
+  const coverage = buildReviewedSemanticCoverage("LC-MS/MS chromatography 분석 run 허용 기준이 뭐야?", run_acceptanceEnvelope(), { store: fullyReviewedStore() });
+  const manifest = coverage.manifests.find((m) => m.manifest_id === "ich_m10.sem.manifest.run_acceptance");
+  assert.ok(manifest.salience);
+  assert.deepEqual(manifest.salience.primary, [
+    "ich_m10.sem.facet.run_acceptance.chromatography",
+    "ich_m10.sem.facet.run_acceptance.lba"
+  ]);
+  assert.deepEqual(manifest.salience.supporting, []);
+  assert.deepEqual(manifest.salience.detail, []);
+});
+
+test("a facet-containment salience match still works when target_id doesn't exactly match the manifest (mirrors summary_spec containment)", () => {
+  // fda_ada.sem.profile.screening_performance's target_id is the
+  // screening_performance facet itself, which the screening_performance
+  // manifest also targets exactly (target.type=facet) — exercised here via
+  // the real served-selector path, not a synthetic fixture.
+  const envelope = {
+    answer_intent: "topic_overview",
+    mode: "list",
+    scope: { resolved_document_ids: ["fda_ada"], requested_document_ids: [], section_ids: ["fda_ada.sec.6_b"] },
+    claims: [claim({ id: "fda_ada.kr.VI_B.001", document_id: "fda_ada", section_id: "fda_ada.sec.6_b" })]
+  };
+  const coverage = buildReviewedSemanticCoverage("ADA screening assay validation 성능 기준은?", envelope, { store: fullyReviewedStore() });
+  const manifest = coverage.manifests.find((m) => m.manifest_id === "fda_ada.sem.manifest.screening_performance");
+  assert.ok(manifest.salience);
+  assert.equal(manifest.salience.profile_id, "fda_ada.sem.profile.screening_performance");
 });

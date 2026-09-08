@@ -551,6 +551,7 @@ function buildManifestPlan(overlay, manifest, envelopeAnswerIntent, queryScope, 
     review_status: manifest.review_status,
     status: summarizeManifestStatus(groups),
     summary: selectServedSummary(overlay, manifest),
+    salience: selectServedSalience(overlay, manifest),
     groups
   };
 }
@@ -558,11 +559,50 @@ function buildManifestPlan(overlay, manifest, envelopeAnswerIntent, queryScope, 
 function buildSaliencePlans(overlay) {
   return (overlay.salience_profiles || []).map((profile) => ({
     profile_id: profile.profile_id,
+    // Stage E3 fix: this was missing before, so buildShadowPlan's own
+    // `profilePlan.target_id === documentId` document-level branch (below)
+    // compared undefined to a string and was always false — a whole-document
+    // salience profile could never surface as document-level, only ever via
+    // the touchesRelevantFacet fallback.
+    target_id: profile.target_id,
     context: profile.context,
+    review_status: profile.review_status,
     order: [...profile.items]
       .sort((a, b) => a.display_order - b.display_order)
       .map((item) => ({ facet_id: item.facet_id, tier: item.tier }))
   }));
+}
+
+/**
+ * Stage E3 (docs/derived_semantic_layer.md §10 단계 E3): matches a
+ * salience_profile to the manifest it should order, using the same
+ * exact-target-then-facet-containment pattern selectServedSummary already
+ * uses — `target_id` here is a bare id (document/section/facet), directly
+ * comparable to `manifest.target.id` regardless of target type.
+ */
+function selectServedSalience(overlay, manifest) {
+  const target = manifest.target || {};
+  const facetIdSet = manifestFacetIds(manifest);
+  let best = null;
+  for (const profile of overlay.salience_profiles || []) {
+    const itemFacetIds = profile.items.map((item) => item.facet_id);
+    const exact = profile.target_id === target.id;
+    const contained = !exact && itemFacetIds.every((id) => facetIdSet.has(id));
+    if (!exact && !contained) continue;
+    const overlap = itemFacetIds.length;
+    if (!best || (exact && !best.exact) || (exact === best.exact && overlap > best.overlap)) {
+      best = { exact, overlap, profile };
+    }
+  }
+  if (!best) return null;
+  return {
+    profile_id: best.profile.profile_id,
+    context: best.profile.context,
+    review_status: best.profile.review_status,
+    items: [...best.profile.items]
+      .sort((a, b) => a.display_order - b.display_order)
+      .map((item) => ({ facet_id: item.facet_id, tier: item.tier }))
+  };
 }
 
 /**
@@ -764,13 +804,34 @@ function servedSummary(summaryPlan, documentId, semanticStore) {
   };
 }
 
+/**
+ * Stage E3: a reviewed salience_profile groups its facets into
+ * `{ primary, supporting, detail }` id lists (display_order within each
+ * tier), for web/render.js to decide what's shown by default versus
+ * collapsed. A facet the profile doesn't mention at all is simply absent
+ * from every list — narrowing exposure order never narrows what disclosure
+ * shows, the caller's own fallback (show everything) covers that facet.
+ */
+function servedSalience(saliencePlan) {
+  if (!saliencePlan || saliencePlan.review_status !== "reviewed") return null;
+  const byTier = { primary: [], supporting: [], detail: [] };
+  for (const item of saliencePlan.items) {
+    if (byTier[item.tier]) byTier[item.tier].push(item.facet_id);
+  }
+  return { profile_id: saliencePlan.profile_id, context: saliencePlan.context, ...byTier };
+}
+
 function buildReviewedSemanticCoverage(question, envelope, options) {
   const semanticStore = options && options.store || defaultStore();
   const shadowPlan = buildShadowPlan(question, envelope, { ...options, store: semanticStore });
   if (!shadowPlan.applicable) return null;
 
   const manifests = selectServedManifests(question, shadowPlan, envelope, semanticStore)
-    .map((manifest) => ({ ...manifest, summary: servedSummary(manifest.summary, manifest.document_id, semanticStore) }));
+    .map((manifest) => ({
+      ...manifest,
+      summary: servedSummary(manifest.summary, manifest.document_id, semanticStore),
+      salience: servedSalience(manifest.salience)
+    }));
 
   // Same reviewed-only filter applied per binding, then an axis is only
   // kept if at least two distinct documents still have a reviewed binding

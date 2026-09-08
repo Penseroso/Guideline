@@ -27,7 +27,9 @@
     "audit:semantic:stage-e1": "node scripts/run_semantic_stage_e1_audit.js",
     "promote:semantic:stage-e1": "node scripts/promote_semantic_stage_e1.js",
     "audit:semantic:stage-e2": "node scripts/run_semantic_stage_e2_audit.js",
-    "promote:semantic:stage-e2": "node scripts/promote_semantic_stage_e2.js"
+    "promote:semantic:stage-e2": "node scripts/promote_semantic_stage_e2.js",
+    "audit:semantic:stage-e3": "node scripts/run_semantic_stage_e3_audit.js",
+    "promote:semantic:stage-e3": "node scripts/promote_semantic_stage_e3.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1",

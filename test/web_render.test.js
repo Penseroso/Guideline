@@ -501,6 +501,59 @@ test("renderSemanticCoverage orders the missing-facet list by a matched summary_
   assert.deepEqual(order, ["a", "b", "c"]);
 });
 
+test("renderSemanticCoverage collapses a detail-tier facet behind a disclosure widget, keeping primary/supporting visible directly (Stage E3)", () => {
+  const html = R.renderSemanticCoverage(
+    {
+      semantic_coverage: {
+        manifests: [
+          {
+            manifest_id: "m",
+            status: "partial",
+            salience: { profile_id: "m.salience", context: "detail", primary: ["facet.a"], supporting: ["facet.b"], detail: ["facet.c"] },
+            groups: [
+              {
+                facets: [
+                  { facet_id: "facet.a", status: "missing" },
+                  { facet_id: "facet.b", status: "missing" },
+                  { facet_id: "facet.c", status: "missing" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    i18n
+  );
+  assert.match(html, /<ul class="semantic-coverage-missing"><li>a<\/li><li>b<\/li><\/ul>/);
+  assert.match(html, /<details class="semantic-coverage-detail">/);
+  assert.match(html, /<summary>[^<]*<span>1<\/span><\/summary>/);
+  const detailsMatch = html.match(/<details class="semantic-coverage-detail">[\s\S]*?<\/details>/);
+  assert.ok(detailsMatch);
+  assert.match(detailsMatch[0], /<li>c<\/li>/);
+});
+
+test("renderSemanticCoverage shows every facet directly when no salience is attached (no collapsed section)", () => {
+  const html = R.renderSemanticCoverage(
+    {
+      semantic_coverage: {
+        manifests: [
+          {
+            manifest_id: "m",
+            status: "partial",
+            salience: null,
+            groups: [{ facets: [{ facet_id: "facet.a", status: "missing" }, { facet_id: "facet.b", status: "missing" }] }]
+          }
+        ]
+      }
+    },
+    i18n
+  );
+  assert.doesNotMatch(html, /semantic-coverage-detail/);
+  assert.match(html, /<li>a<\/li>/);
+  assert.match(html, /<li>b<\/li>/);
+});
+
 test("renderSemanticCoverage falls back to declaration order when no summary is attached", () => {
   const html = R.renderSemanticCoverage(
     {
