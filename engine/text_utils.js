@@ -226,6 +226,11 @@ const REGULATORY_SYNONYMS = {
   "ppnd": ["pre", "post", "natal", "development", "ppnd"],
   "eppnd": ["enhanced", "pre", "post", "natal", "development", "eppnd"],
   "국소자극성": ["local", "tolerance"],
+  "국소자극성시험": ["local", "tolerance"],
+  "국소내약성": ["local", "tolerance"],
+  "국소내약성시험": ["local", "tolerance"],
+  "내약성": ["tolerance", "tolerability"],
+  "내약성시험": ["tolerance", "tolerability"],
 
   // FIH & Clinical Study Design (EMA FIH)
   "fih": ["first", "human", "fih"],

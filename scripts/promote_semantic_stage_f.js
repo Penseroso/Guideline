@@ -4,29 +4,49 @@
  * summary_spec/salience_profile reaches its intended manifest, and a
  * complete live 50-question run against the *exact* on-disk state this
  * promotion produces (see scripts/stage_e_promotion_shared.js's
- * computeSemanticStateFingerprint), with the established-16-suitable-case
- * regression guard Stage D/E used.
+ * computeSemanticStateFingerprint), with the route-keyed established-16-
+ * suitable-case regression policy Stage D/E used
+ * (evaluateEstablishedCase).
  *
- * Flip-then-verify, not verify-then-flip: reviewing a manifest's
+ * Prepare-then-verify, not verify-then-prepare: reviewing a manifest's
  * semantic_coverage requires the manifest's summary/salience to actually be
  * `reviewed` when the live audit runs, so a "prove it's safe" audit
- * generated *before* today's flip proves nothing about today's flip. This
- * script writes the flip first, then requires a live audit whose embedded
- * fingerprint matches that exact post-flip state, and auto-reverts the
- * flip if the audit or regression check then fails.
+ * generated *before* activation proves nothing about that activation (this
+ * is exactly what the original Stage F promotion got wrong — see
+ * history/verification/semantic_stage_f_2026-09-08.md's "Post-activation
+ * re-verification" section). `--prepare` writes the flip to disk and stops;
+ * a fresh live audit run after that (in a separate command) is the only
+ * kind `--verify` will accept — its embedded fingerprint must match
+ * exactly what `--prepare` left on disk, and either step's failure rolls
+ * back only this promotion's own flip.
+ *
+ * Lifecycle: default (no flags) checks every verify precondition before
+ * touching disk, then runs prepare immediately followed by verify — the
+ * same single-command behavior every prior release used.
  */
 const fs = require("node:fs");
 const path = require("node:path");
 
 const { validateSemanticOverlays } = require("../validation/validate_semantic_overlay");
 const { ENVELOPE_VERSION } = require("../engine/answer_envelope");
-const { ESTABLISHED_SUITABLE_IDS, assertLiveAuditRegression } = require("./stage_e_promotion_shared");
+const {
+  ESTABLISHED_SUITABLE_IDS,
+  prepareTargetState,
+  rollbackPreparedState,
+  verifyAndFinalizePromotion
+} = require("./stage_e_promotion_shared");
 
+const LABEL = "stage-f";
 const ROOT = path.resolve(__dirname, "..");
 const OVERLAY_DIR = path.join(ROOT, "data", "derived", "semantic");
 const AUDIT_PATH = process.env.GUIDELINE_STAGE_F_AUDIT_INPUT
   ? path.resolve(process.env.GUIDELINE_STAGE_F_AUDIT_INPUT)
   : path.join(ROOT, "logs", "runtime", "semantic_stage_f_audit.json");
+
+const COLLECTIONS = [
+  { dir: OVERLAY_DIR, collectionKey: "summary_specs", idField: "summary_id" },
+  { dir: OVERLAY_DIR, collectionKey: "salience_profiles", idField: "profile_id" }
+];
 
 function assertOfflineAudit() {
   if (!fs.existsSync(AUDIT_PATH)) throw new Error(`Run scripts/run_semantic_stage_f_audit.js first (expected ${path.relative(ROOT, AUDIT_PATH)})`);
@@ -36,83 +56,56 @@ function assertOfflineAudit() {
   return results;
 }
 
-/** Flips every needs_review summary_spec/salience_profile to reviewed, writing to disk immediately. Returns the exact {file, kind, id} list changed, for revert(). */
-function flipToReviewed() {
-  const changed = [];
-  for (const name of fs.readdirSync(OVERLAY_DIR).filter((item) => item.endsWith(".json")).sort()) {
-    const file = path.join(OVERLAY_DIR, name);
-    const overlay = JSON.parse(fs.readFileSync(file, "utf8"));
-    let touched = false;
-    for (const summary of overlay.summary_specs || []) {
-      if (summary.review_status !== "needs_review") continue;
-      summary.review_status = "reviewed";
-      changed.push({ file, kind: "summary_specs", id: summary.summary_id });
-      touched = true;
-    }
-    for (const profile of overlay.salience_profiles || []) {
-      if (profile.review_status !== "needs_review") continue;
-      profile.review_status = "reviewed";
-      changed.push({ file, kind: "salience_profiles", id: profile.profile_id });
-      touched = true;
-    }
-    if (touched) fs.writeFileSync(file, `${JSON.stringify(overlay, null, 2)}\n`, "utf8");
-  }
-  return changed;
-}
-
-/** Undoes exactly the flips flipToReviewed() just made, by id — never touches anything promoted in an earlier run. */
-function revert(changed) {
-  const byFile = new Map();
-  for (const item of changed) {
-    if (!byFile.has(item.file)) byFile.set(item.file, []);
-    byFile.get(item.file).push(item);
-  }
-  for (const [file, items] of byFile) {
-    const overlay = JSON.parse(fs.readFileSync(file, "utf8"));
-    for (const item of items) {
-      const collection = overlay[item.kind] || [];
-      const idField = item.kind === "summary_specs" ? "summary_id" : "profile_id";
-      const object = collection.find((entry) => entry[idField] === item.id);
-      if (object) object.review_status = "needs_review";
-    }
-    fs.writeFileSync(file, `${JSON.stringify(overlay, null, 2)}\n`, "utf8");
-  }
-}
-
-function main() {
-  const validationBefore = validateSemanticOverlays();
-  if (!validationBefore.ok) throw new Error(`Semantic overlay validation failed:\n${validationBefore.errors.join("\n")}`);
-
-  const offlineResults = assertOfflineAudit();
-
-  const livePathValue = process.env.GUIDELINE_STAGE_F_LIVE_AUDIT_INPUT;
-  if (!livePathValue) throw new Error(`Set GUIDELINE_STAGE_F_LIVE_AUDIT_INPUT to a live 50-question audit run AFTER activating Stage F on disk (answer contract ${ENVELOPE_VERSION})`);
+function assertVerifyPreconditions() {
+  if (!process.env.GUIDELINE_STAGE_F_LIVE_AUDIT_INPUT) throw new Error(`Set GUIDELINE_STAGE_F_LIVE_AUDIT_INPUT to a live 50-question audit run AFTER activating Stage F on disk (answer contract ${ENVELOPE_VERSION})`);
   if (process.env.GUIDELINE_STAGE_F_AUDIT_REVIEW_ATTESTED !== "true") {
     throw new Error("Set GUIDELINE_STAGE_F_AUDIT_REVIEW_ATTESTED=true only after reviewing the live audit against its per-question minimum contracts");
   }
-  const livePath = path.resolve(livePathValue);
+}
 
-  const changed = flipToReviewed();
-  try {
-    assertLiveAuditRegression(livePath, ENVELOPE_VERSION, process.env.GUIDELINE_STAGE_F_BASELINE_AUDIT);
-    const validationAfter = validateSemanticOverlays();
-    if (!validationAfter.ok) throw new Error(`Post-promotion semantic validation failed:\n${validationAfter.errors.join("\n")}`);
-  } catch (error) {
-    if (changed.length > 0) {
-      revert(changed);
-      console.error(`Reverted ${changed.length} object(s) back to needs_review after the check below failed.`);
-    }
-    throw error;
-  }
+function parseArgs(argv) {
+  const args = { prepare: argv.includes("--prepare"), verify: argv.includes("--verify"), rollback: argv.includes("--rollback") };
+  args.combined = !args.prepare && !args.verify && !args.rollback;
+  return args;
+}
 
-  const promotedSummaries = changed.filter((item) => item.kind === "summary_specs").length;
-  const promotedSalience = changed.filter((item) => item.kind === "salience_profiles").length;
-  console.log(`Promoted ${promotedSummaries} summary_spec(s) and ${promotedSalience} salience_profile(s) to reviewed.`);
+function prepare() {
+  const validationBefore = validateSemanticOverlays();
+  if (!validationBefore.ok) throw new Error(`Semantic overlay validation failed:\n${validationBefore.errors.join("\n")}`);
+  const offlineResults = assertOfflineAudit();
+  const receipt = prepareTargetState(LABEL, COLLECTIONS);
+  const promotedSummaries = receipt.changed.filter((item) => item.collectionKey === "summary_specs").length;
+  const promotedSalience = receipt.changed.filter((item) => item.collectionKey === "salience_profiles").length;
+  console.log(`Prepared "${LABEL}": ${promotedSummaries} summary_spec(s) and ${promotedSalience} salience_profile(s) flipped to reviewed. Fingerprint: ${receipt.post_fingerprint}`);
   console.log(`Offline audit: ${offlineResults.length} manifest(s) checked, all attached.`);
-  console.log(`Live audit: ${path.relative(ROOT, livePath)} (50/50, answer contract ${ENVELOPE_VERSION}, semantic_state_fingerprint matched current disk state)`);
+  return receipt;
+}
+
+function verify() {
+  assertVerifyPreconditions();
+  const livePath = path.resolve(process.env.GUIDELINE_STAGE_F_LIVE_AUDIT_INPUT);
+  const { live } = verifyAndFinalizePromotion(LABEL, livePath, ENVELOPE_VERSION, process.env.GUIDELINE_STAGE_F_BASELINE_AUDIT);
+
+  const validationAfter = validateSemanticOverlays();
+  if (!validationAfter.ok) throw new Error(`Post-promotion semantic validation failed:\n${validationAfter.errors.join("\n")}`);
+  console.log(`Live audit: ${path.relative(ROOT, livePath)} (${live.length}/50, answer contract ${ENVELOPE_VERSION}, semantic_state_fingerprint matched current disk state)`);
   console.log(`Established suitable regression guard: ${ESTABLISHED_SUITABLE_IDS.length}/${ESTABLISHED_SUITABLE_IDS.length} unchanged`);
+}
+
+function main() {
+  const args = parseArgs(process.argv.slice(2));
+  if (args.rollback) {
+    rollbackPreparedState(LABEL);
+    console.log(`Rolled back pending promotion "${LABEL}".`);
+    return;
+  }
+  if (args.prepare) { prepare(); return; }
+  if (args.verify) { verify(); return; }
+  assertVerifyPreconditions();
+  prepare();
+  verify();
 }
 
 if (require.main === module) main();
 
-module.exports = { main };
+module.exports = { main, prepare, verify, parseArgs, LABEL, COLLECTIONS };
