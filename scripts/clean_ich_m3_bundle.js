@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "ich_m3_nonclinical.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "ich_m3_r2.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 // Calculate sha256 uppercase checksum of source PDF
@@ -106,4 +106,4 @@ cleanedBundle.conditions = cleanedBundle.conditions.filter(
 );
 
 fs.writeFileSync(bundlePath, JSON.stringify(cleanedBundle, null, 2), "utf8");
-console.log("Successfully cleaned and validated ich_m3_nonclinical.json schema shape!");
+console.log("Successfully cleaned and validated ich_m3_r2.json schema shape!");

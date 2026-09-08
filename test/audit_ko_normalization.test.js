@@ -26,6 +26,6 @@ test("normalization preflight preserves signed numeric tokens and validates batc
 test("all committed KnowledgeRecord normalizations have fresh reviewed attestations and no critical risk flags", () => {
   const result = auditKnowledgeNormalization();
   assert.equal(result.ok, true, JSON.stringify(result.issues.slice(0, 10), null, 2));
-  assert.equal(result.documents.reduce((sum, document) => sum + document.total, 0), 1353);
-  assert.equal(result.documents.reduce((sum, document) => sum + document.reviewed, 0), 1353);
+  assert.equal(result.documents.reduce((sum, document) => sum + document.total, 0), 1495);
+  assert.equal(result.documents.reduce((sum, document) => sum + document.reviewed, 0), 1495);
 });

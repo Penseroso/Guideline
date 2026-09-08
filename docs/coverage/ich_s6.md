@@ -3,7 +3,7 @@
 ## Overview
 * **Document**: ICH S6(R1) Preclinical Safety Evaluation of Biotechnology-Derived Pharmaceuticals
 * **Status**: Step 4 Final (Parent Guideline 16 July 1997 + Addendum 12 June 2011)
-* **Master Target Bundle**: `data/pilots/s6_r1_species_selection.json`
+* **Master Target Bundle**: `data/guidelines/ich_s6_r1.json`
 
 ---
 

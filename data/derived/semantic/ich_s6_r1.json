@@ -1,7 +1,7 @@
 {
   "semantic_overlay_version": "0.3.0",
   "document_id": "ich_s6_r1",
-  "source_bundle_sha256": "a8c4d38f71ffb94c45ae4b701879c28516e6919f86b593faf0dad05573ccbc0b",
+  "source_bundle_sha256": "83afe0f4fffc73b761e080abc5136ade817bf23c28c19b169b5083ab1d073dcf",
   "derivation": {
     "method": "agent_assisted",
     "pipeline_version": "stage-d-2026-09-08"
@@ -53,9 +53,34 @@
       ],
       "evidence_refs": [
         {
+          "record_id": "ich_s6_r1.kr.part2.2_1.001",
+          "source_unit_id": "ich_s6_r1.su.part2.2_1.002",
+          "source_text_sha256": "c8fa08ab84e17ae3f104554e9784c1bf6855bb011d2ca4af022e66f1f5e290e9"
+        },
+        {
           "record_id": "ich_s6_r1.cond.part2.2_1.001",
           "source_unit_id": "ich_s6_r1.su.part2.2_1.002",
           "source_text_sha256": "4bab267f27d54f5bd829ab4559f79a7f1954d0d2acec54269036177014422388"
+        },
+        {
+          "record_id": "ich_s6_r1.cond.part2.2_2.003",
+          "source_unit_id": "ich_s6_r1.su.part2.2_2.002",
+          "source_text_sha256": "1a833616e549ea6cbfbbcd4271c9a7f93bee8581e7c2c8da1af9353d95c8c781"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2.2_2.001",
+          "source_unit_id": "ich_s6_r1.su.part2.2_2.002",
+          "source_text_sha256": "cf52a34f1cd81b4624cc5ddd533786e6d0301a7322c627cdbf568f577ed8e919"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2_2_3.001",
+          "source_unit_id": "ich_s6_r1.su.part2.2_3.001",
+          "source_text_sha256": "0a96655c069926f50ede9e2ee7c71d21dc7fc74090d8537fd92a7f9a5c3c722f"
+        },
+        {
+          "record_id": "ich_s6_r1.cond.part2_2_3.001",
+          "source_unit_id": "ich_s6_r1.su.part2.2_3.001",
+          "source_text_sha256": "eb2e0af910be6816d95409646fb4484fe09952061e41364332c565cd235074b6"
         }
       ],
       "review_status": "reviewed"
@@ -81,6 +106,41 @@
           "record_id": "ich_s6_r1.cond.part2_3_1.001",
           "source_unit_id": "ich_s6_r1.su.part2.3_1.001",
           "source_text_sha256": "5b96c4ac773755908290fe885aebe0c80845aa5fd3ac2024dbd7382603a3f3a6"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2_3_1.001",
+          "source_unit_id": "ich_s6_r1.su.part2.3_1.001",
+          "source_text_sha256": "b6e63babbb87fa713a5871e598fdeb4bd2ee6138f1b6c3aaed30fd649893ad82"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2_3_2.001",
+          "source_unit_id": "ich_s6_r1.su.part2.3_2.001",
+          "source_text_sha256": "d2c8b2e1fb0e2cb1bc1b007cca81d940d8f684326ccb3ca37984047dbb452ec4"
+        },
+        {
+          "record_id": "ich_s6_r1.cond.part2_3_2.001",
+          "source_unit_id": "ich_s6_r1.su.part2.3_2.001",
+          "source_text_sha256": "49dc69ec899e6f0e351662f401852a5587464c2b0af264f5e3c2a91a92fd2735"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2_3_3.007",
+          "source_unit_id": "ich_s6_r1.su.part2.3_3.001",
+          "source_text_sha256": "5197ae64e434ce16857434c90a7ff5a483ed9fe054ef6a7719443704af994e3e"
+        },
+        {
+          "record_id": "ich_s6_r1.cond.part2_3_3.001",
+          "source_unit_id": "ich_s6_r1.su.part2.3_3.001",
+          "source_text_sha256": "a51d9ad240141ff1452efc6d0b803a78f37d2befb3e23a60384cfcbce94f364a"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2_3_4.002",
+          "source_unit_id": "ich_s6_r1.su.part2.3_4.001",
+          "source_text_sha256": "c2c85ad09a7d016a2cbf0a2fe3d935fd3ac36847d44a6f217b5fb72bdd533ece"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2_3_4.003",
+          "source_unit_id": "ich_s6_r1.su.part2.3_4.001",
+          "source_text_sha256": "c2c85ad09a7d016a2cbf0a2fe3d935fd3ac36847d44a6f217b5fb72bdd533ece"
         }
       ],
       "review_status": "reviewed"
@@ -111,6 +171,46 @@
           "record_id": "ich_s6_r1.kr.4_1.001",
           "source_unit_id": "ich_s6_r1.su.part1.4_1.001",
           "source_text_sha256": "6a880e52d68d8033276129f682f2597c161c695ee498ea6ecbaa62c8e0ae23df"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part1_4_2.007",
+          "source_unit_id": "ich_s6_r1.su.part1.4_2.001",
+          "source_text_sha256": "40930bd5d1118973b39d349a3d0a994d583dc2c13ad8a6caeae16276f49dba1e"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part1_4_3.004",
+          "source_unit_id": "ich_s6_r1.su.part1.4_3.001",
+          "source_text_sha256": "3aa3d2451c9d1879ac84ed257443e4baf3293e8df3ae0632b1bff40a952d64d0"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.4_4.002",
+          "source_unit_id": "ich_s6_r1.su.part1.4_4.001",
+          "source_text_sha256": "6e19a93406ea2e6dc45b04261649db1b1746283bfd0b818f6b60ee361e6163be"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part1_4_5.001",
+          "source_unit_id": "ich_s6_r1.su.part1.4_5.001",
+          "source_text_sha256": "8c46b0c23abb456c0e506fa73f5d9850d6029227400945e6828856e38c9092ee"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part1_4_6.001",
+          "source_unit_id": "ich_s6_r1.su.part1.4_6.001",
+          "source_text_sha256": "da8d845384859169bf02f240f06b0fb7e3bd39b6b18f3b985a6d940d4e4c7cdb"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.4_7.003",
+          "source_unit_id": "ich_s6_r1.su.part1.4_7.001",
+          "source_text_sha256": "ae16fdcdc1353920d51f21ed6f19d8790fb03655029dbdace0fe33be26035e09"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part1_4_8.004",
+          "source_unit_id": "ich_s6_r1.su.part1.4_8.001",
+          "source_text_sha256": "a3cf8ae5bafab048cffed62354cbcfe307a5e1224c01ae03a8e3b46e34ef6578"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part1_4_9.001",
+          "source_unit_id": "ich_s6_r1.su.part1.4_9.001",
+          "source_text_sha256": "b52d9fc7885e458a6f9b885a678e383c12c2a8a18c973a8855bcc89fba8e793e"
         }
       ],
       "review_status": "reviewed"
@@ -133,9 +233,29 @@
       ],
       "evidence_refs": [
         {
-          "record_id": "ich_s6_r1.cond.part2_5.001",
+          "record_id": "ich_s6_r1.kr.part2_5.001",
           "source_unit_id": "ich_s6_r1.su.part2.5.001",
-          "source_text_sha256": "c4aede8b2df040592301f521b57d08d405f7195a1371480373542081c30bb5ef"
+          "source_text_sha256": "cf89195678e65d29cf0f70099af09aaa8f421ecf026791ee561352803d6e8aa1"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2_5_1.001",
+          "source_unit_id": "ich_s6_r1.su.part2.5_1.001",
+          "source_text_sha256": "75b871cce931a558a8b803ae2de6f9fadce06418f93f3eccb8f07a0f13b70877"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2_5_2.003",
+          "source_unit_id": "ich_s6_r1.su.part2.5_2.001",
+          "source_text_sha256": "4059ac33587b84e1d9e7ff226ea0bcbcf55d5d60d91a831cd81bfe07a4e0a899"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2_5_3.001",
+          "source_unit_id": "ich_s6_r1.su.part2.5_3.001",
+          "source_text_sha256": "17201c1e03bb0625928998d5708e07f85cda0d16d474455061db67390baa5af5"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2_5_4.005",
+          "source_unit_id": "ich_s6_r1.su.part2.5_4.001",
+          "source_text_sha256": "6f89cc449699920fe7403036692ab2fad2588b6194dcd1a20d62d4b17b927586"
         }
       ],
       "review_status": "reviewed"
@@ -164,9 +284,104 @@
       ],
       "evidence_refs": [
         {
-          "record_id": "ich_s6_r1.cond.1_3.001",
+          "record_id": "ich_s6_r1.cond.1_3.002",
           "source_unit_id": "ich_s6_r1.su.part1.1_3.001",
-          "source_text_sha256": "e434370636d0a40bec8cd31ccf53c20b51b9c9736bd444bf4346c1623b5e4c0c"
+          "source_text_sha256": "86b22426197492bebae8120375c86ef975fb6740800d80a0a07a589718e6377d"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.1_1.001",
+          "source_unit_id": "ich_s6_r1.su.part1.1_1.001",
+          "source_text_sha256": "c0640835c89ae61dc42d1ff0153c7c67f0da4a57421ed29992ada0206e6cf06d"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.2.001",
+          "source_unit_id": "ich_s6_r1.su.part1.2.001",
+          "source_text_sha256": "6b2ca8dc2440e165710303790d2c52f439c0f4c5209c3712162d5cfa3ea15117"
+        },
+        {
+          "record_id": "ich_s6_r1.cond.2.001",
+          "source_unit_id": "ich_s6_r1.su.part1.2.001",
+          "source_text_sha256": "c41a3ad951c90b77985962a0d08086ad2c17349322b668498b6e60bd27c6eaef"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.3_1.001",
+          "source_unit_id": "ich_s6_r1.su.part1.3_1.001",
+          "source_text_sha256": "e5fa16cdd65fb2be86539fff322f036ef754868dd35eb96c10b4eb5222fa6371"
+        },
+        {
+          "record_id": "ich_s6_r1.cond.3_1.001",
+          "source_unit_id": "ich_s6_r1.su.part1.3_1.001",
+          "source_text_sha256": "685eb2a1a3b687844f89260ae943ea1d71d0e965bfdae233341daf8b4b03c83c"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part1_3_2.010",
+          "source_unit_id": "ich_s6_r1.su.part1.3_2.001",
+          "source_text_sha256": "d6dab22ff3a71b8430e9ad93dcee7675bac923dbeb508696c0142b47501752b2"
+        },
+        {
+          "record_id": "ich_s6_r1.cond.part1_3_2.002",
+          "source_unit_id": "ich_s6_r1.su.part1.3_2.001",
+          "source_text_sha256": "3033e1928c387f99f465798e12bdbf4c44f6bb01435226549ae119a66fe0ee1a"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part1.3_3.001",
+          "source_unit_id": "ich_s6_r1.su.part1.3_3.002",
+          "source_text_sha256": "f1766adc3c2b3783af1440815adf46d7de2b60da717f5762abdbe53c180b7489"
+        },
+        {
+          "record_id": "ich_s6_r1.cond.part1.3_3.001",
+          "source_unit_id": "ich_s6_r1.su.part1.3_3.002",
+          "source_text_sha256": "8fd68ab92df4022edc55d51e99cae9e7408a06972fca961a72eeb78b5c23d415"
+        },
+        {
+          "record_id": "ich_s6_r1.cond.3_4.001",
+          "source_unit_id": "ich_s6_r1.su.part1.3_4.001",
+          "source_text_sha256": "f9526ec7497275d8f1038d97055b9b8ad7bb82f7c552cb7323cb7046c0a5242e"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.3_4.001",
+          "source_unit_id": "ich_s6_r1.su.part1.3_4.001",
+          "source_text_sha256": "c3d4832244b28551badf0b7613af6b66df928032504643ea18c80e120b27956e"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part1_3_5.001",
+          "source_unit_id": "ich_s6_r1.su.part1.3_5.001",
+          "source_text_sha256": "13c74841eec969ced4e16f0b92efe3b8068215e295766bdabb16829c187e8633"
+        },
+        {
+          "record_id": "ich_s6_r1.cond.part1_3_5.001",
+          "source_unit_id": "ich_s6_r1.su.part1.3_5.002",
+          "source_text_sha256": "ad59d580d35f0348ab5d62932cb6c0b6cf1763c3f98e6f8d3d55e1a36dcda94e"
+        },
+        {
+          "record_id": "ich_s6_r1.cond.3_6.002",
+          "source_unit_id": "ich_s6_r1.su.part1.3_6.001",
+          "source_text_sha256": "05d1e80b4b662fdff47983db5bdffceb1c20b717dac8ad835ab9d01bf3e78c11"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.3_6.003",
+          "source_unit_id": "ich_s6_r1.su.part1.3_6.001",
+          "source_text_sha256": "39d409af54a0902120a357e5c26822d06aa3c395a1cf2a70e9e95a3e8f84330f"
+        },
+        {
+          "record_id": "ich_s6_r1.cond.part1_4_9.001",
+          "source_unit_id": "ich_s6_r1.su.part1.4_9.001",
+          "source_text_sha256": "58b7713d7e55ed93f1df0bc768097083815f027a2f43f8af45728c83761db297"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.4_1.001",
+          "source_unit_id": "ich_s6_r1.su.part1.4_1.001",
+          "source_text_sha256": "6a880e52d68d8033276129f682f2597c161c695ee498ea6ecbaa62c8e0ae23df"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part1.notes.001",
+          "source_unit_id": "ich_s6_r1.su.part1.notes.note1.001",
+          "source_text_sha256": "78916df56b075dd63c63bbdb6bf560dd24ee4af29c6024d3a5cab3dbd9d6e2b3"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part1.notes.002",
+          "source_unit_id": "ich_s6_r1.su.part1.notes.note1.001",
+          "source_text_sha256": "78916df56b075dd63c63bbdb6bf560dd24ee4af29c6024d3a5cab3dbd9d6e2b3"
         }
       ],
       "review_status": "reviewed"
@@ -192,9 +407,39 @@
       ],
       "evidence_refs": [
         {
-          "record_id": "ich_s6_r1.cond.part2.2_1.001",
+          "record_id": "ich_s6_r1.kr.part2_1.001",
+          "source_unit_id": "ich_s6_r1.su.part2.1.001",
+          "source_text_sha256": "43d0da1d5cdf616cfc7b5389b7de92d2b77d479c21d1909505f3ba9b5d91b1bc"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2.2_1.001",
           "source_unit_id": "ich_s6_r1.su.part2.2_1.002",
-          "source_text_sha256": "4bab267f27d54f5bd829ab4559f79a7f1954d0d2acec54269036177014422388"
+          "source_text_sha256": "c8fa08ab84e17ae3f104554e9784c1bf6855bb011d2ca4af022e66f1f5e290e9"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2_3_3.007",
+          "source_unit_id": "ich_s6_r1.su.part2.3_3.001",
+          "source_text_sha256": "5197ae64e434ce16857434c90a7ff5a483ed9fe054ef6a7719443704af994e3e"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2_4.001",
+          "source_unit_id": "ich_s6_r1.su.part2.4.001",
+          "source_text_sha256": "238ba4f0191e72453532247c6b8a35130ba6ca5b5d060ce099e6d26ed352ed60"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2_5.001",
+          "source_unit_id": "ich_s6_r1.su.part2.5.001",
+          "source_text_sha256": "cf89195678e65d29cf0f70099af09aaa8f421ecf026791ee561352803d6e8aa1"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2_6.001",
+          "source_unit_id": "ich_s6_r1.su.part2.6.001",
+          "source_text_sha256": "914d317fdbe8b5124c51ef0ea4da5243faedebdd48931d03486e0bb93d41c60a"
+        },
+        {
+          "record_id": "ich_s6_r1.kr.part2.notes.004",
+          "source_unit_id": "ich_s6_r1.su.part2.notes.note1.003",
+          "source_text_sha256": "c9d5fcf72c53abe7e1cae0195ceaf622991e98467561475692f6d1065cbaec64"
         }
       ],
       "review_status": "reviewed"

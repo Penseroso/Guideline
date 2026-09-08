@@ -3,10 +3,10 @@ const fs = require("fs");
 const path = require("path");
 const Ajv = require("ajv");
 
-const { discoverJsonFiles } = require("./validate_pilots");
+const { discoverJsonFiles } = require("./validate_guidelines");
 
 const ROOT = path.resolve(__dirname, "..");
-const PILOTS_DIR = path.join(ROOT, "data", "pilots");
+const GUIDELINES_DIR = path.join(ROOT, "data", "guidelines");
 const OVERLAY_DIR = path.join(ROOT, "data", "derived", "semantic");
 const PRESENTATION_DIR = path.join(ROOT, "data", "derived", "presentation", "ko");
 const OVERLAY_SCHEMA_PATH = path.join(ROOT, "data", "schemas", "derived_semantic_overlay.schema.json");
@@ -54,13 +54,13 @@ function loadJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
 }
 
-function loadCoreArchive(pilotsDir = PILOTS_DIR) {
+function loadCoreArchive(guidelinesDir = GUIDELINES_DIR) {
   const byDocumentId = new Map();
   const sourceUnitsById = new Map();
   const sectionsById = new Map();
   const recordsById = new Map(); // id -> { kind, record, documentId }
 
-  for (const file of discoverJsonFiles(pilotsDir)) {
+  for (const file of discoverJsonFiles(guidelinesDir)) {
     const bundle = loadJson(file);
     for (const document of bundle.documents || []) {
       byDocumentId.set(document.document_id, { file, bundle });
@@ -108,6 +108,16 @@ function recordSourceText(entry, sourceUnitsById) {
   if (entry.kind === "quantitative_criterion") return entry.record.source_text;
   if (entry.kind === "condition") return entry.record.condition_text;
   return null;
+}
+
+function summarySpecSha256(summary) {
+  return sha256(canonicalize({
+    summary_id: summary.summary_id,
+    target: summary.target,
+    summary_kind: summary.summary_kind,
+    facet_ids: summary.facet_ids,
+    sentence_roles: summary.sentence_roles
+  }));
 }
 
 function checkEvidenceRef({ file, ownerId, field, ref, errors, archive, expectedDocumentId }) {
@@ -432,10 +442,7 @@ function validatePresentationFile(file, presentation, ajvValidate, archive, over
     return;
   }
 
-  const semanticIds = new Set([
-    ...overlay.summary_specs.map((summary) => summary.summary_id),
-    ...overlay.facets.map((facet) => facet.facet_id)
-  ]);
+  const summariesById = new Map(overlay.summary_specs.map((summary) => [summary.summary_id, summary]));
 
   const seen = new Set();
   for (const entry of presentation.entries) {
@@ -443,24 +450,59 @@ function validatePresentationFile(file, presentation, ajvValidate, archive, over
       addError(errors, file, entry.semantic_id, "semantic_id", "duplicate presentation entry");
     }
     seen.add(entry.semantic_id);
-    if (!semanticIds.has(entry.semantic_id)) {
-      addError(errors, file, entry.semantic_id, "semantic_id", "does not resolve to a summary_spec or facet in the corresponding semantic overlay");
+    const summary = summariesById.get(entry.semantic_id);
+    if (!summary) {
+      addError(errors, file, entry.semantic_id, "semantic_id", "does not resolve to a summary_spec in the corresponding semantic overlay");
+      continue;
+    }
+    if (entry.summary_spec_sha256 !== summarySpecSha256(summary)) {
+      addError(errors, file, entry.semantic_id, "summary_spec_sha256", "is stale: does not match the current summary_spec");
+    }
+    if (entry.review_status === "reviewed" && summary.review_status !== "reviewed") {
+      addError(errors, file, entry.semantic_id, "review_status", "reviewed presentation references a non-reviewed summary_spec");
+    }
+
+    const expectedFacetIds = new Set(summary.facet_ids);
+    const dispositionIds = new Set();
+    for (const disposition of entry.facet_dispositions || []) {
+      if (dispositionIds.has(disposition.facet_id)) {
+        addError(errors, file, entry.semantic_id, "facet_dispositions", `duplicate facet_id: ${disposition.facet_id}`);
+      }
+      dispositionIds.add(disposition.facet_id);
+      if (!expectedFacetIds.has(disposition.facet_id)) {
+        addError(errors, file, entry.semantic_id, "facet_dispositions", `facet is not declared by summary_spec: ${disposition.facet_id}`);
+      }
+      if (entry.review_status === "reviewed" && disposition.status === "gap" && disposition.gap_reason !== "no_structured_evidence") {
+        addError(errors, file, entry.semantic_id, "facet_dispositions", `reviewed entry has unresolved gap ${disposition.facet_id}: ${disposition.gap_reason}`);
+      }
+    }
+    for (const facetId of expectedFacetIds) {
+      if (!dispositionIds.has(facetId)) {
+        addError(errors, file, entry.semantic_id, "facet_dispositions", `missing summary facet disposition: ${facetId}`);
+      }
     }
     for (const unit of entry.units) {
+      if (!summary.sentence_roles.includes(unit.sentence_role)) {
+        addError(errors, file, `${entry.semantic_id}/${unit.unit_id}`, "sentence_role", `is not declared by summary_spec: ${unit.sentence_role}`);
+      }
       for (const ref of unit.evidence_refs) {
         checkEvidenceRef({ file, ownerId: `${entry.semantic_id}/${unit.unit_id}`, field: "evidence_refs", ref, errors, archive, expectedDocumentId: documentId });
+        const sourceRecord = archive.recordsById.get(ref.record_id);
+        if (entry.review_status === "reviewed" && sourceRecord && sourceRecord.record.review_status !== "reviewed") {
+          addError(errors, file, `${entry.semantic_id}/${unit.unit_id}`, "evidence_refs", `reviewed presentation references non-reviewed evidence ${ref.record_id}`);
+        }
       }
     }
   }
 }
 
 function validateSemanticOverlays({
-  pilotsDir = PILOTS_DIR,
+  guidelinesDir = GUIDELINES_DIR,
   overlayDir = OVERLAY_DIR,
   presentationDir = PRESENTATION_DIR
 } = {}) {
   const errors = [];
-  const archive = loadCoreArchive(pilotsDir);
+  const archive = loadCoreArchive(guidelinesDir);
   const concepts = loadJson(CONCEPTS_PATH);
   const contextSlots = loadJson(CONTEXT_SLOTS_PATH);
 
@@ -531,5 +573,6 @@ module.exports = {
   canonicalize,
   sha256,
   recordSourceText,
+  summarySpecSha256,
   validateSemanticOverlays
 };

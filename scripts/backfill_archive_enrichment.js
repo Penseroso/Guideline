@@ -3,11 +3,11 @@ const path = require("path");
 const { createClient } = require("../engine/llm_client");
 const { validateFiles } = require("../validation/validate_structured_data");
 
-const pilots = [
-  path.resolve(__dirname, "..", "data", "pilots", "ich_m10_validation.json"),
-  path.resolve(__dirname, "..", "data", "pilots", "fda_ada_validation.json"),
-  path.resolve(__dirname, "..", "data", "pilots", "ema_fih_dosing.json"),
-  path.resolve(__dirname, "..", "data", "pilots", "s6_r1_species_selection.json")
+const guidelines = [
+  path.resolve(__dirname, "..", "data", "guidelines", "ich_m10.json"),
+  path.resolve(__dirname, "..", "data", "guidelines", "fda_ada.json"),
+  path.resolve(__dirname, "..", "data", "guidelines", "ema_fih.json"),
+  path.resolve(__dirname, "..", "data", "guidelines", "ich_s6_r1.json")
 ];
 
 function linkConditionsInBundle(bundle) {
@@ -127,7 +127,7 @@ async function main() {
   console.log("=== Starting Archive Backfill & Condition Enrichment ===");
   const client = createClient();
 
-  for (const p of pilots) {
+  for (const p of guidelines) {
     const docName = path.basename(p);
     console.log(`\nProcessing ${docName}...`);
     const bundle = JSON.parse(fs.readFileSync(p, "utf8"));
@@ -141,13 +141,13 @@ async function main() {
   }
 
   console.log("\n=== Validating All Bundles Post-Backfill ===");
-  const valRes = validateFiles(pilots);
+  const valRes = validateFiles(guidelines);
   if (!valRes.ok) {
     console.error("Validation failed:", valRes.errors);
     process.exit(1);
   }
 
-  console.log("All 4 pilot bundles validated successfully (0 errors)!");
+  console.log("All 4 guideline bundles validated successfully (0 errors)!");
   console.log("Archive Backfill and Enrichment complete!");
 }
 

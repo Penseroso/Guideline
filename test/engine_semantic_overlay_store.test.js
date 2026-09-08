@@ -38,7 +38,7 @@ test("a presentation entry whose evidence went stale is dropped whole, not trunc
   writePresentation(dir, "ema_fih.json", presentation);
   const store = loadSemanticOverlayStore({ presentationDir: dir });
   const loaded = store.presentationByDocumentId.get("ema_fih");
-  assert.equal(loaded.entries.length, 0, "a stale unit must drop the whole entry, not just that unit");
+  assert.equal(loaded.entries.length, presentation.entries.length - 1, "a stale unit must drop the whole entry, not just that unit");
 });
 
 test("a presentation entry whose evidence record_id no longer resolves is dropped", () => {
@@ -48,5 +48,15 @@ test("a presentation entry whose evidence record_id no longer resolves is droppe
   writePresentation(dir, "ema_fih.json", presentation);
   const store = loadSemanticOverlayStore({ presentationDir: dir });
   const loaded = store.presentationByDocumentId.get("ema_fih");
-  assert.equal(loaded.entries.length, 0);
+  assert.equal(loaded.entries.length, presentation.entries.length - 1);
+});
+
+test("a presentation entry whose summary_spec hash is stale is dropped whole", () => {
+  const presentation = loadPresentation("ema_fih.json");
+  presentation.entries[0].summary_spec_sha256 = "0".repeat(64);
+  const dir = tempDir("stale_summary");
+  writePresentation(dir, "ema_fih.json", presentation);
+  const store = loadSemanticOverlayStore({ presentationDir: dir });
+  const loaded = store.presentationByDocumentId.get("ema_fih");
+  assert.equal(loaded.entries.length, presentation.entries.length - 1);
 });

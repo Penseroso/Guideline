@@ -1,0 +1,541 @@
+{
+  "presentation_overlay_version": "0.2.0",
+  "language": "ko",
+  "document_id": "fda_ada_2014",
+  "entries": [
+    {
+      "semantic_id": "fda_ada_2014.sem.summary.clinical_risk_mitigation",
+      "language": "ko",
+      "summary_spec_sha256": "c150822c3b1e565998a05967a04bc2807b665dbe55eab30a441e42003eb52adb",
+      "facet_dispositions": [
+        {
+          "facet_id": "fda_ada_2014.sem.facet.clinical_risk_mitigation.baseline",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.clinical_risk_mitigation.risk_stratified_sampling",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.clinical_risk_mitigation.event_triggered_sampling",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.clinical_risk_mitigation.premedication_boundary",
+          "status": "covered",
+          "gap_reason": null
+        }
+      ],
+      "units": [
+        {
+          "unit_id": "fda_ada_2014.sem.summary.clinical_risk_mitigation.u1",
+          "text": "임상 단계 면역원성 위험 완화는 치료 전 기준선 검체, 위험도별 검체 검사, 이상반응 의심 시 검체 채취, 시험 종료 시 검체 관련 고려사항을 다룬다.",
+          "sentence_role": "main_points",
+          "evidence_refs": [
+            {
+              "record_id": "fda_ada_2014.kr.4.001",
+              "source_unit_id": "fda_ada_2014.su.4.001",
+              "source_text_sha256": "a390fe07de84a9c80cefbb190960f82eaaa4893f3c731501b7362a3c297a03a1"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.4.002",
+              "source_unit_id": "fda_ada_2014.su.4.001",
+              "source_text_sha256": "a390fe07de84a9c80cefbb190960f82eaaa4893f3c731501b7362a3c297a03a1"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.4.003",
+              "source_unit_id": "fda_ada_2014.su.4.001",
+              "source_text_sha256": "a390fe07de84a9c80cefbb190960f82eaaa4893f3c731501b7362a3c297a03a1"
+            },
+            {
+              "record_id": "fda_ada_2014.cond.4.002",
+              "source_unit_id": "fda_ada_2014.su.4.001",
+              "source_text_sha256": "9d873c2f4540c5300356801f49f1f54f02d2a8695f455ab4446aa9868c135ffd"
+            },
+            {
+              "record_id": "fda_ada_2014.cond.4.005",
+              "source_unit_id": "fda_ada_2014.su.4.001",
+              "source_text_sha256": "d6798141b3c85f499c5f6fe145033d350644e3fdec38f930535fd8e42d61c34d"
+            }
+          ],
+          "source_support": "synthesized"
+        },
+        {
+          "unit_id": "fda_ada_2014.sem.summary.clinical_risk_mitigation.u2",
+          "text": "항히스타민제 또는 코르티코스테로이드 전처치는 주입 반응을 가릴 수 있으나 항체 생성을 예방하지 않는다.",
+          "sentence_role": "boundary",
+          "evidence_refs": [
+            {
+              "record_id": "fda_ada_2014.kr.4.004",
+              "source_unit_id": "fda_ada_2014.su.4.001",
+              "source_text_sha256": "a390fe07de84a9c80cefbb190960f82eaaa4893f3c731501b7362a3c297a03a1"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.4.005",
+              "source_unit_id": "fda_ada_2014.su.4.001",
+              "source_text_sha256": "a390fe07de84a9c80cefbb190960f82eaaa4893f3c731501b7362a3c297a03a1"
+            }
+          ],
+          "source_support": "synthesized"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "semantic_id": "fda_ada_2014.sem.summary.document_overview",
+      "language": "ko",
+      "summary_spec_sha256": "1344b87479958b06acc8353cd4309a8ebc1dea6c6d1493bcdc6f6f2c1312205e",
+      "facet_dispositions": [
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_i_introduction",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_iii_clinical_consequences",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_iv_recommendations_for_immunogenicity_risk_mitigation_in_the_clinical_phase",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.risk_factors",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_appendix_a_supplemental_technical_details",
+          "status": "covered",
+          "gap_reason": null
+        }
+      ],
+      "units": [
+        {
+          "unit_id": "fda_ada_2014.sem.summary.document_overview.u1",
+          "text": "이 지침은 사람용 치료 단백질 제품의 면역원성 위험 기반 평가 및 완화, 임상적 결과, 임상 단계 위험 완화, 환자 및 제품별 면역원성 영향 요인, 보충 기술 세부사항을 다룬다.",
+          "sentence_role": "main_points",
+          "evidence_refs": [
+            {
+              "record_id": "fda_ada_2014.kr.1.003",
+              "source_unit_id": "fda_ada_2014.su.1.001",
+              "source_text_sha256": "c76318c768857de06d7764a71c8ccf6ce3a9dd56f7448384c1f63c4cb384e5fd"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.3_b.002",
+              "source_unit_id": "fda_ada_2014.su.3_b.001",
+              "source_text_sha256": "3b6c6a5918992fc7c6f7e0ce88ed711dd1e0f62ae3bedc27bbf9f39188f5e69c"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.3_b.003",
+              "source_unit_id": "fda_ada_2014.su.3_b.001",
+              "source_text_sha256": "3b6c6a5918992fc7c6f7e0ce88ed711dd1e0f62ae3bedc27bbf9f39188f5e69c"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.4.001",
+              "source_unit_id": "fda_ada_2014.su.4.001",
+              "source_text_sha256": "a390fe07de84a9c80cefbb190960f82eaaa4893f3c731501b7362a3c297a03a1"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_a_2.003",
+              "source_unit_id": "fda_ada_2014.su.5_a_2.001",
+              "source_text_sha256": "d7996abc589cf5c0f0fc939d335e707285b3f7f6b195143a6ed689ca9d90bdad"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.app_a_6.001",
+              "source_unit_id": "fda_ada_2014.su.app_a_6.001",
+              "source_text_sha256": "754959af5b3e2d62aae4b9618c85f03cfd9b7a238068ff320b18516acfcb7fdb"
+            }
+          ],
+          "source_support": "synthesized"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "semantic_id": "fda_ada_2014.sem.summary.risk_factors",
+      "language": "ko",
+      "summary_spec_sha256": "06a6f9c3f9341b4b96743fcafa582a030b579e628cbdb1980f49dec7a0062aa0",
+      "facet_dispositions": [
+        {
+          "facet_id": "fda_ada_2014.sem.facet.risk_factors.patient",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.risk_factors.product",
+          "status": "covered",
+          "gap_reason": null
+        }
+      ],
+      "units": [
+        {
+          "unit_id": "fda_ada_2014.sem.summary.risk_factors.u1",
+          "text": "면역원성에 영향을 미치는 환자 및 제품 특이적 요인은 사전 감작 또는 알레르기 병력, 용기 밀봉계, 제품 응집체 관련 고려사항을 다룬다.",
+          "sentence_role": "main_points",
+          "evidence_refs": [
+            {
+              "record_id": "fda_ada_2014.kr.5_a_2.003",
+              "source_unit_id": "fda_ada_2014.su.5_a_2.001",
+              "source_text_sha256": "d7996abc589cf5c0f0fc939d335e707285b3f7f6b195143a6ed689ca9d90bdad"
+            },
+            {
+              "record_id": "fda_ada_2014.cond.5_a_2.001",
+              "source_unit_id": "fda_ada_2014.su.5_a_2.001",
+              "source_text_sha256": "0b90fbf3afbdfe937b0f99c9eba01799396197c0b93130743014457aba1689af"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_b_8.003",
+              "source_unit_id": "fda_ada_2014.su.5_b_8.001",
+              "source_text_sha256": "9eb2b25fb59515b02d200e06e244d7d5c2bc6a062bc090f325ef0fd398846e29"
+            },
+            {
+              "record_id": "fda_ada_2014.qc.5_b_3.001",
+              "source_unit_id": "fda_ada_2014.su.5_b_3.001",
+              "source_text_sha256": "52cc37649d598dbd11dc9f5a5c17d2fdca64e2db2dae4f4cd3bd5eaf35cbc722"
+            }
+          ],
+          "source_support": "synthesized"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "semantic_id": "fda_ada_2014.sem.summary.section_appendix_a_supplemental_technical_details",
+      "language": "ko",
+      "summary_spec_sha256": "d5f1db2930c396ef0e3658c30813e8c23ac07b2e5c850c75813c7df118673b6b",
+      "facet_dispositions": [
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_appendix_a_1_diagnosis_of_anaphylaxis",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_appendix_a_2_cytokine_release_syndrome",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_appendix_a_3_non_acute_immune_responses",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_appendix_a_4_antibody_responses_to_therapeutic_protein_products",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_appendix_a_5_utility_of_animal_studies",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_appendix_a_6_comparative_immunogenicity_studies",
+          "status": "covered",
+          "gap_reason": null
+        }
+      ],
+      "units": [
+        {
+          "unit_id": "fda_ada_2014.sem.summary.section_appendix_a_supplemental_technical_details.u1",
+          "text": "보충 기술 세부사항은 아나필락시스 진단, 사이토카인 방출 증후군(CRS), 비급성 면역 반응, 치료용 단백질 제품에 대한 항체 반응, 동물 연구의 유용성 및 비교 면역원성 연구를 다룬다.",
+          "sentence_role": "main_points",
+          "evidence_refs": [
+            {
+              "record_id": "fda_ada_2014.kr.app_a_1.001",
+              "source_unit_id": "fda_ada_2014.su.app_a_1.001",
+              "source_text_sha256": "c85fc921fb9105fd244b38cd5fcee9f064f24362e62cb5b4dc998fe6b4dee301"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.app_a_2.001",
+              "source_unit_id": "fda_ada_2014.su.app_a_2.001",
+              "source_text_sha256": "060f8874d3daaa29ac5bed0ce9a859ac684ce8c1537a3d09933d5b5e30bfaf82"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.app_a_3.001",
+              "source_unit_id": "fda_ada_2014.su.app_a_3.001",
+              "source_text_sha256": "3865b92a42675010805c29a57420cd5f03904778352a93b0d20c6641677976c3"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.app_a_3.002",
+              "source_unit_id": "fda_ada_2014.su.app_a_3.001",
+              "source_text_sha256": "3865b92a42675010805c29a57420cd5f03904778352a93b0d20c6641677976c3"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.app_a_4.001",
+              "source_unit_id": "fda_ada_2014.su.app_a_4.001",
+              "source_text_sha256": "9a69493eb547660e9cec57680321b9532d2e305302de731d4f8105a92069a0bd"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.app_a_4.002",
+              "source_unit_id": "fda_ada_2014.su.app_a_4.001",
+              "source_text_sha256": "9a69493eb547660e9cec57680321b9532d2e305302de731d4f8105a92069a0bd"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.app_a_5.001",
+              "source_unit_id": "fda_ada_2014.su.app_a_5.001",
+              "source_text_sha256": "89fb618678abbd3b7c8624d41beffafa567169bbc9681ca74d07de60f17f4716"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.app_a_5.002",
+              "source_unit_id": "fda_ada_2014.su.app_a_5.001",
+              "source_text_sha256": "89fb618678abbd3b7c8624d41beffafa567169bbc9681ca74d07de60f17f4716"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.app_a_6.001",
+              "source_unit_id": "fda_ada_2014.su.app_a_6.001",
+              "source_text_sha256": "754959af5b3e2d62aae4b9618c85f03cfd9b7a238068ff320b18516acfcb7fdb"
+            }
+          ],
+          "source_support": "synthesized"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "semantic_id": "fda_ada_2014.sem.summary.section_iii_clinical_consequences",
+      "language": "ko",
+      "summary_spec_sha256": "afb8f94245b580ada2a45fae14730376174db314b88c604efe24c4baf73b70b2",
+      "facet_dispositions": [
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_iii_a_consequences_for_efficacy",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_iii_b_consequences_for_safety",
+          "status": "covered",
+          "gap_reason": null
+        }
+      ],
+      "units": [
+        {
+          "unit_id": "fda_ada_2014.sem.summary.section_iii_clinical_consequences.u1",
+          "text": "임상적 결과의 하위 절은 유효성에 대한 영향과 안전성에 대한 영향을 다룬다.",
+          "sentence_role": "main_points",
+          "evidence_refs": [
+            {
+              "record_id": "fda_ada_2014.kr.3_a.001",
+              "source_unit_id": "fda_ada_2014.su.3_a.001",
+              "source_text_sha256": "f686ea9d3849701eed3bcbe4f314ab6531d8725640fd8f1d2ab45be349b8f441"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.3_a.002",
+              "source_unit_id": "fda_ada_2014.su.3_a.001",
+              "source_text_sha256": "f686ea9d3849701eed3bcbe4f314ab6531d8725640fd8f1d2ab45be349b8f441"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.3_b.002",
+              "source_unit_id": "fda_ada_2014.su.3_b.001",
+              "source_text_sha256": "3b6c6a5918992fc7c6f7e0ce88ed711dd1e0f62ae3bedc27bbf9f39188f5e69c"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.3_b.003",
+              "source_unit_id": "fda_ada_2014.su.3_b.001",
+              "source_text_sha256": "3b6c6a5918992fc7c6f7e0ce88ed711dd1e0f62ae3bedc27bbf9f39188f5e69c"
+            }
+          ],
+          "source_support": "synthesized"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "semantic_id": "fda_ada_2014.sem.summary.section_v_a_patient_specific_factors_that_affect_immunogenicity",
+      "language": "ko",
+      "summary_spec_sha256": "a53e154f9f4aa30a6a90a294f5494dd7231332c9cd7377dfc6331443e42f55fa",
+      "facet_dispositions": [
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_v_a_1_immunologic_status_and_competence_of_the_patient",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_v_a_2_prior_sensitization_history_of_allergy",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_v_a_3_route_of_administration_dose_and_frequency_of_administration",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_v_a_4_genetic_status",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_v_a_5_status_of_immune_tolerance_to_endogenous_protein",
+          "status": "covered",
+          "gap_reason": null
+        }
+      ],
+      "units": [
+        {
+          "unit_id": "fda_ada_2014.sem.summary.section_v_a_patient_specific_factors_that_affect_immunogenicity.u1",
+          "text": "환자 특이적 면역원성 요인은 환자의 면역 상태와 역량, 이전 감작 및 알레르기 이력, 투여 경로·용량·빈도, 유전적 상태, 내인성 단백질에 대한 면역 관용 상태를 다룬다.",
+          "sentence_role": "main_points",
+          "evidence_refs": [
+            {
+              "record_id": "fda_ada_2014.kr.5_a_1.001",
+              "source_unit_id": "fda_ada_2014.su.5_a_1.001",
+              "source_text_sha256": "4ec8125643a269c965b4e1d8a64640961d2d67b5065a01214224df3a60a8ee82"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_a_1.002",
+              "source_unit_id": "fda_ada_2014.su.5_a_1.001",
+              "source_text_sha256": "4ec8125643a269c965b4e1d8a64640961d2d67b5065a01214224df3a60a8ee82"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_a_2.003",
+              "source_unit_id": "fda_ada_2014.su.5_a_2.001",
+              "source_text_sha256": "d7996abc589cf5c0f0fc939d335e707285b3f7f6b195143a6ed689ca9d90bdad"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_a_3.001",
+              "source_unit_id": "fda_ada_2014.su.5_a_3.001",
+              "source_text_sha256": "1a429cc0032c2e0c191e9233ebc8a856563d7aefab306c5d819e566f8eac96af"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_a_3.002",
+              "source_unit_id": "fda_ada_2014.su.5_a_3.001",
+              "source_text_sha256": "1a429cc0032c2e0c191e9233ebc8a856563d7aefab306c5d819e566f8eac96af"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_a_4.001",
+              "source_unit_id": "fda_ada_2014.su.5_a_4.001",
+              "source_text_sha256": "860b9bbb60ad5bbddef54bf090b3bf3eb539af737542a2fff5c2190a1205fe5c"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_a_4.002",
+              "source_unit_id": "fda_ada_2014.su.5_a_4.001",
+              "source_text_sha256": "860b9bbb60ad5bbddef54bf090b3bf3eb539af737542a2fff5c2190a1205fe5c"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_a_5.001",
+              "source_unit_id": "fda_ada_2014.su.5_a_5.001",
+              "source_text_sha256": "322adb114b16733f6155dc18e791a7b7dba3ee0497ee7e1d2c4ce5b117b6606e"
+            }
+          ],
+          "source_support": "synthesized"
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "semantic_id": "fda_ada_2014.sem.summary.section_v_b_product_specific_factors_that_affect_immunogenicity",
+      "language": "ko",
+      "summary_spec_sha256": "678aa8bdd27026eafc626f2654b9b1943392f8878ff167bded720f90e4b81e81",
+      "facet_dispositions": [
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_v_b_1_product_origin_foreign_or_human",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_v_b_2_primary_molecular_structure_posttranslational_modifications",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_v_b_3_quaternary_structure_product_aggregates_and_measurement_of_aggregates",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_v_b_4_glycosylation_pegylation",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_v_b_5_impurities_with_adjuvant_activity",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_v_b_6_immunomodulatory_properties_of_the_therapeutic_protein_product",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_v_b_7_formulation",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_v_b_8_container_closure_considerations",
+          "status": "covered",
+          "gap_reason": null
+        },
+        {
+          "facet_id": "fda_ada_2014.sem.facet.section_v_b_9_product_custody",
+          "status": "covered",
+          "gap_reason": null
+        }
+      ],
+      "units": [
+        {
+          "unit_id": "fda_ada_2014.sem.summary.section_v_b_product_specific_factors_that_affect_immunogenicity.u1",
+          "text": "제품 특이적 면역원성 요인은 제품 유래, 일차 분자 구조 및 번역 후 변형, 사차 구조와 단백질 응집체, 당화와 PEG화, 보조제 활성 불순물, 제품의 면역조절 특성, 제형, 용기 밀봉 시스템 및 제품 보관 관리를 다룬다.",
+          "sentence_role": "main_points",
+          "evidence_refs": [
+            {
+              "record_id": "fda_ada_2014.kr.5_b_1.001",
+              "source_unit_id": "fda_ada_2014.su.5_b_1.001",
+              "source_text_sha256": "ca6374e476dc55ac213871d7aa2b60c1c746179be477818069560666d7467084"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_b_2.001",
+              "source_unit_id": "fda_ada_2014.su.5_b_2.001",
+              "source_text_sha256": "8bf0470cdf2b4667812cf6f4c5bb12f7cdef71bf81c7608308b68bcee04f38b8"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_b_3.001",
+              "source_unit_id": "fda_ada_2014.su.5_b_3.001",
+              "source_text_sha256": "b3979c5623b0af42c50ef05b03e4c243d39b53bbda104a25b9cca9d20fdc2d6b"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_b_4.001",
+              "source_unit_id": "fda_ada_2014.su.5_b_4.001",
+              "source_text_sha256": "dfa36e4678d249dd9ddd633c46ff64d69020bae69531183832a50ff91fbb3d0f"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_b_5.001",
+              "source_unit_id": "fda_ada_2014.su.5_b_5.001",
+              "source_text_sha256": "554778cee25d87b7b53b42aa6eb3647551db12f96f72cdc6ac4d064364d02de1"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_b_6.001",
+              "source_unit_id": "fda_ada_2014.su.5_b_6.001",
+              "source_text_sha256": "3bc14dbf52dbbfa03bd349219de29974c5fb50199b637c35cfb615e23f121ee9"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_b_7.001",
+              "source_unit_id": "fda_ada_2014.su.5_b_7.001",
+              "source_text_sha256": "127bc330f39bb3274832bf9f7b43180061d95dc3f34f9477056a062bf9307020"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_b_8.001",
+              "source_unit_id": "fda_ada_2014.su.5_b_8.001",
+              "source_text_sha256": "9eb2b25fb59515b02d200e06e244d7d5c2bc6a062bc090f325ef0fd398846e29"
+            },
+            {
+              "record_id": "fda_ada_2014.kr.5_b_9.001",
+              "source_unit_id": "fda_ada_2014.su.5_b_9.001",
+              "source_text_sha256": "41b285e7b557354e0ff6d3251c45c14f20a656b51fd9aed8c11dfd00850829f5"
+            }
+          ],
+          "source_support": "synthesized"
+        }
+      ],
+      "review_status": "reviewed"
+    }
+  ]
+}

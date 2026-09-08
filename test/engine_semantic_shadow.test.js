@@ -702,8 +702,11 @@ test("presentation text follows the summary_spec's own sentence_roles order, not
 });
 
 test("a document with a reviewed summary_spec but no presentation file at all serves the structure with text: null (expected gap, not a bug)", () => {
-  // fda_ada_2014 has a summary_spec (risk_factors) but data/derived/presentation/ko/fda_ada_2014.json
-  // does not exist yet — narrow Stage E scope deliberately did not author it.
+  const baseStore = fullyReviewedStore();
+  const presentationByDocumentId = new Map(baseStore.presentationByDocumentId);
+  presentationByDocumentId.delete("fda_ada_2014");
+  const noPresentationStore = { ...baseStore, presentationByDocumentId };
+  // Simulate an absent file independently of the repository's current coverage.
   const envelope = {
     answer_intent: "topic_overview",
     mode: "list",
@@ -713,7 +716,7 @@ test("a document with a reviewed summary_spec but no presentation file at all se
   const coverage = buildReviewedSemanticCoverage(
     "FDA-2014-ADA §V PATIENT- AND PRODUCT-SPECIFIC FACTORS THAT AFFECT IMMUNOGENICITY 항목은 어떻게 구성돼?",
     envelope,
-    { store: fullyReviewedStore() }
+    { store: noPresentationStore }
   );
   const manifest = coverage.manifests.find((m) => m.manifest_id === "fda_ada_2014.sem.manifest.risk_factors");
   assert.ok(manifest.summary, "the summary_spec itself should still be served");

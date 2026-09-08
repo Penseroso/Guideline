@@ -4,7 +4,7 @@ const { createClient } = require("../engine/llm_client");
 const { extractSectionSelfConsistent } = require("../engine/pipeline");
 const { validateFiles } = require("../validation/validate_structured_data");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "s6_r1_species_selection.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "ich_s6_r1.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 const SOURCE_PDF = "source_pdfs/ICH S6.pdf";

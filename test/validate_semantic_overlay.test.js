@@ -45,7 +45,7 @@ test("committed sample semantic overlays and presentation entries validate clean
   assert.equal(result.ok, true, result.errors.join("\n"));
   assert.deepEqual(result.errors, []);
   assert.equal(result.overlayCount, 6);
-  assert.equal(result.presentationCount, 3);
+  assert.equal(result.presentationCount, 6);
 });
 
 test("stale source_bundle_sha256 fails", () => {
@@ -172,13 +172,21 @@ test("presentation entry with an unresolved semantic_id fails", () => {
   fs.writeFileSync(path.join(overlayDir, "ich_m10.json"), JSON.stringify(overlay), "utf8");
 
   const presentation = {
-    presentation_overlay_version: "0.1.0",
+    presentation_overlay_version: "0.2.0",
     language: "ko",
     document_id: "ich_m10",
     entries: [
       {
         semantic_id: "ich_m10.sem.summary.does_not_exist",
         language: "ko",
+        summary_spec_sha256: "0".repeat(64),
+        facet_dispositions: [
+          {
+            facet_id: "ich_m10.sem.facet.scope",
+            status: "covered",
+            gap_reason: null
+          }
+        ],
         review_status: "needs_review",
         units: [
           {
@@ -201,5 +209,5 @@ test("presentation entry with an unresolved semantic_id fails", () => {
   fs.writeFileSync(path.join(presentationDir, "ich_m10.json"), JSON.stringify(presentation), "utf8");
 
   const result = validateSemanticOverlays({ overlayDir, presentationDir });
-  assertInvalid(result, "does not resolve to a summary_spec or facet in the corresponding semantic overlay");
+  assertInvalid(result, "does not resolve to a summary_spec in the corresponding semantic overlay");
 });

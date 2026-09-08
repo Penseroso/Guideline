@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "ema_fih_dosing.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "ema_fih.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 // 1. Fix source_units schema properties

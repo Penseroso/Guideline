@@ -17,11 +17,11 @@
 const fs = require("fs");
 const path = require("path");
 
-const { discoverJsonFiles } = require("../validation/validate_pilots");
-const { canonicalize, sha256, loadCoreArchive, recordSourceText } = require("../validation/validate_semantic_overlay");
+const { discoverJsonFiles } = require("../validation/validate_guidelines");
+const { canonicalize, sha256, loadCoreArchive, recordSourceText, summarySpecSha256 } = require("../validation/validate_semantic_overlay");
 
 const ROOT = path.resolve(__dirname, "..");
-const PILOTS_DIR = path.join(ROOT, "data", "pilots");
+const GUIDELINES_DIR = path.join(ROOT, "data", "guidelines");
 const OVERLAY_DIR = path.join(ROOT, "data", "derived", "semantic");
 const PRESENTATION_DIR = path.join(ROOT, "data", "derived", "presentation", "ko");
 const CONCEPTS_PATH = path.join(ROOT, "data", "ontology", "semantic_concepts.json");
@@ -97,17 +97,19 @@ function evidenceRefIsFresh(archive, ref) {
   return sha256(sourceText) === ref.source_text_sha256;
 }
 
-function presentationEntryIsFresh(archive, entry) {
+function presentationEntryIsFresh(archive, entry, overlay) {
+  const summary = overlay && (overlay.summary_specs || []).find((item) => item.summary_id === entry.semantic_id);
+  if (!summary || entry.summary_spec_sha256 !== summarySpecSha256(summary)) return false;
   return (entry.units || []).every((unit) => (unit.evidence_refs || []).every((ref) => evidenceRefIsFresh(archive, ref)));
 }
 
 function loadSemanticOverlayStore({
-  pilotsDir = PILOTS_DIR,
+  guidelinesDir = GUIDELINES_DIR,
   overlayDir = OVERLAY_DIR,
   presentationDir = PRESENTATION_DIR,
   conceptsPath = CONCEPTS_PATH
 } = {}) {
-  const archive = loadCoreArchive(pilotsDir);
+  const archive = loadCoreArchive(guidelinesDir);
   const concepts = fs.existsSync(conceptsPath)
     ? loadJson(conceptsPath)
     : { concepts: [], comparison_axes: [] };
@@ -132,7 +134,8 @@ function loadSemanticOverlayStore({
   for (const file of presentationFiles) {
     const presentation = loadJson(file);
     if (presentation && presentation.document_id) {
-      const freshEntries = (presentation.entries || []).filter((entry) => presentationEntryIsFresh(archive, entry));
+      const overlay = overlaysByDocumentId.get(presentation.document_id);
+      const freshEntries = (presentation.entries || []).filter((entry) => presentationEntryIsFresh(archive, entry, overlay));
       presentationByDocumentId.set(presentation.document_id, { ...presentation, entries: freshEntries });
     }
   }
@@ -144,7 +147,7 @@ function loadSemanticOverlayStore({
 
 module.exports = {
   loadSemanticOverlayStore,
-  PILOTS_DIR,
+  GUIDELINES_DIR,
   OVERLAY_DIR,
   PRESENTATION_DIR,
   CONCEPTS_PATH

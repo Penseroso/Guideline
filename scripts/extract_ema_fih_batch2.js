@@ -4,7 +4,7 @@ const { createClient } = require("../engine/llm_client");
 const { extractSectionSelfConsistent } = require("../engine/pipeline");
 const { validateFiles } = require("../validation/validate_structured_data");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "ema_fih_dosing.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "ema_fih.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 const SOURCE_PDF = "source_pdfs/EMA guideline-strategies-identify-and-mitigate-risks-first-human-and-early-clinical-trials-investigational-medicinal-products-revision-1_en.pdf";

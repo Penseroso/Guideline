@@ -3,7 +3,7 @@ const path = require("path");
 const { createClient } = require("../engine/llm_client");
 const { extractSectionSelfConsistent } = require("../engine/pipeline");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "fda_ada_2014_clinical.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "fda_ada_2014.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 const batch1Data = JSON.parse(fs.readFileSync(path.resolve(__dirname, "fda_ada_2014_batch1_data.json"), "utf8"));

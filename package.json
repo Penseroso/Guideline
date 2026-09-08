@@ -7,7 +7,7 @@
   "scripts": {
     "test": "node --test \"test/**/*.test.js\"",
     "validate": "node validation/validate_structured_data.js",
-    "validate:pilots": "node validation/validate_pilots.js",
+    "validate:guidelines": "node validation/validate_guidelines.js",
     "validate:ko": "node validation/validate_ko_presentation.js",
     "audit:ko": "node scripts/audit_ko_normalization.js",
     "validate:semantic": "node validation/validate_semantic_overlay.js",
@@ -32,7 +32,12 @@
     "promote:semantic:stage-e3": "node scripts/promote_semantic_stage_e3.js",
     "build:semantic:stage-f": "node scripts/build_semantic_stage_f.js",
     "audit:semantic:stage-f": "node scripts/run_semantic_stage_f_audit.js",
-    "promote:semantic:stage-f": "node scripts/promote_semantic_stage_f.js"
+    "promote:semantic:stage-f": "node scripts/promote_semantic_stage_f.js",
+    "migrate:semantic:presentation:v0_2": "node scripts/migrate_semantic_presentation_v0_2.js",
+    "author:semantic:presentation": "node scripts/author_semantic_presentation.js",
+    "audit:semantic:presentation": "node scripts/audit_semantic_presentation.js",
+    "verify:semantic:presentation": "node scripts/audit_semantic_presentation.js",
+    "promote:semantic:presentation": "node scripts/promote_semantic_presentation.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1",

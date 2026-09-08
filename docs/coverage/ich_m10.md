@@ -3,7 +3,7 @@
 ## Overview
 * **Document**: ICH M10 (Final Step 4, 24 May 2022)
 * **Source PDF**: `source_pdfs/ICH M10.pdf` (59 pages)
-* **Master Bundle**: `data/pilots/ich_m10_validation.json`
+* **Master Bundle**: `data/guidelines/ich_m10.json`
 
 ---
 

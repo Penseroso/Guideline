@@ -531,9 +531,9 @@ async function main() {
     cross_references: []
   };
 
-  const outputPath = path.resolve(__dirname, "..", "data", "pilots", "fda_ada_validation.json");
+  const outputPath = path.resolve(__dirname, "..", "data", "guidelines", "fda_ada.json");
   fs.writeFileSync(outputPath, JSON.stringify(finalBundle, null, 2), "utf8");
-  console.log(`\nSaved FDA ADA pilot bundle to: ${outputPath}`);
+  console.log(`\nSaved FDA ADA guideline bundle to: ${outputPath}`);
 }
 
 main().catch((err) => {

@@ -3,7 +3,7 @@ const assert = require("node:assert/strict");
 
 const { loadStore, buildIndex, citationFor, sourceTextFor } = require("../engine/data_store");
 
-test("loadStore joins all pilot bundles into one index", () => {
+test("loadStore joins all guideline bundles into one index", () => {
   const { index, records } = loadStore();
   assert.equal(index.documents.size, 6, "ICH M10 + ICH S6(R1) + EMA FIH + FDA ADA 2019 + ICH M3(R2) + FDA ADA 2014");
   assert.equal(

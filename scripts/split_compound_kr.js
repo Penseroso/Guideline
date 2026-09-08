@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "ema_fih_dosing.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "ema_fih.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 // Find the Section 7.4 dose increment KR
@@ -39,4 +39,4 @@ if (krIndex !== -1) {
 }
 
 fs.writeFileSync(bundlePath, JSON.stringify(bundle, null, 2), "utf8");
-console.log("Successfully split compound dose increment requirement into 2 atomic KRs in ema_fih_dosing.json");
+console.log("Successfully split compound dose increment requirement into 2 atomic KRs in ema_fih.json");

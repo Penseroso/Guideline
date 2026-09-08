@@ -57,9 +57,9 @@
       ],
       "evidence_refs": [
         {
-          "record_id": "ema_fih.cond.5_1.001",
-          "source_unit_id": "ema_fih.su.5_1.001",
-          "source_text_sha256": "25f673c4915cce11300be7589ad96086842e1e0bd0d24f47bb8969b0e6fb4b55"
+          "record_id": "ema_fih.kr.5.008",
+          "source_unit_id": "ema_fih.su.5.001",
+          "source_text_sha256": "a43568bbcd64e16dcfce1f57d7ee34054e1482f303b0d8b1e84a1e919bbec2d0"
         }
       ],
       "review_status": "reviewed"
@@ -84,9 +84,39 @@
       ],
       "evidence_refs": [
         {
-          "record_id": "ema_fih.cond.6_1.001",
-          "source_unit_id": "ema_fih.su.6_1.002",
-          "source_text_sha256": "20d470de47e735f4260c8951ebcc1506c4873b923a1dc66ffba7e82c666c42e0"
+          "record_id": "ema_fih.kr.6.004",
+          "source_unit_id": "ema_fih.su.6.001",
+          "source_text_sha256": "8eacb57dd7cdeee4688ed00701292b6ffd9b8b1edb957ffeb0249404882f281b"
+        },
+        {
+          "record_id": "ema_fih.kr.6_1.001",
+          "source_unit_id": "ema_fih.su.6_1.001",
+          "source_text_sha256": "442ab56763db09867c4d8c0cb817f561fcb7b907855c2ff40cc6cbf4937647c6"
+        },
+        {
+          "record_id": "ema_fih.kr.6_2.001",
+          "source_unit_id": "ema_fih.su.6_2.001",
+          "source_text_sha256": "b6c8303f38c60ac8670b1f76e31701d807fc321335543e9552dabc184b82b233"
+        },
+        {
+          "record_id": "ema_fih.kr.6_3.001",
+          "source_unit_id": "ema_fih.su.6_3.001",
+          "source_text_sha256": "67f897953cf02ce9584d52d39b0261f05364f7320359752aab93f91c5bb4643d"
+        },
+        {
+          "record_id": "ema_fih.kr.6_4.001",
+          "source_unit_id": "ema_fih.su.6_4.001",
+          "source_text_sha256": "67cb55a149306df92be554a8ef514e3ea8f2bbc441625e9622cc690421166fe9"
+        },
+        {
+          "record_id": "ema_fih.kr.6_5.001",
+          "source_unit_id": "ema_fih.su.6_5.001",
+          "source_text_sha256": "a23cd51cce24b8336ce290e41f72d268fbdf04a5e78d41d2b013689977826bcf"
+        },
+        {
+          "record_id": "ema_fih.kr.6_6.001",
+          "source_unit_id": "ema_fih.su.6_6.001",
+          "source_text_sha256": "6cd8979145506b2c645e04a3e682c4b8c4604c5b495139e5f1d41597a74e551e"
         }
       ],
       "review_status": "reviewed"
@@ -112,9 +142,74 @@
       ],
       "evidence_refs": [
         {
+          "record_id": "ema_fih.kr.7_1.016",
+          "source_unit_id": "ema_fih.su.7_1.003",
+          "source_text_sha256": "7a1c676c558542077b420c2f10ec7f886f556b788cababe8549a405f993b73cb"
+        },
+        {
           "record_id": "ema_fih.cond.7_1.001",
           "source_unit_id": "ema_fih.su.7_1.004",
           "source_text_sha256": "8fe486359e7b5b09ebf348ad9096903df773218674df29d922b3999bd803972d"
+        },
+        {
+          "record_id": "ema_fih.cond.7_2.005",
+          "source_unit_id": "ema_fih.su.7_2.004",
+          "source_text_sha256": "75419be07022a0f8d9d104926f0ed923e14461dc46333d37d81a12fe0719c7d2"
+        },
+        {
+          "record_id": "ema_fih.kr.7_2.003",
+          "source_unit_id": "ema_fih.su.7_2.002",
+          "source_text_sha256": "ffb2439ed8e9102a697d91863f8b498aeb18cc6b549a791009cc7241aa93ef1c"
+        },
+        {
+          "record_id": "ema_fih.cond.7_3.011",
+          "source_unit_id": "ema_fih.su.7_3.004",
+          "source_text_sha256": "5d4497c248787d4415aa7f796e134695deec351b2a095832985d60d29505ac0a"
+        },
+        {
+          "record_id": "ema_fih.kr.7_3.003",
+          "source_unit_id": "ema_fih.su.7_3.002",
+          "source_text_sha256": "534614b6ba0fc4d286754d588acb9b32e51a710ee2ff84d6f7a2c2cf6ddb9268"
+        },
+        {
+          "record_id": "ema_fih.cond.7_4.009",
+          "source_unit_id": "ema_fih.su.7_4.002",
+          "source_text_sha256": "8faf7717ebe1f3921b31598d12f0b50c467d7024722713114e9c5207f462da85"
+        },
+        {
+          "record_id": "ema_fih.kr.7_4.001",
+          "source_unit_id": "ema_fih.su.7_4.002",
+          "source_text_sha256": "c5028292942e62210a4b170b0d1dd57b053dda4eeec227f406da3a66282b1060"
+        },
+        {
+          "record_id": "ema_fih.cond.7_5.001",
+          "source_unit_id": "ema_fih.su.7_5.002",
+          "source_text_sha256": "947a07c77abf9210f82932806e10ff210f626e9b4d3edb4acc96b3751512d755"
+        },
+        {
+          "record_id": "ema_fih.kr.7_5.001",
+          "source_unit_id": "ema_fih.su.7_5.002",
+          "source_text_sha256": "85ec5d040b8538bd75e648b92ca0b5d4a58be025d59c98186f6733d00a1db3e1"
+        },
+        {
+          "record_id": "ema_fih.kr.7_6.001",
+          "source_unit_id": "ema_fih.su.7_6.002",
+          "source_text_sha256": "1bfcf83ff353e7493ba50c235398b7f572db10370d23c8db80129a9dd0f3df1f"
+        },
+        {
+          "record_id": "ema_fih.cond.7_6.001",
+          "source_unit_id": "ema_fih.su.7_6.002",
+          "source_text_sha256": "9c95454a0c63e457daf6c658ec33e7bfbbdd4240444e7f4ac37190d0507dfda3"
+        },
+        {
+          "record_id": "ema_fih.kr.7_7.001",
+          "source_unit_id": "ema_fih.su.7_7.002",
+          "source_text_sha256": "a249c8d32ac19bbd64b2d095811744054954c3a4a20e2913c5a3c2294d8c8f0f"
+        },
+        {
+          "record_id": "ema_fih.cond.7_7.001",
+          "source_unit_id": "ema_fih.su.7_7.003",
+          "source_text_sha256": "edea2f4610e09ecb1d4590af2d7d3fd78885e2cec53b96ea02a27621564752e5"
         }
       ],
       "review_status": "reviewed"
@@ -139,13 +234,59 @@
         "ema_fih.sem.facet.section_8_2_10_monitoring_and_communication_of_adverse_events_reactions"
       ],
       "sentence_roles": [
-        "main_points"
+        "main_points",
+        "exception"
       ],
       "evidence_refs": [
         {
-          "record_id": "ema_fih.cond.8_2_1.001",
+          "record_id": "ema_fih.kr.8_2_1.003",
           "source_unit_id": "ema_fih.su.8_2_1.002",
-          "source_text_sha256": "987d4bdf6550b25599831f205b39ce20e5e8cff687fce7bfad4488f2e28d001a"
+          "source_text_sha256": "8c4b86dd6cae5afb21176982a940305a26d0c925623a1cbff81997ba82050d66"
+        },
+        {
+          "record_id": "ema_fih.kr.8_2_2.007",
+          "source_unit_id": "ema_fih.su.8_2_2.002",
+          "source_text_sha256": "a4ac981c29fb126ee5a1dc1b594a27274f2b76633ea77dde0956a0a19cc18739"
+        },
+        {
+          "record_id": "ema_fih.kr.8_2_3.002",
+          "source_unit_id": "ema_fih.su.8_2_3.003",
+          "source_text_sha256": "9a35fd372ec27f96bb2c3283eb24124883b6b3594a6c0e62a086a7a30912b905"
+        },
+        {
+          "record_id": "ema_fih.kr.8_2_4.001",
+          "source_unit_id": "ema_fih.su.8_2_4.002",
+          "source_text_sha256": "e4c775340dc88b754fc2693d2b535676b83b34b403d1b86ecf181f737852fdbd"
+        },
+        {
+          "record_id": "ema_fih.kr.8_2_5.006",
+          "source_unit_id": "ema_fih.su.8_2_5.002",
+          "source_text_sha256": "065b9a30d0de4b5722e0d2ba4fd4e01b8877be7f1180bfa297ba23ef6aad001e"
+        },
+        {
+          "record_id": "ema_fih.kr.8_2_6.009",
+          "source_unit_id": "ema_fih.su.8_2_6.002",
+          "source_text_sha256": "9482c291ae631fc534542ed7eb4b5b8a07bf3e4a44ba5f25cc80bf7009b4d854"
+        },
+        {
+          "record_id": "ema_fih.kr.8_2_7.016",
+          "source_unit_id": "ema_fih.su.8_2_7.003",
+          "source_text_sha256": "3031dc9920ad04f6ee7e4d237c9edfa97176c902141acb63a465c7402f75f53a"
+        },
+        {
+          "record_id": "ema_fih.kr.8_2_8.002",
+          "source_unit_id": "ema_fih.su.8_2_8.002",
+          "source_text_sha256": "8fdf12db827137c023960db759bc236d2fc8f1e4ceeb2dc1c32e28e2b5d79f54"
+        },
+        {
+          "record_id": "ema_fih.kr.8_2_9.001",
+          "source_unit_id": "ema_fih.su.8_2_9.002",
+          "source_text_sha256": "78250c8734aa393434be97417168800019c2560f9a2dc78dc9cece77a45c5f96"
+        },
+        {
+          "record_id": "ema_fih.kr.8_2_10.005",
+          "source_unit_id": "ema_fih.su.8_2_10.002",
+          "source_text_sha256": "dc2982842911a054642b81b025bb6877acdd4672ee110efe5b3638c7c73eface"
         }
       ],
       "review_status": "reviewed"
@@ -168,9 +309,44 @@
       ],
       "evidence_refs": [
         {
+          "record_id": "ema_fih.kr.8_1.001",
+          "source_unit_id": "ema_fih.su.8_1.002",
+          "source_text_sha256": "b6bf3f29a44b0bf4b1a108a18c66f75b52addc215f3c1a5ce79f3586e42b1b6e"
+        },
+        {
           "record_id": "ema_fih.cond.8_1.001",
           "source_unit_id": "ema_fih.su.8_1.003",
           "source_text_sha256": "0b392ffbabb1b3641263dfef7a31221982c1a27072554a09d4d688a6ffd36ab4"
+        },
+        {
+          "record_id": "ema_fih.cond.8_2_2.004",
+          "source_unit_id": "ema_fih.su.8_2_2.002",
+          "source_text_sha256": "7aeaf733852c13d820cd3d4f7f5b1d5dd0a2227c97c129bd514bf68744acc3b3"
+        },
+        {
+          "record_id": "ema_fih.kr.8_2_10.005",
+          "source_unit_id": "ema_fih.su.8_2_10.002",
+          "source_text_sha256": "dc2982842911a054642b81b025bb6877acdd4672ee110efe5b3638c7c73eface"
+        },
+        {
+          "record_id": "ema_fih.kr.8_3.007",
+          "source_unit_id": "ema_fih.su.8_3.002",
+          "source_text_sha256": "dbb3013e80e7c1fafe940866464c1df2fe0c8842f026aa1dfca1787a4ebfa16c"
+        },
+        {
+          "record_id": "ema_fih.cond.8_3.001",
+          "source_unit_id": "ema_fih.su.8_3.002",
+          "source_text_sha256": "e77d8cac113cb493e3799ea128705098bd1d2edadfe9358d22ee598e6c6315ed"
+        },
+        {
+          "record_id": "ema_fih.kr.8_4.001",
+          "source_unit_id": "ema_fih.su.8_4.002",
+          "source_text_sha256": "f9c39ced675ff33f792d2ef1dd5b428c944fd67497fe0f6f04035b985993e5e1"
+        },
+        {
+          "record_id": "ema_fih.cond.8_4.001",
+          "source_unit_id": "ema_fih.su.8_4.002",
+          "source_text_sha256": "c4ef6e68aa8c771484e093e1f9cc8600a6e88860dc286d54aa46e6ad940aaa6d"
         }
       ],
       "review_status": "reviewed"

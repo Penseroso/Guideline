@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { createClient } = require("../engine/llm_client");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "fda_ada_2014_clinical.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "fda_ada_2014.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 async function backfillKorean() {
@@ -61,7 +61,7 @@ Return ONLY the Korean translation string.`;
   }
 
   fs.writeFileSync(bundlePath, JSON.stringify(bundle, null, 2), "utf8");
-  console.log("Successfully backfilled Korean text in fda_ada_2014_clinical.json!");
+  console.log("Successfully backfilled Korean text in fda_ada_2014.json!");
 }
 
 backfillKorean().catch((err) => {

@@ -6,7 +6,7 @@
   "additionalProperties": false,
   "required": ["presentation_overlay_version", "language", "document_id", "entries"],
   "properties": {
-    "presentation_overlay_version": { "const": "0.1.0" },
+    "presentation_overlay_version": { "const": "0.2.0" },
     "language": { "const": "ko" },
     "document_id": { "type": "string", "minLength": 1 },
     "entries": {
@@ -62,10 +62,48 @@
     "entry": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["semantic_id", "language", "units", "review_status"],
+      "required": ["semantic_id", "language", "summary_spec_sha256", "facet_dispositions", "units", "review_status"],
       "properties": {
         "semantic_id": { "$ref": "#/definitions/id" },
         "language": { "const": "ko" },
+        "summary_spec_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "facet_dispositions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["facet_id", "status", "gap_reason"],
+            "properties": {
+              "facet_id": { "$ref": "#/definitions/id" },
+              "status": { "type": "string", "enum": ["covered", "gap"] },
+              "gap_reason": {
+                "type": ["string", "null"],
+                "enum": [null, "no_structured_evidence", "insufficient_support", "verification_failed"]
+              }
+            },
+            "allOf": [
+              {
+                "if": {
+                  "properties": { "status": { "const": "covered" } },
+                  "required": ["status"]
+                },
+                "then": { "properties": { "gap_reason": { "type": "null" } } },
+                "else": {
+                  "properties": {
+                    "gap_reason": {
+                      "type": "string",
+                      "enum": ["no_structured_evidence", "insufficient_support", "verification_failed"]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
         "units": {
           "type": "array",
           "minItems": 1,

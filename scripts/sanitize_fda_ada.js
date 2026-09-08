@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "fda_ada_validation.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "fda_ada.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 const DOC_ID = "fda_ada";
@@ -90,4 +90,4 @@ for (const qc of bundle.quantitative_criteria) {
 }
 
 fs.writeFileSync(bundlePath, JSON.stringify(bundle, null, 2), "utf8");
-console.log("Successfully sanitized FDA ADA pilot bundle");
+console.log("Successfully sanitized FDA ADA guideline bundle");

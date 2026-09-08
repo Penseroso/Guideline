@@ -1,6 +1,6 @@
 # 파생 의미 레이어 설계
 
-상태: Implemented through Stage D; Stage E0/E1/E2/E3 완료 및 최종 reviewed 승격 완료(2026-09-08); Stage F(신규 47개 manifest 구조 확장, 문장 저작 제외) 완료 및 승격 완료(2026-09-08)
+상태: Stage D–F 완료; Stage G에서 적용 가능한 summary_spec 50개 전부의 한국어 semantic presentation 저작·독립 검증·승격 완료(2026-09-08)
 적용 대상: 검색·라우팅·답변 조립 계층  
 활성 의미 오버레이 계약: `0.3.0`
 활성 public answer contract: `2.5.0`
@@ -382,6 +382,14 @@ Stage D가 만든 55개 manifest 중 Stage E는 기존 pilot 소표본(5/7개)�
 **`scripts/promote_semantic_stage_f.js`**: Stage E와 동일한 게이트(schema 검증 + 오프라인 감사 클린 + 현재 `ENVELOPE_VERSION`(2.5.0) 기준 라이브 50문항 감사 + established 16개 무회귀 + 검토 attestation). Stage F는 엔진 코드를 전혀 바꾸지 않으므로 Stage E0~E3 승격에 썼던 것과 동일한 라이브 감사 결과(및 Q25 조정 baseline)를 재사용해 그대로 승격했다. 45개 summary_spec + 19개 salience_profile 전부 `reviewed`로 승격 완료.
 
 상세: `history/verification/semantic_stage_f_2026-09-08.md`.
+
+### 단계 G — 한국어 semantic presentation 전수화(2026-09-08)
+
+Stage G는 적용 가능한 reviewed `summary_spec` 50개 전부에 한국어 presentation entry를 제공한다. 기존 3개 entry를 presentation 계약 `0.2.0`으로 이관하고 47개를 새로 저작했다. 저작은 summary 단위, 검증은 문장별 entailment와 facet completeness 단위로 분리했으며 서로 다른 generator/verifier 모델을 사용했다. 상위 section에 직접 본문 record가 없는 경우 첫 하위 record를 전체 대표로 확대하지 않고, 근거가 있는 하위 facet의 주제를 보수적으로 나열했다.
+
+`summary_spec_sha256`는 summary의 target, kind, facet 순서, sentence role 변경을 source hash와 별도로 감지한다. `facet_dispositions`는 각 summary facet을 `covered` 또는 명시적 `gap`으로 완전 분할한다. reviewed entry에서 허용되는 gap은 실제 구조화 record가 없는 `no_structured_evidence`뿐이다. 현재 허용된 gap은 S6(R1)의 13개 facet이며, 이 내용은 추론하거나 presentation 문장에 포함하지 않는다.
+
+`npm run audit:semantic:presentation`은 50/50 fresh reviewed entry, 한국어 문자, 숫자 근거, gap allowlist를 검사한다. runtime loader는 source evidence hash 또는 `summary_spec_sha256`가 불일치하면 entry 전체를 탈락시킨다. semantic overlay 계약 `0.3.0`, public answer contract `2.5.0`, route/claims/citations/manifest coverage 계산은 변경하지 않았다. post-activation 50문항 감사와 Stage F baseline 비교에서 established suitable 16/16의 route, mode, claim ID 집합이 동일했다.
 
 ## 11. 활성화 승인 기준
 

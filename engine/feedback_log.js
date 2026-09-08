@@ -5,7 +5,7 @@ const crypto = require("crypto");
 /**
  * M5 Phase 5 (history/verification/engine_test_record_through_2026-08-28.md Entry 008 / M5 plan §5): a parallel,
  * derived log for user-flagged answers — never a new field on
- * data/pilots/*.json records, since the archive schema is closed
+ * data/guidelines/*.json records, since the archive schema is closed
  * (precedent: verification rejection reasons live in a parallel report,
  * never a record field, docs/milestone_log.md M1). Sibling to
  * engine/query_log.js, same append-only-JSONL shape.

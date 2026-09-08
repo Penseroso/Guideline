@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "fda_ada_validation.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "fda_ada.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 console.log("=== FDA ADA BUNDLE DETAILED BREAKDOWN ===");
@@ -31,11 +31,11 @@ const danglingConds = bundle.conditions.filter((c) => !c.applies_to_ids || c.app
 console.log(`\nDangling conditions (applies_to_ids empty): ${danglingConds.length}`);
 
 // Check all 5 pilot files
-const pilotsDir = path.resolve(__dirname, "..", "data", "pilots");
-const files = fs.readdirSync(pilotsDir).filter((f) => f.endsWith(".json"));
+const guidelinesDir = path.resolve(__dirname, "..", "data", "guidelines");
+const files = fs.readdirSync(guidelinesDir).filter((f) => f.endsWith(".json"));
 console.log("\n=== ALL 5 PILOT BUNDLES REVIEW STATUS ===");
 for (const f of files) {
-  const b = JSON.parse(fs.readFileSync(path.join(pilotsDir, f), "utf8"));
+  const b = JSON.parse(fs.readFileSync(path.join(guidelinesDir, f), "utf8"));
   const krs = b.knowledge_records || [];
   const qcs = b.quantitative_criteria || [];
   const conds = b.conditions || [];

@@ -3,7 +3,7 @@ const path = require("path");
 const { createClient } = require("../engine/llm_client");
 const { verifyDraft } = require("../engine/pipeline");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "ema_fih_dosing.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "ema_fih.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 // 1. Clean condition links: only link condition to KR if condition_text actually modifies that KR

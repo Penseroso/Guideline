@@ -21,11 +21,42 @@
         "fda_ada_2014.sem.facet.clinical_risk_mitigation.premedication_boundary"
       ],
       "sentence_roles": [
-        "main_points"
+        "main_points",
+        "boundary"
       ],
       "evidence_refs": [
         {
           "record_id": "fda_ada_2014.kr.4.001",
+          "source_unit_id": "fda_ada_2014.su.4.001",
+          "source_text_sha256": "a390fe07de84a9c80cefbb190960f82eaaa4893f3c731501b7362a3c297a03a1"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.4.002",
+          "source_unit_id": "fda_ada_2014.su.4.001",
+          "source_text_sha256": "a390fe07de84a9c80cefbb190960f82eaaa4893f3c731501b7362a3c297a03a1"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.4.003",
+          "source_unit_id": "fda_ada_2014.su.4.001",
+          "source_text_sha256": "a390fe07de84a9c80cefbb190960f82eaaa4893f3c731501b7362a3c297a03a1"
+        },
+        {
+          "record_id": "fda_ada_2014.cond.4.002",
+          "source_unit_id": "fda_ada_2014.su.4.001",
+          "source_text_sha256": "9d873c2f4540c5300356801f49f1f54f02d2a8695f455ab4446aa9868c135ffd"
+        },
+        {
+          "record_id": "fda_ada_2014.cond.4.005",
+          "source_unit_id": "fda_ada_2014.su.4.001",
+          "source_text_sha256": "d6798141b3c85f499c5f6fe145033d350644e3fdec38f930535fd8e42d61c34d"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.4.004",
+          "source_unit_id": "fda_ada_2014.su.4.001",
+          "source_text_sha256": "a390fe07de84a9c80cefbb190960f82eaaa4893f3c731501b7362a3c297a03a1"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.4.005",
           "source_unit_id": "fda_ada_2014.su.4.001",
           "source_text_sha256": "a390fe07de84a9c80cefbb190960f82eaaa4893f3c731501b7362a3c297a03a1"
         }
@@ -47,13 +78,39 @@
         "fda_ada_2014.sem.facet.section_appendix_a_supplemental_technical_details"
       ],
       "sentence_roles": [
+        "scope",
         "main_points"
       ],
       "evidence_refs": [
         {
-          "record_id": "fda_ada_2014.cond.1.001",
+          "record_id": "fda_ada_2014.kr.1.003",
           "source_unit_id": "fda_ada_2014.su.1.001",
-          "source_text_sha256": "8b8cce72f98f561022b0d729f8c56bf5d9dc844f68346d80e1615ac4aeecefe6"
+          "source_text_sha256": "c76318c768857de06d7764a71c8ccf6ce3a9dd56f7448384c1f63c4cb384e5fd"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.3_b.002",
+          "source_unit_id": "fda_ada_2014.su.3_b.001",
+          "source_text_sha256": "3b6c6a5918992fc7c6f7e0ce88ed711dd1e0f62ae3bedc27bbf9f39188f5e69c"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.3_b.003",
+          "source_unit_id": "fda_ada_2014.su.3_b.001",
+          "source_text_sha256": "3b6c6a5918992fc7c6f7e0ce88ed711dd1e0f62ae3bedc27bbf9f39188f5e69c"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.4.001",
+          "source_unit_id": "fda_ada_2014.su.4.001",
+          "source_text_sha256": "a390fe07de84a9c80cefbb190960f82eaaa4893f3c731501b7362a3c297a03a1"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_a_2.003",
+          "source_unit_id": "fda_ada_2014.su.5_a_2.001",
+          "source_text_sha256": "d7996abc589cf5c0f0fc939d335e707285b3f7f6b195143a6ed689ca9d90bdad"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.app_a_6.001",
+          "source_unit_id": "fda_ada_2014.su.app_a_6.001",
+          "source_text_sha256": "754959af5b3e2d62aae4b9618c85f03cfd9b7a238068ff320b18516acfcb7fdb"
         }
       ],
       "review_status": "reviewed"
@@ -70,19 +127,28 @@
         "fda_ada_2014.sem.facet.risk_factors.product"
       ],
       "sentence_roles": [
-        "scope",
         "main_points"
       ],
       "evidence_refs": [
         {
-          "record_id": "fda_ada_2014.kr.5_a_1.001",
-          "source_unit_id": "fda_ada_2014.su.5_a_1.001",
-          "source_text_sha256": "4ec8125643a269c965b4e1d8a64640961d2d67b5065a01214224df3a60a8ee82"
+          "record_id": "fda_ada_2014.kr.5_a_2.003",
+          "source_unit_id": "fda_ada_2014.su.5_a_2.001",
+          "source_text_sha256": "d7996abc589cf5c0f0fc939d335e707285b3f7f6b195143a6ed689ca9d90bdad"
         },
         {
-          "record_id": "fda_ada_2014.kr.5_b_1.001",
-          "source_unit_id": "fda_ada_2014.su.5_b_1.001",
-          "source_text_sha256": "ca6374e476dc55ac213871d7aa2b60c1c746179be477818069560666d7467084"
+          "record_id": "fda_ada_2014.cond.5_a_2.001",
+          "source_unit_id": "fda_ada_2014.su.5_a_2.001",
+          "source_text_sha256": "0b90fbf3afbdfe937b0f99c9eba01799396197c0b93130743014457aba1689af"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_b_8.003",
+          "source_unit_id": "fda_ada_2014.su.5_b_8.001",
+          "source_text_sha256": "9eb2b25fb59515b02d200e06e244d7d5c2bc6a062bc090f325ef0fd398846e29"
+        },
+        {
+          "record_id": "fda_ada_2014.qc.5_b_3.001",
+          "source_unit_id": "fda_ada_2014.su.5_b_3.001",
+          "source_text_sha256": "52cc37649d598dbd11dc9f5a5c17d2fdca64e2db2dae4f4cd3bd5eaf35cbc722"
         }
       ],
       "review_status": "reviewed"
@@ -107,9 +173,49 @@
       ],
       "evidence_refs": [
         {
-          "record_id": "fda_ada_2014.cond.app_a_1.001",
+          "record_id": "fda_ada_2014.kr.app_a_1.001",
           "source_unit_id": "fda_ada_2014.su.app_a_1.001",
-          "source_text_sha256": "bad8e8d0202cde47359abdbe86a3b4aeb7e85f3063e906a0568dba1c0b867728"
+          "source_text_sha256": "c85fc921fb9105fd244b38cd5fcee9f064f24362e62cb5b4dc998fe6b4dee301"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.app_a_2.001",
+          "source_unit_id": "fda_ada_2014.su.app_a_2.001",
+          "source_text_sha256": "060f8874d3daaa29ac5bed0ce9a859ac684ce8c1537a3d09933d5b5e30bfaf82"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.app_a_3.001",
+          "source_unit_id": "fda_ada_2014.su.app_a_3.001",
+          "source_text_sha256": "3865b92a42675010805c29a57420cd5f03904778352a93b0d20c6641677976c3"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.app_a_3.002",
+          "source_unit_id": "fda_ada_2014.su.app_a_3.001",
+          "source_text_sha256": "3865b92a42675010805c29a57420cd5f03904778352a93b0d20c6641677976c3"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.app_a_4.001",
+          "source_unit_id": "fda_ada_2014.su.app_a_4.001",
+          "source_text_sha256": "9a69493eb547660e9cec57680321b9532d2e305302de731d4f8105a92069a0bd"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.app_a_4.002",
+          "source_unit_id": "fda_ada_2014.su.app_a_4.001",
+          "source_text_sha256": "9a69493eb547660e9cec57680321b9532d2e305302de731d4f8105a92069a0bd"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.app_a_5.001",
+          "source_unit_id": "fda_ada_2014.su.app_a_5.001",
+          "source_text_sha256": "89fb618678abbd3b7c8624d41beffafa567169bbc9681ca74d07de60f17f4716"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.app_a_5.002",
+          "source_unit_id": "fda_ada_2014.su.app_a_5.001",
+          "source_text_sha256": "89fb618678abbd3b7c8624d41beffafa567169bbc9681ca74d07de60f17f4716"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.app_a_6.001",
+          "source_unit_id": "fda_ada_2014.su.app_a_6.001",
+          "source_text_sha256": "754959af5b3e2d62aae4b9618c85f03cfd9b7a238068ff320b18516acfcb7fdb"
         }
       ],
       "review_status": "reviewed"
@@ -133,6 +239,21 @@
           "record_id": "fda_ada_2014.kr.3_a.001",
           "source_unit_id": "fda_ada_2014.su.3_a.001",
           "source_text_sha256": "f686ea9d3849701eed3bcbe4f314ab6531d8725640fd8f1d2ab45be349b8f441"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.3_a.002",
+          "source_unit_id": "fda_ada_2014.su.3_a.001",
+          "source_text_sha256": "f686ea9d3849701eed3bcbe4f314ab6531d8725640fd8f1d2ab45be349b8f441"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.3_b.002",
+          "source_unit_id": "fda_ada_2014.su.3_b.001",
+          "source_text_sha256": "3b6c6a5918992fc7c6f7e0ce88ed711dd1e0f62ae3bedc27bbf9f39188f5e69c"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.3_b.003",
+          "source_unit_id": "fda_ada_2014.su.3_b.001",
+          "source_text_sha256": "3b6c6a5918992fc7c6f7e0ce88ed711dd1e0f62ae3bedc27bbf9f39188f5e69c"
         }
       ],
       "review_status": "reviewed"
@@ -159,6 +280,41 @@
           "record_id": "fda_ada_2014.kr.5_a_1.001",
           "source_unit_id": "fda_ada_2014.su.5_a_1.001",
           "source_text_sha256": "4ec8125643a269c965b4e1d8a64640961d2d67b5065a01214224df3a60a8ee82"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_a_1.002",
+          "source_unit_id": "fda_ada_2014.su.5_a_1.001",
+          "source_text_sha256": "4ec8125643a269c965b4e1d8a64640961d2d67b5065a01214224df3a60a8ee82"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_a_2.003",
+          "source_unit_id": "fda_ada_2014.su.5_a_2.001",
+          "source_text_sha256": "d7996abc589cf5c0f0fc939d335e707285b3f7f6b195143a6ed689ca9d90bdad"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_a_3.001",
+          "source_unit_id": "fda_ada_2014.su.5_a_3.001",
+          "source_text_sha256": "1a429cc0032c2e0c191e9233ebc8a856563d7aefab306c5d819e566f8eac96af"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_a_3.002",
+          "source_unit_id": "fda_ada_2014.su.5_a_3.001",
+          "source_text_sha256": "1a429cc0032c2e0c191e9233ebc8a856563d7aefab306c5d819e566f8eac96af"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_a_4.001",
+          "source_unit_id": "fda_ada_2014.su.5_a_4.001",
+          "source_text_sha256": "860b9bbb60ad5bbddef54bf090b3bf3eb539af737542a2fff5c2190a1205fe5c"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_a_4.002",
+          "source_unit_id": "fda_ada_2014.su.5_a_4.001",
+          "source_text_sha256": "860b9bbb60ad5bbddef54bf090b3bf3eb539af737542a2fff5c2190a1205fe5c"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_a_5.001",
+          "source_unit_id": "fda_ada_2014.su.5_a_5.001",
+          "source_text_sha256": "322adb114b16733f6155dc18e791a7b7dba3ee0497ee7e1d2c4ce5b117b6606e"
         }
       ],
       "review_status": "reviewed"
@@ -189,6 +345,46 @@
           "record_id": "fda_ada_2014.kr.5_b_1.001",
           "source_unit_id": "fda_ada_2014.su.5_b_1.001",
           "source_text_sha256": "ca6374e476dc55ac213871d7aa2b60c1c746179be477818069560666d7467084"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_b_2.001",
+          "source_unit_id": "fda_ada_2014.su.5_b_2.001",
+          "source_text_sha256": "8bf0470cdf2b4667812cf6f4c5bb12f7cdef71bf81c7608308b68bcee04f38b8"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_b_3.001",
+          "source_unit_id": "fda_ada_2014.su.5_b_3.001",
+          "source_text_sha256": "b3979c5623b0af42c50ef05b03e4c243d39b53bbda104a25b9cca9d20fdc2d6b"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_b_4.001",
+          "source_unit_id": "fda_ada_2014.su.5_b_4.001",
+          "source_text_sha256": "dfa36e4678d249dd9ddd633c46ff64d69020bae69531183832a50ff91fbb3d0f"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_b_5.001",
+          "source_unit_id": "fda_ada_2014.su.5_b_5.001",
+          "source_text_sha256": "554778cee25d87b7b53b42aa6eb3647551db12f96f72cdc6ac4d064364d02de1"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_b_6.001",
+          "source_unit_id": "fda_ada_2014.su.5_b_6.001",
+          "source_text_sha256": "3bc14dbf52dbbfa03bd349219de29974c5fb50199b637c35cfb615e23f121ee9"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_b_7.001",
+          "source_unit_id": "fda_ada_2014.su.5_b_7.001",
+          "source_text_sha256": "127bc330f39bb3274832bf9f7b43180061d95dc3f34f9477056a062bf9307020"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_b_8.001",
+          "source_unit_id": "fda_ada_2014.su.5_b_8.001",
+          "source_text_sha256": "9eb2b25fb59515b02d200e06e244d7d5c2bc6a062bc090f325ef0fd398846e29"
+        },
+        {
+          "record_id": "fda_ada_2014.kr.5_b_9.001",
+          "source_unit_id": "fda_ada_2014.su.5_b_9.001",
+          "source_text_sha256": "41b285e7b557354e0ff6d3251c45c14f20a656b51fd9aed8c11dfd00850829f5"
         }
       ],
       "review_status": "reviewed"

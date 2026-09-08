@@ -12,7 +12,7 @@ const { records, index } = loadStore();
 test("the Korean presentation overlay covers every answerable record with current source hashes", () => {
   const result = validateKoPresentation();
   assert.equal(result.ok, true, result.errors.slice(0, 5).join("\n"));
-  assert.equal(result.entryCount, 2484);
+  assert.equal(result.entryCount, 2693);
   assert.equal(result.entryCount, result.targetCount);
 });
 

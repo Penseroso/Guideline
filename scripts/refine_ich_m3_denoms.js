@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "ich_m3_nonclinical.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "ich_m3_r2.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 for (const qc of bundle.quantitative_criteria) {
@@ -48,4 +48,4 @@ for (const qc of bundle.quantitative_criteria) {
 }
 
 fs.writeFileSync(bundlePath, JSON.stringify(bundle, null, 2), "utf8");
-console.log("Successfully refined parameters and denominators in ich_m3_nonclinical.json!");
+console.log("Successfully refined parameters and denominators in ich_m3_r2.json!");

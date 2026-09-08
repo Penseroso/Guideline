@@ -24,7 +24,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const ROOT = path.resolve(__dirname, "..");
-const PILOTS_DIR = path.join(ROOT, "data", "pilots");
+const GUIDELINES_DIR = path.join(ROOT, "data", "guidelines");
 const OVERLAY_DIR = path.join(ROOT, "data", "derived", "semantic");
 
 // coverage_manifest.answer_intent -> summary_spec.summary_kind. Only these
@@ -77,8 +77,8 @@ function sha256(text) { return crypto.createHash("sha256").update(String(text ||
 
 function loadBundles() {
   const byDocumentId = new Map();
-  for (const name of fs.readdirSync(PILOTS_DIR).filter((item) => item.endsWith(".json"))) {
-    const bundle = readJson(path.join(PILOTS_DIR, name));
+  for (const name of fs.readdirSync(GUIDELINES_DIR).filter((item) => item.endsWith(".json"))) {
+    const bundle = readJson(path.join(GUIDELINES_DIR, name));
     byDocumentId.set(bundle.documents[0].document_id, bundle);
   }
   return byDocumentId;

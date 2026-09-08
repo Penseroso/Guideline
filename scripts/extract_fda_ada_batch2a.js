@@ -4,7 +4,7 @@ const { createClient } = require("../engine/llm_client");
 const { extractSectionSelfConsistent } = require("../engine/pipeline");
 const { validateFiles } = require("../validation/validate_structured_data");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "fda_ada_validation.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "fda_ada.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 const SOURCE_PDF = "source_pdfs/FDA Immunogenicity Testing of Therapeutic Protein Products —Developing and Validating Assays for Anti-Drug Antibody Detection.pdf";

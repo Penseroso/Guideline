@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "ich_m3_nonclinical.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "ich_m3_r2.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 console.log("QCs before dedupe:", bundle.quantitative_criteria.length);

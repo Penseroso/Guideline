@@ -3,7 +3,7 @@ const path = require("path");
 const { createClient } = require("../engine/llm_client");
 const { extractSectionSelfConsistent } = require("../engine/pipeline");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "ich_m3_nonclinical.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "ich_m3_r2.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 const batch4Data = JSON.parse(fs.readFileSync(path.resolve(__dirname, "ich_m3_batch4_data.json"), "utf8"));

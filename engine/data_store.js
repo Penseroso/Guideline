@@ -2,10 +2,10 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
-const { discoverJsonFiles } = require("../validation/validate_pilots");
+const { discoverJsonFiles } = require("../validation/validate_guidelines");
 
 const ROOT = path.resolve(__dirname, "..");
-const PILOTS_DIR = path.join(ROOT, "data", "pilots");
+const GUIDELINES_DIR = path.join(ROOT, "data", "guidelines");
 const KO_PRESENTATION_DIR = path.join(ROOT, "data", "presentation", "ko");
 const SCOPE_PROFILES_PATH = path.join(ROOT, "data", "ontology", "document_scope_profiles.json");
 
@@ -17,8 +17,8 @@ function loadScopeProfiles() {
   return scopeProfilesCache;
 }
 
-function loadBundles(pilotsDir = PILOTS_DIR) {
-  const files = discoverJsonFiles(pilotsDir);
+function loadBundles(guidelinesDir = GUIDELINES_DIR) {
+  const files = discoverJsonFiles(guidelinesDir);
   return files.map((file) => ({
     file,
     bundle: JSON.parse(fs.readFileSync(file, "utf8"))
@@ -381,8 +381,8 @@ function answerableRecords(index, koPresentation = new Map()) {
   return records;
 }
 
-function loadStore(pilotsDir = PILOTS_DIR, koPresentationDir = KO_PRESENTATION_DIR) {
-  const bundles = loadBundles(pilotsDir);
+function loadStore(guidelinesDir = GUIDELINES_DIR, koPresentationDir = KO_PRESENTATION_DIR) {
+  const bundles = loadBundles(guidelinesDir);
   const index = buildIndex(bundles);
   const koPresentation = loadKoPresentation(koPresentationDir);
   return { index, records: answerableRecords(index, koPresentation), koPresentation };

@@ -195,6 +195,9 @@ async function extractSection({ section, sourceUnits, client }) {
     "Never invent a source_unit_id that wasn't provided. " +
     "Never restate or paraphrase whole paragraphs as source_text/condition_text — " +
     "quote the exact minimal supporting excerpt from the given source units. " +
+    "normalized_ko MUST be a natural, standalone Korean sentence (never English) that fully and " +
+    "faithfully restates this record's subject/action/object, preserving modality strength, negation, " +
+    "and any material qualifiers or conditions named in the source text. " +
     // Added after a real dry-run (M10 3.2.5.2) showed 0 wrong values but
     // real under-extraction: a quantitative fact embedded in a sentence
     // already captured as a KnowledgeRecord did not also get its own

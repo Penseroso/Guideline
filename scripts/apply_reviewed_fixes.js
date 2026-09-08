@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "ema_fih_dosing.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "ema_fih.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 // 1. Fix KRs with negation or missing actions
@@ -74,4 +74,4 @@ for (const qc of bundle.quantitative_criteria) {
 }
 
 fs.writeFileSync(bundlePath, JSON.stringify(bundle, null, 2), "utf8");
-console.log("Successfully updated and reviewed clear records in ema_fih_dosing.json");
+console.log("Successfully updated and reviewed clear records in ema_fih.json");

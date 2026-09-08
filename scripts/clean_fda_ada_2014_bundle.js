@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "fda_ada_2014_clinical.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "fda_ada_2014.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 // Calculate sha256 uppercase checksum of source PDF
@@ -106,4 +106,4 @@ cleanedBundle.conditions = cleanedBundle.conditions.filter(
 );
 
 fs.writeFileSync(bundlePath, JSON.stringify(cleanedBundle, null, 2), "utf8");
-console.log("Successfully cleaned and validated fda_ada_2014_clinical.json schema shape!");
+console.log("Successfully cleaned and validated fda_ada_2014.json schema shape!");

@@ -3,10 +3,10 @@ const fs = require("fs");
 const path = require("path");
 const Ajv = require("ajv");
 
-const { discoverJsonFiles } = require("./validate_pilots");
+const { discoverJsonFiles } = require("./validate_guidelines");
 
 const ROOT = path.resolve(__dirname, "..");
-const PILOTS_DIR = path.join(ROOT, "data", "pilots");
+const GUIDELINES_DIR = path.join(ROOT, "data", "guidelines");
 const OVERLAY_DIR = path.join(ROOT, "data", "presentation", "ko");
 const SCHEMA_PATH = path.join(ROOT, "data", "schemas", "ko_presentation_overlay.schema.json");
 
@@ -14,9 +14,9 @@ function sourceHash(text) {
   return crypto.createHash("sha256").update(String(text || ""), "utf8").digest("hex");
 }
 
-function collectTargets(pilotsDir = PILOTS_DIR) {
+function collectTargets(guidelinesDir = GUIDELINES_DIR) {
   const targets = new Map();
-  for (const file of discoverJsonFiles(pilotsDir)) {
+  for (const file of discoverJsonFiles(guidelinesDir)) {
     const bundle = JSON.parse(fs.readFileSync(file, "utf8"));
     const sourceUnits = new Map((bundle.source_units || []).map((record) => [record.source_unit_id, record]));
     for (const record of bundle.knowledge_records || []) {
@@ -51,11 +51,11 @@ function formatAjvErrors(file, errors) {
   return (errors || []).map((error) => `${file} ${error.instancePath || "/"}: ${error.message}`);
 }
 
-function validateKoPresentation({ pilotsDir = PILOTS_DIR, overlayDir = OVERLAY_DIR } = {}) {
+function validateKoPresentation({ guidelinesDir = GUIDELINES_DIR, overlayDir = OVERLAY_DIR } = {}) {
   const errors = [];
   const schema = JSON.parse(fs.readFileSync(SCHEMA_PATH, "utf8"));
   const validate = new Ajv({ allErrors: true, strict: false }).compile(schema);
-  const targets = collectTargets(pilotsDir);
+  const targets = collectTargets(guidelinesDir);
   const seen = new Set();
   const files = fs.existsSync(overlayDir) ? discoverJsonFiles(overlayDir) : [];
 

@@ -5,7 +5,7 @@ const { verifyDraft } = require("../engine/pipeline");
 
 async function main() {
   const client = createClient();
-  const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "fda_ada_validation.json");
+  const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "fda_ada.json");
   const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
   console.log("=== Auditing FDA ADA Guidance (2019) Sections through Verification Agent ===");
@@ -71,7 +71,7 @@ async function main() {
   console.log(`Flagged (Requires Attention): ${totalFlagged.length}`);
 
   // Save audit log
-  const outPath = path.resolve(__dirname, "..", "data", "pilots", "fda_ada_audit_report.json");
+  const outPath = path.resolve(__dirname, "..", "data", "guidelines", "fda_ada_audit_report.json");
   fs.writeFileSync(
     outPath,
     JSON.stringify(

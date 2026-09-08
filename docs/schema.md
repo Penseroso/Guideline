@@ -14,7 +14,7 @@ Model `0.5.0` is implemented as a machine-validatable JSON bundle contract with 
 
 An earlier derived-layer design (AmendmentMapping, EffectiveRecord, a family/edition registry) was explored but never adopted into the product build, so it is not described here as current.
 
-A separate, additive source-grounded answer-planning overlay is documented in `docs/derived_semantic_layer.md`. It does not calculate amendment/effective state and does not change this `0.5.0` core model. Stages A–D are implemented: the overlay contract is `0.3.0`, the public answer contract is `2.5.0`, and the final reviewed inventory contains 55 unique manifests across all 6 pilot documents. Stage E0 (schema-only) added `review_status` to every `salience_profile`; Stage E1 wires `summary_specs` structure into served coverage disclosure, Stage E2 renders the matching Korean presentation sentence, and Stage E3 applies `salience_profiles` exposure tiers — all three live-audit-promoted to `reviewed`. Stage F then extended `summary_specs`/`salience_profiles` (structure only, no new Korean text) to the 47 manifests Stage D added but Stage E's pilot scope left uncovered — see "Derived semantic overlay" below.
+A separate, additive source-grounded answer-planning overlay is documented in `docs/derived_semantic_layer.md`. It does not calculate amendment/effective state and does not change this `0.5.0` core model. The semantic overlay contract is `0.3.0`, the Korean semantic presentation contract is `0.2.0`, and the public answer contract is `2.5.0`. The final reviewed inventory contains 55 unique manifests and 50 applicable summary presentations across all 6 pilot documents. Stages E–F activated and expanded summary/salience structure; Stage G completed the Korean presentation text with independent verification and explicit evidence-gap accounting — see "Derived semantic overlay" below.
 
 ## Core principles
 
@@ -55,7 +55,7 @@ Allowed values:
 
 `data/presentation/ko/*.json` is a lower-authority, UI-facing layer for Korean normalization review. It stores Korean presentation text for `QuantitativeCriterion` and `Condition`, and review attestations for the core bundle's `KnowledgeRecord.normalized_ko`. It does not modify or supersede the source bundle, typed values, conditions, or source text. The contract is validated by `data/schemas/ko_presentation_overlay.schema.json` and `npm run validate:ko`.
 
-Each document has one overlay file with `overlay_version=0.2.0`, `language=ko`, its `document_id`, and ID-keyed entries. Every answerable `KnowledgeRecord`, `QuantitativeCriterion`, and `Condition` in the six pilot bundles must have exactly one entry. All entries contain `record_id`, `record_type`, `source_text_sha256`, and `normalization_status`.
+Each document has one overlay file with `overlay_version=0.2.0`, `language=ko`, its `document_id`, and ID-keyed entries. Every answerable `KnowledgeRecord`, `QuantitativeCriterion`, and `Condition` in the six guideline bundles must have exactly one entry. All entries contain `record_id`, `record_type`, `source_text_sha256`, and `normalization_status`.
 
 For `QuantitativeCriterion` and `Condition`, an entry also contains:
 
@@ -159,6 +159,12 @@ Korean presentation text authoring is explicitly out of scope for Stage F — a 
 `scripts/run_semantic_stage_f_audit.js` offline-verified all 45 new summary_specs and 19 new salience_profiles reach their intended manifest (45/45, 19/19). Promoted to `reviewed` on 2026-09-08: 45 summary_specs, 19 salience_profiles (bringing the totals to 50 and 26 respectively).
 
 That promotion initially reused Stage E0-E3's live audit, which is only valid if Stage F truly changes no served-answer behavior — an assumption a follow-up review correctly flagged as unverified, since `semantic_coverage` is only observable as `reviewed` once an object actually is, and the reused audit predates Stage F's activation. `scripts/stage_e_promotion_shared.js` gained `computeSemanticStateFingerprint()` (hashes every file in `data/derived/semantic/` and `data/derived/presentation/ko/`), embedded per-entry by `scripts/run_answer_suitability_audit.js`, and `assertLiveAuditRegression()` now rejects any audit whose fingerprint doesn't match the current on-disk state — `scripts/promote_semantic_stage_f.js` was restructured to flip-then-verify (write the `reviewed` flip first, then require a matching-fingerprint live audit, auto-reverting on failure) rather than verify-then-flip. A fresh post-activation audit then confirmed: 15/16 established-suitable cases exact-matched (Q25 showed a third independent claim-set variant, `history/decision_log/review_log.md` REV-015 — model-generation variance, not a Stage F regression); every one of the 43 summary/27 salience occurrences across all 50 live answers attached to a topically-correct manifest; and zero `detail`-tier salience items exist anywhere in the current dataset, so the collapse-behind-disclosure mechanism never hides a coverage gap in practice. Full record: `history/verification/semantic_stage_f_2026-09-08.md`.
+
+### Stage G
+
+The derived Korean presentation overlay is version `0.2.0`. Each entry resolves to one `summary_spec`, carries `summary_spec_sha256`, and exhaustively classifies that summary's `facet_ids` in `facet_dispositions`. A disposition is either `covered` with `gap_reason=null`, or `gap` with `no_structured_evidence`, `insufficient_support`, or `verification_failed`; a reviewed entry may retain only `no_structured_evidence`. Source evidence hashes and the summary-spec hash are both fail-closed at validation and runtime, and either mismatch drops the whole entry.
+
+Stage G provides fresh reviewed Korean presentation entries for all 50 applicable summary_specs. The authoring pipeline builds reviewed evidence packs per facet, uses neutral topic-level synthesis for parent sections without directly filed records, and independently verifies sentence entailment, modality, conditions/exceptions, over-generalization, standalone wording, and facet completeness. Thirteen S6(R1) facets have no structured record in their scope and remain explicit `no_structured_evidence` gaps; they are not inferred or presented as covered. `npm run audit:semantic:presentation` enforces the 50/50 inventory, approved gap set, Korean writing-system check, numeric grounding, review state, and freshness. No semantic manifest, route, claim, citation, coverage, envelope shape, or envelope version changed.
 
 ## Bundle contract
 
@@ -405,7 +411,7 @@ JSON Schema validates object structure, required fields, primitive and nullable 
 
 The reusable validator validates JSON parsing, JSON Schema conformance, object ID uniqueness, reference resolution, self-contained bundle rules, repeated `Document` and `Section` consistency across files, `SourceUnit` ordering, provenance consistency, value/status consistency, and actionable non-zero failures.
 
-Use `npm run validate -- <json-file> [json-file ...]` to validate explicit files. Use `npm run validate:pilots` to discover and validate all JSON files under `data/pilots/` without relying on shell wildcard expansion.
+Use `npm run validate -- <json-file> [json-file ...]` to validate explicit files. Use `npm run validate:guidelines` to discover and validate all JSON files under `data/guidelines/` without relying on shell wildcard expansion.
 
 ## Relationships
 
@@ -455,7 +461,7 @@ Guideline-specific controlled vocabularies for condition types, species, study t
 
 ## Deliberate non-extraction (not an omission)
 
-A recall/completeness audit (`docs/milestone_log.md` M1, 2026-08-18) found real omissions in `s6_r1_species_selection.json` and also surfaced a separate category that looks like an omission but isn't one: source text that is deliberately not given its own `KnowledgeRecord`/`Condition`. Three patterns, confirmed against actual source text, not to be re-flagged as missing in future audits unless the specific instance carries independent, freestanding regulatory content:
+A recall/completeness audit (`docs/milestone_log.md` M1, 2026-08-18) found real omissions in `ich_s6_r1.json` and also surfaced a separate category that looks like an omission but isn't one: source text that is deliberately not given its own `KnowledgeRecord`/`Condition`. Three patterns, confirmed against actual source text, not to be re-flagged as missing in future audits unless the specific instance carries independent, freestanding regulatory content:
 
 - **Narrative/scene-setting sentences** with no discrete regulatory content of their own (e.g. "In recent years, there has been much progress in the development of animal models that are thought to be similar to the human disease.") — context for the sentences that follow, not itself an assertion to preserve separately.
 - **Incidental parentheticals embedded in another sentence's directive** (e.g. "(choice of species to be justified by the sponsor)" inside a sentence about when a short-term safety study can be considered) — part of the host sentence's own record, not a separate `Condition`.

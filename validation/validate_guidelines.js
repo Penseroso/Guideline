@@ -4,7 +4,7 @@ const path = require("path");
 const { validateFiles } = require("./validate_structured_data");
 
 const ROOT = path.resolve(__dirname, "..");
-const PILOTS_DIR = path.join(ROOT, "data", "pilots");
+const GUIDELINES_DIR = path.join(ROOT, "data", "guidelines");
 
 function discoverJsonFiles(directory) {
   const entries = fs.readdirSync(directory, { withFileTypes: true });
@@ -23,9 +23,9 @@ function discoverJsonFiles(directory) {
 }
 
 function main() {
-  const files = discoverJsonFiles(PILOTS_DIR);
+  const files = discoverJsonFiles(GUIDELINES_DIR);
   if (files.length === 0) {
-    console.error(`No JSON files found under ${path.relative(ROOT, PILOTS_DIR)}.`);
+    console.error(`No JSON files found under ${path.relative(ROOT, GUIDELINES_DIR)}.`);
     process.exit(2);
   }
 
@@ -36,7 +36,7 @@ function main() {
     process.exit(1);
   }
 
-  console.log(`Validated ${result.bundleCount} pilot bundle(s).`);
+  console.log(`Validated ${result.bundleCount} guideline bundle(s).`);
 }
 
 if (require.main === module) {

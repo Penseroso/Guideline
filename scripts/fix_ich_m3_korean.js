@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { createClient } = require("../engine/llm_client");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "ich_m3_nonclinical.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "ich_m3_r2.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 
 async function fixRemaining() {

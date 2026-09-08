@@ -3,7 +3,7 @@ const path = require("path");
 const { createClient } = require("../engine/llm_client");
 const { verifyDraft } = require("../engine/pipeline");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "ema_fih_dosing.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "ema_fih.json");
 const bundle = JSON.parse(fs.readFileSync(bundlePath, "utf8"));
 const suMap = new Map(bundle.source_units.map((su) => [su.source_unit_id, su]));
 

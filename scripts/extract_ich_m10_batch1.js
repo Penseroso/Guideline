@@ -4,7 +4,7 @@ const { createClient } = require("../engine/llm_client");
 const { extractSectionSelfConsistent } = require("../engine/pipeline");
 const { validateFiles } = require("../validation/validate_structured_data");
 
-const bundlePath = path.resolve(__dirname, "..", "data", "pilots", "ich_m10_validation.json");
+const bundlePath = path.resolve(__dirname, "..", "data", "guidelines", "ich_m10.json");
 
 // Start with clean document base
 const initialDoc = {
