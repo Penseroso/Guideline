@@ -20,6 +20,15 @@
 const { verifyClaim, claimTextFor } = require("./verification_agent");
 const { criterionValueKey } = require("./criterion_value");
 
+// Same pattern as scripts/author_semantic_presentation.js's
+// hasUnexpectedScript: catches both "not Korean at all" (e.g. the
+// extraction_agent.js prompt gap that produced English normalized_ko
+// throughout an entire backfill pass, docs/milestone_log.md M5) and
+// mid-generation script corruption (replacement char, stray CJK/Devanagari).
+function hasUnexpectedScript(text) {
+  return /[\ufffd\u0900-\u097f\u4e00-\u9fff]/.test(String(text || "")) || !/[\uac00-\ud7af]/.test(String(text || ""));
+}
+
 function sourceTextForUnits(sourceUnits, ids) {
   const byId = new Map(sourceUnits.map((su) => [su.source_unit_id, su]));
   return ids
@@ -31,6 +40,17 @@ function sourceTextForUnits(sourceUnits, ids) {
 }
 
 async function verifyKnowledgeRecord(kr, { sourceUnits, conditions, client, model }) {
+  // Deterministic, local, and checked before spending an entailment call:
+  // normalized_ko is schema-nullable but when present must actually be
+  // Korean. extraction_agent.js instructs this in its prompt, but a prompt
+  // instruction is not a guarantee — this exact failure mode produced 142
+  // English normalized_ko records in one backfill pass before entailment
+  // verification (which only checks subject/action/object, never
+  // normalized_ko) caught none of it (docs/milestone_log.md M5).
+  if (kr.normalized_ko && hasUnexpectedScript(kr.normalized_ko)) {
+    return { entailed: false, reason: `normalized_ko is not valid Korean text: "${kr.normalized_ko}"` };
+  }
+
   // record_type=example (one item of an enumerated list under a framing
   // sentence, docs/schema.md) is a special case: the natural "[category]
   // includes [item]" phrasing asserts the framing sentence's category, which

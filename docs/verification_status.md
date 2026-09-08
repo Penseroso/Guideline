@@ -17,12 +17,7 @@ This is the active verification summary. Detailed historical measurements are fr
 - Refusal correctness: 100%
 - Live semantic-route API test: 23/23 passing with an OpenAI same-provider cross-model generator/verifier pair as of 2026-09-02
 - Live 50-question user-path audit: 50/50 valid envelopes completed with 0 final runtime errors as of 2026-09-08 (two transient provider failures passed targeted retry); the public answer contract has since advanced to `2.5.0` — see `history/verification/semantic_stage_g_2026-09-08.md` for the latest post-activation live-audit record on that contract
-- Answer-suitability audit after Stage D: 16 suitable / 34 partially suitable / 0 unsuitable across 50 Korean broad-to-detail questions; all 16 established suitable cases have retained route, mode, and (for the 6 deterministic cases) identical claim IDs through every later Stage E/F/G promotion — see `scripts/stage_e_promotion_shared.js`'s route-keyed regression policy for the 10 `grounded_generation` cases, whose claim *selection* is not required to be reproducible run-to-run
+- Answer-suitability audit after Stage D: 16 suitable / 34 partially suitable / 0 unsuitable across 50 Korean broad-to-detail questions; all 16 established suitable cases have retained route, mode, and (for the 6 deterministic cases) identical claim IDs through every later Stage E/F/G promotion — see `scripts/semantic_promotion_lifecycle.js`'s route-keyed regression policy for the 10 `grounded_generation` cases, whose claim *selection* is not required to be reproducible run-to-run
 - Production dependency audit as of 2026-08-28: 0 known vulnerabilities
-
-## Open verification work
-
-- Run the grounded-generation route against two distinct live providers. Same-provider cross-model behavior is now covered live; cross-provider security and behavior coverage remains mocked.
-- Build representative post-M1 ground truth before re-measuring extraction accuracy for KnowledgeRecord, QuantitativeCriterion, and Condition.
 
 Do not append per-run narratives here. Update this summary only when the current accepted baseline changes; preserve detailed run evidence under `history/verification/`.

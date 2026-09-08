@@ -1,14 +1,16 @@
 /**
- * Narrow entailment check (product_roadmap.md §2.5.1, §2.6 item 4/5).
- * Deliberately does one bounded thing: given a claim and the exact
- * source text it's supposed to come from, answer yes/no + why. This
- * is reused for two different call sites with the same primitive:
- *   - extraction-time: does a drafted KnowledgeRecord/QuantitativeCriterion/
- *     Condition actually follow from its cited source_text (dry-run/
- *     ongoing drift monitoring, §2.5.1).
- *   - answer-time: does a grounded generated answer sentence actually
- *     follow from the source_text of the record it cites, before the
- *     answer is shown to the user (§2.6 item 4).
+ * Narrow entailment check (product_roadmap.md §2.5.1): given a claim and
+ * the exact source text it's supposed to come from, answer yes/no + why.
+ * Deliberately does one bounded thing, used at extraction/ingestion time
+ * only — does a drafted KnowledgeRecord/QuantitativeCriterion/Condition
+ * actually follow from its cited source_text (engine/pipeline.js's
+ * draft→verify→review_status step). The live answering path
+ * (engine/query_router.js's grounded_generation route, §2.6 item 4) does
+ * NOT reuse this module — it independently implements its own
+ * batchVerificationSchema for answer-time claim checking, since that path
+ * verifies multiple generated sentences against multiple candidate
+ * records in one batched call rather than one claim/source_text pair at a
+ * time.
  * Never trusted to grade itself — prefer a different provider/model
  * from whichever produced the claim (config, see engine/llm_client.js).
  */
