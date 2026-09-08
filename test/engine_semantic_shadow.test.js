@@ -584,7 +584,15 @@ test("buildReviewedSemanticCoverage omits a summary that is not (yet) reviewed, 
   assert.equal(manifest.summary, null, "the real committed summary_spec is still needs_review and must not be served");
 });
 
-test("buildReviewedSemanticCoverage serves the summary once it is reviewed too, with text left null pending Stage E2", () => {
+function storeWithPresentationEntries(documentId, entries) {
+  const base = fullyReviewedStore();
+  const presentationByDocumentId = new Map(base.presentationByDocumentId);
+  const existing = presentationByDocumentId.get(documentId);
+  presentationByDocumentId.set(documentId, { ...existing, entries });
+  return { ...base, presentationByDocumentId };
+}
+
+test("buildReviewedSemanticCoverage serves the summary once it is reviewed, but text stays null while its presentation entry is still needs_review", () => {
   const envelope = {
     answer_intent: "document_overview",
     scope: { resolved_document_ids: ["ema_fih"], requested_document_ids: [], section_ids: ["ema_fih.sec.5"] },
@@ -621,4 +629,60 @@ test("a summary_spec targeting a narrower sub-section still matches a broader ma
   assert.ok(manifest, "expected section_1_introduction to be served");
   assert.ok(manifest.summary, "expected the §1.3-targeted summary_spec to match via facet containment");
   assert.equal(manifest.summary.summary_id, "ich_m3_r2.sem.summary.scope");
+});
+
+// --- Korean presentation sentence rendering (Stage E2) ---
+
+function ema_fihDocumentOverviewEnvelope() {
+  return {
+    answer_intent: "document_overview",
+    scope: { resolved_document_ids: ["ema_fih"], requested_document_ids: [], section_ids: ["ema_fih.sec.5"] },
+    claims: [claim({ id: "ema_fih.kr.5.001", document_id: "ema_fih", section_id: "ema_fih.sec.5" })]
+  };
+}
+
+test("buildReviewedSemanticCoverage renders presentation text once both the summary_spec and its presentation entry are reviewed", () => {
+  const realPresentation = store.presentationByDocumentId.get("ema_fih");
+  const reviewedEntries = realPresentation.entries.map((entry) => ({ ...entry, review_status: "reviewed" }));
+  const testStore = storeWithPresentationEntries("ema_fih", reviewedEntries);
+  const coverage = buildReviewedSemanticCoverage("EMA FIH 전체 개요를 알려줘", ema_fihDocumentOverviewEnvelope(), { store: testStore });
+  const manifest = coverage.manifests.find((m) => m.manifest_id === "ema_fih.sem.manifest.document_overview");
+  assert.ok(manifest.summary.text, "expected rendered presentation text");
+  assert.deepEqual(manifest.summary.text.map((unit) => unit.sentence_role), ["main_points", "boundary"]);
+  assert.ok(manifest.summary.text.every((unit) => typeof unit.text === "string" && unit.text.length > 0));
+});
+
+test("presentation text follows the summary_spec's own sentence_roles order, not the presentation entry's storage order", () => {
+  const realPresentation = store.presentationByDocumentId.get("ema_fih");
+  const reorderedEntries = realPresentation.entries.map((entry) => ({
+    ...entry,
+    review_status: "reviewed",
+    units: [...entry.units].reverse()
+  }));
+  const testStore = storeWithPresentationEntries("ema_fih", reorderedEntries);
+  const coverage = buildReviewedSemanticCoverage("EMA FIH 전체 개요를 알려줘", ema_fihDocumentOverviewEnvelope(), { store: testStore });
+  const manifest = coverage.manifests.find((m) => m.manifest_id === "ema_fih.sem.manifest.document_overview");
+  // summary_kind's sentence_roles is ["scope", "main_points", "boundary"], so
+  // main_points must sort before boundary even though storage order was
+  // reversed to [boundary, main_points] above.
+  assert.deepEqual(manifest.summary.text.map((unit) => unit.sentence_role), ["main_points", "boundary"]);
+});
+
+test("a document with a reviewed summary_spec but no presentation file at all serves the structure with text: null (expected gap, not a bug)", () => {
+  // fda_ada_2014 has a summary_spec (risk_factors) but data/derived/presentation/ko/fda_ada_2014.json
+  // does not exist yet — narrow Stage E scope deliberately did not author it.
+  const envelope = {
+    answer_intent: "topic_overview",
+    mode: "list",
+    scope: { resolved_document_ids: ["fda_ada_2014"], requested_document_ids: [], section_ids: ["fda_ada_2014.sec.5"] },
+    claims: [claim({ id: "fda_ada_2014.kr.5_a_1.001", document_id: "fda_ada_2014", section_id: "fda_ada_2014.sec.5" })]
+  };
+  const coverage = buildReviewedSemanticCoverage(
+    "FDA-2014-ADA §V PATIENT- AND PRODUCT-SPECIFIC FACTORS THAT AFFECT IMMUNOGENICITY 항목은 어떻게 구성돼?",
+    envelope,
+    { store: fullyReviewedStore() }
+  );
+  const manifest = coverage.manifests.find((m) => m.manifest_id === "fda_ada_2014.sem.manifest.risk_factors");
+  assert.ok(manifest.summary, "the summary_spec itself should still be served");
+  assert.equal(manifest.summary.text, null);
 });

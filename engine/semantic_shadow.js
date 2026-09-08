@@ -709,20 +709,58 @@ function comparePlans(question, envelope, options) {
  * present but empty" as the same thing — never render an empty box.
  */
 /**
+ * Stage E2 (docs/derived_semantic_layer.md §10 단계 E2): orders a
+ * presentation entry's units by the summary_spec's own `sentence_roles`
+ * (its intended reading order), not the entry's storage order. A unit whose
+ * role isn't in `sentence_roles` keeps its relative position at the end.
+ */
+function orderedPresentationText(sentenceRoles, units) {
+  const rank = new Map((sentenceRoles || []).map((role, index) => [role, index]));
+  return units
+    .map((unit, index) => ({ unit, index }))
+    .sort((a, b) => {
+      const rankA = rank.has(a.unit.sentence_role) ? rank.get(a.unit.sentence_role) : Number.POSITIVE_INFINITY;
+      const rankB = rank.has(b.unit.sentence_role) ? rank.get(b.unit.sentence_role) : Number.POSITIVE_INFINITY;
+      return rankA !== rankB ? rankA - rankB : a.index - b.index;
+    })
+    .map(({ unit }) => ({ unit_id: unit.unit_id, text: unit.text, sentence_role: unit.sentence_role }));
+}
+
+/**
+ * Stage E2: a reviewed summary_spec only gets rendered Korean text when the
+ * matching presentation entry (same `semantic_id`) is itself `reviewed` —
+ * the two review_status fields are independent, so a structurally-approved
+ * summary can still show no prose if nobody has reviewed the sentences yet.
+ * engine/semantic_overlay_store.js already dropped any entry whose evidence
+ * went stale, so nothing here re-checks freshness.
+ */
+function presentationTextFor(summaryPlan, documentId, semanticStore) {
+  const presentation = semanticStore.presentationByDocumentId.get(documentId);
+  if (!presentation) return null;
+  const entry = (presentation.entries || []).find((item) => item.semantic_id === summaryPlan.summary_id);
+  if (!entry || entry.review_status !== "reviewed" || !entry.units || entry.units.length === 0) return null;
+  return orderedPresentationText(summaryPlan.sentence_roles, entry.units);
+}
+
+/**
  * Stage E1 (docs/derived_semantic_layer.md §10 단계 E1): the summary a
  * manifest plan carries diagnostically may point at a summary_spec that
  * isn't reviewed yet — same shadow-shows-everything, serve-only-reviewed
- * split as manifests/comparison bindings above. `text` stays null here;
- * Stage E2 fills it in from the reviewed Korean presentation overlay.
+ * split as manifests/comparison bindings above. `text` is Stage E2's
+ * addition: it stays null unless the matching presentation entry is itself
+ * reviewed and fresh, independent of the summary_spec's own review_status.
+ * This value is only ever attached to `semantic_coverage`, computed after
+ * grounded_generation's LLM call already produced `prose`/`claims` above in
+ * answerEnvelope — it can never be fed into generation as input.
  */
-function servedSummary(summaryPlan) {
+function servedSummary(summaryPlan, documentId, semanticStore) {
   if (!summaryPlan || summaryPlan.review_status !== "reviewed") return null;
   return {
     summary_id: summaryPlan.summary_id,
     summary_kind: summaryPlan.summary_kind,
     facet_ids: summaryPlan.facet_ids,
     sentence_roles: summaryPlan.sentence_roles,
-    text: null
+    text: presentationTextFor(summaryPlan, documentId, semanticStore)
   };
 }
 
@@ -732,7 +770,7 @@ function buildReviewedSemanticCoverage(question, envelope, options) {
   if (!shadowPlan.applicable) return null;
 
   const manifests = selectServedManifests(question, shadowPlan, envelope, semanticStore)
-    .map((manifest) => ({ ...manifest, summary: servedSummary(manifest.summary) }));
+    .map((manifest) => ({ ...manifest, summary: servedSummary(manifest.summary, manifest.document_id, semanticStore) }));
 
   // Same reviewed-only filter applied per binding, then an axis is only
   // kept if at least two distinct documents still have a reviewed binding

@@ -18,7 +18,7 @@ const fs = require("fs");
 const path = require("path");
 
 const { discoverJsonFiles } = require("../validation/validate_pilots");
-const { canonicalize, sha256, loadCoreArchive } = require("../validation/validate_semantic_overlay");
+const { canonicalize, sha256, loadCoreArchive, recordSourceText } = require("../validation/validate_semantic_overlay");
 
 const ROOT = path.resolve(__dirname, "..");
 const PILOTS_DIR = path.join(ROOT, "data", "pilots");
@@ -77,6 +77,30 @@ function buildSectionIndex(archive) {
   return { recordIdsBySectionId, sectionIdByRecordId, childrenBySectionId };
 }
 
+/**
+ * Stage E2 (docs/derived_semantic_layer.md §10 단계 E2): the presentation
+ * overlay's own validator (validate_semantic_overlay.js's
+ * validatePresentationFile) checks evidence freshness only at authoring
+ * time; nothing re-checked it at load time the way the structural overlay's
+ * own source_bundle_sha256 already is above. A presentation entry whose
+ * evidence has since drifted (a core record's source_text_sha256 no longer
+ * matches) is dropped whole here, not truncated to its still-fresh units —
+ * a "scope" summary missing its own boundary/exception sentence could read
+ * as broader than the source actually supports, which is worse than
+ * showing no curated sentence at all and falling back to raw evidence.
+ */
+function evidenceRefIsFresh(archive, ref) {
+  const entry = archive.recordsById.get(ref.record_id);
+  if (!entry) return false;
+  const sourceText = recordSourceText({ kind: entry.kind, record: entry.record, evidenceSourceUnitId: ref.source_unit_id }, archive.sourceUnitsById);
+  if (sourceText === null || sourceText === undefined) return false;
+  return sha256(sourceText) === ref.source_text_sha256;
+}
+
+function presentationEntryIsFresh(archive, entry) {
+  return (entry.units || []).every((unit) => (unit.evidence_refs || []).every((ref) => evidenceRefIsFresh(archive, ref)));
+}
+
 function loadSemanticOverlayStore({
   pilotsDir = PILOTS_DIR,
   overlayDir = OVERLAY_DIR,
@@ -108,7 +132,8 @@ function loadSemanticOverlayStore({
   for (const file of presentationFiles) {
     const presentation = loadJson(file);
     if (presentation && presentation.document_id) {
-      presentationByDocumentId.set(presentation.document_id, presentation);
+      const freshEntries = (presentation.entries || []).filter((entry) => presentationEntryIsFresh(archive, entry));
+      presentationByDocumentId.set(presentation.document_id, { ...presentation, entries: freshEntries });
     }
   }
 

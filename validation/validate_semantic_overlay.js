@@ -530,5 +530,6 @@ module.exports = {
   loadCoreArchive,
   canonicalize,
   sha256,
+  recordSourceText,
   validateSemanticOverlays
 };

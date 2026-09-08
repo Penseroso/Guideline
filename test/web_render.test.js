@@ -325,6 +325,53 @@ test("section overview mode renders child-section hierarchy with criteria and pr
   assert.doesNotMatch(html, /evidence-panel/);
 });
 
+test("section overview layout renders the curated overview box above the section index when a served summary has text (Stage E2)", () => {
+  const claims = [{
+    source_unit_id: "ich_m10.su.overview.0",
+    citation: realCitation({ source_unit_id: "ich_m10.su.overview.0", section_number: "3.2.1", section_title: "Selectivity" }),
+    overview_group: { section_id: "ich_m10.sec.3_2_1", section_number: "3.2.1", title: "Selectivity", order: 0 },
+    record: { id: "kr.0", type: "knowledge_record", modality: "should", source_text: "Selectivity summary", section_path: ["CHROMATOGRAPHY", "Validation", "Selectivity"] }
+  }];
+  const envelope = {
+    answered: true, route: "structured", mode: "section_overview", claims,
+    answer_units: claims.map((claim) => ({ text: claim.record.source_text, record_id: claim.record.id, source_unit_id: claim.source_unit_id, overview_group: claim.overview_group })),
+    semantic_coverage: {
+      manifests: [{
+        manifest_id: "m",
+        status: "complete",
+        summary: {
+          summary_id: "m.summary",
+          facet_ids: [],
+          sentence_roles: [],
+          text: [
+            { unit_id: "u1", text: "이 섹션은 무엇을 다룬다.", sentence_role: "scope" },
+            { unit_id: "u2", text: "다만 일부는 제외된다.", sentence_role: "boundary" }
+          ]
+        },
+        groups: []
+      }]
+    }
+  };
+  const html = R.renderEnvelope(envelope, i18n, "질문");
+  assert.match(html, /class="curated-overview"/);
+  assert.match(html, /이 섹션은 무엇을 다룬다\. 다만 일부는 제외된다\./);
+});
+
+test("section overview layout renders no curated overview box when no served summary carries text", () => {
+  const claims = [{
+    source_unit_id: "ich_m10.su.overview.0",
+    citation: realCitation({ source_unit_id: "ich_m10.su.overview.0", section_number: "3.2.1", section_title: "Selectivity" }),
+    overview_group: { section_id: "ich_m10.sec.3_2_1", section_number: "3.2.1", title: "Selectivity", order: 0 },
+    record: { id: "kr.0", type: "knowledge_record", modality: "should", source_text: "Selectivity summary", section_path: ["CHROMATOGRAPHY", "Validation", "Selectivity"] }
+  }];
+  const envelope = {
+    answered: true, route: "structured", mode: "section_overview", claims,
+    answer_units: claims.map((claim) => ({ text: claim.record.source_text, record_id: claim.record.id, source_unit_id: claim.source_unit_id, overview_group: claim.overview_group }))
+  };
+  const html = R.renderEnvelope(envelope, i18n, "질문");
+  assert.doesNotMatch(html, /class="curated-overview"/);
+});
+
 test("claimForUnit prioritizes an exact record id before a shared source-unit fallback", () => {
   const shared = "shared.source";
   const claims = [

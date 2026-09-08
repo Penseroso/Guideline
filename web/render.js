@@ -498,6 +498,25 @@
     return first.length > 260 ? `${first.slice(0, 257).trim()}...` : first;
   }
 
+  /**
+   * Stage E2 (docs/derived_semantic_layer.md §10 단계 E2): §7's "한 개의
+   * 개괄 박스" — curated Korean sentences from the reviewed semantic
+   * presentation overlay, distinct from `synopsisText()`'s per-group raw
+   * record excerpt below (§9: normalized_ko/presentation are never each
+   * other's substitute, so they stay visually separate, never merged into
+   * one paragraph). Renders nothing when no served manifest carries text
+   * (not yet reviewed, no presentation authored, or stale evidence) — the
+   * existing per-group synopsis already covers that case.
+   */
+  function renderCuratedOverview(envelope, i18n) {
+    const manifests = envelope && envelope.semantic_coverage && Array.isArray(envelope.semantic_coverage.manifests)
+      ? envelope.semantic_coverage.manifests : [];
+    const withText = manifests.find((manifest) => manifest.summary && Array.isArray(manifest.summary.text) && manifest.summary.text.length > 0);
+    if (!withText) return "";
+    const sentence = withText.summary.text.map((unit) => escapeHtml(unit.text)).join(" ");
+    return `<div class="curated-overview"><span class="curated-overview-label">${escapeHtml(i18n.curatedOverviewTitle)}</span><p>${sentence}</p></div>`;
+  }
+
   function renderSectionOverviewLayout(envelope, i18n) {
     const grouped = new Map();
     for (const unit of answerUnits(envelope, i18n)) {
@@ -535,6 +554,7 @@
 
     return `<div class="section-overview-layout"><header class="section-overview-intro"><span class="section-label">${escapeHtml(i18n.sectionOverviewTitle)}</span>
       <h2>${escapeHtml(guideline)} · ${escapeHtml(parentTitle)}</h2><p>${escapeHtml(i18n.sectionOverviewIntro.replace("{count}", groups.length))}</p></header>
+      ${renderCuratedOverview(envelope, i18n)}
       <nav class="overview-index" aria-label="${escapeHtml(i18n.sectionOverviewIndex)}"><span>${escapeHtml(i18n.sectionOverviewIndex)}</span><ol>${indexLinks}</ol></nav>
       <div class="overview-sections">${sections}</div>${renderVerdictBar(envelope, i18n)}${renderReviewStatusFooter(envelope, i18n)}</div>`;
   }

@@ -73,7 +73,7 @@ test("a needs_review normalization is never used as the primary answer", () => {
 
 test("answer envelope 2.2 returns citation-linked answer_units in the requested language", async () => {
   const envelope = await answerEnvelope("LLOQ \uc815\ud655\ub3c4 \uae30\uc900\uc740 \ubb34\uc5c7\uc778\uac00?", records, { index, responseLanguage: "ko" });
-  assert.equal(ENVELOPE_VERSION, "2.3.0");
+  assert.equal(ENVELOPE_VERSION, "2.4.0");
   assert.equal(envelope.answered, true);
   assert.ok(envelope.answer_units.length > 0);
   assert.match(envelope.answer_units[0].text, /\u00b120%/);
