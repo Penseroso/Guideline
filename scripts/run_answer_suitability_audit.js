@@ -6,6 +6,7 @@ require("dotenv").config({ path: path.resolve(__dirname, "..", ".env"), quiet: t
 const { loadStore } = require("../engine/data_store");
 const { setUpAnswering } = require("../engine/cli");
 const { startServer } = require("../engine/server");
+const { computeSemanticStateFingerprint } = require("./stage_e_promotion_shared");
 
 const DESIGN_PATH = path.resolve(__dirname, "..", "docs", "answer_suitability_evaluation.md");
 const OUTPUT_PATH = process.env.GUIDELINE_AUDIT_OUTPUT
@@ -59,6 +60,12 @@ async function main() {
     !rerunIds.has(result.id) && !result.error && result.envelope && Array.isArray(result.envelope.claims)
   );
   const completed = new Set(results.map((result) => result.id));
+  // Stamped on every new entry so a promotion script can refuse to reuse an
+  // audit captured against a different data/derived/ state (see
+  // scripts/stage_e_promotion_shared.js's assertLiveAuditRegression) — a
+  // resumed/mixed run would otherwise silently combine entries from two
+  // different overlay states.
+  const semanticStateFingerprint = computeSemanticStateFingerprint();
   const { records } = loadStore();
   const deps = setUpAnswering(records);
   const server = startServer({
@@ -99,7 +106,7 @@ async function main() {
         error = caught.stack || caught.message || String(caught);
       }
       const elapsed_ms = Date.now() - startedAt;
-      results.push({ ...item, elapsed_ms, envelope: envelope || null, error });
+      results.push({ ...item, elapsed_ms, envelope: envelope || null, error, semantic_state_fingerprint: semanticStateFingerprint });
       saveResults(results);
       const envelopeLabel = envelope && Array.isArray(envelope.claims)
         ? `${envelope.route}/${envelope.mode} claims=${envelope.claims.length}`

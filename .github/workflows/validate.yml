@@ -36,5 +36,8 @@ jobs:
       - name: Validate pilot structured data
         run: npm run validate:pilots
 
+      - name: Validate derived semantic overlay
+        run: npm run validate:semantic
+
       - name: Run eval harness (Option A only, no API key needed)
         run: npm run eval
