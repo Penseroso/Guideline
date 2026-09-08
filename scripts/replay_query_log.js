@@ -5,7 +5,7 @@ const { setUpAnswering } = require("../engine/cli");
 const { answer } = require("../engine/query_router");
 
 async function main() {
-  console.log("=== Re-evaluating M2 Real User Queries against Live Engine ===");
+  console.log("=== Replaying logged user queries against the live engine ===");
 
   const { records, index } = loadStore();
   // Missing providers are valid: local structured and source-excerpt routes
@@ -17,7 +17,7 @@ async function main() {
     : "Structured evidence with source-excerpt fallback active.");
 
   // Replays a caller-selected log. Live runtime logs are intentionally not
-  // tracked; pass an archived snapshot explicitly when reproducing M2.
+  // tracked; pass an archived snapshot explicitly to reproduce a past run.
   const logFile = path.resolve(process.argv[2] || process.env.GUIDELINE_QUERY_LOG_PATH || path.resolve(__dirname, "..", "logs", "runtime", "queries.jsonl"));
   if (!fs.existsSync(logFile)) {
     throw new Error(`Query log not found: ${logFile}. Pass a JSONL path as the first argument.`);
@@ -76,14 +76,14 @@ async function main() {
   }
 
   console.log("\n==================================================");
-  console.log("M2 RE-EVALUATION SUMMARY");
+  console.log("QUERY LOG REPLAY SUMMARY");
   console.log("==================================================");
   console.log(`Total Unique Questions: ${testCases.length}`);
   console.log(`Originally Answered (as logged in ${logFile}): ${testCases.filter((t) => t.originalAnswered).length} / ${testCases.length} (${Math.round((testCases.filter((t) => t.originalAnswered).length / testCases.length) * 100)}%)`);
   console.log(`Currently Answered (${new Date().toISOString().slice(0, 10)}): ${stillAnsweredCount + newlyAnsweredCount} / ${testCases.length} (${Math.round(((stillAnsweredCount + newlyAnsweredCount) / testCases.length) * 100)}%)`);
   console.log(`  - Retained Answered: ${stillAnsweredCount}`);
-  console.log(`  - Newly Answered (Gaps Closed by EMA/FDA Ingestion): ${newlyAnsweredCount}`);
-  console.log(`  - Still Refused (Remaining Knowledge Gaps): ${stillRefusedCount}`);
+  console.log(`  - Newly Answered (gaps closed since the log was captured): ${newlyAnsweredCount}`);
+  console.log(`  - Still Refused (remaining knowledge gaps): ${stillRefusedCount}`);
 
   console.log("\n--- DETAILED QUESTION BREAKDOWN ---");
   for (const r of results) {

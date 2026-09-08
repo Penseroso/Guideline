@@ -1,12 +1,22 @@
 /**
  * engine/semantic_shadow.js
- * Stage B (docs/derived_semantic_layer.md §10): "의미 오버레이로 answer
- * plan을 만들되 사용자 응답에는 아직 적용하지 않는다." This module builds
- * that second, semantic-overlay-derived plan next to the answer the
- * existing router already produced, for logging/comparison only. Nothing
- * here changes `envelope` or picks records for the real answer — see
- * engine/server.js's /api/ask handler, where this runs strictly after the
- * envelope that is actually sent to the client has already been built.
+ * Two exported entry points, two different runtime roles — kept in one
+ * file because they share most of their manifest/facet/salience selection
+ * logic (selectServedManifests, selectServedSummary, selectServedSalience,
+ * facetCoverage, ...), not because both are still "shadow":
+ *
+ * - `buildReviewedSemanticCoverage` IS served: `engine/answer_envelope.js`
+ *   calls it on the `structured` and `grounded_generation` success paths
+ *   and attaches its result as `envelope.semantic_coverage` — the
+ *   coverage-disclosure box a real client sees. A failure here can never
+ *   affect the answer itself (wrapped, swallowed on error).
+ * - `buildShadowPlan`/`comparePlans` remain genuinely diagnostic-only —
+ *   Stage B (docs/derived_semantic_layer.md §10)'s "의미 오버레이로 answer
+ *   plan을 만들되 사용자 응답에는 아직 적용하지 않는다": a second,
+ *   semantic-overlay-derived plan built next to the answer the router
+ *   already produced, for logging/comparison only (engine/server.js's
+ *   /api/ask handler runs this strictly after the real envelope is
+ *   already built; engine/semantic_shadow_log.js is the only consumer).
  *
  * Deliberately does not gate a document's coverage_manifests by matching
  * the router's own `answer_intent` label: the audit that motivated Stage A

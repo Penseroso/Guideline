@@ -36,7 +36,6 @@
     "migrate:semantic:presentation:v0_2": "node scripts/migrate_semantic_presentation_v0_2.js",
     "author:semantic:presentation": "node scripts/author_semantic_presentation.js",
     "audit:semantic:presentation": "node scripts/audit_semantic_presentation.js",
-    "verify:semantic:presentation": "node scripts/audit_semantic_presentation.js",
     "promote:semantic:presentation": "node scripts/promote_semantic_presentation.js"
   },
   "dependencies": {

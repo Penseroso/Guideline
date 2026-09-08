@@ -29,7 +29,7 @@ Not "the model never generates incorrect tokens" — that is not achievable. Ope
 ### 1.4 Functional scope
 
 In scope:
-- Natural-language Q&A over the structured archive (initially M10 + S6(R1) pilot sections; expands with coverage).
+- Natural-language Q&A over the structured archive (started with M10 + S6(R1) sections; now covers all 6 reviewed guideline documents under `data/guidelines/`).
 - Mandatory inline citation (document/section/page + `source_unit_id`) on every factual sentence.
 - Explicit refusal ("not covered in the current archive") when no grounded record supports an answer, instead of falling back to model world-knowledge about ICH guidelines.
 - Surfacing conflicting or amended guidance (parent vs. addendum) rather than picking one silently.

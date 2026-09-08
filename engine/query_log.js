@@ -17,7 +17,7 @@ const path = require("path");
  * treats missing fields as absent, not as an error. `readInteractions()`
  * is new too — the log previously had no reader at all in engine/, which
  * is exactly why the file existed for a week before anyone wrote a script
- * (scripts/retest_m2_queries.js) to actually replay it.
+ * (scripts/replay_query_log.js) to actually replay it.
  */
 const DEFAULT_LOG_PATH = path.resolve(__dirname, "..", "logs", "runtime", "queries.jsonl");
 

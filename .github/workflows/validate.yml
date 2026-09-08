@@ -33,7 +33,7 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Validate pilot structured data
+      - name: Validate guideline structured data
         run: npm run validate:guidelines
 
       - name: Validate derived semantic overlay

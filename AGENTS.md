@@ -4,7 +4,7 @@
 
 Build an objective, traceable, and reusable structured-data archive of regulatory guidelines.
 
-The current pilot document is ICH M10. The project is an archive and knowledge-structuring project, not a regulatory decision engine.
+Six guideline documents are structured and reviewed under `data/guidelines/`: ICH M10, ICH S6(R1), ICH M3(R2), EMA FIH, FDA ADA (2019), and FDA Clinical Immunogenicity (2014) — see `docs/coverage/` for per-document section matrices. The project is an archive and knowledge-structuring project, not a regulatory decision engine.
 
 ## Source hierarchy
 
@@ -72,7 +72,7 @@ Preserve the original modal verb or wording in the source record.
 * Structure a small representative sample before processing a full document.
 * Do not expand the assigned section range without explicit instruction.
 * Update `docs/schema.md` when the data model changes.
-* Record milestone-level outcomes in `docs/milestone_log.md`, one entry per roadmap milestone (`docs/product_roadmap.md` §3) — not one entry per individual decision. The prior per-decision `DEC-`/`REV-` convention is retired. Keep entries high-level (milestone status, decisions with lasting consequences) — not a blow-by-blow of every small fix.
+* Record milestone-level outcomes in `docs/milestone_log.md`, one entry per roadmap milestone (`docs/product_roadmap.md` §3) — not one entry per individual decision. The prior per-decision `DEC-` convention (`history/decision_log/decisions.md`) is retired. Keep milestone_log entries high-level (milestone status, decisions with lasting consequences) — not a blow-by-blow of every small fix. `history/decision_log/review_log.md`'s `REV-` entries are not retired the same way: still use one when a specific finding needs a full reviewed writeup (scope, evidence, corrections, unresolved items) that a milestone_log line can only summarize and link out to.
 * Run the relevant validation script after modifying structured data.
 * Review the Git diff before declaring completion.
 

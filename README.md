@@ -8,6 +8,7 @@ A hallucination-resistant conversational assistant for regulatory guidelines, bu
 - **Engine** (`engine/`): loads and indexes the guideline bundles and routes automatically through structured evidence, grounded generation, verbatim source excerpts, then refusal. Local structured answers and excerpt retrieval work without an API key. One OpenAI key can use distinct generator and verifier models; OpenAI + Anthropic can instead verify across providers. Every answer surfaces the record's own attached `Condition`s as a verbatim caveat, never a judgment about whether they hold. Try it with `npm run chat`.
 - **Web UI** (`web/`, M5): a local-first HTTP API (`engine/server.js`) and vanilla-JS UI over the same engine. `npm run serve` binds `127.0.0.1` by default. When `GUIDELINE_AUTH_TOKEN` is set, API, UI assets, and PDFs all require either Bearer auth or browser Basic auth using username `guideline` and the token as password.
 - **Validation**: `npm test` (unit tests, mocked LLM calls, no network), `npm run validate:guidelines` (schema + cross-reference validation over all guideline bundles), `npm run eval` (gold question/citation regression set, structured route only by default, zero API cost).
+- **Derived semantic overlay** (`data/derived/`, see `docs/derived_semantic_layer.md`): an additive, source-grounded layer over the same reviewed archive that attaches coverage disclosure (`envelope.semantic_coverage`) and a reviewed Korean presentation summary to structured and grounded-generation answers, gated end-to-end on `review_status: reviewed` and content-hash freshness. `npm run validate:semantic` and `npm run audit:semantic:presentation` check it; `scripts/stage_e_promotion_shared.js` provides the shared prepare/verify/finalize/rollback lifecycle its promotion scripts use.
 
 An M6 spike explored a separate "Applicability Engine" (given a structured program context, deterministically evaluate whether a specific rule applies) on top of a derived `Condition`→predicate layer. It was discontinued as a standalone module after a real-usage review found it added a large separate architecture on top of a narrow, 3-guideline island of coverage — see `docs/milestone_log.md` M6 and `history/applicability_engine/` for the full record. Two improvements it surfaced were cherry-picked into this engine directly (both described above): additional Korean regulatory-term synonyms, and the `Condition` caveat now shown on every answer.
 
@@ -15,7 +16,7 @@ An M6 spike explored a separate "Applicability Engine" (given a structured progr
 
 - `source_pdfs/`: immutable original guideline PDFs.
 - `docs/`: active project scope, data model, coverage matrices, verification summary, roadmap, and milestone index.
-- `data/`: the reviewed guideline bundles, the source JSON Schema (`data/guidelines/`, `data/schemas/`), and the declarative document/section scope ontology (`data/ontology/`).
+- `data/`: the reviewed guideline bundles and their JSON Schema (`data/guidelines/`, `data/schemas/`), the declarative document/section scope ontology (`data/ontology/`), the derived semantic overlay and Korean presentation layers (`data/derived/`), and the per-record Korean-normalization attestation overlay (`data/presentation/ko/`).
 - `engine/`: the chatbot/extraction/verification application layer, plus `server.js` (HTTP API).
 - `web/`: the local-first web UI served by `engine/server.js` (vanilla HTML/CSS/JS, no build step).
 - `validation/`: reproducible validation scripts.
@@ -37,6 +38,7 @@ An M6 spike explored a separate "Applicability Engine" (given a structured progr
 - `docs/verification_status.md`: current accepted verification baseline and explicitly open verification work.
 - `docs/coverage/`: current per-guideline coverage matrices.
 - `docs/schema.md`: the current data model.
+- `docs/derived_semantic_layer.md`: the derived semantic overlay/presentation layer's design and current activation state.
 - `docs/project_scope.md`: mission, users, design principles, and non-goals.
 - `history/audits/`, `history/source_assessments/`, `history/verification/`, and `history/milestones/`: frozen evidence and completed-milestone detail.
 - `AGENTS.md`: repository-wide operating rules for agents.
