@@ -28,7 +28,7 @@
           "source_text_sha256": "537b4a230e34a44c930cd2e01275f82884f56b824a8434710b84a229d1ad210f"
         }
       ],
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     }
   ],
   "facets": [
@@ -642,7 +642,7 @@
           "rationale_code": "scope_boundary"
         }
       ],
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     }
   ]
 }

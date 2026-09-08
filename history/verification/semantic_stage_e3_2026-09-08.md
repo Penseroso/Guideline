@@ -29,10 +29,12 @@ Stage E3 applies `salience_profiles` exposure tiers (`primary`/`supporting`/`det
 - `node scripts/run_semantic_stage_e3_audit.js` — 7/7 salience_profiles attached to their intended manifest.
 - `node scripts/promote_semantic_stage_e3.js` (without a live audit input) — correctly refuses with "Set GUIDELINE_STAGE_E3_LIVE_AUDIT_INPUT...".
 
-## Engineering completion vs. final promotion
+## Final promotion (2026-09-08, same day)
 
-Same limitation as Stage E1/E2: no `OPENAI_API_KEY`/`ANTHROPIC_API_KEY` in this environment, so the live 50-question audit `promote_semantic_stage_e3.js` requires cannot be run here. All 7 salience_profiles remain `review_status: "needs_review"`. To complete promotion in an environment with API access: run `node scripts/run_answer_suitability_audit.js` for a fresh raw JSON on contract `2.5.0`, then `GUIDELINE_STAGE_E3_LIVE_AUDIT_INPUT=<path> GUIDELINE_STAGE_E3_AUDIT_REVIEW_ATTESTED=true npm run promote:semantic:stage-e3` after reviewing that audit.
+The "no API key" note above was a false negative — see `history/verification/semantic_stage_e1_2026-09-08.md`'s "Final promotion" section. Promoted alongside Stage E1/E2 using the same live audit run and the same reviewed Q25 exception (`history/decision_log/review_log.md` REV-015):
+
+`GUIDELINE_STAGE_E3_LIVE_AUDIT_INPUT=logs/runtime/answer_suitability_50_raw_2026-09-08_stage_e.json GUIDELINE_STAGE_E3_BASELINE_AUDIT=logs/runtime/answer_suitability_50_raw_2026-09-08_stage_e_baseline.json GUIDELINE_STAGE_E3_AUDIT_REVIEW_ATTESTED=true npm run promote:semantic:stage-e3` promoted all 7 salience_profiles to `reviewed`. `npm test` (384/384, after updating four tests in `test/engine_semantic_shadow.test.js` whose fixtures asserted the real committed data was still `needs_review` — now forced explicitly via `storeWithSummaryReviewStatus`/`storeWithSalienceReviewStatus`/mutated presentation entries instead of relying on ambient state), `validate:semantic`, and `eval_harness` (24/24) all passed afterward with no regression.
 
 ## Stage E summary
 
-Stage E0 (salience `review_status` field), E1 (`summary_specs` structure), E2 (presentation sentence text), and E3 (salience exposure tiers) are all engineering-complete and offline-verified against the narrow pre-existing pilot scope (5 summary_specs, 3 presentation files, 7 salience_profiles). All four sub-stages' data remains `needs_review` pending a live 50-question audit in an environment with LLM API access. Extending authoring to Stage D's 47 newly generated manifests is separate future work (Stage F), not attempted here.
+Stage E0 (salience `review_status` field), E1 (`summary_specs` structure), E2 (presentation sentence text), and E3 (salience exposure tiers) are all engineering-complete, offline-verified, and now finally promoted to `reviewed` against the narrow pre-existing pilot scope (5 summary_specs, 3 presentation files, 7 salience_profiles). Extending authoring to Stage D's 47 newly generated manifests is separate future work (Stage F, in progress as of this writing).

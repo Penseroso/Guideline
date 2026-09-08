@@ -419,6 +419,36 @@ function storeWithManifestReviewStatus(manifestId, reviewStatus) {
   return { ...store, overlaysByDocumentId };
 }
 
+function storeWithSummaryReviewStatus(summaryId, reviewStatus) {
+  const overlaysByDocumentId = new Map(store.overlaysByDocumentId);
+  for (const [documentId, overlay] of overlaysByDocumentId) {
+    const summary = (overlay.summary_specs || []).find((s) => s.summary_id === summaryId);
+    if (!summary) continue;
+    const mutatedOverlay = {
+      ...overlay,
+      summary_specs: overlay.summary_specs.map((s) => s.summary_id === summaryId ? { ...s, review_status: reviewStatus } : s)
+    };
+    overlaysByDocumentId.set(documentId, mutatedOverlay);
+    break;
+  }
+  return { ...store, overlaysByDocumentId };
+}
+
+function storeWithSalienceReviewStatus(profileId, reviewStatus) {
+  const overlaysByDocumentId = new Map(store.overlaysByDocumentId);
+  for (const [documentId, overlay] of overlaysByDocumentId) {
+    const profile = (overlay.salience_profiles || []).find((p) => p.profile_id === profileId);
+    if (!profile) continue;
+    const mutatedOverlay = {
+      ...overlay,
+      salience_profiles: overlay.salience_profiles.map((p) => p.profile_id === profileId ? { ...p, review_status: reviewStatus } : p)
+    };
+    overlaysByDocumentId.set(documentId, mutatedOverlay);
+    break;
+  }
+  return { ...store, overlaysByDocumentId };
+}
+
 function fullyReviewedStore() {
   return {
     ...store,
@@ -560,12 +590,8 @@ test("buildReviewedSemanticCoverage.comparison only keeps an axis with >=2 revie
 // --- summary_specs structural activation (Stage E1) ---
 
 test("buildShadowPlan attaches the matched summary_spec to a manifest regardless of review_status (shadow diagnostic)", () => {
-  const envelope = {
-    answer_intent: "document_overview",
-    scope: { resolved_document_ids: ["ema_fih"], requested_document_ids: [], section_ids: ["ema_fih.sec.5"] },
-    claims: [claim({ id: "ema_fih.kr.5.001", document_id: "ema_fih", section_id: "ema_fih.sec.5" })]
-  };
-  const plan = buildShadowPlan("EMA FIH 전체 개요를 알려줘", envelope, { store });
+  const needsReviewStore = storeWithSummaryReviewStatus("ema_fih.sem.summary.document_overview", "needs_review");
+  const plan = buildShadowPlan("EMA FIH 전체 개요를 알려줘", ema_fihDocumentOverviewEnvelope(), { store: needsReviewStore });
   const manifest = plan.manifests.find((m) => m.manifest_id === "ema_fih.sem.manifest.document_overview");
   assert.ok(manifest.summary, "expected the exact-target summary_spec to be matched even though it is still needs_review");
   assert.equal(manifest.summary.summary_id, "ema_fih.sem.summary.document_overview");
@@ -573,16 +599,20 @@ test("buildShadowPlan attaches the matched summary_spec to a manifest regardless
 });
 
 test("buildReviewedSemanticCoverage omits a summary that is not (yet) reviewed, even when its manifest is reviewed", () => {
-  const envelope = {
-    answer_intent: "document_overview",
-    scope: { resolved_document_ids: ["ema_fih"], requested_document_ids: [], section_ids: ["ema_fih.sec.5"] },
-    claims: [claim({ id: "ema_fih.kr.5.001", document_id: "ema_fih", section_id: "ema_fih.sec.5" })]
-  };
-  const coverage = buildReviewedSemanticCoverage("EMA FIH 전체 개요를 알려줘", envelope, { store });
+  const needsReviewStore = storeWithSummaryReviewStatus("ema_fih.sem.summary.document_overview", "needs_review");
+  const coverage = buildReviewedSemanticCoverage("EMA FIH 전체 개요를 알려줘", ema_fihDocumentOverviewEnvelope(), { store: needsReviewStore });
   assert.ok(coverage);
   const manifest = coverage.manifests.find((m) => m.manifest_id === "ema_fih.sem.manifest.document_overview");
   assert.ok(manifest);
-  assert.equal(manifest.summary, null, "the real committed summary_spec is still needs_review and must not be served");
+  assert.equal(manifest.summary, null, "a summary_spec still needs_review must not be served");
+});
+
+test("buildReviewedSemanticCoverage serves the summary once it is reviewed (against the real, currently-promoted store)", () => {
+  const coverage = buildReviewedSemanticCoverage("EMA FIH 전체 개요를 알려줘", ema_fihDocumentOverviewEnvelope(), { store });
+  assert.ok(coverage);
+  const manifest = coverage.manifests.find((m) => m.manifest_id === "ema_fih.sem.manifest.document_overview");
+  assert.ok(manifest.summary);
+  assert.equal(manifest.summary.summary_id, "ema_fih.sem.summary.document_overview");
 });
 
 function storeWithPresentationEntries(documentId, entries) {
@@ -599,7 +629,9 @@ test("buildReviewedSemanticCoverage serves the summary once it is reviewed, but 
     scope: { resolved_document_ids: ["ema_fih"], requested_document_ids: [], section_ids: ["ema_fih.sec.5"] },
     claims: [claim({ id: "ema_fih.kr.5.001", document_id: "ema_fih", section_id: "ema_fih.sec.5" })]
   };
-  const coverage = buildReviewedSemanticCoverage("EMA FIH 전체 개요를 알려줘", envelope, { store: fullyReviewedStore() });
+  const needsReviewEntries = store.presentationByDocumentId.get("ema_fih").entries.map((entry) => ({ ...entry, review_status: "needs_review" }));
+  const testStore = storeWithPresentationEntries("ema_fih", needsReviewEntries);
+  const coverage = buildReviewedSemanticCoverage("EMA FIH 전체 개요를 알려줘", envelope, { store: testStore });
   assert.ok(coverage);
   const manifest = coverage.manifests.find((m) => m.manifest_id === "ema_fih.sem.manifest.document_overview");
   assert.ok(manifest.summary);
@@ -702,18 +734,27 @@ function run_acceptanceEnvelope() {
 }
 
 test("buildShadowPlan attaches the matched salience_profile to a manifest by exact target_id match, regardless of review_status", () => {
-  const plan = buildShadowPlan("LC-MS/MS chromatography 분석 run 허용 기준이 뭐야?", run_acceptanceEnvelope(), { store });
+  const needsReviewStore = storeWithSalienceReviewStatus("ich_m10.sem.profile.run_acceptance", "needs_review");
+  const plan = buildShadowPlan("LC-MS/MS chromatography 분석 run 허용 기준이 뭐야?", run_acceptanceEnvelope(), { store: needsReviewStore });
   const manifest = plan.manifests.find((m) => m.manifest_id === "ich_m10.sem.manifest.run_acceptance");
-  assert.ok(manifest.salience, "expected the exact-target salience_profile to be matched");
+  assert.ok(manifest.salience, "expected the exact-target salience_profile to be matched even though it is still needs_review");
   assert.equal(manifest.salience.profile_id, "ich_m10.sem.profile.run_acceptance");
   assert.equal(manifest.salience.review_status, "needs_review");
 });
 
 test("buildReviewedSemanticCoverage omits salience that is not (yet) reviewed, even when its manifest is reviewed", () => {
-  const coverage = buildReviewedSemanticCoverage("LC-MS/MS chromatography 분석 run 허용 기준이 뭐야?", run_acceptanceEnvelope(), { store });
+  const needsReviewStore = storeWithSalienceReviewStatus("ich_m10.sem.profile.run_acceptance", "needs_review");
+  const coverage = buildReviewedSemanticCoverage("LC-MS/MS chromatography 분석 run 허용 기준이 뭐야?", run_acceptanceEnvelope(), { store: needsReviewStore });
   const manifest = coverage.manifests.find((m) => m.manifest_id === "ich_m10.sem.manifest.run_acceptance");
   assert.equal(manifest.review_status, "reviewed");
-  assert.equal(manifest.salience, null, "the real committed salience_profile is still needs_review and must not be served");
+  assert.equal(manifest.salience, null, "a salience_profile still needs_review must not be served");
+});
+
+test("buildReviewedSemanticCoverage serves salience once it is reviewed too (against the real, currently-promoted store)", () => {
+  const coverage = buildReviewedSemanticCoverage("LC-MS/MS chromatography 분석 run 허용 기준이 뭐야?", run_acceptanceEnvelope(), { store });
+  const manifest = coverage.manifests.find((m) => m.manifest_id === "ich_m10.sem.manifest.run_acceptance");
+  assert.ok(manifest.salience);
+  assert.equal(manifest.salience.profile_id, "ich_m10.sem.profile.run_acceptance");
 });
 
 test("buildReviewedSemanticCoverage groups a reviewed salience_profile's facets into primary/supporting/detail tiers, in display_order", () => {

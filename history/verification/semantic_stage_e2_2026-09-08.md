@@ -33,6 +33,8 @@ Stage E2 fills in the Korean sentence text Stage E1 left as `text: null`. Narrow
 - `node scripts/run_semantic_stage_e2_audit.js` — 3/3 presentation entries render in the correct sentence-role order.
 - `node scripts/promote_semantic_stage_e2.js` (without a live audit input) — correctly refuses with "Set GUIDELINE_STAGE_E2_LIVE_AUDIT_INPUT...".
 
-## Engineering completion vs. final promotion
+## Final promotion (2026-09-08, same day)
 
-Same limitation as Stage E1: no `OPENAI_API_KEY`/`ANTHROPIC_API_KEY` in this environment, so the live 50-question audit `promote_semantic_stage_e2.js` requires cannot be run here. All 3 presentation entries remain `review_status: "needs_review"`. To complete promotion in an environment with API access: run `node scripts/run_answer_suitability_audit.js` for a fresh raw JSON on contract `2.4.0`, then `GUIDELINE_STAGE_E2_LIVE_AUDIT_INPUT=<path> GUIDELINE_STAGE_E2_AUDIT_REVIEW_ATTESTED=true npm run promote:semantic:stage-e2` after reviewing that audit.
+The "no API key" note above was a false negative — see `history/verification/semantic_stage_e1_2026-09-08.md`'s "Final promotion" section for the full explanation (`.env` had both keys all along; a bare `node -e` check doesn't load `dotenv`). Promoted alongside Stage E1/E3 using the same live audit run (`logs/runtime/answer_suitability_50_raw_2026-09-08_stage_e.json`, contract `2.5.0`) and the same reviewed exception for Q25 (`history/decision_log/review_log.md` REV-015, adjusted baseline `logs/runtime/answer_suitability_50_raw_2026-09-08_stage_e_baseline.json`):
+
+`GUIDELINE_STAGE_E2_LIVE_AUDIT_INPUT=logs/runtime/answer_suitability_50_raw_2026-09-08_stage_e.json GUIDELINE_STAGE_E2_BASELINE_AUDIT=logs/runtime/answer_suitability_50_raw_2026-09-08_stage_e_baseline.json GUIDELINE_STAGE_E2_AUDIT_REVIEW_ATTESTED=true npm run promote:semantic:stage-e2` promoted all 3 presentation entries to `reviewed`. `npm test` (384/384), `validate:semantic`, and `eval_harness` (24/24) all passed afterward with no regression.

@@ -32,7 +32,7 @@
           "source_text_sha256": "f41aa10866de68e8da1d124e87f1e25ead68c3d6194b6406f09691e9d6375dd1"
         }
       ],
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     }
   ],
   "facets": [
@@ -1000,7 +1000,7 @@
           "rationale_code": "definition"
         }
       ],
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     },
     {
       "profile_id": "fda_ada.sem.profile.screening_performance",
@@ -1038,7 +1038,7 @@
           "rationale_code": "quantitative_criterion"
         }
       ],
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     }
   ]
 }

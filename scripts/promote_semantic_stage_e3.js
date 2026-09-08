@@ -11,6 +11,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const { validateSemanticOverlays } = require("../validation/validate_semantic_overlay");
+const { ENVELOPE_VERSION } = require("../engine/answer_envelope");
 const { ESTABLISHED_SUITABLE_IDS, assertLiveAuditRegression } = require("./stage_e_promotion_shared");
 
 const ROOT = path.resolve(__dirname, "..");
@@ -34,12 +35,12 @@ function main() {
   const offlineResults = assertOfflineAudit();
 
   const livePathValue = process.env.GUIDELINE_STAGE_E3_LIVE_AUDIT_INPUT;
-  if (!livePathValue) throw new Error("Set GUIDELINE_STAGE_E3_LIVE_AUDIT_INPUT to a complete live 50-question audit on answer contract 2.5.0");
+  if (!livePathValue) throw new Error(`Set GUIDELINE_STAGE_E3_LIVE_AUDIT_INPUT to a complete live 50-question audit on answer contract ${ENVELOPE_VERSION}`);
   if (process.env.GUIDELINE_STAGE_E3_AUDIT_REVIEW_ATTESTED !== "true") {
     throw new Error("Set GUIDELINE_STAGE_E3_AUDIT_REVIEW_ATTESTED=true only after reviewing the live audit against its per-question minimum contracts");
   }
   const livePath = path.resolve(livePathValue);
-  assertLiveAuditRegression(livePath, "2.5.0", process.env.GUIDELINE_STAGE_E3_BASELINE_AUDIT);
+  assertLiveAuditRegression(livePath, ENVELOPE_VERSION, process.env.GUIDELINE_STAGE_E3_BASELINE_AUDIT);
 
   let promoted = 0;
   for (const name of fs.readdirSync(OVERLAY_DIR).filter((item) => item.endsWith(".json")).sort()) {
@@ -57,7 +58,7 @@ function main() {
   if (!validationAfter.ok) throw new Error(`Post-promotion semantic validation failed:\n${validationAfter.errors.join("\n")}`);
   console.log(`Promoted ${promoted} salience_profile(s) to reviewed.`);
   console.log(`Offline audit: ${offlineResults.length}/${offlineResults.length} attached to their intended manifest.`);
-  console.log(`Live audit: ${path.relative(ROOT, livePath)} (50/50, answer contract 2.5.0)`);
+  console.log(`Live audit: ${path.relative(ROOT, livePath)} (50/50, answer contract ${ENVELOPE_VERSION})`);
   console.log(`Established suitable regression guard: ${ESTABLISHED_SUITABLE_IDS.length}/${ESTABLISHED_SUITABLE_IDS.length} unchanged`);
 }
 

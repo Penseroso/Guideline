@@ -38,7 +38,7 @@
           "source_text_sha256": "bbc406c2a51844ff21b8f90771de4ac92e4ea310fc7177aa72dc0f13cd5283b4"
         }
       ],
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     }
   ],
   "facets": [
@@ -621,7 +621,7 @@
           "rationale_code": "governing_text"
         }
       ],
-      "review_status": "needs_review"
+      "review_status": "reviewed"
     }
   ]
 }

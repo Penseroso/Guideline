@@ -6,7 +6,7 @@
     {
       "semantic_id": "ema_fih.sem.summary.document_overview",
       "language": "ko",
-      "review_status": "needs_review",
+      "review_status": "reviewed",
       "units": [
         {
           "unit_id": "ema_fih.sem.summary.document_overview.u1",
