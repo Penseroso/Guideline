@@ -417,6 +417,28 @@
     return documentId;
   }
 
+  /**
+   * Stage E1 (docs/derived_semantic_layer.md §10 단계 E1): a manifest with a
+   * matched, reviewed summary_spec orders its facet disclosure by the
+   * summary's own facet_ids (its intended reading order) instead of raw
+   * coverage_group declaration order. A facet the summary doesn't mention
+   * keeps its relative position at the end, stable, rather than being
+   * dropped — the summary structure narrows presentation order, it doesn't
+   * narrow what disclosure shows.
+   */
+  function orderFacetsBySummary(facets, summary) {
+    if (!summary || !Array.isArray(summary.facet_ids) || summary.facet_ids.length === 0) return facets;
+    const rank = new Map(summary.facet_ids.map((id, index) => [id, index]));
+    return facets
+      .map((facet, index) => ({ facet, index }))
+      .sort((a, b) => {
+        const rankA = rank.has(a.facet.facet_id) ? rank.get(a.facet.facet_id) : Number.POSITIVE_INFINITY;
+        const rankB = rank.has(b.facet.facet_id) ? rank.get(b.facet.facet_id) : Number.POSITIVE_INFINITY;
+        return rankA !== rankB ? rankA - rankB : a.index - b.index;
+      })
+      .map((entry) => entry.facet);
+  }
+
   function renderSemanticCoverage(envelope, i18n) {
     const semanticCoverage = envelope && envelope.semantic_coverage;
     const manifests = semanticCoverage && Array.isArray(semanticCoverage.manifests) ? semanticCoverage.manifests : [];
@@ -424,7 +446,7 @@
     if (manifests.length === 0 && comparisons.length === 0) return "";
 
     const manifestBlocks = manifests.map((manifest) => {
-      const facets = (manifest.groups || []).flatMap((group) => group.facets || []);
+      const facets = orderFacetsBySummary((manifest.groups || []).flatMap((group) => group.facets || []), manifest.summary);
       const missing = facets.filter((facet) => facet.status === "missing" || facet.status === "partial");
       const missingList = missing.length
         ? `<ul class="semantic-coverage-missing">${missing.map((facet) => `<li>${escapeHtml(facetShortLabel(facet.facet_id))}</li>`).join("")}</ul>`

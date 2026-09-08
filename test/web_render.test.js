@@ -426,6 +426,54 @@ test("renderSemanticCoverage in isolation: unknown status falls back to the raw 
   assert.doesNotMatch(html, /undefined/);
 });
 
+test("renderSemanticCoverage orders the missing-facet list by a matched summary_spec's facet_ids, not declaration order (Stage E1)", () => {
+  const html = R.renderSemanticCoverage(
+    {
+      semantic_coverage: {
+        manifests: [
+          {
+            manifest_id: "m",
+            status: "partial",
+            summary: { summary_id: "m.summary", facet_ids: ["facet.a", "facet.b", "facet.c"], text: null },
+            groups: [
+              {
+                facets: [
+                  { facet_id: "facet.c", status: "missing" },
+                  { facet_id: "facet.a", status: "missing" },
+                  { facet_id: "facet.b", status: "missing" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    i18n
+  );
+  const order = [...html.matchAll(/<li>([a-c])<\/li>/g)].map((match) => match[1]);
+  assert.deepEqual(order, ["a", "b", "c"]);
+});
+
+test("renderSemanticCoverage falls back to declaration order when no summary is attached", () => {
+  const html = R.renderSemanticCoverage(
+    {
+      semantic_coverage: {
+        manifests: [
+          {
+            manifest_id: "m",
+            status: "partial",
+            summary: null,
+            groups: [{ facets: [{ facet_id: "facet.c", status: "missing" }, { facet_id: "facet.a", status: "missing" }] }]
+          }
+        ]
+      }
+    },
+    i18n
+  );
+  const order = [...html.matchAll(/<li>([a-c])<\/li>/g)].map((match) => match[1]);
+  assert.deepEqual(order, ["c", "a"]);
+});
+
 test("renderSemanticCoverage renders a comparison axis block using each side's guideline label from its own claims", () => {
   const envelope = {
     claims: [

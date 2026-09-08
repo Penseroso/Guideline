@@ -424,6 +424,7 @@ function fullyReviewedStore() {
     ...store,
     overlaysByDocumentId: new Map([...store.overlaysByDocumentId].map(([documentId, overlay]) => [documentId, {
       ...overlay,
+      summary_specs: overlay.summary_specs.map((summary) => ({ ...summary, review_status: "reviewed" })),
       facets: overlay.facets.map((facet) => ({ ...facet, review_status: "reviewed" })),
       coverage_manifests: overlay.coverage_manifests.map((manifest) => ({ ...manifest, review_status: "reviewed" })),
       comparison_bindings: overlay.comparison_bindings.map((binding) => ({ ...binding, review_status: "reviewed" }))
@@ -553,4 +554,71 @@ test("buildReviewedSemanticCoverage.comparison only keeps an axis with >=2 revie
   assert.ok(axis);
   assert.deepEqual(axis.bindings.map((b) => b.document_id).sort(), ["ich_m3_r2", "ich_s6_r1"]);
   assert.ok(axis.bindings.every((b) => b.review_status === "reviewed"));
+});
+
+// --- summary_specs structural activation (Stage E1) ---
+
+test("buildShadowPlan attaches the matched summary_spec to a manifest regardless of review_status (shadow diagnostic)", () => {
+  const envelope = {
+    answer_intent: "document_overview",
+    scope: { resolved_document_ids: ["ema_fih"], requested_document_ids: [], section_ids: ["ema_fih.sec.5"] },
+    claims: [claim({ id: "ema_fih.kr.5.001", document_id: "ema_fih", section_id: "ema_fih.sec.5" })]
+  };
+  const plan = buildShadowPlan("EMA FIH 전체 개요를 알려줘", envelope, { store });
+  const manifest = plan.manifests.find((m) => m.manifest_id === "ema_fih.sem.manifest.document_overview");
+  assert.ok(manifest.summary, "expected the exact-target summary_spec to be matched even though it is still needs_review");
+  assert.equal(manifest.summary.summary_id, "ema_fih.sem.summary.document_overview");
+  assert.equal(manifest.summary.review_status, "needs_review");
+});
+
+test("buildReviewedSemanticCoverage omits a summary that is not (yet) reviewed, even when its manifest is reviewed", () => {
+  const envelope = {
+    answer_intent: "document_overview",
+    scope: { resolved_document_ids: ["ema_fih"], requested_document_ids: [], section_ids: ["ema_fih.sec.5"] },
+    claims: [claim({ id: "ema_fih.kr.5.001", document_id: "ema_fih", section_id: "ema_fih.sec.5" })]
+  };
+  const coverage = buildReviewedSemanticCoverage("EMA FIH 전체 개요를 알려줘", envelope, { store });
+  assert.ok(coverage);
+  const manifest = coverage.manifests.find((m) => m.manifest_id === "ema_fih.sem.manifest.document_overview");
+  assert.ok(manifest);
+  assert.equal(manifest.summary, null, "the real committed summary_spec is still needs_review and must not be served");
+});
+
+test("buildReviewedSemanticCoverage serves the summary once it is reviewed too, with text left null pending Stage E2", () => {
+  const envelope = {
+    answer_intent: "document_overview",
+    scope: { resolved_document_ids: ["ema_fih"], requested_document_ids: [], section_ids: ["ema_fih.sec.5"] },
+    claims: [claim({ id: "ema_fih.kr.5.001", document_id: "ema_fih", section_id: "ema_fih.sec.5" })]
+  };
+  const coverage = buildReviewedSemanticCoverage("EMA FIH 전체 개요를 알려줘", envelope, { store: fullyReviewedStore() });
+  assert.ok(coverage);
+  const manifest = coverage.manifests.find((m) => m.manifest_id === "ema_fih.sem.manifest.document_overview");
+  assert.ok(manifest.summary);
+  assert.equal(manifest.summary.summary_id, "ema_fih.sem.summary.document_overview");
+  assert.deepEqual(manifest.summary.facet_ids, [
+    "ema_fih.sem.facet.scope",
+    "ema_fih.sem.facet.quality",
+    "ema_fih.sem.facet.non_clinical",
+    "ema_fih.sem.facet.dose_selection",
+    "ema_fih.sem.facet.trial_planning"
+  ]);
+  assert.equal(manifest.summary.text, null);
+});
+
+test("a summary_spec targeting a narrower sub-section still matches a broader manifest that includes its facet (containment match)", () => {
+  // ich_m3_r2.sem.summary.scope targets §1.3 exactly, but the only manifest
+  // covering that facet is section_1_introduction (target §1) — the summary
+  // must still attach there since its whole facet_ids set is included.
+  const envelope = {
+    answer_intent: "section_overview",
+    mode: "section_overview",
+    scope: { resolved_document_ids: ["ich_m3_r2"], requested_document_ids: [], section_ids: ["ich_m3_r2.sec.1_3"] },
+    claims: [claim({ id: "ich_m3_r2.kr.1_3.004", document_id: "ich_m3_r2", section_id: "ich_m3_r2.sec.1_3" })]
+  };
+  const coverage = buildReviewedSemanticCoverage("ICH M3(R2) §1 Introduction은 어떻게 구성돼?", envelope, { store: fullyReviewedStore() });
+  assert.ok(coverage);
+  const manifest = coverage.manifests.find((m) => m.manifest_id === "ich_m3_r2.sem.manifest.section_1_introduction");
+  assert.ok(manifest, "expected section_1_introduction to be served");
+  assert.ok(manifest.summary, "expected the §1.3-targeted summary_spec to match via facet containment");
+  assert.equal(manifest.summary.summary_id, "ich_m3_r2.sem.summary.scope");
 });

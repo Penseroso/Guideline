@@ -419,7 +419,7 @@ function selectServedManifests(question, shadowPlan, envelope, semanticStore) {
     const overlay = semanticStore.overlaysByDocumentId.get(planned.document_id);
     const manifest = overlay && (overlay.coverage_manifests || []).find((item) => item.manifest_id === planned.manifest_id);
     if (!manifest) continue;
-    const referencedFacetIds = new Set((manifest.coverage_groups || []).flatMap((group) => group.facet_ids || []));
+    const referencedFacetIds = manifestFacetIds(manifest);
     const facetsById = new Map((overlay.facets || []).map((facet) => [facet.facet_id, facet]));
     if ([...referencedFacetIds].some((id) => !facetsById.has(id) || facetsById.get(id).review_status !== "reviewed")) continue;
 
@@ -491,6 +491,45 @@ function isManifestRelevant(overlay, manifest, resolvedSectionIds, sectionsById,
   return false;
 }
 
+function manifestFacetIds(manifest) {
+  return new Set((manifest.coverage_groups || []).flatMap((group) => group.facet_ids || []));
+}
+
+/**
+ * Stage E1 (docs/derived_semantic_layer.md §10 단계 E1): matches a
+ * summary_spec to the manifest it should introduce. An exact target match
+ * (same type+id) is the strongest signal; a summary whose facet_ids are all
+ * inside a manifest's own coverage-group facets is treated as narrower-scope
+ * but still applicable evidence (this is how ich_m3_r2's/ich_s6_r1's "scope"
+ * summary_spec, whose target is the §1.3 sub-section, resolves onto the
+ * broader "section_1_introduction" manifest that includes that facet). Ties
+ * favor the summary that covers more of the matched facet set. review_status
+ * travels with the result unfiltered — same shadow-first, filter-at-serving
+ * split every other object here already uses.
+ */
+function selectServedSummary(overlay, manifest) {
+  const target = manifest.target || {};
+  const facetIdSet = manifestFacetIds(manifest);
+  let best = null;
+  for (const summary of overlay.summary_specs || []) {
+    const exact = Boolean(summary.target) && summary.target.type === target.type && summary.target.id === target.id;
+    const contained = !exact && summary.facet_ids.every((id) => facetIdSet.has(id));
+    if (!exact && !contained) continue;
+    const overlap = summary.facet_ids.length;
+    if (!best || (exact && !best.exact) || (exact === best.exact && overlap > best.overlap)) {
+      best = { exact, overlap, summary };
+    }
+  }
+  if (!best) return null;
+  return {
+    summary_id: best.summary.summary_id,
+    summary_kind: best.summary.summary_kind,
+    facet_ids: [...best.summary.facet_ids],
+    sentence_roles: [...best.summary.sentence_roles],
+    review_status: best.summary.review_status
+  };
+}
+
 function buildManifestPlan(overlay, manifest, envelopeAnswerIntent, queryScope, claimIds, sectionIndex) {
   const facetsById = new Map((overlay.facets || []).map((facet) => [facet.facet_id, facet]));
   const sortedGroups = [...(manifest.coverage_groups || [])].sort((a, b) => a.display_order - b.display_order);
@@ -511,6 +550,7 @@ function buildManifestPlan(overlay, manifest, envelopeAnswerIntent, queryScope, 
     intent_match: labelIntent(envelopeAnswerIntent) === manifest.answer_intent,
     review_status: manifest.review_status,
     status: summarizeManifestStatus(groups),
+    summary: selectServedSummary(overlay, manifest),
     groups
   };
 }
@@ -668,12 +708,31 @@ function comparePlans(question, envelope, options) {
  * show, so a caller can treat "no semantic_coverage field" and "field is
  * present but empty" as the same thing — never render an empty box.
  */
+/**
+ * Stage E1 (docs/derived_semantic_layer.md §10 단계 E1): the summary a
+ * manifest plan carries diagnostically may point at a summary_spec that
+ * isn't reviewed yet — same shadow-shows-everything, serve-only-reviewed
+ * split as manifests/comparison bindings above. `text` stays null here;
+ * Stage E2 fills it in from the reviewed Korean presentation overlay.
+ */
+function servedSummary(summaryPlan) {
+  if (!summaryPlan || summaryPlan.review_status !== "reviewed") return null;
+  return {
+    summary_id: summaryPlan.summary_id,
+    summary_kind: summaryPlan.summary_kind,
+    facet_ids: summaryPlan.facet_ids,
+    sentence_roles: summaryPlan.sentence_roles,
+    text: null
+  };
+}
+
 function buildReviewedSemanticCoverage(question, envelope, options) {
   const semanticStore = options && options.store || defaultStore();
   const shadowPlan = buildShadowPlan(question, envelope, { ...options, store: semanticStore });
   if (!shadowPlan.applicable) return null;
 
-  const manifests = selectServedManifests(question, shadowPlan, envelope, semanticStore);
+  const manifests = selectServedManifests(question, shadowPlan, envelope, semanticStore)
+    .map((manifest) => ({ ...manifest, summary: servedSummary(manifest.summary) }));
 
   // Same reviewed-only filter applied per binding, then an axis is only
   // kept if at least two distinct documents still have a reviewed binding

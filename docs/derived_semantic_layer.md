@@ -1,9 +1,9 @@
 # 파생 의미 레이어 설계
 
-상태: Implemented through Stage D; Stage E0 완료, Stage E1 진행 중
+상태: Implemented through Stage D; Stage E0/E1 engineering completion 완료(최종 reviewed 승격은 라이브 감사 대기), Stage E2 예정
 적용 대상: 검색·라우팅·답변 조립 계층  
 활성 의미 오버레이 계약: `0.3.0`
-활성 public answer contract: `2.2.0`
+활성 public answer contract: `2.3.0`
 
 ## 1. 목적
 
@@ -353,7 +353,7 @@ Stage D가 남긴 세 개 — `summary_specs`, 한국어 presentation 문장, `s
 
 **Stage E0(2026-09-08, 구현 완료) — salience_profiles 게이팅 선결 조건.** `salienceProfile`은 다른 다섯 객체와 달리 `review_status`가 스키마에 없어 "reviewed만 서빙" 규칙을 그대로 쓸 수 없었다. `data/schemas/derived_semantic_overlay.schema.json`에 `salienceProfile.review_status`를 필수 필드로 추가하고 `semantic_overlay_version`을 `0.2.0` → `0.3.0`으로 올렸다. `scripts/migrate_semantic_overlay_v0_3.js`가 기존 6개 오버레이의 salience_profiles 전체(7개)에 `review_status: needs_review`를 부여했다 — 지금까지 검토를 거친 적이 없으므로 정직한 초기값이다. 이 단계는 스키마·데이터만 바꾸고 engine/UI/envelope는 건드리지 않는다(공개 answer contract는 여전히 `2.2.0`). 검증: `npm test`(362/362), `node validation/validate_semantic_overlay.js`(6개 오버레이 + 3개 presentation 통과).
 
-**Stage E1(예정) — `summary_specs` 구조 활성화.** 아직 문장 텍스트 없이, `facet_ids` 순서/`sentence_roles`만 서빙되는 manifest에 연결해 coverage disclosure의 facet 노출 순서에 반영한다(Stage B가 salience에 썼던 "shadow에는 다 보이고 reviewed 서빙 함수는 필터링" 패턴 재사용). `envelope_version` `2.2.0` → `2.3.0`.
+**Stage E1(2026-09-08, engineering completion) — `summary_specs` 구조 활성화.** 아직 문장 텍스트 없이, `facet_ids` 순서/`sentence_roles`만 서빙되는 manifest에 연결해 coverage disclosure의 facet 노출 순서에 반영한다(Stage B가 salience에 썼던 "shadow에는 다 보이고 reviewed 서빙 함수는 필터링" 패턴 재사용). `envelope_version` `2.2.0` → `2.3.0`. `engine/semantic_shadow.js`의 `selectServedSummary()`는 summary의 `target`이 manifest의 `target`과 정확히 일치하는 경우를 최우선으로 하고, 없으면 summary의 `facet_ids` 전체가 manifest의 facet 집합에 포함되는 경우(포함 매칭)를 대체 후보로 쓴다 — 후자는 ich_m3_r2/ich_s6_r1의 "scope" summary(§1.3 대상)가 더 넓은 "section_1_introduction" manifest(§1 대상)에 붙는 실제 사례를 커버한다. `scripts/run_semantic_stage_e1_audit.js`(`npm run audit:semantic:stage-e1`)가 기존 5개 summary_spec 전부 의도한 manifest에 실제로 매칭되는지 오프라인으로 검증(5/5 확인 완료). `scripts/promote_semantic_stage_e1.js`(`npm run promote:semantic:stage-e1`)는 Stage D와 동일하게 라이브 50문항 감사(계약 `2.3.0`) + 기존 16개 적합 케이스 무회귀 + 검토 attestation을 요구한다 — 이 환경은 LLM API 키가 없어 라이브 감사를 실행할 수 없으므로, engineering completion까지만 완료되고 5개 summary_specs의 `review_status`는 계속 `needs_review`로 남는다(Stage D의 동일한 fallback 문구 참고). 상세: `history/verification/semantic_stage_e1_2026-09-08.md`.
 
 **Stage E2(예정) — 한국어 semantic presentation 문장 렌더링.** E1의 구조에 `data/derived/presentation/ko/`의 reviewed·비-stale 문장을 채워 §7의 "한 개의 개괄 박스"로 노출한다. `envelope.prose`/`claims`에는 합류시키지 않는다(§9 금지 항목 — synthesized 문장이 생성 근거로 세탁되는 것을 방지). `envelope_version` `2.3.0` → `2.4.0`.
 

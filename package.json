@@ -22,7 +22,10 @@
     "build:semantic:stage-d": "node scripts/build_semantic_stage_d.js",
     "audit:semantic:stage-d": "node scripts/run_semantic_stage_d_audit.js",
     "verify:semantic:stage-d": "node scripts/verify_semantic_stage_d.js",
-    "promote:semantic:stage-d": "node scripts/promote_semantic_stage_d.js"
+    "promote:semantic:stage-d": "node scripts/promote_semantic_stage_d.js",
+    "migrate:semantic:v0_3": "node scripts/migrate_semantic_overlay_v0_3.js",
+    "audit:semantic:stage-e1": "node scripts/run_semantic_stage_e1_audit.js",
+    "promote:semantic:stage-e1": "node scripts/promote_semantic_stage_e1.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1",

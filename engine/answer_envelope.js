@@ -20,7 +20,7 @@ const { structuredQuery, formatAnswer, answerFallback, explainRefusal, NOT_FOUND
 const { presentClaims } = require("./answer_presenter");
 const { buildReviewedSemanticCoverage } = require("./semantic_shadow");
 
-const ENVELOPE_VERSION = "2.2.0";
+const ENVELOPE_VERSION = "2.3.0";
 
 function modeForMatch(match) {
   if (match.isComparison) return "comparison";
