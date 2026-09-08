@@ -62,6 +62,29 @@ test("coverage manifest referencing an unknown facet fails", () => {
   assertInvalid(result, "does not resolve inside this overlay: ich_m10.sem.facet.does_not_exist");
 });
 
+test("declared_members coverage requires a non-empty member set when a manifest measures the facet", () => {
+  const result = withMutatedOverlay("ich_m10.json", (overlay) => {
+    overlay.facets.find((f) => f.facet_id === "ich_m10.sem.facet.run_acceptance.chromatography").member_record_ids = [];
+  });
+  assertInvalid(result, "uses declared_members but has no member_record_ids");
+});
+
+test("section_census coverage requires a section scope", () => {
+  const result = withMutatedOverlay("ich_m10.json", (overlay) => {
+    const facet = overlay.facets.find((f) => f.facet_id === "ich_m10.sem.facet.run_acceptance.chromatography");
+    facet.coverage_basis = "section_census";
+    facet.scope = "ich_m10";
+  });
+  assertInvalid(result, "uses section_census but its scope is not a section");
+});
+
+test("a reviewed manifest cannot depend on a non-reviewed facet", () => {
+  const result = withMutatedOverlay("ich_m10.json", (overlay) => {
+    overlay.facets.find((f) => f.facet_id === "ich_m10.sem.facet.run_acceptance.chromatography").review_status = "needs_review";
+  });
+  assertInvalid(result, "reviewed manifest references non-reviewed facet");
+});
+
 test("relation evidence pointing at a nonexistent record fails", () => {
   const result = withMutatedOverlay("ich_m10.json", (overlay) => {
     overlay.relations[0].evidence_refs[0].record_id = "ich_m10.qc.does_not_exist";

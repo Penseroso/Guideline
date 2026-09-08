@@ -1,13 +1,107 @@
 {
-  "semantic_overlay_version": "0.1.0",
+  "semantic_overlay_version": "0.2.0",
   "document_id": "ich_m10",
   "source_bundle_sha256": "98a508e958ee646f19cd2edc5441e75027ac3cd00f71d6122c321f9933cfbb12",
   "derivation": {
     "method": "agent_assisted",
-    "pipeline_version": "stage-a-2026-09-03"
+    "pipeline_version": "stage-d-2026-09-08"
   },
   "summary_specs": [],
   "facets": [
+    {
+      "facet_id": "ich_m10.sem.facet.isr_process",
+      "concept_id": "ich_m10.concept.isr_process",
+      "scope": "ich_m10.sec.5",
+      "parent_facet_id": null,
+      "member_record_ids": [
+        "ich_m10.kr.5.001",
+        "ich_m10.kr.5.002",
+        "ich_m10.kr.5.003",
+        "ich_m10.kr.5.004",
+        "ich_m10.cond.5.001",
+        "ich_m10.cond.5.002",
+        "ich_m10.qc.5.003",
+        "ich_m10.qc.5.004",
+        "ich_m10.qc.5.005",
+        "ich_m10.qc.5.006",
+        "ich_m10.qc.5.008",
+        "ich_m10.qc.5.009",
+        "ich_m10.qc.5.010",
+        "ich_m10.qc.5.011"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.isr_process.applicability",
+      "concept_id": "ich_m10.concept.isr_process.applicability",
+      "scope": "ich_m10.sec.5",
+      "parent_facet_id": "ich_m10.sem.facet.isr_process",
+      "member_record_ids": [
+        "ich_m10.kr.5.004",
+        "ich_m10.cond.5.001",
+        "ich_m10.cond.5.002"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "condition",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.isr_process.chromatography_acceptance",
+      "concept_id": "ich_m10.concept.isr_process.chromatography_acceptance",
+      "scope": "ich_m10.sec.5",
+      "parent_facet_id": "ich_m10.sem.facet.isr_process",
+      "member_record_ids": [
+        "ich_m10.qc.5.009",
+        "ich_m10.qc.5.010"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.isr_process.lba_acceptance",
+      "concept_id": "ich_m10.concept.isr_process.lba_acceptance",
+      "scope": "ich_m10.sec.5",
+      "parent_facet_id": "ich_m10.sem.facet.isr_process",
+      "member_record_ids": [
+        "ich_m10.qc.5.011"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.isr_process.purpose",
+      "concept_id": "ich_m10.concept.isr_process.purpose",
+      "scope": "ich_m10.sec.5",
+      "parent_facet_id": "ich_m10.sem.facet.isr_process",
+      "member_record_ids": [
+        "ich_m10.kr.5.001",
+        "ich_m10.kr.5.002",
+        "ich_m10.kr.5.003"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.isr_process.sample_selection",
+      "concept_id": "ich_m10.concept.isr_process.sample_selection",
+      "scope": "ich_m10.sec.5",
+      "parent_facet_id": "ich_m10.sem.facet.isr_process",
+      "member_record_ids": [
+        "ich_m10.qc.5.003",
+        "ich_m10.qc.5.004",
+        "ich_m10.qc.5.005",
+        "ich_m10.qc.5.006",
+        "ich_m10.qc.5.008"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
     {
       "facet_id": "ich_m10.sem.facet.run_acceptance",
       "concept_id": "run_acceptance_criteria",
@@ -15,7 +109,8 @@
       "parent_facet_id": null,
       "member_record_ids": [],
       "semantic_role": "criterion",
-      "review_status": "reviewed"
+      "review_status": "reviewed",
+      "coverage_basis": "declared_members"
     },
     {
       "facet_id": "ich_m10.sem.facet.run_acceptance.chromatography",
@@ -31,7 +126,8 @@
         "ich_m10.qc.3_3_2.006"
       ],
       "semantic_role": "criterion",
-      "review_status": "reviewed"
+      "review_status": "reviewed",
+      "coverage_basis": "declared_members"
     },
     {
       "facet_id": "ich_m10.sem.facet.run_acceptance.lba",
@@ -47,6 +143,657 @@
         "ich_m10.qc.4_3_2.006"
       ],
       "semantic_role": "criterion",
+      "review_status": "reviewed",
+      "coverage_basis": "declared_members"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.scope",
+      "concept_id": "guideline_applicability_scope",
+      "scope": "ich_m10.sec.1_3",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "scope",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_1_1_objective",
+      "concept_id": "ich_m10.concept.objective",
+      "scope": "ich_m10.sec.1_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_1_introduction",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_1_2_background",
+      "concept_id": "ich_m10.concept.background",
+      "scope": "ich_m10.sec.1_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_1_introduction",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_1_3_scope",
+      "concept_id": "ich_m10.concept.scope",
+      "scope": "ich_m10.sec.1_3",
+      "parent_facet_id": "ich_m10.sem.facet.section_1_introduction",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "scope",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_1_introduction",
+      "concept_id": "ich_m10.concept.introduction",
+      "scope": "ich_m10.sec.1",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_2_1_method_development",
+      "concept_id": "ich_m10.concept.method_development",
+      "scope": "ich_m10.sec.2_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_2_general_principles",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_2_2_1_full_validation",
+      "concept_id": "ich_m10.concept.full_validation",
+      "scope": "ich_m10.sec.2_2_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_2_2_method_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_2_2_2_partial_validation",
+      "concept_id": "ich_m10.concept.partial_validation",
+      "scope": "ich_m10.sec.2_2_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_2_2_method_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_2_2_3_cross_validation",
+      "concept_id": "ich_m10.concept.cross_validation",
+      "scope": "ich_m10.sec.2_2_3",
+      "parent_facet_id": "ich_m10.sem.facet.section_2_2_method_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_2_2_method_validation",
+      "concept_id": "ich_m10.concept.method_validation",
+      "scope": "ich_m10.sec.2_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_2_general_principles",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_2_general_principles",
+      "concept_id": "ich_m10.concept.general_principles",
+      "scope": "ich_m10.sec.2",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_1_reference_standards",
+      "concept_id": "ich_m10.concept.reference_standards",
+      "scope": "ich_m10.sec.3_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_chromatography",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_2_1_selectivity",
+      "concept_id": "ich_m10.concept.selectivity",
+      "scope": "ich_m10.sec.3_2_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_2_2_specificity",
+      "concept_id": "ich_m10.concept.specificity",
+      "scope": "ich_m10.sec.3_2_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_2_3_matrix_effect",
+      "concept_id": "ich_m10.concept.matrix_effect",
+      "scope": "ich_m10.sec.3_2_3",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_2_4_calibration_curve_and_range",
+      "concept_id": "ich_m10.concept.calibration_curve_and_range",
+      "scope": "ich_m10.sec.3_2_4",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_2_5_1_preparation_of_quality_control_samples",
+      "concept_id": "ich_m10.concept.preparation_of_quality_control_samples",
+      "scope": "ich_m10.sec.3_2_5_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_2_5_accuracy_and_precision",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_2_5_2_evaluation_of_accuracy_and_precision",
+      "concept_id": "ich_m10.concept.evaluation_of_accuracy_and_precision",
+      "scope": "ich_m10.sec.3_2_5_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_2_5_accuracy_and_precision",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_2_5_accuracy_and_precision",
+      "concept_id": "ich_m10.concept.accuracy_and_precision",
+      "scope": "ich_m10.sec.3_2_5",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_2_6_carry_over",
+      "concept_id": "ich_m10.concept.carry_over",
+      "scope": "ich_m10.sec.3_2_6",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_2_7_dilution_integrity",
+      "concept_id": "ich_m10.concept.dilution_integrity",
+      "scope": "ich_m10.sec.3_2_7",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_2_8_stability",
+      "concept_id": "ich_m10.concept.stability",
+      "scope": "ich_m10.sec.3_2_8",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_2_9_reinjection_reproducibility",
+      "concept_id": "ich_m10.concept.reinjection_reproducibility",
+      "scope": "ich_m10.sec.3_2_9",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_2_validation",
+      "concept_id": "ich_m10.concept.validation",
+      "scope": "ich_m10.sec.3_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_chromatography",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_3_1_analytical_run",
+      "concept_id": "ich_m10.concept.analytical_run",
+      "scope": "ich_m10.sec.3_3_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_3_study_sample_analysis",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_3_2_acceptance_criteria_for_an_analytical_run",
+      "concept_id": "ich_m10.concept.acceptance_criteria_for_an_analytical_run",
+      "scope": "ich_m10.sec.3_3_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_3_study_sample_analysis",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_3_3_calibration_range",
+      "concept_id": "ich_m10.concept.calibration_range",
+      "scope": "ich_m10.sec.3_3_3",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_3_study_sample_analysis",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_3_4_reanalysis_of_study_samples",
+      "concept_id": "ich_m10.concept.reanalysis_of_study_samples",
+      "scope": "ich_m10.sec.3_3_4",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_3_study_sample_analysis",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_3_5_reinjection_of_study_samples",
+      "concept_id": "ich_m10.concept.reinjection_of_study_samples",
+      "scope": "ich_m10.sec.3_3_5",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_3_study_sample_analysis",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_3_6_integration_of_chromatograms",
+      "concept_id": "ich_m10.concept.integration_of_chromatograms",
+      "scope": "ich_m10.sec.3_3_6",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_3_study_sample_analysis",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_3_study_sample_analysis",
+      "concept_id": "ich_m10.concept.study_sample_analysis",
+      "scope": "ich_m10.sec.3_3",
+      "parent_facet_id": "ich_m10.sem.facet.section_3_chromatography",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_3_chromatography",
+      "concept_id": "ich_m10.concept.chromatography",
+      "scope": "ich_m10.sec.3",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_1_1_reference_standard",
+      "concept_id": "ich_m10.concept.reference_standard",
+      "scope": "ich_m10.sec.4_1_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_1_key_reagents",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_1_2_critical_reagents",
+      "concept_id": "ich_m10.concept.critical_reagents",
+      "scope": "ich_m10.sec.4_1_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_1_key_reagents",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_1_key_reagents",
+      "concept_id": "ich_m10.concept.key_reagents",
+      "scope": "ich_m10.sec.4_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_ligand_binding_assays",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_2_1_specificity",
+      "concept_id": "ich_m10.concept.specificity",
+      "scope": "ich_m10.sec.4_2_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_2_2_selectivity",
+      "concept_id": "ich_m10.concept.selectivity",
+      "scope": "ich_m10.sec.4_2_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_2_3_calibration_curve_and_range",
+      "concept_id": "ich_m10.concept.calibration_curve_and_range",
+      "scope": "ich_m10.sec.4_2_3",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_2_4_1_preparation_of_quality_control_samples",
+      "concept_id": "ich_m10.concept.preparation_of_quality_control_samples",
+      "scope": "ich_m10.sec.4_2_4_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_2_4_accuracy_and_precision",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_2_4_2_evaluation_of_accuracy_and_precision",
+      "concept_id": "ich_m10.concept.evaluation_of_accuracy_and_precision",
+      "scope": "ich_m10.sec.4_2_4_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_2_4_accuracy_and_precision",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_2_4_accuracy_and_precision",
+      "concept_id": "ich_m10.concept.accuracy_and_precision",
+      "scope": "ich_m10.sec.4_2_4",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_2_5_carry_over",
+      "concept_id": "ich_m10.concept.carry_over",
+      "scope": "ich_m10.sec.4_2_5",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_2_6_dilution_linearity_and_hook_effect",
+      "concept_id": "ich_m10.concept.dilution_linearity_and_hook_effect",
+      "scope": "ich_m10.sec.4_2_6",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_2_7_stability",
+      "concept_id": "ich_m10.concept.stability",
+      "scope": "ich_m10.sec.4_2_7",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_2_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_2_validation",
+      "concept_id": "ich_m10.concept.validation",
+      "scope": "ich_m10.sec.4_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_ligand_binding_assays",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_3_1_analytical_run",
+      "concept_id": "ich_m10.concept.analytical_run",
+      "scope": "ich_m10.sec.4_3_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_3_study_sample_analysis",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_3_2_acceptance_criteria_for_an_analytical_run",
+      "concept_id": "ich_m10.concept.acceptance_criteria_for_an_analytical_run",
+      "scope": "ich_m10.sec.4_3_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_3_study_sample_analysis",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_3_3_calibration_range",
+      "concept_id": "ich_m10.concept.calibration_range",
+      "scope": "ich_m10.sec.4_3_3",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_3_study_sample_analysis",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_3_4_reanalysis_of_study_samples",
+      "concept_id": "ich_m10.concept.reanalysis_of_study_samples",
+      "scope": "ich_m10.sec.4_3_4",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_3_study_sample_analysis",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_3_study_sample_analysis",
+      "concept_id": "ich_m10.concept.study_sample_analysis",
+      "scope": "ich_m10.sec.4_3",
+      "parent_facet_id": "ich_m10.sem.facet.section_4_ligand_binding_assays",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_4_ligand_binding_assays",
+      "concept_id": "ich_m10.concept.ligand_binding_assays",
+      "scope": "ich_m10.sec.4",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_5_incurred_sample_reanalysis_isr",
+      "concept_id": "ich_m10.concept.incurred_sample_reanalysis_isr",
+      "scope": "ich_m10.sec.5",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_6_1_partial_validation",
+      "concept_id": "ich_m10.concept.partial_validation",
+      "scope": "ich_m10.sec.6_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_6_partial_and_cross_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_6_2_cross_validation",
+      "concept_id": "ich_m10.concept.cross_validation",
+      "scope": "ich_m10.sec.6_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_6_partial_and_cross_validation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_6_partial_and_cross_validation",
+      "concept_id": "ich_m10.concept.partial_and_cross_validation",
+      "scope": "ich_m10.sec.6",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_7_1_endogenous_compounds",
+      "concept_id": "ich_m10.concept.endogenous_compounds",
+      "scope": "ich_m10.sec.7_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_7_additional_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_7_2_parallelism",
+      "concept_id": "ich_m10.concept.parallelism",
+      "scope": "ich_m10.sec.7_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_7_additional_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_7_3_recovery",
+      "concept_id": "ich_m10.concept.recovery",
+      "scope": "ich_m10.sec.7_3",
+      "parent_facet_id": "ich_m10.sem.facet.section_7_additional_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_7_4_minimum_required_dilution",
+      "concept_id": "ich_m10.concept.minimum_required_dilution",
+      "scope": "ich_m10.sec.7_4",
+      "parent_facet_id": "ich_m10.sem.facet.section_7_additional_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_7_5_commercial_and_diagnostic_kits",
+      "concept_id": "ich_m10.concept.commercial_and_diagnostic_kits",
+      "scope": "ich_m10.sec.7_5",
+      "parent_facet_id": "ich_m10.sem.facet.section_7_additional_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_7_6_new_or_alternative_technologies",
+      "concept_id": "ich_m10.concept.new_or_alternative_technologies",
+      "scope": "ich_m10.sec.7_6",
+      "parent_facet_id": "ich_m10.sem.facet.section_7_additional_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_7_additional_considerations",
+      "concept_id": "ich_m10.concept.additional_considerations",
+      "scope": "ich_m10.sec.7",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_8_1_summary_information",
+      "concept_id": "ich_m10.concept.summary_information",
+      "scope": "ich_m10.sec.8_1",
+      "parent_facet_id": "ich_m10.sem.facet.section_8_documentation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_8_2_documentation_for_validation_and_bioanalytical_reports",
+      "concept_id": "ich_m10.concept.documentation_for_validation_and_bioanalytical_reports",
+      "scope": "ich_m10.sec.8_2",
+      "parent_facet_id": "ich_m10.sem.facet.section_8_documentation",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m10.sem.facet.section_8_documentation",
+      "concept_id": "ich_m10.concept.documentation",
+      "scope": "ich_m10.sec.8",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
       "review_status": "reviewed"
     }
   ],
@@ -78,6 +825,103 @@
     }
   ],
   "coverage_manifests": [
+    {
+      "manifest_id": "ich_m10.sem.manifest.document_overview",
+      "target": {
+        "type": "document",
+        "id": "ich_m10"
+      },
+      "answer_intent": "document_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "major_areas",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_1_introduction",
+            "ich_m10.sem.facet.section_2_general_principles",
+            "ich_m10.sem.facet.section_3_chromatography",
+            "ich_m10.sem.facet.section_4_ligand_binding_assays",
+            "ich_m10.sem.facet.section_5_incurred_sample_reanalysis_isr",
+            "ich_m10.sem.facet.section_6_partial_and_cross_validation",
+            "ich_m10.sem.facet.section_7_additional_considerations",
+            "ich_m10.sem.facet.section_8_documentation"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.isr_process",
+      "target": {
+        "type": "facet",
+        "id": "ich_m10.sem.facet.isr_process"
+      },
+      "answer_intent": "process",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "purpose",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.isr_process.purpose"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        },
+        {
+          "group_id": "applicability",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.isr_process.applicability"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 2
+        },
+        {
+          "group_id": "sample_selection",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.isr_process.sample_selection"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 3
+        },
+        {
+          "group_id": "chromatography_acceptance",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.isr_process.chromatography_acceptance"
+          ],
+          "when": {
+            "slot_id": "target_assay",
+            "value": "chromatography"
+          },
+          "on_ambiguity": "present_branches",
+          "display_order": 4
+        },
+        {
+          "group_id": "lba_acceptance",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.isr_process.lba_acceptance"
+          ],
+          "when": {
+            "slot_id": "target_assay",
+            "value": "ligand_binding_assay"
+          },
+          "on_ambiguity": "present_branches",
+          "display_order": 5
+        }
+      ],
+      "review_status": "reviewed"
+    },
     {
       "manifest_id": "ich_m10.sem.manifest.run_acceptance",
       "target": {
@@ -115,9 +959,395 @@
         }
       ],
       "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_1_introduction",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.1"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_1_1_objective",
+            "ich_m10.sem.facet.section_1_2_background",
+            "ich_m10.sem.facet.scope"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_2_2_method_validation",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.2_2"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_2_2_1_full_validation",
+            "ich_m10.sem.facet.section_2_2_2_partial_validation",
+            "ich_m10.sem.facet.section_2_2_3_cross_validation"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_2_general_principles",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.2"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_2_1_method_development",
+            "ich_m10.sem.facet.section_2_2_method_validation"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_3_2_5_accuracy_and_precision",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.3_2_5"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_3_2_5_2_evaluation_of_accuracy_and_precision",
+            "ich_m10.sem.facet.section_3_2_5_1_preparation_of_quality_control_samples"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_3_2_validation",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.3_2"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_3_2_5_accuracy_and_precision",
+            "ich_m10.sem.facet.section_3_2_1_selectivity",
+            "ich_m10.sem.facet.section_3_2_2_specificity",
+            "ich_m10.sem.facet.section_3_2_3_matrix_effect",
+            "ich_m10.sem.facet.section_3_2_4_calibration_curve_and_range",
+            "ich_m10.sem.facet.section_3_2_6_carry_over",
+            "ich_m10.sem.facet.section_3_2_7_dilution_integrity",
+            "ich_m10.sem.facet.section_3_2_8_stability",
+            "ich_m10.sem.facet.section_3_2_9_reinjection_reproducibility"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_3_3_study_sample_analysis",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.3_3"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_3_3_1_analytical_run",
+            "ich_m10.sem.facet.section_3_3_2_acceptance_criteria_for_an_analytical_run",
+            "ich_m10.sem.facet.section_3_3_3_calibration_range",
+            "ich_m10.sem.facet.section_3_3_4_reanalysis_of_study_samples",
+            "ich_m10.sem.facet.section_3_3_5_reinjection_of_study_samples",
+            "ich_m10.sem.facet.section_3_3_6_integration_of_chromatograms"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_3_chromatography",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.3"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_3_1_reference_standards",
+            "ich_m10.sem.facet.section_3_2_validation",
+            "ich_m10.sem.facet.section_3_3_study_sample_analysis"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_4_1_key_reagents",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.4_1"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_4_1_1_reference_standard",
+            "ich_m10.sem.facet.section_4_1_2_critical_reagents"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_4_2_4_accuracy_and_precision",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.4_2_4"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_4_2_4_1_preparation_of_quality_control_samples",
+            "ich_m10.sem.facet.section_4_2_4_2_evaluation_of_accuracy_and_precision"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_4_2_validation",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.4_2"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_4_2_1_specificity",
+            "ich_m10.sem.facet.section_4_2_2_selectivity",
+            "ich_m10.sem.facet.section_4_2_3_calibration_curve_and_range",
+            "ich_m10.sem.facet.section_4_2_4_accuracy_and_precision",
+            "ich_m10.sem.facet.section_4_2_5_carry_over",
+            "ich_m10.sem.facet.section_4_2_6_dilution_linearity_and_hook_effect",
+            "ich_m10.sem.facet.section_4_2_7_stability"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_4_3_study_sample_analysis",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.4_3"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_4_3_1_analytical_run",
+            "ich_m10.sem.facet.section_4_3_2_acceptance_criteria_for_an_analytical_run",
+            "ich_m10.sem.facet.section_4_3_3_calibration_range",
+            "ich_m10.sem.facet.section_4_3_4_reanalysis_of_study_samples"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_4_ligand_binding_assays",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.4"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_4_1_key_reagents",
+            "ich_m10.sem.facet.section_4_2_validation",
+            "ich_m10.sem.facet.section_4_3_study_sample_analysis"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_6_partial_and_cross_validation",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.6"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_6_1_partial_validation",
+            "ich_m10.sem.facet.section_6_2_cross_validation"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_7_additional_considerations",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.7"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_7_1_endogenous_compounds",
+            "ich_m10.sem.facet.section_7_2_parallelism",
+            "ich_m10.sem.facet.section_7_3_recovery",
+            "ich_m10.sem.facet.section_7_4_minimum_required_dilution",
+            "ich_m10.sem.facet.section_7_5_commercial_and_diagnostic_kits",
+            "ich_m10.sem.facet.section_7_6_new_or_alternative_technologies"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m10.sem.manifest.section_8_documentation",
+      "target": {
+        "type": "section",
+        "id": "ich_m10.sec.8"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m10.sem.facet.section_8_1_summary_information",
+            "ich_m10.sem.facet.section_8_2_documentation_for_validation_and_bioanalytical_reports"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
     }
   ],
-  "comparison_bindings": [],
+  "comparison_bindings": [
+    {
+      "binding_id": "ich_m10.sem.binding.scope_product_or_matrix",
+      "axis_id": "scope.product_or_matrix",
+      "facet_id": "ich_m10.sem.facet.scope",
+      "evidence_refs": [
+        {
+          "record_id": "ich_m10.kr.1_3.001",
+          "source_unit_id": "ich_m10.su.1_3.001",
+          "source_text_sha256": "8349b44c2bdd613381b14a71e4916921f7e2efeef568b667e4549da7bdf32172"
+        }
+      ],
+      "display_label_key": "ich_m10.scope.product_or_matrix",
+      "review_status": "reviewed"
+    }
+  ],
   "salience_profiles": [
     {
       "profile_id": "ich_m10.sem.profile.run_acceptance",

@@ -57,12 +57,14 @@ function sourceUnitIdForRecordEntry(entry) {
  */
 function buildSectionIndex(archive) {
   const recordIdsBySectionId = new Map();
+  const sectionIdByRecordId = new Map();
   for (const [recordId, entry] of archive.recordsById) {
     const sourceUnitId = sourceUnitIdForRecordEntry(entry);
     const sourceUnit = sourceUnitId ? archive.sourceUnitsById.get(sourceUnitId) : null;
     if (!sourceUnit || !sourceUnit.section_id) continue;
     if (!recordIdsBySectionId.has(sourceUnit.section_id)) recordIdsBySectionId.set(sourceUnit.section_id, new Set());
     recordIdsBySectionId.get(sourceUnit.section_id).add(recordId);
+    sectionIdByRecordId.set(recordId, sourceUnit.section_id);
   }
 
   const childrenBySectionId = new Map();
@@ -72,7 +74,7 @@ function buildSectionIndex(archive) {
     childrenBySectionId.get(section.parent_section_id).add(section.section_id);
   }
 
-  return { recordIdsBySectionId, childrenBySectionId };
+  return { recordIdsBySectionId, sectionIdByRecordId, childrenBySectionId };
 }
 
 function loadSemanticOverlayStore({

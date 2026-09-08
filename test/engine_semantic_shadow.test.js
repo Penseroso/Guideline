@@ -144,7 +144,9 @@ test("ema_fih document overview: router under-classifying as topic_overview is v
   assert.equal(manifest.status, "partial");
   const dose = manifest.groups[0].facets.find((f) => f.facet_id === "ema_fih.sem.facet.dose_selection");
   const quality = manifest.groups[0].facets.find((f) => f.facet_id === "ema_fih.sem.facet.quality");
-  assert.equal(dose.status, "covered");
+  assert.equal(dose.status, "partial");
+  assert.equal(dose.coverage_basis, "section_census");
+  assert.deepEqual(dose.effective, { granularity: "section", covered: 1, total: 7 });
   assert.equal(quality.status, "missing");
 });
 
@@ -175,11 +177,11 @@ test("a manifest scoped far away from the resolved sections (no shared ancestor 
 
 test("section coverage granularity switches to child-section breadth for a chapter-scoped facet, not raw record count", () => {
   // ema_fih.sem.facet.dose_selection's scope (§7) has 7 real sub-sections
-  // (§7.1-§7.7) totalling ~197 individual records — flat record recall
+  // (§7.1-§7.7), totalling ~197 individual records — flat record recall
   // there would make the "section" signal permanently near-zero regardless
   // of how good an answer is. §7.2 (Starting dose for healthy volunteers)
   // is one specific real sub-section; citing something from it should
-  // register as "1 of 7 sub-topics touched", not "a handful out of 197".
+  // register as one section bucket touched, not "a handful out of 197".
   const envelope = {
     answer_intent: "topic_overview",
     scope: { resolved_document_ids: ["ema_fih"], requested_document_ids: [], section_ids: ["ema_fih.sec.7_2"] },
@@ -197,7 +199,20 @@ test("section coverage granularity switches to child-section breadth for a chapt
   // fine-grained record recall — the fix only changes chapter-shaped scopes.
   const quality = manifest.groups[0].facets.find((f) => f.facet_id === "ema_fih.sem.facet.quality");
   assert.equal(quality.section.granularity, "section"); // §5 also has 3 real sub-sections
-  assert.equal(quality.section.total, 3);
+  assert.equal(quality.section.total, 4);
+});
+
+test("section census counts a chapter's own directly filed overview body as one bucket", () => {
+  const envelope = {
+    answer_intent: "document_overview",
+    scope: { resolved_document_ids: ["ema_fih"], requested_document_ids: [], section_ids: ["ema_fih.sec.5"] },
+    claims: [claim({ id: "ema_fih.kr.5.001", document_id: "ema_fih", section_id: "ema_fih.sec.5" })]
+  };
+  const plan = buildShadowPlan("EMA FIH 전체 개요를 알려줘", envelope, { store });
+  const manifest = plan.manifests.find((m) => m.manifest_id === "ema_fih.sem.manifest.document_overview");
+  const quality = manifest.groups[0].facets.find((f) => f.facet_id === "ema_fih.sem.facet.quality");
+  assert.deepEqual(quality.effective, { granularity: "section", covered: 1, total: 4 });
+  assert.equal(quality.status, "partial");
 });
 
 test("a leaf-scoped facet (no sub-sections of its own) still reports record-granularity section coverage", () => {
@@ -404,6 +419,18 @@ function storeWithManifestReviewStatus(manifestId, reviewStatus) {
   return { ...store, overlaysByDocumentId };
 }
 
+function fullyReviewedStore() {
+  return {
+    ...store,
+    overlaysByDocumentId: new Map([...store.overlaysByDocumentId].map(([documentId, overlay]) => [documentId, {
+      ...overlay,
+      facets: overlay.facets.map((facet) => ({ ...facet, review_status: "reviewed" })),
+      coverage_manifests: overlay.coverage_manifests.map((manifest) => ({ ...manifest, review_status: "reviewed" })),
+      comparison_bindings: overlay.comparison_bindings.map((binding) => ({ ...binding, review_status: "reviewed" }))
+    }]))
+  };
+}
+
 test("buildReviewedSemanticCoverage filters out a manifest that is not (yet) reviewed", () => {
   const needsReviewStore = storeWithManifestReviewStatus("ich_m10.sem.manifest.run_acceptance", "needs_review");
   const envelope = {
@@ -412,7 +439,8 @@ test("buildReviewedSemanticCoverage filters out a manifest that is not (yet) rev
     claims: [claim({ id: "ich_m10.qc.3_3_2.001", document_id: "ich_m10" })]
   };
   const coverage = buildReviewedSemanticCoverage("chromatography 분석 run 허용 기준이 뭐야?", envelope, { store: needsReviewStore });
-  assert.equal(coverage, null, "a manifest still needs_review must never be disclosed, even if it would otherwise apply");
+  assert.ok(!coverage || !coverage.manifests.some((manifest) => manifest.manifest_id === "ich_m10.sem.manifest.run_acceptance"),
+    "a manifest still needs_review must never be disclosed, even if another reviewed Stage D manifest applies");
 });
 
 test("buildReviewedSemanticCoverage includes a manifest once it's reviewed (against the real, currently-promoted store)", () => {
@@ -428,9 +456,92 @@ test("buildReviewedSemanticCoverage includes a manifest once it's reviewed (agai
   assert.equal(manifest.review_status, "reviewed");
 });
 
-test("buildReviewedSemanticCoverage.comparison only keeps an axis with >=2 reviewed sides, and computes both_sides_evidenced from those alone", () => {
+test("served coverage selects the exact multi-criterion manifest instead of a broader topic manifest", () => {
+  const envelope = {
+    answer_intent: "topic_overview",
+    mode: "list",
+    scope: {
+      resolved_document_ids: ["fda_ada"],
+      requested_document_ids: [],
+      section_ids: ["fda_ada.sec.6_b"]
+    },
+    claims: [claim({ id: "fda_ada.kr.VI_B.001", document_id: "fda_ada", section_id: "fda_ada.sec.6_b" })]
+  };
+  const coverage = buildReviewedSemanticCoverage("ADA screening assay validation 성능 기준은?", envelope, { store });
+  assert.ok(coverage);
+  assert.deepEqual(coverage.manifests.map((manifest) => manifest.manifest_id), ["fda_ada.sem.manifest.screening_performance"]);
+});
+
+test("served coverage prefers the explicitly named parent section over child-record proximity", () => {
+  const envelope = {
+    answer_intent: "section_overview",
+    mode: "section_overview",
+    scope: {
+      resolved_document_ids: ["fda_ada_2014"],
+      requested_document_ids: [],
+      section_ids: ["fda_ada_2014.sec.5_a_1"]
+    },
+    claims: [claim({ id: "fda_ada_2014.kr.5_a_1.001", document_id: "fda_ada_2014", section_id: "fda_ada_2014.sec.5_a_1" })]
+  };
+  const coverage = buildReviewedSemanticCoverage(
+    "FDA-2014-ADA §V PATIENT- AND PRODUCT-SPECIFIC FACTORS THAT AFFECT IMMUNOGENICITY 항목은 어떻게 구성돼?",
+    envelope,
+    { store: fullyReviewedStore() }
+  );
+  assert.ok(coverage);
+  assert.deepEqual(coverage.manifests.map((manifest) => manifest.manifest_id), ["fda_ada_2014.sem.manifest.risk_factors"]);
+});
+
+test("an explicitly named S6 Part II section survives an erroneous Part I amendment route", () => {
   const envelope = {
     answer_intent: null,
+    mode: "amendment",
+    scope: {
+      resolved_document_ids: ["ich_s6_r1"],
+      requested_document_ids: [],
+      section_ids: ["ich_s6_r1.sec.part1.1"]
+    },
+    claims: [claim({ id: "ich_s6_r1.kr.1.001", document_id: "ich_s6_r1", section_id: "ich_s6_r1.sec.part1.1" })]
+  };
+  const coverage = buildReviewedSemanticCoverage(
+    "S6(R1) §2 Addendum to S6의 Species Selection 항목은 어떻게 구성돼?",
+    envelope,
+    { store: fullyReviewedStore() }
+  );
+  assert.ok(coverage);
+  assert.deepEqual(coverage.manifests.map((manifest) => manifest.manifest_id), ["ich_s6_r1.sem.manifest.section_2_species_selection"]);
+});
+
+test("served coverage does not attach a document overview to a detail answer", () => {
+  const envelope = {
+    answer_intent: "detail",
+    scope: {
+      resolved_document_ids: ["ema_fih"],
+      requested_document_ids: ["ema_fih"],
+      section_ids: ["ema_fih.sec.7_2"]
+    },
+    claims: [claim({ id: "ema_fih.kr.7_2.001", document_id: "ema_fih", section_id: "ema_fih.sec.7_2" })]
+  };
+  assert.equal(buildReviewedSemanticCoverage("건강인 starting dose의 MABEL 근거는?", envelope, { store }), null);
+});
+
+test("served comparison binding is omitted when the envelope is not a comparison", () => {
+  const envelope = {
+    answer_intent: "topic_overview",
+    mode: "generated",
+    claims: [
+      claim({ id: "ich_m3_r2.kr.1_3.004", document_id: "ich_m3_r2" }),
+      claim({ id: "ich_s6_r1.kr.1_3.001", document_id: "ich_s6_r1" })
+    ]
+  };
+  const coverage = buildReviewedSemanticCoverage("비임상 개발 범위를 종합해 줘", envelope, { store });
+  assert.ok(coverage);
+  assert.deepEqual(coverage.comparison, []);
+});
+
+test("buildReviewedSemanticCoverage.comparison only keeps an axis with >=2 reviewed sides, and computes both_sides_evidenced from those alone", () => {
+  const envelope = {
+    answer_intent: "comparison",
     claims: [
       claim({ id: "ich_m3_r2.kr.1_3.004", document_id: "ich_m3_r2" }),
       claim({ id: "ich_s6_r1.kr.1_3.001", document_id: "ich_s6_r1" })

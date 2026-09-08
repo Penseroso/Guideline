@@ -1,10 +1,10 @@
 {
-  "semantic_overlay_version": "0.1.0",
+  "semantic_overlay_version": "0.2.0",
   "document_id": "fda_ada",
   "source_bundle_sha256": "296b786814657f064268a2e4511675a08c5e2424d9827a1f1049acf5330d71e2",
   "derivation": {
     "method": "agent_assisted",
-    "pipeline_version": "stage-a-2026-09-03"
+    "pipeline_version": "stage-d-2026-09-08"
   },
   "summary_specs": [
     {
@@ -43,29 +43,8 @@
       "parent_facet_id": null,
       "member_record_ids": [],
       "semantic_role": "scope",
-      "review_status": "reviewed"
-    },
-    {
-      "facet_id": "fda_ada.sem.facet.assay_validation.general",
-      "concept_id": "assay_validation_tier",
-      "scope": "fda_ada.sec.6_a",
-      "parent_facet_id": "fda_ada.sem.facet.assay_validation",
-      "member_record_ids": [
-        "fda_ada.kr.VI_A.001"
-      ],
-      "semantic_role": "scope",
-      "review_status": "reviewed"
-    },
-    {
-      "facet_id": "fda_ada.sem.facet.assay_validation.screening",
-      "concept_id": "assay_validation_tier",
-      "scope": "fda_ada.sec.6_b",
-      "parent_facet_id": "fda_ada.sem.facet.assay_validation",
-      "member_record_ids": [
-        "fda_ada.kr.VI_B.001"
-      ],
-      "semantic_role": "scope",
-      "review_status": "reviewed"
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
     },
     {
       "facet_id": "fda_ada.sem.facet.assay_validation.confirmatory",
@@ -76,18 +55,20 @@
         "fda_ada.kr.VI_C.001"
       ],
       "semantic_role": "scope",
-      "review_status": "reviewed"
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
     },
     {
-      "facet_id": "fda_ada.sem.facet.assay_validation.titration",
+      "facet_id": "fda_ada.sem.facet.assay_validation.general",
       "concept_id": "assay_validation_tier",
-      "scope": "fda_ada.sec.6_d",
+      "scope": "fda_ada.sec.6_a",
       "parent_facet_id": "fda_ada.sem.facet.assay_validation",
       "member_record_ids": [
-        "fda_ada.kr.VI_D.001"
+        "fda_ada.kr.VI_A.001"
       ],
       "semantic_role": "scope",
-      "review_status": "reviewed"
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
     },
     {
       "facet_id": "fda_ada.sem.facet.assay_validation.neutralization",
@@ -98,6 +79,103 @@
         "fda_ada.kr.VI_E.001"
       ],
       "semantic_role": "scope",
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.assay_validation.screening",
+      "concept_id": "assay_validation_tier",
+      "scope": "fda_ada.sec.6_b",
+      "parent_facet_id": "fda_ada.sem.facet.assay_validation",
+      "member_record_ids": [
+        "fda_ada.kr.VI_B.001"
+      ],
+      "semantic_role": "scope",
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.assay_validation.titration",
+      "concept_id": "assay_validation_tier",
+      "scope": "fda_ada.sec.6_d",
+      "parent_facet_id": "fda_ada.sem.facet.assay_validation",
+      "member_record_ids": [
+        "fda_ada.kr.VI_D.001"
+      ],
+      "semantic_role": "scope",
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.multi_tier_testing",
+      "concept_id": "fda_ada.concept.multi_tier_testing",
+      "scope": "fda_ada.sec.4_a_1",
+      "parent_facet_id": null,
+      "member_record_ids": [
+        "fda_ada.kr.IV_A_1.001",
+        "fda_ada.kr.IV_A_1.002",
+        "fda_ada.kr.IV_A_1.003",
+        "fda_ada.kr.IV_A_1.004",
+        "fda_ada.kr.IV_A_1.005",
+        "fda_ada.kr.IV_A_1.006",
+        "fda_ada.kr.IV_A_1.010",
+        "fda_ada.kr.IV_A_1.011",
+        "fda_ada.kr.IV_A_1.012"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.multi_tier_testing.confirmatory",
+      "concept_id": "fda_ada.concept.multi_tier_testing.confirmatory",
+      "scope": "fda_ada.sec.4_a_1",
+      "parent_facet_id": "fda_ada.sem.facet.multi_tier_testing",
+      "member_record_ids": [
+        "fda_ada.kr.IV_A_1.005",
+        "fda_ada.kr.IV_A_1.006",
+        "fda_ada.kr.IV_A_1.010"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.multi_tier_testing.downstream_characterization",
+      "concept_id": "fda_ada.concept.multi_tier_testing.downstream_characterization",
+      "scope": "fda_ada.sec.4_a_1",
+      "parent_facet_id": "fda_ada.sem.facet.multi_tier_testing",
+      "member_record_ids": [
+        "fda_ada.kr.IV_A_1.011",
+        "fda_ada.kr.IV_A_1.012"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.multi_tier_testing.screening",
+      "concept_id": "fda_ada.concept.multi_tier_testing.screening",
+      "scope": "fda_ada.sec.4_a_1",
+      "parent_facet_id": "fda_ada.sem.facet.multi_tier_testing",
+      "member_record_ids": [
+        "fda_ada.kr.IV_A_1.001",
+        "fda_ada.kr.IV_A_1.002",
+        "fda_ada.kr.IV_A_1.003",
+        "fda_ada.kr.IV_A_1.004"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.scope",
+      "concept_id": "guideline_applicability_scope",
+      "scope": "fda_ada.sec.1",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "scope",
       "review_status": "reviewed"
     },
     {
@@ -107,7 +185,8 @@
       "parent_facet_id": null,
       "member_record_ids": [],
       "semantic_role": "criterion",
-      "review_status": "reviewed"
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
     },
     {
       "facet_id": "fda_ada.sem.facet.screening_performance.cut_point",
@@ -124,19 +203,21 @@
         "fda_ada.qc.VI_B.010"
       ],
       "semantic_role": "criterion",
-      "review_status": "reviewed"
+      "review_status": "reviewed",
+      "coverage_basis": "declared_members"
     },
     {
-      "facet_id": "fda_ada.sem.facet.screening_performance.sensitivity",
+      "facet_id": "fda_ada.sem.facet.screening_performance.drug_tolerance",
       "concept_id": "fda_ada.local.screening_performance_criteria",
-      "scope": "fda_ada.sec.6_b",
+      "scope": "fda_ada.sec.4_c_2",
       "parent_facet_id": "fda_ada.sem.facet.screening_performance",
       "member_record_ids": [
-        "fda_ada.kr.VI_B.001",
-        "fda_ada.qc.VI_B.001"
+        "fda_ada.kr.IV_C_2.001",
+        "fda_ada.kr.IV_C_2.002"
       ],
       "semantic_role": "criterion",
-      "review_status": "reviewed"
+      "review_status": "reviewed",
+      "coverage_basis": "declared_members"
     },
     {
       "facet_id": "fda_ada.sem.facet.screening_performance.precision",
@@ -153,19 +234,21 @@
         "fda_ada.qc.VI_B.005"
       ],
       "semantic_role": "criterion",
-      "review_status": "reviewed"
+      "review_status": "reviewed",
+      "coverage_basis": "declared_members"
     },
     {
-      "facet_id": "fda_ada.sem.facet.screening_performance.drug_tolerance",
+      "facet_id": "fda_ada.sem.facet.screening_performance.sensitivity",
       "concept_id": "fda_ada.local.screening_performance_criteria",
-      "scope": "fda_ada.sec.4_c_2",
+      "scope": "fda_ada.sec.6_b",
       "parent_facet_id": "fda_ada.sem.facet.screening_performance",
       "member_record_ids": [
-        "fda_ada.kr.IV_C_2.001",
-        "fda_ada.kr.IV_C_2.002"
+        "fda_ada.kr.VI_B.001",
+        "fda_ada.qc.VI_B.001"
       ],
       "semantic_role": "criterion",
-      "review_status": "reviewed"
+      "review_status": "reviewed",
+      "coverage_basis": "declared_members"
     },
     {
       "facet_id": "fda_ada.sem.facet.screening_performance.specificity",
@@ -177,6 +260,387 @@
         "fda_ada.kr.IV_D.002"
       ],
       "semantic_role": "criterion",
+      "review_status": "reviewed",
+      "coverage_basis": "declared_members"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_i_introduction",
+      "concept_id": "fda_ada.concept.introduction",
+      "scope": "fda_ada.sec.1",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iii_a_assays_for_ada_detection",
+      "concept_id": "fda_ada.concept.assays_for_ada_detection",
+      "scope": "fda_ada.sec.3_a",
+      "parent_facet_id": "fda_ada.sem.facet.section_iii_general_principles",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iii_b_limitations_in_comparing_ada_incidence_across_products",
+      "concept_id": "fda_ada.concept.limitations_in_comparing_ada_incidence_across_products",
+      "scope": "fda_ada.sec.3_b",
+      "parent_facet_id": "fda_ada.sem.facet.section_iii_general_principles",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iii_general_principles",
+      "concept_id": "fda_ada.concept.general_principles",
+      "scope": "fda_ada.sec.3",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_a_1_multi_tiered_testing_approach",
+      "concept_id": "fda_ada.concept.multi_tiered_testing_approach",
+      "scope": "fda_ada.sec.4_a_1",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_a_2_immunoglobulin_isotypes_or_subtypes",
+      "concept_id": "fda_ada.concept.immunoglobulin_isotypes_or_subtypes",
+      "scope": "fda_ada.sec.4_a_2",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_a_3_domain_specificity",
+      "concept_id": "fda_ada.concept.domain_specificity",
+      "scope": "fda_ada.sec.4_a_3",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "concept_id": "fda_ada.concept.assay_design_elements",
+      "scope": "fda_ada.sec.4",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_b_assay_cut_point",
+      "concept_id": "fda_ada.concept.assay_cut_point",
+      "scope": "fda_ada.sec.4_b",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_c_1_assay_sensitivity",
+      "concept_id": "fda_ada.concept.assay_sensitivity",
+      "scope": "fda_ada.sec.4_c_1",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_c_2_drug_tolerance_sensitivity_and_assay_suitability",
+      "concept_id": "fda_ada.concept.drug_tolerance_sensitivity_and_assay_suitability",
+      "scope": "fda_ada.sec.4_c_2",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_d_specificity",
+      "concept_id": "fda_ada.concept.specificity",
+      "scope": "fda_ada.sec.4_d",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_e_1_matrix_interference",
+      "concept_id": "fda_ada.concept.matrix_interference",
+      "scope": "fda_ada.sec.4_e_1",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_e_2_minimal_required_dilution",
+      "concept_id": "fda_ada.concept.minimal_required_dilution",
+      "scope": "fda_ada.sec.4_e_2",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_f_precision",
+      "concept_id": "fda_ada.concept.precision",
+      "scope": "fda_ada.sec.4_f",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_g_reproducibility",
+      "concept_id": "fda_ada.concept.reproducibility",
+      "scope": "fda_ada.sec.4_g",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_h_robustness_and_sample_stability",
+      "concept_id": "fda_ada.concept.robustness_and_sample_stability",
+      "scope": "fda_ada.sec.4_h",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_i_selection_of_format",
+      "concept_id": "fda_ada.concept.selection_of_format",
+      "scope": "fda_ada.sec.4_i",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_j_1_development_of_positive_control_antibodies",
+      "concept_id": "fda_ada.concept.development_of_positive_control_antibodies",
+      "scope": "fda_ada.sec.4_j_1",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_j_2_development_of_negative_controls",
+      "concept_id": "fda_ada.concept.development_of_negative_controls",
+      "scope": "fda_ada.sec.4_j_2",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_j_3_controlling_non_specific_binding",
+      "concept_id": "fda_ada.concept.controlling_non_specific_binding",
+      "scope": "fda_ada.sec.4_j_3",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_k_reporting_results_for_qualitative_and_quasi_quantitative_assays",
+      "concept_id": "fda_ada.concept.reporting_results_for_qualitative_and_quasi_quantitative_assays",
+      "scope": "fda_ada.sec.4_k",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_l_1_pre_existing_antibodies",
+      "concept_id": "fda_ada.concept.pre_existing_antibodies",
+      "scope": "fda_ada.sec.4_l_1",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_l_2_rheumatoid_factor_and_other_endogenous_human_antibodies",
+      "concept_id": "fda_ada.concept.rheumatoid_factor_and_other_endogenous_human_antibodies",
+      "scope": "fda_ada.sec.4_l_2",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_l_3_monoclonal_antibodies",
+      "concept_id": "fda_ada.concept.monoclonal_antibodies",
+      "scope": "fda_ada.sec.4_l_3",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_iv_l_4_conjugated_proteins_and_multi_domain_molecules",
+      "concept_id": "fda_ada.concept.conjugated_proteins_and_multi_domain_molecules",
+      "scope": "fda_ada.sec.4_l_4",
+      "parent_facet_id": "fda_ada.sem.facet.section_iv_assay_design_elements",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_v_a_development_of_screening_assay",
+      "concept_id": "fda_ada.concept.development_of_screening_assay",
+      "scope": "fda_ada.sec.5_a",
+      "parent_facet_id": "fda_ada.sem.facet.section_v_assay_development",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_v_assay_development",
+      "concept_id": "fda_ada.concept.assay_development",
+      "scope": "fda_ada.sec.5",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_v_b_1_selection_of_format_for_confirmatory_assay",
+      "concept_id": "fda_ada.concept.selection_of_format_for_confirmatory_assay",
+      "scope": "fda_ada.sec.5_b_1",
+      "parent_facet_id": "fda_ada.sem.facet.section_v_b_development_of_confirmatory_assay",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_v_b_2_cut_point_of_confirmatory_assay",
+      "concept_id": "fda_ada.concept.cut_point_of_confirmatory_assay",
+      "scope": "fda_ada.sec.5_b_2",
+      "parent_facet_id": "fda_ada.sem.facet.section_v_b_development_of_confirmatory_assay",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_v_b_development_of_confirmatory_assay",
+      "concept_id": "fda_ada.concept.development_of_confirmatory_assay",
+      "scope": "fda_ada.sec.5_b",
+      "parent_facet_id": "fda_ada.sem.facet.section_v_assay_development",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_v_c_development_of_titration_assay",
+      "concept_id": "fda_ada.concept.development_of_titration_assay",
+      "scope": "fda_ada.sec.5_c",
+      "parent_facet_id": "fda_ada.sem.facet.section_v_assay_development",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_v_d_development_of_neutralization_assay",
+      "concept_id": "fda_ada.concept.development_of_neutralization_assay",
+      "scope": "fda_ada.sec.5_d",
+      "parent_facet_id": "fda_ada.sem.facet.section_v_assay_development",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_vii_a_obtaining_subject_samples_and_timing_of_collection",
+      "concept_id": "fda_ada.concept.obtaining_subject_samples_and_timing_of_collection",
+      "scope": "fda_ada.sec.7_a",
+      "parent_facet_id": "fda_ada.sem.facet.section_vii_implementation_of_assay_testing",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_vii_b_concurrent_positive_and_negative_quality_controls",
+      "concept_id": "fda_ada.concept.concurrent_positive_and_negative_quality_controls",
+      "scope": "fda_ada.sec.7_b",
+      "parent_facet_id": "fda_ada.sem.facet.section_vii_implementation_of_assay_testing",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_vii_c_confirmation_of_cut_point_in_the_target_population",
+      "concept_id": "fda_ada.concept.confirmation_of_cut_point_in_the_target_population",
+      "scope": "fda_ada.sec.7_c",
+      "parent_facet_id": "fda_ada.sem.facet.section_vii_implementation_of_assay_testing",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_vii_implementation_of_assay_testing",
+      "concept_id": "fda_ada.concept.implementation_of_assay_testing",
+      "scope": "fda_ada.sec.7",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada.sem.facet.section_viii_documentation",
+      "concept_id": "fda_ada.concept.documentation",
+      "scope": "fda_ada.sec.8",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
       "review_status": "reviewed"
     }
   ],
@@ -226,25 +690,95 @@
     {
       "manifest_id": "fda_ada.sem.manifest.assay_validation",
       "target": {
-        "type": "facet",
-        "id": "fda_ada.sem.facet.assay_validation"
+        "type": "section",
+        "id": "fda_ada.sec.6"
       },
       "answer_intent": "topic_overview",
       "scope_selectors": [],
       "coverage_groups": [
         {
-          "group_id": "all_validation_categories",
+          "group_id": "direct_child_sections",
           "selection": "all",
           "facet_ids": [
             "fda_ada.sem.facet.assay_validation.general",
             "fda_ada.sem.facet.assay_validation.screening",
-            "fda_ada.sem.facet.assay_validation.confirmatory",
             "fda_ada.sem.facet.assay_validation.titration",
+            "fda_ada.sem.facet.assay_validation.confirmatory",
             "fda_ada.sem.facet.assay_validation.neutralization"
           ],
           "when": null,
           "on_ambiguity": "disclose_gap",
           "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "fda_ada.sem.manifest.document_overview",
+      "target": {
+        "type": "document",
+        "id": "fda_ada"
+      },
+      "answer_intent": "document_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "major_areas",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada.sem.facet.section_i_introduction",
+            "fda_ada.sem.facet.section_iii_general_principles",
+            "fda_ada.sem.facet.section_iv_assay_design_elements",
+            "fda_ada.sem.facet.section_v_assay_development",
+            "fda_ada.sem.facet.assay_validation",
+            "fda_ada.sem.facet.section_vii_implementation_of_assay_testing",
+            "fda_ada.sem.facet.section_viii_documentation"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "fda_ada.sem.manifest.multi_tier_testing",
+      "target": {
+        "type": "facet",
+        "id": "fda_ada.sem.facet.multi_tier_testing"
+      },
+      "answer_intent": "process",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "screening",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada.sem.facet.multi_tier_testing.screening"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        },
+        {
+          "group_id": "confirmatory",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada.sem.facet.multi_tier_testing.confirmatory"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 2
+        },
+        {
+          "group_id": "downstream_characterization",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada.sem.facet.multi_tier_testing.downstream_characterization"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 3
         }
       ],
       "review_status": "reviewed"
@@ -274,9 +808,161 @@
         }
       ],
       "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "fda_ada.sem.manifest.section_iii_general_principles",
+      "target": {
+        "type": "section",
+        "id": "fda_ada.sec.3"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada.sem.facet.section_iii_a_assays_for_ada_detection",
+            "fda_ada.sem.facet.section_iii_b_limitations_in_comparing_ada_incidence_across_products"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "fda_ada.sem.manifest.section_iv_assay_design_elements",
+      "target": {
+        "type": "section",
+        "id": "fda_ada.sec.4"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada.sem.facet.section_iv_a_1_multi_tiered_testing_approach",
+            "fda_ada.sem.facet.section_iv_b_assay_cut_point",
+            "fda_ada.sem.facet.section_iv_c_2_drug_tolerance_sensitivity_and_assay_suitability",
+            "fda_ada.sem.facet.section_iv_a_2_immunoglobulin_isotypes_or_subtypes",
+            "fda_ada.sem.facet.section_iv_a_3_domain_specificity",
+            "fda_ada.sem.facet.section_iv_c_1_assay_sensitivity",
+            "fda_ada.sem.facet.section_iv_d_specificity",
+            "fda_ada.sem.facet.section_iv_e_1_matrix_interference",
+            "fda_ada.sem.facet.section_iv_e_2_minimal_required_dilution",
+            "fda_ada.sem.facet.section_iv_f_precision",
+            "fda_ada.sem.facet.section_iv_i_selection_of_format",
+            "fda_ada.sem.facet.section_iv_j_1_development_of_positive_control_antibodies",
+            "fda_ada.sem.facet.section_iv_g_reproducibility",
+            "fda_ada.sem.facet.section_iv_j_2_development_of_negative_controls",
+            "fda_ada.sem.facet.section_iv_j_3_controlling_non_specific_binding",
+            "fda_ada.sem.facet.section_iv_h_robustness_and_sample_stability",
+            "fda_ada.sem.facet.section_iv_k_reporting_results_for_qualitative_and_quasi_quantitative_assays",
+            "fda_ada.sem.facet.section_iv_l_1_pre_existing_antibodies",
+            "fda_ada.sem.facet.section_iv_l_2_rheumatoid_factor_and_other_endogenous_human_antibodies",
+            "fda_ada.sem.facet.section_iv_l_3_monoclonal_antibodies",
+            "fda_ada.sem.facet.section_iv_l_4_conjugated_proteins_and_multi_domain_molecules"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "fda_ada.sem.manifest.section_v_assay_development",
+      "target": {
+        "type": "section",
+        "id": "fda_ada.sec.5"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada.sem.facet.section_v_d_development_of_neutralization_assay",
+            "fda_ada.sem.facet.section_v_a_development_of_screening_assay",
+            "fda_ada.sem.facet.section_v_b_development_of_confirmatory_assay",
+            "fda_ada.sem.facet.section_v_c_development_of_titration_assay"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "fda_ada.sem.manifest.section_v_b_development_of_confirmatory_assay",
+      "target": {
+        "type": "section",
+        "id": "fda_ada.sec.5_b"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada.sem.facet.section_v_b_1_selection_of_format_for_confirmatory_assay",
+            "fda_ada.sem.facet.section_v_b_2_cut_point_of_confirmatory_assay"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "fda_ada.sem.manifest.section_vii_implementation_of_assay_testing",
+      "target": {
+        "type": "section",
+        "id": "fda_ada.sec.7"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada.sem.facet.section_vii_a_obtaining_subject_samples_and_timing_of_collection",
+            "fda_ada.sem.facet.section_vii_b_concurrent_positive_and_negative_quality_controls",
+            "fda_ada.sem.facet.section_vii_c_confirmation_of_cut_point_in_the_target_population"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
     }
   ],
-  "comparison_bindings": [],
+  "comparison_bindings": [
+    {
+      "binding_id": "fda_ada.sem.binding.scope_product_or_matrix",
+      "axis_id": "scope.product_or_matrix",
+      "facet_id": "fda_ada.sem.facet.scope",
+      "evidence_refs": [
+        {
+          "record_id": "fda_ada.kr.I.001",
+          "source_unit_id": "fda_ada.su.1.001",
+          "source_text_sha256": "a0368ab422011cd0377204babfcf167fe150ceb54e6325937d85fcf3f2de4f9d"
+        }
+      ],
+      "display_label_key": "fda_ada.scope.product_or_matrix",
+      "review_status": "reviewed"
+    }
+  ],
   "salience_profiles": [
     {
       "profile_id": "fda_ada.sem.profile.assay_validation",

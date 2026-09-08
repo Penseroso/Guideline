@@ -1,10 +1,10 @@
 {
-  "semantic_overlay_version": "0.1.0",
+  "semantic_overlay_version": "0.2.0",
   "document_id": "ich_m3_r2",
   "source_bundle_sha256": "5e348dd4538b5250a6cfc983535aae66220799b68d0e37ef1a124cf7a76f8be9",
   "derivation": {
     "method": "agent_assisted",
-    "pipeline_version": "stage-a-2026-09-03"
+    "pipeline_version": "stage-d-2026-09-08"
   },
   "summary_specs": [
     {
@@ -33,6 +33,77 @@
   ],
   "facets": [
     {
+      "facet_id": "ich_m3_r2.sem.facet.high_dose_selection",
+      "concept_id": "ich_m3_r2.concept.high_dose_selection",
+      "scope": "ich_m3_r2.sec.1_5",
+      "parent_facet_id": null,
+      "member_record_ids": [
+        "ich_m3_r2.kr.1_5.001",
+        "ich_m3_r2.kr.1_5.003",
+        "ich_m3_r2.qc.1_5.001",
+        "ich_m3_r2.kr.1_5.004",
+        "ich_m3_r2.qc.1_5.003",
+        "ich_m3_r2.kr.1_5.002",
+        "ich_m3_r2.cond.1_5.002",
+        "ich_m3_r2.cond.1_5.003"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.high_dose_selection.exceptions",
+      "concept_id": "ich_m3_r2.concept.high_dose_selection.exceptions",
+      "scope": "ich_m3_r2.sec.1_5",
+      "parent_facet_id": "ich_m3_r2.sem.facet.high_dose_selection",
+      "member_record_ids": [
+        "ich_m3_r2.kr.1_5.002",
+        "ich_m3_r2.cond.1_5.002",
+        "ich_m3_r2.cond.1_5.003"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "exception",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.high_dose_selection.exposure_margin",
+      "concept_id": "ich_m3_r2.concept.high_dose_selection.exposure_margin",
+      "scope": "ich_m3_r2.sec.1_5",
+      "parent_facet_id": "ich_m3_r2.sem.facet.high_dose_selection",
+      "member_record_ids": [
+        "ich_m3_r2.kr.1_5.004",
+        "ich_m3_r2.qc.1_5.003"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.high_dose_selection.limit_dose",
+      "concept_id": "ich_m3_r2.concept.high_dose_selection.limit_dose",
+      "scope": "ich_m3_r2.sec.1_5",
+      "parent_facet_id": "ich_m3_r2.sem.facet.high_dose_selection",
+      "member_record_ids": [
+        "ich_m3_r2.kr.1_5.003",
+        "ich_m3_r2.qc.1_5.001"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.high_dose_selection.selection_endpoints",
+      "concept_id": "ich_m3_r2.concept.high_dose_selection.selection_endpoints",
+      "scope": "ich_m3_r2.sec.1_5",
+      "parent_facet_id": "ich_m3_r2.sem.facet.high_dose_selection",
+      "member_record_ids": [
+        "ich_m3_r2.kr.1_5.001"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
       "facet_id": "ich_m3_r2.sem.facet.scope",
       "concept_id": "guideline_applicability_scope",
       "scope": "ich_m3_r2.sec.1_3",
@@ -42,11 +113,501 @@
         "ich_m3_r2.kr.1_3.006"
       ],
       "semantic_role": "scope",
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_1_1_objectives_of_the_guideline",
+      "concept_id": "ich_m3_r2.concept.objectives_of_the_guideline",
+      "scope": "ich_m3_r2.sec.1_1",
+      "parent_facet_id": "ich_m3_r2.sem.facet.section_1_introduction",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_1_2_background",
+      "concept_id": "ich_m3_r2.concept.background",
+      "scope": "ich_m3_r2.sec.1_2",
+      "parent_facet_id": "ich_m3_r2.sem.facet.section_1_introduction",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_1_4_general_principles",
+      "concept_id": "ich_m3_r2.concept.general_principles",
+      "scope": "ich_m3_r2.sec.1_4",
+      "parent_facet_id": "ich_m3_r2.sem.facet.section_1_introduction",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_1_5_high_dose_selection_for_general_toxicity_studies",
+      "concept_id": "ich_m3_r2.concept.high_dose_selection_for_general_toxicity_studies",
+      "scope": "ich_m3_r2.sec.1_5",
+      "parent_facet_id": "ich_m3_r2.sem.facet.section_1_introduction",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_1_introduction",
+      "concept_id": "ich_m3_r2.concept.introduction",
+      "scope": "ich_m3_r2.sec.1",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_10_carcinogenicity_studies",
+      "concept_id": "ich_m3_r2.concept.carcinogenicity_studies",
+      "scope": "ich_m3_r2.sec.10",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_11_1_men",
+      "concept_id": "ich_m3_r2.concept.men",
+      "scope": "ich_m3_r2.sec.11_1",
+      "parent_facet_id": "ich_m3_r2.sem.facet.section_11_reproduction_toxicity_studies",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_11_2_women_not_of_childbearing_potential",
+      "concept_id": "ich_m3_r2.concept.women_not_of_childbearing_potential",
+      "scope": "ich_m3_r2.sec.11_2",
+      "parent_facet_id": "ich_m3_r2.sem.facet.section_11_reproduction_toxicity_studies",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_11_3_women_of_childbearing_potential",
+      "concept_id": "ich_m3_r2.concept.women_of_childbearing_potential",
+      "scope": "ich_m3_r2.sec.11_3",
+      "parent_facet_id": "ich_m3_r2.sem.facet.section_11_reproduction_toxicity_studies",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_11_4_pregnant_women",
+      "concept_id": "ich_m3_r2.concept.pregnant_women",
+      "scope": "ich_m3_r2.sec.11_4",
+      "parent_facet_id": "ich_m3_r2.sem.facet.section_11_reproduction_toxicity_studies",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_11_reproduction_toxicity_studies",
+      "concept_id": "ich_m3_r2.concept.reproduction_toxicity_studies",
+      "scope": "ich_m3_r2.sec.11",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_12_clinical_trials_in_pediatric_populations",
+      "concept_id": "ich_m3_r2.concept.clinical_trials_in_pediatric_populations",
+      "scope": "ich_m3_r2.sec.12",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_13_immunotoxicity",
+      "concept_id": "ich_m3_r2.concept.immunotoxicity",
+      "scope": "ich_m3_r2.sec.13",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_14_photosafety_testing",
+      "concept_id": "ich_m3_r2.concept.photosafety_testing",
+      "scope": "ich_m3_r2.sec.14",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_15_nonclinical_abuse_liability",
+      "concept_id": "ich_m3_r2.concept.nonclinical_abuse_liability",
+      "scope": "ich_m3_r2.sec.15",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_16_other_toxicity_studies",
+      "concept_id": "ich_m3_r2.concept.other_toxicity_studies",
+      "scope": "ich_m3_r2.sec.16",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_17_combination_drug_toxicity_testing",
+      "concept_id": "ich_m3_r2.concept.combination_drug_toxicity_testing",
+      "scope": "ich_m3_r2.sec.17",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_2_pharmacology_studies",
+      "concept_id": "ich_m3_r2.concept.pharmacology_studies",
+      "scope": "ich_m3_r2.sec.2",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_3_toxicokinetic_and_pharmacokinetic_studies",
+      "concept_id": "ich_m3_r2.concept.toxicokinetic_and_pharmacokinetic_studies",
+      "scope": "ich_m3_r2.sec.3",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_4_acute_toxicity_studies",
+      "concept_id": "ich_m3_r2.concept.acute_toxicity_studies",
+      "scope": "ich_m3_r2.sec.4",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_5_1_clinical_development_trials",
+      "concept_id": "ich_m3_r2.concept.clinical_development_trials",
+      "scope": "ich_m3_r2.sec.5_1",
+      "parent_facet_id": "ich_m3_r2.sem.facet.section_5_repeated_dose_toxicity_studies",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_5_2_marketing_authorization",
+      "concept_id": "ich_m3_r2.concept.marketing_authorization",
+      "scope": "ich_m3_r2.sec.5_2",
+      "parent_facet_id": "ich_m3_r2.sem.facet.section_5_repeated_dose_toxicity_studies",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_5_repeated_dose_toxicity_studies",
+      "concept_id": "ich_m3_r2.concept.repeated_dose_toxicity_studies",
+      "scope": "ich_m3_r2.sec.5",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_6_estimation_of_the_first_dose_in_human",
+      "concept_id": "ich_m3_r2.concept.estimation_of_the_first_dose_in_human",
+      "scope": "ich_m3_r2.sec.6",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_7_1_microdose_trials",
+      "concept_id": "ich_m3_r2.concept.microdose_trials",
+      "scope": "ich_m3_r2.sec.7_1",
+      "parent_facet_id": "ich_m3_r2.sem.facet.section_7_exploratory_clinical_trials",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_7_2_single_dose_trials_at_sub_therapeutic_doses_or_into_the_anticipated_ther",
+      "concept_id": "ich_m3_r2.concept.single_dose_trials_at_sub_therapeutic_doses_or_into_the_anticipated_ther",
+      "scope": "ich_m3_r2.sec.7_2",
+      "parent_facet_id": "ich_m3_r2.sem.facet.section_7_exploratory_clinical_trials",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_7_3_multiple_dose_trials",
+      "concept_id": "ich_m3_r2.concept.multiple_dose_trials",
+      "scope": "ich_m3_r2.sec.7_3",
+      "parent_facet_id": "ich_m3_r2.sem.facet.section_7_exploratory_clinical_trials",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_7_exploratory_clinical_trials",
+      "concept_id": "ich_m3_r2.concept.exploratory_clinical_trials",
+      "scope": "ich_m3_r2.sec.7",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_8_local_tolerance_studies",
+      "concept_id": "ich_m3_r2.concept.local_tolerance_studies",
+      "scope": "ich_m3_r2.sec.8",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_m3_r2.sem.facet.section_9_genotoxicity_studies",
+      "concept_id": "ich_m3_r2.concept.genotoxicity_studies",
+      "scope": "ich_m3_r2.sec.9",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
       "review_status": "reviewed"
     }
   ],
   "relations": [],
-  "coverage_manifests": [],
+  "coverage_manifests": [
+    {
+      "manifest_id": "ich_m3_r2.sem.manifest.document_overview",
+      "target": {
+        "type": "document",
+        "id": "ich_m3_r2"
+      },
+      "answer_intent": "document_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "major_areas",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m3_r2.sem.facet.section_1_introduction",
+            "ich_m3_r2.sem.facet.section_2_pharmacology_studies",
+            "ich_m3_r2.sem.facet.section_3_toxicokinetic_and_pharmacokinetic_studies",
+            "ich_m3_r2.sem.facet.section_4_acute_toxicity_studies",
+            "ich_m3_r2.sem.facet.section_5_repeated_dose_toxicity_studies",
+            "ich_m3_r2.sem.facet.section_6_estimation_of_the_first_dose_in_human",
+            "ich_m3_r2.sem.facet.section_7_exploratory_clinical_trials",
+            "ich_m3_r2.sem.facet.section_8_local_tolerance_studies",
+            "ich_m3_r2.sem.facet.section_9_genotoxicity_studies",
+            "ich_m3_r2.sem.facet.section_10_carcinogenicity_studies",
+            "ich_m3_r2.sem.facet.section_11_reproduction_toxicity_studies",
+            "ich_m3_r2.sem.facet.section_12_clinical_trials_in_pediatric_populations",
+            "ich_m3_r2.sem.facet.section_13_immunotoxicity",
+            "ich_m3_r2.sem.facet.section_14_photosafety_testing",
+            "ich_m3_r2.sem.facet.section_15_nonclinical_abuse_liability",
+            "ich_m3_r2.sem.facet.section_16_other_toxicity_studies",
+            "ich_m3_r2.sem.facet.section_17_combination_drug_toxicity_testing"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m3_r2.sem.manifest.high_dose_selection",
+      "target": {
+        "type": "facet",
+        "id": "ich_m3_r2.sem.facet.high_dose_selection"
+      },
+      "answer_intent": "multi_criterion",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "selection_endpoints",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m3_r2.sem.facet.high_dose_selection.selection_endpoints"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        },
+        {
+          "group_id": "limit_dose",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m3_r2.sem.facet.high_dose_selection.limit_dose"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 2
+        },
+        {
+          "group_id": "exposure_margin",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m3_r2.sem.facet.high_dose_selection.exposure_margin"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 3
+        },
+        {
+          "group_id": "exceptions",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m3_r2.sem.facet.high_dose_selection.exceptions"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 4
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m3_r2.sem.manifest.section_1_introduction",
+      "target": {
+        "type": "section",
+        "id": "ich_m3_r2.sec.1"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m3_r2.sem.facet.section_1_1_objectives_of_the_guideline",
+            "ich_m3_r2.sem.facet.section_1_2_background",
+            "ich_m3_r2.sem.facet.scope",
+            "ich_m3_r2.sem.facet.section_1_4_general_principles",
+            "ich_m3_r2.sem.facet.section_1_5_high_dose_selection_for_general_toxicity_studies"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m3_r2.sem.manifest.section_11_reproduction_toxicity_studies",
+      "target": {
+        "type": "section",
+        "id": "ich_m3_r2.sec.11"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m3_r2.sem.facet.section_11_1_men",
+            "ich_m3_r2.sem.facet.section_11_2_women_not_of_childbearing_potential",
+            "ich_m3_r2.sem.facet.section_11_3_women_of_childbearing_potential",
+            "ich_m3_r2.sem.facet.section_11_4_pregnant_women"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m3_r2.sem.manifest.section_5_repeated_dose_toxicity_studies",
+      "target": {
+        "type": "section",
+        "id": "ich_m3_r2.sec.5"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m3_r2.sem.facet.section_5_1_clinical_development_trials",
+            "ich_m3_r2.sem.facet.section_5_2_marketing_authorization"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_m3_r2.sem.manifest.section_7_exploratory_clinical_trials",
+      "target": {
+        "type": "section",
+        "id": "ich_m3_r2.sec.7"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_m3_r2.sem.facet.section_7_1_microdose_trials",
+            "ich_m3_r2.sem.facet.section_7_2_single_dose_trials_at_sub_therapeutic_doses_or_into_the_anticipated_ther",
+            "ich_m3_r2.sem.facet.section_7_3_multiple_dose_trials"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    }
+  ],
   "comparison_bindings": [
     {
       "binding_id": "ich_m3_r2.sem.binding.scope_product_or_matrix",
@@ -64,7 +625,7 @@
           "source_text_sha256": "537b4a230e34a44c930cd2e01275f82884f56b824a8434710b84a229d1ad210f"
         }
       ],
-      "display_label_key": "semantic.comparison.ich_m3_r2.scope_product_or_matrix",
+      "display_label_key": "ich_m3_r2.scope.product_or_matrix",
       "review_status": "reviewed"
     }
   ],

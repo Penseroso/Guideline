@@ -391,13 +391,15 @@
    * read "partial" while one has near-zero actual coverage and the other
    * doesn't (e.g. exact 1/3 vs 0/2, section 1/5 vs 1/17), a real asymmetry
    * the status word alone can't show. Surfaces whichever ratio is
-   * meaningful (curated `exact` members first, falling back to the
-   * broader `section` census when a facet has no curated members at all)
+   * meaningful (the facet's explicit Stage D `effective` denominator,
+   * with the pre-Stage-D exact/section shape retained as a compatibility
+   * fallback)
    * so a reader can judge severity themselves instead of trusting one
    * shared label. Returns "" when neither denominator is populated.
    */
   function coverageFractionLabel(i18n, coverage) {
-    const source = coverage && coverage.exact && coverage.exact.total > 0 ? coverage.exact
+    const source = coverage && coverage.effective && coverage.effective.total > 0 ? coverage.effective
+      : coverage && coverage.exact && coverage.exact.total > 0 ? coverage.exact
       : coverage && coverage.section && coverage.section.total > 0 ? coverage.section
         : null;
     if (!source) return "";

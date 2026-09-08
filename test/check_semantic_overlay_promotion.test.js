@@ -51,7 +51,16 @@ test("recommendation reports insufficient_evidence when never exercised, distinc
   assert.match(result, /^insufficient_evidence/);
 });
 
-test("recommendation reports ready_for_human_review only once mechanical checks pass and it's been exercised", () => {
+test("recommendation reports ready_for_review only once mechanical checks pass and it has been exercised", () => {
   const result = recommendation({ validatorOk: true, stale: false, exercised: 3 });
-  assert.match(result, /^ready_for_human_review/);
+  assert.match(result, /^ready_for_review/);
+});
+
+test("manifestExerciseStats accepts the Stage D post-authoring audit shape", () => {
+  const stats = manifestExerciseStats("a", [
+    { manifest_id: "a", shadow_exercised: true, selected_as_best_match: true },
+    { manifest_id: "b", shadow_exercised: true, selected_as_best_match: true }
+  ]);
+  assert.equal(stats.exercised, 1);
+  assert.deepEqual(stats.statusCounts, { stage_d_selected: 1 });
 });

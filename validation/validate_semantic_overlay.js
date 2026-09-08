@@ -284,6 +284,7 @@ function validateOverlayFile(file, overlay, ajvValidate, archive, concepts, cont
   }
 
   const facetIds = new Set(overlay.facets.map((facet) => facet.facet_id));
+  const facetsById = new Map(overlay.facets.map((facet) => [facet.facet_id, facet]));
 
   const idNamespaces = [
     ["summary_specs", "summary_id"],
@@ -318,6 +319,20 @@ function validateOverlayFile(file, overlay, ajvValidate, archive, concepts, cont
     }
   }
   checkFacetParentCycles(file, overlay.facets, errors);
+
+  const checkedMeasurableFacets = new Set();
+  function checkMeasurableFacet(ownerId, facetId) {
+    if (checkedMeasurableFacets.has(facetId)) return;
+    checkedMeasurableFacets.add(facetId);
+    const facet = facetsById.get(facetId);
+    if (!facet) return;
+    if (facet.coverage_basis === "declared_members" && facet.member_record_ids.length === 0) {
+      addError(errors, file, ownerId, "coverage_basis", `${facetId} uses declared_members but has no member_record_ids`);
+    }
+    if (facet.coverage_basis === "section_census" && !archive.sectionsById.has(facet.scope)) {
+      addError(errors, file, ownerId, "coverage_basis", `${facetId} uses section_census but its scope is not a section`);
+    }
+  }
 
   for (const summary of overlay.summary_specs) {
     checkTarget({ file, ownerId: summary.summary_id, field: "target", target: summary.target, errors, archive, facetIds, expectedDocumentId: documentId });
@@ -354,6 +369,11 @@ function validateOverlayFile(file, overlay, ajvValidate, archive, concepts, cont
         if (seenInGroup.has(facetId)) {
           addError(errors, file, manifest.manifest_id, "coverage_groups.facet_ids", `duplicate facet_id inside group ${group.group_id}: ${facetId}`);
         }
+        checkMeasurableFacet(manifest.manifest_id, facetId);
+        const facet = facetsById.get(facetId);
+        if (manifest.review_status === "reviewed" && facet && facet.review_status !== "reviewed") {
+          addError(errors, file, manifest.manifest_id, "review_status", `reviewed manifest references non-reviewed facet ${facetId}`);
+        }
         seenInGroup.add(facetId);
       }
       checkWhenCondition({ file, ownerId: manifest.manifest_id, field: "coverage_groups.when", when: group.when, errors, contextSlots });
@@ -367,6 +387,11 @@ function validateOverlayFile(file, overlay, ajvValidate, archive, concepts, cont
     }
     if (!facetIds.has(binding.facet_id)) {
       addError(errors, file, binding.binding_id, "facet_id", `does not resolve inside this overlay: ${binding.facet_id}`);
+    }
+    checkMeasurableFacet(binding.binding_id, binding.facet_id);
+    const boundFacet = facetsById.get(binding.facet_id);
+    if (binding.review_status === "reviewed" && boundFacet && boundFacet.review_status !== "reviewed") {
+      addError(errors, file, binding.binding_id, "review_status", `reviewed binding references non-reviewed facet ${binding.facet_id}`);
     }
     for (const ref of binding.evidence_refs) {
       checkEvidenceRef({ file, ownerId: binding.binding_id, field: "evidence_refs", ref, errors, archive, expectedDocumentId: documentId });

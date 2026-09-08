@@ -1,10 +1,10 @@
 {
-  "semantic_overlay_version": "0.1.0",
+  "semantic_overlay_version": "0.2.0",
   "document_id": "fda_ada_2014",
   "source_bundle_sha256": "f803425fd1cc86896fef536ba7c3c3d079f93c4c9761a48f0f6f4b1c3a5b9cea",
   "derivation": {
     "method": "agent_assisted",
-    "pipeline_version": "stage-a-expansion-2026-09-03"
+    "pipeline_version": "stage-d-2026-09-08"
   },
   "summary_specs": [
     {
@@ -39,13 +39,89 @@
   ],
   "facets": [
     {
+      "facet_id": "fda_ada_2014.sem.facet.clinical_risk_mitigation",
+      "concept_id": "fda_ada_2014.concept.clinical_risk_mitigation",
+      "scope": "fda_ada_2014.sec.4",
+      "parent_facet_id": null,
+      "member_record_ids": [
+        "fda_ada_2014.kr.4.001",
+        "fda_ada_2014.kr.4.002",
+        "fda_ada_2014.kr.4.003",
+        "fda_ada_2014.kr.4.006",
+        "fda_ada_2014.kr.4.007",
+        "fda_ada_2014.cond.4.002",
+        "fda_ada_2014.cond.4.005",
+        "fda_ada_2014.cond.4.006",
+        "fda_ada_2014.kr.4.004",
+        "fda_ada_2014.kr.4.005"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.clinical_risk_mitigation.baseline",
+      "concept_id": "fda_ada_2014.concept.clinical_risk_mitigation.baseline",
+      "scope": "fda_ada_2014.sec.4",
+      "parent_facet_id": "fda_ada_2014.sem.facet.clinical_risk_mitigation",
+      "member_record_ids": [
+        "fda_ada_2014.kr.4.001"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.clinical_risk_mitigation.event_triggered_sampling",
+      "concept_id": "fda_ada_2014.concept.clinical_risk_mitigation.event_triggered_sampling",
+      "scope": "fda_ada_2014.sec.4",
+      "parent_facet_id": "fda_ada_2014.sem.facet.clinical_risk_mitigation",
+      "member_record_ids": [
+        "fda_ada_2014.cond.4.002",
+        "fda_ada_2014.cond.4.005",
+        "fda_ada_2014.cond.4.006"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "condition",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.clinical_risk_mitigation.premedication_boundary",
+      "concept_id": "fda_ada_2014.concept.clinical_risk_mitigation.premedication_boundary",
+      "scope": "fda_ada_2014.sec.4",
+      "parent_facet_id": "fda_ada_2014.sem.facet.clinical_risk_mitigation",
+      "member_record_ids": [
+        "fda_ada_2014.kr.4.004",
+        "fda_ada_2014.kr.4.005"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "boundary",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.clinical_risk_mitigation.risk_stratified_sampling",
+      "concept_id": "fda_ada_2014.concept.clinical_risk_mitigation.risk_stratified_sampling",
+      "scope": "fda_ada_2014.sec.4",
+      "parent_facet_id": "fda_ada_2014.sem.facet.clinical_risk_mitigation",
+      "member_record_ids": [
+        "fda_ada_2014.kr.4.002",
+        "fda_ada_2014.kr.4.003",
+        "fda_ada_2014.kr.4.006",
+        "fda_ada_2014.kr.4.007"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "condition",
+      "review_status": "reviewed"
+    },
+    {
       "facet_id": "fda_ada_2014.sem.facet.risk_factors",
       "concept_id": "fda_ada_2014.local.immunogenicity_risk_factor",
       "scope": "fda_ada_2014.sec.5",
       "parent_facet_id": null,
       "member_record_ids": [],
       "semantic_role": "scope",
-      "review_status": "reviewed"
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
     },
     {
       "facet_id": "fda_ada_2014.sem.facet.risk_factors.patient",
@@ -54,7 +130,8 @@
       "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors",
       "member_record_ids": [],
       "semantic_role": "risk_factor",
-      "review_status": "reviewed"
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
     },
     {
       "facet_id": "fda_ada_2014.sem.facet.risk_factors.product",
@@ -63,22 +140,371 @@
       "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors",
       "member_record_ids": [],
       "semantic_role": "risk_factor",
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.scope",
+      "concept_id": "guideline_applicability_scope",
+      "scope": "fda_ada_2014.sec.1",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "scope",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_appendix_a_1_diagnosis_of_anaphylaxis",
+      "concept_id": "fda_ada_2014.concept.diagnosis_of_anaphylaxis",
+      "scope": "fda_ada_2014.sec.app_a_1",
+      "parent_facet_id": "fda_ada_2014.sem.facet.section_appendix_a_supplemental_technical_details",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_appendix_a_2_cytokine_release_syndrome",
+      "concept_id": "fda_ada_2014.concept.cytokine_release_syndrome",
+      "scope": "fda_ada_2014.sec.app_a_2",
+      "parent_facet_id": "fda_ada_2014.sem.facet.section_appendix_a_supplemental_technical_details",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_appendix_a_3_non_acute_immune_responses",
+      "concept_id": "fda_ada_2014.concept.non_acute_immune_responses",
+      "scope": "fda_ada_2014.sec.app_a_3",
+      "parent_facet_id": "fda_ada_2014.sem.facet.section_appendix_a_supplemental_technical_details",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_appendix_a_4_antibody_responses_to_therapeutic_protein_products",
+      "concept_id": "fda_ada_2014.concept.antibody_responses_to_therapeutic_protein_products",
+      "scope": "fda_ada_2014.sec.app_a_4",
+      "parent_facet_id": "fda_ada_2014.sem.facet.section_appendix_a_supplemental_technical_details",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_appendix_a_5_utility_of_animal_studies",
+      "concept_id": "fda_ada_2014.concept.utility_of_animal_studies",
+      "scope": "fda_ada_2014.sec.app_a_5",
+      "parent_facet_id": "fda_ada_2014.sem.facet.section_appendix_a_supplemental_technical_details",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_appendix_a_6_comparative_immunogenicity_studies",
+      "concept_id": "fda_ada_2014.concept.comparative_immunogenicity_studies",
+      "scope": "fda_ada_2014.sec.app_a_6",
+      "parent_facet_id": "fda_ada_2014.sem.facet.section_appendix_a_supplemental_technical_details",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_appendix_a_supplemental_technical_details",
+      "concept_id": "fda_ada_2014.concept.supplemental_technical_details",
+      "scope": "fda_ada_2014.sec.app_a",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_i_introduction",
+      "concept_id": "fda_ada_2014.concept.introduction",
+      "scope": "fda_ada_2014.sec.1",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_iii_a_consequences_for_efficacy",
+      "concept_id": "fda_ada_2014.concept.consequences_for_efficacy",
+      "scope": "fda_ada_2014.sec.3_a",
+      "parent_facet_id": "fda_ada_2014.sem.facet.section_iii_clinical_consequences",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_iii_b_consequences_for_safety",
+      "concept_id": "fda_ada_2014.concept.consequences_for_safety",
+      "scope": "fda_ada_2014.sec.3_b",
+      "parent_facet_id": "fda_ada_2014.sem.facet.section_iii_clinical_consequences",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_iii_clinical_consequences",
+      "concept_id": "fda_ada_2014.concept.clinical_consequences",
+      "scope": "fda_ada_2014.sec.3",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_iv_recommendations_for_immunogenicity_risk_mitigation_in_the_clinical_phase",
+      "concept_id": "fda_ada_2014.concept.recommendations_for_immunogenicity_risk_mitigation_in_the_clinical_phase",
+      "scope": "fda_ada_2014.sec.4",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_v_a_1_immunologic_status_and_competence_of_the_patient",
+      "concept_id": "fda_ada_2014.concept.immunologic_status_and_competence_of_the_patient",
+      "scope": "fda_ada_2014.sec.5_a_1",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors.patient",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_v_a_2_prior_sensitization_history_of_allergy",
+      "concept_id": "fda_ada_2014.concept.prior_sensitization_history_of_allergy",
+      "scope": "fda_ada_2014.sec.5_a_2",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors.patient",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_v_a_3_route_of_administration_dose_and_frequency_of_administration",
+      "concept_id": "fda_ada_2014.concept.route_of_administration_dose_and_frequency_of_administration",
+      "scope": "fda_ada_2014.sec.5_a_3",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors.patient",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_v_a_4_genetic_status",
+      "concept_id": "fda_ada_2014.concept.genetic_status",
+      "scope": "fda_ada_2014.sec.5_a_4",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors.patient",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_v_a_5_status_of_immune_tolerance_to_endogenous_protein",
+      "concept_id": "fda_ada_2014.concept.status_of_immune_tolerance_to_endogenous_protein",
+      "scope": "fda_ada_2014.sec.5_a_5",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors.patient",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_v_b_1_product_origin_foreign_or_human",
+      "concept_id": "fda_ada_2014.concept.product_origin_foreign_or_human",
+      "scope": "fda_ada_2014.sec.5_b_1",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors.product",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_v_b_2_primary_molecular_structure_posttranslational_modifications",
+      "concept_id": "fda_ada_2014.concept.primary_molecular_structure_posttranslational_modifications",
+      "scope": "fda_ada_2014.sec.5_b_2",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors.product",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_v_b_3_quaternary_structure_product_aggregates_and_measurement_of_aggregates",
+      "concept_id": "fda_ada_2014.concept.quaternary_structure_product_aggregates_and_measurement_of_aggregates",
+      "scope": "fda_ada_2014.sec.5_b_3",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors.product",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_v_b_4_glycosylation_pegylation",
+      "concept_id": "fda_ada_2014.concept.glycosylation_pegylation",
+      "scope": "fda_ada_2014.sec.5_b_4",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors.product",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_v_b_5_impurities_with_adjuvant_activity",
+      "concept_id": "fda_ada_2014.concept.impurities_with_adjuvant_activity",
+      "scope": "fda_ada_2014.sec.5_b_5",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors.product",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_v_b_6_immunomodulatory_properties_of_the_therapeutic_protein_product",
+      "concept_id": "fda_ada_2014.concept.immunomodulatory_properties_of_the_therapeutic_protein_product",
+      "scope": "fda_ada_2014.sec.5_b_6",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors.product",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_v_b_7_formulation",
+      "concept_id": "fda_ada_2014.concept.formulation",
+      "scope": "fda_ada_2014.sec.5_b_7",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors.product",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_v_b_8_container_closure_considerations",
+      "concept_id": "fda_ada_2014.concept.container_closure_considerations",
+      "scope": "fda_ada_2014.sec.5_b_8",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors.product",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "fda_ada_2014.sem.facet.section_v_b_9_product_custody",
+      "concept_id": "fda_ada_2014.concept.product_custody",
+      "scope": "fda_ada_2014.sec.5_b_9",
+      "parent_facet_id": "fda_ada_2014.sem.facet.risk_factors.product",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
       "review_status": "reviewed"
     }
   ],
   "relations": [],
   "coverage_manifests": [
     {
-      "manifest_id": "fda_ada_2014.sem.manifest.risk_factors",
+      "manifest_id": "fda_ada_2014.sem.manifest.clinical_risk_mitigation",
       "target": {
         "type": "facet",
-        "id": "fda_ada_2014.sem.facet.risk_factors"
+        "id": "fda_ada_2014.sem.facet.clinical_risk_mitigation"
+      },
+      "answer_intent": "process",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "baseline",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada_2014.sem.facet.clinical_risk_mitigation.baseline"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        },
+        {
+          "group_id": "risk_stratified_sampling",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada_2014.sem.facet.clinical_risk_mitigation.risk_stratified_sampling"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 2
+        },
+        {
+          "group_id": "event_triggered_sampling",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada_2014.sem.facet.clinical_risk_mitigation.event_triggered_sampling"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 3
+        },
+        {
+          "group_id": "premedication_boundary",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada_2014.sem.facet.clinical_risk_mitigation.premedication_boundary"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 4
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "fda_ada_2014.sem.manifest.document_overview",
+      "target": {
+        "type": "document",
+        "id": "fda_ada_2014"
+      },
+      "answer_intent": "document_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "major_areas",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada_2014.sem.facet.section_i_introduction",
+            "fda_ada_2014.sem.facet.section_iii_clinical_consequences",
+            "fda_ada_2014.sem.facet.section_iv_recommendations_for_immunogenicity_risk_mitigation_in_the_clinical_phase",
+            "fda_ada_2014.sem.facet.risk_factors",
+            "fda_ada_2014.sem.facet.section_appendix_a_supplemental_technical_details"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "fda_ada_2014.sem.manifest.risk_factors",
+      "target": {
+        "type": "section",
+        "id": "fda_ada_2014.sec.5"
       },
       "answer_intent": "topic_overview",
       "scope_selectors": [],
       "coverage_groups": [
         {
-          "group_id": "patient_and_product_categories",
+          "group_id": "direct_child_sections",
           "selection": "all",
           "facet_ids": [
             "fda_ada_2014.sem.facet.risk_factors.patient",
@@ -90,9 +516,130 @@
         }
       ],
       "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "fda_ada_2014.sem.manifest.section_appendix_a_supplemental_technical_details",
+      "target": {
+        "type": "section",
+        "id": "fda_ada_2014.sec.app_a"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada_2014.sem.facet.section_appendix_a_1_diagnosis_of_anaphylaxis",
+            "fda_ada_2014.sem.facet.section_appendix_a_2_cytokine_release_syndrome",
+            "fda_ada_2014.sem.facet.section_appendix_a_3_non_acute_immune_responses",
+            "fda_ada_2014.sem.facet.section_appendix_a_4_antibody_responses_to_therapeutic_protein_products",
+            "fda_ada_2014.sem.facet.section_appendix_a_5_utility_of_animal_studies",
+            "fda_ada_2014.sem.facet.section_appendix_a_6_comparative_immunogenicity_studies"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "fda_ada_2014.sem.manifest.section_iii_clinical_consequences",
+      "target": {
+        "type": "section",
+        "id": "fda_ada_2014.sec.3"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada_2014.sem.facet.section_iii_a_consequences_for_efficacy",
+            "fda_ada_2014.sem.facet.section_iii_b_consequences_for_safety"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "fda_ada_2014.sem.manifest.section_v_a_patient_specific_factors_that_affect_immunogenicity",
+      "target": {
+        "type": "section",
+        "id": "fda_ada_2014.sec.5_a"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada_2014.sem.facet.section_v_a_1_immunologic_status_and_competence_of_the_patient",
+            "fda_ada_2014.sem.facet.section_v_a_2_prior_sensitization_history_of_allergy",
+            "fda_ada_2014.sem.facet.section_v_a_3_route_of_administration_dose_and_frequency_of_administration",
+            "fda_ada_2014.sem.facet.section_v_a_4_genetic_status",
+            "fda_ada_2014.sem.facet.section_v_a_5_status_of_immune_tolerance_to_endogenous_protein"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "fda_ada_2014.sem.manifest.section_v_b_product_specific_factors_that_affect_immunogenicity",
+      "target": {
+        "type": "section",
+        "id": "fda_ada_2014.sec.5_b"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "fda_ada_2014.sem.facet.section_v_b_1_product_origin_foreign_or_human",
+            "fda_ada_2014.sem.facet.section_v_b_2_primary_molecular_structure_posttranslational_modifications",
+            "fda_ada_2014.sem.facet.section_v_b_3_quaternary_structure_product_aggregates_and_measurement_of_aggregates",
+            "fda_ada_2014.sem.facet.section_v_b_4_glycosylation_pegylation",
+            "fda_ada_2014.sem.facet.section_v_b_5_impurities_with_adjuvant_activity",
+            "fda_ada_2014.sem.facet.section_v_b_6_immunomodulatory_properties_of_the_therapeutic_protein_product",
+            "fda_ada_2014.sem.facet.section_v_b_7_formulation",
+            "fda_ada_2014.sem.facet.section_v_b_8_container_closure_considerations",
+            "fda_ada_2014.sem.facet.section_v_b_9_product_custody"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
     }
   ],
-  "comparison_bindings": [],
+  "comparison_bindings": [
+    {
+      "binding_id": "fda_ada_2014.sem.binding.scope_product_or_matrix",
+      "axis_id": "scope.product_or_matrix",
+      "facet_id": "fda_ada_2014.sem.facet.scope",
+      "evidence_refs": [
+        {
+          "record_id": "fda_ada_2014.kr.1.001",
+          "source_unit_id": "fda_ada_2014.su.1.001",
+          "source_text_sha256": "c76318c768857de06d7764a71c8ccf6ce3a9dd56f7448384c1f63c4cb384e5fd"
+        }
+      ],
+      "display_label_key": "fda_ada_2014.scope.product_or_matrix",
+      "review_status": "reviewed"
+    }
+  ],
   "salience_profiles": [
     {
       "profile_id": "fda_ada_2014.sem.profile.risk_factors",

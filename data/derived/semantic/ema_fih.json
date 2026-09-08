@@ -1,10 +1,10 @@
 {
-  "semantic_overlay_version": "0.1.0",
+  "semantic_overlay_version": "0.2.0",
   "document_id": "ema_fih",
   "source_bundle_sha256": "73847518ff14a2003ed78d37e77fce80bd4d3c809884d75e5777dbdab30c74a2",
   "derivation": {
     "method": "agent_assisted",
-    "pipeline_version": "stage-a-2026-09-03"
+    "pipeline_version": "stage-d-2026-09-08"
   },
   "summary_specs": [
     {
@@ -43,27 +43,16 @@
   ],
   "facets": [
     {
-      "facet_id": "ema_fih.sem.facet.scope",
-      "concept_id": "guideline_applicability_scope",
-      "scope": "ema_fih.sec.2",
+      "facet_id": "ema_fih.sem.facet.dose_selection",
+      "concept_id": "ema_fih.local.dose_selection_aspect",
+      "scope": "ema_fih.sec.7",
       "parent_facet_id": null,
       "member_record_ids": [
-        "ema_fih.kr.2.002",
-        "ema_fih.kr.2.003"
-      ],
-      "semantic_role": "scope",
-      "review_status": "reviewed"
-    },
-    {
-      "facet_id": "ema_fih.sem.facet.quality",
-      "concept_id": "ema_fih.local.quality_aspect",
-      "scope": "ema_fih.sec.5",
-      "parent_facet_id": null,
-      "member_record_ids": [
-        "ema_fih.kr.5.001"
+        "ema_fih.kr.7_1.001"
       ],
       "semantic_role": "purpose",
-      "review_status": "reviewed"
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
     },
     {
       "facet_id": "ema_fih.sem.facet.non_clinical",
@@ -74,16 +63,331 @@
         "ema_fih.kr.6.001"
       ],
       "semantic_role": "purpose",
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.quality",
+      "concept_id": "ema_fih.local.quality_aspect",
+      "scope": "ema_fih.sec.5",
+      "parent_facet_id": null,
+      "member_record_ids": [
+        "ema_fih.kr.5.001"
+      ],
+      "semantic_role": "purpose",
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.scope",
+      "concept_id": "guideline_applicability_scope",
+      "scope": "ema_fih.sec.2",
+      "parent_facet_id": null,
+      "member_record_ids": [
+        "ema_fih.kr.2.002",
+        "ema_fih.kr.2.003"
+      ],
+      "semantic_role": "scope",
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_5_1_determination_of_strength_and_potency",
+      "concept_id": "ema_fih.concept.determination_of_strength_and_potency",
+      "scope": "ema_fih.sec.5_1",
+      "parent_facet_id": "ema_fih.sem.facet.quality",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
       "review_status": "reviewed"
     },
     {
-      "facet_id": "ema_fih.sem.facet.dose_selection",
-      "concept_id": "ema_fih.local.dose_selection_aspect",
-      "scope": "ema_fih.sec.7",
-      "parent_facet_id": null,
-      "member_record_ids": [
-        "ema_fih.kr.7_1.001"
-      ],
+      "facet_id": "ema_fih.sem.facet.section_5_2_qualification_of_the_material_used",
+      "concept_id": "ema_fih.concept.qualification_of_the_material_used",
+      "scope": "ema_fih.sec.5_2",
+      "parent_facet_id": "ema_fih.sem.facet.quality",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_5_3_reliability_of_very_small_doses",
+      "concept_id": "ema_fih.concept.reliability_of_very_small_doses",
+      "scope": "ema_fih.sec.5_3",
+      "parent_facet_id": "ema_fih.sem.facet.quality",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_6_1_relevance_of_the_animal_model",
+      "concept_id": "ema_fih.concept.relevance_of_the_animal_model",
+      "scope": "ema_fih.sec.6_1",
+      "parent_facet_id": "ema_fih.sem.facet.non_clinical",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_6_2_nature_of_the_target",
+      "concept_id": "ema_fih.concept.nature_of_the_target",
+      "scope": "ema_fih.sec.6_2",
+      "parent_facet_id": "ema_fih.sem.facet.non_clinical",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_6_3_pharmacodynamics",
+      "concept_id": "ema_fih.concept.pharmacodynamics",
+      "scope": "ema_fih.sec.6_3",
+      "parent_facet_id": "ema_fih.sem.facet.non_clinical",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_6_4_pharmaco_and_toxicokinetics",
+      "concept_id": "ema_fih.concept.pharmaco_and_toxicokinetics",
+      "scope": "ema_fih.sec.6_4",
+      "parent_facet_id": "ema_fih.sem.facet.non_clinical",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_6_5_safety_pharmacology",
+      "concept_id": "ema_fih.concept.safety_pharmacology",
+      "scope": "ema_fih.sec.6_5",
+      "parent_facet_id": "ema_fih.sem.facet.non_clinical",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_6_6_toxicology",
+      "concept_id": "ema_fih.concept.toxicology",
+      "scope": "ema_fih.sec.6_6",
+      "parent_facet_id": "ema_fih.sem.facet.non_clinical",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_7_1_general_aspects",
+      "concept_id": "ema_fih.concept.general_aspects",
+      "scope": "ema_fih.sec.7_1",
+      "parent_facet_id": "ema_fih.sem.facet.dose_selection",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_7_2_starting_dose_for_healthy_volunteers",
+      "concept_id": "ema_fih.concept.starting_dose_for_healthy_volunteers",
+      "scope": "ema_fih.sec.7_2",
+      "parent_facet_id": "ema_fih.sem.facet.dose_selection",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_7_3_starting_dose_for_patients",
+      "concept_id": "ema_fih.concept.starting_dose_for_patients",
+      "scope": "ema_fih.sec.7_3",
+      "parent_facet_id": "ema_fih.sem.facet.dose_selection",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_7_4_dose_escalation",
+      "concept_id": "ema_fih.concept.dose_escalation",
+      "scope": "ema_fih.sec.7_4",
+      "parent_facet_id": "ema_fih.sem.facet.dose_selection",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_7_5_maximum_exposure_and_dose",
+      "concept_id": "ema_fih.concept.maximum_exposure_and_dose",
+      "scope": "ema_fih.sec.7_5",
+      "parent_facet_id": "ema_fih.sem.facet.dose_selection",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_7_6_moving_from_single_to_multiple_dosing",
+      "concept_id": "ema_fih.concept.moving_from_single_to_multiple_dosing",
+      "scope": "ema_fih.sec.7_6",
+      "parent_facet_id": "ema_fih.sem.facet.dose_selection",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_7_7_route_of_administration",
+      "concept_id": "ema_fih.concept.route_of_administration",
+      "scope": "ema_fih.sec.7_7",
+      "parent_facet_id": "ema_fih.sem.facet.dose_selection",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_8_1_general_aspects",
+      "concept_id": "ema_fih.concept.general_aspects",
+      "scope": "ema_fih.sec.8_1",
+      "parent_facet_id": "ema_fih.sem.facet.trial_planning",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_8_2_1_overall_design",
+      "concept_id": "ema_fih.concept.overall_design",
+      "scope": "ema_fih.sec.8_2_1",
+      "parent_facet_id": "ema_fih.sem.facet.section_8_2_protocol",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_8_2_10_monitoring_and_communication_of_adverse_events_reactions",
+      "concept_id": "ema_fih.concept.monitoring_and_communication_of_adverse_events_reactions",
+      "scope": "ema_fih.sec.8_2_10",
+      "parent_facet_id": "ema_fih.sem.facet.section_8_2_protocol",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_8_2_2_integrated_protocols",
+      "concept_id": "ema_fih.concept.integrated_protocols",
+      "scope": "ema_fih.sec.8_2_2",
+      "parent_facet_id": "ema_fih.sem.facet.section_8_2_protocol",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_8_2_3_choice_of_subjects",
+      "concept_id": "ema_fih.concept.choice_of_subjects",
+      "scope": "ema_fih.sec.8_2_3",
+      "parent_facet_id": "ema_fih.sem.facet.section_8_2_protocol",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_8_2_4_subject_assessments_and_interventions",
+      "concept_id": "ema_fih.concept.subject_assessments_and_interventions",
+      "scope": "ema_fih.sec.8_2_4",
+      "parent_facet_id": "ema_fih.sem.facet.section_8_2_protocol",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_8_2_5_general_considerations_for_all_cohorts",
+      "concept_id": "ema_fih.concept.general_considerations_for_all_cohorts",
+      "scope": "ema_fih.sec.8_2_5",
+      "parent_facet_id": "ema_fih.sem.facet.section_8_2_protocol",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_8_2_6_precautions_to_apply_between_treating_subjects_within_a_cohort",
+      "concept_id": "ema_fih.concept.precautions_to_apply_between_treating_subjects_within_a_cohort",
+      "scope": "ema_fih.sec.8_2_6",
+      "parent_facet_id": "ema_fih.sem.facet.section_8_2_protocol",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_8_2_7_precautions_to_apply_between_cohorts_and_study_parts",
+      "concept_id": "ema_fih.concept.precautions_to_apply_between_cohorts_and_study_parts",
+      "scope": "ema_fih.sec.8_2_7",
+      "parent_facet_id": "ema_fih.sem.facet.section_8_2_protocol",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_8_2_8_data_review_for_decision",
+      "concept_id": "ema_fih.concept.data_review_for_decision",
+      "scope": "ema_fih.sec.8_2_8",
+      "parent_facet_id": "ema_fih.sem.facet.section_8_2_protocol",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_8_2_9_stopping_rules",
+      "concept_id": "ema_fih.concept.stopping_rules",
+      "scope": "ema_fih.sec.8_2_9",
+      "parent_facet_id": "ema_fih.sem.facet.section_8_2_protocol",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_8_2_protocol",
+      "concept_id": "ema_fih.concept.protocol",
+      "scope": "ema_fih.sec.8_2",
+      "parent_facet_id": "ema_fih.sem.facet.trial_planning",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_8_3_documentation_of_sponsor_and_investigators_responsibilities",
+      "concept_id": "ema_fih.concept.documentation_of_sponsor_and_investigators_responsibilities",
+      "scope": "ema_fih.sec.8_3",
+      "parent_facet_id": "ema_fih.sem.facet.trial_planning",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ema_fih.sem.facet.section_8_4_investigator_site_facilities_and_personnel",
+      "concept_id": "ema_fih.concept.investigator_site_facilities_and_personnel",
+      "scope": "ema_fih.sec.8_4",
+      "parent_facet_id": "ema_fih.sem.facet.trial_planning",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
       "semantic_role": "purpose",
       "review_status": "reviewed"
     },
@@ -96,7 +400,8 @@
         "ema_fih.kr.8_1.001"
       ],
       "semantic_role": "purpose",
-      "review_status": "reviewed"
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
     }
   ],
   "relations": [],
@@ -126,9 +431,159 @@
         }
       ],
       "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ema_fih.sem.manifest.section_5_quality_aspects",
+      "target": {
+        "type": "section",
+        "id": "ema_fih.sec.5"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ema_fih.sem.facet.section_5_1_determination_of_strength_and_potency",
+            "ema_fih.sem.facet.section_5_2_qualification_of_the_material_used",
+            "ema_fih.sem.facet.section_5_3_reliability_of_very_small_doses"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ema_fih.sem.manifest.section_6_non_clinical_aspects",
+      "target": {
+        "type": "section",
+        "id": "ema_fih.sec.6"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ema_fih.sem.facet.section_6_1_relevance_of_the_animal_model",
+            "ema_fih.sem.facet.section_6_2_nature_of_the_target",
+            "ema_fih.sem.facet.section_6_3_pharmacodynamics",
+            "ema_fih.sem.facet.section_6_4_pharmaco_and_toxicokinetics",
+            "ema_fih.sem.facet.section_6_5_safety_pharmacology",
+            "ema_fih.sem.facet.section_6_6_toxicology"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ema_fih.sem.manifest.section_7_dosing_selection_for_fih_and_early_clinical_trials",
+      "target": {
+        "type": "section",
+        "id": "ema_fih.sec.7"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ema_fih.sem.facet.section_7_1_general_aspects",
+            "ema_fih.sem.facet.section_7_2_starting_dose_for_healthy_volunteers",
+            "ema_fih.sem.facet.section_7_3_starting_dose_for_patients",
+            "ema_fih.sem.facet.section_7_4_dose_escalation",
+            "ema_fih.sem.facet.section_7_5_maximum_exposure_and_dose",
+            "ema_fih.sem.facet.section_7_6_moving_from_single_to_multiple_dosing",
+            "ema_fih.sem.facet.section_7_7_route_of_administration"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ema_fih.sem.manifest.section_8_2_protocol",
+      "target": {
+        "type": "section",
+        "id": "ema_fih.sec.8_2"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ema_fih.sem.facet.section_8_2_1_overall_design",
+            "ema_fih.sem.facet.section_8_2_2_integrated_protocols",
+            "ema_fih.sem.facet.section_8_2_3_choice_of_subjects",
+            "ema_fih.sem.facet.section_8_2_4_subject_assessments_and_interventions",
+            "ema_fih.sem.facet.section_8_2_5_general_considerations_for_all_cohorts",
+            "ema_fih.sem.facet.section_8_2_6_precautions_to_apply_between_treating_subjects_within_a_cohort",
+            "ema_fih.sem.facet.section_8_2_7_precautions_to_apply_between_cohorts_and_study_parts",
+            "ema_fih.sem.facet.section_8_2_8_data_review_for_decision",
+            "ema_fih.sem.facet.section_8_2_9_stopping_rules",
+            "ema_fih.sem.facet.section_8_2_10_monitoring_and_communication_of_adverse_events_reactions"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ema_fih.sem.manifest.section_8_planning_and_conduct_of_fih_and_early_clinical_trials",
+      "target": {
+        "type": "section",
+        "id": "ema_fih.sec.8"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ema_fih.sem.facet.section_8_1_general_aspects",
+            "ema_fih.sem.facet.section_8_2_protocol",
+            "ema_fih.sem.facet.section_8_3_documentation_of_sponsor_and_investigators_responsibilities",
+            "ema_fih.sem.facet.section_8_4_investigator_site_facilities_and_personnel"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
     }
   ],
-  "comparison_bindings": [],
+  "comparison_bindings": [
+    {
+      "binding_id": "ema_fih.sem.binding.scope_product_or_matrix",
+      "axis_id": "scope.product_or_matrix",
+      "facet_id": "ema_fih.sem.facet.scope",
+      "evidence_refs": [
+        {
+          "record_id": "ema_fih.kr.2.001",
+          "source_unit_id": "ema_fih.su.2.001",
+          "source_text_sha256": "bbc406c2a51844ff21b8f90771de4ac92e4ea310fc7177aa72dc0f13cd5283b4"
+        }
+      ],
+      "display_label_key": "ema_fih.scope.product_or_matrix",
+      "review_status": "reviewed"
+    }
+  ],
   "salience_profiles": [
     {
       "profile_id": "ema_fih.sem.profile.document_overview",

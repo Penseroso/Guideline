@@ -482,6 +482,32 @@ test("renderSemanticCoverage's comparison axis surfaces each side's own coverage
   assert.match(html, /<strong>S6\(R1\)<\/strong> Some sub-items may be missing\. <span class="semantic-coverage-fraction">\(1\/3 confirmed\)<\/span>/);
 });
 
+test("renderSemanticCoverage uses the explicit effective denominator before diagnostic ratios", () => {
+  const envelope = {
+    claims: [{ citation: { document_id: "ich_m3_r2", guideline_code: "M3(R2)" } }],
+    semantic_coverage: {
+      manifests: [],
+      comparison: [{
+        axis_id: "axis.x",
+        both_sides_evidenced: true,
+        bindings: [{
+          document_id: "ich_m3_r2",
+          coverage: {
+            status: "partial",
+            coverage_basis: "section_census",
+            effective: { granularity: "section", covered: 3, total: 4 },
+            exact: { covered: 1, total: 1 },
+            section: { granularity: "section", covered: 3, total: 4 }
+          }
+        }]
+      }]
+    }
+  };
+  const html = R.renderSemanticCoverage(envelope, i18n);
+  assert.match(html, /\(3\/4 confirmed\)/);
+  assert.doesNotMatch(html, /\(1\/1 confirmed\)/);
+});
+
 test("renderSemanticCoverage's coverage fraction falls back to the section census when a facet has no curated exact members", () => {
   const envelope = {
     claims: [{ citation: { document_id: "ich_m3_r2", guideline_code: "M3(R2)" } }],

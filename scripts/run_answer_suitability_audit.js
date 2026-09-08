@@ -53,7 +53,11 @@ async function main() {
   const requestedIds = new Set(String(process.env.GUIDELINE_AUDIT_IDS || "")
     .split(",").map((id) => id.trim()).filter(Boolean));
   if (requestedIds.size > 0) questions = questions.filter((item) => requestedIds.has(item.id));
-  const results = loadResults().filter((result) => !result.error && result.envelope && Array.isArray(result.envelope.claims));
+  const rerunIds = new Set(String(process.env.GUIDELINE_AUDIT_RERUN_IDS || "")
+    .split(",").map((id) => id.trim()).filter(Boolean));
+  const results = loadResults().filter((result) =>
+    !rerunIds.has(result.id) && !result.error && result.envelope && Array.isArray(result.envelope.claims)
+  );
   const completed = new Set(results.map((result) => result.id));
   const { records } = loadStore();
   const deps = setUpAnswering(records);

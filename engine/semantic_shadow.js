@@ -29,7 +29,7 @@
  * indistinguishable in the log from one that was never authored. All five
  * are fixed below; see each function's comment for the specific mechanism.
  */
-const { extractQueryScope } = require("./text_utils");
+const { extractQueryScope, tokenize } = require("./text_utils");
 const { loadSemanticOverlayStore } = require("./semantic_overlay_store");
 
 let cachedDefaultStore = null;
@@ -201,7 +201,18 @@ function measureSectionCoverage(facet, overlay, claimIds, sectionIndex) {
     const childRecordIds = sectionSubtreeRecordIds(childId, sectionIndex);
     return [...childRecordIds].some((id) => claimIds.has(id));
   });
-  return { granularity: "section", covered: touchedChildren.length, total: children.length };
+  // A chapter may carry substantive overview records directly on the
+  // parent section in addition to named child sections. Treat that parent
+  // body as one census bucket; otherwise a directly cited chapter summary
+  // incorrectly reports 0 covered merely because children also exist.
+  const directIds = new Set(sectionIndex.recordIdsBySectionId.get(facet.scope) || []);
+  const directBucket = directIds.size > 0 ? 1 : 0;
+  const directCovered = [...directIds].some((id) => claimIds.has(id)) ? 1 : 0;
+  return {
+    granularity: "section",
+    covered: touchedChildren.length + directCovered,
+    total: children.length + directBucket
+  };
 }
 
 /**
@@ -224,24 +235,31 @@ function measureSectionCoverage(facet, overlay, claimIds, sectionIndex) {
  * "covered" when every sub-topic was touched.
  */
 function facetCoverage(facet, overlay, claimIds, sectionIndex) {
-  if (!facet) return { status: "unknown", exact: { covered: 0, total: 0 }, section: null };
+  if (!facet) return {
+    status: "unknown",
+    coverage_basis: null,
+    effective: null,
+    exact: { covered: 0, total: 0 },
+    section: null
+  };
 
   const members = facet.member_record_ids || [];
   const exactCovered = members.filter((id) => claimIds.has(id)).length;
   const exact = { covered: exactCovered, total: members.length };
   const section = measureSectionCoverage(facet, overlay, claimIds, sectionIndex);
+  const coverageBasis = facet.coverage_basis;
+  const effective = coverageBasis === "declared_members"
+    ? { granularity: "record", covered: exact.covered, total: exact.total }
+    : section ? { ...section } : null;
 
-  if (members.length === 0 && section === null) return { status: "not_applicable", exact, section };
-
-  if (exact.total > 0) {
-    if (exactCovered === exact.total) return { status: "covered", exact, section };
-    if (exactCovered > 0) return { status: "partial", exact, section };
+  if (!effective) return { status: "not_applicable", coverage_basis: coverageBasis, effective, exact, section };
+  if (effective.total > 0 && effective.covered === effective.total) {
+    return { status: "covered", coverage_basis: coverageBasis, effective, exact, section };
   }
-  if (section) {
-    if (section.total > 0 && section.covered === section.total) return { status: "covered", exact, section };
-    if (section.covered > 0) return { status: "partial", exact, section };
+  if (effective.covered > 0) {
+    return { status: "partial", coverage_basis: coverageBasis, effective, exact, section };
   }
-  return { status: "missing", exact, section };
+  return { status: "missing", coverage_basis: coverageBasis, effective, exact, section };
 }
 
 /**
@@ -273,6 +291,157 @@ function manifestScopeSectionIds(overlay, manifest) {
   }
   if (manifest.target && manifest.target.type === "section") sectionIds.add(manifest.target.id);
   return sectionIds;
+}
+
+function sectionDistance(a, b, sectionsById) {
+  if (a === b) return 0;
+  const aPath = [a, ...sectionAncestors(a, sectionsById)];
+  const bPositions = new Map([b, ...sectionAncestors(b, sectionsById)].map((id, index) => [id, index]));
+  let distance = Number.POSITIVE_INFINITY;
+  for (let index = 0; index < aPath.length; index += 1) {
+    if (bPositions.has(aPath[index])) distance = Math.min(distance, index + bPositions.get(aPath[index]));
+  }
+  return distance;
+}
+
+function resolvedSectionIdsForEnvelope(envelope, sectionIndex) {
+  const ids = new Set((envelope.scope && envelope.scope.section_ids) || []);
+  for (const claim of envelope.claims || []) {
+    const sectionId = claim && claim.record && claim.record.section_id;
+    if (sectionId) ids.add(sectionId);
+    const recordId = claim && claim.record && claim.record.id;
+    const indexedSectionId = recordId && sectionIndex.sectionIdByRecordId.get(recordId);
+    if (indexedSectionId) ids.add(indexedSectionId);
+  }
+  return [...ids];
+}
+
+function servedEnvelopeIntent(envelope) {
+  if (envelope.mode === "comparison" || envelope.semantic_mode === "comparison") return "comparison";
+  if (envelope.mode === "amendment" && !envelope.answer_intent) return "section_overview";
+  return envelope.answer_intent;
+}
+
+function intentCompatibilityScore(manifestIntent, envelopeIntent) {
+  const actual = labelIntent(envelopeIntent);
+  if (manifestIntent === actual) return 3;
+  const overviewFamily = new Set(["section_overview", "topic_overview"]);
+  if (overviewFamily.has(manifestIntent) && overviewFamily.has(actual)) return 2;
+  const structuredFamily = new Set(["section_overview", "topic_overview", "multi_criterion", "process"]);
+  if (structuredFamily.has(manifestIntent) && structuredFamily.has(actual)) return 1;
+  return 0;
+}
+
+function identifierTokens(value) {
+  return tokenize(String(value || "").replace(/[._/-]+/g, " "));
+}
+
+function containsSectionNumber(question, sectionNumber) {
+  if (!sectionNumber) return false;
+  const value = String(sectionNumber);
+  const escaped = value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const text = String(question || "");
+  const boundary = `${escaped}([^A-Za-z0-9.]|$)`;
+  if (value.includes(".") || /^part\s/i.test(value)) {
+    return new RegExp(`(^|[^A-Za-z0-9.])${boundary}`, "i").test(text);
+  }
+  // A bare integer such as "1" is usually a criterion value, not a
+  // section reference. Single numeric/Roman sections need an explicit
+  // section marker; dotted numbers and "Part II" are self-identifying.
+  return new RegExp(`(?:§|section\s*|sec\.?\s*)${boundary}`, "i").test(text);
+}
+
+/**
+ * Resolved records remain the authoritative scope signal, but parent and
+ * child manifests frequently share those records. In that tie, prefer the
+ * object the question actually names. Section numbers are intentionally a
+ * very strong signal; title/concept/manifest tokens provide the same
+ * disambiguation for ordinary prose and for specialized leaf manifests.
+ */
+function manifestQueryScore(question, overlay, manifest, sectionsById) {
+  const questionTokens = new Set(tokenize(question));
+  let score = 0;
+  const scopeIds = new Set();
+  if (manifest.target && manifest.target.type === "section") scopeIds.add(manifest.target.id);
+  if (manifest.target && manifest.target.type === "facet") {
+    const targetFacet = (overlay.facets || []).find((item) => item.facet_id === manifest.target.id);
+    if (targetFacet && targetFacet.scope && targetFacet.scope !== overlay.document_id) scopeIds.add(targetFacet.scope);
+  }
+  for (const scopeId of scopeIds) {
+    const section = sectionsById.get(scopeId);
+    if (!section) continue;
+    if (containsSectionNumber(question, section.section_number)) score += 100;
+    for (const token of tokenize(section.title)) if (questionTokens.has(token)) score += 4;
+  }
+  for (const token of identifierTokens(manifest.manifest_id.split(".manifest.").pop())) {
+    if (questionTokens.has(token)) score += 6;
+  }
+  if (manifest.target && manifest.target.type === "facet") {
+    const facet = (overlay.facets || []).find((item) => item.facet_id === manifest.target.id);
+    const namedMatches = identifierTokens(manifest.manifest_id.split(".manifest.").pop())
+      .filter((token) => questionTokens.has(token)).length;
+    // Facet-target manifests are deliberately authored specialized topics,
+    // unlike hierarchy-generated section parents. A question naming their
+    // semantic key should be able to beat the broader parent overview even
+    // when the router labels the response as topic_overview/list.
+    score += namedMatches * 35;
+    for (const token of identifierTokens(facet && facet.concept_id)) {
+      if (questionTokens.has(token)) score += 3;
+    }
+  }
+  return score;
+}
+
+function manifestDistance(overlay, manifest, resolvedSectionIds, sectionsById) {
+  if (manifest.target && manifest.target.type === "document") return 0;
+  const scopeIds = manifestScopeSectionIds(overlay, manifest);
+  if (scopeIds.size === 0 || resolvedSectionIds.length === 0) return Number.POSITIVE_INFINITY;
+  let distance = Number.POSITIVE_INFINITY;
+  for (const scopeId of scopeIds) {
+    for (const resolvedId of resolvedSectionIds) {
+      distance = Math.min(distance, sectionDistance(scopeId, resolvedId, sectionsById));
+    }
+  }
+  return distance;
+}
+
+/**
+ * Stage D separates diagnostic breadth from served precision. Shadow mode
+ * deliberately keeps broad candidates so router misses remain visible;
+ * served disclosure selects only the best reviewed intent/scope match.
+ */
+function selectServedManifests(question, shadowPlan, envelope, semanticStore) {
+  const resolvedSectionIds = resolvedSectionIdsForEnvelope(envelope, semanticStore.sectionIndex);
+  const envelopeIntent = servedEnvelopeIntent(envelope);
+  const candidates = [];
+  for (const planned of shadowPlan.manifests || []) {
+    if (planned.review_status !== "reviewed") continue;
+    const overlay = semanticStore.overlaysByDocumentId.get(planned.document_id);
+    const manifest = overlay && (overlay.coverage_manifests || []).find((item) => item.manifest_id === planned.manifest_id);
+    if (!manifest) continue;
+    const referencedFacetIds = new Set((manifest.coverage_groups || []).flatMap((group) => group.facet_ids || []));
+    const facetsById = new Map((overlay.facets || []).map((facet) => [facet.facet_id, facet]));
+    if ([...referencedFacetIds].some((id) => !facetsById.has(id) || facetsById.get(id).review_status !== "reviewed")) continue;
+
+    const intentScore = intentCompatibilityScore(manifest.answer_intent, envelopeIntent);
+    if (intentScore === 0) continue;
+    if (manifest.answer_intent === "document_overview" && labelIntent(envelopeIntent) !== "document_overview") continue;
+    const distance = manifestDistance(overlay, manifest, resolvedSectionIds, semanticStore.archive.sectionsById);
+    const queryScore = manifestQueryScore(question, overlay, manifest, semanticStore.archive.sectionsById);
+    // A directly named section can legitimately expose a router miss across
+    // disconnected document roots (notably S6 Part I vs Part II). Weak
+    // lexical overlap alone is not enough to bypass the evidence distance.
+    if (!Number.isFinite(distance) && manifest.target.type !== "document" && queryScore < 100) continue;
+    candidates.push({ planned, intentScore, queryScore, rankScore: queryScore + intentScore * 20, distance });
+  }
+  if (candidates.length === 0) return [];
+  const bestRank = Math.max(...candidates.map((entry) => entry.rankScore));
+  const rankMatches = candidates.filter((entry) => entry.rankScore === bestRank);
+  const bestDistance = Math.min(...rankMatches.map((entry) => entry.distance));
+  return rankMatches
+    .filter((entry) => entry.distance === bestDistance)
+    .map((entry) => entry.planned)
+    .sort((a, b) => a.manifest_id.localeCompare(b.manifest_id));
 }
 
 // A manifest declaring itself document_overview/topic_overview intent is,
@@ -307,9 +476,10 @@ const ALWAYS_RELEVANT_ANSWER_INTENTS = new Set(["document_overview", "topic_over
  * hidden that exact case, so the exemption is keyed on the manifest's own
  * declared breadth (answer_intent) instead.
  */
-function isManifestRelevant(overlay, manifest, resolvedSectionIds, sectionsById) {
+function isManifestRelevant(overlay, manifest, resolvedSectionIds, sectionsById, question) {
   if (manifest.target && manifest.target.type === "document") return true;
   if (ALWAYS_RELEVANT_ANSWER_INTENTS.has(manifest.answer_intent)) return true;
+  if (manifestQueryScore(question, overlay, manifest, sectionsById) >= 100) return true;
   if (!resolvedSectionIds || resolvedSectionIds.length === 0) return true;
   const scopeSectionIds = manifestScopeSectionIds(overlay, manifest);
   if (scopeSectionIds.size === 0) return true;
@@ -419,7 +589,7 @@ function buildShadowPlan(question, envelope, { store } = {}) {
     const overlay = semanticStore.overlaysByDocumentId.get(documentId);
     const relevantFacetIds = new Set();
     for (const manifest of overlay.coverage_manifests || []) {
-      if (!isManifestRelevant(overlay, manifest, resolvedSectionIds, semanticStore.archive.sectionsById)) continue;
+      if (!isManifestRelevant(overlay, manifest, resolvedSectionIds, semanticStore.archive.sectionsById, question)) continue;
       manifests.push({
         document_id: documentId,
         ...buildManifestPlan(overlay, manifest, envelope.answer_intent, queryScope, claimIds, semanticStore.sectionIndex)
@@ -499,16 +669,17 @@ function comparePlans(question, envelope, options) {
  * present but empty" as the same thing — never render an empty box.
  */
 function buildReviewedSemanticCoverage(question, envelope, options) {
-  const shadowPlan = buildShadowPlan(question, envelope, options);
+  const semanticStore = options && options.store || defaultStore();
+  const shadowPlan = buildShadowPlan(question, envelope, { ...options, store: semanticStore });
   if (!shadowPlan.applicable) return null;
 
-  const manifests = (shadowPlan.manifests || []).filter((manifest) => manifest.review_status === "reviewed");
+  const manifests = selectServedManifests(question, shadowPlan, envelope, semanticStore);
 
   // Same reviewed-only filter applied per binding, then an axis is only
   // kept if at least two distinct documents still have a reviewed binding
   // on it afterward — a comparison row needs two reviewed sides to mean
   // anything, same as buildComparisonPlan's own >=2-documents rule above.
-  const comparison = (shadowPlan.comparison || [])
+  const comparison = labelIntent(servedEnvelopeIntent(envelope)) === "comparison" ? (shadowPlan.comparison || [])
     .map((axis) => ({
       axis_id: axis.axis_id,
       bindings: (axis.bindings || []).filter((binding) => binding.review_status === "reviewed")
@@ -520,7 +691,7 @@ function buildReviewedSemanticCoverage(question, envelope, options) {
       both_sides_evidenced: new Set(
         axis.bindings.filter((binding) => binding.coverage.status !== "missing").map((binding) => binding.document_id)
       ).size >= 2
-    }));
+    })) : [];
 
   if (manifests.length === 0 && comparison.length === 0) return null;
   return { manifests, comparison };

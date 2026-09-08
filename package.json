@@ -18,7 +18,11 @@
     "eval": "node engine/eval_harness.js",
     "test:routes:live": "node scripts/test_live_routes.js",
     "shadow:semantic": "node scripts/run_semantic_shadow_audit.js",
-    "check:promotion": "node scripts/check_semantic_overlay_promotion.js"
+    "check:promotion": "node scripts/check_semantic_overlay_promotion.js",
+    "build:semantic:stage-d": "node scripts/build_semantic_stage_d.js",
+    "audit:semantic:stage-d": "node scripts/run_semantic_stage_d_audit.js",
+    "verify:semantic:stage-d": "node scripts/verify_semantic_stage_d.js",
+    "promote:semantic:stage-d": "node scripts/promote_semantic_stage_d.js"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1",

@@ -1,10 +1,10 @@
 {
-  "semantic_overlay_version": "0.1.0",
+  "semantic_overlay_version": "0.2.0",
   "document_id": "ich_s6_r1",
   "source_bundle_sha256": "a8c4d38f71ffb94c45ae4b701879c28516e6919f86b593faf0dad05573ccbc0b",
   "derivation": {
     "method": "agent_assisted",
-    "pipeline_version": "stage-a-2026-09-03"
+    "pipeline_version": "stage-d-2026-09-08"
   },
   "summary_specs": [
     {
@@ -49,11 +49,761 @@
         "ich_s6_r1.kr.1_3.003"
       ],
       "semantic_role": "scope",
+      "review_status": "reviewed",
+      "coverage_basis": "section_census"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_1_1_background",
+      "concept_id": "ich_s6_r1.concept.background",
+      "scope": "ich_s6_r1.sec.part1.1_1",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_1_introduction",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_1_2_objectives",
+      "concept_id": "ich_s6_r1.concept.objectives",
+      "scope": "ich_s6_r1.sec.part1.1_2",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_1_introduction",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_1_introduction",
+      "concept_id": "ich_s6_r1.concept.introduction",
+      "scope": "ich_s6_r1.sec.part1.1",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_i_preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_1_introduction_addendum",
+      "concept_id": "ich_s6_r1.concept.introduction_addendum",
+      "scope": "ich_s6_r1.sec.part2.1",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_ii_addendum_to_s6",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_2_1_general_principles",
+      "concept_id": "ich_s6_r1.concept.general_principles",
+      "scope": "ich_s6_r1.sec.part2.2_1",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_2_species_selection",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_2_2_one_or_two_species",
+      "concept_id": "ich_s6_r1.concept.one_or_two_species",
+      "scope": "ich_s6_r1.sec.part2.2_2",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_2_species_selection",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_2_3_use_of_homologous_proteins",
+      "concept_id": "ich_s6_r1.concept.use_of_homologous_proteins",
+      "scope": "ich_s6_r1.sec.part2.2_3",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_2_species_selection",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_2_species_selection",
+      "concept_id": "ich_s6_r1.concept.species_selection",
+      "scope": "ich_s6_r1.sec.part2.2",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_ii_addendum_to_s6",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_2_specification_of_the_test_material",
+      "concept_id": "ich_s6_r1.concept.specification_of_the_test_material",
+      "scope": "ich_s6_r1.sec.part1.2",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_i_preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_3_1_dose_selection_and_application_of_pk_pd_principles",
+      "concept_id": "ich_s6_r1.concept.dose_selection_and_application_of_pk_pd_principles",
+      "scope": "ich_s6_r1.sec.part2.3_1",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_3_study_design",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_3_1_general_principles",
+      "concept_id": "ich_s6_r1.concept.general_principles",
+      "scope": "ich_s6_r1.sec.part1.3_1",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_i_preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_3_2_biological_activity_pharmacodynamics",
+      "concept_id": "ich_s6_r1.concept.biological_activity_pharmacodynamics",
+      "scope": "ich_s6_r1.sec.part1.3_2",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_i_preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_3_2_duration_of_studies",
+      "concept_id": "ich_s6_r1.concept.duration_of_studies",
+      "scope": "ich_s6_r1.sec.part2.3_2",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_3_study_design",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_3_3_animal_species_model_selection",
+      "concept_id": "ich_s6_r1.concept.animal_species_model_selection",
+      "scope": "ich_s6_r1.sec.part1.3_3",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_i_preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_3_3_recovery",
+      "concept_id": "ich_s6_r1.concept.recovery",
+      "scope": "ich_s6_r1.sec.part2.3_3",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_3_study_design",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_3_4_exploratory_clinical_trials",
+      "concept_id": "ich_s6_r1.concept.exploratory_clinical_trials",
+      "scope": "ich_s6_r1.sec.part2.3_4",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_3_study_design",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_3_4_number_gender_of_animals",
+      "concept_id": "ich_s6_r1.concept.number_gender_of_animals",
+      "scope": "ich_s6_r1.sec.part1.3_4",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_i_preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_3_5_administration_dose_selection",
+      "concept_id": "ich_s6_r1.concept.administration_dose_selection",
+      "scope": "ich_s6_r1.sec.part1.3_5",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_i_preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_3_6_immunogenicity",
+      "concept_id": "ich_s6_r1.concept.immunogenicity",
+      "scope": "ich_s6_r1.sec.part1.3_6",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_i_preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_3_study_design",
+      "concept_id": "ich_s6_r1.concept.study_design",
+      "scope": "ich_s6_r1.sec.part2.3",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_ii_addendum_to_s6",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "procedure_step",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_4_1_safety_pharmacology",
+      "concept_id": "ich_s6_r1.concept.safety_pharmacology",
+      "scope": "ich_s6_r1.sec.part1.4_1",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_4_specific_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_4_2_exposure_assessment",
+      "concept_id": "ich_s6_r1.concept.exposure_assessment",
+      "scope": "ich_s6_r1.sec.part1.4_2",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_4_specific_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_4_3_single_dose_toxicity_studies",
+      "concept_id": "ich_s6_r1.concept.single_dose_toxicity_studies",
+      "scope": "ich_s6_r1.sec.part1.4_3",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_4_specific_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_4_4_repeated_dose_toxicity_studies",
+      "concept_id": "ich_s6_r1.concept.repeated_dose_toxicity_studies",
+      "scope": "ich_s6_r1.sec.part1.4_4",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_4_specific_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_4_5_immunotoxicity_studies",
+      "concept_id": "ich_s6_r1.concept.immunotoxicity_studies",
+      "scope": "ich_s6_r1.sec.part1.4_5",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_4_specific_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_4_6_reproductive_performance_and_developmental_toxicity_studies",
+      "concept_id": "ich_s6_r1.concept.reproductive_performance_and_developmental_toxicity_studies",
+      "scope": "ich_s6_r1.sec.part1.4_6",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_4_specific_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_4_7_genotoxicity_studies",
+      "concept_id": "ich_s6_r1.concept.genotoxicity_studies",
+      "scope": "ich_s6_r1.sec.part1.4_7",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_4_specific_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_4_8_carcinogenicity_studies",
+      "concept_id": "ich_s6_r1.concept.carcinogenicity_studies",
+      "scope": "ich_s6_r1.sec.part1.4_8",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_4_specific_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_4_9_local_tolerance_studies",
+      "concept_id": "ich_s6_r1.concept.local_tolerance_studies",
+      "scope": "ich_s6_r1.sec.part1.4_9",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_4_specific_considerations",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_4_immunogenicity_addendum",
+      "concept_id": "ich_s6_r1.concept.immunogenicity_addendum",
+      "scope": "ich_s6_r1.sec.part2.4",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_ii_addendum_to_s6",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_4_specific_considerations",
+      "concept_id": "ich_s6_r1.concept.specific_considerations",
+      "scope": "ich_s6_r1.sec.part1.4",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_i_preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_5_1_general_comments",
+      "concept_id": "ich_s6_r1.concept.general_comments",
+      "scope": "ich_s6_r1.sec.part2.5_1",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_5_reproductive_and_developmental_toxicity",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_5_2_fertility",
+      "concept_id": "ich_s6_r1.concept.fertility",
+      "scope": "ich_s6_r1.sec.part2.5_2",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_5_reproductive_and_developmental_toxicity",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_5_3_embryo_fetal_development_efd",
+      "concept_id": "ich_s6_r1.concept.embryo_fetal_development_efd",
+      "scope": "ich_s6_r1.sec.part2.5_3",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_5_reproductive_and_developmental_toxicity",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_5_4_pre_and_post_natal_development_ppnd",
+      "concept_id": "ich_s6_r1.concept.pre_and_post_natal_development_ppnd",
+      "scope": "ich_s6_r1.sec.part2.5_4",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_5_reproductive_and_developmental_toxicity",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_5_reproductive_and_developmental_toxicity",
+      "concept_id": "ich_s6_r1.concept.reproductive_and_developmental_toxicity",
+      "scope": "ich_s6_r1.sec.part2.5",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_ii_addendum_to_s6",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_6_carcinogenicity_addendum",
+      "concept_id": "ich_s6_r1.concept.carcinogenicity_addendum",
+      "scope": "ich_s6_r1.sec.part2.6",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_ii_addendum_to_s6",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_part_i_preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "concept_id": "ich_s6_r1.concept.preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "scope": "ich_s6_r1.sec.part1",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_part_ii_addendum_to_s6",
+      "concept_id": "ich_s6_r1.concept.addendum_to_s6",
+      "scope": "ich_s6_r1.sec.part2",
+      "parent_facet_id": null,
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_part1_notes",
+      "concept_id": "ich_s6_r1.concept.notes",
+      "scope": "ich_s6_r1.sec.part1.notes",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_i_preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.section_part2_notes",
+      "concept_id": "ich_s6_r1.concept.notes",
+      "scope": "ich_s6_r1.sec.part2.notes",
+      "parent_facet_id": "ich_s6_r1.sem.facet.section_part_ii_addendum_to_s6",
+      "member_record_ids": [],
+      "coverage_basis": "section_census",
+      "semantic_role": "purpose",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.species_number_conditions",
+      "concept_id": "ich_s6_r1.concept.species_number_conditions",
+      "scope": "ich_s6_r1.sec.part2.2_2",
+      "parent_facet_id": null,
+      "member_record_ids": [
+        "ich_s6_r1.kr.part2.2_2.001",
+        "ich_s6_r1.cond.part2.2_2.001",
+        "ich_s6_r1.kr.part2.2_2.002",
+        "ich_s6_r1.cond.part2.2_2.002",
+        "ich_s6_r1.kr.part2.2_2.005",
+        "ich_s6_r1.cond.part2.2_2.004",
+        "ich_s6_r1.kr.part2.2_2.003",
+        "ich_s6_r1.kr.part2.2_2.004",
+        "ich_s6_r1.kr.part2.2_2.006"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "criterion",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.species_number_conditions.boundaries",
+      "concept_id": "ich_s6_r1.concept.species_number_conditions.boundaries",
+      "scope": "ich_s6_r1.sec.part2.2_2",
+      "parent_facet_id": "ich_s6_r1.sem.facet.species_number_conditions",
+      "member_record_ids": [
+        "ich_s6_r1.kr.part2.2_2.003",
+        "ich_s6_r1.kr.part2.2_2.004",
+        "ich_s6_r1.kr.part2.2_2.006"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "boundary",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.species_number_conditions.one_species_long_term",
+      "concept_id": "ich_s6_r1.concept.species_number_conditions.one_species_long_term",
+      "scope": "ich_s6_r1.sec.part2.2_2",
+      "parent_facet_id": "ich_s6_r1.sem.facet.species_number_conditions",
+      "member_record_ids": [
+        "ich_s6_r1.kr.part2.2_2.002",
+        "ich_s6_r1.cond.part2.2_2.002"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "condition",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.species_number_conditions.single_relevant_species",
+      "concept_id": "ich_s6_r1.concept.species_number_conditions.single_relevant_species",
+      "scope": "ich_s6_r1.sec.part2.2_2",
+      "parent_facet_id": "ich_s6_r1.sem.facet.species_number_conditions",
+      "member_record_ids": [
+        "ich_s6_r1.kr.part2.2_2.005",
+        "ich_s6_r1.cond.part2.2_2.004"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "condition",
+      "review_status": "reviewed"
+    },
+    {
+      "facet_id": "ich_s6_r1.sem.facet.species_number_conditions.two_species_short_term",
+      "concept_id": "ich_s6_r1.concept.species_number_conditions.two_species_short_term",
+      "scope": "ich_s6_r1.sec.part2.2_2",
+      "parent_facet_id": "ich_s6_r1.sem.facet.species_number_conditions",
+      "member_record_ids": [
+        "ich_s6_r1.kr.part2.2_2.001",
+        "ich_s6_r1.cond.part2.2_2.001"
+      ],
+      "coverage_basis": "declared_members",
+      "semantic_role": "criterion",
       "review_status": "reviewed"
     }
   ],
   "relations": [],
-  "coverage_manifests": [],
+  "coverage_manifests": [
+    {
+      "manifest_id": "ich_s6_r1.sem.manifest.document_overview",
+      "target": {
+        "type": "document",
+        "id": "ich_s6_r1"
+      },
+      "answer_intent": "document_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "major_areas",
+          "selection": "all",
+          "facet_ids": [
+            "ich_s6_r1.sem.facet.scope",
+            "ich_s6_r1.sem.facet.section_2_specification_of_the_test_material",
+            "ich_s6_r1.sem.facet.section_3_1_general_principles",
+            "ich_s6_r1.sem.facet.section_4_specific_considerations",
+            "ich_s6_r1.sem.facet.section_part_ii_addendum_to_s6"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_s6_r1.sem.manifest.section_1_introduction",
+      "target": {
+        "type": "section",
+        "id": "ich_s6_r1.sec.part1.1"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_s6_r1.sem.facet.section_1_1_background",
+            "ich_s6_r1.sem.facet.section_1_2_objectives",
+            "ich_s6_r1.sem.facet.scope"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_s6_r1.sem.manifest.section_2_species_selection",
+      "target": {
+        "type": "section",
+        "id": "ich_s6_r1.sec.part2.2"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_s6_r1.sem.facet.section_2_1_general_principles",
+            "ich_s6_r1.sem.facet.section_2_2_one_or_two_species",
+            "ich_s6_r1.sem.facet.section_2_3_use_of_homologous_proteins"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_s6_r1.sem.manifest.section_3_study_design",
+      "target": {
+        "type": "section",
+        "id": "ich_s6_r1.sec.part2.3"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_s6_r1.sem.facet.section_3_1_dose_selection_and_application_of_pk_pd_principles",
+            "ich_s6_r1.sem.facet.section_3_2_duration_of_studies",
+            "ich_s6_r1.sem.facet.section_3_3_recovery",
+            "ich_s6_r1.sem.facet.section_3_4_exploratory_clinical_trials"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_s6_r1.sem.manifest.section_4_specific_considerations",
+      "target": {
+        "type": "section",
+        "id": "ich_s6_r1.sec.part1.4"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_s6_r1.sem.facet.section_4_1_safety_pharmacology",
+            "ich_s6_r1.sem.facet.section_4_2_exposure_assessment",
+            "ich_s6_r1.sem.facet.section_4_3_single_dose_toxicity_studies",
+            "ich_s6_r1.sem.facet.section_4_4_repeated_dose_toxicity_studies",
+            "ich_s6_r1.sem.facet.section_4_5_immunotoxicity_studies",
+            "ich_s6_r1.sem.facet.section_4_6_reproductive_performance_and_developmental_toxicity_studies",
+            "ich_s6_r1.sem.facet.section_4_7_genotoxicity_studies",
+            "ich_s6_r1.sem.facet.section_4_8_carcinogenicity_studies",
+            "ich_s6_r1.sem.facet.section_4_9_local_tolerance_studies"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_s6_r1.sem.manifest.section_5_reproductive_and_developmental_toxicity",
+      "target": {
+        "type": "section",
+        "id": "ich_s6_r1.sec.part2.5"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_s6_r1.sem.facet.section_5_1_general_comments",
+            "ich_s6_r1.sem.facet.section_5_2_fertility",
+            "ich_s6_r1.sem.facet.section_5_3_embryo_fetal_development_efd",
+            "ich_s6_r1.sem.facet.section_5_4_pre_and_post_natal_development_ppnd"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_s6_r1.sem.manifest.section_part_i_preclinical_safety_evaluation_of_biotechnology_derived_pharmaceuticals",
+      "target": {
+        "type": "section",
+        "id": "ich_s6_r1.sec.part1"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_s6_r1.sem.facet.section_1_introduction",
+            "ich_s6_r1.sem.facet.section_2_specification_of_the_test_material",
+            "ich_s6_r1.sem.facet.section_3_1_general_principles",
+            "ich_s6_r1.sem.facet.section_3_2_biological_activity_pharmacodynamics",
+            "ich_s6_r1.sem.facet.section_3_3_animal_species_model_selection",
+            "ich_s6_r1.sem.facet.section_3_4_number_gender_of_animals",
+            "ich_s6_r1.sem.facet.section_3_5_administration_dose_selection",
+            "ich_s6_r1.sem.facet.section_3_6_immunogenicity",
+            "ich_s6_r1.sem.facet.section_4_specific_considerations",
+            "ich_s6_r1.sem.facet.section_part1_notes"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_s6_r1.sem.manifest.section_part_ii_addendum_to_s6",
+      "target": {
+        "type": "section",
+        "id": "ich_s6_r1.sec.part2"
+      },
+      "answer_intent": "section_overview",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "direct_child_sections",
+          "selection": "all",
+          "facet_ids": [
+            "ich_s6_r1.sem.facet.section_2_species_selection",
+            "ich_s6_r1.sem.facet.section_part2_notes",
+            "ich_s6_r1.sem.facet.section_1_introduction_addendum",
+            "ich_s6_r1.sem.facet.section_3_study_design",
+            "ich_s6_r1.sem.facet.section_4_immunogenicity_addendum",
+            "ich_s6_r1.sem.facet.section_5_reproductive_and_developmental_toxicity",
+            "ich_s6_r1.sem.facet.section_6_carcinogenicity_addendum"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        }
+      ],
+      "review_status": "reviewed"
+    },
+    {
+      "manifest_id": "ich_s6_r1.sem.manifest.species_number_conditions",
+      "target": {
+        "type": "facet",
+        "id": "ich_s6_r1.sem.facet.species_number_conditions"
+      },
+      "answer_intent": "multi_criterion",
+      "scope_selectors": [],
+      "coverage_groups": [
+        {
+          "group_id": "two_species_short_term",
+          "selection": "all",
+          "facet_ids": [
+            "ich_s6_r1.sem.facet.species_number_conditions.two_species_short_term"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 1
+        },
+        {
+          "group_id": "one_species_long_term",
+          "selection": "all",
+          "facet_ids": [
+            "ich_s6_r1.sem.facet.species_number_conditions.one_species_long_term"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 2
+        },
+        {
+          "group_id": "single_relevant_species",
+          "selection": "all",
+          "facet_ids": [
+            "ich_s6_r1.sem.facet.species_number_conditions.single_relevant_species"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 3
+        },
+        {
+          "group_id": "boundaries",
+          "selection": "all",
+          "facet_ids": [
+            "ich_s6_r1.sem.facet.species_number_conditions.boundaries"
+          ],
+          "when": null,
+          "on_ambiguity": "disclose_gap",
+          "display_order": 4
+        }
+      ],
+      "review_status": "reviewed"
+    }
+  ],
   "comparison_bindings": [
     {
       "binding_id": "ich_s6_r1.sem.binding.scope_product_or_matrix",
@@ -71,7 +821,7 @@
           "source_text_sha256": "b081a51a9245ee5f45b7f81623baa2eb031f972ffcb533ebdbcf65bb9d771198"
         }
       ],
-      "display_label_key": "semantic.comparison.ich_s6_r1.scope_product_or_matrix",
+      "display_label_key": "ich_s6_r1.scope.product_or_matrix",
       "review_status": "reviewed"
     }
   ],

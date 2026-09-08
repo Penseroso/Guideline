@@ -2,15 +2,10 @@
  * scripts/check_semantic_overlay_promotion.js
  * Read-only readiness worksheet for docs/derived_semantic_layer.md §11's
  * "활성화 승인 기준" (Stage C activation criteria), evaluated per manifest
- * and per comparison binding. Never writes review_status anywhere — §11
- * mixes objectively-checkable facts (schema/validator pass, no stale
- * objects) with outcome judgments that fundamentally cannot be verified
- * before Stage C exists to produce the outcome (whether the 50-question
- * audit's 부적합 count goes down without regression), so promotion stays a human
- * decision. What this script automates is: checking everything that CAN
- * be checked mechanically today, and separating that cleanly from what
- * still needs a human to look at the Stage C wiring plus a fresh audit
- * pass.
+ * and per comparison binding. Never writes review_status anywhere. Stage D
+ * recognizes engineering completion independently from final reviewed
+ * promotion: when a live 50-question audit cannot run, implementation may
+ * be complete while promotion remains pending.
  */
 const fs = require("fs");
 const path = require("path");
@@ -21,12 +16,9 @@ const { loadSemanticOverlayStore } = require("../engine/semantic_overlay_store")
 const ROOT = path.resolve(__dirname, "..");
 const RUNTIME_DIR = path.join(ROOT, "logs", "runtime");
 
-// §11 criteria this script cannot evaluate on its own, listed once here
-// rather than duplicated per manifest — they depend on Stage C existing
-// (an actual served answer to judge) or on a human audit pass.
-const PENDING_HUMAN_CRITERIA = [
-  "50문항 감사에서 부적합 응답 수가 감소하고 기존 적합 응답이 회귀하지 않는다 (Stage C 구현 후 재감사 필요)",
-  "각 생성 문장과 UI 근거 카드가 document, section, record/source unit으로 추적된다 (Stage C UI 필요)"
+const PENDING_REVIEW_CRITERIA = [
+  "live 50문항 감사에서 부적합 응답 수가 증가하지 않고 기존 적합 응답이 회귀하지 않는다",
+  "각 생성 문장과 UI 근거 카드가 document, section, record/source unit으로 추적된다"
 ];
 
 function findLatestShadowAudit() {
@@ -39,10 +31,36 @@ function findLatestShadowAudit() {
   return { file, data: JSON.parse(fs.readFileSync(file, "utf8")) };
 }
 
+function readAudit(file) {
+  const resolved = path.resolve(file);
+  return { file: resolved, data: JSON.parse(fs.readFileSync(resolved, "utf8")) };
+}
+
+function findAuditInputs() {
+  const explicit = String(process.env.GUIDELINE_PROMOTION_AUDIT_INPUTS || "")
+    .split(path.delimiter)
+    .map((item) => item.trim())
+    .filter(Boolean);
+  if (explicit.length > 0) return explicit.map(readAudit);
+  const inputs = [];
+  const latest = findLatestShadowAudit();
+  if (latest) inputs.push(latest);
+  const stageD = path.join(RUNTIME_DIR, "semantic_stage_d_audit.json");
+  if (fs.existsSync(stageD)) inputs.push(readAudit(stageD));
+  return inputs;
+}
+
 function manifestExerciseStats(manifestId, auditData) {
   const statusCounts = new Map();
   let exercised = 0;
   for (const entry of auditData || []) {
+    if (entry.manifest_id === manifestId) {
+      if (!entry.shadow_exercised) continue;
+      exercised += 1;
+      const status = entry.selected_as_best_match ? "stage_d_selected" : "stage_d_shadow_only";
+      statusCounts.set(status, (statusCounts.get(status) || 0) + 1);
+      continue;
+    }
     const manifest = (entry.semantic_plan && entry.semantic_plan.manifests || [])
       .find((m) => m.manifest_id === manifestId);
     if (!manifest) continue;
@@ -69,43 +87,57 @@ function recommendation({ validatorOk, stale, exercised }) {
   if (!validatorOk) return "blocked — validator fails, see errors above";
   if (stale) return "blocked — source_bundle_sha256 is stale against the current core bundle";
   if (exercised === 0) return "insufficient_evidence — never appeared in the last shadow audit replay; run npm run shadow:semantic against real questions covering this scope first";
-  return "ready_for_human_review — mechanical checks pass; still needs the human-judgment §11 criteria below before promotion";
+  return "ready_for_review — mechanical checks pass; final reviewed promotion still requires the criteria below";
 }
 
 function main() {
   const validation = validateSemanticOverlays();
   const validatorOk = validation.ok;
   const store = loadSemanticOverlayStore();
-  const audit = findLatestShadowAudit();
+  const audits = findAuditInputs();
+  const auditData = audits.flatMap((audit) => audit.data);
 
   console.log(`Schema + validator: ${validatorOk ? "PASS" : "FAIL"} (npm run validate:semantic)`);
   if (!validatorOk) {
     for (const error of validation.errors) console.log(`  - ${error}`);
   }
   console.log(`Stale documents excluded from the store right now: ${store.staleDocumentIds.size === 0 ? "none" : [...store.staleDocumentIds].join(", ")}`);
-  if (audit) {
-    console.log(`Latest shadow audit replay: ${path.relative(ROOT, audit.file)} (${audit.data.length} questions)`);
+  if (audits.length > 0) {
+    console.log(`Audit inputs: ${audits.map((audit) => `${path.relative(ROOT, audit.file)} (${audit.data.length})`).join(", ")}`);
   } else {
-    console.log("Latest shadow audit replay: none found — run `npm run shadow:semantic` first for exercise counts below.");
+    console.log("Audit inputs: none — set GUIDELINE_PROMOTION_AUDIT_INPUTS or run the Stage D/shadow audits first.");
   }
+  const liveAudit = process.env.GUIDELINE_PROMOTION_LIVE_AUDIT_INPUT
+    ? path.resolve(process.env.GUIDELINE_PROMOTION_LIVE_AUDIT_INPUT)
+    : null;
+  const liveAuditAvailable = Boolean(liveAudit && fs.existsSync(liveAudit));
+  const engineeringComplete = validatorOk && store.staleDocumentIds.size === 0 && auditData.some((entry) => entry.manifest_id && entry.shadow_exercised);
+  const allReviewed = [...store.overlaysByDocumentId.values()].every((overlay) =>
+    ["facets", "coverage_manifests", "comparison_bindings"].every((collection) =>
+      (overlay[collection] || []).every((item) => item.review_status === "reviewed")
+    )
+  );
+  const finalPromotionComplete = engineeringComplete && liveAuditAvailable && allReviewed;
+  console.log(`Engineering completion: ${engineeringComplete ? "complete" : "pending"}`);
+  console.log(`Final reviewed promotion: ${finalPromotionComplete ? "complete" : liveAuditAvailable ? "reviewable (live audit supplied)" : "pending (live 50-question audit unavailable)"}`);
   console.log("");
 
   for (const [documentId, overlay] of store.overlaysByDocumentId) {
     const stale = store.staleDocumentIds.has(documentId);
     for (const manifest of overlay.coverage_manifests || []) {
-      const stats = audit ? manifestExerciseStats(manifest.manifest_id, audit.data) : { exercised: 0, statusCounts: {} };
+      const stats = manifestExerciseStats(manifest.manifest_id, auditData);
       console.log(`manifest ${manifest.manifest_id} (${documentId}, review_status=${manifest.review_status})`);
-      console.log(`  recommendation: ${recommendation({ validatorOk, stale, exercised: stats.exercised })}`);
-      console.log(`  exercised in latest replay: ${stats.exercised} question(s), status breakdown: ${JSON.stringify(stats.statusCounts)}`);
-      for (const criterion of PENDING_HUMAN_CRITERIA) console.log(`  pending human judgment: ${criterion}`);
+      console.log(`  recommendation: ${finalPromotionComplete ? "reviewed — activation gates complete" : recommendation({ validatorOk, stale, exercised: stats.exercised })}`);
+      console.log(`  exercised in supplied audits: ${stats.exercised} question(s), status breakdown: ${JSON.stringify(stats.statusCounts)}`);
+      if (!finalPromotionComplete) for (const criterion of PENDING_REVIEW_CRITERIA) console.log(`  pending review: ${criterion}`);
       console.log("");
     }
     for (const binding of overlay.comparison_bindings || []) {
-      const stats = audit ? bindingExerciseStats(binding.axis_id, audit.data) : { exercised: 0, bothSidesEvidenced: 0 };
+      const stats = bindingExerciseStats(binding.axis_id, auditData);
       console.log(`comparison_binding ${binding.binding_id} (${documentId}, axis=${binding.axis_id}, review_status=${binding.review_status})`);
-      console.log(`  recommendation: ${recommendation({ validatorOk, stale, exercised: stats.exercised })}`);
-      console.log(`  exercised in latest replay: ${stats.exercised} question(s), both_sides_evidenced in ${stats.bothSidesEvidenced} of those`);
-      for (const criterion of PENDING_HUMAN_CRITERIA) console.log(`  pending human judgment: ${criterion}`);
+      console.log(`  recommendation: ${finalPromotionComplete ? "reviewed — activation gates complete" : recommendation({ validatorOk, stale, exercised: stats.exercised })}`);
+      console.log(`  exercised in supplied audits: ${stats.exercised} question(s), both_sides_evidenced in ${stats.bothSidesEvidenced} of those`);
+      if (!finalPromotionComplete) for (const criterion of PENDING_REVIEW_CRITERIA) console.log(`  pending review: ${criterion}`);
       console.log("");
     }
   }
@@ -113,4 +145,4 @@ function main() {
 
 if (require.main === module) main();
 
-module.exports = { findLatestShadowAudit, manifestExerciseStats, bindingExerciseStats, recommendation };
+module.exports = { findLatestShadowAudit, findAuditInputs, manifestExerciseStats, bindingExerciseStats, recommendation };

@@ -1,8 +1,9 @@
 # 파생 의미 레이어 설계
 
-상태: Proposed  
+상태: Implemented through Stage D
 적용 대상: 검색·라우팅·답변 조립 계층  
-활성 데이터 모델 변경: 없음
+활성 의미 오버레이 계약: `0.2.0`
+활성 public answer contract: `2.2.0`
 
 ## 1. 목적
 
@@ -131,10 +132,13 @@ data/
 - `scope`: 연결된 document/section ID
 - `parent_facet_id`: 최상위이면 `null`
 - `member_record_ids`
+- `coverage_basis`: `declared_members` 또는 `section_census`
 - `semantic_role`: `definition`, `purpose`, `scope`, `criterion`, `condition`, `exception`, `procedure_step`, `risk_factor`, `evidence`, `boundary` 중 하나
 - `review_status`
 
 facet은 규제 요건을 선언하지 않는다. `semantic_role: criterion`은 record의 문서상 역할을 나타낼 뿐 `must`로 승격하지 않는다.
+
+`coverage_basis`는 coverage 상태의 유효 분모를 명시한다. `declared_members`는 선언된 `member_record_ids`만을 유효 분모로 사용하고, `section_census`는 facet scope의 section 구조를 유효 분모로 사용한다. 하위 section이 있는 chapter에 직접 귀속된 본문 record도 존재하면 그 parent 본문을 하나의 section bucket으로 포함한다. 실행 결과의 `effective`가 이 유효 분모이며, `status`는 오직 `effective`로 계산한다. `exact`와 `section`은 진단용 보조 신호로 함께 남지만 서로를 암묵적으로 대체하지 않는다.
 
 ### 4.4 `relations`
 
@@ -316,7 +320,7 @@ coverage manifest는 “규제상 필수 항목”이 아니라 “이 범위의
 
 `test/engine_semantic_shadow_regression.test.js`는 손으로 만든 envelope가 아니라 실제 엔진(`answerEnvelope`, LLM 미사용·결정적)에 감사 문항과 같은 실제 질문을 통과시켜 Q06/Q26/FDA ADA/Q49 각 대표 범위의 shadow plan이 안정적으로 나오는지 검증한다 — routing/retrieval 쪽 회귀는 기존 단위 테스트가 못 잡는 지점이라 별도로 추가했다.
 
-`scripts/check_semantic_overlay_promotion.js`(`npm run check:promotion`)는 §11 기준 중 기계적으로 확인 가능한 것(schema/validator 통과, staleness 없음, 최근 shadow 감사 재생에서 실제로 몇 번 발동했고 어떤 상태였는지)만 자동으로 점검해 manifest/comparison_binding별 워크시트를 출력한다. review_status는 쓰지 않는다 — 나머지 기준(50문항 적합 수 증가, UI 근거 추적)은 Stage C가 있어야 판단 가능한 사람 몫으로 명시적으로 분리해 둔다.
+`scripts/check_semantic_overlay_promotion.js`(`npm run check:promotion`)는 §11 기준 중 기계적으로 확인 가능한 것(schema/validator 통과, staleness 없음, 명시적으로 공급된 감사 입력에서 실제로 몇 번 발동했는지)을 점검해 manifest/comparison_binding별 워크시트를 출력한다. review_status는 쓰지 않는다. engineering completion과 final reviewed promotion을 분리하며, live 50문항 감사를 실행할 수 없으면 전자는 인정할 수 있지만 후자는 pending으로 유지한다.
 
 ### 단계 C — 검토 완료 범위만 활성화
 
@@ -330,6 +334,16 @@ coverage manifest는 “규제상 필수 항목”이 아니라 “이 범위의
 
 - 질문 빈도나 특정 테스트 문항이 아니라 재사용 가능한 guideline section/topic 단위로 확장한다.
 - 문서마다 작은 대표 표본을 먼저 검증한 뒤 인접 범위로 넓힌다.
+
+**구현(2026-09-08)**: Wave 1보다 먼저 Stage D0에서 의미 오버레이 계약을 `0.2.0`으로, public answer contract를 `2.2.0`으로 마이그레이션했다. `coverage_basis`와 `effective` 분모를 schema/validator/engine/UI 전체에 연결하고 기존 오버레이·manifest 회귀를 통과시킨 뒤 section hierarchy 기반 authoring을 수행했다. shadow 진단은 router 결함을 드러내도록 넓게 유지하고, 실제 응답은 질문에 명시된 section/topic, answer intent, 인용 section 거리를 차례로 사용해 가장 정확한 reviewed manifest만 선택한다.
+
+최종 inventory는 **중복 제거된 55개 unique manifest**다: document overview 6 + substantive parent section 42 + leaf process/conditional 5 + 독립 특화 manifest 2. 기존 5개 중 EMA FIH document overview, FDA ADA assay validation, FDA 2014 risk factors 3개는 새 계층형 범위에 흡수·마이그레이션했고, 독립 특화 의미를 유지하는 ICH M10 `run_acceptance`와 FDA ADA `screening_performance` 2개만 별도 manifest로 존치한다. 따라서 Wave별 작성 건수를 단순 합산한 수가 아니라 최종 파일에서 ID 중복을 제거한 실제 manifest 수가 55다.
+
+`scripts/build_semantic_stage_d.js`가 질문과 독립적인 section inventory에서 overlay를 재생성하고, `scripts/run_semantic_stage_d_audit.js`가 authoring 이후 55개 전부를 shadow 및 future-served selector로 검증한다. `scripts/verify_semantic_stage_d.js`는 direct-child topology, document area, leaf record membership, hash/staleness, 최종 수를 별도 granularity로 확인한다. 검증 과정에서 S6 Part I/II의 동명 `Notes` facet ID 충돌을 발견해 section 경로 기반 ID로 수정했다.
+
+live 50문항 감사도 OpenAI same-provider cross-model 구성으로 50/50 완료했다. 기존 적합 16문항의 route/mode/claim ID가 모두 그대로였고, 전체 판정은 16 적합/34 부분 적합/0 부적합을 유지했다. 이 감사와 명시적 review attestation을 요구하는 `scripts/promote_semantic_stage_d.js`를 통해 최종 55개 manifest 및 참조 객체를 `reviewed`로 승격했다. 감사 실행 자체가 불가능한 환경에서는 `verify:semantic:stage-d`의 engineering completion은 완료될 수 있으나 final reviewed promotion은 계속 pending이다.
+
+이번 Stage D는 coverage disclosure 확장만 다룬다. 기존 `summary_specs`, presentation 문장, salience profile의 runtime 소비는 의도적으로 연결하지 않았으며 별도 후속 범위다.
 
 ## 11. 활성화 승인 기준
 

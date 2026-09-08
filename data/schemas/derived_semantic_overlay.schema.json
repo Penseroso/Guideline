@@ -17,7 +17,7 @@
     "salience_profiles"
   ],
   "properties": {
-    "semantic_overlay_version": { "const": "0.1.0" },
+    "semantic_overlay_version": { "const": "0.2.0" },
     "document_id": { "$ref": "#/definitions/id" },
     "source_bundle_sha256": {
       "type": "string",
@@ -166,6 +166,7 @@
         "scope",
         "parent_facet_id",
         "member_record_ids",
+        "coverage_basis",
         "semantic_role",
         "review_status"
       ],
@@ -175,6 +176,10 @@
         "scope": { "$ref": "#/definitions/id" },
         "parent_facet_id": { "$ref": "#/definitions/nullableId" },
         "member_record_ids": { "$ref": "#/definitions/idArray" },
+        "coverage_basis": {
+          "type": "string",
+          "enum": ["declared_members", "section_census"]
+        },
         "semantic_role": {
           "type": "string",
           "enum": [
