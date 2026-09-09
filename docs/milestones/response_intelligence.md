@@ -277,38 +277,53 @@ Status: complete (2026-09-09)
 Outcome: goal met with one narrow, measurement-verified fix; a second
 candidate was explicitly deferred. Workstream 3's ambiguous-tie/manifest-
 ambiguous-tie LLM disambiguation candidate was **not implemented** — it
-measured 0/50 in real production traffic, so there is no real trade-off to
+measured 0/50 in Workstream 2's 50-question production-path audit (not
+observed in that benchmark; not a claim about all production traffic this
+system has served), so there is no real trade-off from that benchmark to
 compare against, per the milestone's own "implement only ... cannot solve
 reliably" gate. Implemented instead: `engine/answer_envelope.js`'s
 `shouldGenerate()` now skips a speculative generation attempt for
 `multi_criterion`/`list`/`within_document_comparison` matches at exactly
 `SMALL_CANDIDATE_SET_CEILING` (3) expected units, because the deterministic
 composite already trivially satisfies `generatedCoverageIsAdequate`'s own
-completeness bar for that exact shape — skipping can never violate "retain
-deterministic handling whenever it meets the same acceptance contract."
+completeness bar for that exact shape — skipping can never fail that
+specific coverage check. That is a guarantee about the coverage check
+only, not proof that a generated narrative would never have added real
+value; the `process`-mode exclusion below is exactly a case where it does.
 
 Verification: the scope was narrowed twice from its first design, each
 time by real measurement against fresh full 50-question production-path
 runs, not assumption. Count 1 was excluded after finding all 4 real cases
 had already succeeded at generation (pure value loss if skipped). `process`
 mode was excluded after implementing the broader version broke a pinned
-test showing genuine 3-unit narrative synthesis value. Count 2 was excluded
-after finding real outcomes genuinely mixed (1 failure, 2 successes across
-3 real cases) — not a clean win. Only count 3 showed a clean, repeated real
+test showing genuine 3-unit narrative synthesis value — real, direct
+evidence that the same evidence shape can carry real synthesis value, so
+this fix's safety is about the coverage check, not a general "no value
+lost" property of the shape itself. Count 2 was excluded after finding
+real outcomes genuinely mixed (1 failure, 2 successes across 3 real
+cases) — not a clean win. Only count 3 showed a clean, repeated real
 failure (Q05, Q47) with no counterexample across three separate fresh
-runs; the final scope targets exactly that shape. `npm test` 436/436 (7 new
-tests), `validate:guidelines` 6/6, `validate:ko` 2,693/2,693, `audit:ko`
-1,495/1,495 with 0 issues, `validate:semantic` 6/6, `audit:routing:hardening`
-220/220 with 42 mode/intent diagnostics unchanged, and `npm run eval` 24/24
-all stayed green. Full detail:
+runs; the final scope targets exactly that shape, and this remains a risk
+to re-evaluate (not a proven property) if Workstream 6 finds otherwise.
+`npm test` 436/436 (430 prior + 6 new), `validate:guidelines` 6/6,
+`validate:ko` 2,693/2,693, `audit:ko` 1,495/1,495 with 0 issues,
+`validate:semantic` 6/6, `audit:routing:hardening` 220/220 with 42
+mode/intent diagnostics unchanged, and `npm run eval` 24/24 all stayed
+green. Full detail:
 `history/verification/response_intelligence_workstream_5_2026-09-09.md`.
 
 Remaining risk/follow-up: count-2 and `process`-mode completeness failures
 remain unaddressed on current evidence (a real, documented trade rather
 than a free win) — `isSmallCompleteClaimSet`
 (`engine/answer_envelope.js`) documents exactly why and can be revisited
-with more data. The ambiguous-tie disambiguation candidate remains
-deferred pending real occurrence evidence at production scale.
+with more data. The count-3 skip itself is a guarantee about the coverage
+check, not a proven "no synthesis value ever lost" property — the
+`process`-mode counter-evidence above shows the same evidence shape can
+carry real value, so Workstream 6 (response/generation quality) should
+explicitly re-evaluate whether the count-3 skip is losing real value for
+`multi_criterion`/`list`/`within_document_comparison`, not treat it as
+settled. The ambiguous-tie disambiguation candidate remains deferred
+pending real occurrence evidence at production scale.
 
 ## 6. Response Quality / Verification Contract
 

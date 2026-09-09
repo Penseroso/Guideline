@@ -4,8 +4,8 @@ Date: 2026-09-09
 
 Workstream: Conditional LLM Query Planning
 
-Result: complete. One narrow, evidence-verified, zero-downside fix
-implemented; a second candidate explicitly deferred with reasoning.
+Result: complete. One narrow, measurement-verified fix implemented; a
+second candidate explicitly deferred with reasoning.
 
 ## Method
 
@@ -14,15 +14,17 @@ one and deferred the other.
 
 **Deferred: LLM disambiguation on `routing_ambiguous_tie`/
 `manifest_ambiguous_tie`.** Workstream 3 measured this escalation condition
-at 0/50 in Workstream 2's real production-path audit — only reproducible
-via targeted probes. Building a new conditional-LLM code path for a
-condition with zero observed real occurrences fails the milestone's own
+at 0/50 in Workstream 2's 50-question production-path audit — only
+reproducible via targeted probes, not observed in that benchmark. Building
+a new conditional-LLM code path for a condition with zero occurrences in
+the one real-question benchmark measured so far fails the milestone's own
 "implement only for cases deterministic resolution ... cannot solve
 reliably" and "compare against always-on ... trade-offs" gates: there is no
-real trade-off to compare, because the case does not occur in measured
-traffic. The existing fallback already produces an answer for these
-abstentions (imperfect, per Workstream 3's manifest-ambiguity trace, but
-not broken). Not implemented.
+real trade-off to compare from that benchmark. This is a statement about
+that specific 50-question audit, not a claim about all production traffic
+this system has ever served. The existing fallback already produces an
+answer for these abstentions (imperfect, per Workstream 3's manifest-
+ambiguity trace, but not broken). Not implemented.
 
 **Implemented: skip speculative generation when the deterministic answer is
 already adequate.** `engine/answer_envelope.js`'s `shouldGenerate()`
@@ -36,8 +38,12 @@ whether to keep the generated candidate — and for every mode except
 `match.claims`' distinct source units whenever there are `<=
 SMALL_CANDIDATE_SET_CEILING` (3) of them. That expected set is fully known
 before generation runs, and the deterministic composite trivially *is* that
-set — so for this exact shape, skipping the call can never violate "retain
-deterministic handling whenever it meets the same acceptance contract."
+set — so for this exact shape, skipping the call can never fail that
+specific coverage check. That is a guarantee about the coverage/acceptance
+check only, not a claim that a generated narrative would never have added
+real value for the user; see the `process`-mode exclusion below, which is
+exactly a case where the same evidence shape does carry real synthesis
+value.
 
 ## Iterating the scope against real measurement (not just implementing on paper)
 
@@ -77,8 +83,14 @@ justified by measurement, which is what the milestone asks for.
 ## Real measured effect (final scope)
 
 A third fresh full 50-question run with the final scope confirmed exactly
-2 real questions (Q05, Q47) triggered `generation_skipped_adequate`, and
-both are clean, zero-downside wins:
+2 real questions (Q05, Q47) triggered `generation_skipped_adequate`. For
+both, the observed outcome is a clean win with no downside: in the
+baseline, generation had already been attempted and rejected for these
+exact questions, so the user received the identical structured answer
+either way — this fix only removed the wasted call, it did not change
+what the user saw. This is an observed result for these two measured
+cases, not a guarantee that every future question hitting this same shape
+will have nothing to lose from skipping generation:
 
 | | Q05 | Q47 |
 |---|---|---|
@@ -107,7 +119,7 @@ should not be read as this fix's own effect size.
 
 ## Tests
 
-`test/engine_answer_envelope.test.js` (7 new tests, `shouldGenerate`
+`test/engine_answer_envelope.test.js` (6 new tests, `shouldGenerate`
 exported for direct testing, following `engine/query_router.js`'s existing
 convention of exporting internals for test purposes):
 
@@ -122,11 +134,15 @@ convention of exporting internals for test purposes):
 - Still attempts generation once the claim set exceeds the ceiling (> 3).
 - Does **not** skip `document_overview`/`comparison` at 3 units (their
   bars are breadth-based, explicitly out of scope).
-- The pre-existing pinned `process`-mode test continues to pass unmodified.
+
+The pre-existing pinned `process`-mode test ("auto preference synthesizes
+broad semantic modes...") is not new, but its continued, unmodified pass
+is itself load-bearing verification: it is the real counter-evidence that
+justified excluding `process` from this fix's scope (see Method above).
 
 ## Verification
 
-- `npm test` — 436/436 (429 prior + 7 new).
+- `npm test` — 436/436 (430 prior, per Workstream 4's verified count, + 6 new).
 - Three fresh full 50-question production-path runs, final one 50/50 with
   0 errors.
 - `npm run validate:guidelines` — 6/6.

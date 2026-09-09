@@ -55,13 +55,12 @@ function shouldGenerate(match, preference, generatorClient, verifierClient, tele
   if (!["document_overview", "process", "within_document_comparison", "multi_criterion", "list", "comparison"].includes(mode)) {
     return false;
   }
-  // Workstream 5: a claim set this small is exactly what
-  // generatedCoverageIsAdequate would require 100% coverage of anyway, and
-  // the deterministic composite already trivially is that set. Attempting
-  // generation here can only ever be discarded or, at best, tie the
-  // deterministic answer's own facts in different words -- not worth its
-  // latency/API cost. Measured real cases: history/verification/
-  // response_intelligence_workstream_5_2026-09-09.md.
+  // A claim set at exactly this size already satisfies
+  // generatedCoverageIsAdequate's own completeness bar below (see
+  // isSmallCompleteClaimSet for why this size specifically), so skipping
+  // never fails the coverage check a generated candidate would otherwise
+  // have to pass. That is a latency/cost argument, not proof that a
+  // generated narrative would add no value here.
   if (isSmallCompleteClaimSet(match, mode)) {
     recordTelemetryEvent(telemetry, "generation_skipped_adequate", { mode, expected_unit_count: expectedUnitsOf(match).size });
     return false;
@@ -113,35 +112,31 @@ function expectedUnitsOf(match) {
 }
 
 /**
- * Response Intelligence Workstream 5: the deterministic composite *is* the
- * expected unit set for `multi_criterion`/`list`/`within_document_comparison`
- * (document_overview/comparison's bars are breadth/distinct-count based, not
- * identity with `match.claims`, so they're excluded), so whenever this is
- * true, the composite trivially satisfies `generatedCoverageIsAdequate`'s
- * own small-set bar below with 100% coverage, before any generation call is
- * made. `process` is also excluded despite falling into the same generic
- * bar: a real pinned case ("auto preference synthesizes broad semantic
- * modes...", test/engine_answer_envelope.test.js) has a genuine 3-unit
- * process question where narrated sequencing is real synthesis value, not
- * redundant with the raw list — unlike Workstream 2's real Q40 failure at
- * the same shape, this is a genuine mixed cost/benefit for `process`
- * specifically, not a case that's always safe to skip for free. Shared by
- * `shouldGenerate` (skip the call) and `generatedCoverageIsAdequate` (judge
- * the call's result) so both use one identical definition — no drift.
+ * The deterministic composite is, by construction, the expected unit set
+ * for a `multi_criterion`/`list`/`within_document_comparison` match, so it
+ * always trivially satisfies `generatedCoverageIsAdequate`'s completeness
+ * bar below for these modes (`document_overview`/`comparison` use a
+ * different, breadth/distinct-count-based bar, not identity with
+ * `match.claims`, so they're excluded here). That guarantees skipping
+ * generation never fails this specific coverage check — it does not prove
+ * a generated narrative would add no value for the user. `process` is
+ * deliberately excluded despite sharing the same generic bar: a pinned
+ * regression case ("auto preference synthesizes broad semantic modes...",
+ * test/engine_answer_envelope.test.js) shows a real 3-unit process
+ * question where narrated sequencing has genuine synthesis value over the
+ * same evidence shape. The same could be true for the modes still in
+ * scope here and has not been ruled out, only not yet observed — treat
+ * this as a latency/cost optimization for a coverage-bar failure mode,
+ * not a proven no-value-lost guarantee, and revisit if that turns out to
+ * matter for these modes too.
  *
- * The bound is exactly `SMALL_CANDIDATE_SET_CEILING` (3), not a range, from
- * measuring this fix against two fresh 50-question runs before finalizing
- * it. At `expected_unit_count === 1` (Q08/Q24/Q38/Q46), every real case had
- * *already* succeeded at generation with no rejection — trivially easy to
- * cover completely, so skipping forfeits real value for no measured risk
- * reduction. At `=== 2` (Q06/Q39/Q41), real outcomes were genuinely mixed
- * (1 real failure, 2 real successes across both runs) — not decisive
- * enough to justify forfeiting Q39/Q41's real synthesis value. Only
- * `=== 3` (Q05/Q47) showed a clean, repeated real failure with zero
- * counterexample across both runs. If a future workstream gathers more
- * evidence at count 2, this bound can be revisited — it is not
- * philosophically tied to 3, only currently justified only there. See
- * history/verification/response_intelligence_workstream_5_2026-09-09.md.
+ * The bound is exactly `SMALL_CANDIDATE_SET_CEILING` (3), not a wider
+ * range: observed outcomes at 1-2 expected units did not show a decisive,
+ * one-sided pattern, so the threshold stays narrow rather than
+ * extrapolated from thin evidence. Widen it only with more data. Shared
+ * by `shouldGenerate` (skip the call) and `generatedCoverageIsAdequate`
+ * (judge the call's result) so both use one identical definition — no
+ * drift.
  */
 function isSmallCompleteClaimSet(match, mode) {
   if (!["multi_criterion", "list", "within_document_comparison"].includes(mode)) return false;
