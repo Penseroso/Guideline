@@ -34,7 +34,7 @@ An M6 spike explored a separate "Applicability Engine" (given a structured progr
 ## Key Documents
 
 - `docs/product_roadmap.md`: target product profile, implementation-approach decision (RAG and alternatives, agent-driven extraction/verification), and the active roadmap.
-- `docs/milestone_log.md`: active decision record, one entry per roadmap milestone — the source of truth for what changed, why, and what it affects.
+- `docs/milestone_log.md`: concise active milestone register, one entry per roadmap milestone; detailed implementation chronology is frozen under `history/milestones/` and `history/verification/`.
 - `docs/verification_status.md`: current accepted verification baseline and explicitly open verification work.
 - `docs/coverage/`: current per-guideline coverage matrices.
 - `docs/schema.md`: the current data model.

@@ -56,8 +56,8 @@ not satisfy a positive structured-answer gate.
 There were 42 mode/intent diagnostics among the 220 probes: the intended
 grounded manifest was selected, but an established deterministic path used a
 mode or answer-intent label different from the manifest declaration. These do
-not violate the Workstream 1 hard gate and remain a response-contract question
-for Workstream 5.
+not violate the Workstream 1 hard gate and enter Workstream 3's query
+resolution taxonomy before any retrieval or LLM intervention is selected.
 
 The fresh production-path 50-question audit completed 50/50 with 0 final
 errors and 0 refusals after targeted retry of two transient provider failures

@@ -14,7 +14,7 @@ This directory holds frozen, superseded planning, process, and prototype artifac
 - `audits/`: dated repository audits that informed earlier roadmap decisions.
 - `source_assessments/`: one-time source PDF and extraction-risk assessments.
 - `verification/`: detailed engine measurements superseded by `docs/verification_status.md`.
-- `milestones/`: completed milestone narratives superseded by the active index in `docs/milestone_log.md`.
+- `milestones/`: frozen cumulative milestone logs and completed implementation narratives superseded by the concise active register in `docs/milestone_log.md`.
 - `usage/`: frozen real-use logs and derived reports, never live runtime inputs.
 
 ## Current source of truth

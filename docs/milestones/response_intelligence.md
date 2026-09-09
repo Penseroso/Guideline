@@ -63,7 +63,8 @@ interruption and verify both persistence and resume behavior.
 Remaining risk/follow-up: 42/220 probes selected the intended grounded
 manifest but used an existing deterministic mode/intent different from the
 manifest declaration. This is diagnostic, not a failure of the structured
-routing gate, and should be evaluated under Workstream 5's response contract.
+routing gate, and should first be classified under Workstream 3's query
+resolution audit.
 The current manifest inventory has no stale or unreviewed member, so those
 states are covered by negative regression fixtures rather than the positive
 220-probe denominator.
@@ -89,12 +90,34 @@ Workstream 2 baseline): end-to-end latency across 50 questions was p50
 times only. Stage-level timing, API-call counts, token use, and cost remain
 to be instrumented in this workstream.
 
-## 3. Retrieval Quality Upgrade
+## 3. Query Resolution & LLM Intervention Audit
+
+Goal: classify the failures that remain after routing hardening and baseline
+measurement before choosing an implementation technique.
+
+- Build a failure taxonomy from real questions: evidence absent, retrieval
+  miss, query-understanding/resolution miss, ambiguous scope, deterministic
+  confidence gap, or response-generation/verification failure.
+- Distinguish cases where the correct semantic scope was resolved but
+  evidence retrieval missed from cases where document/topic/intent/context
+  resolution itself was wrong.
+- Identify the exact candidate intervention points for an LLM and define
+  observable escalation conditions, including the deterministic evidence
+  available at each point.
+- Measure how many cases each proposed intervention would cover and what
+  latency/API-call budget it would consume using Workstream 2's baseline.
+- Do not implement an LLM planner or retrieval upgrade in this workstream;
+  its output is the evidence-backed scope for Workstreams 4 and 5.
+
+Status: not started
+
+## 4. Retrieval Quality Upgrade
 
 Goal: reduce cases where the semantic scope is right but needed evidence is
-missed by retrieval.
+missed by retrieval, limited to the cases classified as retrieval failures in
+Workstream 3.
 
-- After Workstream 1's routing fixes, check what recall gaps remain.
+- Use Workstream 3's taxonomy and fixtures as the benchmark denominator.
 - Evaluate real synonym/paraphrase/wording-variation cases lexical/
   structured retrieval misses.
 - Only adopt hybrid retrieval / BM25 / embeddings / reranking if benchmark
@@ -103,20 +126,22 @@ missed by retrieval.
 
 Status: not started
 
-## 4. Conditional LLM Query Planning
+## 5. Conditional LLM Query Planning
 
 Goal: cover deterministic routing's natural-language blind spots while
-minimizing added API/latency cost.
+minimizing added API/latency cost. Implement only for Workstream 3 cases that
+deterministic resolution and the justified Workstream 4 retrieval changes
+cannot solve reliably.
 
-- Identify question shapes deterministic resolution doesn't handle well:
-  ambiguous, broad-compound, low-confidence resolution, insufficient first
-  retrieval.
-- Evaluate conditional escalation to an LLM planner only for those shapes.
+- Implement the intervention points and observable escalation conditions
+  selected by Workstream 3; do not broaden them by default.
 - Compare against always-on LLM planning on latency/cost/quality trade-offs.
+- Retain deterministic handling whenever it meets the same acceptance
+  contract.
 
 Status: not started
 
-## 5. Response Quality / Verification Contract
+## 6. Response Quality / Verification Contract
 
 Goal: reduce generation-level failures where evidence is adequate but the
 answer is incomplete or distorts meaning.
@@ -127,7 +152,7 @@ answer is incomplete or distorts meaning.
 
 Status: not started
 
-## 6. Production Evaluation & SLO
+## 7. Production Evaluation & SLO
 
 Goal: define product-level acceptance criteria and a production SLO.
 
@@ -138,7 +163,7 @@ Goal: define product-level acceptance criteria and a production SLO.
 
 Status: not started
 
-## 7. Corpus Expansion / Reusability Test
+## 8. Corpus Expansion / Reusability Test
 
 Goal: empirically determine whether the current engine is a
 Guideline-specific application or a reusable regulatory-QA platform.
