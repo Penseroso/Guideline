@@ -24,6 +24,7 @@
     "audit:routing:hardening": "node scripts/audit_answer_routing_hardening.js",
     "audit:latency-cost": "node scripts/analyze_latency_cost_baseline.js",
     "audit:query-resolution": "node scripts/analyze_query_resolution_taxonomy.js",
+    "audit:retrieval-quality": "node scripts/analyze_retrieval_quality.js",
     "verify:semantic:manifests": "node scripts/verify_semantic_manifests.js",
     "build:semantic:summaries": "node scripts/build_semantic_summaries.js",
     "audit:semantic:summaries": "node scripts/audit_semantic_summary_routing.js",

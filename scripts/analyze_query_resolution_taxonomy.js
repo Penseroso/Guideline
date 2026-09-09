@@ -221,11 +221,14 @@ function runManifestAmbiguityProbe(probe, semanticStore) {
  * (`npm run audit:routing:hardening`) rather than re-running it: every probe
  * there already carries ground truth (`document_id`/`manifest_id`), and the
  * hard gate (structured/manifest_selected/correct_document_scope/
- * claims_grounded) already passed 220/220. The `mode_or_intent_diagnostics`
- * subset -- manifest and document resolved correctly, but the router's own
- * mode/answer_intent label disagreed with the manifest's declaration -- is a
- * real, already-measured query-understanding/resolution-miss case flagged by
- * Workstream 1 for this workstream to classify.
+ * claims_grounded) already passed 220/220 -- document and manifest
+ * resolution were both already correct for every one of these. The
+ * `mode_or_intent_diagnostics` subset is only a disagreement between the
+ * router's own internal mode/answer_intent LABEL and the manifest's
+ * declaration; it is deliberately NOT counted under the milestone's
+ * "query-understanding/resolution miss" category (that category means
+ * document/topic/intent/context resolution itself was wrong, which it was
+ * not here) -- see `mode_intent_contract_mismatch` below.
  */
 function loadRoutingHardeningDiagnostics() {
   if (!fs.existsSync(ROUTING_HARDENING_INPUT)) return null;
@@ -338,7 +341,13 @@ function buildInterventionCandidates({ ambiguousTieResults, confidenceFloorResul
     },
     {
       id: "mode_intent_relabeling_diagnostics",
-      category: "query_understanding_resolution_miss",
+      // Deliberately not "query_understanding_resolution_miss": document and
+      // manifest resolution were both already correct for every one of
+      // these 42 cases (Workstream 1's 220/220 hard gate). This is a
+      // disagreement between an internal label and the manifest
+      // declaration, not a resolution failure -- see the doc-comment on
+      // loadRoutingHardeningDiagnostics above.
+      category: "mode_intent_contract_mismatch",
       escalation_condition: "Workstream 1 mode_or_intent_diagnostics (manifest/document correct, router's own mode/answer_intent label disagrees)",
       deterministic_evidence_available: routingHardening
         ? `The manifest's own declared answer_intent, already resolved (n=${routingHardening.mode_or_intent_diagnostics.length}).`
@@ -374,7 +383,7 @@ async function analyze() {
   for (const r of ambiguousTieResults) for (const c of r.categories) tally(c);
   for (const r of confidenceFloorResults) for (const c of r.categories) tally(c);
   for (const r of manifestAmbiguityResults) for (const c of r.categories) tally(c);
-  if (routingHardening) categoryCounts.query_understanding_resolution_miss = routingHardening.mode_or_intent_diagnostics.length;
+  if (routingHardening) categoryCounts.mode_intent_contract_mismatch = routingHardening.mode_or_intent_diagnostics.length;
   if (fiftyQ) for (const [category, count] of Object.entries(fiftyQ.category_counts)) categoryCounts[category] = (categoryCounts[category] || 0) + count;
 
   return {

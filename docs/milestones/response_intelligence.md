@@ -141,30 +141,42 @@ Status: complete (2026-09-09)
 
 Outcome: goal met, as a non-implementing audit only. Additive, non-behavior-
 changing diagnostic telemetry was added to `structuredQuery` and
-`selectReviewedRoutingManifest` (seven new event names) so every routing
-abstention is now observable, not silent. The existing 50-question
-suitability set alone could not supply real query-resolution failures (its
-34 partial cases are format/completeness gaps, not resolution failures), so
-this workstream built 26 real, corpus-derived probes (19 ambiguous-tie
-same-parameter non-sibling QC collisions, 6 confidence-floor single-word
-probes, 1 cross-document manifest-topic overlap) plus reuse of Workstream
-1's 220-probe mode/intent diagnostics (42 cases) and Workstream 2's fresh
-50-question production run.
+`selectReviewedRoutingManifest` (eight new event names, seven covered by
+dedicated unit tests — the eighth, `routing_document_gate_empty`, is
+unreachable through `structuredQuery`'s current public signature and kept
+only as defensive instrumentation) so every routing abstention is now
+observable, not silent. The existing 50-question suitability set alone
+could not supply real query-resolution failures (its 34 partial cases are
+format/completeness gaps, not resolution failures), so this workstream
+built 26 real, corpus-derived probes (19 ambiguous-tie same-parameter
+non-sibling QC collisions, 6 confidence-floor single-word probes, 1
+cross-document manifest-topic overlap) plus reuse of Workstream 1's
+220-probe mode/intent diagnostics (42 cases) and Workstream 2's fresh
+50-question production-path audit.
 
 Verification: measured taxonomy counts — `ambiguous_scope` 19,
-`deterministic_confidence_gap` 6, `query_understanding_resolution_miss` 42,
-`response_generation_verification_failure` 10, `evidence_absent` 0. Zero of
-the routing-abstention categories occurred in real production traffic (the
-50-question run); all came from targeted probes. Of the 6 confidence-floor
-cases, 5 were shown to be genuine retrieval misses (the structured router
-correctly identified the right document even sub-floor, but the separate
+`deterministic_confidence_gap` 6, `response_generation_verification_failure`
+10, `evidence_absent` 0, and the milestone's own `query-understanding/
+resolution miss` category **0** (no probe or corpus case had document/
+topic/intent/context resolution itself resolve incorrectly). Workstream 1's
+42 mode/intent-label diagnostics were kept as a separate,
+non-milestone-taxonomy count (`mode_intent_contract_mismatch`) precisely
+because document and manifest resolution were already correct in every one
+of those cases — only an internal label disagreed with the manifest.
+None of the `ambiguous_scope`/`deterministic_confidence_gap` cases occurred
+in Workstream 2's 50-question production-path audit (0/50); all came from
+targeted, corpus-derived probes — a finding about that one benchmark, not a
+claim about all production traffic. Of the 6 confidence-floor probes, 5
+reproduced a genuine retrieval miss (the structured router correctly
+identified the right document even sub-floor, but the separate
 `store.search()` fallback path independently missed the same record) and
 only 1 was recoverable by existing fallback — this splits the milestone's
-retrieval-miss/resolution-miss distinction with real data, not assumption.
-A concrete real trace showed a bare cross-document topic question
-degrading to a `source_excerpts` answer mixing two unrelated documents with
-no disambiguation signal to the user. Reproducible via
-`npm run audit:query-resolution`
+retrieval-miss/resolution-miss distinction with real (probe-derived) data,
+not assumption, though it has not yet been measured how often this pattern
+occurs in real production questions. A concrete real trace showed a bare
+cross-document topic question degrading to a `source_excerpts` answer
+mixing two unrelated documents with no disambiguation signal to the user.
+Reproducible via `npm run audit:query-resolution`
 (`history/verification/response_intelligence_workstream_3_2026-09-09.md`).
 `npm test` 428/428 (7 new routing-diagnostics tests), `validate:guidelines`
 6/6, `validate:ko` 2,693/2,693, `audit:ko` 1,495/1,495 with 0 issues,
@@ -175,9 +187,14 @@ Remaining risk/follow-up: a documented (not fixed) bug —
 `answer_envelope.js`'s plain-fallback path reads `refusal_reason` while
 `answerFallback` sets the richer reasons on `fallback_reason`, silently
 collapsing them to `"no_match"`; fixing it changes the public envelope
-contract and is left for a dedicated follow-up. Workstream 4 should treat
-the 5 real retrieval-miss cases as part of its benchmark denominator.
-Workstream 5 should scope any new LLM call strictly to the two measured
+contract and is left for a dedicated follow-up. **Addendum (Workstream 4
+kickoff): the "5 retrieval-miss cases" above are not usable as a benchmark
+denominator** — they are an artificial single-real-word query colliding
+with unrelated records at the keyword store's field-tier scoring, not a
+demonstrated synonym/paraphrase gap (see the corresponding addendum in the
+Workstream 3 report). Workstream 4 built a real, multi-word synonym/
+paraphrase benchmark instead. Workstream 5 should scope any new LLM call
+strictly to the two measured
 ambiguous-tie escalation conditions and implement Workstream 2's
 cost-negative recommendation (skip speculative generation when the
 deterministic answer is already adequate) first, ahead of any new
@@ -199,7 +216,48 @@ Workstream 3.
   results actually justify it — building RAG machinery is not itself a
   goal here.
 
-Status: not started
+Status: complete (2026-09-09)
+
+Outcome: goal met with two small, dependency-free fixes; no hybrid
+retrieval/BM25/embeddings/reranking was adopted. Workstream 3's "5
+retrieval-miss" cases were first found unusable as a benchmark denominator
+(they were an artificial single-real-word query colliding with unrelated
+records at the keyword store's field-tier scoring, not a synonym/paraphrase
+gap — addenda added to the Workstream 3 report and §3 above). A real
+benchmark was built instead (`npm run audit:retrieval-quality`,
+`scripts/analyze_retrieval_quality.js`): 30 auto-generated known-synonym
+regression probes and 3 hand-curated real uncovered-synonym probes, all
+realistic multi-word questions.
+
+Verification: uncovered-synonym gap went 1/3 → 3/3 after adding
+`"repeats"`/`"repeat"`/`"cycling"` to `engine/text_utils.js`'s
+`REGULATORY_SYNONYMS` (two confirmed real missing-vocabulary gaps —
+neither shared any token at all with its ground-truth record). Known-
+synonym regression stayed 28/30 both before and after adding a small
+document-frequency-aware scoring bonus to `engine/vector_store.js`'s
+`createKeywordStore()` (fixes the same field-tier-collision mechanism the
+Workstream 3 artifact exposed, at its root); the remaining 2 misses
+(`단백질`/protein, `결합`/binding) are a genuinely under-specified 2-generic-
+word query (each word individually matches ~9-12% of the 2,693-record
+archive), not a fixable ranking or vocabulary defect. `npm test` 430/430
+(2 new tests), `validate:guidelines` 6/6, `validate:ko` 2,693/2,693,
+`audit:ko` 1,495/1,495 with 0 issues, `validate:semantic` 6/6,
+`audit:routing:hardening` 220/220 with 42 mode/intent diagnostics
+unchanged (confirms this change is isolated to the fallback retrieval
+path, not `structuredQuery`'s own scorer), and `npm run eval` 24/24 all
+stayed green. Full detail:
+`history/verification/response_intelligence_workstream_4_2026-09-09.md`.
+
+Remaining risk/follow-up: the IDF bonus weight (0.3) was chosen to fix the
+observed collision shape without regressing any pinned test, not
+exhaustively tuned against a larger corpus. The remaining 2-generic-word
+under-specification gap may need upstream fallback-query construction
+(more of the original question's content words), not further retrieval-
+layer changes, if it proves to matter with real user questions. Embeddings
+remain unintegrated and infrastructurally blocked (no working native-binary
+build for `better-sqlite3`/`sqlite-vec` on this machine) — a real
+prerequisite, independent of retrieval-quality justification, for any
+future workstream that revisits them.
 
 ## 5. Conditional LLM Query Planning
 

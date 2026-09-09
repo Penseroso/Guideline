@@ -98,7 +98,7 @@ History: `history/applicability_engine/`.
 
 ## Active milestone — Response Intelligence
 
-Status: active since 2026-09-08; Workstreams 1-3 completed 2026-09-09.
+Status: active since 2026-09-08; Workstreams 1-4 completed 2026-09-09.
 
 This sequential milestone measures and improves routing, latency/cost, query
 resolution, retrieval, conditional planning, response verification,
@@ -109,11 +109,21 @@ not deterministic routing cost: it is generation/verification work performed
 before a final structured fallback. Detailed evidence is in
 `history/verification/response_intelligence_workstream_2_2026-09-09.md`.
 Workstream 3 added additive routing-abstention telemetry and 26 real,
-corpus-derived probes to classify the remaining failures: 5 of 6
-confidence-floor cases are genuine retrieval misses (not resolution
-failures), routing/manifest ambiguous-tie abstention is real but did not
-occur in real production traffic, and the highest-value next step remains
-Workstream 2's cost-negative recommendation. Detailed evidence is in
-`history/verification/response_intelligence_workstream_3_2026-09-09.md`.
+corpus-derived probes to classify the remaining failures: routing/manifest
+ambiguous-tie abstention is real but did not occur in Workstream 2's
+50-question production-path audit, and the highest-value next step remains
+Workstream 2's cost-negative recommendation. Its initial "5 of 6
+confidence-floor probes are retrieval misses" finding was corrected by
+Workstream 4 (below) before being used as a benchmark. Detailed evidence is
+in `history/verification/response_intelligence_workstream_3_2026-09-09.md`.
+Workstream 4 found that correction — those 5 cases were an artificial
+single-real-word query colliding with unrelated records at the keyword
+store's field-tier scoring, not a synonym/paraphrase gap — then built a
+real, realistic-multi-word benchmark and implemented two small,
+dependency-free fixes it justified: two missing synonym entries and a
+document-frequency-aware scoring bonus in `engine/vector_store.js`. No
+hybrid retrieval, BM25, or embeddings were adopted. Detailed evidence is in
+`history/verification/response_intelligence_workstream_4_2026-09-09.md`.
+Workstream 5, Conditional LLM Query Planning, is next.
 Workstream 4, Retrieval Quality Upgrade, is next, scoped to the retrieval-
 miss cases Workstream 3 classified.

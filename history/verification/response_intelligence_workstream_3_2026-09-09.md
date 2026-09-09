@@ -21,15 +21,25 @@ be built by manually re-reading code per failing question.
 pattern as Workstream 2) were added to `engine/query_router.js` and
 `engine/semantic_routing.js`, threading an optional `telemetry` object into
 `structuredQuery`, `tryListCompositeQuery`, `tryCoverageCompositeQuery` /
-`buildCoverageMatch`, and `selectReviewedRoutingManifest`. Seven new event
+`buildCoverageMatch`, and `selectReviewedRoutingManifest`. Eight new event
 names were added: `routing_document_gate_empty`,
 `routing_below_confidence_floor`, `routing_broad_no_composite`,
 `routing_ambiguous_tie`, `routing_list_ambiguous_tie`,
 `routing_coverage_composite_below_threshold`, `manifest_no_eligible_candidate`,
 `manifest_ambiguous_tie`. Seven unit tests
-(`test/engine_routing_diagnostics.test.js`) confirm each fires on the
-branch it names, without changing any match/return value. `npm test`
-(428/428), `validate:guidelines`, `validate:ko`, `audit:ko`,
+(`test/engine_routing_diagnostics.test.js`) cover seven of these eight
+events (one test exercises three cascading events together — a
+single-record broad question falls through `routing_coverage_composite_below_threshold`,
+`manifest_no_eligible_candidate`, and `routing_broad_no_composite` in
+sequence). `routing_document_gate_empty` has no dedicated test: it is
+unreachable through `structuredQuery`'s public signature today, because
+`resolveRequestedDocumentIds` builds its document-identity map from the
+same `records` array that `applyDocumentGate` then filters — any document
+id it can return is therefore already guaranteed to have at least one
+matching record in that same array, so the gate can never empty. The event
+is kept as defensive instrumentation in case a future caller passes
+`structuredQuery` a pre-scoped record subset that decouples the two. `npm
+test` (428/428), `validate:guidelines`, `validate:ko`, `audit:ko`,
 `validate:semantic`, `audit:routing:hardening` (220/220), and `npm run eval`
 (24/24) all stayed green after this change.
 
@@ -82,20 +92,30 @@ Workstream 1's 220-probe routing-hardening audit
 
 | Milestone category | Real measured count | Source |
 |---|---:|---|
-| `ambiguous_scope` | 19 | 18/19 ambiguous-tie probes tied; the 1 manifest-ambiguity probe tied |
-| `deterministic_confidence_gap` | 6 | 6/6 confidence-floor probes fell below the router's score/token floor |
-| `query_understanding_resolution_miss` | 42 | Workstream 1's 220-probe mode/intent diagnostics (manifest and document resolved correctly; the router's own mode/answer_intent label disagreed with the manifest's declaration) |
-| `response_generation_verification_failure` | 10 | Workstream 2's fresh 50-question production corpus (verification retry/failure, language retry, generated-facet-coverage rejection, model decline — already itemized in the Workstream 2 report) |
-| `evidence_absent` | 0 | Not observed in either probe corpus or the 50-question production corpus |
+| `ambiguous_scope` | 19 | 18/19 ambiguous-tie probes tied; the 1 manifest-ambiguity probe tied — all from targeted, corpus-derived probes (see caveat below) |
+| `deterministic_confidence_gap` | 6 | 6/6 confidence-floor probes fell below the router's score/token floor — targeted probes |
+| `query-understanding/resolution miss` | **0** | Not found by this audit: no probe or corpus case had document/topic/intent/context resolution itself resolve incorrectly (the milestone's own definition of this category) |
+| `response_generation_verification_failure` | 10 | Workstream 2's fresh 50-question production-path audit (verification retry/failure, language retry, generated-facet-coverage rejection, model decline — already itemized in the Workstream 2 report) |
+| `evidence_absent` | 0 | Not observed in either probe corpus or the 50-question production-path audit |
 | `retrieval_miss` | (see below — distinct axis, not double-counted here) | Confidence-floor probes only |
 
-**A real production question essentially never reaches the routing-
-abstention branches.** All 19 ambiguous-scope and 6 confidence-gap cases
-came from targeted probes built specifically to exercise those branches;
-zero occurred in Workstream 2's real 50-question production run. This is
-itself a finding: these deterministic abstention points are real and now
-observable, but latent under the current corpus's actual question
-distribution — not a source of everyday user-facing failures today.
+**Not part of the milestone's six-category taxonomy:** 42 cases from
+Workstream 1's 220-probe audit where the router selected the correct
+document and manifest (both resolution signals were already right) but its
+own internal `mode`/`answer_intent` label disagreed with the manifest's
+declaration. This is a labeling/consistency mismatch, not a resolution
+failure, and counting it under `query-understanding/resolution miss` would
+overstate that category — see `mode_intent_contract_mismatch` in the JSON
+output and the "documented, not an LLM candidate" note below.
+
+**These abstention branches were not observed in Workstream 2's real
+50-question production-path audit.** All 19 ambiguous-scope and 6
+confidence-gap cases above came from probes built specifically to exercise
+those branches; the corresponding count in the 50-question production-path
+audit is 0/50. This is a finding about that one benchmark, not a claim
+about all production traffic this system has ever served: these
+deterministic abstention points are real and now observable, but did not
+occur in the one real-question corpus this workstream measured against.
 
 One ambiguous-tie probe (`precision (%cv)`, `ich_m10.qc.3_2_7.003` vs.
 `ich_m10.qc.4_2_4_2.010`) did not tie: the `(%cv)` parenthetical gave the two
@@ -118,7 +138,7 @@ check whether the ground-truth record is retrievable at all:
 | ich_m3_r2 | yes | no | retrieval_miss |
 | ich_s6_r1 | yes | no | retrieval_miss |
 
-**5 of 6 confidence-floor cases are genuine retrieval misses**: the
+**5 of 6 confidence-floor probes reproduce a genuine retrieval miss**: the
 structured router's own scorer actually identified the correct document even
 at sub-floor confidence (`best_sub_floor_document_id` in the new telemetry
 event), but the separate vector/keyword `store.search()` used for
@@ -130,6 +150,31 @@ This directly answers the milestone's ask: these 5 cases are **not**
 query-understanding/resolution failures — the resolution was already
 correct — and belong in Workstream 4's retrieval-quality benchmark
 denominator, not in Workstream 5's LLM-planning scope.
+
+**Addendum (Workstream 4 kickoff, 2026-09-09): these 5 cases are not a
+usable synonym/paraphrase benchmark denominator, and the paragraph above
+overstated what they show.** Workstream 4 re-examined them before building
+on them. Every probe is `"<one real word> xylophone marmalade zeppelin"`,
+and the "real word" (e.g. "addition", "because", "recommended") is not a
+synonym or paraphrase of anything — it is a verbatim substring of the
+ground-truth record's own `source_text` (its literal opening word).
+Reproducing `"addition xylophone marmalade zeppelin"` directly against
+`engine/vector_store.js`'s keyword store shows the actual mechanism: its
+scorer assigns a flat per-token score by field tier (`semantic` fields = 3,
+`source_text` = 2, `section` = 1, `document` = 0.5) with no term-frequency
+or informativeness weighting, so the common word "addition" also matches
+several unrelated records' `parameter`/`subject`/`action`/`object` fields
+at the higher semantic tier (score 3), outranking the true paragraph's
+source-text-tier match (score 2) and pushing it out of the top-5. This is
+a real ranking-quality gap, but only reachable by an artificial
+single-real-word query -- no real multi-word question collapses to one
+generic content token, and none of these 5 words is a synonym/paraphrase
+gap in the sense the milestone means. The raw observation stands
+(`store.search()` did not return the ground truth for these 5 inputs); the
+"becomes Workstream 4's benchmark denominator" conclusion does not.
+Workstream 4's report
+(`history/verification/response_intelligence_workstream_4_2026-09-09.md`)
+builds a real, multi-word, genuine-synonym/paraphrase benchmark instead.
 
 ## Manifest ambiguity: a concrete real trace
 
@@ -151,10 +196,10 @@ looks like in production, not a hypothetical.
 | Candidate | Escalation condition | Deterministic evidence already available | Measured coverage | Direction |
 |---|---|---|---|---|
 | **Skip speculative generation when the deterministic answer is already adequate** | `generated_answer_rejected` / `structured_routing_rejected` | The already-complete deterministic structured/manifest answer | 12/23 final-structured Workstream 2 baseline cases | **cost-negative** — highest priority |
-| LLM disambiguation on `routing_ambiguous_tie` / `routing_list_ambiguous_tie` | Tie abstention fires | The tied candidate record set itself — no new retrieval | 18/19 real corpus-derived probes; 0/50 real production questions | cost-positive, conditional |
+| LLM disambiguation on `routing_ambiguous_tie` / `routing_list_ambiguous_tie` | Tie abstention fires | The tied candidate record set itself — no new retrieval | 18/19 real corpus-derived probes; 0/50 in Workstream 2's 50-question production-path audit | cost-positive, conditional |
 | LLM disambiguation on `manifest_ambiguous_tie` | Manifest tie abstention fires | The tied manifest list | 1/1 real cross-document topic group (of 55 reviewed manifests) | cost-positive, conditional, low volume today |
-| Retrieval quality upgrade for confidence-floor retrieval misses | `routing_below_confidence_floor` where `store.search` also misses | N/A — this is retrieval quality, not LLM planning | 5/6 confidence-floor probes | **out of scope for Workstream 5**; becomes Workstream 4's benchmark |
-| Deterministic mode/intent relabeling | Workstream 1's 42 mode/intent diagnostics | The selected manifest's own declared `answer_intent` | 42/220 eligible probes | diagnostic only — not an LLM candidate; a deterministic label fix is cheaper if it ever causes an observable defect |
+| Retrieval quality upgrade for confidence-floor retrieval misses | `routing_below_confidence_floor` where `store.search` also misses | N/A — this is retrieval quality, not LLM planning | See the Workstream 4 addendum below the retrieval-miss table: this specific coverage number is superseded, not usable as a benchmark | **out of scope for Workstream 5**; real benchmark moved to Workstream 4 |
+| Deterministic mode/intent relabeling (`mode_intent_contract_mismatch`, not a milestone taxonomy category) | Workstream 1's 42 mode/intent diagnostics | The selected manifest's own declared `answer_intent` | 42/220 eligible probes | diagnostic only — not an LLM candidate; a deterministic label fix is cheaper if it ever causes an observable defect |
 
 Using Workstream 2's measured per-call cost (frozen 2026-09-09 OpenAI
 Standard short-context snapshot; `gpt-5.6-terra` generation rates), a single
@@ -196,14 +241,16 @@ of scope for a non-implementing audit workstream.
   pick up new real cases automatically, not a fixed fixture.
 - `evidence_absent` (document-gate-empty / zero-candidate) was not observed
   by any probe in this workstream; `routing_document_gate_empty` in
-  particular is likely unreachable by construction today because
-  `resolveRequestedDocumentIds`'s identity map is built from the same
-  `records` array `applyDocumentGate` filters — the event is kept as
-  defensive instrumentation for a caller that ever passes a pre-scoped
-  record subset.
-- Workstream 4 should treat the 5 real retrieval-miss cases (and the
-  underlying mechanism — the structured scorer and `store.search` not
-  sharing a signal) as part of its benchmark denominator.
+  particular is unreachable through `structuredQuery`'s current public
+  signature (see Method) — the event is kept as defensive instrumentation
+  for a caller that ever passes it a pre-scoped record subset decoupled
+  from the identity resolution step.
+- Superseded by the Workstream 4 addendum above: the 5 confidence-floor
+  probes are an artificial single-real-word collision at the keyword
+  store's field-tier scoring, not a synonym/paraphrase benchmark. See
+  `history/verification/response_intelligence_workstream_4_2026-09-09.md`
+  for the real retrieval-quality benchmark this workstream's finding was
+  replaced with.
 - Workstream 5 should scope any new LLM call strictly to the two ambiguous-
   tie escalation conditions above, and implement Workstream 2's
   cost-negative recommendation first.

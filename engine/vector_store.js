@@ -30,9 +30,28 @@ function createStore({ embed } = {}) {
   return createKeywordStore();
 }
 
+// Response Intelligence Workstream 4 (scripts/analyze_retrieval_quality.js):
+// a realistic multi-word benchmark found the correct record missing from
+// the top-5 specifically when its one matching query token was also common
+// across roughly a third or more of the whole archive (e.g. "protein" in
+// 303/~900 records, "binding" in 234/~900) — the flat per-tier score alone
+// can't tell a distinctive term from a ubiquitous one. `idfBonus` adds a
+// document-frequency-aware nudge on top of the existing tier score, small
+// enough that the tier hierarchy (semantic > source > section > document)
+// still dominates ranking, while a rare token now counts for more than a
+// near-universal one.
+const IDF_BONUS_WEIGHT = 0.3;
+
 function createKeywordStore() {
   let indexed = [];
   let fieldTokenSets = [];
+  let documentFrequency = new Map();
+
+  function idfBonus(token) {
+    const df = documentFrequency.get(token) || 0;
+    if (df === 0 || indexed.length === 0) return 0;
+    return Math.log((indexed.length + 1) / (df + 1)) * IDF_BONUS_WEIGHT;
+  }
 
   return {
     mode: "keyword",
@@ -44,6 +63,11 @@ function createKeywordStore() {
         section: new Set(tokenize([record.section_number, ...(record.section_path || [])].filter(Boolean).join(" "))),
         document: new Set(tokenize([record.document_id && record.document_id.replace(/_/g, " "), record.guideline_code, record.document_title].filter(Boolean).join(" ")))
       }));
+      documentFrequency = new Map();
+      for (const fields of fieldTokenSets) {
+        const allTokens = new Set([...fields.semantic, ...fields.source, ...fields.section, ...fields.document]);
+        for (const token of allTokens) documentFrequency.set(token, (documentFrequency.get(token) || 0) + 1);
+      }
     },
     async search(query, k = 5) {
       const qTokens = new Set(tokenize(query));
@@ -61,7 +85,7 @@ function createKeywordStore() {
             else if (fields.section.has(token)) tokenScore = 1;
             else if (fields.document.has(token)) tokenScore = 0.5;
             if (tokenScore > 0) {
-              score += tokenScore;
+              score += tokenScore + idfBonus(token);
               matchedTokenCount++;
             }
           }

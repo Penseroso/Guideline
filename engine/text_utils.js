@@ -281,6 +281,13 @@ Object.assign(REGULATORY_SYNONYMS, {
   "isr": ["isr", "incurred", "sample", "reanalysis"],
   "aggregate": ["aggregate", "aggregates", "aggregation", "particles"],
   "aggregates": ["aggregate", "aggregates", "aggregation", "particles"],
+  // Real retrieval-quality gaps found by scripts/analyze_retrieval_quality.js
+  // (Response Intelligence Workstream 4): a genuine wording variant of an
+  // archived `parameter` term that shared none of its tokens, so store.search
+  // scored it zero regardless of any other query word.
+  "repeats": ["repeats", "replicates"],
+  "repeat": ["repeat", "replicates"],
+  "cycling": ["cycling", "cycles"],
   "피하주사": ["subcutaneous", "sc", "route", "administration"],
   "정맥주사": ["intravenous", "iv", "route", "administration"],
   "동물": ["animal", "animals"],
