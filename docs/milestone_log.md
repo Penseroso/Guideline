@@ -98,7 +98,7 @@ History: `history/applicability_engine/`.
 
 ## Active milestone — Response Intelligence
 
-Status: active since 2026-09-08; Workstreams 1-5 completed 2026-09-09.
+Status: active since 2026-09-08; Workstreams 1-6 completed 2026-09-09.
 
 This sequential milestone measures and improves routing, latency/cost, query
 resolution, retrieval, conditional planning, response verification,
@@ -139,4 +139,20 @@ twice by real measurement (counts 1 and 2, and `process` mode, were each
 tried and found to be a real net loss, not a free win, before landing on
 exactly count 3). Detailed evidence is in
 `history/verification/response_intelligence_workstream_5_2026-09-09.md`.
-Workstream 6, Response Quality / Verification Contract, is next.
+(Note: Workstream 6, below, did not re-evaluate the count-3 skip risk
+Workstream 5 flagged — that specific question remains open.)
+Workstream 6 fixed a concrete rendering bug — `web/render.js`'s
+`renderGeneratedUnit` was the only per-route renderer that never showed a
+claim's `applicable_conditions`/`modality`/`value_status`, affecting the
+36% of the archive (978/2,693 records) carrying attached conditions — and
+separately measured (reusing Workstream 5's already-collected run, no new
+API cost) whether generated prose itself preserves those conditions in
+its own wording. 2 of 76 real checked cases showed a genuine, material
+omission; the rest were mostly benign (one generated sentence can't
+restate every one of several distinct conditions on one record). A
+verifier-prompt change was considered and explicitly not implemented — the
+omission rate is too broad and undifferentiated to target narrowly without
+risking wide regression, and the render fix already guarantees every
+condition is shown regardless of prose fidelity. Detailed evidence is in
+`history/verification/response_intelligence_workstream_6_2026-09-09.md`.
+Workstream 7, Production Evaluation & SLO, is next.

@@ -334,7 +334,53 @@ answer is incomplete or distorts meaning.
   omission, stochastic-generation regression, structured vs. generated
   answer consistency.
 
-Status: not started
+Status: complete (2026-09-09)
+
+Outcome: goal partially met by a concrete, deterministic fix, and
+partially found not to clear the bar for a pipeline change on real
+evidence. `web/render.js`'s `renderGeneratedUnit` (the only per-unit
+renderer used by the `grounded_generation` route) was the sole renderer
+that never showed a claim's `applicable_conditions`/`modality`/
+`value_status`, while every other route's renderer did — a real,
+structured-vs-generated inconsistency affecting 36% of the archive (978/
+2,693 records carry `applicable_conditions`). Fixed, along with the same
+gap in the shared `renderClaimCard` evidence-card renderer.
+
+A second, real measurement (`npm run audit:generation-fidelity`, reusing
+Workstream 5's already-collected 50-question run at zero extra API cost)
+checked 76 real cases of a generated answer's own prose against an
+attached condition's text. Two real methodology bugs in the measurement
+script itself were caught and fixed first (an English-vs-Korean text
+mismatch, then a length filter that zeroed out short Korean condition
+phrases) before drawing any conclusion. Manual review of the result found
+most apparent omissions are not distortions — a single generated sentence
+naturally can't restate every one of several distinct conditions attached
+to one source record — but found 2 real, material cases where an omitted
+exception/precondition would mislead a user about the answer's
+applicability, matching the exact critical failure
+`docs/answer_suitability_evaluation.md` already names.
+
+Verification: `npm test` 439/439 (436 prior + 3 new). No routing/
+generation/verification code was touched, so the Workstream 1-5
+validate/audit/eval battery was not re-run (nothing in its scope changed).
+Full detail:
+`history/verification/response_intelligence_workstream_6_2026-09-09.md`.
+
+Remaining risk/follow-up: a verifier-prompt change to reject
+condition-omitting units was considered and explicitly **not**
+implemented — the measured omission rate is high across both benign and
+consequential condition types (not concentrated in a subset a narrow rule
+could target), so any such rule risks broadly rejecting generation
+attempts for the 36% of the archive with attached conditions, for a
+benefit measured so far in only 2/76 real cases. The Step 1 render fix is
+judged the correct primary mitigation: it guarantees every condition is
+shown regardless of what the generated prose says. The 2 real material
+cases are documented for a future, narrower fix attempt.
+"Stochastic-generation regression" is documented as a measurement
+practice (reuse `GUIDELINE_AUDIT_RERUN_IDS` for spot-checking one
+question's stability), not something fixable — LLM output variance is
+inherent and already observed directly in this milestone (Workstream 2's
+Q07/Q34; Workstream 5's three separate runs).
 
 ## 7. Production Evaluation & SLO
 

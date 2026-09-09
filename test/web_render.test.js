@@ -277,6 +277,58 @@ test("generated route uses one synthesis panel with structured evidence below, n
   assert.doesNotMatch(html, /class="answer-unit"/);
 });
 
+// Response Intelligence Workstream 6: renderGeneratedUnit rendered only
+// unit.text and a citation link -- unlike every other route's renderer, it
+// never surfaced the cited record's own modality/value_status/
+// applicable_conditions, so a generated answer grounded to a record with an
+// attached exception/precondition showed the user no sign of it at all
+// (36% of the real archive carries applicable_conditions).
+test("generated route surfaces the cited record's modality, value status, and applicable conditions, same as the structured route", () => {
+  const claim = {
+    source_unit_id: realCitation().source_unit_id,
+    citation: realCitation(),
+    record: {
+      id: "kr.1",
+      type: "knowledge_record",
+      modality: "should",
+      source_text: "source text",
+      applicable_conditions: [{ condition_type: "exception", condition_text: "unless a robust rationale is provided" }]
+    }
+  };
+  const envelope = {
+    answered: true,
+    route: "grounded_generation",
+    mode: "generated",
+    claims: [claim],
+    answer_units: [{ text: "A complete generated answer.", record_id: "kr.1", source_unit_id: claim.source_unit_id }]
+  };
+  const html = R.renderEnvelope(envelope, i18n, "question");
+  assert.match(html, /modality-label/);
+  assert.match(html, /conditions-block/);
+  assert.match(html, /unless a robust rationale is provided/);
+});
+
+test("generated route shows no value-status note when the cited record's value_status is known (or absent)", () => {
+  const claim = { source_unit_id: realCitation().source_unit_id, citation: realCitation(), record: { id: "kr.1", type: "knowledge_record", modality: "should", source_text: "source text" } };
+  const envelope = { answered: true, route: "grounded_generation", mode: "generated", claims: [claim], answer_units: [{ text: "A complete generated answer.", record_id: "kr.1", source_unit_id: claim.source_unit_id }] };
+  const html = R.renderEnvelope(envelope, i18n, "question");
+  assert.doesNotMatch(html, /value-status-note/);
+});
+
+test("the shared evidence claim card also surfaces applicable conditions, matching the structured route's own answer-unit block", () => {
+  const claim = {
+    citation: realCitation(),
+    record: {
+      type: "knowledge_record",
+      source_text: "source text",
+      applicable_conditions: [{ condition_type: "precondition", condition_text: "if the study is ongoing" }]
+    }
+  };
+  const html = R.renderClaimCard(claim, i18n);
+  assert.match(html, /conditions-block/);
+  assert.match(html, /if the study is ongoing/);
+});
+
 test("source-excerpts route renders a distinct verbatim list without duplicating an evidence panel", () => {
   const claim = { source_unit_id: realCitation().source_unit_id, citation: realCitation(), record: { id: "kr.1", type: "knowledge_record", source_text: "verbatim source" } };
   const envelope = { answered: true, route: "source_excerpts", mode: "source_excerpts", claims: [claim], answer_units: [{ text: "verbatim source", record_id: "kr.1", source_unit_id: claim.source_unit_id }] };

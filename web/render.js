@@ -136,6 +136,7 @@
       <header class="claim-header">${renderModalityLabel(record, i18n)}${conditionLabel}</header>
       ${renderValueStatusNote(record, i18n)}<blockquote class="source-excerpt">${escapeHtml(record.source_text || "")}</blockquote>${structured}
       ${renderCitationLine(claim.citation, i18n)}${renderCrossReferences(record.cross_references, i18n)}
+      ${renderApplicableConditions(record.applicable_conditions, i18n)}
     </article>`;
   }
 
@@ -190,7 +191,11 @@
     // left edge instead of flush with it, reading as a stray indent. Now
     // a proper block sibling below the text, same pattern renderCitationLine
     // already uses for the structured route's citation line.
-    return `<div class="generated-unit"><p>${escapeHtml(unit.text)}</p><a class="generated-citation" href="#${escapeHtml(evidenceDomId(claim))}">${escapeHtml(compactCitation(claim.citation))}</a></div>`;
+    const record = claim.record || {};
+    return `<div class="generated-unit"><div class="answer-unit-meta">${renderModalityLabel(record, i18n)}${renderValueStatusNote(record, i18n)}</div>
+      <p>${escapeHtml(unit.text)}</p><a class="generated-citation" href="#${escapeHtml(evidenceDomId(claim))}">${escapeHtml(compactCitation(claim.citation))}</a>
+      ${renderApplicableConditions(record.applicable_conditions, i18n)}
+    </div>`;
   }
 
   function renderSourceExcerptUnit(unit, claims, i18n) {
