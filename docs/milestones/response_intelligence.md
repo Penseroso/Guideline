@@ -137,7 +137,54 @@ measurement before choosing an implementation technique.
 - Do not implement an LLM planner or retrieval upgrade in this workstream;
   its output is the evidence-backed scope for Workstreams 4 and 5.
 
-Status: not started
+Status: complete (2026-09-09)
+
+Outcome: goal met, as a non-implementing audit only. Additive, non-behavior-
+changing diagnostic telemetry was added to `structuredQuery` and
+`selectReviewedRoutingManifest` (seven new event names) so every routing
+abstention is now observable, not silent. The existing 50-question
+suitability set alone could not supply real query-resolution failures (its
+34 partial cases are format/completeness gaps, not resolution failures), so
+this workstream built 26 real, corpus-derived probes (19 ambiguous-tie
+same-parameter non-sibling QC collisions, 6 confidence-floor single-word
+probes, 1 cross-document manifest-topic overlap) plus reuse of Workstream
+1's 220-probe mode/intent diagnostics (42 cases) and Workstream 2's fresh
+50-question production run.
+
+Verification: measured taxonomy counts — `ambiguous_scope` 19,
+`deterministic_confidence_gap` 6, `query_understanding_resolution_miss` 42,
+`response_generation_verification_failure` 10, `evidence_absent` 0. Zero of
+the routing-abstention categories occurred in real production traffic (the
+50-question run); all came from targeted probes. Of the 6 confidence-floor
+cases, 5 were shown to be genuine retrieval misses (the structured router
+correctly identified the right document even sub-floor, but the separate
+`store.search()` fallback path independently missed the same record) and
+only 1 was recoverable by existing fallback — this splits the milestone's
+retrieval-miss/resolution-miss distinction with real data, not assumption.
+A concrete real trace showed a bare cross-document topic question
+degrading to a `source_excerpts` answer mixing two unrelated documents with
+no disambiguation signal to the user. Reproducible via
+`npm run audit:query-resolution`
+(`history/verification/response_intelligence_workstream_3_2026-09-09.md`).
+`npm test` 428/428 (7 new routing-diagnostics tests), `validate:guidelines`
+6/6, `validate:ko` 2,693/2,693, `audit:ko` 1,495/1,495 with 0 issues,
+`validate:semantic` 6/6, `audit:routing:hardening` 220/220 (unchanged), and
+`npm run eval` 24/24 all stayed green.
+
+Remaining risk/follow-up: a documented (not fixed) bug —
+`answer_envelope.js`'s plain-fallback path reads `refusal_reason` while
+`answerFallback` sets the richer reasons on `fallback_reason`, silently
+collapsing them to `"no_match"`; fixing it changes the public envelope
+contract and is left for a dedicated follow-up. Workstream 4 should treat
+the 5 real retrieval-miss cases as part of its benchmark denominator.
+Workstream 5 should scope any new LLM call strictly to the two measured
+ambiguous-tie escalation conditions and implement Workstream 2's
+cost-negative recommendation (skip speculative generation when the
+deterministic answer is already adequate) first, ahead of any new
+LLM-call-adding disambiguation path. Probe corpora are small because the
+real archive currently contains only that many genuine collisions/overlaps;
+`npm run audit:query-resolution` is fully corpus-derived and will pick up
+new real cases as the archive/manifest inventory grows.
 
 ## 4. Retrieval Quality Upgrade
 

@@ -41,6 +41,7 @@
  */
 const { extractQueryScope, tokenize } = require("./text_utils");
 const { loadSemanticOverlayStore } = require("./semantic_overlay_store");
+const { recordTelemetryEvent } = require("./answer_telemetry");
 
 let cachedDefaultStore = null;
 function defaultStore() {
@@ -568,7 +569,8 @@ function selectReviewedRoutingManifest(question, {
   intent = {},
   queryScope = {},
   scored = [],
-  store
+  store,
+  telemetry = null
 } = {}) {
   if (!hasBroadRoutingCue(question, intent)) return null;
   const semanticStore = store || defaultStore();
@@ -610,12 +612,20 @@ function selectReviewedRoutingManifest(question, {
     candidates.push({ ...entry, facet_ids: facetIds, rankScore, distance, queryScore });
   }
 
-  if (candidates.length === 0) return null;
+  if (candidates.length === 0) {
+    recordTelemetryEvent(telemetry, "manifest_no_eligible_candidate", { eligible_manifest_count: eligible.length });
+    return null;
+  }
   candidates.sort((a, b) => b.rankScore - a.rankScore || a.distance - b.distance || a.manifest_id.localeCompare(b.manifest_id));
   const best = candidates[0];
   const tied = candidates.filter((candidate) => candidate.rankScore === best.rankScore && candidate.distance === best.distance);
   const distinctTargets = new Set(tied.map((candidate) => `${candidate.document_id}:${candidate.manifest.target.type}:${candidate.manifest.target.id}`));
-  if (distinctTargets.size > 1) return null;
+  if (distinctTargets.size > 1) {
+    recordTelemetryEvent(telemetry, "manifest_ambiguous_tie", {
+      tied_manifest_ids: tied.map((candidate) => candidate.manifest_id)
+    });
+    return null;
+  }
   return best;
 }
 

@@ -619,7 +619,7 @@ function trySectionOverviewQuery(question, records, index, {
   };
 }
 
-function tryListCompositeQuery(scored, qTokens, question) {
+function tryListCompositeQuery(scored, qTokens, question, telemetry = null) {
   if (!isListQuery(question, qTokens)) return null;
 
   // Group scored records by section_id (or topic_scope if section_id is missing)
@@ -674,6 +674,10 @@ function tryListCompositeQuery(scored, qTokens, question) {
   if (sortedGroups.length > 1) {
     const secondGroup = sortedGroups[1];
     if (secondGroup.maxScore === topGroup.maxScore && secondGroup.totalScore >= topGroup.totalScore * 0.9) {
+      recordTelemetryEvent(telemetry, "routing_list_ambiguous_tie", {
+        top_group_title: topGroup.title,
+        second_group_title: secondGroup.title
+      });
       return null;
     }
   }
@@ -689,11 +693,17 @@ function tryListCompositeQuery(scored, qTokens, question) {
   };
 }
 
-function buildCoverageMatch(records, intent, requestedDocumentIds, title, maxRecords = 10, minimumRecords = 2) {
+function buildCoverageMatch(records, intent, requestedDocumentIds, title, maxRecords = 10, minimumRecords = 2, telemetry = null) {
   const selected = dedupeRecordsForAnswer(records)
     .filter((record) => !isSuppressedBroadRecord(record, ""))
     .slice(0, maxRecords);
-  if (selected.length < minimumRecords) return null;
+  if (selected.length < minimumRecords) {
+    recordTelemetryEvent(telemetry, "routing_coverage_composite_below_threshold", {
+      candidate_count: selected.length,
+      minimum_required: minimumRecords
+    });
+    return null;
+  }
   const sectionIds = [...new Set(selected.map((record) => record.section_id).filter(Boolean))];
   const documentIds = [...new Set(selected.map((record) => record.document_id).filter(Boolean))];
   return {
@@ -875,7 +885,7 @@ function tryDocumentOverviewQuery(question, records, index, requestedDocumentIds
   return buildCoverageMatch(bySection, intent, requestedDocumentIds, `${documentId} document overview`);
 }
 
-function tryCoverageCompositeQuery(scored, question, intent, requestedDocumentIds) {
+function tryCoverageCompositeQuery(scored, question, intent, requestedDocumentIds, telemetry = null) {
   if (intent.breadth !== "broad" || scored.length === 0) return null;
   let eligible = scored
     .filter(({ record }) => !isSuppressedBroadRecord(record, question))
@@ -969,7 +979,7 @@ function tryCoverageCompositeQuery(scored, question, intent, requestedDocumentId
   selected.splice(10);
   if (intent.process) selected.sort(compareSectionNumbers);
   const title = `${selected[0] && (selected[0].guideline_code || selected[0].document_id) || "Guideline"} ${intent.kind.replace(/_/g, " ")}`;
-  return buildCoverageMatch(selected, intent, requestedDocumentIds, title);
+  return buildCoverageMatch(selected, intent, requestedDocumentIds, title, 10, 2, telemetry);
 }
 
 /**
@@ -977,14 +987,19 @@ function tryCoverageCompositeQuery(scored, question, intent, requestedDocumentId
  * answerable match (single or sibling composite), or null if nothing scores
  * above the confidence threshold or if top candidates are in conflict (abstention).
  */
-function structuredQuery(question, records, index = null) {
+function structuredQuery(question, records, index = null, { telemetry = null } = {}) {
   if (!question || typeof question !== "string" || !records || records.length === 0) {
     return null;
   }
 
   const requestedDocumentIds = resolveRequestedDocumentIds(question, records);
   const gatedRecords = applyDocumentGate(records, requestedDocumentIds);
-  if (gatedRecords.length === 0) return null;
+  if (gatedRecords.length === 0) {
+    recordTelemetryEvent(telemetry, "routing_document_gate_empty", {
+      requested_document_ids: requestedDocumentIds ? [...requestedDocumentIds] : []
+    });
+    return null;
+  }
 
   // M4: Check for Cross-Guideline Comparison queries. A comparison within
   // one explicitly named document is handled by the coverage composite below.
@@ -1012,11 +1027,14 @@ function structuredQuery(question, records, index = null) {
   queryScope.require_starting_dose_focus = /\b(?:starting|initial) dose\b|시작\s*용량|초기\s*용량/i.test(question);
 
   const scored = [];
+  let bestSubFloorCandidate = null;
   for (const record of gatedRecords) {
     const { score, matchedCount } = scoreRecord(record, qTokens, queryScope);
     const requiredMatchedTokens = intent.breadth === "broad" ? 1 : MIN_MATCHED_TOKENS;
     if (score >= MIN_CONFIDENT_MATCH_SCORE && matchedCount >= requiredMatchedTokens) {
       scored.push({ record, score, matchedCount });
+    } else if (score > 0 && (!bestSubFloorCandidate || score > bestSubFloorCandidate.score)) {
+      bestSubFloorCandidate = { score, matchedCount, document_id: record.document_id };
     }
   }
   scored.sort((a, b) => {
@@ -1029,11 +1047,11 @@ function structuredQuery(question, records, index = null) {
   const analyticalRunAcceptance = tryAnalyticalRunAcceptanceQuery(scored, qTokens, intent, requestedDocumentIds);
   if (analyticalRunAcceptance) return analyticalRunAcceptance;
 
-  const coverageComposite = tryCoverageCompositeQuery(scored, question, intent, requestedDocumentIds);
+  const coverageComposite = tryCoverageCompositeQuery(scored, question, intent, requestedDocumentIds, telemetry);
   if (coverageComposite) return coverageComposite;
 
   // Check if this is a multi-item list / requirements query
-  const listCompositeMatch = tryListCompositeQuery(scored, qTokens, question);
+  const listCompositeMatch = tryListCompositeQuery(scored, qTokens, question, telemetry);
   if (listCompositeMatch) {
     const listRecords = listCompositeMatch.compositeRecords || [];
     listCompositeMatch.answerIntent = intent.kind;
@@ -1057,7 +1075,8 @@ function structuredQuery(question, records, index = null) {
     requestedDocumentIds,
     intent,
     queryScope,
-    scored
+    scored,
+    telemetry
   });
   if (semanticSelection) {
     const semanticMatch = trySemanticManifestQuery(
@@ -1075,13 +1094,23 @@ function structuredQuery(question, records, index = null) {
     return semanticMatch;
   }
 
-  if (scored.length === 0) return null;
+  if (scored.length === 0) {
+    recordTelemetryEvent(telemetry, "routing_below_confidence_floor", {
+      best_sub_floor_score: bestSubFloorCandidate ? bestSubFloorCandidate.score : null,
+      best_sub_floor_matched_count: bestSubFloorCandidate ? bestSubFloorCandidate.matchedCount : null,
+      best_sub_floor_document_id: bestSubFloorCandidate ? bestSubFloorCandidate.document_id : null
+    });
+    return null;
+  }
 
   // A broad question that could not assemble at least two independently
   // grounded facets is not a direct-fact answer. Let grounded generation
   // retrieve more context or refuse instead of presenting one scalar as a
   // complete overview.
-  if (intent.breadth === "broad") return null;
+  if (intent.breadth === "broad") {
+    recordTelemetryEvent(telemetry, "routing_broad_no_composite", { candidate_count: scored.length });
+    return null;
+  }
 
   const maxScore = scored[0].score;
   const topTied = scored.filter((s) => s.score === maxScore);
@@ -1148,6 +1177,10 @@ function structuredQuery(question, records, index = null) {
 
   // Case 4: Ambiguous / conflicting tie between different records
   // -> ABSTAIN to prevent an arbitrary winner, safely delegate to fallback retrieval
+  recordTelemetryEvent(telemetry, "routing_ambiguous_tie", {
+    tied_record_ids: topTied.map((t) => t.record.id),
+    tied_document_ids: [...new Set(topTied.map((t) => t.record.document_id))]
+  });
   return null;
 }
 
@@ -1735,6 +1768,7 @@ module.exports = {
   resolveRequestedDocumentIds,
   classifyAnswerIntent,
   tryCoverageCompositeQuery,
+  tryListCompositeQuery,
   trySectionOverviewQuery,
   structuredQuery,
   formatCitation,

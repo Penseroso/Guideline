@@ -160,7 +160,7 @@ async function answerEnvelope(question, records, {
     envelope.telemetry = finalized;
     return envelope;
   };
-  let match = measureSync(telemetry, "routing", () => structuredQuery(question, records, index));
+  let match = measureSync(telemetry, "routing", () => structuredQuery(question, records, index, { telemetry }));
   let structuredSemanticCoverage = null;
 
   // A manifest-backed partial broad answer is only valid when its complete
