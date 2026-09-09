@@ -37,6 +37,16 @@ function percentile(sortedValues, p) {
   return sortedValues[idx];
 }
 
+function latencySummary(values) {
+  const sorted = values.filter((value) => typeof value === "number" && Number.isFinite(value)).sort((a, b) => a - b);
+  return {
+    measured: sorted.length,
+    p50_ms: percentile(sorted, 0.5),
+    p95_ms: percentile(sorted, 0.95),
+    max_ms: sorted.length ? sorted[sorted.length - 1] : null
+  };
+}
+
 /**
  * Groups refused questions by shared token, keeping only tokens that
  * recur across more than one question (a single-occurrence token isn't
@@ -74,6 +84,17 @@ function aggregate(interactions, feedback = []) {
   const byMode = {};
   const byDocument = {};
   const latencies = [];
+  const telemetryStages = { routing: [], retrieval: [], generation: [], verification: [], presentation: [], unaccounted: [] };
+  const llm = {
+    calls: 0,
+    input_tokens: 0,
+    cached_input_tokens: 0,
+    cache_write_input_tokens: 0,
+    output_tokens: 0,
+    reasoning_output_tokens: 0,
+    total_tokens: 0
+  };
+  let telemetryMeasured = 0;
 
   for (const i of interactions) {
     // Read historical A/B logs without rewriting them; all newly written
@@ -86,6 +107,18 @@ function aggregate(interactions, feedback = []) {
     if (i.mode) byMode[i.mode] = (byMode[i.mode] || 0) + 1;
 
     if (typeof i.latency_ms === "number") latencies.push(i.latency_ms);
+
+    if (i.telemetry && i.telemetry.stages_ms && i.telemetry.llm) {
+      telemetryMeasured++;
+      for (const stage of ["routing", "retrieval", "generation", "verification", "presentation"]) {
+        if (typeof i.telemetry.stages_ms[stage] === "number") telemetryStages[stage].push(i.telemetry.stages_ms[stage]);
+      }
+      if (typeof i.telemetry.unaccounted_ms === "number") telemetryStages.unaccounted.push(i.telemetry.unaccounted_ms);
+      llm.calls += Number(i.telemetry.llm.calls) || 0;
+      for (const key of Object.keys(llm).filter((key) => key !== "calls")) {
+        llm[key] += Number(i.telemetry.llm.usage && i.telemetry.llm.usage[key]) || 0;
+      }
+    }
 
     const citedIds = i.cited_source_unit_ids || [];
     const docsThisInteraction = new Set();
@@ -120,10 +153,15 @@ function aggregate(interactions, feedback = []) {
     p50_latency_ms: percentile(latencies, 0.5),
     p95_latency_ms: percentile(latencies, 0.95),
     latencies_measured: latencies.length,
+    telemetry: {
+      measured: telemetryMeasured,
+      stages: Object.fromEntries(Object.entries(telemetryStages).map(([stage, values]) => [stage, latencySummary(values)])),
+      llm
+    },
     feedback_total: feedback.length,
     feedback_by_verdict: feedbackByVerdict,
     unresolved_feedback: feedback.filter((f) => !f.triage).length
   };
 }
 
-module.exports = { aggregate, documentIdFromSourceUnitId, clusterRefusals, percentile };
+module.exports = { aggregate, documentIdFromSourceUnitId, clusterRefusals, latencySummary, percentile };

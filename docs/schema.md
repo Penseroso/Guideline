@@ -14,7 +14,7 @@ Model `0.5.0` is implemented as a machine-validatable JSON bundle contract with 
 
 An earlier derived-layer design (AmendmentMapping, EffectiveRecord, a family/edition registry) was explored but never adopted into the product build, so it is not described here as current.
 
-A separate, additive source-grounded answer-planning overlay is documented in `docs/derived_semantic_layer.md`. It does not calculate amendment/effective state and does not change this `0.5.0` core model. The semantic overlay contract is `0.3.0`, the Korean semantic presentation contract is `0.2.0`, and the public answer contract is `2.5.0`. The reviewed inventory contains 55 unique manifests and 50 applicable summary presentations, all with independently-verified Korean presentation text (0 explicit evidence gaps), across all 6 guideline documents — see "Derived semantic overlay" below.
+A separate, additive source-grounded answer-planning overlay is documented in `docs/derived_semantic_layer.md`. It does not calculate amendment/effective state and does not change this `0.5.0` core model. The semantic overlay contract is `0.3.0`, the Korean semantic presentation contract is `0.2.0`, and the public answer contract is `2.6.0`. The reviewed inventory contains 55 unique manifests and 50 applicable summary presentations, all with independently-verified Korean presentation text (0 explicit evidence gaps), across all 6 guideline documents — see "Derived semantic overlay" below.
 
 ## Core principles
 
@@ -100,13 +100,24 @@ Files:
 - `data/derived/semantic/<document_id>.json` — one overlay per document.
 - `validation/validate_semantic_overlay.js` (`npm run validate:semantic`) — JSON Schema plus reference resolution, per-document evidence hash freshness (`source_text_sha256` against the live core `SourceUnit.source_text` / `QuantitativeCriterion.source_text` / `Condition.condition_text`), whole-bundle staleness (`source_bundle_sha256`), facet-parent and procedural-relation cycle detection, coverage-manifest and comparison-binding reference checks, and salience `display_order` uniqueness per profile/tier.
 
-Semantic overlay contract `0.3.0` requires every facet to declare `coverage_basis` and every `salience_profile` to declare `review_status`, so every overlay object type is gated `reviewed`/`needs_review` the same way. `declared_members` makes its explicit member record set the effective denominator; `section_census` uses its scoped section census, including one parent-body bucket when substantive records are directly filed on a chapter that also has children. Runtime coverage exposes `effective`, `exact`, and `section`, but computes status only from `effective`. The validator rejects an empty `declared_members` denominator and a `section_census` facet whose scope is not a section. Answer envelope `2.5.0` is the corresponding public API contract.
+Semantic overlay contract `0.3.0` requires every facet to declare `coverage_basis` and every `salience_profile` to declare `review_status`, so every overlay object type is gated `reviewed`/`needs_review` the same way. `declared_members` makes its explicit member record set the effective denominator; `section_census` uses its scoped section census, including one parent-body bucket when substantive records are directly filed on a chapter that also has children. Runtime coverage exposes `effective`, `exact`, and `section`, but computes status only from `effective`. The validator rejects an empty `declared_members` denominator and a `section_census` facet whose scope is not a section. Answer envelope `2.6.0` is the corresponding public API contract.
 
 Implementation note beyond the design document's literal text: an `evidence_refs.record_id` may resolve to a `KnowledgeRecord`, `QuantitativeCriterion`, or `Condition` (not only a `KnowledgeRecord`) — most `QuantitativeCriterion` records in the guideline archive have no linked `knowledge_record_id`, and quantitative evidence is exactly what multi-criterion/detail-level overlay objects need to cite.
 
 All 6 guideline documents have at least one overlay scope. Which representative scopes were structured first, and why: `history/milestones/derived_semantic_layer_stages_a_g_2026-09-08.md`.
 
 ### Runtime wiring
+
+Answer envelope `2.6.0` adds non-authoritative operational telemetry. Every
+response has `timing_ms` plus `telemetry`: monotonic `total_ms`, additive
+`stages_ms` for `routing`, `retrieval`, `generation`, `verification`, and
+`presentation`, `unaccounted_ms`, ordered control-flow `events`, and an `llm`
+summary. Each LLM detail records role, requested and response model, provider,
+service tier, call latency, normalized token usage, usage availability, and
+error class. This metadata explains execution and cost; it never changes
+claims, evidence authority, review status, or answer selection. Runtime query
+logs persist the same telemetry, and query stats aggregate stage latency and
+LLM usage while remaining compatible with older entries that lack it.
 
 `engine/semantic_overlay_store.js` loads these overlays at server startup, dropping any document whose `source_bundle_sha256` no longer matches the live core bundle. `engine/semantic_routing.js` exposes three runtime roles over that store. `selectReviewedRoutingManifest()` is a pre-answer fallback used only after established deterministic composite/list routing cannot form an answer; its positive inventory is limited to reviewed, fresh, evidence-bearing manifests, and it ranks explicit document/section/topic cues, compatible answer intent, and resolved-evidence distance without using record count or section size. Distinct tied targets remain unresolved. `buildReviewedSemanticCoverage()` is called by `engine/answer_envelope.js` on both `grounded_generation` and `structured` success paths and attaches reviewed-only `envelope.semantic_coverage`. A manifest-routed partial structured answer is retained only when at least one applicable facet is grounded and every applicable uncovered facet remains explicit in that coverage metadata. `buildShadowPlan()`/`comparePlans()` remains a diagnostic-only side-by-side plan logged by `engine/server.js` after the envelope is built. `refusal`/`source_excerpts` routes are excluded from `semantic_coverage`. `web/render.js`'s `renderSemanticCoverage` renders manifest facet-coverage and comparison-axis disclosure (with `detail`-tier salience facets collapsed behind a `<details>` widget — a facet a profile doesn't mention stays visible; salience narrows exposure order, never disclosure itself), and `renderCuratedOverview()` renders a summary's reviewed Korean presentation text separately from the raw-record excerpt box.
 

@@ -82,6 +82,24 @@ test("aggregate: feedback_by_verdict and unresolved_feedback", () => {
   assert.equal(stats.unresolved_feedback, 2);
 });
 
+test("aggregate exposes stage distributions and LLM usage from instrumented interactions", () => {
+  const telemetry = {
+    stages_ms: { routing: 2, retrieval: 3, generation: 10, verification: 5, presentation: 1 },
+    unaccounted_ms: 4,
+    llm: {
+      calls: 2,
+      usage: { input_tokens: 100, cached_input_tokens: 20, output_tokens: 10, total_tokens: 110 }
+    }
+  };
+  const stats = aggregate([{ question: "q", answered: true, route: "grounded_generation", latency_ms: 25, telemetry }]);
+  assert.equal(stats.telemetry.measured, 1);
+  assert.equal(stats.telemetry.stages.generation.p50_ms, 10);
+  assert.equal(stats.telemetry.stages.unaccounted.max_ms, 4);
+  assert.equal(stats.telemetry.llm.calls, 2);
+  assert.equal(stats.telemetry.llm.input_tokens, 100);
+  assert.equal(stats.telemetry.llm.cached_input_tokens, 20);
+});
+
 test("aggregate against a legacy query-log fixture runs without throwing", () => {
   const interactions = readInteractions(LEGACY_LOG_FIXTURE);
   const stats = aggregate(interactions, []);

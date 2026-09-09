@@ -8,6 +8,17 @@
  */
 
 const DEFAULT_MODEL = "gpt-5.6-terra";
+const { attachLlmMeta } = require("./answer_telemetry");
+
+function withResponseMeta(result, response, requestedModel) {
+  return attachLlmMeta(result, {
+    provider: "openai",
+    model: requestedModel,
+    response_model: response.model || null,
+    service_tier: response.service_tier || null,
+    usage: response.usage || null
+  });
+}
 
 function create({ model: configuredModel } = {}) {
   const OpenAI = require("openai");
@@ -35,11 +46,11 @@ function create({ model: configuredModel } = {}) {
       }, { signal });
       const content = response.choices[0].message.content;
       if (!content) throw new Error("openai_adapter: model returned no content for the requested schema.");
-      return JSON.parse(content);
+      return withResponseMeta(JSON.parse(content), response, model);
     }
 
     const response = await client.chat.completions.create({ model, max_completion_tokens: maxTokens, messages: chatMessages }, { signal });
-    return { text: response.choices[0].message.content || "" };
+    return withResponseMeta({ text: response.choices[0].message.content || "" }, response, model);
   }
 
   return { complete, model: defaultModel };

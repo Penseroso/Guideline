@@ -80,15 +80,43 @@ milestone is judged against.
 - p50/p95 for structured vs. grounded_generation separately.
 - API call count and cost by question type.
 
-Status: not started
+Status: complete (2026-09-09)
 
-Preliminary observation from the Workstream 1 production-path run (not the
-Workstream 2 baseline): end-to-end latency across 50 questions was p50
-8,945 ms, p95 26,600 ms, max 40,415 ms. Structured responses (n=22) were p50
-90 ms, p95 23,793 ms, max 28,973 ms; grounded generation (n=28) was p50
-10,986 ms, p95 26,600 ms, max 40,415 ms. These are request-level elapsed
-times only. Stage-level timing, API-call counts, token use, and cost remain
-to be instrumented in this workstream.
+Outcome: goal met. The production answer envelope and query log now record
+monotonic stage timing for routing, retrieval, generation, verification, and
+presentation; every LLM call records its role, provider/model, service tier,
+latency, token usage, and retry/fallback events. Aggregation and a frozen
+pricing-snapshot cost report are reproducible with `npm run
+audit:latency-cost`.
+
+Baseline: a fresh 50-question production-path run completed 50/50 with zero
+runtime errors. End-to-end p50/p95/max was 8,075/30,087/35,446 ms. Final
+structured responses (n=23) were 1,891/30,087/35,446 ms; grounded generation
+(n=26) was 9,980/23,388/34,379 ms; one source-excerpts fallback took 18,537
+ms. The run made 94 calls (50 generation, 44 verification), used 165,901
+tokens, and cost an estimated USD 1.0107562 using the frozen 2026-09-09
+OpenAI Standard short-context price snapshot.
+
+Root cause of the structured latency tail: the final route label was hiding
+an attempted generated-answer path. In the full baseline, 12 of 23 final
+structured answers had already made 30 LLM calls before falling back to the
+deterministic answer; only 11 were deterministic-only. A targeted event-level
+rerun measured deterministic-only structured at p50 15 ms / p95 66 ms, versus
+LLM-attempt-then-structured-fallback at p50 11,043 ms / p95 24,741 ms.
+Routing, retrieval, and presentation were not the bottleneck. Recorded causes
+were verification rejection (sometimes after a full retry), unexpected
+writing-system/language retry, model decline, or a grounded answer that passed
+verification but failed the manifest facet-coverage gate. Two originally
+structured tail cases passed as grounded generation on rerun, confirming that
+model/verification outcome variance also changes the final-route distribution.
+
+Evidence: `history/verification/response_intelligence_workstream_2_2026-09-09.md`.
+
+Remaining risk/follow-up: cost is an estimate from observed token usage and a
+dated price snapshot, not an invoice. The 50-question set has no repeated-run
+confidence interval. Workstream 3 must use these events to define when LLM
+synthesis is justified and when the already-complete deterministic answer
+should be returned without paying generation/verification latency first.
 
 ## 3. Query Resolution & LLM Intervention Audit
 

@@ -393,6 +393,7 @@ function startServer({
           interaction_id: interactionId,
           mode: envelope.mode,
           timing_ms: envelope.timing_ms,
+          telemetry: envelope.telemetry,
           claims: envelope.claims,
           source: "web"
         }, queryLogPath);

@@ -98,14 +98,16 @@ History: `history/applicability_engine/`.
 
 ## Active milestone — Response Intelligence
 
-Status: active since 2026-09-08; Workstream 1 completed 2026-09-09.
+Status: active since 2026-09-08; Workstreams 1-2 completed 2026-09-09.
 
 This sequential milestone measures and improves routing, latency/cost, query
 resolution, retrieval, conditional planning, response verification,
 production SLOs, and cross-corpus reusability. Its scope and per-workstream
 outcomes are maintained in `docs/milestones/response_intelligence.md`.
-Workstream 2, Latency & Cost Baseline, is next; it is followed by a
-non-implementing Query Resolution & LLM Intervention Audit that determines
-the evidence-backed scope of retrieval and conditional-LLM changes. The
-Workstream 1 run contains preliminary request-level latency observations but
-not stage-level instrumentation.
+The stage-level latency/cost baseline found that the structured p95 tail is
+not deterministic routing cost: it is generation/verification work performed
+before a final structured fallback. Detailed evidence is in
+`history/verification/response_intelligence_workstream_2_2026-09-09.md`.
+Workstream 3, the non-implementing Query Resolution & LLM Intervention Audit,
+is next and will use these measurements to determine the evidence-backed
+scope of retrieval and conditional-LLM changes.

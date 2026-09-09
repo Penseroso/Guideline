@@ -19,8 +19,9 @@
 const { structuredQuery, formatAnswer, answerFallback, explainRefusal, NOT_FOUND } = require("./query_router");
 const { presentClaims } = require("./answer_presenter");
 const { buildReviewedSemanticCoverage } = require("./semantic_routing");
+const { createAnswerTelemetry, finalizeTelemetry, measureSync, recordTelemetryEvent } = require("./answer_telemetry");
 
-const ENVELOPE_VERSION = "2.5.0";
+const ENVELOPE_VERSION = "2.6.0";
 
 function modeForMatch(match) {
   if (match.isComparison) return "comparison";
@@ -152,8 +153,14 @@ async function answerEnvelope(question, records, {
   fallbackMode,
   generationPreference = "auto"
 } = {}) {
-  const start = Date.now();
-  let match = structuredQuery(question, records, index);
+  const telemetry = createAnswerTelemetry();
+  const finish = (envelope) => {
+    const finalized = finalizeTelemetry(telemetry);
+    envelope.timing_ms = Math.round(finalized.total_ms);
+    envelope.telemetry = finalized;
+    return envelope;
+  };
+  let match = measureSync(telemetry, "routing", () => structuredQuery(question, records, index));
   let structuredSemanticCoverage = null;
 
   // A manifest-backed partial broad answer is only valid when its complete
@@ -162,14 +169,17 @@ async function answerEnvelope(question, records, {
   // record hit from masquerading as a broad answer.
   if (match && match.routingManifestId) {
     const deterministicMode = modeForMatch(match);
-    structuredSemanticCoverage = safeReviewedSemanticCoverage(question, {
+    structuredSemanticCoverage = measureSync(telemetry, "routing", () => safeReviewedSemanticCoverage(question, {
       mode: deterministicMode,
       semantic_mode: deterministicMode,
       claims: match.claims || [],
       scope: match.scope || null,
       answer_intent: match.answerIntent || null
-    });
-    if (!semanticCoverageSupportsRouting(match, structuredSemanticCoverage)) match = null;
+    }));
+    if (!semanticCoverageSupportsRouting(match, structuredSemanticCoverage)) {
+      recordTelemetryEvent(telemetry, "structured_routing_rejected", { reason: "semantic_coverage_inadequate" });
+      match = null;
+    }
   }
 
   if (match) {
@@ -188,7 +198,8 @@ async function answerEnvelope(question, records, {
         store: scopedStore,
         responseLanguage,
         signal,
-        fallbackMode: "grounded_generation"
+        fallbackMode: "grounded_generation",
+        telemetry
       });
       if (generated.answered && generated.route === "grounded_generation" && generatedCoverageIsAdequate(match, generated)) {
         const envelope = {
@@ -209,46 +220,56 @@ async function answerEnvelope(question, records, {
             generation_scope_limited_to_structured_claims: true
           },
           answer_intent: match.answerIntent || generated.answer_intent || null,
-          review_status: generated.review_status,
-          timing_ms: Date.now() - start
+          review_status: generated.review_status
         };
         // Disclosure-only for the grounded_generation synthesis box — this
         // never changes `prose`, `claims`, or the structured citation
         // contract below it, and only ever reflects `reviewed`, non-stale
         // manifests (see docs/derived_semantic_layer.md §10).
-        envelope.semantic_coverage = safeReviewedSemanticCoverage(question, envelope);
-        if (semanticCoverageSupportsRouting(match, envelope.semantic_coverage)) return envelope;
+        envelope.semantic_coverage = measureSync(telemetry, "presentation", () => safeReviewedSemanticCoverage(question, envelope));
+        if (semanticCoverageSupportsRouting(match, envelope.semantic_coverage)) return finish(envelope);
+        recordTelemetryEvent(telemetry, "generated_answer_rejected", { reason: "semantic_coverage_inadequate" });
+      } else if (generated.answered && generated.route === "grounded_generation") {
+        recordTelemetryEvent(telemetry, "generated_answer_rejected", { reason: "generated_coverage_inadequate" });
+      } else {
+        recordTelemetryEvent(telemetry, "generated_answer_rejected", {
+          reason: generated.fallback_reason || generated.refusal_reason || generated.route || "fallback"
+        });
       }
     }
-    const structuredEnvelope = {
-      envelope_version: ENVELOPE_VERSION,
-      answered: true,
-      mode: deterministicMode,
-      semantic_mode: deterministicMode,
-      route: "structured",
-      generation_preference: generationPreference,
-      prose: formatAnswer(match),
-      refusal: null,
-      claims: match.claims || [],
-      answer_units: presentClaims(match.claims || [], responseLanguage),
-      scope: match.scope || null,
-      coverage: match.coverage || null,
-      answer_intent: match.answerIntent || null,
-      review_status: reviewStatusFor(match),
-      timing_ms: Date.now() - start
-    };
+    const structuredEnvelope = measureSync(telemetry, "presentation", () => ({
+        envelope_version: ENVELOPE_VERSION,
+        answered: true,
+        mode: deterministicMode,
+        semantic_mode: deterministicMode,
+        route: "structured",
+        generation_preference: generationPreference,
+        prose: formatAnswer(match),
+        refusal: null,
+        claims: match.claims || [],
+        answer_units: presentClaims(match.claims || [], responseLanguage),
+        scope: match.scope || null,
+        coverage: match.coverage || null,
+        answer_intent: match.answerIntent || null,
+        review_status: reviewStatusFor(match)
+      }));
     // Also computed for the structured route: several reviewed manifests
     // are most often exercised here, not on grounded_generation (e.g.
     // ich_m10's run_acceptance branch comes back as route:"structured",
     // mode:"multi_criterion"). Same disclosure-only contract as the
     // grounded_generation branch above: never touches `prose`/`claims`/
     // citations, best-effort, swallowed on failure.
-    structuredEnvelope.semantic_coverage = structuredSemanticCoverage || safeReviewedSemanticCoverage(question, structuredEnvelope);
-    return structuredEnvelope;
+    if (!structuredSemanticCoverage) {
+      structuredEnvelope.semantic_coverage = measureSync(telemetry, "presentation", () => safeReviewedSemanticCoverage(question, structuredEnvelope));
+    } else {
+      structuredEnvelope.semantic_coverage = structuredSemanticCoverage;
+    }
+    return finish(structuredEnvelope);
   }
 
   if (!store) {
-    return {
+    const refusalKind = measureSync(telemetry, "routing", () => explainRefusal(question, records));
+    return finish({
       envelope_version: ENVELOPE_VERSION,
       answered: false,
       mode: "refusal",
@@ -256,20 +277,27 @@ async function answerEnvelope(question, records, {
       route: "refusal",
       generation_preference: generationPreference,
       prose: NOT_FOUND,
-      refusal: { kind: explainRefusal(question, records), reason: null },
+      refusal: { kind: refusalKind, reason: null },
       claims: [],
       answer_units: [],
       scope: null,
       coverage: null,
       answer_intent: null,
-      review_status: null,
-      timing_ms: Date.now() - start
-    };
+      review_status: null
+    });
   }
 
-  const result = await answerFallback(question, records, { generatorClient, verifierClient, store, responseLanguage, signal, fallbackMode });
+  const result = await answerFallback(question, records, {
+    generatorClient,
+    verifierClient,
+    store,
+    responseLanguage,
+    signal,
+    fallbackMode,
+    telemetry
+  });
   if (!result.answered) {
-    return {
+    return finish({
       envelope_version: ENVELOPE_VERSION,
       answered: false,
       mode: "refusal",
@@ -283,12 +311,11 @@ async function answerEnvelope(question, records, {
       scope: result.scope || null,
       coverage: result.coverage || null,
       answer_intent: result.answer_intent || null,
-      review_status: null,
-      timing_ms: Date.now() - start
-    };
+      review_status: null
+    });
   }
 
-  return {
+  return finish({
     envelope_version: ENVELOPE_VERSION,
     answered: true,
     mode: result.mode || "generated",
@@ -302,9 +329,8 @@ async function answerEnvelope(question, records, {
     scope: result.scope || null,
     coverage: result.coverage || null,
     answer_intent: result.answer_intent || null,
-    review_status: result.review_status,
-    timing_ms: Date.now() - start
-  };
+    review_status: result.review_status
+  });
 }
 
 module.exports = { answerEnvelope, ENVELOPE_VERSION, safeReviewedSemanticCoverage };

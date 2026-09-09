@@ -8,6 +8,17 @@
  */
 
 const DEFAULT_MODEL = "claude-sonnet-4-5";
+const { attachLlmMeta } = require("./answer_telemetry");
+
+function withResponseMeta(result, response, requestedModel) {
+  return attachLlmMeta(result, {
+    provider: "anthropic",
+    model: requestedModel,
+    response_model: response.model || null,
+    service_tier: null,
+    usage: response.usage || null
+  });
+}
 
 function create({ model: configuredModel } = {}) {
   const Anthropic = require("@anthropic-ai/sdk");
@@ -26,12 +37,12 @@ function create({ model: configuredModel } = {}) {
       }, { signal });
       const toolUse = response.content.find((block) => block.type === "tool_use");
       if (!toolUse) throw new Error("anthropic_adapter: model did not return a tool_use block for the requested schema.");
-      return toolUse.input;
+      return withResponseMeta(toolUse.input, response, model);
     }
 
     const response = await client.messages.create({ model, max_tokens: maxTokens, system, messages }, { signal });
     const textBlock = response.content.find((block) => block.type === "text");
-    return { text: textBlock ? textBlock.text : "" };
+    return withResponseMeta({ text: textBlock ? textBlock.text : "" }, response, model);
   }
 
   return { complete, model: defaultModel };

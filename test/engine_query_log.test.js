@@ -55,8 +55,9 @@ test("logInteraction creates the log directory if it doesn't exist yet", () => {
   }
 });
 
-// M5 Phase 5: additive fields (interaction_id/mode/latency_ms/
-// cited_source_unit_ids/source) — must not require a caller to supply
+// M5 Phase 5 + Response Intelligence Workstream 2: additive fields
+// (interaction_id/mode/latency_ms/telemetry/cited_source_unit_ids/source)
+// — must not require a caller to supply
 // them, and must default sensibly (source: "cli") so existing cli.js call
 // sites (which never set `source`) keep logging as before.
 test("logInteraction records the new additive fields when present, and defaults source to 'cli'", () => {
@@ -70,12 +71,14 @@ test("logInteraction records the new additive fields when present, and defaults 
       interaction_id: "int_1",
       mode: "structured",
       timing_ms: 42,
+      telemetry: { version: "1.0.0", stages_ms: { routing: 10 } },
       claims: [{ source_unit_id: "su_1" }, { source_unit_id: null }, { source_unit_id: "su_2" }]
     }, logPath);
     const entry = JSON.parse(fs.readFileSync(logPath, "utf8").trim());
     assert.equal(entry.interaction_id, "int_1");
     assert.equal(entry.mode, "structured");
     assert.equal(entry.latency_ms, 42);
+    assert.deepEqual(entry.telemetry, { version: "1.0.0", stages_ms: { routing: 10 } });
     assert.deepEqual(entry.cited_source_unit_ids, ["su_1", "su_2"]);
     assert.equal(entry.source, "cli");
   } finally {

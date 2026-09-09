@@ -33,6 +33,7 @@ function logInteraction(question, result, logPath = process.env.GUIDELINE_QUERY_
     interaction_id: result.interaction_id ?? null,
     mode: result.mode ?? null,
     latency_ms: result.timing_ms ?? null,
+    telemetry: result.telemetry ?? null,
     cited_source_unit_ids: (result.claims || []).map((c) => c.source_unit_id).filter(Boolean),
     source: result.source ?? "cli"
   };
