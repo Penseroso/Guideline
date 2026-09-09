@@ -1,0 +1,133 @@
+const test = require("node:test");
+const assert = require("node:assert/strict");
+const crypto = require("node:crypto");
+const fs = require("node:fs");
+const path = require("node:path");
+
+const { loadStore } = require("../engine/data_store");
+const { answerEnvelope } = require("../engine/answer_envelope");
+const { structuredQuery } = require("../engine/query_router");
+const { loadSemanticOverlayStore } = require("../engine/semantic_overlay_store");
+const { reviewedRoutingEligibility, selectReviewedRoutingManifest } = require("../engine/semantic_routing");
+const { runAudit } = require("../scripts/audit_answer_routing_hardening");
+
+const { records, index } = loadStore();
+
+test("current production inventory has 55 reviewed, fresh, evidence-bearing routing manifests", () => {
+  const store = loadSemanticOverlayStore();
+  const eligibility = reviewedRoutingEligibility(store);
+  assert.equal(store.staleDocumentIds.size, 0);
+  assert.equal(eligibility.eligible.length, 55);
+  assert.equal(eligibility.ineligible.length, 0);
+});
+
+test("deterministic established cases match the pre-Workstream-1 production baseline", async () => {
+  const baseline = JSON.parse(fs.readFileSync(path.join(__dirname, "fixtures", "pre_workstream_1_production_baseline.json"), "utf8"));
+  const design = fs.readFileSync(path.join(__dirname, "..", "docs", "answer_suitability_evaluation.md"), "utf8");
+  const questions = new Map([...design.matchAll(/^\| (Q\d{2}) \| [A-Z0-9]+ \| (.*?) \|/gm)].map((match) => [match[1], match[2]]));
+  assert.equal(baseline.baseline_id, "pre_workstream_1_production_baseline");
+  assert.equal(baseline.cases.length, 16);
+  for (const expected of baseline.cases.filter((item) => item.route === "structured")) {
+    const envelope = await answerEnvelope(questions.get(expected.id), records, { index });
+    const claimIds = envelope.claims.map((claim) => claim.record.id).sort();
+    const hash = crypto.createHash("sha256").update(claimIds.join("\n")).digest("hex");
+    assert.equal(envelope.route, expected.route, expected.id);
+    assert.equal(envelope.mode, expected.mode, expected.id);
+    assert.equal(claimIds.length, expected.claim_count, expected.id);
+    assert.equal(hash, expected.claim_set_sha256, expected.id);
+  }
+});
+
+test("all 220 eligible manifest probes stay structured, grounded, and in the intended document scope", async () => {
+  const report = await runAudit();
+  assert.equal(report.eligible_manifest_count, 55);
+  assert.equal(report.ineligible_manifests.length, 0);
+  assert.equal(report.probe_count, 220);
+  assert.equal(report.passed, 220);
+});
+
+test("bare ADA in an ADC species question is a topic, not an FDA document hard gate", async () => {
+  const envelope = await answerEnvelope("ADC에서 ADA 확인하기 위해서 어떤 동물종을 사용해야 하는지?", records, { index });
+  assert.equal(envelope.route, "structured");
+  assert.deepEqual([...new Set(envelope.claims.map((claim) => claim.record.document_id))], ["ich_s6_r1"]);
+  assert.ok(envelope.claims.some((claim) => claim.record.id === "ich_s6_r1.kr.part2.2_1.014"));
+});
+
+test("manifest routing is invariant to record order and unrelated candidate volume", () => {
+  const question = "ICH M10 §3 CHROMATOGRAPHY 설명해줘.";
+  const baseline = structuredQuery(question, records, index);
+  const unrelated = records.filter((record) => record.document_id !== "ich_m10").slice(0, 100)
+    .map((record, i) => ({ ...record, id: `synthetic.unrelated.${i}` }));
+  const perturbed = structuredQuery(question, [...records].reverse().concat(unrelated), index);
+  assert.ok(baseline && perturbed);
+  assert.equal(baseline.routingManifestId, "ich_m10.sem.manifest.section_3_chromatography");
+  assert.equal(perturbed.routingManifestId, baseline.routingManifestId);
+  assert.deepEqual(new Set(perturbed.scope.section_ids), new Set(baseline.scope.section_ids));
+  assert.deepEqual(new Set(perturbed.groundedRoutingFacetIds), new Set(baseline.groundedRoutingFacetIds));
+});
+
+test("one grounded facet may produce a partial structured answer only when every uncovered facet is disclosed", async () => {
+  const oneFacetRecord = records.find((record) => record.id === "ich_m10.kr.3_1.001");
+  const envelope = await answerEnvelope("ICH M10 §3 CHROMATOGRAPHY 설명해줘.", [oneFacetRecord], { index });
+  assert.equal(envelope.route, "structured");
+  assert.equal(envelope.mode, "section_overview");
+  const manifest = envelope.semantic_coverage.manifests
+    .find((item) => item.manifest_id === "ich_m10.sem.manifest.section_3_chromatography");
+  assert.ok(manifest);
+  const facets = manifest.groups.flatMap((group) => group.facets);
+  assert.equal(facets.length, 3);
+  assert.ok(facets.some((facet) => facet.effective && facet.effective.covered > 0));
+  assert.ok(facets.some((facet) => facet.status === "missing"));
+});
+
+test("a broad target with no facet-grounded record abstains instead of using an incidental detail hit", () => {
+  const unrelated = records.find((record) => record.document_id === "ich_m10" && record.section_id === "ich_m10.sec.8_1");
+  assert.ok(unrelated);
+  assert.equal(structuredQuery("ICH M10 §3 CHROMATOGRAPHY 설명해줘.", [unrelated], index), null);
+});
+
+test("equal semantic targets with the same title remain ambiguous without section or parent context", () => {
+  const selection = selectReviewedRoutingManifest("ICH M10 Accuracy and Precision 설명해줘.", {
+    requestedDocumentIds: new Set(["ich_m10"]),
+    intent: { kind: "detail", breadth: "detail" },
+    queryScope: {},
+    scored: []
+  });
+  assert.equal(selection, null);
+});
+
+test("unreviewed and stale manifests never participate in semantic routing", () => {
+  const original = loadSemanticOverlayStore();
+  const unreviewedStore = { ...original, overlaysByDocumentId: new Map(original.overlaysByDocumentId) };
+  const overlay = original.overlaysByDocumentId.get("ich_m10");
+  unreviewedStore.overlaysByDocumentId.set("ich_m10", {
+    ...overlay,
+    coverage_manifests: overlay.coverage_manifests.map((manifest) => manifest.manifest_id === "ich_m10.sem.manifest.section_3_chromatography"
+      ? { ...manifest, review_status: "needs_review" }
+      : manifest)
+  });
+  const eligibility = reviewedRoutingEligibility(unreviewedStore);
+  assert.ok(eligibility.ineligible.some((entry) => entry.manifest_id === "ich_m10.sem.manifest.section_3_chromatography"));
+
+  const staleStore = {
+    ...original,
+    overlaysByDocumentId: new Map([...original.overlaysByDocumentId].filter(([id]) => id !== "ich_m10")),
+    staleDocumentIds: new Set([...original.staleDocumentIds, "ich_m10"])
+  };
+  const selection = selectReviewedRoutingManifest("ICH M10 §3 CHROMATOGRAPHY 설명해줘.", {
+    requestedDocumentIds: new Set(["ich_m10"]),
+    intent: { kind: "detail", breadth: "detail" },
+    queryScope: {},
+    scored: [],
+    store: staleStore
+  });
+  assert.equal(selection, null);
+});
+
+test("legitimate unrelated and scope-excluded refusals remain intact", async () => {
+  const unrelated = await answerEnvelope("what is the meaning of life", records, { index });
+  assert.equal(unrelated.route, "refusal");
+  const excluded = await answerEnvelope("저분자 화합물의 독성 시험에서 종 선택 기준은?", records, { index });
+  assert.equal(excluded.route, "refusal");
+  assert.equal(excluded.refusal.kind, "scope_excluded");
+});

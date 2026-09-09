@@ -39,6 +39,6 @@
 
 ## Summary Statistics
 * **적재 완료 섹션 수 (Completed)**: **18개 전 섹션 100% 완료** (Part I 9개 + Part II 9개, Part II §3.4 행 신설)
-* **총 구조화 데이터 규모 (ICH S6(R1))**: **271 KnowledgeRecords, 23 QuantitativeCriteria, 129 Conditions (총 423개 엔티티, 100% `reviewed`)** — 2026-09-08 구조 백필로 13개 facet(§3.2, §3.5, §4.2-4.3, §4.5-4.6, §4.8-4.9, Part II §3.4, §5.1-5.4) 보강 후 수치 (`docs/milestone_log.md` M5 Stage G follow-up 참조)
+* **총 구조화 데이터 규모 (ICH S6(R1))**: **271 KnowledgeRecords, 23 QuantitativeCriteria, 129 Conditions (총 423개 엔티티, 100% `reviewed`)** — current baseline snapshot에는 2026-09-08 구조 백필로 보강한 13개 facet(§3.2, §3.5, §4.2-4.3, §4.5-4.6, §4.8-4.9, Part II §3.4, §5.1-5.4)이 포함됨
 * **아카이브 전체 엔티티 규모**: **2,693개 엔티티** (ICH M10 585 + FDA ADA 667 + FDA ADA 2014 127 + EMA FIH 645 + ICH M3(R2) 246 + ICH S6(R1) 423)
 * **완결율 (Coverage)**: **ICH S6(R1) 100% 전수 적재 완료, 시맨틱 프레젠테이션 gap 0건** (`npm run audit:semantic:presentation`)

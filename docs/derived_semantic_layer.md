@@ -237,17 +237,17 @@ coverage manifest는 “규제상 필수 항목”이 아니라 “이 범위의
 
 ## 6. 답변 엔진 소비 절차
 
-1. 기존 router가 문서, 주제, context slot 및 answer intent를 정한다.
-2. 일치하는 coverage manifest가 있으면 필요한 facet과 조건 분기를 계획한다.
+1. 기존 router가 문서, 주제, context slot 및 answer intent를 정하고, 이미 성립하는 detail·single-criterion·composite/list 경로를 우선 처리한다.
+2. 기존 경로가 답을 만들지 못하거나 incidental detail로 축소될 때만, reviewed + fresh + evidence-bearing coverage manifest를 broad-question routing fallback 후보로 사용한다. 명시된 문서·section·topic, 호환 answer intent, 회수 근거와의 거리를 사용하며 record 수나 section 크기는 순위에 쓰지 않는다. 서로 다른 target이 동률이면 선택하지 않는다.
 3. 각 facet의 member record를 검색 후보에 포함하고 기존 검색 순위와 source authority를 적용한다.
 4. relation graph로 절차, 조건, 예외 및 대조의 표시 순서를 정한다.
 5. 최신이며 reviewed인 summary presentation이 있으면 생성형 답변의 도입부로 사용한다.
 6. 비교 질문은 공통 comparison axis별로 양쪽 binding을 정렬한다.
 7. salience profile에 따라 첫 답변과 펼침 가능한 세부 근거를 나눈다.
-8. 회수된 facet을 manifest와 대조해 coverage 상태와 빠진 항목을 응답 metadata에 기록한다.
+8. 선택된 reviewed manifest에서 최소 한 facet이 실제 근거에 grounded된 경우에만 partial structured 응답을 허용한다. 적용 가능한 모든 facet을 manifest와 대조해 coverage 상태와 빠진 항목을 응답 metadata에 기록한다.
 9. 기존 인용 검증을 통과한 문장과 근거만 UI에 표시한다.
 
-오버레이가 없거나 stale이면 현재 코어 검색으로 안전하게 fallback한다. 오버레이의 존재만으로 API route를 강제하지 않는다.
+오버레이가 없거나 stale/unreviewed이거나, 선택된 manifest의 어떤 facet도 실제 근거에 grounded되지 않으면 현재 코어 검색으로 안전하게 fallback하거나 abstain한다. reviewed manifest의 존재만으로 API route를 강제하지 않는다.
 
 ## 7. 라우트별 표현 계약
 

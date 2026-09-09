@@ -31,7 +31,42 @@ evidence is missing.
 - Keep the existing deterministic path for detail/single-criterion
   questions wherever possible.
 
-Status: not started
+Status: complete (2026-09-09)
+
+Outcome: goal met. Reviewed semantic manifests now participate as a
+pre-answer fallback when the established deterministic composite/list paths
+cannot form an answer. A manifest is eligible only when it is reviewed,
+fresh against the current source bundle, and has real evidence behind at
+least one applicable facet. Selection uses explicit document/section/topic
+cues, compatible answer intent, and evidence distance; record count and
+section size are not ranking signals. Ambiguous ties abstain.
+
+Verification: the current inventory contains 55 eligible manifests. Four
+probe variants per manifest produced 220/220 structured, reviewed, cited
+answers in the intended document scope. This 100% gate is defined only over
+eligible probes generated from reviewed + fresh + evidence-bearing
+manifests; stale, unreviewed, ambiguous, unrelated, and scope-excluded cases
+are separate negative regressions. Partial structured answers require at
+least one grounded facet in the selected reviewed manifest and explicit
+coverage disclosure for every uncovered applicable facet. The previously
+logged ADC/ADA animal-species question now resolves to ICH S6(R1) evidence
+instead of treating `ADA` as an FDA-document constraint. A fresh 50-question
+production-path audit completed 50/50 with no final runtime error or refusal,
+and all 16 established suitable cases passed the pre-Workstream-1 production
+baseline regression policy.
+
+Operational hardening: the 50-question runner persists an atomic snapshot
+after every completed question. A resumed run skips saved successful IDs;
+an interrupted or failed in-flight question alone is retried. Tests inject an
+interruption and verify both persistence and resume behavior.
+
+Remaining risk/follow-up: 42/220 probes selected the intended grounded
+manifest but used an existing deterministic mode/intent different from the
+manifest declaration. This is diagnostic, not a failure of the structured
+routing gate, and should be evaluated under Workstream 5's response contract.
+The current manifest inventory has no stale or unreviewed member, so those
+states are covered by negative regression fixtures rather than the positive
+220-probe denominator.
 
 ## 2. Latency & Cost Baseline
 
@@ -45,6 +80,14 @@ milestone is judged against.
 - API call count and cost by question type.
 
 Status: not started
+
+Preliminary observation from the Workstream 1 production-path run (not the
+Workstream 2 baseline): end-to-end latency across 50 questions was p50
+8,945 ms, p95 26,600 ms, max 40,415 ms. Structured responses (n=22) were p50
+90 ms, p95 23,793 ms, max 28,973 ms; grounded generation (n=28) was p50
+10,986 ms, p95 26,600 ms, max 40,415 ms. These are request-level elapsed
+times only. Stage-level timing, API-call counts, token use, and cost remain
+to be instrumented in this workstream.
 
 ## 3. Retrieval Quality Upgrade
 

@@ -25,15 +25,38 @@ function questionsFromDesign() {
   return questions;
 }
 
-function loadResults() {
-  if (process.env.GUIDELINE_AUDIT_FRESH === "true") return [];
-  if (!fs.existsSync(OUTPUT_PATH)) return [];
-  return JSON.parse(fs.readFileSync(OUTPUT_PATH, "utf8"));
+function loadResults(outputPath = OUTPUT_PATH, { fresh = process.env.GUIDELINE_AUDIT_FRESH === "true" } = {}) {
+  if (fresh) return [];
+  if (!fs.existsSync(outputPath)) return [];
+  return JSON.parse(fs.readFileSync(outputPath, "utf8"));
 }
 
-function saveResults(results) {
-  fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true });
-  fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(results, null, 2)}\n`, "utf8");
+function saveResults(results, outputPath = OUTPUT_PATH) {
+  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+  const temporaryPath = `${outputPath}.tmp`;
+  fs.writeFileSync(temporaryPath, `${JSON.stringify(results, null, 2)}\n`, "utf8");
+  fs.renameSync(temporaryPath, outputPath);
+}
+
+async function runQuestions(questions, {
+  results = [],
+  execute,
+  persist = saveResults,
+  onResult = () => {}
+} = {}) {
+  const completed = new Set(results.map((result) => result.id));
+  for (const item of questions) {
+    if (completed.has(item.id)) {
+      onResult({ item, skipped: true });
+      continue;
+    }
+    const result = await execute(item);
+    results.push(result);
+    persist(results);
+    completed.add(item.id);
+    onResult({ item, result, skipped: false });
+  }
+  return results;
 }
 
 async function listen(server) {
@@ -59,7 +82,6 @@ async function main() {
   const results = loadResults().filter((result) =>
     !rerunIds.has(result.id) && !result.error && result.envelope && Array.isArray(result.envelope.claims)
   );
-  const completed = new Set(results.map((result) => result.id));
   // Stamped on every new entry so a promotion script can refuse to reuse an
   // audit captured against a different data/derived/ state (see
   // scripts/semantic_promotion_lifecycle.js's assertLiveAuditRegression) — a
@@ -81,38 +103,47 @@ async function main() {
   try {
     const health = await (await fetch(`${baseUrl}/api/health`)).json();
     console.log(`[server] ${health.generator_provider || "local"}/${health.generator_model || "excerpts"} -> ${health.verifier_provider || "local"}/${health.verifier_model || "none"}`);
-    for (const item of questions) {
-      if (completed.has(item.id)) {
-        console.log(`SKIP ${item.id}`);
-        continue;
+    await runQuestions(questions, {
+      results,
+      execute: async (item) => {
+        const startedAt = Date.now();
+        let envelope;
+        let error = null;
+        try {
+          const response = await fetch(`${baseUrl}/api/ask`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              question: item.question,
+              response_language: "ko",
+              generation_preference: process.env.GUIDELINE_AUDIT_GENERATION_PREFERENCE || "auto"
+            }),
+            signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
+          });
+          envelope = await response.json();
+          if (!response.ok) throw new Error(`HTTP ${response.status}: ${JSON.stringify(envelope)}`);
+        } catch (caught) {
+          error = caught.stack || caught.message || String(caught);
+        }
+        return {
+          ...item,
+          elapsed_ms: Date.now() - startedAt,
+          envelope: envelope || null,
+          error,
+          semantic_state_fingerprint: semanticStateFingerprint
+        };
+      },
+      onResult: ({ item, result, skipped }) => {
+        if (skipped) {
+          console.log(`SKIP ${item.id}`);
+          return;
+        }
+        const envelopeLabel = result.envelope && Array.isArray(result.envelope.claims)
+          ? `${result.envelope.route}/${result.envelope.mode} claims=${result.envelope.claims.length}`
+          : "no-valid-envelope";
+        console.log(`${result.error ? "ERROR" : "DONE"} ${item.id} ${envelopeLabel} ${result.elapsed_ms}ms`);
       }
-      const startedAt = Date.now();
-      let envelope;
-      let error = null;
-      try {
-        const response = await fetch(`${baseUrl}/api/ask`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            question: item.question,
-            response_language: "ko",
-            generation_preference: process.env.GUIDELINE_AUDIT_GENERATION_PREFERENCE || "auto"
-          }),
-          signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS)
-        });
-        envelope = await response.json();
-        if (!response.ok) throw new Error(`HTTP ${response.status}: ${JSON.stringify(envelope)}`);
-      } catch (caught) {
-        error = caught.stack || caught.message || String(caught);
-      }
-      const elapsed_ms = Date.now() - startedAt;
-      results.push({ ...item, elapsed_ms, envelope: envelope || null, error, semantic_state_fingerprint: semanticStateFingerprint });
-      saveResults(results);
-      const envelopeLabel = envelope && Array.isArray(envelope.claims)
-        ? `${envelope.route}/${envelope.mode} claims=${envelope.claims.length}`
-        : "no-valid-envelope";
-      console.log(`${error ? "ERROR" : "DONE"} ${item.id} ${envelopeLabel} ${elapsed_ms}ms`);
-    }
+    });
   } finally {
     await close(server);
   }
@@ -120,7 +151,17 @@ async function main() {
   console.log(`Saved ${results.length}/50 responses to ${OUTPUT_PATH}`);
 }
 
-main().catch((error) => {
-  console.error(error.stack || error.message || error);
-  process.exitCode = 1;
-});
+if (require.main === module) {
+  main().catch((error) => {
+    console.error(error.stack || error.message || error);
+    process.exitCode = 1;
+  });
+}
+
+module.exports = {
+  loadResults,
+  main,
+  questionsFromDesign,
+  runQuestions,
+  saveResults
+};

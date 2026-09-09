@@ -1,0 +1,22 @@
+{
+  "baseline_id": "pre_workstream_1_production_baseline",
+  "captured_on": "2026-09-08",
+  "cases": [
+    { "id": "Q02", "route": "structured", "mode": "section_overview", "answered": true, "claim_count": 4, "claim_set_sha256": "fa2d8af7d209a1f3bcd304480150cf7c62b1a0cadf43de039dfa76da6c407f87" },
+    { "id": "Q03", "route": "structured", "mode": "section_overview", "answered": true, "claim_count": 60, "claim_set_sha256": "038cc6b0c23a58275d4535ed72050377802a587c8a572bf4dcc11240825ab539" },
+    { "id": "Q04", "route": "structured", "mode": "section_overview", "answered": true, "claim_count": 22, "claim_set_sha256": "fdaf8f25a748848aba95836559c88e3e0b1685bda6df0632d0e4c4d6096ed11a" },
+    { "id": "Q08", "route": "grounded_generation", "mode": "generated", "answered": true, "claim_count": 1, "claim_set_sha256": "f6260ebbc73fa5296a71878be52c33d85d7c39f61489c30e1dd34adae44825b9" },
+    { "id": "Q09", "route": "structured", "mode": "section_overview", "answered": true, "claim_count": 47, "claim_set_sha256": "c24b5e7a001b1dd6c3566596dbe9e0b89df679cd8b4fa0e269c08ec07f58bdb5" },
+    { "id": "Q12", "route": "grounded_generation", "mode": "generated", "answered": true, "claim_count": 3, "claim_set_sha256": "f2a8843a7fd8d40015aa82bff0f6be9a8f8d64ade8d55435061efc701edbc5b7" },
+    { "id": "Q14", "route": "structured", "mode": "section_overview", "answered": true, "claim_count": 32, "claim_set_sha256": "075c0359c414c2c3b89c7d5d0a9aceb9d3d3407f2ad7e15d2ae319e7ea446498" },
+    { "id": "Q16", "route": "grounded_generation", "mode": "generated", "answered": true, "claim_count": 2, "claim_set_sha256": "5a20de093396da20474ba339a3b58af0e8cb52018a7f3213a8620ccae1b29053" },
+    { "id": "Q17", "route": "grounded_generation", "mode": "generated", "answered": true, "claim_count": 3, "claim_set_sha256": "80f8598ba27513265d1ff42af0f4d44c36bee875980b800f40e0c10cde13e467" },
+    { "id": "Q24", "route": "grounded_generation", "mode": "generated", "answered": true, "claim_count": 1, "claim_set_sha256": "e6110f1f20d0df93c61bd587b87e343f734fbbac0ed63771ebc17ce69409a132" },
+    { "id": "Q25", "route": "grounded_generation", "mode": "generated", "answered": true, "claim_count": 5, "claim_set_sha256": "1c1f3d96ab6eb00d6a4b18390533c63ee67bcf5d6ab8cc88a3bfab51a51dd21c" },
+    { "id": "Q29", "route": "grounded_generation", "mode": "generated", "answered": true, "claim_count": 4, "claim_set_sha256": "78fbddb3e8a795616896fcf4546cefbf8bd34d460b71e91c12830800c1402037" },
+    { "id": "Q38", "route": "grounded_generation", "mode": "generated", "answered": true, "claim_count": 2, "claim_set_sha256": "ff84f39d68b970ebda709e77f9be4896cde11c4f084eb6fca13241789ae385c1" },
+    { "id": "Q41", "route": "grounded_generation", "mode": "generated", "answered": true, "claim_count": 2, "claim_set_sha256": "2b124b0b62adaa2f2aa8c22621b62a839aa031acd8abbb960a256889ae74178b" },
+    { "id": "Q45", "route": "grounded_generation", "mode": "generated", "answered": true, "claim_count": 3, "claim_set_sha256": "db43bf8d95ea48f5929d3be9efd0b1fdb1a27b09e2cbbdbf7d69d71c4d235b70" },
+    { "id": "Q47", "route": "structured", "mode": "multi_criterion", "answered": true, "claim_count": 5, "claim_set_sha256": "99a32b317a6f4f7f3ac80371105f7860e484d5b00c016817e5ad31a0abe7c8d1" }
+  ]
+}

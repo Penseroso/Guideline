@@ -506,6 +506,119 @@ function manifestFacetIds(manifest) {
   return new Set((manifest.coverage_groups || []).flatMap((group) => group.facet_ids || []));
 }
 
+function sectionSubtreeHasEvidence(sectionId, semanticStore) {
+  if (!sectionId) return false;
+  const sectionIds = new Set([sectionId, ...descendantSectionIds(sectionId, semanticStore.sectionIndex.childrenBySectionId)]);
+  return [...sectionIds].some((id) => (semanticStore.sectionIndex.recordIdsBySectionId.get(id) || new Set()).size > 0);
+}
+
+/**
+ * Routing eligibility is deliberately stricter than mere schema validity.
+ * A manifest may influence a broad answer only when the runtime loader kept
+ * its overlay fresh, the manifest and every referenced facet are reviewed,
+ * and at least one referenced facet resolves to real core evidence.
+ */
+function reviewedRoutingEligibility(semanticStore = defaultStore()) {
+  const eligible = [];
+  const ineligible = [];
+  for (const [documentId, overlay] of semanticStore.overlaysByDocumentId) {
+    const facetsById = new Map((overlay.facets || []).map((facet) => [facet.facet_id, facet]));
+    for (const manifest of overlay.coverage_manifests || []) {
+      const facetIds = [...manifestFacetIds(manifest)];
+      const facets = facetIds.map((id) => facetsById.get(id));
+      const reviewed = manifest.review_status === "reviewed" && facetIds.length > 0 &&
+        facets.every((facet) => facet && facet.review_status === "reviewed");
+      const evidenceBearing = reviewed && facets.some((facet) => facet.coverage_basis === "declared_members"
+        ? (facet.member_record_ids || []).some((id) => semanticStore.archive.recordsById.has(id))
+        : facet.scope !== documentId && sectionSubtreeHasEvidence(facet.scope, semanticStore));
+      const entry = { document_id: documentId, manifest_id: manifest.manifest_id, manifest, overlay, facets };
+      if (reviewed && evidenceBearing) eligible.push(entry);
+      else ineligible.push({ ...entry, reason: reviewed ? "no_resolvable_evidence" : "not_fully_reviewed" });
+    }
+  }
+  return { eligible, ineligible };
+}
+
+function hasBroadRoutingCue(question, intent = {}) {
+  if (intent.breadth === "broad") return true;
+  return /(?:설명|정리|요약|뭐가\s*있|무엇이\s*있|무엇을\s*다루|어떤\s*내용|큰\s*그림|overview|summari[sz]e|what(?:'s| is)\s+(?:in|covered))/i
+    .test(String(question || ""));
+}
+
+function applicableRoutingFacetIds(manifest, queryScope) {
+  const ids = [];
+  for (const group of [...(manifest.coverage_groups || [])].sort((a, b) => a.display_order - b.display_order)) {
+    const applicability = evaluateWhen(group.when, queryScope);
+    if (applicability === "not_applicable") continue;
+    if (applicability === "ambiguous" && group.on_ambiguity !== "present_branches" && group.when) continue;
+    ids.push(...(group.facet_ids || []));
+  }
+  return [...new Set(ids)];
+}
+
+/**
+ * Selects one reviewed semantic target for a broad question before answer
+ * construction. Record volume is never a ranking feature: explicit document
+ * identity, section/title/concept query evidence, compatible intent, and
+ * distance from the best-scoring section are the complete ordering contract.
+ * Equal best targets abstain rather than choosing by insertion order.
+ */
+function selectReviewedRoutingManifest(question, {
+  requestedDocumentIds = null,
+  intent = {},
+  queryScope = {},
+  scored = [],
+  store
+} = {}) {
+  if (!hasBroadRoutingCue(question, intent)) return null;
+  const semanticStore = store || defaultStore();
+  const { eligible } = reviewedRoutingEligibility(semanticStore);
+  const explicitlyRequested = requestedDocumentIds && requestedDocumentIds.size > 0;
+  const topScore = scored.length ? scored[0].score : null;
+  const scoredDocumentIds = new Set(topScore == null ? [] : scored
+    .filter((item) => item.score === topScore)
+    .map((item) => item.record.document_id));
+  const resolvedSectionIds = scored
+    .filter((item) => topScore != null && item.score === topScore)
+    .map((item) => item.record.section_id)
+    .filter(Boolean);
+  const candidates = [];
+
+  for (const entry of eligible) {
+    const { document_id: documentId, manifest, overlay } = entry;
+    if (explicitlyRequested && !requestedDocumentIds.has(documentId)) continue;
+    if (!explicitlyRequested && scoredDocumentIds.size > 0 && !scoredDocumentIds.has(documentId)) continue;
+
+    const isDocumentTarget = manifest.target && manifest.target.type === "document";
+    const queryScore = manifestQueryScore(question, overlay, manifest, semanticStore.archive.sectionsById);
+    const effectiveIntent = intent.breadth === "broad" ? intent.kind : manifest.answer_intent;
+    const intentScore = intentCompatibilityScore(manifest.answer_intent, effectiveIntent);
+    if (isDocumentTarget) {
+      const documentOverviewCue = /가이드라인|문서\s*전체|전체적|전체\s*(?:구성|내용)|큰\s*그림|document\s*overview|overall/i
+        .test(String(question || ""));
+      if (!explicitlyRequested || !(intent.documentOverview || documentOverviewCue)) continue;
+    } else {
+      const minimumQueryScore = explicitlyRequested ? 4 : 8;
+      if (queryScore < minimumQueryScore || intentScore === 0) continue;
+    }
+
+    const distance = manifestDistance(overlay, manifest, resolvedSectionIds, semanticStore.archive.sectionsById);
+    const distancePenalty = Number.isFinite(distance) ? Math.min(distance, 20) : 20;
+    const rankScore = (isDocumentTarget ? 20 : queryScore) + intentScore * 20 - distancePenalty;
+    const facetIds = applicableRoutingFacetIds(manifest, queryScope);
+    if (facetIds.length === 0) continue;
+    candidates.push({ ...entry, facet_ids: facetIds, rankScore, distance, queryScore });
+  }
+
+  if (candidates.length === 0) return null;
+  candidates.sort((a, b) => b.rankScore - a.rankScore || a.distance - b.distance || a.manifest_id.localeCompare(b.manifest_id));
+  const best = candidates[0];
+  const tied = candidates.filter((candidate) => candidate.rankScore === best.rankScore && candidate.distance === best.distance);
+  const distinctTargets = new Set(tied.map((candidate) => `${candidate.document_id}:${candidate.manifest.target.type}:${candidate.manifest.target.id}`));
+  if (distinctTargets.size > 1) return null;
+  return best;
+}
+
 /**
  * Matches a summary_spec (docs/derived_semantic_layer.md §10) to the
  * manifest it should introduce. An exact target match
@@ -867,4 +980,11 @@ function buildReviewedSemanticCoverage(question, envelope, options) {
   return { manifests, comparison };
 }
 
-module.exports = { buildShadowPlan, comparePlans, buildReviewedSemanticCoverage, defaultStore };
+module.exports = {
+  buildShadowPlan,
+  comparePlans,
+  buildReviewedSemanticCoverage,
+  reviewedRoutingEligibility,
+  selectReviewedRoutingManifest,
+  defaultStore
+};

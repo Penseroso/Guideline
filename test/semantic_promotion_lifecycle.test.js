@@ -96,7 +96,7 @@ test("evaluateEstablishedCase: grounded_generation still hard-fails on empty or 
 
 test("all 16 established-suitable IDs are covered by the deterministic/stochastic split without a Q25-specific carve-out", () => {
   // Documents which contract each established case currently exercises
-  // (route observed live in logs/runtime/answer_suitability_50_raw_2026-09-08_stage_g.json),
+  // (route captured in the pre-Workstream-1 production baseline),
   // guarding against silently reclassifying one without noticing.
   const deterministic = new Set(["Q02", "Q03", "Q04", "Q09", "Q14", "Q47"]);
   const stochastic = new Set(["Q08", "Q12", "Q16", "Q17", "Q24", "Q25", "Q29", "Q38", "Q41", "Q45"]);

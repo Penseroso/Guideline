@@ -77,6 +77,17 @@ function safeReviewedSemanticCoverage(question, envelope) {
   }
 }
 
+function semanticCoverageSupportsRouting(match, semanticCoverage) {
+  if (!match || !match.routingManifestId) return true;
+  const manifest = semanticCoverage && (semanticCoverage.manifests || [])
+    .find((item) => item.manifest_id === match.routingManifestId);
+  if (!manifest) return false;
+  const facets = (manifest.groups || []).flatMap((group) => group.facets || []);
+  const surfacedIds = new Set(facets.map((facet) => facet.facet_id));
+  if (!(match.routingFacetIds || []).every((id) => surfacedIds.has(id))) return false;
+  return facets.some((facet) => facet.effective && facet.effective.covered > 0);
+}
+
 // A candidate set this small has little room for the model to legitimately
 // treat one as redundant. A real regression case: the router retrieved
 // exactly 3 candidates (including the source's own stated quantitative-
@@ -142,7 +153,24 @@ async function answerEnvelope(question, records, {
   generationPreference = "auto"
 } = {}) {
   const start = Date.now();
-  const match = structuredQuery(question, records, index);
+  let match = structuredQuery(question, records, index);
+  let structuredSemanticCoverage = null;
+
+  // A manifest-backed partial broad answer is only valid when its complete
+  // applicable facet set can be disclosed and at least one of those facets
+  // is grounded by the selected claims. This prevents a coincidental single
+  // record hit from masquerading as a broad answer.
+  if (match && match.routingManifestId) {
+    const deterministicMode = modeForMatch(match);
+    structuredSemanticCoverage = safeReviewedSemanticCoverage(question, {
+      mode: deterministicMode,
+      semantic_mode: deterministicMode,
+      claims: match.claims || [],
+      scope: match.scope || null,
+      answer_intent: match.answerIntent || null
+    });
+    if (!semanticCoverageSupportsRouting(match, structuredSemanticCoverage)) match = null;
+  }
 
   if (match) {
     const deterministicMode = modeForMatch(match);
@@ -189,7 +217,7 @@ async function answerEnvelope(question, records, {
         // contract below it, and only ever reflects `reviewed`, non-stale
         // manifests (see docs/derived_semantic_layer.md §10).
         envelope.semantic_coverage = safeReviewedSemanticCoverage(question, envelope);
-        return envelope;
+        if (semanticCoverageSupportsRouting(match, envelope.semantic_coverage)) return envelope;
       }
     }
     const structuredEnvelope = {
@@ -215,7 +243,7 @@ async function answerEnvelope(question, records, {
     // mode:"multi_criterion"). Same disclosure-only contract as the
     // grounded_generation branch above: never touches `prose`/`claims`/
     // citations, best-effort, swallowed on failure.
-    structuredEnvelope.semantic_coverage = safeReviewedSemanticCoverage(question, structuredEnvelope);
+    structuredEnvelope.semantic_coverage = structuredSemanticCoverage || safeReviewedSemanticCoverage(question, structuredEnvelope);
     return structuredEnvelope;
   }
 

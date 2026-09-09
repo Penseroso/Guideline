@@ -3,6 +3,7 @@ const { tokenize, extractQueryScope } = require("./text_utils");
 const { isComparisonQuery, answerComparison, formatComparativeAnswer } = require("./comparison_engine");
 const { isAmendmentQuery, answerAmendment, formatAmendmentAnswer } = require("./amendment_engine");
 const { criterionValue, criterionValueKey } = require("./criterion_value");
+const { selectReviewedRoutingManifest } = require("./semantic_routing");
 
 /**
  * Minimum score and token count required for structured matching.
@@ -46,6 +47,9 @@ function resolveRequestedDocumentIds(question, records) {
   // Otherwise an ordinary topic such as "starting dose" expands to the
   // ema_fih document_id's aliases and masquerades as an explicit document.
   const qTokens = identityLexemes(question);
+  const lowerQuestion = String(question || "").toLowerCase();
+  const adaNamesDocument = /\bfda\b/.test(lowerQuestion) || /\b(?:2014|2019)\b/.test(lowerQuestion) ||
+    /\bada\b.{0,24}\b(?:guideline|guidance)\b|\b(?:guideline|guidance)\b.{0,24}\bada\b/.test(lowerQuestion);
   const identities = new Map();
   for (const record of records || []) {
     if (record.document_id && !identities.has(record.document_id)) {
@@ -56,6 +60,11 @@ function resolveRequestedDocumentIds(question, records) {
   for (const [documentId, tokens] of identities) {
     const matched = [...tokens].filter((token) => {
       if (!qTokens.has(token) || GENERIC_DOCUMENT_TOKENS.has(token)) return false;
+      // ADA is also the scientific topic "anti-drug antibody". Treat it as
+      // a document-family identity only when the question supplies document
+      // context; otherwise an ADC/species-selection question would be hard-
+      // gated to the two FDA ADA documents and lose the applicable S6 record.
+      if (token === "ada" && !adaNamesDocument) return false;
       // FIH names a development context as often as it names the EMA
       // guideline. Only the explicit "EMA FIH" combination is a document
       // identity; bare FIH must leave S6/M3 evidence discoverable.
@@ -463,17 +472,24 @@ function descendantSectionIds(sectionId, index) {
  * lists. It therefore applies equally to M10 validation, FDA assay validation,
  * EMA dosing selection, M3 exploratory trials, and future bundles.
  */
-function trySectionOverviewQuery(question, records, index) {
+function trySectionOverviewQuery(question, records, index, {
+  targetSectionId = null,
+  allowPartial = false,
+  answerIntent = "section_overview",
+  routingManifestId = null,
+  routingFacetIds = []
+} = {}) {
   if (!index || !index.sections || !index.documents) return null;
   const qTokens = new Set(tokenize(question));
   const rawQuestion = String(question || "").toLowerCase();
-  if (!isListQuery(question, qTokens)) return null;
+  if (!targetSectionId && !isListQuery(question, qTokens)) return null;
   const requestedDocumentIds = resolveRequestedDocumentIds(question, records);
   const gatedRecords = applyDocumentGate(records, requestedDocumentIds);
   const allowedDocumentIds = new Set(gatedRecords.map((record) => record.document_id));
 
   const candidates = [];
   for (const section of index.sections.values()) {
+    if (targetSectionId && section.section_id !== targetSectionId) continue;
     if (!allowedDocumentIds.has(section.document_id)) continue;
     const children = [...index.sections.values()]
       .filter((candidate) => candidate.parent_section_id === section.section_id)
@@ -526,7 +542,9 @@ function trySectionOverviewQuery(question, records, index) {
     const repeatedParentConcept = [...matchedSectionConcepts]
       .some((token) => childTitleTokenSets.every((tokens) => tokens.has(token)));
     const taxonomyMatch = asksTaxonomy && requestedDocumentIds && requestedDocumentIds.size === 1 && repeatedParentConcept;
-    if (matchedSectionConcepts.size >= 2 || taxonomyMatch) candidates.push({ section, children, ancestors, score: score + (taxonomyMatch ? 8 : 0) });
+    if (targetSectionId || matchedSectionConcepts.size >= 2 || taxonomyMatch) {
+      candidates.push({ section, children, ancestors, score: targetSectionId ? Math.max(score, 100) : score + (taxonomyMatch ? 8 : 0) });
+    }
   }
   if (candidates.length === 0) return null;
   candidates.sort((a, b) => b.score - a.score || b.ancestors.length - a.ancestors.length || compareSectionNumbers(a.section, b.section));
@@ -568,7 +586,7 @@ function trySectionOverviewQuery(question, records, index) {
     groups.push({ ...overviewGroup, claims: groupClaims });
     claims.push(...groupClaims);
   }
-  if (groups.length < 2 || claims.length === 0) return null;
+  if (groups.length < (allowPartial ? 1 : 2) || claims.length === 0) return null;
 
   return {
     record: claims[0].record,
@@ -583,7 +601,9 @@ function trySectionOverviewQuery(question, records, index) {
     },
     overviewGroups: groups,
     claims,
-    answerIntent: "section_overview",
+    answerIntent,
+    routingManifestId,
+    routingFacetIds,
     scope: {
       requested_document_ids: requestedDocumentIds ? [...requestedDocumentIds] : [],
       resolved_document_ids: [target.section.document_id],
@@ -668,11 +688,11 @@ function tryListCompositeQuery(scored, qTokens, question) {
   };
 }
 
-function buildCoverageMatch(records, intent, requestedDocumentIds, title, maxRecords = 10) {
+function buildCoverageMatch(records, intent, requestedDocumentIds, title, maxRecords = 10, minimumRecords = 2) {
   const selected = dedupeRecordsForAnswer(records)
     .filter((record) => !isSuppressedBroadRecord(record, ""))
     .slice(0, maxRecords);
-  if (selected.length < 2) return null;
+  if (selected.length < minimumRecords) return null;
   const sectionIds = [...new Set(selected.map((record) => record.section_id).filter(Boolean))];
   const documentIds = [...new Set(selected.map((record) => record.document_id).filter(Boolean))];
   return {
@@ -700,6 +720,81 @@ function buildCoverageMatch(records, intent, requestedDocumentIds, title, maxRec
       claim_count: selected.length
     }
   };
+}
+
+function facetRecordIds(facet, records, index) {
+  if (!facet) return new Set();
+  if (facet.coverage_basis === "declared_members") return new Set(facet.member_record_ids || []);
+  if (!facet.scope || !index || !index.sections || !index.sections.has(facet.scope)) return new Set();
+  const sectionIds = new Set([facet.scope, ...descendantSectionIds(facet.scope, index)]);
+  return new Set(records.filter((record) => sectionIds.has(record.section_id)).map((record) => record.id));
+}
+
+function attachSemanticRoutingMetadata(match, selection, records, index, queryScope, question) {
+  if (!match || !selection) return null;
+  const facetsById = new Map((selection.overlay.facets || []).map((facet) => [facet.facet_id, facet]));
+  const claimIds = new Set((match.claims || []).map((claim) => claim.record && claim.record.id).filter(Boolean));
+  const groundedFacetIds = [];
+  for (const facetId of selection.facet_ids) {
+    const ids = facetRecordIds(facetsById.get(facetId), records, index);
+    if ([...ids].some((id) => claimIds.has(id))) groundedFacetIds.push(facetId);
+  }
+  if (groundedFacetIds.length === 0) return null;
+  match.routingManifestId = selection.manifest_id;
+  match.routingFacetIds = [...selection.facet_ids];
+  match.groundedRoutingFacetIds = groundedFacetIds;
+  match.routingQueryScope = queryScope;
+  match.routingQuestion = question;
+  return match;
+}
+
+function trySemanticManifestQuery(question, records, index, selection, intent, requestedDocumentIds, queryScope) {
+  const manifest = selection.manifest;
+  if (manifest.target.type === "document") {
+    const forcedIntent = { ...intent, kind: "document_overview", breadth: "broad", documentOverview: true };
+    const match = tryDocumentOverviewQuery(question, records, index, requestedDocumentIds, forcedIntent);
+    return attachSemanticRoutingMetadata(match, selection, records, index, queryScope, question);
+  }
+
+  if (manifest.target.type === "section" && manifest.answer_intent === "section_overview") {
+    const match = trySectionOverviewQuery(question, records, index, {
+      targetSectionId: manifest.target.id,
+      allowPartial: true,
+      answerIntent: manifest.answer_intent,
+      routingManifestId: manifest.manifest_id,
+      routingFacetIds: selection.facet_ids
+    });
+    return attachSemanticRoutingMetadata(match, selection, records, index, queryScope, question);
+  }
+
+  const facetsById = new Map((selection.overlay.facets || []).map((facet) => [facet.facet_id, facet]));
+  const recordsById = new Map(records.map((record) => [record.id, record]));
+  const selected = [];
+  const seen = new Set();
+  for (const facetId of selection.facet_ids) {
+    const ids = facetRecordIds(facetsById.get(facetId), records, index);
+    for (const id of ids) {
+      const record = recordsById.get(id);
+      if (!record || seen.has(id) || record.review_status !== "reviewed" ||
+          !record.citations || !record.citations[0] ||
+          scopeGuardReject(record, queryScope) || relevanceGuardReject(record, queryScope) ||
+          isSuppressedBroadRecord(record, question)) continue;
+      seen.add(id);
+      selected.push(record);
+    }
+  }
+  if (selected.length === 0) return null;
+  const effectiveIntent = {
+    ...intent,
+    kind: manifest.answer_intent,
+    breadth: "broad",
+    documentOverview: manifest.answer_intent === "document_overview",
+    process: manifest.answer_intent === "process",
+    comparison: manifest.answer_intent === "comparison"
+  };
+  const title = `${selected[0].guideline_code || selected[0].document_id} ${manifest.answer_intent.replace(/_/g, " ")}`;
+  const match = buildCoverageMatch(selected, effectiveIntent, requestedDocumentIds, title, selected.length, 1);
+  return attachSemanticRoutingMetadata(match, selection, records, index, queryScope, question);
 }
 
 /**
@@ -903,14 +998,14 @@ function structuredQuery(question, records, index = null) {
     if (amendMatch) return amendMatch;
   }
 
-  const sectionOverview = trySectionOverviewQuery(question, gatedRecords, index);
-  if (sectionOverview) return sectionOverview;
-
   const qTokens = new Set(tokenize(question));
   if (qTokens.size === 0) return null;
   const intent = classifyAnswerIntent(question, qTokens);
   const documentOverview = tryDocumentOverviewQuery(question, gatedRecords, index, requestedDocumentIds, intent);
   if (documentOverview) return documentOverview;
+
+  const sectionOverview = trySectionOverviewQuery(question, gatedRecords, index);
+  if (sectionOverview) return sectionOverview;
 
   const queryScope = extractQueryScope(question, qTokens);
   queryScope.require_starting_dose_focus = /\b(?:starting|initial) dose\b|시작\s*용량|초기\s*용량/i.test(question);
@@ -923,8 +1018,6 @@ function structuredQuery(question, records, index = null) {
       scored.push({ record, score, matchedCount });
     }
   }
-  if (scored.length === 0) return null;
-
   scored.sort((a, b) => {
     if (b.score !== a.score) return b.score - a.score;
     const typeDelta = TYPE_PRIORITY[a.record.type] - TYPE_PRIORITY[b.record.type];
@@ -955,6 +1048,33 @@ function structuredQuery(question, records, index = null) {
     };
     return listCompositeMatch;
   }
+
+  // The manifest-backed path hardens only structural misses/downgrades. An
+  // existing deterministic composite remains authoritative when it already
+  // succeeds, preserving the detail and established broad-answer baselines.
+  const semanticSelection = selectReviewedRoutingManifest(question, {
+    requestedDocumentIds,
+    intent,
+    queryScope,
+    scored
+  });
+  if (semanticSelection) {
+    const semanticMatch = trySemanticManifestQuery(
+      question,
+      gatedRecords,
+      index,
+      semanticSelection,
+      intent,
+      requestedDocumentIds,
+      queryScope
+    );
+    // A strong reviewed semantic target is authoritative for this broad
+    // shape. If none of its facets grounds, abstain instead of falling
+    // through to a coincidental single-record detail winner.
+    return semanticMatch;
+  }
+
+  if (scored.length === 0) return null;
 
   // A broad question that could not assemble at least two independently
   // grounded facets is not a direct-fact answer. Let grounded generation
