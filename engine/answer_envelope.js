@@ -44,21 +44,29 @@ function reviewStatusFor(match) {
   return "reviewed";
 }
 
-function shouldGenerate(match, preference, generatorClient, verifierClient) {
+function shouldGenerate(match, preference, generatorClient, verifierClient, telemetry) {
   if (!generatorClient || !verifierClient || !match.claims || match.claims.length === 0) return false;
   if (preference === "prefer_generated") return true;
   if (preference !== "auto") return false;
   // Section overviews already have an exact hierarchy UI. Direct facts and
   // compact rule sets remain deterministic. Synthesis-heavy modes get a
   // coherent generated answer while keeping the same scoped evidence below.
-  return [
-    "document_overview",
-    "process",
-    "within_document_comparison",
-    "multi_criterion",
-    "list",
-    "comparison"
-  ].includes(modeForMatch(match));
+  const mode = modeForMatch(match);
+  if (!["document_overview", "process", "within_document_comparison", "multi_criterion", "list", "comparison"].includes(mode)) {
+    return false;
+  }
+  // Workstream 5: a claim set this small is exactly what
+  // generatedCoverageIsAdequate would require 100% coverage of anyway, and
+  // the deterministic composite already trivially is that set. Attempting
+  // generation here can only ever be discarded or, at best, tie the
+  // deterministic answer's own facts in different words -- not worth its
+  // latency/API cost. Measured real cases: history/verification/
+  // response_intelligence_workstream_5_2026-09-09.md.
+  if (isSmallCompleteClaimSet(match, mode)) {
+    recordTelemetryEvent(telemetry, "generation_skipped_adequate", { mode, expected_unit_count: expectedUnitsOf(match).size });
+    return false;
+  }
+  return true;
 }
 
 /**
@@ -100,6 +108,47 @@ function semanticCoverageSupportsRouting(match, semanticCoverage) {
 // applies below a small fixed ceiling, not to every question.
 const SMALL_CANDIDATE_SET_CEILING = 3;
 
+function expectedUnitsOf(match) {
+  return new Set((match.claims || []).map((claim) => claim.source_unit_id).filter(Boolean));
+}
+
+/**
+ * Response Intelligence Workstream 5: the deterministic composite *is* the
+ * expected unit set for `multi_criterion`/`list`/`within_document_comparison`
+ * (document_overview/comparison's bars are breadth/distinct-count based, not
+ * identity with `match.claims`, so they're excluded), so whenever this is
+ * true, the composite trivially satisfies `generatedCoverageIsAdequate`'s
+ * own small-set bar below with 100% coverage, before any generation call is
+ * made. `process` is also excluded despite falling into the same generic
+ * bar: a real pinned case ("auto preference synthesizes broad semantic
+ * modes...", test/engine_answer_envelope.test.js) has a genuine 3-unit
+ * process question where narrated sequencing is real synthesis value, not
+ * redundant with the raw list — unlike Workstream 2's real Q40 failure at
+ * the same shape, this is a genuine mixed cost/benefit for `process`
+ * specifically, not a case that's always safe to skip for free. Shared by
+ * `shouldGenerate` (skip the call) and `generatedCoverageIsAdequate` (judge
+ * the call's result) so both use one identical definition — no drift.
+ *
+ * The bound is exactly `SMALL_CANDIDATE_SET_CEILING` (3), not a range, from
+ * measuring this fix against two fresh 50-question runs before finalizing
+ * it. At `expected_unit_count === 1` (Q08/Q24/Q38/Q46), every real case had
+ * *already* succeeded at generation with no rejection — trivially easy to
+ * cover completely, so skipping forfeits real value for no measured risk
+ * reduction. At `=== 2` (Q06/Q39/Q41), real outcomes were genuinely mixed
+ * (1 real failure, 2 real successes across both runs) — not decisive
+ * enough to justify forfeiting Q39/Q41's real synthesis value. Only
+ * `=== 3` (Q05/Q47) showed a clean, repeated real failure with zero
+ * counterexample across both runs. If a future workstream gathers more
+ * evidence at count 2, this bound can be revisited — it is not
+ * philosophically tied to 3, only currently justified only there. See
+ * history/verification/response_intelligence_workstream_5_2026-09-09.md.
+ */
+function isSmallCompleteClaimSet(match, mode) {
+  if (!["multi_criterion", "list", "within_document_comparison"].includes(mode)) return false;
+  const expectedUnits = expectedUnitsOf(match);
+  return expectedUnits.size === SMALL_CANDIDATE_SET_CEILING;
+}
+
 function generatedCoverageIsAdequate(match, generated) {
   const generatedUnits = new Set((generated.claims || []).map((claim) => claim.source_unit_id).filter(Boolean));
   if (match.isDocumentOverview) {
@@ -108,7 +157,7 @@ function generatedCoverageIsAdequate(match, generated) {
     return generatedUnits.size >= Math.min(3, expectedSections.size);
   }
   if (match.isMultiCriterion) {
-    const expectedUnits = new Set((match.claims || []).map((claim) => claim.source_unit_id).filter(Boolean));
+    const expectedUnits = expectedUnitsOf(match);
     if (generatedUnits.size < Math.min(2, expectedUnits.size)) return false;
   }
   if (match.isComparison) {
@@ -118,9 +167,8 @@ function generatedCoverageIsAdequate(match, generated) {
       .map((claim) => claim.record && claim.record.document_id).filter(Boolean));
     return [...expectedDocuments].every((documentId) => generatedDocuments.has(documentId));
   }
-  const expectedUnits = new Set((match.claims || []).map((claim) => claim.source_unit_id).filter(Boolean));
-  if (expectedUnits.size > 0 && expectedUnits.size <= SMALL_CANDIDATE_SET_CEILING) {
-    return generatedUnits.size >= expectedUnits.size;
+  if (isSmallCompleteClaimSet(match, modeForMatch(match))) {
+    return generatedUnits.size >= expectedUnitsOf(match).size;
   }
   return true;
 }
@@ -184,7 +232,7 @@ async function answerEnvelope(question, records, {
 
   if (match) {
     const deterministicMode = modeForMatch(match);
-    if (shouldGenerate(match, generationPreference, generatorClient, verifierClient)) {
+    if (shouldGenerate(match, generationPreference, generatorClient, verifierClient, telemetry)) {
       const scopedRecords = [...new Map(match.claims
         .filter((claim) => claim.record)
         .map((claim) => [claim.record.id, claim.record])).values()];
@@ -333,4 +381,4 @@ async function answerEnvelope(question, records, {
   });
 }
 
-module.exports = { answerEnvelope, ENVELOPE_VERSION, safeReviewedSemanticCoverage };
+module.exports = { answerEnvelope, ENVELOPE_VERSION, safeReviewedSemanticCoverage, shouldGenerate, modeForMatch, isSmallCompleteClaimSet };

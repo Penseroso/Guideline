@@ -98,7 +98,7 @@ History: `history/applicability_engine/`.
 
 ## Active milestone — Response Intelligence
 
-Status: active since 2026-09-08; Workstreams 1-4 completed 2026-09-09.
+Status: active since 2026-09-08; Workstreams 1-5 completed 2026-09-09.
 
 This sequential milestone measures and improves routing, latency/cost, query
 resolution, retrieval, conditional planning, response verification,
@@ -124,6 +124,15 @@ dependency-free fixes it justified: two missing synonym entries and a
 document-frequency-aware scoring bonus in `engine/vector_store.js`. No
 hybrid retrieval, BM25, or embeddings were adopted. Detailed evidence is in
 `history/verification/response_intelligence_workstream_4_2026-09-09.md`.
-Workstream 5, Conditional LLM Query Planning, is next.
-Workstream 4, Retrieval Quality Upgrade, is next, scoped to the retrieval-
-miss cases Workstream 3 classified.
+Workstream 5 deferred Workstream 3's ambiguous-tie LLM-disambiguation
+candidate (0/50 real occurrences — no real trade-off to justify it) and
+implemented one narrow, measurement-verified fix instead: skip speculative
+generation for `multi_criterion`/`list`/`within_document_comparison`
+matches at exactly 3 expected units, where the deterministic composite
+already trivially satisfies the completeness bar that would otherwise
+reject a generated answer after paying for it. The scope was narrowed
+twice by real measurement (counts 1 and 2, and `process` mode, were each
+tried and found to be a real net loss, not a free win, before landing on
+exactly count 3). Detailed evidence is in
+`history/verification/response_intelligence_workstream_5_2026-09-09.md`.
+Workstream 6, Response Quality / Verification Contract, is next.

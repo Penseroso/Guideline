@@ -3,7 +3,7 @@ const assert = require("node:assert/strict");
 
 const { loadStore } = require("../engine/data_store");
 const { answer } = require("../engine/query_router");
-const { answerEnvelope, ENVELOPE_VERSION, safeReviewedSemanticCoverage } = require("../engine/answer_envelope");
+const { answerEnvelope, ENVELOPE_VERSION, safeReviewedSemanticCoverage, shouldGenerate } = require("../engine/answer_envelope");
 const fixture = require("./fixtures/eval_questions.json");
 
 const { records, index } = loadStore();
@@ -253,4 +253,68 @@ test("a scope-excluded fallback query produces refusal.kind = scope_excluded via
   const env = await answerEnvelope("저분자 화합물의 독성 시험에서 종 선택 기준은?", records, { client, store: fakeStore([excluded]), index });
   assert.equal(env.answered, false);
   assert.equal(env.refusal.kind, "scope_excluded");
+});
+
+// Response Intelligence Workstream 5: shouldGenerate now skips a speculative
+// generation attempt when the deterministic composite already trivially
+// satisfies generatedCoverageIsAdequate's own small-set completeness bar,
+// for the modes where that bar is exact-identity with match.claims
+// (multi_criterion/list/within_document_comparison), but ONLY at exactly
+// SMALL_CANDIDATE_SET_CEILING (3) expected units, not a range. document_
+// overview and comparison use a different, breadth-based bar and are
+// untouched; process is also deliberately untouched -- see the "auto
+// preference synthesizes broad semantic modes..." test above, a real
+// 3-unit process question with genuine narrated-sequencing synthesis
+// value. Counts 1 and 2 are also deliberately left alone: measuring this
+// fix against two fresh 50-question runs found every real count-1 case
+// already succeeded at generation with no rejection, and count-2 was
+// genuinely mixed (1 real failure, 2 real successes) -- only count 3 showed
+// a clean, repeated real failure with no counterexample. See
+// history/verification/response_intelligence_workstream_5_2026-09-09.md.
+function claimsOf(n) {
+  return Array.from({ length: n }, (_, i) => ({ source_unit_id: `su_${i}` }));
+}
+
+test("shouldGenerate skips generation under auto preference for a multi_criterion/list/within_document_comparison match with exactly 3 expected units", () => {
+  const generatorClient = {};
+  const verifierClient = {};
+  for (const flag of ["isMultiCriterion", "isListComposite", "isWithinDocumentComparison"]) {
+    const match = { claims: claimsOf(3), [flag]: true };
+    assert.equal(shouldGenerate(match, "auto", generatorClient, verifierClient), false, flag);
+  }
+});
+
+test("shouldGenerate records generation_skipped_adequate telemetry when it skips", () => {
+  const { createAnswerTelemetry } = require("../engine/answer_telemetry");
+  const telemetry = createAnswerTelemetry();
+  const match = { claims: claimsOf(3), isMultiCriterion: true };
+  assert.equal(shouldGenerate(match, "auto", {}, {}, telemetry), false);
+  const event = telemetry.events.find((e) => e.event === "generation_skipped_adequate");
+  assert.ok(event);
+  assert.equal(event.mode, "multi_criterion");
+  assert.equal(event.expected_unit_count, 3);
+});
+
+test("shouldGenerate still attempts generation under auto preference for a 1- or 2-unit match — real cases at these counts were not decisive failures", () => {
+  for (const n of [1, 2]) {
+    const match = { claims: claimsOf(n), isMultiCriterion: true };
+    assert.equal(shouldGenerate(match, "auto", {}, {}), true, `count ${n}`);
+  }
+});
+
+test("shouldGenerate still attempts generation when the caller explicitly prefers it, even at exactly 3 units", () => {
+  const match = { claims: claimsOf(3), isMultiCriterion: true };
+  assert.equal(shouldGenerate(match, "prefer_generated", {}, {}), true);
+});
+
+test("shouldGenerate still attempts generation under auto preference once the claim set exceeds the small-set ceiling", () => {
+  const match = { claims: claimsOf(4), isMultiCriterion: true };
+  assert.equal(shouldGenerate(match, "auto", {}, {}), true);
+});
+
+test("shouldGenerate does not skip document_overview or comparison at exactly 3 units — their bars are breadth-based, out of this workstream's scope", () => {
+  for (const flag of ["isDocumentOverview", "isComparison"]) {
+    const match = { claims: claimsOf(3), [flag]: true };
+    assert.equal(shouldGenerate(match, "auto", {}, {}), true, flag);
+  }
 });
