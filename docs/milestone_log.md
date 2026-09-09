@@ -98,7 +98,8 @@ History: `history/applicability_engine/`.
 
 ## Active milestone — Response Intelligence
 
-Status: active since 2026-09-08; Workstreams 1-6 completed 2026-09-09.
+Status: active since 2026-09-08; Workstreams 1-7 completed 2026-09-09;
+Workstream 8 (Corpus Expansion / Reusability Test) not started.
 
 This sequential milestone measures and improves routing, latency/cost, query
 resolution, retrieval, conditional planning, response verification,
@@ -155,4 +156,17 @@ omission rate is too broad and undifferentiated to target narrowly without
 risking wide regression, and the render fix already guarantees every
 condition is shown regardless of prose fidelity. Detailed evidence is in
 `history/verification/response_intelligence_workstream_6_2026-09-09.md`.
-Workstream 7, Production Evaluation & SLO, is next.
+Workstream 7 built the milestone's first question-type taxonomy and
+production SLO, neither of which existed before: a 72-question typed
+corpus (`data/eval/typed_questions.json`) assembled entirely from real
+material already produced by prior workstreams (50Q depth-code mapping
+plus Workstream 3's confirmed ambiguous-tie probes and the gold set's
+stable refusal cases), run through the real production path (72/72, 0
+final errors), scoring 100% answerability/claim-grounding/retrieval-
+groundedness across every applicable type and 18/19 (94.7%) routing-
+abstention for the `ambiguous` type. `docs/production_slo.md` records
+every target as this measured baseline itself, enforced by
+`npm run audit:production-slo -- --check`. Detailed evidence is in
+`history/verification/response_intelligence_workstream_7_2026-09-09.md`.
+Workstream 8, Corpus Expansion / Reusability Test, is next and remains
+not started — the milestone is not yet complete.

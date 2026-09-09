@@ -5,7 +5,7 @@ This is the active verification summary. Detailed historical measurements are fr
 ## Current baseline
 
 - Engine version: `0.6.0`
-- Unit and integration tests: 421/421 passing as of 2026-09-09
+- Unit and integration tests: 444/444 passing as of 2026-09-09
 - Guideline bundle validation (`npm run validate:guidelines`): 6/6 bundles passing
 - Korean presentation validation: 2,693/2,693 entries passing
 - Korean normalization corpus audit: 1,495/1,495 KnowledgeRecords reviewed, 0 issues
@@ -22,5 +22,14 @@ This is the active verification summary. Detailed historical measurements are fr
 - Structured-tail diagnosis: the full baseline had 12/23 final structured answers that attempted generation/verification before deterministic fallback (30 calls total), versus 11 deterministic-only structured answers. In the event-level tail rerun, deterministic-only structured measured p50 15 ms / p95 66 ms and LLM-attempt-then-structured-fallback measured p50 11,043 ms / p95 24,741 ms. Verification failure/retry, language retry, model decline, and generated facet-coverage rejection account for the tail; routing/retrieval/presentation do not. Detailed evidence: `history/verification/response_intelligence_workstream_2_2026-09-09.md`.
 - Last manually adjudicated answer-suitability snapshot: 16 suitable / 34 partially suitable / 0 unsuitable across 50 Korean broad-to-detail questions. The 2026-09-09 routing run verifies envelope completion and established-case regression, not a new manual suitability adjudication.
 - Production dependency audit as of 2026-08-28: 0 known vulnerabilities
+- Production SLO baseline (Workstream 7, `docs/production_slo.md`): a
+  72-question typed corpus (detail/list/overview/process/comparison/
+  ambiguous/refusal) ran 72/72 with 0 final errors; 100% answerability,
+  claim grounding, and retrieval-groundedness across every type where
+  applicable, and 18/19 (94.7%) routing-abstention rate for the
+  `ambiguous` type. Overall p50/p95/max 8,831/27,679/38,034 ms, 139 LLM
+  calls, ~$1.31 total. Reproducible via `npm run audit:production-slo`;
+  regression-checked via `npm run audit:production-slo -- --check`.
+  Detailed evidence: `history/verification/response_intelligence_workstream_7_2026-09-09.md`.
 
 Do not append per-run narratives here. Update this summary only when the current accepted baseline changes; preserve detailed run evidence under `history/verification/`.

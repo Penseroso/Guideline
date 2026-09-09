@@ -391,7 +391,54 @@ Goal: define product-level acceptance criteria and a production SLO.
 - Track answerability, retrieval completeness, citation correctness,
   latency, and API usage — not just accuracy.
 
-Status: not started
+Status: complete (2026-09-09)
+
+Outcome: goal met. No question-type taxonomy or production SLO existed
+anywhere in the repo before this workstream. A 72-question typed eval
+corpus (`data/eval/typed_questions.json`,
+`scripts/build_typed_eval_corpus.js`) was assembled entirely from real,
+already-vetted material from prior workstreams — 50Q depth codes mapped
+to 5 of the 7 types (B0→overview, B1→list, D1+D2→detail, X→comparison,
+plus a documented human split of B2 into `process`/`comparison`/`detail`
+subsets), and the two types the 50Q set structurally cannot supply
+(`ambiguous`, `refusal`) reused Workstream 3's 19 confirmed real
+ambiguous-tie probes and 3 of the gold eval set's refusal-expected
+questions. `scripts/run_typed_eval_audit.js` ran all 72 through the real
+production path (72/72, 0 final errors after retrying 2 transient
+failures); `scripts/analyze_production_slo.js`
+(`npm run audit:production-slo`) aggregates answerability, claim
+grounding, retrieval-groundedness, and (reusing Workstream 2's latency/
+cost code directly) latency/API usage, per type.
+
+Verification: 100% answerability, claim grounding, and retrieval-
+groundedness across every type where they apply; the `ambiguous` type's
+real routing-abstention rate is 18/19 (94.7%, one real probe did not
+reproduce its tie on this run — traced, not a bug). Overall p50/p95/max
+8,831/27,679/38,034 ms, 139 LLM calls, ~$1.31 total. Two real bugs in this
+workstream's own new measurement script were caught and fixed before
+reporting (a wrong `ambiguous`-type success expectation, and a
+floating-point rounding bug that made the SLO baseline fail its own
+check) — see the report. `docs/production_slo.md` records every target as
+this measured baseline itself, code-enforced via
+`scripts/analyze_production_slo.js`'s `SLO_TARGETS` and a `--check` exit-
+code gate (verified to actually catch a real regression, not just report).
+`npm test` 444/444 (439 prior + 5 new). No engine/routing/generation code
+was touched, so the Workstream 1-6 validate/audit/eval battery was not
+re-run. Full detail:
+`history/verification/response_intelligence_workstream_7_2026-09-09.md`.
+
+Remaining risk/follow-up: "retrieval completeness" is operationalized as
+"every returned claim resolves a citation," not "retrieved the exact
+expected document/section" — the typed corpus doesn't yet carry a
+uniform parsed expected-scope field for every question to support the
+stricter check. The `ambiguous` type's 18/19 baseline reflects the
+current 55-manifest reviewed inventory's single real cross-document
+manifest-ambiguity case; re-run `npm run build:eval:typed` +
+`npm run eval:typed:run` as more manifests are authored rather than
+treating it as fixed. **This milestone is not yet complete** — Workstream
+8 (Corpus Expansion / Reusability Test) remains not started; this
+document stays active and is not moved to `history/milestones/` until
+that workstream is also done.
 
 ## 8. Corpus Expansion / Reusability Test
 
