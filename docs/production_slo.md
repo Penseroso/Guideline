@@ -38,19 +38,54 @@ question was newly invented for this document:
 a refusal has no claims to ground; `ambiguous`'s success signal is routing
 abstention, not answerability — see the report for why).
 
-| Type | Answerability | Claim grounding | Retrieval grounded | Routing abstention | p50 / p95 / max (ms) | LLM calls | Cost (USD) |
-|---|---:|---:|---:|---:|---|---:|---:|
-| overview | 100% | 100% | 100% | n/a | 9,070 / 37,452 / 37,452 | 13 | 0.169 |
-| list | 100% | 100% | 100% | n/a | 15 / 19,894 / 19,894 | 4 | 0.064 |
-| process | 100% | 100% | 100% | n/a | 10,691 / 27,679 / 27,679 | 19 | 0.197 |
-| detail | 100% | 100% | 100% | n/a | 8,300 / 21,742 / 38,034 | 41 | 0.356 |
-| comparison | 100% | 100% | 100% | n/a | 16,715 / 28,757 / 28,757 | 11 | 0.131 |
-| ambiguous | n/a | 100%* | 100%* | **94.7% (18/19)** | 11,324 / 26,157 / 26,157 | 51 | 0.393 |
-| refusal | 100% | n/a | n/a | n/a | 6 / 87 / 87 | 0 | 0.000 |
-| **overall** | **100%** (53/53 checked) | **100%** | **100%** | 94.7% | **8,831 / 27,679 / 38,034** | **139** (75 gen / 64 verif) | **1.311** ($0.0182/question avg) |
+| Type | Answerability | Claim grounding | Retrieval grounded | Routing abstention | Cross-scope safe | p50 / p95 / max (ms) | LLM calls | Cost (USD) |
+|---|---:|---:|---:|---:|---:|---|---:|---:|
+| overview | 100% | 100% | 100% | n/a | n/a | 9,070 / 37,452 / 37,452 | 13 | 0.169 |
+| list | 100% | 100% | 100% | n/a | n/a | 15 / 19,894 / 19,894 | 4 | 0.064 |
+| process | 100% | 100% | 100% | n/a | n/a | 10,691 / 27,679 / 27,679 | 19 | 0.197 |
+| detail | 100% | 100% | 100% | n/a | n/a | 8,300 / 21,742 / 38,034 | 41 | 0.356 |
+| comparison | 100% | 100% | 100% | n/a | n/a | 16,715 / 28,757 / 28,757 | 11 | 0.131 |
+| ambiguous | n/a | 100%* | 100%* | **94.7% (18/19)** | **⚠ 94.7% (18/19)** | 11,324 / 26,157 / 26,157 | 51 | 0.393 |
+| refusal | 100% | n/a | n/a | n/a | n/a | 6 / 87 / 87 | 0 | 0.000 |
+| **overall** | **100%** (53/53 checked) | **100%** | **100%** | 94.7% | **⚠ 94.7%** | **8,831 / 27,679 / 38,034** | **139** (75 gen / 64 verif) | **1.311** ($0.0182/question avg) |
 
 *\* computed only over the subset that fell through to an answered
 fallback after abstaining — see the report.*
+
+## Known open safety issue: cross-scope answer mixing (not yet fixed)
+
+Routing abstention firing (the router internally noticing an ambiguous
+tie) is not the same as the final answer being safe. Workstream 3 already
+found the real failure this metric closes: the router abstains correctly,
+then an ordinary fallback silently blends claims from two unrelated
+documents into one answer with no disclosure that the question was
+ambiguous. This is confirmed real, not theoretical: of the 19 `ambiguous`-
+type questions in the baseline run, **1 real case**
+(`ws3_ambiguous_tie.days`) produced a `grounded_generation` answer mixing
+`fda_ada` and `ich_m10` content with no indication to the user that the
+question spanned two guidelines.
+
+`cross_scope_safe_rate` (`scripts/analyze_production_slo.js`) judges a
+final answer safe only when ambiguity, once detected, resolves to one of:
+a refusal, an explicitly-labeled `comparison` (documents kept separately
+labeled by design), or a single-document answer. Anything else that spans
+more than one document is unsafe. **Its SLO target is kept at the correct
+1.0, not lowered to match the measured 18/19 baseline** — unlike
+`routing_abstention_rate` (an internal-detection reliability signal this
+project currently treats as tolerable variance), this is a user-facing
+safety invariant, and the baseline containing one real violation is a
+defect to fix, not a rate to accept. `npm run audit:production-slo --
+--check` is **expected to fail** on this specific check until that defect
+is fixed — this is intentional, not a bug in the gate.
+
+This finding is also relevant to Workstream 5's decision to defer
+building an LLM-disambiguation intervention for ambiguous-tie cases (that
+decision was based on 0/50 real occurrences in Workstream 2's production
+audit — see `history/verification/response_intelligence_workstream_5_2026-09-09.md`).
+This is real evidence of user-facing harm from the *un-intervened* case,
+at a low but non-zero rate (1/19 in a corpus specifically built to
+exercise ambiguity), and should inform whether that deferral is
+re-evaluated.
 
 ## What counts as a regression
 
@@ -64,6 +99,9 @@ Enforced by `npm run audit:production-slo -- --check` (or
   measured 18/19 baseline (kept as the exact fraction in code, not a
   rounded decimal — a rounded target would be stricter than what was
   actually demonstrated and would falsely fail the baseline run itself).
+- **Ambiguous-type cross-scope safety** must reach 100% (see above — the
+  target is correct, not baseline-matched, so this check currently fails
+  and should keep failing until the real defect is fixed).
 - **Overall p95 latency** must stay under 120% of the measured 27,679ms
   baseline (33,215ms).
 - **Overall cost per question** must stay under 120% of the measured
@@ -79,14 +117,18 @@ Enforced by `npm run audit:production-slo -- --check` (or
   meaningful signal, not any single question's route.
 - The `ambiguous` type's one non-reproducing probe
   (`ws3_manifest_ambiguity.section_1_introduction`, real trace in the
-  Workstream 7 report) is already priced into the 18/19 baseline itself;
-  it recurring is not a new finding.
+  Workstream 7 report) is already priced into the 18/19
+  `routing_abstention_rate` baseline itself; it recurring is not a new
+  finding. (This is separate from the cross-scope-safety issue above,
+  which is a different real case.)
 
 ## Relationship to the existing 24Q/50Q baselines
 
 This typed baseline does not replace `docs/verification_status.md`'s
 existing 24-question gold eval (`npm run eval`, fast/cheap, run on every
 regression check) or the 50-question production-path audits from
-Workstreams 1-6. It is the broader, type-organized baseline this
-milestone's final workstream was scoped to produce, reusing rather than
-duplicating that existing material (see the corpus table above).
+Workstreams 1-6. It is the broader, type-organized baseline Workstream 7
+was scoped to produce, reusing rather than duplicating that existing
+material (see the corpus table above). The Response Intelligence
+milestone is not yet complete — Workstream 8 (Corpus Expansion /
+Reusability Test) remains open; see `docs/milestones/response_intelligence.md`.

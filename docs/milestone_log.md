@@ -166,7 +166,16 @@ final errors), scoring 100% answerability/claim-grounding/retrieval-
 groundedness across every applicable type and 18/19 (94.7%) routing-
 abstention for the `ambiguous` type. `docs/production_slo.md` records
 every target as this measured baseline itself, enforced by
-`npm run audit:production-slo -- --check`. Detailed evidence is in
+`npm run audit:production-slo -- --check`. A same-day post-close review
+found the original `ambiguous`-type success check only verified routing
+noticed the ambiguity, not that the final answer was safe — 1/19 real
+cases silently mixed content from two unrelated documents with no
+disclosure, a defect Workstream 5's original "0/50 real occurrences"
+disambiguation deferral should now be re-evaluated against. A
+`cross_scope_safe_rate` check was added with its target correctly kept at
+1.0 (not lowered to match the flawed baseline), so the SLO check
+intentionally fails until that defect is actually fixed. Detailed
+evidence is in
 `history/verification/response_intelligence_workstream_7_2026-09-09.md`.
 Workstream 8, Corpus Expansion / Reusability Test, is next and remains
 not started — the milestone is not yet complete.

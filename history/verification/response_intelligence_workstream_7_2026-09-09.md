@@ -2,12 +2,17 @@
 
 Date: 2026-09-09
 
-Workstream: Production Evaluation & SLO (final workstream of the Response
-Intelligence milestone)
+Workstream: Production Evaluation & SLO. Not the milestone's final
+workstream — Workstream 8 (Corpus Expansion / Reusability Test) remains
+not started; see `docs/milestones/response_intelligence.md`.
 
 Result: complete. A typed eval corpus, a per-type metrics aggregator, and
 a standing, code-enforced production SLO were built and populated with a
-real measured baseline.
+real measured baseline. Post-close review also found the initial SLO's
+`ambiguous`-type success check was insufficient (it only checked that
+routing noticed the ambiguity, not that the final answer was safe); a
+real, user-facing safety metric was added — see "Post-close correction"
+below.
 
 ## Method
 
@@ -169,8 +174,57 @@ caught).
   `npm run build:eval:typed` (fully corpus-derived, will pick up new real
   cases) and `npm run eval:typed:run` to refresh this baseline rather than
   treating it as permanently fixed.
-- This is the Response Intelligence milestone's final workstream. Per the
-  milestone doc's own closing instruction, `docs/milestones/response_
-  intelligence.md` moves to `history/milestones/` and
-  `docs/verification_status.md`/`docs/milestone_log.md` are updated to
-  reflect only the resulting current state, done alongside this report.
+- **This is not the milestone's final workstream.** Workstream 8 (Corpus
+  Expansion / Reusability Test) remains not started, so
+  `docs/milestones/response_intelligence.md` stays active and was not
+  moved to `history/milestones/` — an earlier version of this report
+  incorrectly stated otherwise before this was caught in review; see
+  "Post-close correction" below.
+- The cross-scope-safety gap this report's post-close correction found
+  (see below) is a real, unfixed defect, not just a measurement gap. A
+  future workstream should design a real fix (disambiguation, refusal, or
+  explicit scope disclosure to the user) rather than leaving
+  `npm run audit:production-slo -- --check` permanently red on this one
+  check.
+
+## Post-close correction (same day, before this workstream was treated as settled)
+
+Two issues were found in review after the initial commit and fixed in a
+follow-up commit:
+
+1. **The `ambiguous` type's SLO success criterion was insufficient for
+   production acceptance.** The original design only checked whether
+   routing *noticed* the ambiguity internally (a
+   `routing_ambiguous_tie`/`routing_list_ambiguous_tie`/
+   `manifest_ambiguous_tie` telemetry event fired) — it said nothing about
+   whether the final answer the user receives is actually safe. Workstream
+   3 had already documented the real failure this missed: router abstains
+   correctly, then an ordinary fallback silently blends claims from two
+   unrelated documents into one answer with no disclosure. Re-checking the
+   Workstream 7 baseline run directly confirmed this is real, not
+   theoretical: **1 of the 19 `ambiguous`-type questions**
+   (`ws3_ambiguous_tie.days`) produced exactly this failure — a
+   `grounded_generation` answer mixing `fda_ada` and `ich_m10` content
+   with no indication to the user that the question spanned two
+   guidelines. Under the original design, this counted as a full SLO pass.
+   Fixed: a new `cross_scope_safe_rate` metric
+   (`scripts/analyze_production_slo.js`'s `crossScopeSafe`) judges the
+   *final* answer, not just the routing decision — safe only if ambiguity
+   resolves to a refusal, an explicitly-labeled `comparison`, or a
+   single-document answer. Its SLO target is deliberately kept at the
+   correct 1.0 (not lowered to match the measured 18/19), so
+   `npm run audit:production-slo -- --check` now correctly, intentionally
+   fails on this one real, unfixed defect — see
+   `docs/production_slo.md`'s "Known open safety issue" section. 6 new
+   tests in `test/analyze_production_slo.test.js` pin this behavior,
+   including the exact real failure shape.
+2. **This report and the workstream framing incorrectly claimed to be the
+   milestone's final workstream** and stated the milestone document would
+   move to `history/milestones/`. `docs/milestones/response_intelligence.md`
+   itself was already correctly left active (Workstream 8 was already
+   documented there as not started), but this report and part of
+   `docs/milestone_log.md`'s narrative had not been updated to match after
+   that correction was made elsewhere in the same session, leaving a real
+   internal contradiction. Fixed throughout this report.
+
+`npm test`: 450/450 (444 + 6 new) after this correction.

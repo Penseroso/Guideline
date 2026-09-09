@@ -422,17 +422,36 @@ check) — see the report. `docs/production_slo.md` records every target as
 this measured baseline itself, code-enforced via
 `scripts/analyze_production_slo.js`'s `SLO_TARGETS` and a `--check` exit-
 code gate (verified to actually catch a real regression, not just report).
-`npm test` 444/444 (439 prior + 5 new). No engine/routing/generation code
-was touched, so the Workstream 1-6 validate/audit/eval battery was not
-re-run. Full detail:
+`npm test` 450/450 (post-close correction below; 444/444 at initial
+commit). No engine/routing/generation code was touched, so the Workstream
+1-6 validate/audit/eval battery was not re-run. Full detail:
 `history/verification/response_intelligence_workstream_7_2026-09-09.md`.
 
-Remaining risk/follow-up: "retrieval completeness" is operationalized as
-"every returned claim resolves a citation," not "retrieved the exact
-expected document/section" — the typed corpus doesn't yet carry a
-uniform parsed expected-scope field for every question to support the
-stricter check. The `ambiguous` type's 18/19 baseline reflects the
-current 55-manifest reviewed inventory's single real cross-document
+**Post-close correction (same day):** the initial `ambiguous`-type SLO
+success check only verified that routing *noticed* the ambiguity
+internally, not that the final answer was safe — Workstream 3 had already
+documented the real failure this missed (router abstains correctly, then
+an ordinary fallback silently blends claims from two unrelated documents
+into one answer with no disclosure). Re-checking confirmed this is real:
+1 of the 19 `ambiguous`-type questions (`ws3_ambiguous_tie.days`)
+produced exactly this failure and passed the original SLO anyway. Fixed:
+a new `cross_scope_safe_rate` metric judges the final answer, with its
+SLO target deliberately kept at the correct 1.0 (not lowered to match the
+measured 18/19) — `npm run audit:production-slo -- --check` now
+correctly, intentionally fails on this one real, unfixed defect until a
+future workstream fixes it. This is also new evidence relevant to
+Workstream 5's "0/50 real occurrences" deferral of ambiguous-tie
+disambiguation — see `docs/production_slo.md`.
+
+Remaining risk/follow-up: the cross-scope answer-mixing defect found above
+is real and unfixed — a future workstream should design an actual fix
+(disambiguation, refusal, or explicit scope disclosure), not just leave
+the SLO check red. "Retrieval completeness" is operationalized as "every
+returned claim resolves a citation," not "retrieved the exact expected
+document/section" — the typed corpus doesn't yet carry a uniform parsed
+expected-scope field for every question to support the stricter check.
+The `ambiguous` type's 18/19 `routing_abstention_rate` baseline reflects
+the current 55-manifest reviewed inventory's single real cross-document
 manifest-ambiguity case; re-run `npm run build:eval:typed` +
 `npm run eval:typed:run` as more manifests are authored rather than
 treating it as fixed. **This milestone is not yet complete** — Workstream

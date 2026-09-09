@@ -57,12 +57,44 @@ function routingAbstentionFired(item) {
   return events.some((event) => ROUTING_ABSTENTION_EVENTS.has(event));
 }
 
+/**
+ * routingAbstentionFired only checks that the router *noticed* the
+ * ambiguity internally -- it says nothing about whether the final answer
+ * the user sees is actually safe. Workstream 3's own manifest-ambiguity
+ * trace already showed the real failure mode this misses entirely: router
+ * abstains correctly, then an ordinary fallback silently mixes claims from
+ * two unrelated documents into one answer with no disclosure that the
+ * question was ambiguous. Confirmed real and not just theoretical: of the
+ * 19 `ambiguous`-type questions in the Workstream 7 baseline run, exactly
+ * 1 (`ws3_ambiguous_tie.days`) did this -- a generated answer blending
+ * fda_ada and ich_m10 content with no indication to the user.
+ *
+ * A final answer is judged unsafe here only when it silently presents
+ * claims from more than one document as an undifferentiated answer:
+ * `refusal` (correctly declined) and `comparison` mode (documents are
+ * explicitly, separately labeled by design -- see
+ * `docs/answer_suitability_evaluation.md`'s comparison contract) are both
+ * safe regardless of document count; any other answered route/mode is
+ * unsafe once its claims span more than one document.
+ */
+function crossScopeSafe(item) {
+  if (!item.expect_routing_abstention) return null;
+  if (!item.envelope) return false;
+  const envelope = item.envelope;
+  if (!envelope.answered || envelope.route === "refusal") return true;
+  if (envelope.mode === "comparison") return true;
+  const documentIds = new Set((envelope.claims || []).map((claim) => claim.record && claim.record.document_id).filter(Boolean));
+  return documentIds.size <= 1;
+}
+
 function summarizeType(items, sourceUnits, pricing) {
   const withEnvelope = items.filter((item) => item.envelope && !item.error);
   const answerabilityChecks = withEnvelope.map(answerabilityMatch).filter((v) => v !== null);
   const groundingRates = withEnvelope.map((item) => claimGroundingRate(item.envelope.claims, sourceUnits)).filter((v) => v !== null);
   const retrievalChecks = withEnvelope.map((item) => retrievalGrounded(item.envelope, sourceUnits)).filter((v) => v !== null);
   const abstentionChecks = withEnvelope.map(routingAbstentionFired).filter((v) => v !== null);
+  const crossScopeChecks = withEnvelope.map(crossScopeSafe).filter((v) => v !== null);
+  const unsafeIds = withEnvelope.filter((item) => crossScopeSafe(item) === false).map((item) => item.id);
 
   const latencyCost = withEnvelope.every((item) => item.envelope.telemetry)
     ? summarizeItems(withEnvelope, pricing)
@@ -77,6 +109,8 @@ function summarizeType(items, sourceUnits, pricing) {
     retrieval_grounded_rate: retrievalChecks.length ? retrievalChecks.filter(Boolean).length / retrievalChecks.length : null,
     routing_abstention_rate: abstentionChecks.length ? abstentionChecks.filter(Boolean).length / abstentionChecks.length : null,
     routing_abstention_checked: abstentionChecks.length,
+    cross_scope_safe_rate: crossScopeChecks.length ? crossScopeChecks.filter(Boolean).length / crossScopeChecks.length : null,
+    cross_scope_unsafe_ids: unsafeIds,
     latency_cost: latencyCost
   };
 }
@@ -152,6 +186,18 @@ const SLO_TARGETS = {
   // *below* this is a regression, holding steady or improving is not a
   // breach.
   min_routing_abstention_rate: 18 / 19,
+  // Unlike routing_abstention_rate (an internal-detection reliability
+  // signal this repo currently treats as tolerable variance),
+  // cross_scope_safe_rate is a user-facing safety invariant: once
+  // ambiguity is detected, the final answer must never silently blend
+  // claims from more than one document. The Workstream 7 baseline run
+  // measured 18/19 here too (one real case,
+  // ws3_ambiguous_tie.days, mixed fda_ada and ich_m10 content with no
+  // disclosure) -- but the target is deliberately kept at the correct 1.0,
+  // not lowered to match that baseline. This check is EXPECTED to fail
+  // against the current baseline until that real defect is fixed; do not
+  // "fix" the failure by loosening this constant.
+  min_cross_scope_safe_rate: 1.0,
   // Latency/cost budget: baseline p95/max per docs/production_slo.md,
   // with a 20% margin before flagging a regression (stochastic
   // generation/verification variance already documented in Workstreams 2
@@ -175,6 +221,9 @@ function checkAgainstSlo(report) {
     if (summary.routing_abstention_rate !== null && summary.routing_abstention_rate < SLO_TARGETS.min_routing_abstention_rate) {
       breaches.push(`${type}: routing_abstention_rate ${summary.routing_abstention_rate} < ${SLO_TARGETS.min_routing_abstention_rate}`);
     }
+    if (summary.cross_scope_safe_rate !== null && summary.cross_scope_safe_rate < SLO_TARGETS.min_cross_scope_safe_rate) {
+      breaches.push(`${type}: cross_scope_safe_rate ${summary.cross_scope_safe_rate} < ${SLO_TARGETS.min_cross_scope_safe_rate} (unsafe: ${summary.cross_scope_unsafe_ids.join(", ")})`);
+    }
   }
   if (report.overall.latency_cost) {
     const p95 = report.overall.latency_cost.request_elapsed.p95_ms;
@@ -193,7 +242,7 @@ function main() {
   fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(report, null, 2)}\n`, "utf8");
   console.log(`Total questions: ${report.total_questions}`);
   for (const [type, summary] of Object.entries(report.by_type)) {
-    console.log(`  ${type}: n=${summary.n} answerability=${summary.answerability} grounding=${summary.claim_grounding_rate} retrieval=${summary.retrieval_grounded_rate} abstention=${summary.routing_abstention_rate}`);
+    console.log(`  ${type}: n=${summary.n} answerability=${summary.answerability} grounding=${summary.claim_grounding_rate} retrieval=${summary.retrieval_grounded_rate} abstention=${summary.routing_abstention_rate} cross_scope_safe=${summary.cross_scope_safe_rate}${summary.cross_scope_unsafe_ids.length ? ` (unsafe: ${summary.cross_scope_unsafe_ids.join(", ")})` : ""}`);
   }
   console.log(`Output: ${path.relative(ROOT, OUTPUT_PATH)}`);
 
@@ -211,4 +260,4 @@ function main() {
 
 if (require.main === module) main();
 
-module.exports = { analyze, checkAgainstSlo, SLO_TARGETS, claimGroundingRate, retrievalGrounded, answerabilityMatch };
+module.exports = { analyze, checkAgainstSlo, SLO_TARGETS, claimGroundingRate, retrievalGrounded, answerabilityMatch, crossScopeSafe, routingAbstentionFired };
