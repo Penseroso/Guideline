@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T04:37:14.510Z",
+  "generated_at": "2026-09-10T06:07:01.852Z",
   "total": 72,
   "by_type": {
     "overview": 6,
@@ -258,6 +258,7 @@
       "expect_answered": true,
       "source": "answer_suitability_evaluation.md#Q25 (depth B2)",
       "expected_document_ids": [
+        "fda_ada",
         "fda_ada_2014"
       ]
     },

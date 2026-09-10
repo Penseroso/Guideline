@@ -48,6 +48,17 @@ const SECTION_DOCUMENT_IDS = {
   F: ["ich_s6_r1"]
 };
 const CROSS_DOCUMENT_EXPECTED_IDS = {
+  // Q25 ("ADA가 생기면 임상적으로 어떤 영향을 볼 수 있어?") structurally
+  // matches via tryCoverageCompositeQuery's own intentional cross-document
+  // topic_overview participation rule (query_router.js ~line 932): a
+  // second document joins only when its own best evidence is
+  // independently strong. Traced live -- the real match legitimately
+  // spans fda_ada (ADA formation/detection context) and fda_ada_2014 (the
+  // clinical-impact-specific guideline), both individually grounded, not
+  // a scoring accident. The single-document grouping this question
+  // inherited from its design-doc section (C. FDA 2014) was too narrow
+  // for this specific broad synthesis question -- not a retrieval defect.
+  Q25: ["fda_ada", "fda_ada_2014"],
   Q49: ["ich_m3_r2", "ich_s6_r1"],
   Q50: ["ich_s6_r1", "ema_fih", "ich_m3_r2"]
 };

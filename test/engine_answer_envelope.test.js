@@ -256,12 +256,22 @@ test("a scope-excluded fallback query produces refusal.kind = scope_excluded via
 });
 
 // Real defect (docs/production_slo.md, ws3_ambiguous_tie.days): "days
-// acceptance criteria" ties between a manifest/record in fda_ada and one in
-// ich_m10, structuredQuery abstains (routing_ambiguous_tie /
-// manifest_ambiguous_tie), and a fresh fallback search used to blend both
-// documents into one undisclosed grounded_generation answer. The envelope
-// must now refuse and disclose the ambiguity instead of blending.
-test("cross-document ambiguity: a fallback answer blending two documents after a genuine routing tie is blocked and disclosed, not silently merged", async () => {
+// acceptance criteria" ties within ich_m10 (routing_ambiguous_tie,
+// tied_document_ids=["ich_m10"] -- a same-document tie: the router already
+// agrees on ich_m10, just not the exact record), and a fresh,
+// unconstrained fallback search used to wander into fda_ada content too,
+// blending both documents into one undisclosed grounded_generation answer.
+// Fixed at the router->fallback boundary: a length-1 tie is propagated
+// into answerFallback as a document restriction (including through its
+// own internal repair-retry recursion -- the first version of this fix
+// lost the restriction on retry, re-widening the search; this test's
+// fakeStore is deliberately shaped to force one retry via entailedClient's
+// fixed 2-unit mock against what becomes a 1-candidate pool, so it also
+// pins that the restriction survives the retry). The correct, improved
+// outcome is a clean single-document answer, not a refusal -- the tie was
+// already resolved (document-wise), so there is no remaining ambiguity to
+// disclose.
+test("cross-document ambiguity: a same-document routing tie restricts fallback to that one document, including through its own repair-retry, instead of wandering into an unrelated document", async () => {
   const fdaRecord = records.find((r) => (r.source_unit_ids || []).includes("fda_ada.su.6_a.002"));
   const m10Record = records.find((r) => (r.source_unit_ids || []).includes("ich_m10.su.4_3_2.001"));
   assert.ok(fdaRecord && m10Record, "expected both real corpus records to exist");
@@ -271,15 +281,91 @@ test("cross-document ambiguity: a fallback answer blending two documents after a
     client, store: fakeStore([fdaRecord, m10Record]), index
   });
 
+  assert.equal(env.answered, true);
+  assert.deepEqual([...new Set(env.claims.map((c) => c.record.document_id))], ["ich_m10"]);
+  const tieEvent = env.telemetry.events.find((e) => e.event === "routing_ambiguous_tie");
+  assert.ok(tieEvent, "expected the real same-document routing tie to still fire");
+  assert.deepEqual(tieEvent.tied_document_ids, ["ich_m10"]);
+  assert.ok(!env.telemetry.events.some((e) => e.event === "cross_scope_mixing_blocked"),
+    "restricting to the tied document should mean nothing was left to block");
+});
+
+// ws3_ambiguous_tie.analysts (docs/production_slo.md's retrieval-scope-
+// correctness follow-up): "analysts acceptance criteria" ties within
+// fda_ada (routing_ambiguous_tie, tied_document_ids=["fda_ada"] --
+// matching this probe's own ground_truth_document_ids). Before the fix,
+// the two genuinely correct fda_ada records each matched only 1 literal
+// keyword and were crowded out of the unconstrained fallback's candidate
+// pool by unrelated ich_m10 records that happened to literally contain 2+
+// generic query words -- the final answer confidently cited ich_m10 only,
+// not even blended, so the cross-scope-mixing guard never caught it. Real,
+// targeted end-to-end run (one real LLM call) confirmed the fix: claims
+// now stay within fda_ada.
+test("cross-document ambiguity: a same-document routing tie keeps the final answer within that document even when the correct records would otherwise be crowded out by an unrelated document's candidates", async () => {
+  const analystsRecord = records.find((r) => r.id === "fda_ada.qc.VI_A.003");
+  const m10CriteriaRecord = records.find((r) => r.id === "ich_m10.kr.4_3_2.007");
+  assert.ok(analystsRecord && m10CriteriaRecord, "expected both real corpus records to exist");
+
+  // fakeStore intentionally orders the unrelated ich_m10 candidate first,
+  // mirroring the real keyword store's actual pre-fix ranking (ich_m10
+  // records outscored the sparse-matching fda_ada ones there) -- the fix
+  // must restrict by document, not just happen to prefer whichever
+  // candidate a mock lists first.
+  const client = entailedClient("답변입니다.", 1);
+  const env = await answerEnvelope("analysts acceptance criteria", records, {
+    client, store: fakeStore([m10CriteriaRecord, analystsRecord]), index
+  });
+
+  assert.equal(env.answered, true);
+  assert.deepEqual([...new Set(env.claims.map((c) => c.record.document_id))], ["fda_ada"]);
+});
+
+// Multi-document tie safety contract: per explicit instruction, a tie
+// spanning more than one document must never let fallback silently narrow
+// to one of them without disclosure -- the router itself could not tell
+// which document applies, so nothing downstream should be allowed to
+// quietly resolve that for it. A synthetic same-score tie across two
+// different documents (same technique as
+// test/engine_routing_diagnostics.test.js's "twins" case) deterministically
+// forces routing_ambiguous_tie with a real 2-document tied_document_ids.
+// Proven here by making the store/client throw if ever called: the fix
+// must short-circuit to the disclosure refusal *before* attempting any
+// fallback search or generation, not just avoid citing multiple documents
+// in the end.
+test("a multi-document routing tie refuses immediately, disclosing every tied document, and never calls the fallback store or generator at all", async () => {
+  const twins = [
+    {
+      id: "test.kr.twin_a",
+      type: "knowledge_record",
+      document_id: "doc_a",
+      section_id: "doc_a.sec.1",
+      source_unit_ids: ["su_twin_a"],
+      source_text: "purple lighthouse keepers photograph seventeen wandering pelicans"
+    },
+    {
+      id: "test.kr.twin_b",
+      type: "knowledge_record",
+      document_id: "doc_b",
+      section_id: "doc_b.sec.1",
+      source_unit_ids: ["su_twin_b"],
+      source_text: "purple lighthouse keepers photograph seventeen wandering pelicans"
+    }
+  ];
+  const throwingStore = { search: async () => { throw new Error("fallback must not be called for a multi-document tie"); } };
+  const throwingClient = { complete: async () => { throw new Error("generation must not be attempted for a multi-document tie"); } };
+
+  const env = await answerEnvelope("purple lighthouse keepers photograph seventeen wandering pelicans", twins, {
+    client: throwingClient, store: throwingStore, index: null
+  });
+
   assert.equal(env.answered, false);
   assert.equal(env.route, "refusal");
-  assert.equal(env.mode, "refusal");
   assert.equal(env.refusal.kind, "ambiguous_document_scope");
-  assert.ok(env.refusal.reason && env.refusal.reason.length > 0);
-  assert.deepEqual(env.claims, []);
+  assert.ok(env.refusal.reason.includes("doc_a") && env.refusal.reason.includes("doc_b"),
+    `expected both tied documents disclosed in the reason, got: ${env.refusal.reason}`);
   const event = env.telemetry.events.find((e) => e.event === "cross_scope_mixing_blocked");
-  assert.ok(event, "expected a cross_scope_mixing_blocked telemetry event");
-  assert.deepEqual(event.document_ids.sort(), ["fda_ada", "ich_m10"]);
+  assert.ok(event);
+  assert.deepEqual(event.document_ids.sort(), ["doc_a", "doc_b"]);
 });
 
 // Documented bug (formerly): the envelope's answered:false branch only read

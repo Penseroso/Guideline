@@ -53,6 +53,40 @@ test("bare ADA in an ADC species question is a topic, not an FDA document hard g
   assert.ok(envelope.claims.some((claim) => claim.record.id === "ich_s6_r1.kr.part2.2_1.014"));
 });
 
+// Real defect (retrieval-scope-correctness follow-up, fifty_q_Q11): "ADA
+// 평가는 보통 어떤 흐름으로 시작해?" has no competing target_topic/assay/
+// molecule ontology signal, yet used to structurally route to ich_s6_r1
+// (an unrelated document) via a generic-keyword collision -- two Korean-
+// synonym-expanded words ("evaluation"/"assessment") happened to double-
+// match an unrelated section heading there, outscoring fda_ada's own
+// document-identity match. Fixed at document resolution, before any
+// record-level scoring: resolveRequestedDocumentIds now also treats bare
+// "ADA" as naming the ADA document family when no OTHER ontology scope
+// (extractQueryScope) claims the question instead -- reusing the exact
+// signal that already protects the ADC/species-selection case above, not
+// a new mechanism.
+test("bare ADA with no competing ontology scope resolves to the ADA document family, not an unrelated document via keyword collision", async () => {
+  const envelope = await answerEnvelope("ADA 평가는 보통 어떤 흐름으로 시작해?", records, { index });
+  assert.equal(envelope.route, "structured");
+  assert.deepEqual([...new Set(envelope.claims.map((claim) => claim.record.document_id))], ["fda_ada"]);
+});
+
+// The same fix must not disable the existing, deliberate cross-document
+// topic_overview participation rule (tryCoverageCompositeQuery) for a
+// genuine multi-document family identity: bare "ADA" now resolves
+// requestedDocumentIds to {fda_ada, fda_ada_2014} (size 2), which is a
+// family, not a single explicit document -- the "explicit identity is a
+// hard single-document gate" protection must only apply to an actual
+// single document. Found live as a second-order regression while fixing
+// Q11 above: fifty_q_Q25's real, legitimate two-document answer
+// (fda_ada + fda_ada_2014, both independently grounded) collapsed to
+// fda_ada only until this was also fixed.
+test("a resolved multi-document family identity still allows genuine cross-document topic_overview participation", async () => {
+  const envelope = await answerEnvelope("ADA가 생기면 임상적으로 어떤 영향을 볼 수 있어?", records, { index });
+  assert.equal(envelope.route, "structured");
+  assert.deepEqual([...new Set(envelope.claims.map((claim) => claim.record.document_id))].sort(), ["fda_ada", "fda_ada_2014"]);
+});
+
 test("manifest routing is invariant to record order and unrelated candidate volume", () => {
   const question = "ICH M10 §3 CHROMATOGRAPHY 설명해줘.";
   const baseline = structuredQuery(question, records, index);

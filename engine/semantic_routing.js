@@ -622,7 +622,8 @@ function selectReviewedRoutingManifest(question, {
   const distinctTargets = new Set(tied.map((candidate) => `${candidate.document_id}:${candidate.manifest.target.type}:${candidate.manifest.target.id}`));
   if (distinctTargets.size > 1) {
     recordTelemetryEvent(telemetry, "manifest_ambiguous_tie", {
-      tied_manifest_ids: tied.map((candidate) => candidate.manifest_id)
+      tied_manifest_ids: tied.map((candidate) => candidate.manifest_id),
+      tied_document_ids: [...new Set(tied.map((candidate) => candidate.document_id).filter(Boolean))]
     });
     return null;
   }

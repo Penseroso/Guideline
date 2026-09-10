@@ -43,14 +43,29 @@ function documentIdentityTokens(record) {
  * Tokens shared by every document (agency names and generic words) do not by
  * themselves select a document; discriminating code/year/title tokens do.
  */
-function resolveRequestedDocumentIds(question, records) {
+function resolveRequestedDocumentIds(question, records, queryScope = null) {
   // Identity matching intentionally bypasses semantic synonym expansion.
   // Otherwise an ordinary topic such as "starting dose" expands to the
   // ema_fih document_id's aliases and masquerades as an explicit document.
   const qTokens = identityLexemes(question);
   const lowerQuestion = String(question || "").toLowerCase();
+  // A bare "ADA" mention also names the document family when the
+  // question's own topic/assay/molecule ontology (extractQueryScope,
+  // already computed by callers for scope-guard purposes) found no OTHER
+  // scope to claim it instead -- e.g. the real ADC/species-selection case
+  // this gate was written to protect resolves target_topic:
+  // "species_selection" and stays correctly unaffected by this branch.
+  // Found live: "ADA 평가는 보통 어떤 흐름으로 시작해?" ("how does ADA
+  // evaluation start?") has no competing scope signal at all yet asks
+  // about the ADA guideline family as its actual subject, not an
+  // incidental scientific mention -- without this, it structurally
+  // routed to an unrelated document via a generic-keyword collision (see
+  // Root cause A).
+  const noCompetingOntologyScope = queryScope &&
+    !queryScope.target_topic && !queryScope.target_assay && !queryScope.target_molecule;
   const adaNamesDocument = /\bfda\b/.test(lowerQuestion) || /\b(?:2014|2019)\b/.test(lowerQuestion) ||
-    /\bada\b.{0,24}\b(?:guideline|guidance)\b|\b(?:guideline|guidance)\b.{0,24}\bada\b/.test(lowerQuestion);
+    /\bada\b.{0,24}\b(?:guideline|guidance)\b|\b(?:guideline|guidance)\b.{0,24}\bada\b/.test(lowerQuestion) ||
+    noCompetingOntologyScope;
   const identities = new Map();
   for (const record of records || []) {
     if (record.document_id && !identities.has(record.document_id)) {
@@ -929,7 +944,14 @@ function tryCoverageCompositeQuery(scored, question, intent, requestedDocumentId
       };
     }).sort((a, b) => b.bestScore - a.bestScore || b.aggregate - a.aggregate || b.sections - a.sections);
     const strongest = rankedDocuments[0];
-    const crossDocumentCandidates = !requestedDocumentIds && intent.kind === "topic_overview"
+    // An explicit *single* document identity remains a hard gate (the
+    // original protection this comment describes above). A resolved
+    // document-*family* identity (size >= 2, e.g. bare "ADA" naming both
+    // archived ADA documents) isn't that -- gatedRecords is already
+    // restricted to the family, so cross-document participation within
+    // it is exactly the intended broad-topic_overview behavior, not a
+    // violation of an explicit single-document request.
+    const crossDocumentCandidates = (!requestedDocumentIds || requestedDocumentIds.size >= 2) && intent.kind === "topic_overview"
       ? rankedDocuments.filter((document) =>
         document.items.some((item) => item.score >= strongest.bestScore * 0.7 && item.matchedCount >= 3)
       ).slice(0, 2)
@@ -992,7 +1014,16 @@ function structuredQuery(question, records, index = null, { telemetry = null } =
     return null;
   }
 
-  const requestedDocumentIds = resolveRequestedDocumentIds(question, records);
+  const qTokens = new Set(tokenize(question));
+  if (qTokens.size === 0) return null;
+  // Computed before resolveRequestedDocumentIds (not just before scoring,
+  // as before) so the document-identity gate can use the same topic/
+  // assay/molecule ontology signal scoreGuardReject relies on later --
+  // see resolveRequestedDocumentIds's own comment for why.
+  const queryScope = extractQueryScope(question, qTokens);
+  queryScope.require_starting_dose_focus = /\b(?:starting|initial) dose\b|시작\s*용량|초기\s*용량/i.test(question);
+
+  const requestedDocumentIds = resolveRequestedDocumentIds(question, records, queryScope);
   const gatedRecords = applyDocumentGate(records, requestedDocumentIds);
   if (gatedRecords.length === 0) {
     recordTelemetryEvent(telemetry, "routing_document_gate_empty", {
@@ -1014,17 +1045,12 @@ function structuredQuery(question, records, index = null, { telemetry = null } =
     if (amendMatch) return amendMatch;
   }
 
-  const qTokens = new Set(tokenize(question));
-  if (qTokens.size === 0) return null;
   const intent = classifyAnswerIntent(question, qTokens);
   const documentOverview = tryDocumentOverviewQuery(question, gatedRecords, index, requestedDocumentIds, intent);
   if (documentOverview) return documentOverview;
 
   const sectionOverview = trySectionOverviewQuery(question, gatedRecords, index);
   if (sectionOverview) return sectionOverview;
-
-  const queryScope = extractQueryScope(question, qTokens);
-  queryScope.require_starting_dose_focus = /\b(?:starting|initial) dose\b|시작\s*용량|초기\s*용량/i.test(question);
 
   const scored = [];
   let bestSubFloorCandidate = null;
@@ -1450,7 +1476,8 @@ async function answerFallback(question, records, {
   fallbackMode = "grounded_generation",
   repairRetryBudget = 1,
   repairHint = null,
-  telemetry = null
+  telemetry = null,
+  preferredDocumentIds = null
 } = {}) {
   const qTokens = new Set(tokenize(question));
   const queryScope = extractQueryScope(question, qTokens);
@@ -1475,8 +1502,22 @@ async function answerFallback(question, records, {
   // The same document-identity gate used by structured matching is mandatory
   // here. Fallback may return no candidates, but it may never silently widen
   // an explicitly named guideline to another document.
-  const requestedDocumentIds = resolveRequestedDocumentIds(question, records);
-  if (requestedDocumentIds) rawCandidates = rawCandidates.filter(({ record }) => requestedDocumentIds.has(record.document_id));
+  const requestedDocumentIds = resolveRequestedDocumentIds(question, records, queryScope);
+  // When routing found no explicit document but did abstain on a same-
+  // document tie (structuredQuery's routing_ambiguous_tie/
+  // routing_list_ambiguous_tie, or a manifest_ambiguous_tie tied to one
+  // document), that tie already resolved *which* document applies -- only
+  // *which record* remains open. A fresh, unconstrained search otherwise
+  // has no memory of that and can wander into a completely different,
+  // unrelated document (found live: "analysts acceptance criteria" tied
+  // within fda_ada, then answered from ich_m10 because the correct
+  // fda_ada records matched only 1 literal keyword and were crowded out
+  // by ich_m10 records that happened to literally contain 2+ generic
+  // query words). An explicit document mention in the question itself
+  // stays the stronger, authoritative gate.
+  const effectiveDocumentIds = requestedDocumentIds ||
+    (preferredDocumentIds && preferredDocumentIds.length > 0 ? new Set(preferredDocumentIds) : null);
+  if (effectiveDocumentIds) rawCandidates = rawCandidates.filter(({ record }) => effectiveDocumentIds.has(record.document_id));
 
   // Scope Guard: same rejection as structured scoreRecord applies (shared
   // scopeGuardReject), not just an explicit_exclusions check — see that
@@ -1589,7 +1630,8 @@ async function answerFallback(question, records, {
         fallbackMode,
         repairRetryBudget: repairRetryBudget - 1,
         repairHint: "language",
-        telemetry
+        telemetry,
+        preferredDocumentIds
       });
     }
     recordTelemetryEvent(telemetry, "generation_failed", { reason: "language_mismatch" });
@@ -1661,7 +1703,8 @@ async function answerFallback(question, records, {
         fallbackMode,
         repairRetryBudget: repairRetryBudget - 1,
         repairHint: "grounding",
-        telemetry
+        telemetry,
+        preferredDocumentIds
       });
     }
     recordTelemetryEvent(telemetry, "verification_failed", {

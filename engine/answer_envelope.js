@@ -347,6 +347,60 @@ async function answerEnvelope(question, records, {
     });
   }
 
+  // Deterministic routing already found this question ambiguous
+  // (routing_ambiguous_tie / routing_list_ambiguous_tie /
+  // manifest_ambiguous_tie) and abstained. A fresh, unconstrained fallback
+  // search has no memory of that tie -- traced live to two distinct real
+  // failure shapes: (a) a same-document tie ("analysts acceptance
+  // criteria", tied_document_ids=["fda_ada"]) where the correct records
+  // matched only 1 literal keyword and got crowded out by unrelated
+  // ich_m10 records that happened to literally contain 2+ generic query
+  // words, so fallback confidently cited the wrong document entirely; (b)
+  // a genuine multi-document tie where an unconstrained-within-the-tied-
+  // set search could just as easily converge on a *single* one of the
+  // tied documents by the same kind of accident, silently presenting it
+  // with no disclosure that the other tied documents were equally
+  // plausible ("days acceptance criteria" mixing fda_ada and ich_m10 was
+  // the original observed case of this).
+  //
+  // Fix: a length-1 tie is resolved (document-wise) by definition -- the
+  // router just couldn't pick the record -- so restrict the fallback
+  // search to that one document (reusing answerFallback's own
+  // requestedDocumentIds gate) and let it resolve the record normally. A
+  // length>1 tie is NOT resolved -- nothing downstream should be allowed
+  // to silently narrow it to one either, so skip the fallback attempt
+  // entirely and disclose all tied documents immediately (cheaper than a
+  // wasted LLM call, and strictly safer than judging its output after the
+  // fact).
+  const tieEvent = telemetry.events.find((event) =>
+    ["routing_ambiguous_tie", "routing_list_ambiguous_tie", "manifest_ambiguous_tie"].includes(event.event));
+  const tiedDocumentIds = tieEvent ? [...new Set(tieEvent.tied_document_ids || [])] : [];
+
+  function labelForDocument(documentId) {
+    const record = records.find((r) => r.document_id === documentId);
+    return (record && record.guideline_code) || (record && record.document_title) || documentId;
+  }
+
+  if (tiedDocumentIds.length > 1) {
+    recordTelemetryEvent(telemetry, "cross_scope_mixing_blocked", { document_ids: tiedDocumentIds });
+    return finish({
+      envelope_version: ENVELOPE_VERSION,
+      answered: false,
+      mode: "refusal",
+      semantic_mode: "refusal",
+      route: "refusal",
+      generation_preference: generationPreference,
+      prose: NOT_FOUND,
+      refusal: { kind: "ambiguous_document_scope", reason: `Matched evidence in multiple documents: ${tiedDocumentIds.map(labelForDocument).join(", ")}. Ask again naming the document you mean.` },
+      claims: [],
+      answer_units: [],
+      scope: null,
+      coverage: null,
+      answer_intent: null,
+      review_status: null
+    });
+  }
+
   const result = await answerFallback(question, records, {
     generatorClient,
     verifierClient,
@@ -354,7 +408,8 @@ async function answerEnvelope(question, records, {
     responseLanguage,
     signal,
     fallbackMode,
-    telemetry
+    telemetry,
+    preferredDocumentIds: tiedDocumentIds.length === 1 ? tiedDocumentIds : null
   });
   if (!result.answered) {
     return finish({
@@ -375,43 +430,39 @@ async function answerEnvelope(question, records, {
     });
   }
 
-  // Deterministic routing already found this question ambiguous between
-  // candidates in different documents (routing_ambiguous_tie /
-  // routing_list_ambiguous_tie / manifest_ambiguous_tie) and abstained; a
-  // fresh fallback search has no memory of that tie and can otherwise blend
-  // claims from unrelated documents into one undifferentiated answer (real
-  // case: "days acceptance criteria" mixing fda_ada and ich_m10 content with
-  // no disclosure). Block that blend and disclose the ambiguity instead of
-  // silently returning it.
-  const sawAmbiguousTie = telemetry.events.some((event) =>
-    ["routing_ambiguous_tie", "routing_list_ambiguous_tie", "manifest_ambiguous_tie"].includes(event.event));
-  if (sawAmbiguousTie) {
-    const documentIds = [...new Set((result.claims || [])
-      .map((claim) => claim.record && claim.record.document_id).filter(Boolean))];
-    if (documentIds.length >= 2) {
-      const labels = documentIds.map((documentId) => {
-        const claim = (result.claims || []).find((c) => c.record && c.record.document_id === documentId);
-        return (claim && claim.citation && claim.citation.guideline_code) ||
-          (claim && claim.record && claim.record.document_title) || documentId;
-      });
-      recordTelemetryEvent(telemetry, "cross_scope_mixing_blocked", { document_ids: documentIds });
-      return finish({
-        envelope_version: ENVELOPE_VERSION,
-        answered: false,
-        mode: "refusal",
-        semantic_mode: "refusal",
-        route: "refusal",
-        generation_preference: generationPreference,
-        prose: NOT_FOUND,
-        refusal: { kind: "ambiguous_document_scope", reason: `Matched evidence in multiple documents: ${labels.join(", ")}. Ask again naming the document you mean.` },
-        claims: [],
-        answer_units: [],
-        scope: result.scope || null,
-        coverage: null,
-        answer_intent: result.answer_intent || null,
-        review_status: null
-      });
-    }
+  // Defense in depth, scoped to only when routing actually detected a tie
+  // (tieEvent truthy -- by this point always the length-1 case, since
+  // length>1 already short-circuited above): the preferredDocumentIds
+  // restriction should make it impossible for a length-1 tie's fallback
+  // to still span multiple documents, but if it somehow did, disclose
+  // rather than silently answer. Deliberately NOT applied when there was
+  // no tie event at all -- an ordinary fresh fallback search spanning
+  // multiple documents with no router-detected ambiguity to disclose is
+  // not this guard's concern (no ambiguity was ever flagged to hide).
+  const documentIds = [...new Set((result.claims || [])
+    .map((claim) => claim.record && claim.record.document_id).filter(Boolean))];
+  if (tieEvent && documentIds.length >= 2 && result.mode !== "comparison") {
+    const labels = documentIds.map((documentId) => {
+      const claim = (result.claims || []).find((c) => c.record && c.record.document_id === documentId);
+      return (claim && claim.citation && claim.citation.guideline_code) || labelForDocument(documentId);
+    });
+    recordTelemetryEvent(telemetry, "cross_scope_mixing_blocked", { document_ids: documentIds });
+    return finish({
+      envelope_version: ENVELOPE_VERSION,
+      answered: false,
+      mode: "refusal",
+      semantic_mode: "refusal",
+      route: "refusal",
+      generation_preference: generationPreference,
+      prose: NOT_FOUND,
+      refusal: { kind: "ambiguous_document_scope", reason: `Matched evidence in multiple documents: ${labels.join(", ")}. Ask again naming the document you mean.` },
+      claims: [],
+      answer_units: [],
+      scope: result.scope || null,
+      coverage: null,
+      answer_intent: result.answer_intent || null,
+      review_status: null
+    });
   }
 
   return finish({

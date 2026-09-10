@@ -38,3 +38,15 @@
 {"timestamp":"2026-09-10T04:52:48.518Z","engine_version":"0.6.0","commit":"ba23675","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
 {"timestamp":"2026-09-10T04:52:55.559Z","engine_version":"0.6.0","commit":"ba23675","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
 {"timestamp":"2026-09-10T04:55:51.662Z","engine_version":"0.6.0","commit":"ba23675","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
+{"timestamp":"2026-09-10T05:43:34.523Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":23,"citation_precision":0.95,"claim_grounding_rate":1,"refusal_correctness":1}
+{"timestamp":"2026-09-10T05:43:43.588Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":23,"citation_precision":0.95,"claim_grounding_rate":1,"refusal_correctness":1}
+{"timestamp":"2026-09-10T05:43:50.303Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":23,"citation_precision":0.95,"claim_grounding_rate":1,"refusal_correctness":1}
+{"timestamp":"2026-09-10T05:47:16.434Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
+{"timestamp":"2026-09-10T05:48:39.427Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":23,"citation_precision":0.95,"claim_grounding_rate":1,"refusal_correctness":1}
+{"timestamp":"2026-09-10T05:48:46.919Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":23,"citation_precision":0.95,"claim_grounding_rate":1,"refusal_correctness":1}
+{"timestamp":"2026-09-10T05:52:14.076Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
+{"timestamp":"2026-09-10T05:59:23.988Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
+{"timestamp":"2026-09-10T06:06:28.718Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
+{"timestamp":"2026-09-10T06:11:44.686Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
+{"timestamp":"2026-09-10T06:22:34.491Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
+{"timestamp":"2026-09-10T06:24:13.327Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
