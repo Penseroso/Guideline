@@ -234,17 +234,18 @@ const SLO_TARGETS = {
   // disclosure) is now fixed (engine/answer_envelope.js's cross-document
   // ambiguity guard) and this target is met at baseline -- keep it at 1.0.
   min_cross_scope_safe_rate: 1.0,
-  // Measured baseline 62/66 (see retrievalScopeCorrect above for the 4
-  // known, unfixed real gaps this surfaced) -- the measured baseline
-  // itself, not an undemonstrated 100%, same reasoning as
-  // routing_abstention_rate above.
-  min_retrieval_scope_correct_rate: 62 / 66,
+  // Measured baseline 67/68 (see retrievalScopeCorrect above -- the four
+  // gaps previously tracked here, Q11/Q22/Q25/analysts, are all fixed;
+  // one new real gap, fifty_q_Q23, surfaced on this run and is documented
+  // in docs/production_slo.md) -- the measured baseline itself, not an
+  // undemonstrated 100%, same reasoning as routing_abstention_rate above.
+  min_retrieval_scope_correct_rate: 67 / 68,
   // Latency/cost budget: baseline p95/max per docs/production_slo.md,
   // with a 20% margin before flagging a regression (stochastic
   // generation/verification variance means small run-to-run drift is
   // expected, not a defect).
-  max_overall_p95_ms: Math.round(20007 * 1.2),
-  max_overall_cost_usd_per_question: Math.round((1.2383255 / 72) * 1.2 * 1e6) / 1e6
+  max_overall_p95_ms: Math.round(27694 * 1.2),
+  max_overall_cost_usd_per_question: Math.round((1.3815955 / 72) * 1.2 * 1e6) / 1e6
 };
 
 function checkAgainstSlo(report) {

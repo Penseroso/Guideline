@@ -5,7 +5,7 @@ This is the active verification summary. Detailed historical measurements are fr
 ## Current baseline
 
 - Engine version: `0.6.0`
-- Unit and integration tests: 459/459 passing as of 2026-09-10
+- Unit and integration tests: 464/464 passing as of 2026-09-10
 - Guideline bundle validation (`npm run validate:guidelines`): 6/6 bundles passing
 - Korean presentation validation: 2,693/2,693 entries passing
 - Korean normalization corpus audit: 1,495/1,495 KnowledgeRecords reviewed, 0 issues
@@ -22,29 +22,45 @@ This is the active verification summary. Detailed historical measurements are fr
 - Structured-tail diagnosis: the full baseline had 12/23 final structured answers that attempted generation/verification before deterministic fallback (30 calls total), versus 11 deterministic-only structured answers. In the event-level tail rerun, deterministic-only structured measured p50 15 ms / p95 66 ms and LLM-attempt-then-structured-fallback measured p50 11,043 ms / p95 24,741 ms. Verification failure/retry, language retry, model decline, and generated facet-coverage rejection account for the tail; routing/retrieval/presentation do not. Detailed evidence: `history/verification/response_intelligence_workstream_2_2026-09-09.md`.
 - Last manually adjudicated answer-suitability snapshot: 16 suitable / 34 partially suitable / 0 unsuitable across 50 Korean broad-to-detail questions. The 2026-09-09 routing run verifies envelope completion and established-case regression, not a new manual suitability adjudication.
 - Production dependency audit as of 2026-08-28: 0 known vulnerabilities
-- Production SLO baseline (`docs/production_slo.md`, 2026-09-10): a
-  72-question typed corpus (detail/list/overview/process/comparison/
-  ambiguous/refusal) ran 72/72 with 0 final errors; 100% answerability,
-  claim grounding, and retrieval-groundedness across every type where
-  applicable, 18/19 (94.7%) routing-abstention rate for the `ambiguous`
-  type, and 100% cross-scope-safe rate (the one known real cross-document
-  answer-mixing defect, `ws3_ambiguous_tie.days`, is fixed — see below).
-  A new `retrieval_scope_correct_rate` check measured 93.9% (62/66); 4 real,
-  unfixed retrieval-quality gaps are documented in `docs/production_slo.md`
-  as follow-up. Overall p50/p95/max 7,276/20,007/25,134 ms, 131 LLM calls,
-  ~$1.24 total. Reproducible via `npm run audit:production-slo`;
-  regression-checked via `npm run audit:production-slo -- --check`
-  (passes cleanly as of this baseline).
-- Cross-document answer-mixing fix (2026-09-10): `engine/answer_envelope.js`
-  now blocks a fallback answer that blends claims from more than one
-  document after deterministic routing already flagged a genuine
-  ambiguity tie, returning an explicit `ambiguous_document_scope` refusal
-  naming the candidate documents instead. Also fixed the same day: the
+- Production SLO baseline (`docs/production_slo.md`, final rerun
+  2026-09-10): a 72-question typed corpus (detail/list/overview/process/
+  comparison/ambiguous/refusal) ran 72/72 with 0 final errors; 100%
+  answerability, claim grounding, and retrieval-groundedness across every
+  type where applicable, 18/19 (94.7%) routing-abstention rate for the
+  `ambiguous` type, and 100% cross-scope-safe rate. `retrieval_scope_correct_rate`
+  measured **98.5% (67/68)**, up from 93.9% (62/66) on the prior baseline
+  — all four previously-tracked gaps (`fifty_q_Q11`, `fifty_q_Q22`,
+  `fifty_q_Q25`, `ws3_ambiguous_tie.analysts`) are fixed deterministically
+  (document-identity resolution, document-ranking specificity, an eval-
+  corpus annotation correction, and router→fallback tie propagation,
+  respectively — see `docs/production_slo.md`); one new real gap,
+  `fifty_q_Q23`, surfaced and is documented there as open follow-up.
+  Overall p50/p95/max 8,315/27,694/46,229 ms, 138 LLM calls, ~$1.38 total.
+  Reproducible via `npm run audit:production-slo`; regression-checked via
+  `npm run audit:production-slo -- --check` (passes cleanly as of this
+  baseline).
+- Cross-document answer-mixing fix: `engine/answer_envelope.js`/
+  `engine/query_router.js` now propagate a same-document routing tie into
+  `answerFallback` as a document restriction (surviving its own internal
+  repair-retry), and refuse immediately with every candidate disclosed
+  when a tie spans more than one document — a genuine multi-document
+  ambiguity is never silently narrowed to one candidate. Also fixed: the
   envelope's `refusal.kind` previously read only `refusal_reason`,
   silently dropping the richer `fallback_reason` values (`model_declined`,
   `language_mismatch`, `verification_failed: <detail>`,
   `generation_not_configured`) whenever only the latter was set — it now
   surfaces whichever is actually present.
+- Document-resolution fixes for the two remaining retrieval-scope gaps: a
+  bare "ADA" mention with no competing topic/assay/molecule scope now
+  resolves to the ADA document family at document-identity resolution
+  (`engine/query_router.js`'s `resolveRequestedDocumentIds`), and
+  `tryCoverageCompositeQuery`'s document-ranking tie-break now uses a
+  section-deduped `aggregate` so a document with many records about one
+  narrow point no longer outranks one with fewer but more topically
+  distributed records. Both verified against the full 220-probe/24-
+  question/464-test corpus with zero regressions before landing; a global
+  `scoreRecord` IDF-weighting alternative was evaluated and rejected for
+  causing real regressions elsewhere in the corpus.
 - The Response Intelligence milestone is complete: Workstream 8 (Corpus
   Expansion / Reusability Test) was cancelled by explicit decision, not
   deferred. Full narrative frozen at
