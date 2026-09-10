@@ -1,18 +1,21 @@
 # Production Evaluation & SLO
 
-Current baseline established: 2026-09-10, final rerun after all four
-retrieval-scope-correctness gaps this document previously tracked were
-fixed (see "Retrieval scope correctness" below). Source run:
+Current baseline established: 2026-09-10, final rerun after every
+retrieval-scope-correctness gap this document has ever tracked
+(`fifty_q_Q11`, `fifty_q_Q22`, `fifty_q_Q25`, `ws3_ambiguous_tie.analysts`,
+`fifty_q_Q23`) is fixed — `retrieval_scope_correct_rate` is **100%**
+(see "Retrieval scope correctness" below). Source run:
 `logs/runtime/typed_eval_50plus_raw_2026-09-10.json` (72 questions, fresh
 run, `GUIDELINE_TYPED_EVAL_FRESH=true`), aggregated by
 `npm run audit:production-slo` (`scripts/analyze_production_slo.js`) into
 `logs/runtime/response_intelligence_slo_baseline_2026-09-10.json`. This
-baseline supersedes two earlier same-day runs recorded in git history for
-this file — the original Response Intelligence close-out baseline (full
-method and reasoning: `history/verification/response_intelligence_workstream_7_2026-09-09.md`)
-and an intermediate baseline after the cross-scope-mixing and
-refusal-contract fixes but before the Q11/Q22/Q25/analysts
-retrieval-scope fixes below.
+baseline supersedes three earlier same-day runs recorded in git history
+for this file — the original Response Intelligence close-out baseline
+(full method and reasoning: `history/verification/response_intelligence_workstream_7_2026-09-09.md`),
+an intermediate baseline after the cross-scope-mixing and refusal-
+contract fixes but before the Q11/Q22/Q25/analysts retrieval-scope fixes,
+and a second intermediate baseline after those four but before the Q23
+fix below.
 
 Every target below is the measured baseline itself, not an aspirational
 number — consistent with how this project has recorded every other
@@ -47,24 +50,22 @@ is `retrieval_scope_correct_rate` — see below the table.
 
 | Type | Answerability | Claim grounding | Retrieval grounded | Routing abstention | Cross-scope safe | Scope correct | p50 / p95 / max (ms) | LLM calls | Cost (USD) |
 |---|---:|---:|---:|---:|---:|---:|---|---:|---:|
-| overview | 100% | 100% | 100% | n/a | n/a | 100% | 12,224 / 27,694 / 27,694 | 15 | 0.192 |
-| list | 100% | 100% | 100% | n/a | n/a | 100% | 12 / 46,229 / 46,229 | 6 | 0.116 |
-| process | 100% | 100% | 100% | n/a | n/a | 100% | 7,240 / 36,949 / 36,949 | 18 | 0.221 |
-| detail | 100% | 100% | 100% | n/a | n/a | 95.2% (20/21) | 9,918 / 27,479 / 35,707 | 43 | 0.407 |
-| comparison | 100% | 100% | 100% | n/a | n/a | 100% | 14,655 / 18,246 / 18,246 | 9 | 0.103 |
-| ambiguous | n/a | 100%* | 100%* | 94.7% (18/19) | **100% (19/19)** | **100% (18/18)** | 9,064 / 27,223 / 27,223 | 47 | 0.343 |
-| refusal | 100% | n/a | n/a | n/a | n/a | n/a | 11 / 100 / 100 | 0 | 0.000 |
-| **overall** | **100%** (53/53 checked) | **100%** | **100%** | 94.7% | **100%** | **98.5% (67/68)** | **8,315 / 27,694 / 46,229** | **138** (75 gen / 63 verif) | **1.382** ($0.0192/question avg) |
+| overview | 100% | 100% | 100% | n/a | n/a | 100% | 8,912 / 19,393 / 19,393 | 12 | 0.149 |
+| list | 100% | 100% | 100% | n/a | n/a | 100% | 11 / 16,688 / 16,688 | 4 | 0.071 |
+| process | 100% | 100% | 100% | n/a | n/a | 100% | 7,888 / 31,665 / 31,665 | 18 | 0.221 |
+| detail | 100% | 100% | 100% | n/a | n/a | **100% (21/21)** | 8,264 / 15,661 / 32,415 | 39 | 0.329 |
+| comparison | 100% | 100% | 100% | n/a | n/a | 100% | 12,020 / 29,981 / 29,981 | 11 | 0.134 |
+| ambiguous | n/a | 100%* | 100%* | 94.7% (18/19) | **100% (19/19)** | **100% (18/18)** | 7,200 / 19,518 / 19,518 | 42 | 0.309 |
+| refusal | 100% | n/a | n/a | n/a | n/a | n/a | 12 / 70 / 70 | 0 | 0.000 |
+| **overall** | **100%** (53/53 checked) | **100%** | **100%** | 94.7% | **100%** | **100% (68/68)** | **7,556 / 19,518 / 32,415** | **126** (66 gen / 60 verif) | **1.214** ($0.0169/question avg) |
 
 *\* computed only over the subset that fell through to an answered
 fallback after abstaining — see the report.*
 
-All four previously-tracked retrieval-scope-correctness gaps
-(`fifty_q_Q11`, `fifty_q_Q22`, `fifty_q_Q25`, `ws3_ambiguous_tie.analysts`)
-are fixed and pass on this run. `detail` at 95.2% reflects one newly
-surfaced case, `fifty_q_Q23` — see below, not a regression from those
-fixes (that question doesn't share any mechanism with the four that were
-fixed).
+Every retrieval-scope-correctness gap this document has ever tracked —
+`fifty_q_Q11`, `fifty_q_Q22`, `fifty_q_Q25`, `ws3_ambiguous_tie.analysts`,
+and `fifty_q_Q23` — is fixed and passes on this run.
+`retrieval_scope_correct_rate` is **100% (68/68)** for the first time.
 
 ## Cross-scope answer mixing (fixed)
 
@@ -113,9 +114,8 @@ grouping (`docs/answer_suitability_evaluation.md`'s section headers A-G)
 and the ambiguous-tie probes' own labeled `ground_truth_document_ids`.
 The 3 `refusal`-type questions have no expected document by design.
 
-Measured at **98.5% (67/68)** on this baseline, up from 93.9% (62/66) on
-the prior run. All four previously-tracked real gaps are fixed,
-deterministically, no LLM added:
+Measured at **100% (68/68)** on this baseline — every real gap ever
+found by this metric is now fixed, deterministically, no LLM added:
 
 - `fifty_q_Q11` ("ADA 평가는 보통 어떤 흐름으로 시작해?"): fixed at
   document-*identity* resolution. `engine/query_router.js`'s
@@ -141,26 +141,29 @@ deterministically, no LLM added:
   (`scripts/build_typed_eval_corpus.js`'s `CROSS_DOCUMENT_EXPECTED_IDS`).
 - `ws3_ambiguous_tie.analysts`: fixed by the router→fallback tie
   propagation described above (a same-document tie case).
+- `fifty_q_Q23` ("피하주사와 정맥주사는 면역원성 위험이 어떻게 달라?"):
+  yet another distinct root cause — `structuredQuery` fully abstains for
+  this question (no tie at all, unlike `analysts`), so the whole answer
+  was decided by `answerFallback`'s fresh keyword search. `fda_ada_2014`'s
+  correct match scored an overwhelmingly dominant 29.9, but `ema_fih`'s
+  own "route of administration" section (EMA FIH §7.7 — a different
+  regulatory topic, FIH dose-route selection, not immunogenicity risk)
+  still scored 12.29 on shared "subcutaneous"/"intravenous"/"route"
+  vocabulary and crossed the ordinary relevance floor.
+  `tryCoverageCompositeQuery` already had a "prefer the dominant document;
+  a second document only participates when its own evidence is
+  independently strong (>= 70% of the leader's best score)" rule;
+  `answerFallback` had no equivalent at all. Fixed by porting the
+  identical rule into `answerFallback`'s candidate selection.
 
 A global `scoreRecord` IDF-weighting change was evaluated as an
 alternative for Q11/Q22 but caused real regressions elsewhere in the
-corpus even at the smallest tested weight and was **not adopted** —
-both fixes above are narrower, targeted, and verified regression-free
-against the full 220-probe/24-question/unit-test corpus before landing.
-
-**One new gap surfaced this run, not present in the prior baseline**:
-`fifty_q_Q23` ("피하주사와 정맥주사는 면역원성 위험이 어떻게 달라?",
-expected `fda_ada_2014`) answered from a mix of `fda_ada_2014` and
-`ema_fih` — not blocked by the cross-scope-mixing guard because no
-ambiguity tie fired for this ordinary `detail`-type question, and not
-touched by either the Q11 or Q22 fix (no "ADA" mention, and not the same
-document pair). Left uninvestigated this pass — a future workstream
-should trace why `ema_fih` content entered this specific fallback answer
-before deciding whether it's a defect or legitimate related content
-(same open question Q25 originally raised, now resolved as legitimate —
-this one has not yet been adjudicated). `min_retrieval_scope_correct_rate`
-in `SLO_TARGETS` is set to this measured 67/68 baseline (checked only at
-the overall level, not per-type, for the same reasoning as before).
+corpus even at the smallest tested weight and was **not adopted** — all
+four code fixes above are narrower, targeted, and each verified
+regression-free against the full 220-probe/24-question/unit-test corpus
+before landing (Q23's fix additionally verified via an isolated
+scratchpad experiment loaded into the real, unmodified audit scripts
+before being applied to the real file).
 
 ## What counts as a regression
 
@@ -176,13 +179,13 @@ Enforced by `npm run audit:production-slo -- --check` (or
   actually demonstrated and would falsely fail the baseline run itself).
 - **Ambiguous-type cross-scope safety** must reach 100% — now met at
   baseline (see above).
-- **Overall retrieval-scope-correct rate** must stay at or above the
-  measured 67/68 baseline (see above — 1 known, real, unfixed gap,
-  `fifty_q_Q23`).
-- **Overall p95 latency** must stay under 120% of the measured 27,694ms
-  baseline (33,233ms).
+- **Overall retrieval-scope-correct rate** must reach 100% — every known
+  gap is fixed, so this is no longer a measured-baseline compromise like
+  `routing_abstention_rate`; any drop below 100% is a real, new defect.
+- **Overall p95 latency** must stay under 120% of the measured 19,518ms
+  baseline (23,422ms).
 - **Overall cost per question** must stay under 120% of the measured
-  $0.0192 baseline ($0.0230).
+  $0.0169 baseline ($0.0203).
 
 ## What does not count as a regression
 
@@ -207,6 +210,6 @@ is the broader, type-organized baseline first built to close the Response
 Intelligence milestone, reusing rather than duplicating that existing
 material (see the corpus table above). The Response Intelligence
 milestone is complete (Workstream 8 was cancelled, not deferred — see
-`history/milestones/response_intelligence_2026-09-10.md`); `fifty_q_Q23`
-above is its most concrete real
-follow-up for any future workstream.
+`history/milestones/response_intelligence_2026-09-10.md`), and every
+retrieval-scope-correctness gap this baseline has ever surfaced is now
+fixed with no known open issue remaining.

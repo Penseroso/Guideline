@@ -99,19 +99,17 @@ function crossScopeSafe(item) {
  * the question both carries `expected_document_ids` and was answered --
  * `crossScopeSafe`/`answerability` already judge the refusal case.
  *
- * First measured at 62/66 (checked over answered questions only; refusal
- * questions and 6 unresolved edge cases are excluded from the
- * denominator). 4 real gaps found, none a regression from the
- * cross-scope-mixing fix (identical in the pre-fix baseline run too):
- * fifty_q_Q11 and fifty_q_Q22/Q25 answer from a topically-adjacent but
- * wrong-guideline document (e.g. Q11 asks about FDA ADA but answered from
- * ich_s6_r1); ws3_ambiguous_tie.analysts is a router-flagged ambiguous tie
- * where the fallback confidently settled on a single document that isn't
- * even a plausible candidate for the question -- a real, distinct defect
- * class the cross-scope-mixing guard structurally cannot catch (it only
- * blocks *multi*-document blends, not a confident wrong-*single*-document
- * answer after an unresolved tie). Left unfixed this pass -- see
- * docs/production_slo.md.
+ * Checked over answered questions only (refusal questions and a handful
+ * of unresolved edge cases are excluded from the denominator). First
+ * measured at 62/66 with 4 real gaps (fifty_q_Q11/Q22/Q25 and
+ * ws3_ambiguous_tie.analysts), each a genuinely different root cause
+ * (document-identity resolution, document-ranking specificity, an eval-
+ * annotation correction, and router-to-fallback tie-scope propagation,
+ * respectively). A 5th gap, fifty_q_Q23, surfaced only after those four
+ * were fixed (answerFallback had no "prefer the dominant document" step
+ * at all, unlike its structured-routing sibling). All five are now fixed,
+ * deterministically, no LLM added -- see docs/production_slo.md for the
+ * full history and each fix's evidence.
  */
 function retrievalScopeCorrect(item) {
   if (!item.expected_document_ids || item.expected_document_ids.length === 0) return null;
@@ -234,18 +232,17 @@ const SLO_TARGETS = {
   // disclosure) is now fixed (engine/answer_envelope.js's cross-document
   // ambiguity guard) and this target is met at baseline -- keep it at 1.0.
   min_cross_scope_safe_rate: 1.0,
-  // Measured baseline 67/68 (see retrievalScopeCorrect above -- the four
-  // gaps previously tracked here, Q11/Q22/Q25/analysts, are all fixed;
-  // one new real gap, fifty_q_Q23, surfaced on this run and is documented
-  // in docs/production_slo.md) -- the measured baseline itself, not an
-  // undemonstrated 100%, same reasoning as routing_abstention_rate above.
-  min_retrieval_scope_correct_rate: 67 / 68,
+  // Every gap retrievalScopeCorrect has ever found (Q11/Q22/Q25/analysts,
+  // then fifty_q_Q23) is now fixed -- unlike routing_abstention_rate, this
+  // is not a measured-baseline compromise, it's a real 100% -- any drop
+  // below it is a new, real defect. See docs/production_slo.md.
+  min_retrieval_scope_correct_rate: 1.0,
   // Latency/cost budget: baseline p95/max per docs/production_slo.md,
   // with a 20% margin before flagging a regression (stochastic
   // generation/verification variance means small run-to-run drift is
   // expected, not a defect).
-  max_overall_p95_ms: Math.round(27694 * 1.2),
-  max_overall_cost_usd_per_question: Math.round((1.3815955 / 72) * 1.2 * 1e6) / 1e6
+  max_overall_p95_ms: Math.round(19518 * 1.2),
+  max_overall_cost_usd_per_question: Math.round((1.2137936 / 72) * 1.2 * 1e6) / 1e6
 };
 
 function checkAgainstSlo(report) {

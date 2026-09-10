@@ -5,7 +5,7 @@ This is the active verification summary. Detailed historical measurements are fr
 ## Current baseline
 
 - Engine version: `0.6.0`
-- Unit and integration tests: 464/464 passing as of 2026-09-10
+- Unit and integration tests: 465/465 passing as of 2026-09-10
 - Guideline bundle validation (`npm run validate:guidelines`): 6/6 bundles passing
 - Korean presentation validation: 2,693/2,693 entries passing
 - Korean normalization corpus audit: 1,495/1,495 KnowledgeRecords reviewed, 0 issues
@@ -27,18 +27,18 @@ This is the active verification summary. Detailed historical measurements are fr
   comparison/ambiguous/refusal) ran 72/72 with 0 final errors; 100%
   answerability, claim grounding, and retrieval-groundedness across every
   type where applicable, 18/19 (94.7%) routing-abstention rate for the
-  `ambiguous` type, and 100% cross-scope-safe rate. `retrieval_scope_correct_rate`
-  measured **98.5% (67/68)**, up from 93.9% (62/66) on the prior baseline
-  — all four previously-tracked gaps (`fifty_q_Q11`, `fifty_q_Q22`,
-  `fifty_q_Q25`, `ws3_ambiguous_tie.analysts`) are fixed deterministically
-  (document-identity resolution, document-ranking specificity, an eval-
-  corpus annotation correction, and router→fallback tie propagation,
-  respectively — see `docs/production_slo.md`); one new real gap,
-  `fifty_q_Q23`, surfaced and is documented there as open follow-up.
-  Overall p50/p95/max 8,315/27,694/46,229 ms, 138 LLM calls, ~$1.38 total.
-  Reproducible via `npm run audit:production-slo`; regression-checked via
-  `npm run audit:production-slo -- --check` (passes cleanly as of this
-  baseline).
+  `ambiguous` type, 100% cross-scope-safe rate, and **100% (68/68)
+  `retrieval_scope_correct_rate`** — every retrieval-scope gap this
+  baseline has ever surfaced (`fifty_q_Q11`, `fifty_q_Q22`, `fifty_q_Q25`,
+  `ws3_ambiguous_tie.analysts`, `fifty_q_Q23`) is now fixed
+  deterministically, no LLM added (five distinct root causes: document-
+  identity resolution, document-ranking specificity, an eval-corpus
+  annotation correction, router→fallback tie propagation, and a missing
+  dominant-document preference step in `answerFallback` — see
+  `docs/production_slo.md`). Overall p50/p95/max 7,556/19,518/32,415 ms,
+  126 LLM calls, ~$1.21 total. Reproducible via `npm run
+  audit:production-slo`; regression-checked via `npm run
+  audit:production-slo -- --check` (passes cleanly as of this baseline).
 - Cross-document answer-mixing fix: `engine/answer_envelope.js`/
   `engine/query_router.js` now propagate a same-document routing tie into
   `answerFallback` as a document restriction (surviving its own internal
@@ -50,17 +50,21 @@ This is the active verification summary. Detailed historical measurements are fr
   `language_mismatch`, `verification_failed: <detail>`,
   `generation_not_configured`) whenever only the latter was set — it now
   surfaces whichever is actually present.
-- Document-resolution fixes for the two remaining retrieval-scope gaps: a
-  bare "ADA" mention with no competing topic/assay/molecule scope now
-  resolves to the ADA document family at document-identity resolution
-  (`engine/query_router.js`'s `resolveRequestedDocumentIds`), and
+- Document-resolution and ranking fixes for the remaining retrieval-scope
+  gaps: a bare "ADA" mention with no competing topic/assay/molecule scope
+  now resolves to the ADA document family at document-identity resolution
+  (`engine/query_router.js`'s `resolveRequestedDocumentIds`);
   `tryCoverageCompositeQuery`'s document-ranking tie-break now uses a
   section-deduped `aggregate` so a document with many records about one
   narrow point no longer outranks one with fewer but more topically
-  distributed records. Both verified against the full 220-probe/24-
-  question/464-test corpus with zero regressions before landing; a global
-  `scoreRecord` IDF-weighting alternative was evaluated and rejected for
-  causing real regressions elsewhere in the corpus.
+  distributed records; and `answerFallback` now also prefers the dominant
+  document (porting the identical rule `tryCoverageCompositeQuery` already
+  had), so a topically-adjacent but unrelated document's candidates no
+  longer ride along with an overwhelmingly stronger match just for
+  crossing the ordinary relevance floor. All verified against the full
+  220-probe/24-question/unit-test corpus with zero regressions before
+  landing; a global `scoreRecord` IDF-weighting alternative was evaluated
+  and rejected for causing real regressions elsewhere in the corpus.
 - The Response Intelligence milestone is complete: Workstream 8 (Corpus
   Expansion / Reusability Test) was cancelled by explicit decision, not
   deferred. Full narrative frozen at
