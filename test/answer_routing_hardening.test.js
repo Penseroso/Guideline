@@ -5,6 +5,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const { loadStore } = require("../engine/data_store");
+const { createStore } = require("../engine/vector_store");
 const { answerEnvelope } = require("../engine/answer_envelope");
 const { structuredQuery } = require("../engine/query_router");
 const { loadSemanticOverlayStore } = require("../engine/semantic_overlay_store");
@@ -12,6 +13,8 @@ const { reviewedRoutingEligibility, selectReviewedRoutingManifest } = require(".
 const { runAudit } = require("../scripts/audit_answer_routing_hardening");
 
 const { records, index } = loadStore();
+const keywordStore = createStore();
+keywordStore.index(records);
 
 test("current production inventory has 55 reviewed, fresh, evidence-bearing routing manifests", () => {
   const store = loadSemanticOverlayStore();
@@ -106,6 +109,27 @@ test("document ranking prefers the more topically-distributed document over one 
   assert.equal(envelope.route, "structured");
   assert.deepEqual([...new Set(envelope.claims.map((claim) => claim.record.document_id))], ["fda_ada_2014"]);
   assert.ok(envelope.claims.some((claim) => claim.record.id === "fda_ada_2014.kr.4.001"));
+});
+
+// Real defect (retrieval-scope-correctness follow-up, fifty_q_Q23): a
+// genuinely different failure shape than Q11/Q22 -- structuredQuery fully
+// abstains for this question (no tie, no composite -- routing simply has
+// no opinion), so the whole answer is decided by answerFallback's fresh
+// keyword search. tryCoverageCompositeQuery already has a "prefer the
+// dominant document; a second document only participates when its own
+// evidence is independently strong (>= 70% of the leader's best score)"
+// rule; answerFallback had no equivalent at all, so ema_fih's §7.7 "route
+// of administration" section (a different regulatory topic -- FIH
+// dose-route selection, not immunogenicity risk) rode along with the
+// correct, overwhelmingly dominant fda_ada_2014 match (29.9 vs 12.29)
+// purely on shared "subcutaneous"/"intravenous"/"route" vocabulary. Fixed
+// by porting the same dominant-document rule into answerFallback. Uses a
+// real keyword store (no client) since this question has no structured
+// match at all -- deterministic-only, no API cost.
+test("fallback prefers the overwhelmingly dominant document over a topically-adjacent but unrelated one that crosses the relevance floor", async () => {
+  const envelope = await answerEnvelope("피하주사와 정맥주사는 면역원성 위험이 어떻게 달라?", records, { index, store: keywordStore });
+  assert.equal(envelope.answered, true);
+  assert.deepEqual([...new Set(envelope.claims.map((claim) => claim.record.document_id))], ["fda_ada_2014"]);
 });
 
 test("manifest routing is invariant to record order and unrelated candidate volume", () => {

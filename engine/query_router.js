@@ -1542,6 +1542,34 @@ async function answerFallback(question, records, {
   let candidates = rawCandidates.filter(({ record }) =>
     !scopeGuardReject(record, queryScope) && !relevanceGuardReject(record, queryScope)
   );
+  // Prefer the dominant document, mirroring tryCoverageCompositeQuery's own
+  // "a second document only participates when its own evidence is
+  // independently strong (>= 70% of the leader's best score)" rule -- this
+  // fresh keyword search had no equivalent check at all, letting a
+  // topically-adjacent-but-unrelated document's candidates ride along with
+  // the dominant document's into the same generation prompt whenever they
+  // crossed the ordinary relevance floor. Found live: "피하주사와
+  // 정맥주사는 면역원성 위험이 어떻게 달라?" -- fda_ada_2014's top match
+  // scored 29.9, but ema_fih's own "route of administration" section (a
+  // different regulatory topic entirely: FIH dose-route selection, not
+  // immunogenicity risk) still scored 12.29 (well above the floor) and got
+  // synthesized into the same answer. Skipped when a document is already
+  // explicit/tie-resolved (effectiveDocumentIds) -- that gate already
+  // decided the scope.
+  if (candidates.length > 0 && !effectiveDocumentIds) {
+    const leadingDocumentId = candidates[0].record.document_id;
+    const leadingScore = candidates[0].score;
+    const bestOtherDocumentScore = new Map();
+    for (const candidate of candidates) {
+      if (candidate.record.document_id === leadingDocumentId) continue;
+      const prev = bestOtherDocumentScore.get(candidate.record.document_id) || 0;
+      if (candidate.score > prev) bestOtherDocumentScore.set(candidate.record.document_id, candidate.score);
+    }
+    candidates = candidates.filter((candidate) =>
+      candidate.record.document_id === leadingDocumentId ||
+      (bestOtherDocumentScore.get(candidate.record.document_id) || 0) >= leadingScore * 0.7
+    );
+  }
   const fallbackIntent = classifyAnswerIntent(question, qTokens);
   if (fallbackIntent.breadth === "broad") {
     const preferred = candidates.filter(({ record }) => !isSuppressedBroadRecord(record, question));
