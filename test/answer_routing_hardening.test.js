@@ -87,6 +87,27 @@ test("a resolved multi-document family identity still allows genuine cross-docum
   assert.deepEqual([...new Set(envelope.claims.map((claim) => claim.record.document_id))].sort(), ["fda_ada", "fda_ada_2014"]);
 });
 
+// Real defect (retrieval-scope-correctness follow-up, fifty_q_Q22):
+// within the correctly-resolved ADA document family (Q11's fix above),
+// tryCoverageCompositeQuery's document ranking still picked fda_ada over
+// the expected fda_ada_2014. Both tie on bestScore, and the tie-break
+// (aggregate, a flat sum of the top 8 deduped records' scores) favored
+// fda_ada purely because its 8 top records all sit in the SAME section
+// (§VII.A) -- many records about one narrow point -- while
+// fda_ada_2014's spanned 5 different sections including the one genuinely
+// correct record ("Pre-treatment baseline samples... Scheduled serial
+// sampling..."). Fixed by making `aggregate` section-deduped (best score
+// per distinct section, not a flat sum), so it reflects how many
+// DISTINCT points a document makes rather than how many records restate
+// the same one -- a volume/specificity conflation, not a document-
+// identity problem, so it needed a different fix than Q11's.
+test("document ranking prefers the more topically-distributed document over one with many records about a single narrow point", async () => {
+  const envelope = await answerEnvelope("면역원성 샘플은 baseline부터 언제 채취해야 해?", records, { index });
+  assert.equal(envelope.route, "structured");
+  assert.deepEqual([...new Set(envelope.claims.map((claim) => claim.record.document_id))], ["fda_ada_2014"]);
+  assert.ok(envelope.claims.some((claim) => claim.record.id === "fda_ada_2014.kr.4.001"));
+});
+
 test("manifest routing is invariant to record order and unrelated candidate volume", () => {
   const question = "ICH M10 §3 CHROMATOGRAPHY 설명해줘.";
   const baseline = structuredQuery(question, records, index);

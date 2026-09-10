@@ -934,10 +934,25 @@ function tryCoverageCompositeQuery(scored, question, intent, requestedDocumentId
         seenUnits.add(unitType);
         unique.push(item);
       }
+      // Section-deduped, not a flat sum of the top 8: a document's real
+      // supporting strength is how many DISTINCT points it makes, not how
+      // many records happen to describe the same one. Found live: for
+      // "면역원성 샘플은 baseline부터 언제 채취해야 해?", fda_ada's top 8
+      // were 8 different (already record-deduped) paragraphs that all sit
+      // in the one §VII.A "Timing of Sample Collection" section, while
+      // fda_ada_2014's spanned 5 different sections -- a flat sum let
+      // fda_ada's bestScore tie get broken by raw volume-on-one-point
+      // instead of the correct, more topically-distributed document.
+      // Only used here (verified) -- redefining it has no other blast radius.
+      const bestPerSection = new Map();
+      for (const item of unique.slice(0, 8)) {
+        const existing = bestPerSection.get(item.record.section_id);
+        if (!existing || item.score > existing.score) bestPerSection.set(item.record.section_id, item);
+      }
       return {
         documentId,
         items: unique,
-        aggregate: unique.slice(0, 8).reduce((sum, item) => sum + item.score, 0),
+        aggregate: [...bestPerSection.values()].reduce((sum, item) => sum + item.score, 0),
         sections: new Set(unique.slice(0, 8).map((item) => item.record.section_id)).size,
         bestScore: unique[0] ? unique[0].score : 0,
         bestMatchedCount: unique[0] ? unique[0].matchedCount : 0

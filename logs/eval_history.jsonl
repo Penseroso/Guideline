@@ -50,3 +50,5 @@
 {"timestamp":"2026-09-10T06:11:44.686Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
 {"timestamp":"2026-09-10T06:22:34.491Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
 {"timestamp":"2026-09-10T06:24:13.327Z","engine_version":"0.6.0","commit":"3026bf1","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
+{"timestamp":"2026-09-10T08:03:11.919Z","engine_version":"0.6.0","commit":"34190ec","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
+{"timestamp":"2026-09-10T08:03:55.758Z","engine_version":"0.6.0","commit":"34190ec","fallback_enabled":false,"total":24,"passed":24,"citation_precision":1,"claim_grounding_rate":1,"refusal_correctness":1}
