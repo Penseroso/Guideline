@@ -194,7 +194,7 @@ body.idle .result-panel { display: none; }
 /* Modes that render their own single-column layout (generated,
    source_excerpts, section_overview) gain a matching right-hand rail
    here rather than each defining their own second grid column — the
-   rail (answer-scope + Stage C semantic-coverage) used to sit stacked
+   rail (answer-scope + semantic-coverage) used to sit stacked
    above the content instead of beside it. Standalone here (no
    .answer-side wrapper), so the rail manages its own sticky position. */
 .answer-shell { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 320px); gap: 40px; align-items: start; }

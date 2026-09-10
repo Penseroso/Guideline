@@ -3,11 +3,11 @@
  * into one automatic step (product_roadmap.md §2.5 step 4 / §2.5.1):
  * draft, then verify every drafted object, then set review_status from
  * the verification result — no human spot-check in the loop, and no
- * retry-until-passes loop either (considered and deliberately deferred,
- * docs/milestone_log.md M1: a bounded retry is a reasonable
- * future addition, but the immediate value is closing the loop that
- * already exists — a human manually gluing extract+verify together in
- * ad hoc test scripts — not adding self-correction on top of that yet).
+ * retry-until-passes loop either (considered and deliberately deferred:
+ * a bounded retry is a reasonable future addition, but the immediate
+ * value is closing the loop that already exists — a human manually
+ * gluing extract+verify together in ad hoc test scripts — not adding
+ * self-correction on top of that yet).
  *
  * `review_status` semantics per §2.5.1: `reviewed` means "passed the
  * extraction + verification pipeline," not "a human read it." A record
@@ -21,10 +21,10 @@ const { verifyClaim, claimTextFor } = require("./verification_agent");
 const { criterionValueKey } = require("./criterion_value");
 
 // Same pattern as scripts/author_semantic_presentation.js's
-// hasUnexpectedScript: catches both "not Korean at all" (e.g. the
-// extraction_agent.js prompt gap that produced English normalized_ko
-// throughout an entire backfill pass, docs/milestone_log.md M5) and
-// mid-generation script corruption (replacement char, stray CJK/Devanagari).
+// hasUnexpectedScript: catches both "not Korean at all" (e.g. an
+// extraction_agent.js prompt gap that once produced English normalized_ko
+// throughout an entire backfill pass) and mid-generation script corruption
+// (replacement char, stray CJK/Devanagari).
 function hasUnexpectedScript(text) {
   return /[\ufffd\u0900-\u097f\u4e00-\u9fff]/.test(String(text || "")) || !/[\uac00-\ud7af]/.test(String(text || ""));
 }
@@ -46,7 +46,7 @@ async function verifyKnowledgeRecord(kr, { sourceUnits, conditions, client, mode
   // instruction is not a guarantee — this exact failure mode produced 142
   // English normalized_ko records in one backfill pass before entailment
   // verification (which only checks subject/action/object, never
-  // normalized_ko) caught none of it (docs/milestone_log.md M5).
+  // normalized_ko) caught none of it.
   if (kr.normalized_ko && hasUnexpectedScript(kr.normalized_ko)) {
     return { entailed: false, reason: `normalized_ko is not valid Korean text: "${kr.normalized_ko}"` };
   }
@@ -75,9 +75,9 @@ async function verifyKnowledgeRecord(kr, { sourceUnits, conditions, client, mode
   // strength. Harmless for must/should (the recomposed claim's implied
   // force roughly matches), but for a soft modality like modality="other"
   // ("it is recommended") it overstates the source and gets correctly
-  // rejected — found live on M10 3.2.5.2 kr.005 (docs/milestone_log.md
-  // M1), the same root cause as the QC-side modalHint fix above, just
-  // discovered afterward on the KR side. Only appended when the recomposed
+  // rejected — found live on M10 3.2.5.2 kr.005, the same root cause as
+  // the QC-side modalHint fix above, just discovered afterward on the KR
+  // side. Only appended when the recomposed
   // text doesn't already start with it, so must/should records (whose
   // original_modal_text is often already echoed in action, e.g. "should be
   // within") don't get a redundant/confusing duplicate.
@@ -88,8 +88,8 @@ async function verifyKnowledgeRecord(kr, { sourceUnits, conditions, client, mode
   // inclusion, applied to KnowledgeRecord: a KR qualified by its own
   // Condition (via Condition.applies_to_ids) reads as an unconditional
   // claim without it, and gets correctly rejected for overstating scope
-  // — same pattern, found in the same M10 3.2.5.2 live triage
-  // (docs/milestone_log.md M1), just on the KR side instead of QC.
+  // — same pattern, found in the same M10 3.2.5.2 live triage, just on
+  // the KR side instead of QC.
   const applicable = (conditions || []).filter((c) => (c.applies_to_ids || []).includes(kr.knowledge_record_id));
   const claim = applicable.length
     ? `${base}${modalHint}, applicable when: ${applicable.map((c) => c.condition_text).join("; ")}`
@@ -115,7 +115,7 @@ function sameIdSet(a, b) {
 //     jointly true under it, usable on its own regardless of
 //     knowledge_record_id. Originally required only *some* overlap, which
 //     was mostly dormant while extraction rarely populated condition_ids —
-//     once that was fixed (docs/milestone_log.md M1, S6(R1) 3.3), it
+//     once that was fixed (found live on S6(R1) 3.3), it
 //     started firing on a general rule and its own exception sharing one
 //     condition out of a larger set (e.g. general "≥2 species" scoped to
 //     precondition A, exception "≥1 species" scoped to A+B+C) and grouped
@@ -132,7 +132,7 @@ function sameIdSet(a, b) {
 //     condition_ids=["cond.007"]) via knowledge_record_id alone produced
 //     a claim asserting both hold "jointly," which is false and was
 //     correctly rejected by the verifier — a real self-inflicted
-//     distortion (docs/milestone_log.md M1). Requiring the
+//     distortion. Requiring the
 //     condition_ids sets to match (both empty counts as a match) restricts
 //     this signal to same-KR criteria that also apply under the identical
 //     circumstance, e.g. a compound value split with no Condition object
@@ -153,9 +153,9 @@ const SIBLING_SIGNALS = [
   (qc, other) => Boolean(qc.knowledge_record_id) && other.knowledge_record_id === qc.knowledge_record_id && sameIdSet(qc.condition_ids, other.condition_ids)
 ];
 
-// docs/schema.md M1 (model 0.3.0): QuantitativeCriterion.joint_with_ids
-// is now a grounded, extraction-time-declared, validator-enforced-reciprocal
-// fact — when a criterion has it populated, that's authoritative and the
+// QuantitativeCriterion.joint_with_ids is a grounded, extraction-time-
+// declared, validator-enforced-reciprocal fact — when a criterion has it
+// populated, that's authoritative and the
 // heuristic SIGNAL inference below is skipped entirely for it, rather than
 // unioned with the heuristics. Only criteria without a populated
 // joint_with_ids (legacy records predating this field, or genuinely
@@ -208,8 +208,8 @@ async function verifyQuantitativeCriterion(qc, { sourceUnits, allCriteria, knowl
   // A criterion whose linked KnowledgeRecord uses a modality softer than
   // "should" (e.g. modality=other, "it is recommended") was overstated by
   // the fixed-strength "specified criterion value" phrasing alone — found
-  // live on M10 3.2.5.2 qc.004 (docs/milestone_log.md M1). Rather
-  // than hardcode another modal word, surface the source's own wording so
+  // live on M10 3.2.5.2 qc.004. Rather than hardcode another modal word,
+  // surface the source's own wording so
   // the verifier judges against real evidence, not an assumed strength.
   const linkedKR = (knowledgeRecords || []).find((k) => k.knowledge_record_id === qc.knowledge_record_id);
   const modalHint = linkedKR?.original_modal_text ? ` (per the source's own wording: "${linkedKR.original_modal_text}")` : "";
@@ -249,7 +249,7 @@ async function verifyQuantitativeCriterion(qc, { sourceUnits, allCriteria, knowl
   // certain justified cases [1 suffices]" unless the exception is
   // surfaced. Same pattern as verifyKnowledgeRecord's `applicable` hint
   // and the denominator_or_reference/modalHint/siblingHint fixes above,
-  // found live on S6(R1) 3.3 (docs/milestone_log.md M1).
+  // found live on S6(R1) 3.3.
   const linkedConditions = (conditions || []).filter((c) => (qc.condition_ids || []).includes(c.condition_id));
   const conditionHint = linkedConditions.length
     ? ` (qualified by: ${linkedConditions.map((c) => c.condition_text).join("; ")})`
@@ -258,9 +258,9 @@ async function verifyQuantitativeCriterion(qc, { sourceUnits, allCriteria, knowl
   const claim = `${base}${modalHint}${siblingHint}${conditionHint}`;
 
   // Verified against the FULL SourceUnit paragraph, not the criterion's
-  // own minimal source_text quote. Fixed after a live-API triage
-  // (docs/milestone_log.md M1) showed the narrow quote alone
-  // routinely omits the parameter noun itself (e.g. "accuracy") when it
+  // own minimal source_text quote. Fixed after a live-API triage showed
+  // the narrow quote alone routinely omits the parameter noun itself
+  // (e.g. "accuracy") when it
   // sits earlier in the sentence than the number — the verifier then
   // correctly, but unhelpfully, rejects claims for lacking context the
   // narrow quote never included. Verified live this doesn't reintroduce
@@ -343,8 +343,8 @@ async function extractAndVerifySection({ section, sourceUnits, client, verifyMod
 // --- Self-consistency: multiple extraction passes, merged by content ---
 //
 // Real, measured run-to-run variance on identical input (same section,
-// same prompt, different counts — docs/milestone_log.md M1) is
-// exploited here rather than just tolerated: run extraction N times and
+// same prompt, different counts) is exploited here rather than just
+// tolerated: run extraction N times and
 // take the union, deduped by content fingerprint, instead of trusting
 // any single pass. This is the field's standard answer to LLM extraction
 // recall (GraphRAG "gleanings", self-consistency sampling) — verified
@@ -377,9 +377,9 @@ function conditionFingerprint(c) {
 // `krFingerprint`'s bucket key (source_unit_ids + record_type + modality)
 // is a reliable exact-match signal — same fact, re-extracted, should land
 // on the same source unit(s) with the same classification every time.
-// The action *text* is not: live self-consistency runs (docs/milestone_log.md
-// M1) showed the model phrasing the same fact differently across passes
-// on identical input ("be evaluated" vs. "be evaluated using peak area" vs.
+// The action *text* is not: live self-consistency runs showed the model
+// phrasing the same fact differently across passes on identical input
+// ("be evaluated" vs. "be evaluated using peak area" vs.
 // "be evaluated by analysing spiked samples") — comparing a truncated
 // normalized prefix treated each phrasing as a distinct fact and roughly
 // doubled the merged KR count instead of collapsing near-duplicates.
@@ -569,8 +569,8 @@ async function extractSectionSelfConsistent({ section, sourceUnits, client, pass
 // --- Ensemble verification: require repeated agreement before "reviewed" ---
 //
 // A single entailment call was directly shown to have a false-negative
-// mode (docs/milestone_log.md M1: the range-vs-requirement
-// distortion passed as entailed=true on the first pipeline run). This
+// mode (the range-vs-requirement distortion passed as entailed=true on
+// the first pipeline run). This
 // does not replace that fix (the claimTextFor phrasing fix stands); it
 // adds a second, independent layer: call verifyClaim `times` times and
 // require *all* calls to agree entailed=true before trusting it.

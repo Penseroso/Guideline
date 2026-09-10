@@ -1,6 +1,6 @@
 /**
  * engine/amendment_engine.js
- * M4: Guideline Amendment & Revision History Engine
+ * Guideline Amendment & Revision History Engine.
  * Resolves version evolution, addendum notes, and effective regulatory states.
  */
 
@@ -90,7 +90,7 @@ const GUIDELINE_REVISIONS = {
         // subdivides §V.B into 5_b_1/5_b_2 SourceUnits, not one 5_b unit.
         // Verified by content, not guessed: 5_b_1.001 is the screening-tier
         // passage that states the same "approximately 5%" false-positive
-        // rate this topic line describes (history/verification/engine_test_record_through_2026-08-28.md Entry 007/008).
+        // rate this topic line describes.
         sourceUnitId: "fda_ada.su.5_b_1.001"
       },
       {
@@ -194,12 +194,11 @@ function identifyAmendmentDoc(question) {
  * cohort") that correctly have no KnowledgeRecord/QuantitativeCriterion/
  * Condition of their own (a heading isn't a regulatory claim), even
  * though the section itself has substantial real content (this is the
- * Sentinel Dosing / Stopping Rules content documented in
- * docs/milestone_log.md M3). Pointing at the heading and finding nothing
- * would drop real, on-topic content for no reason; the fallback recovers
- * it. If no `index` is supplied, or the section itself has no records
- * either, this correctly resolves to nothing (dropped, not shown
- * ungrounded — round-2 correction #3).
+ * Sentinel Dosing / Stopping Rules content). Pointing at the heading and
+ * finding nothing would drop real, on-topic content for no reason; the
+ * fallback recovers it. If no `index` is supplied, or the section itself
+ * has no records either, this correctly resolves to nothing (dropped, not
+ * shown ungrounded).
  */
 function resolveNoteClaim(sourceUnitId, records, index) {
   if (!sourceUnitId) return null;
@@ -230,11 +229,9 @@ function answerAmendment(question, records, index) {
   // Each hardcoded keyNote's sourceUnitId is resolved against the real
   // archive — previously it was captured but never read at all, so every
   // "Key Amendment" bullet rendered with zero citation regardless of
-  // whether its target existed (history/verification/engine_test_record_through_2026-08-28.md Entry 007 / M5 plan
-  // §1b). A note that doesn't resolve is dropped here, not shown to the
-  // user in any form, per the M5 plan's explicit correction: ungrounded
-  // regulatory-content synthesis does not belong on the answer surface,
-  // labeled or not.
+  // whether its target existed. A note that doesn't resolve is dropped
+  // here, not shown to the user in any form: ungrounded regulatory-content
+  // synthesis does not belong on the answer surface, labeled or not.
   const claims = [];
   for (const item of revInfo.keyNotes) {
     const resolved = resolveNoteClaim(item.sourceUnitId, records, index);

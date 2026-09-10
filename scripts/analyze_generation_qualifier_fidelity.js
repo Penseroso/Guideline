@@ -6,9 +6,8 @@ const { tokenize } = require("../engine/text_utils");
 const ROOT = path.resolve(__dirname, "..");
 // Reuses an already-collected real production-path run rather than paying
 // for new API calls -- this is real generated output from real questions,
-// not a constructed probe. Response Intelligence Workstream 4/5 established
-// this reuse pattern (reading back an existing run's telemetry) when the
-// question is answerable from data already on disk.
+// not a constructed probe, reading back an existing run's telemetry when
+// the question is answerable from data already on disk.
 const INPUT_PATH = process.env.GUIDELINE_QUALIFIER_FIDELITY_INPUT
   ? path.resolve(process.env.GUIDELINE_QUALIFIER_FIDELITY_INPUT)
   : path.join(ROOT, "logs", "runtime", "answer_suitability_50_workstream_5.json");
@@ -17,8 +16,8 @@ const OUTPUT_PATH = process.env.GUIDELINE_QUALIFIER_FIDELITY_OUTPUT
   : path.join(ROOT, "logs", "runtime", "response_intelligence_workstream_6_qualifier_fidelity.json");
 
 // A keyword-overlap heuristic, not a semantic judgment -- this script's job
-// is to surface real cases for human review (per the Workstream 6 plan),
-// not to gate anything automatically. tokenize() already strips stopwords
+// is to surface real cases for human review, not to gate anything
+// automatically. tokenize() already strips stopwords
 // and Korean particles, so no additional length filter is applied here: an
 // earlier version filtered tokens shorter than 4 characters (reasonable
 // for English) but that zeroed out short, meaningful Korean condition

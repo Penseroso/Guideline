@@ -61,9 +61,9 @@ function draftQuantitativeCriterionSchema() {
   // relevant species," "a single species") — "at_least"/"not_exceed" assert
   // an open-ended bound ("N or more"/"N or fewer") that a source stating an
   // exact number does not, and get correctly rejected for it. Found live
-  // on S6(R1) 3.3 (docs/milestone_log.md M1) as the dominant remaining
-  // failure pattern once the is_default_with_exception/is_illustrative_example
-  // false-conjunction noise was fixed.
+  // on S6(R1) 3.3 as the dominant remaining failure pattern once the
+  // is_default_with_exception/is_illustrative_example false-conjunction
+  // noise was fixed.
   schema.properties.comparator.description =
     "\"within\": a range/tolerance around a value. \"not_exceed\": an upper bound (N or fewer is fine). " +
     "\"at_least\": a lower bound (N or more is fine). \"equals\": an exact count/value — use this, not " +
@@ -71,8 +71,8 @@ function draftQuantitativeCriterionSchema() {
   // A criterion qualified by an exception/precondition (e.g. "should
   // normally be X ... except in certain justified cases") reads as an
   // unconditional rule without this link, and fails verification for
-  // overstating scope — found live on S6(R1) 3.3 (docs/milestone_log.md
-  // M1). Link it here even if a Condition drafted in this call already
+  // overstating scope — found live on S6(R1) 3.3. Link it here even if a
+  // Condition drafted in this call already
   // names this criterion in its own applies_to_temp_ids — this field is
   // what verification actually reads.
   schema.properties.condition_temp_ids.description =
@@ -244,7 +244,7 @@ async function extractSection({ section, sourceUnits, client }) {
   // Reverted. Three prompt versions on one section produced non-monotonic
   // results (QC 11->12->10, Condition 5->10->12) — tuning further against
   // a single section is not reliable signal; needs a multi-section eval
-  // before another attempt (see docs/milestone_log.md).
+  // before another attempt.
 
   const userText = [
     `Section ${section.section_number}: ${section.title}`,

@@ -16,7 +16,7 @@ const TOP_K = 5;
 // value. Hand-picked, not automatable -- identifying a genuine domain
 // synonym needs judgment. Each `context_word` is a second real, distinctive
 // word taken from the SAME ground-truth record's own source_text, so every
-// probe is a realistic multi-word question -- never Workstream 3's
+// probe is a realistic multi-word question -- never an artificial
 // single-real-word-plus-nonsense shape.
 const UNCOVERED_SYNONYM_CASES = [
   { synonym: "length", record_id: "ich_s6_r1.qc.4_4.003", context_word: "biopharmaceutical", covers_term: "duration" },

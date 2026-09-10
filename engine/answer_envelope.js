@@ -1,19 +1,30 @@
 /**
  * engine/answer_envelope.js
- * M5 Phase 2 (history/verification/engine_test_record_through_2026-08-28.md Entry 008 / .claude/plans/scalable-
- * floating-elephant.md): a thin, uniform HTTP-ready shape over answer()'s
- * five previously-inconsistent return shapes. Deliberately minimal per
- * the round-2 plan correction — no per-mode nested schema (no
- * `comparison: {doc_groups}` / `amendment: {key_notes}` types): every
- * mode already reduces to the same flat `claims[]` a UI can group or
- * render generically, since Phase 1 made every answer-producing function
- * attach `claims` to its match object before formatting.
+ *
+ * answerEnvelope() is the canonical production serving path: it is the only
+ * function `engine/server.js`'s `/api/ask` handler calls, so every
+ * production-facing safety/quality gate (semantic-coverage gating,
+ * generation-skip/coverage-adequacy checks, telemetry, the cross-document
+ * ambiguity guard below) belongs here. `engine/query_router.js`'s `answer()`
+ * is a separate, lighter entry point used only by the CLI and the legacy
+ * gold eval (`npm run eval`) — it calls `structuredQuery`/`answerFallback`
+ * directly with no telemetry and none of this file's gates. New
+ * production-facing behavior should be added here, not to `answer()`.
+ *
+ * A uniform HTTP-ready shape over what would otherwise be several
+ * inconsistent per-mode return shapes: deliberately minimal, no per-mode
+ * nested schema (no `comparison: {doc_groups}` / `amendment: {key_notes}`
+ * types) — every mode already reduces to the same flat `claims[]` a UI can
+ * group or render generically, since every answer-producing function
+ * attaches `claims` to its match object before formatting.
  *
  * Mirrors structuredQuery/answerFallback's own control flow directly,
- * rather than wrapping answer()'s already-lossy `text` output — mode
- * isn't recoverable from that string. `prose` is still exactly what
- * answer()/the CLI would show, so the API and CLI can never tell two
- * different stories about the same question.
+ * rather than wrapping answer()'s already-lossy `text` output — mode isn't
+ * recoverable from that string. `prose` is still exactly what answer()/the
+ * CLI would show for the same underlying match, so the API and CLI can
+ * never tell two different stories about the same question — though the
+ * CLI, lacking this file's gates, can still answer a question this file
+ * would refuse or shape differently.
  */
 
 const { structuredQuery, formatAnswer, answerFallback, explainRefusal, NOT_FOUND } = require("./query_router");
@@ -177,7 +188,13 @@ function generatedCoverageIsAdequate(match, generated) {
  *     answer_units, review_status, timing_ms }
  *
  * `refusal` is null when answered; otherwise
- *   { kind: "no_match"|"scope_excluded"|"no_candidates"|"model_declined"|"verification_failed"|"no_provider", reason: string|null }
+ *   { kind: "no_match"|"scope_excluded"|"no_candidates"|"generation_not_configured"|
+ *     "model_declined"|"language_mismatch"|"verification_failed"|"ambiguous_document_scope",
+ *     reason: string|null }
+ * `kind` surfaces whichever of `result.refusal_reason`/`result.fallback_reason`
+ * `answerFallback` actually set (a `verification_failed` kind may carry a
+ * ": <detail>" suffix); `ambiguous_document_scope` is set by this file itself
+ * when the cross-document ambiguity guard below fires.
  *
  * `claims` entries are always { record, source_unit_id, citation } — see
  * engine/query_router.js's deriveClaimsFromRecords / answerFallback, and
@@ -348,7 +365,7 @@ async function answerEnvelope(question, records, {
       route: "refusal",
       generation_preference: generationPreference,
       prose: result.text,
-      refusal: { kind: result.refusal_reason || "no_match", reason: result.text === NOT_FOUND ? null : result.text },
+      refusal: { kind: result.refusal_reason || result.fallback_reason || "no_match", reason: result.text === NOT_FOUND ? null : result.text },
       claims: [],
       answer_units: [],
       scope: result.scope || null,
@@ -356,6 +373,45 @@ async function answerEnvelope(question, records, {
       answer_intent: result.answer_intent || null,
       review_status: null
     });
+  }
+
+  // Deterministic routing already found this question ambiguous between
+  // candidates in different documents (routing_ambiguous_tie /
+  // routing_list_ambiguous_tie / manifest_ambiguous_tie) and abstained; a
+  // fresh fallback search has no memory of that tie and can otherwise blend
+  // claims from unrelated documents into one undifferentiated answer (real
+  // case: "days acceptance criteria" mixing fda_ada and ich_m10 content with
+  // no disclosure). Block that blend and disclose the ambiguity instead of
+  // silently returning it.
+  const sawAmbiguousTie = telemetry.events.some((event) =>
+    ["routing_ambiguous_tie", "routing_list_ambiguous_tie", "manifest_ambiguous_tie"].includes(event.event));
+  if (sawAmbiguousTie) {
+    const documentIds = [...new Set((result.claims || [])
+      .map((claim) => claim.record && claim.record.document_id).filter(Boolean))];
+    if (documentIds.length >= 2) {
+      const labels = documentIds.map((documentId) => {
+        const claim = (result.claims || []).find((c) => c.record && c.record.document_id === documentId);
+        return (claim && claim.citation && claim.citation.guideline_code) ||
+          (claim && claim.record && claim.record.document_title) || documentId;
+      });
+      recordTelemetryEvent(telemetry, "cross_scope_mixing_blocked", { document_ids: documentIds });
+      return finish({
+        envelope_version: ENVELOPE_VERSION,
+        answered: false,
+        mode: "refusal",
+        semantic_mode: "refusal",
+        route: "refusal",
+        generation_preference: generationPreference,
+        prose: NOT_FOUND,
+        refusal: { kind: "ambiguous_document_scope", reason: `Matched evidence in multiple documents: ${labels.join(", ")}. Ask again naming the document you mean.` },
+        claims: [],
+        answer_units: [],
+        scope: result.scope || null,
+        coverage: null,
+        answer_intent: result.answer_intent || null,
+        review_status: null
+      });
+    }
   }
 
   return finish({

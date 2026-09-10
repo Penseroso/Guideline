@@ -13,7 +13,7 @@ const ROOT = path.resolve(__dirname, "..");
 const CORPUS_PATH = path.join(ROOT, "data", "eval", "typed_questions.json");
 const OUTPUT_PATH = process.env.GUIDELINE_TYPED_EVAL_OUTPUT
   ? path.resolve(process.env.GUIDELINE_TYPED_EVAL_OUTPUT)
-  : path.join(ROOT, "logs", "runtime", "typed_eval_50plus_raw_2026-09-09.json");
+  : path.join(ROOT, "logs", "runtime", "typed_eval_50plus_raw_2026-09-10.json");
 const REQUEST_TIMEOUT_MS = 120000;
 
 function questionsFromCorpus() {

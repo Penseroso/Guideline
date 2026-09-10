@@ -6,8 +6,8 @@ const { createStore } = require("./vector_store");
 const { createClient, availableProviders } = require("./llm_client");
 const { logInteraction } = require("./query_log");
 
-// Case-insensitive: a real M2 session logged "EXIT" (all-caps) as a
-// refused question instead of quitting — found live, docs/milestone_log.md M2.
+// Case-insensitive: a real session once logged "EXIT" (all-caps) as a
+// refused question instead of quitting — found live.
 function isExitCommand(question) {
   return /^(exit|quit)$/i.test(question);
 }

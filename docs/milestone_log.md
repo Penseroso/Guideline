@@ -11,8 +11,9 @@ Detailed completed history is frozen in:
 - `history/milestones/milestone_log_through_2026-09-08.md`
 - `history/verification/`
 
-Current measured results belong in `docs/verification_status.md`. The active
-post-M5 workstream belongs in `docs/milestones/response_intelligence.md`.
+Current measured results belong in `docs/verification_status.md`. No
+milestone is currently active in `docs/milestones/` — the most recent
+post-M5 workstream (Response Intelligence) closed 2026-09-10; see below.
 
 ## M0 — Foundation audit and roadmap
 
@@ -96,15 +97,19 @@ rest remains frozen and is not an active dependency.
 
 History: `history/applicability_engine/`.
 
-## Active milestone — Response Intelligence
+## Response Intelligence
 
-Status: active since 2026-09-08; Workstreams 1-7 completed 2026-09-09;
-Workstream 8 (Corpus Expansion / Reusability Test) not started.
+Status: completed 2026-09-10 (started 2026-09-08). Workstreams 1-7
+completed 2026-09-09; Workstream 8 (Corpus Expansion / Reusability Test)
+was cancelled by explicit decision, not completed — the Guideline-
+specific-vs-reusable-platform question it was meant to answer remains
+open for a future milestone.
 
 This sequential milestone measures and improves routing, latency/cost, query
 resolution, retrieval, conditional planning, response verification,
-production SLOs, and cross-corpus reusability. Its scope and per-workstream
-outcomes are maintained in `docs/milestones/response_intelligence.md`.
+production SLOs, and cross-corpus reusability. Its full scope and
+per-workstream outcomes are frozen at
+`history/milestones/response_intelligence_2026-09-10.md`.
 The stage-level latency/cost baseline found that the structured p95 tail is
 not deterministic routing cost: it is generation/verification work performed
 before a final structured fallback. Detailed evidence is in
@@ -177,5 +182,16 @@ disambiguation deferral should now be re-evaluated against. A
 intentionally fails until that defect is actually fixed. Detailed
 evidence is in
 `history/verification/response_intelligence_workstream_7_2026-09-09.md`.
-Workstream 8, Corpus Expansion / Reusability Test, is next and remains
-not started — the milestone is not yet complete.
+
+Close-out (2026-09-10): Workstream 8 was cancelled by explicit decision.
+Both real risks left open above were fixed before closing: the cross-
+scope-mixing defect (`engine/answer_envelope.js` now blocks a blended
+fallback answer after a genuine ambiguity tie and discloses the ambiguity
+instead — `cross_scope_safe_rate` now measures 100%) and the
+`refusal_reason`/`fallback_reason` envelope contract bug (the richer
+fallback reasons no longer silently collapse to `"no_match"`). A new
+`retrieval_scope_correct_rate` metric, added the same day from real
+already-known per-question expected-document provenance, found 4 real,
+unfixed retrieval-quality gaps — left as documented follow-up, not fixed
+this pass. Full detail: `docs/production_slo.md`. This document is frozen
+at `history/milestones/response_intelligence_2026-09-10.md`.

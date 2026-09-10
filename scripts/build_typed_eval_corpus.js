@@ -8,9 +8,9 @@ const EVAL_QUESTIONS_PATH = path.join(ROOT, "test", "fixtures", "eval_questions.
 const OUTPUT_PATH = path.join(ROOT, "data", "eval", "typed_questions.json");
 
 /**
- * Response Intelligence Workstream 7: the milestone's named question-type
- * taxonomy (detail/list/overview/process/comparison/ambiguous/refusal) does
- * not exist anywhere in the repo. B0/B1/D1/D2/X (docs/answer_suitability_
+ * Builds the typed question-type taxonomy (detail/list/overview/process/
+ * comparison/ambiguous/refusal) used by the production SLO/eval scripts.
+ * B0/B1/D1/D2/X (docs/answer_suitability_
  * evaluation.md's depth codes) map cleanly (B0->overview, B1->list,
  * D1+D2->detail, X->comparison); B2 ("procedure/relationship/judgment
  * factors") does not -- it spans genuinely sequential questions and other
@@ -32,6 +32,26 @@ const B2_COMPARISON_IDS = new Set(["Q17", "Q32"]);
 // `list` (B1's exhaustive full-section enumeration) or `comparison` (no
 // second thing being contrasted).
 
+// docs/answer_suitability_evaluation.md groups Q01-48 under one guideline
+// each (section headers "### A. ICH M10 ..." through "### F. ICH S6(R1)
+// ..."); Q49/Q50 (### G) are the document's own deliberately cross-document
+// probes, named as such in their own row text ("M3 §1.3, S6 §1.3" /
+// "S6, EMA FIH, M3 범위 절"). This is real, already-authored scope, not a
+// guess -- used to check actual retrieval-scope correctness, not just
+// whether a citation happened to resolve.
+const SECTION_DOCUMENT_IDS = {
+  A: ["ich_m10"],
+  B: ["fda_ada"],
+  C: ["fda_ada_2014"],
+  D: ["ema_fih"],
+  E: ["ich_m3_r2"],
+  F: ["ich_s6_r1"]
+};
+const CROSS_DOCUMENT_EXPECTED_IDS = {
+  Q49: ["ich_m3_r2", "ich_s6_r1"],
+  Q50: ["ich_s6_r1", "ema_fih", "ich_m3_r2"]
+};
+
 function typeForDepth(depth, id) {
   if (depth === "B0") return "overview";
   if (depth === "B1") return "list";
@@ -48,31 +68,44 @@ function typeForDepth(depth, id) {
 function questionsFromDesign() {
   const text = fs.readFileSync(DESIGN_PATH, "utf8");
   const questions = [];
+  let section = null;
   for (const line of text.split(/\r?\n/)) {
+    const heading = line.match(/^### ([A-G])\./);
+    if (heading) section = heading[1];
     const match = line.match(/^\| (Q\d{2}) \| ([A-Z0-9]+) \| (.*?) \|/);
-    if (match) questions.push({ id: match[1], depth: match[2], question: match[3] });
+    if (match) questions.push({ id: match[1], depth: match[2], question: match[3], section });
   }
   if (questions.length !== 50) throw new Error(`Expected 50 questions from ${DESIGN_PATH}, found ${questions.length}`);
   return questions;
 }
 
+function expectedDocumentIdsFor(id, section) {
+  if (CROSS_DOCUMENT_EXPECTED_IDS[id]) return CROSS_DOCUMENT_EXPECTED_IDS[id];
+  return SECTION_DOCUMENT_IDS[section] || null;
+}
+
 function build50Q() {
-  return questionsFromDesign().map(({ id, depth, question }) => ({
-    id: `fifty_q_${id}`,
-    type: typeForDepth(depth, id),
-    question,
-    expect_answered: true,
-    source: `answer_suitability_evaluation.md#${id} (depth ${depth})`
-  }));
+  return questionsFromDesign().map(({ id, depth, question, section }) => {
+    const entry = {
+      id: `fifty_q_${id}`,
+      type: typeForDepth(depth, id),
+      question,
+      expect_answered: true,
+      source: `answer_suitability_evaluation.md#${id} (depth ${depth})`
+    };
+    const expectedDocumentIds = expectedDocumentIdsFor(id, section);
+    if (expectedDocumentIds) entry.expected_document_ids = expectedDocumentIds;
+    return entry;
+  });
 }
 
 function buildAmbiguous() {
   if (!fs.existsSync(WS3_TAXONOMY_PATH)) {
-    throw new Error(`Missing ${WS3_TAXONOMY_PATH} -- run npm run audit:query-resolution first (Workstream 3's probe run).`);
+    throw new Error(`Missing ${WS3_TAXONOMY_PATH} -- run npm run audit:query-resolution first to generate the ambiguous-tie/manifest-ambiguity probe corpus.`);
   }
   const taxonomy = JSON.parse(fs.readFileSync(WS3_TAXONOMY_PATH, "utf8"));
   const entries = [];
-  // Only probes Workstream 3 itself confirmed actually tied (real,
+  // Only probes the taxonomy run itself confirmed actually tied (real,
   // validated ambiguity) -- e.g. "precision (%cv) acceptance criteria"
   // did NOT tie in that run and is correctly excluded here.
   for (const probe of taxonomy.corpora.ambiguous_tie_probes.results) {
@@ -81,8 +114,8 @@ function buildAmbiguous() {
       id: `ws3_${probe.probe_id}`,
       type: "ambiguous",
       question: probe.question,
-      // Not a hard-refusal expectation: Workstream 3 already found the real
-      // behavior here is routing abstention (a tie event fires) followed
+      // Not a hard-refusal expectation: the taxonomy run already found the
+      // real behavior here is routing abstention (a tie event fires) followed
       // by an ordinary fallback attempt, which usually still answers
       // (via grounded_generation/source_excerpts). expect_answered is
       // deliberately null -- scripts/analyze_production_slo.js checks this
@@ -90,6 +123,11 @@ function buildAmbiguous() {
       // instead, not via envelope.answered.
       expect_answered: null,
       expect_routing_abstention: true,
+      // Carried directly from the probe's own labeled ground truth (not a
+      // fresh guess) -- for a same-document tie this is one document; for a
+      // genuine cross-document tie the final envelope's claims must stay
+      // within this set (or refuse), not wander outside it.
+      expected_document_ids: probe.ground_truth_document_ids || null,
       source: "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     });
   }
@@ -105,6 +143,7 @@ function buildAmbiguous() {
       // envelope.answered.
       expect_answered: null,
       expect_routing_abstention: true,
+      expected_document_ids: probe.ground_truth_document_ids || null,
       source: "workstream_3_manifest_ambiguity_probe (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     });
   }

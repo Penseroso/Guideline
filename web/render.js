@@ -230,10 +230,14 @@
   }
 
   const REFUSAL_SUBTEXT = { no_match: (t) => t.refusalNoMatch, scope_excluded: (t) => t.refusalScopeExcluded,
-    no_candidates: (t) => t.refusalNoMatch, model_declined: (t) => t.refusalNoMatch, verification_failed: (t) => t.refusalVerificationFailed };
+    no_candidates: (t) => t.refusalNoMatch, model_declined: (t) => t.refusalNoMatch, verification_failed: (t) => t.refusalVerificationFailed,
+    ambiguous_document_scope: (t) => t.refusalAmbiguousScope };
 
   function renderRefusalCard(envelope, i18n) {
-    const kind = (envelope.refusal && envelope.refusal.kind) || "no_match";
+    const rawKind = (envelope.refusal && envelope.refusal.kind) || "no_match";
+    // fallback_reason values carry a ": <detail>" suffix (e.g.
+    // "verification_failed: <verdict reason>") that isn't part of the label.
+    const kind = rawKind.split(":")[0].trim();
     const reason = envelope.refusal && envelope.refusal.reason ? `<details class="refusal-detail"><summary>${escapeHtml(i18n.technicalDetail)}</summary><div>${escapeHtml(envelope.refusal.reason)}</div></details>` : "";
     return `<section class="refusal"><h2 class="refusal-title">${escapeHtml(i18n.refusalTitle)}</h2><p class="refusal-body">${escapeHtml(i18n.refusalBody)}</p>
       <p class="refusal-kind">${escapeHtml((REFUSAL_SUBTEXT[kind] || REFUSAL_SUBTEXT.no_match)(i18n))}</p>${reason}</section>`;

@@ -1,14 +1,13 @@
 /**
  * web/i18n.js
- * M5 answer-page presentation strings. Structured answer text follows the
+ * Answer-page presentation strings. Structured answer text follows the
  * active locale: reviewed normalized_ko is used for Korean, while the
  * original source text is used for English. QuantitativeCriterion and
  * Condition Korean text comes from the lower-authority presentation
  * overlay; it never replaces the source record.
  *
- * No em-dash anywhere in these strings (design-taste-frontend audit
- * finding: the previous version had several). Sentences are short on
- * purpose, split with a period rather than joined with a dash.
+ * No em-dash anywhere in these strings. Sentences are short on purpose,
+ * split with a period rather than joined with a dash.
  */
 (function (root, factory) {
   if (typeof module === "object" && module.exports) {
@@ -127,6 +126,7 @@
     refusalNoMatch: "질의와 일치하는 구조화된 근거가 없습니다.",
     refusalScopeExcluded: "질의된 범위가 이 문서들의 명시적 적용 범위를 벗어납니다.",
     refusalVerificationFailed: "생성된 답변이 인용 검증을 통과하지 못했습니다.",
+    refusalAmbiguousScope: "질의가 서로 다른 문서의 근거와 동시에 일치해 하나로 특정할 수 없습니다. 대상 문서를 지정해 다시 질문해 주세요.",
     comparisonNote: "두 문서의 요건을 나란히 제시합니다. 어느 쪽이 적용되는지는 판단하지 않습니다.",
     comparisonDimension: "비교 차원",
     comparisonItem: "항목 {count}",
@@ -254,6 +254,7 @@
     refusalNoMatch: "No structured record matched this question.",
     refusalScopeExcluded: "The requested scope falls outside what these documents explicitly cover.",
     refusalVerificationFailed: "A generated answer failed citation verification.",
+    refusalAmbiguousScope: "The question matched evidence in more than one document and could not be resolved to a single one. Please name the document you mean and ask again.",
     comparisonNote: "Presented side by side. This tool does not judge which one applies.",
     comparisonDimension: "Comparison dimension",
     comparisonItem: "Item {count}",

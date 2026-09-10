@@ -2,22 +2,18 @@ const fs = require("fs");
 const path = require("path");
 
 /**
- * M2 (product_roadmap.md §3): "Log every refusal, and every answer that
- * came from the grounded-RAG fallback... that log IS the coverage-
- * expansion backlog." Appends one JSON line per real question asked
- * through engine/cli.js (or engine/server.js), including the actual
- * answer text — a log of questions alone can't be triaged later without
- * re-running each one.
+ * product_roadmap.md §3: "Log every refusal, and every answer that came
+ * from the grounded-RAG fallback... that log IS the coverage-expansion
+ * backlog." Appends one JSON line per real question asked through
+ * engine/cli.js (or engine/server.js), including the actual answer text —
+ * a log of questions alone can't be triaged later without re-running each
+ * one.
  *
- * M5 Phase 5 (history/verification/engine_test_record_through_2026-08-28.md
- * Entry 008): extended additively —
  * `interaction_id`/`mode`/`latency_ms`/`cited_source_unit_ids`/`source`
- * are new, optional fields alongside the original 6, so archived legacy
- * lines (which lack them) stay readable by any reader that
- * treats missing fields as absent, not as an error. `readInteractions()`
- * is new too — the log previously had no reader at all in engine/, which
- * is exactly why the file existed for a week before anyone wrote a script
- * (scripts/replay_query_log.js) to actually replay it.
+ * were added additively alongside the original fields, so archived legacy
+ * lines (which lack them) stay readable by any reader that treats missing
+ * fields as absent, not as an error. `readInteractions()` replays the log
+ * (scripts/replay_query_log.js uses it to actually replay it).
  */
 const DEFAULT_LOG_PATH = path.resolve(__dirname, "..", "logs", "runtime", "queries.jsonl");
 

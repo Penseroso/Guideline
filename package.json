@@ -40,10 +40,12 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.117.1",
     "ajv": "^8.17.1",
-    "better-sqlite3": "^13.0.3",
     "dotenv": "^17.4.2",
     "openai": "^7.5.0",
-    "pdf-parse": "^2.4.5",
+    "pdf-parse": "^2.4.5"
+  },
+  "devDependencies": {
+    "better-sqlite3": "^13.0.3",
     "sqlite-vec": "^0.1.9"
   }
 }

@@ -8,10 +8,10 @@ const ROOT = path.resolve(__dirname, "..");
 const CORPUS_PATH = path.join(ROOT, "data", "eval", "typed_questions.json");
 const INPUT_PATH = process.env.GUIDELINE_TYPED_EVAL_OUTPUT
   ? path.resolve(process.env.GUIDELINE_TYPED_EVAL_OUTPUT)
-  : path.join(ROOT, "logs", "runtime", "typed_eval_50plus_raw_2026-09-09.json");
+  : path.join(ROOT, "logs", "runtime", "typed_eval_50plus_raw_2026-09-10.json");
 const OUTPUT_PATH = process.env.GUIDELINE_PRODUCTION_SLO_OUTPUT
   ? path.resolve(process.env.GUIDELINE_PRODUCTION_SLO_OUTPUT)
-  : path.join(ROOT, "logs", "runtime", "response_intelligence_workstream_7_slo_baseline.json");
+  : path.join(ROOT, "logs", "runtime", "response_intelligence_slo_baseline_2026-09-10.json");
 
 function claimGroundingRate(claims, sourceUnits) {
   if (!claims || claims.length === 0) return null;
@@ -24,12 +24,9 @@ function claimGroundingRate(claims, sourceUnits) {
  * did the engine actually ground its answer in resolvable evidence at all
  * (non-empty claims, every claim's source_unit_id resolves)? This is
  * deliberately not "did it retrieve the exact expected document/section" --
- * the typed corpus (data/eval/typed_questions.json) does not carry a
- * clean, uniform expected-document field for every question (the 50Q-
- * sourced entries only had a free-text guideline/section reference column
- * in the source markdown table, not a parsed document_id), so a per-
- * question scope-match check isn't honestly computable for the whole set
- * yet. Documented as a real scope limitation, not silently overclaimed.
+ * that stricter check is `retrievalScopeCorrect` below, computed only for
+ * the 69/72 questions carrying `expected_document_ids` (three `refusal`-type
+ * questions have no expected document by design and are excluded).
  */
 function retrievalGrounded(envelope, sourceUnits) {
   if (!envelope || !envelope.answered) return null;
@@ -60,14 +57,17 @@ function routingAbstentionFired(item) {
 /**
  * routingAbstentionFired only checks that the router *noticed* the
  * ambiguity internally -- it says nothing about whether the final answer
- * the user sees is actually safe. Workstream 3's own manifest-ambiguity
- * trace already showed the real failure mode this misses entirely: router
- * abstains correctly, then an ordinary fallback silently mixes claims from
- * two unrelated documents into one answer with no disclosure that the
- * question was ambiguous. Confirmed real and not just theoretical: of the
- * 19 `ambiguous`-type questions in the Workstream 7 baseline run, exactly
- * 1 (`ws3_ambiguous_tie.days`) did this -- a generated answer blending
- * fda_ada and ich_m10 content with no indication to the user.
+ * the user sees is actually safe. A real manifest-ambiguity trace showed
+ * the failure mode this misses entirely: router abstains correctly, then
+ * an ordinary fallback silently mixes claims from two unrelated documents
+ * into one answer with no disclosure that the question was ambiguous.
+ * Confirmed real and not just theoretical: of the 19 `ambiguous`-type
+ * questions in the original typed-eval baseline run, exactly 1
+ * (`ws3_ambiguous_tie.days`) did this -- a generated answer blending
+ * fda_ada and ich_m10 content with no indication to the user. Fixed in
+ * `engine/answer_envelope.js` (the cross-document ambiguity guard, next to
+ * `answerFallback`'s call site): the fix is what this metric now measures
+ * as passing.
  *
  * A final answer is judged unsafe here only when it silently presents
  * claims from more than one document as an undifferentiated answer:
@@ -87,6 +87,41 @@ function crossScopeSafe(item) {
   return documentIds.size <= 1;
 }
 
+/**
+ * `retrievalGrounded` above only asks "did every claim's citation resolve" --
+ * it says nothing about whether the *right* document was actually retrieved.
+ * `expected_document_ids` (data/eval/typed_questions.json, added from real,
+ * already-known provenance: the 50Q set's own per-question guideline
+ * grouping, and the ambiguous-tie probes' own labeled
+ * ground_truth_document_ids -- never fabricated) lets this check the real
+ * thing for the 69/72 questions that carry it: every document actually
+ * cited in the answer must be inside the expected set. Only computed when
+ * the question both carries `expected_document_ids` and was answered --
+ * `crossScopeSafe`/`answerability` already judge the refusal case.
+ *
+ * First measured at 62/66 (checked over answered questions only; refusal
+ * questions and 6 unresolved edge cases are excluded from the
+ * denominator). 4 real gaps found, none a regression from the
+ * cross-scope-mixing fix (identical in the pre-fix baseline run too):
+ * fifty_q_Q11 and fifty_q_Q22/Q25 answer from a topically-adjacent but
+ * wrong-guideline document (e.g. Q11 asks about FDA ADA but answered from
+ * ich_s6_r1); ws3_ambiguous_tie.analysts is a router-flagged ambiguous tie
+ * where the fallback confidently settled on a single document that isn't
+ * even a plausible candidate for the question -- a real, distinct defect
+ * class the cross-scope-mixing guard structurally cannot catch (it only
+ * blocks *multi*-document blends, not a confident wrong-*single*-document
+ * answer after an unresolved tie). Left unfixed this pass -- see
+ * docs/production_slo.md.
+ */
+function retrievalScopeCorrect(item) {
+  if (!item.expected_document_ids || item.expected_document_ids.length === 0) return null;
+  if (!item.envelope || !item.envelope.answered) return null;
+  const expected = new Set(item.expected_document_ids);
+  const documentIds = new Set((item.envelope.claims || []).map((claim) => claim.record && claim.record.document_id).filter(Boolean));
+  if (documentIds.size === 0) return false;
+  return [...documentIds].every((id) => expected.has(id));
+}
+
 function summarizeType(items, sourceUnits, pricing) {
   const withEnvelope = items.filter((item) => item.envelope && !item.error);
   const answerabilityChecks = withEnvelope.map(answerabilityMatch).filter((v) => v !== null);
@@ -95,6 +130,8 @@ function summarizeType(items, sourceUnits, pricing) {
   const abstentionChecks = withEnvelope.map(routingAbstentionFired).filter((v) => v !== null);
   const crossScopeChecks = withEnvelope.map(crossScopeSafe).filter((v) => v !== null);
   const unsafeIds = withEnvelope.filter((item) => crossScopeSafe(item) === false).map((item) => item.id);
+  const scopeCorrectChecks = withEnvelope.map(retrievalScopeCorrect).filter((v) => v !== null);
+  const scopeIncorrectIds = withEnvelope.filter((item) => retrievalScopeCorrect(item) === false).map((item) => item.id);
 
   const latencyCost = withEnvelope.every((item) => item.envelope.telemetry)
     ? summarizeItems(withEnvelope, pricing)
@@ -111,6 +148,9 @@ function summarizeType(items, sourceUnits, pricing) {
     routing_abstention_checked: abstentionChecks.length,
     cross_scope_safe_rate: crossScopeChecks.length ? crossScopeChecks.filter(Boolean).length / crossScopeChecks.length : null,
     cross_scope_unsafe_ids: unsafeIds,
+    retrieval_scope_correct_rate: scopeCorrectChecks.length ? scopeCorrectChecks.filter(Boolean).length / scopeCorrectChecks.length : null,
+    retrieval_scope_correct_checked: scopeCorrectChecks.length,
+    retrieval_scope_incorrect_ids: scopeIncorrectIds,
     latency_cost: latencyCost
   };
 }
@@ -171,39 +211,40 @@ function analyze() {
  * deliberately revised; a silent drift between them is itself a bug.
  */
 const SLO_TARGETS = {
-  // Correctness dimensions: the Workstream 7 baseline measured 100% on
-  // every checked type for these three, so the target is that same 100%
-  // -- any regression below it is a real defect, not noise.
+  // Correctness dimensions: baseline measured 100% on every checked type
+  // for these three, so the target is that same 100% -- any regression
+  // below it is a real defect, not noise.
   min_answerability: 1.0,
   min_claim_grounding_rate: 1.0,
   min_retrieval_grounded_rate: 1.0,
-  // The `ambiguous` type's real baseline was 18/19, not 1.0 -- one real
-  // probe did not reproduce its tie on the Workstream 7 run (see the
-  // report). The target is the measured baseline itself (kept as the
-  // exact fraction, not a rounded decimal literal -- a rounded 0.9474
-  // would be *higher* than the true 18/19 and falsely breach against the
-  // very run that established it), not an undemonstrated 100%; a drop
-  // *below* this is a regression, holding steady or improving is not a
-  // breach.
+  // The `ambiguous` type's real baseline is 18/19, not 1.0 -- one real
+  // probe does not reproduce its tie on every run (see docs/production_slo.md).
+  // The target is the measured baseline itself (kept as the exact
+  // fraction, not a rounded decimal literal -- a rounded 0.9474 would be
+  // *higher* than the true 18/19 and falsely breach against the very run
+  // that established it), not an undemonstrated 100%; a drop *below* this
+  // is a regression, holding steady or improving is not a breach.
   min_routing_abstention_rate: 18 / 19,
   // Unlike routing_abstention_rate (an internal-detection reliability
   // signal this repo currently treats as tolerable variance),
   // cross_scope_safe_rate is a user-facing safety invariant: once
   // ambiguity is detected, the final answer must never silently blend
-  // claims from more than one document. The Workstream 7 baseline run
-  // measured 18/19 here too (one real case,
-  // ws3_ambiguous_tie.days, mixed fda_ada and ich_m10 content with no
-  // disclosure) -- but the target is deliberately kept at the correct 1.0,
-  // not lowered to match that baseline. This check is EXPECTED to fail
-  // against the current baseline until that real defect is fixed; do not
-  // "fix" the failure by loosening this constant.
+  // claims from more than one document. The one known real violation
+  // (ws3_ambiguous_tie.days, mixed fda_ada and ich_m10 content with no
+  // disclosure) is now fixed (engine/answer_envelope.js's cross-document
+  // ambiguity guard) and this target is met at baseline -- keep it at 1.0.
   min_cross_scope_safe_rate: 1.0,
+  // Measured baseline 62/66 (see retrievalScopeCorrect above for the 4
+  // known, unfixed real gaps this surfaced) -- the measured baseline
+  // itself, not an undemonstrated 100%, same reasoning as
+  // routing_abstention_rate above.
+  min_retrieval_scope_correct_rate: 62 / 66,
   // Latency/cost budget: baseline p95/max per docs/production_slo.md,
   // with a 20% margin before flagging a regression (stochastic
-  // generation/verification variance already documented in Workstreams 2
-  // and 5 means small run-to-run drift is expected, not a defect).
-  max_overall_p95_ms: Math.round(27679 * 1.2),
-  max_overall_cost_usd_per_question: Math.round((1.310562 / 72) * 1.2 * 1e6) / 1e6
+  // generation/verification variance means small run-to-run drift is
+  // expected, not a defect).
+  max_overall_p95_ms: Math.round(20007 * 1.2),
+  max_overall_cost_usd_per_question: Math.round((1.2383255 / 72) * 1.2 * 1e6) / 1e6
 };
 
 function checkAgainstSlo(report) {
@@ -225,6 +266,15 @@ function checkAgainstSlo(report) {
       breaches.push(`${type}: cross_scope_safe_rate ${summary.cross_scope_safe_rate} < ${SLO_TARGETS.min_cross_scope_safe_rate} (unsafe: ${summary.cross_scope_unsafe_ids.join(", ")})`);
     }
   }
+  // Checked only at the overall level, not per-type: unlike
+  // routing_abstention_rate/cross_scope_safe_rate (which are null for
+  // every non-`ambiguous` type, so the per-type loop above harmlessly
+  // skips them), retrieval_scope_correct_rate is a real, different-valued
+  // rate across several types -- a single baseline threshold applied
+  // per-type would falsely flag a small type's naturally lower rate.
+  if (report.overall.retrieval_scope_correct_rate !== null && report.overall.retrieval_scope_correct_rate < SLO_TARGETS.min_retrieval_scope_correct_rate) {
+    breaches.push(`overall: retrieval_scope_correct_rate ${report.overall.retrieval_scope_correct_rate} < ${SLO_TARGETS.min_retrieval_scope_correct_rate} (incorrect: ${report.overall.retrieval_scope_incorrect_ids.join(", ")})`);
+  }
   if (report.overall.latency_cost) {
     const p95 = report.overall.latency_cost.request_elapsed.p95_ms;
     if (p95 > SLO_TARGETS.max_overall_p95_ms) breaches.push(`overall: p95 ${p95}ms > ${SLO_TARGETS.max_overall_p95_ms}ms`);
@@ -242,7 +292,7 @@ function main() {
   fs.writeFileSync(OUTPUT_PATH, `${JSON.stringify(report, null, 2)}\n`, "utf8");
   console.log(`Total questions: ${report.total_questions}`);
   for (const [type, summary] of Object.entries(report.by_type)) {
-    console.log(`  ${type}: n=${summary.n} answerability=${summary.answerability} grounding=${summary.claim_grounding_rate} retrieval=${summary.retrieval_grounded_rate} abstention=${summary.routing_abstention_rate} cross_scope_safe=${summary.cross_scope_safe_rate}${summary.cross_scope_unsafe_ids.length ? ` (unsafe: ${summary.cross_scope_unsafe_ids.join(", ")})` : ""}`);
+    console.log(`  ${type}: n=${summary.n} answerability=${summary.answerability} grounding=${summary.claim_grounding_rate} retrieval=${summary.retrieval_grounded_rate} abstention=${summary.routing_abstention_rate} cross_scope_safe=${summary.cross_scope_safe_rate}${summary.cross_scope_unsafe_ids.length ? ` (unsafe: ${summary.cross_scope_unsafe_ids.join(", ")})` : ""} scope_correct=${summary.retrieval_scope_correct_rate}${summary.retrieval_scope_incorrect_ids.length ? ` (incorrect: ${summary.retrieval_scope_incorrect_ids.join(", ")})` : ""}`);
   }
   console.log(`Output: ${path.relative(ROOT, OUTPUT_PATH)}`);
 
@@ -260,4 +310,4 @@ function main() {
 
 if (require.main === module) main();
 
-module.exports = { analyze, checkAgainstSlo, SLO_TARGETS, claimGroundingRate, retrievalGrounded, answerabilityMatch, crossScopeSafe, routingAbstentionFired };
+module.exports = { analyze, checkAgainstSlo, SLO_TARGETS, claimGroundingRate, retrievalGrounded, answerabilityMatch, crossScopeSafe, routingAbstentionFired, retrievalScopeCorrect };

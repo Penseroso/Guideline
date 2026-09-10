@@ -1,8 +1,8 @@
 /**
  * scripts/promote_feedback_to_eval.js
- * M5 Phase 5 (history/verification/engine_test_record_through_2026-08-28.md Entry 008 / M5 plan §5): reads
- * untriaged entries from the configured runtime feedback log, re-runs each question live
- * against the current engine, and PRINTS a candidate fixture block for
+ * Reads untriaged entries from the configured runtime feedback log,
+ * re-runs each question live against the current engine, and PRINTS a
+ * candidate fixture block for
  * human review. Deliberately does NOT write to
  * test/fixtures/eval_questions.json itself — that file's own header
  * states every entry was checked against live behavior before being

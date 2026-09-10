@@ -158,8 +158,8 @@ function dedupeRecordsForAnswer(records) {
  * Uniform grounding-claim list, attached to every structuredQuery match
  * (single/composite/list-composite; comparison/amendment build their own
  * via comparison_engine.js/amendment_engine.js). This is what the
- * claims-level grounding test (M5 plan Phase 1 item 9) actually checks —
- * every claim traces to a resolvable source_unit_id, independent of how
+ * claims-level grounding test actually checks — every claim traces to a
+ * resolvable source_unit_id, independent of how
  * any formatter renders it into prose.
  */
 function deriveClaimsFromRecords(recs) {
@@ -174,8 +174,8 @@ function deriveClaimsFromRecords(recs) {
  * Scope Guard: true if `record` must be rejected for `queryScope`. Shared
  * between structured scoreRecord (below) and fallback candidate filtering
  * (`answerFallback`) so the routes cannot silently diverge again — found
- * live, history/verification/engine_test_record_through_2026-08-28.md Entry 007: fallback retrieval previously re-derived the
- * same queryScope but only checked explicit_exclusions, so a genuinely
+ * live: fallback retrieval previously re-derived the same queryScope but
+ * only checked explicit_exclusions, so a genuinely
  * scope-excluded query (e.g. small-molecule species selection, where
  * S6(R1) is the only species-selection content and is biotechnology-only)
  * fell through to generating an answer from topically-adjacent-but-wrong
@@ -234,7 +234,7 @@ function hasScopeConstraint(queryScope) {
  * doesn't cover this molecule/assay") from a plain no-match refusal
  * ("nothing in the archive talks about this at all") — both currently
  * collapse into the same generic NOT_FOUND string with no way to tell
- * them apart (history/verification/engine_test_record_through_2026-08-28.md Entry 007 / M5 plan §3).
+ * them apart.
  */
 function explainRefusal(question, records) {
   const qTokens = new Set(tokenize(question));
@@ -1001,14 +1001,14 @@ function structuredQuery(question, records, index = null, { telemetry = null } =
     return null;
   }
 
-  // M4: Check for Cross-Guideline Comparison queries. A comparison within
-  // one explicitly named document is handled by the coverage composite below.
+  // Cross-guideline comparison queries. A comparison within one explicitly
+  // named document is handled by the coverage composite below.
   if (isComparisonQuery(question) && requestedDocumentIds && requestedDocumentIds.size >= 2) {
     const compMatch = answerComparison(question, gatedRecords, index);
     if (compMatch) return compMatch;
   }
 
-  // M4: Check for Guideline Amendment & Revision queries
+  // Guideline amendment & revision queries
   if (isAmendmentQuery(question)) {
     const amendMatch = answerAmendment(question, gatedRecords, index);
     if (amendMatch) return amendMatch;
@@ -1196,8 +1196,7 @@ function formatCitation(citation) {
 // value_status ("known"/"unknown"/"not_applicable"/"needs_review") was
 // computed on every QuantitativeCriterion but never rendered — 26/327 real
 // records in the archive carry a non-"known" value here and rendered as
-// if fully specified (TPP §1.3(3) requires surfacing it, not hiding it —
-// history/verification/engine_test_record_through_2026-08-28.md Entry 007 / M5 plan §3).
+// if fully specified (TPP §1.3(3) requires surfacing it, not hiding it).
 const VALUE_STATUS_LABEL = {
   unknown: "(value not confirmed in source — unknown) ",
   not_applicable: "(not applicable as a numeric criterion) ",
@@ -1222,7 +1221,7 @@ function formatSingleCriterion(record) {
 // §1.4 requires precisely surfacing modality, never blurring "may" into
 // "must." `none` renders its own explicit chip rather than being silently
 // omitted (519/1353 real KnowledgeRecords in the archive are modality
-// "none" — history/verification/engine_test_record_through_2026-08-28.md Entry 007 / M5 plan §3).
+// "none").
 function formatModalityChip(record) {
   if (record.type !== "knowledge_record") return "";
   const modal = record.modality || "none";
@@ -1295,12 +1294,10 @@ function formatCompositeAnswer(records) {
 function formatAnswer(match) {
   if (!match) return "";
 
-  // M4: Comparative Answering
   if (match.isComparison) {
     return formatComparativeAnswer(match);
   }
 
-  // M4: Amendment History Answering
   if (match.isAmendment) {
     return formatAmendmentAnswer(match);
   }
@@ -1483,9 +1480,9 @@ async function answerFallback(question, records, {
 
   // Scope Guard: same rejection as structured scoreRecord applies (shared
   // scopeGuardReject), not just an explicit_exclusions check — see that
-  // function's comment / history/verification/engine_test_record_through_2026-08-28.md Entry 007 for why this
-  // matters: without it, a genuinely scope-excluded query silently
-  // substituted the wrong document instead of refusing.
+  // function's comment for why this matters: without it, a genuinely
+  // scope-excluded query silently substituted the wrong document instead
+  // of refusing.
   let candidates = rawCandidates.filter(({ record }) =>
     !scopeGuardReject(record, queryScope) && !relevanceGuardReject(record, queryScope)
   );
@@ -1715,6 +1712,13 @@ async function answerFallback(question, records, {
  * Answers in semantic route order: structured answer first, grounded
  * generation when configured, verbatim source excerpts as the safe fallback,
  * and finally an explicit refusal when no source candidate exists.
+ *
+ * CLI (engine/cli.js) and the legacy gold eval (engine/eval_harness.js,
+ * `npm run eval`) only — not the production path. It passes no telemetry
+ * object, so it does not carry engine/answer_envelope.js's answerEnvelope()
+ * gates (semantic-coverage gating, generation-skip/coverage-adequacy checks,
+ * the cross-document ambiguity guard). `/api/ask` calls answerEnvelope()
+ * directly and never this function.
  */
 async function answer(question, records, {
   client,

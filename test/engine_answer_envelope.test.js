@@ -255,6 +255,72 @@ test("a scope-excluded fallback query produces refusal.kind = scope_excluded via
   assert.equal(env.refusal.kind, "scope_excluded");
 });
 
+// Real defect (docs/production_slo.md, ws3_ambiguous_tie.days): "days
+// acceptance criteria" ties between a manifest/record in fda_ada and one in
+// ich_m10, structuredQuery abstains (routing_ambiguous_tie /
+// manifest_ambiguous_tie), and a fresh fallback search used to blend both
+// documents into one undisclosed grounded_generation answer. The envelope
+// must now refuse and disclose the ambiguity instead of blending.
+test("cross-document ambiguity: a fallback answer blending two documents after a genuine routing tie is blocked and disclosed, not silently merged", async () => {
+  const fdaRecord = records.find((r) => (r.source_unit_ids || []).includes("fda_ada.su.6_a.002"));
+  const m10Record = records.find((r) => (r.source_unit_ids || []).includes("ich_m10.su.4_3_2.001"));
+  assert.ok(fdaRecord && m10Record, "expected both real corpus records to exist");
+
+  const client = entailedClient("혼합된 답변입니다.", 2);
+  const env = await answerEnvelope("days acceptance criteria", records, {
+    client, store: fakeStore([fdaRecord, m10Record]), index
+  });
+
+  assert.equal(env.answered, false);
+  assert.equal(env.route, "refusal");
+  assert.equal(env.mode, "refusal");
+  assert.equal(env.refusal.kind, "ambiguous_document_scope");
+  assert.ok(env.refusal.reason && env.refusal.reason.length > 0);
+  assert.deepEqual(env.claims, []);
+  const event = env.telemetry.events.find((e) => e.event === "cross_scope_mixing_blocked");
+  assert.ok(event, "expected a cross_scope_mixing_blocked telemetry event");
+  assert.deepEqual(event.document_ids.sort(), ["fda_ada", "ich_m10"]);
+});
+
+// Documented bug (formerly): the envelope's answered:false branch only read
+// result.refusal_reason, dropping the richer reasons answerFallback sets on
+// result.fallback_reason (generation_not_configured/model_declined/
+// language_mismatch/verification_failed:<detail>) whenever refusal_reason
+// was unset, silently collapsing them to "no_match".
+test("envelope.refusal.kind surfaces a fallback_reason value when refusal_reason is absent", async () => {
+  const noCitationRecord = {
+    id: "test.no_citation.001",
+    document_id: "test_doc",
+    source_text: "이 레코드는 인용 정보가 없습니다.",
+    citations: [],
+    applicable_conditions: [],
+    explicit_exclusions: []
+  };
+  // No client at all: answerFallback hits its "!generatorClient ||
+  // !verifierClient" branch and returns sourceExcerptResult("generation_not_configured").
+  // The candidate has no citations, so groundedResult produces zero
+  // answer_units -> answered:false, with fallback_reason (not refusal_reason) set.
+  const env = await answerEnvelope("무작위 테스트 질문", records, { store: fakeStore([noCitationRecord]), index });
+  assert.equal(env.answered, false);
+  assert.equal(env.refusal.kind, "generation_not_configured");
+});
+
+test("cross-document mixing guard does not fire without a real routing tie this request — a fresh multi-document fallback answer still comes through normally", async () => {
+  const fdaRecord = records.find((r) => (r.source_unit_ids || []).includes("fda_ada.su.6_a.002"));
+  const m10Record = records.find((r) => (r.source_unit_ids || []).includes("ich_m10.su.4_3_2.001"));
+  assert.ok(fdaRecord && m10Record);
+
+  const client = entailedClient("답변입니다.", 2);
+  // A question structuredQuery cannot match at all (no tie, no candidate) —
+  // match is null through the ordinary no-match path, not an ambiguous tie.
+  const env = await answerEnvelope("전체적인 일반 절차 요구사항은 무엇인가요", records, {
+    client, store: fakeStore([fdaRecord, m10Record]), index
+  });
+  assert.equal(env.route, "grounded_generation");
+  assert.equal(env.answered, true);
+  assert.equal(env.claims.length, 2);
+});
+
 // Response Intelligence Workstream 5: shouldGenerate now skips a speculative
 // generation attempt when the deterministic composite already trivially
 // satisfies generatedCoverageIsAdequate's own small-set completeness bar,

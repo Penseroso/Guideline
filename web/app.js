@@ -1,10 +1,8 @@
 /**
  * web/app.js
- * M5 Phase 4, third pass (design-taste-frontend audit + direct user
- * critique). DOM wiring only: fetch, state, event handling, innerHTML
- * assignment. All HTML string construction lives in render.js (pure,
- * unit-tested with zero DOM); every string handed to it is escaped
- * there, not here.
+ * DOM wiring only: fetch, state, event handling, innerHTML assignment.
+ * All HTML string construction lives in render.js (pure, unit-tested with
+ * zero DOM); every string handed to it is escaped there, not here.
  *
  * Idle vs. results state: the page starts centered and sparse
  * (`body.idle`), then collapses to a compact top search bar once the

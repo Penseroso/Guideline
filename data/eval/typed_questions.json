@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T07:43:56.566Z",
+  "generated_at": "2026-09-10T04:37:14.510Z",
   "total": 72,
   "by_type": {
     "overview": 6,
@@ -16,350 +16,503 @@
       "type": "overview",
       "question": "ICH M10은 전체적으로 뭘 다루는 가이드라인이야?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q01 (depth B0)"
+      "source": "answer_suitability_evaluation.md#Q01 (depth B0)",
+      "expected_document_ids": [
+        "ich_m10"
+      ]
     },
     {
       "id": "fifty_q_Q02",
       "type": "list",
       "question": "M10에서 분석법 밸리데이션 종류는 어떻게 나뉘어?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q02 (depth B1)"
+      "source": "answer_suitability_evaluation.md#Q02 (depth B1)",
+      "expected_document_ids": [
+        "ich_m10"
+      ]
     },
     {
       "id": "fifty_q_Q03",
       "type": "list",
       "question": "LC-MS/MS에서 full validation 항목이 뭐야?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q03 (depth B1)"
+      "source": "answer_suitability_evaluation.md#Q03 (depth B1)",
+      "expected_document_ids": [
+        "ich_m10"
+      ]
     },
     {
       "id": "fifty_q_Q04",
       "type": "list",
       "question": "정확성과 정밀성 평가는 어떤 구성으로 되어 있어?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q04 (depth B1)"
+      "source": "answer_suitability_evaluation.md#Q04 (depth B1)",
+      "expected_document_ids": [
+        "ich_m10"
+      ]
     },
     {
       "id": "fifty_q_Q05",
       "type": "detail",
       "question": "LC-MS/MS accuracy와 precision 기준을 일반 QC랑 LLOQ로 나눠서 알려줘.",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q05 (depth D1)"
+      "source": "answer_suitability_evaluation.md#Q05 (depth D1)",
+      "expected_document_ids": [
+        "ich_m10"
+      ]
     },
     {
       "id": "fifty_q_Q06",
       "type": "detail",
       "question": "분석 run을 accept하려면 calibration standard랑 QC가 각각 어떻게 돼야 해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q06 (depth D1)"
+      "source": "answer_suitability_evaluation.md#Q06 (depth D1)",
+      "expected_document_ids": [
+        "ich_m10"
+      ]
     },
     {
       "id": "fifty_q_Q07",
       "type": "detail",
       "question": "M10에서 안정성은 뭘 확인해야 하고 조건은 어떻게 잡아?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q07 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q07 (depth B2)",
+      "expected_document_ids": [
+        "ich_m10"
+      ]
     },
     {
       "id": "fifty_q_Q08",
       "type": "process",
       "question": "ISR은 왜 하고, 샘플은 어떻게 고르고, 결과는 어떻게 판단해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q08 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q08 (depth B2)",
+      "expected_document_ids": [
+        "ich_m10"
+      ]
     },
     {
       "id": "fifty_q_Q09",
       "type": "list",
       "question": "LBA full validation에서는 어떤 항목을 봐?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q09 (depth B1)"
+      "source": "answer_suitability_evaluation.md#Q09 (depth B1)",
+      "expected_document_ids": [
+        "ich_m10"
+      ]
     },
     {
       "id": "fifty_q_Q10",
       "type": "detail",
       "question": "partial validation이랑 cross validation은 언제 필요하고 뭐가 달라?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q10 (depth D2)"
+      "source": "answer_suitability_evaluation.md#Q10 (depth D2)",
+      "expected_document_ids": [
+        "ich_m10"
+      ]
     },
     {
       "id": "fifty_q_Q11",
       "type": "overview",
       "question": "ADA 평가는 보통 어떤 흐름으로 시작해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q11 (depth B0)"
+      "source": "answer_suitability_evaluation.md#Q11 (depth B0)",
+      "expected_document_ids": [
+        "fda_ada"
+      ]
     },
     {
       "id": "fifty_q_Q12",
       "type": "process",
       "question": "ADA multi-tiered testing은 단계별로 어떻게 이어져?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q12 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q12 (depth B2)",
+      "expected_document_ids": [
+        "fda_ada"
+      ]
     },
     {
       "id": "fifty_q_Q13",
       "type": "list",
       "question": "ADA assay design할 때 고려할 요소를 큰 범주로 정리해줘.",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q13 (depth B1)"
+      "source": "answer_suitability_evaluation.md#Q13 (depth B1)",
+      "expected_document_ids": [
+        "fda_ada"
+      ]
     },
     {
       "id": "fifty_q_Q14",
       "type": "list",
       "question": "FDA ADA assay validation 항목은 뭐야?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q14 (depth B1)"
+      "source": "answer_suitability_evaluation.md#Q14 (depth B1)",
+      "expected_document_ids": [
+        "fda_ada"
+      ]
     },
     {
       "id": "fifty_q_Q15",
       "type": "detail",
       "question": "ADA screening assay validation에서 확인할 성능 기준은?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q15 (depth D1)"
+      "source": "answer_suitability_evaluation.md#Q15 (depth D1)",
+      "expected_document_ids": [
+        "fda_ada"
+      ]
     },
     {
       "id": "fifty_q_Q16",
       "type": "process",
       "question": "ADA screening 양성이면 그다음엔 뭘 확인해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q16 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q16 (depth B2)",
+      "expected_document_ids": [
+        "fda_ada"
+      ]
     },
     {
       "id": "fifty_q_Q17",
       "type": "comparison",
       "question": "약물 간섭이 있으면 ADA assay sensitivity랑 drug tolerance를 어떻게 같이 봐야 해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q17 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q17 (depth B2)",
+      "expected_document_ids": [
+        "fda_ada"
+      ]
     },
     {
       "id": "fifty_q_Q18",
       "type": "detail",
       "question": "neutralizing antibody assay는 언제 필요하고 validation은 뭘 봐?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q18 (depth D2)"
+      "source": "answer_suitability_evaluation.md#Q18 (depth D2)",
+      "expected_document_ids": [
+        "fda_ada"
+      ]
     },
     {
       "id": "fifty_q_Q19",
       "type": "process",
       "question": "타깃 환자군에서 cut point는 어떻게 확인해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q19 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q19 (depth B2)",
+      "expected_document_ids": [
+        "fda_ada"
+      ]
     },
     {
       "id": "fifty_q_Q20",
       "type": "overview",
       "question": "치료용 단백질의 임상 면역원성 위험요인은 크게 뭐가 있어?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q20 (depth B0)"
+      "source": "answer_suitability_evaluation.md#Q20 (depth B0)",
+      "expected_document_ids": [
+        "fda_ada_2014"
+      ]
     },
     {
       "id": "fifty_q_Q21",
       "type": "list",
       "question": "patient-specific factor랑 product-specific factor를 비교해서 정리해줘.",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q21 (depth B1)"
+      "source": "answer_suitability_evaluation.md#Q21 (depth B1)",
+      "expected_document_ids": [
+        "fda_ada_2014"
+      ]
     },
     {
       "id": "fifty_q_Q22",
       "type": "process",
       "question": "면역원성 샘플은 baseline부터 언제 채취해야 해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q22 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q22 (depth B2)",
+      "expected_document_ids": [
+        "fda_ada_2014"
+      ]
     },
     {
       "id": "fifty_q_Q23",
       "type": "detail",
       "question": "피하주사와 정맥주사는 면역원성 위험이 어떻게 달라?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q23 (depth D2)"
+      "source": "answer_suitability_evaluation.md#Q23 (depth D2)",
+      "expected_document_ids": [
+        "fda_ada_2014"
+      ]
     },
     {
       "id": "fifty_q_Q24",
       "type": "detail",
       "question": "단백질 aggregate가 면역원성에 왜 중요하고 뭘 확인해야 해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q24 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q24 (depth B2)",
+      "expected_document_ids": [
+        "fda_ada_2014"
+      ]
     },
     {
       "id": "fifty_q_Q25",
       "type": "detail",
       "question": "ADA가 생기면 임상적으로 어떤 영향을 볼 수 있어?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q25 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q25 (depth B2)",
+      "expected_document_ids": [
+        "fda_ada_2014"
+      ]
     },
     {
       "id": "fifty_q_Q26",
       "type": "overview",
       "question": "EMA FIH 가이드라인은 첫 투여 전에 뭘 종합해서 보라는 거야?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q26 (depth B0)"
+      "source": "answer_suitability_evaluation.md#Q26 (depth B0)",
+      "expected_document_ids": [
+        "ema_fih"
+      ]
     },
     {
       "id": "fifty_q_Q27",
       "type": "list",
       "question": "FIH 전에 보는 non-clinical 항목을 정리해줘.",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q27 (depth B1)"
+      "source": "answer_suitability_evaluation.md#Q27 (depth B1)",
+      "expected_document_ids": [
+        "ema_fih"
+      ]
     },
     {
       "id": "fifty_q_Q28",
       "type": "list",
       "question": "FIH dosing selection은 어떤 항목으로 구성돼?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q28 (depth B1)"
+      "source": "answer_suitability_evaluation.md#Q28 (depth B1)",
+      "expected_document_ids": [
+        "ema_fih"
+      ]
     },
     {
       "id": "fifty_q_Q29",
       "type": "detail",
       "question": "건강인 초회 투여용량 정할 때 MABEL, NOAEL 같은 근거를 어떻게 같이 봐?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q29 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q29 (depth B2)",
+      "expected_document_ids": [
+        "ema_fih"
+      ]
     },
     {
       "id": "fifty_q_Q30",
       "type": "detail",
       "question": "환자 대상 FIH starting dose는 건강인과 뭐가 달라?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q30 (depth D2)"
+      "source": "answer_suitability_evaluation.md#Q30 (depth D2)",
+      "expected_document_ids": [
+        "ema_fih"
+      ]
     },
     {
       "id": "fifty_q_Q31",
       "type": "process",
       "question": "dose escalation은 어떤 정보 확인하고 다음 cohort로 넘어가?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q31 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q31 (depth B2)",
+      "expected_document_ids": [
+        "ema_fih"
+      ]
     },
     {
       "id": "fifty_q_Q32",
       "type": "comparison",
       "question": "maximum exposure랑 maximum dose는 같은 개념이야?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q32 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q32 (depth B2)",
+      "expected_document_ids": [
+        "ema_fih"
+      ]
     },
     {
       "id": "fifty_q_Q33",
       "type": "detail",
       "question": "첫 cohort에서 피험자들을 동시에 투여해도 돼?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q33 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q33 (depth B2)",
+      "expected_document_ids": [
+        "ema_fih"
+      ]
     },
     {
       "id": "fifty_q_Q34",
       "type": "process",
       "question": "FIH stopping rule이랑 data review는 어떻게 연결돼?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q34 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q34 (depth B2)",
+      "expected_document_ids": [
+        "ema_fih"
+      ]
     },
     {
       "id": "fifty_q_Q35",
       "type": "overview",
       "question": "ICH M3(R2)는 임상 개발 단계별로 어떤 비임상 자료를 다뤄?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q35 (depth B0)"
+      "source": "answer_suitability_evaluation.md#Q35 (depth B0)",
+      "expected_document_ids": [
+        "ich_m3_r2"
+      ]
     },
     {
       "id": "fifty_q_Q36",
       "type": "detail",
       "question": "임상시험 기간이 길어지면 반복투여 독성시험 기간은 어떻게 맞춰야 해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q36 (depth D1)"
+      "source": "answer_suitability_evaluation.md#Q36 (depth D1)",
+      "expected_document_ids": [
+        "ich_m3_r2"
+      ]
     },
     {
       "id": "fifty_q_Q37",
       "type": "list",
       "question": "exploratory clinical trial 유형은 어떻게 나뉘어?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q37 (depth B1)"
+      "source": "answer_suitability_evaluation.md#Q37 (depth B1)",
+      "expected_document_ids": [
+        "ich_m3_r2"
+      ]
     },
     {
       "id": "fifty_q_Q38",
       "type": "detail",
       "question": "microdose Approach 1의 최대 용량과 NOAEL 기준은?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q38 (depth D1)"
+      "source": "answer_suitability_evaluation.md#Q38 (depth D1)",
+      "expected_document_ids": [
+        "ich_m3_r2"
+      ]
     },
     {
       "id": "fifty_q_Q39",
       "type": "detail",
       "question": "microdose Approach 1과 2는 용량·반복투여 조건이 어떻게 달라?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q39 (depth D1)"
+      "source": "answer_suitability_evaluation.md#Q39 (depth D1)",
+      "expected_document_ids": [
+        "ich_m3_r2"
+      ]
     },
     {
       "id": "fifty_q_Q40",
       "type": "process",
       "question": "가임기 여성 임상시험 전에 생식독성 자료는 어느 시점까지 필요해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q40 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q40 (depth B2)",
+      "expected_document_ids": [
+        "ich_m3_r2"
+      ]
     },
     {
       "id": "fifty_q_Q41",
       "type": "detail",
       "question": "일반독성시험 high dose는 어떤 원칙으로 정해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q41 (depth D2)"
+      "source": "answer_suitability_evaluation.md#Q41 (depth D2)",
+      "expected_document_ids": [
+        "ich_m3_r2"
+      ]
     },
     {
       "id": "fifty_q_Q42",
       "type": "overview",
       "question": "바이오의약품 비임상 안전성평가를 S6에서는 어떻게 구성해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q42 (depth B0)"
+      "source": "answer_suitability_evaluation.md#Q42 (depth B0)",
+      "expected_document_ids": [
+        "ich_s6_r1"
+      ]
     },
     {
       "id": "fifty_q_Q43",
       "type": "list",
       "question": "S6(R1) species selection 항목을 정리해줘.",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q43 (depth B1)"
+      "source": "answer_suitability_evaluation.md#Q43 (depth B1)",
+      "expected_document_ids": [
+        "ich_s6_r1"
+      ]
     },
     {
       "id": "fifty_q_Q44",
       "type": "detail",
       "question": "관련 종이 한 종밖에 없으면 독성시험을 한 종으로 해도 돼?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q44 (depth D2)"
+      "source": "answer_suitability_evaluation.md#Q44 (depth D2)",
+      "expected_document_ids": [
+        "ich_s6_r1"
+      ]
     },
     {
       "id": "fifty_q_Q45",
       "type": "detail",
       "question": "relevant species가 없을 때 homologous protein은 언제 쓸 수 있어?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q45 (depth D2)"
+      "source": "answer_suitability_evaluation.md#Q45 (depth D2)",
+      "expected_document_ids": [
+        "ich_s6_r1"
+      ]
     },
     {
       "id": "fifty_q_Q46",
       "type": "detail",
       "question": "S6에서 dose selection에 PK/PD를 어떻게 활용해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q46 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q46 (depth B2)",
+      "expected_document_ids": [
+        "ich_s6_r1"
+      ]
     },
     {
       "id": "fifty_q_Q47",
       "type": "detail",
       "question": "반복투여 독성시험 duration이랑 recovery는 어떻게 정해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q47 (depth B2)"
+      "source": "answer_suitability_evaluation.md#Q47 (depth B2)",
+      "expected_document_ids": [
+        "ich_s6_r1"
+      ]
     },
     {
       "id": "fifty_q_Q48",
       "type": "detail",
       "question": "동물에서 항약물항체가 생기면 독성시험 결과를 어떻게 해석해야 해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q48 (depth D2)"
+      "source": "answer_suitability_evaluation.md#Q48 (depth D2)",
+      "expected_document_ids": [
+        "ich_s6_r1"
+      ]
     },
     {
       "id": "fifty_q_Q49",
       "type": "comparison",
       "question": "일반 저분자 의약품과 바이오의약품의 비임상 지원에서 M3(R2)와 S6(R1)의 적용 범위는 어떻게 달라?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q49 (depth X)"
+      "source": "answer_suitability_evaluation.md#Q49 (depth X)",
+      "expected_document_ids": [
+        "ich_m3_r2",
+        "ich_s6_r1"
+      ]
     },
     {
       "id": "fifty_q_Q50",
       "type": "comparison",
       "question": "바이오의약품 FIH 들어가려면 독성 쪽에서 뭐 준비해야 해?",
       "expect_answered": true,
-      "source": "answer_suitability_evaluation.md#Q50 (depth X)"
+      "source": "answer_suitability_evaluation.md#Q50 (depth X)",
+      "expected_document_ids": [
+        "ich_s6_r1",
+        "ema_fih",
+        "ich_m3_r2"
+      ]
     },
     {
       "id": "ws3_ambiguous_tie.different_days",
@@ -367,6 +520,9 @@
       "question": "different days acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "fda_ada"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -375,6 +531,9 @@
       "question": "analysts acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "fda_ada"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -383,6 +542,9 @@
       "question": "one-sided lower confidence interval acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "fda_ada"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -391,6 +553,9 @@
       "question": "false-positive rate acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "fda_ada"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -399,6 +564,9 @@
       "question": "replicates acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m10"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -407,6 +575,9 @@
       "question": "analytical runs acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m10"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -415,6 +586,9 @@
       "question": "days acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m10"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -423,6 +597,9 @@
       "question": "precision acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m10"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -431,6 +608,9 @@
       "question": "number of calibration standard levels acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m10"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -439,6 +619,9 @@
       "question": "number of qc concentration levels acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m10"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -447,6 +630,9 @@
       "question": "low qc concentration acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m10"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -455,6 +641,9 @@
       "question": "high qc concentration acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m10"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -463,6 +652,9 @@
       "question": "aliquots analysed acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m10"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -471,6 +663,9 @@
       "question": "calibration standard concentration levels acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m10"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -479,6 +674,9 @@
       "question": "qc concentration levels acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m10"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -487,6 +685,9 @@
       "question": "qc levels falling within the range of concentrations measured in study samples acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m10"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -495,6 +696,9 @@
       "question": "exposure margin acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m3_r2"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -503,6 +707,9 @@
       "question": "number of mammalian species in the supporting toxicity study acceptance criteria",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m3_r2"
+      ],
       "source": "workstream_3_ambiguous_tie_probes (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {
@@ -511,6 +718,11 @@
       "question": "가이드라인의 section 1 introduction 항목은 뭐가 있어?",
       "expect_answered": null,
       "expect_routing_abstention": true,
+      "expected_document_ids": [
+        "ich_m10",
+        "ich_m3_r2",
+        "ich_s6_r1"
+      ],
       "source": "workstream_3_manifest_ambiguity_probe (logs/runtime/response_intelligence_workstream_3_taxonomy.json)"
     },
     {

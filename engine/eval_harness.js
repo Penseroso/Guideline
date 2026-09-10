@@ -60,8 +60,7 @@ function checkOne(expected, actual) {
 }
 
 /**
- * M5 Phase 5 (history/verification/engine_test_record_through_2026-08-28.md Entry 008, Decision Point 3): a
- * `status: "known_gap"` fixture entry is a currently-failing case
+ * A `status: "known_gap"` fixture entry is a currently-failing case
  * promoted from real user feedback (scripts/promote_feedback_to_eval.js)
  * — by definition the engine cannot answer it correctly today. It's
  * excluded from the pass/fail gate (it would otherwise permanently fail
@@ -89,19 +88,19 @@ function summarize(results) {
   // comparison, an amendment, a list) — a question can pass this check
   // while containing other, completely uncited content elsewhere in the
   // same answer. This is exactly how the comparison/amendment grounding
-  // defects shipped invisibly under a reported 100% here (verified live,
-  // history/verification/engine_test_record_through_2026-08-28.md Entry 007; see claim_grounding_rate below for the
-  // metric that actually checks what this comment used to claim it did).
+  // defects once shipped invisibly under a reported 100% here — see
+  // claim_grounding_rate below for the metric that actually checks the
+  // whole claim set.
   const citationPrecise = answerCases.filter(allPass).length;
 
-  // claim_grounding_rate: the real per-claim invariant (M5 plan Phase 1
-  // item 10/11) — of every claim across every answered case, what
+  // claim_grounding_rate: the real per-claim invariant — of every claim
+  // across every answered case, what
   // fraction have a source_unit_id that resolves in the archive. Distinct
   // from citation_precision: this can be 100% while citation_precision is
   // lower (a correct claim, worded differently than the fixture's exact
-  // expected substring), and — before the Phase 1 fixes — citation_precision
-  // could read 100% while this was well below it (uncited claims never
-  // touched by the expected-substring check at all).
+  // expected substring), and citation_precision could once read 100% while
+  // this was well below it (uncited claims never touched by the
+  // expected-substring check at all).
   const answeredResults = gatedResults.filter((r) => r.actual && r.actual.answered);
   const allClaims = answeredResults.flatMap((r) => r.actual.claims || []);
   const groundedClaims = allClaims.filter((c) => c.source_unit_id);
@@ -123,8 +122,7 @@ async function main() {
   // --fallback: also exercise the grounded-generation/source-excerpt routes,
   // which this harness has otherwise never run — main() previously always
   // called runEval() with no {client, store}, so structured answers were the
-  // only route measured despite runEval() accepting both since M1
-  // (history/verification/engine_test_record_through_2026-08-28.md Entry 007 Step 0).
+  // only route measured despite runEval() accepting both from early on.
   const useFallback = process.argv.includes("--fallback");
   let generatorClient, verifierClient, store, fallbackMode;
   if (useFallback) {
@@ -162,9 +160,9 @@ function formatPct(x) {
 const EVAL_HISTORY_PATH = path.resolve(__dirname, "..", "logs", "eval_history.jsonl");
 
 /**
- * M5 Phase 5 (history/verification/engine_test_record_through_2026-08-28.md Entry 008 / M5 plan §5-6): the drift
- * record product_roadmap.md §2.6 item 8 calls for ("tracked error rate
- * over time") — as a file, not a new monitoring system. Appends one line
+ * The drift record product_roadmap.md §2.6 item 8 calls for ("tracked
+ * error rate over time") — as a file, not a new monitoring system. Appends
+ * one line
  * per `npm run eval` run; never overwrites, so the file itself is the
  * history.
  */

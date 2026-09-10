@@ -1,19 +1,17 @@
 /**
  * engine/query_stats.js
- * M5 Phase 6 (history/verification/engine_test_record_through_2026-08-28.md Entry 008 / .claude/plans/scalable-
- * floating-elephant.md): a pure aggregation over the two logs that
- * already exist (the configured runtime query log via engine/query_log.js's
- * readInteractions(), and the configured runtime feedback log via engine/feedback_log.js's
+ * A pure aggregation over the two logs that already exist (the configured
+ * runtime query log via engine/query_log.js's readInteractions(), and the
+ * configured runtime feedback log via engine/feedback_log.js's
  * readFeedback()) — no new monitoring system, no metrics server, no
- * time-series DB (product_roadmap.md §2.4.1's minimalism, applied to
- * ops the same way it was applied to the HTTP layer in Phase 3).
+ * time-series DB (product_roadmap.md §2.4.1's minimalism, applied to ops
+ * the same way it was applied to the HTTP layer).
  *
  * Refusal clustering reuses the existing tokenizer/synonym map
  * (engine/text_utils.js) rather than any clustering library or
  * cleverness — this is exactly the same mechanism that already produced
- * the real M3 extraction-priority order from the original M2 log
- * (docs/milestone_log.md M2), now exposed as a live view instead of a
- * one-off manual read.
+ * a real extraction-priority order from an early query log, now exposed
+ * as a live view instead of a one-off manual read.
  */
 
 const { tokenize } = require("./text_utils");
@@ -50,8 +48,9 @@ function latencySummary(values) {
 /**
  * Groups refused questions by shared token, keeping only tokens that
  * recur across more than one question (a single-occurrence token isn't
- * a cluster, it's just that question's own wording). This is what
- * produced the real M3 backlog by hand in M2; here it's mechanical.
+ * a cluster, it's just that question's own wording). This is the same
+ * grouping that once produced a real extraction backlog by hand; here
+ * it's mechanical.
  */
 function clusterRefusals(refusedQuestions, topN = 10) {
   const byToken = new Map();
@@ -69,12 +68,11 @@ function clusterRefusals(refusedQuestions, topN = 10) {
 }
 
 /**
- * aggregate(interactions, feedback) -> stats object, per M5 plan Phase 6.
+ * aggregate(interactions, feedback) -> stats object.
  * Both arguments are plain arrays of the shapes readInteractions()/
- * readFeedback() already produce; tolerant of the 44 historical M2
- * entries that predate the Phase 5 field additions (mode, latency_ms,
- * cited_source_unit_ids are simply absent on those, not null-coerced
- * incorrectly).
+ * readFeedback() already produce; tolerant of historical entries that
+ * predate later field additions (mode, latency_ms, cited_source_unit_ids
+ * are simply absent on those, not null-coerced incorrectly).
  */
 function aggregate(interactions, feedback = []) {
   const total = interactions.length;

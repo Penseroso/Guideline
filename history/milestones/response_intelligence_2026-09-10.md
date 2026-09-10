@@ -1,6 +1,15 @@
+> Moved from `docs/milestones/response_intelligence.md` on 2026-09-10 as
+> part of the production-baseline close-out pass. Content below is
+> preserved verbatim from the active milestone document — not rewritten.
+> Current verification numbers live in `docs/verification_status.md`, the
+> current production SLO baseline in `docs/production_slo.md`, and the
+> milestone register entry in `docs/milestone_log.md`.
+
+---
+
 # Milestone: Response Intelligence
 
-Status: active (started 2026-09-08)
+Status: complete (started 2026-09-08, closed 2026-09-10 — Workstream 8 cancelled, Workstreams 1-7 complete)
 
 Purpose: on top of the current production baseline, improve answer quality,
 retrieval, latency, and LLM-involvement structure based on real measured
@@ -454,20 +463,64 @@ The `ambiguous` type's 18/19 `routing_abstention_rate` baseline reflects
 the current 55-manifest reviewed inventory's single real cross-document
 manifest-ambiguity case; re-run `npm run build:eval:typed` +
 `npm run eval:typed:run` as more manifests are authored rather than
-treating it as fixed. **This milestone is not yet complete** — Workstream
-8 (Corpus Expansion / Reusability Test) remains not started; this
-document stays active and is not moved to `history/milestones/` until
-that workstream is also done.
+treating it as fixed.
 
-## 8. Corpus Expansion / Reusability Test
+## Milestone close-out (2026-09-10)
 
-Goal: empirically determine whether the current engine is a
-Guideline-specific application or a reusable regulatory-QA platform.
+Workstream 8 (Corpus Expansion / Reusability Test) was **cancelled** by
+explicit user decision, not deferred and not completed — no separate
+regulatory corpus was added, and the reusability-vs-Guideline-specific
+question it was meant to answer remains genuinely open. With Workstreams
+1-7 complete and Workstream 8 cancelled, this milestone is closed.
 
-- Add a real, separate regulatory corpus.
-- Test whether it works via schema + ontology + semantic data alone, with
-  no engine changes.
-- If engine changes turn out to be necessary, identify exactly what's
-  Guideline-specific coupling.
+Both real risks this document's Workstream 3/7 sections left open were
+fixed in this close-out pass, before moving this document to `history/`:
 
-Status: not started
+- **Cross-scope answer mixing** (§7's "known open safety issue"): fixed in
+  `engine/answer_envelope.js` — after `answerFallback` returns, if this
+  request's telemetry recorded a genuine routing/manifest ambiguity tie
+  and the fallback's own claims span more than one document, the answer
+  is replaced with an explicit `ambiguous_document_scope` refusal naming
+  the candidate documents, surfaced in both the API envelope and the web
+  refusal card. Verified via a direct reproduction of the real
+  `ws3_ambiguous_tie.days` failure shape
+  (`test/engine_answer_envelope.test.js`) and a fresh full 72-question SLO
+  rerun: `cross_scope_safe_rate` is now 100% (19/19), and
+  `npm run audit:production-slo -- --check` passes. Full detail:
+  `docs/production_slo.md`.
+- **`refusal_reason`/`fallback_reason` contract** (§3's documented, then-
+  unfixed bug): `engine/answer_envelope.js`'s plain-fallback branch now
+  reads `result.refusal_reason || result.fallback_reason`, so the richer
+  reasons `answerFallback` actually sets (`model_declined`,
+  `language_mismatch`, `verification_failed: <detail>`,
+  `generation_not_configured`) no longer silently collapse to
+  `"no_match"`. The stale envelope doc-comment listing unreachable
+  `refusal.kind` values was also corrected.
+
+A new, real finding surfaced in the same close-out pass, **left unfixed**
+as a real follow-up rather than something this pass was scoped to
+address: a `retrieval_scope_correct_rate` metric (`data/eval/typed_questions.json`'s
+new `expected_document_ids` field, populated from real, already-known
+provenance) measured 93.9% (62/66) and found 4 real cases where the
+answer cited a document outside the question's real expected scope,
+including one case (`ws3_ambiguous_tie.analysts`) where a router-flagged
+ambiguous tie fell through to a confident answer from a single document
+that isn't even a plausible candidate — a distinct defect class the
+cross-scope-mixing guard above structurally cannot catch. Full detail and
+the 4 specific cases: `docs/production_slo.md`.
+
+`answer()` (`engine/query_router.js`) and `answerEnvelope()`
+(`engine/answer_envelope.js`) were confirmed to be genuine parallel
+implementations, not one wrapping the other — `answerEnvelope()` is the
+sole production path (`/api/ask`); `answer()` serves only the CLI and the
+legacy gold eval, and does not carry `answerEnvelope()`'s gates including
+the fix above. Left as two entry points rather than merged (see
+`engine/answer_envelope.js`'s header comment for the reasoning) — merging
+would have meant migrating the CLI/legacy-eval call sites for no
+production-safety benefit, out of proportion to this pass's scope.
+
+This document is now frozen at
+`history/milestones/response_intelligence_2026-09-10.md`. Current
+verification numbers live in `docs/verification_status.md`, the current
+SLO baseline in `docs/production_slo.md`, and the milestone register entry
+in `docs/milestone_log.md`.

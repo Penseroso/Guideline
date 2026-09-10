@@ -1,7 +1,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 
-const { claimGroundingRate, retrievalGrounded, answerabilityMatch, checkAgainstSlo, SLO_TARGETS, crossScopeSafe } = require("../scripts/analyze_production_slo");
+const { claimGroundingRate, retrievalGrounded, answerabilityMatch, checkAgainstSlo, SLO_TARGETS, crossScopeSafe, retrievalScopeCorrect } = require("../scripts/analyze_production_slo");
 
 test("claimGroundingRate is the fraction of claims whose source_unit_id resolves", () => {
   const sourceUnits = new Set(["su1", "su2"]);
@@ -110,4 +110,49 @@ test("checkAgainstSlo flags a real cross_scope_safe_rate breach and names the un
   assert.equal(breaches.length, 1);
   assert.match(breaches[0], /cross_scope_safe_rate/);
   assert.match(breaches[0], /ws3_ambiguous_tie\.days/);
+});
+
+// retrievalScopeCorrect asks a stricter question than retrievalGrounded:
+// not just "did every claim's citation resolve" but "was the answer
+// actually scoped to one of the real, already-known expected documents."
+test("retrievalScopeCorrect is null when the question carries no expected_document_ids", () => {
+  assert.equal(retrievalScopeCorrect({ envelope: { answered: true, claims: [claim("fda_ada")] } }), null);
+});
+
+test("retrievalScopeCorrect is null for an unanswered question -- crossScopeSafe/answerability judge that case", () => {
+  assert.equal(retrievalScopeCorrect({ expected_document_ids: ["fda_ada"], envelope: { answered: false, claims: [] } }), null);
+});
+
+test("retrievalScopeCorrect is true when every cited document is inside the expected set", () => {
+  assert.equal(retrievalScopeCorrect({ expected_document_ids: ["fda_ada"], envelope: { answered: true, claims: [claim("fda_ada"), claim("fda_ada")] } }), true);
+});
+
+test("retrievalScopeCorrect is false when the answer cites a document outside the expected set -- the real fifty_q_Q11 shape (expected fda_ada, answered from ich_s6_r1)", () => {
+  assert.equal(retrievalScopeCorrect({ expected_document_ids: ["fda_ada"], envelope: { answered: true, claims: [claim("ich_s6_r1")] } }), false);
+});
+
+// checkAgainstSlo checks retrieval_scope_correct_rate only at the overall
+// level (report.overall), not per-type -- the real baseline rate genuinely
+// differs across types (e.g. ambiguous 15/16 vs. list 11/11), so a single
+// threshold applied per-type would falsely flag a small type's naturally
+// lower rate.
+test("checkAgainstSlo flags a real overall retrieval_scope_correct_rate breach and names the incorrect question ids", () => {
+  const report = {
+    total_questions: 1,
+    overall: { latency_cost: null, retrieval_scope_correct_rate: 0.5, retrieval_scope_incorrect_ids: ["fifty_q_Q11"] },
+    by_type: {}
+  };
+  const breaches = checkAgainstSlo(report);
+  assert.equal(breaches.length, 1);
+  assert.match(breaches[0], /retrieval_scope_correct_rate/);
+  assert.match(breaches[0], /fifty_q_Q11/);
+});
+
+test("checkAgainstSlo does not flag the exact measured retrieval_scope_correct_rate baseline as a breach", () => {
+  const report = {
+    total_questions: 1,
+    overall: { latency_cost: null, retrieval_scope_correct_rate: SLO_TARGETS.min_retrieval_scope_correct_rate, retrieval_scope_incorrect_ids: [] },
+    by_type: {}
+  };
+  assert.deepEqual(checkAgainstSlo(report), []);
 });

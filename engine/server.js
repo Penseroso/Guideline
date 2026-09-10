@@ -1,12 +1,10 @@
 /**
  * engine/server.js
- * M5 Phase 3 (history/verification/engine_test_record_through_2026-08-28.md Entry 008 / .claude/plans/scalable-
- * floating-elephant.md): local-first HTTP layer over the engine.
- * node:http, zero new dependencies — the repo has zero devDependencies
- * and product_roadmap.md §2.4.1 explicitly prizes "zero running server
- * processes... no separate server to operate." Six routes with no real
- * middleware need don't justify the first framework this codebase has
- * deliberately avoided.
+ * Local-first HTTP layer over the engine, on node:http with zero new
+ * production dependencies — product_roadmap.md §2.4.1 explicitly prizes
+ * "zero running server processes... no separate server to operate." Six
+ * routes with no real middleware need don't justify the first framework
+ * this codebase has deliberately avoided.
  *
  * Sibling entry point to engine/cli.js — same engine, same
  * setUpAnswering() helper, different front door.
@@ -255,11 +253,11 @@ function startServer({
     ? process.env.GUIDELINE_ALLOWED_HOSTS.split(",").map((value) => value.trim().toLowerCase()).filter(Boolean)
     : host === "127.0.0.1" || host === "localhost" ? ["127.0.0.1", "localhost", "[::1]"] : []
 } = {}) {
-  // The actual security control for M5: refuse to become a public surface
+  // The actual security control here: refuse to become a public surface
   // by accident. One `if`, and it's the permanent guardrail — the day
   // someone changes GUIDELINE_HOST, this stops the unauthenticated-public
   // mistake at the source instead of relying on remembering to also set a
-  // token (M5 plan §7).
+  // token.
   if (host !== "127.0.0.1" && host !== "localhost" && !authToken) {
     throw new Error(
       `engine/server.js: refusing to start bound to "${host}" with no GUIDELINE_AUTH_TOKEN set. ` +

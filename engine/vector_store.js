@@ -6,20 +6,21 @@ const { tokenize } = require("./text_utils");
  *
  *  - Keyword mode (default, no `embed` function supplied): a plain
  *    inverted token index, zero LLM/API cost. This is what's actually
- *    exercised today, since no embedding provider is configured yet.
+ *    exercised in production, since no embedding provider is configured.
  *  - Vector mode (an `embed(text) -> number[]` function supplied):
  *    sqlite-vec, file-based, no server — per product_roadmap.md §2.5
- *    selection criteria (native Node binding, no separate process).
- *    No caller in this codebase passes `embed` today (verified), so
- *    this path is dead in practice — `better-sqlite3`/`sqlite-vec` are
- *    `require`d lazily inside createVectorStore(), not at module load,
- *    so the rest of the app (keyword mode, everything that actually
- *    runs) never depends on `better-sqlite3` having a compiled native
- *    binary available. Found necessary live: this machine has no C++
- *    build toolchain, and `better-sqlite3` has no prebuilt-binary
- *    fallback in the installed version — an unconditional top-level
- *    require here would have broken every caller of this module, not
- *    just the unused vector path.
+ *    selection criteria (native Node binding, no separate process). No
+ *    caller in this codebase passes `embed` (verified), so this path is
+ *    dead in production — only exercised directly by
+ *    test/engine_vector_store.test.js. `better-sqlite3`/`sqlite-vec` are
+ *    `require`d lazily inside createVectorStore(), not at module load, so
+ *    the rest of the app (keyword mode, everything that actually runs)
+ *    never depends on a compiled native binary being available on every
+ *    machine — whether the local build toolchain can produce one is not
+ *    guaranteed and shouldn't gate anything outside this one path.
+ *    `better-sqlite3`/`sqlite-vec` live in devDependencies, not
+ *    dependencies, for the same reason: nothing in the production path
+ *    needs them installed.
  *
  * Both modes expose the same `index(records)` / `search(query, k)`
  * shape so callers (engine/query_router.js's fallback routes) never
@@ -30,9 +31,9 @@ function createStore({ embed } = {}) {
   return createKeywordStore();
 }
 
-// Response Intelligence Workstream 4 (scripts/analyze_retrieval_quality.js):
-// a realistic multi-word benchmark found the correct record missing from
-// the top-5 specifically when its one matching query token was also common
+// scripts/analyze_retrieval_quality.js's realistic multi-word benchmark
+// found the correct record missing from the top-5 specifically when its
+// one matching query token was also common
 // across roughly a third or more of the whole archive (e.g. "protein" in
 // 303/~900 records, "binding" in 234/~900) — the flat per-tier score alone
 // can't tell a distinctive term from a ubiquitous one. `idfBonus` adds a

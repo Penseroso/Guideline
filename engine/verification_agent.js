@@ -35,9 +35,9 @@ const SYSTEM_PROMPT =
   "the subject matter. If the claim adds any number, condition, exception, or modality " +
   "(must/should/may) not present in the source text, entailed must be false. " +
   "If the claim is a fair paraphrase with no added or contradicted content, entailed is true. " +
-  // Added after a live triage on real M10 3.2.5.2 data (docs/milestone_log.md
-  // M1) showed a correct, deliberately narrow criterion (e.g. a general rule split
-  // from its own exception into a separate record, per schema.md's own guidance)
+  // Added after a live triage on real M10 3.2.5.2 data showed a correct,
+  // deliberately narrow criterion (e.g. a general rule split from its own
+  // exception into a separate record, per schema.md's own guidance)
   // was being rejected for not restating a sibling record's condition/exception.
   // Verified this addition still rejects the original range-vs-requirement
   // distortion it was not designed to catch, so it's a scope narrowing, not a
@@ -65,8 +65,9 @@ async function verifyClaim({ claim, sourceText, client, model, signal }) {
 }
 
 // Maps the schema's comparator enum to an explicit-but-modality-neutral
-// phrase. History (docs/milestone_log.md M1), both directions
-// verified against the live API:
+// phrase. Both directions below were verified against the live API before
+// settling on v3 — kept as a record of what was tried and why it failed,
+// since it's a real warning against regressing to v1/v2:
 //   v1 (bare "parameter at_least N"): a distortion — a descriptive range
 //   ("can range from as little as one ... to a nearly full validation")
 //   turned into a QuantitativeCriterion — was verified entailed=true. The
@@ -148,7 +149,7 @@ function claimTextFor(record) {
     // validation runs") when present. Without it, an exception/special-case
     // criterion's claim reads as if it were the general rule and gets
     // correctly rejected for overstating scope — found via a live triage
-    // on real M10 3.2.5.2 data (docs/milestone_log.md M1).
+    // on real M10 3.2.5.2 data.
     const scoped = record.denominator_or_reference ? `${base}, applicable to: ${record.denominator_or_reference}` : base;
     return scoped.trim();
   }
